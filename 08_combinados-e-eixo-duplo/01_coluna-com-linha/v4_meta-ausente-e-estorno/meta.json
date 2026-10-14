@@ -1,0 +1,18 @@
+{
+  "title": "Meses sem meta e mês negativo por estorno",
+  "useCase": "Como ler receita contra meta com dois meses sem meta e um mês negativo por estorno?",
+  "demonstrates": [
+    "Meta ausente como nulo com connectNulls false: linha interrompida e nota",
+    "Coluna negativa com ReferenceLine no zero em line-strong",
+    "Domínio que inclui o negativo sem perder tique redondo",
+    "Frase acessível que cita os meses sem meta e o estorno",
+    "Sinal de menos tipográfico antes do símbolo, sobre o valor absoluto",
+    "Linha da meta por trás das colunas, sem revestimento"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Canvas por número pela GEO-1, e não o preset card de 640x360: o cartão escreve a legenda de 3 itens (20 px mais 12 px de vão), a linha de leitura (20 px mais 8 px de vão) e a faixa do eixo X (24 px pela EIX-6b). Com 400 de altura o plano fica em 181,5 px e as 5 linhas de grade, que aqui incluem o lado negativo do zero, ficam a 45,4 px. Desvio declarado da EIX-6, com consequência medida no render e não estimada: Y_AXIS_WIDTH é 82 e não a faixa de 48 a 64, porque o tique mais longo deste domínio é −R$ 200 mil (U+2212 antes do símbolo). A conta por largura média de caractere previa 66 px; o render mostrou que em 72 px e em 80 px o Recharts ainda quebra o tique em duas linhas, que é a REC-2, e o menor eixo em uma linha é 81 px, com 82 dando 1 px de folga. Pela 14.1 a constante cede quando o desvio aparece no render, e aqui o número veio da medição. Desvio declarado da ROT-3: a meta é identificada pela legenda acima, e não por rótulo no fim da linha, porque a linha termina em dezembro sobre a coluna mais alta do ano e o halo que a ROT-7 exige abriria uma faixa apagada dentro dela. A coluna não leva raio de canto: num mês negativo o retângulo cresce para baixo e o raio de topo nasceria na linha do zero, arredondando o lado errado. O mês do estorno não leva valor escrito: o rótulo mede cerca de 91 px contra uma banda de 41 px, e em qualquer posição ele cruzaria as colunas vizinhas; o número vive na linha de leitura, na frase acessível e na dica. Medição à mão pela TOK-9: --chart-3 contra --chart-1 mede 1,47:1 no escuro e 1,03:1 no claro, daí a linha da meta passa por trás das colunas, sem revestimento (segunda saída da TOK-10). O revestimento de 6 px anterior cobria o topo de nov/26, que bateu a meta por R$ 6,4 mil; agora o topo de toda coluna acima da meta fica inteiro e cobre a linha. Conferir no preview: nov/26 sem vão da cor do cartão entre coluna e linha, fev/26 e set/26 sem fio solto, jun/26 lendo abaixo."
+}

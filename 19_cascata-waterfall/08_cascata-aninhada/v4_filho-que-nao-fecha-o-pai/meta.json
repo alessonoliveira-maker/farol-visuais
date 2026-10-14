@@ -1,0 +1,13 @@
+{
+  "title": "Perdas na proposta sem motivo registrado",
+  "useCase": "Comercial, 2026-T3: das 110 perdas na proposta, quantas não têm motivo e por que não se redistribuem?",
+  "demonstrates": [
+    "Passo Sem motivo registrado vazado, por último e visível",
+    "Soma dos filhos verificada contra o pai no dado",
+    "Ausência nunca redistribuída proporcionalmente entre motivos",
+    "Frase acessível com a parte sem classificação"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O pai e os filhos vêm no dado e o desenho calcula a diferença: 110 menos 97 dá 13 perdas sem motivo, o passo vazado antes da coluna do pai. A parte sem classificação é contorno tracejado em --text-muted com rótulo escrito, e os percentuais dos motivos continuam sobre as 110, sem esticar os quatro motivos para fechar 100%."
+}

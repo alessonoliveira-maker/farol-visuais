@@ -1,0 +1,14 @@
+{
+  "title": "Etapas do processo sem responsável",
+  "useCase": "Comercial: em qual etapa do handoff nenhuma função está definida como responsável.",
+  "demonstrates": [
+    "Célula sem nó com contorno tracejado 3 3 em var(--text-muted)",
+    "Texto sem responsável definido escrito dentro da célula vazia",
+    "Seta tracejada que chega à célula vazia e não sai dela",
+    "Contagem de etapas sem dono escrita no rodapé, como 1 de 16 células",
+    "Diferença visual entre célula que não se aplica e célula sem dono"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo, com o contrato vencendo: a seta sai de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), que mede 5,21:1 e 5,37:1, porque a seta carrega a relação (ACE-6). Canvas card: o corpo mede 574 x 225 px com o caso de uso em duas linhas, e o viewBox de 574 x 222 fecha a escala em 1. Sem pista entre as linhas, a seta sai pela lateral do nó e desce na coluna do destino, e o número fica sobre o trecho horizontal. A seta que chega à célula sem dono é tracejada 3 3 para dizer que o fluxo para ali."
+}

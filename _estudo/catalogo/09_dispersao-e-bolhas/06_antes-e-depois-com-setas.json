@@ -1,0 +1,68 @@
+{
+  "slug": "06_antes-e-depois-com-setas",
+  "nome": "Dispersão de antes e depois com setas",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Cada entidade aparece em dois momentos e uma seta liga a posição antiga à nova. Mostra quem se moveu, para onde e quanto nas duas medidas, e quem cruzou uma divisória. As setas são SVG puro sobre o plano, com a conversão de dado para pixel feita pelos mesmos domínios dos eixos, cor pela direção vinda da polaridade da métrica e recuo da ponta antes do alvo. Absorve o quadrante com trajetória.",
+  "quando_usar": [
+    "Mudança de posição de várias entidades entre dois momentos, como canais de um trimestre para o outro.",
+    "Mostrar quem saiu ou entrou numa região de meta entre dois períodos.",
+    "Até cerca de 15 setas legíveis; acima disso, filtrar para quem mudou de região ou rotular só as maiores.",
+    "Medidas em escala linear com domínio explícito e idêntico nos dois períodos."
+  ],
+  "quando_evitar": [
+    "Muitos momentos por entidade: use dispersão conectada (modelo 05).",
+    "Uma medida só entre dois momentos: use dumbbell ou slope (família 17).",
+    "Escala logarítmica ou domínio automático: a conversão para pixel deixa de bater com os eixos.",
+    "Seta sem indicação de qual ponta é o início: a leitura inverte; a legenda tem que dizer."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_canais-entre-trimestres",
+      "titulo": "Canais de um trimestre para o outro",
+      "caso_de_uso": "Como CPL e taxa de qualificação de 8 canais fictícios mudaram do T2 para o T3?",
+      "o_que_demonstra": [
+        "Geometria de seta em TypeScript com escalas lineares e domínio explícito",
+        "Origem em anel vazado e marker de ponta referenciado por id de useId",
+        "Recuo de 5 px antes do destino para a ponta não sumir sob o ponto",
+        "Legenda que diz qual ponta é o antes e qual é o depois"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_piorou-nas-duas-medidas",
+      "titulo": "Canais que pioraram nas duas medidas",
+      "caso_de_uso": "Quais canais ficaram com CPL maior e qualificação menor ao mesmo tempo? Só eles recebem cor e nome.",
+      "o_que_demonstra": [
+        "Direção boa ou ruim calculada pela polaridade de cada métrica",
+        "Setas que pioraram nas duas em cor semântica com a palavra piorou no rótulo",
+        "Demais setas em neutro, mantidas como contexto"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_origens-cruzando-a-meta",
+      "titulo": "Origens que cruzaram a meta de qualificação",
+      "caso_de_uso": "Quem saiu e quem entrou na região abaixo da meta de ago/26 para set/26? 12 origens de lead fictícias por volume e qualificação.",
+      "o_que_demonstra": [
+        "Divisória fixa na meta de qualificação, igual nos dois períodos",
+        "Só as setas que cruzaram a divisória em cor, as outras em neutro",
+        "Anotação com a contagem de quem saiu e de quem entrou na região crítica",
+        "Rótulo só nas setas acima do percentil 75 de deslocamento"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_entidade-nova-ou-encerrada",
+      "titulo": "Campanhas novas, encerradas e paradas",
+      "caso_de_uso": "Como mostrar campanha sem trimestre anterior, campanha encerrada e campanha que quase não se moveu?",
+      "o_que_demonstra": [
+        "Campanha nova como ponto com anel tracejado, sem seta, e o rótulo nova",
+        "Campanha encerrada como seta que termina num x",
+        "Seta abaixo de 12 px trocada por anel com a legenda mudança pequena",
+        "Os três casos explicados na legenda para seta ausente não virar não mudou"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

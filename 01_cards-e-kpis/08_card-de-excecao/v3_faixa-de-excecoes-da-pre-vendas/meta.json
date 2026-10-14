@@ -1,0 +1,17 @@
+{
+  "title": "Faixa de exceções da pré-vendas",
+  "useCase": "Quais réguas da pré-vendas estouraram na última avaliação e em que ordem de severidade devem ser atacadas?",
+  "demonstrates": [
+    "Quatro réguas próprias: teto da fila, SLA, agendas sem desfecho e leads sem dono",
+    "Ordenação por severidade e etapa, não por ordem de cálculo, escrita no cabeçalho",
+    "Faixa própria acima da grade, que colapsa numa linha de status quando está vazia",
+    "Contagem com denominador só quando a base é pequena: 6 de 19 agendas",
+    "Cada cartão com um único link esticado para a fila de trabalho"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 340
+  },
+  "frame": "stage",
+  "notes": "Largura de 960 px comporta até 4 régua ao lado uma da outra (grade @4xl:grid-cols-4); a altura soma o cabeçalho da faixa com a ordem de ação e a data, mais o cartão mais alto entre os 4, que empilha 5 linhas (cabeçalho com ordinal, rótulo da régua, contagem com denominador, critério, rodapé com link), acima do título e do caso de uso do palco. Nenhum preset serve: faixa (960x260) foi desenhado para uma tira rasa de KPIs e não para cartões de 5 linhas; largo (960x400) sobraria abaixo do necessário."
+}

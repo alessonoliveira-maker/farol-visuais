@@ -1,0 +1,13 @@
+{
+  "title": "Grade de executivos com escala compartilhada",
+  "useCase": "Quais dos 12 executivos estão acima da mediana semanal de receita, e com que forma nas últimas 13 semanas do trimestre?",
+  "demonstrates": [
+    "Doze cartões com polyline em SVG puro sobre o mesmo domínio de eixo (EIX-9)",
+    "Cabeçalho que declara ordem e escala: por receita, semanal de R$ 0 a R$ 120 mil",
+    "Mediana tracejada repetida na mesma posição em todos os micrográficos",
+    "Executivo selecionado com peso 700 e chart 1, demais em neutro",
+    "Posição com o tamanho do grupo em cada cartão: 3º de 12"
+  ],
+  "canvas": "largo",
+  "frame": "stage"
+}

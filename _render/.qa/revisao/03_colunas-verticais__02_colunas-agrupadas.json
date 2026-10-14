@@ -1,0 +1,238 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "02_colunas-agrupadas",
+  "versoes": {
+    "v1_agendas-marcadas-e-realizadas": {
+      "veredito": "aprovado",
+      "nota": "Colunas pareadas do zero, cor por slot 1 e 3, legenda na ordem das colunas, sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:09.221Z",
+      "impressao": "f93a4c0e23c0ed96cf14807b24508cc07ef02f29",
+      "arquivos": {
+        "Chart.tsx": "4fa4485f11c0ba85a6d11115db05cd1bac7c0dc6",
+        "data.ts": "fb00f2b9b444c8c2aaf02b5ad98135459257a548",
+        "meta.json": "7a6642a6407b473cf4f36363c11784f929857dc8"
+      }
+    },
+    "v2_ano-corrente-contra-anterior": {
+      "veredito": "aprovado",
+      "nota": "Ano anterior em neutro com valor escrito, meses abertos sem coluna; so aviso de COLISAO-TEXTO no rotulo de duas linhas",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:14.354Z",
+      "impressao": "0921cfc6a714a10ec7919a3b5a833a7b97288b16",
+      "arquivos": {
+        "Chart.tsx": "e2467ee1406ae19c611a325167b22b0702f0cf17",
+        "data.ts": "324da379acd65f4b1378e5e23701c6a026aa4bf3",
+        "meta.json": "9e277971cc51af9d8fa18c1272d9cb165f51e259"
+      }
+    },
+    "v3_leads-por-plataforma-de-midia": {
+      "veredito": "aprovado",
+      "nota": "Tres series nos slots 1, 3 e 6 com vao de 1,5 px e totais no rodape; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:19.727Z",
+      "impressao": "e3a135a19871274df7297ba9fbb065e49af3bef3",
+      "arquivos": {
+        "Chart.tsx": "d933d548822a6c0c1d3eca86026225a94e098b3c",
+        "data.ts": "d3a1f9e7a6ade5a431f6e97ee4cf75ddfcce8067",
+        "meta.json": "6d94d9fd2b7bd1f656a05b3c3dd4eec7fa5d1377"
+      }
+    },
+    "v4_plataforma-que-estreou-em-maio": {
+      "veredito": "aprovado",
+      "nota": "Ausencia antes da estreia sem coluna e zero medido desenhado e escrito; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:20.288Z",
+      "impressao": "70142733f7a183b62198cac51df68d9b6a8451ef",
+      "arquivos": {
+        "Chart.tsx": "0751c9969530546ed56a43e52bfdc20923102024",
+        "data.ts": "8345684507ca45f14af6fa9b0f666a8e1e153a87",
+        "meta.json": "ca1d09da85ff8eaa56e8e85c7635246d6d4c52d3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Legenda, grade e espessura conferidas; taxa com volume na dica; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:18:34.473Z",
+      "impressao": "272b82f381b0028cc3d7bb5bd9be6c81349b3d66",
+      "arquivos": {
+        "Chart.tsx": "3f50345c7cc80e00df2f58339024816a404578f3",
+        "data.ts": "fb00f2b9b444c8c2aaf02b5ad98135459257a548",
+        "meta.json": "7a6642a6407b473cf4f36363c11784f929857dc8"
+      }
+    },
+    {
+      "versao": "v2_ano-corrente-contra-anterior",
+      "veredito": "reprovado",
+      "nota": "Duas series sem legenda nem nome na tela: nada diz qual cor e 2025 e qual e 2026, e os meses sem 2026 leem como queda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:18:39.745Z",
+      "impressao": "8970907932df072f2a5971f22c624f5878e907fa",
+      "arquivos": {
+        "Chart.tsx": "0636ffcb209a703c36a6c80549a69bf69e8793f2",
+        "data.ts": "324da379acd65f4b1378e5e23701c6a026aa4bf3",
+        "meta.json": "9cc372f98b5179e3e62d4423cadccd6730c27566"
+      }
+    },
+    {
+      "versao": "v3_leads-por-plataforma-de-midia",
+      "veredito": "aprovado",
+      "nota": "Três séries nos slots 1, 3 e 6, com legenda, vão declarado e rodapé de totais; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:18:52.507Z",
+      "impressao": "4336d07ab09d73bb252f8e3966663a5bc47e2ab0",
+      "arquivos": {
+        "Chart.tsx": "8cae9c608f1ea3bf1e0ff21e6a84fec506d25aec",
+        "data.ts": "d3a1f9e7a6ade5a431f6e97ee4cf75ddfcce8067",
+        "meta.json": "6d94d9fd2b7bd1f656a05b3c3dd4eec7fa5d1377"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Legenda na ordem das colunas, grade de contagem sem decimais e taxa com volume na dica; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:19:09.705Z",
+      "impressao": "272b82f381b0028cc3d7bb5bd9be6c81349b3d66",
+      "arquivos": {
+        "Chart.tsx": "3f50345c7cc80e00df2f58339024816a404578f3",
+        "data.ts": "fb00f2b9b444c8c2aaf02b5ad98135459257a548",
+        "meta.json": "7a6642a6407b473cf4f36363c11784f929857dc8"
+      }
+    },
+    {
+      "versao": "v2_ano-corrente-contra-anterior",
+      "veredito": "reprovado",
+      "nota": "Duas séries sem legenda e sem nome na tela: nada diz qual cor é 2025 e qual é 2026, e os meses sem coluna de 2026 leem como queda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:19:10.297Z",
+      "impressao": "8970907932df072f2a5971f22c624f5878e907fa",
+      "arquivos": {
+        "Chart.tsx": "0636ffcb209a703c36a6c80549a69bf69e8793f2",
+        "data.ts": "324da379acd65f4b1378e5e23701c6a026aa4bf3",
+        "meta.json": "9cc372f98b5179e3e62d4423cadccd6730c27566"
+      }
+    },
+    {
+      "versao": "v4_plataforma-que-estreou-em-maio",
+      "veredito": "aprovado",
+      "nota": "Estreia com nulo antes e zero medido desenhado e escrito, com a nota do mês de entrada na legenda; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:19:10.884Z",
+      "impressao": "44323ebbd6eb0e641b36c882231a769fb4d47f49",
+      "arquivos": {
+        "Chart.tsx": "aa2fc1da923852feb03fad025292cdc1cf76451b",
+        "data.ts": "8345684507ca45f14af6fa9b0f666a8e1e153a87",
+        "meta.json": "ca1d09da85ff8eaa56e8e85c7635246d6d4c52d3"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Colunas agrupadas legiveis nos dois temas, zero na base, cor por chave nos slots 1 e 3. Dica propria justificada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:30:09.121Z",
+      "impressao": "272b82f381b0028cc3d7bb5bd9be6c81349b3d66",
+      "arquivos": {
+        "Chart.tsx": "3f50345c7cc80e00df2f58339024816a404578f3",
+        "data.ts": "fb00f2b9b444c8c2aaf02b5ad98135459257a548",
+        "meta.json": "7a6642a6407b473cf4f36363c11784f929857dc8"
+      }
+    },
+    {
+      "versao": "v2_ano-corrente-contra-anterior",
+      "veredito": "aprovado",
+      "nota": "Neutro contra destaque honesto, meses abertos sem coluna e ano escrito no rotulo. Sub-rotulo de ano em 10 px fica abaixo do piso da TIP-2.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:30:13.829Z",
+      "impressao": "0a45bfd49b4fa20a60c77494b589185b1e161d0c",
+      "arquivos": {
+        "Chart.tsx": "15e9b95193a90825d65aecf516769fb5f88473e4",
+        "data.ts": "324da379acd65f4b1378e5e23701c6a026aa4bf3",
+        "meta.json": "9e277971cc51af9d8fa18c1272d9cb165f51e259"
+      }
+    },
+    {
+      "versao": "v3_leads-por-plataforma-de-midia",
+      "veredito": "aprovado",
+      "nota": "Tres series nos slots 1, 3 e 6 com vao declarado; rodape de totais legivel. Falta o substantivo da unidade no rodape.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:30:18.593Z",
+      "impressao": "4336d07ab09d73bb252f8e3966663a5bc47e2ab0",
+      "arquivos": {
+        "Chart.tsx": "8cae9c608f1ea3bf1e0ff21e6a84fec506d25aec",
+        "data.ts": "d3a1f9e7a6ade5a431f6e97ee4cf75ddfcce8067",
+        "meta.json": "6d94d9fd2b7bd1f656a05b3c3dd4eec7fa5d1377"
+      }
+    },
+    {
+      "versao": "v4_plataforma-que-estreou-em-maio",
+      "veredito": "aprovado",
+      "nota": "Ausencia antes da estreia sem coluna e zero medido desenhado com o numero escrito: as duas nao se confundem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:30:22.951Z",
+      "impressao": "44323ebbd6eb0e641b36c882231a769fb4d47f49",
+      "arquivos": {
+        "Chart.tsx": "aa2fc1da923852feb03fad025292cdc1cf76451b",
+        "data.ts": "8345684507ca45f14af6fa9b0f666a8e1e153a87",
+        "meta.json": "ca1d09da85ff8eaa56e8e85c7635246d6d4c52d3"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Colunas pareadas do zero, cor por slot 1 e 3, legenda na ordem das colunas, sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:09.221Z",
+      "impressao": "f93a4c0e23c0ed96cf14807b24508cc07ef02f29",
+      "arquivos": {
+        "Chart.tsx": "4fa4485f11c0ba85a6d11115db05cd1bac7c0dc6",
+        "data.ts": "fb00f2b9b444c8c2aaf02b5ad98135459257a548",
+        "meta.json": "7a6642a6407b473cf4f36363c11784f929857dc8"
+      }
+    },
+    {
+      "versao": "v2_ano-corrente-contra-anterior",
+      "veredito": "aprovado",
+      "nota": "Ano anterior em neutro com valor escrito, meses abertos sem coluna; so aviso de COLISAO-TEXTO no rotulo de duas linhas",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:14.354Z",
+      "impressao": "0921cfc6a714a10ec7919a3b5a833a7b97288b16",
+      "arquivos": {
+        "Chart.tsx": "e2467ee1406ae19c611a325167b22b0702f0cf17",
+        "data.ts": "324da379acd65f4b1378e5e23701c6a026aa4bf3",
+        "meta.json": "9e277971cc51af9d8fa18c1272d9cb165f51e259"
+      }
+    },
+    {
+      "versao": "v3_leads-por-plataforma-de-midia",
+      "veredito": "aprovado",
+      "nota": "Tres series nos slots 1, 3 e 6 com vao de 1,5 px e totais no rodape; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:19.727Z",
+      "impressao": "e3a135a19871274df7297ba9fbb065e49af3bef3",
+      "arquivos": {
+        "Chart.tsx": "d933d548822a6c0c1d3eca86026225a94e098b3c",
+        "data.ts": "d3a1f9e7a6ade5a431f6e97ee4cf75ddfcce8067",
+        "meta.json": "6d94d9fd2b7bd1f656a05b3c3dd4eec7fa5d1377"
+      }
+    },
+    {
+      "versao": "v4_plataforma-que-estreou-em-maio",
+      "veredito": "aprovado",
+      "nota": "Ausencia antes da estreia sem coluna e zero medido desenhado e escrito; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:20.288Z",
+      "impressao": "70142733f7a183b62198cac51df68d9b6a8451ef",
+      "arquivos": {
+        "Chart.tsx": "0751c9969530546ed56a43e52bfdc20923102024",
+        "data.ts": "8345684507ca45f14af6fa9b0f666a8e1e153a87",
+        "meta.json": "ca1d09da85ff8eaa56e8e85c7635246d6d4c52d3"
+      }
+    }
+  ]
+}

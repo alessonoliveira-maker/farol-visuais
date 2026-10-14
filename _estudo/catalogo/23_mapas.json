@@ -1,0 +1,452 @@
+{
+  "slug": "23_mapas",
+  "nome": "Mapas",
+  "modelos": [
+    {
+      "slug": "01_tile-grid-por-uf",
+      "nome": "Tile grid map por UF",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Cada uma das 27 UFs vira um tile de mesmo tamanho numa grade que lembra o mapa do Brasil, com sigla, valor e cor por classe. Elimina o viés de área que faz a Amazônia dominar o coroplético e dá peso visual igual a cada UF, o que o FT chama de equalised cartogram. No Farol é um div com grid de 6 colunas e cada tile posicionado por gridRow e gridColumn a partir de uma constante versionada (as grades públicas br_states_grid1 de 8x6 e br_states_grid2 de 7x6 do geofacet). O modelo absorve o tile grid hexagonal, feito com o mesmo grid e clip-path de hexágono com as linhas ímpares deslocadas meia célula.",
+      "quando_usar": [
+        "Taxa ou percentual por UF (qualificação, CPL qualificado, SLA cumprido) quando todas as 27 UFs devem pesar igual na leitura",
+        "Painel em que as UFs pequenas do Nordeste e do Sudeste (DF, SE, AL, RN, PB, ES, RJ) precisam ser apontáveis e legíveis",
+        "Cartão de 480 px ou menos, onde a malha real não comporta sigla e valor em cada UF",
+        "Destaque de poucas UFs (acima da meta, dentro do perímetro) sobre um fundo geográfico reconhecível",
+        "Versão hexagonal quando a vizinhança entre regiões importa e o valor pode ir para a dica"
+      ],
+      "quando_evitar": [
+        "A pergunta é só qual UF é maior: use as barras ordenadas (02/01_barras-simples-ordenadas)",
+        "Forma e área reais fazem parte da resposta ou o público não reconhece a grade: use o coroplético por UF (23/02)",
+        "O valor é total absoluto e a magnitude importa: use os símbolos proporcionais (23/03)",
+        "UF por mês em intensidade: use a matriz categórica (15/02_matriz-categorica)",
+        "Leitura de valor exato das 27 UFs: use a tabela com barras inline (14/01_tabela-com-barras-inline)"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_taxa-de-qualificacao-por-uf",
+          "titulo": "Taxa de qualificação de leads por UF",
+          "caso_de_uso": "Marketing: em que UFs os leads fictícios de 2026 se qualificam mais, com todas as UFs pesando igual.",
+          "o_que_demonstra": [
+            "Grade br_states_grid1 de 8x6 como constante Record<UF, Posicao> com gridRow e gridColumn",
+            "Cor por 5 classes em var(--seq-3) a var(--seq-7) com quebras calculadas em TypeScript",
+            "Sigla e valor em cada tile com formatPercent, texto claro ou escuro pela luminância",
+            "Legenda em degraus com os limites de cada classe, sem legenda contínua",
+            "Raiz com role img e frase acessível com a UF líder e a amplitude entre classes"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_ufs-acima-da-meta-com-ranking",
+          "titulo": "UFs acima da meta de qualificação",
+          "caso_de_uso": "Marketing: quais UFs passaram da meta fictícia de 18% de qualificação e onde elas ficam no ranking das 10 maiores.",
+          "o_que_demonstra": [
+            "Anel de destaque em var(--chart-1) só nos tiles acima da meta, demais em tom neutro",
+            "Ícone lucide Check junto da sigla, para o destaque não depender só da cor",
+            "Barras das 10 maiores UFs ao lado com a mesma UF acesa pela prop highlightId",
+            "Linha da meta nas barras e a contagem escrita, como 7 de 27 UFs acima da meta",
+            "Container query que empilha tiles e ranking abaixo de 560 px"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_hexagonal-cpl-qualificado-por-plataforma",
+          "titulo": "CPL qualificado por UF em cada plataforma",
+          "caso_de_uso": "Marketing: onde o CPL qualificado fica acima da média nacional fictícia na Plataforma Social, de Busca e Profissional.",
+          "o_que_demonstra": [
+            "Tile hexagonal por clip-path com linhas ímpares deslocadas meia célula no mesmo grid",
+            "Três pequenos múltiplos lado a lado com uma única escala divergente em torno da média",
+            "Divergência em var(--positive) e var(--negative) com sinal escrito, centro em tom neutro",
+            "Separação entre macrorregiões por espaço extra na grade, sem contorno sobre o hexágono",
+            "Abaixo de 32 px por hexágono só a sigla aparece e o valor vai para a dica"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_leads-sem-uf-e-ufs-sem-dado",
+          "titulo": "Cobertura de UF na base de leads",
+          "caso_de_uso": "Marketing: quais UFs não têm lead medido e quantos leads chegaram sem UF preenchida, fora da distribuição.",
+          "o_que_demonstra": [
+            "UF sem dado hachurada por repeating-linear-gradient e escrita como sem dado",
+            "Zero medido desenhado e escrito como 0, distinto da UF sem dado",
+            "Card lateral 1.240 leads sem UF (18% do total) que não é distribuído entre as UFs",
+            "Legenda com item próprio para sem dado, depois das classes",
+            "Grade br_states_grid2 de 7x6 para caber no cartão ao lado do card de cobertura"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_coropletico-por-uf",
+      "nome": "Coroplético por UF",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Contornos reais das 27 UFs pintados por uma taxa em 3 a 7 classes. A geometria vem da API de malhas do IBGE em SVG de qualidade mínima (48 KB, um path por UF com id igual ao código IBGE), baixada uma vez por script de build e versionada em ufPaths.ts; o componente só desenha, no viewBox original e dentro do grupo com scale(0.0001, -0.0001), com vectorEffect non-scaling-stroke para o contorno não sumir. A classificação (quantis, intervalos iguais ou quebras manuais) é TypeScript. A malha de macrorregiões (14,7 KB) serve à visão da Diretoria. O modelo absorve o coroplético bivariado, com paleta 3x3 e legenda obrigatória.",
+      "quando_usar": [
+        "Taxa normalizada por UF (qualificação, CPL qualificado, participação) quando o contorno real ajuda o público a se localizar",
+        "Contraste entre regiões e vizinhança, como Sul contra Nordeste, mais do que a ordem exata das UFs",
+        "Visão executiva por macrorregião com abertura para as UFs da região escolhida",
+        "Relação entre duas taxas por UF em 3 classes cada, com espaço para a legenda 3x3",
+        "Painel com tabela ou lista sincronizada ao lado para as UFs pequenas"
+      ],
+      "quando_evitar": [
+        "Total absoluto por UF: a área premia UFs grandes; use os símbolos proporcionais (23/03)",
+        "Ranking preciso ou diferença pequena entre UFs: use as barras ordenadas (02/01_barras-simples-ordenadas)",
+        "Cartão estreito em que DF, SE, AL e RN viram pontos: use o tile grid por UF (23/01)",
+        "Tendência de cada UF no tempo: use o tile map com mini gráfico (23/04) ou a matriz categórica (15/02_matriz-categorica)",
+        "Público sem tempo para ler legenda de 9 cores: troque o bivariado por dois coropléticos lado a lado ou pela dispersão (09/01_dispersao-simples)"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_taxa-de-qualificacao-sequencial",
+          "titulo": "Qualificação de leads por UF",
+          "caso_de_uso": "Marketing: como a taxa de qualificação dos leads fictícios de 2026 se distribui pelo território.",
+          "o_que_demonstra": [
+            "Paths do IBGE em ufPaths.ts com casamento pelo código IBGE e tabela código para sigla",
+            "Grupo scale(0.0001, -0.0001) e non-scaling-stroke no contorno var(--surface-raised)",
+            "5 classes por quantis em TypeScript sobre var(--seq-3) a var(--seq-7)",
+            "Rótulo com sigla e valor só nas UFs grandes e chamadas externas para as pequenas",
+            "Legenda em degraus e lista das 5 maiores taxas escrita ao lado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_desvio-da-media-nacional",
+          "titulo": "Desvio da média nacional de qualificação",
+          "caso_de_uso": "Marketing: quais UFs ficam acima ou abaixo da média nacional fictícia de 16,4% e qual se afasta mais.",
+          "o_que_demonstra": [
+            "Divergente em var(--positive) e var(--negative) com três intensidades por fill-opacity",
+            "Centro da escala no tom mais próximo do fundo, como pede o tema escuro",
+            "UF de maior desvio com contorno grosso e anotação com sinal e pontos percentuais",
+            "Sinal + e − tipográfico em todo valor, para a cor não ser o único canal",
+            "Legenda simétrica com a média escrita no meio"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_macrorregiao-com-drill-para-uf",
+          "titulo": "Receita média por cliente por região e UF",
+          "caso_de_uso": "Diretoria: que região tem a maior receita média fictícia por cliente e como ela varia entre as UFs da região.",
+          "o_que_demonstra": [
+            "Malha de 5 macrorregiões em regiaoPaths.ts como visão padrão",
+            "Prop regiaoSelecionada que troca a camada pelas UFs da região e esmaece o resto",
+            "Tabela sincronizada com valor, posição no ranking e cobertura de dado por UF",
+            "Módulo de paths carregado sob demanda por import dinâmico ao colar no Farol",
+            "Frase acessível que muda com a região aberta"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_bivariado-com-variavel-ausente",
+          "titulo": "CPL qualificado e taxa de qualificação por UF",
+          "caso_de_uso": "Marketing: onde CPL alto convive com qualificação baixa, sem esconder UFs sem mídia paga e com amostra pequena.",
+          "o_que_demonstra": [
+            "Classificação independente em 3 classes por variável e paleta 3x3 fixa por token",
+            "Legenda 3x3 com os dois eixos nomeados e rótulo só nos cantos",
+            "UF sem CPL medido fora da paleta, com pattern hachurado e nota na legenda",
+            "UF com menos de 30 leads com contorno pontilhado e rótulo amostra pequena",
+            "Canto baixo e baixo perto do fundo e alto e alto como o tom mais saturado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_simbolos-proporcionais",
+      "nome": "Símbolos proporcionais",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Um círculo por UF com área proporcional a um valor absoluto (clientes, receita, oportunidades), desenhado sobre a malha neutra do IBGE no centroide de cada UF, fora do grupo escalado, em cx = lon e cy = −lat. O raio sai de rMax vezes a raiz de valor sobre máximo, a pintura vai do maior para o menor com opacidade de cerca de 0,6 e contorno, e a legenda de tamanho traz dois ou três círculos de referência. O modelo absorve as bolhas por UF em grade (centro do tile, sem sobreposição) e o cartograma de Dorling (relaxação iterativa determinística em TypeScript que afasta círculos sobrepostos e os puxa de volta à origem).",
+      "quando_usar": [
+        "Total absoluto por UF quando o coroplético premiaria as UFs grandes: clientes ativos, receita reconhecida, oportunidades abertas",
+        "Dois valores da mesma grandeza no mesmo lugar, como meta vazada e realizado cheio ou aberto e ganho",
+        "Magnitude com contexto geográfico real, até cerca de 27 símbolos",
+        "Bolhas em grade quando Nordeste oriental e Sudeste se sobrepõem na malha",
+        "Dorling quando a magnitude deve dominar e a posição aproximada basta, com a distorção explicada no subtítulo"
+      ],
+      "quando_evitar": [
+        "Taxa ou percentual: use o coroplético (23/02) ou o tile grid (23/01)",
+        "Comparação precisa entre valores parecidos: área engana; use as barras ordenadas (02/01_barras-simples-ordenadas)",
+        "Relação entre duas medidas sem geografia: use as bolhas da família 09 (09/03_bolhas)",
+        "Fluxo entre UFs: use a família 11 de fluxo e sankey",
+        "Itens individuais com coordenada: use o mapa de pontos (23/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_clientes-ativos-no-centroide",
+          "titulo": "Clientes ativos por UF",
+          "caso_de_uso": "Comercial: onde estão os clientes ativos fictícios da carteira e quanto a maior UF pesa contra as demais.",
+          "o_que_demonstra": [
+            "Malha em var(--surface-overlay) e centroides do IBGE em ufCentroides.ts",
+            "Raio pela raiz quadrada com rMax convertido de pixels para graus pelo viewBox",
+            "Ordem de pintura do maior para o menor, fill-opacity 0,6 e contorno var(--chart-1)",
+            "Legenda de tamanho com três círculos de referência e valores redondos",
+            "Rótulo com sigla e contagem só nas 5 maiores UFs"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_bolhas-em-grade-realizado-contra-meta",
+          "titulo": "Receita realizada contra meta por UF",
+          "caso_de_uso": "Comercial: em que UFs a receita reconhecida fictícia do trimestre já cobre a meta, sem círculos sobrepostos.",
+          "o_que_demonstra": [
+            "Círculo centrado na posição do tile da grade 8x6, com a grade invisível",
+            "Meta como círculo vazado tracejado e realizado cheio, na mesma escala de área",
+            "Maior círculo limitado ao tamanho da célula para nunca invadir o vizinho",
+            "Ícone lucide Check e percentual escrito nas UFs que bateram a meta",
+            "UF com meta e sem realizado mostra só o vazado e a palavra indisponível"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_dorling-receita-2025-e-2026",
+          "titulo": "Receita reconhecida por UF em 2025 e 2026",
+          "caso_de_uso": "Diretoria: como a receita reconhecida fictícia mudou de tamanho por UF entre 2025 e 2026 dentro do perímetro.",
+          "o_que_demonstra": [
+            "Relaxação de Dorling em useMemo com 120 iterações e retorno à origem de fator 0,02",
+            "Posição inicial sempre no centroide, para a mesma entrada dar a mesma saída",
+            "Dois painéis lado a lado com a mesma escala de raio para o tamanho ser comparável",
+            "Contorno nos círculos das UFs do perímetro e cor por macrorregião em var(--chart-N)",
+            "Subtítulo que explica a distorção e aponta a malha real como referência"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_saldo-de-clientes-negativo-e-zero",
+          "titulo": "Saldo de clientes no trimestre por UF",
+          "caso_de_uso": "Comercial: onde a carteira fictícia cresceu ou encolheu no 3º trimestre de 2026, inclusive UFs com saldo zero.",
+          "o_que_demonstra": [
+            "Tamanho pelo valor absoluto e cor pelo sinal em var(--positive) e var(--negative)",
+            "Sinal + e − tipográfico escrito no rótulo, nunca só na cor",
+            "Saldo zero como círculo mínimo vazado com a sigla, para a UF não desaparecer",
+            "Dica com o valor original assinado e as entradas e saídas do trimestre",
+            "Nota que aponta setas para cima e para baixo como alternativa ao círculo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_tile-map-com-mini-grafico",
+      "nome": "Tile map com mini gráfico por UF",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Pequenos múltiplos arranjados como mapa (o geofaceting): a grade de UFs do modelo 01 e, dentro de cada tile, um mini gráfico da UF (linha, área ou barras) com a sigla no canto e o último valor escrito. A grade é HTML com Tailwind; o mini gráfico é um path SVG pré-calculado em TypeScript dentro do tile, mais leve que 27 instâncias de ResponsiveContainer do Recharts. A escolha entre escala Y compartilhada (compara UFs, achata as pequenas) e escala própria (mostra a forma, impede comparação) é declarada em texto no próprio visual.",
+      "quando_usar": [
+        "Tendência mensal de cada UF mantendo a posição geográfica, com 6 a 12 pontos por série",
+        "Comparar formas de evolução entre regiões, como Sul crescendo e Nordeste estável",
+        "Composição por produto dentro de cada UF de um perímetro de até cerca de 12 UFs",
+        "Canvas alto, com tiles de pelo menos 80 px de largura para o mini gráfico ser legível"
+      ],
+      "quando_evitar": [
+        "Mais de um indicador por tile: divida em dois mapas ou vá para a tabela com série por linha (14/03_tabela-com-serie-por-linha)",
+        "Valor exato por UF e mês: use a matriz categórica (15/02_matriz-categorica)",
+        "Só o último valor importa: use o tile grid por UF (23/01)",
+        "Sparkline isolada fora de mapa: o componente é da família 24 (24/01_sparkline-de-linha)",
+        "Comparação de linhas de poucas UFs no mesmo eixo: use os pequenos múltiplos de linha (04/09_pequenos-multiplos-de-linha)"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-mensais-por-uf-escala-compartilhada",
+          "titulo": "Leads mensais por UF em 2026",
+          "caso_de_uso": "Pré-vendas: como as entradas fictícias de jan/26 a ago/26 evoluíram em cada UF, na mesma escala.",
+          "o_que_demonstra": [
+            "Grade br_states_grid1 com tile de proporção fixa e sigla no canto superior",
+            "Path de linha calculado em TypeScript num viewBox fixo por tile, sem Recharts",
+            "Escala Y única para as 27 UFs, declarada no subtítulo como mesma escala",
+            "Último valor escrito em cada tile com formatNumber e className font-display",
+            "Linha em var(--chart-1) com vectorEffect non-scaling-stroke"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_tendencia-dos-ultimos-tres-meses",
+          "titulo": "UFs em alta e em queda nos últimos 3 meses",
+          "caso_de_uso": "Marketing: quais UFs aceleraram ou perderam leads qualificados fictícios entre jun/26 e ago/26.",
+          "o_que_demonstra": [
+            "Classificação de tendência em TypeScript pela variação dos 3 últimos meses",
+            "Linha em var(--positive) na alta, var(--negative) na queda e var(--line-strong) na estável",
+            "Ícone lucide TrendingUp ou TrendingDown e variação com sinal escrita no tile",
+            "Último ponto marcado e último valor em negrito",
+            "Contagem no subtítulo, como 6 UFs em alta e 4 em queda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_receita-por-produto-no-perimetro",
+          "titulo": "Receita por produto nas UFs do perímetro",
+          "caso_de_uso": "Diretoria: como a receita reconhecida fictícia se reparte entre três produtos por trimestre nas UFs do perímetro.",
+          "o_que_demonstra": [
+            "Mini barras empilhadas por trimestre com um slot fixo de var(--chart-N) por produto",
+            "UFs fora do perímetro em var(--surface-sunken) com a sigla e sem gráfico",
+            "Legenda única de produtos acima da grade, sem legenda por tile",
+            "Total do último trimestre escrito com formatCurrencyCompact",
+            "Nota de que os números valem só para o perímetro declarado"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_escala-propria-para-ufs-pequenas",
+          "titulo": "Agendas por UF com escala própria",
+          "caso_de_uso": "Pré-vendas: ver a forma da série de agendas fictícias em UFs com volume 100 vezes menor que a maior UF.",
+          "o_que_demonstra": [
+            "Escala Y independente por tile com selo escala própria em cada um",
+            "Máximo da série escrito no tile, para a forma não ser lida como volume",
+            "Mês sem medição quebra a linha em vez de cair para zero",
+            "UF sem nenhum mês medido mostra ícone lucide Unplug e formatUnavailable",
+            "Aviso no subtítulo de que os tiles não se comparam entre si"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "05_mapa-de-perimetro-e-localizador",
+      "nome": "Mapa de perímetro e localizador",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Realça as UFs de um recorte (perímetro de atuação, região de participação de mercado) e esmaece o resto, para dizer a que geografia o número ao lado se refere. É mapa de contexto, não gráfico analítico principal. Em SVG puro sobre a malha do IBGE, em duas camadas: fora do perímetro em tom neutro e dentro com preenchimento. O contorno externo sai sem dissolver polígonos: primeiro os paths do perímetro com contorno grosso, depois os mesmos paths com preenchimento e contorno fino por cima, o que esconde as bordas internas. Na Diretoria do Farol, participação de mercado só tem sentido com perímetro declarado e data de vigência.",
+      "quando_usar": [
+        "Ao lado de um KPI que só vale para um recorte geográfico, como participação de mercado ou TAM do perímetro",
+        "Mostrar o perímetro atual e uma expansão proposta, com a estimativa em faixa",
+        "Colorir por uma taxa só as UFs do perímetro e deixar o resto sem cor",
+        "Registrar que o perímetro mudou e desde quando os números valem"
+      ],
+      "quando_evitar": [
+        "A pergunta é a distribuição de um valor em todas as UFs: use o coroplético (23/02)",
+        "Perímetro que não é geográfico, como segmento ou carteira: use o perímetro aninhado (12/05_perimetro-aninhado)",
+        "Cenário numérico sem geografia: use a faixa de cenário contra meta (13/07_faixa-de-cenario-contra-meta)",
+        "Miniatura menor que cerca de 100 px com UFs pequenas no perímetro: use a versão em tiles do modelo 01"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_miniatura-ao-lado-do-card-de-participacao",
+          "titulo": "Participação de mercado no perímetro",
+          "caso_de_uso": "Diretoria: a participação fictícia de 7,4% vale para quais UFs, lida num relance ao lado do número.",
+          "o_que_demonstra": [
+            "Miniatura de 120 px com a malha em var(--surface-overlay) e o perímetro em var(--chart-1)",
+            "Contorno externo por duas passadas dos mesmos paths, sem dissolver polígonos",
+            "KPI em kpi-number com a legenda escrita no perímetro Sul e Sudeste",
+            "Miniatura com aria-hidden e a frase acessível no card, que já nomeia as UFs",
+            "Etiqueta de procedência do número em var(--prov-derivado)"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_participacao-so-dentro-do-perimetro",
+          "titulo": "Participação de mercado por UF do perímetro",
+          "caso_de_uso": "Diretoria: dentro das 7 UFs do perímetro fictício, onde a participação é maior e onde ainda é pequena.",
+          "o_que_demonstra": [
+            "Rampa var(--seq-N) aplicada só às UFs do perímetro",
+            "UFs de fora em tom neutro, sem classe de cor e sem dica",
+            "Rótulo com sigla e participação em cada UF do perímetro, com chamada externa nas pequenas",
+            "Legenda em degraus com item à parte para fora do perímetro",
+            "Nota escrita de que o número nacional não é a soma do mapa"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_perimetro-atual-e-expansao-proposta",
+          "titulo": "Perímetro atual e expansão proposta",
+          "caso_de_uso": "Diretoria: que UFs a expansão fictícia de 2027 acrescenta e qual participação ela pode render, em faixa.",
+          "o_que_demonstra": [
+            "Contorno cheio para o perímetro atual e tracejado para as UFs da expansão",
+            "Painel lateral com a participação atual medida e a estimada em faixa, de 5,1% a 6,8%",
+            "Etiquetas de procedência var(--prov-medido) e var(--prov-premissa) em cada número",
+            "Legenda que diferencia perímetro vigente, expansão e fora do perímetro",
+            "Frase acessível com as UFs de cada grupo e a faixa estimada"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_perimetro-que-mudou-de-vigencia",
+          "titulo": "Perímetro vigente e perímetro anterior",
+          "caso_de_uso": "Diretoria: o perímetro mudou em 2026-03-01; que UFs entraram ou saíram e que números deixam de ser comparáveis.",
+          "o_que_demonstra": [
+            "Selo perímetro vigente desde 2026-03-01 com formatDate",
+            "Prop perimetroExibido que alterna entre vigente e anterior sem mudar a escala",
+            "UFs que entraram e saíram marcadas com ícone lucide Plus ou Minus e a palavra",
+            "Aviso escrito de que a participação antes e depois da data não se compara",
+            "Estado indisponível para a UF sem medição no perímetro anterior"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_mapa-de-pontos",
+      "nome": "Mapa de pontos",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Pontos de mesmo tamanho em coordenadas sobre a malha neutra do IBGE, um ponto por item ou um ponto a cada N itens, para ler distribuição, agrupamento e lacuna. Mesmo sistema de coordenadas do coroplético: fora do grupo escalado, x = lon e y = −lat. Até alguns milhares de itens cabem como circle; acima disso, um único path por cor com subcaminhos de círculo. Com um ponto a cada N itens, a posição dentro da UF é sorteada por gerador com semente fixa e teste de ponto dentro do polígono em TypeScript, e o mapa diz que a posição é ilustrativa. Item sem município nunca vai para o centroide.",
+      "quando_usar": [
+        "Localização de itens individuais com coordenada confiável, como eventos, escritórios ou clientes por cidade",
+        "Densidade e aglomeração em escala nacional, com um ponto a cada N itens",
+        "Raio de atuação em torno de poucos pontos de referência",
+        "Distribuição por categoria com até 5 cores, quando a mistura no espaço importa"
+      ],
+      "quando_evitar": [
+        "Dado só com UF, sem município ou coordenada: use o tile grid (23/01) ou os símbolos proporcionais (23/03)",
+        "Densidade 2D de duas medidas sem geografia: use a densidade 2D (09/09_densidade-2d)",
+        "Ligação entre pontos: use a família 27 de rede e relações",
+        "Deslocamento de volume entre locais: use a família 11 de fluxo e sankey",
+        "Contagem exata por cidade: use a tabela com barras inline (14/01_tabela-com-barras-inline)"
+      ],
+      "arquivo_estudo": "_estudo/familias/23_mapas.md",
+      "versoes": [
+        {
+          "slug": "v1_eventos-presenciais-por-cidade",
+          "titulo": "Eventos presenciais de 2026 por cidade",
+          "caso_de_uso": "Marketing: onde aconteceram os 42 eventos presenciais fictícios de 2026 e que regiões ficaram sem evento.",
+          "o_que_demonstra": [
+            "Ponto um para um em cx = lon e cy = −lat fora do grupo escalado da malha",
+            "Raio fixo convertido de pixels para graus pela largura do viewBox",
+            "Pontos em var(--chart-1) com fill-opacity e contorno var(--surface-raised)",
+            "Anotação curta no padrão que o leitor deve ver, como nenhum evento no Norte",
+            "Contagem por macrorregião escrita abaixo do mapa"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_raio-de-atuacao-dos-escritorios",
+          "titulo": "Clientes dentro do raio dos escritórios",
+          "caso_de_uso": "Comercial: quantos clientes fictícios ficam a até 100 km de um dos 3 escritórios fictícios e quantos ficam fora.",
+          "o_que_demonstra": [
+            "Raio de 100 km como elipse em graus, com rx corrigido pelo cosseno da latitude",
+            "Distância por haversine em TypeScript para classificar dentro e fora do raio",
+            "Clientes dentro em var(--chart-1) e fora em var(--line-strong) com contagem escrita",
+            "Escritório como ícone lucide Building2 posicionado na coordenada",
+            "Legenda que declara o raio como aproximado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_um-ponto-a-cada-cinco-leads-por-origem",
+          "titulo": "Leads de 2026 por origem, 1 ponto a cada 5",
+          "caso_de_uso": "Marketing: como os 9.800 leads fictícios de 2026 se espalham pelo território conforme a origem.",
+          "o_que_demonstra": [
+            "Posição sorteada dentro da UF por gerador com semente fixa, sem Math.random",
+            "Teste de ponto dentro do polígono por ray casting sobre os anéis da UF",
+            "Um único path por origem com subcaminhos de círculo em vez de milhares de circle",
+            "Cor fixa por origem em var(--chart-1) a var(--chart-5) com legenda 1 ponto = 5 leads",
+            "Aviso escrito de que a posição dentro da UF é ilustrativa"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_leads-sem-municipio-fora-do-mapa",
+          "titulo": "Leads com e sem município informado",
+          "caso_de_uso": "Marketing: quantos leads fictícios não têm município e por isso não podem virar ponto no mapa.",
+          "o_que_demonstra": [
+            "Card à parte com 320 leads sem município e o percentual do total",
+            "Nenhum ponto no centroide da UF, para não criar aglomerado falso",
+            "Lista das UFs com mais leads sem município, com contagem escrita",
+            "Estado vazio com ícone lucide Filter quando o recorte não tem ponto",
+            "Frase acessível que soma pontos desenhados e leads fora do mapa"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "familia": "05_areas",
+  "modelo": "10_area-bump",
+  "versoes": {
+    "v1_plataformas-por-investimento-trimestral": {
+      "veredito": "aprovado",
+      "nota": "Aprovada: check limpo, dois temas legiveis, cor por slot fixo e escala comum. Observacoes de acabamento no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:11.983Z",
+      "impressao": "626efdcc7432c4311c707f40316e124a47acae75",
+      "arquivos": {
+        "Chart.tsx": "3a9c1b83abd6c6da700cb0e0767a9f98b6355592",
+        "data.ts": "11235940b6615d14f3933fde1302f0313c5d5430",
+        "meta.json": "f35a519faa7e7b990f7d550edcf91625c5455df1"
+      }
+    },
+    "v2_plataforma-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Aprovada: destaque com segundo canal (peso 700 e posicao escrita), contraste ok nos dois temas. Observacao: o halo do rotulo de posicao morde a espessura da faixa em destaque.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:17.089Z",
+      "impressao": "860401871ef61c918b549e015570f6b95b956c75",
+      "arquivos": {
+        "Chart.tsx": "9491cc7af47a05516e924d45a120d23459ec08d4",
+        "data.ts": "532c9ba266abe2d06f1a7810efbb8a9a689f5828",
+        "meta.json": "3fc2fdd62d0915fccf02429a78669f7ac4430882"
+      }
+    },
+    "v3_item-zerado-num-periodo": {
+      "veredito": "aprovado",
+      "nota": "Aprovada: zero medido desenha marca visivel e o dado nao coletado fica sem tinta, casos distintos nos dois temas. Observacoes no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:22.040Z",
+      "impressao": "feffae2e4f86812a03b97eacf8d2f50917340c6b",
+      "arquivos": {
+        "Chart.tsx": "54828720f519d62fbf636f59d1d3af0716cff596",
+        "data.ts": "c418f6f99f93412300de1541916d5b0f0fa0d417",
+        "meta.json": "b62e89140da3a83f4046e7bc2fd4a5ddc0c7a1b2"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_plataformas-por-investimento-trimestral",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; ranking e espessura legiveis nos dois temas; cor presa ao slot do item; rotulos de inicio e fim sem colisao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:44:19.347Z",
+      "impressao": "626efdcc7432c4311c707f40316e124a47acae75",
+      "arquivos": {
+        "Chart.tsx": "3a9c1b83abd6c6da700cb0e0767a9f98b6355592",
+        "data.ts": "11235940b6615d14f3933fde1302f0313c5d5430",
+        "meta.json": "f35a519faa7e7b990f7d550edcf91625c5455df1"
+      }
+    },
+    {
+      "versao": "v2_plataforma-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; destaque por cima nos cruzamentos, posicao escrita por trimestre com halo, contexto neutro legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:44:26.113Z",
+      "impressao": "860401871ef61c918b549e015570f6b95b956c75",
+      "arquivos": {
+        "Chart.tsx": "9491cc7af47a05516e924d45a120d23459ec08d4",
+        "data.ts": "532c9ba266abe2d06f1a7810efbb8a9a689f5828",
+        "meta.json": "3fc2fdd62d0915fccf02429a78669f7ac4430882"
+      }
+    },
+    {
+      "versao": "v3_item-zerado-num-periodo",
+      "veredito": "reprovado",
+      "nota": "Zero medido some da tela: a faixa de 1 px e apagada pelo contorno de 1,5 px da propria fita e o zero fica identico a lacuna (EST-3, EIX-10).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:44:26.773Z",
+      "impressao": "a2636994ccd07ccd511745efd4b0f05fb4fb001d",
+      "arquivos": {
+        "Chart.tsx": "0b42e35a91186c5ad502a61e94463012df64334b",
+        "data.ts": "c418f6f99f93412300de1541916d5b0f0fa0d417",
+        "meta.json": "e4f8b104d93aaaf34c2d9d1fda29534cb849a7ac"
+      }
+    },
+    {
+      "versao": "v1_plataformas-por-investimento-trimestral",
+      "veredito": "aprovado",
+      "nota": "Aprovada: check limpo, dois temas legiveis, cor por slot fixo e escala comum. Observacoes de acabamento no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:11.983Z",
+      "impressao": "626efdcc7432c4311c707f40316e124a47acae75",
+      "arquivos": {
+        "Chart.tsx": "3a9c1b83abd6c6da700cb0e0767a9f98b6355592",
+        "data.ts": "11235940b6615d14f3933fde1302f0313c5d5430",
+        "meta.json": "f35a519faa7e7b990f7d550edcf91625c5455df1"
+      }
+    },
+    {
+      "versao": "v2_plataforma-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Aprovada: destaque com segundo canal (peso 700 e posicao escrita), contraste ok nos dois temas. Observacao: o halo do rotulo de posicao morde a espessura da faixa em destaque.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:17.089Z",
+      "impressao": "860401871ef61c918b549e015570f6b95b956c75",
+      "arquivos": {
+        "Chart.tsx": "9491cc7af47a05516e924d45a120d23459ec08d4",
+        "data.ts": "532c9ba266abe2d06f1a7810efbb8a9a689f5828",
+        "meta.json": "3fc2fdd62d0915fccf02429a78669f7ac4430882"
+      }
+    },
+    {
+      "versao": "v3_item-zerado-num-periodo",
+      "veredito": "aprovado",
+      "nota": "Aprovada: zero medido desenha marca visivel e o dado nao coletado fica sem tinta, casos distintos nos dois temas. Observacoes no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:03:22.040Z",
+      "impressao": "feffae2e4f86812a03b97eacf8d2f50917340c6b",
+      "arquivos": {
+        "Chart.tsx": "54828720f519d62fbf636f59d1d3af0716cff596",
+        "data.ts": "c418f6f99f93412300de1541916d5b0f0fa0d417",
+        "meta.json": "b62e89140da3a83f4046e7bc2fd4a5ddc0c7a1b2"
+      }
+    }
+  ]
+}

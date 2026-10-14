@@ -1,0 +1,15 @@
+{
+  "title": "Variação de leads por origem com base frágil",
+  "useCase": "Quais origens cresceram contra o mês anterior, sem deixar base zero ou minúscula virar manchete?",
+  "demonstrates": [
+    "Base zero escreve sem mês anterior medido para comparar, com glifo Minus neutro",
+    "Base abaixo de 10 leads mostra o delta absoluto (+3 leads) em vez de +50%",
+    "CPL qualificado com polaridade invertida: alta em --negative e seta para cima",
+    "Investimento sem polaridade em --text-secondary, nunca verde nem vermelho (COR-6)",
+    "Origem sem dado no mês atual com formatUnavailable e ícone Unplug",
+    "Frase acessível contando as origens em alta, em queda e sem base"
+  ],
+  "canvas": { "width": 880, "height": 364 },
+  "frame": "stage",
+  "notes": "Canvas 880 x 364 em vez do card sugerido (640 x 360): a coluna de leads carrega a frase sem mês anterior medido para comparar (cerca de 235 px) e a linha com as três medidas não cabe nos 574 px de corpo do card. Corpo de 840 x 265,5 px na moldura stage."
+}

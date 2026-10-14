@@ -1,0 +1,15 @@
+{
+  "title": "Receita do trimestre até a meta",
+  "useCase": "Quanto da meta de receita do 3º trimestre já foi reconhecido até o último dia fechado?",
+  "demonstrates": [
+    "Trilho de 8 px em --surface-sunken com preenchimento em --chart-1",
+    "role progressbar com aria-valuenow, aria-valuemin e aria-valuemax",
+    "Rodapé com o par realizado e meta e o percentual inteiro",
+    "Preenchimento clampado em 100% e excedente escrito em texto",
+    "Percentual abaixo da meta nunca arredonda para 100%",
+    "Sem ritmo declarado, a barra não julga: nenhuma cor semântica abaixo da meta"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "O estudo previa o trilho em --surface-overlay, que no tema claro é o mesmo branco do cartão e some; o trilho usa --surface-sunken, o poço rebaixado. Estouro, zero sem ritmo e sem meta aparecem desenhados na v4; o código desta versão trata os três."
+}

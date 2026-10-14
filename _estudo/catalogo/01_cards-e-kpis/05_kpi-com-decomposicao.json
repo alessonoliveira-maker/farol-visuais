@@ -1,0 +1,74 @@
+{
+  "slug": "05_kpi-com-decomposicao",
+  "nome": "KPI com decomposição em partes",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Total em destaque explicado no próprio cartão pelas partes que o formam: filhos que somam, dividem ou explicam o pai, barra única segmentada com ordem estável, ou lista dos maiores contribuintes com a linha de demais que fecha o total e a linha de sem rótulo que preserva a cobertura do dado. Absorve decomposição, KPI hierárquico e lista de contribuição; tudo em HTML com larguras calculadas em funções puras de TypeScript.",
+  "quando_usar": [
+    "O total só faz sentido com a composição, como a receita entre clientes novos e carteira.",
+    "Um número principal explicado por 2 ou 3 filhos com relação declarada: soma, divisão ou explicação.",
+    "Composição de até 5 partes com ordem estável vinda da configuração da métrica, e não do valor.",
+    "Total e os 3 a 5 maiores responsáveis por ele, com demais e sem rótulo em linhas próprias."
+  ],
+  "quando_evitar": [
+    "Mais de 5 componentes, ou a lista virou a protagonista: barras horizontais (família 02).",
+    "Contribuições de sinais opostos lidas como forma: cascata (família 19).",
+    "Filho de filho, com dois níveis ou mais: hierarquia (família 12).",
+    "Composição de vários totais ou ao longo do tempo: colunas empilhadas (família 03).",
+    "Filhos sem relação declarada com o pai: separar em KPIs simples (modelo 01)."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-mes-entre-novos-e-carteira",
+      "titulo": "Receita do mês entre clientes novos e carteira",
+      "caso_de_uso": "De onde veio a receita reconhecida de ago/26: clientes novos ou carteira, e em que proporção?",
+      "o_que_demonstra": [
+        "Filhos em kpi-number de 14 px e rótulo de 11 px, subordinados ao pai de 30 px",
+        "Relação de soma escrita e conferida: os filhos fecham o total exato",
+        "Participação percentual inteira pelo maior resto, somando 100",
+        "Separação entre pai e filhos por espaço, sem divisória (ESP-5)"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_leads-do-mes-por-origem-com-destaque",
+      "titulo": "Leads do mês por origem com mídia paga acesa",
+      "caso_de_uso": "Quanto do volume de leads de ago/26 veio de mídia paga, contra as outras três origens?",
+      "o_que_demonstra": [
+        "Barra única segmentada com larguras percentuais e ordem vinda da configuração",
+        "Mídia paga em --chart-1 e demais origens em neutro com valor escrito",
+        "Separador de 2 px em --surface-raised entre segmentos vizinhos (COR-5)",
+        "Linha de leitura calculada: mídia paga responde por 52% do volume",
+        "Legenda com valor em colunas à direita, na ordem visual dos segmentos"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_leads-com-maiores-origens-e-sem-rotulo",
+      "titulo": "Leads do mês com as cinco maiores origens",
+      "caso_de_uso": "Quais cinco origens explicam os leads de ago/26, quanto fica nas demais e quanto chegou sem origem registrada?",
+      "o_que_demonstra": [
+        "Lista em ol com barra de fundo proporcional ao total, não ao maior item",
+        "Linha demais (9 origens) em --text-muted que fecha a soma do número",
+        "Sem origem registrada em linha própria, com 22% e etiqueta LACUNA",
+        "Função pura que monta topo, demais e sem rótulo e confere a soma",
+        "Desempate determinístico pelo nome e nome longo inteiro, sem reticência",
+        "Nome acessível por item: origem, valor e participação no total"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_receita-com-contribuicoes-que-se-anulam",
+      "titulo": "Variação da receita com contribuições opostas",
+      "caso_de_uso": "Quem puxou a receita do trimestre quando os produtos que subiram e os que caíram quase se anularam?",
+      "o_que_demonstra": [
+        "Barra de largura recusada quando há contribuições de sinais opostos",
+        "Valores com sinal tipográfico + e −, ordenados pelo módulo",
+        "Variação total de zero com participações escritas como sem base, nunca NaN%",
+        "Resíduo nomeado quando os itens listados não fecham a variação total",
+        "Ponteiro escrito para a cascata da família 19 quando a forma importa"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

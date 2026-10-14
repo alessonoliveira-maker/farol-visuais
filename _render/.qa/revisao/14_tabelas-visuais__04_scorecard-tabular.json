@@ -1,0 +1,160 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "04_scorecard-tabular",
+  "versoes": {
+    "v1_resumo-mensal-do-marketing": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Polaridade, base nomeada e formatos corretos nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:06:57.691Z",
+      "impressao": "35377a3037023d7a1e722defcdb0658ba9b8e2bd",
+      "arquivos": {
+        "Chart.tsx": "9041d7b22b8b403bf0ccc31d75b32589180ee461",
+        "data.ts": "375629e487cdb335eff2030d78183519ea494a28",
+        "meta.json": "f0529d0854f5f586a45900ea9f4b87c3ceb35d88"
+      }
+    },
+    "v2_polaridade-e-banda-de-estabilidade": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Seta pela direcao e cor pela polaridade legiveis nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:02.219Z",
+      "impressao": "58b6db6c625d1ed259b413cab8105eade53c0df4",
+      "arquivos": {
+        "Chart.tsx": "6de7eb6998aa56a6fb970c0fdfda9d577bdd20d5",
+        "data.ts": "7b231a3a0ea8bf5e814cf0f6e07f62ecc4a1a26e",
+        "meta.json": "840d1c9038e95c4cafed3b302c785e2dc892bdb8"
+      }
+    },
+    "v3_scorecard-da-diretoria-com-procedencia": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Selos de procedencia passam AA nos dois temas e o canvas fora de preset esta declarado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:06.866Z",
+      "impressao": "44f6c49bd12a854ce14f68d238682e9ccefc7432",
+      "arquivos": {
+        "Chart.tsx": "93a17c7f866ead7f7ac7f52f4a7544568b783d52",
+        "data.ts": "2328c4672a930336d60103218c69049605724995",
+        "meta.json": "7b2c22221afdc35f070d7bc95cc542434ca9ab51"
+      }
+    },
+    "v4_cobertura-denominador-pequeno-e-lacuna": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Barra de cobertura de 0 a 100 com trilho visivel nos dois temas e fracao abaixo do n minimo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:11.915Z",
+      "impressao": "518a5d5a97f5ab6b08be6f5aac80dd343f7147e2",
+      "arquivos": {
+        "Chart.tsx": "f78fcef26b34e74f4ead39c315f8a687f6ed838f",
+        "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
+        "meta.json": "e225e9c72bac4da7cb442f3f85736e4fb777ebb3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_resumo-mensal-do-marketing",
+      "veredito": "aprovado",
+      "nota": "Check limpo; colunas honestas, atingimento pela direcao explicado no rodape, contraste ok nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:50:07.289Z",
+      "impressao": "35377a3037023d7a1e722defcdb0658ba9b8e2bd",
+      "arquivos": {
+        "Chart.tsx": "9041d7b22b8b403bf0ccc31d75b32589180ee461",
+        "data.ts": "375629e487cdb335eff2030d78183519ea494a28",
+        "meta.json": "f0529d0854f5f586a45900ea9f4b87c3ceb35d88"
+      }
+    },
+    {
+      "versao": "v2_polaridade-e-banda-de-estabilidade",
+      "veredito": "aprovado",
+      "nota": "Check limpo; a mesma seta com cor oposta fica clara e a banda de estabilidade vem escrita no rodape.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:50:13.282Z",
+      "impressao": "58b6db6c625d1ed259b413cab8105eade53c0df4",
+      "arquivos": {
+        "Chart.tsx": "6de7eb6998aa56a6fb970c0fdfda9d577bdd20d5",
+        "data.ts": "7b231a3a0ea8bf5e814cf0f6e07f62ecc4a1a26e",
+        "meta.json": "840d1c9038e95c4cafed3b302c785e2dc892bdb8"
+      }
+    },
+    {
+      "versao": "v3_scorecard-da-diretoria-com-procedencia",
+      "veredito": "aprovado",
+      "nota": "Check limpo; 15 linhas cabem no canvas, selos prov passam AA nos dois temas e a lacuna escreve indisponivel com motivo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:50:18.644Z",
+      "impressao": "44f6c49bd12a854ce14f68d238682e9ccefc7432",
+      "arquivos": {
+        "Chart.tsx": "93a17c7f866ead7f7ac7f52f4a7544568b783d52",
+        "data.ts": "2328c4672a930336d60103218c69049605724995",
+        "meta.json": "7b2c22221afdc35f070d7bc95cc542434ca9ab51"
+      }
+    },
+    {
+      "versao": "v4_cobertura-denominador-pequeno-e-lacuna",
+      "veredito": "reprovado",
+      "nota": "Nao demonstra o que o catalogo pede: as barras de cobertura de 0 a 100 por cento com o percentual ao lado nao existem na versao, que entrega so numero em texto.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:50:24.174Z",
+      "impressao": "b5c91e260d68dbd5b7a58c3b064cb7e26d370874",
+      "arquivos": {
+        "Chart.tsx": "019b1ee272f0785d11c99ca2007cabc727bcf86c",
+        "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
+        "meta.json": "18dc278c1f53cff2c5af0340ce7e6307bb4f1aa9"
+      }
+    },
+    {
+      "versao": "v1_resumo-mensal-do-marketing",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Polaridade, base nomeada e formatos corretos nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:06:57.691Z",
+      "impressao": "35377a3037023d7a1e722defcdb0658ba9b8e2bd",
+      "arquivos": {
+        "Chart.tsx": "9041d7b22b8b403bf0ccc31d75b32589180ee461",
+        "data.ts": "375629e487cdb335eff2030d78183519ea494a28",
+        "meta.json": "f0529d0854f5f586a45900ea9f4b87c3ceb35d88"
+      }
+    },
+    {
+      "versao": "v2_polaridade-e-banda-de-estabilidade",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Seta pela direcao e cor pela polaridade legiveis nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:02.219Z",
+      "impressao": "58b6db6c625d1ed259b413cab8105eade53c0df4",
+      "arquivos": {
+        "Chart.tsx": "6de7eb6998aa56a6fb970c0fdfda9d577bdd20d5",
+        "data.ts": "7b231a3a0ea8bf5e814cf0f6e07f62ecc4a1a26e",
+        "meta.json": "840d1c9038e95c4cafed3b302c785e2dc892bdb8"
+      }
+    },
+    {
+      "versao": "v3_scorecard-da-diretoria-com-procedencia",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Selos de procedencia passam AA nos dois temas e o canvas fora de preset esta declarado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:06.866Z",
+      "impressao": "44f6c49bd12a854ce14f68d238682e9ccefc7432",
+      "arquivos": {
+        "Chart.tsx": "93a17c7f866ead7f7ac7f52f4a7544568b783d52",
+        "data.ts": "2328c4672a930336d60103218c69049605724995",
+        "meta.json": "7b2c22221afdc35f070d7bc95cc542434ca9ab51"
+      }
+    },
+    {
+      "versao": "v4_cobertura-denominador-pequeno-e-lacuna",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Barra de cobertura de 0 a 100 com trilho visivel nos dois temas e fracao abaixo do n minimo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:07:11.915Z",
+      "impressao": "518a5d5a97f5ab6b08be6f5aac80dd343f7147e2",
+      "arquivos": {
+        "Chart.tsx": "f78fcef26b34e74f4ead39c315f8a687f6ed838f",
+        "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
+        "meta.json": "e225e9c72bac4da7cb442f3f85736e4fb777ebb3"
+      }
+    }
+  ]
+}

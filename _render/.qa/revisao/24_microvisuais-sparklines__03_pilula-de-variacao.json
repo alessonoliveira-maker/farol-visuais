@@ -1,0 +1,134 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "03_pilula-de-variacao",
+  "versoes": {
+    "v1_receita-do-mes-contra-mes-anterior": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: pílula de +7,7% em --positive com a base nomeada na linha, faixa neutra de 1% com Minus e a palavra estável, frase acessível de 167 caracteres igual ao corpo. Observações no README: kpi-number sem peso cai em Space Grotesk 400 (TIP-4), frase do ramo sem medição com 62 caracteres (ACE-1, mora no ramo), título do meta diferente do catálogo, arredondamento dos compactos.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:04.845Z",
+      "impressao": "1fdcc13477660605c656d2bb8e96c3231c966918",
+      "arquivos": {
+        "Chart.tsx": "54a5432b67ef2227a4c9f7df934e88b38b4542a1",
+        "data.ts": "03365c8a17cb82154d9068b5849dec095a03e5a6",
+        "meta.json": "ac1a14bb7890303d1a00d5295234414a24dcdc81"
+      }
+    },
+    "v2_setas-de-tendencia-na-linha-de-leitura": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas: vazio com role=status substitui o cartão inteiro (EST-1) e handoffs aceitos 21 contra 25 dá queda de 16% com ArrowDownRight no tom negativo, então as três setas existem na frase. Cinco itens conferidos contra o data.ts, frase acessível de 220 caracteres igual ao corpo, fidelidade 0,05 e 0,08 por cento. Observações no README: vazio sem ícone Filter e com aria-label de 62 caracteres, percentual em Manrope ao lado da base em Space Grotesk, chave das setas no pé (ROT-4), e as da primeira passada que seguem (NUM-4, EST-2 e EST-3 nos ramos, TIP-4, notes do meta).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:59:21.552Z",
+      "impressao": "cce9b5e4fcb7757037d1159d0872af33ff393394",
+      "arquivos": {
+        "Chart.tsx": "c7e01a7a483d759e7a625cabce80351607938de6",
+        "data.ts": "01c43aa8c2d8e449a60b17382941d3d31fae47e6",
+        "meta.json": "50507d2325833a4b5746933a66dedf79669895c7"
+      }
+    },
+    "v3_status-do-handoff-por-oportunidade": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 16 linhas conferidas contra o data.ts (3, 2, 1 e 10), silhueta, palavra e dias úteis por estado, só o crítico em --negative, vazio com role=status. Observações no README: plural fixo no resumo, número sem tabular-nums na linha da regra (TIP-1), kpi-number sem peso (TIP-4), nome longo sem tratamento na linha de 22 px, frase do vazio com 99 caracteres.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:05.862Z",
+      "impressao": "7e979bafc466e589ebd1459b595d020828c7f1ab",
+      "arquivos": {
+        "Chart.tsx": "4c064dd59d1961ce6cdfab99a7fea28f804b07e2",
+        "data.ts": "d1c81c112b644a2070eb6c57eb4eac5230a0520f",
+        "meta.json": "5098245c75eaec5ccfa96020ad7afd99ab381b89"
+      }
+    },
+    "v4_origens-com-base-zero-e-base-minuscula": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas: vazio com role=status substitui a tabela inteira (EST-1). 18 células conferidas contra o data.ts: base zero e base nula declaradas, base de 6 leads com delta absoluto, CPL em alta no tom negativo com seta para cima, investimento neutro, sem coleta com Unplug e formatUnavailable. Frase acessível de 219 caracteres, fidelidade 0,33 e 0,36 por cento. Observações no README: vazio sem ícone Filter e com aria-label de 67 caracteres, e as da primeira passada que seguem (frase sem começar pelo tipo, cabeçalho sem tabular-nums, indisponível 2 px acima, constantes fora do topo, sem base a 1 px do limite do conteúdo).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:59:24.641Z",
+      "impressao": "77fda8f933b220eb99bd6c335387ff58aaa3b8b8",
+      "arquivos": {
+        "Chart.tsx": "29de310414c195c5183d961afa0e8fb645a8be3f",
+        "data.ts": "80c9f4c2612fc1bb2fa9d9c48a52f0aa94423afc",
+        "meta.json": "14948521f8da17e45c59bde903dbb175d35e5acd"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-mes-contra-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: pílula de +7,7% em --positive com a base nomeada na linha, faixa neutra de 1% com Minus e a palavra estável, frase acessível de 167 caracteres igual ao corpo. Observações no README: kpi-number sem peso cai em Space Grotesk 400 (TIP-4), frase do ramo sem medição com 62 caracteres (ACE-1, mora no ramo), título do meta diferente do catálogo, arredondamento dos compactos.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:04.845Z",
+      "impressao": "1fdcc13477660605c656d2bb8e96c3231c966918",
+      "arquivos": {
+        "Chart.tsx": "54a5432b67ef2227a4c9f7df934e88b38b4542a1",
+        "data.ts": "03365c8a17cb82154d9068b5849dec095a03e5a6",
+        "meta.json": "ac1a14bb7890303d1a00d5295234414a24dcdc81"
+      }
+    },
+    {
+      "versao": "v2_setas-de-tendencia-na-linha-de-leitura",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16, EST-1: indicators vazio desenha um ponto final solto e a legenda das três setas, sem bloco role=status; devolver o bloco de vazio da v3 antes do return. Pergunta 1, seção 14.1: nenhum indicador cai além da faixa de 5%, então ArrowDownRight só existe na legenda e a frase diz 0 em queda; trocar um par do data.ts para queda fora da faixa (handoffs aceitos 21 contra 25, queda de 16%). Parecer em validation/revisao_24_microvisuais-sparklines__03_pilula-de-variacao_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:05.358Z",
+      "impressao": "175bcba4be2d3030aec7cb8fd498457d86490d34",
+      "arquivos": {
+        "Chart.tsx": "b8bcd35cbd13a7573c267e63447a1fa51d0ee665",
+        "data.ts": "01a498770786353bb96b18cdda692278a47b785a",
+        "meta.json": "50507d2325833a4b5746933a66dedf79669895c7"
+      }
+    },
+    {
+      "versao": "v3_status-do-handoff-por-oportunidade",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 16 linhas conferidas contra o data.ts (3, 2, 1 e 10), silhueta, palavra e dias úteis por estado, só o crítico em --negative, vazio com role=status. Observações no README: plural fixo no resumo, número sem tabular-nums na linha da regra (TIP-1), kpi-number sem peso (TIP-4), nome longo sem tratamento na linha de 22 px, frase do vazio com 99 caracteres.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:05.862Z",
+      "impressao": "7e979bafc466e589ebd1459b595d020828c7f1ab",
+      "arquivos": {
+        "Chart.tsx": "4c064dd59d1961ce6cdfab99a7fea28f804b07e2",
+        "data.ts": "d1c81c112b644a2070eb6c57eb4eac5230a0520f",
+        "meta.json": "5098245c75eaec5ccfa96020ad7afd99ab381b89"
+      }
+    },
+    {
+      "versao": "v4_origens-com-base-zero-e-base-minuscula",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16, EST-1: rows vazio desenha o cabeçalho da comparação, a linha das polaridades e os nomes das colunas sem nenhuma linha, e não há bloco role=status; devolver o bloco de vazio da v3 antes do return. Sem outro bloqueante: as 18 células conferem com o data.ts nos dois temas. Parecer em validation/revisao_24_microvisuais-sparklines__03_pilula-de-variacao_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:47:06.396Z",
+      "impressao": "225acf46eaa0aace3862d942cfd00c808bfa2649",
+      "arquivos": {
+        "Chart.tsx": "86dee891f5fab9eb7776089153ed53b6cd147302",
+        "data.ts": "80c9f4c2612fc1bb2fa9d9c48a52f0aa94423afc",
+        "meta.json": "14948521f8da17e45c59bde903dbb175d35e5acd"
+      }
+    },
+    {
+      "versao": "v2_setas-de-tendencia-na-linha-de-leitura",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas: vazio com role=status substitui o cartão inteiro (EST-1) e handoffs aceitos 21 contra 25 dá queda de 16% com ArrowDownRight no tom negativo, então as três setas existem na frase. Cinco itens conferidos contra o data.ts, frase acessível de 220 caracteres igual ao corpo, fidelidade 0,05 e 0,08 por cento. Observações no README: vazio sem ícone Filter e com aria-label de 62 caracteres, percentual em Manrope ao lado da base em Space Grotesk, chave das setas no pé (ROT-4), e as da primeira passada que seguem (NUM-4, EST-2 e EST-3 nos ramos, TIP-4, notes do meta).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:59:21.552Z",
+      "impressao": "cce9b5e4fcb7757037d1159d0872af33ff393394",
+      "arquivos": {
+        "Chart.tsx": "c7e01a7a483d759e7a625cabce80351607938de6",
+        "data.ts": "01c43aa8c2d8e449a60b17382941d3d31fae47e6",
+        "meta.json": "50507d2325833a4b5746933a66dedf79669895c7"
+      }
+    },
+    {
+      "versao": "v4_origens-com-base-zero-e-base-minuscula",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas: vazio com role=status substitui a tabela inteira (EST-1). 18 células conferidas contra o data.ts: base zero e base nula declaradas, base de 6 leads com delta absoluto, CPL em alta no tom negativo com seta para cima, investimento neutro, sem coleta com Unplug e formatUnavailable. Frase acessível de 219 caracteres, fidelidade 0,33 e 0,36 por cento. Observações no README: vazio sem ícone Filter e com aria-label de 67 caracteres, e as da primeira passada que seguem (frase sem começar pelo tipo, cabeçalho sem tabular-nums, indisponível 2 px acima, constantes fora do topo, sem base a 1 px do limite do conteúdo).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:59:24.641Z",
+      "impressao": "77fda8f933b220eb99bd6c335387ff58aaa3b8b8",
+      "arquivos": {
+        "Chart.tsx": "29de310414c195c5183d961afa0e8fb645a8be3f",
+        "data.ts": "80c9f4c2612fc1bb2fa9d9c48a52f0aa94423afc",
+        "meta.json": "14948521f8da17e45c59bde903dbb175d35e5acd"
+      }
+    }
+  ]
+}

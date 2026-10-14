@@ -1,0 +1,14 @@
+{
+  "title": "Peso das indicações nas entradas",
+  "useCase": "Pré-vendas: quanto das entradas da semana veio de indicação e por quais subcanais, contra o resto em neutro.",
+  "demonstrates": [
+    "Ramo aceso em chart-1 e todos os outros ramos no neutro de dado",
+    "Percentual do ramo aceso no centro, com o total logo abaixo como base",
+    "Destaque com segundo canal no peso do nome e na linha de leitura",
+    "Ramo aceso declarado no data.ts, nunca inferido do ranking do período",
+    "Valor escrito em todo setor e na lista, porque anel externo não compara com interno"
+  ],
+  "canvas": { "width": 480, "height": 760 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), e a conta: nesta moldura o corpo mede 422 x 635,5 px, com o caso de uso em duas linhas; a peça gasta 17 px na linha de leitura mais 8 px de respiro e 202 px na lista de identificação de cinco origens com os subcanais em linha, o que deixa 408,5 px para o anel. Daí o raio do plano é 211 px, e com innerRadius de 72 px cada anel fica com 46,3 px de espessura, folgado para o texto de 11 px do rótulo nativo. Três colisões entre a especificação do catálogo e o contrato ou a biblioteca, resolvidas aqui. Primeira, o catálogo pede o ramo aceso em accent-amber; o token usado é chart-1, que a seção 7 nomeia como a cor de quando só uma coisa acende, e o hex é o mesmo de accent-cyan nos dois temas (2dd4e8 no escuro, 0b6d7d no claro), então a troca de nome não muda um pixel. Segunda, o catálogo pede anéis externos mais finos para compensar a distorção de área do perímetro maior, e o componente não permite: a espessura sai de thickness = (outerRadius menos innerRadius) dividido por treeDepth, em SunburstChart.js linha 158, igual para todos os anéis, e não existe prop de espessura por nível. A saída aplicada é a que a armadilha GEO-5 prescreve: todo valor vem escrito, no setor e na lista, e a leitura de tamanho acontece dentro de cada anel e nunca entre eles. Terceira, o rótulo do componente imprime o valor cru de cada nó, sem passar por @/lib/format, e não tem prop que o esconda, porque o texto nasce de d[dataKey] em SunburstChart.js linha 226 e o Text só devolve nulo quando não tem linha alguma, o que nunca acontece com um número; por isso nenhum nó do dado chega a mil, faixa em que o texto cru coincide com o de formatInt. Contraste medido à mão, contra o cartão, porque o centro e a lista vivem em foreignObject e as guardas de desenho não alcançam texto em HTML: text-primary 14,53:1 e 17,96:1, text-secondary 8,16:1 e 8,13:1, text-muted 5,21:1 e 5,37:1, e text-primary com halo de surface-raised sobre o setor de chart-1 ou de text-muted 14,53:1 e 17,96:1, porque o halo é o fundo. A marca do ramo aceso mede 9,50:1 e 6,00:1 e a dos ramos neutros 5,21:1 e 5,37:1, as duas acima do piso de 3:1. A peça não desenha dica (DIC-1): o nome e o valor de todo setor já estão na lista, e pela ROT-10 a dica não conta."
+}

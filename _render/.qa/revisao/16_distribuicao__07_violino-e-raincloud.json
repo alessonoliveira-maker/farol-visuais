@@ -1,0 +1,147 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "07_violino-e-raincloud",
+  "versoes": {
+    "v1_ciclo-por-segmento-com-marcadores": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Três formas com a mesma área e a mesma banda de 4,3 dias, eixo de 0 a 120 dias, dois picos anotados só no terceiro segmento, marcador com anel legível sobre a forma e sobre o cartão nos dois temas. Observações no README: barra do intervalo interquartil mais larga que a cintura da forma, tique de 120 dias perto da borda.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:38.424Z",
+      "impressao": "fff13ea33ed3124de2f4d078e9721f473fb6d1de",
+      "arquivos": {
+        "Chart.tsx": "88702e3d50946547dbb082458c8dbc4f69a4a16f",
+        "data.ts": "54eb51e0990bc56ac6d1cc730b547237f0029624",
+        "meta.json": "2cf86dd6edb47c2d050322c04b55e8a2ea5b6171"
+      }
+    },
+    "v2_raincloud-antes-e-depois-da-cadencia": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. Chuva com encaixe determinístico medida no preview dos dois temas: 519 pontos para 519 leads, menor distância entre centros 2,20 px, nenhum par abaixo de 2 px, maior coluna com 11 leads em 26 px e todos os pontos dentro da própria sub-faixa de 32 px. A altura da coluna passou a contar os leads. Eixo de 0 a 8 dias com unidade, vazado anterior e cheio atual nas três camadas, frase de 221 caracteres. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:48:03.870Z",
+      "impressao": "0d28eaa17398ba864182e8dd311a58cde15e2626",
+      "arquivos": {
+        "Chart.tsx": "ae58bb0972907533eca4374c5653eab695e584df",
+        "data.ts": "e0725b45402ad8b9580faa977c8304283e46bf81",
+        "meta.json": "3e0d6fcdf20b63f1c4387280083faf62fec574dc"
+      }
+    },
+    "v3_sina-de-cpl-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Largura por contagem conferida, vídeo por cima com raio maior e anel além da cor, taxa com volume (80,9%, 178 de 220), eixo de R$ 0 a R$ 400. Observações no README: 151 de 1.100 pontos com vizinho a menos de 1 px e 45 neutros inteiros sob ponto de vídeo, chart-2 lê como alerta, ponto mais alto que o contorno na cauda.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:39.461Z",
+      "impressao": "f61e6bec5a720a689de4385e4a0560a3e3f6b264",
+      "arquivos": {
+        "Chart.tsx": "1928e6da23851b6f9b2a353a50208993dbc867f5",
+        "data.ts": "0030bada91e7909b902eb3f6d24de9a204c336f0",
+        "meta.json": "25ee0705b93d1f8ae5ed1282a8b5fd8a206f5220"
+      }
+    },
+    "v4_bean-plot-com-duplicata-suspeita": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. Traço cheio e único por minuto com lead, medido no preview dos dois temas: 121 traços em 121 posições nos quatro canais (29, 38, 45 e 9), vão mínimo de 3,28 px, nenhuma opacidade; a legenda diz o que o desenho faz e não dá direção de cor. Desvio do catálogo declarado nas notas do meta. Massa de 37 leads em 0 min fora da curva com contagem escrita, canal de n 9 só com traços, eixo de 0 a 120 min. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:48:09.994Z",
+      "impressao": "b879c58e700e72dac6805d5071864f9d7b39615e",
+      "arquivos": {
+        "Chart.tsx": "d06447854aab30c857331ef0b3d9fc8a3edae9e7",
+        "data.ts": "3b7bf33bfc412723a2114cb69ae2ce9721593b39",
+        "meta.json": "37dba559cbf83756f1aaf03326d38e6b1dd808b9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-por-segmento-com-marcadores",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Três formas com a mesma área e a mesma banda de 4,3 dias, eixo de 0 a 120 dias, dois picos anotados só no terceiro segmento, marcador com anel legível sobre a forma e sobre o cartão nos dois temas. Observações no README: barra do intervalo interquartil mais larga que a cintura da forma, tique de 120 dias perto da borda.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:38.424Z",
+      "impressao": "fff13ea33ed3124de2f4d078e9721f473fb6d1de",
+      "arquivos": {
+        "Chart.tsx": "88702e3d50946547dbb082458c8dbc4f69a4a16f",
+        "data.ts": "54eb51e0990bc56ac6d1cc730b547237f0029624",
+        "meta.json": "2cf86dd6edb47c2d050322c04b55e8a2ea5b6171"
+      }
+    },
+    {
+      "versao": "v2_raincloud-antes-e-depois-da-cadencia",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 15, ilegibilidade por sobreposição e seção 14.1: a chuva promete um ponto por lead e, no trimestre atual, 157 de 265 pontos têm outro com o centro a menos de 1 px; a maior coluna empilha 11 leads em 10 px e o Squad Entrada mostra 42 pontos separáveis de 96. Dar tinta própria a cada lead por encaixe determinístico na sub-faixa; aceite com nenhum par a menos de 2 px. Parecer em validation/revisao_16_distribuicao__07_violino-e-raincloud_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:38.936Z",
+      "impressao": "cd390d3591f43b3579399f20e59b33c7f5418496",
+      "arquivos": {
+        "Chart.tsx": "5bc414170cc0a9d2a3cf0c6e0dc9485a8eccd4d5",
+        "data.ts": "e0725b45402ad8b9580faa977c8304283e46bf81",
+        "meta.json": "c2cdab850d6248b6e0a7f8d48da66ce300b24174"
+      }
+    },
+    {
+      "versao": "v3_sina-de-cpl-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Largura por contagem conferida, vídeo por cima com raio maior e anel além da cor, taxa com volume (80,9%, 178 de 220), eixo de R$ 0 a R$ 400. Observações no README: 151 de 1.100 pontos com vizinho a menos de 1 px e 45 neutros inteiros sob ponto de vídeo, chart-2 lê como alerta, ponto mais alto que o contorno na cauda.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:39.461Z",
+      "impressao": "f61e6bec5a720a689de4385e4a0560a3e3f6b264",
+      "arquivos": {
+        "Chart.tsx": "1928e6da23851b6f9b2a353a50208993dbc867f5",
+        "data.ts": "0030bada91e7909b902eb3f6d24de9a204c336f0",
+        "meta.json": "25ee0705b93d1f8ae5ed1282a8b5fd8a206f5220"
+      }
+    },
+    {
+      "versao": "v4_bean-plot-com-duplicata-suspeita",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 12, seção 14.1, ACE-5 e GEO-11: a legenda diz um traço por lead, sobrepostos escurecem, mas 338 traços caem em 121 posições, a pilha chega a 12 no mesmo pixel e a opacidade de 0,7 satura no terceiro (48 posições com 3 ou mais saem iguais); no tema escuro o acúmulo clareia. Dar comprimento por contagem ao traço ou reescrever a legenda para um traço por minuto com lead, sem direção de cor. Parecer em validation/revisao_16_distribuicao__07_violino-e-raincloud_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:40:39.949Z",
+      "impressao": "6c96b9670844f3fe8ed63cdcbd6c7e482e2b8c66",
+      "arquivos": {
+        "Chart.tsx": "d574173067dd8c5a67a9b874ccad6f5533a02156",
+        "data.ts": "3b7bf33bfc412723a2114cb69ae2ce9721593b39",
+        "meta.json": "ed141f6f6fdb00fda7e18e3a7b4311163b458595"
+      }
+    },
+    {
+      "versao": "v2_raincloud-antes-e-depois-da-cadencia",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. Chuva com encaixe determinístico medida no preview dos dois temas: 519 pontos para 519 leads, menor distância entre centros 2,20 px, nenhum par abaixo de 2 px, maior coluna com 11 leads em 26 px e todos os pontos dentro da própria sub-faixa de 32 px. A altura da coluna passou a contar os leads. Eixo de 0 a 8 dias com unidade, vazado anterior e cheio atual nas três camadas, frase de 221 caracteres. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:48:03.870Z",
+      "impressao": "0d28eaa17398ba864182e8dd311a58cde15e2626",
+      "arquivos": {
+        "Chart.tsx": "ae58bb0972907533eca4374c5653eab695e584df",
+        "data.ts": "e0725b45402ad8b9580faa977c8304283e46bf81",
+        "meta.json": "3e0d6fcdf20b63f1c4387280083faf62fec574dc"
+      }
+    },
+    {
+      "versao": "v4_bean-plot-com-duplicata-suspeita",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. Traço cheio e único por minuto com lead, medido no preview dos dois temas: 121 traços em 121 posições nos três canais com curva, vão mínimo de 3,28 px, nenhuma opacidade; a legenda diz o que o desenho faz e não dá direção de cor. Desvio do catálogo declarado nas notas do meta. Massa de 37 leads em 0 min fora da curva com contagem escrita, canal de n 9 só com traços, eixo de 0 a 120 min. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:48:04.330Z",
+      "impressao": "b879c58e700e72dac6805d5071864f9d7b39615e",
+      "arquivos": {
+        "Chart.tsx": "d06447854aab30c857331ef0b3d9fc8a3edae9e7",
+        "data.ts": "3b7bf33bfc412723a2114cb69ae2ce9721593b39",
+        "meta.json": "37dba559cbf83756f1aaf03326d38e6b1dd808b9"
+      }
+    },
+    {
+      "versao": "v4_bean-plot-com-duplicata-suspeita",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. Traço cheio e único por minuto com lead, medido no preview dos dois temas: 121 traços em 121 posições nos quatro canais (29, 38, 45 e 9), vão mínimo de 3,28 px, nenhuma opacidade; a legenda diz o que o desenho faz e não dá direção de cor. Desvio do catálogo declarado nas notas do meta. Massa de 37 leads em 0 min fora da curva com contagem escrita, canal de n 9 só com traços, eixo de 0 a 120 min. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:48:09.994Z",
+      "impressao": "b879c58e700e72dac6805d5071864f9d7b39615e",
+      "arquivos": {
+        "Chart.tsx": "d06447854aab30c857331ef0b3d9fc8a3edae9e7",
+        "data.ts": "3b7bf33bfc412723a2114cb69ae2ce9721593b39",
+        "meta.json": "37dba559cbf83756f1aaf03326d38e6b1dd808b9"
+      }
+    }
+  ]
+}

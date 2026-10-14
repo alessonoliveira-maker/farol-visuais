@@ -1,0 +1,14 @@
+{
+  "title": "Motivos de perda com drilldown por fatia",
+  "useCase": "Dentro do motivo preço, qual submotivo pesa mais nas perdas do trimestre?",
+  "demonstrates": [
+    "Estado do nível em React, que troca o data da pizza ao clicar na fatia",
+    "Trilha de Todos a Preço, clicável, com o total do nível pai à vista",
+    "Cor por categoria vinda do dado, sem seriesColor sobre array ordenada",
+    "Trilha e lista equivalente focáveis por teclado, com raiz em role group",
+    "Preview com o nível filho aberto, porque o render não captura clique"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Medido à mão em 2026-09-29, nas três guardas que o check declara não medidas nesta peça. ESPESSURA-MARCA sai marca_html porque as amostras da legenda são div de 10 px dentro de foreignObject e a peça não tem Bar a quem aplicar o piso geral de 12 px; o que resta medir é o piso do rótulo interno, que pede a tinta do texto mais 6 px, isto é 18 px de marca para o texto de 12 px, e a menor fatia desenhada entrega 26,6 px de arco no raio do rótulo, no nível de cima, contra 59 px no nível aberto do preview. EIXO-CALMO sai sem_grade porque a peça não tem eixo cartesiano nenhum: a pizza não usa XAxis nem YAxis, então a EIX-5 não tem onde se aplicar. OPACIDADE-MARCA sai sem_opacidade_em_marca porque nenhuma marca declara opacidade: as cinco pintam opacas, e a mais fraca é --text-muted, que mede 5,21:1 no escuro e 5,37:1 no claro contra o cartão, acima do piso de 3:1 da WCAG 1.4.11. A raiz vai em role group, e não em role img, porque img apaga a trilha e a lista da árvore de acessibilidade, e a versão existe para ser navegada por teclado; a guarda FRASE-ACESSIVEL aceita os quatro papéis da seção 11 e mediu a frase normalmente. Percentual conferido somando o que está impresso no preview.svg, nos dois temas: 48, 32 e 20 somam 100 no nível aberto, e o 38% da trilha é o mesmo número que a lista do nível de cima imprime para Preço, porque os dois saem da mesma conta."
+}

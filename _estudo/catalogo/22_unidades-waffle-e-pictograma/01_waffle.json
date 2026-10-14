@@ -1,0 +1,76 @@
+{
+  "slug": "01_waffle",
+  "nome": "Waffle 10x10",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Grade de 100 quadrados iguais em que cada um vale 1% do total: a fração se lê contando, e as linhas da grade servem de régua. O preenchimento segue ordem fixa, por colunas, de baixo para cima e da esquerda para a direita, para cada categoria formar um bloco contíguo. As contagens por categoria saem pelo método do maior resto, e a grade fecha sempre em 100. O modelo absorve o waffle empilhado de três a cinco categorias, os waffles comparativos em múltiplos com a mesma grade e a mesma unidade, e o micro waffle de contagem de até cerca de 20 unidades reais. Feito em HTML com Tailwind (grid de 100 div com grid-rows-10 explícito), sem Recharts.",
+  "quando_usar": [
+    "Uma fração dita como x de 100, como leads do mês com telefone válido",
+    "Composição de 3 a 5 partes em que a categoria pequena precisa continuar visível",
+    "A mesma fração em 3 a 9 grupos, com a mesma grade, a mesma unidade e o n escrito em cada um",
+    "Contagem pequena e inteira de coisas reais, até cerca de 20 unidades, em cartão ou linha de tabela",
+    "Leitura de diretoria em que 38 de cada 100 comunica melhor que o ângulo de uma rosca"
+  ],
+  "quando_evitar": [
+    "Decimal que decide, como 62,4% contra 62,1%: número com barra de progresso (13/01)",
+    "Mais de 5 categorias: barra 100% empilhada (02) ou treemap (12/01)",
+    "Fração contra meta que pode passar de 100%: barra de progresso e capacidade (13/01)",
+    "Muitos grupos com uma fração cada: tabela com barra em célula (14/01)",
+    "Contagem por categoria sem denominador natural: waffle em barras (22/02)",
+    "Contagem pequena contra total discreto em forma circular: anel segmentado em unidades (07/05)"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-com-telefone-valido",
+      "titulo": "Leads do mês com telefone válido",
+      "caso_de_uso": "Marketing: de cada 100 leads de 2026-08, quantos chegaram com telefone válido para a pré-vendas ligar.",
+      "o_que_demonstra": [
+        "Grid de 100 div com grid-rows-10 explícito para a célula não esticar",
+        "Índice de preenchimento por colunas, de baixo para cima, calculado da posição",
+        "Grade com 62 células e número 62,2% por formatPercent, sem fatiar célula",
+        "Legenda de unidade 1 quadrado = 1% e n = 312 no rodapé",
+        "aria-label com a frase 194 de 312 leads com telefone; células com aria-hidden"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_desfecho-das-oportunidades-encerradas",
+      "titulo": "Desfecho das oportunidades encerradas",
+      "caso_de_uso": "Comercial: de cada 100 oportunidades encerradas no trimestre, quantas foram ganhas, perdidas ou desqualificadas.",
+      "o_que_demonstra": [
+        "Waffle empilhado em blocos contíguos, com contagens pelo maior resto fechando 100",
+        "Só ganhas em --chart-1; perdidas e desqualificadas em dois neutros",
+        "Sem motivo registrado por último, em --line-strong hachurado, fora da ordem",
+        "Transferida com 0,3% listada na legenda como menos de uma célula, sem célula forçada",
+        "Legenda com contagem absoluta e percentual iguais à contagem de células"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cobertura-de-origem-por-plataforma-e-mes",
+      "titulo": "Cobertura de origem por plataforma e mês",
+      "caso_de_uso": "Marketing: em cada plataforma de mídia e mês do trimestre, quantos de cada 100 leads chegaram com origem declarada.",
+      "o_que_demonstra": [
+        "Nove waffles em matriz 3 por 3 com cabeçalho de linha e coluna em grid externo",
+        "Mesma grade, mesma unidade e mesmo tamanho de célula em todos os múltiplos",
+        "Número e n sobre cada waffle; o pior grupo em cor cheia e os demais em neutro",
+        "Selo de amostra pequena abaixo de n = 30, com a fração omitida e o n escrito",
+        "Mês sem coleta em grade tracejada --line-strong com formatUnavailable"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_micro-waffle-de-posicoes-por-fila",
+      "titulo": "Posições de SDR ocupadas por fila",
+      "caso_de_uso": "Diretoria: quantas das 6 posições de cada fila de pré-vendas estão ocupadas e quanto a fila converte em venda.",
+      "o_que_demonstra": [
+        "Micro waffle de 6 unidades reais com quadrado de 6 px e o texto 4 de 6 ao lado",
+        "Vaga aberta em contorno tracejado; posição ocupada em cor cheia",
+        "Nenhuma unidade parcial no tamanho micro: taxa arredondada e escrita por extenso",
+        "Conversão de 0,6% numa grade de 100 vazia, com o chip menos de 1 em 100",
+        "Fila sem dado de ocupação escreve formatUnavailable em vez de grade vazia"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    }
+  ]
+}

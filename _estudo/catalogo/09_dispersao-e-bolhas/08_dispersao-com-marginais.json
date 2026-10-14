@@ -1,0 +1,67 @@
+{
+  "slug": "08_dispersao-com-marginais",
+  "nome": "Dispersão com distribuições marginais",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "O plano de dispersão ganha um histograma de X no topo e um de Y à direita, com os mesmos domínios e as margens alinhadas ao pixel. Responde ao mesmo tempo como as duas medidas se relacionam e como cada uma se distribui, o que revela a forma que a nuvem sobreposta esconde e se um corte caiu num vale ou num pico. Absorve o quadrante com marginais.",
+  "quando_usar": [
+    "Ver relação e forma de cada medida juntas, como ticket contra ciclo com a cauda longa do ticket.",
+    "Nuvem densa de 500 a cerca de 3.000 pontos, em que os marginais mostram o que a sobreposição esconde.",
+    "Conferir se a divisória de um quadrante cai no pico da distribuição.",
+    "Cartão com pelo menos 520 px de largura e altura parecida."
+  ],
+  "quando_evitar": [
+    "Cartão pequeno ou estreito: abaixo de 520 px desligue as marginais e fique com a dispersão simples.",
+    "Pergunta só sobre a distribuição de uma medida: use histograma (família 16).",
+    "Histogramas com domínio ou margens diferentes do plano: as barras deixam de corresponder aos pontos.",
+    "Nuvem enorme sem forma: use densidade 2D (modelo 09)."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-contra-ciclo-com-histogramas",
+      "titulo": "Ticket contra ciclo com as duas distribuições",
+      "caso_de_uso": "Como ticket e ciclo das oportunidades ganhas se distribuem e se relacionam? Histograma de cada medida nas bordas.",
+      "o_que_demonstra": [
+        "Grade de 2 por 2 em Tailwind com ScatterChart e dois BarChart",
+        "Bins calculados em TypeScript sobre o mesmo domínio do plano",
+        "Margens e largura de eixo numa constante única para alinhar ao pixel",
+        "Canto vazio com o número de oportunidades"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_corte-no-pico-da-distribuicao",
+      "titulo": "Corte de CPL no pico da distribuição",
+      "caso_de_uso": "O corte de CPL do quadrante cai num vale ou no pico? 48 campanhas, com o bin do corte destacado no marginal.",
+      "o_que_demonstra": [
+        "Divisória repetida no plano e nas duas faixas, que são gráficos independentes",
+        "Bin que contém o corte em cor de destaque e os demais em neutro",
+        "Nota com quantas campanhas estão a menos de 10% do corte",
+        "Número de bins fixo e declarado no rodapé"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_leads-com-tempo-em-escala-log",
+      "titulo": "Leads por tempo de contato e tentativas",
+      "caso_de_uso": "Que forma tem a massa de 2.000 leads que a nuvem esconde? Minutos até o contato em log e tentativas, com marginais.",
+      "o_que_demonstra": [
+        "Eixo X em escala log com os bins do marginal também em log",
+        "Pontos com opacidade 0,25 e raio pequeno para volume alto",
+        "Marginal mostrando a moda que a sobreposição apaga"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_cauda-longa-recolhida",
+      "titulo": "Ciclo com cauda longa recolhida",
+      "caso_de_uso": "Como não deixar poucas oportunidades de ciclo enorme achatarem o resto? Valores acima do P99 recolhidos na borda.",
+      "o_que_demonstra": [
+        "Barra final acima de com a contagem dos valores além do P99 no marginal",
+        "Marcador na borda do plano para os pontos recolhidos, sem esticar o domínio",
+        "Frase acessível que cita quantos pontos foram recolhidos"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

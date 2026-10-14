@@ -1,0 +1,14 @@
+{
+  "title": "Agendas por dia contra a meta diária",
+  "useCase": "Pré-vendas: em quais dias da semana o time ficou abaixo da meta diária de 18 agendas e por quanto.",
+  "demonstrates": [
+    "ReferenceLine da meta de 18 atravessando as colunas, com rótulo próprio",
+    "Domínio do eixo da razão entre banda e altura, para a linha cair na célula 18",
+    "Dias abaixo da meta em --chart-1 e os demais em neutro",
+    "Distância até a meta escrita no topo da coluna: faltaram 5",
+    "Frase acessível com os dias abaixo da meta e o total da semana"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O neutro dos dias que batem a meta é --text-muted e não --line-strong, que o catálogo sugere: --line-strong mede 1,79:1 e 1,83:1 contra o cartão e a guarda CONTRASTE-MARCA o recusa como marca de dado (TOK-5). O vão entre colunas é de 20% da banda de cada lado, fora dos 30% a 40% da ESP-2: a coluna precisa de largura para três células por linha, e a célula tem cerca de 20 px, acima do piso de 12. A meta de 18 é múltiplo de 3, então a linha cai na borda entre a sexta e a sétima linha de células."
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Verbatins por motivo de perda",
+  "useCase": "Comercial: como os clientes descrevem cada um dos cinco maiores motivos de perda do 3º trimestre, e quanto cada frase representa?",
+  "demonstrates": [
+    "Seletor de motivo e até cinco verbatins do motivo escolhido, com a contagem do motivo",
+    "Parcela por verbatim: representa 23% das respostas desse motivo, por formatPercent",
+    "Verbatins ordenados pela parcela, não pela escolha de quem montou o painel",
+    "Desfecho e mês de cada verbatim em 11 px e text-text-muted",
+    "Motivo sem verbatim cai no estado vazio com role status, sem citação inventada"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 500
+  },
+  "notes": "Canvas por número: o motivo aberto de início tem cinco verbatins de dois blocos de texto, e a soma é 337 px entre seletor, linha de contagem e lista, mais 12 px de vão. O corpo do preset alto (640x560, moldura card) dá 425 px com duas linhas no cabeçalho e sobrava cerca de 90 px vazios; 640x500 dá 365 px e fecha o cartão com 28 px de folga."
+}

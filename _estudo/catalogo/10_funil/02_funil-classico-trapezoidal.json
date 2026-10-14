@@ -1,0 +1,68 @@
+{
+  "slug": "02_funil-classico-trapezoidal",
+  "nome": "Funil clássico trapezoidal",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Faixas empilhadas de cima para baixo e centralizadas, cada trapézio partindo da largura da etapa e terminando na largura da seguinte, de modo que a inclinação sugere a perda. É a metáfora mais reconhecível e serve para leitura rápida de poucas etapas monotônicas; perde para as barras quando a decisão depende de comparar etapas. Absorve o funil cônico contínuo.",
+  "quando_usar": [
+    "Capa de tela ou de apresentação para a Diretoria, com 4 a 6 etapas e leitura de conjunto.",
+    "Processo em que cada etapa é subconjunto da anterior e a série é monotônica no recorte.",
+    "Visão do afunilamento como área contínua, quando o formato pesa mais que os valores intermediários (versão cônica)."
+  ],
+  "quando_evitar": [
+    "Comparar etapas vizinhas ou recortes: a centralização remove a linha de base; usar o 01_funil-em-barras-com-taxa-de-passo ou o 04_funil-comparativo.",
+    "Etapa com valor maior que a anterior, comum quando as janelas de data diferem: o trapézio abre para baixo; validar e cair para barras.",
+    "Gargalo de largura fixa ou última etapa em triângulo: distorcem os valores finais; usar lastShapeType rectangle e largura proporcional.",
+    "Cartão de 400 px de largura: os rótulos laterais não cabem; usar o 07_funil-em-cartoes-de-etapa."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_trapezios-do-trimestre",
+      "titulo": "Funil comercial do trimestre",
+      "caso_de_uso": "Comercial, 2026-T3: Aberta 420, Diagnóstico 268, Proposta 131, Negociação 64 e Ganha 29. Leitura de capa do trimestre com valor e percentual da entrada em cada etapa.",
+      "o_que_demonstra": [
+        "FunnelChart nativo com Funnel dataKey e nameKey e Cell por etapa",
+        "lastShapeType rectangle para a última etapa manter a largura do valor",
+        "LabelList à direita com nome, valor e percentual da entrada pronto no dado",
+        "Largura proporcional ao valor, sem gargalo fixo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_pior-passagem-em-destaque",
+      "titulo": "Pior passagem do trimestre em destaque",
+      "caso_de_uso": "Mesma base de 2026-T3: a passagem de Negociação para Ganha tem a pior taxa de passo (45,3%), enquanto a maior perda absoluta está na primeira passagem, com 152 oportunidades.",
+      "o_que_demonstra": [
+        "Cell em --accent-amber na etapa de destino e --chart-1 a 45% nas demais",
+        "Taxa de passo pronta no dado e lida no formatter do LabelList",
+        "Uma anotação curta: pior passagem do trimestre, 45,3%",
+        "Distingue pior taxa de passo (45,3%) de maior perda absoluta (152)"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cone-continuo-com-meta-semanal",
+      "titulo": "Cone contínuo com meta semanal",
+      "caso_de_uso": "Pré-vendas, semana 2026-W37: as seis etapas de Entradas (1.180) a Handoff aceito (142) num cone horizontal, com a meta semanal de cada etapa (de 1.100 a 190) como contorno tracejado sobre o realizado.",
+      "o_que_demonstra": [
+        "AreaChart com Area de base transparente e Area da faixa no mesmo stackId",
+        "type linear e pontos marcados, porque etapa é discreta",
+        "Série de base fora da legenda e da dica",
+        "Meta como contorno tracejado na mesma escala do realizado"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_etapa-maior-que-a-anterior",
+      "titulo": "Etapa maior que a anterior",
+      "caso_de_uso": "Pré-vendas, 2026-08: Agenda realizada soma 260 contra 248 agendas marcadas, porque inclui agendas marcadas em julho. O trapézio abriria para baixo sem aviso.",
+      "o_que_demonstra": [
+        "Validação de monotonicidade no componente, antes do desenho",
+        "Aviso escrito: etapa maior que a anterior, janelas de data diferentes",
+        "Troca para barras horizontais com o mesmo dado quando a validação falha",
+        "Taxa acima de 100% escrita como tal, nunca truncada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

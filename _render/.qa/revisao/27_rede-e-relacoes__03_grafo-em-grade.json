@@ -1,0 +1,134 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "03_grafo-em-grade",
+  "versoes": {
+    "v1_handoff-por-funcao-e-etapa": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Refeito do data.ts: 5 passagens somam 3.390 e a maior é 1.420; duas chegadas em Qualifica e agenda com pontas a 14 px. Seta em text-muted, 5,21 e 5,37 para 1; nenhum halo morde seta; unidade e período no rodapé. Observações no README: a frase acessível soma passagens em cadeia e chama de oportunidades, TIP-1 no rodapé, nota do meta mede o corpo com o caso de uso em duas linhas.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:26.635Z",
+      "impressao": "58e1c25cb0187e13d521331eaaf60e377c3ce13a",
+      "arquivos": {
+        "Chart.tsx": "2bbb23e6ba2ceba8d4bb028e83d841ae8b65bac5",
+        "data.ts": "c1a3b798e8d13a2d28a4d2896715e4ff5480dccd",
+        "meta.json": "bd7e02d495047b41618e2cc220e653f677187bc8"
+      }
+    },
+    "v2_handoffs-com-sla-estourado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Cinco taxas refeitas do data.ts; 38 e 19 por cento em alerta acima do limiar de 15. Alerta com relógio, traço de 2,25 px e texto, não só cor; zero medido escrito. Observações no README: o halo dos parênteses come metade da espessura da pista em dois pontos de 1,5 px por rótulo, sem partir o traço; rótulo à esquerda fica a 14,5 px da seta e o da direita a 8; TIP-1 na linha de leitura; o README diz as mesmas passagens e a última mudou.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:27.194Z",
+      "impressao": "21bcb94193200d576e3af9f36b92ff9bc8c8455b",
+      "arquivos": {
+        "Chart.tsx": "97a9a6a26fcfd3d71e880451a403258d27e3da8f",
+        "data.ts": "5e169460f808d135e2c14196d4457f4404e17b63",
+        "meta.json": "cfe34c040aa7751dc1decf7e0e78514966f024e0"
+      }
+    },
+    "v3_filas-de-pre-vendas-com-pilha": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgado o arquivo de hoje. O 28 do retorno fica à esquerda do tronco, com o texto a 8 px do traço: tronco com a mesma tinta nas 101 linhas do trecho reto, nos dois temas. Nas três pistas a tinta sob o rótulo é igual à de fora dele, o halo não morde seta. Neutro a 0,76 mede 3,57 e 3,27 para 1, aceso 9,50 e 6,00. Soma refeita do data.ts: 340, 150, 200, 28 e 260 dão 978 em 5 passagens. Observações no README: número do retorno sobre a borda da grade, retorno que pula etapa, teto de 12 caracteres do data.ts, amostra opaca da legenda, e as da primeira passada que seguem valendo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:00:11.104Z",
+      "impressao": "ba91baa5e60144ff29719d63ab06a55a0d9bf14c",
+      "arquivos": {
+        "Chart.tsx": "0f9202ec7f4beb056796de0f9c1cc6a050fbdebc",
+        "data.ts": "94edbe30d9555f15331e2fa623988c373275c235",
+        "meta.json": "16f8ba935729defeef025aac9b3b5765dabf88c4"
+      }
+    },
+    "v4_etapa-sem-responsavel": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgado o arquivo de hoje. O rodapé escreve Oportunidades nas setas, 3º trimestre de 2026, e a dica leva o substantivo: unidade e período no corpo (NUM-6, DAD-9). Trechos horizontais com a mesma tinta sob 1.420 e 860 e fora deles, nos dois temas. Seta e contorno tracejado em text-muted, 5,21 e 5,37 para 1. Escala 1, grade de 478 px. Frase acessível de 205 caracteres. Observações no README: legenda abaixo da grade, frase acessível com mais de uma célula sem dono, Anatomia sem a saída lateral, e as da primeira passada que seguem valendo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:00:11.633Z",
+      "impressao": "f879aea98f3e18202d9b65bea1270d385511a6ff",
+      "arquivos": {
+        "Chart.tsx": "31d9733543b2f650a76fb926a940e5d6f8c100a5",
+        "data.ts": "f3d8c009e35124ce2408e6dc08eb944a5447c570",
+        "meta.json": "f20b24d70d3d1b06e036a25cba83d15378193c4e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_handoff-por-funcao-e-etapa",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Refeito do data.ts: 5 passagens somam 3.390 e a maior é 1.420; duas chegadas em Qualifica e agenda com pontas a 14 px. Seta em text-muted, 5,21 e 5,37 para 1; nenhum halo morde seta; unidade e período no rodapé. Observações no README: a frase acessível soma passagens em cadeia e chama de oportunidades, TIP-1 no rodapé, nota do meta mede o corpo com o caso de uso em duas linhas.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:26.635Z",
+      "impressao": "58e1c25cb0187e13d521331eaaf60e377c3ce13a",
+      "arquivos": {
+        "Chart.tsx": "2bbb23e6ba2ceba8d4bb028e83d841ae8b65bac5",
+        "data.ts": "c1a3b798e8d13a2d28a4d2896715e4ff5480dccd",
+        "meta.json": "bd7e02d495047b41618e2cc220e653f677187bc8"
+      }
+    },
+    {
+      "versao": "v2_handoffs-com-sla-estourado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Cinco taxas refeitas do data.ts; 38 e 19 por cento em alerta acima do limiar de 15. Alerta com relógio, traço de 2,25 px e texto, não só cor; zero medido escrito. Observações no README: o halo dos parênteses come metade da espessura da pista em dois pontos de 1,5 px por rótulo, sem partir o traço; rótulo à esquerda fica a 14,5 px da seta e o da direita a 8; TIP-1 na linha de leitura; o README diz as mesmas passagens e a última mudou.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:27.194Z",
+      "impressao": "21bcb94193200d576e3af9f36b92ff9bc8c8455b",
+      "arquivos": {
+        "Chart.tsx": "97a9a6a26fcfd3d71e880451a403258d27e3da8f",
+        "data.ts": "5e169460f808d135e2c14196d4457f4404e17b63",
+        "meta.json": "cfe34c040aa7751dc1decf7e0e78514966f024e0"
+      }
+    },
+    {
+      "versao": "v3_filas-de-pre-vendas-com-pilha",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 exceção da marca fina: o rótulo 28 do retorno fica em cima do tronco da seta e o halo apaga de 11 a 11,5 px dos 54 px do trecho reto nos dois temas; a seta sai partida em duas. Tirar o rótulo de cima do traço, para o lado do corredor, com margem direita que caiba o número. Demais perguntas sem não. Parecer em validation/revisao_27_rede-e-relacoes__03_grafo-em-grade_2026-10-13.md",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:27.750Z",
+      "impressao": "cdf90293eba172ba0940334b416f491eac0209cd",
+      "arquivos": {
+        "Chart.tsx": "6abef5bee14c6d146e28118cfd0c657cdb7f5693",
+        "data.ts": "94edbe30d9555f15331e2fa623988c373275c235",
+        "meta.json": "16f8ba935729defeef025aac9b3b5765dabf88c4"
+      }
+    },
+    {
+      "versao": "v4_etapa-sem-responsavel",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6 com DAD-9: os números das setas, 1.420, 860 e 388, saem sem substantivo e sem período em todo o corpo; oportunidades e o trimestre só existem na frase acessível. Escrever unidade e período no rodapé, como a v1 faz; há cerca de 19 px livres sob o desenho. Demais perguntas sem não. Parecer em validation/revisao_27_rede-e-relacoes__03_grafo-em-grade_2026-10-13.md",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:41:28.317Z",
+      "impressao": "ee26ed39b148a6c8f28d74fae1589996fef2a99b",
+      "arquivos": {
+        "Chart.tsx": "45a0e124825a79db9b76c626434512bc63ff0322",
+        "data.ts": "f3d8c009e35124ce2408e6dc08eb944a5447c570",
+        "meta.json": "f20b24d70d3d1b06e036a25cba83d15378193c4e"
+      }
+    },
+    {
+      "versao": "v3_filas-de-pre-vendas-com-pilha",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgado o arquivo de hoje. O 28 do retorno fica à esquerda do tronco, com o texto a 8 px do traço: tronco com a mesma tinta nas 101 linhas do trecho reto, nos dois temas. Nas três pistas a tinta sob o rótulo é igual à de fora dele, o halo não morde seta. Neutro a 0,76 mede 3,57 e 3,27 para 1, aceso 9,50 e 6,00. Soma refeita do data.ts: 340, 150, 200, 28 e 260 dão 978 em 5 passagens. Observações no README: número do retorno sobre a borda da grade, retorno que pula etapa, teto de 12 caracteres do data.ts, amostra opaca da legenda, e as da primeira passada que seguem valendo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:00:11.104Z",
+      "impressao": "ba91baa5e60144ff29719d63ab06a55a0d9bf14c",
+      "arquivos": {
+        "Chart.tsx": "0f9202ec7f4beb056796de0f9c1cc6a050fbdebc",
+        "data.ts": "94edbe30d9555f15331e2fa623988c373275c235",
+        "meta.json": "16f8ba935729defeef025aac9b3b5765dabf88c4"
+      }
+    },
+    {
+      "versao": "v4_etapa-sem-responsavel",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgado o arquivo de hoje. O rodapé escreve Oportunidades nas setas, 3º trimestre de 2026, e a dica leva o substantivo: unidade e período no corpo (NUM-6, DAD-9). Trechos horizontais com a mesma tinta sob 1.420 e 860 e fora deles, nos dois temas. Seta e contorno tracejado em text-muted, 5,21 e 5,37 para 1. Escala 1, grade de 478 px. Frase acessível de 205 caracteres. Observações no README: legenda abaixo da grade, frase acessível com mais de uma célula sem dono, Anatomia sem a saída lateral, e as da primeira passada que seguem valendo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:00:11.633Z",
+      "impressao": "f879aea98f3e18202d9b65bea1270d385511a6ff",
+      "arquivos": {
+        "Chart.tsx": "31d9733543b2f650a76fb926a940e5d6f8c100a5",
+        "data.ts": "f3d8c009e35124ce2408e6dc08eb944a5447c570",
+        "meta.json": "f20b24d70d3d1b06e036a25cba83d15378193c4e"
+      }
+    }
+  ]
+}

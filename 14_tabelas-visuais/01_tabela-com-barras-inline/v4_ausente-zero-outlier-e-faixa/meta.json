@@ -1,0 +1,12 @@
+{
+  "title": "Origens com ausência, zero, outlier e faixa",
+  "useCase": "Marketing: ler origens com CPL indisponível, zero medido, volume 11 vezes maior e margem em faixa que cruza o zero.",
+  "demonstrates": [
+    "Indisponível sem barra, com ícone Unplug e formatUnavailable, diferente de zero medido",
+    "Outlier truncado num teto declarado com marca de corte e o valor real escrito",
+    "Ponto e intervalo inline cruzando o zero, com linha do zero em line-strong",
+    "Linha com n igual a 1 mostra só o ponto e o rótulo n=1, sem intervalo"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

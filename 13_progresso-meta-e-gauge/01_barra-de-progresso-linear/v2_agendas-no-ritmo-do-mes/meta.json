@@ -1,0 +1,14 @@
+{
+  "title": "Agendas do mês contra o ritmo esperado",
+  "useCase": "Pré-vendas: no dia 18 de 30, as 41 agendas marcadas estão no ritmo para bater a meta de 90 do mês?",
+  "demonstrates": [
+    "Ritmo esperado como traço pontilhado com rótulo, a partir de elapsedRatio do dado",
+    "Lacuna até o ritmo destacada e escrita: 13 agendas atrás do ritmo",
+    "Projeção tracejada na mesma cor do realizado, dita como premissa em texto",
+    "Modo de ritmo declarado no rótulo, linear ou pela curva histórica",
+    "Nenhum new Date no componente: a data de corte vem no dado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Denominador (meta), período e data de corte aparecem em texto, e o ritmo esperado é o próprio assunto da versão, com o modo (linear ou curva histórica) escrito no rótulo, por decisão da família (ver README, seção Regras)."
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "03_area-100",
+  "nome": "Área 100%",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Área empilhada normalizada em que cada instante soma 100%: mostra como a participação de cada parte evoluiu quando o total não é a notícia. O Recharts normaliza no render com stackOffset expand e o payload continua absoluto, então percentual de rótulo e de dica é calculado no componente. Instante com total zero é lacuna, nunca 0%.",
+  "quando_usar": [
+    "Evolução de participação com 2 a 6 partes coloridas e 10 ou mais datas.",
+    "Cobertura de dado ao longo do tempo: quanto da base segue sem origem declarada depois de uma correção.",
+    "Mix comparado entre períodos de totais muito diferentes, com painel de total sincronizado abaixo."
+  ],
+  "quando_evitar": [
+    "O total mudou muito e isso é a notícia: área empilhada (02_area-empilhada) ou painel de total junto.",
+    "Participação de um único instante: pizza (06_pizza) ou waffle (22_unidades-waffle-e-pictograma).",
+    "Poucos períodos: colunas 100% (03_colunas-verticais).",
+    "Camada de ausência pintada como categoria real ou somada a Outros."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_participacao-do-investimento-por-plataforma",
+      "titulo": "Participação do investimento por plataforma",
+      "caso_de_uso": "Ver como o investimento mensal de 2026 se redistribuiu entre quatro plataformas fictícias de mídia paga.",
+      "o_que_demonstra": [
+        "stackOffset expand com eixo de 0% a 100% por formatPercent",
+        "Rótulo da camada dentro da área onde há espaço, no lugar da legenda",
+        "Percentual inteiro somando 100 pelo maior resto (NUM-2)",
+        "Cor fixa por plataforma vinda do dado, não da posição (COR-3)"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_leads-sem-origem-apos-correcao",
+      "titulo": "Leads sem origem depois da correção de coleta",
+      "caso_de_uso": "Mostrar que a fatia de leads sem origem declarada caiu depois da correção de coleta de 2026-06-02.",
+      "o_que_demonstra": [
+        "Camada de ausência no topo, vazada com contorno text-muted e sem preenchimento",
+        "ReferenceLine vertical na data da correção com rótulo curto",
+        "Participação da ausência antes e depois escrita na linha de leitura",
+        "Ausência fora do teto de 6 cores e nunca somada a Outros"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_origens-com-painel-de-total",
+      "titulo": "Leads por origem com painel de total",
+      "caso_de_uso": "Ler a composição semanal das origens de lead sem perder de vista que o total caiu no mesmo período.",
+      "o_que_demonstra": [
+        "Seis origens coloridas, Outras (n=2) e Sem origem declarada por último",
+        "Dois gráficos alinhados com o mesmo eixo X e syncId, sem eixo duplo (EIX-8)",
+        "Painel de total em área simples abaixo da área 100%",
+        "Legenda na ordem visual da pilha, de cima para baixo (ROT-4)",
+        "52 semanas com ticks mensais por formatMonthShort"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_semanas-sem-nenhum-lead",
+      "titulo": "Composição com semanas sem nenhum lead",
+      "caso_de_uso": "Evitar que uma semana sem nenhum lead apareça como faixa cheia arbitrária ou como 0% na composição.",
+      "o_que_demonstra": [
+        "Total zero tratado como lacuna antes do render, sem divisão por zero",
+        "ReferenceArea em surface-sunken com texto marcando a semana sem base (ANO-4)",
+        "Nota com a contagem de semanas sem base",
+        "Frase acessível com a participação final de cada parte"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

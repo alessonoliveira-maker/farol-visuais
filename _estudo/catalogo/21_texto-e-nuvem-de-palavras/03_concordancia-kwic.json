@@ -1,0 +1,70 @@
+{
+  "slug": "03_concordancia-kwic",
+  "nome": "Concordância KWIC",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Cada ocorrência de um termo vira uma linha, com o termo numa coluna central própria, o contexto esquerdo alinhado à direita e o contexto direito alinhado à esquerda: o formato Key Word in Context. O olho desce pela coluna do termo e lê o que vem antes e depois em todas as ocorrências de uma vez, o que revela padrões de uso que a contagem esconde. É o complemento natural da lista de termos e da nuvem: a contagem diz quanto, a concordância mostra como. O contexto é cortado por palavras em TypeScript, o esquerdo pelo começo, mantendo as palavras mais próximas do termo; o layout é um grid de três colunas em Tailwind, sem o truque de dir=rtl.",
+  "quando_usar": [
+    "Ler o uso real de um termo que a bar list de termos (02/09) ou a nuvem (04) apontou",
+    "De 10 a 200 ocorrências na tela; acima disso, com filtro e virtualização ao colar no Farol",
+    "Agrupar os sentidos de um termo ordenando pelo contexto direito ou esquerdo",
+    "Conferir se um termo classificado como objeção é mesmo objeção antes de publicar a métrica"
+  ],
+  "quando_evitar": [
+    "Resumo executivo: a concordância é ferramenta de leitura; na Diretoria use a frase com número (01)",
+    "Milhares de ocorrências sem filtro: ninguém lê; filtre por desfecho ou por período antes",
+    "Pergunta sobre as continuações mais comuns em forma de ramos: use a árvore de palavras (07)",
+    "Alinhar o contexto esquerdo com dir=rtl: embaralha pontuação; corte pelas palavras em TypeScript",
+    "Texto com dado pessoal sem mascaramento: mascare nome, e-mail e telefone antes de montar a linha"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_ocorrencias-de-concorrente",
+      "titulo": "Vinte ocorrências de concorrente nas perdas",
+      "caso_de_uso": "Comercial: em que contexto o termo concorrente aparece nas anotações das oportunidades perdidas em 2026-T3.",
+      "o_que_demonstra": [
+        "grid grid-cols-[1fr_auto_1fr] com a coluna esquerda em text-right",
+        "Contexto esquerdo cortado pelo começo, mantendo as palavras mais próximas do termo",
+        "Termo central em peso 600 e text-text-primary, contexto em text-text-secondary",
+        "Frase acessível com o termo, o total de ocorrências e as linhas exibidas"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_ordenado-pelo-contexto-direito",
+      "titulo": "Concordância ordenada pelo contexto direito",
+      "caso_de_uso": "Comercial: quais sentidos de concorrente se repetem, como concorrente mais barato ou concorrente já atende.",
+      "o_que_demonstra": [
+        "Ordenação pela primeira palavra do contexto direito, pela chave sem acento",
+        "Grupos de sentido separados por espaço vertical, sem divisória",
+        "Contagem por grupo à direita em tabular-nums, com o substantivo ocorrências",
+        "Seletor de ordenação entre contexto esquerdo, termo e contexto direito"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_concordancia-com-desfecho-e-executivo",
+      "titulo": "Concordância com desfecho, data e executivo",
+      "caso_de_uso": "Comercial: ao clicar em preço na lista de termos, ler as ocorrências filtradas por desfecho, com data e executivo fictício.",
+      "o_que_demonstra": [
+        "Metadados por linha: data por formatDate, desfecho e Executivo 03 em 11 px",
+        "Filtro por desfecho ganha, perdida ou aberta com a contagem em cada opção",
+        "Primeiras 40 de 2.000 linhas no preview, com o total escrito no rodapé",
+        "Desfecho com ícone e palavra junto da cor, nunca só a cor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_termo-na-borda-e-sem-ocorrencia",
+      "titulo": "Termo na borda da frase e termo sem ocorrência",
+      "caso_de_uso": "Pré-vendas: ler ocorrências em que o termo abre ou fecha a anotação, e o que aparece quando ele não ocorre no recorte.",
+      "o_que_demonstra": [
+        "Contexto vazio com marcador discreto em text-text-muted, sem colapsar a coluna",
+        "Grafias preco e preço agrupadas pela chave e exibidas como foram escritas",
+        "Pontuação colada ao termo preservada no contexto e fora do destaque",
+        "Termo sem ocorrência troca a grade por estado vazio com role status"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Raiz rara substituída por concordância",
+  "useCase": "Marketing: o que a peça mostra quando a raiz escolhida, garantia, aparece só em 4 respostas de formulário do trimestre.",
+  "demonstrates": [
+    "Com menos de 5 ocorrências, as frases em concordância no lugar da árvore",
+    "Aviso com a contagem e o limite: 4 ocorrências, a árvore pede 5",
+    "Raiz sem nenhuma ocorrência mostra estado vazio com role status",
+    "A mesma função decide entre árvore e concordância pela contagem"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do preset card: corpo de 574 x 225 px com o caso de uso em duas linhas (119 caracteres). Aviso em duas linhas 40 px, concordância de 4 linhas de 28 px mais 12 px de respiro, 124 px, e nota em duas linhas 40 px somam 204 px, com sobra. O preview fotografa o caminho da concordância, que é o do dado publicado (4 ocorrências). O caminho da árvore (rootWord prazo, 27 ocorrências) e o estado vazio (rootWord frete, nenhuma) vivem no mesmo componente e respondem à mesma função chooseView. As reticências não são truncamento de nome de marca (TIP-7): marcam o corte da janela de 6 palavras da concordância, por palavra inteira, e a resposta inteira vai na dica e na lista para leitor de tela. Nenhum elemento em peso 700 neste caminho: a palavra da concordância usa 600."
+}

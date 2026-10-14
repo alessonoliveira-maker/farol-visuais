@@ -1,0 +1,361 @@
+{
+  "slug": "11_fluxo-sankey",
+  "nome": "Fluxo e Sankey",
+  "modelos": [
+    {
+      "slug": "01_sankey-simples",
+      "nome": "Sankey simples de duas colunas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Nós em duas colunas ligados por faixas com largura proporcional ao volume: de onde vem e onde termina. É a forma mais legível da família e cobre boa parte das perguntas de origem para desfecho e de handoff entre equipes. A orientação vertical, para coluna estreita e celular, entra como versão deste modelo.",
+      "quando_usar": [
+        "Origem para desfecho numa unidade só (leads, agendas ou reais), com até 8 nós por coluna.",
+        "Handoff de uma equipe para outra: quem entrega para quem e em que proporção.",
+        "Cruzamento de duas classificações da mesma população em que a direção de origem para destino é clara.",
+        "Coluna estreita de painel ou celular, na versão vertical, com até 5 nós por nível."
+      ],
+      "quando_evitar": [
+        "Mais de 8 nós por coluna sem agrupar em \"Outros\": as ligações viram fios abaixo de 1 px.",
+        "Caminho com três ou mais etapas e perdas no meio: usar o 02_sankey-multietapa.",
+        "Mesmas unidades mudando de categoria no tempo, sem direção de fluxo: usar o 03_alluvial.",
+        "Funil linear sem ramificação: usar a família 10_funil.",
+        "Leitura exata de cada par origem e destino: usar a matriz de transição (15_mapa-de-calor-e-calendario, 07_matriz-de-transicao)."
+      ],
+      "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+      "versoes": [
+        {
+          "slug": "v1_origem-para-desfecho-dos-leads",
+          "titulo": "Desfecho dos leads por origem",
+          "caso_de_uso": "Marketing, 2026-08: para qual desfecho vão os 1.240 leads de cada origem? Mídia social, Busca paga, Rede profissional, Orgânico e Evento à esquerda; Qualificado, Em nutrição, Descartado e Sem contato à direita.",
+          "o_que_demonstra": [
+            "Sankey nativo com links por índice, montados de um dicionário nome para índice",
+            "node e link customizados com var(--chart-N), sem as cores internas do build",
+            "Margem lateral de 140 px reservada para nome e valor fora do nó",
+            "Cor da ligação herdada da origem, em slot fixo por categoria"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_handoff-sdr-para-executivo-com-foco",
+          "titulo": "Handoff de agendas do SDR para o executivo",
+          "caso_de_uso": "Pré-vendas, 2026-08: para quais executivos cada SDR entregou as 187 agendas realizadas? SDR 1 a SDR 5 à esquerda, Executivo A a H à direita, 40 ligações e o SDR 3 em foco.",
+          "o_que_demonstra": [
+            "Prop highlightId que acende as ligações de um nó e baixa as demais para 15%",
+            "Ligações com menos de 3 agendas agregadas em \"Outros executivos\"",
+            "Anotação na maior saída do foco: SDR 3 para Executivo B, 14 agendas (30% do SDR)",
+            "onMouseEnter(item, type) guardando o índice em estado para o hover no Farol",
+            "Nome do nó em foco em peso 700, porque a cor não é o único canal"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_origem-ausente-com-cobertura",
+          "titulo": "Leads sem origem registrada como nó neutro",
+          "caso_de_uso": "Marketing, 2026-07: 174 dos 1.210 leads chegaram sem origem registrada. Eles entram como nó neutro na coluna de origem, com a cobertura escrita (86% com origem), em vez de sumir do diagrama.",
+          "o_que_demonstra": [
+            "Nó de ausência com contorno --text-muted, sem preenchimento e sempre por último",
+            "Linha de leitura com a cobertura calculada do dado: 1.036 de 1.210 com origem",
+            "sort={false} para o nó de ausência não subir na coluna pelo tamanho",
+            "Ausência fora de \"Outros\" e fora do teto de 6 cores categóricas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_vertical-em-coluna-estreita",
+          "titulo": "Desfecho das agendas em sankey vertical",
+          "caso_de_uso": "Pré-vendas no celular, 2026-08: como terminaram as 248 agendas marcadas de cada origem? Cinco origens no topo; Realizada 187, Remarcada 29, Cancelada 18 e Não compareceu 14 na base.",
+          "o_que_demonstra": [
+            "Layout vertical em TypeScript, porque o Sankey do Recharts não tem orientação",
+            "Nenhum transform no svg: texto e dica continuam na horizontal",
+            "Deslocamento das faixas no nó ordenado pela posição horizontal do destino",
+            "Nome em duas linhas acima do nó em vez de reticência",
+            "viewBox fixo que escala na largura de uma coluna estreita"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "02_sankey-multietapa",
+      "nome": "Sankey multietapa com perdas",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Fluxo por várias colunas de etapa em que a saída de cada etapa se divide entre avançar e nós terminais de perda por motivo, posicionados logo depois da etapa onde a perda acontece. Absorve três variações que usam a mesma mecânica de nó e ligação customizados: o demonstrativo de custo ou receita, a jornada desenrolada por passo e o fluxo com retorno.",
+      "quando_usar": [
+        "Funil com ramificação: da oportunidade aberta ao ganho, com perdas por motivo em cada etapa, em até 6 colunas.",
+        "Demonstrativo em reais: fontes que convergem e saem por destinos, numa unidade só e com a camada de custo declarada.",
+        "Jornada multitoque com até 3 ou 4 passos, desenrolada por passo para não formar laço.",
+        "Reabertura ou retorno que o negócio precisa ver, desenhado como arco à parte do layout acíclico."
+      ],
+      "quando_evitar": [
+        "Retrato de pipeline sem nó \"Em andamento\": a diferença entre entrada e saída some sem aviso.",
+        "Funil sem ramificação: usar a família 10_funil, em especial o 03_funil-com-perdas-por-etapa.",
+        "Resultado negativo tratado como fluxo: largura não codifica negativo; usar 19_cascata-waterfall ou o nó \"Déficit coberto\".",
+        "Jornadas com dezenas de passos: agrupar em \"4 ou mais toques\" ou trocar por tabela de caminhos.",
+        "Tela de 400 px com mais de 3 colunas: usar a versão vertical do 01_sankey-simples ou as barras da família 10."
+      ],
+      "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-com-perdas-por-motivo",
+          "titulo": "Oportunidades do trimestre com perdas por motivo",
+          "caso_de_uso": "Comercial, 2026-T3: onde saem as perdas entre a oportunidade aberta e o ganho? Aberta 420, Diagnóstico 268, Proposta 131, Negociação 64 e Ganha 29, com perdas por motivo (sem perfil, timing, concorrência) e \"Em andamento\" saindo de cada etapa.",
+          "o_que_demonstra": [
+            "align=\"left\" para a perda ficar logo depois da etapa, não na última coluna",
+            "sort={false} com o array de nós na ordem: avançou antes das perdas",
+            "Nó \"Em andamento\" fechando a conservação de cada etapa",
+            "Caminho até Ganha em --chart-1 e perdas em --line-strong com valor escrito",
+            "Rótulo à direita do nó e à esquerda na última profundidade, por payload.depth"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_custo-do-trimestre-por-camada-e-canal",
+          "titulo": "Custo do trimestre por camada e canal",
+          "caso_de_uso": "Diretoria, 2026-T3: como o custo de R$ 1,86 mi se reparte por canal e quanto dele tem ganho atribuído? Mídia R$ 420 mil, pessoas da esteira R$ 610 mil e estrutura R$ 830 mil, por Mídia social, Busca paga, Rede profissional, Evento e Indicação.",
+          "o_que_demonstra": [
+            "Rótulo do nó em formatCurrencyCompact com percentual inteiro do total",
+            "Camada escrita em cada nó de origem, para não somar retornos diferentes sem aviso",
+            "Ligação na cor da camada até o canal, mostrando a composição de cada canal",
+            "Canal com custo e nenhum ganho termina no nó neutro \"Sem retorno atribuído\"",
+            "Uma unidade só no diagrama, dita no rótulo: reais do trimestre"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_jornada-dos-leads-em-ate-tres-toques",
+          "titulo": "Jornada dos leads qualificados em até três toques",
+          "caso_de_uso": "Marketing, 2026-08: por quais pontos de contato passaram os 318 leads qualificados? Passos 1, 2 e 3 com Mídia social, Busca paga, Rede profissional, Orgânico e Evento, até o desfecho Qualificado.",
+          "o_que_demonstra": [
+            "Nó desenrolado por passo com name único e campo rotulo para exibição",
+            "Caminho mais comum (Busca paga, Evento, Qualificado) aceso em --chart-1",
+            "99 leads de toque único (31%) com ligação que pula passos, avisada na legenda",
+            "Canal repetido em passos seguidos sem laço, porque cada passo é outro nó"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_reabertura-com-arco-de-retorno",
+          "titulo": "Reabertura de oportunidades com arco de retorno",
+          "caso_de_uso": "Comercial, 2026-T3: quantas oportunidades perdidas em Proposta voltaram para Diagnóstico? 12 reabertas desenhadas como arco sob as colunas e 9 propostas refeitas na própria etapa como contador no nó.",
+          "o_que_demonstra": [
+            "Busca em profundidade no preparo que separa as ligações que fecham ciclo",
+            "Layout acíclico primeiro; arco de retorno em SVG com a mesma escala de largura",
+            "Laço na própria etapa vira contador no nó com ícone RotateCcw, sem arco",
+            "Legenda que declara se o total conta oportunidades ou passagens",
+            "Caso limite: as bibliotecas de referência quebram ou apagam a ligação cíclica"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_alluvial",
+      "nome": "Alluvial",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Colunas são momentos; blocos empilhados são categorias com altura proporcional à contagem, na mesma ordem em todas as colunas; faixas ligam as unidades que mantiveram ou mudaram de categoria entre colunas vizinhas. O que importa é a correspondência das mesmas unidades, não a direção física de um fluxo.",
+      "quando_usar": [
+        "A mesma população mudando de categoria entre 3 e 5 momentos: temperatura do lead, faixa de receita do cliente.",
+        "Ver quem esfriou, esquentou ou manteve a classificação de um mês para o outro.",
+        "Coorte com entrada e saída da base declaradas como categorias, com até 6 categorias por coluna."
+      ],
+      "quando_evitar": [
+        "População que muda entre colunas sem categoria de entrada e saída: as alturas não fecham e a leitura mente.",
+        "Volume que atravessa etapas com perdas: usar o 02_sankey-multietapa.",
+        "Mais de 6 categorias ou só dois momentos com leitura exata: usar a matriz de transição (15_mapa-de-calor-e-calendario, 07_matriz-de-transicao).",
+        "Ranking de posição entre períodos: usar o bump chart (04_linhas, 08_bump-chart).",
+        "Composição no tempo sem rastrear as unidades: usar áreas empilhadas da família 05_areas."
+      ],
+      "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+      "versoes": [
+        {
+          "slug": "v1_temperatura-dos-leads-em-tres-meses",
+          "titulo": "Temperatura dos leads de junho a agosto",
+          "caso_de_uso": "Marketing, 2026-06 a 2026-08: como a temperatura dos mesmos 1.240 leads mudou mês a mês? Quente, Morno, Frio e Descartado, em ordem fixa nas três colunas.",
+          "o_que_demonstra": [
+            "Geometria de alluvial em TypeScript, sem relaxamento que mova blocos",
+            "Ordem de categorias igual em todas as colunas, para o olho rastrear o bloco",
+            "Saídas do bloco ordenadas pelo destino e entradas ordenadas pela origem",
+            "Cor pela categoria de origem em slot fixo, dita na legenda",
+            "Vão de 2 px entre blocos empilhados na mesma coluna"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_leads-quentes-que-esfriaram",
+          "titulo": "Leads quentes que esfriaram em agosto",
+          "caso_de_uso": "Marketing, 2026-07 para 2026-08: quantos dos 214 leads quentes esfriaram? Só as faixas de Quente para Morno (46) e de Quente para Frio (21) em opacidade cheia, as demais em neutro.",
+          "o_que_demonstra": [
+            "Prop highlight com as transições em foco e as demais faixas a 15%",
+            "Duas anotações no máximo, com a contagem escrita junto da faixa",
+            "Nome das categorias em foco em peso 700, além da cor",
+            "Frase acessível que diz quantos esfriaram e de qual total"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_faixa-de-receita-dos-clientes-em-quatro-trimestres",
+          "titulo": "Faixa de receita dos clientes em quatro trimestres",
+          "caso_de_uso": "Diretoria, 2025-T4 a 2026-T3: os 312 clientes sobem ou descem de faixa de receita mensal? Até R$ 5 mil, R$ 5 a 15 mil, R$ 15 a 40 mil e acima de R$ 40 mil, com \"Ainda não cliente\" e \"Encerrou\" como categorias.",
+          "o_que_demonstra": [
+            "Quatro colunas com 6 categorias cada, no teto de cores do modelo",
+            "Entrada e saída da base como categorias, para a população fechar em toda coluna",
+            "Faixas ordinais na rampa --seq-N, com a contagem escrita no bloco",
+            "Categorias fora da base em neutro, abaixo das faixas de receita",
+            "Percentual da coluna na dica, com o mesmo formato do rótulo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_classificacao-que-passou-a-existir",
+          "titulo": "Classificação nova sem histórico anterior",
+          "caso_de_uso": "Marketing, 2026-06 a 2026-08: a temperatura Morno só passou a existir em julho. Em junho, 388 leads ficam no bloco \"Sem classificação\", que se reparte nas colunas seguintes.",
+          "o_que_demonstra": [
+            "Bloco de ausência com contorno --text-muted, sem preenchimento e por último",
+            "Categoria que nasce no meio da série sem bloco zerado nas colunas anteriores",
+            "Anotação curta na coluna de julho: \"Morno criado em jul/26\"",
+            "Faixas que saem da ausência em neutro até ganharem categoria"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "04_parallel-sets",
+      "nome": "Parallel sets",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Cada eixo é uma dimensão categórica da mesma população, dividida em segmentos; faixas sem seta ligam eixos vizinhos e mostram como os atributos se combinam. Não é sequência no tempo nem fluxo: a ordem dos eixos é escolha de leitura e só eixos vizinhos se comparam diretamente.",
+      "quando_usar": [
+        "Cruzar 3 ou 4 atributos categóricos da mesma população, com até 5 categorias por eixo.",
+        "Achar as combinações que concentram volume, como origem, porte e desfecho das agendas.",
+        "Mostrar a cobertura de dado cruzada com o desfecho, quando a ausência é uma categoria do eixo."
+      ],
+      "quando_evitar": [
+        "Mais de 4 eixos ou mais de 5 categorias por eixo: vira emaranhado; para dois atributos, usar a matriz categórica (15_mapa-de-calor-e-calendario, 02_matriz-categorica).",
+        "Ler correlação entre eixos que não são vizinhos: reordenar os eixos ou fazer outro diagrama.",
+        "Combinações com poucos casos, que sugerem padrão falso: agrupar em \"outras combinações\".",
+        "Mesmas unidades em momentos diferentes: usar o 03_alluvial.",
+        "Parte de um todo em duas dimensões lida por área: usar a família 26_mosaico-marimekko."
+      ],
+      "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+      "versoes": [
+        {
+          "slug": "v1_origem-porte-e-desfecho-das-agendas",
+          "titulo": "Origem, porte e desfecho das agendas",
+          "caso_de_uso": "Pré-vendas, 2026-08: como origem, porte da empresa e desfecho se combinam nas 248 agendas marcadas? Cinco origens, três portes (Pequena, Média, Grande) e quatro desfechos.",
+          "o_que_demonstra": [
+            "Três eixos como barras finas segmentadas, com nome da categoria e contagem",
+            "Faixas coloridas pela primeira dimensão, em slots fixos",
+            "Geometria compartilhada com o alluvial, sem seta e sem ordem temporal",
+            "Vão entre segmentos do eixo e faixas ordenadas pelo segmento de destino"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_combinacao-em-destaque",
+          "titulo": "Indicação de empresa grande até a agenda realizada",
+          "caso_de_uso": "Pré-vendas, 2026-08: quanto pesa a combinação Indicação, Grande e Realizada nas 248 agendas? Só as faixas dessa combinação acesas, com 21 agendas anotadas.",
+          "o_que_demonstra": [
+            "Prop highlight com uma categoria por eixo e as demais faixas a 15%",
+            "Anotação com contagem e percentual do total da combinação",
+            "Nome das três categorias em foco em peso 700",
+            "Ordem inicial fixa na prop axisOrder; reordenar por clique fica para o Farol"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_cobertura-de-dado-dos-leads-por-origem",
+          "titulo": "Cobertura de dado dos leads por origem",
+          "caso_de_uso": "Marketing, 2026-08: a falta de telefone e de cargo pesa no desfecho dos 1.240 leads? Eixos de origem, telefone (com, sem), cargo (declarado, ausente) e desfecho.",
+          "o_que_demonstra": [
+            "Quatro eixos, no teto do modelo, com a ausência como categoria visível",
+            "Segmento de ausência com contorno --text-muted, sem preenchimento e por último",
+            "Ordem dos eixos que põe telefone vizinho do desfecho, a comparação que importa",
+            "Frase acessível que cita a taxa de qualificação com e sem telefone"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_combinacoes-raras-agregadas",
+          "titulo": "Combinações raras agregadas",
+          "caso_de_uso": "Pré-vendas, 2026-08: as 248 agendas geram 60 combinações possíveis e muitas têm uma ou duas agendas. Combinações com menos de 5 agendas viram \"outras combinações\", com a contagem escrita.",
+          "o_que_demonstra": [
+            "Limiar mínimo de 5 agendas por combinação, em constante no topo do arquivo",
+            "Faixa \"outras combinações\" em --line-strong com a contagem escrita",
+            "Lista das combinações agregadas na alternativa tabular",
+            "Nota de amostra pequena para não sugerir padrão falso"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_chord-direcional-de-fluxo",
+      "nome": "Chord direcional de fluxo",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Entidades dispostas no círculo, cada uma com arco externo proporcional ao total; fitas internas ligam pares com espessura proporcional ao fluxo em cada sentido e cor da origem. Serve para trocas mútuas entre até 8 entidades que não têm coluna de origem nem de destino.",
+      "quando_usar": [
+        "Trocas nos dois sentidos entre até 8 entidades: repasses entre funções, reatribuição de oportunidades entre executivos.",
+        "Mostrar a assimetria de ida e volta entre pares, quando a pergunta é quem entrega mais do que recebe.",
+        "Painel com interação de foco e com a matriz a um clique como alternativa acessível."
+      ],
+      "quando_evitar": [
+        "Origem e destino claros e distintos: usar o 01_sankey-simples.",
+        "Relação sem volume ou simétrica: usar o chord simétrico (27_rede-e-relacoes, 07_chord-simetrico).",
+        "Consulta de valor exato ou comparação fina entre pares: usar a matriz de adjacência (27_rede-e-relacoes, 01_matriz-de-adjacencia).",
+        "Mais de 8 entidades sem agrupar em \"Outras\": as fitas fracas somem e os cruzamentos dominam.",
+        "Visual sem hover e sem foco: a roda fica ilegível; nesse caso usar a matriz."
+      ],
+      "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+      "versoes": [
+        {
+          "slug": "v1_repasses-entre-funcoes",
+          "titulo": "Repasses entre funções no trimestre",
+          "caso_de_uso": "Comercial, 2026-T3: quantas oportunidades cada função repassou para as outras, nos dois sentidos? Pré-vendas, Executivo, Relacionamento e Especialista de produto, com 412 repasses.",
+          "o_que_demonstra": [
+            "Geometria do chord em TypeScript a partir da matriz m[i][j], sem biblioteca",
+            "Ângulo do grupo pela soma da linha, descontado o padAngle",
+            "Fita com m[i][j] na borda de i e m[j][i] na borda de j, na cor da origem",
+            "Flag de arco grande do SVG ligada quando o ângulo passa de π",
+            "Nome do grupo horizontal fora do arco, sem rotação de texto"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_foco-na-pre-vendas",
+          "titulo": "Repasses de e para a Pré-vendas",
+          "caso_de_uso": "Comercial, 2026-T3: a Pré-vendas entrega mais do que recebe? Só as fitas dela acesas, com ida e volta anotadas: 186 repasses para Executivo e 23 devoluções.",
+          "o_que_demonstra": [
+            "Prop highlightId que mantém só as fitas do grupo e baixa as demais para 15%",
+            "Anotação de ida e volta no par principal, com as duas contagens",
+            "Nome do grupo em foco em peso 700, além da cor",
+            "Ordem dos grupos estável entre filtros, para o foco não embaralhar a roda"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_reatribuicao-entre-executivos",
+          "titulo": "Reatribuição de oportunidades entre executivos",
+          "caso_de_uso": "Comercial, 2026-T3: entre quais executivos as oportunidades trocaram de dono? Executivo A a H, 8 grupos no teto do modelo, com 137 reatribuições nos dois sentidos.",
+          "o_que_demonstra": [
+            "Oito grupos ordenados por volume para reduzir cruzamentos",
+            "Slots categóricos 1 a 6 e nome escrito em cada arco para os slots 7 e 8",
+            "Pares com menos de 3 reatribuições fora do desenho, somados ao arco",
+            "Linha de leitura com o par de maior troca e o saldo líquido dele"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_muitas-equipes-com-saida-para-matriz",
+          "titulo": "Catorze equipes agrupadas com saída para matriz",
+          "caso_de_uso": "Diretoria, 2026-T3: os repasses entre 14 equipes não cabem na roda. As seis maiores ficam, as oito menores viram \"Outras\" e o botão \"ver como matriz\" fica a um clique.",
+          "o_que_demonstra": [
+            "Colapso das entidades pequenas em \"Outras (n=8)\" com a contagem no nome",
+            "Botão com ícone do lucide que troca a roda pela matriz de adjacência",
+            "Troca interna entre as equipes de \"Outras\" declarada na legenda, sem fita",
+            "Frase acessível que cita quantas equipes foram agrupadas e o peso delas"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    }
+  ]
+}

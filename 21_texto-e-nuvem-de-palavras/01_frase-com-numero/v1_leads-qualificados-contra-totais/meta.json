@@ -1,0 +1,11 @@
+{
+  "title": "Leads qualificados contra leads totais",
+  "useCase": "Marketing: os leads qualificados cresceram mais que os totais em out/26, sem legenda abaixo da linha?",
+  "demonstrates": [
+    "Nomes das séries na frase com a mesma cor do traço, vindos de um objeto único",
+    "Peso 600 junto da cor na palavra, para o destaque não depender só da cor",
+    "Verbo, conector e ordem calculados: a frase inverte quando a relação inverte",
+    "LineChart de duas séries logo abaixo da frase, sem Legend do Recharts"
+  ],
+  "canvas": "card"
+}

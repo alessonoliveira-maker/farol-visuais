@@ -1,0 +1,12 @@
+{
+  "title": "Pior passagem do funil em destaque",
+  "useCase": "Achar em qual passagem a conversão mais cai e não confundir isso com a passagem que perde mais oportunidades em número absoluto.",
+  "demonstrates": [
+    "Cell em --chart-1 na etapa de destino da pior passagem e --line-strong nas demais",
+    "Taxa de passo calculada do dado e escrita com o denominador nomeado",
+    "Linha de leitura que distingue pior taxa de passo de maior perda absoluta",
+    "Peso 700 e cor reservados à etapa de destaque, nunca só a cor"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

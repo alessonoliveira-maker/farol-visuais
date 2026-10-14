@@ -1,0 +1,13 @@
+{
+  "title": "Escala de 4 pontos com itens de n baixo",
+  "useCase": "Ler uma pesquisa interna de escala par, sem ponto neutro, em que alguns itens tiveram menos de 10 respostas.",
+  "demonstrates": [
+    "Escala par sem neutro, com o zero na fronteira entre os polos",
+    "Item com n abaixo de 10 em opacidade reduzida e selo n baixo",
+    "Item sem respostas escreve indisponível no lugar da pilha",
+    "Legenda ordenada do polo negativo ao positivo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem coluna de neutro, porque a escala não tem ponto central. Selo n baixo com limiar de 10 respostas."
+}

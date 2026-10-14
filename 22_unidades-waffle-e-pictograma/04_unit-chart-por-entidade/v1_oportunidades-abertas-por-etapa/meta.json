@@ -1,0 +1,14 @@
+{
+  "title": "Oportunidades abertas por etapa",
+  "useCase": "Quantas oportunidades estão abertas em cada etapa do funil, vistas uma a uma?",
+  "demonstrates": [
+    "Grade por grupo calculada em TypeScript, de baixo para cima, com colunas fixas",
+    "Um rect de 10 px por oportunidade, com chave estável pelo id",
+    "Contagem no topo de cada grupo e nome da etapa na base",
+    "Dica com etapa, valor por formatCurrencyCompact e dias no funil",
+    "viewBox fixo por grupo e escala por className, sem ler a janela"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do corpo (GEO-1): card com 1 linha de caso de uso dá 574 x 241,5. Altura gasta: linha de abertura 20, vão 8, contagem 16, vão 4, pilha mais alta 142 (48 quadrados em 4 colunas, 12 linhas de 12 px menos 2), nome 36 com a borda: 226 px. Cor única em --chart-1 (COR-1): a etapa é o eixo, não há segunda categoria. O topo da pilha são as oportunidades mais recentes."
+}

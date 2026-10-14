@@ -1,0 +1,160 @@
+{
+  "familia": "26_mosaico-marimekko",
+  "modelo": "03_spineplot",
+  "versoes": {
+    "v1_ganho-por-faixa-de-porte": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (14, 30, 25, 18 e 13); os cinco pares de ganho e perdido fecham 100,0; área por caso constante; escala 1 e contraste conferem nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:16.102Z",
+      "impressao": "f5977c2d24f3039564cf8f055cc936bc53377516",
+      "arquivos": {
+        "Chart.tsx": "fe71e625f59c20318c212bcca644d8beafbd424a",
+        "data.ts": "fa8121b52486139bb99aab763d7d9ea643b2ff1d",
+        "meta.json": "6d9ecd24139160c6c0cb3166b6b8cf42d2368bc1"
+      }
+    },
+    "v2_qualificacao-por-tempo-ate-contato": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (26, 33, 27 e 14); pares de taxa e complemento fecham 100,0; legenda com 34,1 e 65,9 ao lado das amostras; faixa do SLA em surface-sunken, linha global e queda de 13,9 p.p. conferem nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:22.887Z",
+      "impressao": "547aab5f436098f0bfa0f9821a6c50c97fe4212d",
+      "arquivos": {
+        "Chart.tsx": "110352cf6899cbafed1a5fa7592f8cd63e714ce6",
+        "data.ts": "1774723440fb1bd499d09db90d47d0b6fdf574f8",
+        "meta.json": "232523cce4cc29c0053223b625e8f8e19e2943d5"
+      }
+    },
+    "v3_qualificado-por-plataforma-e-formato": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. A legenda traz o valor ao lado de cada amostra (190, 125 e 669, que somam os 984), o que atende a isenção da ACE-3; combinação veiculada sem lead passou a escrever sem lead; área por lead constante; nada cortado nem sobreposto nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:23.431Z",
+      "impressao": "02ac2b012b4e533e3a8865f0f1b38e0e1a674ef3",
+      "arquivos": {
+        "Chart.tsx": "92a1d3971130526c3dcb80a0543454b5ec1f7170",
+        "data.ts": "46d6082ccefedee41c4b43da1e8187fcd2bfbcef",
+        "meta.json": "5b83b529effc53f6d9751457baa7ec91f5b6bdfe"
+      }
+    },
+    "v4_porte-desconhecido-e-amostra-pequena": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (18, 29, 20, 2, 1 e 30) e o subtítulo de 70 bate com as faixas conhecidas; Micro fecha 18,8 mais 81,2; rótulos escalonados trazem a participação; amostra de Perdido com contorno em text-muted (5,21 e 5,37 para 1). Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:23.977Z",
+      "impressao": "08141a287af0cfed069010afff72a24d337492ab",
+      "arquivos": {
+        "Chart.tsx": "cdc6d073bb8b4cb2c4f49dbf60ca74b09cc1bd52",
+        "data.ts": "4986643e29e217d18903f0e18a4c39523cbc7b26",
+        "meta.json": "e8d8b705be627fd7137f9d5b70b7ee8038347711"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ganho-por-faixa-de-porte",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6 (e 27), NUM-2: as participações impressas sob as colunas somam 99 e não 100 (14, 29, 25, 18 e 13), por arredondamento independente em Chart.tsx:151; fechar pelo maior resto com a largestRemainder das irmãs do modelo 01, o que leva Pequena a 30. Geometria, área e contraste conferem. Parecer em validation/revisao_26_mosaico-marimekko__03_spineplot_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T17:49:24.095Z",
+      "impressao": "6a53ae54361cb78d4da6b5400e24888a2e90a521",
+      "arquivos": {
+        "Chart.tsx": "d9dc915853ab31afb0585f0f74be2a0aa1816193",
+        "data.ts": "fa8121b52486139bb99aab763d7d9ea643b2ff1d",
+        "meta.json": "6d9ecd24139160c6c0cb3166b6b8cf42d2368bc1"
+      }
+    },
+    {
+      "versao": "v2_qualificacao-por-tempo-ate-contato",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6 (e 27), NUM-2: as participações impressas sob as colunas somam 99 e não 100 (25, 33, 27 e 14), por arredondamento independente em Chart.tsx:169; fechar pelo maior resto, o que leva a faixa até 1 h, a do SLA, a 26. Geometria, área e contraste conferem. Parecer em validation/revisao_26_mosaico-marimekko__03_spineplot_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T17:49:24.713Z",
+      "impressao": "80957927009adc9fcf4074eda698a4c23db1f8d2",
+      "arquivos": {
+        "Chart.tsx": "71c071fbf2001b2d50fad8be05f76f4046bfb2d5",
+        "data.ts": "1774723440fb1bd499d09db90d47d0b6fdf574f8",
+        "meta.json": "232523cce4cc29c0053223b625e8f8e19e2943d5"
+      }
+    },
+    {
+      "versao": "v3_qualificado-por-plataforma-e-formato",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3, TOK-5 e tabela 17.10: duas das três amostras da legenda ficam abaixo de 3:1 nos dois temas e sem valor ao lado (Qualificado abaixo da taxa global em line-strong, 1,79:1 e 1,83:1; Não qualificado em surface-sunken, 1,15:1, com borda line-subtle de 1,25:1 e 1,29:1); escrever os leads de cada estado ao lado do nome (190, 125 e 669, que somam 984) ou dar contorno em text-muted. Na mesma passada, sem peso de bloqueio: combinação veiculada sem lead sai rotulada sem anúncio (Chart.tsx:90 e 293), parte não qualificada sem número, notes com o caso de uso em duas linhas. Parecer em validation/revisao_26_mosaico-marimekko__03_spineplot_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T17:49:33.746Z",
+      "impressao": "e55fad86770d8b9b576a573501deba519ee21306",
+      "arquivos": {
+        "Chart.tsx": "92bf7a8fd669f8b847a7b2c7d0281ac3e1f3db33",
+        "data.ts": "46d6082ccefedee41c4b43da1e8187fcd2bfbcef",
+        "meta.json": "5b83b529effc53f6d9751457baa7ec91f5b6bdfe"
+      }
+    },
+    {
+      "versao": "v4_porte-desconhecido-e-amostra-pequena",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6 (e 27), NUM-2 e ROT-10: Micro imprime 18,8 e 81,3, que somam 100,1; as participações impressas somam 97 (18, 29, 20 e 30), Grande e Muito grande ficam sem participação e o subtítulo diz 70 contra 67 impressos; tirar o complemento da taxa arredondada e escrever a participação pelo maior resto também no rótulo escalonado. Pergunta 20, ACE-3 e TOK-5: amostra de Perdido em line-strong (1,79:1 e 1,83:1) sem valor ao lado; valor ao lado ou contorno em text-muted. Parecer em validation/revisao_26_mosaico-marimekko__03_spineplot_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T17:49:34.381Z",
+      "impressao": "c48e58beeede538114111ce96038b71dd06029c1",
+      "arquivos": {
+        "Chart.tsx": "a59739c7c571660581289efd6a23f140e37d2e5b",
+        "data.ts": "4986643e29e217d18903f0e18a4c39523cbc7b26",
+        "meta.json": "e8d8b705be627fd7137f9d5b70b7ee8038347711"
+      }
+    },
+    {
+      "versao": "v1_ganho-por-faixa-de-porte",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (14, 30, 25, 18 e 13); os cinco pares de ganho e perdido fecham 100,0; área por caso constante; escala 1 e contraste conferem nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:16.102Z",
+      "impressao": "f5977c2d24f3039564cf8f055cc936bc53377516",
+      "arquivos": {
+        "Chart.tsx": "fe71e625f59c20318c212bcca644d8beafbd424a",
+        "data.ts": "fa8121b52486139bb99aab763d7d9ea643b2ff1d",
+        "meta.json": "6d9ecd24139160c6c0cb3166b6b8cf42d2368bc1"
+      }
+    },
+    {
+      "versao": "v2_qualificacao-por-tempo-ate-contato",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (26, 33, 27 e 14); pares de taxa e complemento fecham 100,0; legenda com 34,1 e 65,9 ao lado das amostras; faixa do SLA em surface-sunken, linha global e queda de 13,9 p.p. conferem nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:22.887Z",
+      "impressao": "547aab5f436098f0bfa0f9821a6c50c97fe4212d",
+      "arquivos": {
+        "Chart.tsx": "110352cf6899cbafed1a5fa7592f8cd63e714ce6",
+        "data.ts": "1774723440fb1bd499d09db90d47d0b6fdf574f8",
+        "meta.json": "232523cce4cc29c0053223b625e8f8e19e2943d5"
+      }
+    },
+    {
+      "versao": "v3_qualificado-por-plataforma-e-formato",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. A legenda traz o valor ao lado de cada amostra (190, 125 e 669, que somam os 984), o que atende a isenção da ACE-3; combinação veiculada sem lead passou a escrever sem lead; área por lead constante; nada cortado nem sobreposto nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:23.431Z",
+      "impressao": "02ac2b012b4e533e3a8865f0f1b38e0e1a674ef3",
+      "arquivos": {
+        "Chart.tsx": "92a1d3971130526c3dcb80a0543454b5ec1f7170",
+        "data.ts": "46d6082ccefedee41c4b43da1e8187fcd2bfbcef",
+        "meta.json": "5b83b529effc53f6d9751457baa7ec91f5b6bdfe"
+      }
+    },
+    {
+      "versao": "v4_porte-desconhecido-e-amostra-pequena",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de hoje. Participações pelo maior resto somam 100 (18, 29, 20, 2, 1 e 30) e o subtítulo de 70 bate com as faixas conhecidas; Micro fecha 18,8 mais 81,2; rótulos escalonados trazem a participação; amostra de Perdido com contorno em text-muted (5,21 e 5,37 para 1). Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:58:23.977Z",
+      "impressao": "08141a287af0cfed069010afff72a24d337492ab",
+      "arquivos": {
+        "Chart.tsx": "cdc6d073bb8b4cb2c4f49dbf60ca74b09cc1bd52",
+        "data.ts": "4986643e29e217d18903f0e18a4c39523cbc7b26",
+        "meta.json": "e8d8b705be627fd7137f9d5b70b7ee8038347711"
+      }
+    }
+  ]
+}

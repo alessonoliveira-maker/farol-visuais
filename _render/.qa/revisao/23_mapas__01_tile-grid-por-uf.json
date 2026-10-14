@@ -1,0 +1,147 @@
+{
+  "familia": "23_mapas",
+  "modelo": "01_tile-grid-por-uf",
+  "versoes": {
+    "v1_taxa-de-qualificacao-por-uf": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: as 27 taxas, as quebras de 4 em 4 p.p. e a cor de cada tile batem com o data.ts e com a legenda nos dois temas; textos de 5,45:1 para cima; degraus de baixo da rampa pela isenção do valor escrito (TOK-2, TOK-8). Observações no README (ramo de UF sem lead sem a palavra, coluna 1 da grade vazia, MG 16,0% na classe de 12% a 16%, número sem tabular-nums na nota).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:14.666Z",
+      "impressao": "9b5ef39a34ac5258491a3d834e5a7271bb68e49d",
+      "arquivos": {
+        "Chart.tsx": "fc3e7a0d1d88891c9381118f16e0bdef00b8ce93",
+        "data.ts": "804fb00f9f5319a6fffa88cf9cbdb33fa3832fbc",
+        "meta.json": "7c0f9ed10af9bfb0f343a23096a811c6843532f1"
+      }
+    },
+    "v2_ufs-acima-da-meta-com-ranking": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx de 10:23), não a nota antiga. Sem bloqueante: a UF sem lead agora sai vazada, tracejada, com Unplug e item escrito na legenda, e a base conta só UFs medidas (lido no código, o dado padrão não exercita); a escala do ranking inclui a meta; 7 de 27, corte das 10 e empates conferidos contra o data.ts; textos de 5,21:1 para cima e anel a 3,27:1 no pior tema. Observações no README (linha da meta apagada sobre a barra acesa, empilhamento pede 474 px de corpo, 10 maiores sem substantivo, destaque do tile só pelo preenchimento).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:36:50.328Z",
+      "impressao": "b5cb0bc72597d35c70e0c821ac386f4429fe925c",
+      "arquivos": {
+        "Chart.tsx": "4484f940cbc5ca046629496bfe30588b429bfb25",
+        "data.ts": "6ce29157892b3e393dfba5a743a0f771d88bcb03",
+        "meta.json": "8d1aed285c89e0235394f136c034fe33d10a51db"
+      }
+    },
+    "v3_hexagonal-cpl-qualificado-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx de 10:22), não a nota antiga. Sem bloqueante: os 351 pares de hexágonos de cada mapa têm vão de 2,00 px ou mais nos dois temas, medido no preview.svg, e MA não se sobrepõe mais a TO; os 74 desvios e a classe de cada um batem com o data.ts; textos de 5,01:1 para cima e tinta a 2,4 px ou mais da borda do hexágono. Observações no README (desvio sem o símbolo de percentual, diferença de 0,59 e 0,65 por cento contra a página com cerca de metade no subtítulo da moldura, limiar de 15 na legenda, notes com 280 px, quatro fronteiras de região só com o vão comum).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:37:02.770Z",
+      "impressao": "be189e86f91a1943f54085dcdf14fd53162996a1",
+      "arquivos": {
+        "Chart.tsx": "eb22687d8e2f9a7d550fb80c7bdfe048222b45cf",
+        "data.ts": "8ba790f0921157f8891c9d23e2276b68c09c9ffc",
+        "meta.json": "3f10b465db164f83df13c6063035aa1966cb02c3"
+      }
+    },
+    "v4_leads-sem-uf-e-ufs-sem-dado": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: sem dado (hachura, tracejado e palavra), zero medido (contorno cheio e 0) e classes não se confundem nos dois temas; quintis 70, 110, 230, 380 e 1.280, soma de 5.650 e 18% de 6.890 conferidos; textos de 4,65:1 para cima. Observações no README (sem dado a 1,5 px do contorno, 6.890 sem substantivo, dois vocabulários para a ausência, legenda lateral alta).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:16.330Z",
+      "impressao": "8a28c2389f13fdc091a36107de800983587e05a6",
+      "arquivos": {
+        "Chart.tsx": "c392319398cb3c10228da2efee0cb90ef90d238e",
+        "data.ts": "1d5e60bd5f2eddc725b6ffa140be95ee6be89471",
+        "meta.json": "88cc989b9eaef6a8fb86d56df7f8717022d81450"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_taxa-de-qualificacao-por-uf",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: as 27 taxas, as quebras de 4 em 4 p.p. e a cor de cada tile batem com o data.ts e com a legenda nos dois temas; textos de 5,45:1 para cima; degraus de baixo da rampa pela isenção do valor escrito (TOK-2, TOK-8). Observações no README (ramo de UF sem lead sem a palavra, coluna 1 da grade vazia, MG 16,0% na classe de 12% a 16%, número sem tabular-nums na nota).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:14.666Z",
+      "impressao": "9b5ef39a34ac5258491a3d834e5a7271bb68e49d",
+      "arquivos": {
+        "Chart.tsx": "fc3e7a0d1d88891c9381118f16e0bdef00b8ce93",
+        "data.ts": "804fb00f9f5319a6fffa88cf9cbdb33fa3832fbc",
+        "meta.json": "7c0f9ed10af9bfb0f343a23096a811c6843532f1"
+      }
+    },
+    {
+      "versao": "v2_ufs-acima-da-meta-com-ranking",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EST-2, ACE-2 e DAD-2 (seção 14.1, ausência): UF sem lead (rate nulo) sai no cinza que a legenda define como na meta ou abaixo, sem palavra, e entra na base do 7 de 27. Mudar: tile vazado de contorno tracejado com Unplug, item escrito na legenda e base só com UFs medidas. Ramo lido no código, o dado padrão não exercita. Parecer em validation/revisao_23_mapas__01_tile-grid-por-uf_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:15.251Z",
+      "impressao": "11c85db658eced25c7c10dbd6ef4459ac8ee641b",
+      "arquivos": {
+        "Chart.tsx": "14319288529333d1a696dc7d57a2e65d827fa6db",
+        "data.ts": "6ce29157892b3e393dfba5a743a0f771d88bcb03",
+        "meta.json": "8d1aed285c89e0235394f136c034fe33d10a51db"
+      }
+    },
+    {
+      "versao": "v3_hexagonal-cpl-qualificado-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3 e seção 14.1 (sobreposição): MA e TO se sobrepõem 2,00 px nos três mapas, medido no preview.svg; na Plataforma Social as duas UFs fundem numa mancha só e na Profissional o tracejado de ausência de TO invade MA. Causa: REGION_SHIFT do Nordeste em x 8. Mudar: vão de 2 px ou mais em todo par de hexágonos. Parecer em validation/revisao_23_mapas__01_tile-grid-por-uf_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:15.791Z",
+      "impressao": "d894f1f9cce0834416190d091213323ff081118a",
+      "arquivos": {
+        "Chart.tsx": "aa8a06a1563cdaf43b1179beaab1664c36822621",
+        "data.ts": "8ba790f0921157f8891c9d23e2276b68c09c9ffc",
+        "meta.json": "c7783d07a208ed547e9aed6d1a33ae4495360e69"
+      }
+    },
+    {
+      "versao": "v4_leads-sem-uf-e-ufs-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: sem dado (hachura, tracejado e palavra), zero medido (contorno cheio e 0) e classes não se confundem nos dois temas; quintis 70, 110, 230, 380 e 1.280, soma de 5.650 e 18% de 6.890 conferidos; textos de 4,65:1 para cima. Observações no README (sem dado a 1,5 px do contorno, 6.890 sem substantivo, dois vocabulários para a ausência, legenda lateral alta).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:21:16.330Z",
+      "impressao": "8a28c2389f13fdc091a36107de800983587e05a6",
+      "arquivos": {
+        "Chart.tsx": "c392319398cb3c10228da2efee0cb90ef90d238e",
+        "data.ts": "1d5e60bd5f2eddc725b6ffa140be95ee6be89471",
+        "meta.json": "88cc989b9eaef6a8fb86d56df7f8717022d81450"
+      }
+    },
+    {
+      "versao": "v2_ufs-acima-da-meta-com-ranking",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx de 10:23), não a nota antiga. Sem bloqueante: a UF sem lead agora sai vazada, tracejada, com Unplug e item escrito na legenda, e a base conta só UFs medidas (lido no código, o dado padrão não exercita); a escala do ranking inclui a meta; 7 de 27, corte das 10 e empates conferidos contra o data.ts; textos de 5,21:1 para cima e anel a 3,27:1 no pior tema. Observações no README (linha da meta apagada sobre a barra acesa, empilhamento pede 474 px de corpo, 10 maiores sem substantivo, destaque do tile só pelo preenchimento).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:36:50.328Z",
+      "impressao": "b5cb0bc72597d35c70e0c821ac386f4429fe925c",
+      "arquivos": {
+        "Chart.tsx": "4484f940cbc5ca046629496bfe30588b429bfb25",
+        "data.ts": "6ce29157892b3e393dfba5a743a0f771d88bcb03",
+        "meta.json": "8d1aed285c89e0235394f136c034fe33d10a51db"
+      }
+    },
+    {
+      "versao": "v3_hexagonal-cpl-qualificado-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx de 10:22), não a nota antiga. Sem bloqueante: os 351 pares de hexágonos de cada mapa têm vão de 2,00 px ou mais nos dois temas, medido no preview.svg, e MA não se sobrepõe mais a TO; os 74 desvios e a classe de cada um batem com o data.ts; textos de 5,01:1 para cima e tinta a 2,4 px ou mais da borda do hexágono. Observações no README (desvio sem o símbolo de percentual, diferença de 0,59 e 0,65 por cento contra a página com mais da metade no subtítulo da moldura, limiar de 15 na legenda, notes com 280 px, quatro fronteiras de região só com o vão comum).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:36:53.542Z",
+      "impressao": "be189e86f91a1943f54085dcdf14fd53162996a1",
+      "arquivos": {
+        "Chart.tsx": "eb22687d8e2f9a7d550fb80c7bdfe048222b45cf",
+        "data.ts": "8ba790f0921157f8891c9d23e2276b68c09c9ffc",
+        "meta.json": "3f10b465db164f83df13c6063035aa1966cb02c3"
+      }
+    },
+    {
+      "versao": "v3_hexagonal-cpl-qualificado-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx de 10:22), não a nota antiga. Sem bloqueante: os 351 pares de hexágonos de cada mapa têm vão de 2,00 px ou mais nos dois temas, medido no preview.svg, e MA não se sobrepõe mais a TO; os 74 desvios e a classe de cada um batem com o data.ts; textos de 5,01:1 para cima e tinta a 2,4 px ou mais da borda do hexágono. Observações no README (desvio sem o símbolo de percentual, diferença de 0,59 e 0,65 por cento contra a página com cerca de metade no subtítulo da moldura, limiar de 15 na legenda, notes com 280 px, quatro fronteiras de região só com o vão comum).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:37:02.770Z",
+      "impressao": "be189e86f91a1943f54085dcdf14fd53162996a1",
+      "arquivos": {
+        "Chart.tsx": "eb22687d8e2f9a7d550fb80c7bdfe048222b45cf",
+        "data.ts": "8ba790f0921157f8891c9d23e2276b68c09c9ffc",
+        "meta.json": "3f10b465db164f83df13c6063035aa1966cb02c3"
+      }
+    }
+  ]
+}

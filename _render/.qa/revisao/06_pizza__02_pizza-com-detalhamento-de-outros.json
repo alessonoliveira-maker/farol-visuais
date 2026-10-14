@@ -1,0 +1,147 @@
+{
+  "familia": "06_pizza",
+  "modelo": "02_pizza-com-detalhamento-de-outros",
+  "versoes": {
+    "v1_origens-de-lead-com-outros-aberto": {
+      "veredito": "aprovado",
+      "nota": "Pizza de 5 partes com Outros em neutro por ultimo, percentuais somando 100 na lista de identificacao, detalhe com valor e unidade na ponta livre; check limpo nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T14:16:46.839Z",
+      "impressao": "2475413db785451d4aedec0b8cc850e313a0ab81",
+      "arquivos": {
+        "Chart.tsx": "11879f2715b880a86f775f4553be50813c998117",
+        "data.ts": "243c86b23cc168c4c5e7768ec2ba5f9939c9fffb",
+        "meta.json": "c01ff687353f8d0f1c0534edcb9d36ce22036795"
+      }
+    },
+    "v2_parceiro-cresceu-dentro-de-outros": {
+      "veredito": "aprovado",
+      "nota": "Bar of pie com Outros em neutro por último, conectores das bordas da fatia aos cantos do painel sem cruzar o disco, Parceiro como único destaque em chart-1 com peso 700 e base nomeada (18 contra 6 em jul/26), percentuais somando 100 e painel fechando 46; check limpo nos dois temas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:57:59.968Z",
+      "impressao": "ee419e6f6c1a40e88a071c5650aaa90ad82c7a6c",
+      "arquivos": {
+        "Chart.tsx": "0311019ebf9c5fc2c09f2839c01cf54204e25ccd",
+        "data.ts": "e5f577ed89409cb41e31f6fb46dcedd76d4f76e5",
+        "meta.json": "1bc422676b6ab3138f9cf35fde4c678f06854043"
+      }
+    },
+    "v3_motivos-de-perda-com-drilldown": {
+      "veredito": "aprovado",
+      "nota": "Slots agora 1, 3, 6, 5 no nível de cima e 1, 3, 6 nos filhos (COR-8), sem chart-2 nem chart-4; percentuais 48, 32, 20 e 38, 23, 18, 12, 9 somando 100 pelo maior resto; rótulo vazado sem halo de 5,21:1 a 9,50:1 nos dois temas; trilha e lista focáveis, vazio e indisponível separados; check limpo.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:06:25.225Z",
+      "impressao": "f26428e29161df8e3095a3cbc1733c0e86cd8104",
+      "arquivos": {
+        "Chart.tsx": "2f252f2943c9315d97af0e652899d19fec1f2b73",
+        "data.ts": "66753952ec6139bc745ac55c88976102cca97fd8",
+        "meta.json": "4b4006f98ceaa9a5954f5ac582bb71e686d7ce9c"
+      }
+    },
+    "v4_cauda-de-23-categorias": {
+      "veredito": "aprovado",
+      "nota": "Cauda de 23 abaixo de 1% aberta nas 10 maiores com o resto escrito (13 campanhas, 34 leads, maior 4), painel fechando 99, slots 1, 3, 6, 5, conectores das bordas da fatia aos cantos do painel, nomes inteiros e barras de 13 px no canvas por número; check limpo nos dois temas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:58:06.636Z",
+      "impressao": "de3e96e594d5e625fee0fd623aebe5f9ccecf139",
+      "arquivos": {
+        "Chart.tsx": "a6daae7252c34e6384854212ba09b559420294a8",
+        "data.ts": "63dae5c3221e4f6aca30d762e7b371b899574187",
+        "meta.json": "2e9c5c70e01b5a63c47b390ad8b8eb96f7569259"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origens-de-lead-com-outros-aberto",
+      "veredito": "reprovado",
+      "nota": "Conector inferior corta o disco (fatias Outros e Site organico) e os dois conectores param no cabecalho do painel, sem abracar a lista do detalhe.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T13:53:59.240Z",
+      "impressao": "1c2458a0863c6021b4931c401c91442958d1f6c5",
+      "arquivos": {
+        "Chart.tsx": "27809c721011ead91a4a3c165cc14e5b4c0e6268",
+        "data.ts": "243c86b23cc168c4c5e7768ec2ba5f9939c9fffb",
+        "meta.json": "c01ff687353f8d0f1c0534edcb9d36ce22036795"
+      }
+    },
+    {
+      "versao": "v1_origens-de-lead-com-outros-aberto",
+      "veredito": "reprovado",
+      "nota": "Conector de baixo faz meia volta de 180 graus por fora das fatias maiores: o par de linhas passa a abracar a pizza inteira em vez da fatia Outros, e o desenho sugere que o painel de 51 leads detalha os 390.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T14:07:11.277Z",
+      "impressao": "6d27c65b24e1ac36a6837a65caeaf998b683a61f",
+      "arquivos": {
+        "Chart.tsx": "10d2ef20d18e2a967063c9e610cefea15d80f26c",
+        "data.ts": "243c86b23cc168c4c5e7768ec2ba5f9939c9fffb",
+        "meta.json": "c01ff687353f8d0f1c0534edcb9d36ce22036795"
+      }
+    },
+    {
+      "versao": "v1_origens-de-lead-com-outros-aberto",
+      "veredito": "aprovado",
+      "nota": "Pizza de 5 partes com Outros em neutro por ultimo, percentuais somando 100 na lista de identificacao, detalhe com valor e unidade na ponta livre; check limpo nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T14:16:46.839Z",
+      "impressao": "2475413db785451d4aedec0b8cc850e313a0ab81",
+      "arquivos": {
+        "Chart.tsx": "11879f2715b880a86f775f4553be50813c998117",
+        "data.ts": "243c86b23cc168c4c5e7768ec2ba5f9939c9fffb",
+        "meta.json": "c01ff687353f8d0f1c0534edcb9d36ce22036795"
+      }
+    },
+    {
+      "versao": "v2_parceiro-cresceu-dentro-de-outros",
+      "veredito": "aprovado",
+      "nota": "Bar of pie com Outros em neutro por último, conectores das bordas da fatia aos cantos do painel sem cruzar o disco, Parceiro como único destaque em chart-1 com peso 700 e base nomeada (18 contra 6 em jul/26), percentuais somando 100 e painel fechando 46; check limpo nos dois temas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:57:59.968Z",
+      "impressao": "ee419e6f6c1a40e88a071c5650aaa90ad82c7a6c",
+      "arquivos": {
+        "Chart.tsx": "0311019ebf9c5fc2c09f2839c01cf54204e25ccd",
+        "data.ts": "e5f577ed89409cb41e31f6fb46dcedd76d4f76e5",
+        "meta.json": "1bc422676b6ab3138f9cf35fde4c678f06854043"
+      }
+    },
+    {
+      "versao": "v3_motivos-de-perda-com-drilldown",
+      "veredito": "reprovado",
+      "nota": "Pergunta 11, COR-8 (papel de cor): slots pulam o chart-1 sem destaque que o reserve; o nível de cima pinta 4 motivos em chart-3, chart-6, chart-5 e chart-2 (Concorrente no hex de warning e prov-premissa) e o filho em 3, 6, 5. Mudar no data.ts para 0, 2, 5, 4 nos motivos e 0, 2, 5 nos submotivos.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:58:06.117Z",
+      "impressao": "e7c0c43e0b54848f621fe7d31fa103fec71f1c22",
+      "arquivos": {
+        "Chart.tsx": "2f252f2943c9315d97af0e652899d19fec1f2b73",
+        "data.ts": "6dd1fdbc9d97ceaaad02d123f1c6110b901a08ce",
+        "meta.json": "4b4006f98ceaa9a5954f5ac582bb71e686d7ce9c"
+      }
+    },
+    {
+      "versao": "v4_cauda-de-23-categorias",
+      "veredito": "aprovado",
+      "nota": "Cauda de 23 abaixo de 1% aberta nas 10 maiores com o resto escrito (13 campanhas, 34 leads, maior 4), painel fechando 99, slots 1, 3, 6, 5, conectores das bordas da fatia aos cantos do painel, nomes inteiros e barras de 13 px no canvas por número; check limpo nos dois temas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:58:06.636Z",
+      "impressao": "de3e96e594d5e625fee0fd623aebe5f9ccecf139",
+      "arquivos": {
+        "Chart.tsx": "a6daae7252c34e6384854212ba09b559420294a8",
+        "data.ts": "63dae5c3221e4f6aca30d762e7b371b899574187",
+        "meta.json": "2e9c5c70e01b5a63c47b390ad8b8eb96f7569259"
+      }
+    },
+    {
+      "versao": "v3_motivos-de-perda-com-drilldown",
+      "veredito": "aprovado",
+      "nota": "Slots agora 1, 3, 6, 5 no nível de cima e 1, 3, 6 nos filhos (COR-8), sem chart-2 nem chart-4; percentuais 48, 32, 20 e 38, 23, 18, 12, 9 somando 100 pelo maior resto; rótulo vazado sem halo de 5,21:1 a 9,50:1 nos dois temas; trilha e lista focáveis, vazio e indisponível separados; check limpo.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:06:25.225Z",
+      "impressao": "f26428e29161df8e3095a3cbc1733c0e86cd8104",
+      "arquivos": {
+        "Chart.tsx": "2f252f2943c9315d97af0e652899d19fec1f2b73",
+        "data.ts": "66753952ec6139bc745ac55c88976102cca97fd8",
+        "meta.json": "4b4006f98ceaa9a5954f5ac582bb71e686d7ce9c"
+      }
+    }
+  ]
+}

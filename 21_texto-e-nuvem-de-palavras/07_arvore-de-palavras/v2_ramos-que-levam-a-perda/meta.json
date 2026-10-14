@@ -1,0 +1,16 @@
+{
+  "title": "Ramos de objeção que terminaram em perda",
+  "useCase": "Pré-vendas: quais continuações de não aparecem mais em ligações cujas oportunidades foram perdidas depois.",
+  "demonstrates": [
+    "Folha do ramo com maioria perdida em --chart-1 e peso 700; os demais em --text-secondary",
+    "Parcela escrita no fim do ramo por formatRateWithVolume, como 7 de 9",
+    "No máximo dois ramos anotados, com a regra de maioria declarada na nota",
+    "Conector do ramo destacado com traço mais grosso, sem depender só da cor"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 456
+  },
+  "frame": "card",
+  "notes": "Canvas por número, pela mesma conta da v1: 10 folhas de 22 px mais 12 px dão 232 px de desenho; com 24 px da linha de leitura e 56 px da nota em três linhas são 312 px, contra 265 a 281,5 px do corpo do largo. Em 640 x 456 o corpo mede 574 x 321 px com o caso de uso em duas linhas (106 caracteres). Desvio do catálogo pela TIP-3: o catálogo pede o ramo destacado em peso 700 e a regra limita o 700 a dois elementos, então só a folha de cada ramo destacado leva 700 (duas, no máximo), a parcela dela leva 600 e a raiz 600. As palavras do meio do caminho ficam neutras, porque também levam a ramos sem maioria, e o caminho se lê pelo conector, que engrossa de 1,5 para 3 px e muda para --chart-1 da raiz até a folha. Regra de destaque: parcela perdida acima de 50%, com 8 ligações ou mais no ramo, e só os 2 de maior parcela; 4 de 6 e 3 de 5 ficam sem destaque pelo volume e 6 de 12 por não ser maioria. A parcela sai por formatRateWithVolume em todas as folhas. TIP-2 como na v1: o tamanho da palavra é a marca. A nota do rodapé declara a ordem dos ramos irmãos, porque a contagem que ordena não está escrita nos nós do meio (GEO-12)."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Agendas da semana contra a meta por SDR",
+  "useCase": "Pré-vendas: quais SDRs ficaram abaixo da meta semanal de 18 agendas e a que distância dela.",
+  "demonstrates": [
+    "Bullet inline em SVG de viewBox fixo com vectorEffect non-scaling-stroke no traço da meta",
+    "Faixas qualitativas comuns à coluna, de 0 a 70%, 70 a 100% e acima de 100% da meta",
+    "Abaixo da meta com ícone e peso no nome, sem depender só da cor",
+    "Marca de estouro na ponta quando o valor passa do teto da escala, com o número real"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Peso 700 fica só na linha mais crítica (abaixo de 70% da meta), para não passar do teto de dois elementos em negrito da TIP-3; as demais linhas abaixo de 100% usam peso normal, distinguidas pela posição do traço na escala."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Zero, indisponível e sem base lado a lado",
+  "useCase": "Como quatro cartões da mesma tira dizem zero medido, falta de coleta, falta de base e período parcial sem mentir?",
+  "demonstrates": [
+    "Zero medido em tipografia cheia, com a frase nenhuma venda de mídia paga",
+    "Indisponível com formatUnavailable, ícone Unplug, motivo e última medição válida",
+    "Sem mês anterior medido no lugar da variação, nunca +100% nem Infinity",
+    "Período parcial declarado: 14 de 31 dias contra os mesmos 14 dias de jul/26",
+    "Quatro cartões com a mesma altura e a mesma linha de base do número"
+  ],
+  "canvas": { "width": 960, "height": 300 },
+  "frame": "stage",
+  "notes": "O preset faixa (260 px) não sobra corpo para o cartão de zero e o de sem base depois que os dois passam a carregar coverage (EST-4): a linha de leitura soma a frase do estado com mês parcial e o rótulo direto de ComparisonLine fica mais longo com a janela dos mesmos dias. 300 px devolve a margem."
+}

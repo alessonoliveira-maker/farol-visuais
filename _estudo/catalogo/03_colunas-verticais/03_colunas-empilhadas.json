@@ -1,0 +1,72 @@
+{
+  "slug": "03_colunas-empilhadas",
+  "nome": "Colunas empilhadas com total",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma coluna por período dividida em segmentos empilhados, um por componente, com o total escrito acima. A altura responde quanto foi o período e os segmentos respondem de que isso é feito; só a base e o total têm referência comum. Absorve a variante agrupada e empilhada, com duas pilhas por período, como orçado e realizado.",
+  "quando_usar": [
+    "Total por período e sua composição, em até 6 componentes coloridos e até 12 períodos.",
+    "O componente que o leitor mais precisa acompanhar pode ficar encostado na base da pilha.",
+    "Cauda longa de componentes que aceita agrupamento em Outros com a contagem no rótulo.",
+    "Duas pilhas por período com os mesmos componentes, como orçado e realizado por trimestre."
+  ],
+  "quando_evitar": [
+    "A pergunta é a evolução de um componente do meio da pilha: small multiples (modelo 08) ou linhas (04).",
+    "Só o mix interessa e o tamanho não: colunas empilhadas 100% (modelo 04).",
+    "Decomposição de uma variação em contribuições passo a passo: cascata (19).",
+    "Componentes com sinais opostos, como entradas e saídas: colunas positivo e negativo (modelo 05).",
+    "Mais de duas pilhas por período: small multiples (modelo 08).",
+    "Total contra meta por período como mensagem principal: colunas contra meta (modelo 06)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-por-origem-com-total",
+      "titulo": "Leads por mês em três origens",
+      "caso_de_uso": "Quanto entrou em cada um dos últimos 6 meses e de quais origens veio esse volume?",
+      "o_que_demonstra": [
+        "Bar com o mesmo stackId e radius só no segmento do topo da pilha",
+        "Total somado no dado em TypeScript e escrito acima da coluna por LabelList",
+        "Legenda na ordem visual da pilha, lida de cima para baixo",
+        "Contorno surface-raised de 1,5 px separando segmentos vizinhos"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_custo-em-tres-camadas",
+      "titulo": "Custo mensal em três camadas",
+      "caso_de_uso": "Quanto custou cada mês e quanto desse custo é direto, rateio de time e estrutura, antes de discutir retorno?",
+      "o_que_demonstra": [
+        "Camada direta na base, a única comparável entre meses além do total",
+        "Dica que nomeia o perímetro de cada camada e o total acumulado até ela",
+        "Total em formatCurrencyCompact acima de 12 colunas e tique em formatCurrencyAxis",
+        "Linha de leitura com a participação da camada de estrutura no ano"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_origens-com-cauda-longa",
+      "titulo": "Leads por origem com cauda longa",
+      "caso_de_uso": "Como manter legível a composição mensal quando 14 origens disputam a pilha e parte dos leads chega sem origem?",
+      "o_que_demonstra": [
+        "Cinco maiores origens com cor e as nove menores em Outros (n=9), listadas na dica",
+        "Sem origem declarada em contorno vazado text-muted, visível, por último e fora de Outros",
+        "Componente zero no mês não desenha segmento nem entra na dica daquele mês",
+        "Mapa fixo de origem para slot vindo do dado, nunca da posição no ranking"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_orcado-e-realizado-por-trimestre",
+      "titulo": "Orçado e realizado por trimestre",
+      "caso_de_uso": "Em cada trimestre, o executado bateu com o plano e em qual linha de produto o desvio aconteceu?",
+      "o_que_demonstra": [
+        "Dois stackId por trimestre: orçado em contorno e realizado sólido, como plano e efetivo",
+        "Rótulo da pilha num segundo XAxis com xAxisId, abaixo do trimestre",
+        "Legenda em HTML: componente por cor e pilha por posição, sem entrada duplicada",
+        "Trimestre sem orçamento aprovado sem pilha de orçado e com a frase no lugar",
+        "Diferença total anotada acima do par, com a base nomeada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

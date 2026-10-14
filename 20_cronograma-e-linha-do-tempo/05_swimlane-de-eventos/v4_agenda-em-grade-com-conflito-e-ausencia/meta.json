@@ -1,0 +1,14 @@
+{
+  "title": "Agenda do dia com conflito e SDR ausente",
+  "useCase": "Pré-vendas: em 10/11, onde há reuniões sobrepostas, qual SDR está ausente e qual reunião cai fora do expediente.",
+  "demonstrates": [
+    "Grade com horas na vertical e uma coluna por SDR, top e altura por minuto",
+    "Três reuniões sobrepostas em colunas internas pelo empacotamento guloso",
+    "SDR ausente com coluna hachurada e a palavra ausente, distinta de agenda livre",
+    "Reunião às 20h estende a grade só nesse dia, com aviso escrito",
+    "Bloco de 15 minutos com altura mínima visual e horário completo no title"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O catálogo pede grade girada. Girada aqui quer dizer eixos trocados (horas na vertical), e nenhum texto roda: a TIP-5 fica cumprida, sem angle nem rotate. O viewBox tem 574 px de largura, o corpo medido do canvas alto em moldura card, e a altura calculada (417 px com a grade de 9h a 21h) cabe nos 425 px do pior cabeçalho, então a escala sai 1 e o texto fica em 11 px (GEO-18). A hora vale 27 px, então 15 minutos medem 6,75 px e o bloco ganha 10 px de altura mínima, avisado na legenda. SDR ausente tem hachura e a palavra; SDR 5 tem agenda livre e escreve 0 reuniões, porque ausente e vazio são coisas diferentes."
+}

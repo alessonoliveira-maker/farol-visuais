@@ -1,0 +1,14 @@
+{
+  "title": "Leads por etapa com grupo sem etapa",
+  "useCase": "Quantos leads há em cada etapa, mesmo quando parte deles não tem etapa registrada?",
+  "demonstrates": [
+    "Grupo sem etapa por último, com marcadores em contorno tracejado",
+    "Recorte de 1.900 leads passa sozinho para 1 quadrado = 10 leads",
+    "Aviso de unidade agregada escrito no topo, e não só na legenda",
+    "Número exato acima do grupo, com o desenho arredondado dito por escrito",
+    "Recorte vazio troca o gráfico por bloco role status com ícone Filter"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do corpo: 574 x 241,5. Altura gasta: aviso 20 mais nota 16, vão 8, contagem 16, vão 4, pilha mais alta 118 (56 quadrados em 6 colunas, 10 linhas), nome 36: 218 px. A etapa Convertido (14 leads) arredonda para 1 quadrado e a nota do topo avisa que o número é o exato. Cor única em --chart-1 (COR-1); a ausência usa contorno --text-muted tracejado, e não --line-strong, que mede 1,8:1."
+}

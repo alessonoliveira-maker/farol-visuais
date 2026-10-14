@@ -1,0 +1,33 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "05_calendario-mensal-em-grade",
+  "versoes": {
+    "v1_reunioes-realizadas-em-setembro": {
+      "veredito": "aprovado",
+      "nota": "Cada dia escreve a contagem, feriado sai da escala com marca propria e rotulo, e o rodape declara total, media por dia util e o zero de dias uteis sem reuniao em vez de omitir. Ressalva sem conserto: no tema claro o degrau zero da rampa quase iguala o fundo do cartao, entao o dia sem reuniao perde a moldura e a grade abre buracos; a contagem escrita na celula segura a leitura, por isso nao reprova.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.703Z",
+      "impressao": "fb773d6d37689b2ea9092841acd367a6ca53bfd0",
+      "arquivos": {
+        "Chart.tsx": "ba7fad5eaa42cf8fadb6b1f916e33625b5343d86",
+        "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
+        "meta.json": "ad29e8665a7a8d3f087829d9fd12da8ef151ff44"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_reunioes-realizadas-em-setembro",
+      "veredito": "aprovado",
+      "nota": "Cada dia escreve a contagem, feriado sai da escala com marca propria e rotulo, e o rodape declara total, media por dia util e o zero de dias uteis sem reuniao em vez de omitir. Ressalva sem conserto: no tema claro o degrau zero da rampa quase iguala o fundo do cartao, entao o dia sem reuniao perde a moldura e a grade abre buracos; a contagem escrita na celula segura a leitura, por isso nao reprova.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.703Z",
+      "impressao": "fb773d6d37689b2ea9092841acd367a6ca53bfd0",
+      "arquivos": {
+        "Chart.tsx": "ba7fad5eaa42cf8fadb6b1f916e33625b5343d86",
+        "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
+        "meta.json": "ad29e8665a7a8d3f087829d9fd12da8ef151ff44"
+      }
+    }
+  ]
+}

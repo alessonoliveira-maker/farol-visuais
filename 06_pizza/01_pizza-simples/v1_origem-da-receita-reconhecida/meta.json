@@ -1,0 +1,14 @@
+{
+  "title": "Origem da receita reconhecida do trimestre",
+  "useCase": "Quanto da receita reconhecida do 3º trimestre veio de cliente novo, de expansão de cliente ativo e de renovação?",
+  "demonstrates": [
+    "startAngle 90 e endAngle -270 para começar às 12 horas no sentido horário",
+    "Ordenação decrescente e teto de fatias em TypeScript antes do data",
+    "Rótulo interno de percentual por midAngle, escondido abaixo de 18 graus",
+    "Lista de nome e percentual abaixo do gráfico, com toda fatia identificável",
+    "Separador em var(--surface-raised) e percentual inteiro que soma 100",
+    "Total reconhecido na linha de leitura e valor absoluto só na dica"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

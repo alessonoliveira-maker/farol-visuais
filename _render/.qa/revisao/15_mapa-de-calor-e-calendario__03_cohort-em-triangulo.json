@@ -1,0 +1,46 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "03_cohort-em-triangulo",
+  "versoes": {
+    "v1_agenda-por-cohort-mensal-de-entrada": {
+      "veredito": "reprovado",
+      "nota": "Reverto a aprovação que eu mesmo dei hoje. Conferi no código: a linha 123 desenha a microbarra de leads como div com rounded-full e bg-surface-overlay, ou seja um trilho, e o CONTRATO diz na tabela de tokens \"nunca trilho, moldura nem faixa\", regra que eu próprio escrevi depois de perseguir esse defeito em 18 modelos. No tema claro o token mede 1,00:1 contra o cartão e o trilho desaparece. O resto da peça continua exemplar e a medição dos degraus da rampa segue correta; o que falhou foi a minha varredura, que olhou a célula do heatmap e não a coluna lateral.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:24.918Z",
+      "impressao": "2afe7cf747dd8884bbe4edbcb3d5d25259d68e70",
+      "arquivos": {
+        "Chart.tsx": "5d464cfd7fffb3e1b9e5f2779a377bf618b110a8",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agenda-por-cohort-mensal-de-entrada",
+      "veredito": "aprovado",
+      "nota": "Peca exemplar. Conferi a medicao que o proprio codigo declara, de pular os degraus 4 e 5 da rampa: no escuro o seq-4 alcanca no maximo 4,29:1 e no claro o seq-5 no maximo 4,82:1 com texto escuro contra 3,72:1 com branco, entao nao existe par que sirva aos dois temas com a mesma regra de alternancia. Com os cinco degraus escolhidos o pior caso e 5,45:1. O triangulo declara celula vazia como periodo que ainda nao comecou, tracejado para periodo em curso, e a media ponderada so soma periodos fechados.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.614Z",
+      "impressao": "2afe7cf747dd8884bbe4edbcb3d5d25259d68e70",
+      "arquivos": {
+        "Chart.tsx": "5d464cfd7fffb3e1b9e5f2779a377bf618b110a8",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    {
+      "versao": "v1_agenda-por-cohort-mensal-de-entrada",
+      "veredito": "reprovado",
+      "nota": "Reverto a aprovação que eu mesmo dei hoje. Conferi no código: a linha 123 desenha a microbarra de leads como div com rounded-full e bg-surface-overlay, ou seja um trilho, e o CONTRATO diz na tabela de tokens \"nunca trilho, moldura nem faixa\", regra que eu próprio escrevi depois de perseguir esse defeito em 18 modelos. No tema claro o token mede 1,00:1 contra o cartão e o trilho desaparece. O resto da peça continua exemplar e a medição dos degraus da rampa segue correta; o que falhou foi a minha varredura, que olhou a célula do heatmap e não a coluna lateral.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:24.918Z",
+      "impressao": "2afe7cf747dd8884bbe4edbcb3d5d25259d68e70",
+      "arquivos": {
+        "Chart.tsx": "5d464cfd7fffb3e1b9e5f2779a377bf618b110a8",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    }
+  ]
+}

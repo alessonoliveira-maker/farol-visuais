@@ -1,0 +1,13 @@
+{
+  "title": "Fechamentos por mês de 12 executivos",
+  "useCase": "Como se compara o ritmo de fechamento de 12 executivos na mesma escala, e quem está abaixo do piso de win rate?",
+  "demonstrates": [
+    "12 painéis em grade de 3 colunas ordenados por win rate, não por nome",
+    "Win rate com volume ao lado do nome por formatRateWithVolume",
+    "Executivo abaixo do piso marcado com ícone e palavra em negative, sem borda interna",
+    "Escala comum a todos os painéis, com o piso dito uma vez no topo da grade"
+  ],
+  "canvas": { "width": 640, "height": 720 },
+  "frame": "card",
+  "notes": "Canvas por número, maior que o preset alto: 3 colunas por 4 linhas com cabeçalho de até 3 linhas de texto por painel exige altura maior que 560 para o corpo do gráfico não ficar abaixo de um piso de leitura confortável, conforme a conta da ESP-2. Revisão de 2026-09-18: as 3 linhas do cabeçalho (nome, taxa com volume, aviso) mediam 53px e o HEADER_H de 40 cortava a última, comendo a vírgula do percentual e a descendente de nomes como \"Thiago R.\"; HEADER_H subiu para 56 e a altura do canvas subiu de 620 para 720 para o corpo do gráfico não encolher junto. A largura da coluna sai a 7,67px medidos no desenho, não no maxBarSize declarado (aviso ESPESSURA-MARCA, não erro): com 12 painéis de 3 colunas e 6 meses cada, o próprio propósito do modelo é caber muitas séries; alargar a barra exigiria alargar o canvas além do que um cartão do Farol comporta. É a mesma exceção que a ESP-2 já reconhece para minigráfico e marca de densidade."
+}

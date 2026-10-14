@@ -1,0 +1,14 @@
+{
+  "title": "Tempo até o primeiro contato em escala log",
+  "useCase": "O tempo até o primeiro contato derruba as tentativas até a agenda? 1.800 leads de um trimestre.",
+  "demonstrates": [
+    "XAxis com scale log, domínio positivo e marcas em 1 min, 1 h e 1 dia",
+    "Aviso de escala logarítmica escrito no rótulo do eixo",
+    "Contatos registrados como 0 viram marcador na borda com contagem",
+    "Leads sem horário de contato saem do plano e entram no rodapé",
+    "Ponto de raio 2 com opacidade 0,35 para volume alto"
+  ],
+  "canvas": { "width": 960, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: além do plano o cartão escreve a linha de leitura de 12 px, o rótulo do eixo de 11 px dentro da margem inferior e a nota de rodapé de 11 px, cerca de 70 px. A opacidade de 0,35 do ponto é a que a especificação pede para 1.697 marcas; ela compõe com o cartão e fica abaixo do piso de 3:1 da ACE-5, o que está declarado no README do modelo como tensão aberta entre volume e contraste."
+}

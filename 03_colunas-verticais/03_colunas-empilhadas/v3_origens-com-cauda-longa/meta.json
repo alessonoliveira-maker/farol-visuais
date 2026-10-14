@@ -1,0 +1,12 @@
+{
+  "title": "Leads por origem com cauda longa",
+  "useCase": "Como manter legível a composição mensal quando 14 origens disputam a pilha e parte dos leads chega sem origem?",
+  "demonstrates": [
+    "Cinco maiores origens com cor e as nove menores agrupadas em Outros (n=9)",
+    "Sem origem declarada em contorno vazado text-muted, visível, por último e fora de Outros",
+    "Componente zero no mês não desenha segmento nem entra na dica daquele mês",
+    "Mapa fixo de origem para slot vindo do dado, nunca da posição no ranking"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

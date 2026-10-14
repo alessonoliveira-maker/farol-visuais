@@ -1,0 +1,14 @@
+{
+  "title": "O passo que mais cresceu se abre",
+  "useCase": "Diretoria, ago/26 contra jul/26: o custo subiu R$ 26 mil, e quem puxou a alta dentro do passo que mais cresceu?",
+  "demonstrates": [
+    "Moldura e ícone lucide no passo com maior variação",
+    "Filho ordenado por variação e não por valor",
+    "Variação com a base na mesma linha, conforme NUM-4",
+    "onClick no shape para trocar o passo aberto e foco de teclado equivalente",
+    "Polaridade de custo: alta em vermelho, queda em verde, sempre com sinal"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Os passos são variações e a última coluna é a variação do próprio nó, ancorada no zero; as colunas de início e fim (R$ 364 mil e R$ 390 mil) não são desenhadas porque o passo de R$ 23 mil encolheria diante delas, sem quebrar o eixo. A base e o valor atual de cada passo vão na linha de leitura e na dica. Entrada e saída do filho são o valor do passo pai: a última coluna do filho repete a variação dele. A raiz é role group porque os passos com filhos são botões."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Canal com amostra insuficiente",
+  "useCase": "Como mostrar canal com 3 leads, cujo intervalo vai de quase 0 a 100%, sem dar peso a ele?",
+  "demonstrates": [
+    "Piso de volume: abaixo dele o ponto fica vazado e a barra de erro some",
+    "A palavra amostra insuficiente com o volume escrito junto do ponto",
+    "Domínio do eixo calculado sem o intervalo de quem está abaixo do piso",
+    "O custo do piso escrito do próprio dado: onde o eixo pararia sem ele"
+  ],
+  "canvas": { "width": 760, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: além do plano o cartão escreve duas linhas, a leitura de 12 px acima e a chave de 11 px com glifo abaixo, cerca de 50 px, e os dois rótulos de duas linhas dos canais sem amostra precisam de plano largo. A conta de altura é 135 px de moldura, com o caso de uso em duas linhas, mais 50 px de texto mais 255 px de plano; a de largura é 66 px de moldura mais 694 px de corpo. O QUE A BARRA REPRESENTA está escrito em três lugares, porque desvio padrão, erro padrão, intervalo de 95% e faixa de mínimo a máximo produzem barras de tamanhos muito diferentes sobre o mesmo dado: o glifo de serifa no rodapé, o texto do rodapé que nomeia o intervalo de Wilson e o nível, e a frase acessível da raiz. A mesma linha declara a segunda coisa que decide o desenho, o piso de volume, pela mesma razão da GEO-12: critério que escolhe quem recebe barra e não aparece no cartão deixa o leitor concluir o que quiser. O piso é 20 leads, e o custo dele vai medido do próprio dado em vez de afirmado: com o intervalo dos escassos na conta o eixo iria a 90%, e sem ele para em 60%, o que devolve um terço do plano aos oito canais que têm medida. O domínio e os tiques dos dois eixos são derivados, não constantes, porque a régua aqui é o dado. O ponto sem amostra não é escondido, só perde a barra: canal com pouco lead é resultado, e a EST-3 manda desenhar o que foi medido. O traço é DADO e não referência, então vale a ACE-6 e não o 1,79:1 de line-strong: text-muted mede 5,21:1 no escuro e 5,37:1 no claro, acima do piso de 3:1, e o mesmo token pinta o anel vazado e o rótulo do canal sem amostra. A linha de eixo herdada de AXIS_PROPS sai desligada nos dois eixos, pela EIX-5, e a grade vai nos dois sentidos pela EIX-3b."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Para onde vão os repasses do SDR 3",
+  "useCase": "Pré-vendas: quanto dos repasses do SDR 3 em 2026-T3 foi para os dois executivos que mais recebem dele.",
+  "demonstrates": [
+    "Prop highlightId que acende as ligações do nó em var(--chart-1) e baixa as demais",
+    "Rótulo do nó selecionado em peso 700 e os 70% em dois pares na linha de leitura",
+    "Percentual de cada ligação sobre o total do SDR escrito junto da ponta de destino",
+    "Adjacência pré-calculada em Map para o hover não varrer as ligações",
+    "Frase acessível na raiz com o par mais forte e o percentual",
+    "Percentuais inteiros que somam 100 pelo maior resto, com o volume ao lado"
+  ],
+  "canvas": { "width": 640, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): oito executivos com rótulo de duas linhas pedem 7 caixas de 24 px, uma de 30 px (o executivo de 5 ligações, a 6 px por ponta) e 7 vãos de 10 px, 268 px; com 4 px de margem, a linha de leitura (28 px) e a legenda das faixas (24 px) o corpo pede 324 px, e o card entrega 225 px com o caso de uso em duas linhas. Em 640 x 460 o corpo mede 325 px e o SVG fica com 273 px para um viewBox de 574 x 272, escala 1 (GEO-18). O vão de 10 px entre caixas é o dobro do vão entre as duas linhas do rótulo, para o olho juntar nome e valor do mesmo nó. Desvios do catálogo, com o contrato vencendo. Um: fora de foco a ligação segue em var(--text-muted), nunca em var(--line-strong), porque a aresta carrega a relação (ACE-6), e baixa por opacidade medida de 0,76 (ACE-5): composta com o cartão mede 3,58:1 no escuro e 3,28:1 no claro, acima do piso de 3:1. Marca contra marca (TOK-9), var(--chart-1) contra a ligação baixada mede 2,65:1 no escuro e 1,83:1 no claro, contra 1,82:1 e 1,12:1 sem a opacidade; por isso o destaque também vem do revestimento por cima, do peso 700 e do percentual escrito. Dois: a anotação dos 70% em dois executivos vive na linha de leitura (ANO-5) e não numa terceira linha ao lado do nó, porque a terceira linha mudaria a altura da caixa do nó aceso e faria o layout saltar a cada hover. Três: peso 700 só no nome e no valor do nó aceso (TIP-3). O executivo sem ligação com o SDR aceso escreve 0% (0 de 40), porque zero medido não some."
+}

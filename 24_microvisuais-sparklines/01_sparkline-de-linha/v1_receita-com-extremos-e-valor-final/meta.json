@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida em 12 meses",
+  "useCase": "A receita do mês está em alta, queda ou serra, e quão longe do melhor mês do ano?",
+  "demonstrates": [
+    "LineChart sem eixo, grade, legenda nem dica, com margem lateral de 6 px e useAnimateOnce",
+    "Domínio do mínimo ao máximo da série com folga de 8%, sem o traço encostar na borda",
+    "Ponto final em --chart-1 e extremos em tom neutro; o final vence se coincidir",
+    "Valor final em HTML irmão com kpi-number e formatCurrencyCompact, fora do SVG",
+    "Frase acessível com a variação em 12 meses, o último valor e a distância do melhor mês"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Desvio do catálogo: os extremos saem em --text-muted e não em --line-strong, porque --line-strong mede 1,79:1 contra o cartão (ACE-3 e ACE-6 pedem 3:1 para marca de dado, e o valor do extremo não está escrito junto da marca). Corpo do canvas kpi-alto com moldura stage: 328 x 181,5 px."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Funil da pré-vendas na semana",
+  "useCase": "Em qual passagem da semana a pré-vendas perdeu mais conversão, do topo ao handoff aceito.",
+  "demonstrates": [
+    "BarChart vertical com domínio fixo em zero até a entrada, para o trilho valer 100%",
+    "Trilho de fundo por background em surface sunken",
+    "Taxa de passo entre barras por LabelList content, sem rodar no último índice",
+    "Toda taxa nomeia o denominador: do passo anterior ou da entrada, nunca só o percentual",
+    "Perda entre etapas em número absoluto, ao lado da taxa de passo"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Resultado por origem com desvio e mix de status",
+  "useCase": "Marketing: por origem, o volume, o saldo de receita atribuída menos custo e o mix de status dos leads em 2026-08.",
+  "demonstrates": [
+    "Três marcas na mesma tabela, cada coluna com domínio próprio declarado no cabeçalho",
+    "Barra divergente com zero calculado por coluna e domínio simétrico",
+    "Composição 100% com flex, ordem fixa das categorias e legenda única no cabeçalho",
+    "Rótulo percentual só em segmento acima de 12% e vão de 1,5 px entre segmentos"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

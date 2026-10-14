@@ -1,0 +1,83 @@
+{
+  "familia": "04_linhas",
+  "modelo": "03_step-degrau",
+  "versoes": {
+    "v1_teto-de-capacidade-da-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Degrau stepAfter correto, eixo de tempo numerico, anotacao da maior mudanca sem colisao nos dois temas. Observacao: tique sem unidade e sigla em minuscula na frase acessivel.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:34.156Z",
+      "impressao": "ec2a5711df0e7d1125b049162fbca9591111970f",
+      "arquivos": {
+        "Chart.tsx": "e844a23d49f58e2b7f857b0a588e969f7f995d8e",
+        "data.ts": "6711c2df5433978add82911dc8736353ff86fa8b",
+        "meta.json": "795856c90363e748a295332cebc856299b708a2a"
+      }
+    },
+    "v2_capacidade-contra-demanda-semanal": {
+      "veredito": "aprovado",
+      "nota": "Mesma unidade num eixo so, sem eixo duplo; teto neutro com valor escrito ao lado, excedente com sinal e simbolo. Observacao: o rotulo do teto nao nomeia a serie.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:38.555Z",
+      "impressao": "e76533d644bc9825ca945320ddd7c75ca1d08ac8",
+      "arquivos": {
+        "Chart.tsx": "6b9d31abdec0bbd7f4ab3ab15243885cf1b6dee2",
+        "data.ts": "c9b724a44d8b9b2c483be2483b246e6174e3416a",
+        "meta.json": "5e8f527c15f62e80a42fd6e0036a97e32bc6f40b"
+      }
+    },
+    "v3_equipe-por-funcao-em-area-degrau": {
+      "veredito": "aprovado",
+      "nota": "Area empilhada do zero, faixa das ferias em surface-sunken atras das camadas, legenda na ordem da pilha. Observacao: buildRows assume o dado ja cronologico.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:42.663Z",
+      "impressao": "4d7e905551efdeb3a982b01536d2ddfacfaa20b2",
+      "arquivos": {
+        "Chart.tsx": "2aee821ca54521731208cb24666935fc3b54a618",
+        "data.ts": "a7e668c8219910ea832c5c756f1a1e2ec3cd3162",
+        "meta.json": "e21acf6962f01ebb129a2d0d0e33139d9010cb46"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_teto-de-capacidade-da-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Degrau stepAfter correto, eixo de tempo numerico, anotacao da maior mudanca sem colisao nos dois temas. Observacao: tique sem unidade e sigla em minuscula na frase acessivel.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:34.156Z",
+      "impressao": "ec2a5711df0e7d1125b049162fbca9591111970f",
+      "arquivos": {
+        "Chart.tsx": "e844a23d49f58e2b7f857b0a588e969f7f995d8e",
+        "data.ts": "6711c2df5433978add82911dc8736353ff86fa8b",
+        "meta.json": "795856c90363e748a295332cebc856299b708a2a"
+      }
+    },
+    {
+      "versao": "v2_capacidade-contra-demanda-semanal",
+      "veredito": "aprovado",
+      "nota": "Mesma unidade num eixo so, sem eixo duplo; teto neutro com valor escrito ao lado, excedente com sinal e simbolo. Observacao: o rotulo do teto nao nomeia a serie.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:38.555Z",
+      "impressao": "e76533d644bc9825ca945320ddd7c75ca1d08ac8",
+      "arquivos": {
+        "Chart.tsx": "6b9d31abdec0bbd7f4ab3ab15243885cf1b6dee2",
+        "data.ts": "c9b724a44d8b9b2c483be2483b246e6174e3416a",
+        "meta.json": "5e8f527c15f62e80a42fd6e0036a97e32bc6f40b"
+      }
+    },
+    {
+      "versao": "v3_equipe-por-funcao-em-area-degrau",
+      "veredito": "aprovado",
+      "nota": "Area empilhada do zero, faixa das ferias em surface-sunken atras das camadas, legenda na ordem da pilha. Observacao: buildRows assume o dado ja cronologico.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:53:42.663Z",
+      "impressao": "4d7e905551efdeb3a982b01536d2ddfacfaa20b2",
+      "arquivos": {
+        "Chart.tsx": "2aee821ca54521731208cb24666935fc3b54a618",
+        "data.ts": "a7e668c8219910ea832c5c756f1a1e2ec3cd3162",
+        "meta.json": "e21acf6962f01ebb129a2d0d0e33139d9010cb46"
+      }
+    }
+  ]
+}

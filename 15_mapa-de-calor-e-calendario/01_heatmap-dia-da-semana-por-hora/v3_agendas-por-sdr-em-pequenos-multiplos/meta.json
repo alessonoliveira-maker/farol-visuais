@@ -1,0 +1,14 @@
+{
+  "title": "Agendas marcadas por hora, uma grade por SDR",
+  "useCase": "Quais pessoas da pré-vendas concentram as agendas no começo da manhã e quem fica sem produção depois das 16h?",
+  "demonstrates": [
+    "Oito pequenos múltiplos de 5 dias por 12 horas com domínio comum às oito",
+    "Sábado e domingo fora da grade, com a regra escrita no rodapé",
+    "Célula com menos de 5 agendas hachurada, nunca pintada no degrau mais baixo",
+    "Três faixas nomeadas pelo intervalo, porque a rampa só tem três degraus úteis",
+    "Nome por extenso e total do trimestre escritos no cabeçalho de cada painel"
+  ],
+  "canvas": { "width": 960, "height": 490 },
+  "frame": "card",
+  "notes": "Canvas declarado por número porque nenhum preset fecha o cartão, e a conta que a GEO-1 pede é esta: corpo de 894 x 371,5 px (960 menos 66 de recuo; 490 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). As linhas escritas consomem 113,5 px: linha de leitura 17, legenda de faixas 24, duas linhas de rodapé 32 e o respiro entre elas e os painéis. Sobram 258 px para duas fileiras de painéis, o que dá painel de 121 px, célula de 15,6 por 16,2 px e nenhuma dimensão abaixo de 12 px. No preset largo de 960x400 a mesma conta daria célula de 11,8 px de altura, abaixo do piso, e com 460 px de canvas a segunda linha de rodapé saía 2 px fora do corpo, medido no render. O caso de uso tem 109 caracteres e cabe em uma linha na largura de 894 px, cujo limite medido é 153. Uma colisão com o catálogo, resolvida a favor do CONTRATO: a v1 deste modelo usa cinco faixas e esta usa três. Com 480 células não há onde escrever o valor de cada uma, então a cor é o único canal de grandeza, e pela TOK-8 só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas; uma quarta faixa cairia em --seq-4, que mede 2,60:1 no claro. A perda de degraus é compensada pela faixa nomeada, com o intervalo de contagem escrito ao lado de cada amostra, e pelo total escrito em cada painel. A ordem dos painéis é por total do trimestre e vem declarada no rodapé, como a GEO-12 pede."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Participação de mercado por UF do perímetro",
+  "useCase": "Diretoria: dentro das 7 UFs do perímetro fictício, onde a participação é maior e onde ainda é pequena.",
+  "demonstrates": [
+    "Rampa var(--seq-N) aplicada só às UFs do perímetro, em 3 classes",
+    "UFs de fora em tom neutro, sem classe de cor e sem dica",
+    "Rótulo com sigla e participação em cada UF do perímetro",
+    "Legenda em degraus com item à parte para fora do perímetro",
+    "Nota escrita de que o número nacional não é a soma do mapa",
+    "Contorno externo por duas passadas, com as UFs vizinhas separadas na cor do cartão"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvios do catálogo. A malha: neste catálogo não há a malha do IBGE (lista de imports fechada e cinco arquivos por versão), então o mapa usa a malha de hexágonos do coroplético da família, declarada no data.ts. Com ela sai a chamada externa nas UFs pequenas: todo hexágono tem o mesmo tamanho e leva sigla e percentual dentro. A rampa: 3 classes em --seq-3, --seq-6 e --seq-7. Ficam fora --seq-4 e --seq-5, que não têm texto legível nos dois temas (TOK-2), e --seq-1 e --seq-2, porque contra a malha de fora --seq-1 mede 1,05:1 no claro e --seq-2 1,29:1, e a classe mais baixa leria como fora do perímetro. Com --seq-3 a classe mais baixa mede 2,63:1 no escuro e 1,66:1 no claro contra a malha de fora; entre classes, --seq-3 contra --seq-6 dá 3,03:1 e 2,84:1 e --seq-6 contra --seq-7 dá 1,45:1 e 1,52:1 (TOK-8, TOK-9, medido à mão). A cor entrega então dois níveis seguros, pequena contra o resto; quem separa as duas classes altas é o percentual escrito em todo hexágono, e quem separa dentro de fora é o contorno externo de 1,5 px em --text-primary, a sigla em peso 600 e o número, nunca a cor sozinha. Quebras de intervalo igual em pontos inteiros, do piso da menor participação (2%) ao teto da maior (13%), passo de 4 p.p.; a legenda escreve o intervalo observado de cada classe, para o limite não aparecer em duas linhas, e nomeia as UFs dela por extenso. Fora do perímetro: preenchimento em --surface-sunken com traço de 1 px em --line-strong, e não --surface-overlay, que some no tema claro (TOK-1). A dica nativa das UFs do perímetro acrescenta o par de receita e mercado; as de fora não têm dica. Conta do canvas card: o caso de uso tem 103 caracteres, na fronteira das duas alturas do cabeçalho, então a peça foi fechada para o corpo de 574 por 225 px; mapa de 252 por 214 px (hexágono de 38 px, 6,5 células e 6 linhas) e coluna lateral de 306 px com cerca de 213 px de linhas escritas."
+}

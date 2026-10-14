@@ -1,0 +1,13 @@
+{
+  "title": "KPI com variação e tendência de 12 meses",
+  "useCase": "Abrir a leitura do mês com o número, a variação contra o mês anterior e a tendência de 12 meses.",
+  "demonstrates": [
+    "Variação com sinal, ícone e cor semântica sobre o cartão, sem fundo tingido",
+    "Base da comparação escrita na mesma linha da variação",
+    "Sparkline sem área: ponto de comparação vazado e ponto atual cheio",
+    "Mês sem medição quebra a linha e o número indisponível não vira zero",
+    "Número em Space Grotesk com algarismo tabular"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

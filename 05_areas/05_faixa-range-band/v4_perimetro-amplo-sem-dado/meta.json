@@ -1,0 +1,13 @@
+{
+  "title": "Faixa com perímetro amplo ausente",
+  "useCase": "Mostrar meses em que só o perímetro restrito foi medido, sem desenhar faixa inventada até o amplo.",
+  "demonstrates": [
+    "Faixa omitida onde uma borda é null, com a borda existente em linha",
+    "ReferenceArea em surface-sunken com texto nomeando os meses sem dado",
+    "formatUnavailable no rótulo do perímetro ausente (EST-2)",
+    "Nenhuma interpolação entre trechos com faixa (EIX-10)"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Mesma definição de perímetro da v1: restrito é só operações com garantia real, amplo inclui também as operações sem garantia real. O amplo depende de dado de terceiros e ficou sem atualização de mai a jul de 2026; método declarado, ausência real, nunca zero."
+}

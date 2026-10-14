@@ -1,0 +1,70 @@
+{
+  "slug": "04_calendario-estilo-contribuicoes",
+  "nome": "Calendário estilo contribuições",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Um ano (ou vários empilhados) desenhado como colunas de semanas e linhas de dias da semana, cada dia uma célula colorida pela intensidade. Mostra sazonalidade, dias sem atividade e rupturas ao longo de meses, com contorno em degrau separando os meses. Absorve a matriz anual de dia do mês por mês, que troca o dia da semana pelo dia do calendário contábil, e a grade de atividade micro em tamanho de cartão pequeno.",
+  "quando_usar": [
+    "Atividade diária ao longo de meses ou anos: fechamentos, entradas, receita reconhecida por dia.",
+    "Ciclo de dia da semana e sazonalidade na mesma figura, com um ano cabendo num cartão largo.",
+    "Efeito de dia do mês (início, quinzena, fim de mês), na variante de meses nas linhas e dias 1 a 31 nas colunas.",
+    "Comparar a rotina de poucas pessoas num mês, em grades micro lado a lado com escala comum."
+  ],
+  "quando_evitar": [
+    "Séries curtas, menos de 8 semanas: calendário mensal em grade (modelo 05) ou colunas por dia (03).",
+    "Pergunta de tendência: a grade apaga a sequência; linha diária ou semanal (04).",
+    "Leitura de um mês com o número do dia visível para público operacional: calendário mensal (modelo 05).",
+    "Uma linha de dias com status categórico: faixa de status (24, modelo 04).",
+    "Eventos com hora de início e fim: cronograma (20)."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_fechamentos-por-dia-em-2026",
+      "titulo": "Fechamentos por dia em 2026",
+      "caso_de_uso": "Em que semanas de 2026 os fechamentos se concentraram e quantos dias úteis passaram sem nenhum negócio ganho?",
+      "o_que_demonstra": [
+        "Posição por semana e dia da semana calculada em UTC, com a semana na segunda",
+        "Contorno em degrau entre meses a partir do último dia de cada mês",
+        "Escala em 5 faixas de 0 a 4 ou mais fechamentos, zero com borda sutil",
+        "Ano parcial até 2026-09-14 sem células futuras desenhadas"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_tres-anos-de-receita-reconhecida",
+      "titulo": "Receita reconhecida por dia em três anos",
+      "caso_de_uso": "A concentração de receita reconhecida em dezembro se repete em 2024, 2025 e 2026, ou foi um ano isolado?",
+      "o_que_demonstra": [
+        "Três anos empilhados com domínio comum calculado sobre o conjunto",
+        "Soma do ano em formatCurrencyCompact ao lado de cada faixa",
+        "Seis dias de falha de carga hachurados, distintos de dia com zero",
+        "Rótulos de mês só na primeira faixa e dias da semana alternados"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_efeito-de-fim-de-mes-por-dia-do-mes",
+      "titulo": "Efeito de fim de mês nos fechamentos",
+      "caso_de_uso": "Os fechamentos se acumulam nos últimos dias úteis de cada mês de 2026, como a coordenação suspeita?",
+      "o_que_demonstra": [
+        "Matriz de 12 meses por 31 dias com máscara de validade de data",
+        "Datas inexistentes sem desenho: fevereiro com 28 células, abril com 30",
+        "Últimos 5 dias úteis de cada mês com contorno e anotação de 41% do total",
+        "Fins de semana sombreados em --surface-sunken e setembro cortado no dia 14"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_grade-micro-por-sdr-com-ferias",
+      "titulo": "Atividades registradas por SDR em agosto",
+      "caso_de_uso": "Quem concentra o registro de atividades no começo da semana e quem registra tudo na sexta, em ago/26?",
+      "o_que_demonstra": [
+        "Seis grades micro de 5 semanas por 7 dias, células de 10 px e vão de 2 px",
+        "Escala comum de 4 faixas para as seis pessoas fictícias",
+        "Duas semanas de férias com contorno vazado, nunca pintadas na classe zero",
+        "Feriado com contorno pontilhado para o vazio não parecer ociosidade"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

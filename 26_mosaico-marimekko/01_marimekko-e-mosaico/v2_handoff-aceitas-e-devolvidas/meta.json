@@ -1,0 +1,18 @@
+{
+  "title": "Handoff: aceitas e devolvidas por fila",
+  "useCase": "Comercial, handoff 2026-T3: de cada fila que passa oportunidades para vendas, quanto foi aceito e por que motivo o resto voltou?",
+  "demonstrates": [
+    "Variação divergente: aceitas acima e devolvidas abaixo de uma linha zero",
+    "Dois acumuladores por coluna e domínio vertical simétrico pelo maior lado",
+    "Motivo fora de perfil em --chart-1 cheio; demais motivos em --line-strong com rótulo",
+    "Anotação na coluna mais larga com a taxa de devolução por formatPercent",
+    "Fila com n = 3 em coluna fina com rótulo escalonado, linha conectora e selo n = 3",
+    "Eixo vertical lido como proporção por lado, com 100% escrito nas duas pontas"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 540
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset largo do catálogo deixa 281,5 px de corpo, e a conta pede 421. São 24 da linha de leitura, 28 da legenda com valor, 24 da lista de identificação e 345 do SVG: 8 de margem, 263 de plano e 74 de eixo (vão de 8, nome, total e participação a 14 px, 4 de respiro e 18 da linha escalonada, 2 de folga); 421 mais 118,5 de moldura dá 539,5, arredondado para 540. O domínio simétrico é fixo em 100% por lado, o maior lado possível de uma proporção, e não o maior lado do recorte, para o eixo não mudar de escala entre filtros; por isso o plano precisa da altura, 129,5 px por lado: abaixo disso uma parte de 15% não comporta o rótulo de 12 px (piso de 18 px da ESP-2). O viewBox de 894 por 345 é o tamanho da caixa, escala 1 (GEO-18). Decisões que o catálogo não fixava: as aceitas vão em --text-muted, neutro forte, para o destaque ser só o motivo fora de perfil; os demais motivos somam numa parte só em --line-strong, com o percentual escrito, e a dica abre a soma por motivo, porque duas partes neutras de mesma cor não se identificam sem nome (ROT-10); o marcador externo da fila fina é o rótulo escalonado da GEO-7, com contagem no lugar de percentual, porque percentual sobre n = 3 engana (DAD-1). Desvio do catálogo: o ladrilho sem rótulo interno vai para a lista de identificação e não só para a dica (ROT-10). O tique de 100% de baixo ignora o vão de 2 px entre as duas partes devolvidas; a área de cada ladrilho segue exatamente proporcional à contagem (GEO-16). Medido no preview, ladrilho a ladrilho: a participação em área bate com a participação em valor, com desvio de 0,000 p.p. O aviso de CONTRASTE-MARCA que o check deixa é o --line-strong (1,8:1) como neutro de dado da 17.2: no ladrilho ele leva o valor escrito, e na amostra da legenda o valor fica ao lado."
+}

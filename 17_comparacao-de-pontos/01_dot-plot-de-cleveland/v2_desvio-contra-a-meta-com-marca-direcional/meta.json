@@ -1,0 +1,15 @@
+{
+  "title": "Realizado contra a meta do trimestre",
+  "useCase": "Quanto cada executivo ficou acima ou abaixo da meta, legível para quem não conhece o dot plot.",
+  "demonstrates": [
+    "Bar com shape própria: barra clara até o valor e traço opaco de 2 px na ponta",
+    "Domínio simétrico fixo e zero rotulado como meta do trimestre",
+    "Cor pela polaridade da métrica, com sinal escrito no rótulo",
+    "Desvio zero medido desenhado e escrito como na meta",
+    "Anotação com a contagem: 5 de 12 abaixo da meta",
+    "Dica com realizado, meta e desvio, nunca só o desvio"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo, o contrato vence. (1) Sem gradiente com useId: a COR-9 proíbe gradiente em marca. A barra é clara por fillOpacity 0,7, que é o piso medido de --positive (0,70) e de --negative (0,66) para a marca composta ficar em 3:1 no tema claro (ACE-5); o traço opaco de 2 px carrega o valor e o rótulo escreve o número. Como a opacidade mínima limita o quanto a barra esmaece, o traço é mais alto que a barra (18 contra 12 px) para continuar sendo a marca principal. (2) Os negativos não esmaecem em direção ao zero: o mesmo piso de opacidade vale nos dois lados. (3) Zebra em surface-sunken, porque o cartão já é surface-raised. Conta da altura: 12 linhas x 26 px = 312 px, mais 20 de margem, 26 de eixo, linha de leitura e nota, dentro dos 441,5 px do corpo do canvas alto."
+}

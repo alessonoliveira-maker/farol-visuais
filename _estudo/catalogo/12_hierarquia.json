@@ -1,0 +1,555 @@
+{
+  "slug": "12_hierarquia",
+  "nome": "Hierarquia",
+  "modelos": [
+    {
+      "slug": "01_treemap",
+      "nome": "Treemap",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Retângulos lado a lado cuja área é proporcional ao valor de cada categoria, preenchendo um espaço fixo. É o modelo mais eficiente em espaço da família; aceita cor por categoria, cor por variação com sinal e detalhamento nível a nível com trilha de volta.",
+      "quando_usar": [
+        "Parte do todo com 8 a 40 categorias, quando a barra ficaria longa demais para o cartão",
+        "Uma hierarquia explorada um nível por vez, com trilha de navegação sempre visível",
+        "Área para tamanho (investimento, receita) e cor para desempenho com sinal (variação, desvio contra meta)",
+        "Leitura de concentração: poucos itens grandes e uma cauda de itens pequenos"
+      ],
+      "quando_evitar": [
+        "Menos de 6 categorias: barra horizontal ordenada lê melhor (família 02)",
+        "Pergunta de quanto a mais com precisão: comparar área é grosseiro, prefira barras",
+        "Valores negativos ou zero: não cabem em área; ficam fora do desenho e numa lista à parte",
+        "Dois ou três níveis que precisam ser vistos de uma vez: use o treemap aninhado (12/02)",
+        "Métrica de cor sem ponto neutro claro: a escala divergente perde o sentido"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-por-produto",
+          "titulo": "Receita reconhecida por produto no trimestre",
+          "caso_de_uso": "Comercial: de quais produtos vieram os R$ 4,6 mi de receita reconhecida em 2026-T3.",
+          "o_que_demonstra": [
+            "Recharts Treemap com content customizado e isAnimationActive desligado",
+            "Rótulo de nome e valor só acima de 64 por 36 px; abaixo disso, só tooltip",
+            "aspectRatio próximo de quadrado e nodeGap na cor de surface-canvas",
+            "Filtro de valor menor ou igual a zero antes do desenho, com lista fora do gráfico"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_produto-que-mais-cresceu",
+          "titulo": "Produto que mais cresceu no trimestre",
+          "caso_de_uso": "Comercial: qual produto mais cresceu contra 2026-T2 e quanto ele pesa na receita de 2026-T3.",
+          "o_que_demonstra": [
+            "Contorno em accent-amber no retângulo destacado e os demais em chart-1 com opacidade 0,6",
+            "Anotação curta calculada do dado: crescimento em pontos e participação no total",
+            "Destaque escolhido no data.ts, nunca inferido no render"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cpl-qualificado-por-campanha",
+          "titulo": "Investimento e variação do CPL qualificado",
+          "caso_de_uso": "Marketing: onde está o dinheiro de 2026-08 e em quais campanhas o CPL qualificado piorou contra 2026-07.",
+          "o_que_demonstra": [
+            "Área igual ao investimento e cor igual à variação, em escala divergente de cinco faixas",
+            "Escala invertida (subir o CPL é ruim) escrita na legenda, com teto simétrico de 50%",
+            "Rótulo só nas campanhas com piora acima de 30%; as demais ficam no tooltip",
+            "Campanha nova sem mês anterior em neutro hachurado com o rótulo nova",
+            "Opacidade menor para retângulos abaixo de 1% do investimento total"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_detalhamento-com-ramo-vazio",
+          "titulo": "Investimento com detalhamento e ramo sem dado",
+          "caso_de_uso": "Marketing: navegar do investimento de 2026-08 por plataforma até o criativo, sem quebrar em campanha sem criativos.",
+          "o_que_demonstra": [
+            "Detalhamento plataforma, campanha e criativo com trilha de navegação sempre visível",
+            "Cabeçalho do nível com o peso do ramo no todo, como Busca paga 34% do investimento",
+            "Estado vazio sem criativos registrados, com botão de voltar, no lugar de retângulo único",
+            "Caminho inicial declarado no data.ts para o preview mostrar o ramo vazio",
+            "key com a assinatura do filtro para remontar quando o ramo deixa de existir"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_treemap-aninhado",
+      "nome": "Treemap aninhado com rótulo de grupo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Retângulos de grupo que contêm os retângulos dos filhos, com o nome do grupo visível num selo ou faixa de cabeçalho. Mostra dois ou três níveis de uma vez, com cor por grupo e variação de luminosidade por filho.",
+      "quando_usar": [
+        "Dois ou três níveis que precisam ser lidos juntos, como executivo e produto",
+        "Composição de um total grande em grupos e rubricas, com até cerca de 40 folhas",
+        "Leitura de concentração dentro de cada grupo e entre grupos no mesmo quadro"
+      ],
+      "quando_evitar": [
+        "Mais de 3 níveis desenhados de uma vez: vira mosaico ilegível; use detalhamento (12/01) ou icicle (12/06)",
+        "Comparar a mesma subcategoria entre grupos: a posição muda de grupo para grupo; use barras agrupadas",
+        "Treemap Voronoi pedido por estética: a leitura de polígono irregular é pior e o layout exige algoritmo iterativo sem biblioteca; ofereça este modelo e registre o motivo",
+        "Grupos com duas dimensões independentes (largura e altura): é Marimekko, família 26"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_pipeline-por-executivo-e-produto",
+          "titulo": "Pipeline aberto por executivo e produto",
+          "caso_de_uso": "Comercial: como os R$ 18,2 mi de pipeline aberto se dividem entre os executivos A a H e, dentro de cada um, por produto.",
+          "o_que_demonstra": [
+            "content do Recharts decide pelo depth: grupo com contorno e selo, folha com área",
+            "Índice do ancestral de primeiro nível guardado no dado (grupoIndex) para a cor",
+            "Luminosidade da folha por color-mix a partir da cor do grupo",
+            "Selo do grupo com fundo surface-overlay para não brigar com os filhos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_concentracao-em-um-executivo",
+          "titulo": "Concentração do pipeline em um executivo",
+          "caso_de_uso": "Comercial: quanto do pipeline aberto depende de um único executivo e de quais produtos é feita essa fatia.",
+          "o_que_demonstra": [
+            "Grupo Executivo C com contorno forte e os demais grupos em neutro",
+            "Anotação calculada do dado: concentra 31% do pipeline",
+            "Folhas do grupo destacado mantêm a cor; folhas dos outros grupos perdem saturação"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_custo-por-camada-e-rubrica",
+          "titulo": "Custo do trimestre por camada e rubrica",
+          "caso_de_uso": "Diretoria: de que é feito o custo de 2026-T3 em mídia, pessoas da esteira e estrutura, com cerca de 30 rubricas.",
+          "o_que_demonstra": [
+            "Três grupos com cerca de 30 folhas e rótulo só nas rubricas que comportam texto",
+            "Faixa de cabeçalho de 18 px reservada no topo de cada grupo antes de repartir os filhos",
+            "Total do grupo e percentual do custo escritos no cabeçalho",
+            "Rubricas ordenadas por valor decrescente, estáveis entre filtros"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_grupo-minusculo-sem-selo",
+          "titulo": "Grupo minúsculo sem selo",
+          "caso_de_uso": "Diretoria: uma rubrica de R$ 3 mil num custo de R$ 1,86 mi não pode sumir nem sobrepor o nome aos vizinhos.",
+          "o_que_demonstra": [
+            "Regra de corte do selo: grupo abaixo da largura e altura mínimas fica só com contorno",
+            "Nome e valor do grupo pequeno disponíveis no tooltip e na lista de acessibilidade",
+            "Nenhum retângulo desenhado fora de escala para caber o rótulo"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_sunburst",
+      "nome": "Sunburst",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Anéis concêntricos em que o centro é a raiz, cada anel é um nível e o ângulo de cada setor é proporcional ao valor. Com dois níveis equivale à rosca aninhada hierárquica; com clique, o setor vira a nova raiz e o centro vira botão de voltar.",
+      "quando_usar": [
+        "Hierarquia de 2 ou 3 níveis em que a pergunta é de que é feito cada pai",
+        "Ênfase no total e no primeiro nível, com o total escrito no centro",
+        "Explorar um ramo mantendo a forma radial, com trilha acima do gráfico"
+      ],
+      "quando_evitar": [
+        "Comparação precisa entre fatias ou pergunta de quanto a mais: ângulo é grosseiro; use barras ou treemap",
+        "Comparar a mesma subcategoria entre pais diferentes: a leitura é impossível no anel externo",
+        "Muitos subníveis finos com rótulo: o componente não esconde rótulo por ângulo; agrupe antes ou use icicle (12/06)",
+        "Dois anéis que não são hierarquia, como dois períodos: família 07, modelo 03",
+        "Mais de 3 níveis com rótulos longos: use icicle lateral (12/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_entradas-por-origem-e-subcanal",
+          "titulo": "Entradas por origem e subcanal",
+          "caso_de_uso": "Pré-vendas: como as 1.180 entradas de 2026-W37 se dividem entre origem, no anel interno, e subcanal, no externo.",
+          "o_que_demonstra": [
+            "SunburstChart com innerRadius, ringPadding, stroke e textOptions sobrescritos",
+            "Padrões de cor do componente (fill #333, stroke #FFF) trocados por tokens do tema escuro",
+            "Cor por ramo de primeiro nível gravada no fill de cada nó do dado",
+            "Total no centro numa div absoluta sobre o gráfico",
+            "Filhos ordenados por valor dentro de cada origem, somando exatamente o pai"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_ramo-indicacao-em-destaque",
+          "titulo": "Peso das indicações nas entradas",
+          "caso_de_uso": "Pré-vendas: quanto das entradas da semana veio de indicação e por quais subcanais, contra o resto em neutro.",
+          "o_que_demonstra": [
+            "Ramo Indicação em accent-cyan e todos os outros ramos em neutro",
+            "Percentual do ramo destacado no centro, no lugar do total",
+            "Anéis externos mais finos para compensar a distorção de área do perímetro maior"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_motivos-de-perda-com-detalhamento",
+          "titulo": "Motivos de perda com detalhamento",
+          "caso_de_uso": "Comercial: quais categorias de perda pesam em 2026-T3 e, ao entrar em Sem perfil, qual submotivo domina.",
+          "o_que_demonstra": [
+            "Caminho em useState e data igual à subárvore do caminho atual",
+            "Clique no setor re-enraíza; clique em folha não faz nada",
+            "Centro vira botão de voltar e trilha em Tailwind fica acima do gráfico",
+            "Só o submotivo dominante do ramo recebe rótulo; o resto fica no tooltip",
+            "Caminho inicial no data.ts para o preview abrir dentro de Sem perfil",
+            "Volta à raiz quando o filtro global remove o ramo aberto"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_subcanais-finos-agrupados",
+          "titulo": "Subcanais finos agrupados por origem",
+          "caso_de_uso": "Pré-vendas: 22 subcanais, vários abaixo de 1%, sem texto sobreposto e sem esconder que a soma não fecha.",
+          "o_que_demonstra": [
+            "Preparo em TypeScript que agrupa subcanais abaixo de 1% em Outros subcanais por origem",
+            "Filho não classificado criado com a diferença quando os subcanais não somam a origem",
+            "Não classificado em neutro hachurado, com aviso de reconciliação no rodapé",
+            "Lista fora do gráfico com os subcanais agrupados e seus valores"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "04_arvore-de-indicadores",
+      "nome": "Árvore de indicadores (driver tree)",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Um indicador de resultado decomposto em alavancas por soma ou produto, em cartões ligados por conectores. Cada cartão traz valor, unidade, faixa de p10 a p90 e etiqueta de procedência (medido, premissa, derivado, lacuna); os operadores entre filhos fecham numericamente com o pai.",
+      "quando_usar": [
+        "Decompor uma meta ou projeção em alavancas multiplicativas ou aditivas",
+        "Mostrar qual alavanca move mais o resultado dentro do cenário em faixa",
+        "Ligar o resultado financeiro à capacidade operacional, como entradas por mês contra o teto",
+        "Deixar explícito o que é medição e o que é premissa em cada elo do cálculo"
+      ],
+      "quando_evitar": [
+        "Relações que não são soma nem produto (correlação, influência qualitativa): use rede (família 27) ou texto",
+        "Quando o peso de cada parte é a mensagem e não a fórmula: use treemap (12/01)",
+        "Mais de cinco níveis ou mais de 25 cartões: divida em duas árvores com um nó de ligação",
+        "Nós sem etiqueta de procedência: sem ela o visual faz premissa parecer medição"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-nova-do-ano-seguinte",
+          "titulo": "Receita nova do ano seguinte em alavancas",
+          "caso_de_uso": "Diretoria: R$ 8,4 mi de receita nova igual a 42 ganhos vezes R$ 200 mil, e 42 ganhos igual a 350 oportunidades vezes 12%.",
+          "o_que_demonstra": [
+            "Layout lateral com raiz à esquerda e conectores SVG ortogonais calculados em TypeScript",
+            "Cartão rounded-lg border com valor, unidade e selo de procedência",
+            "Operador vezes ou mais desenhado entre os filhos de cada nó",
+            "Validação no preparo que acusa nó cujo operador não fecha com o valor do pai"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_alavanca-de-maior-sensibilidade",
+          "titulo": "Alavanca que mais move a receita",
+          "caso_de_uso": "Diretoria: qual alavanca tem maior efeito na faixa da receita nova e quanto vale cada ponto dela.",
+          "o_que_demonstra": [
+            "Taxa de ganho em accent-amber e os demais cartões em neutro",
+            "Anotação calculada do dado: cada ponto de taxa vale R$ 0,7 mi",
+            "Microbarra de faixa p10 a p90 com marca do valor central em cada cartão",
+            "Regra da faixa do pai escrita no rodapé, porque ela não é a soma das faixas dos filhos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_da-receita-a-capacidade-de-pre-vendas",
+          "titulo": "Da receita à capacidade de Pré-vendas",
+          "caso_de_uso": "Diretoria: o cenário de R$ 8,4 mi pede cerca de 292 entradas por mês; o teto fictício de Pré-vendas é 240.",
+          "o_que_demonstra": [
+            "Árvore de cinco níveis: receita, ganhos, oportunidades, agendas e entradas",
+            "Taxas fictícias que fecham: 20% de agendamento e 50% de agenda para oportunidade",
+            "Nó de capacidade em negative quando a demanda do cenário passa do teto (122%)",
+            "Selo de procedência diferente por nível, com medido e premissa lado a lado",
+            "Cartões compactos e ramos laterais recolhíveis para caber no canvas largo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_ticket-de-produto-novo-como-premissa",
+          "titulo": "Produto novo com ticket sem medição",
+          "caso_de_uso": "Diretoria: a receita de um produto novo depende de um ticket médio que ainda não foi medido; o resultado herda a incerteza.",
+          "o_que_demonstra": [
+            "Selo premissa no ticket médio e faixa larga de R$ 60 mil a R$ 300 mil",
+            "Aviso no nó de resultado: herda a incerteza da premissa",
+            "Nó com lacuna desenhado em contorno tracejado, sem valor inventado",
+            "Faixa do resultado pela regra declarada, escrita junto do cartão"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_perimetro-aninhado",
+      "nome": "Perímetro aninhado",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Formas contidas umas nas outras (mercado total, endereçável, alcançável e participação), alinhadas no canto inferior esquerdo, com lado proporcional à raiz quadrada do valor para que a área seja proporcional. A nota do perímetro, o que entra e o que fica fora, fica colada ao visual.",
+      "quando_usar": [
+        "Participação de mercado com perímetro declarado: total, endereçável, alcançável e fatia própria",
+        "Mostrar quanto cada nível representa do nível acima, com etiqueta de procedência por nível",
+        "Comparar dois perímetros quando a definição de mercado muda"
+      ],
+      "quando_evitar": [
+        "Níveis que não estão contidos uns nos outros: use barras (família 02)",
+        "Ordens de grandeza tão distantes que a forma interna some sem painel ampliado: acrescente o zoom ou use barras em escala logarítmica anotada",
+        "Perímetro por território: família 23, modelo 05",
+        "Quando a série no tempo da participação é a mensagem: use linhas (família 04)"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_mercado-total-enderecavel-alcancavel",
+          "titulo": "Mercado total, endereçável e alcançável",
+          "caso_de_uso": "Diretoria: de R$ 120 bi de mercado total, R$ 18 bi são endereçáveis, R$ 2,4 bi alcançáveis e R$ 96 mi são nossos.",
+          "o_que_demonstra": [
+            "Quadrados alinhados no canto inferior esquerdo com lado pela raiz quadrada do valor",
+            "Rótulo de cada nível com valor e percentual do nível acima",
+            "Participação quase invisível em escala, com nota em vez de desenho fora de escala",
+            "Nota do perímetro colada ao visual: o que entra e o que fica fora"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_zoom-do-alcancavel-com-meta",
+          "titulo": "Participação no alcançável contra a meta",
+          "caso_de_uso": "Diretoria: quanto dos R$ 2,4 bi alcançáveis já é nosso (4%) e quanto falta para a meta de participação de 6%.",
+          "o_que_demonstra": [
+            "Painel lateral ampliado do nível alcançável ligado ao quadro maior por linhas finas",
+            "Meta de participação como contorno tracejado dentro do alcançável",
+            "Escala do painel ampliado declarada no próprio painel",
+            "Distância para a meta escrita em reais e em pontos percentuais"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_perimetro-alterado-lado-a-lado",
+          "titulo": "Participação antes e depois do perímetro novo",
+          "caso_de_uso": "Diretoria: incluir outra região leva o alcançável de R$ 2,4 bi a R$ 3,2 bi e a participação de 4% a 3%, sem venda a menos.",
+          "o_que_demonstra": [
+            "Dois perímetros lado a lado na mesma escala de área",
+            "Nota da mudança de perímetro com o que passou a entrar",
+            "Etiqueta de procedência por nível: fonte pública, derivado, premissa e medido",
+            "Participação em reais igual nos dois quadros, para mostrar que só o denominador mudou"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_nivel-sem-estimativa",
+          "titulo": "Perímetro com nível sem estimativa",
+          "caso_de_uso": "Diretoria: o alcançável ainda não tem estimativa; a participação não pode ser calculada sobre um número inventado.",
+          "o_que_demonstra": [
+            "Nível ausente desenhado em contorno tracejado, sem área e com o selo lacuna",
+            "Participação mostrada só em reais, com percentual marcado como indisponível",
+            "Níveis medidos mantidos em escala, sem redistribuir espaço para esconder o vazio"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_icicle",
+      "nome": "Icicle (partição retangular)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Faixas empilhadas por nível em que a largura de cada retângulo é proporcional ao valor e os filhos ficam exatamente sob o pai. Na orientação lateral, com a raiz à esquerda, aceita rótulos longos e hierarquias profundas; a partição é calculada em TypeScript e desenhada em SVG.",
+      "quando_usar": [
+        "Hierarquia de 3 ou 4 níveis com rótulos longos, como categoria, motivo e submotivo",
+        "Ler ao mesmo tempo o peso de cada nó e a posição dele na estrutura",
+        "Ampliar um ramo por clique mantendo os ancestrais como faixa fina de contexto"
+      ],
+      "quando_evitar": [
+        "Parte do todo de um nível só: use barras (família 02) ou treemap (12/01)",
+        "Quando o espaço é quadrado e a ênfase é no centro: use sunburst (12/03)",
+        "Estrutura sem valor, como organograma: use árvore (12/07)",
+        "Leitura de consulta linha a linha com números: use tabela em árvore (família 14, modelo 07)"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_perdas-por-motivo-e-submotivo",
+          "titulo": "Perdas por categoria, motivo e submotivo",
+          "caso_de_uso": "Comercial: de que são feitas as 164 perdas de 2026-T3, da categoria ao submotivo.",
+          "o_que_demonstra": [
+            "Partição em TypeScript: x0 e x1 dentro do intervalo do pai pela soma cumulativa",
+            "Orientação lateral com a raiz à esquerda e uma coluna por nível",
+            "Rótulo só em retângulos com 48 px ou mais na direção do texto",
+            "Filhos ordenados por valor decrescente dentro de cada pai, estáveis entre filtros"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_ramo-concorrencia-ampliado",
+          "titulo": "Ramo de concorrência ampliado",
+          "caso_de_uso": "Comercial: dentro das perdas para concorrência, quais motivos e submotivos pesam mais.",
+          "o_que_demonstra": [
+            "Ramo Concorrência reescalado para a altura inteira do canvas",
+            "Ancestrais mantidos como faixa fina de contexto, com o percentual do ramo no todo",
+            "Ramo ampliado declarado no data.ts para o preview abrir já ampliado",
+            "Clique no ancestral volta um nível; tecla Escape volta à raiz"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_investimento-da-plataforma-ao-criativo",
+          "titulo": "Investimento da plataforma ao criativo",
+          "caso_de_uso": "Marketing: como os R$ 312 mil de 2026-08 descem de plataforma para campanha e para criativo.",
+          "o_que_demonstra": [
+            "Orientação vertical com quatro faixas: total, plataforma, campanha e criativo",
+            "Cor por plataforma com luminosidade decrescente por profundidade",
+            "Filho direto no grupo criado quando a campanha tem valor próprio sem criativo",
+            "Faixa de criativos sem rótulo e com tooltip, porque as larguras ficam abaixo do mínimo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_submotivos-com-rotulos-longos",
+          "titulo": "Submotivos com rótulos longos",
+          "caso_de_uso": "Comercial: submotivos com mais de 40 caracteres precisam ser legíveis sem estourar a faixa nem sobrepor vizinhos.",
+          "o_que_demonstra": [
+            "Truncamento com reticências medido pela largura disponível da faixa",
+            "Texto completo em title no SVG e na lista de acessibilidade",
+            "Faixa abaixo do mínimo sem texto, com o nome só no tooltip",
+            "Valor zero fora da partição e listado à parte com o motivo"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "07_arvore-e-dendrograma",
+      "nome": "Árvore e dendrograma",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Nós ligados por arestas do pai para os filhos. Na árvore arrumada os nós ficam por profundidade; no dendrograma todas as folhas se alinham; na árvore radial a raiz vai ao centro e as folhas ao perímetro. O organograma é a mesma forma com cartões. Layout calculado em TypeScript.",
+      "quando_usar": [
+        "Estrutura de pertencimento: organograma, taxonomia de campanhas e criativos, catálogo de produtos",
+        "Quando a mensagem é quem pertence a quem, com ou sem valor em cada nó",
+        "Taxonomia grande num espaço quadrado, na versão radial, quando a forma geral importa mais que a consulta",
+        "Expandir e recolher ramos com contagem de descendentes ocultos"
+      ],
+      "quando_evitar": [
+        "Quando o valor é a mensagem: use treemap (12/01) ou icicle (12/06)",
+        "Arestas entre ramos diferentes: deixa de ser hierarquia; use rede (família 27)",
+        "Consulta nó a nó em taxonomia grande na forma radial: a leitura linear orienta melhor",
+        "Decomposição por fórmula com operadores e faixas: use árvore de indicadores (12/04)"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_estrutura-da-area-comercial",
+          "titulo": "Estrutura da área comercial",
+          "caso_de_uso": "Diretoria: como a área fictícia se organiza em Comercial, Pré-vendas e Marketing, com funções e pessoas por função.",
+          "o_que_demonstra": [
+            "Árvore lateral com raiz à esquerda: folha pela ordem, pai pela média dos filhos",
+            "Aresta curva M x0,y0 C x0,ym x1,ym x1,y1 calculada em TypeScript",
+            "Quantidade de pessoas por função como rótulo ao lado do nó",
+            "Só funções e contagens, sem nome de pessoa"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_organograma-com-capacidade-contra-teto",
+          "titulo": "Organograma com capacidade contra teto",
+          "caso_de_uso": "Diretoria: qual função está perto do teto, como Pré-vendas com 6 pessoas, teto de 240 entradas por mês e 226 em uso.",
+          "o_que_demonstra": [
+            "Cartões em Tailwind posicionados pelo layout e conectores ortogonais em SVG por baixo",
+            "Uso contra teto em microbarra dentro do cartão, com percentual escrito",
+            "Cor pela faixa de uso: neutro, accent-amber acima de 85% e negative acima de 100%",
+            "Etiqueta de procedência no teto, que é premissa, e no uso, que é medido"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_taxonomia-radial-de-criativos",
+          "titulo": "Taxonomia radial de criativos",
+          "caso_de_uso": "Marketing: como 96 criativos se distribuem por plataforma e campanha, com o caminho de um criativo até a raiz.",
+          "o_que_demonstra": [
+            "Dendrograma radial: ângulo pela ordem da folha e raio pela profundidade",
+            "Rótulos da metade esquerda girados 180 graus e alinhados à direita",
+            "Abertura angular de alguns graus entre a última e a primeira folha",
+            "Código curto no perímetro e nome completo no tooltip",
+            "Caminho até a raiz aceso para o criativo declarado no data.ts"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_subarvore-larga-recolhida",
+          "titulo": "Árvore desbalanceada com ramo recolhido",
+          "caso_de_uso": "Diretoria: uma coordenação com 14 funções e outra com 2 cabem no mesmo cartão sem sobrepor subárvores.",
+          "o_que_demonstra": [
+            "Subárvore larga recolhida por padrão com o selo 14 funções",
+            "Afastamento de subárvores vizinhas pelo contorno, na ideia de Reingold e Tilford",
+            "Estado expandido declarado no data.ts, com botão acessível por teclado",
+            "Profundidade máxima visível fixa e contagem de descendentes ocultos"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_circle-packing",
+      "nome": "Circle packing",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Cada nó é um círculo, com os filhos dentro do pai e área aproximadamente proporcional ao valor. Mostra bem o agrupamento e mal o tamanho; o layout é uma aproximação em espiral com teste de colisão, calculada em TypeScript e memorizada pela assinatura do dado.",
+      "quando_usar": [
+        "Quando a mensagem é o agrupamento: quais itens pertencem a qual grupo e quais grupos são maiores",
+        "Até 2 ou 3 níveis e cerca de 60 folhas, com rótulo só nos círculos grandes",
+        "Peça de visão geral em que o tamanho aproximado basta"
+      ],
+      "quando_evitar": [
+        "Comparação de valores: área de círculo é das leituras mais imprecisas; use barras ou treemap (12/01)",
+        "Um nível só, sem hierarquia: vira bolhas soltas; use barras (família 02) ou bolhas (família 09)",
+        "Espaço apertado: o modelo desperdiça muito espaço entre círculos; use treemap",
+        "Valores zero ou negativos: não cabem em área; liste à parte"
+      ],
+      "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+      "versoes": [
+        {
+          "slug": "v1_criativos-por-campanha",
+          "titulo": "Criativos agrupados por campanha",
+          "caso_de_uso": "Marketing: quais campanhas concentram os criativos que mais geraram leads em 2026-08.",
+          "o_que_demonstra": [
+            "Raio proporcional à raiz quadrada do valor, nunca ao valor",
+            "Empacotamento em espiral por raio decrescente com teste de colisão",
+            "Raio do pai pelo maior distância mais raio dos filhos, com margem",
+            "Layout em useMemo com a assinatura do dado para ficar determinístico"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_cpl-qualificado-abaixo-da-mediana",
+          "titulo": "Campanhas com CPL qualificado abaixo da mediana",
+          "caso_de_uso": "Marketing: quais campanhas de 2026-08 têm CPL qualificado abaixo da mediana e quanto de lead elas trazem.",
+          "o_que_demonstra": [
+            "Campanhas abaixo da mediana em positive e as demais em neutro",
+            "Mediana calculada no preparo e escrita na legenda",
+            "Rótulo com nome e CPL qualificado só nos círculos com raio suficiente"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_entradas-por-origem-subcanal-e-desfecho",
+          "titulo": "Entradas por origem, subcanal e desfecho",
+          "caso_de_uso": "Pré-vendas: como as entradas de 2026-08 se agrupam por origem e subcanal, e qual desfecho domina cada grupo.",
+          "o_que_demonstra": [
+            "Três níveis com a raiz omitida do desenho para ganhar legibilidade",
+            "Cor por desfecho nas folhas e contorno por origem nos grupos",
+            "Rótulo de grupo no arco superior do círculo e rótulo de folha só nos grandes",
+            "Legenda de área com três círculos de referência, avisando que o tamanho é aproximado"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_um-nivel-so-e-zeros",
+          "titulo": "Dado sem hierarquia e criativos sem lead",
+          "caso_de_uso": "Marketing: quando o recorte não tem grupo e há criativos com zero lead, o componente não pode fingir estrutura.",
+          "o_que_demonstra": [
+            "Guarda que detecta profundidade 1 e troca para barras horizontais com aviso",
+            "Criativos com zero lead fora do desenho, listados com o motivo",
+            "Estado vazio quando nenhuma folha tem valor positivo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

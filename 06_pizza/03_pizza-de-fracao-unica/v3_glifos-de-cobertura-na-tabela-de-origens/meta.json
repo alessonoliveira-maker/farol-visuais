@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura de qualificação por origem de lead",
+  "useCase": "Em cada origem, que fração dos leads do mês já tem qualificação registrada?",
+  "demonstrates": [
+    "Glifo de 20 px em path de arco calculado em TypeScript, sem PieChart por linha",
+    "Tabela em HTML com Tailwind e percentual à direita em tabular-nums",
+    "Mesma geometria e mesma cor em todas as linhas, percentual sempre escrito",
+    "Arco de 100% desenhado como círculo, caso que o path de arco único não cobre",
+    "Origem com menos de 10 leads mostra o par volume e fração"
+  ],
+  "canvas": { "width": 640, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas declarado por número (GEO-1), e a conta das linhas escritas foi medida no render: cabeçalho da tabela com 22 px, 7 linhas de 36 px (20 px de glifo mais 8 px de respiro por lado) somando 252 px, a linha do agregado e a nota de ordenação com 37 px juntas, o que fecha cerca de 311 px. A moldura card acima de 560 px de largura come 118,5 px de altura com o caso de uso em uma linha (33 px de recuo por lado, 40,5 px de cabeçalho e 12 px de vão), então 460 px devolvem 341,5 px de corpo e sobram cerca de 31 px. O caso de uso tem 75 caracteres, abaixo dos 92 que cabem em uma linha a 574 px, e por isso o cabeçalho não ganha a segunda linha que custaria 16,5 px. Nenhum preset serve: card de 640x360 deixa 241,5 px e corta a nota, e alto de 640x560 deixa 125 px de sobra no pé da tabela. A guarda CONTRASTE-MARCA avisa que o trilho em --line-strong mede 1,79:1 contra o cartão; o desvio é consciente e o valor vem escrito em toda linha, como a tabela 17.2 exige."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Hexbin do time com uma SDR por cima",
+  "useCase": "Os leads de uma SDR caem onde está a massa do time, ou fora dela?",
+  "demonstrates": [
+    "Rede hexagonal montada em pixel, com os seis vértices saindo de ângulo",
+    "Três degraus de cor, o teto medido da paleta, com a contagem escrita em cada faixa",
+    "Raio do hexágono repetindo a faixa, porque a cor não ordena sozinha",
+    "Pontos da SDR sobre a densidade, separados por anel na cor do cartão",
+    "Hexágono vazio não desenhado, distinto de hexágono de contagem baixa"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card declarado por número (GEO-1): o corpo de 574 x 241,5 px recebe 1 linha de leitura, 1 rótulo de eixo vertical, a rede de 150 px, 1 fileira de tiques, 1 rótulo de eixo horizontal, e no painel da direita 1 título, 1 fileira de amostras, 2 fileiras de rótulo de faixa, 1 nota de método, 1 linha de destaque, o total e a legenda dele; soma 228 px de desenho no viewBox de 234. Divergência assumida contra o catálogo, a favor do CONTRATO: a especificação pede escala sequencial sem dizer quantos degraus, e a TOK-8 mede que só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas, então a escala tem três faixas e não mais. Medido à mão nesta sessão, porque nenhuma guarda mede marca contra marca (TOK-9): os três degraus medem 1,42:1 entre --seq-5 e --seq-6, 1,45:1 entre --seq-6 e --seq-7 e 2,07:1 entre --seq-5 e --seq-7, isto é, a cor separa cada faixa do cartão mas não separa uma faixa da outra; por isso o raio do hexágono e o rótulo escrito carregam a ordem junto com ela. Ainda pela TOK-9, --chart-1 mede 1,07:1 contra --seq-7 no escuro e 1,10:1 contra --seq-6 no claro, e nenhuma das oito cores categóricas do Farol passa de 1,16:1 contra os três degraus, então o anel de --surface-raised de 1,5 px é o que torna o ponto da SDR visível (3,72:1 a 10,12:1) e não acabamento. Menor hexágono desenhado: 12,9 px de largura por 14,9 px de altura, acima do piso de 12 px da ESP-2, medido à mão porque a guarda ESPESSURA-MARCA não alcança marca desenhada fora de um <Bar>."
+}

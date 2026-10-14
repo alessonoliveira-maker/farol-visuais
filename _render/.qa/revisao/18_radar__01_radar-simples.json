@@ -1,0 +1,134 @@
+{
+  "familia": "18_radar",
+  "modelo": "01_radar-simples",
+  "versoes": {
+    "v1_perfil-de-qualidade-da-origem": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: grade circular, com 50, 75 e 100 a 3,8 px por fora do anel que nomeiam e a 11,5 px do anel seguinte, conferido no preview.svg e no DOM vivo; rótulos do topo e da base por fora do gráfico, a 9 px do anel de 100; preenchimento a 0,66 mede 4,85:1 no escuro e 3,01:1 no claro; estado vazio sondado em navegador com role status. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:46:49.309Z",
+      "impressao": "25e7891a0969c3ad242c096f889f3e443e301b44",
+      "arquivos": {
+        "Chart.tsx": "d6f99eb37c4e4a4fbb58340f07f83b84beea1d57",
+        "data.ts": "01f374238bdf934c63bff6640343f07e8fe7914e",
+        "meta.json": "d4bd8e5fc842dced17072d3d334b260b7278f67b"
+      }
+    },
+    "v2_perfil-do-sdr-com-eixo-mais-fraco": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: escala sobre os anéis circulares conferida no preview.svg, rótulos fora do círculo com 11 px de folga pelos cantos, eixo mais fraco com ponto maior e dois elementos em 700, frase de 153 caracteres. Observações no README (algarismo tabular na linha de leitura, redação da frase).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:31:55.705Z",
+      "impressao": "4be0f15b35e323d87ad11d4067b5fc398f29ef40",
+      "arquivos": {
+        "Chart.tsx": "649d447e01b4a3630738ed176f1ee4780b1d737f",
+        "data.ts": "dae2f0c99b52d4eee070fe831fbbac7c0e387d89",
+        "meta.json": "89893190ec3ce9bddff221b8dd264b981d9ea54d"
+      }
+    },
+    "v3_executivo-na-faixa-do-time": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: coroa conferida contra min e max no preview.svg, contorno da coroa a 5,21:1 e 5,37:1 contra o cartão, três vértices fora da faixa vazados e com valor, dica aberta por sonda nos dois temas. Observações no README: comentário do data.ts que põe o próprio executivo dentro da faixa, três valores em peso 700 (TIP-3), aviso CONTRASTE-MARCA do preenchimento da coroa, frase sem o sentido da saída.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:32:23.219Z",
+      "impressao": "33e9a5a92dd4629f335cd14b6a3e87b3079a9d3b",
+      "arquivos": {
+        "Chart.tsx": "e76d59235fa5dd72f4d9f36bf9ff2c1789345575",
+        "data.ts": "cafb189a8347484e843ed254dc8405afd9ea4b6b",
+        "meta.json": "afa2e52a02290e32ae651b1cc442b46b1068db1e"
+      }
+    },
+    "v4_eixo-sem-dado-e-indice-normalizado": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: grade circular, com 25, 50, 75 e 100 colados por fora ao anel que nomeiam; dica aberta por sonda nos dois temas no eixo sem dado, com o nome da dimensão e sem dado, sem número, e nos seis eixos medidos; estado vazio e estado de todos os eixos nulos sondados com role status; eixo tracejado a 5,21:1 no escuro e 5,37:1 no claro. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:46:49.833Z",
+      "impressao": "bdd1bc580380086c0b9f92b3f2de12e34905592a",
+      "arquivos": {
+        "Chart.tsx": "86b0b323c3c36ee3e540b69dd07512c4ffde3308",
+        "data.ts": "13de4b6215e4b0d984add1dd3bf5d35110df27d9",
+        "meta.json": "a4ad14dfdfaf93cc50b29bb08544634a655fcdaf"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_perfil-de-qualidade-da-origem",
+      "veredito": "reprovado",
+      "nota": "Pergunta 13 e seção 14.1 (domínio de eixo), EIX-4: os números da escala não caem no anel que nomeiam; o 75 está escrito sobre a linha do anel de 100, o 50 a 0,8 px do anel de 75 e o 100 a 20,5 px da grade, porque o tique fica no raio cheio e o anel poligonal cruza a bissetriz em raio vezes cos(pi/6). Levar cada número ao anel dele, ou pôr a escala num raio, ou usar grade circular como a v2. Pergunta 15 e ROT-7: os rótulos dos eixos do topo e da base crescem para dentro do gráfico (Telefone sobre o vértice de 100, 58 e Fit sobre o raio, 62 sobre o vértice); o sinal de sin está invertido em renderAngleTick e o comentário diz o contrário. Usar a direção do eixo como a v2 e a v4. Parecer em validation/revisao_18_radar__01_radar-simples_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:31:55.218Z",
+      "impressao": "b8966b8bd495e07e547916af9312c3e2cb2a4a0d",
+      "arquivos": {
+        "Chart.tsx": "d545d8945dc84e4c552f70a695854454b265ff5b",
+        "data.ts": "01f374238bdf934c63bff6640343f07e8fe7914e",
+        "meta.json": "d4bd8e5fc842dced17072d3d334b260b7278f67b"
+      }
+    },
+    {
+      "versao": "v2_perfil-do-sdr-com-eixo-mais-fraco",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: escala sobre os anéis circulares conferida no preview.svg, rótulos fora do círculo com 11 px de folga pelos cantos, eixo mais fraco com ponto maior e dois elementos em 700, frase de 153 caracteres. Observações no README (algarismo tabular na linha de leitura, redação da frase).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:31:55.705Z",
+      "impressao": "4be0f15b35e323d87ad11d4067b5fc398f29ef40",
+      "arquivos": {
+        "Chart.tsx": "649d447e01b4a3630738ed176f1ee4780b1d737f",
+        "data.ts": "dae2f0c99b52d4eee070fe831fbbac7c0e387d89",
+        "meta.json": "89893190ec3ce9bddff221b8dd264b981d9ea54d"
+      }
+    },
+    {
+      "versao": "v3_executivo-na-faixa-do-time",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: coroa conferida contra min e max no preview.svg, contorno da coroa a 5,21:1 e 5,37:1 contra o cartão, três vértices fora da faixa vazados e com valor, dica aberta por sonda nos dois temas. Observações no README: comentário do data.ts que põe o próprio executivo dentro da faixa, três valores em peso 700 (TIP-3), aviso CONTRASTE-MARCA do preenchimento da coroa, frase sem o sentido da saída.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:32:23.219Z",
+      "impressao": "33e9a5a92dd4629f335cd14b6a3e87b3079a9d3b",
+      "arquivos": {
+        "Chart.tsx": "e76d59235fa5dd72f4d9f36bf9ff2c1789345575",
+        "data.ts": "cafb189a8347484e843ed254dc8405afd9ea4b6b",
+        "meta.json": "afa2e52a02290e32ae651b1cc442b46b1068db1e"
+      }
+    },
+    {
+      "versao": "v4_eixo-sem-dado-e-indice-normalizado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 13 e seção 14.1 (domínio de eixo), EIX-4: os números da escala ficam fora do anel que nomeiam; o 75 a 1,8 px do anel de 100 e a 10,1 px do anel de 75, o 50 mais perto do anel de 75 (4,7 px) que do de 50 (7,5 px), o 100 a 13,4 px da grade. Mesma causa e mesma saída da v1: raio do tique vezes cos(pi/7), ou escala num raio, ou grade circular. Pergunta 18, DIC-1 e REC-6: a dica não abre no eixo sem dado (sonda com o mouse nos dois temas, nenhuma dica), porque o Tooltip do Recharts filtra valor nulo antes do content e o ramo que escreve sem dado nunca roda; o item do demonstrates fica sem entrega. Passar filterNull falso no Tooltip e buscar a linha no dado pelo label. Parecer em validation/revisao_18_radar__01_radar-simples_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:32:23.708Z",
+      "impressao": "dd2f41b470a853a18f7e28a35cf548e4e34a584b",
+      "arquivos": {
+        "Chart.tsx": "657dc536bc4dcc95c0fc7e05425337aa9a294f9e",
+        "data.ts": "13de4b6215e4b0d984add1dd3bf5d35110df27d9",
+        "meta.json": "a4ad14dfdfaf93cc50b29bb08544634a655fcdaf"
+      }
+    },
+    {
+      "versao": "v1_perfil-de-qualidade-da-origem",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: grade circular, com 50, 75 e 100 a 3,8 px por fora do anel que nomeiam e a 11,5 px do anel seguinte, conferido no preview.svg e no DOM vivo; rótulos do topo e da base por fora do gráfico, a 9 px do anel de 100; preenchimento a 0,66 mede 4,85:1 no escuro e 3,01:1 no claro; estado vazio sondado em navegador com role status. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:46:49.309Z",
+      "impressao": "25e7891a0969c3ad242c096f889f3e443e301b44",
+      "arquivos": {
+        "Chart.tsx": "d6f99eb37c4e4a4fbb58340f07f83b84beea1d57",
+        "data.ts": "01f374238bdf934c63bff6640343f07e8fe7914e",
+        "meta.json": "d4bd8e5fc842dced17072d3d334b260b7278f67b"
+      }
+    },
+    {
+      "versao": "v4_eixo-sem-dado-e-indice-normalizado",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: grade circular, com 25, 50, 75 e 100 colados por fora ao anel que nomeiam; dica aberta por sonda nos dois temas no eixo sem dado, com o nome da dimensão e sem dado, sem número, e nos seis eixos medidos; estado vazio e estado de todos os eixos nulos sondados com role status; eixo tracejado a 5,21:1 no escuro e 5,37:1 no claro. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:46:49.833Z",
+      "impressao": "bdd1bc580380086c0b9f92b3f2de12e34905592a",
+      "arquivos": {
+        "Chart.tsx": "86b0b323c3c36ee3e540b69dd07512c4ffde3308",
+        "data.ts": "13de4b6215e4b0d984add1dd3bf5d35110df27d9",
+        "meta.json": "a4ad14dfdfaf93cc50b29bb08544634a655fcdaf"
+      }
+    }
+  ]
+}

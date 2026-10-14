@@ -1,0 +1,13 @@
+{
+  "title": "O ano da pré-vendas em 8 eventos",
+  "useCase": "Que eventos de 2026 explicam a mudança na taxa de agenda, em ordem e em escala real de tempo?",
+  "demonstrates": [
+    "Cartões de título e frase alternando acima e abaixo, ligados ao ponto por conector curto",
+    "Escala real declarada na linha de leitura, com a data escrita em cada cartão",
+    "Cartão do evento que mudou a métrica com borda de destaque e a variação da taxa de agenda",
+    "Cartões em SVG posicionados pela escala do XAxis via useXAxisScale e usePlotArea"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: os cartões são retângulo e texto em SVG, não foreignObject, porque o contrato (seção 13) diz que foreignObject dentro do SVG do Chart não sai no preview. A taxa sai das contagens do dado (60 de 400 contatos, 84 de 400), a variação é 21,0 sobre 15,0 menos 1, igual a +40%, e o cartão escreve a base (15,0%) na mesma linha. Cartões do mesmo lado são empurrados para manter 8 px de vão, inclusive depois do ajuste de borda (quatro cartões de 200 px e três vãos somam 824 px, dentro dos 886 px úteis)."
+}

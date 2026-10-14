@@ -1,0 +1,15 @@
+{
+  "title": "Receita por oportunidade com massa no zero",
+  "useCase": "Como mostrar a receita por oportunidade quando 41% valem zero e a cauda passa de R$ 600 mil?",
+  "demonstrates": [
+    "Zero medido como coluna neutra fora da rampa, separada das faixas por um vão",
+    "Coluna do zero truncada com tarja de escala interrompida e o número escrito acima",
+    "Registro sem o campo apurado fora da amostra e no rodapé, como indisponível",
+    "Faixa sem nenhum caso com traço de base, distinta do zero e da ausência",
+    "Última faixa aberta em 600 mil, desenhada e contada, sem esticar o eixo",
+    "Eixo Y nomeado como oportunidades, para a altura não ser lida como dinheiro"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Uma recusa de especificação, e ela é o ponto da versão. O catálogo e o estudo mandam hachurar a coluna do zero. Hachura é o tratamento que a armadilha 46 reserva para a AUSÊNCIA, e zero medido é o oposto dela: a saída escrita ali é zero no neutro fora da rampa, ausência hachurada ou contornada. Hachurar o zero faria a coluna ler como o estado que a peça existe para distinguir dela. Os três estados saíram assim: zero medido é coluna cheia em --text-muted, separada por uma coluna vazia inteira e por uma divisória tracejada, com o número escrito; faixa medida sem caso é traço de base de 2 px no mesmo neutro, porque é a mesma classe de coisa, medida e fora da forma; ausência não desenha nada e aparece só no rodapé, com o ícone Unplug e formatUnavailable(). Segunda decisão declarada, a mais delicada: a coluna do zero é TRUNCADA. O eixo de contagem é dimensionado pelas faixas de valor, não pelos 89 do zero; com o teto em 89 as faixas de 1, 2 e 3 casos mediriam de 1 a 4 px e a forma que o histograma existe para mostrar sumiria. O corte é declarado no desenho por duas tarjas diagonais na cor do cartão, que é a marca universal de escala interrompida, e o número verdadeiro vai escrito na margem de cima; a coluna passa 3 px do teto da área de plotagem, porque parando rente à última linha de grade o olho lê o valor dela, que é 30. Terceira: o eixo X é numérico em unidades de coluna e não em reais, porque a régua não é contínua, ela tem um átomo no zero e uma faixa sem fim no topo; os tiques caem nas bordas das faixas e o vão entre o átomo e a régua é uma linha do array que não desenha barra, que é o jeito de abrir um vão no Recharts sem mudar a largura das outras. Medição própria: --line-strong seria o neutro intuitivo e mede 1,79:1 no escuro e 1,83:1 no claro contra o cartão, abaixo do piso de 3:1 da marca, então o neutro é --text-muted, em 5,21:1 e 5,37:1."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Oportunidades do trimestre com perdas por motivo",
+  "useCase": "Comercial, 2026, T3: entre a oportunidade Aberta e a Ganha, onde saem as 420 oportunidades e por qual motivo?",
+  "demonstrates": [
+    "align=\"left\" para a perda ficar logo depois da etapa, não na última coluna",
+    "sort={false} com o array de nós na ordem: avançou antes das perdas",
+    "Nó \"Em andamento\" fechando a conservação de cada etapa",
+    "Caminho até Ganha em --chart-1 e perdas em --line-strong com valor escrito",
+    "Faixa de rótulo por coluna com trecho reto na ligação, sem cruzar texto vizinho (ROT-7)"
+  ],
+  "canvas": { "width": 1360, "height": 620 },
+  "frame": "card",
+  "notes": "Canvas maior que o preset largo porque cinco colunas empilham até cinco nós cada, e cada coluna reserva sua própria faixa de rótulo (largura do maior nome ou contagem daquela etapa, calculada em stageLabelBand) antes do trecho de curva; a largura evita que a faixa de rótulo de uma coluna colida com a ligação da coluna seguinte, e a altura dá vão vertical suficiente aos nós terminais de perda. Histórico: NODE_PADDING subiu de 36 para 44 px e a margem superior de 16 para 44 px em 2026-09-19 (rótulo de duas linhas no vão acima do nó); em 2026-09-20 o layout de coluna passou a ser todo customizado (buildColumnX/makeRenderLink), com um trecho reto de largura igual à faixa de rótulo antes de qualquer curva abrir leque, porque o vão antigo (sem essa faixa) deixava a ligação do nó de caminho de cada coluna cruzar o rótulo dos nós de perda vizinhos, mais abaixo na mesma coluna."
+}

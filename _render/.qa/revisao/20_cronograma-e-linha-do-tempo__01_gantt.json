@@ -1,0 +1,134 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "01_gantt",
+  "versoes": {
+    "v1_calendario-de-campanhas-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual: o pico de 4 simultâneas confere com o dado e o rótulo Busca paga, 31 dias começa 12 px depois da linha de hoje, sem halo sobre ela. Observações no README: a faixa de congelamento sai com fillOpacity 0,5 e a nota do meta diz opaca; rótulo a 95 px da ponta da barra; ramos sem desvio no rótulo à esquerda e em hoje dentro do congelamento.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:12:47.061Z",
+      "impressao": "ca9a172763d1223ad2a0ae21edeb2a1d0ae4d14b",
+      "arquivos": {
+        "Chart.tsx": "1a8e47cc0561244a7553afc09b88a806461a7d7d",
+        "data.ts": "888e8b05fe405feda04cb556343ebe17be7e4cee",
+        "meta.json": "af459d464049e552345719befaff1d6980a5e80f"
+      }
+    },
+    "v2_progresso-contra-linha-de-base": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: ramo sem plano e sem início real usa hoje como início; trilho do planejado mede 1,8:1 e vale pela isenção do número escrito na linha; redação de no prazo; truncate na linha de leitura.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:28.807Z",
+      "impressao": "ed95006c4c3b1eeb5243da61cab2637169d65bc2",
+      "arquivos": {
+        "Chart.tsx": "3da28f77e768ff9c20b380e3da534807a754692c",
+        "data.ts": "3cc238ce421908f80724604bf01c2e1ddc881566",
+        "meta.json": "d163ece1de2be1c3d5641a433f5b2467fc344086"
+      }
+    },
+    "v3_plano-hierarquico-por-publico": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual: o contorno da entrega planejada em text-muted mede 5,21:1 no escuro e 5,37:1 no claro e os três níveis, dono e status se leem nos dois temas. Observações no README: a nota do meta ainda cita line-strong; a guarda de vazio testa linhas e não entregas; as datas das entregas só se leem pela grade trimestral.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:12:52.933Z",
+      "impressao": "940d4894e3530d43f3eb514712daa1a8aeecc2b0",
+      "arquivos": {
+        "Chart.tsx": "72de68fb4ce50edf83484f0067cef97a1676a3af",
+        "data.ts": "bf51d9ab1b3838b7cad23ca5eacffcee4b566907",
+        "meta.json": "1aacc9c1f216498e64f4884c03cc18b5399a1dec"
+      }
+    },
+    "v4_criativos-empacotados-com-periodo-aberto": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: o empacotamento trata o criativo em aberto como encerrado em hoje; o nome dos em aberto só existe na dica; a guarda de vazio testa data e não os datados; truncate na lista dos sem data de início.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:29.825Z",
+      "impressao": "f2a452bf829855d12e9e1b553f1bbfd17c0c065c",
+      "arquivos": {
+        "Chart.tsx": "5a42d19c5836d23b13c7d4c8e189f451c64d186b",
+        "data.ts": "fd1c84b4d1ccb4ffd2b44dabbc0a224cc91ebd69",
+        "meta.json": "6ae50c6f691fea26e2f979955d99a20976bf5d0f"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_calendario-de-campanhas-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "Perguntas 17 e 19, ANO-5 e ACE-1: a linha de leitura e a frase acessível dizem que no pico 6 correm em paralelo e o dado dá 4 simultâneas, porque peakOverlap conta os vizinhos de cada linha e não a simultaneidade; contar quem está no ar no instante de cada início. Pergunta 31, ROT-7 marca fina: o rótulo Busca paga, 31 dias cruza a linha de hoje e o halo apaga 7 px dela; mover o rótulo para depois da linha.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:28.294Z",
+      "impressao": "13a8b2378d069d73167f5c4c228d99d1114f01cb",
+      "arquivos": {
+        "Chart.tsx": "6ffb452b27697adb42187292d7e810451429484b",
+        "data.ts": "888e8b05fe405feda04cb556343ebe17be7e4cee",
+        "meta.json": "af459d464049e552345719befaff1d6980a5e80f"
+      }
+    },
+    {
+      "versao": "v2_progresso-contra-linha-de-base",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: ramo sem plano e sem início real usa hoje como início; trilho do planejado mede 1,8:1 e vale pela isenção do número escrito na linha; redação de no prazo; truncate na linha de leitura.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:28.807Z",
+      "impressao": "ed95006c4c3b1eeb5243da61cab2637169d65bc2",
+      "arquivos": {
+        "Chart.tsx": "3da28f77e768ff9c20b380e3da534807a754692c",
+        "data.ts": "3cc238ce421908f80724604bf01c2e1ddc881566",
+        "meta.json": "d163ece1de2be1c3d5641a433f5b2467fc344086"
+      }
+    },
+    {
+      "versao": "v3_plano-hierarquico-por-publico",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 e TOK-5: as 3 barras de entrega Planejada medem 1,15:1 no preenchimento e 1,79:1 no escuro e 1,83:1 no claro no contorno, sem número escrito que ative a isenção; trocar o contorno para o token text-muted, o mesmo do anel do ícone, que mede 5,21:1 e 5,37:1.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:29.329Z",
+      "impressao": "513682501d579fdf2c858521bdf788d82dd66303",
+      "arquivos": {
+        "Chart.tsx": "ca611a5bc5f27f1d44df7c1ed60466b68e69174c",
+        "data.ts": "bf51d9ab1b3838b7cad23ca5eacffcee4b566907",
+        "meta.json": "1aacc9c1f216498e64f4884c03cc18b5399a1dec"
+      }
+    },
+    {
+      "versao": "v4_criativos-empacotados-com-periodo-aberto",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: o empacotamento trata o criativo em aberto como encerrado em hoje; o nome dos em aberto só existe na dica; a guarda de vazio testa data e não os datados; truncate na lista dos sem data de início.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:25:29.825Z",
+      "impressao": "f2a452bf829855d12e9e1b553f1bbfd17c0c065c",
+      "arquivos": {
+        "Chart.tsx": "5a42d19c5836d23b13c7d4c8e189f451c64d186b",
+        "data.ts": "fd1c84b4d1ccb4ffd2b44dabbc0a224cc91ebd69",
+        "meta.json": "6ae50c6f691fea26e2f979955d99a20976bf5d0f"
+      }
+    },
+    {
+      "versao": "v1_calendario-de-campanhas-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual: o pico de 4 simultâneas confere com o dado e o rótulo Busca paga, 31 dias começa 12 px depois da linha de hoje, sem halo sobre ela. Observações no README: a faixa de congelamento sai com fillOpacity 0,5 e a nota do meta diz opaca; rótulo a 95 px da ponta da barra; ramos sem desvio no rótulo à esquerda e em hoje dentro do congelamento.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:12:47.061Z",
+      "impressao": "ca9a172763d1223ad2a0ae21edeb2a1d0ae4d14b",
+      "arquivos": {
+        "Chart.tsx": "1a8e47cc0561244a7553afc09b88a806461a7d7d",
+        "data.ts": "888e8b05fe405feda04cb556343ebe17be7e4cee",
+        "meta.json": "af459d464049e552345719befaff1d6980a5e80f"
+      }
+    },
+    {
+      "versao": "v3_plano-hierarquico-por-publico",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual: o contorno da entrega planejada em text-muted mede 5,21:1 no escuro e 5,37:1 no claro e os três níveis, dono e status se leem nos dois temas. Observações no README: a nota do meta ainda cita line-strong; a guarda de vazio testa linhas e não entregas; as datas das entregas só se leem pela grade trimestral.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:12:52.933Z",
+      "impressao": "940d4894e3530d43f3eb514712daa1a8aeecc2b0",
+      "arquivos": {
+        "Chart.tsx": "72de68fb4ce50edf83484f0067cef97a1676a3af",
+        "data.ts": "bf51d9ab1b3838b7cad23ca5eacffcee4b566907",
+        "meta.json": "1aacc9c1f216498e64f4884c03cc18b5399a1dec"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Densidade do ticket de fechamento",
+  "useCase": "Onde se concentra o ticket dos 208 negócios ganhos no ano, e a curva tem mais de um pico?",
+  "demonstrates": [
+    "Kernel gaussiano sobre grade de 120 pontos e banda pela regra de Silverman",
+    "Grade recortada no observado e cortada em zero, métrica declarada não negativa",
+    "Area monotone com preenchimento leve e mediana em ReferenceLine",
+    "Eixo Y omitido com nota de altura relativa e rodapé n 208 · banda R$ 8,2 mil"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O data.ts entrega um ticket por negócio e quem estima a curva é o componente, em TypeScript, sem biblioteca. A amostra vem de um sorteador de semente fixa com duas populações (plano de entrada perto de R$ 25 mil e plano completo perto de R$ 72 mil), ajustadas para a banda de Silverman sair em R$ 8,2 mil, como o catálogo escreve. A mediana cai na descida do primeiro pico, longe do vale, e a frase de leitura só localiza a mediana quando a conta confirma: no vale, dentro de uma banda dele, ou na descida do primeiro pico. O preenchimento de 0,18 não alcança 3:1 sobre o cartão (1,48:1 no escuro e 1,30:1 no claro, como no molde 05_areas/01_area-simples/v1): quem carrega a marca é o contorno opaco de 2 px, que mede 9,50:1 e 6,00:1, e a guarda OPACIDADE-MARCA não enxerga a opacidade quando ela vem de constante. O rótulo da mediana vive na margem superior reservada (MARGIN.top 24), fora da área, para não colidir com o pico."
+}

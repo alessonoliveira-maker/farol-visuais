@@ -1,0 +1,46 @@
+{
+  "familia": "11_fluxo-sankey",
+  "modelo": "03_alluvial",
+  "versoes": {
+    "v1_temperatura-dos-leads-em-tres-meses": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, encoding fecha 1.240 nas tres colunas, rotulos e contraste OK nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:22:13.255Z",
+      "impressao": "702ccaf4e5303095e96d555da60292eb75ed17f6",
+      "arquivos": {
+        "Chart.tsx": "403791ab3ebbb7f91bfe40fb56957215024501bb",
+        "data.ts": "ad1460cad498177f25c3dc8436230cc7a3049fb5",
+        "meta.json": "f685b8f3cf9f38c8b5bc138f76f8529a0ce29d74"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_temperatura-dos-leads-em-tres-meses",
+      "veredito": "reprovado",
+      "nota": "ACE-5: faixas com fillOpacity 0,55 compoem 2,27 a 2,57:1 no tema claro contra o cartao, abaixo do piso de 3:1, e a faixa nao tem valor escrito junto dela.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:07:09.405Z",
+      "impressao": "9fc9ea78317e08baf8d3d820605ebdd16cf94166",
+      "arquivos": {
+        "Chart.tsx": "782a637114557996fbc67c9931df1d8c8e736501",
+        "data.ts": "ad1460cad498177f25c3dc8436230cc7a3049fb5",
+        "meta.json": "b015b2c84feb78bb770abad12dfc23d53e07f216"
+      }
+    },
+    {
+      "versao": "v1_temperatura-dos-leads-em-tres-meses",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, encoding fecha 1.240 nas tres colunas, rotulos e contraste OK nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:22:13.255Z",
+      "impressao": "702ccaf4e5303095e96d555da60292eb75ed17f6",
+      "arquivos": {
+        "Chart.tsx": "403791ab3ebbb7f91bfe40fb56957215024501bb",
+        "data.ts": "ad1460cad498177f25c3dc8436230cc7a3049fb5",
+        "meta.json": "f685b8f3cf9f38c8b5bc138f76f8529a0ce29d74"
+      }
+    }
+  ]
+}

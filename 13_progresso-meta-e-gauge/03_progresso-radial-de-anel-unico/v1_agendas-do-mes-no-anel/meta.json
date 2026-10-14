@@ -1,0 +1,13 @@
+{
+  "title": "Agendas do mês em anel",
+  "useCase": "Mostrar, num cartão pequeno, quantas agendas já foram marcadas contra a meta do mês e que percentual isso representa.",
+  "demonstrates": [
+    "RadialBarChart com startAngle 90 e endAngle menos 270, começando no topo",
+    "PolarAngleAxis numérico com domínio de zero até a meta e tique desligado",
+    "Percentual grande no centro, sempre com o valor absoluto e o total escritos ao lado",
+    "Anel com espessura visível e trilho aceso nos dois temas",
+    "Ponta reta perto de 0% e de 100%, para a ponta não somar ângulo que o valor não tem"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card"
+}

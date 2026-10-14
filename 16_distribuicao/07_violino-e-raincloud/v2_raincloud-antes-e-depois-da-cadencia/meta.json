@@ -1,0 +1,18 @@
+{
+  "title": "Tempo até a agenda antes e depois da cadência",
+  "useCase": "A nova cadência encurtou o tempo até a agenda nos três squads de pré-vendas, e para todos os leads?",
+  "demonstrates": [
+    "Banda dividida em nuvem, caixa fina e chuva, com altura mínima de 56 px",
+    "Nuvem do trimestre anterior só em contorno e a do atual preenchida",
+    "Chuva com encaixe: nenhum par de pontos a menos de 2 px",
+    "Frase calculada: a mediana caiu de 3,2 para 1,8 dia depois da nova cadência",
+    "Legenda de uma linha explicando as três camadas",
+    "Contorno com revestimento da cor da superfície onde cruza a nuvem preenchida"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 646
+  },
+  "frame": "card",
+  "notes": "O canvas sai do preset largo por altura. A conta: cada squad pede 30 px de nuvem, duas caixas de 6 px, duas faixas de chuva e os vãos entre elas; a faixa de chuva é calculada do maior empilhamento (encaixe a 2,2 px entre centros) e a banda passa de 100 px, bem acima do piso de 56. O svg mede 434 px de altura, e com linha de leitura, legenda de uma linha, rodapé de duas linhas e os três vãos o corpo pede 526 px; a altura de 646 dá 528. O svg é desenhado com viewBox de 894 px de largura, a largura do corpo, para a escala sair 1 (GEO-18). Vazado é sempre o trimestre anterior e cheio é sempre o atual, nas três camadas, para a cor ter um papel só. A banda única é a mediana das seis bandas de Silverman. A caixa não tem bigode: a chuva logo abaixo já mostra o alcance, e o bigode repetiria a mesma informação num espaço de 6 px. O terceiro squad guarda no trimestre atual um grupo de leads que continua acima de cinco dias, e a segunda metade da frase de leitura conta quantos são e onde estão."
+}

@@ -1,0 +1,237 @@
+{
+  "slug": "26_mosaico-marimekko",
+  "nome": "Mosaico e marimekko",
+  "modelos": [
+    {
+      "slug": "01_marimekko-e-mosaico",
+      "nome": "Marimekko 100% e mosaico",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Colunas encostadas cuja largura é a participação do grupo no total e cuja altura se divide pela participação de cada parte dentro do grupo; a área de cada ladrilho é proporcional ao valor da célula. Lê primeiro quanto pesa cada grupo e depois do que ele é feito. O modelo absorve o marimekko divergente (partes favoráveis acima e desfavoráveis abaixo de uma linha central), o mosaico de duas variáveis (tabela de contingência como área, com vão maior entre grupos que entre partes) e o mosaico com resíduos (cor pelo resíduo de Pearson contra a independência). SVG puro em React: o Recharts não tem barra de largura variável, e a geometria sai de uma função pura marimekko() em TypeScript que devolve um ladrilho por célula.",
+      "quando_usar": [
+        "Peso de cada grupo e composição dele no mesmo quadro, de 3 a 6 grupos por até 5 partes, como leads por origem e cobertura de dado",
+        "Participação de mercado por segmento com perímetro declarado: largura pelo tamanho do segmento, altura pela fatia de cada competidor",
+        "Lado favorável e desfavorável por grupo com peso, como oportunidades aceitas e devolvidas por fila no handoff (variação divergente)",
+        "Tabela de contingência de duas variáveis categóricas vista como área, com contagens de dezenas a milhares",
+        "Onde uma combinação acontece mais ou menos que o esperado pela independência, com contagem esperada de pelo menos 5 por célula"
+      ],
+      "quando_evitar": [
+        "Comparar com precisão partes do meio da pilha entre colunas, que não têm linha de base comum: barras agrupadas (02/02)",
+        "Grupos de peso parecido ou largura sem significado: barras empilhadas 100% (02/04) ou colunas empilhadas 100% (03/04)",
+        "Mais de 6 grupos ou mais de 5 partes: tabela cruzada com totais marginais (14/06)",
+        "Hierarquia de três níveis ou mais: treemap (12/01)",
+        "Passagem de casos entre etapas ou estados: parallel sets (11/04)",
+        "Taxa de um desfecho binário ao longo de x: spineplot (modelo 03); área como produto de duas métricas: bar mekko (modelo 02)",
+        "Resíduos em que a área não acrescenta: matriz categórica em cor (15/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+      "versoes": [
+        {
+          "slug": "v1_cobertura-de-dado-por-origem",
+          "titulo": "Leads por origem e cobertura de dado",
+          "caso_de_uso": "Marketing, 2026-08: quanto cada origem pesa no volume de leads e quanto dele chega com dado completo, parcial ou ausente?",
+          "o_que_demonstra": [
+            "Função pura marimekko() em TypeScript devolvendo x, w, y e h de cada ladrilho",
+            "Colunas por largura decrescente e ordem das partes fixa, com completo na base",
+            "Vão de 2 px em --surface-raised entre colunas e entre partes",
+            "Nome, total e participação de cada coluna no eixo, fora do ladrilho",
+            "Rótulo interno só em ladrilho acima de 28 por 16 px; o resto vai para a dica",
+            "Ausente como parte hachurada em --line-strong no topo, nunca buraco"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_handoff-aceitas-e-devolvidas",
+          "titulo": "Handoff: aceitas e devolvidas por fila",
+          "caso_de_uso": "Comercial, handoff 2026-T3: de cada fila que passa oportunidades para vendas, quanto foi aceito e por que motivo o resto voltou?",
+          "o_que_demonstra": [
+            "Variação divergente: aceitas acima e devolvidas abaixo de uma linha zero",
+            "Dois acumuladores por coluna e domínio vertical simétrico pelo maior lado",
+            "Motivo fora de perfil em --chart-1 cheio; demais motivos em --line-strong com rótulo",
+            "Anotação na coluna mais larga com a taxa de devolução por formatPercent",
+            "Fila com n = 3 em coluna fina com marcador externo e selo n = 3",
+            "Eixo vertical lido como proporção por lado, com 100% escrito nas duas pontas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_participacao-de-mercado-com-perimetro",
+          "titulo": "Participação de mercado por segmento",
+          "caso_de_uso": "Diretoria, 2026: qual a nossa fatia em cada segmento e quanto cada segmento pesa no perímetro de mercado declarado?",
+          "o_que_demonstra": [
+            "Subtítulo obrigatório com o perímetro: 4 segmentos, base pública fictícia, 2026",
+            "Etiqueta de procedência em --prov-premissa junto ao total do perímetro",
+            "Nós na base em --chart-1; concorrente A, concorrente B e demais em neutros",
+            "Segmento de 0,5% com 3 px de largura ganha marcador externo com rótulo",
+            "Seletor que troca as colunas de segmento para região, com a ordem das partes fixa",
+            "Tabela cruzada equivalente em details, com o SVG em aria-hidden"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_desfecho-por-origem-com-residuos",
+          "titulo": "Desfecho por origem com resíduos",
+          "caso_de_uso": "Comercial, 2026: que combinações de origem e desfecho acontecem mais ou menos do que o esperado se fossem independentes?",
+          "o_que_demonstra": [
+            "Mosaico de duas variáveis com vão de 6 px entre grupos e 2 px entre partes",
+            "Subtítulo diz que a origem dividiu primeiro; botão inverte as variáveis",
+            "Resíduo de Pearson em TypeScript e cor em dois matizes de acento, sem --positive",
+            "Legenda com limiares em ±2 e ±4 e faixa neutra perto de zero",
+            "Esperado abaixo de 5 sem cor e com hachura: amostra insuficiente",
+            "Contagem zero observada como linha de 1 px marcada, nunca ausência silenciosa"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_bar-mekko-variwide",
+      "nome": "Bar mekko (variwide)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Colunas encostadas de largura variável com altura em valor absoluto de uma métrica, sem normalizar para 100%. A largura carrega a métrica A, a altura carrega a métrica B, e a área de cada coluna é o produto das duas. O modelo só vale quando esse produto é uma grandeza real: leads vezes CPL é investimento, vitórias vezes ticket médio é receita. Algumas bibliotecas chamam a forma de variwide. SVG puro em React: x acumulado pela métrica A, altura por escala linear que começa em zero e tiques de passo bonito calculados em TypeScript.",
+      "quando_usar": [
+        "Taxa por grupo com o peso do grupo à vista, de 3 a 10 colunas, quando largura vezes altura é uma grandeza de negócio",
+        "CPL por plataforma com a largura nos leads, em que a área de cada coluna é o investimento do período",
+        "Ticket médio por origem com a largura nas vitórias, em que a área de cada coluna é a receita",
+        "Quanto do investimento foi pago acima de um CPL alvo, lido como a área de cada coluna acima de uma linha de referência"
+      ],
+      "quando_evitar": [
+        "Largura vezes altura sem significado de negócio: dispersão simples (09/01) ou bolhas (09/03)",
+        "Composição de cada grupo em partes: marimekko 100% (modelo 01)",
+        "Grupos de peso parecido, em que a largura não informa: colunas simples (03/01)",
+        "Métrica de altura que pode ser negativa: colunas positivo e negativo (03/05)",
+        "Mais de 10 grupos, com colunas abaixo de 4 px de largura: tabela com barras inline (14/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-por-plataforma",
+          "titulo": "CPL e investimento por plataforma",
+          "caso_de_uso": "Marketing, 2026-08: qual plataforma de mídia paga tem o CPL mais alto e quanto do investimento do mês ela concentra?",
+          "o_que_demonstra": [
+            "x acumulado pelos leads e altura pelo CPL numa escala linear a partir de zero",
+            "Tiques do eixo Y com passo bonito de 1, 2, 2,5 ou 5 vezes potência de 10",
+            "Colunas ordenadas pelo CPL decrescente, com a largura como peso",
+            "Rótulo com CPL e investimento por formatCurrencyCompact e leads no eixo X",
+            "Eixo X acumulado de leads com o total do mês escrito no fim"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_investimento-acima-do-cpl-alvo",
+          "titulo": "Investimento pago acima do CPL alvo",
+          "caso_de_uso": "Marketing, 2026-08: em cada plataforma, quanto do investimento do mês foi pago acima do CPL alvo de R$ 180?",
+          "o_que_demonstra": [
+            "Linha de referência horizontal no CPL alvo em --line-strong com rótulo à direita",
+            "Parte de cada coluna acima do alvo em --chart-1 e parte abaixo em --line-strong",
+            "Anotação com o excedente por formatCurrencyCompact na coluna de maior área acima",
+            "Soma do excedente de todas as plataformas escrita no subtítulo",
+            "Plataforma abaixo do alvo sem parte destacada e com o CPL escrito"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_ticket-medio-e-receita-por-origem",
+          "titulo": "Ticket médio e receita por origem",
+          "caso_de_uso": "Comercial, 2026 até agosto: qual origem traz ticket alto com poucas vitórias e qual sustenta a receita reconhecida no volume?",
+          "o_que_demonstra": [
+            "Sete origens com largura pelas vitórias e altura pelo ticket médio",
+            "Área lida como receita e escrita por formatCurrencyCompact em cada coluna",
+            "Coluna alta e estreita com anotação: ticket alto em poucas vitórias",
+            "Rótulos das colunas finas puxados para cima com linha guia, sem sobreposição",
+            "Linha do ticket médio geral em tracejado 3 3 de --text-muted",
+            "Etiqueta de procedência --prov-medido no total de receita"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_investimento-sem-lead",
+          "titulo": "Plataforma com investimento e zero lead",
+          "caso_de_uso": "Marketing, 2026-08: como mostrar uma plataforma que gastou R$ 8 mil sem gerar lead, com o CPL indefinido?",
+          "o_que_demonstra": [
+            "CPL indefinido sem coluna de altura infinita nem divisão por zero no layout",
+            "Marcador na base com a frase R$ 8 mil sem lead, fora da escala de altura",
+            "Plataforma sem custo coletado com formatUnavailable, separada de zero medido",
+            "Domínio do eixo Y calculado só com os CPL definidos",
+            "Frase acessível que cita a plataforma sem lead e o investimento dela"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_spineplot",
+      "nome": "Spineplot, spinograma e double decker",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Caso especial do mosaico em que uma variável explicativa divide a largura e um desfecho, de preferência binário, divide a altura: largura pela frequência de x e altura pela proporção de y dentro de cada x. Responde se a taxa de um desfecho muda ao longo de x e quanto pesa cada x. O modelo absorve o spinograma, com x contínuo cortado em faixas de limites declarados, e o double decker, com duas ou três variáveis explicativas aninhadas na largura e o desfecho na altura. SVG puro em React com o mesmo layout do marimekko, vão de 1 px entre colunas e a parte de interesse na base, a única com linha de base comum.",
+      "quando_usar": [
+        "Taxa de um desfecho binário, como ganho ou agenda realizada, ao longo de 3 a 8 categorias de x com pesos diferentes",
+        "x contínuo que o negócio já corta em faixas, como horas até o primeiro contato ou dias sem movimento (spinograma)",
+        "Desfecho ao longo de duas variáveis explicativas combinadas, com até 12 colunas finais (double decker)",
+        "Comparar cada coluna com a taxa global, desenhada como linha de referência que atravessa o gráfico"
+      ],
+      "quando_evitar": [
+        "Categorias de x com peso parecido, em que a largura não informa: colunas empilhadas 100% (03/04)",
+        "Desfecho com mais de 3 estados: marimekko 100% (modelo 01)",
+        "Distribuição de x sem desfecho: histograma (16/01)",
+        "Passagem dos casos entre etapas ou estados: parallel sets (11/04)",
+        "Mais de três variáveis explicativas ou colunas finais abaixo de 4 px: tabela cruzada com totais marginais (14/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+      "versoes": [
+        {
+          "slug": "v1_ganho-por-faixa-de-porte",
+          "titulo": "Taxa de ganho por faixa de porte",
+          "caso_de_uso": "Comercial, 2026: a taxa de ganho muda com a faixa de porte da conta, e quanto das oportunidades encerradas cai em cada faixa?",
+          "o_que_demonstra": [
+            "Colunas encostadas com vão de 1 px e largura pelas oportunidades encerradas",
+            "Ganho na base em --chart-1 e perdido acima em --line-strong",
+            "Faixas na ordem natural do porte, do menor para o maior",
+            "Taxa por formatRateWithVolume sobre cada coluna, como 25,0% (7 de 28)",
+            "Categorias do desfecho rotuladas à direita, no lugar de legenda"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_qualificacao-por-tempo-ate-contato",
+          "titulo": "Qualificação por tempo até o primeiro contato",
+          "caso_de_uso": "Pré-vendas, 2026-08: leads contatados dentro do SLA de 1 hora qualificam mais do que os contatados depois?",
+          "o_que_demonstra": [
+            "Spinograma com faixas até 1 h, 1 a 4 h, 4 a 24 h e acima de 24 h",
+            "Limites numéricos escritos no eixo X, vindos da regra de SLA do painel",
+            "Faixa do SLA marcada com fundo --surface-overlay e rótulo dentro do SLA",
+            "Linha da taxa global de qualificação em tracejado 3 3 de --text-muted",
+            "Anotação na faixa acima de 24 h com a queda em pontos percentuais"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_qualificado-por-plataforma-e-formato",
+          "titulo": "Lead qualificado por plataforma e formato",
+          "caso_de_uso": "Marketing, 2026-T3: que combinação de plataforma e formato do criativo entrega a maior proporção de lead qualificado?",
+          "o_que_demonstra": [
+            "Double decker: plataforma e formato aninhados na largura, qualificado na altura",
+            "Layout recursivo com vão de 4 px entre plataformas e 1 px entre formatos",
+            "Rótulo do eixo X em duas linhas: formato em cima, plataforma embaixo",
+            "Colunas acima da taxa global em --chart-1 cheio; as demais em --line-strong",
+            "Combinação sem veiculação como linha fina marcada com a frase sem anúncio",
+            "Nove colunas finais; as abaixo de 4 px agregadas em outros formatos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_porte-desconhecido-e-amostra-pequena",
+          "titulo": "Ganho com porte desconhecido e amostra pequena",
+          "caso_de_uso": "Comercial, 2026: como ler a taxa de ganho quando 30% das oportunidades não têm porte e uma faixa tem só 4 casos?",
+          "o_que_demonstra": [
+            "Porte desconhecido como coluna larga hachurada à direita, fora da ordem natural",
+            "Subtítulo com a cobertura: 70% das oportunidades com faixa de porte informada",
+            "Faixa com n = 4 com selo de amostra pequena e taxa por formatRateWithVolume",
+            "Faixa sem ganho desenha só a parte perdida e escreve 0,0% (0 de 11)",
+            "Linha da taxa global calculada só com porte informado, dito na legenda"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

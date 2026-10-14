@@ -1,0 +1,578 @@
+{
+  "slug": "15_mapa-de-calor-e-calendario",
+  "nome": "Mapa de calor e calendário",
+  "modelos": [
+    {
+      "slug": "01_heatmap-dia-da-semana-por-hora",
+      "nome": "Heatmap dia da semana por hora",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Grade de 7 linhas (segunda a domingo) por até 24 colunas de hora, com a cor da célula para volume médio ou taxa naquela janela. É o modelo mais pedido pela operação: onde está o pico e se a equipe está lá. Recharts não tem heatmap, então a grade é SVG com geometria calculada em TypeScript. Absorve o heatmap radial de 24 horas como versão de destaque, com a ressalva de precisão.",
+      "quando_usar": [
+        "Janela de pico de um evento recorrente: entradas de lead, respostas, agendas marcadas, tickets de atendimento.",
+        "Cruzar a janela de demanda com a janela de disponibilidade da equipe (almoço, turno, expediente).",
+        "Recorte com eventos suficientes por célula: pelo menos 4 semanas e algumas centenas de eventos no total.",
+        "Pequenos múltiplos por pessoa ou fila, até 8 grades com escala comum."
+      ],
+      "quando_evitar": [
+        "Poucos eventos por célula: a grade vira mancha aleatória; agregar em blocos de 2 horas ou usar colunas por dia (03).",
+        "Pergunta de tendência ao longo das semanas: linha semanal (04) ou lasagna (modelo 06).",
+        "Volume e taxa ao mesmo tempo na mesma célula: punch card da família 09 (modelo 04).",
+        "Uma série só por hora, sem dia da semana: radar de ciclo (18, modelo 04) ou coluna por hora (03).",
+        "Comparação precisa entre dias: a forma radial engana; manter a grade cartesiana."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_entradas-de-lead-por-dia-e-hora",
+          "titulo": "Entradas de lead por dia da semana e hora",
+          "caso_de_uso": "Em que dia e hora chegam os leads de mídia paga, em média por ocorrência do dia, nas últimas 12 semanas?",
+          "o_que_demonstra": [
+            "Grade SVG de 7 por 13 células (8h às 20h) com x por hora e y por dia",
+            "Média por ocorrência do dia no recorte, não soma bruta",
+            "Escala sequencial em 6 faixas de --seq-1 a --seq-7 com legenda e unidade",
+            "Vão de 1 px na cor do cartão entre células e rótulo de hora a cada 2 horas",
+            "Frase acessível com a maior janela, a menor e a média geral"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_pico-contra-janela-do-sdr",
+          "titulo": "Pico de entradas contra a janela do SDR",
+          "caso_de_uso": "A equipe de pré-vendas está disponível na janela em que mais chegam leads, ou o pico cai no horário de almoço?",
+          "o_que_demonstra": [
+            "Contorno da janela de pico calculado sobre a soma de 3 horas consecutivas",
+            "Faixa de indisponibilidade da equipe em --surface-sunken com texto próprio",
+            "Anotação curta: 58% das entradas entre 11h e 14h, 2 de 5 SDRs em almoço",
+            "Texto da célula com contraste condicional por faixa, sem opacidade em texto"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_agendas-por-sdr-em-pequenos-multiplos",
+          "titulo": "Agendas marcadas por hora, uma grade por SDR",
+          "caso_de_uso": "Quais dos 8 SDRs concentram as agendas marcadas no começo da manhã e quem fica sem produção depois das 16h?",
+          "o_que_demonstra": [
+            "8 pequenos múltiplos de 5 dias por 12 horas com domínio comum a todos",
+            "Sábado e domingo fora da grade, com a regra dita no rodapé",
+            "Célula com menos de 5 eventos hachurada por padrão SVG, nunca pintada de --seq-1",
+            "Nome de cada SDR fictício inteiro acima da grade, sem reticência"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_relogio-radial-de-24-horas",
+          "titulo": "Relógio de entradas por hora em anéis por dia",
+          "caso_de_uso": "Em peça de destaque para a diretoria, como mostrar a natureza cíclica das entradas ao longo das 24 horas de cada dia?",
+          "o_que_demonstra": [
+            "Setor anular em path de dois arcos, com 0h no topo e sentido horário",
+            "Sete anéis com segunda no centro e rótulos só em 0h, 6h, 12h e 18h",
+            "Mesma escala sequencial da v1 para permitir comparação lado a lado",
+            "Nota de leitura: anel externo tem célula maior e parece mais intenso"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "02_matriz-categorica",
+      "nome": "Matriz categórica em cor",
+      "abordagem_stack": "svg-puro",
+      "resumo": "O heatmap clássico em tabela: uma dimensão categórica nas linhas, outra nas colunas e a mesma medida em todas as células, com cor por escala sequencial ou divergente e número na célula quando cabe. É o primitivo HeatGrid da família e absorve quatro variações do estudo: totais marginais, eixo agrupado em dois níveis, células de tamanho variável para taxa com volume e ordenação por semelhança.",
+      "quando_usar": [
+        "Achar extremos e padrões entre duas dimensões de categoria: executivo por segmento, motivo por etapa, plataforma por mês.",
+        "Até uns 15 por 12 células com número escrito; acima disso, cor sem número e valor exato na dica.",
+        "Padrão da grade e peso de cada linha ao mesmo tempo, com barras de total nas margens.",
+        "Hierarquia curta num eixo (canal e origem, ano e trimestre), com vão maior entre grupos.",
+        "Taxa que só faz sentido junto do volume, com o tamanho da célula carregando o volume."
+      ],
+      "quando_evitar": [
+        "Colunas com unidades diferentes ou texto: tabela com heatmap nas células (14, modelo 02).",
+        "Leitura de valor fino entre células vizinhas: barras agrupadas (03) ou barras horizontais (02).",
+        "Eixo de tempo contínuo com muitas entidades: lasagna (modelo 06).",
+        "Mesma lista de estados nos dois eixos: matriz de transição (modelo 07).",
+        "Hierarquia com mais de dois níveis: treemap ou árvore (12).",
+        "Público sem hábito de dupla codificação cor e tamanho: dois heatmaps lado a lado."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_win-rate-por-executivo-e-segmento",
+          "titulo": "Win rate por executivo e segmento de cliente",
+          "caso_de_uso": "Em quais segmentos de cliente cada um dos 10 executivos converte melhor, e onde a taxa despenca?",
+          "o_que_demonstra": [
+            "HeatGrid SVG de 10 por 5 células com taxa escrita por formatPercent",
+            "Executivos ordenados pelo win rate geral, nunca em ordem alfabética",
+            "Alternador de ordem por semelhança de perfil, que congela a ordem ao filtrar",
+            "Texto da célula com token claro ou escuro escolhido pela faixa",
+            "Contorno e peso 700 só na maior taxa de cada segmento"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_perdas-por-motivo-e-etapa-com-totais",
+          "titulo": "Perdas por motivo e etapa com totais nas margens",
+          "caso_de_uso": "Qual etapa do funil concentra as perdas do trimestre e qual motivo domina dentro dela?",
+          "o_que_demonstra": [
+            "Barras de total por linha à direita e por coluna embaixo no mesmo SVG",
+            "Duas escalas separadas: cor do miolo e comprimento das margens, cada uma nomeada",
+            "Total fora da escala de cor do miolo, com valor escrito ao lado da barra",
+            "Anotação na etapa proposta: preço responde por 46% das 212 perdas dela"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_leads-por-origem-agrupada-em-canal",
+          "titulo": "Leads por origem agrupada em canal, mês a mês",
+          "caso_de_uso": "Como evoluíram os leads de 14 origens, agrupadas em pago, orgânico e indicação, de out/25 a set/26?",
+          "o_que_demonstra": [
+            "Eixo de linhas em dois níveis com rótulo de canal centrado sobre suas origens",
+            "Vão de 8 px entre grupos e de 1 px entre itens, calculado na posição y",
+            "Grupos desiguais: indicação com 1 origem e pago com 7",
+            "Origem Sem origem declarada em neutro, por último e fora dos grupos",
+            "Mês corrente parcial com borda tracejada e nota parcial até 2026-09-14"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_taxa-e-volume-em-celula-de-tamanho-variavel",
+          "titulo": "Taxa de agenda e volume por origem e mês",
+          "caso_de_uso": "Qual origem tem taxa de agenda alta com volume que importa, sem que 2 leads com 100% dominem a leitura?",
+          "o_que_demonstra": [
+            "Quadrado com área proporcional ao volume (lado pela raiz) e cor pela taxa",
+            "Zero leads sem forma e ponto neutro para a grade não parecer quebrada",
+            "Volume 30 vezes maior limitado ao lado máximo e anotado",
+            "Duas legendas: tamanho com três referências e faixas de cor da taxa"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_cohort-em-triangulo",
+      "nome": "Cohort de conversão em triângulo",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Tabela em que cada linha é um grupo de entrada (o mês em que o lead ou a oportunidade nasceu), cada coluna é o tempo decorrido desde a entrada (M0, M1, M2) e a célula mostra a taxa acumulada em cor e número. O triângulo aparece sozinho porque cohorts recentes têm menos períodos. Lê em três sentidos: na horizontal um cohort amadurece, na vertical cohorts se comparam na mesma idade, na diagonal aparece um mês de calendário.",
+      "quando_usar": [
+        "Saber se grupos novos convertem melhor que os antigos na mesma idade: lead em agenda, oportunidade em ganho.",
+        "Avaliar o efeito de uma mudança de processo a partir do cohort em que ela entrou.",
+        "De 6 a 18 cohorts por até 12 períodos decorridos, com pelo menos algumas dezenas de entradas por cohort.",
+        "Público que lê tabela e precisa do número exato ao lado da cor."
+      ],
+      "quando_evitar": [
+        "Cohorts de poucos elementos: taxas instáveis; agregar em trimestres ou mostrar só contagem.",
+        "Comparar a forma das curvas de amadurecimento: uma linha por cohort (04).",
+        "Só o total convertido por mês de calendário, sem idade: colunas (03) ou linha (04).",
+        "Estados que avançam e voltam entre etapas: matriz de transição (modelo 07)."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_agenda-por-cohort-mensal-de-entrada",
+          "titulo": "Conversão de lead em agenda por mês de entrada",
+          "caso_de_uso": "Os leads que entraram de jan/26 a set/26 chegam à agenda mais rápido, comparando cada cohort na mesma idade?",
+          "o_que_demonstra": [
+            "Grid do Tailwind com coluna de cohort, coluna de n e miolo de M0 a M6",
+            "Taxa acumulada com cor sequencial por style e número por formatPercent",
+            "Triângulo natural: células futuras não existem, sem cinza nem zero",
+            "Linha de média ponderada pelo tamanho do cohort no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_mudanca-de-cadencia-entre-cohorts",
+          "titulo": "Cohorts antes e depois da nova cadência",
+          "caso_de_uso": "A nova cadência de pré-vendas, iniciada em mai/26, melhorou a conversão em agenda já no primeiro mês de vida?",
+          "o_que_demonstra": [
+            "Divisória horizontal entre abr/26 e mai/26 com rótulo nova cadência",
+            "Coluna M1 em destaque com anotação: 18% antes, 27% depois",
+            "Médias ponderadas separadas para os dois blocos de cohorts",
+            "Destaque com segundo canal: peso de fonte na coluna, além da cor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_ganho-acumulado-por-mes-de-criacao",
+          "titulo": "Taxa de ganho acumulada por mês de criação",
+          "caso_de_uso": "Quais dos 18 cohorts de oportunidades criadas de abr/25 a set/26 fecham mais negócios aos 3, 6 e 12 meses?",
+          "o_que_demonstra": [
+            "18 cohorts por 12 meses decorridos em linhas de 20 px, sem rolagem",
+            "Coluna de n com barra horizontal proporcional ao tamanho do cohort",
+            "Marcos de leitura em M3, M6 e M12 com borda de coluna discreta",
+            "Média ponderada no rodapé e frase acessível com o melhor cohort em M6"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_periodo-parcial-e-cohort-pequeno",
+          "titulo": "Cohorts com período parcial e amostra pequena",
+          "caso_de_uso": "Como ler o cohort sem confundir o mês em curso com queda nem uma taxa de 12 oportunidades com tendência?",
+          "o_que_demonstra": [
+            "Diagonal de set/26 com borda tracejada e nota período em curso",
+            "Cohort de fev/26 com n = 12 esmaecido na marca e o n escrito ao lado",
+            "Alternador entre taxa e contagem absoluta com aria-pressed",
+            "Cohort sem entradas escrito como indisponível, nunca 0%"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_calendario-estilo-contribuicoes",
+      "nome": "Calendário estilo contribuições",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Um ano (ou vários empilhados) desenhado como colunas de semanas e linhas de dias da semana, cada dia uma célula colorida pela intensidade. Mostra sazonalidade, dias sem atividade e rupturas ao longo de meses, com contorno em degrau separando os meses. Absorve a matriz anual de dia do mês por mês, que troca o dia da semana pelo dia do calendário contábil, e a grade de atividade micro em tamanho de cartão pequeno.",
+      "quando_usar": [
+        "Atividade diária ao longo de meses ou anos: fechamentos, entradas, receita reconhecida por dia.",
+        "Ciclo de dia da semana e sazonalidade na mesma figura, com um ano cabendo num cartão largo.",
+        "Efeito de dia do mês (início, quinzena, fim de mês), na variante de meses nas linhas e dias 1 a 31 nas colunas.",
+        "Comparar a rotina de poucas pessoas num mês, em grades micro lado a lado com escala comum."
+      ],
+      "quando_evitar": [
+        "Séries curtas, menos de 8 semanas: calendário mensal em grade (modelo 05) ou colunas por dia (03).",
+        "Pergunta de tendência: a grade apaga a sequência; linha diária ou semanal (04).",
+        "Leitura de um mês com o número do dia visível para público operacional: calendário mensal (modelo 05).",
+        "Uma linha de dias com status categórico: faixa de status (24, modelo 04).",
+        "Eventos com hora de início e fim: cronograma (20)."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_fechamentos-por-dia-em-2026",
+          "titulo": "Fechamentos por dia em 2026",
+          "caso_de_uso": "Em que semanas de 2026 os fechamentos se concentraram e quantos dias úteis passaram sem nenhum negócio ganho?",
+          "o_que_demonstra": [
+            "Posição por semana e dia da semana calculada em UTC, com a semana na segunda",
+            "Contorno em degrau entre meses a partir do último dia de cada mês",
+            "Escala em 5 faixas de 0 a 4 ou mais fechamentos, zero com borda sutil",
+            "Ano parcial até 2026-09-14 sem células futuras desenhadas"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_tres-anos-de-receita-reconhecida",
+          "titulo": "Receita reconhecida por dia em três anos",
+          "caso_de_uso": "A concentração de receita reconhecida em dezembro se repete em 2024, 2025 e 2026, ou foi um ano isolado?",
+          "o_que_demonstra": [
+            "Três anos empilhados com domínio comum calculado sobre o conjunto",
+            "Soma do ano em formatCurrencyCompact ao lado de cada faixa",
+            "Seis dias de falha de carga hachurados, distintos de dia com zero",
+            "Rótulos de mês só na primeira faixa e dias da semana alternados"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_efeito-de-fim-de-mes-por-dia-do-mes",
+          "titulo": "Efeito de fim de mês nos fechamentos",
+          "caso_de_uso": "Os fechamentos se acumulam nos últimos dias úteis de cada mês de 2026, como a coordenação suspeita?",
+          "o_que_demonstra": [
+            "Matriz de 12 meses por 31 dias com máscara de validade de data",
+            "Datas inexistentes sem desenho: fevereiro com 28 células, abril com 30",
+            "Últimos 5 dias úteis de cada mês com contorno e anotação de 41% do total",
+            "Fins de semana sombreados em --surface-sunken e setembro cortado no dia 14"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_grade-micro-por-sdr-com-ferias",
+          "titulo": "Atividades registradas por SDR em agosto",
+          "caso_de_uso": "Quem concentra o registro de atividades no começo da semana e quem registra tudo na sexta, em ago/26?",
+          "o_que_demonstra": [
+            "Seis grades micro de 5 semanas por 7 dias, células de 10 px e vão de 2 px",
+            "Escala comum de 4 faixas para as seis pessoas fictícias",
+            "Duas semanas de férias com contorno vazado, nunca pintadas na classe zero",
+            "Feriado com contorno pontilhado para o vazio não parecer ociosidade"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_calendario-mensal-em-grade",
+      "nome": "Calendário mensal em grade",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "O mês desenhado como calendário de parede: 7 colunas, 6 linhas reservadas, número do dia no canto de cada célula e a cor pelo valor. Lê como agenda, o que ajuda públicos operacionais. É HTML com grid do Tailwind porque o texto do dia e do valor precisa escalar com a fonte. Absorve o calendário de marcos da família 20, em que a célula carrega chips de evento e períodos atravessam dias em vez de cor.",
+      "quando_usar": [
+        "Leitura de um mês com o número do dia visível: reuniões realizadas, agendas marcadas, SLA por dia.",
+        "Público operacional que pensa em agenda e precisa achar o dia de hoje e a próxima semana.",
+        "Marcar dias que passaram de um limite (capacidade, teto de agendas) com ícone além da cor.",
+        "Prazos e marcos do mês (fechamento, revisão de forecast) e janelas que atravessam semanas."
+      ],
+      "quando_evitar": [
+        "Comparação entre muitos meses: calendário estilo contribuições (modelo 04).",
+        "Efeito de dia do mês ao longo do ano: matriz dia do mês por mês (modelo 04, v3).",
+        "Eventos com hora de início e fim no mesmo dia: agenda em grade ou cronograma (20).",
+        "Pergunta de tendência diária: colunas por dia (03) ou linha (04)."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_reunioes-realizadas-em-setembro",
+          "titulo": "Reuniões realizadas por dia em setembro",
+          "caso_de_uso": "Em que dias de set/26 o time comercial realizou mais reuniões com prospects, e quais dias úteis ficaram vazios?",
+          "o_que_demonstra": [
+            "grid-cols-7 com semana na segunda e 6 linhas reservadas sem salto de layout",
+            "Número do dia no canto e contagem de reuniões no centro da célula",
+            "Cor por faixa via style com var(--seq-N), texto com contraste por faixa",
+            "Dias de agosto e outubro nas pontas sem cor e em --text-muted"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_dias-acima-da-capacidade-de-agenda",
+          "titulo": "Dias acima da capacidade de agenda",
+          "caso_de_uso": "Em quais dias de ago/26 a pré-vendas marcou mais de 22 agendas, acima do teto que o time de vendas consegue atender?",
+          "o_que_demonstra": [
+            "Borda em --warning e ícone lucide AlertTriangle nos dias acima do teto",
+            "Teto declarado na linha de leitura: 5 de 21 dias úteis acima de 22 agendas",
+            "Destaque com segundo canal: ícone e peso de fonte, não só a cor",
+            "Frase acessível com os dias acima do teto e o maior valor do mês"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_mes-de-seis-semanas-com-feriado",
+          "titulo": "Mês de seis semanas com feriado e dia corrente",
+          "caso_de_uso": "Como ler um mês que ocupa 6 semanas, com feriado nacional e o dia de hoje, sem confundir feriado com dia sem agenda?",
+          "o_que_demonstra": [
+            "Mês de 6 semanas gerado em TypeScript a partir do deslocamento do dia 1",
+            "Feriado com ícone e célula neutra, sem cor de valor",
+            "Dia corrente com anel de foco e dias futuros sem valor desenhado",
+            "Dia com zero agendas escrito 0 e distinto do feriado"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_calendario-de-marcos-com-janela-de-leitura",
+          "titulo": "Marcos de dezembro e janela de leitura",
+          "caso_de_uso": "Quais prazos do planejamento caem em dez/26 e onde começa a janela de leitura conclusiva que vai até 2027-01-13?",
+          "o_que_demonstra": [
+            "Chips de evento na célula com teto de 2 e resumo +N para dia lotado",
+            "Período de 2026-12-14 em diante como barra que atravessa semanas",
+            "Segmento por semana com cantos arredondados só nas pontas reais",
+            "Hoje, fins de semana e recesso fictício marcados sem cor de valor"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "06_lasagna",
+      "nome": "Lasagna (entidades por tempo)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Cada linha é uma entidade (fila, SDR, oportunidade) e cada coluna é um período (dia ou semana), com a cor da célula para valor ou status naquele período. É o heatmap de séries temporais densas: mostra o padrão de cada entidade ao longo do tempo e os dias em que várias pioraram juntas, o que um gráfico com dezenas de linhas não consegue. SVG com geometria calculada em TypeScript; entidade que ainda não existia não tem célula, e isso é diferente de zero.",
+      "quando_usar": [
+        "Status ou valor diário de muitas entidades: SLA por fila, ocupação por SDR, dias parados por oportunidade.",
+        "De 8 a 200 linhas por 12 a 180 colunas; até uns 10 mil retângulos o SVG aguenta sem agregar.",
+        "Achar colunas que escurecem juntas (um dia ruim para todos) e linhas que destoam do grupo.",
+        "Ordenar as linhas para contar a história: por data de início, por média do período ou por semelhança."
+      ],
+      "quando_evitar": [
+        "Poucas entidades com valor contínuo e pergunta de tendência: múltiplas séries (04, modelo 02).",
+        "Uma entidade só com status por dia: faixa de status tracker (24, modelo 04).",
+        "Padrão de dia da semana por hora, sem entidade: heatmap dia por hora (modelo 01).",
+        "Leitura do valor exato de cada dia: tabela com série por linha (14, modelo 03).",
+        "Mais de 10 mil células sem agregação: fundir dias iguais ou agrupar por semana antes de desenhar."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_sla-diario-por-fila",
+          "titulo": "SLA diário de primeiro contato por fila",
+          "caso_de_uso": "Em quais dos últimos 90 dias as 12 filas de pré-vendas estouraram o SLA de primeiro contato, e foi uma fila ou todas?",
+          "o_que_demonstra": [
+            "Grade SVG de 12 filas por 90 dias com célula estreita e sem vão horizontal",
+            "Três faixas categóricas (dentro do SLA, atenção, estouro) com legenda nomeada",
+            "Rótulo de tempo esparso: só o primeiro dia de cada mês no eixo",
+            "Filas ordenadas pela quantidade de dias em estouro, nunca por nome",
+            "Frase acessível com a fila de mais estouros e os dias em que todas estouraram"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_ocupacao-semanal-por-sdr",
+          "titulo": "Ocupação semanal da agenda por SDR",
+          "caso_de_uso": "Quais dos 9 SDRs passaram de 100% da capacidade de agenda nas últimas 26 semanas, e a sobrecarga é crônica ou pontual?",
+          "o_que_demonstra": [
+            "Linhas ordenadas pela ocupação média do período, a maior no topo",
+            "Escala divergente centrada em 100% da capacidade, com o teto declarado na legenda",
+            "Contorno em --warning nas semanas acima de 100%, além da cor",
+            "Ocupação média de cada SDR escrita à direita da linha por formatPercent",
+            "Semana corrente parcial com borda tracejada e nota de semana em curso"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_dias-parados-das-oportunidades-abertas",
+          "titulo": "Dias parados das oportunidades abertas",
+          "caso_de_uso": "Onde as 200 oportunidades abertas do Comercial ficaram paradas nos últimos 120 dias, e quais nunca voltaram a andar?",
+          "o_que_demonstra": [
+            "Dias seguidos na mesma faixa fundidos num só rect: de 24 mil células para poucos mil",
+            "Cor pelos dias sem movimento em 5 faixas sequenciais, reiniciando a cada movimento",
+            "Oportunidade criada no meio do recorte sem células antes da data de criação",
+            "Linhas ordenadas pela data de criação, com rótulo de linha a cada 25 oportunidades",
+            "Linha de hoje em --line-strong e contagem das paradas há 30 dias ou mais"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_inicio-tardio-e-agregacao-semanal",
+          "titulo": "Início tardio e agregação por semana",
+          "caso_de_uso": "Como mostrar SDRs admitidos em jul/26 sem pintar os meses anteriores de zero, com a grade agregada em semanas num cartão?",
+          "o_que_demonstra": [
+            "Nenhuma célula antes da admissão, com marca discreta no primeiro dia de cada SDR",
+            "Dia sem registro depois da admissão hachurado por padrão SVG, distinto de zero",
+            "Prop de granularidade que agrega 182 dias em 26 semanas, com nota no rodapé",
+            "Semana da admissão calculada só sobre os dias em que o SDR já existia",
+            "Nota de leitura: vazio é antes de existir, hachura é sem registro, 0 é zero"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_matriz-de-transicao",
+      "nome": "Matriz de transição, de-para e confusão",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Matriz quadrada com a mesma lista de estados nos dois eixos: origem nas linhas, destino nas colunas e contagem ou percentual na célula. Na transição entre etapas, acima da diagonal é avanço e abaixo é retrocesso; na matriz de-para entre duas datas, a linha de entradas e a coluna de saídas fecham os totais; na matriz de confusão, a diagonal é acerto e o resto é tipo de erro. A diagonal fica fora da escala de cor, porque permanência ou acerto costuma ser o maior número e achata todo o resto.",
+      "quando_usar": [
+        "De onde para onde as oportunidades se moveram entre etapas do funil num trimestre.",
+        "Comparar a foto de duas datas: quem ficou, avançou, regrediu, entrou e saiu.",
+        "Auditar uma classificação automática: temperatura prevista contra desfecho, motivo sugerido contra motivo revisado.",
+        "De 3 a 10 estados por eixo, com contagem escrita na célula e percentual da linha na dica."
+      ],
+      "quando_evitar": [
+        "Caminho por vários estágios em sequência, com o volume do fluxo como leitura: Sankey multietapa (11, modelo 02).",
+        "Só o volume por etapa, sem origem e destino: funil (10).",
+        "Dimensões diferentes nos dois eixos: matriz categórica em cor (modelo 02).",
+        "Relação simétrica entre entidades, sem direção: matriz de adjacência (27, modelo 01).",
+        "Estados sem ordem natural (origem, canal) lidos como avanço e retrocesso: desligar os dois tons do triângulo."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_movimentos-entre-etapas-no-trimestre",
+          "titulo": "Movimentos entre etapas do funil no trimestre",
+          "caso_de_uso": "Das 1.340 oportunidades do trimestre, entre 2026-06-30 e 2026-09-14, quem ficou, avançou, regrediu, entrou e saiu?",
+          "o_que_demonstra": [
+            "Seis etapas nos dois eixos na ordem do funil, com de nas linhas e para nas colunas",
+            "Linha extra nova no trimestre e colunas ganha e perdida para os totais fecharem",
+            "Diagonal de permanência fora do domínio de cor, com contorno e número escrito",
+            "Contagem na célula e percentual da linha na dica por formatRateWithVolume",
+            "Cinco totais separados: permaneceram, avançaram, regrediram, entraram e saíram"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_retrocessos-em-destaque",
+          "titulo": "Retrocessos entre etapas em destaque",
+          "caso_de_uso": "Quantas oportunidades voltaram de proposta para etapas anteriores no trimestre, e em quais pares de etapas o retrocesso se concentra?",
+          "o_que_demonstra": [
+            "Abaixo da diagonal em rampa de --negative por color-mix; acima, rampa --seq",
+            "Duas legendas, avanço e retrocesso, cada uma com seu próprio domínio",
+            "Percentual por linha: de quem saiu de proposta, para onde foi",
+            "Anotação na maior célula de retrocesso: 14% das propostas voltaram para descoberta",
+            "Retrocesso marcado também por seta no rótulo da célula, não só pela cor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_motivo-de-perda-sugerido-contra-revisado",
+          "titulo": "Motivo de perda sugerido contra revisado",
+          "caso_de_uso": "O classificador de texto acerta o motivo de perda? Em 1.200 perdas fictícias, quais motivos ele confunde com sem fit?",
+          "o_que_demonstra": [
+            "Matriz de confusão com real nas linhas e previsto nas colunas, escrito no cabeçalho",
+            "Seletor de normalização: bruto, por linha (revocação), por coluna (precisão), total",
+            "Escala e legenda próprias por modo; em bruto só o fora da diagonal ganha cor",
+            "Painel lateral com precisão e revocação por classe e o coeficiente de Matthews",
+            "Divisão por zero tratada em TypeScript: linha sem casos vira null e hachura"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_diagonal-dominante-e-estagio-extinto",
+          "titulo": "Diagonal dominante, etapa vazia e estágio extinto",
+          "caso_de_uso": "Como manter a matriz legível quando 80% das oportunidades não se moveram, uma etapa ficou vazia e outra foi extinta?",
+          "o_que_demonstra": [
+            "Diagonal em --surface-overlay com valor escrito e fora do domínio da escala",
+            "Etapa contrato sem movimentos: linha vazia com o rótulo sem movimento no período",
+            "Estágio extinto em 2026-08-01 como coluna hachurada, com nota de mudança de processo",
+            "Linha com menos de 20 casos esmaecida e com o n escrito na margem",
+            "Estado fora do dicionário contado à parte no rodapé, nunca descartado em silêncio"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_heatmap-de-correlacao",
+      "nome": "Heatmap de correlação",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Matriz de métricas contra métricas com o coeficiente de correlação de cada par, em escala divergente de −1 a +1 com o neutro fixo no zero, e só o triângulo inferior, porque a matriz é simétrica. Responde quais métricas andam juntas e quais se descolam, como exploração e não como prova de causa. O coeficiente é calculado em TypeScript com exclusão por par, então cada célula carrega seu próprio número de observações. Absorve a matriz de correlação da família 25, com círculo de área proporcional ao módulo do coeficiente.",
+      "quando_usar": [
+        "Saber quais métricas de mídia e de funil andam juntas antes de montar um modelo ou escolher os cartões de um painel.",
+        "De 5 a 14 métricas com pelo menos 26 observações por par, por exemplo semanas.",
+        "Achar blocos de métricas que se movem juntas, com a ordem das métricas por agrupamento.",
+        "Público analítico; para a diretoria, só os pares fortes rotulados e o aviso de que correlação não é causa."
+      ],
+      "quando_evitar": [
+        "Menos de 12 observações por par: coeficiente enganoso; mostrar a dispersão do par (09, modelo 01).",
+        "Quando a forma da relação importa (curva, grupos, pontos fora da curva): matriz de dispersão (09, modelo 10).",
+        "Duas métricas só: dispersão com linha de referência (09, modelo 02).",
+        "Mais de uns 14 atributos: a leitura desmancha; filtrar por tema antes de calcular.",
+        "Séries com tendência comum lidas em nível: calcular sobre a variação semana a semana."
+      ],
+      "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+      "versoes": [
+        {
+          "slug": "v1_seis-medidas-de-midia",
+          "titulo": "Correlação entre seis medidas de mídia",
+          "caso_de_uso": "Nas últimas 52 semanas, investimento, impressões, cliques, leads, qualificados e CPL qualificado andam juntos?",
+          "o_que_demonstra": [
+            "Triângulo inferior por máscara de linha maior que coluna, diagonal com o nome",
+            "Escala divergente com domínio fixo de −1 a +1 e neutro em --surface-overlay",
+            "Coeficiente com duas casas na célula e texto com contraste por faixa",
+            "Pearson declarado no subtítulo e n de semanas do par na dica"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_pares-fortes-rotulados",
+          "titulo": "Só os pares fortes rotulados",
+          "caso_de_uso": "Para a diretoria, quais pares entre dez métricas semanais do funil têm correlação forte e qual relação esperada não aparece?",
+          "o_que_demonstra": [
+            "Número e contorno só nas células com módulo acima de 0,7; o resto só em cor",
+            "Anotação ao lado: investimento e leads andam juntos, qualificados não acompanham",
+            "Subtítulo com o aviso de que correlação não é causa, para público executivo",
+            "Frase acessível com os três pares mais fortes e o sinal de cada um"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_catorze-medidas-em-blocos",
+          "titulo": "Catorze medidas semanais em blocos",
+          "caso_de_uso": "Em 52 semanas de marketing e pré-vendas, o bloco de métricas de topo de funil se descola do bloco de qualificação?",
+          "o_que_demonstra": [
+            "14 medidas ordenadas por agrupamento hierárquico, nunca em ordem alfabética",
+            "Círculo com área proporcional ao módulo (raio pela raiz) e cor pelo sinal",
+            "Faixas de grupo nomeadas nos eixos: topo de funil, qualificação e custo",
+            "Correlação sobre a variação semana a semana, dita no subtítulo",
+            "Valor exato e n de pares na dica, sem número escrito na célula"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_pares-insuficientes-e-nao-calculavel",
+          "titulo": "Pares insuficientes e coeficiente não calculável",
+          "caso_de_uso": "Como tratar métricas com só 8 semanas de histórico e uma métrica constante no período sem desenhar correlação zero?",
+          "o_que_demonstra": [
+            "Célula com menos de 12 pares hachurada, com pares insuficientes escrito na dica",
+            "Métrica constante com variância zero: célula escrita não calculável, nunca 0",
+            "n de pares por célula, porque a exclusão por par muda a amostra entre vizinhas",
+            "Par negativo forte em nível que some na variação, com nota de tendência comum"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    }
+  ]
+}

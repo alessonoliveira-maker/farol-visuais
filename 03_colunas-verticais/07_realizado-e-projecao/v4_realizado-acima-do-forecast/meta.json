@@ -1,0 +1,14 @@
+{
+  "title": "Realizado acima do forecast e mês sem meta",
+  "useCase": "Como tratar o mês em que o realizado já passou do forecast e o mês sem meta cadastrada, sem desenho enganoso?",
+  "demonstrates": [
+    "Legenda nomeando realizado, hachura de previsto restante e traço de meta",
+    "Rótulo de valor preso ao próprio segmento realizado, nunca ao topo da pilha inteira",
+    "Restante zero quando o realizado passa do forecast, com aviso de previsão desatualizada",
+    "Mês sem meta cadastrada sem traço de meta e com nota curta, nunca meta zero",
+    "Primeiro dia do período trocado por traço na base com a frase sem leitura ainda",
+    "Frase acessível que diz quantos meses têm meta, forecast e só realizado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

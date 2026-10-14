@@ -1,0 +1,14 @@
+{
+  "title": "Metas 2027 da diretoria em percentual",
+  "useCase": "Onde cada um dos seis indicadores de meta 2027 está contra a própria meta, em unidades diferentes lidas numa escala só.",
+  "demonstrates": [
+    "Indicadores de unidades diferentes normalizados em percentual da própria meta",
+    "Faixas qualitativas em três tons de um só matiz pela prop background do Bar",
+    "Faixas invertidas no custo por reunião, em que menos é melhor",
+    "Marcador de meta único em 100% como ReferenceLine para todos os indicadores",
+    "Valor original de cada indicador escrito na própria linha, no formato da unidade"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O valor original vai na linha, não numa dica: um único ChartTooltip não troca de formato por linha, e DIC-1 prefere o essencial escrito a escondido no hover."
+}

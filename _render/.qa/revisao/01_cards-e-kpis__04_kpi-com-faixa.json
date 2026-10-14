@@ -1,0 +1,212 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "04_kpi-com-faixa",
+  "versoes": {
+    "v1_receita-projetada-de-2027-em-faixa": {
+      "veredito": "aprovado",
+      "nota": "Faixa honesta no dominio declarado de zero ao teto; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:23.301Z",
+      "impressao": "75460b6898137bd06b27eefc0c8e599591691be1",
+      "arquivos": {
+        "Chart.tsx": "831214d24817d11981c78783519735f54a6bfaef",
+        "data.ts": "d1b9871045f2829e0b3eda4db66e1144ddfdc8cb",
+        "meta.json": "02d850ded7d733908c3e15c8551da1b25437ed7d"
+      }
+    },
+    "v2_tres-cenarios-e-o-que-virou-meta": {
+      "veredito": "aprovado",
+      "nota": "Escala comum, marcas por forma e meta em destaque; observacoes de halo e alinhamento de rotulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:27.871Z",
+      "impressao": "0a520cc90f2bf4dbf4ea312ebe28f608fbbfada2",
+      "arquivos": {
+        "Chart.tsx": "a67dcc5f4eeedeb56e26ce90282cf28b72380a1a",
+        "data.ts": "bde60d2f106836a2506822a0469dbb61df4b5faa",
+        "meta.json": "d7045800d1b18e53b1bb03ea4565bb682280eb9e"
+      }
+    },
+    "v3_tempos-da-esteira-em-mediana-e-p90": {
+      "veredito": "aprovado",
+      "nota": "Tres reguas na mesma escala ate o teto declarado, com n e metodo escritos; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:33.679Z",
+      "impressao": "bbf75cf6531ad3e0d5d2aa3b57480f5880214a99",
+      "arquivos": {
+        "Chart.tsx": "e34796255ab5a288eb030050133cfc84d128bf8e",
+        "data.ts": "04ab37a65aeaf29d9cf1f3eee4cd446d7518c1c6",
+        "meta.json": "b4d7ff51fa17c3f0372d78ba21bdba985d5fd778"
+      }
+    },
+    "v4_retorno-que-cruza-zero-e-amostra-pequena": {
+      "veredito": "aprovado",
+      "nota": "Casos limite corretos: zero marcado, sinal tipografico e p90 suprimido; aviso da frase acessivel em 244 de 250.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:34.162Z",
+      "impressao": "5d2e50a81a4c8c9ae6ff54b5008b288cab426b64",
+      "arquivos": {
+        "Chart.tsx": "9470eaad230ca43163b3783d4ac1495d5042f8d6",
+        "data.ts": "958eb9904b9dc9573668ba1a95c6be223c816a15",
+        "meta.json": "06122c9fc4f619e480e1ab45cf3d961290083768"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-projetada-de-2027-em-faixa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: números da premissa sem algarismo tabular; rótulo centro some quando a referência cai dentro da faixa.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T11:34:56.199Z",
+      "impressao": "75460b6898137bd06b27eefc0c8e599591691be1",
+      "arquivos": {
+        "Chart.tsx": "831214d24817d11981c78783519735f54a6bfaef",
+        "data.ts": "d1b9871045f2829e0b3eda4db66e1144ddfdc8cb",
+        "meta.json": "02d850ded7d733908c3e15c8551da1b25437ed7d"
+      }
+    },
+    {
+      "versao": "v2_tres-cenarios-e-o-que-virou-meta",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: halo sobre a faixa rebaixada deixa manchas no tema escuro; rótulo de valor sem alinhamento pela ponta; sem premissa o cartão não avisa.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T11:34:56.722Z",
+      "impressao": "0a520cc90f2bf4dbf4ea312ebe28f608fbbfada2",
+      "arquivos": {
+        "Chart.tsx": "a67dcc5f4eeedeb56e26ce90282cf28b72380a1a",
+        "data.ts": "bde60d2f106836a2506822a0469dbb61df4b5faa",
+        "meta.json": "d7045800d1b18e53b1bb03ea4565bb682280eb9e"
+      }
+    },
+    {
+      "versao": "v3_tempos-da-esteira-em-mediana-e-p90",
+      "veredito": "reprovado",
+      "nota": "Item d e 17.2: a barra p25 a p75 da régua não tem rótulo nem valor na tela e usa line-strong, que só vale com valor escrito. Nomear faixa central, corte da mediana e ponto do p90 na nota ou escrever p25 e p75.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T11:34:57.311Z",
+      "impressao": "ded99ce33a6121152a04e578c4f7a71cfe65912f",
+      "arquivos": {
+        "Chart.tsx": "3e73af2fbe969c909ee6a307d0b6edc56279cf52",
+        "data.ts": "04ab37a65aeaf29d9cf1f3eee4cd446d7518c1c6",
+        "meta.json": "b4d7ff51fa17c3f0372d78ba21bdba985d5fd778"
+      }
+    },
+    {
+      "versao": "v4_retorno-que-cruza-zero-e-amostra-pequena",
+      "veredito": "reprovado",
+      "nota": "Item d e ROT: o corte central em 0,5x parte a faixa em duas sem rótulo nem valor na tela ou na frase acessível. Escrever centro 0,5x na linha de rótulos, como a v1, ou não desenhar o corte.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T11:34:57.770Z",
+      "impressao": "3b7b6b8e1148fc1fe67096c655506cb8ac293a99",
+      "arquivos": {
+        "Chart.tsx": "ffd2e34c5994aa648f20fa1c3c40403efb858d86",
+        "data.ts": "958eb9904b9dc9573668ba1a95c6be223c816a15",
+        "meta.json": "06122c9fc4f619e480e1ab45cf3d961290083768"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-de-2027-em-faixa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: números da premissa sem algarismo tabular; rótulo centro some quando a referência cai dentro da faixa.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:01:42.836Z",
+      "impressao": "75460b6898137bd06b27eefc0c8e599591691be1",
+      "arquivos": {
+        "Chart.tsx": "831214d24817d11981c78783519735f54a6bfaef",
+        "data.ts": "d1b9871045f2829e0b3eda4db66e1144ddfdc8cb",
+        "meta.json": "02d850ded7d733908c3e15c8551da1b25437ed7d"
+      }
+    },
+    {
+      "versao": "v2_tres-cenarios-e-o-que-virou-meta",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: halo sobre a faixa rebaixada deixa manchas no escuro; rótulo de valor sem alinhamento pela ponta; sem premissa o cartão não avisa.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:01:43.336Z",
+      "impressao": "0a520cc90f2bf4dbf4ea312ebe28f608fbbfada2",
+      "arquivos": {
+        "Chart.tsx": "a67dcc5f4eeedeb56e26ce90282cf28b72380a1a",
+        "data.ts": "bde60d2f106836a2506822a0469dbb61df4b5faa",
+        "meta.json": "d7045800d1b18e53b1bb03ea4565bb682280eb9e"
+      }
+    },
+    {
+      "versao": "v3_tempos-da-esteira-em-mediana-e-p90",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; o anterior foi corrigido com p25 e p75 escritos. Observações: SLA de 8 h sobre o p75; ponto do p90 sem rótulo na régua; dado sem caso de amostra pequena.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:01:43.833Z",
+      "impressao": "bbf75cf6531ad3e0d5d2aa3b57480f5880214a99",
+      "arquivos": {
+        "Chart.tsx": "e34796255ab5a288eb030050133cfc84d128bf8e",
+        "data.ts": "04ab37a65aeaf29d9cf1f3eee4cd446d7518c1c6",
+        "meta.json": "b4d7ff51fa17c3f0372d78ba21bdba985d5fd778"
+      }
+    },
+    {
+      "versao": "v4_retorno-que-cruza-zero-e-amostra-pequena",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; o anterior foi corrigido com centro 0,5x escrito. Observações: alerta mantido com amostra suficiente; frase acessível diz não calculado; sem aviso de premissa.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:01:44.352Z",
+      "impressao": "ed843b972aac717165086759f163ebf0939194fa",
+      "arquivos": {
+        "Chart.tsx": "1cae5dc0d68741cedb0d8c1a1ea72dd96d205263",
+        "data.ts": "958eb9904b9dc9573668ba1a95c6be223c816a15",
+        "meta.json": "06122c9fc4f619e480e1ab45cf3d961290083768"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-de-2027-em-faixa",
+      "veredito": "aprovado",
+      "nota": "Faixa honesta no dominio declarado de zero ao teto; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:23.301Z",
+      "impressao": "75460b6898137bd06b27eefc0c8e599591691be1",
+      "arquivos": {
+        "Chart.tsx": "831214d24817d11981c78783519735f54a6bfaef",
+        "data.ts": "d1b9871045f2829e0b3eda4db66e1144ddfdc8cb",
+        "meta.json": "02d850ded7d733908c3e15c8551da1b25437ed7d"
+      }
+    },
+    {
+      "versao": "v2_tres-cenarios-e-o-que-virou-meta",
+      "veredito": "aprovado",
+      "nota": "Escala comum, marcas por forma e meta em destaque; observacoes de halo e alinhamento de rotulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:27.871Z",
+      "impressao": "0a520cc90f2bf4dbf4ea312ebe28f608fbbfada2",
+      "arquivos": {
+        "Chart.tsx": "a67dcc5f4eeedeb56e26ce90282cf28b72380a1a",
+        "data.ts": "bde60d2f106836a2506822a0469dbb61df4b5faa",
+        "meta.json": "d7045800d1b18e53b1bb03ea4565bb682280eb9e"
+      }
+    },
+    {
+      "versao": "v3_tempos-da-esteira-em-mediana-e-p90",
+      "veredito": "aprovado",
+      "nota": "Tres reguas na mesma escala ate o teto declarado, com n e metodo escritos; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:33.679Z",
+      "impressao": "bbf75cf6531ad3e0d5d2aa3b57480f5880214a99",
+      "arquivos": {
+        "Chart.tsx": "e34796255ab5a288eb030050133cfc84d128bf8e",
+        "data.ts": "04ab37a65aeaf29d9cf1f3eee4cd446d7518c1c6",
+        "meta.json": "b4d7ff51fa17c3f0372d78ba21bdba985d5fd778"
+      }
+    },
+    {
+      "versao": "v4_retorno-que-cruza-zero-e-amostra-pequena",
+      "veredito": "aprovado",
+      "nota": "Casos limite corretos: zero marcado, sinal tipografico e p90 suprimido; aviso da frase acessivel em 244 de 250.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:54:34.162Z",
+      "impressao": "5d2e50a81a4c8c9ae6ff54b5008b288cab426b64",
+      "arquivos": {
+        "Chart.tsx": "9470eaad230ca43163b3783d4ac1495d5042f8d6",
+        "data.ts": "958eb9904b9dc9573668ba1a95c6be223c816a15",
+        "meta.json": "06122c9fc4f619e480e1ab45cf3d961290083768"
+      }
+    }
+  ]
+}

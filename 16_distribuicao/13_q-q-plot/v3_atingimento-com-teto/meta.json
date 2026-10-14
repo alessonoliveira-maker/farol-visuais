@@ -1,0 +1,13 @@
+{
+  "title": "Atingimento de meta com teto de 150%",
+  "useCase": "O desvio no topo do atingimento de meta é forma real ou efeito do teto de 150% do sistema de origem?",
+  "demonstrates": [
+    "Pontos achatados no topo formando uma linha horizontal em 150%",
+    "ReferenceLine no teto com rótulo e nota que atribui o desvio ao teto",
+    "Casos no teto contados no rodapé, fora da leitura de forma",
+    "Diagonal mantida para mostrar que o miolo segue a referência"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "A normal de referência é ajustada pela mediana e pelo intervalo interquartil dividido por 1,349, e não por média e desvio: os casos truncados no teto puxariam a média para baixo e achatariam o desvio, e a diagonal deixaria de valer para o miolo. Com cerca de 10% no teto, o quartil superior continua intacto."
+}

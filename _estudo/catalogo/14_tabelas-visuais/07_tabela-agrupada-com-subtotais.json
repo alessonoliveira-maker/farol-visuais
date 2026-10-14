@@ -1,0 +1,69 @@
+{
+  "slug": "07_tabela-agrupada-com-subtotais",
+  "nome": "Tabela agrupada com subtotais e linha fixa",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Linhas agrupadas por uma dimensão curta (time, área, canal) com rótulo de grupo e subtotal, linhas filhas recuadas e uma linha fixa de referência (média da casa, total geral) com fundo próprio. Quando as colunas também têm grupo, o cabeçalho é duplo. Ordenar por coluna ordena dentro de cada grupo e preserva os grupos; subtotal e total ficam fora do domínio das barras. No Farol o agrupamento vem do TanStack Table e a linha fixa usa position sticky no contêiner de rolagem.",
+  "quando_usar": [
+    "Hierarquia curta de dois níveis com 2 a 6 grupos e 3 a 12 linhas por grupo",
+    "Comparar cada linha contra uma referência que não pode sair da tela ao rolar",
+    "Colunas agrupadas em blocos (camadas de custo, trimestres) com cabeçalho duplo",
+    "Subtotal por grupo que o leitor usa tanto quanto as linhas"
+  ],
+  "quando_evitar": [
+    "Grupos de uma linha só na maioria: tabela plana com coluna de grupo",
+    "Hierarquia com mais de dois níveis: treemap ou árvore (família 12)",
+    "Detalhe por linha que o leitor abre sob demanda: linha expansível (14/08)",
+    "Ordenação que precisa quebrar os grupos: ofereça um modo próprio com controle explícito"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_pipeline-por-time-comercial",
+      "titulo": "Pipeline e fechamentos por time comercial",
+      "caso_de_uso": "Comercial: quanto de pipeline aberto e de fechamentos de 2026-T3 cada um dos 3 times soma e quem pesa em cada time.",
+      "o_que_demonstra": [
+        "Linha de grupo com rótulo e subtotal em kpi-number, filhas recuadas",
+        "Subtotal fora do domínio das barras inline das linhas filhas",
+        "Ordenação por valor dentro de cada grupo, com os grupos preservados",
+        "Separação entre grupos por espaço, sem borda interna"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_media-da-casa-fixa-no-topo",
+      "titulo": "Executivos contra a média da casa",
+      "caso_de_uso": "Comercial: quem está acima ou abaixo da média da casa em taxa de ganho, com a média sempre à vista.",
+      "o_que_demonstra": [
+        "Linha fixa da média com fundo surface-sunken, marcada como referência",
+        "Coluna de desvio contra a média em barra divergente com sinal escrito",
+        "Posição sticky no contêiner de rolagem, sem overflow hidden em ancestral",
+        "Taxa com volume por formatRateWithVolume em cada linha"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_custo-em-tres-camadas-por-area",
+      "titulo": "Custo em três camadas por área",
+      "caso_de_uso": "Diretoria: quanto cada área custa nas camadas 1, 2 e 3 de 2026, com subtotal por área e total geral fixo no rodapé.",
+      "o_que_demonstra": [
+        "Cabeçalho duplo com o bloco de cada camada sobre as colunas de valor",
+        "Subtotal por área e total geral fixo no rodapé com estilo próprio",
+        "Moeda por formatCurrencyCompact e a camada declarada em cada bloco",
+        "Colunas de camada sem cor semântica, porque custo não tem bom nem ruim aqui"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_grupo-unitario-e-grupo-vazio",
+      "titulo": "Grupo de uma linha e grupo vazio no recorte",
+      "caso_de_uso": "Comercial: ler um time com um único executivo e um time que o filtro esvaziou sem sumir da tabela.",
+      "o_que_demonstra": [
+        "Grupo unitário sem subtotal redundante",
+        "Grupo vazio recolhido com a frase nenhuma linha neste recorte em text-muted",
+        "Total geral recalculado só com as linhas visíveis e dito no rótulo",
+        "Frase acessível que conta grupos, linhas e grupos vazios"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

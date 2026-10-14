@@ -1,0 +1,14 @@
+{
+  "title": "Sem origem cai do topo ao fundo",
+  "useCase": "Marketing, 2026-08: quanto do funil chega sem origem declarada, e por que o mix do fundo não se compara ao do topo.",
+  "demonstrates": [
+    "Faixa Sem origem em contorno neutro, com percentual escrito em cada etapa",
+    "Aviso de viés de preenchimento na linha de leitura",
+    "Cobertura de origem por etapa junto do rótulo da categoria",
+    "Nenhuma redistribuição da lacuna entre as origens conhecidas",
+    "Origens conhecidas somam um tom neutro só (Neutro de dado, 17.2), sem cor por categoria"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O catálogo descreve a faixa como hachurada; aqui ela segue o token de ausência da seção 17.2 (contorno --text-muted sem preenchimento), porque hachura é textura decorativa vedada pela COR-9. A parte com origem soma as seis categorias numa faixa neutra só (--line-strong), sem cor por categoria: seis cores sem legenda não eram identificáveis na imagem (ROT-4); a dica continua trazendo o valor de cada origem para quem quiser o detalhe."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Custo e receita do trimestre em blocos de R$ 10 mil",
+  "useCase": "Diretoria: quanto custou o trimestre na camada declarada e quanto de receita reconhecida entrou.",
+  "demonstrates": [
+    "R$ 10 mil por célula: custo em 193 células contra receita em 248",
+    "Valores por formatCurrencyCompact sob cada quadrado",
+    "Camada do custo escrita no rótulo, porque o retorno muda de camada para camada",
+    "Diferença de 55 células acesa no quadrado da receita como folga do trimestre",
+    "Procedência do número em etiqueta --prov, fora da cor dos quadrados"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A etiqueta de procedência fica dentro do Chart porque o catálogo a pede e há precedente na família 01 (kpi-simples v3); ao colar num VisualCard que já a desenha, apague as duas etiquetas (ANO-6). Cor: custo e as 193 células da receita que ele cobre em --text-muted, folga em --chart-1; o par de quadrados se lê por rótulo e valor sob cada um, e a legenda nomeia as duas cores."
+}

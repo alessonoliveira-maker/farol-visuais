@@ -1,0 +1,13 @@
+{
+  "title": "Termos de perda que cresceram no trimestre",
+  "useCase": "Comercial: quais termos dos motivos de perda cresceram mais de 50% contra 2026-T2, sem perder o vocabulário inteiro.",
+  "demonstrates": [
+    "Destaque em --chart-1 e peso 600 só nos termos acima do corte de 50%",
+    "Demais termos em --text-muted, ainda legíveis no tema escuro",
+    "Dica com contagem atual, contagem anterior e variação com a base nomeada",
+    "Termo sem base anterior marcado como novo, fora do cálculo de variação"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "card",
+  "notes": "Desvio do catálogo, que pede peso 700 no destaque: a TIP-3 limita o 700 a dois elementos por visual e o recorte tem 6 termos acima do corte, então o destaque vai em 600 contra 400 do resto, com a cor como primeiro canal. Canvas por número em vez do card sugerido: o caso de uso ocupa duas linhas (116 caracteres) e a nota precisa de duas, a legenda do destaque e da marca novo e a linha de método com os dois períodos. Conta: 400 menos 135 da moldura dá corpo de 265 px; menos 24 da linha de leitura e 41 da nota sobram 200 px, e o plano da nuvem tem 574 x 198 px, igual ao viewBox, para a escala sair 1 (GEO-18). No card o plano cairia para 160 px e 5 dos 32 termos ficariam fora, um deles marcado como novo. Toda caixa é medida no peso 600 para o termo que cruza o corte não mudar a nuvem de lugar. A dica é o title nativo do SVG."
+}

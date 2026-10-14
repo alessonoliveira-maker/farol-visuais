@@ -1,0 +1,13 @@
+{
+  "title": "Receita reconhecida por produto no trimestre",
+  "useCase": "Comercial: de quais produtos vieram os R$ 4,6 mi de receita reconhecida em 2026-T3.",
+  "demonstrates": [
+    "Recharts Treemap com conteúdo customizado e isAnimationActive desligado",
+    "Nome e valor avaliados como par: célula pequena não mostra só um dos dois (ROT-10)",
+    "Lista fora do gráfico com cor, nome e valor de toda célula, inclusive as pequenas demais",
+    "aspectRatio próximo de quadrado e vão entre células na cor de surface-raised",
+    "Valor zero ou negativo sai do desenho, com o motivo na mesma lista de identificação"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

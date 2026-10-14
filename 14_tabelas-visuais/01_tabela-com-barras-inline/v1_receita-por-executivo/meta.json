@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida por executivo",
+  "useCase": "Comercial: quem concentra a receita reconhecida de 2026 T3 entre 12 executivos, sem perder o valor exato de cada um.",
+  "demonstrates": [
+    "Barra em div com largura percentual sobre trilho em surface-overlay",
+    "Domínio da coluna calculado uma vez em useMemo sobre todas as linhas, a partir do zero",
+    "Número à direita em tabular nums, fora da barra, por formatCurrencyCompact",
+    "Traço vertical da média do time no trilho de todas as linhas, com rótulo no cabeçalho"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "CPL qualificado por plataforma com teto",
+  "useCase": "Quais plataformas e meses passaram do teto de R$ 180 de CPL qualificado no 1º semestre de 2026.",
+  "demonstrates": [
+    "Faixa manual de R$ 60 a R$ 240 em 5 degraus, com valor fora da faixa encostado no extremo",
+    "Célula acima do teto com contorno em warning e ícone, além da cor",
+    "Legenda que diz a faixa manual e a regra do teto numa linha",
+    "Polaridade invertida escrita: tom mais forte é CPL mais caro"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Cinco degraus, não sete, pela mesma razão medida da v1: ver README, seção Anatomia."
+}

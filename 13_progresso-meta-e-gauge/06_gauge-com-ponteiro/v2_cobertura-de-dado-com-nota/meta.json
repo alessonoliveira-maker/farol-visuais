@@ -1,0 +1,13 @@
+{
+  "title": "Cobertura de dado do funil com nota de estado",
+  "useCase": "Comercial: a cobertura de campos mínimos das oportunidades está em atenção, e a quantos pontos da faixa saudável?",
+  "demonstrates": [
+    "Estado como palavra no centro e o valor numérico de apoio logo abaixo",
+    "Quatro setores nomeados com limiares declarados e a origem na legenda",
+    "Distância até a fronteira mais próxima escrita em pontos percentuais",
+    "Texto central em div absoluto por Tailwind, fora do viewBox do Recharts"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O ponteiro é a forma menos precisa deste catálogo: por isso o estado e o valor saem sempre escritos, nunca só a posição do ponteiro. Ver README, seção Quando evitar, para a alternativa nomeada (bullet chart, 13/02)."
+}

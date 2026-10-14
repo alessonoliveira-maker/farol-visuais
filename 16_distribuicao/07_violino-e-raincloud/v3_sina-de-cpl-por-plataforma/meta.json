@@ -1,0 +1,14 @@
+{
+  "title": "Sina plot do CPL por plataforma",
+  "useCase": "O criativo em vídeo mora na cauda barata ou na cara do CPL das 1.100 campanhas das quatro plataformas?",
+  "demonstrates": [
+    "Fração lateral de cada ponto limitada pela densidade no valor, em useMemo",
+    "Círculo de SVG puro deslocado pela meia largura da forma no valor do próprio ponto",
+    "Campanhas em vídeo em --chart-2 e demais em neutro, cor com um papel só",
+    "Contorno do violino em 1 px, mediana marcada e escala por contagem declarada",
+    "Legenda: a posição lateral do ponto não tem significado"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O canvas é o preset alto, e não o card sugerido. A conta: quatro faixas de 66 px mais 6 de topo e 22 de eixo dão 292 px de desenho; linha de leitura, legenda de duas linhas, rodapé de três linhas e os três vãos somam 132 px, então o corpo pede 424 px, contra os 225 do card e dentro dos 425 do alto com o caso de uso em duas linhas. O svg é desenhado com viewBox de 574 px de largura, a largura do corpo, para a escala sair 1 (GEO-18). Desvio do catálogo, um: o item que pedia Scatter com shape é do Recharts, e a abordagem deste modelo é SVG puro, então o ponto é um círculo com o centro deslocado pela meia largura da forma no valor dele. Desvio do catálogo, dois: as quatro plataformas levam nome genérico de tipo de mídia, porque marca real não entra no catálogo (DAD-8). A largura é por contagem, casos por real, contra o valor com mais campanhas do conjunto: a plataforma de 200 campanhas desenha uma forma mais estreita que a de 340, e isso é a leitura pedida. O neutro dos pontos é text-muted, e não line-strong, que mede 1,79 para 1 contra o cartão e não se vê como marca (TOK-5). A frase de leitura compara cada campanha em vídeo com a mediana da própria plataforma, que é o traço desenhado na faixa dela, e não com a mediana geral."
+}

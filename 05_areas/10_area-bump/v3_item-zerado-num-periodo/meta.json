@@ -1,0 +1,13 @@
+{
+  "title": "Area bump com item zerado num período",
+  "useCase": "Mostrar uma origem que não gerou nenhum lead num trimestre sem sumir do ranking nem inventar volume.",
+  "demonstrates": [
+    "Espessura mínima de 4 px para zero medido, que sobrevive ao próprio contorno (EST-3)",
+    "Caminho interrompido quando o valor é null, distinto do zero",
+    "Empates desempatados pela ordem do período anterior",
+    "Frase acessível com o líder de cada ponta e o item zerado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Leitura primária é a posição vertical (ranking); a espessura é secundária (leads), e a linha de leitura no topo do corpo diz isso com essas palavras. Zero medido mantém a faixa em 4 px, espessura que sobrevive ao contorno de 1,5 px sem desaparecer; trimestre sem coleta interrompe o caminho por inteiro em vez de encolher até a base ou virar o mesmo buraco do zero."
+}

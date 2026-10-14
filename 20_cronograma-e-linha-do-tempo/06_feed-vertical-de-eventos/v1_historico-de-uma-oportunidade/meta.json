@@ -1,0 +1,13 @@
+{
+  "title": "Histórico da oportunidade OP-0412",
+  "useCase": "Comercial: o que aconteceu com a oportunidade fictícia OP-0412 desde a criação, em 10 eventos.",
+  "demonstrates": [
+    "Lista ordenada com border-s e marcador absolute, como na timeline do Flowbite",
+    "Ícone lucide por tipo: Phone, Mail, CalendarCheck, FileText",
+    "Data absoluta por formatDate e relativa contra a data de referência do dado",
+    "Evento mais recente no topo, com a ordem declarada no cabeçalho"
+  ],
+  "canvas": { "width": 640, "height": 750 },
+  "frame": "card",
+  "notes": "Canvas por número porque nenhum preset fecha a conta: 10 cartões de 2 linhas (cerca de 52 px cada, mais 8 px de vão, 600 px) mais a linha de leitura de 16 px e 16 px de respiro somam cerca de 630 px de corpo; o corpo do preset alto tem 425 px (640x560 menos 135 px de cabeçalho de 2 linhas). Com o desconto da moldura, 740 de altura dá o corpo necessário."
+}

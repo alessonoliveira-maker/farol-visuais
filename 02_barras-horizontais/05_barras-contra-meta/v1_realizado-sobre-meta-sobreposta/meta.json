@@ -1,0 +1,15 @@
+{
+  "title": "Receita realizada sobre a meta por executivo",
+  "useCase": "Quanto cada executivo já realizou da meta do trimestre, com a meta e o realizado na mesma banda.",
+  "demonstrates": [
+    "Dois YAxis de categoria com o mesmo dataKey, um oculto, e yAxisId por Bar",
+    "Meta larga e clara atrás, realizado com barSize menor na frente",
+    "Ordem dos filhos no JSX define quem fica na frente",
+    "Percentual atingido escrito à direita da banda, com realizado e meta em colunas",
+    "Cabeçalho das colunas com amostra na forma de cada barra, no lugar de legenda solta",
+    "Linha de leitura com o time contra a meta somada"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem dica: realizado, meta e percentual já estão escritos em toda linha (DIC-1)."
+}

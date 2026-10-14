@@ -1,0 +1,14 @@
+{
+  "title": "Fechamento projetado do trimestre",
+  "useCase": "Quanto o trimestre fecha se o restante de setembro se confirmar, e quanto disso já é realizado?",
+  "demonstrates": [
+    "Preenchimento sólido para realizado e hachura para projetado",
+    "Pattern declarado em defs dentro do Recharts, sem imagem externa",
+    "Divisor vertical na data de corte com o rótulo realizado até",
+    "Total final com a palavra projeção e peso 700, diferente do realizado",
+    "Regime escrito sob cada coluna: a distinção sobrevive sem cor"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o divisor não é um ReferenceLine. Em escala de banda a ReferenceLine cai no centro da categoria, que é a coluna do passo projetado de setembro; o divisor precisa estar na fronteira entre a banda realizada e a projetada, então sai de useXAxisScale (início da banda do primeiro passo projetado). O nome da coluna e o regime (realizado, projetado) são desenhados pelo shape sob a base, em duas linhas, porque setembro aparece duas vezes e um tique de uma linha repetiria o nome. Conta do corpo (ESP-6): 574 − 16 = 558 px, 5 colunas, passo 111,6 px, barra = min(24, 111,6 × 0,36) = 24 px."
+}

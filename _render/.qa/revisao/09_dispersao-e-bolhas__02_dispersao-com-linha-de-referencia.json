@@ -1,0 +1,46 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "02_dispersao-com-linha-de-referencia",
+  "versoes": {
+    "v1_investimento-contra-leads-qualificados": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro nem aviso; dispersao legivel nos dois temas, nuvem em chart-1 (5,25:1 escuro e 3,28:1 claro medidos no PNG), reta tracejada em text-muted so entre o menor e o maior X, piso de R2 e n respeitado, tique de Y com a unidade. Observacoes: grade nos dois sentidos (EIX-3), axisLine herdado (EIX-5), numero do selo sem tabular-nums (TIP-1), selo a 1 px do ponto mais alto e sem fundo visivel no tema claro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:01:23.966Z",
+      "impressao": "0d48a6ba23f7798c51dbeb0b5aa8d62f46fe8de5",
+      "arquivos": {
+        "Chart.tsx": "8c7d352143139cc435ee21cb4155cd6fd712e6d6",
+        "data.ts": "a9c165ac1cac062941c2c0b6b3a2ab860342b322",
+        "meta.json": "7bbb2df777802ac5db72cabf4b8d46206926a5c4"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_investimento-contra-leads-qualificados",
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas; reta so entre o menor e o maior X, piso de R2 e n respeitado, selo com inclinacao traduzida, R2 e n legivel. Observacoes: grade nos dois sentidos contra a Anatomia 6, nuvem em line-strong sem valor escrito e eixo Y sem unidade visivel.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T17:39:02.765Z",
+      "impressao": "6bb9cc4bfda134d2debab7489b60132e257c5781",
+      "arquivos": {
+        "Chart.tsx": "67fa4c9f517113bf6d5cd67ca1d166fce228cd25",
+        "data.ts": "a9c165ac1cac062941c2c0b6b3a2ab860342b322",
+        "meta.json": "7bbb2df777802ac5db72cabf4b8d46206926a5c4"
+      }
+    },
+    {
+      "versao": "v1_investimento-contra-leads-qualificados",
+      "veredito": "aprovado",
+      "nota": "Check sem erro nem aviso; dispersao legivel nos dois temas, nuvem em chart-1 (5,25:1 escuro e 3,28:1 claro medidos no PNG), reta tracejada em text-muted so entre o menor e o maior X, piso de R2 e n respeitado, tique de Y com a unidade. Observacoes: grade nos dois sentidos (EIX-3), axisLine herdado (EIX-5), numero do selo sem tabular-nums (TIP-1), selo a 1 px do ponto mais alto e sem fundo visivel no tema claro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:01:23.966Z",
+      "impressao": "0d48a6ba23f7798c51dbeb0b5aa8d62f46fe8de5",
+      "arquivos": {
+        "Chart.tsx": "8c7d352143139cc435ee21cb4155cd6fd712e6d6",
+        "data.ts": "a9c165ac1cac062941c2c0b6b3a2ab860342b322",
+        "meta.json": "7bbb2df777802ac5db72cabf4b8d46206926a5c4"
+      }
+    }
+  ]
+}

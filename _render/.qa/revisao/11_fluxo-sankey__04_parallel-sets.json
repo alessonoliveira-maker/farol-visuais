@@ -1,0 +1,46 @@
+{
+  "familia": "11_fluxo-sankey",
+  "modelo": "04_parallel-sets",
+  "versoes": {
+    "v1_origem-porte-e-desfecho-das-agendas": {
+      "veredito": "aprovado",
+      "nota": "Tres eixos proporcionais, tinta igual nos tres (217, 221 e 219 px), toda categoria com nome e contagem, cor por slot fixo da COR-8 e neutro com valor junto. Sem bloqueante; observacoes de legenda, faixa fina e ROT-7 no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:56:31.253Z",
+      "impressao": "ee881324a7f016a3b791a023292d3b6c2c1fe836",
+      "arquivos": {
+        "Chart.tsx": "9fafe1fe5fd4e53edd1801e5cfebec8abdba9348",
+        "data.ts": "39c250c0ab2a808be90716fea75278dccc515c30",
+        "meta.json": "3286aa3e7030205f940fed9d5d21520c60d7d53b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origem-porte-e-desfecho-das-agendas",
+      "veredito": "reprovado",
+      "nota": "NUM-6: rotulo de segmento imprime a contagem sem o substantivo nos tres eixos; escrever a unidade agendas no rotulo, como o 03_alluvial faz.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:45:16.790Z",
+      "impressao": "b406f481da3da4a24a13e3c04ac16613228b1447",
+      "arquivos": {
+        "Chart.tsx": "68b9e6b311d38931aff3b9be5fae6a5785d1faed",
+        "data.ts": "39c250c0ab2a808be90716fea75278dccc515c30",
+        "meta.json": "3286aa3e7030205f940fed9d5d21520c60d7d53b"
+      }
+    },
+    {
+      "versao": "v1_origem-porte-e-desfecho-das-agendas",
+      "veredito": "aprovado",
+      "nota": "Tres eixos proporcionais, tinta igual nos tres (217, 221 e 219 px), toda categoria com nome e contagem, cor por slot fixo da COR-8 e neutro com valor junto. Sem bloqueante; observacoes de legenda, faixa fina e ROT-7 no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T01:56:31.253Z",
+      "impressao": "ee881324a7f016a3b791a023292d3b6c2c1fe836",
+      "arquivos": {
+        "Chart.tsx": "9fafe1fe5fd4e53edd1801e5cfebec8abdba9348",
+        "data.ts": "39c250c0ab2a808be90716fea75278dccc515c30",
+        "meta.json": "3286aa3e7030205f940fed9d5d21520c60d7d53b"
+      }
+    }
+  ]
+}

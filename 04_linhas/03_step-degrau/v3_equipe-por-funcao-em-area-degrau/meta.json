@@ -1,0 +1,13 @@
+{
+  "title": "Equipe por função em área em degrau",
+  "useCase": "Como pré-vendas, vendas e atendimento mudaram de tamanho em 2026, incluindo a queda temporária das férias coletivas?",
+  "demonstrates": [
+    "Area type stepAfter empilhada com stackId e domínio a partir do zero",
+    "União das datas de mudança em TypeScript para os degraus não desencontrarem",
+    "Degrau para baixo e volta das férias coletivas anotados",
+    "Duas mudanças na mesma data resolvidas pela ordem do registro",
+    "Contorno --surface-raised separando as camadas vizinhas"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

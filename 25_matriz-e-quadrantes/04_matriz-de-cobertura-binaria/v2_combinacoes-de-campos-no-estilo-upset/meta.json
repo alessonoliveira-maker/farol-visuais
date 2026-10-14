@@ -1,0 +1,13 @@
+{
+  "title": "Combinações de campos preenchidos",
+  "useCase": "Marketing: quais combinações de campos preenchidos são mais comuns entre 8.400 leads e quanto cada uma reúne.",
+  "demonstrates": [
+    "Matriz de pontos com traço ligando os campos presentes em cada combinação",
+    "Barra por combinação à direita e por campo no topo, em divs alinhadas à grade",
+    "Chave de combinação montada em TypeScript e ordenada por tamanho",
+    "As 9 maiores combinações e o resto em demais combinações, com contagem",
+    "Anotação: a maior combinação é só e-mail e nome"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

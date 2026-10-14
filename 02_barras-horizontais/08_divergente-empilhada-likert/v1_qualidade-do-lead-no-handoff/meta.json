@@ -1,0 +1,15 @@
+{
+  "title": "Qualidade do lead no handoff por critério",
+  "useCase": "Como os executivos avaliam os leads recebidos da pré-vendas nos seis critérios da escala de 5 pontos.",
+  "demonstrates": [
+    "SVG puro com escala linear e deslocamento por item calculados em TypeScript",
+    "Negativos à esquerda em tons quentes e positivos à direita em tons frios, por slot fixo",
+    "Neutro numa coluna própria, fora da pilha, com a escolha escrita na legenda",
+    "Centro alinhado entre linhas pelo maior lado do conjunto, com a legenda ancorada no zero",
+    "Percentual dentro do segmento só quando cabe, somando 100 pelo maior resto",
+    "n de cada critério escrito à direita"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Os tokens não têm rampa divergente: a versão usa os slots 5 e 6 no polo ruim e 3 e 1 no bom. Texto sobre segmento em --accent-cyan-contrast, medido de 5,39:1 a 10,06:1 nos dois temas."
+}

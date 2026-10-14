@@ -1,0 +1,468 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="SLA diário do mês por fila. Em quantos dias úteis de junho cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta." data-farol-source="f0dd8f25dce24827" data-farol-tokens="1dfabdbcf6ca9c95" data-farol-lib="2fed596641a7de53" data-farol-theme="light" data-farol-renderer="1" data-farol-ace-role="img" data-farol-ace="Três anéis de unidades com o SLA diário de 3 filas em 22 dias úteis do mês, com um feriado sem expediente. Inbound cumpriu 17 de 21; Outbound cumpriu 12 de 21; Reativação cumpriu 21 de 21. Cada segmento do anel vale 1 dia útil.">
+<title>SLA diário do mês por fila</title>
+<desc>Em quantos dias úteis de junho cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta.</desc>
+<style>*{font-family:inherit;font-size:inherit;font-weight:inherit;font-style:inherit;font-stretch:inherit;line-height:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-variant-numeric:inherit;font-variant-ligatures:inherit;font-variant-caps:inherit;letter-spacing:inherit;word-spacing:inherit;color:inherit;text-align:inherit;text-indent:inherit;text-transform:inherit;list-style-type:inherit;list-style-position:inherit;border-collapse:inherit;border-spacing:inherit;caption-side:inherit;empty-cells:inherit;tab-size:inherit;text-rendering:inherit;direction:inherit}a,u,ins,del,s,abbr,acronym{text-decoration:inherit}@font-face{font-family:'Manrope';font-style:normal;font-weight:400;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;src:url(data:font/woff2;base64,d09GMgABAAAAAAwcAA8AAAAAGuwAAAvAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG4pKHIIyBmA/U1RBVC4AgVgRCAqcNJdgC1wAATYCJAOBMgQgBYQYByAMBxs0F6OilJN2S/ZXB7yh9NEXkJEIgZI2BoEKFNUAmNRcT/8F7CpgMnlzMCP2x0MYNZjg+X+det/Xl0ykOCX7KARQIHbKvPOUtR4Lw9IRcMQNeQYUD8/fq+e/3JdgOhf41r3AivleXuKtFqRUpW7qHZ6/2asJrOOM32DVhNru2iFqqhEndCDrINT/AOCwlZ3P+SpFeRR5fGozuAgD57Ck5dyQFYEbW0BZGNA/DzGmta2RD45QzT3LwBP8/2vf6pt9qwpU09CtEQmJQyWU+++M37W3Ym89IaJvBJfTOcRt1BlELHkoHEISr4QEoVtqlEjJhJpI+7ef6hMcGZPLOakl9DE1SLK/cv39IMCvXCtjZ3jGAuzbw3u2Ybdr9+3ApgGujAAZbNyzAy8QIDTFS8V3firqaeiXCCVXLgAAGwDubbjfw32rRFHUYOmF4bceFPKpx8BdTmvdi51ivW/3uJetz+UTXow+EIwBIg8ybwjRWKuREvrVBZ2cVTW7zwK1BoooUCEEmBLvVMcafUd/A3GDMVGLAskCTzlM2BHtp5T2R7sXJRZEj92nu0+Mk8XbEtljqd4cuzulcdiq+6ZHCy9WUYQNkgrYhKikxYEJFAiwWExyGD0qJMIzOIeHz5Vi1aQwvxgDBnsFRQlwbSiBhCbPpoDBTxMJii3CZAIvL2HJERWzrDF6QADghgoZJ37OHpRDBGkggqsHiPy8TYDfCfc/ojyTkbngEubmsiHHtO15Cxy9xz2gJc03fYMqb+ZNP18+XBkFzDxLZxlZamv5MJ/easc2r2Ww3bl+G90n3srreeW8YiB6JMDhBtcLTJZFBxmmI4OMWiNGftSzLKGkaVMkRfkVU5KKKAkFlKhChqgk4SrTvswokxzuJEHHLKExYY7FMhiv+lbv6ssW+2lPgeGC8w9mTuU6Z6nYm/rvEtZ3qTId8gzQG1UIHJp4k2DD7U6h7jZn9gkAFAOoxpALYAyJosNmaCyp3Qallr5nXo5K1foMGDLVDLPNt8V+BxyS5a2PfjvFrgyo6c+z1rabD+Q/v13PSGy/vXbbGe6sOTaTxIljPkPXBFO3saZPQFBY5DGWcYlH9UVJykQAVAFYBoah+2DdgwWgFeFXCSG1wZNVVCvISRlJZ8lIQM8p94JmOhcH8AaMpgLLKUkXskoHmitqCqek19JY2cjXOk1FrVVTddc4liXttsqcso0oKZSkypzK7mzHclwKJCV7/OA4Zxc4W6TFZDu732i6/yP/YaA6y/AlEFMiVxyKB16qyChmzEINhE3WMecrScafKNd3vnOpSPECvDgvLZKSJAhGC2jcRrx+UZj7Ni2NYX2R+44VbGe1iKUX/RfYl/RfVdBCvzfMKUeCxtYSJKEcu/KiBNJwJZOLWLO6ST3a2iAisAT0wg9ILGb2yUWUi3vuiE5hG4Ln6g7XwcB6TSNTf0SfJ4VtgsSZLbaN4TOdxm6xw0EanGsXghZsRF6kzch2iEDShbGf1db4Tc/N6NnjMYIPwe3wAigdbitytcgVl9k4h2qFkAGjmyaS0LgTWkrgp9Jdl6wNIGf69C5oMdm/GjGRCRdeggax35kFh6LU7iEHRJIonbccKR+hhMOBxSnImQ9vjiIX9XGegA3xIZJ8NdUBytVCZOnCh0GpULSRJYBg9nWsMScTCqlJlfGivTFta/MCQkV10LoNd2X4MHof6ZHLM6P1kbeY/exYatactdA0tebjmwHgU2unEWMtisXAebpa3YWTsEcynnW2jQotNqyhMfctmoblWy9ik7nwOFvEmXRm4QXOefFlsbmBG7dwe53dvM5pITm7wt75E5xAQUw4XLzz0JilagPpLGcrBeExdqN8i5Z4X4uI+LBcwksCuGpxy0nMTXrwIIHqMdz6EwB8b7EdEbPvTh2decRH68K2g+1oHalg5ui704gZtqPkZgIAIAEFIZ786fM5uUPpExkI+y6TWPWx9ObJJntuO4p53Sq8JEfxLdKMZFW7Y0cOVf00cJAGpLZEYLTb3SB0vPd4BjsT92LG5j6MWLo9tLthBpE8vHBe0iW27pcNkFZ+FrIrLAzZTaD7Nyn9rMsGuBT3Y+ngXiMc29iO+GJYVD0VWtCV5u0UH7IuzhZVWxui2+CbnIxoiO7ErTwoIAOatIx5wKiXb6aZV7N1ElUCisaDMxqiocSM1jU4k+T9re7oZKi/ojR+iFIj9gaHLTrHM5Lo6ZmR3Z0JifpJeictxYZRqkHwkT6+qIFXYllDcbGnPRrZzrpY71oZqNbkP7JRq8CT8IJOw1bwobxejcTtsG6rbpTKot60SZjO/TSkZ5zvKmRGpQ9A7HjqmmCDcg+1sXTMHa00yEzoznT7MUqYjYX9wK6/aEZCr1EE3Hk/w+gU+wKnCi4arwaXmDzWNTYaJhrFwG5wui2AgpDVpI1IrsawMajjXZ3QMQ6mGcOqg47ieqDj7AYQkxqT0JsBbBI20wYkFNH45xF3AhXhUDheXd02UBtzBPTIkaXXi/WCUqdCppsf9QUHmD6ylxxwKLti5SS0QCY5I6ELdWuJGaHJIUnoGrMjtvppRVpwb3AwsFERGnaNzeJdYlaDcVEV/AKnf0sTuwE63oODjrLqMM1cTPSxzi7UcTbmWDVCu4kFFIQgNTX8nIj7N7fSA3tKHBRKGE068gc56+WuzN+YXNwjuXJ+z+PZ5vnqNaVb1geRfgp8tLt8usCPLa7KSWaoR3Jx1qkqLoTu3tTkpEye/pN92BYs8P43X7h6cyUiBQ+5Z43Gp7XQ0kNmANbRUdrogpRPrdRtbx04HEN+NN2XEfCcsm04KHRrQFp8q0diqQs1t8JwsklyrglfRPMrLQvYYMaAkkVAQdiP0GoCqgoKE8wJFQ8Fb6Y30HtECYDSUZkvGEBBfXMvvl8p8tkEY+JZ1cQ/QohBVi8Ax3sIlJqAJi9UV2m6MbypcGG2sHbs2Ok58DjrMPDGq2ojPxP6trDQ6K08XMaqyqLxmfzaCmFGzlQ7uD+xG/fuV9VCgviU6Am9AzY12yV7ShkefUprB93XtgM8o46Qdiy9P3R8+cX2jsHa2MPYY9tfP5hvyRGgaIxHaL8JRSVRPxT/o9tRb7QReKBoDEjeeHm6lU+iCavBEaP4hrBI1FrK8mjW2RBsBizNxV/HzOhsY6Oc2VpsF7k8a+3FrR5b7BlOEwkRlbG5FYTdsZ2dh+NbyKp5bFPN/OH6DlgjnJob5+a/xQNrxXKYSYnCpPKli+B2tu6yEiHMLuqcfGfCA8atcHi2rV3ooEmTrnuYD/Y4Fjibxu5EllOWDXeGC2g5sc9NVbWQTG/grC/FCo8bVv37Oo3EZWO8N1vvyyG9a+3cNhboT9gMGiyHjgeNL1fxkzYr0cuoZeCybh/W/XCgG/fd+Z1a1/Y9TLXTc/tnB9oeKEc3euD0c67N/cnNzUmL6pIAxaLAI1oqgRLFFYgnjMpEecLxdFm6zNSV/mFladMleLTS8g/glVoCsiDLdVYnzOkqrvKt1xw98erY+a7e11KyoC+4igB93136WDxYHfH/9hqeB4Cnb5NPgOeLSRf/j/8r7wrPOWBRAATfT8K3IGHj6i+Nh6msp92PT6WVqzOaOSPXZI1/suYUz96toa8YiAzmsLGFTusU5mgiRhflBMYVpm3jTuvppO1bfqtcC4uiBj2ih/jEcsUZbWpOx4adeIfYBTo/lYYluyJ09qAkJ3YxSUI9x27+uKT0MPM/ygotoNdElaVClrKCIYNv89nTiPAVFVlRHC4KvRmuhD0Zbhh1ZrjWaMlw0yTdwyz1guMJBEGGjZtdbKMxm2XsM9NaO+yx0y5B65BDubanZob021Vlno0222+btfZYZKM99hqz0w6ORtWa1Gq0s32nmISzseb7uMN8o2aaqmNCCi78JGhAcuRhe6bl1qer12njWCCjpbZCczptC61Ht/bZT2TGznhIR6mVS+6zy17tatTYbIw0ab91qq2303aB3CszScxnbrBWTbqpl64yxr9Zk61f/JrI+hdkAA==) format('woff2')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;src:url(data:font/woff2;base64,d09GMgABAAAAAALsAA8AAAAABmAAAAKTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGx4cgXQGYD9TVEFUKgBEEQgKgQyBCwsQAAE2AiQDHAQgBYQcByAMBxtLBcguCmxbkj2MxSxnO3mRDxcV8fD9fv9b+5z75CMmTbyR1LTiiWSR6SJaaZZMKjSG+79r+lNWfZVAUQXCMbhjzA2cq9BTek5vwdv/hf78K4V7/i/HNxf4fTqhAzzgExu7xWPzGhpegZ1o1AY5bXLP25xwlnnLJvZZLNEk0+MeM326okAjXeSh0WNvXiChgLIEgUb6MYTAeHLzCmJBEiOVC5KsUFm91TZhvnYny0N/6x7Tg+b2lYfy7qbEQKgiFUiYcv9ICDW7SYitvqIUhFAXNooEsVrO8Mm72aOkyr/MQgdIKyBQCKEiREWsjVAhI++TFKlT/FEhnUzzgUk+TyzVj95MyL6bsZMAPNbDMb/9n+Jo9OkBnYX4ltBDWAh1gTYQugjtW6cQBElA5PgDEjLaCAu0ETEIqKtL6KHnWNIftvzojVUQgBAlzUENNEOBLkBfoI4mAAJRkur1etG00mh2o0WNi8aZy/Map/i+TaKp2Nli5+9t54c/dqxd066zJs0vHF+qub3F7J+bdo5ezV75t1KopiCWFtAylvpNAonn73Y+WtZ8xN96zj/gw8Ve52jvM6vK1xrlu/khqhIIfprL/wB5ccE+Ti0fQPknrmmuJGgZtEyb7SHUzBY1XUQAgCyhwU5hUTTguW8HhGF+QNLMJZCNxEULDCo6uZCrBkkPBU00ISjfgilEAlXA9E6kkimIZw4WT3TOYyNEPt2NTrdy0Fuyx6eyWbC+tu5w985aOHNtUQs9LZYFDCwvOQtLFIsaLz6wOb55qNDXnZvHXihEuDR8iJAm8Yi/U4lQfA8WsKomEQ7fXEeHTKWLA5w2ns3UITHYPCqWRcfKGi/GWDr859oWuVETZnrlRUP03o6yy8UZAA==) format('woff2')}@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:600;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;src:url(data:font/woff2;base64,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) format('woff2')}</style>
+<clipPath id="farol-clip-1"><rect x="0" y="0" width="640" height="360"/></clipPath><g clip-path="url(#farol-clip-1)"><rect x="0" y="0" width="640" height="360" fill="rgb(246, 248, 252)"/><rect x="12" y="12" width="616" height="336" rx="12" fill="rgb(255, 255, 255)"/><rect x="12.5" y="12.5" width="615" height="335" rx="11.5" fill="none" stroke="rgb(220, 227, 239)" stroke-width="1"/><foreignObject x="33" y="33" width="574" height="40.5" style="overflow:visible"><header xmlns="http://www.w3.org/1999/xhtml" style="box-sizing:border-box;width:574px;height:40.5px;color:rgb(14, 23, 38);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:15px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:22.5px;letter-spacing:normal;text-align:start;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;display:block;margin:0"><h2 style="box-sizing:border-box;width:574px;height:20px;margin-top:0px;margin-bottom:0px;overflow-x:hidden;overflow-y:hidden;text-overflow:ellipsis;font-family:&quot;Space Grotesk&quot;, Manrope, ui-sans-serif, system-ui, sans-serif;font-size:16px;font-weight:600;font-feature-settings:&quot;tnum&quot;;font-variant-numeric:tabular-nums;line-height:20px;text-wrap-mode:nowrap">SLA diário do mês por fila</h2><p style="display:flow-root;box-sizing:border-box;width:574px;height:16.5px;margin-top:4px;margin-bottom:0px;overflow-x:hidden;overflow-y:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical;color:rgb(92, 107, 135);font-size:12px;line-height:16.5px">Em quantos dias úteis de junho cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta.</p></header></foreignObject><svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" viewBox="0 0 160 160" x="45" y="99" width="160" height="160" style="font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:15px;text-rendering:optimizelegibility;overflow:hidden"><title ></title><desc ></desc><g ></g><g ></g><defs ><clipPath id="recharts1-clip"><rect x="4" y="4" height="152" width="152"></rect></clipPath></defs><g ><g ><g ><g ><g ><path cx="80" cy="80" name="2026-06-01" d="M 80,8.56
+    A 71.44,71.44,0,
+    0,1,
+    96.5119,10.4944
+  L 91.9448,29.7193
+            A 51.68,51.68,0,
+            0,0,
+            80,28.32 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-02" d="M 100.1269,11.4538
+    A 71.44,71.44,0,
+    0,1,
+    115.425,17.9618
+  L 105.6266,35.1213
+            A 51.68,51.68,0,
+            0,0,
+            94.5599,30.4134 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-03" d="M 118.6233,19.9008
+    A 71.44,71.44,0,
+    0,1,
+    131.4682,30.4551
+  L 117.2323,44.159
+            A 51.68,51.68,0,
+            0,0,
+            107.9403,36.524 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-04" d="M 133.9907,33.2166
+    A 71.44,71.44,0,
+    0,1,
+    143.3418,46.9623
+  L 125.8217,56.1004
+            A 51.68,51.68,0,
+            0,0,
+            119.0571,46.1567 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-05" d="M 144.984,50.3226
+    A 71.44,71.44,0,
+    0,1,
+    150.0838,66.1459
+  L 130.6989,69.9779
+            A 51.68,51.68,0,
+            0,0,
+            127.0097,58.5312 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-08" d="M 150.7128,69.8328
+    A 71.44,71.44,0,
+    0,1,
+    151.1481,86.4519
+  L 131.4688,84.6674
+            A 51.68,51.68,0,
+            0,0,
+            131.1539,72.645 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-09" d="M 150.7129,90.1667
+    A 71.44,71.44,0,
+    0,1,
+    146.4484,106.2353
+  L 128.069,98.9787
+            A 51.68,51.68,0,
+            0,0,
+            131.154,87.3546 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-10" d="M 144.9842,109.677
+    A 71.44,71.44,0,
+    0,1,
+    136.3654,123.8932
+  L 120.775,111.7525
+            A 51.68,51.68,0,
+            0,0,
+            127.0099,101.4684 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-11" d="M 133.991,126.783
+    A 71.44,71.44,0,
+    0,1,
+    121.7161,137.9952
+  L 110.1776,121.9539
+            A 51.68,51.68,0,
+            0,0,
+            119.0573,113.843 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-12" d="M 118.6237,140.0989
+    A 71.44,71.44,0,
+    0,1,
+    103.6872,147.3987
+  L 97.1355,128.7565
+            A 51.68,51.68,0,
+            0,0,
+            107.9406,123.4758 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-15" d="M 100.1274,148.5461
+    A 71.44,71.44,0,
+    0,1,
+    83.7394,151.3421
+  L 82.7051,131.6092
+            A 51.68,51.68,0,
+            0,0,
+            94.5603,129.5865 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-16" d="M 80.0005,151.44
+    A 71.44,71.44,0,
+    0,1,
+    63.4886,149.5057
+  L 68.0556,130.2807
+            A 51.68,51.68,0,
+            0,0,
+            80.0004,131.68 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-17" d="M 59.8735,148.5463
+    A 71.44,71.44,0,
+    0,1,
+    44.5754,142.0385
+  L 54.3737,124.8789
+            A 51.68,51.68,0,
+            0,0,
+            65.4404,129.5867 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-18" d="M 41.3771,140.0995
+    A 71.44,71.44,0,
+    0,1,
+    28.5321,129.5453
+  L 42.7679,115.8412
+            A 51.68,51.68,0,
+            0,0,
+            52.06,123.4762 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-19" d="M 26.0097,126.7837
+    A 71.44,71.44,0,
+    0,1,
+    16.6585,113.0382
+  L 34.1785,103.9
+            A 51.68,51.68,0,
+            0,0,
+            40.9432,113.8435 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-22" d="M 15.0162,109.6779
+    A 71.44,71.44,0,
+    0,1,
+    9.9163,93.8546
+  L 29.3012,90.0225
+            A 51.68,51.68,0,
+            0,0,
+            32.9904,101.4691 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-23" d="M 9.2873,90.1677
+    A 71.44,71.44,0,
+    0,1,
+    8.8519,73.5486
+  L 28.5312,75.333
+            A 51.68,51.68,0,
+            0,0,
+            28.8461,87.3554 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-24" d="M 9.287,69.8338
+    A 71.44,71.44,0,
+    0,1,
+    13.5515,53.7652
+  L 31.9308,61.0216
+            A 51.68,51.68,0,
+            0,0,
+            28.8459,72.6457 Z" style="fill:none;stroke:rgb(92, 107, 135)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-25" d="M 15.0156,50.3235
+    A 71.44,71.44,0,
+    0,1,
+    23.6343,36.1072
+  L 39.2248,48.2478
+            A 51.68,51.68,0,
+            0,0,
+            32.99,58.5319 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-26" d="M 26.0087,33.2174
+    A 71.44,71.44,0,
+    0,1,
+    38.2835,22.0051
+  L 49.8221,38.0463
+            A 51.68,51.68,0,
+            0,0,
+            40.9425,46.1573 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-29" d="M 41.3759,19.9013
+    A 71.44,71.44,0,
+    0,1,
+    56.3123,12.6014
+  L 62.8642,31.2436
+            A 51.68,51.68,0,
+            0,0,
+            52.0591,36.5244 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-30" d="M 59.8721,11.4541
+    A 71.44,71.44,0,
+    0,1,
+    76.2601,8.658
+  L 77.2946,28.3909
+            A 51.68,51.68,0,
+            0,0,
+            65.4394,30.4136 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g></g><text x="80" y="80" style="text-anchor:middle;text-wrap-mode:nowrap"><tspan dy="-0.1em" x="80" style="fill:rgb(14, 23, 38);font-family:&quot;Space Grotesk&quot;, Manrope, ui-sans-serif, system-ui, sans-serif;font-size:14px;font-weight:600;font-feature-settings:&quot;tnum&quot;;font-variant-numeric:tabular-nums">17 de 21</tspan></text></g></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g></svg><foreignObject x="101.92" y="261" width="45.47" height="12" style="overflow:visible"><span xmlns="http://www.w3.org/1999/xhtml" style="display:block;box-sizing:border-box;width:45.47px;height:12px;color:rgb(65, 80, 107);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:12px;letter-spacing:normal;text-align:start;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;margin:0">Inbound</span></foreignObject><svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" viewBox="0 0 160 160" x="240" y="99" width="160" height="160" style="font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:15px;text-rendering:optimizelegibility;overflow:hidden"><title ></title><desc ></desc><g ></g><g ></g><defs ><clipPath id="recharts2-clip"><rect x="4" y="4" height="152" width="152"></rect></clipPath></defs><g ><g ><g ><g ><g ><path cx="80" cy="80" name="2026-06-01" d="M 80,8.56
+    A 71.44,71.44,0,
+    0,1,
+    96.5119,10.4944
+  L 91.9448,29.7193
+            A 51.68,51.68,0,
+            0,0,
+            80,28.32 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-02" d="M 100.1269,11.4538
+    A 71.44,71.44,0,
+    0,1,
+    115.425,17.9618
+  L 105.6266,35.1213
+            A 51.68,51.68,0,
+            0,0,
+            94.5599,30.4134 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-03" d="M 118.6233,19.9008
+    A 71.44,71.44,0,
+    0,1,
+    131.4682,30.4551
+  L 117.2323,44.159
+            A 51.68,51.68,0,
+            0,0,
+            107.9403,36.524 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-04" d="M 133.9907,33.2166
+    A 71.44,71.44,0,
+    0,1,
+    143.3418,46.9623
+  L 125.8217,56.1004
+            A 51.68,51.68,0,
+            0,0,
+            119.0571,46.1567 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-05" d="M 144.984,50.3226
+    A 71.44,71.44,0,
+    0,1,
+    150.0838,66.1459
+  L 130.6989,69.9779
+            A 51.68,51.68,0,
+            0,0,
+            127.0097,58.5312 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-08" d="M 150.7128,69.8328
+    A 71.44,71.44,0,
+    0,1,
+    151.1481,86.4519
+  L 131.4688,84.6674
+            A 51.68,51.68,0,
+            0,0,
+            131.1539,72.645 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-09" d="M 150.7129,90.1667
+    A 71.44,71.44,0,
+    0,1,
+    146.4484,106.2353
+  L 128.069,98.9787
+            A 51.68,51.68,0,
+            0,0,
+            131.154,87.3546 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-10" d="M 144.9842,109.677
+    A 71.44,71.44,0,
+    0,1,
+    136.3654,123.8932
+  L 120.775,111.7525
+            A 51.68,51.68,0,
+            0,0,
+            127.0099,101.4684 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-11" d="M 133.991,126.783
+    A 71.44,71.44,0,
+    0,1,
+    121.7161,137.9952
+  L 110.1776,121.9539
+            A 51.68,51.68,0,
+            0,0,
+            119.0573,113.843 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-12" d="M 118.6237,140.0989
+    A 71.44,71.44,0,
+    0,1,
+    103.6872,147.3987
+  L 97.1355,128.7565
+            A 51.68,51.68,0,
+            0,0,
+            107.9406,123.4758 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-15" d="M 100.1274,148.5461
+    A 71.44,71.44,0,
+    0,1,
+    83.7394,151.3421
+  L 82.7051,131.6092
+            A 51.68,51.68,0,
+            0,0,
+            94.5603,129.5865 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-16" d="M 80.0005,151.44
+    A 71.44,71.44,0,
+    0,1,
+    63.4886,149.5057
+  L 68.0556,130.2807
+            A 51.68,51.68,0,
+            0,0,
+            80.0004,131.68 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-17" d="M 59.8735,148.5463
+    A 71.44,71.44,0,
+    0,1,
+    44.5754,142.0385
+  L 54.3737,124.8789
+            A 51.68,51.68,0,
+            0,0,
+            65.4404,129.5867 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-18" d="M 41.3771,140.0995
+    A 71.44,71.44,0,
+    0,1,
+    28.5321,129.5453
+  L 42.7679,115.8412
+            A 51.68,51.68,0,
+            0,0,
+            52.06,123.4762 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-19" d="M 26.0097,126.7837
+    A 71.44,71.44,0,
+    0,1,
+    16.6585,113.0382
+  L 34.1785,103.9
+            A 51.68,51.68,0,
+            0,0,
+            40.9432,113.8435 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-22" d="M 15.0162,109.6779
+    A 71.44,71.44,0,
+    0,1,
+    9.9163,93.8546
+  L 29.3012,90.0225
+            A 51.68,51.68,0,
+            0,0,
+            32.9904,101.4691 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-23" d="M 9.2873,90.1677
+    A 71.44,71.44,0,
+    0,1,
+    8.8519,73.5486
+  L 28.5312,75.333
+            A 51.68,51.68,0,
+            0,0,
+            28.8461,87.3554 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-24" d="M 9.287,69.8338
+    A 71.44,71.44,0,
+    0,1,
+    13.5515,53.7652
+  L 31.9308,61.0216
+            A 51.68,51.68,0,
+            0,0,
+            28.8459,72.6457 Z" style="fill:none;stroke:rgb(92, 107, 135)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-25" d="M 15.0156,50.3235
+    A 71.44,71.44,0,
+    0,1,
+    23.6343,36.1072
+  L 39.2248,48.2478
+            A 51.68,51.68,0,
+            0,0,
+            32.99,58.5319 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-26" d="M 26.0087,33.2174
+    A 71.44,71.44,0,
+    0,1,
+    38.2835,22.0051
+  L 49.8221,38.0463
+            A 51.68,51.68,0,
+            0,0,
+            40.9425,46.1573 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-29" d="M 41.3759,19.9013
+    A 71.44,71.44,0,
+    0,1,
+    56.3123,12.6014
+  L 62.8642,31.2436
+            A 51.68,51.68,0,
+            0,0,
+            52.0591,36.5244 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-30" d="M 59.8721,11.4541
+    A 71.44,71.44,0,
+    0,1,
+    76.2601,8.658
+  L 77.2946,28.3909
+            A 51.68,51.68,0,
+            0,0,
+            65.4394,30.4136 Z" style="fill:rgb(181, 37, 63);stroke:rgb(255, 255, 255)"></path></g></g></g><text x="80" y="80" style="text-anchor:middle;text-wrap-mode:nowrap"><tspan dy="-0.1em" x="80" style="fill:rgb(14, 23, 38);font-family:&quot;Space Grotesk&quot;, Manrope, ui-sans-serif, system-ui, sans-serif;font-size:14px;font-weight:600;font-feature-settings:&quot;tnum&quot;;font-variant-numeric:tabular-nums">12 de 21</tspan></text></g></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g></svg><foreignObject x="291.92" y="261" width="56.16" height="12" style="overflow:visible"><span xmlns="http://www.w3.org/1999/xhtml" style="display:block;box-sizing:border-box;width:56.16px;height:12px;color:rgb(65, 80, 107);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:12px;letter-spacing:normal;text-align:start;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;margin:0">Outbound</span></foreignObject><svg xmlns="http://www.w3.org/2000/svg" cx="50%" cy="50%" viewBox="0 0 160 160" x="435" y="99" width="160" height="160" style="font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:15px;text-rendering:optimizelegibility;overflow:hidden"><title ></title><desc ></desc><g ></g><g ></g><defs ><clipPath id="recharts3-clip"><rect x="4" y="4" height="152" width="152"></rect></clipPath></defs><g ><g ><g ><g ><g ><path cx="80" cy="80" name="2026-06-01" d="M 80,8.56
+    A 71.44,71.44,0,
+    0,1,
+    96.5119,10.4944
+  L 91.9448,29.7193
+            A 51.68,51.68,0,
+            0,0,
+            80,28.32 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-02" d="M 100.1269,11.4538
+    A 71.44,71.44,0,
+    0,1,
+    115.425,17.9618
+  L 105.6266,35.1213
+            A 51.68,51.68,0,
+            0,0,
+            94.5599,30.4134 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-03" d="M 118.6233,19.9008
+    A 71.44,71.44,0,
+    0,1,
+    131.4682,30.4551
+  L 117.2323,44.159
+            A 51.68,51.68,0,
+            0,0,
+            107.9403,36.524 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-04" d="M 133.9907,33.2166
+    A 71.44,71.44,0,
+    0,1,
+    143.3418,46.9623
+  L 125.8217,56.1004
+            A 51.68,51.68,0,
+            0,0,
+            119.0571,46.1567 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-05" d="M 144.984,50.3226
+    A 71.44,71.44,0,
+    0,1,
+    150.0838,66.1459
+  L 130.6989,69.9779
+            A 51.68,51.68,0,
+            0,0,
+            127.0097,58.5312 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-08" d="M 150.7128,69.8328
+    A 71.44,71.44,0,
+    0,1,
+    151.1481,86.4519
+  L 131.4688,84.6674
+            A 51.68,51.68,0,
+            0,0,
+            131.1539,72.645 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-09" d="M 150.7129,90.1667
+    A 71.44,71.44,0,
+    0,1,
+    146.4484,106.2353
+  L 128.069,98.9787
+            A 51.68,51.68,0,
+            0,0,
+            131.154,87.3546 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-10" d="M 144.9842,109.677
+    A 71.44,71.44,0,
+    0,1,
+    136.3654,123.8932
+  L 120.775,111.7525
+            A 51.68,51.68,0,
+            0,0,
+            127.0099,101.4684 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-11" d="M 133.991,126.783
+    A 71.44,71.44,0,
+    0,1,
+    121.7161,137.9952
+  L 110.1776,121.9539
+            A 51.68,51.68,0,
+            0,0,
+            119.0573,113.843 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-12" d="M 118.6237,140.0989
+    A 71.44,71.44,0,
+    0,1,
+    103.6872,147.3987
+  L 97.1355,128.7565
+            A 51.68,51.68,0,
+            0,0,
+            107.9406,123.4758 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-15" d="M 100.1274,148.5461
+    A 71.44,71.44,0,
+    0,1,
+    83.7394,151.3421
+  L 82.7051,131.6092
+            A 51.68,51.68,0,
+            0,0,
+            94.5603,129.5865 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-16" d="M 80.0005,151.44
+    A 71.44,71.44,0,
+    0,1,
+    63.4886,149.5057
+  L 68.0556,130.2807
+            A 51.68,51.68,0,
+            0,0,
+            80.0004,131.68 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-17" d="M 59.8735,148.5463
+    A 71.44,71.44,0,
+    0,1,
+    44.5754,142.0385
+  L 54.3737,124.8789
+            A 51.68,51.68,0,
+            0,0,
+            65.4404,129.5867 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-18" d="M 41.3771,140.0995
+    A 71.44,71.44,0,
+    0,1,
+    28.5321,129.5453
+  L 42.7679,115.8412
+            A 51.68,51.68,0,
+            0,0,
+            52.06,123.4762 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-19" d="M 26.0097,126.7837
+    A 71.44,71.44,0,
+    0,1,
+    16.6585,113.0382
+  L 34.1785,103.9
+            A 51.68,51.68,0,
+            0,0,
+            40.9432,113.8435 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-22" d="M 15.0162,109.6779
+    A 71.44,71.44,0,
+    0,1,
+    9.9163,93.8546
+  L 29.3012,90.0225
+            A 51.68,51.68,0,
+            0,0,
+            32.9904,101.4691 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-23" d="M 9.2873,90.1677
+    A 71.44,71.44,0,
+    0,1,
+    8.8519,73.5486
+  L 28.5312,75.333
+            A 51.68,51.68,0,
+            0,0,
+            28.8461,87.3554 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-24" d="M 9.287,69.8338
+    A 71.44,71.44,0,
+    0,1,
+    13.5515,53.7652
+  L 31.9308,61.0216
+            A 51.68,51.68,0,
+            0,0,
+            28.8459,72.6457 Z" style="fill:none;stroke:rgb(92, 107, 135)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-25" d="M 15.0156,50.3235
+    A 71.44,71.44,0,
+    0,1,
+    23.6343,36.1072
+  L 39.2248,48.2478
+            A 51.68,51.68,0,
+            0,0,
+            32.99,58.5319 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-26" d="M 26.0087,33.2174
+    A 71.44,71.44,0,
+    0,1,
+    38.2835,22.0051
+  L 49.8221,38.0463
+            A 51.68,51.68,0,
+            0,0,
+            40.9425,46.1573 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-29" d="M 41.3759,19.9013
+    A 71.44,71.44,0,
+    0,1,
+    56.3123,12.6014
+  L 62.8642,31.2436
+            A 51.68,51.68,0,
+            0,0,
+            52.0591,36.5244 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g><g ><g ><path cx="80" cy="80" name="2026-06-30" d="M 59.8721,11.4541
+    A 71.44,71.44,0,
+    0,1,
+    76.2601,8.658
+  L 77.2946,28.3909
+            A 51.68,51.68,0,
+            0,0,
+            65.4394,30.4136 Z" style="fill:rgb(15, 122, 85);stroke:rgb(255, 255, 255)"></path></g></g></g><text x="80" y="80" style="text-anchor:middle;text-wrap-mode:nowrap"><tspan dy="-0.1em" x="80" style="fill:rgb(14, 23, 38);font-family:&quot;Space Grotesk&quot;, Manrope, ui-sans-serif, system-ui, sans-serif;font-size:14px;font-weight:600;font-feature-settings:&quot;tnum&quot;;font-variant-numeric:tabular-nums">21 de 21</tspan></text></g></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g><g ></g></svg><foreignObject x="484.58" y="261" width="61.5" height="12" style="overflow:visible"><span xmlns="http://www.w3.org/1999/xhtml" style="display:block;box-sizing:border-box;width:61.5px;height:12px;color:rgb(65, 80, 107);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:12px;letter-spacing:normal;text-align:start;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;margin:0">Reativação</span></foreignObject><foreignObject x="33" y="290.5" width="574" height="16" style="overflow:visible"><div xmlns="http://www.w3.org/1999/xhtml" aria-hidden="true" style="display:flex;box-sizing:border-box;width:574px;height:16px;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:4px;column-gap:16px;color:rgb(14, 23, 38);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:16px;letter-spacing:normal;text-align:start;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;margin:0"><span style="display:flex;box-sizing:border-box;width:70.3438px;height:16px;min-width:auto;min-height:auto;align-items:center;row-gap:6px;column-gap:6px"><span style="display:block;box-sizing:border-box;width:10px;height:10px;min-width:auto;min-height:auto;flex-shrink:0;background-color:rgb(15, 122, 85);border-top-left-radius:3.35544e+07px;border-top-right-radius:3.35544e+07px;border-bottom-right-radius:3.35544e+07px;border-bottom-left-radius:3.35544e+07px"></span><span style="display:block;box-sizing:border-box;width:54.3438px;height:16px;min-width:auto;min-height:auto;color:rgb(65, 80, 107)">Cumprido</span></span><span style="display:flex;box-sizing:border-box;width:72.9062px;height:16px;min-width:auto;min-height:auto;align-items:center;row-gap:6px;column-gap:6px"><span style="display:block;box-sizing:border-box;width:10px;height:10px;min-width:auto;min-height:auto;flex-shrink:0;background-color:rgb(181, 37, 63);border-top-left-radius:3.35544e+07px;border-top-right-radius:3.35544e+07px;border-bottom-right-radius:3.35544e+07px;border-bottom-left-radius:3.35544e+07px"></span><span style="display:block;box-sizing:border-box;width:56.9062px;height:16px;min-width:auto;min-height:auto;color:rgb(65, 80, 107)">Estourado</span></span><span style="display:flex;box-sizing:border-box;width:105.484px;height:16px;min-width:auto;min-height:auto;align-items:center;row-gap:6px;column-gap:6px"><span style="display:block;box-sizing:border-box;width:10px;height:10px;min-width:auto;min-height:auto;flex-shrink:0;border-top-width:1px;border-top-style:solid;border-top-color:rgb(92, 107, 135);border-right-width:1px;border-right-style:solid;border-right-color:rgb(92, 107, 135);border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(92, 107, 135);border-left-width:1px;border-left-style:solid;border-left-color:rgb(92, 107, 135);border-top-left-radius:3.35544e+07px;border-top-right-radius:3.35544e+07px;border-bottom-right-radius:3.35544e+07px;border-bottom-left-radius:3.35544e+07px"></span><span style="display:block;box-sizing:border-box;width:89.4844px;height:16px;min-width:auto;min-height:auto;color:rgb(92, 107, 135)">Sem expediente</span></span></div></foreignObject><foreignObject x="33" y="310.5" width="574" height="16.5" style="overflow:visible"><p xmlns="http://www.w3.org/1999/xhtml" aria-hidden="true" style="box-sizing:border-box;width:574px;height:16.5px;color:rgb(92, 107, 135);font-family:Manrope, ui-sans-serif, system-ui, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;font-size:11px;font-weight:400;font-style:normal;font-feature-settings:normal;font-variant-numeric:normal;line-height:16.5px;letter-spacing:normal;text-align:center;white-space-collapse:collapse;text-wrap-mode:wrap;tab-size:4;direction:ltr;text-rendering:optimizelegibility;border-spacing:0px;display:block;margin:0">Cada segmento do anel vale <span style="box-sizing:border-box;font-family:&quot;Space Grotesk&quot;, Manrope, ui-sans-serif, system-ui, sans-serif;font-feature-settings:&quot;tnum&quot;;font-variant-numeric:tabular-nums">1</span> dia útil.</p></foreignObject></g>
+</svg>

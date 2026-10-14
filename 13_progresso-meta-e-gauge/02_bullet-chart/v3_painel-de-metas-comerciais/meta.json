@@ -1,0 +1,13 @@
+{
+  "title": "Painel de metas comerciais do trimestre",
+  "useCase": "Comparar de uma vez várias metas de unidades diferentes, cada uma contra sua própria régua.",
+  "demonstrates": [
+    "Um BarChart só, com faixas em ReferenceArea comuns a todas as linhas",
+    "Métricas normalizadas em percentual da meta, unidade original no rótulo e na dica",
+    "Rótulos alinhados à esquerda, com a mesma margem em todas as linhas",
+    "Métrica abaixo da faixa aceitável com ícone e peso no rótulo, sem depender da cor",
+    "Valor absoluto de cada métrica escrito ao fim da própria linha, na unidade original"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "05_dispersao-conectada",
+  "nome": "Dispersão conectada",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Os pontos de uma entidade são ligados por segmentos retos na ordem do tempo, e a linha desenha a trajetória nas duas medidas ao mesmo tempo. Mostra viradas que duas linhas separadas escondem, mas cobra caro do leitor: ele acompanha quatro coisas mudando juntas. Início vazado, fim cheio e rótulo de período nas pontas e nas viradas são obrigatórios.",
+  "quando_usar": [
+    "Trajetória de uma entidade em duas medidas, como CPL e taxa de qualificação de uma plataforma nos últimos 12 meses.",
+    "Mostrar o mês em que as duas medidas mudaram de direção juntas.",
+    "Uma ou duas entidades, de 6 a cerca de 24 períodos.",
+    "Público analítico que já conhece as duas medidas."
+  ],
+  "quando_evitar": [
+    "Mais de duas entidades no mesmo plano: vira espaguete; mostre uma por vez ou use pequenos múltiplos (modelo 11).",
+    "Público não técnico: duas linhas empilhadas ou indexadas no tempo (família 04) contam o mesmo com menos esforço.",
+    "Só dois momentos por entidade: use antes e depois com setas (modelo 06).",
+    "Curva suavizada: monotone inventa caminho entre meses; a ligação é sempre linear."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_trajetoria-de-uma-plataforma",
+      "titulo": "Trajetória de CPL e qualificação da plataforma A",
+      "caso_de_uso": "Como CPL e taxa de qualificação da plataforma A andaram juntos nos últimos 12 meses?",
+      "o_que_demonstra": [
+        "Scatter com line e lineJointType linear sobre dados ordenados por mês",
+        "Início em anel vazado e fim em ponto cheio com rótulo de mês",
+        "Rótulos de mês só no início, no fim e nas viradas",
+        "Domínio explícito nos dois eixos com unidade"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_virada-anotada",
+      "titulo": "A virada de público da plataforma A",
+      "caso_de_uso": "Em que mês o CPL caiu e a qualificação caiu junto? A virada recebe anotação de uma frase.",
+      "o_que_demonstra": [
+        "Anotação curta ancorada no mês da virada, com halo sobre a linha",
+        "Segmento da virada em cor de destaque e o restante da trajetória em neutro",
+        "No máximo duas anotações por visual"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_tres-plataformas-uma-em-foco",
+      "titulo": "Plataforma em foco entre as três",
+      "caso_de_uso": "Qual trajetória a plataforma escolhida fez contra as outras duas? Seletor acende uma e as demais ficam em traço neutro fino.",
+      "o_que_demonstra": [
+        "Prop highlightId escolhendo a trajetória acesa entre três",
+        "Trajetórias de contexto em traço fino neutro, sem rótulo de mês",
+        "Ordem de desenho com a trajetória acesa por último",
+        "Frase acessível que descreve a trajetória em foco"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_mes-sem-coleta",
+      "titulo": "Trajetória com mês sem coleta",
+      "caso_de_uso": "Como mostrar a trajetória quando um mês não teve coleta? A linha quebra e o mês ausente ganha nota.",
+      "o_que_demonstra": [
+        "Série dividida em duas no mês ausente, sem ligar por cima do buraco",
+        "Ponto fantasma tracejado e nota com o mês sem coleta",
+        "Mês ausente nunca interpolado nem lançado como zero"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

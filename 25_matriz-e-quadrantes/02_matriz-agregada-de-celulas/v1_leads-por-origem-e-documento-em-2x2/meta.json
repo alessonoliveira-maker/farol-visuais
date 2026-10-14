@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem e documento",
+  "useCase": "Marketing: quantos leads do mês têm origem identificada, documento válido, os dois ou nenhum.",
+  "demonstrates": [
+    "Grade 2x2 com gap-px sobre fundo de divisória, cada caixa um botão que filtra",
+    "Seta de sentido e rótulo nos dois eixos, fora da grade",
+    "Número grande, rótulo da região e participação sobre o total em cada caixa",
+    "Caixa sem origem nem documento com borda chart-3 e ícone da lucide",
+    "Nenhuma caixa com área proporcional ao valor"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

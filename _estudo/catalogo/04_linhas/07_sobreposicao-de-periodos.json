@@ -1,0 +1,67 @@
+{
+  "slug": "07_sobreposicao-de-periodos",
+  "nome": "Sobreposição de períodos",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Período atual e períodos anteriores desenhados no mesmo eixo de calendário relativo (semana ISO, dia útil do mês) para ler sazonalidade e comparar com o mesmo momento do passado. O pivot é feito em TypeScript por posição relativa, nunca por data civil quando o negócio segue dias úteis.",
+  "quando_usar": [
+    "Ano contra ano por semana ISO: agendas, entradas, fechamentos.",
+    "Mês corrente contra a média dos meses anteriores, alinhado por dia útil.",
+    "Ano corrente contra a faixa de mínimo e máximo dos anos anteriores."
+  ],
+  "quando_evitar": [
+    "Série contínua em que a pergunta é tendência e não sazonalidade: use 01_linha-simples.",
+    "Comparação de só dois momentos agregados: use 17_comparacao-de-pontos.",
+    "Mais de 3 anos anteriores desenhados um a um: resuma em faixa de mínimo e máximo.",
+    "Calendários desalinhados sem normalização declarada: normalize por dia útil ou por fração do período."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-semana-2026-contra-2025",
+      "titulo": "Agendas por semana ISO, 2026 contra 2025",
+      "caso_de_uso": "As agendas semanais de 2026 seguem a sazonalidade de 2025 ou já descolaram até a semana 37?",
+      "o_que_demonstra": [
+        "Pivot em TypeScript por semana ISO com uma chave por ano",
+        "Ano atual em --chart-1 e ano anterior em --line-strong",
+        "Rótulo do ano no fim de cada linha, sem legenda",
+        "Ano corrente termina em null depois da última semana medida"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_receita-por-dia-util-contra-media",
+      "titulo": "Receita do mês por dia útil contra a média de 6 meses",
+      "caso_de_uso": "No 9º dia útil de 2026-09, a receita acumulada do mês está à frente da média dos 6 meses anteriores?",
+      "o_que_demonstra": [
+        "Alinhamento por dia útil, não por data civil",
+        "Média dos 6 meses anteriores como série tracejada de referência",
+        "Diferença de hoje escrita com a base nomeada na mesma linha"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-sobre-faixa-de-tres-anos",
+      "titulo": "Entradas de 2026 sobre a faixa de 2023 a 2025",
+      "caso_de_uso": "As entradas semanais de 2026 ficam dentro da faixa de mínimo e máximo de 2023 a 2025?",
+      "o_que_demonstra": [
+        "Area de faixa com mínimo e máximo dos anos anteriores atrás da linha",
+        "Semanas de 2026 fora da faixa marcadas com ponto e valor",
+        "Nota escrita dizendo quais anos formam a faixa",
+        "Faixa histórica completa e linha atual que para na semana medida"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_meses-com-dias-uteis-diferentes",
+      "titulo": "Meses com 18 e 22 dias úteis normalizados",
+      "caso_de_uso": "Como comparar agendas acumuladas de um mês com 18 dias úteis e outro com 22 sem que o curto pareça queda?",
+      "o_que_demonstra": [
+        "Eixo em fração do mês útil, de 0 a 100%, em vez de dia civil",
+        "Normalização declarada em nota curta no visual",
+        "Mês curto sem pontos inventados para igualar o longo",
+        "Dica com o dia útil real e a fração correspondente"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Entradas e saídas de oportunidades por semana",
+  "useCase": "Ver se o funil está enchendo ou esvaziando: oportunidades que entram contra as que saem por ganho ou perda.",
+  "demonstrates": [
+    "Duas pilhas por sinal (positiva e negativa) com offset padrão, sem stackOffset sign",
+    "Linha do zero em line-strong e saldo líquido em Line dentro do ComposedChart",
+    "Tique e rótulo com sinal de menos tipográfico (U+2212) nas saídas",
+    "Semanas de saldo negativo sinalizadas com símbolo e texto, não só cor",
+    "Camada que alterna sinal separada em duas chaves com a mesma cor, uma em cada pilha",
+    "Legenda acima do gráfico e reclassificação líquida declarada na conta escrita"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "03_grafo-em-grade",
+  "nome": "Grafo em grade",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Nós posicionados nas células de uma grade definida por duas categorias (colunas por função, linhas por etapa) e ligados por arestas com seta. Mantém a leitura de matriz e mostra dependências dirigidas sem layout livre: a posição do nó já diz de quem é e em que etapa está, e a seta diz quem passa para quem. Grade, cabeçalhos e arestas saem no mesmo viewBox, com o centro de cada célula calculado em TypeScript, então a camada de arestas nunca descola da grade. A aresta é ortogonal com cantos arredondados para não atravessar nós; várias arestas da mesma célula têm as pontas deslocadas alguns pixels, e a célula com mais de um nó vira pilha interna com contagem. A célula vazia é informação: etapa sem dono aparece tracejada e escrita.",
+  "quando_usar": [
+    "Handoff entre funções ao longo das etapas do funil, com seta de quem passa para quem",
+    "Nós que já têm duas categorias (função e etapa, fila e prioridade) e cabem em até 6 por 6 células",
+    "Mostrar etapa sem responsável ou função sem papel numa etapa, que o grafo livre esconde",
+    "Marcar arestas em estado de atenção (SLA estourado) sem perder a estrutura do processo",
+    "Documentar o desenho do processo junto com a contagem medida em cada passagem"
+  ],
+  "quando_evitar": [
+    "Os nós não têm atributo categórico: use o grafo por forças (27/04) ou o bipartido (27/02)",
+    "A pergunta é quanto volume passou em cada etapa: use o sankey multietapa (11/02_sankey-multietapa)",
+    "Só importa quem é responsável, consultado ou informado em cada etapa, sem seta: use a matriz RACI (25/07_matriz-raci)",
+    "Movimento entre etapas contado por par de-para: use a matriz de transição (15/07_matriz-de-transicao)",
+    "Mais de 8 categorias num eixo: a grade vira tabela; agrupe categorias antes"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_handoff-por-funcao-e-etapa",
+      "titulo": "Quem passa para quem em cada etapa",
+      "caso_de_uso": "Comercial: como a oportunidade fictícia passa entre marketing, pré-vendas, executivo e relacionamento da entrada ao pós-venda.",
+      "o_que_demonstra": [
+        "Grade de 4 funções por 4 etapas e arestas no mesmo viewBox, sem medir o DOM",
+        "Centro de célula calculado por constante de geometria em TypeScript",
+        "Aresta ortogonal com cantos arredondados e ponta de seta em marker SVG",
+        "Contagem de passagens do trimestre escrita no meio de cada seta",
+        "Grade em var(--line-subtle) e nós em var(--line-strong) com rótulo em var(--text-primary)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_handoffs-com-sla-estourado",
+      "titulo": "Passagens com SLA estourado",
+      "caso_de_uso": "Pré-vendas: em quais passagens do processo fictício de 2026-08 o prazo acordado estourou e em quantos casos.",
+      "o_que_demonstra": [
+        "Arestas com SLA estourado em var(--negative) e as demais em var(--line-strong)",
+        "Ícone lucide Clock junto da contagem, para o alerta não depender só da cor",
+        "Percentual estourado sobre o total da passagem escrito na seta",
+        "Aresta em atenção desenhada por último para ficar por cima das demais",
+        "Frase acessível com a passagem de maior estouro e a contagem"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_filas-de-pre-vendas-com-pilha",
+      "titulo": "Redistribuição entre filas de pré-vendas",
+      "caso_de_uso": "Pré-vendas: como os leads fictícios são redistribuídos entre 4 filas de trabalho ao longo de 5 etapas de qualificação.",
+      "o_que_demonstra": [
+        "Célula com mais de um nó vira pilha interna com contagem, como 3 filas",
+        "Pontas de várias arestas da mesma célula deslocadas alguns pixels por aresta",
+        "Espessura da aresta em três faixas pelo número de leads redistribuídos",
+        "Caminho selecionado por highlightId aceso em var(--chart-1), resto esmaecido",
+        "Retorno para etapa anterior desenhado por fora da grade para não cruzar nós"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_etapa-sem-responsavel",
+      "titulo": "Etapas do processo sem responsável",
+      "caso_de_uso": "Comercial: em qual etapa do handoff fictício nenhuma função está definida como responsável, que é justamente o achado.",
+      "o_que_demonstra": [
+        "Célula sem nó com contorno tracejado 3 3 em var(--text-muted)",
+        "Texto sem responsável definido escrito dentro da célula vazia",
+        "Seta interrompida que chega à célula vazia e não sai dela",
+        "Contagem de etapas sem dono escrita no rodapé, como 1 de 16 células",
+        "Diferença visual entre célula que não se aplica e célula sem dono"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "05_histograma-comparativo",
+  "versoes": {
+    "v1_ciclo-novo-contra-cliente-da-casa": {
+      "veredito": "aprovado",
+      "nota": "Controle da rodada. O parecer independente convergiu com o meu, inclusive na mesma dúvida sobre n de 167 contra 143 e na mesma dispensa, o que é evidência de que a delegação da revisão não está perdendo o essencial. Ressalva acrescentada por ele: median devolve 0 em lista vazia, contra a EST-1b. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.953Z",
+      "impressao": "c14c34082d2a24515f50183c327df760b3d7770c",
+      "arquivos": {
+        "Chart.tsx": "e8c18b3b1e23657cf0a6d89cbdf0a3e5deb774b3",
+        "data.ts": "4dc152f13a2e9db5b2c40dde397ca02eb40b072f",
+        "meta.json": "f910e65b72ba58dc62eb6dce37b6448cbf9bfca1"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-novo-contra-cliente-da-casa",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Barra solida contra silhueta em degrau resolve a sobreposicao sem transparencia, a legenda usa a forma de cada marca e nao um quadrado para os dois, a mediana de cada grupo entra tracejada na cor do grupo com a diferenca de 34 dias medida por seta, e o rodape declara a largura do bin, o dominio fixo e os 18 excluidos ja decompostos por grupo. A altura e contagem com n de 167 contra 143, o que distorce um pouco a comparacao de forma, mas os dois n estao escritos na legenda e o eixo esta nomeado, entao o leitor tem o material para corrigir.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:06:13.393Z",
+      "impressao": "c14c34082d2a24515f50183c327df760b3d7770c",
+      "arquivos": {
+        "Chart.tsx": "e8c18b3b1e23657cf0a6d89cbdf0a3e5deb774b3",
+        "data.ts": "4dc152f13a2e9db5b2c40dde397ca02eb40b072f",
+        "meta.json": "f910e65b72ba58dc62eb6dce37b6448cbf9bfca1"
+      }
+    },
+    {
+      "versao": "v1_ciclo-novo-contra-cliente-da-casa",
+      "veredito": "aprovado",
+      "nota": "Controle da rodada. O parecer independente convergiu com o meu, inclusive na mesma dúvida sobre n de 167 contra 143 e na mesma dispensa, o que é evidência de que a delegação da revisão não está perdendo o essencial. Ressalva acrescentada por ele: median devolve 0 em lista vazia, contra a EST-1b. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.953Z",
+      "impressao": "c14c34082d2a24515f50183c327df760b3d7770c",
+      "arquivos": {
+        "Chart.tsx": "e8c18b3b1e23657cf0a6d89cbdf0a3e5deb774b3",
+        "data.ts": "4dc152f13a2e9db5b2c40dde397ca02eb40b072f",
+        "meta.json": "f910e65b72ba58dc62eb6dce37b6448cbf9bfca1"
+      }
+    }
+  ]
+}

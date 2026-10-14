@@ -1,0 +1,15 @@
+{
+  "title": "Maturidade da área comercial em doze critérios",
+  "useCase": "Diretoria, plano 2027: como a área comercial pontua nos doze critérios de maturidade e onde estão as lacunas antes do orçamento?",
+  "demonstrates": [
+    "Doze espetos com rótulos horizontais no raio externo fixo, sem texto girado",
+    "textAnchor pelo quadrante: start à direita, end à esquerda, middle no topo e na base",
+    "Nomes longos em duas linhas por tspan, sem abreviação inventada",
+    "Ordem dos critérios vinda do registry, com os correlatos vizinhos",
+    "Canvas de 640 por 412 com a lista dos três critérios mais baixos ao lado da estrela",
+    "Área do espeto linear no valor: largura fixa, só o comprimento muda (GEO-3)"
+  ],
+  "canvas": { "width": 640, "height": 412 },
+  "frame": "card",
+  "notes": "Desvio do catálogo, GEO-1: o preset card não fecha. Conta de linhas: o rótulo do topo e o da base têm duas linhas de 13 px cada, a 10 px do anel externo, então a altura da estrela é 2 vezes (raio + 10 + 26 + 2). No corpo de 225 px do card isso deixa raio externo de 74 px e 14,5 px entre anéis. Mantida a largura de 640, a altura sobe para 412: corpo de 574 por 277 com o caso de uso em duas linhas, raio externo de 100 px, 21 px entre anéis. A largura do corpo se divide em 398 da estrela, 16 de vão e 160 da lista, e o viewBox de 398 por 276 fica em escala 1 (GEO-18). Nota do dono, GEO-3: a marca é um trapézio de largura fixa, 6 px na base e 2 px na ponta, então a área vale 4 px vezes o comprimento e cresce em linha com o índice; 86 pontos desenham 289 px² e 34 pontos desenham 114 px², razão de 2,53 nos dois. A guarda RAIO-CONTRA-AREA não mede trapézio (sem_marca_de_area), então a conferência foi à mão, pela área do polígono de cada path do preview contra o data.ts: desvio de participação abaixo de 0,001 ponto percentual. O anel do zero tem 16 px porque com doze eixos 12 px deixariam as bases encostadas. Só os anéis de 50 e 100 levam número: a 37 px do centro o vão entre dois espetos tem 19 px e o 25 com halo pede 26, e o 75 ficava a 3,2 px do 100 no primeiro render (aviso da COLISAO-TEXTO); o rodapé da lista diz que os anéis vão de 25 em 25. Os três mais baixos levam peso 600 no nome, sem 700 em lugar nenhum (TIP-3)."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Tira de abertura do Comercial",
+  "useCase": "Qual é o estado do Comercial em ago/26 antes de qualquer gráfico: receita, negócios fechados e ticket médio?",
+  "demonstrates": [
+    "Grade de colunas iguais com items stretch e h full, sem altura fixa em pixels",
+    "Período declarado uma vez no cabeçalho da tira, porque é o mesmo para todos",
+    "Linha de variação reservada em todos os cartões para alinhar a base do número",
+    "Unidade colada a cada número: moeda, contagem de negócios e ticket"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "02_linha-do-tempo-de-marcos",
+  "nome": "Linha do tempo de marcos",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Eventos de duração zero posicionados na data exata sobre um eixo de tempo contínuo, com losango ou círculo por marco, rótulo curto com a data e linha de hoje. A escala é sempre temporal: dois marcos a três dias um do outro ficam colados e o seguinte, a quatro meses, fica longe. No Recharts é um ScatterChart com XAxis numérico de datas, YAxis de categoria para a faixa e LabelList com content customizado; o trabalho real do modelo é resolver colisão de rótulo em TypeScript antes do render (alternar acima e abaixo, escada de alturas, agrupar o que cai no mesmo pixel). Absorve a linha do tempo narrativa com rótulos alternados e a régua de marcos com estado da família 13.",
+  "quando_usar": [
+    "Eventos pontuais com data exata, de 4 a cerca de 25 no período exibido",
+    "Acompanhamento de plano: marcos atingidos, em curso e futuros contra a data de hoje",
+    "Contar a história de um período com poucos eventos descritos em título e uma frase",
+    "Comparar a cadência de marcos entre públicos em faixas sobre o mesmo eixo"
+  ],
+  "quando_evitar": [
+    "Eventos com duração relevante: use o Gantt (20/01)",
+    "Etapas sem data e só com ordem: use o stepper de etapas (20/03)",
+    "Eventos com magnitude que precisa ser comparada: use a linha do tempo de círculos (20/08)",
+    "Eventos explicando uma métrica: marque sobre a série com ReferenceLine (04/01)",
+    "Mais de 15 eventos com texto descritivo: vire feed vertical em cartões (20/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_marcos-do-plano-comercial-2027",
+      "titulo": "Marcos do plano comercial 2027",
+      "caso_de_uso": "Comercial: quando caem os 6 marcos do plano de 2027, do orçamento aprovado à revisão de meta.",
+      "o_que_demonstra": [
+        "ScatterChart com XAxis numérico em milissegundos UTC e Scatter com shape diamond",
+        "Espaçamento pela data real, nunca pela ordem, com ticks mensais gerados em TypeScript",
+        "LabelList com content customizado alternando rótulo acima e abaixo do eixo",
+        "Data do rótulo por formatDate e linha de hoje vinda do dado"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_regua-de-marcos-com-estado",
+      "titulo": "Régua de marcos do trimestre com estado",
+      "caso_de_uso": "Diretoria: quais dos 5 marcos do trimestre foram atingidos, qual está em curso e qual já atrasou e por quantos dias.",
+      "o_que_demonstra": [
+        "Três estados pela forma: cheio atingido, anel em curso, vazado futuro",
+        "Trecho do eixo já percorrido em traço cheio e o restante em var(--line-subtle)",
+        "Marco atrasado em var(--negative) com ícone e a contagem de dias de atraso ao lado",
+        "Marco sem data confirmada vazado e tracejado, com a data prevista entre parênteses"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_narrativa-do-ano-da-pre-vendas",
+      "titulo": "O ano da pré-vendas em 8 eventos",
+      "caso_de_uso": "Pré-vendas: que eventos de 2026 explicam a mudança na taxa de agenda, contados em ordem com uma frase cada.",
+      "o_que_demonstra": [
+        "Cartões de título e frase alternando acima e abaixo, ligados ao ponto por conector curto",
+        "Escala real declarada no subtítulo, com a data escrita em cada cartão",
+        "Cartão do evento que mudou a métrica com borda de destaque e número taxa de agenda +40%",
+        "Cartões em foreignObject posicionados pela escala do XAxis via useXAxisScale"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_marcos-por-publico-com-semana-lotada",
+      "titulo": "Marcos do ano por público",
+      "caso_de_uso": "Diretoria: 25 marcos de 2027 em quatro públicos, com 7 marcos na mesma semana e 2 ainda sem data definida.",
+      "o_que_demonstra": [
+        "Quatro faixas no YAxis de categoria com a mesma escala de tempo e hoje cruzando todas",
+        "Rótulos em escada de três alturas com linha guia fina até o ponto",
+        "Marcos que caem no mesmo pixel viram um losango com contador e lista na dica",
+        "Marco sem data sai do eixo para uma coluna a definir à direita, nunca no fim do ano"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

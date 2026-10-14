@@ -1,0 +1,121 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "04_matriz-de-cobertura-binaria",
+  "versoes": {
+    "v1_campos-entregues-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: contagens por linha e rodapé conferidos à mão (4, 4, 6, 4, 6 e 4 de 8 origens), ordem declarada no corpo, ponto e anel legíveis nos dois temas, contraste medido à mão porque as guardas de texto não leem HTML. Sem bloqueante; observações no README (empate de quatro campos dito como um só na frase acessível, sobra de 59 px antes do rodapé, critério de entrega só no data.ts, estado vazio sem ícone).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:55.203Z",
+      "impressao": "920c7eb8d1c7595b847f161cf3d3b1c5a236d642",
+      "arquivos": {
+        "Chart.tsx": "d34cf5c9f41111111b01ecda5d1345db7be08eba",
+        "data.ts": "ead70454522133f333b16998a8b94694553db6f2",
+        "meta.json": "f4d909cb5cc81483662115e10f671c8d1efbc456"
+      }
+    },
+    "v2_combinacoes-de-campos-no-estilo-upset": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 8.400 leads, seis totais por campo e demais de 390 em 5 combinações conferidos à mão, barras a partir do zero e alinhadas à grade (34 px para 8.230 e 96 px para 3.100), traço de ligação em chart-1 acima de 3:1 nos dois temas. Sem bloqueante; observações no README (ponto de ausência sobre o traço, rótulo Leads por campo na coluna lateral, col-span fixo, piso de 2 px para zero).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:55.850Z",
+      "impressao": "7c037e58a66bfbf35a17c506bca81c911858ad45",
+      "arquivos": {
+        "Chart.tsx": "aef9e50159b69f3b55e92a049630e75589503ec9",
+        "data.ts": "1d6ac3c4128ca0bca9bb2f098a0ebdfeabfcb8e2",
+        "meta.json": "c4510e1d0618bf004cd873875adf7f6b7b491d3e"
+      }
+    },
+    "v3_cobertura-por-origem-com-limiar-de-80": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 24 de 42 células no piso e as seis médias ponderadas conferidas à mão, três origens abaixo do piso em telefone, pares sobre surface-sunken de 4,97:1 para cima nos dois temas. Sem bloqueante; observações no README (etiqueta PREMISSA no Chart pedida pelo catálogo, ressalva na ANO-6; quatro elementos em peso 700; fidelidade do render em 0,67 e 0,68 por cento, aviso; tipo sem nulo faria ausência virar zero; linhas sem critério de ordem).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:56.338Z",
+      "impressao": "630e64cce646377257ed7090eefb5189fb0df4ee",
+      "arquivos": {
+        "Chart.tsx": "26f57102b9ee328db4014fcbe95c9b14fdcbaac6",
+        "data.ts": "734fc3db5d58f5dd3255b40347f22cb9dfb6e708",
+        "meta.json": "dadfcb64183dcaaced6b82241580460fceb974fd"
+      }
+    },
+    "v4_campo-fora-da-coleta": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 depois da correção: o rodapé nomeia a medida (Preenchido entre as fontes que coletam o campo) com contagem e substantivo, seis pares conferidos contra o data.ts, três estados distintos e legíveis nos dois temas, Consentimento dentro da célula de 82 px, contraste medido à mão (texto e marcas de 5,21:1 para cima). Sem bloqueante; observações no README (sobra de 45 px no canvas, legenda em 11 px, ramos sem coleta, critério de preenchimento fora do cartão, divisória de linha contra a ESP-5).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:45:50.416Z",
+      "impressao": "b6a9c31d26e429b9c94023b151f43137ccffb9e1",
+      "arquivos": {
+        "Chart.tsx": "40c98d6b423178b4fcc56e345dc0dc7b416f437e",
+        "data.ts": "6385b8c1994feb0c21655c7a8b6549e65354e261",
+        "meta.json": "59f36f5596563e654166083e8777f705fc1b2e7a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_campos-entregues-por-origem",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: contagens por linha e rodapé conferidos à mão (4, 4, 6, 4, 6 e 4 de 8 origens), ordem declarada no corpo, ponto e anel legíveis nos dois temas, contraste medido à mão porque as guardas de texto não leem HTML. Sem bloqueante; observações no README (empate de quatro campos dito como um só na frase acessível, sobra de 59 px antes do rodapé, critério de entrega só no data.ts, estado vazio sem ícone).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:55.203Z",
+      "impressao": "920c7eb8d1c7595b847f161cf3d3b1c5a236d642",
+      "arquivos": {
+        "Chart.tsx": "d34cf5c9f41111111b01ecda5d1345db7be08eba",
+        "data.ts": "ead70454522133f333b16998a8b94694553db6f2",
+        "meta.json": "f4d909cb5cc81483662115e10f671c8d1efbc456"
+      }
+    },
+    {
+      "versao": "v2_combinacoes-de-campos-no-estilo-upset",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 8.400 leads, seis totais por campo e demais de 390 em 5 combinações conferidos à mão, barras a partir do zero e alinhadas à grade (34 px para 8.230 e 96 px para 3.100), traço de ligação em chart-1 acima de 3:1 nos dois temas. Sem bloqueante; observações no README (ponto de ausência sobre o traço, rótulo Leads por campo na coluna lateral, col-span fixo, piso de 2 px para zero).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:55.850Z",
+      "impressao": "7c037e58a66bfbf35a17c506bca81c911858ad45",
+      "arquivos": {
+        "Chart.tsx": "aef9e50159b69f3b55e92a049630e75589503ec9",
+        "data.ts": "1d6ac3c4128ca0bca9bb2f098a0ebdfeabfcb8e2",
+        "meta.json": "c4510e1d0618bf004cd873875adf7f6b7b491d3e"
+      }
+    },
+    {
+      "versao": "v3_cobertura-por-origem-com-limiar-de-80",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 24 de 42 células no piso e as seis médias ponderadas conferidas à mão, três origens abaixo do piso em telefone, pares sobre surface-sunken de 4,97:1 para cima nos dois temas. Sem bloqueante; observações no README (etiqueta PREMISSA no Chart pedida pelo catálogo, ressalva na ANO-6; quatro elementos em peso 700; fidelidade do render em 0,67 e 0,68 por cento, aviso; tipo sem nulo faria ausência virar zero; linhas sem critério de ordem).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:56.338Z",
+      "impressao": "630e64cce646377257ed7090eefb5189fb0df4ee",
+      "arquivos": {
+        "Chart.tsx": "26f57102b9ee328db4014fcbe95c9b14fdcbaac6",
+        "data.ts": "734fc3db5d58f5dd3255b40347f22cb9dfb6e708",
+        "meta.json": "dadfcb64183dcaaced6b82241580460fceb974fd"
+      }
+    },
+    {
+      "versao": "v4_campo-fora-da-coleta",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-5 e NUM-6, seção 14.1 (unidade): a linha do rodapé se chama Fontes que coletam e o número é o de fontes com o campo preenchido entre as que coletam; em Cargo lê 2 de 4 fontes coletam, e as 4 coletam. Renomear a linha para a medida (preenchido entre as que coletam), dar substantivo à contagem e alinhar a nota lateral. Não bloqueante, na mesma rodada: Consentimento mede 80 px na célula de 76 e passa 4,5 px da grade. Parecer em validation/revisao_25_matriz-e-quadrantes__04_matriz-de-cobertura-binaria_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:36:56.867Z",
+      "impressao": "dc704c84b0130524c6766412831d465f78224de3",
+      "arquivos": {
+        "Chart.tsx": "bdb4528058bf7d1bba539ea992c763fa9fa898ed",
+        "data.ts": "6385b8c1994feb0c21655c7a8b6549e65354e261",
+        "meta.json": "a1b6c86fb16c05f2d20452543eb93810855c7dcf"
+      }
+    },
+    {
+      "versao": "v4_campo-fora-da-coleta",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 depois da correção: o rodapé nomeia a medida (Preenchido entre as fontes que coletam o campo) com contagem e substantivo, seis pares conferidos contra o data.ts, três estados distintos e legíveis nos dois temas, Consentimento dentro da célula de 82 px, contraste medido à mão (texto e marcas de 5,21:1 para cima). Sem bloqueante; observações no README (sobra de 45 px no canvas, legenda em 11 px, ramos sem coleta, critério de preenchimento fora do cartão, divisória de linha contra a ESP-5).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:45:50.416Z",
+      "impressao": "b6a9c31d26e429b9c94023b151f43137ccffb9e1",
+      "arquivos": {
+        "Chart.tsx": "40c98d6b423178b4fcc56e345dc0dc7b416f437e",
+        "data.ts": "6385b8c1994feb0c21655c7a8b6549e65354e261",
+        "meta.json": "59f36f5596563e654166083e8777f705fc1b2e7a"
+      }
+    }
+  ]
+}

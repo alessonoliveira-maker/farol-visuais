@@ -1,0 +1,108 @@
+{
+  "familia": "05_areas",
+  "modelo": "01_area-simples",
+  "versoes": {
+    "v1_entradas-mensais-de-leads": {
+      "veredito": "aprovado",
+      "nota": "Area de serie unica limpa nos dois temas, base no zero, tiques redondos e leitura calculada do dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:27:54.012Z",
+      "impressao": "f2d434e4eac3892a2ee3d4f87ebdfdc556b95042",
+      "arquivos": {
+        "Chart.tsx": "a85cbc3d6b30052275f894606272133afe8cb4fc",
+        "data.ts": "04bf58eeb129ef74b9f4996feab199f86c8582a9",
+        "meta.json": "8266e6c537f9e47a5dc0d4ba33410eeea31b141a"
+      }
+    },
+    "v2_receita-com-mes-parcial": {
+      "veredito": "aprovado",
+      "nota": "Mes corrente sai tracejado e com nota de parcial; media so dos meses fechados, com rotulo em margem reservada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:27:58.034Z",
+      "impressao": "9dca50b7c01f267c1cafb7aca0ee2e42794f6721",
+      "arquivos": {
+        "Chart.tsx": "48062dd6909b679b4b8c653f9db70e2c8b8d110f",
+        "data.ts": "3eefe89c3785f8ec74d550897ca72af9d1c5bf8b",
+        "meta.json": "e0430128a30522b9bcb32778fc9b4d342c957d97"
+      }
+    },
+    "v3_leads-por-origem-em-multiplos": {
+      "veredito": "aprovado",
+      "nota": "Oito paineis com escala comum declarada, ordenados pelo total, eixos so nas bordas; leitura de forma preservada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:28:02.482Z",
+      "impressao": "16a828bbd340fa7f52f00b057c952822d8b9091b",
+      "arquivos": {
+        "Chart.tsx": "89a90318498f1b0dd80f548c81d7493e515adddb",
+        "data.ts": "04ca17dc925818bf9a95238ee838db0be0ac7d11",
+        "meta.json": "e41265c91d0fd84504159c9c06aee392047c6877"
+      }
+    },
+    "v4_lacuna-de-coleta": {
+      "veredito": "aprovado",
+      "nota": "Lacuna quebra a area e ganha faixa nomeada; zero medido segue desenhado e escrito, sem virar ausencia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:28:06.611Z",
+      "impressao": "b6c73d64cfba793412a96aded464ef85e8aa949c",
+      "arquivos": {
+        "Chart.tsx": "56a481af6baab3e385bb609e6176c2b971446eb0",
+        "data.ts": "6f58c17b42452055b587992797b45e4e00ff61bc",
+        "meta.json": "cc306cc30433c44bbd13f0436e0c375c457fdbcd"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_entradas-mensais-de-leads",
+      "veredito": "aprovado",
+      "nota": "Area de serie unica limpa nos dois temas, base no zero, tiques redondos e leitura calculada do dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:27:54.012Z",
+      "impressao": "f2d434e4eac3892a2ee3d4f87ebdfdc556b95042",
+      "arquivos": {
+        "Chart.tsx": "a85cbc3d6b30052275f894606272133afe8cb4fc",
+        "data.ts": "04bf58eeb129ef74b9f4996feab199f86c8582a9",
+        "meta.json": "8266e6c537f9e47a5dc0d4ba33410eeea31b141a"
+      }
+    },
+    {
+      "versao": "v2_receita-com-mes-parcial",
+      "veredito": "aprovado",
+      "nota": "Mes corrente sai tracejado e com nota de parcial; media so dos meses fechados, com rotulo em margem reservada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:27:58.034Z",
+      "impressao": "9dca50b7c01f267c1cafb7aca0ee2e42794f6721",
+      "arquivos": {
+        "Chart.tsx": "48062dd6909b679b4b8c653f9db70e2c8b8d110f",
+        "data.ts": "3eefe89c3785f8ec74d550897ca72af9d1c5bf8b",
+        "meta.json": "e0430128a30522b9bcb32778fc9b4d342c957d97"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-multiplos",
+      "veredito": "aprovado",
+      "nota": "Oito paineis com escala comum declarada, ordenados pelo total, eixos so nas bordas; leitura de forma preservada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:28:02.482Z",
+      "impressao": "16a828bbd340fa7f52f00b057c952822d8b9091b",
+      "arquivos": {
+        "Chart.tsx": "89a90318498f1b0dd80f548c81d7493e515adddb",
+        "data.ts": "04ca17dc925818bf9a95238ee838db0be0ac7d11",
+        "meta.json": "e41265c91d0fd84504159c9c06aee392047c6877"
+      }
+    },
+    {
+      "versao": "v4_lacuna-de-coleta",
+      "veredito": "aprovado",
+      "nota": "Lacuna quebra a area e ganha faixa nomeada; zero medido segue desenhado e escrito, sem virar ausencia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:28:06.611Z",
+      "impressao": "b6c73d64cfba793412a96aded464ef85e8aa949c",
+      "arquivos": {
+        "Chart.tsx": "56a481af6baab3e385bb609e6176c2b971446eb0",
+        "data.ts": "6f58c17b42452055b587992797b45e4e00ff61bc",
+        "meta.json": "cc306cc30433c44bbd13f0436e0c375c457fdbcd"
+      }
+    }
+  ]
+}

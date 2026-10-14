@@ -1,0 +1,12 @@
+{
+  "title": "Variação de agendas quando todas as filas caíram",
+  "useCase": "Ler a queda de agendas por fila numa semana em que nenhuma fila cresceu, sem metade do card vazia.",
+  "demonstrates": [
+    "Detecção de sinal único que recolhe o lado vazio do domínio",
+    "Zero mantido na borda como linha de base da barra espelhada",
+    "Fila sem variação escreve 0 sem barra e sem sinal",
+    "Linha de leitura que declara todas as filas em queda"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Termos de ganhas contra perdidas",
+  "useCase": "Comercial: quais termos das anotações são típicos das oportunidades ganhas e quais das perdidas, entre 100 termos de 2026.",
+  "demonstrates": [
+    "ScatterChart com eixos em posição de frequência nos dois grupos e domínio igual",
+    "Diagonal por ReferenceLine com segment em --text-muted tracejado 3 3",
+    "Quinze rótulos escolhidos por algoritmo guloso de colisão em TypeScript",
+    "Cantos nomeados, típico de ganhas e típico de perdidas, sem legenda"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Posição de frequência em cada grupo, com 1 para o termo mais citado; empate recebe a posição média do bloco empatado, para a ordem alfabética não inventar diferença. Típico de um grupo: 15 posições ou mais de diferença entre os dois. Os termos mais distantes da diagonal são tentados primeiro e só ganham nome se couberem sem cobrir marca, canto ou outro nome; por isso o número de nomes pode ficar abaixo de 15. Cor por grupo fixa: --chart-1 para ganhas e --chart-3 para perdidas, sem verde e vermelho porque ganha e perda aqui nomeiam grupos, não polaridade de métrica (COR-6). Marca opaca com contorno --surface-raised, sem opacidade."
+}

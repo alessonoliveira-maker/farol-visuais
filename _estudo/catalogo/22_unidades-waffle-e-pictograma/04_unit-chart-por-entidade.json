@@ -1,0 +1,73 @@
+{
+  "slug": "04_unit-chart-por-entidade",
+  "nome": "Unit chart por entidade",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Um marcador por item real (oportunidade, conta, lead), agrupado em colunas por uma categoria e ordenado dentro do grupo pelo atributo que vira cor. Diferente do waffle, a unidade é a entidade e não uma fração: cada quadrado tem chave estável, dica com os dados do item e pode abrir o registro. SVG puro em React, com a grade de cada grupo calculada em TypeScript de baixo para cima e o reagrupamento animado por transform, medindo antes e depois. Filtrar remove marcadores sem reposicionar os demais ao acaso. Acima de cerca de 1.500 itens a unidade é agregada, com aviso escrito.",
+  "quando_usar": [
+    "Cada item importa e pode ser aberto: oportunidades abertas por etapa, contas por executivo",
+    "De 20 a cerca de 1.500 itens, distribuídos em 3 a 8 grupos",
+    "Um atributo por item que vira cor, como dias sem movimento, lido como gradiente no grupo",
+    "Carga contra teto por pessoa, com a moldura do teto desenhada no próprio grupo"
+  ],
+  "quando_evitar": [
+    "Só a contagem por grupo interessa, sem abrir item: waffle em barras (22/02)",
+    "Distribuição de um valor contínuo por item: strip plot e beeswarm (16/03)",
+    "Mais de cerca de 1.500 itens: agregar a unidade ou usar colunas (03)",
+    "Leitura em linha de tabela ou cartão estreito: micro waffle de contagem (22/01)",
+    "Estado de cada item ao longo do tempo: lasagna (15/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-abertas-por-etapa",
+      "titulo": "Oportunidades abertas por etapa",
+      "caso_de_uso": "Comercial: quantas oportunidades estão abertas em cada etapa do funil, vistas uma a uma.",
+      "o_que_demonstra": [
+        "Layout em TypeScript: grade por grupo de baixo para cima com colunas fixas",
+        "Um rect de 10 px por oportunidade com chave estável pelo id",
+        "Contagem no topo de cada grupo e nome da etapa na base",
+        "Dica com etapa, valor por formatCurrencyCompact e dias no funil",
+        "viewBox fixo e escala por className, sem ler a janela"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_oportunidades-paradas-por-etapa",
+      "titulo": "Oportunidades paradas por etapa",
+      "caso_de_uso": "Comercial: quais oportunidades abertas estão sem movimento há mais de 30 dias e em que etapa elas param.",
+      "o_que_demonstra": [
+        "Cor por faixa de dias sem movimento: até 15, 16 a 30 e mais de 30 em --warning",
+        "Ordem dentro da etapa pelo atributo de cor, formando gradiente legível",
+        "Nota direta 19 paradas há mais de 30 dias ligada ao grupo com mais casos",
+        "Faixa crítica também por forma, com contorno, e não só por cor",
+        "aria-label com o total aberto e o total parado há mais de 30 dias"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_carteira-de-contas-por-executivo",
+      "titulo": "Carteira de contas por executivo contra o teto",
+      "caso_de_uso": "Comercial: quantas contas cada um dos 6 executivos carrega contra o teto de 120 e de que segmento elas são.",
+      "o_que_demonstra": [
+        "Seis grupos de até 120 quadrados com moldura tracejada do teto em --line-strong",
+        "Excedente acima do teto em --negative com o número escrito acima da moldura",
+        "Troca de agrupamento para segmento anima o reagrupamento por transform",
+        "Chave estável por conta para a animação não embaralhar; filtro só remove",
+        "Marcador como botão com rótulo, navegável por teclado na ordem de preenchimento"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_leads-por-etapa-com-sem-etapa",
+      "titulo": "Leads por etapa com grupo sem etapa",
+      "caso_de_uso": "Pré-vendas: leads por etapa quando parte não tem etapa registrada e o recorte passa de 1.500 itens.",
+      "o_que_demonstra": [
+        "Grupo sem etapa por último, com marcadores em contorno tracejado",
+        "Recorte de 1.900 leads passa sozinho para 1 quadrado = 10 leads",
+        "Aviso de unidade agregada escrito no topo, e não só na legenda",
+        "Recorte vazio troca o gráfico por bloco role status com ícone Filter"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

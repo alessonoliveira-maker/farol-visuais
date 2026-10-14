@@ -1,0 +1,160 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "03_kpi-com-regua-de-meta",
+  "versoes": {
+    "v1_receita-do-trimestre-ate-a-meta": {
+      "veredito": "aprovado",
+      "nota": "Barra de progresso honesta: zero na base, clamp com excedente escrito, sem cor semantica abaixo da meta; trilho trocado para --surface-sunken com justificativa no meta.json.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:19.137Z",
+      "impressao": "ef4c6d4f94b89625167db8a94bcb2ae380d3d481",
+      "arquivos": {
+        "Chart.tsx": "778758a1ad16030a4fab8440d0ea8f0eb584e3a9",
+        "data.ts": "cc7aaf97ebf009a26ebe60292a5482fa89eb4006",
+        "meta.json": "e78489afd52c701f5c5c3107c42a39d70f9f50e0"
+      }
+    },
+    "v2_receita-com-ritmo-esperado-e-veredito": {
+      "veredito": "aprovado",
+      "nota": "Ritmo por dias uteis com meta e ritmo distinguiveis sem cor, veredito com base nomeada e projecao declarada como piso; etiqueta DERIVADO dentro do Chart segue o catalogo, ressalva na ANO-6.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:24.829Z",
+      "impressao": "69f467b4e980dd0f50eafdc09f43958fe6a98fe2",
+      "arquivos": {
+        "Chart.tsx": "59f0b7bca5602df325f94457f3498b00de2f7a4e",
+        "data.ts": "95f0e3b8ca84556e69365c9bb9230765b30d65ac",
+        "meta.json": "8c3273ca272be7b89371166709ac436f0df4fe14"
+      }
+    },
+    "v3_filas-da-pre-vendas-contra-o-teto": {
+      "veredito": "aprovado",
+      "nota": "Cinco bullets na mesma escala relativa, estouro em hachura sem clamp, teto com halo legivel nos dois temas e origem medido ou premissa escrita por linha.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:29.142Z",
+      "impressao": "20cbf064785cdc150b9c656a71687941da59001b",
+      "arquivos": {
+        "Chart.tsx": "28b7effe3e27a212a677674accfbe5d4f69808d6",
+        "data.ts": "d878621efcf2ecef23ed16231708242cac00d9f1",
+        "meta.json": "3852871893554813c5e779fc37c11d3a9bd524af"
+      }
+    },
+    "v4_metas-com-estouro-zero-e-sem-meta": {
+      "veredito": "aprovado",
+      "nota": "Tres bordas da regua na mesma geometria: 118% com zona de excesso reservada, zero sem alerta e sem meta com trilho vazado, nenhuma divisao por zero.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:32.976Z",
+      "impressao": "a44dbbf49df4c9242911cb27c4eec6a842f64356",
+      "arquivos": {
+        "Chart.tsx": "5e9000860edc4c334531a9fae6161f4d6408db65",
+        "data.ts": "35a363ccfe4ed5500a9980ac7ebd58a240a70754",
+        "meta.json": "473a5fc9e81d8e9e498f290299af39cff9519340"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-trimestre-ate-a-meta",
+      "veredito": "aprovado",
+      "nota": "Checklist aplicado integralmente: escolha do visual, honestidade do encoding, acabamento, contrato de codigo e precedencia todos sim; check 0 com erro, previews em dia nos dois temas, diferenca maxima 0,00%.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:45:21.662Z",
+      "impressao": "ef4c6d4f94b89625167db8a94bcb2ae380d3d481",
+      "arquivos": {
+        "Chart.tsx": "778758a1ad16030a4fab8440d0ea8f0eb584e3a9",
+        "data.ts": "cc7aaf97ebf009a26ebe60292a5482fa89eb4006",
+        "meta.json": "e78489afd52c701f5c5c3107c42a39d70f9f50e0"
+      }
+    },
+    {
+      "versao": "v2_receita-com-ritmo-esperado-e-veredito",
+      "veredito": "aprovado",
+      "nota": "Checklist aplicado integralmente: marcadores de meta e ritmo distintos sem cor, projecao com etiqueta DERIVADO, primeiro dia sem divisao por zero; check 0 com erro, previews em dia, diferenca maxima 0,07%.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:45:31.595Z",
+      "impressao": "69f467b4e980dd0f50eafdc09f43958fe6a98fe2",
+      "arquivos": {
+        "Chart.tsx": "59f0b7bca5602df325f94457f3498b00de2f7a4e",
+        "data.ts": "95f0e3b8ca84556e69365c9bb9230765b30d65ac",
+        "meta.json": "8c3273ca272be7b89371166709ac436f0df4fe14"
+      }
+    },
+    {
+      "versao": "v3_filas-da-pre-vendas-contra-o-teto",
+      "veredito": "aprovado",
+      "nota": "Checklist aplicado integralmente: cinco bullets na mesma escala relativa, teto medido ou premissa escrito por linha, estouro em hachura nunca clampado, faixas em seq-1 a seq-3 sem matiz; check 0 com erro, diferenca maxima 0,06%.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:45:37.733Z",
+      "impressao": "20cbf064785cdc150b9c656a71687941da59001b",
+      "arquivos": {
+        "Chart.tsx": "28b7effe3e27a212a677674accfbe5d4f69808d6",
+        "data.ts": "d878621efcf2ecef23ed16231708242cac00d9f1",
+        "meta.json": "3852871893554813c5e779fc37c11d3a9bd524af"
+      }
+    },
+    {
+      "versao": "v4_metas-com-estouro-zero-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Checklist aplicado integralmente: 118% com zona de excesso reservada e hachura, zero no dia 1 sem cor de alerta, sem meta com trilho vazado sem dividir por zero, tres cartoes com mesma geometria; check 0 com erro, diferenca maxima 0,01%.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:45:41.928Z",
+      "impressao": "a44dbbf49df4c9242911cb27c4eec6a842f64356",
+      "arquivos": {
+        "Chart.tsx": "5e9000860edc4c334531a9fae6161f4d6408db65",
+        "data.ts": "35a363ccfe4ed5500a9980ac7ebd58a240a70754",
+        "meta.json": "473a5fc9e81d8e9e498f290299af39cff9519340"
+      }
+    },
+    {
+      "versao": "v1_receita-do-trimestre-ate-a-meta",
+      "veredito": "aprovado",
+      "nota": "Barra de progresso honesta: zero na base, clamp com excedente escrito, sem cor semantica abaixo da meta; trilho trocado para --surface-sunken com justificativa no meta.json.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:19.137Z",
+      "impressao": "ef4c6d4f94b89625167db8a94bcb2ae380d3d481",
+      "arquivos": {
+        "Chart.tsx": "778758a1ad16030a4fab8440d0ea8f0eb584e3a9",
+        "data.ts": "cc7aaf97ebf009a26ebe60292a5482fa89eb4006",
+        "meta.json": "e78489afd52c701f5c5c3107c42a39d70f9f50e0"
+      }
+    },
+    {
+      "versao": "v2_receita-com-ritmo-esperado-e-veredito",
+      "veredito": "aprovado",
+      "nota": "Ritmo por dias uteis com meta e ritmo distinguiveis sem cor, veredito com base nomeada e projecao declarada como piso; etiqueta DERIVADO dentro do Chart segue o catalogo, ressalva na ANO-6.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:24.829Z",
+      "impressao": "69f467b4e980dd0f50eafdc09f43958fe6a98fe2",
+      "arquivos": {
+        "Chart.tsx": "59f0b7bca5602df325f94457f3498b00de2f7a4e",
+        "data.ts": "95f0e3b8ca84556e69365c9bb9230765b30d65ac",
+        "meta.json": "8c3273ca272be7b89371166709ac436f0df4fe14"
+      }
+    },
+    {
+      "versao": "v3_filas-da-pre-vendas-contra-o-teto",
+      "veredito": "aprovado",
+      "nota": "Cinco bullets na mesma escala relativa, estouro em hachura sem clamp, teto com halo legivel nos dois temas e origem medido ou premissa escrita por linha.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:29.142Z",
+      "impressao": "20cbf064785cdc150b9c656a71687941da59001b",
+      "arquivos": {
+        "Chart.tsx": "28b7effe3e27a212a677674accfbe5d4f69808d6",
+        "data.ts": "d878621efcf2ecef23ed16231708242cac00d9f1",
+        "meta.json": "3852871893554813c5e779fc37c11d3a9bd524af"
+      }
+    },
+    {
+      "versao": "v4_metas-com-estouro-zero-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Tres bordas da regua na mesma geometria: 118% com zona de excesso reservada, zero sem alerta e sem meta com trilho vazado, nenhuma divisao por zero.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:59:32.976Z",
+      "impressao": "a44dbbf49df4c9242911cb27c4eec6a842f64356",
+      "arquivos": {
+        "Chart.tsx": "5e9000860edc4c334531a9fae6161f4d6408db65",
+        "data.ts": "35a363ccfe4ed5500a9980ac7ebd58a240a70754",
+        "meta.json": "473a5fc9e81d8e9e498f290299af39cff9519340"
+      }
+    }
+  ]
+}

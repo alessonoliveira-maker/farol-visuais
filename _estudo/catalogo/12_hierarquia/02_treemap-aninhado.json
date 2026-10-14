@@ -1,0 +1,66 @@
+{
+  "slug": "02_treemap-aninhado",
+  "nome": "Treemap aninhado com rótulo de grupo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Retângulos de grupo que contêm os retângulos dos filhos, com o nome do grupo visível num selo ou faixa de cabeçalho. Mostra dois ou três níveis de uma vez, com cor por grupo e variação de luminosidade por filho.",
+  "quando_usar": [
+    "Dois ou três níveis que precisam ser lidos juntos, como executivo e produto",
+    "Composição de um total grande em grupos e rubricas, com até cerca de 40 folhas",
+    "Leitura de concentração dentro de cada grupo e entre grupos no mesmo quadro"
+  ],
+  "quando_evitar": [
+    "Mais de 3 níveis desenhados de uma vez: vira mosaico ilegível; use detalhamento (12/01) ou icicle (12/06)",
+    "Comparar a mesma subcategoria entre grupos: a posição muda de grupo para grupo; use barras agrupadas",
+    "Treemap Voronoi pedido por estética: a leitura de polígono irregular é pior e o layout exige algoritmo iterativo sem biblioteca; ofereça este modelo e registre o motivo",
+    "Grupos com duas dimensões independentes (largura e altura): é Marimekko, família 26"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_pipeline-por-executivo-e-produto",
+      "titulo": "Pipeline aberto por executivo e produto",
+      "caso_de_uso": "Comercial: como os R$ 18,2 mi de pipeline aberto se dividem entre os executivos A a H e, dentro de cada um, por produto.",
+      "o_que_demonstra": [
+        "content do Recharts decide pelo depth: grupo com contorno e selo, folha com área",
+        "Índice do ancestral de primeiro nível guardado no dado (grupoIndex) para a cor",
+        "Luminosidade da folha por color-mix a partir da cor do grupo",
+        "Selo do grupo com fundo surface-overlay para não brigar com os filhos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_concentracao-em-um-executivo",
+      "titulo": "Concentração do pipeline em um executivo",
+      "caso_de_uso": "Comercial: quanto do pipeline aberto depende de um único executivo e de quais produtos é feita essa fatia.",
+      "o_que_demonstra": [
+        "Grupo Executivo C com contorno forte e os demais grupos em neutro",
+        "Anotação calculada do dado: concentra 31% do pipeline",
+        "Folhas do grupo destacado mantêm a cor; folhas dos outros grupos perdem saturação"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_custo-por-camada-e-rubrica",
+      "titulo": "Custo do trimestre por camada e rubrica",
+      "caso_de_uso": "Diretoria: de que é feito o custo de 2026-T3 em mídia, pessoas da esteira e estrutura, com cerca de 30 rubricas.",
+      "o_que_demonstra": [
+        "Três grupos com cerca de 30 folhas e rótulo só nas rubricas que comportam texto",
+        "Faixa de cabeçalho de 18 px reservada no topo de cada grupo antes de repartir os filhos",
+        "Total do grupo e percentual do custo escritos no cabeçalho",
+        "Rubricas ordenadas por valor decrescente, estáveis entre filtros"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_grupo-minusculo-sem-selo",
+      "titulo": "Grupo minúsculo sem selo",
+      "caso_de_uso": "Diretoria: uma rubrica de R$ 3 mil num custo de R$ 1,86 mi não pode sumir nem sobrepor o nome aos vizinhos.",
+      "o_que_demonstra": [
+        "Regra de corte do selo: grupo abaixo da largura e altura mínimas fica só com contorno",
+        "Nome e valor do grupo pequeno disponíveis no tooltip e na lista de acessibilidade",
+        "Nenhum retângulo desenhado fora de escala para caber o rótulo"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

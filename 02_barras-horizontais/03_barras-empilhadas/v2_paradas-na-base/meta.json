@@ -1,0 +1,13 @@
+{
+  "title": "Oportunidades paradas há mais de 30 dias",
+  "useCase": "Quanto do pipeline de cada executivo está parado há mais de 30 dias e precisa de ação nesta semana.",
+  "demonstrates": [
+    "Segmento prioritário na base, encostado no zero, em cor de alerta",
+    "Demais estágios em neutro graduado por opacidade da marca, para recuar",
+    "Percentual parado escrito ao lado do total, com a palavra e não só a cor",
+    "Ordenação pelo segmento da base, não pelo total",
+    "Zero parado escrito como 0%, sem segmento de alerta"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Criativos no ar empacotados em faixas",
+  "useCase": "Dos 35 criativos de lançamento, quantos seguem no ar e quais não têm data de fim.",
+  "demonstrates": [
+    "Empacotamento guloso determinístico em TypeScript, ordenado por início e depois por id",
+    "Dado pivotado por faixa, um Bar por posição com stackId comum e série de gap sem marca",
+    "Teto de 7 faixas com o excedente numa barra +N e a lista completa na dica",
+    "Criativo sem data de fim desenhado até hoje com ponta tracejada e rótulo em aberto",
+    "Criativo sem data de início fora do eixo, listado abaixo como sem data, nunca no zero"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O catálogo pede teto de 8 faixas; aqui são 7 faixas de criativos mais a linha do excedente, 8 linhas no total, para a barra ter 12 px ou mais no canvas largo. O eixo conta dias desde 2026-09-01 porque a pilha parte do zero, e a série de gap sem marca (fill none) é o deslocamento de cada criativo. A dica lista os criativos da faixa com as datas, que o corpo não escreve (DIC-1). O vão de 26% fica abaixo dos 30% da ESP-2 para a barra chegar a 12 px."
+}

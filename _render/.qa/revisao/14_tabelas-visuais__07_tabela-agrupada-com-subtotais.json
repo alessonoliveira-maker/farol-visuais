@@ -1,0 +1,108 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "07_tabela-agrupada-com-subtotais",
+  "versoes": {
+    "v1_pipeline-por-time-comercial": {
+      "veredito": "aprovado",
+      "nota": "Subtotais fecham com as filhas, barra do zero com dominio so das filhas, tokens e formatadores corretos nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:48.347Z",
+      "impressao": "08386fa24b6d86878b5c264f52247e0a042d643e",
+      "arquivos": {
+        "Chart.tsx": "b7945bd9d307a911561a74eb5280c93da6129558",
+        "data.ts": "43e4ecf3af19ecb5b5315cf3ceb5ea187a41ddd2",
+        "meta.json": "6157890546c087fc7101b5184059663059de909b"
+      }
+    },
+    "v2_media-da-casa-fixa-no-topo": {
+      "veredito": "aprovado",
+      "nota": "Media ponderada correta, desvio divergente simetrico com sinal escrito, semantica so na variacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:53.165Z",
+      "impressao": "7d75389ad50c0407fe4ed815f292210a88d0bd15",
+      "arquivos": {
+        "Chart.tsx": "9603a411dac0cf239976d71025e0d9036056155b",
+        "data.ts": "170731e407e25ffd45493300b3ba521b40df99d2",
+        "meta.json": "b7708a57db5a1d467605c3d2b90ab215f7a1ea54"
+      }
+    },
+    "v3_custo-em-tres-camadas-por-area": {
+      "veredito": "aprovado",
+      "nota": "Cabecalho duplo legivel, subtotais e total geral fecham na soma, canvas por numero declarado em notes.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:58.256Z",
+      "impressao": "6327e8ca5d9092a8956f49c3ece656e2c76f807e",
+      "arquivos": {
+        "Chart.tsx": "51a9c644cfd973100bb3b57fbe00c8f8788f2b01",
+        "data.ts": "2954607206cb462f5c32587b7a50b35f927b4fb7",
+        "meta.json": "90eceafcedaf7d255d829a34109f2d26198dec5e"
+      }
+    },
+    "v4_grupo-unitario-e-grupo-vazio": {
+      "veredito": "aprovado",
+      "nota": "Medianas conferem, grupo vazio separado de indisponivel, total geral so das linhas visiveis e dito no rotulo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:49:02.972Z",
+      "impressao": "a34782b3f8bae3b9a52d5fc15fd2dd31d77f9f85",
+      "arquivos": {
+        "Chart.tsx": "ab75eea6074802e0016a04abb3841287b55b145a",
+        "data.ts": "ee171b0eda417bf27c30ece686c4205a10f46d7b",
+        "meta.json": "1ee25f029b9582ac851b8c2c41cb79133eb8f521"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_pipeline-por-time-comercial",
+      "veredito": "aprovado",
+      "nota": "Subtotais fecham com as filhas, barra do zero com dominio so das filhas, tokens e formatadores corretos nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:48.347Z",
+      "impressao": "08386fa24b6d86878b5c264f52247e0a042d643e",
+      "arquivos": {
+        "Chart.tsx": "b7945bd9d307a911561a74eb5280c93da6129558",
+        "data.ts": "43e4ecf3af19ecb5b5315cf3ceb5ea187a41ddd2",
+        "meta.json": "6157890546c087fc7101b5184059663059de909b"
+      }
+    },
+    {
+      "versao": "v2_media-da-casa-fixa-no-topo",
+      "veredito": "aprovado",
+      "nota": "Media ponderada correta, desvio divergente simetrico com sinal escrito, semantica so na variacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:53.165Z",
+      "impressao": "7d75389ad50c0407fe4ed815f292210a88d0bd15",
+      "arquivos": {
+        "Chart.tsx": "9603a411dac0cf239976d71025e0d9036056155b",
+        "data.ts": "170731e407e25ffd45493300b3ba521b40df99d2",
+        "meta.json": "b7708a57db5a1d467605c3d2b90ab215f7a1ea54"
+      }
+    },
+    {
+      "versao": "v3_custo-em-tres-camadas-por-area",
+      "veredito": "aprovado",
+      "nota": "Cabecalho duplo legivel, subtotais e total geral fecham na soma, canvas por numero declarado em notes.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:48:58.256Z",
+      "impressao": "6327e8ca5d9092a8956f49c3ece656e2c76f807e",
+      "arquivos": {
+        "Chart.tsx": "51a9c644cfd973100bb3b57fbe00c8f8788f2b01",
+        "data.ts": "2954607206cb462f5c32587b7a50b35f927b4fb7",
+        "meta.json": "90eceafcedaf7d255d829a34109f2d26198dec5e"
+      }
+    },
+    {
+      "versao": "v4_grupo-unitario-e-grupo-vazio",
+      "veredito": "aprovado",
+      "nota": "Medianas conferem, grupo vazio separado de indisponivel, total geral so das linhas visiveis e dito no rotulo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:49:02.972Z",
+      "impressao": "a34782b3f8bae3b9a52d5fc15fd2dd31d77f9f85",
+      "arquivos": {
+        "Chart.tsx": "ab75eea6074802e0016a04abb3841287b55b145a",
+        "data.ts": "ee171b0eda417bf27c30ece686c4205a10f46d7b",
+        "meta.json": "1ee25f029b9582ac851b8c2c41cb79133eb8f521"
+      }
+    }
+  ]
+}

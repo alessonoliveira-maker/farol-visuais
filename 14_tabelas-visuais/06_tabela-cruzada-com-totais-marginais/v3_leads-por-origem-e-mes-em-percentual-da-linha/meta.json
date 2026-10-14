@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem e mês em % da linha",
+  "useCase": "Como os leads de 10 origens se distribuíram pelos 12 meses de 2026, lidos como % do total de cada origem.",
+  "demonstrates": [
+    "Prop de modo de percentual com default % da linha e o denominador escrito no cabeçalho",
+    "Célula com percentual inteiro; a contagem absoluta mora só na margem",
+    "Soma da linha fechando 100 pelo maior resto, mesmo em origem sazonal concentrada em 1 mês",
+    "Meses curtos por formatMonthShort nas 12 colunas, nome de origem longo numa linha só"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "10 linhas por 12 colunas não cabe no piso de 11 px dentro dos 400 px do preset largo (ESP-2, subir a altura do canvas): a conta de linhas (cabeçalho, 10 origens, total) em 17 px por linha mais a legenda de rodapé pede por volta de 480 px. Origem sazonal (Feira Setorial de Concessionárias) concentra 100% num único mês; largest remainder ainda fecha 100 no resto."
+}

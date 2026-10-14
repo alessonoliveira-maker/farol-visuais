@@ -1,0 +1,147 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "07_roadmap-por-horizonte",
+  "versoes": {
+    "v1_roadmap-de-paineis-do-farol": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste, colisão e corte conferidos à mão porque as guardas de texto não leem HTML (par mais fraco 4,65:1). As doze prioridades do data.ts saem na ordem declarada e o ordinal coincide com a priority. Observações no README: dado sem caso de título que quebre nem ausência, useCase encurtado contra o catálogo, moldura stage contra o VisualCard do README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:50.656Z",
+      "impressao": "f8244e0ba8ad10256280a3b82b1f95e52c76f20b",
+      "arquivos": {
+        "Chart.tsx": "d5f014447b64fea33ee1fd893a5bc8b3575f995b",
+        "data.ts": "5797fe3857ab5ebf02d6e01e41ee8676ab55444f",
+        "meta.json": "6a18058fd841cec3dc512c5d54a31ada27ab5c85"
+      }
+    },
+    "v2_confianca-por-iniciativa": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste à mão, par mais fraco 4,65:1. A linha de leitura só afirma a queda quando a parcela de alta cai a cada horizonte (3 de 3, 1 de 4, 0 de 3, refeitas do data.ts). Borda tracejada em line-strong vale pela palavra escrita no cartão. Observações no README: nada na tela diz que não há datas (só a frase acessível), linha de leitura sem tabular-nums (TIP-1), legenda que repete o cartão (ROT-4), 2027 fixo na frase acessível.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:51.137Z",
+      "impressao": "d98de6bcf1f27daa83baa328c1ea7d8882d6f2db",
+      "arquivos": {
+        "Chart.tsx": "3e4649f3bc532040d81f9555165b1ecebd9cba47",
+        "data.ts": "635984c1968f81848e98f39a30eb1582f87ab296",
+        "meta.json": "e80153159615a10ac3c48a2b13bea830eeee96f0"
+      }
+    },
+    "v3_roadmap-por-publico": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sim. Bloqueante da pergunta 17 (ANO-5) resolvido: a frase do topo agora é calculada do dado (só 4 de 24 iniciativas têm data comprometida) e concorda com os quatro selos, o rodapé e a frase acessível nos dois temas. Contagens refeitas do data.ts (6 por faixa, 8 por horizonte, 4 com data); contraste à mão porque as guardas de texto não leem HTML (bordas de 4,67:1 a 10,90:1, texto de 5,05:1 para cima); última tinta em 534 de 540 px. Observações no README: singular da frase do topo e da frase acessível, linha de leitura sem aria-hidden, horizonte sem nome para leitor de tela no layout largo.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:57:40.787Z",
+      "impressao": "060987be10e9bb341c64a39a8fe39753e9374417",
+      "arquivos": {
+        "Chart.tsx": "ebff59934534c68bfa14ead1019b8dcbb839e7ae",
+        "data.ts": "3c04cb5f6b5544f35c9fa19866fe82a35abddf93",
+        "meta.json": "3c30cf09c1427fdfc666a00f7b31acdb38404979"
+      }
+    },
+    "v4_horizonte-vazio-e-descartadas": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sim. Bloqueante da pergunta 3 (encoding, NUM-7) resolvido: a ordenação ficou só pela prioridade e o data.ts declara a iniciativa sem público como 3, então o ordinal impresso coincide com a priority nos seis cartões que o trazem (Próximo: 1º Calendário editorial, 2º Pesquisa de satisfação, 3º Revisão do glossário) e as três descartadas saem na ordem declarada. Coluna Depois mantida com 0 iniciativas; contraste à mão, par mais fraco 4,65:1; última tinta em 368 de 380 px. Observações no README: line-clamp-2 contra TIP-7 e DIC-1 (item do catálogo), linha de leitura sem tabular-nums e sem aria-hidden, plural fixo em ideias, cabeçalho do data.ts e nota do meta.json sem dizer que o por último vem da prioridade.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:57:52.249Z",
+      "impressao": "5d783e48ef8df80de19f78ae2fba31c8471c14e1",
+      "arquivos": {
+        "Chart.tsx": "24c9b313e53256a003bb8ad5500cb3796d0aa219",
+        "data.ts": "85f1b557307c25571bb09b9e0a99a89e3373bc38",
+        "meta.json": "99ffcf3d8ccb8cb052f8ce8ce0a8ea7c8827e744"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_roadmap-de-paineis-do-farol",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste, colisão e corte conferidos à mão porque as guardas de texto não leem HTML (par mais fraco 4,65:1). As doze prioridades do data.ts saem na ordem declarada e o ordinal coincide com a priority. Observações no README: dado sem caso de título que quebre nem ausência, useCase encurtado contra o catálogo, moldura stage contra o VisualCard do README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:50.656Z",
+      "impressao": "f8244e0ba8ad10256280a3b82b1f95e52c76f20b",
+      "arquivos": {
+        "Chart.tsx": "d5f014447b64fea33ee1fd893a5bc8b3575f995b",
+        "data.ts": "5797fe3857ab5ebf02d6e01e41ee8676ab55444f",
+        "meta.json": "6a18058fd841cec3dc512c5d54a31ada27ab5c85"
+      }
+    },
+    {
+      "versao": "v2_confianca-por-iniciativa",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste à mão, par mais fraco 4,65:1. A linha de leitura só afirma a queda quando a parcela de alta cai a cada horizonte (3 de 3, 1 de 4, 0 de 3, refeitas do data.ts). Borda tracejada em line-strong vale pela palavra escrita no cartão. Observações no README: nada na tela diz que não há datas (só a frase acessível), linha de leitura sem tabular-nums (TIP-1), legenda que repete o cartão (ROT-4), 2027 fixo na frase acessível.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:51.137Z",
+      "impressao": "d98de6bcf1f27daa83baa328c1ea7d8882d6f2db",
+      "arquivos": {
+        "Chart.tsx": "3e4649f3bc532040d81f9555165b1ecebd9cba47",
+        "data.ts": "635984c1968f81848e98f39a30eb1582f87ab296",
+        "meta.json": "e80153159615a10ac3c48a2b13bea830eeee96f0"
+      }
+    },
+    {
+      "versao": "v3_roadmap-por-publico",
+      "veredito": "reprovado",
+      "nota": "Pergunta 17, ANO-5 e seção 14.1: a frase fixa do topo diz que nenhuma data está comprometida, e a mesma tela mostra 4 cartões com data e o rodapé os chama de data comprometida (a frase acessível diz 4 já têm data no Gantt). Mudar: Chart.tsx linha 71, frase calculada de inGantt e do total (só 4 de 24 iniciativas têm data comprometida), ou no mínimo cortar a oração falsa. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__07_roadmap-por-horizonte_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:51.626Z",
+      "impressao": "dfade23d14fa2a04c7a347db860ec0737f75cb5b",
+      "arquivos": {
+        "Chart.tsx": "c2f395643d829ee2718efc5fca67606c6399fcd4",
+        "data.ts": "3c04cb5f6b5544f35c9fa19866fe82a35abddf93",
+        "meta.json": "3c30cf09c1427fdfc666a00f7b31acdb38404979"
+      }
+    },
+    {
+      "versao": "v4_horizonte-vazio-e-descartadas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 3, seção 14.1 (encoding), regra do modelo e NUM-7: na coluna Próximo o ordinal impresso desmente a prioridade do data.ts nos três cartões (tela 1º Calendário, 2º Pesquisa, 3º Revisão do glossário; dado 2, 3 e 1), porque a ordenação põe sem público por último e o ordinal é o índice da lista reordenada. Mudar: data.ts linhas 42, 45 e 48 (mk-04 1, mk-09 2, mk-05 3) e Chart.tsx linhas 55 a 57, ordenação só por prioridade. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__07_roadmap-por-horizonte_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:26:52.107Z",
+      "impressao": "f9edb0e6aa568dbd154c32fbf81fe1f45678d79a",
+      "arquivos": {
+        "Chart.tsx": "3cf3977de160fc8f16b9a0f379693dae7f2af68d",
+        "data.ts": "f41657f825d949a5d7f079dd47be860a3cb1d7ab",
+        "meta.json": "99ffcf3d8ccb8cb052f8ce8ce0a8ea7c8827e744"
+      }
+    },
+    {
+      "versao": "v3_roadmap-por-publico",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sim. Bloqueante da pergunta 17 (ANO-5) resolvido: a frase do topo agora é calculada do dado (só 4 de 24 iniciativas têm data comprometida) e concorda com os quatro selos, o rodapé e a frase acessível nos dois temas. Contagens refeitas do data.ts (6 por faixa, 8 por horizonte, 4 com data); contraste à mão porque as guardas de texto não leem HTML (bordas de 4,67:1 a 10,90:1, texto de 5,05:1 para cima); última tinta em 534 de 540 px. Observações no README: singular da frase do topo e da frase acessível, linha de leitura sem aria-hidden, horizonte sem nome para leitor de tela no layout largo.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:57:40.787Z",
+      "impressao": "060987be10e9bb341c64a39a8fe39753e9374417",
+      "arquivos": {
+        "Chart.tsx": "ebff59934534c68bfa14ead1019b8dcbb839e7ae",
+        "data.ts": "3c04cb5f6b5544f35c9fa19866fe82a35abddf93",
+        "meta.json": "3c30cf09c1427fdfc666a00f7b31acdb38404979"
+      }
+    },
+    {
+      "versao": "v4_horizonte-vazio-e-descartadas",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sim. Bloqueante da pergunta 3 (encoding, NUM-7) resolvido: a ordenação ficou só pela prioridade e o data.ts declara a iniciativa sem público como 3, então o ordinal impresso coincide com a priority nos nove cartões (Próximo: 1º Calendário editorial, 2º Pesquisa de satisfação, 3º Revisão do glossário). Coluna Depois mantida com 0 iniciativas; contraste à mão, par mais fraco 4,65:1; última tinta em 368 de 380 px. Observações no README: line-clamp-2 contra TIP-7 e DIC-1 (item do catálogo), linha de leitura sem tabular-nums e sem aria-hidden, plural fixo em ideias, cabeçalho do data.ts e nota do meta.json sem dizer que o por último vem da prioridade.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:57:41.280Z",
+      "impressao": "5d783e48ef8df80de19f78ae2fba31c8471c14e1",
+      "arquivos": {
+        "Chart.tsx": "24c9b313e53256a003bb8ad5500cb3796d0aa219",
+        "data.ts": "85f1b557307c25571bb09b9e0a99a89e3373bc38",
+        "meta.json": "99ffcf3d8ccb8cb052f8ce8ce0a8ea7c8827e744"
+      }
+    },
+    {
+      "versao": "v4_horizonte-vazio-e-descartadas",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sim. Bloqueante da pergunta 3 (encoding, NUM-7) resolvido: a ordenação ficou só pela prioridade e o data.ts declara a iniciativa sem público como 3, então o ordinal impresso coincide com a priority nos seis cartões que o trazem (Próximo: 1º Calendário editorial, 2º Pesquisa de satisfação, 3º Revisão do glossário) e as três descartadas saem na ordem declarada. Coluna Depois mantida com 0 iniciativas; contraste à mão, par mais fraco 4,65:1; última tinta em 368 de 380 px. Observações no README: line-clamp-2 contra TIP-7 e DIC-1 (item do catálogo), linha de leitura sem tabular-nums e sem aria-hidden, plural fixo em ideias, cabeçalho do data.ts e nota do meta.json sem dizer que o por último vem da prioridade.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:57:52.249Z",
+      "impressao": "5d783e48ef8df80de19f78ae2fba31c8471c14e1",
+      "arquivos": {
+        "Chart.tsx": "24c9b313e53256a003bb8ad5500cb3796d0aa219",
+        "data.ts": "85f1b557307c25571bb09b9e0a99a89e3373bc38",
+        "meta.json": "99ffcf3d8ccb8cb052f8ce8ce0a8ea7c8827e744"
+      }
+    }
+  ]
+}

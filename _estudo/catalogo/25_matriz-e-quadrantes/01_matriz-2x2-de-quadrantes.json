@@ -1,0 +1,78 @@
+{
+  "slug": "01_matriz-2x2-de-quadrantes",
+  "nome": "Matriz 2x2 de quadrantes",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas medidas numéricas nos eixos, uma divisória vertical, uma horizontal e um ponto por entidade: é a dispersão que virou classificação. A pergunta deixa de ser se X e Y se relacionam e passa a ser em que região cada entidade caiu e que ação essa região pede. O limiar é a decisão inteira, então toda divisória diz o que é, o valor e a procedência (MEDIDO em traço sólido, PREMISSA tracejado), e cada região mostra quantos itens tem e, quando faz sentido, quanto eles somam. Construído com ScatterChart, duas ReferenceLine e ReferenceArea de fundo entre 4% e 8% de opacidade, sobre domínio fixo amarrado a constantes, porque a área com ifOverflow discard some calada quando o filtro encolhe os dados. Corte estatístico, corte por meta, rótulos diretos, bolhas, sumário por região, lista sincronizada e variação centrada no zero entram como versões.",
+  "quando_usar": [
+    "Classificar de 8 a 60 entidades por duas medidas, com uma ação nomeada para cada região",
+    "Existe corte com procedência: mediana da própria série, meta, SLA, break-even ou teto de capacidade",
+    "Terceira medida aditiva (investimento, receita, fila) que pesa na leitura da região, em bolha",
+    "O leitor precisa do plano e da lista de itens ao mesmo tempo, em cartão largo",
+    "Os dois eixos são variações com sinal entre dois períodos e o zero é o corte natural"
+  ],
+  "quando_evitar": [
+    "A pergunta é a relação entre X e Y, não o grupo: dispersão simples (09/01)",
+    "Só interessam os quatro números, sem procurar item: matriz agregada de células (25/02)",
+    "Mais de cerca de 120 entidades, onde o rótulo morre: densidade 2D (09/09)",
+    "Movimento de cada entidade entre dois períodos: dispersão de antes e depois com setas (09/06)",
+    "A regra de decisão é razão ou produto dos dois eixos: plano com iso-linhas (25/03)",
+    "A mesma classificação repetida por segmento ou período: pequenos múltiplos de dispersão (09/11)",
+    "Quase toda a amostra cai numa só região: trocar o corte ou passar a postos antes de insistir no 2x2"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-e-conversao-por-executivo",
+      "titulo": "Ticket médio e conversão por executivo",
+      "caso_de_uso": "Comercial: quais dos 14 executivos estão acima da mediana do time em ticket médio e em conversão no trimestre.",
+      "o_que_demonstra": [
+        "Cortes na mediana calculados em TypeScript, com o valor escrito no rótulo da linha",
+        "ReferenceArea amarrada às constantes do domínio fixo, nunca a dataMax",
+        "Rótulo direto por ponto com desconflito vertical calculado fora do LabelList",
+        "Título de ação e contagem de itens no canto externo de cada região",
+        "Rodapé com n no plano e n fora por dado ausente, sem ponto no zero"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_campanhas-contra-break-even-com-bolhas",
+      "titulo": "Campanhas contra break-even, com investimento",
+      "caso_de_uso": "Marketing: quais das 30 campanhas pagam o lead abaixo do break-even de R$ 4,20 e batem a meta de 18% de qualificação.",
+      "o_que_demonstra": [
+        "Corte de premissa tracejado com etiqueta e corte medido sólido no mesmo plano",
+        "ZAxis com domain a partir de zero, maiores desenhadas antes e legenda de tamanho",
+        "Blocos de resumo em HTML sobre o gráfico: contagem, investimento e participação",
+        "Taxa da região recalculada sobre os totais, nunca média das médias",
+        "Anotação na região de CPL baixo e qualificação baixa: volume barato que não vira nada",
+        "Classificação pelo centro da bolha, escrita na legenda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_forecast-parado-com-lista-sincronizada",
+      "titulo": "Forecast por valor e dias parada, com lista",
+      "caso_de_uso": "Comercial: quais das 84 oportunidades do forecast valem mais de R$ 150 mil e estão paradas há mais de 30 dias.",
+      "o_que_demonstra": [
+        "Plano e lista ligados nos dois sentidos: clique na região filtra, hover acende o ponto",
+        "Destaque vindo da lista como segundo Scatter de um item, sem redesenhar a nuvem",
+        "Faixa de indiferença de 8% em torno dos cortes, com itens da fronteira em cinza",
+        "Bloco da região crítica com contagem, valor somado e participação no pipeline vivo",
+        "Oportunidades sem data de movimento no fim da lista, com selo fora do plano"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_variacao-de-origens-centrada-no-zero",
+      "titulo": "Variação de volume e qualificação por origem",
+      "caso_de_uso": "Marketing: de agosto para setembro, quais das 22 origens de lead cresceram em volume e perderam qualificação.",
+      "o_que_demonstra": [
+        "Domínio simétrico em torno do zero calculado em TypeScript, com teto para extremos",
+        "Ticks com sinal explícito e unidades separadas: % no volume, p.p. na taxa",
+        "Origem com +480% presa na borda, com marca de fora da escala e o valor real",
+        "Base mínima de 30 leads: origens abaixo dela e origens novas vão para o rodapé",
+        "Rótulo de ação nos quatro quadrantes, sem verde e vermelho saturados"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

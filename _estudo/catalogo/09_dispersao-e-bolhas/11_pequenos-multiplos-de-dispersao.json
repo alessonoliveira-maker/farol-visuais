@@ -1,0 +1,67 @@
+{
+  "slug": "11_pequenos-multiplos-de-dispersao",
+  "nome": "Pequenos múltiplos de dispersão",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "A mesma dispersão repetida por grupo em painéis do mesmo tamanho, com domínio e cortes idênticos, lado a lado. Resolve a comparação entre grupos sem empilhar nuvens no mesmo plano e responde se a relação ou a massa por região muda entre executivos, regiões, plataformas ou trimestres. O domínio compartilhado é a regra que dá sentido ao modelo. Absorve os pequenos múltiplos de quadrantes.",
+  "quando_usar": [
+    "A mesma relação em 4 a 12 grupos, como ticket contra ciclo por executivo.",
+    "Mais de 5 grupos, que não cabem com cor e forma no mesmo plano.",
+    "Quadrante repetido por plataforma ou trimestre com os mesmos cortes e contagem por região no título.",
+    "Grupos com pelo menos cerca de 10 pontos por painel."
+  ],
+  "quando_evitar": [
+    "Poucos pontos por painel: a comparação vira anedota; use pontos por categoria (família 17).",
+    "Até 5 grupos com nuvens que não se cobrem: use a dispersão simples por categoria (modelo 01).",
+    "Domínio próprio por painel: a mesma posição passa a significar valores diferentes.",
+    "Tela estreita em uma coluna só: mantenha pelo menos duas colunas e role."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-contra-ciclo-por-executivo",
+      "titulo": "Ticket contra ciclo por executivo",
+      "caso_de_uso": "A relação entre ticket e ciclo muda de um executivo para outro? Oito painéis fictícios com os mesmos eixos.",
+      "o_que_demonstra": [
+        "Grade responsiva em Tailwind com um ScatterChart por painel",
+        "Domínio único calculado sobre o conjunto inteiro",
+        "Eixos numéricos só na borda externa da grade",
+        "Mediana do grupo como referência dentro de cada painel"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_time-inteiro-ao-fundo",
+      "titulo": "Cada executivo contra a nuvem do time",
+      "caso_de_uso": "Onde as oportunidades de cada executivo ficam dentro da nuvem do time inteiro? Time em neutro atrás de cada painel.",
+      "o_que_demonstra": [
+        "Nuvem do time em neutro desenhada antes em todos os painéis",
+        "Pontos do executivo do painel em cor de destaque por cima",
+        "Título do painel com nome e número de oportunidades"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_doze-regioes-ordenadas-pela-mediana",
+      "titulo": "Doze regiões comerciais pela mediana do ciclo",
+      "caso_de_uso": "Quais das 12 regiões comerciais fictícias fecham mais rápido para o mesmo ticket? Painéis ordenados pela mediana do ciclo.",
+      "o_que_demonstra": [
+        "Ordem dos painéis por medida, não alfabética",
+        "Doze painéis em grade de 3 colunas com rótulo de eixo só na borda",
+        "Mediana do ciclo escrita no título de cada painel"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_quadrantes-por-trimestre-com-painel-vazio",
+      "titulo": "Quadrantes de executivos por trimestre",
+      "caso_de_uso": "Como a massa por quadrante mudou em seis trimestres, se um tem 2 executivos e outro não tem oportunidades?",
+      "o_que_demonstra": [
+        "Mesmos cortes em todos os painéis e contagem por região no título",
+        "Painel com 2 pontos mantém o tamanho e ganha a nota amostra pequena",
+        "Painel sem dado mantém a moldura com o texto sem oportunidades no período",
+        "Meta que mudou no trimestre escrita no título do painel afetado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

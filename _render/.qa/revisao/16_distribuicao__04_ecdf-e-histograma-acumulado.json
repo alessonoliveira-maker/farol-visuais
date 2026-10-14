@@ -1,0 +1,59 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "04_ecdf-e-histograma-acumulado",
+  "versoes": {
+    "v1_sla-de-primeiro-contato": {
+      "veredito": "aprovado",
+      "nota": "Colisão resolvida com número medido no PNG e não estimado: o rótulo desce 16 px e fica com 8 px livres acima e 7 abaixo. Ganhou de passagem os algarismos tabulares da TIP-1. Ressalva: o eixo declara cinco tiques e desenha quatro, e o vão de 50 a 100% fica sem grade, que é a REC-29. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.729Z",
+      "impressao": "2e9c65849019b0a267507b5ee5c3cf4812b6d1e9",
+      "arquivos": {
+        "Chart.tsx": "a78f8d92f20922fb5af18f9cae8209fbede21285",
+        "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
+        "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_sla-de-primeiro-contato",
+      "veredito": "reprovado",
+      "nota": "O rotulo 71% em ate 30 min fica na altura exata da ReferenceLine horizontal que passa pelo mesmo ponto, porque o label do ReferenceDot usa position right e herda o y do ponto. A tracejada atravessa as letras, visivel nos dois temas e pior no claro. Deslocar o rotulo em y, ou dar respiro atras dele. Resto da peca aceito: o stepAfter esta certo contra a reta que inventaria casos, o par de guias traduz a curva numa frase, o eixo marca de hora em hora para ancorar os 30 minutos, e os 37 leads sem contato aparecem declarados fora da curva em vez de virarem zero.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:06:13.551Z",
+      "impressao": "d8a7f1e124e98102808e182dd6a245b6c25ffe64",
+      "arquivos": {
+        "Chart.tsx": "2546bc07d07c3ecfdd4fa91df346d5a3806959d9",
+        "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
+        "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
+      }
+    },
+    {
+      "versao": "v1_sla-de-primeiro-contato",
+      "veredito": "reprovado",
+      "nota": "O rótulo \"71% em até 30 min\" fica na altura exata da ReferenceLine horizontal que passa pelo mesmo ponto, porque o label do ReferenceDot usa position right e herda o y do ponto. A tracejada atravessa as letras, visível nos dois temas e pior no claro. Deslocar o rótulo em y, ou dar respiro atrás dele. Resto da peça aceito: o stepAfter está certo contra a reta que inventaria casos, o par de guias traduz a curva numa frase, o eixo marca de hora em hora para ancorar os 30 minutos, e os 37 leads sem contato aparecem declarados fora da curva em vez de virarem zero.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:19:47.499Z",
+      "impressao": "d8a7f1e124e98102808e182dd6a245b6c25ffe64",
+      "arquivos": {
+        "Chart.tsx": "2546bc07d07c3ecfdd4fa91df346d5a3806959d9",
+        "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
+        "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
+      }
+    },
+    {
+      "versao": "v1_sla-de-primeiro-contato",
+      "veredito": "aprovado",
+      "nota": "Colisão resolvida com número medido no PNG e não estimado: o rótulo desce 16 px e fica com 8 px livres acima e 7 abaixo. Ganhou de passagem os algarismos tabulares da TIP-1. Ressalva: o eixo declara cinco tiques e desenha quatro, e o vão de 50 a 100% fica sem grade, que é a REC-29. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.729Z",
+      "impressao": "2e9c65849019b0a267507b5ee5c3cf4812b6d1e9",
+      "arquivos": {
+        "Chart.tsx": "a78f8d92f20922fb5af18f9cae8209fbede21285",
+        "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
+        "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
+      }
+    }
+  ]
+}

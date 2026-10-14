@@ -1,0 +1,14 @@
+{
+  "title": "Cenários de orçamento 2027 com eliminatório",
+  "useCase": "Diretoria: qual dos 4 cenários de orçamento de 2027 vence nos 7 critérios e cabe na capacidade medida de pré-vendas.",
+  "demonstrates": [
+    "Faixa eliminatória em passa e não passa avaliada antes de qualquer soma",
+    "Cenário de maior total riscado com o motivo, fora do ranking",
+    "Critérios com medida real normalizados e notas ordinais marcadas como julgamento",
+    "Etiqueta de procedência por critério: MEDIDO, PREMISSA ou DERIVADO",
+    "Receita em faixa na célula, com a nota calculada sobre o ponto médio e aviso"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O critério de medida vira nota de 1 a 5 por interpolação linear entre o pior e o melhor dos quatro cenários (a direção melhor vem do dado: custo e prazo menores são melhores), e a receita em faixa usa o ponto médio. Os cenários que não passam no eliminatório entram na normalização, para a escala não mudar conforme quem sai, mas ficam fora do ranking e do total do vencedor. Critério em que todos têm a mesma medida recebe a nota do meio da escala."
+}

@@ -1,0 +1,225 @@
+{
+  "familia": "05_areas",
+  "modelo": "03_area-100",
+  "versoes": {
+    "v1_participacao-do-investimento-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Camadas com cor fixa por plataforma, percentual pelo maior resto somando 100 e total do ultimo mes na linha de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:10.361Z",
+      "impressao": "8cd966468e5dda6c8a89e6c0f8c16116cccb464e",
+      "arquivos": {
+        "Chart.tsx": "f146796bae4f197bfcb62105e7a5ade30d95aae5",
+        "data.ts": "506cdb3bcae106655b5d7283414256c8e890c3fe",
+        "meta.json": "4ebb19c155fc75323eb96b69a4d38fc49e6595cd"
+      }
+    },
+    "v2_leads-sem-origem-apos-correcao": {
+      "veredito": "aprovado",
+      "nota": "Ausencia vazada no topo, fora do teto de 6 cores, com linha de correcao rotulada e total de leads na linha de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:15.545Z",
+      "impressao": "b0c0ee75174f812155978b4e1819aabca4aa0f7c",
+      "arquivos": {
+        "Chart.tsx": "8d4f058cf04656f743e661c9a1249ec8d3eb2d93",
+        "data.ts": "e774f1f32b3da5fb5427cf2c4e1daedfe765f2f7",
+        "meta.json": "47f843f68d72bde9c1f0204700071ecded1e1182"
+      }
+    },
+    "v3_origens-com-painel-de-total": {
+      "veredito": "aprovado",
+      "nota": "Seis origens na ordem de slot da COR-8, painel de total sincronizado sem eixo duplo e legenda na ordem da pilha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:20.273Z",
+      "impressao": "ec9916722fd26d615541e82c393e9b71b058340c",
+      "arquivos": {
+        "Chart.tsx": "4a467ca87588b2eae4e2aa8a8fa65fea5ebd65af",
+        "data.ts": "cd12e0d056bc6c961930e2e02fb1e54b24dd347c",
+        "meta.json": "d00c686170ee9a697ddafcec1e591141065ba4da"
+      }
+    },
+    "v4_semanas-sem-nenhum-lead": {
+      "veredito": "aprovado",
+      "nota": "Semana de total zero vira lacuna antes do render, com ReferenceArea nomeando o motivo; nenhum 0% inventado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:24.917Z",
+      "impressao": "f53ab73fb145d27efc73668510a051ade6b1ee8f",
+      "arquivos": {
+        "Chart.tsx": "182bb7319dc3f3a7cbd7dae24ae2344e5f7185f8",
+        "data.ts": "a99df5cb8efbf3092b22f5e3b4b44400bb3af7cb",
+        "meta.json": "e0d061501cdd078520a2807fe6abda7158b6bb5d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_participacao-do-investimento-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Texto do rotulo sobre a camada --chart-6 mede 4,36:1 no tema claro, abaixo de AA (ACE-3, checklist 20): o fillOpacity 0.9 clareia a faixa.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:02:12.025Z",
+      "impressao": "e86fe6ce1a01e24e832f7ee9c67dd752c081ac01",
+      "arquivos": {
+        "Chart.tsx": "4b782fcdbc0dd43e73d0a6a06eaa8b162862c103",
+        "data.ts": "506cdb3bcae106655b5d7283414256c8e890c3fe",
+        "meta.json": "4ebb19c155fc75323eb96b69a4d38fc49e6595cd"
+      }
+    },
+    {
+      "versao": "v2_leads-sem-origem-apos-correcao",
+      "veredito": "aprovado",
+      "nota": "Composicao honesta, ausencia vazada no topo, legenda na ordem da pilha e total escrito; observacoes menores no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:02:16.420Z",
+      "impressao": "9a18d64c02a9d00ec1cf9e61259d5e360197dc52",
+      "arquivos": {
+        "Chart.tsx": "a667c1740194a039572e6d4fc65677033346b76b",
+        "data.ts": "e774f1f32b3da5fb5427cf2c4e1daedfe765f2f7",
+        "meta.json": "47f843f68d72bde9c1f0204700071ecded1e1182"
+      }
+    },
+    {
+      "versao": "v3_origens-com-painel-de-total",
+      "veredito": "reprovado",
+      "nota": "COR-8 (checklist 11): usa --chart-2 e --chart-4 no mesmo corpo em que a linha de leitura pinta a queda em text-negative.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:02:22.230Z",
+      "impressao": "cc1c1abc6be4e847a0c51d73632b17af31a616f5",
+      "arquivos": {
+        "Chart.tsx": "3e45286962012c02d3f9bc2f7e168addba376387",
+        "data.ts": "cd12e0d056bc6c961930e2e02fb1e54b24dd347c",
+        "meta.json": "d00c686170ee9a697ddafcec1e591141065ba4da"
+      }
+    },
+    {
+      "versao": "v4_semanas-sem-nenhum-lead",
+      "veredito": "reprovado",
+      "nota": "Tres camadas sem legenda e sem rotulo direto (ROT-4, checklist 12) e ReferenceArea com x1 igual a x2, que nao pinta nenhum rect no preview.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:02:22.801Z",
+      "impressao": "53c8b6a7a1331f3964538a410da3ee71e31d46d8",
+      "arquivos": {
+        "Chart.tsx": "e9dbecaf81612b764b87dad171bbf2366171f2fe",
+        "data.ts": "a99df5cb8efbf3092b22f5e3b4b44400bb3af7cb",
+        "meta.json": "e0d061501cdd078520a2807fe6abda7158b6bb5d"
+      }
+    },
+    {
+      "versao": "v1_participacao-do-investimento-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Area 100% correta: expand normaliza o desenho e o percentual do rotulo vem do absoluto pelo maior resto, somando 100; rotulo dentro da camada com par de contraste aprovado em opacidade cheia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:15:28.589Z",
+      "impressao": "05e51b314805f8d2899735ffaa0d5e5ed3f8ce7b",
+      "arquivos": {
+        "Chart.tsx": "2ff26274b4f9e8e1c707de174549761b351d9655",
+        "data.ts": "506cdb3bcae106655b5d7283414256c8e890c3fe",
+        "meta.json": "4ebb19c155fc75323eb96b69a4d38fc49e6595cd"
+      }
+    },
+    {
+      "versao": "v2_leads-sem-origem-apos-correcao",
+      "veredito": "aprovado",
+      "nota": "Camada de ausência vazada no topo, fora do teto de cores e fora de Outros; a linha de leitura declara a participação antes e depois e o total de leads do mês.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:15:36.777Z",
+      "impressao": "9a18d64c02a9d00ec1cf9e61259d5e360197dc52",
+      "arquivos": {
+        "Chart.tsx": "a667c1740194a039572e6d4fc65677033346b76b",
+        "data.ts": "e774f1f32b3da5fb5427cf2c4e1daedfe765f2f7",
+        "meta.json": "47f843f68d72bde9c1f0204700071ecded1e1182"
+      }
+    },
+    {
+      "versao": "v1_participacao-do-investimento-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Área 100% correta: o percentual do rótulo vem do valor absoluto pelo maior resto e soma 100; texto dentro da camada com par de contraste aprovado em opacidade cheia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:15:43.377Z",
+      "impressao": "05e51b314805f8d2899735ffaa0d5e5ed3f8ce7b",
+      "arquivos": {
+        "Chart.tsx": "2ff26274b4f9e8e1c707de174549761b351d9655",
+        "data.ts": "506cdb3bcae106655b5d7283414256c8e890c3fe",
+        "meta.json": "4ebb19c155fc75323eb96b69a4d38fc49e6595cd"
+      }
+    },
+    {
+      "versao": "v3_origens-com-painel-de-total",
+      "veredito": "aprovado",
+      "nota": "Seis origens em slot fixo, Outras neutra e ausência vazada por último; painel de total sincronizado sem eixo duplo fecha o que a normalização esconde. Observações de eixo e de cor do painel no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:15:43.993Z",
+      "impressao": "e41be35b08e8f42f2caa02e9628694be86268993",
+      "arquivos": {
+        "Chart.tsx": "dc1bd4be92bc1b62703044784ae13c33320c2f3a",
+        "data.ts": "cd12e0d056bc6c961930e2e02fb1e54b24dd347c",
+        "meta.json": "d00c686170ee9a697ddafcec1e591141065ba4da"
+      }
+    },
+    {
+      "versao": "v4_semanas-sem-nenhum-lead",
+      "veredito": "aprovado",
+      "nota": "Total zero vira lacuna antes do render, sem divisão por zero e sem 0% inventado; vão marcado com texto. Observações: frase acessível soma 99 por arredondamento simples e a nota diz mês onde o número é da semana.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:15:50.049Z",
+      "impressao": "41da8b04410b343525f5f8d0634e76372434041a",
+      "arquivos": {
+        "Chart.tsx": "6edc284899b6666de6b95941c60f0e2038a9c5e8",
+        "data.ts": "a99df5cb8efbf3092b22f5e3b4b44400bb3af7cb",
+        "meta.json": "e0d061501cdd078520a2807fe6abda7158b6bb5d"
+      }
+    },
+    {
+      "versao": "v1_participacao-do-investimento-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Camadas com cor fixa por plataforma, percentual pelo maior resto somando 100 e total do ultimo mes na linha de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:10.361Z",
+      "impressao": "8cd966468e5dda6c8a89e6c0f8c16116cccb464e",
+      "arquivos": {
+        "Chart.tsx": "f146796bae4f197bfcb62105e7a5ade30d95aae5",
+        "data.ts": "506cdb3bcae106655b5d7283414256c8e890c3fe",
+        "meta.json": "4ebb19c155fc75323eb96b69a4d38fc49e6595cd"
+      }
+    },
+    {
+      "versao": "v2_leads-sem-origem-apos-correcao",
+      "veredito": "aprovado",
+      "nota": "Ausencia vazada no topo, fora do teto de 6 cores, com linha de correcao rotulada e total de leads na linha de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:15.545Z",
+      "impressao": "b0c0ee75174f812155978b4e1819aabca4aa0f7c",
+      "arquivos": {
+        "Chart.tsx": "8d4f058cf04656f743e661c9a1249ec8d3eb2d93",
+        "data.ts": "e774f1f32b3da5fb5427cf2c4e1daedfe765f2f7",
+        "meta.json": "47f843f68d72bde9c1f0204700071ecded1e1182"
+      }
+    },
+    {
+      "versao": "v3_origens-com-painel-de-total",
+      "veredito": "aprovado",
+      "nota": "Seis origens na ordem de slot da COR-8, painel de total sincronizado sem eixo duplo e legenda na ordem da pilha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:20.273Z",
+      "impressao": "ec9916722fd26d615541e82c393e9b71b058340c",
+      "arquivos": {
+        "Chart.tsx": "4a467ca87588b2eae4e2aa8a8fa65fea5ebd65af",
+        "data.ts": "cd12e0d056bc6c961930e2e02fb1e54b24dd347c",
+        "meta.json": "d00c686170ee9a697ddafcec1e591141065ba4da"
+      }
+    },
+    {
+      "versao": "v4_semanas-sem-nenhum-lead",
+      "veredito": "aprovado",
+      "nota": "Semana de total zero vira lacuna antes do render, com ReferenceArea nomeando o motivo; nenhum 0% inventado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:25:24.917Z",
+      "impressao": "f53ab73fb145d27efc73668510a051ade6b1ee8f",
+      "arquivos": {
+        "Chart.tsx": "182bb7319dc3f3a7cbd7dae24ae2344e5f7185f8",
+        "data.ts": "a99df5cb8efbf3092b22f5e3b4b44400bb3af7cb",
+        "meta.json": "e0d061501cdd078520a2807fe6abda7158b6bb5d"
+      }
+    }
+  ]
+}

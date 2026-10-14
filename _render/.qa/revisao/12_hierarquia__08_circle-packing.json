@@ -1,0 +1,33 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "08_circle-packing",
+  "versoes": {
+    "v1_criativos-por-campanha": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: encoding por raiz quadrada do valor, cor por slot fixo (1, 3, 6, 5), identificacao de todas as 14 folhas e das 4 campanhas fora do desenho, nada cortado nem sobreposto nos dois temas. Observacoes de enquadramento, vao e espessura de contorno no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T08:51:55.510Z",
+      "impressao": "0a40a9be1f8c2a1c14ab9c277154de7e71f672c7",
+      "arquivos": {
+        "Chart.tsx": "0dc25c0ecd9fa14fa4e3f65acccc54cc5f76a2c7",
+        "data.ts": "3700049cf6d331bed5a4aad1ddc4159445b8dcbf",
+        "meta.json": "6fd9e62432c7fe56492fa4427712b26e19cc0f61"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_criativos-por-campanha",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: encoding por raiz quadrada do valor, cor por slot fixo (1, 3, 6, 5), identificacao de todas as 14 folhas e das 4 campanhas fora do desenho, nada cortado nem sobreposto nos dois temas. Observacoes de enquadramento, vao e espessura de contorno no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T08:51:55.510Z",
+      "impressao": "0a40a9be1f8c2a1c14ab9c277154de7e71f672c7",
+      "arquivos": {
+        "Chart.tsx": "0dc25c0ecd9fa14fa4e3f65acccc54cc5f76a2c7",
+        "data.ts": "3700049cf6d331bed5a4aad1ddc4159445b8dcbf",
+        "meta.json": "6fd9e62432c7fe56492fa4427712b26e19cc0f61"
+      }
+    }
+  ]
+}

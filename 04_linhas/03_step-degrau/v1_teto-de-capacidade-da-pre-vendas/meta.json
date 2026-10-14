@@ -1,0 +1,12 @@
+{
+  "title": "Teto de capacidade da pré-vendas em degrau",
+  "useCase": "Quantas agendas por semana a pré-vendas comporta de 2026-01 a 2026-09, a cada contratação ou saída?",
+  "demonstrates": [
+    "Line type stepAfter porque o teto vale a partir da data da mudança",
+    "Ponto final repetido na data de corte para o último patamar ter largura",
+    "Eixo numérico de tempo para a largura do degrau respeitar a duração",
+    "Motivo de cada mudança na dica e uma anotação na maior delas"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

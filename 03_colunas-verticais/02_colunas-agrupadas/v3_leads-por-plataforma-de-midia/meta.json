@@ -1,0 +1,13 @@
+{
+  "title": "Leads por plataforma de mídia paga",
+  "useCase": "Como se compara o volume mensal de leads das três plataformas de mídia paga e quanto cada uma somou no semestre?",
+  "demonstrates": [
+    "Três Bar por mês nos slots 1, 3 e 6, com vão de 1,5 px entre colunas vizinhas",
+    "Rodapé em HTML com o total por plataforma, número à direita e algarismo tabular",
+    "maxBarSize ajustado para as 18 colunas do semestre não virarem traço",
+    "Dica que lista as plataformas na ordem visual, não na alfabética"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Passo pela ESP-6: corpo do cartão largo aproximadamente 894 x 274 px, disponível aproximadamente 894 menos 36 do eixo de contagem menos 8 de margem = 850 px para 6 meses, passo aproximadamente 141,7 px. Com barGap de 1,5 px (declarado, três séries na banda) e barCategoryGap no piso de 30 por cento: espessura = (141,7 x 0,40 menos 1,5 x 2) dividido por 3, aproximadamente 17,9 px, acima do piso de 12 px da ESP-2. Conferido no preview.svg, não só na constante declarada."
+}

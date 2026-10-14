@@ -1,0 +1,73 @@
+{
+  "slug": "04_radar-de-ciclo",
+  "nome": "Radar de ciclo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Eixos que são posições de um ciclo (24 horas, 7 dias, 12 meses), com o início no topo, sentido horário, grade circular e rótulos só nos quartos do ciclo. É o único caso em que Few aceita o radar: o relógio preserva a continuidade entre o fim e o começo, e a madrugada fica ligada à noite. Custom porque o tick só desenha os quartos e as marcações de expediente e de período ausente entram por camada SVG sobre o RadarChart.",
+  "quando_usar": [
+    "Uma série naturalmente cíclica de 7 a 24 posições em que a mensagem é a continuidade: entradas por hora, atividade por dia da semana.",
+    "Comparar dois regimes do mesmo ciclo, como dia útil contra fim de semana, com o foco preenchido e o outro em contorno.",
+    "Marcar no próprio relógio a janela que importa para a operação, como o expediente da pré-vendas.",
+    "Ano corrente em 12 meses com os meses futuros declarados como ausentes."
+  ],
+  "quando_evitar": [
+    "Comparação fina de valores entre horas: colunas por hora (03/01) ou linha (04).",
+    "Leitura de dia e hora juntos: heatmap dia da semana por hora (15/01).",
+    "Ciclo que não fecha, como uma série de 30 dias corridos: linha (04).",
+    "Volume por setor com apelo visual e área proporcional: rosa de Nightingale (07/07) ou coluna radial (07/06).",
+    "Começar o ciclo fora do topo ou girar em sentido anti-horário: manter startAngle 90 e endAngle -270."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_entradas-de-lead-por-hora-do-dia",
+      "titulo": "Entradas de lead por hora do dia",
+      "caso_de_uso": "Pré-vendas, 2026-08: em que horas do dia os leads chegam e quanto da demanda cai fora do horário comercial?",
+      "o_que_demonstra": [
+        "24 eixos com startAngle 90 e endAngle -270: 0h no topo e sentido horário",
+        "PolarGrid gridType circle e tick customizado que só escreve 0h, 6h, 12h e 18h",
+        "Área leve em --chart-1 com a média de entradas por hora no mês e unidade na dica",
+        "domain de 0 ao primeiro nível redondo acima do pico, calculado no componente",
+        "Linha de leitura com o pico: 14h, média de 9,2 entradas"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_dia-util-contra-fim-de-semana",
+      "titulo": "Entradas em dia útil contra fim de semana",
+      "caso_de_uso": "Pré-vendas, 2026-08: a demanda de fim de semana tem outro relógio e pede plantão num horário diferente?",
+      "o_que_demonstra": [
+        "Dia útil preenchido em --chart-1 e fim de semana em contorno --chart-3",
+        "Médias por hora nas duas séries para comparar regimes de tamanho diferente",
+        "Anotação na madrugada: atividade de fim de semana começa às 21h",
+        "Legenda com amostra de área e de linha e dica com as duas médias por hora"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_resposta-fora-do-sla-com-expediente",
+      "titulo": "Primeira resposta fora do SLA com o expediente marcado",
+      "caso_de_uso": "Pré-vendas, 2026-08: as respostas fora do SLA se concentram fora do expediente ou também acontecem dentro dele?",
+      "o_que_demonstra": [
+        "Setor do expediente, das 8h às 18h, desenhado por Customized com arco em --surface-sunken",
+        "Texto dizendo o que o setor marca, sem ReferenceArea, que não existe no polar",
+        "Percentual fora do SLA por hora com formatRateWithVolume na dica",
+        "Grade e série desenhadas por cima do setor, na ordem correta de camadas",
+        "Linha de leitura: 71% dos estouros entre 18h e 8h"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_doze-meses-com-ano-parcial",
+      "titulo": "Agendas realizadas por mês com o ano parcial",
+      "caso_de_uso": "Pré-vendas, 2026: como ler o ciclo mensal de agendas realizadas quando setembro está em curso e outubro a dezembro ainda não existem?",
+      "o_que_demonstra": [
+        "Meses futuros como null: polígono aberto, sem recolher ao centro",
+        "Rótulo a medir em --text-muted nos eixos de outubro a dezembro",
+        "Setembro parcial com trecho tracejado 4 4 e nota parcial até a data do dado",
+        "Janeiro e dezembro vizinhos no topo, preservando a virada do ano",
+        "Frase acessível que declara 8 meses fechados, 1 parcial e 3 ausentes"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

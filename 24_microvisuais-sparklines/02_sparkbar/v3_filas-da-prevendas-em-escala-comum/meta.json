@@ -1,0 +1,14 @@
+{
+  "title": "Entradas por fila em 13 semanas",
+  "useCase": "Quais das 12 filas da pré-vendas carregam volume, lendo a altura absoluta entre linhas?",
+  "demonstrates": [
+    "Tabela de 12 linhas com um BarChart de 13 colunas por célula, de largura e altura fixas",
+    "Escala comum a todas as filas, com o cabeçalho dizendo mesma escala e o máximo da tabela",
+    "Valor da última semana em coluna à direita com tabular-nums e alinhamento à direita",
+    "Semana de recesso com zero medido desenhada como traço de 1 px na base",
+    "Frase acessível com a fila de maior volume e a de menor"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Corpo do canvas alto com moldura card: 574 x 425 a 441,5 px. A tabela ocupa 12 linhas de 32 px mais cabeçalho e nota, perto de 420 px. Célula de 156 x 28 px: passo (156 − 4) / 13 = 11,7 px; espessura 11,7 × (1 − 2 × 0,30) = 4,7 px, larga o bastante para ler. Valor positivo menor que 1 px de altura é desenhado com 1 px (piso que vale cerca de 3,8 entradas na escala comum, sem igualar filas distintas); o zero medido é um traço de 1 px em --text-muted, mais largo que a coluna, de modo que os dois não se confundem."
+}

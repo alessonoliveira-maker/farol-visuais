@@ -1,0 +1,14 @@
+{
+  "title": "Executivo sem repasse no trimestre",
+  "useCase": "Pré-vendas: o executivo que não recebeu nenhuma agenda em 2026-T3 continua na coluna, para a ausência ser lida.",
+  "demonstrates": [
+    "Nó sem ligação com contorno var(--text-muted) e sem preenchimento, por último na coluna",
+    "Texto 0 repasses escrito, porque zero medido não some",
+    "Baricentro que ignora nós de grau zero e os manda para o fim da ordem",
+    "SDR em férias parciais marcado como indisponível, distinto de zero repasses",
+    "Rodapé com a contagem de nós sem ligação nas duas colunas"
+  ],
+  "canvas": { "width": 640, "height": 486 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): oito executivos com rótulo de duas linhas pedem 8 caixas de 24 px, 7 vãos de 10 px e 8 px de separação antes do nó sem ligação, 270 px; com a linha de leitura (28 px), a legenda das faixas (24 px) e o rodapé (24 px) o corpo pede 350 px, e o card entrega 225 px com o caso de uso em duas linhas. Em 640 x 486 o corpo mede 351 px e o SVG fica com 275 px para um viewBox de 574 x 274, escala 1 (GEO-18). Desvio do catálogo, com o contrato vencendo: as ligações saem de var(--line-strong), 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), 5,21:1 e 5,37:1, porque a aresta carrega a relação (ACE-6). O catálogo fala em SDR marcado como sem dado: a tela escreve o texto de formatUnavailable(), como manda a EST-2, e troca o nó pelo ícone Unplug, forma diferente do contorno vazado do zero medido. O motivo da ausência vem do campo unmeasuredReason do dado. Peso 700 no nome e no valor do nó de zero, que é o destaque do cartão (TIP-3); com mais de um nó de zero os dois baixam para 600."
+}

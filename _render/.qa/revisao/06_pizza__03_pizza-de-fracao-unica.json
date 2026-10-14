@@ -1,0 +1,121 @@
+{
+  "familia": "06_pizza",
+  "modelo": "03_pizza-de-fracao-unica",
+  "versoes": {
+    "v1_indicacao-nas-oportunidades-ganhas": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, fracao 38,0 mais 62,0 soma 100 com nome e numero das duas partes impressos, tokens e imports dentro do contrato nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T14:29:37.266Z",
+      "impressao": "90ca2f5372d7fdb9364eddac350dfd124ac7bb01",
+      "arquivos": {
+        "Chart.tsx": "ce6792a76059fcd2ace5e69f6b1860c75801d6a4",
+        "data.ts": "51594cd3c9f77b090a7f47cec75c1664ea343189",
+        "meta.json": "2dfd903e39efe49d112f5a6c9dff1252a2e959e0"
+      }
+    },
+    "v2_tique-do-trimestre-anterior": {
+      "veredito": "aprovado",
+      "nota": "Bloqueantes da primeira passada corrigidos: tique em ZIndexLayer acima do Pie, so por fora e encostando no setor (cyan ate x=215, traco de 216 a 229 em 2x, nos dois temas), rotulo Anterior e 25,0% com nome e valor. Check limpo, 38,0 mais 62,0 soma 100, +13 p.p. com base nomeada. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:01.669Z",
+      "impressao": "00e652a4bd80387e50f600fc3a8abb440172dd45",
+      "arquivos": {
+        "Chart.tsx": "610d063f562a89c6f5a0c712221e299b0b523502",
+        "data.ts": "80d2c4e8b0c819a833bd830e0957171737b28f6a",
+        "meta.json": "ff0c4518b2b405ffaec28b12555e2c94216ed632"
+      }
+    },
+    "v3_glifos-de-cobertura-na-tabela-de-origens": {
+      "veredito": "aprovado",
+      "nota": "Check limpo; arco em path com 100% como circulo, percentual escrito em toda linha, base pequena pelo par volume e taxa, contas e ordem conferidas, contraste de texto conferido a mao nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:16:15.772Z",
+      "impressao": "ad4946bdb55b7d6c588954db4ad4589f214c6c47",
+      "arquivos": {
+        "Chart.tsx": "8df28a0fbfadb181b5f883cffd1bd68286d30ce1",
+        "data.ts": "07c5f78607a93d61961fa07479f048de903517db",
+        "meta.json": "9471041a85bf1db1bd991a386344508f18d0b66a"
+      }
+    },
+    "v4_zero-indisponivel-e-extremos": {
+      "veredito": "aprovado",
+      "nota": "Check limpo; zero medido com trilho e 0%, ausencia com contorno tracejado, Unplug e formatUnavailable, extremos 3,3% e 98,3% trocam o glifo pelo numero, mesma caixa de 44 px nos quatro estados. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:16:16.288Z",
+      "impressao": "5ca37ade92beeec64155ffc5afc87428b7d55726",
+      "arquivos": {
+        "Chart.tsx": "f7dbdaf5b18ec503b78d66869cb2f7e6cdc3aae1",
+        "data.ts": "12e13fcabee91a311a9b7fe33acea1a54c9df023",
+        "meta.json": "fcbe01e1c318a8bf97d1cb79bc15b13e0630a78c"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_indicacao-nas-oportunidades-ganhas",
+      "veredito": "aprovado",
+      "nota": "Check limpo, fracao 38,0 mais 62,0 soma 100 com nome e numero das duas partes impressos, tokens e imports dentro do contrato nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T14:29:37.266Z",
+      "impressao": "90ca2f5372d7fdb9364eddac350dfd124ac7bb01",
+      "arquivos": {
+        "Chart.tsx": "ce6792a76059fcd2ace5e69f6b1860c75801d6a4",
+        "data.ts": "51594cd3c9f77b090a7f47cec75c1664ea343189",
+        "meta.json": "2dfd903e39efe49d112f5a6c9dff1252a2e959e0"
+      }
+    },
+    {
+      "versao": "v2_tique-do-trimestre-anterior",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, REC-13: o Pie pinta por cima do tique e esconde a metade de dentro; sobram 5 de 12 px soltos a 2 px do disco, fora do contorno que o catalogo promete; pintar o tique acima do Pie com zIndex e anel da superficie ou so por fora encostando no setor (TOK-10). Pergunta 13, ANO-2: rotulo do tique so com o numero le como '- 25,0%' ao lado do traco horizontal; escrever nome e valor. Parecer em validation/revisao_06_pizza__03_pizza-de-fracao-unica_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:16:10.771Z",
+      "impressao": "0a90d2635f9e987115b23a1b33de69215bb5ab58",
+      "arquivos": {
+        "Chart.tsx": "2d72bf48f162b23408e930fc69019fd5401e75c5",
+        "data.ts": "80d2c4e8b0c819a833bd830e0957171737b28f6a",
+        "meta.json": "ff0c4518b2b405ffaec28b12555e2c94216ed632"
+      }
+    },
+    {
+      "versao": "v3_glifos-de-cobertura-na-tabela-de-origens",
+      "veredito": "aprovado",
+      "nota": "Check limpo; arco em path com 100% como circulo, percentual escrito em toda linha, base pequena pelo par volume e taxa, contas e ordem conferidas, contraste de texto conferido a mao nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:16:15.772Z",
+      "impressao": "ad4946bdb55b7d6c588954db4ad4589f214c6c47",
+      "arquivos": {
+        "Chart.tsx": "8df28a0fbfadb181b5f883cffd1bd68286d30ce1",
+        "data.ts": "07c5f78607a93d61961fa07479f048de903517db",
+        "meta.json": "9471041a85bf1db1bd991a386344508f18d0b66a"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-extremos",
+      "veredito": "aprovado",
+      "nota": "Check limpo; zero medido com trilho e 0%, ausencia com contorno tracejado, Unplug e formatUnavailable, extremos 3,3% e 98,3% trocam o glifo pelo numero, mesma caixa de 44 px nos quatro estados. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:16:16.288Z",
+      "impressao": "5ca37ade92beeec64155ffc5afc87428b7d55726",
+      "arquivos": {
+        "Chart.tsx": "f7dbdaf5b18ec503b78d66869cb2f7e6cdc3aae1",
+        "data.ts": "12e13fcabee91a311a9b7fe33acea1a54c9df023",
+        "meta.json": "fcbe01e1c318a8bf97d1cb79bc15b13e0630a78c"
+      }
+    },
+    {
+      "versao": "v2_tique-do-trimestre-anterior",
+      "veredito": "aprovado",
+      "nota": "Bloqueantes da primeira passada corrigidos: tique em ZIndexLayer acima do Pie, so por fora e encostando no setor (cyan ate x=215, traco de 216 a 229 em 2x, nos dois temas), rotulo Anterior e 25,0% com nome e valor. Check limpo, 38,0 mais 62,0 soma 100, +13 p.p. com base nomeada. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:01.669Z",
+      "impressao": "00e652a4bd80387e50f600fc3a8abb440172dd45",
+      "arquivos": {
+        "Chart.tsx": "610d063f562a89c6f5a0c712221e299b0b523502",
+        "data.ts": "80d2c4e8b0c819a833bd830e0957171737b28f6a",
+        "meta.json": "ff0c4518b2b405ffaec28b12555e2c94216ed632"
+      }
+    }
+  ]
+}

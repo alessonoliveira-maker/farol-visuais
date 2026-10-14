@@ -1,0 +1,12 @@
+{
+  "title": "Taxa de agenda por SDR com intervalo",
+  "useCase": "A taxa de agenda de cada SDR é confiável para o volume que trabalhou? Leads no X e taxa com intervalo de 95% no Y.",
+  "demonstrates": [
+    "Intervalo de Wilson calculado em TypeScript e assimétrico perto de 0% e 100%",
+    "ErrorBar direction y com dataKey em par de distâncias a partir do ponto",
+    "Serifas curtas e traço em tom de texto discreto",
+    "Subtítulo com o tipo de intervalo desenhado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

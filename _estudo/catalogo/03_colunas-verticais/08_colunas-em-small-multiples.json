@@ -1,0 +1,70 @@
+{
+  "slug": "08_colunas-em-small-multiples",
+  "nome": "Colunas em small multiples",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "O mesmo gráfico de colunas repetido em painéis pequenos, um por série, numa grade HTML com Tailwind e um BarChart mínimo por célula. A escala é comum por padrão, calculada uma vez sobre o conjunto; o eixo de períodos aparece só na linha de baixo e os painéis são ordenados por uma medida. Cada painel guarda a forma da própria série, o que o agrupado com muitas séries destrói.",
+  "quando_usar": [
+    "De 4 a 12 séries da mesma medida por período, que não cabem num gráfico só.",
+    "Comparar a forma de cada série (pico, queda, sazonalidade) mais que o valor exato de um período.",
+    "Uma série por pessoa, origem ou plataforma, com escala compartilhada para a comparação ser honesta.",
+    "Séries de histórico desigual, desde que o vazio de cada painel fique marcado."
+  ],
+  "quando_evitar": [
+    "Duas ou três séries: colunas agrupadas (modelo 02).",
+    "Escala livre por painel sem aviso: a comparação entre painéis vira mentira; manter escala comum ou avisar em cada painel.",
+    "Mais de 12 painéis num cartão: filtrar, paginar ou usar mapa de calor (15).",
+    "O valor exato de cada período é a pergunta: tabela visual (14).",
+    "Tendência de muitas séries em muitos períodos: pequenos múltiplos de linha (04/09)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-por-origem-em-seis-paineis",
+      "titulo": "Leads por mês em seis origens",
+      "caso_de_uso": "Qual a forma mensal de cada origem de leads, sem amontoar seis séries no mesmo gráfico?",
+      "o_que_demonstra": [
+        "Grade HTML com container query e um BarChart mínimo por célula",
+        "Domínio comum calculado uma vez sobre o conjunto e passado a todos os painéis",
+        "Eixo de meses só na linha de baixo e painéis ordenados pelo total",
+        "Altura fixa por painel e animação desligada para a grade não pesar"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_origem-em-foco",
+      "titulo": "Seis origens com uma em foco",
+      "caso_de_uso": "Como destacar a origem em discussão mantendo as outras cinco como contexto na mesma escala?",
+      "o_que_demonstra": [
+        "Painel em foco em chart-1 com o nome em peso 700; demais painéis em neutro",
+        "Total de cada painel ao lado do título, em Space Grotesk com algarismo tabular",
+        "syncId comum para o cursor andar junto em todos os painéis",
+        "Foco recebido pela prop highlightId, com default no data.ts"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_fechamentos-por-executivo",
+      "titulo": "Fechamentos por mês de 12 executivos",
+      "caso_de_uso": "Como se compara o ritmo de fechamento de 12 executivos na mesma escala, e quem está fora da faixa de win rate?",
+      "o_que_demonstra": [
+        "12 painéis em grade de 3 colunas ordenados por win rate, não por nome",
+        "Win rate com volume ao lado do nome por formatRateWithVolume",
+        "Executivo fora da faixa marcado com ícone e palavra em negative, sem borda interna",
+        "Escala comum a todos os painéis, com o teto dito uma vez no topo da grade"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_historico-curto-e-sem-volume",
+      "titulo": "Painéis com histórico curto e sem volume",
+      "caso_de_uso": "Como mostrar quem tem só dois meses de histórico e quem não teve volume, sem esticar dado nem esconder o vazio?",
+      "o_que_demonstra": [
+        "Meses antes da entrada marcados como sem histórico, no mesmo eixo dos outros painéis",
+        "Painel com todos os meses em zero desenhado plano, com a nota sem volume no período",
+        "Zero medido separado de mês indisponível dentro do mesmo painel",
+        "Frase acessível que lista os painéis com histórico curto e sem volume"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

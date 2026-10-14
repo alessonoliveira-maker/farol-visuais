@@ -1,0 +1,147 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "01_dot-plot-de-cleveland",
+  "versoes": {
+    "v1_ticket-medio-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Mediana em text-muted tracejado 3 3, distinta da grade de R$ 240 mil nos dois temas; rótulos com halo sobre a linha, ordem e escala declaradas. Observações no README: TIP-1 no rótulo da mediana, margem direita justa, truncate na linha de leitura",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:33:54.337Z",
+      "impressao": "1e696ceaa54d513a669d6216a30104146b4f99e7",
+      "arquivos": {
+        "Chart.tsx": "6b7df8028c05ca0894c02331d9bf469f35852ad9",
+        "data.ts": "d46b1d13d0772086c869d43949a1dcc2439f76e1",
+        "meta.json": "36e1276344a1a13b2f07ca5b0a150ef3ef1a45c9"
+      }
+    },
+    "v2_desvio-contra-a-meta-com-marca-direcional": {
+      "veredito": "aprovado",
+      "nota": "Zero no meio, barra a partir do zero, desvio zero escrito, contagem conferida; barra a 0,7 medida à mão em 3,03:1 no claro. Quatro observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:45.319Z",
+      "impressao": "621772ffb8d2563a3db090d98340504305999910",
+      "arquivos": {
+        "Chart.tsx": "32413aeea739ec6002bb22010d293c1aa094eece",
+        "data.ts": "a66e2a46ddd9a65546b418c96ad01bfa0e5ab20b",
+        "meta.json": "41daefe897f6e1703c0727e7bcbf4ed8dc22961d"
+      }
+    },
+    "v3_cpl-bruto-qualificado-e-meta-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Ordem pela distância conferida, três formas, polaridade certa na coluna. Observações no README: cabeçalho da coluna sem o sujeito e empate de bruto e qualificado em lascas",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:45.843Z",
+      "impressao": "af7fecc2a1eba4b4c11c4d25a5a3a011140dcd93",
+      "arquivos": {
+        "Chart.tsx": "5ecc2402de833c9256c424b236720cd1924511ae",
+        "data.ts": "6603a22a9c5ae48399f2f23fb5135ca8a957fb79",
+        "meta.json": "69a2709f45f05ec6e9b634766bd8df48438eb025"
+      }
+    },
+    "v4_sla-por-sdr-em-paineis-com-semana-vazia": {
+      "veredito": "aprovado",
+      "nota": "Teto, anel e amostras em text-muted; texto pintado sobre o tracejado e legível nos dois temas; domínio único, 7 de 39 conferido, ausência fora da escala. Observações no README: legenda abaixo, teto sem rótulo no painel, TIP-1, truncate",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:33:54.915Z",
+      "impressao": "b8f1e38e5a1bd52e2f54f2cad46595e79ec8c02e",
+      "arquivos": {
+        "Chart.tsx": "10658557ee63c36fb7eeff1fa9d6e98b610d716e",
+        "data.ts": "bb8aedf2b7d03acb1fdc375fde2d228e114bbb6e",
+        "meta.json": "68aed84278297cef65ad34b84f4e1f1915a27915"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-medio-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 13, secao 17.2 Referencia e TOK-5: mediana em --line-strong (1,79:1 e 1,83:1) cola na grade de R$ 240 mil e some; trocar por --text-muted tracejado 3 3 e conferir a separacao nos dois temas",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:35.909Z",
+      "impressao": "3d9fa52541c620e05df39b62e4d3019020ccae01",
+      "arquivos": {
+        "Chart.tsx": "e338246e64cbf67cddf5e3495cad28995655db04",
+        "data.ts": "d46b1d13d0772086c869d43949a1dcc2439f76e1",
+        "meta.json": "36e1276344a1a13b2f07ca5b0a150ef3ef1a45c9"
+      }
+    },
+    {
+      "versao": "v1_ticket-medio-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 13, seção 17.2 Referência e TOK-5: mediana em --line-strong (1,79:1 e 1,83:1) cola na grade de R$ 240 mil e some; trocar por --text-muted tracejado 3 3 e conferir a separação nos dois temas",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:44.835Z",
+      "impressao": "3d9fa52541c620e05df39b62e4d3019020ccae01",
+      "arquivos": {
+        "Chart.tsx": "e338246e64cbf67cddf5e3495cad28995655db04",
+        "data.ts": "d46b1d13d0772086c869d43949a1dcc2439f76e1",
+        "meta.json": "36e1276344a1a13b2f07ca5b0a150ef3ef1a45c9"
+      }
+    },
+    {
+      "versao": "v2_desvio-contra-a-meta-com-marca-direcional",
+      "veredito": "aprovado",
+      "nota": "Zero no meio, barra a partir do zero, desvio zero escrito, contagem conferida; barra a 0,7 medida à mão em 3,03:1 no claro. Quatro observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:45.319Z",
+      "impressao": "621772ffb8d2563a3db090d98340504305999910",
+      "arquivos": {
+        "Chart.tsx": "32413aeea739ec6002bb22010d293c1aa094eece",
+        "data.ts": "a66e2a46ddd9a65546b418c96ad01bfa0e5ab20b",
+        "meta.json": "41daefe897f6e1703c0727e7bcbf4ed8dc22961d"
+      }
+    },
+    {
+      "versao": "v3_cpl-bruto-qualificado-e-meta-por-origem",
+      "veredito": "aprovado",
+      "nota": "Ordem pela distância conferida, três formas, polaridade certa na coluna. Observações no README: cabeçalho da coluna sem o sujeito e empate de bruto e qualificado em lascas",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:45.843Z",
+      "impressao": "af7fecc2a1eba4b4c11c4d25a5a3a011140dcd93",
+      "arquivos": {
+        "Chart.tsx": "5ecc2402de833c9256c424b236720cd1924511ae",
+        "data.ts": "6603a22a9c5ae48399f2f23fb5135ca8a957fb79",
+        "meta.json": "69a2709f45f05ec6e9b634766bd8df48438eb025"
+      }
+    },
+    {
+      "versao": "v4_sla-por-sdr-em-paineis-com-semana-vazia",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 31, ROT-7: o tracejado do teto é pintado por cima de sem lead e de na semana; pintar o texto depois da linha. Perguntas 11 e 20, seção 17.2 e TOK-5: teto, anel de ausência e amostras da legenda em --line-strong (1,83:1; 1,59:1 na zebra clara); trocar por --text-muted",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:28:46.394Z",
+      "impressao": "803462fd7f45872022f1f0461d52f559868b47db",
+      "arquivos": {
+        "Chart.tsx": "e42e2dd4e1119782da0d2dbe3c59970e32b4eade",
+        "data.ts": "bb8aedf2b7d03acb1fdc375fde2d228e114bbb6e",
+        "meta.json": "84285668ad377e3f8cd5765fa4cbaea851dd7f8c"
+      }
+    },
+    {
+      "versao": "v1_ticket-medio-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Mediana em text-muted tracejado 3 3, distinta da grade de R$ 240 mil nos dois temas; rótulos com halo sobre a linha, ordem e escala declaradas. Observações no README: TIP-1 no rótulo da mediana, margem direita justa, truncate na linha de leitura",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:33:54.337Z",
+      "impressao": "1e696ceaa54d513a669d6216a30104146b4f99e7",
+      "arquivos": {
+        "Chart.tsx": "6b7df8028c05ca0894c02331d9bf469f35852ad9",
+        "data.ts": "d46b1d13d0772086c869d43949a1dcc2439f76e1",
+        "meta.json": "36e1276344a1a13b2f07ca5b0a150ef3ef1a45c9"
+      }
+    },
+    {
+      "versao": "v4_sla-por-sdr-em-paineis-com-semana-vazia",
+      "veredito": "aprovado",
+      "nota": "Teto, anel e amostras em text-muted; texto pintado sobre o tracejado e legível nos dois temas; domínio único, 7 de 39 conferido, ausência fora da escala. Observações no README: legenda abaixo, teto sem rótulo no painel, TIP-1, truncate",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:33:54.915Z",
+      "impressao": "b8f1e38e5a1bd52e2f54f2cad46595e79ec8c02e",
+      "arquivos": {
+        "Chart.tsx": "10658557ee63c36fb7eeff1fa9d6e98b610d716e",
+        "data.ts": "bb8aedf2b7d03acb1fdc375fde2d228e114bbb6e",
+        "meta.json": "68aed84278297cef65ad34b84f4e1f1915a27915"
+      }
+    }
+  ]
+}

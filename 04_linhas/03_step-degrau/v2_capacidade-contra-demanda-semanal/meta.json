@@ -1,0 +1,12 @@
+{
+  "title": "Capacidade em degrau contra demanda semanal",
+  "useCase": "Em quais semanas de 2026 a demanda de entradas passou do teto de capacidade da pré-vendas?",
+  "demonstrates": [
+    "Teto em degrau em --line-strong e demanda em linha comum em --chart-1",
+    "Semanas acima do teto marcadas com ponto e excedente escrito",
+    "Mesma unidade num eixo só, sem área nem eixo duplo",
+    "Frase acessível com o total de semanas acima do teto"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

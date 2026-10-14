@@ -1,0 +1,121 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "01_barra-de-progresso-linear",
+  "versoes": {
+    "v1_receita-do-trimestre-contra-meta": {
+      "veredito": "aprovado",
+      "nota": "Barra do zero, dominio com folga, meta marcada e o que falta escrito; trilho pouco visivel no tema claro e caso de uso cortado pela moldura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:03.604Z",
+      "impressao": "d792dd325200bc2c4a6b251794718afef7fa6227",
+      "arquivos": {
+        "Chart.tsx": "02a5a73e5ee0f9c3af0a06e3f3a879f1b6e0b121",
+        "data.ts": "cafbef97f15404f367e1467410344afd05f915aa",
+        "meta.json": "69e3f8d5766f0c0f04acea88c2c94984e22cc754"
+      }
+    },
+    "v2_agendas-no-ritmo-do-mes": {
+      "veredito": "aprovado",
+      "nota": "Ritmo esperado, projecao como premissa e lacuna escrita; o traco do ritmo se confunde com as listras da projecao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:09.560Z",
+      "impressao": "b24635360fae1d45a4a39ed5acea5e94f92b13ec",
+      "arquivos": {
+        "Chart.tsx": "f545357f43dff5f66798f90d20eaac55d0ce3daf",
+        "data.ts": "0e31dcae907460abf19030517fc906893db1a123",
+        "meta.json": "6c1db6e76186d21a79c1d5952577ca5ab79c30b6"
+      }
+    },
+    "v3_cota-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Conserto do zero aceito nos dois temas: cota sem progresso agora desenha traco de base e nao fica indistinguivel de recorte do eixo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.696Z",
+      "impressao": "d2d30e9ab526cb24a4fdd4bf81c566cdcf35cf26",
+      "arquivos": {
+        "Chart.tsx": "bbdfdf8f99b9d195066329962dd9ad0a3612fca9",
+        "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
+        "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
+      }
+    },
+    "v4_filas-contra-teto-com-estouro": {
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida, escala comum, premissa no rotulo e indisponivel sem zero; a demanda de cada fila nao aparece escrita.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:18.717Z",
+      "impressao": "31d3e791b0847644156f192e383952e161f42dcd",
+      "arquivos": {
+        "Chart.tsx": "6e268aac0042463f56c7a632848bbb657330d2c0",
+        "data.ts": "ac2975863acc646104c0df215e8fbe5cdd639519",
+        "meta.json": "f254bd794080323d112917e38b6da614cd9d4614"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-trimestre-contra-meta",
+      "veredito": "aprovado",
+      "nota": "Barra do zero, dominio com folga, meta marcada e o que falta escrito; trilho pouco visivel no tema claro e caso de uso cortado pela moldura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:03.604Z",
+      "impressao": "d792dd325200bc2c4a6b251794718afef7fa6227",
+      "arquivos": {
+        "Chart.tsx": "02a5a73e5ee0f9c3af0a06e3f3a879f1b6e0b121",
+        "data.ts": "cafbef97f15404f367e1467410344afd05f915aa",
+        "meta.json": "69e3f8d5766f0c0f04acea88c2c94984e22cc754"
+      }
+    },
+    {
+      "versao": "v2_agendas-no-ritmo-do-mes",
+      "veredito": "aprovado",
+      "nota": "Ritmo esperado, projecao como premissa e lacuna escrita; o traco do ritmo se confunde com as listras da projecao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:09.560Z",
+      "impressao": "b24635360fae1d45a4a39ed5acea5e94f92b13ec",
+      "arquivos": {
+        "Chart.tsx": "f545357f43dff5f66798f90d20eaac55d0ce3daf",
+        "data.ts": "0e31dcae907460abf19030517fc906893db1a123",
+        "meta.json": "6c1db6e76186d21a79c1d5952577ca5ab79c30b6"
+      }
+    },
+    {
+      "versao": "v3_cota-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Escala comum, ordem por atingimento, excedente e sem meta tratados; falta marca no 100 por cento e a raiz usa role table sem linhas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:13.989Z",
+      "impressao": "97e1495d58d0508ea87970ed714df14758d03f9a",
+      "arquivos": {
+        "Chart.tsx": "d2de6572483098b3f53949ba37e954b854ca6281",
+        "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
+        "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
+      }
+    },
+    {
+      "versao": "v4_filas-contra-teto-com-estouro",
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida, escala comum, premissa no rotulo e indisponivel sem zero; a demanda de cada fila nao aparece escrita.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:52:18.717Z",
+      "impressao": "31d3e791b0847644156f192e383952e161f42dcd",
+      "arquivos": {
+        "Chart.tsx": "6e268aac0042463f56c7a632848bbb657330d2c0",
+        "data.ts": "ac2975863acc646104c0df215e8fbe5cdd639519",
+        "meta.json": "f254bd794080323d112917e38b6da614cd9d4614"
+      }
+    },
+    {
+      "versao": "v3_cota-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Conserto do zero aceito nos dois temas: cota sem progresso agora desenha traco de base e nao fica indistinguivel de recorte do eixo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.696Z",
+      "impressao": "d2d30e9ab526cb24a4fdd4bf81c566cdcf35cf26",
+      "arquivos": {
+        "Chart.tsx": "bbdfdf8f99b9d195066329962dd9ad0a3612fca9",
+        "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
+        "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
+      }
+    }
+  ]
+}

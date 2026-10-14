@@ -1,0 +1,14 @@
+{
+  "title": "Motivos de perda por executivo",
+  "useCase": "Qual executivo perde mais por falta de fit, em proporção das próprias perdas, entre os 12 do time.",
+  "demonstrates": [
+    "Doze barras ordenadas pela fatia de sem fit, que fica na base da pilha",
+    "Rótulo de percentual centrado no segmento, no texto de contraste do token",
+    "Rótulo suprimido quando o segmento não comporta o texto",
+    "n de cada executivo escrito à direita da barra, como n = 214",
+    "Fatia de sem fit do time inteiro como linha de referência anotada"
+  ],
+  "canvas": { "width": 640, "height": 940 },
+  "frame": "card",
+  "notes": "Altura sai da conta da ESP-6: ROW_STEP de 58 px para os 12 executivos, engrossando a marca para 20,88 px e passando o piso de 18 px do rótulo interno de 12 px."
+}

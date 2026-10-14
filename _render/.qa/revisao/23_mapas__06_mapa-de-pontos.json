@@ -1,0 +1,173 @@
+{
+  "familia": "23_mapas",
+  "modelo": "06_mapa-de-pontos",
+  "versoes": {
+    "v1_eventos-presenciais-por-cidade": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas. Os 42 pontos ficam inteiros dentro do svg (tinta de x 89,2 a 195,9 em 204 px), a macrorregião sem cidade escreve formatUnavailable sem amostra e o zero medido do Norte vai em anel com o 0 escrito. Contraste mínimo de marca 3,59:1 no claro. Observações no README, segunda revisão de 2026-10-13: tarja do halo da anotação fora do contorno, Ribeirão Preto e Uberlândia com 0,78 px de sobreposição, contagem do rodapé sem substantivo, números da linha de leitura sem tabular-nums.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:32.777Z",
+      "impressao": "fed99da494d173849090c96a3815fd878c96db5b",
+      "arquivos": {
+        "Chart.tsx": "8d1f638613ccd8c88c446de753cb9ae9838551d7",
+        "data.ts": "86ae5c92f558f5012d737f9072a62b76cd1e6dda",
+        "meta.json": "70127d8c1a65a53c77b733ab611ea80b2a16d516"
+      }
+    },
+    "v2_raio-de-atuacao-dos-escritorios": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 15. Seção 14.1, constante com consequência no render (colisão): um ponto cheio de Jundiaí não acha lugar em 900 tentativas e cai na coordenada da cidade sem passar por teste nenhum (let chosen = origin, Chart.tsx:129), a 9,20 px do centro do selo de São Paulo; 1,55 dos 4 px do preenchimento ficam sob o selo, nos dois temas, e o notes do meta.json diz que todo ponto fica longe do selo. A faixa entre o selo e a folga da elipse não comporta os 16 pontos de São Paulo. Trocar a queda na origem por busca determinística que só aceita posição válida e abrir a faixa (selo menor, MIN_GAP menor ou contagem menor) até todo ponto ficar a pelo menos BADGE_CLEAR do selo. Contagens, classes, rótulos e elipses estão certos. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:33.357Z",
+      "impressao": "347f4eb6695de7a1e7501bb0194290bcedf26e55",
+      "arquivos": {
+        "Chart.tsx": "2348ec627bfe6a5154983d6e75e8898037dd8488",
+        "data.ts": "1f433f088a48b4660a82b4995a1a6ecc89c46b9e",
+        "meta.json": "194fb36d2415515199c473565d26ea3d8af0661f"
+      }
+    },
+    "v3_um-ponto-a-cada-cinco-leads-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas. Um mapa por origem na mesma escala, nome, contagem e percentual escritos sobre cada um, percentuais somando 100, 1.960 pontos para 9.800 leads. Participação de cada origem na tinta a até 2,5 pontos da participação em leads no país e a até 3,5 na caixa de São Paulo. Contraste mínimo de marca 3,25:1 (chart-6 a 0,80 no claro), medido à mão porque a OPACIDADE-MARCA não mede esta versão. Observações no README, segunda revisão de 2026-10-13: saturação declarada na tela (tinta de 77% a 97% do nominal por mapa; Rio de Janeiro e Distrito Federal saem iguais entre origens), caixas de UF sobrepostas, sobra de 110 px à direita.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:33.968Z",
+      "impressao": "404c0920bceba150ec22b8348ed118808cb7c91a",
+      "arquivos": {
+        "Chart.tsx": "c8e52cdd296d3f20c8c0664ea970e8c867e48025",
+        "data.ts": "671716477dee027453878954428a5d8911009c44",
+        "meta.json": "0578a657b0f3b1e1da4cbd53dfbc6624a71b058e"
+      }
+    },
+    "v4_leads-sem-municipio-fora-do-mapa": {
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 3. Seção 14.1, encoding de posição: o afastamento entre cachos leva 64 dos 184 pontos (35%) para fora do contorno do país, entre eles os 18 do Rio de Janeiro e os 10 de Curitiba, desenhados no mar, e o cacho de São Paulo fica centrado a 38,7 px da cidade (cerca de 740 km), sobre o Mato Grosso do Sul; visível nos dois temas. A espiral dá de 6,2 a 7,2 px entre centros, e não os 4 px do comentário, e por isso o cacho de São Paulo tem 52 px de diâmetro. Cacho compacto, nenhum ponto com centro fora do polígono do país (o ray casting da v3 serve) e deslocamento do cacho com teto, ou valor de ponto maior. Card, lista, estado vazio e frase acessível estão certos. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:54.974Z",
+      "impressao": "4b6ac889e4aa7c810ea00085bf73a15ef6942aea",
+      "arquivos": {
+        "Chart.tsx": "b59c647ad227509d5bd5123687902a6ca1cc0ec3",
+        "data.ts": "510465e5f0a66c5b727da2c4001694a88d885c63",
+        "meta.json": "a8ba612aca88bc5de5853e9b9934dfbc38d61ab1"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_eventos-presenciais-por-cidade",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 8. ESP-3 com consequência no render: um dos três pontos de Recife sai cortado pela borda direita do svg, 1,40 px dos 5,2 px do preenchimento (centro em x 182,80, largura 184), nos dois temas; dar margem de pelo menos 9 px ao viewBox e à projeção. EST-1b e DAD-2, ausência exibida como zero: macrorregião sem cidade na lista escreve 0 com amostra de ponto cheio (region.events ou 0, Chart.tsx:183); escrever formatUnavailable sem amostra ou tirar a região da lista. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:32:54.916Z",
+      "impressao": "4426236401ca9d03bd76502ebef36264457e73f7",
+      "arquivos": {
+        "Chart.tsx": "7d6671a5c4353e7190bd0d374db92db2cd28e046",
+        "data.ts": "86ae5c92f558f5012d737f9072a62b76cd1e6dda",
+        "meta.json": "70127d8c1a65a53c77b733ab611ea80b2a16d516"
+      }
+    },
+    {
+      "versao": "v2_raio-de-atuacao-dos-escritorios",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1, 3, 31, 13 e 15. Seção 14.1, encoding: a classe dentro ou fora é medida no ponto sorteado e não na cidade; a tela diz 55 dentro (38 por cento) e o data.ts dá 86 de 143 (60 por cento), e 28 dos 36 clientes da cidade de um escritório saem como fora do raio; classificar por coordenada que está no dado e não deixar o espalhamento atravessar a elipse. ROT-7 marca fina e GEO-4: os nomes Brasília e São Paulo começam colados num anel de cliente e o halo cobre um anel do Rio de Janeiro; posicionar o nome testando contra os pontos. Sobreposição: 64 por cento do perímetro da elipse de São Paulo coberto por ponto. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:32:55.472Z",
+      "impressao": "93363efcbf15692ad7b13917abda37c61183694a",
+      "arquivos": {
+        "Chart.tsx": "d24f6a58de74ae3cbfb97d740d2484db1b8e587c",
+        "data.ts": "d8411123440481939b2f03ba13aa7a79bfeb4243",
+        "meta.json": "abad469578467ddf772ae94db7952beed12d5c15"
+      }
+    },
+    {
+      "versao": "v3_um-ponto-a-cada-cinco-leads-por-origem",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15, 11 e 19. Seção 14.1, encoding: a origem pintada por último toma o mapa; Redes sociais tem 22,8 por cento dos leads e 35,1 por cento da tinta à vista (61 por cento na caixa do RJ), 462 dos 1.960 pontos ficam com menos de 10 por cento à vista e o DF vira um borrão da cor do cartão (1,03:1 contra o contorno do país no claro); pequenos múltiplos por origem ou pintura intercalada, e tirar o stroke do path único. COR-8 e ACE-2: slots 2 e 6 juntos sem rótulo em cada marca, distância de cor de 17,5 em visão normal e 3,6 em deuteranopia no claro. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:32:56.017Z",
+      "impressao": "248ec454dbcc05c84241627d88e84453d14aaa11",
+      "arquivos": {
+        "Chart.tsx": "21a8486226b6a498d9e241bccfda8595d81b07d7",
+        "data.ts": "671716477dee027453878954428a5d8911009c44",
+        "meta.json": "a15e7e90ec1055ce7f97ffce690550041a1142d2"
+      }
+    },
+    {
+      "versao": "v4_leads-sem-municipio-fora-do-mapa",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15. Seção 14.1, encoding: os pontos de cada cidade caem num disco de 3,22 px de raio que comporta a área de 8,4 pontos; São Paulo com 36 pontos mostra tinta de 4,7 e Belo Horizonte com 13 mostra 5,9; dos 184 pontos, 44 têm menos de 10 por cento à vista; fazer o cacho crescer com a contagem, com distância mínima entre centros, e dizer na tela que a posição em volta da cidade é ilustrativa. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:32:56.611Z",
+      "impressao": "539cefcde3920c9a524641dfc0c078a5a8c85e71",
+      "arquivos": {
+        "Chart.tsx": "e639d556d27673b08789b865e77f0a0239e89449",
+        "data.ts": "510465e5f0a66c5b727da2c4001694a88d885c63",
+        "meta.json": "cf03c47a866380f378b092e6166e7934595cc892"
+      }
+    },
+    {
+      "versao": "v1_eventos-presenciais-por-cidade",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas. Os 42 pontos ficam inteiros dentro do svg (tinta de x 89,2 a 195,9 em 204 px), a macrorregião sem cidade escreve formatUnavailable sem amostra e o zero medido do Norte vai em anel com o 0 escrito. Contraste mínimo de marca 3,59:1 no claro. Observações no README, segunda revisão de 2026-10-13: tarja do halo da anotação fora do contorno, Ribeirão Preto e Uberlândia com 0,78 px de sobreposição, contagem do rodapé sem substantivo, números da linha de leitura sem tabular-nums.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:32.777Z",
+      "impressao": "fed99da494d173849090c96a3815fd878c96db5b",
+      "arquivos": {
+        "Chart.tsx": "8d1f638613ccd8c88c446de753cb9ae9838551d7",
+        "data.ts": "86ae5c92f558f5012d737f9072a62b76cd1e6dda",
+        "meta.json": "70127d8c1a65a53c77b733ab611ea80b2a16d516"
+      }
+    },
+    {
+      "versao": "v2_raio-de-atuacao-dos-escritorios",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15. Seção 14.1, constante com consequência no render (colisão): um ponto cheio de Jundiaí não acha lugar em 900 tentativas e cai na coordenada da cidade sem passar por teste nenhum (let chosen = origin, Chart.tsx:129), a 9,20 px do centro do selo de São Paulo; 1,55 dos 4 px do preenchimento ficam sob o selo, nos dois temas, e o notes do meta.json diz que todo ponto fica longe do selo. A faixa entre o selo e a folga da elipse não comporta os 16 pontos de São Paulo. Trocar a queda na origem por busca determinística que só aceita posição válida e abrir a faixa (selo menor, MIN_GAP menor ou contagem menor) até todo ponto ficar a pelo menos BADGE_CLEAR do selo. Contagens, classes, rótulos e elipses estão certos. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:33.357Z",
+      "impressao": "347f4eb6695de7a1e7501bb0194290bcedf26e55",
+      "arquivos": {
+        "Chart.tsx": "2348ec627bfe6a5154983d6e75e8898037dd8488",
+        "data.ts": "1f433f088a48b4660a82b4995a1a6ecc89c46b9e",
+        "meta.json": "194fb36d2415515199c473565d26ea3d8af0661f"
+      }
+    },
+    {
+      "versao": "v3_um-ponto-a-cada-cinco-leads-por-origem",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas. Um mapa por origem na mesma escala, nome, contagem e percentual escritos sobre cada um, percentuais somando 100, 1.960 pontos para 9.800 leads. Participação de cada origem na tinta a até 2,5 pontos da participação em leads no país e a até 3,5 na caixa de São Paulo. Contraste mínimo de marca 3,25:1 (chart-6 a 0,80 no claro), medido à mão porque a OPACIDADE-MARCA não mede esta versão. Observações no README, segunda revisão de 2026-10-13: saturação declarada na tela (tinta de 77% a 97% do nominal por mapa; Rio de Janeiro e Distrito Federal saem iguais entre origens), caixas de UF sobrepostas, sobra de 110 px à direita.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:33.968Z",
+      "impressao": "404c0920bceba150ec22b8348ed118808cb7c91a",
+      "arquivos": {
+        "Chart.tsx": "c8e52cdd296d3f20c8c0664ea970e8c867e48025",
+        "data.ts": "671716477dee027453878954428a5d8911009c44",
+        "meta.json": "0578a657b0f3b1e1da4cbd53dfbc6624a71b058e"
+      }
+    },
+    {
+      "versao": "v4_leads-sem-municipio-fora-do-mapa",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 3. Seção 14.1, encoding de posição: o afastamento entre cachos leva 64 dos 184 pontos (35%) para fora do contorno do país, entre eles os 18 do Rio de Janeiro e os 10 de Curitiba, desenhados no mar, e o cacho de São Paulo fica centrado a 38,7 px da cidade (cerca de 740 km), sobre o Mato Grosso do Sul; visível nos dois temas. A espiral dá de 6,2 a 7,6 px entre centros, e não os 4 px do comentário, e por isso o cacho de São Paulo tem 52 px de diâmetro. Cacho compacto, nenhum ponto com centro fora do polígono do país (o ray casting da v3 serve) e deslocamento do cacho com teto, ou valor de ponto maior. Card, lista, estado vazio e frase acessível estão certos. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:34.602Z",
+      "impressao": "4b6ac889e4aa7c810ea00085bf73a15ef6942aea",
+      "arquivos": {
+        "Chart.tsx": "b59c647ad227509d5bd5123687902a6ca1cc0ec3",
+        "data.ts": "510465e5f0a66c5b727da2c4001694a88d885c63",
+        "meta.json": "a8ba612aca88bc5de5853e9b9934dfbc38d61ab1"
+      }
+    },
+    {
+      "versao": "v4_leads-sem-municipio-fora-do-mapa",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 3. Seção 14.1, encoding de posição: o afastamento entre cachos leva 64 dos 184 pontos (35%) para fora do contorno do país, entre eles os 18 do Rio de Janeiro e os 10 de Curitiba, desenhados no mar, e o cacho de São Paulo fica centrado a 38,7 px da cidade (cerca de 740 km), sobre o Mato Grosso do Sul; visível nos dois temas. A espiral dá de 6,2 a 7,2 px entre centros, e não os 4 px do comentário, e por isso o cacho de São Paulo tem 52 px de diâmetro. Cacho compacto, nenhum ponto com centro fora do polígono do país (o ray casting da v3 serve) e deslocamento do cacho com teto, ou valor de ponto maior. Card, lista, estado vazio e frase acessível estão certos. Parecer em validation/revisao_23_mapas__06_mapa-de-pontos_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:53:54.974Z",
+      "impressao": "4b6ac889e4aa7c810ea00085bf73a15ef6942aea",
+      "arquivos": {
+        "Chart.tsx": "b59c647ad227509d5bd5123687902a6ca1cc0ec3",
+        "data.ts": "510465e5f0a66c5b727da2c4001694a88d885c63",
+        "meta.json": "a8ba612aca88bc5de5853e9b9934dfbc38d61ab1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Ticket por origem com amostra pequena",
+  "useCase": "Ticket mediano das vendas ganhas por origem, quando três origens fecharam menos de 5 negócios.",
+  "demonstrates": [
+    "Regra n menor que 5: sem faixa, só os casos individuais",
+    "Regra n menor que 10: sem marcador de mediana, com nota no rodapé",
+    "Origem sem negócio mantida na lista, com sem venda no período",
+    "Dica que distingue ausência de dado de valor zero"
+  ],
+  "canvas": { "width": 640, "height": 490 },
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas 640 x 490 em vez de card. Conta: 8 linhas x 34 px = 272 (duas linhas por rótulo, nome e n), mais 8 de margem superior, 26 de eixo, 24 de linha de leitura e 24 de nota = 354 px; o corpo do card só tem 241,5 px, e o de 640 x 490 tem 371,5 px. A faixa de n entre 5 e 9 usa a mediana como centro do ErrorBar sem desenhar o marcador, e os casos usam --text-muted com 0,80 de opacidade (0,72 não passa de 3:1 sobre a zebra, ACE-5)."
+}

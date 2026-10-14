@@ -1,0 +1,13 @@
+{
+  "title": "Receita mensal e acumulado contra meta anual",
+  "useCase": "Quanto entrou de receita reconhecida em cada mês de 2026 e quanto falta para a meta anual de R$ 10 mi?",
+  "demonstrates": [
+    "Bar no eixo do mês e Line no eixo do acumulado, cada eixo na cor da série",
+    "Eixo direito de 0 ao maior valor entre meta anual e acumulado",
+    "ReferenceLine da meta anual com o yAxisId do acumulado e rótulo",
+    "Meses futuros como null nas duas séries, sem coluna zerada",
+    "Ponto e rótulo só no último mês fechado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

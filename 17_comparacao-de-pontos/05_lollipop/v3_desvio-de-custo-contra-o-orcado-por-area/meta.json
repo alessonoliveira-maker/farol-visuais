@@ -1,0 +1,14 @@
+{
+  "title": "Desvio de custo contra o orçado por área",
+  "useCase": "Diretoria: quanto o custo por unidade entregue de cada uma das 18 áreas ficou acima ou abaixo do orçado.",
+  "demonstrates": [
+    "Bar com dataKey do par zero e desvio; shape com Math.min e Math.abs",
+    "ReferenceLine forte no zero, rotulada como orçado",
+    "Rótulos de categoria fixos à esquerda, fora da área de dados",
+    "Domínio simétrico calculado do dado e cor pela polaridade: acima do orçado é ruim",
+    "Ordem pelo desvio e sinal no rótulo, sem depender da cor"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O catálogo pede domínio simétrico do registry de métricas, mas o registry está fora da lista de imports da seção 6 do contrato; o domínio simétrico sai do próprio dado: maior desvio absoluto vezes LABEL_ROOM_FACTOR (1,5), arredondado para cima em múltiplo de 2, para o rótulo do desvio extremo caber do lado dele sem invadir a coluna de nomes. Conta do corpo: canvas alto 640x560 dá 574x441,5 com o caso de uso em uma linha; 18 linhas de ROW_STEP 18 mais margem de 24 dão 348 px, e a linha de leitura e a legenda somam 52 px, total 400 px."
+}

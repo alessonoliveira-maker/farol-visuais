@@ -1,0 +1,74 @@
+{
+  "slug": "07_rosa-de-nightingale",
+  "nome": "Rosa de Nightingale",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Setores de ângulo igual, um por passo de um ciclo, com o raio pela raiz quadrada do valor para que a área, e não o raio, seja proporcional. Com furo central a raiz fica por fora da soma inteira, Math.sqrt(rMin ** 2 + (rMax ** 2 - rMin ** 2) * (v / topo)), porque a área de um setor de anel vale r² menos rMin² e não r²; a forma com a raiz por dentro parece corrigida e não está. Também chamada coxcomb ou área polar. Absorve as colunas radiais e rosa da família 18, com a regra de declarar se o raio é linear ou por área; no Farol, o raio é sempre por área, e a peça escreve no rodapé que a grandeza lida é a área.",
+  "quando_usar": [
+    "Magnitude em ciclo de 12 meses ou 7 dias, onde o círculo significa alguma coisa",
+    "Peça de capa que mostra sazonalidade com a média como referência",
+    "Composição empilhada de até 3 camadas por passo do ciclo, com raio acumulado em raiz quadrada"
+  ],
+  "quando_evitar": [
+    "Categorias sem ciclo: colunas (03) ou barra horizontal (02)",
+    "Várias métricas por categoria: radar (18)",
+    "Leitura exata de valores mês a mês: colunas com rótulo (03)",
+    "Raio linear no valor: a área cresce ao quadrado e exagera o pico",
+    "Raiz quadrada por dentro do piso de raio: ignora o furo central e ainda exagera o pequeno"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_investimento-de-midia-por-mes",
+      "titulo": "Investimento de mídia por mês",
+      "caso_de_uso": "Marketing: como o investimento em mídia paga se distribuiu pelos 12 meses de 2025, com área proporcional ao valor.",
+      "o_que_demonstra": [
+        "Pie com 12 itens de value 1 para ângulo igual e shape desenhando Sector",
+        "Raio pela raiz quadrada com o furo central dentro da raiz, área proporcional ao valor",
+        "Anéis de escala em circle, pintados depois dos setores, com o topo escrito no miolo",
+        "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+        "Nome do mês no perímetro por formatMonthShort, em texto horizontal"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_meses-acima-da-media",
+      "titulo": "Meses acima da média de investimento",
+      "caso_de_uso": "Marketing: quais meses de 2025 ficaram acima da média mensal de investimento em mídia e qual foi o maior.",
+      "o_que_demonstra": [
+        "Anel tracejado da média mensal, pela mesma conta de raio e por cima das pétalas",
+        "Meses acima da média em chart-1 e abaixo em line-strong com valor escrito",
+        "Maior mês com nome e valor em peso 700",
+        "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+        "Frase acessível com a média, o maior mês e quantos ficaram acima"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_custo-mensal-em-tres-camadas",
+      "titulo": "Custo mensal em três camadas",
+      "caso_de_uso": "Diretoria: como o custo de cada mês de 2025 se reparte entre mídia, time e estrutura, e em que meses a mídia pesa mais.",
+      "o_que_demonstra": [
+        "Setores empilhados com raio acumulado pela mesma fórmula, sobre o total da pilha",
+        "Teto de escala fixo com o corte declarado: tarja de quebra, marca fora do anel e valor escrito",
+        "Desenho em SVG com arcPath próprio, necessário para o empilhamento",
+        "Três camadas em slots 1, 3 e 6, com separador em surface-raised",
+        "Legenda acima com amostra e total anual de cada camada"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_ano-com-meses-a-realizar",
+      "titulo": "Investimento de 2026 com meses a realizar",
+      "caso_de_uso": "Marketing: como mostrar 2026 em rosa quando setembro está parcial e outubro a dezembro ainda não têm dado.",
+      "o_que_demonstra": [
+        "Meses sem dado com contorno tracejado text-muted e rótulo a realizar, nunca raio zero",
+        "Piso de raio do mês sem dado que não coincide com valor plausível da escala",
+        "Mês corrente com contorno tracejado e nota de parcial até a data do dado",
+        "Escala calculada só sobre meses fechados, para o parcial não achatar o resto",
+        "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+        "Frase acessível dizendo quantos meses têm dado fechado"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

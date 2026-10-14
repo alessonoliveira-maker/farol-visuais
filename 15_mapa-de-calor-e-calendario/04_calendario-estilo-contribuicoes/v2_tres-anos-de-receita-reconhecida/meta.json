@@ -1,0 +1,13 @@
+{
+  "title": "Receita reconhecida por dia em três anos",
+  "useCase": "A concentração de dezembro se repete nos três anos, ou foi um ano isolado?",
+  "demonstrates": [
+    "Três anos empilhados com a rampa por quartil calculada sobre o conjunto",
+    "Total do ano e total de dezembro escritos ao lado de cada faixa",
+    "Seis dias de falha de carga hachurados, distintos de dia com zero medido",
+    "Rótulos de mês só na primeira faixa e dias da semana alternados"
+  ],
+  "canvas": { "width": 951, "height": 476 },
+  "frame": "card",
+  "notes": "Canvas por número, com a conta escrita (GEO-1). O desenho pede 53 colunas de semana, porque nenhum dos três anos cabe em 52: largura = 30 de rótulo de dia da semana + 53 x 14 menos o vão de 3 + 12 + 104 da coluna de totais = 885; altura = 16 de rótulo de mês + 3 faixas de 95 + 2 vãos de 14 + 12 + 16 de legenda = 357. Na moldura card com 951 px de largura o recuo é 33 por lado, e o caso de uso tem 73 caracteres contra o teto de cerca de 143 numa linha de 885 px, então o cabeçalho é de uma linha: canvas = 885 + 66 por 357 + 118,5, isto é 951 x 475,5, arredondado para 476. O corpo sai 885 x 357,5 e o viewBox é 885 x 357, então a escala fica em 1 e o texto de 11 px chega à tela com 11 px. Os cortes da rampa são os quartis dos dias com valor, e não quatro fatias iguais do máximo: a distribuição é torta, o maior dia do triênio vale quase quatro vezes o dia comum, e em faixas lineares 90% dos dias caíam no primeiro degrau, o que apagava justamente dezembro, que é a pergunta da peça. Cor por quartil não é cor linear, então a legenda escreve o teto de cada degrau em vez de só as pontas da régua. A rampa tem quatro degraus e a lacuna é conhecida e medida: o primeiro degrau mede 3,38:1 no escuro e 2,60:1 no claro contra o cartão, abaixo do piso de 3:1 da WCAG 1.4.11, e o segundo passa raspando no claro. A escolha declarada é dar ao degrau mais claro um contorno de 1 px em text-muted, que mede 5,21:1 e 5,37:1, e carregar a ordem pela régua escrita da legenda e pelos dois totais ao lado de cada faixa, não pelo tom. As colunas são a semana do ano e cada ano começa num dia da semana diferente, então o rótulo de mês vale para a primeira faixa e o degrau de cada faixa marca a virada de mês daquele ano, que pode cair uma coluna antes ou depois. A hachura é desenhada à mão em três diagonais dentro da célula, e não por pattern, porque pattern vive em defs, que não é pintado, e a cor sairia sem resolver no preview."
+}

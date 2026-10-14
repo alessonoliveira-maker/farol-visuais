@@ -1,0 +1,160 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "02_waffle-em-barras",
+  "versoes": {
+    "v1_agendas-por-dia-util": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu: eixo de 28 px, e nos quatro PNGs (escuro, claro e os dois da página) o g de Segunda e a cedilha de Terça têm 6 linhas de tinta sob a linha de base, com 6 linhas livres até a borda. Contagens 12, 17, 21, 24 e 7 conferidas no desenho, soma 81 na legenda e na frase. Observações que seguem (vão de 20%, valor do topo sem substantivo) estão no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:39.508Z",
+      "impressao": "89191407b03472315f13ae3c6d8c768f4b10c962",
+      "arquivos": {
+        "Chart.tsx": "34f98e09e1a54a8279a82e0a5946c57f7053847e",
+        "data.ts": "e2bbf0c5c31b0c9301cb0a9874409ac788897f0a",
+        "meta.json": "cff278dfa5d9e0d77a67e1c0c974da7131212b31"
+      }
+    },
+    "v2_agendas-contra-meta-diaria": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu (eixo de 28 px, g de Segunda e cedilha de Terça com 6 linhas de tinta sob a linha de base nos quatro PNGs). Os rótulos faltaram 3 e faltaram 5 agora ficam 6 px acima da linha da meta, os valores 15 e 13 ficam 3 px abaixo, e a linha passa inteira sob os dois (58 de 116 px de tinta nas três linhas do traço, igual à quinta, onde não há rótulo por perto): o halo não corta o traço. Meta na borda da célula 18, contagens 15, 13, 21, 18 e 9, soma 76 e 17 faltantes conferidas. Seguem como observação no README: meta que não é múltiplo de 3, dois rótulos em Manrope sem tabular-nums, par destaque contra neutro fora do notes.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:55.792Z",
+      "impressao": "5b4b6ebcc8314e3d3470ad271f97bd80d8ceaa1f",
+      "arquivos": {
+        "Chart.tsx": "0357ced94dd07971be9ad64fa0fd3d742f8ec064",
+        "data.ts": "30066457d1d405b4ba4b21373e4cecbdf84be726",
+        "meta.json": "82b4e2136f0cff0203557502a1287e7213f0293d"
+      }
+    },
+    "v3_vitorias-por-mes-e-origem": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante nas 32 perguntas. A ausência agora é vazada na célula e na amostra da legenda: 3 células sem preenchimento, contorno text-muted de 1,5 px, mesmo tamanho externo das 196 cheias (16,33 por 16,55 px), nos dois temas. O eixo escreve parcial até 12/10, sem corte (p com 6 linhas de descendente, 6 livres até a borda, 10 px de folga à direita). Contagens 71, 59, 21, 45 e 3, soma 199. ATENÇÃO antes de colar no Farol, registrada como observação porque nenhuma pergunta nem regra do contrato cobre alvo de clique: a célula vazada só recebe clique no contorno de 1,5 px (fill none sem pointerEvents all; clique no centro medido no navegador, 0 eventos); o teclado funciona. O parecer da primeira passada pedia manter a área clicável e a correção não fez. Demais observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:56.273Z",
+      "impressao": "5de2f0f364e305080beed4a0397701734d2e73d3",
+      "arquivos": {
+        "Chart.tsx": "b2e94ae2e7955e00aae14f81cced8867c1c8d9ef",
+        "data.ts": "e4663dd675868b8ff1068e0f050e06291ef8a5b6",
+        "meta.json": "7ef24ad106a44e3e7c3141e47f2c89195bfc67c0"
+      }
+    },
+    "v4_leads-por-mes-em-celulas-de-dez": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu (eixo de 28 px, g de ago/26 e j de jul/26 com 6 linhas de tinta sob a linha de base nos quatro PNGs). Células conferidas: 21 cheias e 20%, 27 e 80%, 34 e 70%, 15 e 60%; julho sem coleta tracejado com formatUnavailable, agosto com zero medido na régua da base, soma medida 993. Seguem como observação no README: filete de 20% em abr/26 (aviso ESPESSURA-MARCA do check), recorte todo sem coleta cai no bloco de vazio, e o limiar de 300 com célula de 1 lead não cabe no card (leitura do código, ramo não renderizado).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:56.781Z",
+      "impressao": "3ff60a564011b1b8582b0bd324b742dd4e4497ef",
+      "arquivos": {
+        "Chart.tsx": "3ede654edac4b2f8aa0a6edd520799c7f58d5411",
+        "data.ts": "614ab121ebc48728130b53291db4f122d7df3972",
+        "meta.json": "8764e3a17e77b47f230d51e011ef6af685a336bb"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-por-dia-util",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Um bloqueante. Pergunta 15, seção 14.1 (acabamento com consequência no render: texto cortado) e EIX-6b: o descendente dos tiques do eixo sai cortado pela borda de baixo do gráfico, nos dois temas e também no PNG da página. O g de Segunda e a cedilha de Terça perdem 1 px dos 3 px de descendente (tinta até a linha 655 do PNG, borda na 656). X_AXIS_HEIGHT 24 com MARGIN.bottom 0 deixa 2,19 px sob a linha de base. Dar folga embaixo (MARGIN.bottom 4 ou eixo de 28) e conferir o g inteiro nos dois PNGs. O resto foi conferido sem bloqueante. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__02_waffle-em-barras_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:59:40.521Z",
+      "impressao": "d6071782b6da92dfea24aa2200724eea4bffbea9",
+      "arquivos": {
+        "Chart.tsx": "f21abf8d5ef80052099d955e13ed6350d0cfd49d",
+        "data.ts": "e2bbf0c5c31b0c9301cb0a9874409ac788897f0a",
+        "meta.json": "cff278dfa5d9e0d77a67e1c0c974da7131212b31"
+      }
+    },
+    {
+      "versao": "v2_agendas-contra-meta-diaria",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Um bloqueante. Pergunta 15, seção 14.1 (acabamento com consequência no render: texto cortado) e EIX-6b: o descendente dos tiques do eixo sai cortado pela borda de baixo do gráfico, nos dois temas e também no PNG da página. O g de Segunda e a cedilha de Terça perdem 1 px dos 3 px de descendente. X_AXIS_HEIGHT 24 com MARGIN.bottom 0 deixa 2,19 px sob a linha de base. Dar folga embaixo (MARGIN.bottom 4 ou eixo de 28). Levar na mesma rodada, sem bloquear: faltaram 3 e faltaram 5 ficam a 1,5 px da linha da meta e o halo apaga a franja do traço; ancorar o rótulo com folga da linha. Meta na borda da célula, cor com segundo canal e frase conferidas. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__02_waffle-em-barras_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:59:41.023Z",
+      "impressao": "c9b5d5726056a4962ea4e43eb48461c827ae6911",
+      "arquivos": {
+        "Chart.tsx": "f6f169d8ee12f26415b30e4d1255e0e0c3179334",
+        "data.ts": "30066457d1d405b4ba4b21373e4cecbdf84be726",
+        "meta.json": "82b4e2136f0cff0203557502a1287e7213f0293d"
+      }
+    },
+    {
+      "versao": "v3_vitorias-por-mes-e-origem",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Um bloqueante. Perguntas 11, 12 e 19; papel Ausência da tabela 17.2, ACE-2 e ROT-4: as 3 células de Sem origem declarada são preenchidas em text-muted, na mesma forma das quatro origens, e a amostra da legenda também. Contra as categóricas o neutro mede de 1,13 a 1,82:1 no escuro e de 1,00 a 1,16:1 no claro, então a ausência mora só no matiz. Desenhar a ausência vazada, sem preenchimento e com contorno text-muted, na célula e na amostra. Levar na mesma rodada, sem bloquear: escrever no desenho até que dia outubro foi contado (EIX-10, DAD-9), hoje só na frase acessível. Contagens, slots 1, 3, 6 e 5 e eixo sem corte conferidos. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__02_waffle-em-barras_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:59:41.573Z",
+      "impressao": "15732df3452b7f68efcba2e4c8c00953b14b8a31",
+      "arquivos": {
+        "Chart.tsx": "cd938d651be62e138675c37fed86a33cca2af17b",
+        "data.ts": "51d4ec189bc8cb8a7893fb13c7fd0b041fc51336",
+        "meta.json": "7ef24ad106a44e3e7c3141e47f2c89195bfc67c0"
+      }
+    },
+    {
+      "versao": "v4_leads-por-mes-em-celulas-de-dez",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Um bloqueante. Pergunta 15, seção 14.1 (acabamento com consequência no render: texto cortado) e EIX-6b: o descendente dos tiques do eixo sai cortado pela borda de baixo do gráfico, nos dois temas e também no PNG da página. O g de ago/26 perde 1 px dos 3 px de descendente e o j de jul/26 perde 0,5 px (tinta até a linha 655 do PNG, borda na 656; na v3, sem corte, o mesmo g tem 6 linhas e aqui tem 4). X_AXIS_HEIGHT 24 com MARGIN.bottom 0. Dar folga embaixo (MARGIN.bottom 4 ou eixo de 28). Célula parcial, mês sem coleta, zero medido e valor exato conferidos sem bloqueante. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__02_waffle-em-barras_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:59:42.149Z",
+      "impressao": "c37dc74696568620d1f6a26f2b484d393acb7ba9",
+      "arquivos": {
+        "Chart.tsx": "4b24776d4839eaeeca4a4ccaf6db842869a7e8a8",
+        "data.ts": "614ab121ebc48728130b53291db4f122d7df3972",
+        "meta.json": "8764e3a17e77b47f230d51e011ef6af685a336bb"
+      }
+    },
+    {
+      "versao": "v1_agendas-por-dia-util",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu: eixo de 28 px, e nos quatro PNGs (escuro, claro e os dois da página) o g de Segunda e a cedilha de Terça têm 6 linhas de tinta sob a linha de base, com 6 linhas livres até a borda. Contagens 12, 17, 21, 24 e 7 conferidas no desenho, soma 81 na legenda e na frase. Observações que seguem (vão de 20%, valor do topo sem substantivo) estão no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:39.508Z",
+      "impressao": "89191407b03472315f13ae3c6d8c768f4b10c962",
+      "arquivos": {
+        "Chart.tsx": "34f98e09e1a54a8279a82e0a5946c57f7053847e",
+        "data.ts": "e2bbf0c5c31b0c9301cb0a9874409ac788897f0a",
+        "meta.json": "cff278dfa5d9e0d77a67e1c0c974da7131212b31"
+      }
+    },
+    {
+      "versao": "v2_agendas-contra-meta-diaria",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu (eixo de 28 px, g de Segunda e cedilha de Terça com 6 linhas de tinta sob a linha de base nos quatro PNGs). Os rótulos faltaram 3 e faltaram 5 agora ficam 6 px acima da linha da meta, os valores 15 e 13 ficam 3 px abaixo, e a linha passa inteira sob os dois (58 de 116 px de tinta nas três linhas do traço, igual à quinta, onde não há rótulo por perto): o halo não corta o traço. Meta na borda da célula 18, contagens 15, 13, 21, 18 e 9, soma 76 e 17 faltantes conferidas. Seguem como observação no README: meta que não é múltiplo de 3, dois rótulos em Manrope sem tabular-nums, par destaque contra neutro fora do notes.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:55.792Z",
+      "impressao": "5b4b6ebcc8314e3d3470ad271f97bd80d8ceaa1f",
+      "arquivos": {
+        "Chart.tsx": "0357ced94dd07971be9ad64fa0fd3d742f8ec064",
+        "data.ts": "30066457d1d405b4ba4b21373e4cecbdf84be726",
+        "meta.json": "82b4e2136f0cff0203557502a1287e7213f0293d"
+      }
+    },
+    {
+      "versao": "v3_vitorias-por-mes-e-origem",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante nas 32 perguntas. A ausência agora é vazada na célula e na amostra da legenda: 3 células sem preenchimento, contorno text-muted de 1,5 px, mesmo tamanho externo das 196 cheias (16,33 por 16,55 px), nos dois temas. O eixo escreve parcial até 12/10, sem corte (p com 6 linhas de descendente, 6 livres até a borda, 10 px de folga à direita). Contagens 71, 59, 21, 45 e 3, soma 199. ATENÇÃO antes de colar no Farol, registrada como observação porque nenhuma pergunta nem regra do contrato cobre alvo de clique: a célula vazada só recebe clique no contorno de 1,5 px (fill none sem pointerEvents all; clique no centro medido no navegador, 0 eventos); o teclado funciona. O parecer da primeira passada pedia manter a área clicável e a correção não fez. Demais observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:56.273Z",
+      "impressao": "5de2f0f364e305080beed4a0397701734d2e73d3",
+      "arquivos": {
+        "Chart.tsx": "b2e94ae2e7955e00aae14f81cced8867c1c8d9ef",
+        "data.ts": "e4663dd675868b8ff1068e0f050e06291ef8a5b6",
+        "meta.json": "7ef24ad106a44e3e7c3141e47f2c89195bfc67c0"
+      }
+    },
+    {
+      "versao": "v4_leads-por-mes-em-celulas-de-dez",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da rodada de correção. Sem bloqueante. O corte do descendente saiu (eixo de 28 px, g de ago/26 e j de jul/26 com 6 linhas de tinta sob a linha de base nos quatro PNGs). Células conferidas: 21 cheias e 20%, 27 e 80%, 34 e 70%, 15 e 60%; julho sem coleta tracejado com formatUnavailable, agosto com zero medido na régua da base, soma medida 993. Seguem como observação no README: filete de 20% em abr/26 (aviso ESPESSURA-MARCA do check), recorte todo sem coleta cai no bloco de vazio, e o limiar de 300 com célula de 1 lead não cabe no card (leitura do código, ramo não renderizado).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:16:56.781Z",
+      "impressao": "3ff60a564011b1b8582b0bd324b742dd4e4497ef",
+      "arquivos": {
+        "Chart.tsx": "3ede654edac4b2f8aa0a6edd520799c7f58d5411",
+        "data.ts": "614ab121ebc48728130b53291db4f122d7df3972",
+        "meta.json": "8764e3a17e77b47f230d51e011ef6af685a336bb"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Diagonal dominante, etapa vazia e estágio extinto",
+  "useCase": "Como ler a matriz quando quase tudo ficou parado, uma etapa esvaziou e outra foi extinta?",
+  "demonstrates": [
+    "Diagonal dominante em neutro, fora do domínio da cor e com o número escrito",
+    "Etapa sem movimento como faixa com o motivo escrito, nunca célula fraca",
+    "Linha de base pequena vazada e fora da escala, com o n escrito na margem",
+    "Estágio extinto hachurado, com a data da mudança de processo no rodapé",
+    "Movimento fora do dicionário contado à parte, nunca descartado em silêncio"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Canvas por conta: 640 x 400 na moldura card. O caso de uso tem 89 caracteres e a tabela de fronteira para 574 px de cabeçalho garante uma linha até 92, então o cabeçalho mede 40,5 px e o corpo fica em 574 x 281,5 px pela conta canvas menos 66 de recuo, menos 40,5 de cabeçalho, menos 12 de vão. O preset card de 640x360 daria 241,5 px e não fecha: a peça precisa de cinco linhas de matriz mais duas linhas de legenda e duas de rodapé, e as quatro linhas escritas somam 76 px abaixo da grade. O viewBox é 574 x 281 de propósito, para a escala do svg sair 1 e a TAMANHO-TEXTO, a COLISAO-TEXTO e a CONTRASTE-TEXTO medirem a peça; por isso legenda e rodapé são desenhados dentro do mesmo svg, e não como bloco HTML irmão. Três desvios declarados, os dois primeiros contra a especificação da versão e por ordem do contrato. Primeiro: a especificação pede a diagonal em surface-overlay, e aqui ela sai em surface-sunken, porque a TOK-1 é literal contra surface-overlay como marca e a guarda CONTRASTE-MARCA reprova por isso; no tema claro surface-overlay mede 1,00:1 contra o cartão, que é o mesmo branco. Segundo: a especificação pede a linha de base pequena esmaecida, e aqui ela sai vazada, com contorno e o número em text-muted, porque a ACE-5 trata opacidade em marca como perda de contraste medida e o degrau mais claro da rampa já está abaixo de 3:1 opaco; vazado é forma, que a ACE-2 aceita como segundo canal, e a legenda escreve a palavra. Terceiro: os três degraus da rampa ficam abaixo de 3:1 contra o cartão, seq-1 em 1,14 e 1,21, seq-2 em 1,58 e 1,49 e seq-3 em 2,29 e 1,92, e valem pela isenção da ACE-3, porque cada célula carrega o valor escrito. A hachura é feita de linhas soltas, e não de pattern, porque o serializador precisa resolver cor concreta em cada traço; o recorte branco atrás do número do estágio extinto tem 20 px de altura porque a ESP-2 pede o tamanho do texto mais 6. Texto por fundo medido nesta produção: text-primary sobre seq-1 a seq-3 mede 6,33 no pior tema, e text-secondary sobre surface-sunken mede 7,04. Duas guardas saíram NÃO MEDIDAS no check e foram conferidas à mão. EIXO-CALMO sai em sem_grade: a peça não usa Recharts, não desenha CartesianGrid e não tem XAxis nem YAxis, então a EIX-5 não tem eixo a medir; a EIX-3b, que torna a grade dos dois sentidos obrigatória em matriz, também não se aplica, porque ela pede os dois eixos quantitativos e lidos por posição e aqui os dois são categóricos, com a separação das células feita pelo vão de 2 px. OPACIDADE-MARCA sai em sem_opacidade_em_marca: conferido por busca no arquivo, não há fillOpacity, opacity, strokeOpacity nem classe bg-token com percentual em lugar nenhum, e toda marca é pintada opaca."
+}

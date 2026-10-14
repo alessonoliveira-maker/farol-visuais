@@ -1,0 +1,14 @@
+{
+  "title": "Parceiro cresceu dentro de Outros",
+  "useCase": "Qual origem pequena, escondida em Outros, mudou de patamar no mês e merece sair do agrupamento?",
+  "demonstrates": [
+    "Barra do destaque em --chart-1 no detalhe, com a cauda em --text-muted",
+    "Anotação com base nomeada: 18 leads contra 6 em jul/26",
+    "Pizza principal intacta: o destaque vive só no painel de detalhe",
+    "Critério da cauda escrito na tela, com a contagem de origens que reúne",
+    "Rótulo interno vazado em --surface-raised, sem halo, pela ROT-7b"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Medido à mão em 2026-09-29, porque o check não mede estas duas guardas nesta peça. EIXO-CALMO sai sem_grade: a peça não desenha CartesianGrid, porque a ROT-2 tira a grade de barra com valor escrito; os dois eixos do painel ficam com axisLine e tickLine em false e o XAxis em hide, então não sobra linha de régua. OPACIDADE-MARCA sai sem_opacidade_em_marca: nenhuma marca declara opacidade, todas as cinco pintam opacas, e a mais fraca é --text-muted, que mede 5,21:1 no escuro e 5,37:1 no claro contra o cartão, acima do piso de 3:1 da WCAG 1.4.11. Colisão entre catálogo e CONTRATO, resolvida a favor do CONTRATO: o catálogo pede rótulo com halo na cor da superfície quando ele cruza o conector, e a emenda de 2026-09-19 da ROT-7 mostra que o halo de 4 px apaga marca de traço mais fina que ele, isto é, apagaria os conectores de 1 px; então o rótulo de valor sai sem halo e a geometria mantém as duas coisas separadas, com os conectores terminando na borda esquerda do painel e os valores na ponta direita das barras. Percentual conferido no preview.svg: 37, 25, 14, 12 e 12 somam 100."
+}

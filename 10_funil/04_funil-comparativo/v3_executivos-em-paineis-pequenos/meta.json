@@ -1,0 +1,13 @@
+{
+  "title": "Funil por executivo em painéis pequenos",
+  "useCase": "Comparar a taxa de conversão de cada executivo etapa a etapa, sem perder o tamanho real da carteira de cada um.",
+  "demonstrates": [
+    "Grade HTML com um BarChart por célula e domínio comum de 0 a 100%",
+    "Ordenação dos painéis pela taxa final, calculada no componente",
+    "Mediana do time como ReferenceLine em cada painel",
+    "Painel com menos de 10 oportunidades sem taxa e com aviso, tamanho absoluto sempre visível"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Barras de 10 px em cada painel são a forma certa de oito pequenos múltiplos numa grade 4 por 2, mesma exceção do minigráfico de tendência do modelo de KPI: abaixo do piso geral da ESP-2, mas medida como aviso e não como erro. O percentual normalizado nunca aparece sozinho: todo painel mostra n = aberturas absolutas ao lado do nome."
+}

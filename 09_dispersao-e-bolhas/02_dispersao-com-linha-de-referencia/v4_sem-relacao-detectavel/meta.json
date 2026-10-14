@@ -1,0 +1,14 @@
+{
+  "title": "Frequência contra CTR sem relação linear",
+  "useCase": "Criativo com mais frequência perde CTR? Com R² 0,07 e n 9 a reta não é desenhada.",
+  "demonstrates": [
+    "Piso de R² 0,3 e n de pelo menos 10 aplicado antes de desenhar a reta",
+    "Rótulo que explica a ausência da reta com o R² e o n medidos",
+    "Nuvem mantida intacta, sem resumo estatístico no lugar do gráfico",
+    "Taxa de clique nascida do par cliques e impressões, com o volume na dica",
+    "Criativo sem impressão entregue sai do plano em vez de cair em zero"
+  ],
+  "canvas": { "width": 640, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: além do plano o cartão escreve a linha de leitura de 12 px e o rodapé de 11 px, cerca de 50 px, e o rótulo de ausência ocupa duas linhas de 11 px dentro do plano, na faixa baixa que a nuvem não usa; sobre os 360 px do preset o plano ficaria com cerca de 143 px e o bloco de ausência encostaria na nuvem. A grade sai nos dois sentidos, como a exceção da EIX-3 medida em 2026-09-19 torna obrigatório nas famílias 09, 16, 17 e 25, e o axisLine do AXIS_PROPS é desligado explicitamente, que é a outra metade da mesma exceção. Contraste medido contra o cartão, que a guarda CONTRASTE-MARCA não mediu por transform no preview: ponto em chart-1 opaco, 9,50:1 no escuro e 6,00:1 no claro, bem acima do piso de 3:1 da ACE-3; não há opacidade em marca nesta versão, porque com 9 pontos não existe sobreposição a resolver. O R² de 0,07 e o n de 9 são medidos do dado do arquivo, não escritos à mão: o ajuste sai de 0,0713."
+}

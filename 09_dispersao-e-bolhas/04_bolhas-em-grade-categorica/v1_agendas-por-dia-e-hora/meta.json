@@ -1,0 +1,12 @@
+{
+  "title": "Agendas marcadas por dia e hora",
+  "useCase": "Em que dia útil e hora a pré-vendas marca mais agendas? Trimestre inteiro, das 8h às 19h.",
+  "demonstrates": [
+    "ScatterChart com eixos X e Y do tipo categoria e ordem de dia e hora fixa",
+    "ZAxis com domínio a partir de zero e piso de área que mantém o valor 1 visível",
+    "Legenda de tamanho cuja última referência é o maior cruzamento do recorte",
+    "Todas as categorias impressas nos dois eixos, sem rotação de texto"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

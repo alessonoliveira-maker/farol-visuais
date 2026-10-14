@@ -1,0 +1,67 @@
+{
+  "slug": "04_linha-com-banda-de-intervalo",
+  "nome": "Linha com banda de intervalo",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Linha central (mediana, média ou estimativa) sobre uma faixa sombreada de dispersão ou incerteza, com uma nota que diz o que a faixa representa. Banda estatística não é faixa de meta: a faixa aceitável mora em 01_linha-simples como ReferenceArea, e o leque de projeção com bandas aninhadas mora em 05_areas.",
+  "quando_usar": [
+    "Valor central com dispersão: tempo até o primeiro contato em mediana com quartis, ciclo de venda.",
+    "Faixa histórica de comparação: mínimo e máximo das semanas anteriores para achar dias fora do padrão.",
+    "Estimativa com incerteza declarada, como participação de mercado entre dois perímetros."
+  ],
+  "quando_evitar": [
+    "Público que lê a banda como meta: use ReferenceArea em 01_linha-simples com o texto da meta.",
+    "Projeção com bandas aninhadas por probabilidade: use o leque de 05_areas.",
+    "Distribuição completa de um único período: use 16_distribuicao.",
+    "Banda mais saliente que a linha central: reduza a opacidade ou mostre só a linha."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_tempo-ate-primeiro-contato-com-quartis",
+      "titulo": "Tempo até o primeiro contato com faixa entre quartis",
+      "caso_de_uso": "O tempo até o primeiro contato piorou nas últimas 26 semanas, na mediana e na dispersão entre quartis?",
+      "o_que_demonstra": [
+        "ComposedChart com Area de dataKey em par inferior e superior, sem contorno",
+        "Area antes da Line nos filhos para a linha central ficar por cima",
+        "Dica que escreve entre X e Y com formatHours",
+        "Nota curta dizendo que a faixa vai do 1º ao 3º quartil"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cpl-diario-fora-da-faixa-historica",
+      "titulo": "CPL diário fora da faixa das 8 semanas anteriores",
+      "caso_de_uso": "Em quais dias de 2026-08 o CPL saiu da faixa de mínimo e máximo das 8 semanas anteriores?",
+      "o_que_demonstra": [
+        "Faixa móvel de mínimo e máximo calculada em TypeScript por dia",
+        "Dias fora da faixa com ponto, símbolo e valor escrito",
+        "Faixa estatística em tom neutro, distinta de faixa de meta"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_participacao-de-mercado-entre-perimetros",
+      "titulo": "Participação de mercado entre dois perímetros",
+      "caso_de_uso": "A participação de mercado estimada mudou de patamar em 2026, considerando o perímetro restrito e o amplo?",
+      "o_que_demonstra": [
+        "Banda entre perímetro restrito e amplo com a estimativa central por cima",
+        "Revisão de perímetro como uma anotação vertical datada",
+        "Frase acessível com a saída em faixa, nunca um número único",
+        "Eixo percentual com recorte de escala, permitido por ser linha"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_ciclo-de-venda-com-amostra-pequena",
+      "titulo": "Ciclo de venda com banda omitida em amostra pequena",
+      "caso_de_uso": "Qual o ciclo mediano de venda por mês, sem desenhar faixa nos meses com menos de 10 fechamentos?",
+      "o_que_demonstra": [
+        "Bordas da banda em null quando a amostra do mês é menor que 10",
+        "Aviso amostra insuficiente escrito no visual, não só na dica",
+        "Tamanho da amostra junto da mediana em cada mês",
+        "Mediana mantida como ponto isolado quando a faixa some"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

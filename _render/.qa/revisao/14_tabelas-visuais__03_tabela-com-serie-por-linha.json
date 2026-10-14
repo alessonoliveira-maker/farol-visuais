@@ -1,0 +1,108 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "03_tabela-com-serie-por-linha",
+  "versoes": {
+    "v1_agendas-semanais-por-sdr": {
+      "veredito": "aprovado",
+      "nota": "Sparkline de escala propria com aviso escrito e valor na coluna vizinha; sem bloqueante. Observacao: o ponto final sai cortado na borda do viewBox.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:43:56.013Z",
+      "impressao": "049c9de96402598b97097b081e246272bec01f39",
+      "arquivos": {
+        "Chart.tsx": "4574c5afa69e6642976b85414d2a3c0537c13698",
+        "data.ts": "b6c1fb062f5b46b9111cdb13327560066c17f0c2",
+        "meta.json": "e9000e58c623945aaef0b399e7f021ebea039d15"
+      }
+    },
+    "v2_sla-de-primeiro-contato-com-faixa": {
+      "veredito": "aprovado",
+      "nota": "Escala comum de 0 a 30 min declarada, faixa em surface-sunken e contagem de semanas fora ao lado da cor; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:01.756Z",
+      "impressao": "36fe86dfcdca135a66cdc9be442332a7b3bb3634",
+      "arquivos": {
+        "Chart.tsx": "4b7ef812482b6108358301492d6d9db08aa8a370",
+        "data.ts": "17e84b6b054f1b1b610b2730463a84e6d5dec926",
+        "meta.json": "b965367113603263cf847f89f94b84f8068ef77e"
+      }
+    },
+    "v3_tracker-de-sla-por-fila": {
+      "veredito": "aprovado",
+      "nota": "Tracker com legenda, marca de hoje e resumo em texto que nao depende da cor; sem bloqueante. Observacao: o numero dias no SLA fica vermelho por haver estouro na linha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:06.588Z",
+      "impressao": "68eb966f2f2cb91986279b0e5644516e8a1d5b6c",
+      "arquivos": {
+        "Chart.tsx": "e97dcefa9ce12a647701ec5be0b42ac30364c285",
+        "data.ts": "a0601bc4d8d40c830f68817c5cd3509950d3cd00",
+        "meta.json": "f0ab2568237f2ec7c05d1488007eb68bf108dd0c"
+      }
+    },
+    "v4_serie-curta-buraco-e-calendario-irregular": {
+      "veredito": "aprovado",
+      "nota": "Lacuna quebra o path, recesso em neutro, serie curta so nas posicoes finais e denominador ajustado; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:11.331Z",
+      "impressao": "fc01152ee8f9ab199878e783c68d0caf435c9c86",
+      "arquivos": {
+        "Chart.tsx": "57d4f0b796970d2d12965dec43acc5dc1147e76d",
+        "data.ts": "6a8dcff037a3bde26e625f0c0da2b336cf79631a",
+        "meta.json": "596f9d9ee3ff359325e3e9892208aa50a6e425d3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-semanais-por-sdr",
+      "veredito": "aprovado",
+      "nota": "Sparkline de escala propria com aviso escrito e valor na coluna vizinha; sem bloqueante. Observacao: o ponto final sai cortado na borda do viewBox.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:43:56.013Z",
+      "impressao": "049c9de96402598b97097b081e246272bec01f39",
+      "arquivos": {
+        "Chart.tsx": "4574c5afa69e6642976b85414d2a3c0537c13698",
+        "data.ts": "b6c1fb062f5b46b9111cdb13327560066c17f0c2",
+        "meta.json": "e9000e58c623945aaef0b399e7f021ebea039d15"
+      }
+    },
+    {
+      "versao": "v2_sla-de-primeiro-contato-com-faixa",
+      "veredito": "aprovado",
+      "nota": "Escala comum de 0 a 30 min declarada, faixa em surface-sunken e contagem de semanas fora ao lado da cor; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:01.756Z",
+      "impressao": "36fe86dfcdca135a66cdc9be442332a7b3bb3634",
+      "arquivos": {
+        "Chart.tsx": "4b7ef812482b6108358301492d6d9db08aa8a370",
+        "data.ts": "17e84b6b054f1b1b610b2730463a84e6d5dec926",
+        "meta.json": "b965367113603263cf847f89f94b84f8068ef77e"
+      }
+    },
+    {
+      "versao": "v3_tracker-de-sla-por-fila",
+      "veredito": "aprovado",
+      "nota": "Tracker com legenda, marca de hoje e resumo em texto que nao depende da cor; sem bloqueante. Observacao: o numero dias no SLA fica vermelho por haver estouro na linha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:06.588Z",
+      "impressao": "68eb966f2f2cb91986279b0e5644516e8a1d5b6c",
+      "arquivos": {
+        "Chart.tsx": "e97dcefa9ce12a647701ec5be0b42ac30364c285",
+        "data.ts": "a0601bc4d8d40c830f68817c5cd3509950d3cd00",
+        "meta.json": "f0ab2568237f2ec7c05d1488007eb68bf108dd0c"
+      }
+    },
+    {
+      "versao": "v4_serie-curta-buraco-e-calendario-irregular",
+      "veredito": "aprovado",
+      "nota": "Lacuna quebra o path, recesso em neutro, serie curta so nas posicoes finais e denominador ajustado; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:44:11.331Z",
+      "impressao": "fc01152ee8f9ab199878e783c68d0caf435c9c86",
+      "arquivos": {
+        "Chart.tsx": "57d4f0b796970d2d12965dec43acc5dc1147e76d",
+        "data.ts": "6a8dcff037a3bde26e625f0c0da2b336cf79631a",
+        "meta.json": "596f9d9ee3ff359325e3e9892208aa50a6e425d3"
+      }
+    }
+  ]
+}

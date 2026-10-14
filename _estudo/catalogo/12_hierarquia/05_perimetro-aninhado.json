@@ -1,0 +1,67 @@
+{
+  "slug": "05_perimetro-aninhado",
+  "nome": "Perímetro aninhado",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Formas contidas umas nas outras (mercado total, endereçável, alcançável e participação), alinhadas no canto inferior esquerdo, com lado proporcional à raiz quadrada do valor para que a área seja proporcional. A nota do perímetro, o que entra e o que fica fora, fica colada ao visual.",
+  "quando_usar": [
+    "Participação de mercado com perímetro declarado: total, endereçável, alcançável e fatia própria",
+    "Mostrar quanto cada nível representa do nível acima, com etiqueta de procedência por nível",
+    "Comparar dois perímetros quando a definição de mercado muda"
+  ],
+  "quando_evitar": [
+    "Níveis que não estão contidos uns nos outros: use barras (família 02)",
+    "Ordens de grandeza tão distantes que a forma interna some sem painel ampliado: acrescente o zoom ou use barras em escala logarítmica anotada",
+    "Perímetro por território: família 23, modelo 05",
+    "Quando a série no tempo da participação é a mensagem: use linhas (família 04)"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_mercado-total-enderecavel-alcancavel",
+      "titulo": "Mercado total, endereçável e alcançável",
+      "caso_de_uso": "Diretoria: de R$ 120 bi de mercado total, R$ 18 bi são endereçáveis, R$ 2,4 bi alcançáveis e R$ 96 mi são nossos.",
+      "o_que_demonstra": [
+        "Quadrados alinhados no canto inferior esquerdo com lado pela raiz quadrada do valor",
+        "Rótulo de cada nível com valor e percentual do nível acima",
+        "Participação quase invisível em escala, com nota em vez de desenho fora de escala",
+        "Nota do perímetro colada ao visual: o que entra e o que fica fora"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_zoom-do-alcancavel-com-meta",
+      "titulo": "Participação no alcançável contra a meta",
+      "caso_de_uso": "Diretoria: quanto dos R$ 2,4 bi alcançáveis já é nosso (4%) e quanto falta para a meta de participação de 6%.",
+      "o_que_demonstra": [
+        "Painel lateral ampliado do nível alcançável ligado ao quadro maior por linhas finas",
+        "Meta de participação como contorno tracejado dentro do alcançável",
+        "Escala do painel ampliado declarada no próprio painel",
+        "Distância para a meta escrita em reais e em pontos percentuais"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_perimetro-alterado-lado-a-lado",
+      "titulo": "Participação antes e depois do perímetro novo",
+      "caso_de_uso": "Diretoria: incluir outra região leva o alcançável de R$ 2,4 bi a R$ 3,2 bi e a participação de 4% a 3%, sem venda a menos.",
+      "o_que_demonstra": [
+        "Dois perímetros lado a lado na mesma escala de área",
+        "Nota da mudança de perímetro com o que passou a entrar",
+        "Etiqueta de procedência por nível: fonte pública, derivado, premissa e medido",
+        "Participação em reais igual nos dois quadros, para mostrar que só o denominador mudou"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_nivel-sem-estimativa",
+      "titulo": "Perímetro com nível sem estimativa",
+      "caso_de_uso": "Diretoria: o alcançável ainda não tem estimativa; a participação não pode ser calculada sobre um número inventado.",
+      "o_que_demonstra": [
+        "Nível ausente desenhado em contorno tracejado, sem área e com o selo lacuna",
+        "Participação mostrada só em reais, com percentual marcado como indisponível",
+        "Níveis medidos mantidos em escala, sem redistribuir espaço para esconder o vazio"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

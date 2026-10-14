@@ -1,0 +1,296 @@
+{
+  "_LEIA": "FILA DE DÍVIDA das seis guardas nascidas em 2026-09-28 (AGREGACAO-ZERO, CONTRASTE-MARCA, REGUA-CONSTANTE, FORMATO-ACESSIVEL, EIXO-CALMO e OPACIDADE-MARCA) mais a TEXTO-NA-MARCA, de 2026-09-29, e a RAIO-CONTRA-AREA, de 2026-10-02, que entrou com uma peça. O mecanismo está em _render/scripts/lib/divida.mjs. Cada linha é uma versão que JÁ carregava o defeito quando a guarda entrou, e ali a guarda avisa em vez de reprovar. Peça nova é barrada. Dívida que cresce volta a reprovar. Ao consertar, apague A CHAVE da guarda quitada; a linha só sai quando o objeto dela fica vazio. Este arquivo só encurta, e o check avisa quando um registro ficou sobrando.",
+  "_NAO_CONFUNDIR_COM_ESCAPE": "O escape (// check-ok: CODIGO motivo) diz que aquele caso é legítimo. Esta fila diz o contrário: está errado e ainda não foi consertado. Item da fila não vira escape por conveniência.",
+  "_GERADO_EM": "2026-09-29",
+  "_QUITAR_E_APAGAR_A_CHAVE": "Uma versão pode dever a mais de uma guarda, e por isso o conserto apaga A CHAVE da guarda quitada, não a linha inteira: apagar a linha anistiaria a outra guarda em silêncio. A linha só sai quando o objeto dela fica vazio.",
+  "01_cards-e-kpis/07_grade-e-tira-de-kpis/v2_tira-da-pre-vendas-com-primario-e-janela": {
+    "AGREGACAO-ZERO": 2
+  },
+  "02_barras-horizontais/03_barras-empilhadas/v2_paradas-na-base": {
+    "AGREGACAO-ZERO": 3
+  },
+  "02_barras-horizontais/03_barras-empilhadas/v3_leads-por-cobertura-de-dado": {
+    "AGREGACAO-ZERO": 1
+  },
+  "02_barras-horizontais/05_barras-contra-meta/v1_realizado-sobre-meta-sobreposta": {
+    "AGREGACAO-ZERO": 1
+  },
+  "02_barras-horizontais/09_bar-list/v3_criativos-com-leads-e-cpl": {
+    "OPACIDADE-MARCA": 1
+  },
+  "02_barras-horizontais/09_bar-list/v4_termos-com-cauda-agregada": {
+    "OPACIDADE-MARCA": 1
+  },
+  "03_colunas-verticais/04_colunas-empilhadas-100/v2_origem-paga-passa-de-70": {
+    "TEXTO-NA-MARCA": 1
+  },
+  "03_colunas-verticais/05_colunas-positivo-e-negativo/v1_saldo-mensal-de-clientes": {
+    "EIXO-CALMO": 1
+  },
+  "03_colunas-verticais/05_colunas-positivo-e-negativo/v3_movimento-do-funil-por-sinal": {
+    "EIXO-CALMO": 1
+  },
+  "03_colunas-verticais/05_colunas-positivo-e-negativo/v4_saldo-zero-e-mes-sem-dado": {
+    "EIXO-CALMO": 1
+  },
+  "03_colunas-verticais/06_colunas-contra-meta-ou-limiar/v3_fechamentos-contra-forecast": {
+    "AGREGACAO-ZERO": 3
+  },
+  "03_colunas-verticais/07_realizado-e-projecao/v1_receita-do-ano-com-projecao": {
+    "OPACIDADE-MARCA": 3
+  },
+  "03_colunas-verticais/07_realizado-e-projecao/v2_mes-corrente-parcial": {
+    "OPACIDADE-MARCA": 1
+  },
+  "03_colunas-verticais/07_realizado-e-projecao/v3_realizado-previsto-e-meta": {
+    "OPACIDADE-MARCA": 3
+  },
+  "03_colunas-verticais/07_realizado-e-projecao/v4_realizado-acima-do-forecast": {
+    "OPACIDADE-MARCA": 3
+  },
+  "04_linhas/04_linha-com-banda-de-intervalo/v4_ciclo-de-venda-com-amostra-pequena": {
+    "TEXTO-NA-MARCA": 1
+  },
+  "04_linhas/07_sobreposicao-de-periodos/v1_agendas-por-semana-2026-contra-2025": {
+    "EIXO-CALMO": 2
+  },
+  "04_linhas/07_sobreposicao-de-periodos/v2_receita-por-dia-util-contra-media": {
+    "EIXO-CALMO": 2
+  },
+  "04_linhas/07_sobreposicao-de-periodos/v3_entradas-sobre-faixa-de-tres-anos": {
+    "AGREGACAO-ZERO": 1,
+    "EIXO-CALMO": 2
+  },
+  "04_linhas/07_sobreposicao-de-periodos/v4_meses-com-dias-uteis-diferentes": {
+    "EIXO-CALMO": 2
+  },
+  "05_areas/01_area-simples/v1_entradas-mensais-de-leads": {
+    "OPACIDADE-MARCA": 1
+  },
+  "05_areas/01_area-simples/v2_receita-com-mes-parcial": {
+    "AGREGACAO-ZERO": 1,
+    "OPACIDADE-MARCA": 2
+  },
+  "05_areas/01_area-simples/v3_leads-por-origem-em-multiplos": {
+    "OPACIDADE-MARCA": 1
+  },
+  "05_areas/02_area-empilhada/v3_estoque-da-fila-contra-teto": {
+    "AGREGACAO-ZERO": 1
+  },
+  "05_areas/03_area-100/v3_origens-com-painel-de-total": {
+    "AGREGACAO-ZERO": 1,
+    "OPACIDADE-MARCA": 1
+  },
+  "05_areas/04_areas-sobrepostas/v1_capacidade-e-agendas-realizadas": {
+    "AGREGACAO-ZERO": 1
+  },
+  "05_areas/07_area-de-diferenca/v2_receita-contra-meta-mensal": {
+    "OPACIDADE-MARCA": 2
+  },
+  "05_areas/08_streamgraph/v1_leads-por-campanha-no-ano": {
+    "AGREGACAO-ZERO": 1
+  },
+  "05_areas/09_horizon-chart/v1_desvio-do-cpl-por-campanha": {
+    "AGREGACAO-ZERO": 3
+  },
+  "05_areas/09_horizon-chart/v2_campanha-expandida-em-area": {
+    "AGREGACAO-ZERO": 2,
+    "OPACIDADE-MARCA": 2
+  },
+  "05_areas/09_horizon-chart/v3_sla-de-30-equipes": {
+    "TAMANHO-TEXTO": 1
+  },
+  "05_areas/10_area-bump/v3_item-zerado-num-periodo": {
+    "TAMANHO-TEXTO": 1
+  },
+  "06_pizza/01_pizza-simples/v1_origem-da-receita-reconhecida": {
+    "TEXTO-NA-MARCA": 3
+  },
+  "06_pizza/02_pizza-com-detalhamento-de-outros/v1_origens-de-lead-com-outros-aberto": {
+    "TEXTO-NA-MARCA": 4
+  },
+  "06_pizza/04_pizzas-em-small-multiples/v1_agendas-em-quatro-semanas": {
+    "TEXTO-NA-MARCA": 3
+  },
+  "06_pizza/05_pizza-de-raio-variavel/v1_investimento-e-cpl-qualificado-por-plataforma": {
+    "RAIO-CONTRA-AREA": 1
+  },
+  "06_pizza/06_pizzas-proporcionais-ao-total/v1_receita-por-trimestre-e-tipo-de-cliente": {
+    "TEXTO-NA-MARCA": 3
+  },
+  "07_rosca-e-radial/06_coluna-radial/v1_entradas-por-hora-do-dia": {
+    "TAMANHO-TEXTO": 1
+  },
+  "07_rosca-e-radial/06_coluna-radial/v2_janela-de-atendimento-e-pico": {
+    "AGREGACAO-ZERO": 1,
+    "TAMANHO-TEXTO": 1
+  },
+  "07_rosca-e-radial/06_coluna-radial/v3_leads-por-dia-do-ano": {
+    "AGREGACAO-ZERO": 1,
+    "TAMANHO-TEXTO": 1
+  },
+  "07_rosca-e-radial/06_coluna-radial/v4_desvio-semanal-do-cpl": {
+    "AGREGACAO-ZERO": 1,
+    "TAMANHO-TEXTO": 1
+  },
+  "07_rosca-e-radial/07_rosa-de-nightingale/v3_custo-mensal-em-tres-camadas": {
+    "TAMANHO-TEXTO": 1
+  },
+  "09_dispersao-e-bolhas/01_dispersao-simples/v1_ticket-contra-ciclo": {
+    "EIXO-CALMO": 2
+  },
+  "09_dispersao-e-bolhas/01_dispersao-simples/v2_extremos-rotulados-com-destaque": {
+    "EIXO-CALMO": 2
+  },
+  "09_dispersao-e-bolhas/01_dispersao-simples/v3_origens-com-envoltoria": {
+    "EIXO-CALMO": 2
+  },
+  "09_dispersao-e-bolhas/01_dispersao-simples/v4_tempo-de-contato-em-escala-log": {
+    "EIXO-CALMO": 2
+  },
+  "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia/v1_investimento-contra-leads-qualificados": {
+    "EIXO-CALMO": 2
+  },
+  "09_dispersao-e-bolhas/03_bolhas/v1_campanhas-por-cpl-e-qualificacao": {
+    "EIXO-CALMO": 2,
+    "OPACIDADE-MARCA": 2
+  },
+  "10_funil/01_funil-em-barras-com-taxa-de-passo/v1_barras-com-trilho-e-taxa-de-passo": {
+    "AGREGACAO-ZERO": 1
+  },
+  "10_funil/01_funil-em-barras-com-taxa-de-passo/v3_funil-micro-por-origem-em-tabela": {
+    "AGREGACAO-ZERO": 2
+  },
+  "10_funil/01_funil-em-barras-com-taxa-de-passo/v4_barras-centralizadas-com-etapa-zerada": {
+    "AGREGACAO-ZERO": 2,
+    "OPACIDADE-MARCA": 1,
+    "TAMANHO-TEXTO": 1
+  },
+  "10_funil/04_funil-comparativo/v1_trimestre-contra-trimestre": {
+    "AGREGACAO-ZERO": 2
+  },
+  "10_funil/06_funil-empilhado-por-composicao/v4_sem-origem-cai-ao-longo-do-funil": {
+    "AGREGACAO-ZERO": 1
+  },
+  "11_fluxo-sankey/03_alluvial/v1_temperatura-dos-leads-em-tres-meses": {
+    "AGREGACAO-ZERO": 1
+  },
+  "11_fluxo-sankey/04_parallel-sets/v1_origem-porte-e-desfecho-das-agendas": {
+    "AGREGACAO-ZERO": 2
+  },
+  "12_hierarquia/02_treemap-aninhado/v1_pipeline-por-executivo-e-produto": {
+    "AGREGACAO-ZERO": 1
+  },
+  "12_hierarquia/03_sunburst/v1_entradas-por-origem-e-subcanal": {
+    "TEXTO-NA-MARCA": 5
+  },
+  "12_hierarquia/03_sunburst/v2_ramo-indicacao-em-destaque": {
+    "TEXTO-NA-MARCA": 2
+  },
+  "12_hierarquia/03_sunburst/v3_motivos-de-perda-com-detalhamento": {
+    "TEXTO-NA-MARCA": 1
+  },
+  "12_hierarquia/03_sunburst/v4_subcanais-finos-agrupados": {
+    "TEXTO-NA-MARCA": 5
+  },
+  "12_hierarquia/04_arvore-de-indicadores/v1_receita-nova-do-ano-seguinte": {
+    "AGREGACAO-ZERO": 2
+  },
+  "12_hierarquia/07_arvore-e-dendrograma/v1_estrutura-da-area-comercial": {
+    "TAMANHO-TEXTO": 1
+  },
+  "13_progresso-meta-e-gauge/01_barra-de-progresso-linear/v1_receita-do-trimestre-contra-meta": {
+    "AGREGACAO-ZERO": 1
+  },
+  "13_progresso-meta-e-gauge/05_gauge-de-arco-preenchido/v1_meta-de-agendas-em-arco": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/01_tabela-com-barras-inline/v1_receita-por-executivo": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/01_tabela-com-barras-inline/v3_resultado-por-origem-com-desvio-e-mix": {
+    "AGREGACAO-ZERO": 2
+  },
+  "14_tabelas-visuais/01_tabela-com-barras-inline/v4_ausente-zero-outlier-e-faixa": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v1_conversao-por-etapa-e-mes": {
+    "AGREGACAO-ZERO": 2
+  },
+  "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v2_cpl-qualificado-com-teto": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v3_perfil-das-areas-por-coluna": {
+    "AGREGACAO-ZERO": 2
+  },
+  "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v4_desvio-divergente-e-sem-meta": {
+    "AGREGACAO-ZERO": 1,
+    "OPACIDADE-MARCA": 6
+  },
+  "14_tabelas-visuais/03_tabela-com-serie-por-linha/v1_agendas-semanais-por-sdr": {
+    "AGREGACAO-ZERO": 2
+  },
+  "14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais/v2_heatmap-no-miolo-e-barras-nas-margens": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais/v4_denominador-e-celulas-vazias": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/07_tabela-agrupada-com-subtotais/v1_pipeline-por-time-comercial": {
+    "AGREGACAO-ZERO": 1
+  },
+  "14_tabelas-visuais/07_tabela-agrupada-com-subtotais/v2_media-da-casa-fixa-no-topo": {
+    "AGREGACAO-ZERO": 2
+  },
+  "14_tabelas-visuais/08_tabela-com-linha-expansivel/v2_executivo-com-serie-e-motivos": {
+    "EIXO-CALMO": 2
+  },
+  "14_tabelas-visuais/09_matriz-de-comparacao-com-status/v2_cenarios-com-bolas-de-harvey": {
+    "AGREGACAO-ZERO": 1
+  },
+  "15_mapa-de-calor-e-calendario/03_cohort-em-triangulo/v1_agenda-por-cohort-mensal-de-entrada": {
+    "AGREGACAO-ZERO": 1
+  },
+  "15_mapa-de-calor-e-calendario/04_calendario-estilo-contribuicoes/v1_fechamentos-por-dia-em-2026": {
+    "TAMANHO-TEXTO": 1
+  },
+  "15_mapa-de-calor-e-calendario/05_calendario-mensal-em-grade/v1_reunioes-realizadas-em-setembro": {
+    "AGREGACAO-ZERO": 1
+  },
+  "15_mapa-de-calor-e-calendario/06_lasagna/v1_sla-diario-por-fila": {
+    "TAMANHO-TEXTO": 1
+  },
+  "15_mapa-de-calor-e-calendario/07_matriz-de-transicao/v1_movimentos-entre-etapas-no-trimestre": {
+    "AGREGACAO-ZERO": 1,
+    "TAMANHO-TEXTO": 1
+  },
+  "15_mapa-de-calor-e-calendario/08_heatmap-de-correlacao/v1_seis-medidas-de-midia": {
+    "TAMANHO-TEXTO": 1
+  },
+  "16_distribuicao/01_histograma/v1_ciclo-de-fechamento": {
+    "EIXO-CALMO": 2
+  },
+  "16_distribuicao/01_histograma/v2_media-contra-mediana": {
+    "AGREGACAO-ZERO": 1,
+    "EIXO-CALMO": 2
+  },
+  "16_distribuicao/01_histograma/v3_ciclo-por-executivo-em-pequenos-multiplos": {
+    "EIXO-CALMO": 2
+  },
+  "16_distribuicao/01_histograma/v4_receita-com-massa-no-zero": {
+    "EIXO-CALMO": 2
+  },
+  "16_distribuicao/02_box-plot/v1_primeiro-contato-por-sdr": {
+    "AGREGACAO-ZERO": 3
+  },
+  "16_distribuicao/03_strip-plot-e-beeswarm/v1_cpl-das-campanhas-por-plataforma": {
+    "OPACIDADE-MARCA": 1
+  },
+  "16_distribuicao/04_ecdf-e-histograma-acumulado/v1_sla-de-primeiro-contato": {
+    "EIXO-CALMO": 2
+  },
+  "16_distribuicao/05_histograma-comparativo/v1_ciclo-novo-contra-cliente-da-casa": {
+    "AGREGACAO-ZERO": 2,
+    "EIXO-CALMO": 2
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "03_strip-plot-e-beeswarm",
+  "nome": "Strip plot e beeswarm",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada observação vira um ponto numa escala só, com uma faixa por grupo. Mostra o valor exato de cada caso e os buracos entre eles, que o histograma apaga, e perde para o histograma na leitura da forma. O strip simples sai do ScatterChart nativo com eixo de categoria; jitter determinístico, dodge de beeswarm, wheat plot e barcode pedem geometria calculada em TypeScript. Absorve beeswarm, barcode, wheat plot e dot strip como versões; o strip micro dentro de card mora na família 24 com esta mesma geometria.",
+  "quando_usar": [
+    "Poucas dezenas a poucas centenas de casos por grupo, quando cada caso importa e pode abrir drill.",
+    "Amostra pequena demais para violino ou densidade: abaixo de 30 casos a curva vira pontos.",
+    "Mostrar a posição de cada caso sem sobrepor, em beeswarm, enquanto a nuvem couber na altura do cartão.",
+    "Forma crua em altura de uma linha, como barcode sob um KPI ou rug sob uma densidade."
+  ],
+  "quando_evitar": [
+    "Milhares de pontos numa faixa estreita: faixa de densidade em cor ou KDE (06).",
+    "Métrica discreta com poucos valores, como tentativas de 1 a 12: dot plot empilhado (09).",
+    "Leitura de valor exato no beeswarm: o raio do ponto cobre uma faixa de valores; usar tooltip ou tabela.",
+    "Quartis e mediana como mensagem principal: box plot com os pontos por cima (02).",
+    "Ponto valendo várias unidades, com contagem como mensagem: família 22 de unidades e waffle."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-das-campanhas-por-plataforma",
+      "titulo": "CPL de cada campanha por plataforma",
+      "caso_de_uso": "Como se espalha o CPL das campanhas do trimestre em cada uma das quatro plataformas de mídia paga?",
+      "o_que_demonstra": [
+        "ScatterChart com XAxis numérico, YAxis de categoria e um Scatter por plataforma",
+        "Opacidade de 0,45 com contorno de 0,5 px na cor da superfície, legível no escuro",
+        "Mediana de cada faixa como traço curto e meta de CPL em ReferenceLine rotulada",
+        "n ao lado do nome da plataforma e tooltip com o nome fictício da campanha"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_wheat-plot-com-buraco-anotado",
+      "titulo": "Dias até a primeira reunião em wheat plot",
+      "caso_de_uso": "As 46 oportunidades do mês chegam à primeira reunião em que prazo, e existe alguma faixa sem nenhum caso?",
+      "o_que_demonstra": [
+        "Pontos no valor exato e altura pela ordem dentro do intervalo de 5 dias",
+        "Desempate por id na ordenação para o desenho não mudar entre renders",
+        "YAxis oculto com domínio fixo de zero ao maior nível",
+        "Anotação da lacuna entre 13 e 15 dias: nenhuma reunião, semana de feriado",
+        "Nota de leitura na primeira aparição explicando a pilha inclinada"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_beeswarm-de-ticket-por-trimestre",
+      "titulo": "Ticket dos negócios ganhos por trimestre",
+      "caso_de_uso": "Os 312 negócios ganhos do ano mudaram de ticket entre os trimestres, e onde estão os maiores?",
+      "o_que_demonstra": [
+        "Dodge guloso em TypeScript com ordem de entrada fixa por valor e padding de 1 px",
+        "Layout recalculado após medir a largura, com debounce no redimensionamento",
+        "Raio de 3 px reduzido até o piso de 2 px quando a nuvem não cabe na faixa",
+        "Cor com um papel só: vertical fictícia A ou B, com drill por ponto",
+        "Mediana por trimestre marcada e janela deslizante na busca de vizinhos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_barcode-com-valores-repetidos",
+      "titulo": "Barcode de CPL com valores arredondados",
+      "caso_de_uso": "Como mostrar 1.100 campanhas numa faixa de 20 px quando o CPL foi lançado em múltiplos de R$ 10?",
+      "o_que_demonstra": [
+        "Um line por valor em meio pixel, com shapeRendering crispEdges",
+        "Opacidade de 0,35 que acumula nas coincidências até o limite de leitura",
+        "Troca para histograma acima de 8 coincidências no mesmo valor, com aviso",
+        "Campanhas sem CPL fora da faixa e contadas no rodapé",
+        "Campanha selecionada em traço alto --chart-2 com a posição relativa escrita"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

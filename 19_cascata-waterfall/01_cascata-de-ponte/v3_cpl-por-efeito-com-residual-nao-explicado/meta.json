@@ -1,0 +1,14 @@
+{
+  "title": "Variação do CPL por efeito",
+  "useCase": "Por que o CPL subiu de R$ 184 para R$ 212 por lead, e quanto da alta o modelo não explica?",
+  "demonstrates": [
+    "Passos como efeitos calculados por função pura que devolve o resíduo",
+    "Passo Não explicado hachurado e visível, nunca absorvido em Outros",
+    "Polaridade invertida: CPL que sobe pinta a queda de qualidade",
+    "Unidade da métrica no rótulo: reais por lead, não reais",
+    "Resíduo acima de 10% da diferença escrito na linha de leitura"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: sem colunas de início e fim. Os passos de R$ 5 a R$ 26 diante de totais de R$ 184 e R$ 212 ficariam com 2 a 12% da altura (quando evitar do modelo: tirar os totais e mostrar só os efeitos, nunca quebrar o eixo). O zero do eixo é o CPL de 2026-07, a última coluna é a variação total ancorada nele, e o eixo vai de −R$ 9 a +R$ 28 por lead. Sem eixo de valor escrito: todo valor vem no rótulo com a unidade."
+}

@@ -1,0 +1,394 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "07_grade-e-tira-de-kpis",
+  "versoes": {
+    "v1_tira-de-abertura-do-comercial": {
+      "veredito": "aprovado",
+      "nota": "Conserto de zero e de redacao aceito nos dois temas, com a re-renderizacao conferida.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.983Z",
+      "impressao": "3e4480599d4ddb0a3adc20964dddfd8a103f51c1",
+      "arquivos": {
+        "Chart.tsx": "da88b4f613343474ed7c2ca9ebe63cc73221039e",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    "v2_tira-da-pre-vendas-com-primario-e-janela": {
+      "veredito": "aprovado",
+      "nota": "EIX-10 fechada e conferida na página viva nos dois temas: na janela de 90 dias a sparkline tem 12 pontos de 7 dias (índices 6 a 89), o d do DOM é idêntico ao calculado à parte, o último ponto vale 102 e a tinta fica a no máximo 0,63 px do esperado; nota em uma linha, sem corte. Previews de 30 dias iguais ao commit fora o carimbo. Sem bloqueante; observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:55:47.613Z",
+      "impressao": "75deb262f9fbe3548f8d334c71badbb55b19c4a2",
+      "arquivos": {
+        "Chart.tsx": "65bb7efa6c3f3581c584ae3951213dcd7f616df4",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    "v3_grade-de-executivos-com-escala-comum": {
+      "veredito": "aprovado",
+      "nota": "Conserto de escala aceito nos dois temas: a escala comum deixou de apagar o caso pequeno.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.204Z",
+      "impressao": "b4b0e235ad614e50b792fe8a2845fdd61cf97fa8",
+      "arquivos": {
+        "Chart.tsx": "670175059022494298ff98624364c95ed7a09912",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    "v4_grade-com-novo-amostra-pequena-e-afastado": {
+      "veredito": "aprovado",
+      "nota": "Aceito nos dois temas. A pintura que eu tinha apontado nao se confirmava: hasSample e qualifying usam o mesmo predicado, conforme o produtor demonstrou no codigo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.288Z",
+      "impressao": "511420b377d65b9a399dfca1742c573b2f2a2dc2",
+      "arquivos": {
+        "Chart.tsx": "e2eb9063e37ca2b5f1100123d591f869d05c19f8",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "c0f8810140b4d32cd2b62927f5f24a89293b704a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Tira de 3 metricas com periodo unico, base nomeada e altura igual; sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:56:54.669Z",
+      "impressao": "d44003a776a5cd278c8e17f4ce7f9282edcbb8ae",
+      "arquivos": {
+        "Chart.tsx": "ec12ed6843581a2e4141799f9184b96942b8df8f",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Primario com sparkline e seletor de janela coerentes; deltas dos cartoes menores sem a base escrita, so observacao.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:57:00.090Z",
+      "impressao": "bf6192345ed9859a186202a5ce6888f1bf421165",
+      "arquivos": {
+        "Chart.tsx": "9b3fa1cabc5657565206eb74f1ec710215c8f92a",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "reprovado",
+      "nota": "Nome longo cortado por reticencia no cartao e ausente da frase acessivel: o 10o executivo fica sem identificacao (TIP-5/TIP-7).",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:57:04.280Z",
+      "impressao": "9630e9fae27ef3727d0f112da1cab0ff9684bec9",
+      "arquivos": {
+        "Chart.tsx": "74064bfd57a0480fcadcbb19b041d7d4b7fbc0f5",
+        "data.ts": "1e5afc5c95343b56f2d8b248cb701507833a031f",
+        "meta.json": "0f5afe72b2e6d15e8f14d05933712b1d9e2317e2"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "aprovado",
+      "nota": "Tres casos limite sustentados sem sumir nem virar zero; limiar da cor e sobra de altura ficam como observacao.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:57:09.584Z",
+      "impressao": "0ed83acd984d3996d6104abd64afdb5f5e9434af",
+      "arquivos": {
+        "Chart.tsx": "7910342d9e1199b5a86c9b87a1a910357801e5fb",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "d0c9bf0f1d53edb303f8959cd5496c2f42fd28b1"
+      }
+    },
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Tira de tres metricas com altura igual, periodo unico no cabecalho e linha de variacao reservada; check limpo e dois temas legiveis.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T19:50:54.352Z",
+      "impressao": "d44003a776a5cd278c8e17f4ce7f9282edcbb8ae",
+      "arquivos": {
+        "Chart.tsx": "ec12ed6843581a2e4141799f9184b96942b8df8f",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Cartao primario com sparkline e seletor unico de janela; sem bloqueante, observacoes de base do delta nos cartoes menores.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T19:50:59.453Z",
+      "impressao": "bf6192345ed9859a186202a5ce6888f1bf421165",
+      "arquivos": {
+        "Chart.tsx": "9b3fa1cabc5657565206eb74f1ec710215c8f92a",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "aprovado",
+      "nota": "Doze cartoes no mesmo dominio, mediana na mesma altura e escala escrita no cabecalho; observacoes de frase acessivel longa e agregado do numero.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T19:51:03.844Z",
+      "impressao": "e6b57dae2fa0fc1d623857ff2211782e7c6bd8a5",
+      "arquivos": {
+        "Chart.tsx": "529adfc64a10b13c9b478d0f83a472b0bd1f6c1a",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "reprovado",
+      "nota": "Verde e vermelho na taxa saem de uma mediana do grupo que nao aparece escrita, e a cor e o unico canal: 54,8% verde contra 54,3% vermelho.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T19:51:08.374Z",
+      "impressao": "0ed83acd984d3996d6104abd64afdb5f5e9434af",
+      "arquivos": {
+        "Chart.tsx": "7910342d9e1199b5a86c9b87a1a910357801e5fb",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "d0c9bf0f1d53edb303f8959cd5496c2f42fd28b1"
+      }
+    },
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Tira de tres metricas com altura igual, periodo unico no cabecalho e linha de variacao reservada; check limpo, dois temas legiveis, sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T20:22:20.305Z",
+      "impressao": "d44003a776a5cd278c8e17f4ce7f9282edcbb8ae",
+      "arquivos": {
+        "Chart.tsx": "ec12ed6843581a2e4141799f9184b96942b8df8f",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Cartao primario com sparkline e seletor unico de janela; encoding honesto e legivel nos dois temas, observacoes sobre ancora do delta nos cartoes menores.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T20:22:24.808Z",
+      "impressao": "bf6192345ed9859a186202a5ce6888f1bf421165",
+      "arquivos": {
+        "Chart.tsx": "9b3fa1cabc5657565206eb74f1ec710215c8f92a",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "aprovado",
+      "nota": "Doze cartoes no mesmo dominio, mediana na mesma posicao relativa e escala escrita no cabecalho; observacoes sobre frase acessivel longa e agregado do numero.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T20:22:29.045Z",
+      "impressao": "e6b57dae2fa0fc1d623857ff2211782e7c6bd8a5",
+      "arquivos": {
+        "Chart.tsx": "529adfc64a10b13c9b478d0f83a472b0bd1f6c1a",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: mediana e faixa neutra de 2 p.p. escritas no cabecalho e cor acompanhada de icone; casos limite sustentados sem virar zero.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T20:22:33.927Z",
+      "impressao": "e366bfb919a33c3dc2155c52519a0a88928e514e",
+      "arquivos": {
+        "Chart.tsx": "d6a83946d654c85d52ac5ab074cabc7e52a2a33b",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "c0f8810140b4d32cd2b62927f5f24a89293b704a"
+      }
+    },
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Tira de 3 metricas com periodo unico, unidade colada e variacao com sinal e icone; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:01.925Z",
+      "impressao": "d44003a776a5cd278c8e17f4ce7f9282edcbb8ae",
+      "arquivos": {
+        "Chart.tsx": "ec12ed6843581a2e4141799f9184b96942b8df8f",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Cartao primario com sparkline sem area e seletor de janela unico; ancora do delta escrita no primario, sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:06.568Z",
+      "impressao": "7efc2484a5419e2e6c863632e95a25d7bfd6914e",
+      "arquivos": {
+        "Chart.tsx": "b8126f637a424ff03728c33280c73665d19899ff",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "aprovado",
+      "nota": "Doze micrograficos no mesmo dominio de 0 a 120 mil, mediana na mesma altura e destaque por peso mais chart 1; frase a 246 chars, dentro do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:11.194Z",
+      "impressao": "d33241e59cf5c2fa8a0b17ef1472a2f41bfcb77f",
+      "arquivos": {
+        "Chart.tsx": "d8cd0229f6001573a840f24d4d1aac6a655bde44",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "aprovado",
+      "nota": "Mediana e faixa neutra de 2 p.p. declaradas no cabecalho, amostra de 4 sem cor semantica e afastado que permanece; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:15.866Z",
+      "impressao": "c951f2cbb06bffbf97b79829489c545455f92b07",
+      "arquivos": {
+        "Chart.tsx": "16d1f6b4aed82b773781c4818af0734d773f34cf",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "c0f8810140b4d32cd2b62927f5f24a89293b704a"
+      }
+    },
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Tira de 3 KPIs legivel nos dois temas; contas e sinal de menos conferem; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:00:32.188Z",
+      "impressao": "d44003a776a5cd278c8e17f4ce7f9282edcbb8ae",
+      "arquivos": {
+        "Chart.tsx": "ec12ed6843581a2e4141799f9184b96942b8df8f",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Cartao primario com sparkline e seletor de janela; tokens e formatadores corretos; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:00:36.625Z",
+      "impressao": "7efc2484a5419e2e6c863632e95a25d7bfd6914e",
+      "arquivos": {
+        "Chart.tsx": "b8126f637a424ff03728c33280c73665d19899ff",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "aprovado",
+      "nota": "Escala comum de zero declarada, mediana na mesma posicao; aviso de frase a 246 caracteres nao reprova.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:00:41.074Z",
+      "impressao": "d33241e59cf5c2fa8a0b17ef1472a2f41bfcb77f",
+      "arquivos": {
+        "Chart.tsx": "d8cd0229f6001573a840f24d4d1aac6a655bde44",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "aprovado",
+      "nota": "Tres casos limite sustentados sem sumir nem virar zero; quebra de linha do valor e observacao, nao bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:00:46.660Z",
+      "impressao": "c951f2cbb06bffbf97b79829489c545455f92b07",
+      "arquivos": {
+        "Chart.tsx": "16d1f6b4aed82b773781c4818af0734d773f34cf",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "c0f8810140b4d32cd2b62927f5f24a89293b704a"
+      }
+    },
+    {
+      "versao": "v1_tira-de-abertura-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Conserto de zero e de redacao aceito nos dois temas, com a re-renderizacao conferida.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.983Z",
+      "impressao": "3e4480599d4ddb0a3adc20964dddfd8a103f51c1",
+      "arquivos": {
+        "Chart.tsx": "da88b4f613343474ed7c2ca9ebe63cc73221039e",
+        "data.ts": "2757f84593533c5777911c1243917aac77b89c04",
+        "meta.json": "b563590f1b5b2781c989c03bbdf030294362d7e0"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "Conserto de zero e de redacao aceito nos dois temas, com a re-renderizacao conferida.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.110Z",
+      "impressao": "2fc0487e68a792454ccfc533d01f150e30e87c16",
+      "arquivos": {
+        "Chart.tsx": "185d9f22ee3fa69a5a26c5d9f6da8a7cc4f95cf6",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v3_grade-de-executivos-com-escala-comum",
+      "veredito": "aprovado",
+      "nota": "Conserto de escala aceito nos dois temas: a escala comum deixou de apagar o caso pequeno.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.204Z",
+      "impressao": "b4b0e235ad614e50b792fe8a2845fdd61cf97fa8",
+      "arquivos": {
+        "Chart.tsx": "670175059022494298ff98624364c95ed7a09912",
+        "data.ts": "f5b2e341565e76c4ab8ee2dfb8e8d5b7caebb4a8",
+        "meta.json": "d348971f69e6b29282d496063921414ea629d601"
+      }
+    },
+    {
+      "versao": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "veredito": "aprovado",
+      "nota": "Aceito nos dois temas. A pintura que eu tinha apontado nao se confirmava: hasSample e qualifying usam o mesmo predicado, conforme o produtor demonstrou no codigo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.288Z",
+      "impressao": "511420b377d65b9a399dfca1742c573b2f2a2dc2",
+      "arquivos": {
+        "Chart.tsx": "e2eb9063e37ca2b5f1100123d591f869d05c19f8",
+        "data.ts": "74ca4c14b0ce6ca5ddddb5ff337af7476ea1aca4",
+        "meta.json": "c0f8810140b4d32cd2b62927f5f24a89293b704a"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EIX-10: na janela de 90 dias a sparkline soma caixas de 7 dias a partir do início e a última, a mais recente, tem 6 dias (87 agendas desenhadas contra 102 em 7 dias, um quinto da altura abaixo). Alinhar as caixas pelo fim e desenhar só semanas cheias, e reescrever a nota sem cerca de 13 semanas. Sem relação com o botão, que está limpo nos dois temas. Parecer em validation/revisao_01_cards-e-kpis__07_grade-e-tira-de-kpis_2026-10-02.md",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:49:34.602Z",
+      "impressao": "2fc0487e68a792454ccfc533d01f150e30e87c16",
+      "arquivos": {
+        "Chart.tsx": "185d9f22ee3fa69a5a26c5d9f6da8a7cc4f95cf6",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    },
+    {
+      "versao": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "veredito": "aprovado",
+      "nota": "EIX-10 fechada e conferida na página viva nos dois temas: na janela de 90 dias a sparkline tem 12 pontos de 7 dias (índices 6 a 89), o d do DOM é idêntico ao calculado à parte, o último ponto vale 102 e a tinta fica a no máximo 0,63 px do esperado; nota em uma linha, sem corte. Previews de 30 dias iguais ao commit fora o carimbo. Sem bloqueante; observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:55:47.613Z",
+      "impressao": "75deb262f9fbe3548f8d334c71badbb55b19c4a2",
+      "arquivos": {
+        "Chart.tsx": "65bb7efa6c3f3581c584ae3951213dcd7f616df4",
+        "data.ts": "0dfebf3def097ea829ff5e2be0081ab7e4f827bb",
+        "meta.json": "0f5852d8f0d1f96ba5214985708ec080c7fc70ba"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Micro halteres de CPL com mês ausente",
+  "useCase": "Marketing: custo por lead de quatro plataformas em julho e agosto, e uma sem veiculação em agosto.",
+  "demonstrates": [
+    "Micro haltere em SVG de viewBox fixo por linha do cartão",
+    "Ponta ausente vira ponto solto, sem conector descendo a zero",
+    "Cabeças a menos de dois raios mais 2 px viram marcador bipartido",
+    "Escala comum às quatro linhas, declarada no rodapé do cartão",
+    "Texto sem veiculação em agosto no lugar do delta"
+  ],
+  "canvas": { "width": 440, "height": 300 },
+  "frame": "stage",
+  "notes": "Moldura stage com cartão próprio na raiz (rounded-lg border border-line-subtle bg-surface-raised p-4). Canvas de 440 x 300: corpo de 408 px de largura e cartão com 374 px úteis. Conta de altura: 4 linhas x 32 px = 128, mais 8 de respiro e rodapé de 36 = 172, dentro dos 300 menos o miolo da moldura e 34 do cartão. Colunas 88 + 96 + 2 x 8 de vão deixam 174 px ao haltere, igual ao viewBox de 174 x 20, e a cabeça mantém o raio 4. Escala do menor ao maior CPL, igual nas quatro linhas. Cabeças coladas: metade de julho vazada e metade de agosto cheia, com vão de 3 px."
+}

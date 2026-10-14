@@ -1,0 +1,15 @@
+{
+  "title": "Participação por segmento dentro do perímetro",
+  "useCase": "Diretoria: em cada um dos 8 segmentos, onde a participação própria cai entre os concorrentes do perímetro?",
+  "demonstrates": [
+    "Uma linha por segmento, trilho da menor à maior participação do perímetro",
+    "Perímetro declarado no cabeçalho, com o número de concorrentes fictícios de cada linha",
+    "Escala comum de 0% ao maior máximo da tabela, dita no cabeçalho, para comparar nível",
+    "Mediana do perímetro como traço de 1 px dentro do trilho",
+    "Participação por formatPercent com uma casa e posição ordinal com º, como 3º de 11",
+    "Frase acessível com os segmentos acima e abaixo da mediana"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo: o trilho é --line-strong e não --surface-overlay (no claro o overlay é o branco do cartão), e o traço da mediana é --text-muted de 1 px e 16 px de altura, porque --line-strong sobre um trilho em --line-strong não se vê. O perímetro de cada linha é o próprio segmento mais os concorrentes: 3º de 11 conta a própria empresa. A mediana é calculada sobre o perímetro inteiro, com a própria participação dentro."
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "04_scorecard-tabular",
+  "nome": "Scorecard tabular com procedência",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Uma linha por indicador com valor atual, meta, atingimento, variação contra o período anterior com a base nomeada e o ícone de tendência. A seta diz a direção do número e a cor diz se é bom, pela polaridade da métrica: CPL subindo tem seta para cima em negative. Na postura do Farol cada linha também diz de onde o número vem (MEDIDO, DERIVADO, PREMISSA, LACUNA) e quanto do dado existe, trocando o percentual pela fração quando o denominador é pequeno e declarando a lacuna uma vez em vez de repetir a palavra em cada célula.",
+  "quando_usar": [
+    "Resumo de 6 a 20 KPIs com unidades diferentes que não cabem em cartões na mesma tela",
+    "Leitura de valor, meta e variação lado a lado, com a polaridade decidindo a cor",
+    "Tela executiva em que cada número precisa carregar a procedência na própria linha",
+    "Cobertura de campos por origem ou por métrica, para não ler taxa de 20% da base como a base inteira"
+  ],
+  "quando_evitar": [
+    "Até 5 KPIs com espaço: cartões da família 01 leem melhor",
+    "Quando o leitor precisa da série de cada indicador: use a série por linha (14/03)",
+    "Métrica nova sem período anterior exibida com percentual de variação: escreva sem base",
+    "Procedência que é a mesma para o cartão inteiro: é a etiqueta única do VisualCard, não uma coluna"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_resumo-mensal-do-marketing",
+      "titulo": "Resumo mensal do Marketing",
+      "caso_de_uso": "Marketing: como leads, MQL, CPL, CPL qualificado, agendas e investimento de 2026-08 ficaram contra meta e contra 2026-07.",
+      "o_que_demonstra": [
+        "Colunas de valor, meta, atingimento e variação, com número à direita em tabular-nums",
+        "Variação com sinal tipográfico e base nomeada na mesma linha",
+        "Ícones TrendingUp, TrendingDown e Minus com aria-hidden e texto ao lado",
+        "Formato por unidade de cada linha via formatValue"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_polaridade-e-banda-de-estabilidade",
+      "titulo": "Seta pela direção, cor pela polaridade",
+      "caso_de_uso": "Marketing: não confundir CPL +12% (ruim) com taxa de agenda +12% (bom) nem alarmar oscilação de +0,8%.",
+      "o_que_demonstra": [
+        "Mesma seta para cima em negative no CPL e em positive na taxa de agenda",
+        "Banda de estabilidade de 2% que troca a seta por Minus e o texto estável",
+        "Métrica sem polaridade em text-secondary, nunca verde nem vermelha",
+        "Nota de rodapé de uma linha explicando a regra"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_scorecard-da-diretoria-com-procedencia",
+      "titulo": "Scorecard da Diretoria com procedência",
+      "caso_de_uso": "Diretoria: 15 métricas agrupadas por área, cada uma dizendo se o número é medido, derivado, premissa ou lacuna.",
+      "o_que_demonstra": [
+        "Selo de procedência por linha em texto com tokens prov, desenhado no próprio Chart",
+        "Linhas agrupadas por área com rótulo de grupo, sem borda interna",
+        "Linha LACUNA sem valor, com formatUnavailable e o motivo curto",
+        "Legenda dos quatro selos no topo, uma vez só"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_cobertura-denominador-pequeno-e-lacuna",
+      "titulo": "Cobertura de campos com denominador pequeno",
+      "caso_de_uso": "Marketing: quanto de telefone, cargo e cidade existe por origem, e onde a taxa de agenda não merece percentual cheio.",
+      "o_que_demonstra": [
+        "Barras de cobertura de 0 a 100% com o percentual escrito ao lado",
+        "Abaixo do n mínimo a taxa vira fração, como 3 de 4, por formatRateWithVolume",
+        "Taxa com cobertura abaixo de 50% em text-muted com ícone, sem opacidade",
+        "Coluna inteira LACUNA declarada uma vez no cabeçalho; métrica nova escreve sem base"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

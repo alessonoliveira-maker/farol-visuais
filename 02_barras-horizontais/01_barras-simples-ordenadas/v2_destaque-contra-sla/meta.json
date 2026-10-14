@@ -1,0 +1,13 @@
+{
+  "title": "Tempo até o primeiro contato por SDR",
+  "useCase": "Quais SDRs passam do SLA de 4 horas até o primeiro contato e por quanto, entre as 12 do time.",
+  "demonstrates": [
+    "Cor por item via shape com Rectangle, sem Cell, a partir de um campo calculado",
+    "Acima do SLA em cor de alerta com sinal e palavra; demais em neutro com valor escrito",
+    "ReferenceLine x=4 tracejada e rotulada como SLA 4 h, com halo nos rótulos que cruzam",
+    "Ordem do pior para o melhor, porque a mensagem é quem está pior",
+    "Destaque vindo de regra de dado, estável quando a ordem muda"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

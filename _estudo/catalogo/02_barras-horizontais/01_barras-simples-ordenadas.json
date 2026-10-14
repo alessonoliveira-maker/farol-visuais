@@ -1,0 +1,73 @@
+{
+  "slug": "01_barras-simples-ordenadas",
+  "nome": "Barras simples ordenadas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma barra por categoria, todas partindo do zero, ordenadas pela grandeza em TypeScript antes do render: o comprimento é o dado e a leitura é de ranking. É o modelo padrão da família e a base de quase todos os outros. Nome completo à esquerda num eixo de categoria, valor escrito na ponta, eixo de valor omitido quando toda barra está rotulada. Absorve a variação com destaque: uma ou poucas categorias acesas na cor de destaque por regra de dado, o resto em neutro, com a cor aplicada pela prop shape e nunca por Cell, que está deprecado no Recharts 3.",
+  "quando_usar": [
+    "Ranking de uma medida entre categorias sem ordem natural: receita por executivo, perdas por motivo, leads por campanha.",
+    "Nomes longos que girados num eixo de colunas ficariam ilegíveis.",
+    "De 3 a cerca de 15 barras em card; até 25 em card alto, e acima disso top N mais uma barra de cauda.",
+    "Quando uma categoria carrega a mensagem (a pessoa logada, a fila que estoura SLA) e precisa de destaque sem perder a escala do grupo."
+  ],
+  "quando_evitar": [
+    "Série temporal: a ordenação pela grandeza apaga o tempo; use colunas (03_colunas-verticais) ou linhas (04_linhas).",
+    "Valores com os dois sinais: barras divergentes de sinal (06_barras-divergentes).",
+    "Duas ou três séries por categoria: barras agrupadas (02_barras-agrupadas).",
+    "Muitas categorias com valores quase iguais: lollipop (17_comparacao-de-pontos) reduz o efeito de parede.",
+    "Ocupação contra um teto real por categoria: barras com trilho (13_progresso-meta-e-gauge).",
+    "Top N compacto em card estreito, sem necessidade de eixo: bar list (09_bar-list)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-por-executivo",
+      "titulo": "Receita reconhecida por executivo no trimestre",
+      "caso_de_uso": "Quem está na frente em receita reconhecida no trimestre e por quanto, entre os oito executivos do time.",
+      "o_que_demonstra": [
+        "BarChart layout vertical com YAxis de categoria e XAxis numérico oculto",
+        "Ordenação decrescente com desempate estável por nome, feita no componente",
+        "Valor na ponta por LabelList com formatCurrencyCompact",
+        "Altura derivada do número de categorias com passo fixo por barra",
+        "Linha de leitura calculada do dado: líder e distância para o 2º"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_destaque-contra-sla",
+      "titulo": "Tempo até o primeiro contato por SDR",
+      "caso_de_uso": "Quais SDRs passam do SLA de 4 horas até o primeiro contato e quanto passam, entre as 12 do time.",
+      "o_que_demonstra": [
+        "Cor por item via shape com Rectangle, sem Cell, a partir de um campo calculado",
+        "Acima do SLA em cor de alerta, demais em neutro com valor escrito em toda barra",
+        "ReferenceLine x=4 tracejada e rotulada como SLA 4 h",
+        "Ordenação crescente porque a mensagem é quem está pior",
+        "Destaque vindo de regra de dado, estável quando a ordem muda"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_campanhas-com-cauda-agregada",
+      "titulo": "Leads por campanha com cauda agregada",
+      "caso_de_uso": "Quais das 40 campanhas do mês trouxeram mais leads, sem espremer 40 barras num card só.",
+      "o_que_demonstra": [
+        "Top 15 ordenado e uma barra final Outras 25 campanhas em neutro, fora da ordenação",
+        "Nome longo dentro da barra por LabelList insideLeft e contagem na ponta",
+        "Nome que não cabe na barra curta sai para depois da ponta, sem reticência",
+        "Cauda somada entrando no domínio sem roubar a primeira posição"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_zero-indisponivel-e-empate",
+      "titulo": "Agendas por fila com zero, lacuna e empate",
+      "caso_de_uso": "Ler agendas da semana por fila quando uma fila marcou zero, outra não tem coleta e duas empatam no topo.",
+      "o_que_demonstra": [
+        "Zero medido escreve 0 sem minPointSize para fabricar barra visível",
+        "Fila sem coleta escreve indisponível em texto apagado, nunca barra zerada",
+        "Empate no topo com as duas categorias em destaque e título dizendo empate",
+        "Estado vazio no lugar do gráfico quando o recorte não tem linhas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Decisão sensível ao peso de custo",
+  "useCase": "Diretoria: o cenário vencedor continua vencendo se o peso de algum critério variar 20% para mais ou para menos?",
+  "demonstrates": [
+    "Sensibilidade calculada em TypeScript variando cada peso em 20%",
+    "Selo decisão sensível ao peso de custo no lugar da coroa de vencedor",
+    "Cenário que vence com o peso alterado, indicado na mesma tabela",
+    "Nota ausente mostrada como sem nota e total marcado incompleto, nunca zero"
+  ],
+  "canvas": { "width": 960, "height": 420 },
+  "frame": "card",
+  "notes": "Canvas de 960 por 420 em vez do largo sugerido: o selo de duas linhas na linha do vencedor e a linha de sensibilidade somam cerca de 288 px de conteúdo contra 282 px do corpo no largo; com 420 o corpo tem 302 px. A prova varia um peso por vez em 20% para menos e para mais, mantém os outros e refaz a soma normalizada pela soma dos pesos; vale o vencedor de cada refação. O total de quem tem nota ausente usa só os pesos das notas presentes e sai marcado como incompleto, sem tratar a ausência como zero. Empate no topo não elege vencedor."
+}

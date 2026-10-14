@@ -1,0 +1,13 @@
+{
+  "title": "Primeira resposta dentro da faixa de SLA",
+  "useCase": "Em quantos dos últimos 20 dias úteis a primeira resposta saiu da faixa de SLA contratada?",
+  "demonstrates": [
+    "ReferenceArea do SLA em --surface-sunken, declarada antes do Line para ficar atrás",
+    "Ponto só nos dias fora da faixa, em --negative, com a contagem escrita junto",
+    "Rodapé calculado do dado: 3 de 20 dias fora do SLA, com formatHours no limite",
+    "Fonte da faixa escrita (SLA contratado), nunca desenhada em volta do que aconteceu",
+    "Faixa com menos contraste que o traço, conferida nos temas escuro e claro"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

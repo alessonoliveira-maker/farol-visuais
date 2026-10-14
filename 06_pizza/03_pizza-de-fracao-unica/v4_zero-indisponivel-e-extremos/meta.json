@@ -1,0 +1,13 @@
+{
+  "title": "Zero, indisponível e frações extremas",
+  "useCase": "Como o glifo separa fração zero, fração indisponível e frações fora da faixa legível?",
+  "demonstrates": [
+    "0% medido desenha o trilho vazio e escreve 0%",
+    "Indisponível com contorno tracejado --text-muted e formatUnavailable()",
+    "Abaixo de 5% ou acima de 95% o glifo dá lugar ao número",
+    "Quatro estados lado a lado com o mesmo diâmetro e o ícone Unplug"
+  ],
+  "canvas": { "width": 640, "height": 300 },
+  "frame": "card",
+  "notes": "Canvas declarado por número (GEO-1), e a conta foi medida no render, não estimada: a caixa do glifo com 44 px, o nome do recorte com 15 px, a linha do par com 18 px e a nota de apoio em duas linhas de 11 px somando 28 px, com 6 px de vão entre os quatro blocos, mais a nota de rodapé em duas linhas e 12 px de afastamento, o que fecha 159 px de conteúdo desenhado. A moldura card acima de 560 px de largura come 118,5 px de altura com o caso de uso em uma linha, e o caso de uso tem 85 caracteres, abaixo dos 92 que cabem a 574 px: 300 px devolvem 181,5 px de corpo e sobram 22,5 px. Na largura, 574 px menos três vãos de 16 px dão colunas de 131,5 px, onde a nota de 45 caracteres quebra em duas linhas. O preset card de 640x360 caberia e deixaria 82,5 px de sobra abaixo do rodapé, e a régua da GEO-1 é a conta das linhas escritas, não o preset mais próximo."
+}

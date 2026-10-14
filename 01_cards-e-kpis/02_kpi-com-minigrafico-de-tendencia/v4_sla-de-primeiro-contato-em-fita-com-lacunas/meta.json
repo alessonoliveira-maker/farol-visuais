@@ -1,0 +1,14 @@
+{
+  "title": "SLA de primeiro contato em fita com lacunas",
+  "useCase": "Quantos dias úteis dos últimos 60 dias corridos cumpriram o SLA de primeiro contato, com duas semanas sem coleta no meio?",
+  "demonstrates": [
+    "Fita de células em flex gap-px, em HTML, sem BarChart de barras iguais",
+    "Sem coleta em contorno tracejado neutro, distinto de fora do SLA em --negative",
+    "Fim de semana marcado em tom sunken, fora do denominador de dias válidos",
+    "Número sobre dias válidos com o par: 91,2% (31 de 34 dias válidos)",
+    "Extremos da fita rotulados com formatDate, e legenda com amostra na forma da marca",
+    "Cada célula com title de data e estado; maior vão sem coleta em função pura"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

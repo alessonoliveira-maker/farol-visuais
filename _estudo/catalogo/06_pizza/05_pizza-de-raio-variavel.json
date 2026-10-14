@@ -1,0 +1,68 @@
+{
+  "slug": "05_pizza-de-raio-variavel",
+  "nome": "Pizza de raio variável",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Pizza em que o ângulo de cada setor codifica uma métrica (a participação no todo) e o raio codifica outra, com raio em escala de raiz quadrada, zero incluído e raio mínimo. É peça de análise exploratória: pede anéis de escala, legenda que explique as duas codificações e dica com os dois números, porque o olho soma ângulo e raio numa área só.",
+  "quando_usar": [
+    "Aba de análise com 3 a 6 categorias e duas métricas por categoria, uma delas participação num todo.",
+    "Quando o produto de ângulo e raio não induz leitura errada e a dica traz as duas métricas por extenso.",
+    "Peça de exploração que precede uma decisão, não o painel diário."
+  ],
+  "quando_evitar": [
+    "Painel operacional ou leitura rápida: barras pareadas (02) ou dispersão (09).",
+    "Mais de 6 setores ou raios muito próximos: a diferença de raio some; barras pareadas (02).",
+    "Métrica em que raio maior significa pior sem aviso escrito, porque a área grande parece melhor.",
+    "Raio linear no valor, que infla a área ao quadrado: nunca."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_investimento-e-cpl-qualificado-por-plataforma",
+      "titulo": "Investimento e CPL qualificado por plataforma",
+      "caso_de_uso": "Onde está o investimento do mês e quanto custa cada lead qualificado em cada uma das três plataformas de mídia?",
+      "o_que_demonstra": [
+        "Pie com outerRadius máximo e shape que devolve Sector com raio por item",
+        "Raio por raiz quadrada do valor sobre o maior valor, entre rMin e rMax",
+        "Anéis de escala em circle no mesmo SVG, com rótulo em R$",
+        "Legenda dupla que explica ângulo e raio, e dica com as duas métricas"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_anel-do-cpl-qualificado-alvo",
+      "titulo": "CPL qualificado contra o anel do alvo",
+      "caso_de_uso": "Qual plataforma de mídia passou do CPL qualificado alvo no mês, e com que fatia do investimento?",
+      "o_que_demonstra": [
+        "Anel de referência tracejado 3 3 em --text-muted no raio do alvo",
+        "Rótulo só no setor que passa do anel, com halo na cor da superfície",
+        "Anotação curta com nome e valor do alvo em formatCurrencyCompact",
+        "Acima do alvo dito em palavra, sem --negative como único sinal"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_entradas-e-taxa-de-agenda-por-fila",
+      "titulo": "Entradas e taxa de agenda por fila da pré-vendas",
+      "caso_de_uso": "Quais filas da pré-vendas recebem mais entradas e quais convertem melhor em agenda, na aba de análise?",
+      "o_que_demonstra": [
+        "Cinco filas com cor por slot fixo na ordem 1, 3, 6, 5, 2",
+        "Domínio do raio de 0 a 100% declarado, não do menor ao maior valor",
+        "Legenda lateral tabular com participação, taxa de agenda e volume",
+        "Taxa com volume na dica por formatRateWithVolume"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_plataforma-sem-lead-qualificado",
+      "titulo": "Plataforma sem lead qualificado no mês",
+      "caso_de_uso": "Como mostrar uma plataforma que recebeu investimento mas não gerou lead qualificado, sem CPL calculável?",
+      "o_que_demonstra": [
+        "Setor em raio mínimo, vazado, com contorno tracejado --text-muted",
+        "Rótulo CPL indisponível: 0 leads qualificados, por formatUnavailable()",
+        "Ângulo mantido pelo investimento: a ausência está no raio, não na fatia",
+        "Divisão por zero tratada em TypeScript antes do data, nunca Infinity no raio"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

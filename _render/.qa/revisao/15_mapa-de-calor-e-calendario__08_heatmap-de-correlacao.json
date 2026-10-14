@@ -1,0 +1,147 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "08_heatmap-de-correlacao",
+  "versoes": {
+    "v1_seis-medidas-de-midia": {
+      "veredito": "reprovado",
+      "nota": "Contraste do número resolvido pela pastilha em --surface-sunken e sinal de menos tipográfico conferido no preview. Volta por dois pontos. Pergunta 16, EST-1: data vazio não tem ramo, desenha um svg sem célula e mantém a régua e a legenda, sem bloco role=status; copiar o ramo das irmãs v2 a v4. Pergunta 10, TIP-2 e GEO-18: os 22 textos do svg chegam à tela em 10,05 px por escala 0,91, e três guardas de texto ficam cegas; desenhar no viewBox do corpo medido, como as irmãs. Na mesma passada: corrigir o notes do meta.json, que ainda descreve o limiar de 0,50. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__08_heatmap-de-correlacao_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:58.378Z",
+      "impressao": "7171181277d1182b07c172b63dec1086722a36d3",
+      "arquivos": {
+        "Chart.tsx": "3d985384f4e358d74228aa73424cad9e4c78a9fb",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "d1d15a32fd8259d99a4655be96eac778f39b8384"
+      }
+    },
+    "v2_pares-fortes-rotulados": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Três faixas discretas com intervalo escrito, número vazado só nos 14 pares fortes, seta de sinal na faixa moderada, dez medidas nomeadas no desenho parado, vazio com role=status, escala 1 e todas as guardas de texto medindo. Observações no README: legenda a 4 px da última linha da matriz, intervalo da legenda em módulo sem dizer, comentário de signed desatualizado, sem dica.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:58.889Z",
+      "impressao": "3cc76dfdecbb96048629e26cae06ebba48409b25",
+      "arquivos": {
+        "Chart.tsx": "51a4c95c83ca295e42c6b78cd22a78c6641a8a97",
+        "data.ts": "ee101a871e6901bded976f45a6b9c1b6d70bc0ca",
+        "meta.json": "beb8d7bed686f02a447605deedfe99f8c03882ed"
+      }
+    },
+    "v3_catorze-medidas-em-blocos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Área proporcional ao módulo sem piso (RAIO-CONTRA-AREA mediu), losango de área igual conferido pela conta, sinal em cor e forma, catorze nomes na diagonal, régua terminando no máximo observado de 0,94, vazio com role=status. Observações no README: linha da régua no mesmo passo das linhas da matriz, 2,8 px entre o maior círculo da régua e o rótulo, valor exato sem dica.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:59.467Z",
+      "impressao": "787926416feb24ec9931706f54e5aa0708f5f4a5",
+      "arquivos": {
+        "Chart.tsx": "a007ac325d7338ae1ca9acebc1768687677b1168",
+        "data.ts": "21fe4687c6a6a86ceb8e73b86fdcf2d7b6cb452a",
+        "meta.json": "dd70b661b8daa318a4447495ca55d07c2afdc91b"
+      }
+    },
+    "v4_pares-insuficientes-e-nao-calculavel": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Três estados de célula separados no desenho e na legenda, variância zero com formatUnavailable e contorno tracejado, nunca zero; hachura com n e sem coeficiente; contagens da frase conferidas contra o data.ts (6, 4 e 5 de 15). Observações no README: 2 px medidos entre a palavra de ausência e o contorno tracejado, célula de ausência sem n, ícone Unplug ausente por desvio declarado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:59.987Z",
+      "impressao": "140d3c178d2a2e9cd116ed50f2ca9ec2b9ec671d",
+      "arquivos": {
+        "Chart.tsx": "d094c30683e5e791ade8031de7b07334b0f3de67",
+        "data.ts": "aad8554a78be96c51295c374218615645a5f6db3",
+        "meta.json": "299346c9d9ddd45b8fa600235e15a062612bed16"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_seis-medidas-de-midia",
+      "veredito": "reprovado",
+      "nota": "A peca compara seis medidas e nomeia cinco. As colunas sao rotuladas so por numero, de 1 a 5, e as linhas vao de 2 Impressoes a 6 CPL qualificado, entao a medida 1 nao tem nome em lugar nenhum do cartao, nos dois temas. E justamente a medida que o subtitulo pergunta, o investimento em midia, e o leitor precisa deduzi-la do subtitulo em vez de ler. E o mesmo principio da ROT-10: toda parte se nomeia no desenho parado. Nomear a coluna 1, ou trocar o numero por nome curto nas colunas. Resto aceito: o triangulo inferior declara a simetria, o rodape diz o metodo e o numero de semanas fechadas, avisa que correlacao nao e causa, e cada celula escreve o valor, o que sustenta a leitura para quem nao separa vermelho de verde.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:50.042Z",
+      "impressao": "41c2d905191b4a2353191a4555a790b835425a8b",
+      "arquivos": {
+        "Chart.tsx": "5cb78d6fd787c441b9a45ef069f3825edad097a5",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "3ea4ed28ce567f9dc5e5626169815dc2d2de6621"
+      }
+    },
+    {
+      "versao": "v1_seis-medidas-de-midia",
+      "veredito": "reprovado",
+      "nota": "Armadilha GEO-13. A peça compara seis medidas e nomeia cinco. As colunas são rotuladas só por número, de 1 a 5, e as linhas vão de \"2 Impressões\" a \"6 CPL qualificado\", então a medida 1 não tem nome em lugar nenhum do cartão, nos dois temas. É justamente a medida que o subtítulo pergunta, o investimento em mídia, e o leitor precisa deduzi-la do subtítulo em vez de ler. Mesmo princípio da ROT-10: toda parte se nomeia no desenho parado. Nomear a coluna 1, ou trocar o número por nome curto nas colunas. Resto aceito: o triângulo inferior declara a simetria, o rodapé diz o método e o número de semanas fechadas, avisa que correlação não é causa, e cada célula escreve o valor, o que sustenta a leitura para quem não separa vermelho de verde.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:20:18.951Z",
+      "impressao": "41c2d905191b4a2353191a4555a790b835425a8b",
+      "arquivos": {
+        "Chart.tsx": "5cb78d6fd787c441b9a45ef069f3825edad097a5",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "3ea4ed28ce567f9dc5e5626169815dc2d2de6621"
+      }
+    },
+    {
+      "versao": "v1_seis-medidas-de-midia",
+      "veredito": "reprovado",
+      "nota": "Conserto do GEO-13 aceito: os dois eixos passaram a levar nome e a medida órfã ganhou identidade. Volta porque a cor do texto da célula troca num limiar fixo de 0,5, e no tema claro 8 das 15 células ficam abaixo de 4,5:1, com pior caso de 2,10:1. O limiar tem que sair da luminância do fundo, não do valor da correlação. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:25.046Z",
+      "impressao": "3bd6f672a9eb6a18883f38fae0d927dee7bdc33e",
+      "arquivos": {
+        "Chart.tsx": "a5bd24a58338026984f88174016f94dd89d9a3ca",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "d1d15a32fd8259d99a4655be96eac778f39b8384"
+      }
+    },
+    {
+      "versao": "v1_seis-medidas-de-midia",
+      "veredito": "reprovado",
+      "nota": "Contraste do número resolvido pela pastilha em --surface-sunken e sinal de menos tipográfico conferido no preview. Volta por dois pontos. Pergunta 16, EST-1: data vazio não tem ramo, desenha um svg sem célula e mantém a régua e a legenda, sem bloco role=status; copiar o ramo das irmãs v2 a v4. Pergunta 10, TIP-2 e GEO-18: os 22 textos do svg chegam à tela em 10,05 px por escala 0,91, e três guardas de texto ficam cegas; desenhar no viewBox do corpo medido, como as irmãs. Na mesma passada: corrigir o notes do meta.json, que ainda descreve o limiar de 0,50. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__08_heatmap-de-correlacao_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:58.378Z",
+      "impressao": "7171181277d1182b07c172b63dec1086722a36d3",
+      "arquivos": {
+        "Chart.tsx": "3d985384f4e358d74228aa73424cad9e4c78a9fb",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "d1d15a32fd8259d99a4655be96eac778f39b8384"
+      }
+    },
+    {
+      "versao": "v2_pares-fortes-rotulados",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Três faixas discretas com intervalo escrito, número vazado só nos 14 pares fortes, seta de sinal na faixa moderada, dez medidas nomeadas no desenho parado, vazio com role=status, escala 1 e todas as guardas de texto medindo. Observações no README: legenda a 4 px da última linha da matriz, intervalo da legenda em módulo sem dizer, comentário de signed desatualizado, sem dica.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:58.889Z",
+      "impressao": "3cc76dfdecbb96048629e26cae06ebba48409b25",
+      "arquivos": {
+        "Chart.tsx": "51a4c95c83ca295e42c6b78cd22a78c6641a8a97",
+        "data.ts": "ee101a871e6901bded976f45a6b9c1b6d70bc0ca",
+        "meta.json": "beb8d7bed686f02a447605deedfe99f8c03882ed"
+      }
+    },
+    {
+      "versao": "v3_catorze-medidas-em-blocos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Área proporcional ao módulo sem piso (RAIO-CONTRA-AREA mediu), losango de área igual conferido pela conta, sinal em cor e forma, catorze nomes na diagonal, régua terminando no máximo observado de 0,94, vazio com role=status. Observações no README: linha da régua no mesmo passo das linhas da matriz, 2,8 px entre o maior círculo da régua e o rótulo, valor exato sem dica.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:59.467Z",
+      "impressao": "787926416feb24ec9931706f54e5aa0708f5f4a5",
+      "arquivos": {
+        "Chart.tsx": "a007ac325d7338ae1ca9acebc1768687677b1168",
+        "data.ts": "21fe4687c6a6a86ceb8e73b86fdcf2d7b6cb452a",
+        "meta.json": "dd70b661b8daa318a4447495ca55d07c2afdc91b"
+      }
+    },
+    {
+      "versao": "v4_pares-insuficientes-e-nao-calculavel",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Três estados de célula separados no desenho e na legenda, variância zero com formatUnavailable e contorno tracejado, nunca zero; hachura com n e sem coeficiente; contagens da frase conferidas contra o data.ts (6, 4 e 5 de 15). Observações no README: 2 px medidos entre a palavra de ausência e o contorno tracejado, célula de ausência sem n, ícone Unplug ausente por desvio declarado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:59.987Z",
+      "impressao": "140d3c178d2a2e9cd116ed50f2ca9ec2b9ec671d",
+      "arquivos": {
+        "Chart.tsx": "d094c30683e5e791ade8031de7b07334b0f3de67",
+        "data.ts": "aad8554a78be96c51295c374218615645a5f6db3",
+        "meta.json": "299346c9d9ddd45b8fa600235e15a062612bed16"
+      }
+    }
+  ]
+}

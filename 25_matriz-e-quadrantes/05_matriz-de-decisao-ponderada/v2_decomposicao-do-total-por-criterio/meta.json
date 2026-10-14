@@ -1,0 +1,13 @@
+{
+  "title": "De onde vem o total de cada desenho",
+  "useCase": "Comercial: em quais critérios o desenho vencedor abre vantagem e em quais ele empata ou perde.",
+  "demonstrates": [
+    "Coluna de total como barra empilhada de divs, um segmento por critério",
+    "Mesma cor por critério no segmento e no cabeçalho da coluna",
+    "Anotação: o vencedor ganha quase só em simplicidade de apuração",
+    "Diferença para o segundo colocado escrita ao lado do total"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "A barra tem trilho de 0 até o máximo da escala (5) e cada segmento mede nota vezes peso sobre a soma dos pesos, então o vazio do trilho é a distância até a nota máxima. Segmentos separados por vão de 2 px (COR-5). A anotação escolhe o critério de maior vantagem do 1º sobre o 2º e escreve a vantagem do critério contra a vantagem total; ela passa de 100% quando o 1º perde em outros critérios, e o texto diz os dois números em vez de um percentual."
+}

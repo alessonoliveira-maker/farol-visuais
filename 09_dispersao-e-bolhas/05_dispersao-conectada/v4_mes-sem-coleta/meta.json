@@ -1,0 +1,16 @@
+{
+  "title": "Trajetória com mês sem coleta",
+  "useCase": "Como mostrar a trajetória quando um mês não teve coleta?",
+  "demonstrates": [
+    "Série dividida em duas no mês ausente, sem ligar por cima do buraco",
+    "Anel tracejado e vazado marcando o vão, com o mês sem coleta escrito ao lado",
+    "Mês ausente na lista com os campos em nulo, nunca interpolado nem lançado como zero",
+    "Mês sem coleta fora do vão declarado na nota, porque ele não tem anel para ser lido"
+  ],
+  "canvas": {
+    "width": 680,
+    "height": 450
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1. A conta: a moldura card com largura de 680 desconta 66 px de largura e 135 px de altura com o caso de uso em duas linhas, e o corpo de 614 x 315 recebe a linha de leitura de 12 px com respiro de 8, que são 25 px, mais 265 px de plano, mais a nota de 11 px com respiro de 8, outros 25 px. COR DO TRAÇO: ele carrega a relação, apagado ele ninguém sabe qual mês virou qual, então a ACE-6 cobra 3:1 contra o cartão. Medido contra --surface-raised: --chart-1 9,50:1 no escuro e 6,00:1 no claro; --line-strong, que a tabela 17.2 indicaria, mede 1,79:1 e 1,83:1 e está fora. O anel do vão sai em --text-muted (5,21:1 e 5,37:1) e não na cor da série, porque ele não é dado, é a falta dele. ONDE A ESPECIFICAÇÃO CEDEU AO CONTRATO, e é o ponto de desenho desta versão: o catálogo pede ponto fantasma tracejado, e a EIX-10 proíbe afirmar valor para o que não foi medido. O anel fica no meio do vão, mas ele é vazado, tracejado, tem raio de 7 px, maior que qualquer marca de dado da peça, e NENHUM segmento chega até ele, então nada no desenho afirma caminho nem posição; o que fecha a leitura é a palavra sem coleta ao lado, porque forma sozinha não diz por que o mês não está lá. Por isso também não se usa formatUnavailable(): não existe casa de número a preencher no plano, o mês simplesmente não tem marca, e o que a peça precisa dizer é a CAUSA, que é o que a EST-4 pede de uma comparação sem base. Conferência das guardas, medida nesta peça e não suposta: CONTRASTE-MARCA MEDE esta versão, ao contrário do que acontece nos vizinhos de bolhas, onde ela sai preview_com_transform; ESPESSURA-MARCA sai sem medir, por sem_marca_de_barra. O que continua sem guarda nenhuma é a marca contra a MARCA, porque CONTRASTE-MARCA mede contra o cartão; esse número foi calculado à mão pela fórmula da WCAG sobre os tokens e os dois PNGs foram olhados."
+}

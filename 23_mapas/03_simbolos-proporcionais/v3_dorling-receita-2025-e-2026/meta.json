@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida por UF em 2025 e 2026",
+  "useCase": "Como a receita por UF mudou de tamanho entre 2025 e 2026 dentro do perímetro?",
+  "demonstrates": [
+    "Relaxação de Dorling em useMemo com 300 passos e retorno à origem de fator 0,02",
+    "Posição inicial sempre no centroide, para a mesma entrada dar a mesma saída",
+    "Dois painéis lado a lado com a mesma escala de raio, comparáveis",
+    "Contorno nas UFs do perímetro e cor por macrorregião em --chart-N",
+    "Subtítulo que explica a distorção e aponta o contorno real como referência"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Cor por macrorregião em --chart-1, --chart-3, --chart-6, --chart-5 e --chart-2, a ordem de COR-8, com o slot fixo na constante REGION_SLOT do data.ts. Sem opacidade: o cheio com contorno resolve a sobreposição, e a sigla vai em --accent-cyan-contrast (5,3:1 ou mais) dentro do círculo de 10 px de raio ou mais; abaixo disso a sigla sobe para cima do círculo, com halo, porque nenhum texto cabe em 20 px. A relaxação afasta cada par em proporção inversa à área, de modo que São Paulo quase não se move, e o último passo de cada rodada é o afastamento. O contorno do país é desenhado à mão (51 pontos) e os centroides são aproximados a 0,1 grau; o catálogo não tem a malha do IBGE. O viewBox tem escala 1, com 5 px por grau, para o texto chegar com 11 px (GEO-18). O perímetro é dado fictício: 22 das 27 UFs."
+}

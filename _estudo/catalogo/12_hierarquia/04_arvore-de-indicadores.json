@@ -1,0 +1,70 @@
+{
+  "slug": "04_arvore-de-indicadores",
+  "nome": "Árvore de indicadores (driver tree)",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Um indicador de resultado decomposto em alavancas por soma ou produto, em cartões ligados por conectores. Cada cartão traz valor, unidade, faixa de p10 a p90 e etiqueta de procedência (medido, premissa, derivado, lacuna); os operadores entre filhos fecham numericamente com o pai.",
+  "quando_usar": [
+    "Decompor uma meta ou projeção em alavancas multiplicativas ou aditivas",
+    "Mostrar qual alavanca move mais o resultado dentro do cenário em faixa",
+    "Ligar o resultado financeiro à capacidade operacional, como entradas por mês contra o teto",
+    "Deixar explícito o que é medição e o que é premissa em cada elo do cálculo"
+  ],
+  "quando_evitar": [
+    "Relações que não são soma nem produto (correlação, influência qualitativa): use rede (família 27) ou texto",
+    "Quando o peso de cada parte é a mensagem e não a fórmula: use treemap (12/01)",
+    "Mais de cinco níveis ou mais de 25 cartões: divida em duas árvores com um nó de ligação",
+    "Nós sem etiqueta de procedência: sem ela o visual faz premissa parecer medição"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-nova-do-ano-seguinte",
+      "titulo": "Receita nova do ano seguinte em alavancas",
+      "caso_de_uso": "Diretoria: R$ 8,4 mi de receita nova igual a 42 ganhos vezes R$ 200 mil, e 42 ganhos igual a 350 oportunidades vezes 12%.",
+      "o_que_demonstra": [
+        "Layout lateral com raiz à esquerda e conectores SVG ortogonais calculados em TypeScript",
+        "Cartão rounded-lg border com valor, unidade e selo de procedência",
+        "Operador vezes ou mais desenhado entre os filhos de cada nó",
+        "Validação no preparo que acusa nó cujo operador não fecha com o valor do pai"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_alavanca-de-maior-sensibilidade",
+      "titulo": "Alavanca que mais move a receita",
+      "caso_de_uso": "Diretoria: qual alavanca tem maior efeito na faixa da receita nova e quanto vale cada ponto dela.",
+      "o_que_demonstra": [
+        "Taxa de ganho em accent-amber e os demais cartões em neutro",
+        "Anotação calculada do dado: cada ponto de taxa vale R$ 0,7 mi",
+        "Microbarra de faixa p10 a p90 com marca do valor central em cada cartão",
+        "Regra da faixa do pai escrita no rodapé, porque ela não é a soma das faixas dos filhos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_da-receita-a-capacidade-de-pre-vendas",
+      "titulo": "Da receita à capacidade de Pré-vendas",
+      "caso_de_uso": "Diretoria: o cenário de R$ 8,4 mi pede cerca de 292 entradas por mês; o teto fictício de Pré-vendas é 240.",
+      "o_que_demonstra": [
+        "Árvore de cinco níveis: receita, ganhos, oportunidades, agendas e entradas",
+        "Taxas fictícias que fecham: 20% de agendamento e 50% de agenda para oportunidade",
+        "Nó de capacidade em negative quando a demanda do cenário passa do teto (122%)",
+        "Selo de procedência diferente por nível, com medido e premissa lado a lado",
+        "Cartões compactos e ramos laterais recolhíveis para caber no canvas largo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_ticket-de-produto-novo-como-premissa",
+      "titulo": "Produto novo com ticket sem medição",
+      "caso_de_uso": "Diretoria: a receita de um produto novo depende de um ticket médio que ainda não foi medido; o resultado herda a incerteza.",
+      "o_que_demonstra": [
+        "Selo premissa no ticket médio e faixa larga de R$ 60 mil a R$ 300 mil",
+        "Aviso no nó de resultado: herda a incerteza da premissa",
+        "Nó com lacuna desenhado em contorno tracejado, sem valor inventado",
+        "Faixa do resultado pela regra declarada, escrita junto do cartão"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

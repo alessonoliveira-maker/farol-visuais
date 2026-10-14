@@ -1,0 +1,75 @@
+{
+  "slug": "02_waffle-em-barras",
+  "nome": "Waffle em barras",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Colunas feitas de células contáveis sobre um eixo de categorias: a altura segue comparável como numa coluna comum, e cada célula vale uma quantidade declarada (1 agenda, 10 leads). O BarChart do Recharts entrega banda, ordenação, dica e ReferenceLine; um shape customizado no Bar desenha os rect de baixo para cima, com o mesmo número de células por linha em todas as barras. O eixo Y fica oculto e o valor vai escrito no topo, porque a altura das células só bate com a escala quando o domínio é calculado da razão entre banda e altura. Só a última célula pode ser parcial, e sempre com aviso na legenda.",
+  "quando_usar": [
+    "Contagem por categoria que o leitor quer contar, até cerca de 300 unidades por barra",
+    "Agendas, reuniões ou vitórias por dia ou mês, em que cada célula é uma coisa real",
+    "Contagem contra uma referência fixa, como meta diária, desenhada como ReferenceLine",
+    "Composição por origem dentro de cada coluna, com poucas categorias e unidade 1"
+  ],
+  "quando_evitar": [
+    "Contagens grandes sem necessidade de contar: colunas comuns (03)",
+    "Mais de 12 a 15 categorias: as células ficam pequenas demais; colunas (03) ou linha (04)",
+    "Valor contínuo em reais ou horas, sem unidade contável honesta: colunas (03)",
+    "Diferença fina entre categorias próximas: barras horizontais ordenadas (02/01)",
+    "Parte de um todo sem eixo de categoria: waffle 10x10 (22/01)",
+    "Distribuição de uma medida por item, como dias no funil: dot plot empilhado (16/09)"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-dia-util",
+      "titulo": "Agendas marcadas por dia útil",
+      "caso_de_uso": "Pré-vendas: quantas agendas o time marcou em cada dia útil da semana, contadas uma a uma.",
+      "o_que_demonstra": [
+        "BarChart nativo com Bar shape customizado que desenha rect de baixo para cima",
+        "perRow fixo e igual para todas as barras, com YAxis oculto",
+        "Valor escrito no topo por LabelList, no lugar do eixo de valor",
+        "Legenda de unidade 1 célula = 1 agenda sempre visível",
+        "Dica por ChartTooltip no mesmo formato do rótulo visível"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_agendas-contra-meta-diaria",
+      "titulo": "Agendas por dia contra a meta diária",
+      "caso_de_uso": "Pré-vendas: em quais dias da semana o time ficou abaixo da meta diária de 18 agendas e por quanto.",
+      "o_que_demonstra": [
+        "ReferenceLine da meta de 18 atravessando as colunas, com rótulo próprio",
+        "Domínio do YAxis calculado da razão banda e altura para a linha cair na célula 18",
+        "Dias abaixo da meta em --chart-1 e os demais em --line-strong",
+        "Distância até a meta escrita no topo da coluna: faltaram 5",
+        "Frase acessível com os dias abaixo da meta e o total da semana"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_vitorias-por-mes-e-origem",
+      "titulo": "Vitórias por mês e origem em 2026",
+      "caso_de_uso": "Comercial: quantas oportunidades foram ganhas em cada mês de 2026 e de qual origem veio cada uma.",
+      "o_que_demonstra": [
+        "Células empilhadas por origem dentro da coluna, na ordem fixa da legenda",
+        "Cor por origem com seriesColor(i), a mesma do restante do painel",
+        "Célula como botão com rótulo que abre a oportunidade, na ordem de preenchimento",
+        "Mês em curso marcado como parcial no rótulo do eixo",
+        "Meses por formatMonthShort e total do mês escrito no topo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_leads-por-mes-em-celulas-de-dez",
+      "titulo": "Leads por mês em células de dez",
+      "caso_de_uso": "Marketing: volume de leads por mês quando um mês passa de 300 e outro mês não tem coleta.",
+      "o_que_demonstra": [
+        "Unidade sobe para 1 célula = 10 leads quando alguma barra passa de 300",
+        "Última célula com largura parcial de 70% e aviso na legenda",
+        "Valor exato 347 escrito no topo, independente do arredondamento das células",
+        "Mês sem coleta com contorno tracejado e formatUnavailable, nunca coluna zerada",
+        "Mês com zero medido desenha só a base e escreve 0"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

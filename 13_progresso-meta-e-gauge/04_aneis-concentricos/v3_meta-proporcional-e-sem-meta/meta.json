@@ -1,0 +1,11 @@
+{
+  "title": "Anéis com meta proporcional, sem meta e estouro",
+  "useCase": "Pré-vendas: pessoa que entrou na quarta tem meta proporcional em duas metas, nenhuma na terceira e passou de 100% numa.",
+  "demonstrates": [
+    "Anel sem meta só com o trilho tracejado e o texto sem meta na legenda",
+    "Selo de meta proporcional com os dias úteis considerados",
+    "Anel acima de 100% travado na volta cheia, com o percentual real escrito",
+    "Frase acessível que nomeia a ausência em vez de somar zero"
+  ],
+  "canvas": "card"
+}

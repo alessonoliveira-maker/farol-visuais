@@ -1,0 +1,13 @@
+{
+  "title": "Ocupação do teto de contas",
+  "useCase": "Comercial: quantos dos 120 lugares da carteira estão ocupados, por conta ativa e em risco, e quantos sobram.",
+  "demonstrates": [
+    "Lugares vazios em ponto vazado de --text-muted, contando como parte do teto",
+    "Ativas em --chart-1 e em risco em --warning com contorno, não só cor",
+    "Texto 104 de 120 no centro e folga de 16 escrita ao lado",
+    "Dica por grupo com contagem e taxa por formatRateWithVolume"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta da GEO-1 no card de 640x360: o caso de uso tem 107 caracteres e quebra em duas linhas, então o corpo é de 574 x 225 px. Hemiciclo de raio 184 com a base em y 215 e centro em x 226; os três rótulos diretos ficam fora do arco, a 18 px do raio de fora (GEO-19), e cabem nos 574 px. O viewBox é o próprio corpo, então a escala é 1 (GEO-18). Desvio do catálogo, pelo contrato: o lugar vazio não usa --surface-overlay, que mede 1,00:1 no tema claro e 1,10:1 no escuro contra o cartão (TOK-1) e sumiria; sai em ponto vazado com contorno de --text-muted (5,21:1 e 5,37:1). Em risco é anel de contorno com miolo, os dois em --warning, separados por um vão na cor do cartão. Sem legenda: com três grupos o rótulo direto cabe na ponta de cada cunha (ROT-4), cada um com a amostra na forma do ponto. A dica segue o cursor e não sai no preview; o corpo escreve só a contagem, e a dica acrescenta a taxa sobre o teto."
+}

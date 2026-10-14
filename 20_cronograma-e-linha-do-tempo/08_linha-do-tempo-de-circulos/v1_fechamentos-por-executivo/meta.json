@@ -1,0 +1,14 @@
+{
+  "title": "Fechamentos por semana por executivo",
+  "useCase": "Quando fecharam e de que tamanho foram os fechamentos dos 5 executivos no terceiro trimestre de 2026?",
+  "demonstrates": [
+    "ScatterChart com XAxis numérico em milissegundos UTC e YAxis numérico com tique nomeado",
+    "ZAxis dataKey valor com range em área e domain de zero ao máximo declarado",
+    "Dado ordenado do maior para o menor antes do render, com preenchimento translúcido",
+    "Legenda de tamanho com três círculos por formatCurrencyCompact, o último é o máximo",
+    "Ticks mensais gerados em TypeScript por Date.UTC e formatMonthShort"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Opacidade 0,72 em vez dos 0,6 do catálogo: a ACE-5 exige 0,66 no mínimo para --chart-1 compor 3:1 com o cartão nos dois temas. O eixo das faixas é numérico (0 a 4) com tique escrito pelo nome, e não de categoria, porque Scatter sobre categoria abre uma banda por ponto (REC-14). Área sem piso: o range vai de 0 a 700 px², e o círculo mínimo do dado (R$ 9,8 mil) tem 37 px² e raio de 3,4 px. A área máxima de 700 px² dá diâmetro de 30 px, a altura de uma faixa: corpo 894 x 265, menos 24 da linha de leitura e 42 da legenda, menos o eixo X, dá cerca de 148 px para 5 faixas."
+}

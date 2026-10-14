@@ -1,0 +1,316 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "07_butterfly-piramide",
+  "versoes": {
+    "v1_leads-e-oportunidades-por-porte": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; escala simetrica honesta, marca a 15 px, rotulos nos dois temas legiveis.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:11:54.443Z",
+      "impressao": "ef9ab22bb36f20f78a419822af0e81c363c8b8ad",
+      "arquivos": {
+        "Chart.tsx": "a6e771e92162583771c2960c4aa4d25bad80dbac",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "1c36becf009f74ef423cfa5cd8700fb950e39f35"
+      }
+    },
+    "v2_tempo-ate-o-primeiro-contato": {
+      "veredito": "aprovado",
+      "nota": "Escalas independentes declaradas na leitura e todo valor escrito; frase acessivel agora dentro da ACE-1.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:11:59.192Z",
+      "impressao": "122f0c4df480aedeac4ab95a4cd17509124107b9",
+      "arquivos": {
+        "Chart.tsx": "b1694e38b03d645f8fd5ec6e0af92a3347ea9d40",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    "v3_termos-em-ganhas-e-perdidas": {
+      "veredito": "aprovado",
+      "nota": "14 termos legiveis no canvas alto; ausencia com traco e 0 por cento, nunca removida.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:12:03.443Z",
+      "impressao": "1fdf0fff64738387cc21b62bcce4e2a64cef169d",
+      "arquivos": {
+        "Chart.tsx": "1429ebf3d98d2eb50f0885d29b5aba7515bb759a",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "8db693f69a7180b8112ebc92b462c9f264dd95f6"
+      }
+    },
+    "v4_escalas-de-grandeza-diferentes": {
+      "veredito": "aprovado",
+      "nota": "Percentual do proprio total soma 100 nos dois lados; nulo vira indisponivel e nunca zero; dica traz o absoluto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:12:07.822Z",
+      "impressao": "721dc523cf6d5dabeef450eedaf59be840654548",
+      "arquivos": {
+        "Chart.tsx": "eb712c4e2b250f6ab546971385d30eadb73bd4e2",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "f66d89a92fb9269b0e934f3e2dc18e71a394b1f3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-e-oportunidades-por-porte",
+      "veredito": "reprovado",
+      "nota": "Bars empilhadas no mesmo stackId: o lado direito nao sai do zero e fica vazio; rotulos de valor colidem; o eixo de categoria imprime o id (porte-ate-5mi) em vez da faixa.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:50:35.300Z",
+      "impressao": "84544463c3e4cff035f7ded566b9e7167fd30e69",
+      "arquivos": {
+        "Chart.tsx": "55e04a3832c04591430c2ba17fdfb8cfa6586780",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "c09aab20633df6a9f3fa7dbab0a20f66522a4175"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-o-primeiro-contato",
+      "veredito": "reprovado",
+      "nota": "Rotulo 24 da maior barra da direita cai fora da area e some nos dois temas; os dois lados usam escalas independentes sem nenhuma sinalizacao na tela.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:50:39.901Z",
+      "impressao": "f622ad284abec3c8167d4881ce2fba5a2ac6abd9",
+      "arquivos": {
+        "Chart.tsx": "1268d7e8212d4ca96ccdbe18da2b3216e0651139",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    {
+      "versao": "v3_termos-em-ganhas-e-perdidas",
+      "veredito": "reprovado",
+      "nota": "Mesmo stackId empilha os dois lados: a barra de ganhas comeca no fim da de perdidas, nao no zero, e em 8 dos 14 termos fica toda a esquerda; rotulos colidem.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:50:45.141Z",
+      "impressao": "5c06d0ce533f7097401d83f0a370e7d719fafdcf",
+      "arquivos": {
+        "Chart.tsx": "32f9a58b070155c7bd5d7c30db59ea0d82b3b86a",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "fd2a1c517d2e028fdcef43ca32f8beba1e3325df"
+      }
+    },
+    {
+      "versao": "v4_escalas-de-grandeza-diferentes",
+      "veredito": "reprovado",
+      "nota": "Mesmo stackId empilha os lados: a barra de oportunidades nao parte do zero e em 3 das 5 faixas fica a esquerda ou some; rotulos 31,3% e 28,4% colidem.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:50:49.605Z",
+      "impressao": "e5c7e9449940dc3be6f336d92c914aa78ea351ca",
+      "arquivos": {
+        "Chart.tsx": "05a7fc90363482079135e2735a504e435b3f64b0",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "d6b8529afbd182281be7b99955a85021dba8909b"
+      }
+    },
+    {
+      "versao": "v1_leads-e-oportunidades-por-porte",
+      "veredito": "reprovado",
+      "nota": "Checklist 15 e ROT-7: o rotulo de valor da esquerda cai sobre a propria barra junto ao zero e o halo parte a marca em duas; nas faixas pequenas (21 leads) sobra so um toco. Ancorar o rotulo no extremo livre da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:53:34.823Z",
+      "impressao": "9c664edcb217a503d28690add947a0e7c798bfb2",
+      "arquivos": {
+        "Chart.tsx": "60501e456094c3e9352da90ff06561b8d9f43631",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "69fa5e5050048bba8a2d43cf5bd6ee6662fca91e"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-o-primeiro-contato",
+      "veredito": "reprovado",
+      "nota": "Checklist 20, ROT-6 e ACE-6: o valor fica dentro da barra; em destaque e text-primary sobre chart-1 (1,53:1 escuro, 2,99:1 claro, par proibido) e nas neutras 4,43:1 no claro, abaixo de AA. Levar o rotulo para fora da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:53:39.848Z",
+      "impressao": "8b77a0272f71fe5a6cf129bb900262a6ba9e7d4b",
+      "arquivos": {
+        "Chart.tsx": "103f6534e7313917051b7ecb74150b6736c7e68c",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    {
+      "versao": "v3_termos-em-ganhas-e-perdidas",
+      "veredito": "reprovado",
+      "nota": "Checklist 15 e ROT-7: o rotulo percentual da esquerda cai sobre a propria barra junto ao zero; com 14 barras finas o halo apaga quase toda a marca dos valores baixos (8,7%). Ancorar no extremo livre da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:54:17.123Z",
+      "impressao": "dd83da74e0a1cad110df293f44ba7d8c895028ea",
+      "arquivos": {
+        "Chart.tsx": "8949f268c90e98a656b33363782d9309e1729f33",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "fd2a1c517d2e028fdcef43ca32f8beba1e3325df"
+      }
+    },
+    {
+      "versao": "v4_escalas-de-grandeza-diferentes",
+      "veredito": "reprovado",
+      "nota": "Checklist 15 e ROT-7: o rotulo percentual da esquerda cai sobre a propria barra junto ao zero e o halo corta a marca; na faixa de 3,6% sobra um toco de poucos pixels. Ancorar no extremo livre da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:54:17.618Z",
+      "impressao": "91d53f5074caafae242fa3c8d70d8afff9f18f94",
+      "arquivos": {
+        "Chart.tsx": "193752fed72e65c2ab8ba67bb8690f866b59d798",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "d6b8529afbd182281be7b99955a85021dba8909b"
+      }
+    },
+    {
+      "versao": "v1_leads-e-oportunidades-por-porte",
+      "veredito": "aprovado",
+      "nota": "Butterfly honesto: dominio simetrico nos dois conjuntos, Math.abs no tique e no rotulo, zero solido. Alas da mesma faixa saem escalonadas em y.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:49:16.487Z",
+      "impressao": "14fa5d41374a906e88e1410a630b7a8e4f111034",
+      "arquivos": {
+        "Chart.tsx": "a6e771e92162583771c2960c4aa4d25bad80dbac",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "69fa5e5050048bba8a2d43cf5bd6ee6662fca91e"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-o-primeiro-contato",
+      "veredito": "aprovado",
+      "nota": "Dois BarChart irmaos bem alinhados, taxa com volume no centro, destaque com peso alem da cor. Escalas independentes declaradas na leitura.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:49:21.181Z",
+      "impressao": "4eba3747f3e7610793fbae0f8645de204096dc81",
+      "arquivos": {
+        "Chart.tsx": "e1eb6abaa589103b2f62bcf4dcee98883d4b562d",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    {
+      "versao": "v3_termos-em-ganhas-e-perdidas",
+      "veredito": "aprovado",
+      "nota": "Piramide normalizada por grupo, criterio de ordem escrito, termo ausente com traco e 0 por cento. barCategoryGap 26 por cento fora da ESP-2.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:49:25.695Z",
+      "impressao": "a24078aae18f5e1d7cdc96d696d4c33e82b3e373",
+      "arquivos": {
+        "Chart.tsx": "808c0eb43bfdd947ec8c0db97301c7853b5ed2aa",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "fd2a1c517d2e028fdcef43ca32f8beba1e3325df"
+      }
+    },
+    {
+      "versao": "v4_escalas-de-grandeza-diferentes",
+      "veredito": "reprovado",
+      "nota": "A dica repete o percentual do rotulo em vez da contagem absoluta, contra o catalogo, o meta.json e a DIC-1.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:49:30.131Z",
+      "impressao": "fc0be3b00156dee6a1f38cd96e3a91ced0356709",
+      "arquivos": {
+        "Chart.tsx": "6fc024e8b423cf1333dbf0cb44cb4e917fa6d449",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "d6b8529afbd182281be7b99955a85021dba8909b"
+      }
+    },
+    {
+      "versao": "v1_leads-e-oportunidades-por-porte",
+      "veredito": "aprovado",
+      "nota": "Encoding honesto, dominio simetrico e sem sinal em texto. Pendem alas escalonadas em y e tique sem substantivo.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T17:03:58.809Z",
+      "impressao": "14fa5d41374a906e88e1410a630b7a8e4f111034",
+      "arquivos": {
+        "Chart.tsx": "a6e771e92162583771c2960c4aa4d25bad80dbac",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "69fa5e5050048bba8a2d43cf5bd6ee6662fca91e"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-o-primeiro-contato",
+      "veredito": "aprovado",
+      "nota": "Escalas independentes declaradas na leitura e valor escrito em cada barra, dentro da Anatomia 8. Frase acessivel passa de 250.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T17:04:03.364Z",
+      "impressao": "4eba3747f3e7610793fbae0f8645de204096dc81",
+      "arquivos": {
+        "Chart.tsx": "e1eb6abaa589103b2f62bcf4dcee98883d4b562d",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    {
+      "versao": "v3_termos-em-ganhas-e-perdidas",
+      "veredito": "aprovado",
+      "nota": "Piramide normalizada por grupo, ausencia com traco e zero por cento. Pendem barCategoryGap 26 por cento e excesso de peso 700.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T17:04:08.910Z",
+      "impressao": "a24078aae18f5e1d7cdc96d696d4c33e82b3e373",
+      "arquivos": {
+        "Chart.tsx": "808c0eb43bfdd947ec8c0db97301c7853b5ed2aa",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "fd2a1c517d2e028fdcef43ca32f8beba1e3325df"
+      }
+    },
+    {
+      "versao": "v4_escalas-de-grandeza-diferentes",
+      "veredito": "aprovado",
+      "nota": "Percentual do proprio total soma 100 nos dois lados, indisponivel no lugar da barra e dica em contagem absoluta.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T17:04:09.401Z",
+      "impressao": "ba07e50b918bbda501031dfeb080e6a36d550002",
+      "arquivos": {
+        "Chart.tsx": "eb712c4e2b250f6ab546971385d30eadb73bd4e2",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "38e7849a7c28088417537f7fbd280bb4f89b7c2e"
+      }
+    },
+    {
+      "versao": "v1_leads-e-oportunidades-por-porte",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; escala simetrica honesta, marca a 15 px, rotulos nos dois temas legiveis.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:11:54.443Z",
+      "impressao": "ef9ab22bb36f20f78a419822af0e81c363c8b8ad",
+      "arquivos": {
+        "Chart.tsx": "a6e771e92162583771c2960c4aa4d25bad80dbac",
+        "data.ts": "e72b6eb6f11a4220daab731d708667ee08332677",
+        "meta.json": "1c36becf009f74ef423cfa5cd8700fb950e39f35"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-o-primeiro-contato",
+      "veredito": "aprovado",
+      "nota": "Escalas independentes declaradas na leitura e todo valor escrito; frase acessivel agora dentro da ACE-1.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:11:59.192Z",
+      "impressao": "122f0c4df480aedeac4ab95a4cd17509124107b9",
+      "arquivos": {
+        "Chart.tsx": "b1694e38b03d645f8fd5ec6e0af92a3347ea9d40",
+        "data.ts": "98088273e883dab98b671499c27b46b24f1890dc",
+        "meta.json": "76ef9ceb5b34da880e8ee38eddce41a1959df1c7"
+      }
+    },
+    {
+      "versao": "v3_termos-em-ganhas-e-perdidas",
+      "veredito": "aprovado",
+      "nota": "14 termos legiveis no canvas alto; ausencia com traco e 0 por cento, nunca removida.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:12:03.443Z",
+      "impressao": "1fdf0fff64738387cc21b62bcce4e2a64cef169d",
+      "arquivos": {
+        "Chart.tsx": "1429ebf3d98d2eb50f0885d29b5aba7515bb759a",
+        "data.ts": "f51f4c3c5cf7c9433ae28926d22033cad6efca48",
+        "meta.json": "8db693f69a7180b8112ebc92b462c9f264dd95f6"
+      }
+    },
+    {
+      "versao": "v4_escalas-de-grandeza-diferentes",
+      "veredito": "aprovado",
+      "nota": "Percentual do proprio total soma 100 nos dois lados; nulo vira indisponivel e nunca zero; dica traz o absoluto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:12:07.822Z",
+      "impressao": "721dc523cf6d5dabeef450eedaf59be840654548",
+      "arquivos": {
+        "Chart.tsx": "eb712c4e2b250f6ab546971385d30eadb73bd4e2",
+        "data.ts": "f825344ad01b5df11b2416d30cde0e1af16d29f5",
+        "meta.json": "f66d89a92fb9269b0e934f3e2dc18e71a394b1f3"
+      }
+    }
+  ]
+}

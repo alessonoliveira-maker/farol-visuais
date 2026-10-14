@@ -1,0 +1,70 @@
+{
+  "slug": "06_par-de-indicadores",
+  "nome": "Par de indicadores",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Dois números no mesmo cartão ligados por efeito e contraefeito: o volume perseguido e a qualidade que pode pagar por ele. Cada indicador traz a própria variação com a própria polaridade, um conector escrito nomeia a relação e um veredito calculado resolve as cores opostas. É a resposta de desenho à lei de Goodhart: a métrica perseguida sozinha é otimizada à custa de outra, e o par torna esse custo visível na mesma leitura.",
+  "quando_usar": [
+    "Volume que pode ser inflado à custa da qualidade: agendas e comparecimento, leads e percentual qualificado.",
+    "Par declarado no dicionário de métricas, com a relação escrita e um corte de estabilidade.",
+    "Coorte acompanhada no tempo, em que o contraindicador só fecha dias depois do indicador.",
+    "Tela com dois ou três pares em faixa, cada um com coorte e veredito próprios."
+  ],
+  "quando_evitar": [
+    "As duas medidas não têm relação de efeito e contraefeito: dois KPIs simples (modelo 01).",
+    "Entra uma terceira medida: decomposição (modelo 05) ou atual contra anterior e meta (modelo 01).",
+    "A relação precisa ser vista em muitos pontos ou entidades: dispersão (família 09) ou quadrantes (família 25).",
+    "Volume e qualidade de coortes diferentes lidos na mesma semana: montar a coorte antes de publicar."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-e-comparecimento-da-coorte",
+      "titulo": "Agendas marcadas e comparecimento da coorte",
+      "caso_de_uso": "A pré-vendas marcou mais agendas na semana sem perder comparecimento nessa mesma coorte de agendas?",
+      "o_que_demonstra": [
+        "Indicador de efeito em 30 px e contraindicador um degrau abaixo, em 14 px",
+        "Conector escrito com entre os dois números, nomeando a relação",
+        "Variação de cada indicador com a própria polaridade e a base nomeada",
+        "Comparecimento com o par: 71,2% (84 de 118 agendas)"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_leads-e-percentual-qualificado-com-veredito",
+      "titulo": "Leads e percentual qualificado com veredito",
+      "caso_de_uso": "O volume de leads de ago/26 subiu à custa da qualidade, ou as duas medidas melhoraram juntas?",
+      "o_que_demonstra": [
+        "Leads +34% em --positive e qualificados −9 p.p. em --negative no mesmo cartão",
+        "Variação de taxa em pontos percentuais com formatPercentPoints",
+        "Veredito calculado em texto: o volume subiu à custa da qualidade",
+        "Função pura que devolve um de cinco vereditos a partir das polaridades",
+        "Quadrante de 48 px em SVG com seta do período anterior para o atual"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_tres-pares-do-comercial",
+      "titulo": "Três pares do Comercial em faixa",
+      "caso_de_uso": "Fechamentos, handoff e funil criado melhoraram sem piorar desconto médio, aceite e idade das oportunidades?",
+      "o_que_demonstra": [
+        "Três pares com coorte declarada e veredito próprio em cada cartão",
+        "Polaridades opostas convivendo: desconto e idade média são menor melhor",
+        "Velocidade do handoff com formatHours e taxa de aceite com o par",
+        "Cartões de mesma altura com a linha do veredito reservada em todos"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v4_coorte-aberta-volume-zero-e-par-estavel",
+      "titulo": "Coorte aberta, volume zero e par estável",
+      "caso_de_uso": "Como o par se comporta quando a coorte ainda não fechou, quando não houve volume e quando nada mudou de verdade?",
+      "o_que_demonstra": [
+        "Contraindicador marcado parcial e veredito suprimido até a coorte fechar",
+        "Volume zero com a taxa escrita como sem base, nunca 0% nem NaN",
+        "Os dois deltas dentro do corte: sem mudança relevante e sem cor semântica",
+        "Data de fechamento da coorte escrita com formatDate"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

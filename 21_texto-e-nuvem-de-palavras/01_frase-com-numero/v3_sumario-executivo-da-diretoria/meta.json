@@ -1,0 +1,12 @@
+{
+  "title": "Sumário executivo da Diretoria em três frases",
+  "useCase": "Diretoria: receita contra meta, entradas contra o teto e cenário de 2027 em faixa, em três frases.",
+  "demonstrates": [
+    "Três frases geradas pela mesma função, cada uma com no máximo dois números",
+    "Multiplicador contra o teto em text-negative com peso 700 e ícone de alerta",
+    "Cenário escrito em faixa, nunca o ponto médio",
+    "A palavra premissa escrita na frase; a etiqueta colorida fica com o VisualCard"
+  ],
+  "canvas": "largo",
+  "notes": "O catálogo pede o cenário entre R$ 8,4 mi e R$ 10,1 mi e o multiplicador 3,1x; saem assim do dado. O peso 700 fica só no multiplicador, um elemento, dentro do limite de dois da TIP-3. Conta do corpo no preset largo com moldura card: 894 x 265 px; três frases de até duas linhas de 32 px mais dois vãos de 16 px cabem com sobra."
+}

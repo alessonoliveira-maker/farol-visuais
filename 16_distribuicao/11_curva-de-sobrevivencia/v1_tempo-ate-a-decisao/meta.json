@@ -1,0 +1,14 @@
+{
+  "title": "Tempo até a decisão das oportunidades",
+  "useCase": "Em quantos dias metade das 520 oportunidades de 2026 chega a uma decisão, contando as 87 ainda abertas?",
+  "demonstrates": [
+    "Função kaplanMeier com eventos e censuras agrupados por dia",
+    "Line stepAfter na curva e Scatter com shape de traço vertical nas censuras",
+    "ReferenceLine em 50% com o rótulo metade decide em até 58 dias",
+    "Tabela de em risco em Tailwind com as mesmas margens do gráfico",
+    "Nota: o evento é ganho ou perda; perda nunca vira censura"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Dado gerado por congruência linear com semente fixa e duração Weibull, que dá 520 casos, 87 abertos e mediana de 58 dias no estimador. A tabela de em risco usa as mesmas margens do gráfico: a coluna da esquerda vale margem de 8 mais eixo Y de 52, e cada número fica a (tique sobre teto do domínio) por cento do plano, centrado no tique de cima. O domínio do eixo X vai ao maior tempo observado arredondado em passos de 30 dias."
+}

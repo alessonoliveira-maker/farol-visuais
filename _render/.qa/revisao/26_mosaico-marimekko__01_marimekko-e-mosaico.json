@@ -1,0 +1,121 @@
+{
+  "familia": "26_mosaico-marimekko",
+  "modelo": "01_marimekko-e-mosaico",
+  "versoes": {
+    "v1_cobertura-de-dado-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 15 ladrilhos com área igual ao valor (0,0000 p.p.), percentuais somando 100 por coluna, entre colunas e na legenda, ausência hachurada por último e no topo, dois ladrilhos mudos na lista de identificação, textos de 5,21:1 para cima nos dois temas. Observações no README (ordem da legenda contra ROT-4, par sobre chart-3 medido, rótulo escalonado fora do dado padrão).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:59.411Z",
+      "impressao": "81aac0e39ba35b7ff0b59ab8c44037e3eba4f9b3",
+      "arquivos": {
+        "Chart.tsx": "ebbc099ba4a3ed6280bcab392a6a04d18fe89efe",
+        "data.ts": "4877aed51ba888afcdc0a1eb5eb3100595193959",
+        "meta.json": "78fd55bda95aca2b26d568d9cdec30a9f750b331"
+      }
+    },
+    "v2_handoff-aceitas-e-devolvidas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 14 ladrilhos com área igual ao valor, dois lados na mesma escala a partir do zero, partes somando 100 por fila, anotação com taxa e volume, fila de n = 3 com contagem e selo. Aviso de CONTRASTE-MARCA é line-strong como neutro com o valor escrito. Observações no README (demais motivos só abrem na dica, motivo da fila fina só pela cor, metade de baixo vazia pelo domínio fixo).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:59.964Z",
+      "impressao": "d614c288cdb5476e5001b613ea07f56875a9bc32",
+      "arquivos": {
+        "Chart.tsx": "3110024d2d70c1eead34ecbd8dd0e8d32b90b631",
+        "data.ts": "5d64e185a66cdff4fb6c9e405bae341b4f74797b",
+        "meta.json": "1db57118ff3c728be87fa4a954f9cd45051fb494"
+      }
+    },
+    "v3_participacao-de-mercado-com-perimetro": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 16 ladrilhos com área igual ao valor, perímetro de 400,0 mi nas duas visões, fatias somando 100 por coluna e na legenda, coluna de 0,5 por cento com rótulo escalonado e os quatro ladrilhos na lista. Perguntas 17 e 25 com ressalva: etiqueta PREMISSA no Chart pedida pelo catálogo, desvio da ANO-6 declarado. Destaque contra neutro mede 1,12:1 no claro; o segundo canal é o nome no ladrilho e a posição na base. Observações no README (neutros da coluna estreita sem número junto, quinto competidor repete estilo, visão Região não renderizada).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:04:09.375Z",
+      "impressao": "2d592664a3716cfd00bbfbce59de6cc19f819331",
+      "arquivos": {
+        "Chart.tsx": "4e4bd274ffd87b33ec40b8ff41eba37d388ab166",
+        "data.ts": "7afc0cf75cb0be42d33642ebad4c4ae350d36499",
+        "meta.json": "8bf33ca9eb8a7424aa91af5c38dac9e01fcafe7c"
+      }
+    },
+    "v4_desfecho-por-origem-com-residuos": {
+      "veredito": "aprovado",
+      "nota": "Julgado o Chart.tsx de 2026-10-13 13:06, segunda passada. Sem bloqueante: oportunidades escrito no eixo da primeira coluna e na linha de leitura (NUM-6); as 5 células fora da faixa neutra com o resíduo e o sinal na tela, 3 no ladrilho, 1 na lista de resíduos e 1 na lista de identificação (ACE-2); 14 ladrilhos com área igual à contagem, vãos de 6 e 2 px, SVG em escala 1, texto de 5,21:1 para cima nos dois temas, 15 partes com nome e número somando o n de cada coluna. Observações no README (notes e comentário do topo com a geometria antiga de 321 px, linha de leitura a 3,5 px da quebra, dica sem o substantivo, total de 520 só na frase acessível, estado invertido não renderizado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:50:57.010Z",
+      "impressao": "1702073a9ea84630fab87cddc613f041dbeeb679",
+      "arquivos": {
+        "Chart.tsx": "6768b078731d46cb8f47bcba47fb67e1f226f71e",
+        "data.ts": "1d138ae70a080307d3bc18c21906705b4a8fdc0a",
+        "meta.json": "cb0a83cc72be6b55e6fcedfb984a4b126a0db6c5"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cobertura-de-dado-por-origem",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 15 ladrilhos com área igual ao valor (0,0000 p.p.), percentuais somando 100 por coluna, entre colunas e na legenda, ausência hachurada por último e no topo, dois ladrilhos mudos na lista de identificação, textos de 5,21:1 para cima nos dois temas. Observações no README (ordem da legenda contra ROT-4, par sobre chart-3 medido, rótulo escalonado fora do dado padrão).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:59.411Z",
+      "impressao": "81aac0e39ba35b7ff0b59ab8c44037e3eba4f9b3",
+      "arquivos": {
+        "Chart.tsx": "ebbc099ba4a3ed6280bcab392a6a04d18fe89efe",
+        "data.ts": "4877aed51ba888afcdc0a1eb5eb3100595193959",
+        "meta.json": "78fd55bda95aca2b26d568d9cdec30a9f750b331"
+      }
+    },
+    {
+      "versao": "v2_handoff-aceitas-e-devolvidas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 14 ladrilhos com área igual ao valor, dois lados na mesma escala a partir do zero, partes somando 100 por fila, anotação com taxa e volume, fila de n = 3 com contagem e selo. Aviso de CONTRASTE-MARCA é line-strong como neutro com o valor escrito. Observações no README (demais motivos só abrem na dica, motivo da fila fina só pela cor, metade de baixo vazia pelo domínio fixo).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:59.964Z",
+      "impressao": "d614c288cdb5476e5001b613ea07f56875a9bc32",
+      "arquivos": {
+        "Chart.tsx": "3110024d2d70c1eead34ecbd8dd0e8d32b90b631",
+        "data.ts": "5d64e185a66cdff4fb6c9e405bae341b4f74797b",
+        "meta.json": "1db57118ff3c728be87fa4a954f9cd45051fb494"
+      }
+    },
+    {
+      "versao": "v3_participacao-de-mercado-com-perimetro",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 16 ladrilhos com área igual ao valor, perímetro de 400,0 mi nas duas visões, fatias somando 100 por coluna e na legenda, coluna de 0,5 por cento com rótulo escalonado e os quatro ladrilhos na lista. Perguntas 17 e 25 com ressalva: etiqueta PREMISSA no Chart pedida pelo catálogo, desvio da ANO-6 declarado. Destaque contra neutro mede 1,12:1 no claro; o segundo canal é o nome no ladrilho e a posição na base. Observações no README (neutros da coluna estreita sem número junto, quinto competidor repete estilo, visão Região não renderizada).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:04:09.375Z",
+      "impressao": "2d592664a3716cfd00bbfbce59de6cc19f819331",
+      "arquivos": {
+        "Chart.tsx": "4e4bd274ffd87b33ec40b8ff41eba37d388ab166",
+        "data.ts": "7afc0cf75cb0be42d33642ebad4c4ae350d36499",
+        "meta.json": "8bf33ca9eb8a7424aa91af5c38dac9e01fcafe7c"
+      }
+    },
+    {
+      "versao": "v4_desfecho-por-origem-com-residuos",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6 e 14.1 (unidade): a palavra oportunidades não aparece em nenhum texto visível do cartão (n = 190, Ganho 22, 58 contra 27,0 esperadas); escrever o substantivo no corpo, a começar pelo eixo da primeira coluna. Pergunta 19, ACE-2 e DIC-1: Indicação de cliente com perdido (resíduo −3,4, faixa de −2 a −4) só se lê pelo preenchimento line-strong, 1,59:1 contra a faixa neutra no claro, e o número só existe na dica; escrever na tela o resíduo com sinal de toda célula fora da faixa neutra (segunda linha do ladrilho ou lista de identificação). Parecer em validation/revisao_26_mosaico-marimekko__01_marimekko-e-mosaico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:04:09.931Z",
+      "impressao": "bdb642df33380a0980f19a0102b8cf4e1613b357",
+      "arquivos": {
+        "Chart.tsx": "d118af21e6aead9117b1c869fae227a5238b3cfa",
+        "data.ts": "1d138ae70a080307d3bc18c21906705b4a8fdc0a",
+        "meta.json": "cb0a83cc72be6b55e6fcedfb984a4b126a0db6c5"
+      }
+    },
+    {
+      "versao": "v4_desfecho-por-origem-com-residuos",
+      "veredito": "aprovado",
+      "nota": "Julgado o Chart.tsx de 2026-10-13 13:06, segunda passada. Sem bloqueante: oportunidades escrito no eixo da primeira coluna e na linha de leitura (NUM-6); as 5 células fora da faixa neutra com o resíduo e o sinal na tela, 3 no ladrilho, 1 na lista de resíduos e 1 na lista de identificação (ACE-2); 14 ladrilhos com área igual à contagem, vãos de 6 e 2 px, SVG em escala 1, texto de 5,21:1 para cima nos dois temas, 15 partes com nome e número somando o n de cada coluna. Observações no README (notes e comentário do topo com a geometria antiga de 321 px, linha de leitura a 3,5 px da quebra, dica sem o substantivo, total de 520 só na frase acessível, estado invertido não renderizado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:50:57.010Z",
+      "impressao": "1702073a9ea84630fab87cddc613f041dbeeb679",
+      "arquivos": {
+        "Chart.tsx": "6768b078731d46cb8f47bcba47fb67e1f226f71e",
+        "data.ts": "1d138ae70a080307d3bc18c21906705b4a8fdc0a",
+        "meta.json": "cb0a83cc72be6b55e6fcedfb984a4b126a0db6c5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Leads por origem agrupada em canal, mês a mês",
+  "useCase": "Como evoluíram os leads de 14 origens, agrupadas em pago, orgânico e indicação, de out/25 a set/26?",
+  "demonstrates": [
+    "Eixo de linhas em dois níveis, com o canal centrado sobre as origens dele",
+    "Vão de 8 px na troca de canal e de 2 px entre itens, acumulado no y",
+    "Grupos desiguais: 7 origens em mídia paga e 2 em indicação",
+    "Sem origem declarada em neutro, por último e fora do teto da rampa",
+    "Mês parcial com moldura tracejada no vão e a data de corte no rodapé"
+  ],
+  "canvas": { "width": 960, "height": 578 },
+  "frame": "card",
+  "notes": "Canvas declarado por número porque nenhum preset fecha o cartão, e a conta que a GEO-1 pede é esta: corpo de 894 x 459,5 px (960 menos 66 de recuo por lado; 578 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). O caso de uso tem 98 caracteres e cabe em uma linha na largura de 894 px, cujo limite medido é 153, então o cabeçalho é o de 40,5 px. A grade ocupa 346 px, que é a soma de 15 linhas de 20 px, mais 11 vãos de 2 px dentro dos canais, mais 3 vãos de 8 px na troca de canal; as linhas escritas consomem os outros 113,5 px, em linha de leitura, anotação, régua de meses, legenda de faixas e rodapé. A célula de 20 px fica acima dos 17 px que o rótulo interno de 11 px exige pela ESP-2. Duas colisões com o catálogo, as duas resolvidas a favor do CONTRATO. A primeira: o catálogo pede 1 px entre itens e aqui são 2 px, porque a COR-5 exige vão de pelo menos 1,5 px entre marcas que não contrastam entre si, e vizinhos da rampa medem de 1,23:1 a 1,52:1. A segunda: o catálogo pede Sem origem declarada em neutro, e o neutro foi aplicado à célula e não só ao rótulo, pelo mesmo motivo da seção 7, que é a ausência não poder parecer um degrau da escala; por isso essa linha também fica fora do cálculo do teto da rampa. A cor do miolo desenha cinco degraus, seq-1 a seq-3 e seq-6 a seq-7, o que vale porque o número está escrito em toda célula, a condição da isenção registrada na TOK-8; seq-4 e seq-5 ficam fora porque não aceitam texto nenhum. Medido degrau contra degrau, só o salto de seq-3 para seq-6 separa de fato, 3,03:1 no escuro e 2,84:1 no claro, contra 1,23:1 a 1,52:1 dos outros vizinhos: a cor afirma dois níveis e a ordem fina mora no número. O recuo da moldura do mês parcial é de 1 px, e não de um múltiplo de 2 como a ESP-1 pede, porque o vão entre colunas tem 2 px e com recuo de 2 px o traço nasceria sobre a borda da célula vizinha. Sobre a cobertura do check, medida e não suposta: a ESPESSURA-MARCA MEDIU esta versão, porque o piso do rótulo interno vale para qualquer marca desenhada à mão, e a célula de 20 px passa contra os 17 px que o texto de 11 px exige; o que não se aplica é o piso geral de 12 px, que só existe onde há Bar do Recharts."
+}

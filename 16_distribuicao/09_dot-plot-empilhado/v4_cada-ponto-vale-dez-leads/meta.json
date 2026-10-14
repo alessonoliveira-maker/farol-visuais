@@ -1,0 +1,16 @@
+{
+  "title": "Pontos que valem 10 leads cada",
+  "useCase": "Como mostrar os 600 leads do mês em pilhas quando um ponto por lead não cabe na altura do cartão?",
+  "demonstrates": [
+    "Unidade escrita na legenda: cada ponto vale 10 leads",
+    "Resto de cada pilha como ponto parcial com rótulo, nunca arredondado em silêncio",
+    "Altura da maior pilha conferida contra a área útil antes de escolher a unidade",
+    "Nota de ponte com a família 22 quando a contagem passa a ser a mensagem"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 440
+  },
+  "frame": "card",
+  "notes": "Canvas de 640 por 440 em vez do card sugerido: a pilha mais alta tem 14 posições (13 pontos inteiros e um parcial) e o ponto precisa de pelo menos 10 px, o que pede 140 px de altura de desenho. No card, com o resumo, o eixo e as três linhas de legenda que a unidade, o resto e a ponte pedem, sobram uns 120 px, e a conferência de altura subiria a unidade para 20, contradizendo o título. O raio do ponto parcial é a raiz da fração do resto, para a área seguir o valor, sem piso."
+}

@@ -1,0 +1,59 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "09_densidade-2d",
+  "versoes": {
+    "v1_leads-binados-por-fit-e-engajamento": {
+      "veredito": "aprovado",
+      "nota": "Conserto de escala e de apagamento aceito nos dois temas: celula com caso deixou de ser indistinguivel de celula vazia.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.670Z",
+      "impressao": "c355f7b61b690c4681f933d44abe49085e1a1758",
+      "arquivos": {
+        "Chart.tsx": "0cd7dbf2fbf41ad30f043ad7d07999211f7f5eb4",
+        "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
+        "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-binados-por-fit-e-engajamento",
+      "veredito": "reprovado",
+      "nota": "TIP-1 sem tabular-nums na linha de leitura; tique e faixas fora dos formatadores; vao da legenda lateral em 30 px",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T21:21:04.188Z",
+      "impressao": "66df53265d33e0800bce936558a84be35973fc13",
+      "arquivos": {
+        "Chart.tsx": "e37abba4f680d0389be03728716731c781e25c44",
+        "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
+        "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
+      }
+    },
+    {
+      "versao": "v1_leads-binados-por-fit-e-engajamento",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, binagem com bordas fixas em TS, celula vazia sem circulo, area pela mesma conta do plano e da legenda, chart-1 unico com contorno surface-raised, texto e contraste ok nos dois temas. Observacoes no README: eixo Y sem rotulo numerico, 6 linhas de grade, legenda lateral alta e alinhada a esquerda.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T21:32:04.491Z",
+      "impressao": "ef706a0baa347709de21c3ea26db7ee11cae6d88",
+      "arquivos": {
+        "Chart.tsx": "cb807efcb30b3152f348bee50a98eed36a7d707e",
+        "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
+        "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
+      }
+    },
+    {
+      "versao": "v1_leads-binados-por-fit-e-engajamento",
+      "veredito": "aprovado",
+      "nota": "Conserto de escala e de apagamento aceito nos dois temas: celula com caso deixou de ser indistinguivel de celula vazia.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.670Z",
+      "impressao": "c355f7b61b690c4681f933d44abe49085e1a1758",
+      "arquivos": {
+        "Chart.tsx": "0cd7dbf2fbf41ad30f043ad7d07999211f7f5eb4",
+        "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
+        "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
+      }
+    }
+  ]
+}

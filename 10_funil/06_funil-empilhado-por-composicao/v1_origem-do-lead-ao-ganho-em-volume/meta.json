@@ -1,0 +1,12 @@
+{
+  "title": "Origem dos leads do lead ao ganho",
+  "useCase": "Marketing, leads de 2026-08 por origem em cinco etapas: quais origens sobrevivem até o ganho e quais se perdem pelo caminho.",
+  "demonstrates": [
+    "Uma Bar com stackId mix por categoria em BarChart vertical",
+    "Sem origem em contorno neutro e sempre no fim da pilha",
+    "Ordem das categorias fixa em todas as etapas, por slot de cor",
+    "Total da etapa escrito na ponta da pilha, em número absoluto"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

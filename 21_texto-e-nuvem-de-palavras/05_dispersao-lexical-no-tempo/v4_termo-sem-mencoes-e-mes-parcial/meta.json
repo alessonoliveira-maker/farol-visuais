@@ -1,0 +1,13 @@
+{
+  "title": "Termo sem menções e mês parcial",
+  "useCase": "Marketing: como as faixas de termos de formulário se comportam quando um termo não aparece e o mês ainda não fechou?",
+  "demonstrates": [
+    "Faixa vazia mantida com trilho e o texto sem menções, nunca removida",
+    "Mês corrente em ReferenceArea com --surface-sunken e a nota parcial até a data de corte",
+    "Semana sem coleta em quadro tracejado com formatUnavailable, separada do zero",
+    "Recorte sem nenhuma ocorrência troca o gráfico por estado vazio com role status"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Opacidade de 0,75 por menção, acima do piso de 0,66 de --chart-1 (ACE-5). O termo sem menção entra no Scatter com uma linha de contagem 0 no começo do eixo, que o shape não desenha: sem essa linha o eixo de categoria não abre a faixa. Zero medido e coleta parada têm formas diferentes: o zero leva trilho em --text-muted e o texto sem menções à direita; a semana sem coleta leva quadro tracejado cruzando todas as faixas e a palavra indisponível acima dele. O primeiro termo das linhas do Scatter vai para a base e o domain do YAxis de categoria não reordena, observado no render."
+}

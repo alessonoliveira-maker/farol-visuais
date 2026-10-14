@@ -1,0 +1,13 @@
+{
+  "title": "Perfil das áreas nas metas do ano",
+  "useCase": "Como 9 áreas se saem em 8 métricas de unidades diferentes, e quem é o melhor e o pior em cada uma.",
+  "demonstrates": [
+    "Cor calculada por coluna como posição percentual dentro da própria coluna",
+    "Direção por coluna vinda do dado: em métrica de menor é melhor a rampa inverte",
+    "Melhor da coluna em peso 700 e pior com ícone, com legenda dizendo a regra",
+    "Número formatado pela unidade de cada coluna, cada uma com seu formatador"
+  ],
+  "canvas": { "width": 960, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas maior que o preset largo (960x400): 9 linhas mais legenda não cabem em 282 px de corpo sem violar o piso de espessura da ESP-2 nem cortar a legenda (ESP-6). Cinco degraus, não sete, pela mesma razão medida da v1. Coluna receita nova com cinco áreas em zero medido (áreas de suporte não vendem): zero é EST-3, nunca vira indisponível."
+}

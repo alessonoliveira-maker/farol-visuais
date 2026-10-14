@@ -1,0 +1,108 @@
+{
+  "familia": "04_linhas",
+  "modelo": "07_sobreposicao-de-periodos",
+  "versoes": {
+    "v1_agendas-por-semana-2026-contra-2025": {
+      "veredito": "aprovado",
+      "nota": "Pivot por semana ISO correto, 2026 termina em nulo na semana 37, rotulo de ano na ponta das duas linhas, sem legenda; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:38.325Z",
+      "impressao": "7336cd52a7e7a044a6cce5832781f469885b3394",
+      "arquivos": {
+        "Chart.tsx": "8ae7f64352ccc4aa90ccc168cabc61f3b4cec245",
+        "data.ts": "79ff5e3b47b788be7c6b10285da1cd51f82406f8",
+        "meta.json": "a3df9bfe69f478ed917e5a7c4419692884634760"
+      }
+    },
+    "v2_receita-por-dia-util-contra-media": {
+      "veredito": "aprovado",
+      "nota": "Alinhamento por dia util honesto, media tracejada com valor escrito, corte de hoje em ReferenceLine e diferenca com base nomeada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:43.961Z",
+      "impressao": "79a3174e77279547de08b15eddb623c4b5146b8e",
+      "arquivos": {
+        "Chart.tsx": "1ea2670464225c47807bc66827b357cedc935828",
+        "data.ts": "4bf089f521510b54a4640141c7c7cbf457086de6",
+        "meta.json": "f06f8742a3a5fa44c47c6344e622843c2e7d1e97"
+      }
+    },
+    "v3_entradas-sobre-faixa-de-tres-anos": {
+      "veredito": "aprovado",
+      "nota": "Faixa de minimo e maximo atras da linha, semanas fora marcadas com ponto e valor, nota dizendo quais anos formam a faixa; faixa de baixo contraste fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:48.365Z",
+      "impressao": "d84190e6bba7f2c776bd69a7e34514874b8e8cfa",
+      "arquivos": {
+        "Chart.tsx": "47e98cd075e07e628a9d3bd8cfd911648b5ab224",
+        "data.ts": "2995aef05481cf9207d36a073645b670c8f9abce",
+        "meta.json": "eccdd7b8b251cf1d1427f185bcace1ffd538bc47"
+      }
+    },
+    "v4_meses-com-dias-uteis-diferentes": {
+      "veredito": "aprovado",
+      "nota": "Eixo em fracao do mes util com normalizacao declarada, mes curto sem ponto inventado, rotulo de mes na ponta das duas linhas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:52.465Z",
+      "impressao": "01a21da46c1dc4d8eba9a289becaf9a20f3356d9",
+      "arquivos": {
+        "Chart.tsx": "5ee447c2d50d2703a481b1cae7565bdeecddc8fa",
+        "data.ts": "107d220e7980a55869ced728e8138ae76fd0f551",
+        "meta.json": "dfc572ed1665abf0b194c834df13e351214d0ab2"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-por-semana-2026-contra-2025",
+      "veredito": "aprovado",
+      "nota": "Pivot por semana ISO correto, 2026 termina em nulo na semana 37, rotulo de ano na ponta das duas linhas, sem legenda; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:38.325Z",
+      "impressao": "7336cd52a7e7a044a6cce5832781f469885b3394",
+      "arquivos": {
+        "Chart.tsx": "8ae7f64352ccc4aa90ccc168cabc61f3b4cec245",
+        "data.ts": "79ff5e3b47b788be7c6b10285da1cd51f82406f8",
+        "meta.json": "a3df9bfe69f478ed917e5a7c4419692884634760"
+      }
+    },
+    {
+      "versao": "v2_receita-por-dia-util-contra-media",
+      "veredito": "aprovado",
+      "nota": "Alinhamento por dia util honesto, media tracejada com valor escrito, corte de hoje em ReferenceLine e diferenca com base nomeada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:43.961Z",
+      "impressao": "79a3174e77279547de08b15eddb623c4b5146b8e",
+      "arquivos": {
+        "Chart.tsx": "1ea2670464225c47807bc66827b357cedc935828",
+        "data.ts": "4bf089f521510b54a4640141c7c7cbf457086de6",
+        "meta.json": "f06f8742a3a5fa44c47c6344e622843c2e7d1e97"
+      }
+    },
+    {
+      "versao": "v3_entradas-sobre-faixa-de-tres-anos",
+      "veredito": "aprovado",
+      "nota": "Faixa de minimo e maximo atras da linha, semanas fora marcadas com ponto e valor, nota dizendo quais anos formam a faixa; faixa de baixo contraste fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:48.365Z",
+      "impressao": "d84190e6bba7f2c776bd69a7e34514874b8e8cfa",
+      "arquivos": {
+        "Chart.tsx": "47e98cd075e07e628a9d3bd8cfd911648b5ab224",
+        "data.ts": "2995aef05481cf9207d36a073645b670c8f9abce",
+        "meta.json": "eccdd7b8b251cf1d1427f185bcace1ffd538bc47"
+      }
+    },
+    {
+      "versao": "v4_meses-com-dias-uteis-diferentes",
+      "veredito": "aprovado",
+      "nota": "Eixo em fracao do mes util com normalizacao declarada, mes curto sem ponto inventado, rotulo de mes na ponta das duas linhas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:24:52.465Z",
+      "impressao": "01a21da46c1dc4d8eba9a289becaf9a20f3356d9",
+      "arquivos": {
+        "Chart.tsx": "5ee447c2d50d2703a481b1cae7565bdeecddc8fa",
+        "data.ts": "107d220e7980a55869ced728e8138ae76fd0f551",
+        "meta.json": "dfc572ed1665abf0b194c834df13e351214d0ab2"
+      }
+    }
+  ]
+}

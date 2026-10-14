@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por fila com zero, lacuna e empate",
+  "useCase": "Agendas da semana por fila quando uma marcou zero, outra não tem coleta e duas empatam no topo.",
+  "demonstrates": [
+    "Zero medido escreve 0 agendas sem minPointSize para fabricar barra visível",
+    "Fila sem coleta escreve indisponível em texto apagado, nunca barra zerada",
+    "Empate no topo com as duas filas em destaque, posição 1 repetida e linha de leitura",
+    "Estado vazio no lugar do gráfico quando o recorte não tem linhas"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Termos de perda que mais mudaram no trimestre",
+  "useCase": "Quais termos dos motivos de perda ganharam ou perderam peso do 2º para o 3º trimestre de 2026.",
+  "demonstrates": [
+    "Word shift: termos ordenados pela contribuição em pontos percentuais",
+    "Contribuição como diferença de proporção entre os dois trimestres",
+    "Mínimo de ocorrências somadas aplicado e declarado no próprio visual",
+    "Termo que só existe no trimestre recente com selo novo",
+    "Contagem de cada trimestre na dica, não no rótulo"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Custo mensal em três camadas",
+  "useCase": "Quanto o custo total de 2026 cresceu e quanto disso veio do custo direto, do alocado e da estrutura.",
+  "demonstrates": [
+    "Area com stackId comum e a camada mais importante como primeiro filho, na base",
+    "Rótulo de total escrito por cima da pilha, nomeado como total, não como um segmento",
+    "Slots categóricos na ordem 1, 3, 6 com separador surface-raised entre as camadas",
+    "Linha de leitura com o total do mês e a participação de cada camada, o todo e as partes"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

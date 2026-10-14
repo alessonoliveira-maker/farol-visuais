@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida com variação mensal",
+  "useCase": "Quanto de receita foi reconhecido em ago/26 e quanto isso se afastou de jul/26?",
+  "demonstrates": [
+    "Número em kpi-number com formatCurrencyCompact e valor exato no title",
+    "Variação com sinal tipográfico, ícone do lucide-react e cor pela polaridade",
+    "Base nomeada na mesma linha: +8,4% contra R$ 1,1 mi em jul/26",
+    "Período sempre escrito e algarismo tabular em todos os números",
+    "Frase acessível com número, unidade, período e comparação"
+  ],
+  "canvas": { "width": 360, "height": 216 },
+  "frame": "stage",
+  "notes": "Canvas abaixo do preset kpi (180 px) não cabe a moldura stage com caso de uso em duas linhas; 216 px fecha o cartão sem sobra."
+}

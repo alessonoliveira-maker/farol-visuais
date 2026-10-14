@@ -1,0 +1,12 @@
+{
+  "title": "Campanhas agrupadas ao longo do funil",
+  "useCase": "Marketing, 2026-08: 14 campanhas ativas. Quais nomeadas sustentam volume até o ganho, e o que a cauda soma junto?",
+  "demonstrates": [
+    "Agrupamento da cauda calculado no componente pelo volume da entrada",
+    "Outras campanhas e Sem campanha nunca somadas na mesma fatia",
+    "No máximo 6 cores categóricas mais o neutro da lacuna",
+    "Dica que lista as campanhas que compõem Outras campanhas"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

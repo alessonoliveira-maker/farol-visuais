@@ -1,0 +1,160 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "05_ranking-com-variacao-de-posicao",
+  "versoes": {
+    "v1_receita-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Posicao anterior agora bate com valueAnterior; sobra a unidade mil quebrando na ultima coluna.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:23.844Z",
+      "impressao": "0ac18597c50e80f5b52645a2738ff34b5d94fad7",
+      "arquivos": {
+        "Chart.tsx": "c034c345cdab2f4a0c1facf45914650b13748a98",
+        "data.ts": "42aad1c41fe9df348af39f61d32cdf62b5631e3c",
+        "meta.json": "c9cd164f41a3d2ea63e26883f8a15a7f9bed79da"
+      }
+    },
+    "v2_top-10-origens-com-entrada-e-saida": {
+      "veredito": "aprovado",
+      "nota": "Entrada nova, saida do topo e bases coerentes; sobra faixa vazia no canvas e a frase de ausencia fala em posicao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:31.250Z",
+      "impressao": "6521d590a9c938b12d41e6c515c4e2e7028b5b5d",
+      "arquivos": {
+        "Chart.tsx": "6bae1d24e3d4b338cd6b813f6264308be6a987c0",
+        "data.ts": "75bc4ef3f6d18b336d3d8427c6efad0576aac20d",
+        "meta.json": "0895da4d865fa7a034eaaaf9598deabc2e9a4278"
+      }
+    },
+    "v3_executivos-com-tres-variacoes": {
+      "veredito": "aprovado",
+      "nota": "Tres variacoes legiveis e barra com dominio comum; trajetoria tem posicao repetida nos meses antigos e eixo invertido sem sinalizacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:31.751Z",
+      "impressao": "dd0c099ddceba930efc74f32ce9c7c459b99fb76",
+      "arquivos": {
+        "Chart.tsx": "aa1681c52cc452474b5ca5fd3522e902d2a92015",
+        "data.ts": "6a0f11fb9f24f8e1800ccfb7544bbf0848f0f587",
+        "meta.json": "d39afb0ed42c67ce3ac5ea579064ac0a72ffa28a"
+      }
+    },
+    "v4_empate-e-menor-e-melhor": {
+      "veredito": "aprovado",
+      "nota": "Empate 4= e polaridade da metrica corretos; a ultima linha quebra a unidade dias e sobra altura no canvas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:32.229Z",
+      "impressao": "65a133677925f9bbce93a80deba8c7e0f98ca712",
+      "arquivos": {
+        "Chart.tsx": "be1a73e6a560f5d435c9d03ba112cbedac94b05c",
+        "data.ts": "db71dc6c2f4cf89711c87ec9cdece958a988865e",
+        "meta.json": "5398a3c7348bb8fba436452f18f350164ed7dda5"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "Posicao anterior contradiz o valor anterior impresso na mesma tabela: Otavio aparece 3o com R$ 151,7 mil e Renan 4o com R$ 312,4 mil.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:45:49.708Z",
+      "impressao": "3831fd034b9b14dcf44f2870a9ca001777e2426e",
+      "arquivos": {
+        "Chart.tsx": "c034c345cdab2f4a0c1facf45914650b13748a98",
+        "data.ts": "8ab3660b5680834c1c827fa4b65a4f0ebb1b54f4",
+        "meta.json": "c9cd164f41a3d2ea63e26883f8a15a7f9bed79da"
+      }
+    },
+    {
+      "versao": "v2_top-10-origens-com-entrada-e-saida",
+      "veredito": "aprovado",
+      "nota": "Entrada nova, saida do topo e base coerente; sobra faixa vazia no canvas e a frase de ausencia fala em posicao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:45:55.378Z",
+      "impressao": "6521d590a9c938b12d41e6c515c4e2e7028b5b5d",
+      "arquivos": {
+        "Chart.tsx": "6bae1d24e3d4b338cd6b813f6264308be6a987c0",
+        "data.ts": "75bc4ef3f6d18b336d3d8427c6efad0576aac20d",
+        "meta.json": "0895da4d865fa7a034eaaaf9598deabc2e9a4278"
+      }
+    },
+    {
+      "versao": "v3_executivos-com-tres-variacoes",
+      "veredito": "aprovado",
+      "nota": "Tres variacoes legiveis e barra com dominio comum; meses antigos da trajetoria tem posicao repetida e o eixo invertido nao e sinalizado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:46:00.453Z",
+      "impressao": "dd0c099ddceba930efc74f32ce9c7c459b99fb76",
+      "arquivos": {
+        "Chart.tsx": "aa1681c52cc452474b5ca5fd3522e902d2a92015",
+        "data.ts": "6a0f11fb9f24f8e1800ccfb7544bbf0848f0f587",
+        "meta.json": "d39afb0ed42c67ce3ac5ea579064ac0a72ffa28a"
+      }
+    },
+    {
+      "versao": "v4_empate-e-menor-e-melhor",
+      "veredito": "aprovado",
+      "nota": "Empate 4= e polaridade da metrica corretos; a ultima linha quebra a unidade em duas linhas e sobra faixa vazia no canvas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:46:05.660Z",
+      "impressao": "65a133677925f9bbce93a80deba8c7e0f98ca712",
+      "arquivos": {
+        "Chart.tsx": "be1a73e6a560f5d435c9d03ba112cbedac94b05c",
+        "data.ts": "db71dc6c2f4cf89711c87ec9cdece958a988865e",
+        "meta.json": "5398a3c7348bb8fba436452f18f350164ed7dda5"
+      }
+    },
+    {
+      "versao": "v1_receita-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Posicao anterior agora bate com valueAnterior; sobra a unidade mil quebrando na ultima coluna.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:23.844Z",
+      "impressao": "0ac18597c50e80f5b52645a2738ff34b5d94fad7",
+      "arquivos": {
+        "Chart.tsx": "c034c345cdab2f4a0c1facf45914650b13748a98",
+        "data.ts": "42aad1c41fe9df348af39f61d32cdf62b5631e3c",
+        "meta.json": "c9cd164f41a3d2ea63e26883f8a15a7f9bed79da"
+      }
+    },
+    {
+      "versao": "v2_top-10-origens-com-entrada-e-saida",
+      "veredito": "aprovado",
+      "nota": "Entrada nova, saida do topo e bases coerentes; sobra faixa vazia no canvas e a frase de ausencia fala em posicao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:31.250Z",
+      "impressao": "6521d590a9c938b12d41e6c515c4e2e7028b5b5d",
+      "arquivos": {
+        "Chart.tsx": "6bae1d24e3d4b338cd6b813f6264308be6a987c0",
+        "data.ts": "75bc4ef3f6d18b336d3d8427c6efad0576aac20d",
+        "meta.json": "0895da4d865fa7a034eaaaf9598deabc2e9a4278"
+      }
+    },
+    {
+      "versao": "v3_executivos-com-tres-variacoes",
+      "veredito": "aprovado",
+      "nota": "Tres variacoes legiveis e barra com dominio comum; trajetoria tem posicao repetida nos meses antigos e eixo invertido sem sinalizacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:31.751Z",
+      "impressao": "dd0c099ddceba930efc74f32ce9c7c459b99fb76",
+      "arquivos": {
+        "Chart.tsx": "aa1681c52cc452474b5ca5fd3522e902d2a92015",
+        "data.ts": "6a0f11fb9f24f8e1800ccfb7544bbf0848f0f587",
+        "meta.json": "d39afb0ed42c67ce3ac5ea579064ac0a72ffa28a"
+      }
+    },
+    {
+      "versao": "v4_empate-e-menor-e-melhor",
+      "veredito": "aprovado",
+      "nota": "Empate 4= e polaridade da metrica corretos; a ultima linha quebra a unidade dias e sobra altura no canvas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:53:32.229Z",
+      "impressao": "65a133677925f9bbce93a80deba8c7e0f98ca712",
+      "arquivos": {
+        "Chart.tsx": "be1a73e6a560f5d435c9d03ba112cbedac94b05c",
+        "data.ts": "db71dc6c2f4cf89711c87ec9cdece958a988865e",
+        "meta.json": "5398a3c7348bb8fba436452f18f350164ed7dda5"
+      }
+    }
+  ]
+}

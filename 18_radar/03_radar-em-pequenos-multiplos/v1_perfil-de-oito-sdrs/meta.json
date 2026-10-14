@@ -1,0 +1,14 @@
+{
+  "title": "Perfil de oito SDRs lado a lado",
+  "useCase": "Pré-vendas, 2026-T3: quais SDRs têm perfil parecido e quem foge do padrão do time em seis dimensões?",
+  "demonstrates": [
+    "Um RadarChart por célula de grade, com a mesma ordem de eixos e domínio fixo de 0 a 100",
+    "Miniaturas ordenadas pelo índice médio, com o critério escrito na linha de leitura",
+    "Eixos numerados de 1 a 6 nas miniaturas e legenda comum com o nome de cada eixo",
+    "Título de miniatura com o nome e o índice médio em font-display tabular",
+    "Frase acessível que cita o maior e o menor índice médio"
+  ],
+  "canvas": { "width": 960, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas por número, não o largo sugerido (960x400): o corpo do largo mede 894 x 281,5 e, descontados a linha de leitura, a legenda de eixos e o vão entre as duas fileiras, sobrariam cerca de 90 px de altura por miniatura, pequeno demais para um radar com eixos numerados. Com 960x640 o corpo mede 894 x 521,5 (640 menos 118,5), as duas fileiras ficam com cerca de 200 px e o radar com raio de cerca de 70 px."
+}

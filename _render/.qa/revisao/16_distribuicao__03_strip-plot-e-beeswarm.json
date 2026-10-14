@@ -1,0 +1,160 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "03_strip-plot-e-beeswarm",
+  "versoes": {
+    "v1_cpl-das-campanhas-por-plataforma": {
+      "veredito": "reprovado",
+      "nota": "Opacidade consertada e aceita. Volta por dois bloqueantes. Pergunta 16, EST-1: sem estado vazio, data vazio desenha eixo, meta e rodapé; devolver bloco role=status como as irmãs. Pergunta 1, seção 14.1 e DAD-10: meta e catálogo declaram campanha nomeada por ponto e nenhum nome chega à tela (sem Tooltip, sem rótulo, sem rodapé); ligar ChartTooltip e escrever o caso extremo no rodapé, ou corrigir o meta. Parecer em validation/revisao_16_distribuicao__03_strip-plot-e-beeswarm_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:09:09.896Z",
+      "impressao": "31b2d4811805f6acaeccd131a0ac1de9a7843caa",
+      "arquivos": {
+        "Chart.tsx": "6206556f3b37125d94691304d95171d97d9535b9",
+        "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
+        "meta.json": "98bbf56dcc023d9a086e8873fe051014fad0e8f2"
+      }
+    },
+    "v2_wheat-plot-com-buraco-anotado": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Mediana, faixa mais cheia e vão de 13 a 14 dias conferidos contra o dado; altura declarada como ordem, eixo Y oculto, vão com texto. Observações no README: limites do intervalo de 5 dias sem marca no desenho, rótulo do vão sem reserva contra pilha vizinha, código de armadilha trocado em comentário.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:08:45.835Z",
+      "impressao": "4c542c018edc5a725f2e698880cbdef65b2577de",
+      "arquivos": {
+        "Chart.tsx": "b0b202c9b08802d1a8946902072940e94048a4fd",
+        "data.ts": "ea1e5967586e62e6e81c658d53978b2c6592b7f6",
+        "meta.json": "e730ba8ae5705f92b9fee960c0f70602d62951fa"
+      }
+    },
+    "v3_beeswarm-de-ticket-por-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Conserto da mediana aceito: dois traços laterais fora da nuvem com o valor escrito; medido no preview dos dois temas, nenhum dos 312 pontos tocado por traço ou rótulo (folga mínima de 2,37 px e 5,30 px) e nenhum par de pontos sobreposto. Medianas, contagens por vertical e maior ticket conferidos contra o dado. Observações no README: folga de 2,9 px entre o rótulo do 1º tri e o traço esquerdo do 2º tri, legenda no rodapé, pendência do README desatualizada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:56.215Z",
+      "impressao": "703950b26b3876b06a048bef490aa64dabdde9c8",
+      "arquivos": {
+        "Chart.tsx": "a69853dc41c7b532919d432b23f195f133805e96",
+        "data.ts": "ef8c3424f4dc5e506d3211a5ee611e90ed891148",
+        "meta.json": "abf7334d7e434885ee2c19edd9a5ad04c3613e8f"
+      }
+    },
+    "v4_barcode-com-valores-repetidos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os dois consertos aceitos: tapete de altura uniforme sob o zero deixa visíveis os 34 valores, inclusive a cauda de 330 a 460 reais, e a seleção saiu do canal de contagem para o traço longo do tapete com guia tracejada. Totais, faixa e posição relativa conferidos contra o dado. Observações no README: notas do meta falam em 97 px de plano e o preview mede 59 px, seleção descrita como mais alta que todas, rótulo da seleção sem reserva contra traço alto, papel de cor do chart-2.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:56.785Z",
+      "impressao": "ffd8974ec746c15a77ebd86de9cd8f90a796c2bb",
+      "arquivos": {
+        "Chart.tsx": "4411cdbb0da532a3781bb7f911648c3ca8c437a0",
+        "data.ts": "a0a49175fd977e10a219fb63b96436f111ac652d",
+        "meta.json": "12eb8a66349dc0e4fe8504d72b26a7540bfe164f"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-das-campanhas-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Conserto da mediana aceito: faixa sem campanha deixa de receber mediana zero, sai da ordenação por valor e vai declarada para o rodapé. Falta a armadilha GEO-12: as quatro faixas estão ordenadas por mediana crescente e nada no cartão declara isso. Aqui o defeito morde mais que na 10/04, porque a mediana de cada faixa não está escrita em lugar nenhum, então o leitor não tem como deduzir a ordem do próprio desenho. Uma frase no rodapé resolve, no formato que a 04_linhas/09/v2 já usa.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:53.019Z",
+      "impressao": "6b603f6e2163645b0c0cb30e8420926fd3135745",
+      "arquivos": {
+        "Chart.tsx": "d12a42fd41441c34da53db7dfc0d7f2a372cc02a",
+        "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
+        "meta.json": "a5314508901f2d2884a5e3bb3b5cbbe07b937340"
+      }
+    },
+    {
+      "versao": "v1_cpl-das-campanhas-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Conserto do GEO-12 aceito: o rodapé declara a ordem das faixas. Volta porque fillOpacity de 0,45 composta contra o cartão branco põe o ponto isolado em 2,04:1 no tema claro, e o ponto isolado é exatamente o outlier que a peça existe para achar. A opacidade que faz a pilha aparecer é a mesma que apaga o caso único. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:25.112Z",
+      "impressao": "0fca81e4d8e90710a231d95df358044a70cfe383",
+      "arquivos": {
+        "Chart.tsx": "b7b4f355aeba00bce05621e371c0eca5e2fe7bf1",
+        "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
+        "meta.json": "a5314508901f2d2884a5e3bb3b5cbbe07b937340"
+      }
+    },
+    {
+      "versao": "v2_wheat-plot-com-buraco-anotado",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Mediana, faixa mais cheia e vão de 13 a 14 dias conferidos contra o dado; altura declarada como ordem, eixo Y oculto, vão com texto. Observações no README: limites do intervalo de 5 dias sem marca no desenho, rótulo do vão sem reserva contra pilha vizinha, código de armadilha trocado em comentário.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:08:45.835Z",
+      "impressao": "4c542c018edc5a725f2e698880cbdef65b2577de",
+      "arquivos": {
+        "Chart.tsx": "b0b202c9b08802d1a8946902072940e94048a4fd",
+        "data.ts": "ea1e5967586e62e6e81c658d53978b2c6592b7f6",
+        "meta.json": "e730ba8ae5705f92b9fee960c0f70602d62951fa"
+      }
+    },
+    {
+      "versao": "v1_cpl-das-campanhas-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Opacidade consertada e aceita. Volta por dois bloqueantes. Pergunta 16, EST-1: sem estado vazio, data vazio desenha eixo, meta e rodapé; devolver bloco role=status como as irmãs. Pergunta 1, seção 14.1 e DAD-10: meta e catálogo declaram campanha nomeada por ponto e nenhum nome chega à tela (sem Tooltip, sem rótulo, sem rodapé); ligar ChartTooltip e escrever o caso extremo no rodapé, ou corrigir o meta. Parecer em validation/revisao_16_distribuicao__03_strip-plot-e-beeswarm_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:09:09.896Z",
+      "impressao": "31b2d4811805f6acaeccd131a0ac1de9a7843caa",
+      "arquivos": {
+        "Chart.tsx": "6206556f3b37125d94691304d95171d97d9535b9",
+        "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
+        "meta.json": "98bbf56dcc023d9a086e8873fe051014fad0e8f2"
+      }
+    },
+    {
+      "versao": "v3_beeswarm-de-ticket-por-trimestre",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, ROT-7 e COR-5 pela consequência: o traço da mediana com base de 4 px na cor do cartão parte os pontos de 6 px; medido no preview.svg, 72 de 312 tocados e 35 com metade ou mais da área coberta, sem dar para ler ponto cheio contra anel. Tirar a mediana de cima da nuvem: traços curtos nas bordas da faixa ou marcador lateral, com o valor escrito. Parecer em validation/revisao_16_distribuicao__03_strip-plot-e-beeswarm_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:09:10.383Z",
+      "impressao": "83602bb3a055693d7fd5bcb217d822b846e9b156",
+      "arquivos": {
+        "Chart.tsx": "f255e0e72bfb2bd9b83d2e18fb116f7823c8917c",
+        "data.ts": "ef8c3424f4dc5e506d3211a5ee611e90ed891148",
+        "meta.json": "a18e087a50cb2c4a534c027cf9b7b33c6757eb5e"
+      }
+    },
+    {
+      "versao": "v4_barcode-com-valores-repetidos",
+      "veredito": "reprovado",
+      "nota": "Dois bloqueantes. Perguntas 1 e 15, ilegibilidade: os oito valores com uma campanha medem 1 px por 0,78 px e somem sobre a grade do zero, apagando a cauda de 330 a 460 reais; manter a faixa de barcode de altura uniforme como tapete sob a contagem. Pergunta 4, encoding: a seleção nasce do zero e sobe até 120 no eixo de contagem, no ramo em que a altura conta; marcar a seleção no tapete ou como guia tracejada. Parecer em validation/revisao_16_distribuicao__03_strip-plot-e-beeswarm_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:09:10.859Z",
+      "impressao": "f6de15429c65e13b7d13062a63e7b183a2207848",
+      "arquivos": {
+        "Chart.tsx": "a1934074e96d7fc362bdcf439fbce0e41b83329b",
+        "data.ts": "a0a49175fd977e10a219fb63b96436f111ac652d",
+        "meta.json": "eaffaf6b0c19a6e13a853386bac7e0877b3b4a7c"
+      }
+    },
+    {
+      "versao": "v3_beeswarm-de-ticket-por-trimestre",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Conserto da mediana aceito: dois traços laterais fora da nuvem com o valor escrito; medido no preview dos dois temas, nenhum dos 312 pontos tocado por traço ou rótulo (folga mínima de 2,37 px e 5,30 px) e nenhum par de pontos sobreposto. Medianas, contagens por vertical e maior ticket conferidos contra o dado. Observações no README: folga de 2,9 px entre o rótulo do 1º tri e o traço esquerdo do 2º tri, legenda no rodapé, pendência do README desatualizada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:56.215Z",
+      "impressao": "703950b26b3876b06a048bef490aa64dabdde9c8",
+      "arquivos": {
+        "Chart.tsx": "a69853dc41c7b532919d432b23f195f133805e96",
+        "data.ts": "ef8c3424f4dc5e506d3211a5ee611e90ed891148",
+        "meta.json": "abf7334d7e434885ee2c19edd9a5ad04c3613e8f"
+      }
+    },
+    {
+      "versao": "v4_barcode-com-valores-repetidos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os dois consertos aceitos: tapete de altura uniforme sob o zero deixa visíveis os 34 valores, inclusive a cauda de 330 a 460 reais, e a seleção saiu do canal de contagem para o traço longo do tapete com guia tracejada. Totais, faixa e posição relativa conferidos contra o dado. Observações no README: notas do meta falam em 97 px de plano e o preview mede 59 px, seleção descrita como mais alta que todas, rótulo da seleção sem reserva contra traço alto, papel de cor do chart-2.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:56.785Z",
+      "impressao": "ffd8974ec746c15a77ebd86de9cd8f90a796c2bb",
+      "arquivos": {
+        "Chart.tsx": "4411cdbb0da532a3781bb7f911648c3ca8c437a0",
+        "data.ts": "a0a49175fd977e10a219fb63b96436f111ac652d",
+        "meta.json": "12eb8a66349dc0e4fe8504d72b26a7540bfe164f"
+      }
+    }
+  ]
+}

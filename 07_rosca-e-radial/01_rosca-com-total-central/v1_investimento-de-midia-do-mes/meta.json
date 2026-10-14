@@ -1,0 +1,12 @@
+{
+  "title": "Investimento de mídia do mês",
+  "useCase": "Marketing: como os R$ 186,4 mil investidos em 2026-08 se dividem entre os canais de mídia paga.",
+  "demonstrates": [
+    "Pie com innerRadius 62% e outerRadius 80%, ordem decrescente a partir das 12 horas",
+    "Total no centro por Label com content e dois tspan, sem repetir o total no título",
+    "Separador entre fatias com stroke em surface-raised",
+    "Legenda tabular ao lado com valor compacto e percentual inteiro somando 100"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Investimento de mídia concentrado por campanha",
+  "useCase": "Quantas das 1.100 campanhas do ano consomem 70% do investimento em mídia paga?",
+  "demonstrates": [
+    "Curva de 1.100 pontos reamostrada para o render, com Gini calculado no dado cheio",
+    "Marcação de que 12% das campanhas consomem 70% do investimento",
+    "Faixa clicável que abre a lista das campanhas que concentram o gasto",
+    "Cartão com o quadrado à esquerda e a leitura em texto à direita"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A marcação é a menor quantidade de campanhas, das maiores, cuja soma alcança 70% ou mais do total, e por isso o texto diz pelo menos. A curva é reamostrada em grade uniforme de 120 passos mais o ponto da marcação, e o erro vertical máximo contra os vértices do dado cheio é calculado e escrito na nota; o Gini sai do dado cheio. A faixa clicável e o botão chamam a mesma função, onClick da faixa só serve ao ponteiro, e o botão serve ao teclado."
+}

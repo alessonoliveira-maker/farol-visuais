@@ -1,0 +1,160 @@
+{
+  "familia": "10_funil",
+  "modelo": "06_funil-empilhado-por-composicao",
+  "versoes": {
+    "v1_origem-do-lead-ao-ganho-em-volume": {
+      "veredito": "aprovado",
+      "nota": "Pilha por origem com lacuna em contorno no fim, total na ponta e check limpo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:11:53.728Z",
+      "impressao": "7fb391594857002424e379734096b9218dc1891d",
+      "arquivos": {
+        "Chart.tsx": "283c522de2d9fca8ce3362b2b38c526810331f26",
+        "data.ts": "809b0b387b81f237e23145828eeffd8b3d6190db",
+        "meta.json": "d817aa7f79249cc37ac0502fe168268613dd4ef0"
+      }
+    },
+    "v2_mix-em-100-com-indicacao-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Mix em 100% soma 100 pelo maior resto, total absoluto na ponta; legenda de valor sem nomear a etapa fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:11:58.539Z",
+      "impressao": "c0ef3b2917b216a7490606dd4316a48c4f0b6305",
+      "arquivos": {
+        "Chart.tsx": "96696d8fd7a6ba5f7095723722f89e75983ed642",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    "v3_cauda-longa-de-campanhas-agrupada": {
+      "veredito": "aprovado",
+      "nota": "Cauda agrupada no componente, lacuna separada, teto de 6 cores respeitado; cor por posto e dica por id ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:12:03.613Z",
+      "impressao": "a3c8415ea90d30b7cada99104d06d0c8accacadc",
+      "arquivos": {
+        "Chart.tsx": "0c4767e9f1231c8400b2fee3e7e65dd3a5eb46e4",
+        "data.ts": "28a44b837a2ebee896ad40a75f1f21d7a9e1e386",
+        "meta.json": "1ecdfd588e3f39d91ea52bde3899d179896d9452"
+      }
+    },
+    "v4_sem-origem-cai-ao-longo-do-funil": {
+      "veredito": "aprovado",
+      "nota": "Cobertura por etapa, percentual da lacuna em cada barra e aviso de vies; desvio da hachura esta declarado no meta.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:12:08.886Z",
+      "impressao": "800d982b0532b13bbf6c05dd6524a5698e17ca5d",
+      "arquivos": {
+        "Chart.tsx": "944fc096cfd840d5bd513d691035d7fb7c7e7c42",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "f41812d6fd7e7d91e63f760c9ee1abd829118a00"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origem-do-lead-ao-ganho-em-volume",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: pilha em volume legível, lacuna em contorno no fim e total na ponta livre.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:54:47.390Z",
+      "impressao": "7fb391594857002424e379734096b9218dc1891d",
+      "arquivos": {
+        "Chart.tsx": "283c522de2d9fca8ce3362b2b38c526810331f26",
+        "data.ts": "809b0b387b81f237e23145828eeffd8b3d6190db",
+        "meta.json": "d817aa7f79249cc37ac0502fe168268613dd4ef0"
+      }
+    },
+    {
+      "versao": "v2_mix-em-100-com-indicacao-em-destaque",
+      "veredito": "reprovado",
+      "nota": "Rótulo 1.240 leads cortado na borda do corpo nos dois temas (ESP-3): MARGIN.right de 68 não cabe o texto mais o respiro; reservar a margem pelo rótulo mais longo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:55:02.208Z",
+      "impressao": "35c349d0c1c160172494292ccc7fc9758fdcae7b",
+      "arquivos": {
+        "Chart.tsx": "d7809fccfcd0877ed5f2feedf3792476c8541d6d",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    {
+      "versao": "v3_cauda-longa-de-campanhas-agrupada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: cauda agrupada pelo volume da entrada, seis cores mais a lacuna separada e legenda na ordem da pilha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:55:07.136Z",
+      "impressao": "a3c8415ea90d30b7cada99104d06d0c8accacadc",
+      "arquivos": {
+        "Chart.tsx": "0c4767e9f1231c8400b2fee3e7e65dd3a5eb46e4",
+        "data.ts": "28a44b837a2ebee896ad40a75f1f21d7a9e1e386",
+        "meta.json": "1ecdfd588e3f39d91ea52bde3899d179896d9452"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "reprovado",
+      "nota": "Seis origens coloridas sem legenda e sem rótulo: a série não é identificável na imagem (ROT-4 e item 5 da Anatomia do modelo); dar chave às cores ou neutralizar a parte com origem.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:55:12.970Z",
+      "impressao": "36d4f08fddc9d60b04d403ec532d3da68e60cec0",
+      "arquivos": {
+        "Chart.tsx": "1fde6d94ece780a97c38bab4857f9659797f9313",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "7a935219354c3aeecd5e5f2eccc0622746de119e"
+      }
+    },
+    {
+      "versao": "v1_origem-do-lead-ao-ganho-em-volume",
+      "veredito": "aprovado",
+      "nota": "Pilha por origem com lacuna em contorno no fim, total na ponta e check limpo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:11:53.728Z",
+      "impressao": "7fb391594857002424e379734096b9218dc1891d",
+      "arquivos": {
+        "Chart.tsx": "283c522de2d9fca8ce3362b2b38c526810331f26",
+        "data.ts": "809b0b387b81f237e23145828eeffd8b3d6190db",
+        "meta.json": "d817aa7f79249cc37ac0502fe168268613dd4ef0"
+      }
+    },
+    {
+      "versao": "v2_mix-em-100-com-indicacao-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Mix em 100% soma 100 pelo maior resto, total absoluto na ponta; legenda de valor sem nomear a etapa fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:11:58.539Z",
+      "impressao": "c0ef3b2917b216a7490606dd4316a48c4f0b6305",
+      "arquivos": {
+        "Chart.tsx": "96696d8fd7a6ba5f7095723722f89e75983ed642",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    {
+      "versao": "v3_cauda-longa-de-campanhas-agrupada",
+      "veredito": "aprovado",
+      "nota": "Cauda agrupada no componente, lacuna separada, teto de 6 cores respeitado; cor por posto e dica por id ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:12:03.613Z",
+      "impressao": "a3c8415ea90d30b7cada99104d06d0c8accacadc",
+      "arquivos": {
+        "Chart.tsx": "0c4767e9f1231c8400b2fee3e7e65dd3a5eb46e4",
+        "data.ts": "28a44b837a2ebee896ad40a75f1f21d7a9e1e386",
+        "meta.json": "1ecdfd588e3f39d91ea52bde3899d179896d9452"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "aprovado",
+      "nota": "Cobertura por etapa, percentual da lacuna em cada barra e aviso de vies; desvio da hachura esta declarado no meta.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:12:08.886Z",
+      "impressao": "800d982b0532b13bbf6c05dd6524a5698e17ca5d",
+      "arquivos": {
+        "Chart.tsx": "944fc096cfd840d5bd513d691035d7fb7c7e7c42",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "f41812d6fd7e7d91e63f760c9ee1abd829118a00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Cenário base preenchido com alternativas em contorno",
+  "useCase": "Diretoria, meta 2027: como o cenário base se posiciona entre o pessimista e o otimista em seis alavancas do plano?",
+  "demonstrates": [
+    "Alternativas sem preenchimento, com strokeWidth 2 e dot, sem peso de área",
+    "Pessimista tracejado e otimista pontilhado: série distinta sem depender só de cor",
+    "radialLines desligado para a linha fina não sumir sobre a grade no escuro",
+    "Exceção declarada à regra de duas séries: as duas em contorno formam a faixa do cenário",
+    "Eixos de receita, fechamentos, ticket, ciclo, win rate e retenção normalizados"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O catálogo pede fillOpacity 0 nas alternativas; o contrato trata opacidade em marca pela ACE-5, então as alternativas usam fill none, que não tem cor composta a medir. O preenchimento do cenário base sai com 0,66 de opacidade, o mínimo de --chart-1 para a área passar de 3:1 no tema claro. As alternativas sobem por zIndex (250, acima da grade em 150 e da área em 100) para as linhas finas não sumirem sob o preenchimento. O contrato vence."
+}

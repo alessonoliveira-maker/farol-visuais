@@ -1,0 +1,12 @@
+{
+  "title": "Oportunidades abertas por executivo e estágio",
+  "useCase": "Quanto pipeline aberto cada executivo carrega e em que estágio ele está, de Descoberta a Assinatura.",
+  "demonstrates": [
+    "Bar com stackId comum dentro de BarStack e raio só no contorno da pilha",
+    "Total na ponta por LabelList content no último segmento",
+    "Ordem de segmentos fixa e igual à legenda, com cor por slot do estágio",
+    "Executivos ordenados pelo total da pilha, com desempate pelo nome"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

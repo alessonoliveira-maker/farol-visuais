@@ -1,0 +1,14 @@
+{
+  "title": "Agendas marcadas e realizadas por canal",
+  "useCase": "Em que canal de entrada a pré-vendas marca agenda que não acontece, comparando marcadas e realizadas.",
+  "demonstrates": [
+    "Dois Bar sem stackId com barGap e barCategoryGap explícitos",
+    "Canais ordenados pela série principal, não pela soma",
+    "Legenda no topo na ordem das barras e cor fixa por série",
+    "Valor na ponta de cada barra com formatador único",
+    "Linha de leitura com a menor taxa de realização e o volume"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas declarado por número, e mais alto que o preset card, porque a altura sai da conta do passo da ESP-6: com 2 séries, barGap de 2 px e vão de 30%, cada canal precisa de 76 px de passo para a marca entregar os 14 px do BAR_MAX, o que pede 456 px de corpo de gráfico. A altura de 640 px comporta os 6 canais desta amostra; cada canal a mais pede 76 px."
+}

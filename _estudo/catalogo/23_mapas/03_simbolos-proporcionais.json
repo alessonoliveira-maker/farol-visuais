@@ -1,0 +1,75 @@
+{
+  "slug": "03_simbolos-proporcionais",
+  "nome": "Símbolos proporcionais",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Um círculo por UF com área proporcional a um valor absoluto (clientes, receita, oportunidades), desenhado sobre a malha neutra do IBGE no centroide de cada UF, fora do grupo escalado, em cx = lon e cy = −lat. O raio sai de rMax vezes a raiz de valor sobre máximo, a pintura vai do maior para o menor com opacidade de cerca de 0,6 e contorno, e a legenda de tamanho traz dois ou três círculos de referência. O modelo absorve as bolhas por UF em grade (centro do tile, sem sobreposição) e o cartograma de Dorling (relaxação iterativa determinística em TypeScript que afasta círculos sobrepostos e os puxa de volta à origem).",
+  "quando_usar": [
+    "Total absoluto por UF quando o coroplético premiaria as UFs grandes: clientes ativos, receita reconhecida, oportunidades abertas",
+    "Dois valores da mesma grandeza no mesmo lugar, como meta vazada e realizado cheio ou aberto e ganho",
+    "Magnitude com contexto geográfico real, até cerca de 27 símbolos",
+    "Bolhas em grade quando Nordeste oriental e Sudeste se sobrepõem na malha",
+    "Dorling quando a magnitude deve dominar e a posição aproximada basta, com a distorção explicada no subtítulo"
+  ],
+  "quando_evitar": [
+    "Taxa ou percentual: use o coroplético (23/02) ou o tile grid (23/01)",
+    "Comparação precisa entre valores parecidos: área engana; use as barras ordenadas (02/01_barras-simples-ordenadas)",
+    "Relação entre duas medidas sem geografia: use as bolhas da família 09 (09/03_bolhas)",
+    "Fluxo entre UFs: use a família 11 de fluxo e sankey",
+    "Itens individuais com coordenada: use o mapa de pontos (23/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_clientes-ativos-no-centroide",
+      "titulo": "Clientes ativos por UF",
+      "caso_de_uso": "Comercial: onde estão os clientes ativos fictícios da carteira e quanto a maior UF pesa contra as demais.",
+      "o_que_demonstra": [
+        "Malha em var(--surface-overlay) e centroides do IBGE em ufCentroides.ts",
+        "Raio pela raiz quadrada com rMax convertido de pixels para graus pelo viewBox",
+        "Ordem de pintura do maior para o menor, fill-opacity 0,6 e contorno var(--chart-1)",
+        "Legenda de tamanho com três círculos de referência e valores redondos",
+        "Rótulo com sigla e contagem só nas 5 maiores UFs"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_bolhas-em-grade-realizado-contra-meta",
+      "titulo": "Receita realizada contra meta por UF",
+      "caso_de_uso": "Comercial: em que UFs a receita reconhecida fictícia do trimestre já cobre a meta, sem círculos sobrepostos.",
+      "o_que_demonstra": [
+        "Círculo centrado na posição do tile da grade 8x6, com a grade invisível",
+        "Meta como círculo vazado tracejado e realizado cheio, na mesma escala de área",
+        "Maior círculo limitado ao tamanho da célula para nunca invadir o vizinho",
+        "Ícone lucide Check e percentual escrito nas UFs que bateram a meta",
+        "UF com meta e sem realizado mostra só o vazado e a palavra indisponível"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_dorling-receita-2025-e-2026",
+      "titulo": "Receita reconhecida por UF em 2025 e 2026",
+      "caso_de_uso": "Diretoria: como a receita reconhecida fictícia mudou de tamanho por UF entre 2025 e 2026 dentro do perímetro.",
+      "o_que_demonstra": [
+        "Relaxação de Dorling em useMemo com 120 iterações e retorno à origem de fator 0,02",
+        "Posição inicial sempre no centroide, para a mesma entrada dar a mesma saída",
+        "Dois painéis lado a lado com a mesma escala de raio para o tamanho ser comparável",
+        "Contorno nos círculos das UFs do perímetro e cor por macrorregião em var(--chart-N)",
+        "Subtítulo que explica a distorção e aponta a malha real como referência"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_saldo-de-clientes-negativo-e-zero",
+      "titulo": "Saldo de clientes no trimestre por UF",
+      "caso_de_uso": "Comercial: onde a carteira fictícia cresceu ou encolheu no 3º trimestre de 2026, inclusive UFs com saldo zero.",
+      "o_que_demonstra": [
+        "Tamanho pelo valor absoluto e cor pelo sinal em var(--positive) e var(--negative)",
+        "Sinal + e − tipográfico escrito no rótulo, nunca só na cor",
+        "Saldo zero como círculo mínimo vazado com a sigla, para a UF não desaparecer",
+        "Dica com o valor original assinado e as entradas e saídas do trimestre",
+        "Nota que aponta setas para cima e para baixo como alternativa ao círculo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

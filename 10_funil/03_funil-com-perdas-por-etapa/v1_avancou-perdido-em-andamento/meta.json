@@ -1,0 +1,12 @@
+{
+  "title": "Avançou, perdido e em andamento por etapa",
+  "useCase": "Em qual etapa do funil comercial as oportunidades avançam, se perdem ou seguem em andamento, com os totais fechando.",
+  "demonstrates": [
+    "BarStack com avançou, perdido e em andamento na mesma ordem em todas as etapas",
+    "Fechamento auditado no dado: avançou mais perdido mais em andamento fecha com a etapa",
+    "Taxa de perda por formatRateWithVolume, sempre com o denominador da própria etapa",
+    "Entrada da etapa na régua do eixo, saída e taxa de perda na ponta livre"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

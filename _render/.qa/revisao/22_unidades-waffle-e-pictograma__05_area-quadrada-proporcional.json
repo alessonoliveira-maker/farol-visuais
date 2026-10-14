@@ -1,0 +1,121 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "05_area-quadrada-proporcional",
+  "versoes": {
+    "v1_funil-do-semestre-em-celulas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 257, 42 e 8 células contadas no preview e alinhadas pela base, área honesta com célula e vão iguais nos três quadrados, textos de 5,21:1 para cima e marca de 6,00:1 para cima nos dois temas. Observações no README (unidade sem substantivo na legenda, faixa direita do corpo vazia).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:48.512Z",
+      "impressao": "c48d7ce8c695991f937ff25e2f23f6d154e2a0b1",
+      "arquivos": {
+        "Chart.tsx": "b0f60757e113c0ddc04c41cced37041140449fed",
+        "data.ts": "4a21f9425516cfe233b44826700aa8c2b481fee5",
+        "meta.json": "f2eca93eb49075949282acb724e785565f162563"
+      }
+    },
+    "v2_leads-que-viraram-oportunidade": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx das 06:41), não a nota antiga. Sem bloqueante: a frase acessível agora tem uma unidade só (184 caracteres, 1 célula vale 5 leads para 1.284 leads); 42 acesas e 215 apagadas contadas nos dois previews; as partes escritas somam 1.284; textos de 5,21:1 para cima, célula acesa de 6,00:1 para cima, apagadas pela isenção do valor escrito ao lado. Observações no README (colchete do aceso encosta em 9 apagadas, anotação mais alta que o colchete com taxa abaixo de 7%, ramos sem rótulo fora do dado padrão, período fixo na tela).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:50:38.428Z",
+      "impressao": "2ff9bacc391c67f3d2b2e80e406e591502b0d7c9",
+      "arquivos": {
+        "Chart.tsx": "fd6b9571fbcb19a61095093e66eeab92b5844339",
+        "data.ts": "a3d2afa06d6021945fc9dfacaaf3112ca30136f1",
+        "meta.json": "72f8d37ebabdc1425df72db9c32b92217e2b6a0c"
+      }
+    },
+    "v3_custo-e-receita-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 193 e 248 células contadas, 55 de folga acesas, mesma célula nos dois quadrados, textos de 5,21:1 para cima. Perguntas 17 e 25 com ressalva: etiqueta de procedência no Chart pedida pelo catálogo, desvio da ANO-6 declarado. Observações no README, a principal: destaque contra neutro mede 1,12:1 no claro e delta E de 4,2 em deuteranopia; o segundo canal é o colchete com rótulo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:49.508Z",
+      "impressao": "2315d2357a42ae08e927b4fb990e984b180c371d",
+      "arquivos": {
+        "Chart.tsx": "f865d49ef3e0ad72ecc92226e400f621ac8319d7",
+        "data.ts": "5d54086591dbe1d023776dceb4c835cd141eac3e",
+        "meta.json": "6e265ad7102e527b73007d49851411f6a33c9c04"
+      }
+    },
+    "v4_quando-a-area-deixa-de-servir": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 204 e 147 células contadas, razão 200 checada contra o limite de 100, nulo escreve o rótulo de ausência com ícone, saldo negativo fora da área com U+2212. Observações no README (barra de 6 px com piso de 2 px declarado, dois textos sem tabular-nums, cor categórica em marca já rotulada, frase acessível sem valor em reais, período sem uso).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:50.022Z",
+      "impressao": "5fb659e51b4f0fc60d92d3b00027cbb7129d4ebc",
+      "arquivos": {
+        "Chart.tsx": "cbe4c08e5f5cd55623aa7d4404b179ea48f5fcf4",
+        "data.ts": "17ef5381da30e806260c234ef7005149b5e9da4b",
+        "meta.json": "561b043715c8c9228b16cb200f6aa6fdee42132a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_funil-do-semestre-em-celulas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 257, 42 e 8 células contadas no preview e alinhadas pela base, área honesta com célula e vão iguais nos três quadrados, textos de 5,21:1 para cima e marca de 6,00:1 para cima nos dois temas. Observações no README (unidade sem substantivo na legenda, faixa direita do corpo vazia).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:48.512Z",
+      "impressao": "c48d7ce8c695991f937ff25e2f23f6d154e2a0b1",
+      "arquivos": {
+        "Chart.tsx": "b0f60757e113c0ddc04c41cced37041140449fed",
+        "data.ts": "4a21f9425516cfe233b44826700aa8c2b481fee5",
+        "meta.json": "f2eca93eb49075949282acb724e785565f162563"
+      }
+    },
+    {
+      "versao": "v2_leads-que-viraram-oportunidade",
+      "veredito": "reprovado",
+      "nota": "Perguntas 19 e 14, ACE-1 e seção 14.1 (unidade): a frase acessível afirma \"257 células de 5 leads, uma para cada lead\", e são 257 células para 1.284 leads; a frase se contradiz sobre quanto vale a célula. Tirar \"uma para cada lead\" e dizer o total de leads no lugar. Desenho, contagens (42 acesas, 215 apagadas) e contrastes conferidos e sem outro bloqueante. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__05_area-quadrada-proporcional_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:48.999Z",
+      "impressao": "ff1cc75ef932397bde29805729cc87618c340da5",
+      "arquivos": {
+        "Chart.tsx": "d900db90a4d79fcbb47e6d4a6e4e356d4b9e43e9",
+        "data.ts": "a3d2afa06d6021945fc9dfacaaf3112ca30136f1",
+        "meta.json": "72f8d37ebabdc1425df72db9c32b92217e2b6a0c"
+      }
+    },
+    {
+      "versao": "v3_custo-e-receita-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 193 e 248 células contadas, 55 de folga acesas, mesma célula nos dois quadrados, textos de 5,21:1 para cima. Perguntas 17 e 25 com ressalva: etiqueta de procedência no Chart pedida pelo catálogo, desvio da ANO-6 declarado. Observações no README, a principal: destaque contra neutro mede 1,12:1 no claro e delta E de 4,2 em deuteranopia; o segundo canal é o colchete com rótulo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:49.508Z",
+      "impressao": "2315d2357a42ae08e927b4fb990e984b180c371d",
+      "arquivos": {
+        "Chart.tsx": "f865d49ef3e0ad72ecc92226e400f621ac8319d7",
+        "data.ts": "5d54086591dbe1d023776dceb4c835cd141eac3e",
+        "meta.json": "6e265ad7102e527b73007d49851411f6a33c9c04"
+      }
+    },
+    {
+      "versao": "v4_quando-a-area-deixa-de-servir",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 204 e 147 células contadas, razão 200 checada contra o limite de 100, nulo escreve o rótulo de ausência com ícone, saldo negativo fora da área com U+2212. Observações no README (barra de 6 px com piso de 2 px declarado, dois textos sem tabular-nums, cor categórica em marca já rotulada, frase acessível sem valor em reais, período sem uso).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:25:50.022Z",
+      "impressao": "5fb659e51b4f0fc60d92d3b00027cbb7129d4ebc",
+      "arquivos": {
+        "Chart.tsx": "cbe4c08e5f5cd55623aa7d4404b179ea48f5fcf4",
+        "data.ts": "17ef5381da30e806260c234ef7005149b5e9da4b",
+        "meta.json": "561b043715c8c9228b16cb200f6aa6fdee42132a"
+      }
+    },
+    {
+      "versao": "v2_leads-que-viraram-oportunidade",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx das 06:41), não a nota antiga. Sem bloqueante: a frase acessível agora tem uma unidade só (184 caracteres, 1 célula vale 5 leads para 1.284 leads); 42 acesas e 215 apagadas contadas nos dois previews; as partes escritas somam 1.284; textos de 5,21:1 para cima, célula acesa de 6,00:1 para cima, apagadas pela isenção do valor escrito ao lado. Observações no README (colchete do aceso encosta em 9 apagadas, anotação mais alta que o colchete com taxa abaixo de 7%, ramos sem rótulo fora do dado padrão, período fixo na tela).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:50:38.428Z",
+      "impressao": "2ff9bacc391c67f3d2b2e80e406e591502b0d7c9",
+      "arquivos": {
+        "Chart.tsx": "fd6b9571fbcb19a61095093e66eeab92b5844339",
+        "data.ts": "a3d2afa06d6021945fc9dfacaaf3112ca30136f1",
+        "meta.json": "72f8d37ebabdc1425df72db9c32b92217e2b6a0c"
+      }
+    }
+  ]
+}

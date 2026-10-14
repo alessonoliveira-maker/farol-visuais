@@ -1,0 +1,121 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "02_grafo-bipartido",
+  "versoes": {
+    "v1_handoffs-sdr-para-executivo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 22 pares, os 177 repasses e o total dos 13 nós conferidos com o data.ts; faixas 1 a 5, 6 a 10 e 11 a 16 saem do maior peso observado; ordem por baricentro refeita fora do componente (25 cruzamentos); ligação em text-muted a 5,21 e 5,37 para 1. Observações no README: altura do nó conta pares e o número ao lado é o total, margem esquerda não guarda total de três algarismos, TIP-1 no período da legenda.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:20.833Z",
+      "impressao": "d1183082a939470aa66d34be9bab083930b54cf7",
+      "arquivos": {
+        "Chart.tsx": "d533447c8a4e978889da9b54b7835116d9340b25",
+        "data.ts": "9f38dd56f6485944f3c8a56fea822bc4b5b045bc",
+        "meta.json": "4148c0964ea5263a926fce1dcb085cfbe79b52f7"
+      }
+    },
+    "v2_concentracao-do-sdr-selecionado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgada pelo arquivo de hoje. Página viva com o cursor em cada um dos 13 nós nos dois temas: nenhum texto fora do SVG, a linha mais larga, 100 por cento (16 de 16) no SDR 3 com o cursor no Executivo E, mede 86,55 px e fica 5,45 px dentro da borda esquerda, sem colisão, dois elementos em peso 700 e linha de leitura em uma linha em todos os estados. Vazio, highlightId inexistente e nó aceso por prop montados e conferidos. Ligação fora de foco medida à mão em 3,58 e 3,28 para 1. Observações no README: margens calibradas para total de dois algarismos, arredondamento da linha de leitura em três estados de cursor, empate no Executivo G, hover sem teclado, ordem das colunas sem critério escrito, altura do nó conta pares.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:08:43.180Z",
+      "impressao": "38b93fc4b8d71e75245d7b47bb9b2efa57ea94b6",
+      "arquivos": {
+        "Chart.tsx": "8b291cb54721a9358aa83dd48dd182df67afb762",
+        "data.ts": "72517040a90b928f758e813db845b556bcc307bc",
+        "meta.json": "e7f6be146e85997ccd687aeeab38bce65717d0c7"
+      }
+    },
+    "v3_clientes-e-produtos-na-carteira": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. As 58 ligações, o grau dos 7 nós de produto e o par mais frequente (11 de 24) conferidos com o data.ts; ordem refeita fora do componente (253 cruzamentos); seis cores de produto de 5,34 a 9,50 para 1 nos dois temas e Outros em neutro. Observações no README: 13 contas sem nome no desenho parado por especificação do catálogo, ligações de emissão fiscal em traços curtos sob o feixe de controle de estoque, limite de 20 nós do catálogo, TIP-4 no cabeçalho.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:29.562Z",
+      "impressao": "65f14f99b06ffadd191b04fb5cd7ad49bb3fa347",
+      "arquivos": {
+        "Chart.tsx": "bea67e80406a8b36bd6b45920617ad81e4130ba7",
+        "data.ts": "27c81f2c70f44f9ec419a363e6c41335b7305642",
+        "meta.json": "65d67d72c1be3e1bb014950d5e2c63956d350b2e"
+      }
+    },
+    "v4_executivo-sem-repasse": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 16 pares e os 140 repasses conferidos com o data.ts; zero medido vazado com 0 repasses escrito e ausência com Unplug e formatUnavailable, sem se confundirem em nenhum tema; dois elementos em peso 700. Observações no README: os totais somam só o medido e só a linha de leitura diz, o filtro da linha 242 faria zero de vizinho de nó sem medição, nó de zero mais alto que os de um e dois pares.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:30.109Z",
+      "impressao": "fd6621b62ddb6264429b65cc945948cf811cd165",
+      "arquivos": {
+        "Chart.tsx": "b293bbc6143ede6eb64c3a58800d6f73d18fe8cd",
+        "data.ts": "aa76df508c719d43275c05561a91246bb6308c8f",
+        "meta.json": "59518803eacafb44c76fe84c0c18eac3fc07ef61"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_handoffs-sdr-para-executivo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 22 pares, os 177 repasses e o total dos 13 nós conferidos com o data.ts; faixas 1 a 5, 6 a 10 e 11 a 16 saem do maior peso observado; ordem por baricentro refeita fora do componente (25 cruzamentos); ligação em text-muted a 5,21 e 5,37 para 1. Observações no README: altura do nó conta pares e o número ao lado é o total, margem esquerda não guarda total de três algarismos, TIP-1 no período da legenda.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:20.833Z",
+      "impressao": "d1183082a939470aa66d34be9bab083930b54cf7",
+      "arquivos": {
+        "Chart.tsx": "d533447c8a4e978889da9b54b7835116d9340b25",
+        "data.ts": "9f38dd56f6485944f3c8a56fea822bc4b5b045bc",
+        "meta.json": "4148c0964ea5263a926fce1dcb085cfbe79b52f7"
+      }
+    },
+    {
+      "versao": "v2_concentracao-do-sdr-selecionado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3: com o cursor sobre o Executivo E, o rótulo 100 por cento (16 de 16) do SDR 3 mede 86,55 px contra 84 px de margem esquerda, começa 2,55 px fora do SVG e o primeiro algarismo sai cortado, medido em página viva nos dois temas; levar MARGIN.left a 96 no mínimo ou derivar a margem do maior total do dado, e corrigir o comentário das linhas 24 a 28. Parecer em validation/revisao_27_rede-e-relacoes__02_grafo-bipartido_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:29.010Z",
+      "impressao": "8f3a0e681ec2de60037d5e0118d8add3bdb1bf1a",
+      "arquivos": {
+        "Chart.tsx": "9c928873665ac485fc9d4c2c54e3edd6fbe27ae3",
+        "data.ts": "72517040a90b928f758e813db845b556bcc307bc",
+        "meta.json": "e7f6be146e85997ccd687aeeab38bce65717d0c7"
+      }
+    },
+    {
+      "versao": "v3_clientes-e-produtos-na-carteira",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. As 58 ligações, o grau dos 7 nós de produto e o par mais frequente (11 de 24) conferidos com o data.ts; ordem refeita fora do componente (253 cruzamentos); seis cores de produto de 5,34 a 9,50 para 1 nos dois temas e Outros em neutro. Observações no README: 13 contas sem nome no desenho parado por especificação do catálogo, ligações de emissão fiscal em traços curtos sob o feixe de controle de estoque, limite de 20 nós do catálogo, TIP-4 no cabeçalho.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:29.562Z",
+      "impressao": "65f14f99b06ffadd191b04fb5cd7ad49bb3fa347",
+      "arquivos": {
+        "Chart.tsx": "bea67e80406a8b36bd6b45920617ad81e4130ba7",
+        "data.ts": "27c81f2c70f44f9ec419a363e6c41335b7305642",
+        "meta.json": "65d67d72c1be3e1bb014950d5e2c63956d350b2e"
+      }
+    },
+    {
+      "versao": "v4_executivo-sem-repasse",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 16 pares e os 140 repasses conferidos com o data.ts; zero medido vazado com 0 repasses escrito e ausência com Unplug e formatUnavailable, sem se confundirem em nenhum tema; dois elementos em peso 700. Observações no README: os totais somam só o medido e só a linha de leitura diz, o filtro da linha 242 faria zero de vizinho de nó sem medição, nó de zero mais alto que os de um e dois pares.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:42:30.109Z",
+      "impressao": "fd6621b62ddb6264429b65cc945948cf811cd165",
+      "arquivos": {
+        "Chart.tsx": "b293bbc6143ede6eb64c3a58800d6f73d18fe8cd",
+        "data.ts": "aa76df508c719d43275c05561a91246bb6308c8f",
+        "meta.json": "59518803eacafb44c76fe84c0c18eac3fc07ef61"
+      }
+    },
+    {
+      "versao": "v2_concentracao-do-sdr-selecionado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas, julgada pelo arquivo de hoje. Página viva com o cursor em cada um dos 13 nós nos dois temas: nenhum texto fora do SVG, a linha mais larga, 100 por cento (16 de 16) no SDR 3 com o cursor no Executivo E, mede 86,55 px e fica 5,45 px dentro da borda esquerda, sem colisão, dois elementos em peso 700 e linha de leitura em uma linha em todos os estados. Vazio, highlightId inexistente e nó aceso por prop montados e conferidos. Ligação fora de foco medida à mão em 3,58 e 3,28 para 1. Observações no README: margens calibradas para total de dois algarismos, arredondamento da linha de leitura em três estados de cursor, empate no Executivo G, hover sem teclado, ordem das colunas sem critério escrito, altura do nó conta pares.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:08:43.180Z",
+      "impressao": "38b93fc4b8d71e75245d7b47bb9b2efa57ea94b6",
+      "arquivos": {
+        "Chart.tsx": "8b291cb54721a9358aa83dd48dd182df67afb762",
+        "data.ts": "72517040a90b928f758e813db845b556bcc307bc",
+        "meta.json": "e7f6be146e85997ccd687aeeab38bce65717d0c7"
+      }
+    }
+  ]
+}

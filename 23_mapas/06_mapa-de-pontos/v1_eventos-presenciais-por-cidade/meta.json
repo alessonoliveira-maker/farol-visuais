@@ -1,0 +1,14 @@
+{
+  "title": "Eventos presenciais de 2026 por cidade",
+  "useCase": "Onde aconteceram os 42 eventos presenciais de 2026 e que regiões ficaram sem evento?",
+  "demonstrates": [
+    "Um ponto por evento, com raio fixo em pixels e contorno de superfície",
+    "Cidade com vários eventos abre os pontos num anel, sem empilhar",
+    "Anel pontilhado para cidade acompanhada que não recebeu evento",
+    "Anotação curta sobre a região vazia, o Norte, no padrão que o leitor deve ver",
+    "Contagem por macrorregião escrita abaixo do mapa, com o zero do Norte em anel"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Preenchimento a 0,80 e não a 0,60 como diz o catálogo: --chart-1 precisa de 0,66 para a marca composta fechar 3:1 no tema claro (ACE-5). O viewBox tem escala 1 (4,6 px por grau) e não está em graus, para o texto de 11 px chegar com 11 px (GEO-18); o raio fixo já nasce em pixels e a conversão para graus fica desnecessária. Não há malha do IBGE: o contorno de 51 pontos e as coordenadas das cidades, a 0,1 grau, vivem no data.ts, escritos à mão e declarados como aproximados. Contorno em --surface-sunken e não em --surface-overlay, que no claro é o mesmo branco do cartão. Manaus, Belém e Porto Velho entram com zero medido e aparecem como anel pontilhado, para o zero não parecer cidade ignorada."
+}

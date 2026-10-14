@@ -1,0 +1,13 @@
+{
+  "title": "Ridgeline com mês sem dado",
+  "useCase": "Como manter o eixo temporal honesto quando um mês não teve campanha ativa e outro teve só 11?",
+  "demonstrates": [
+    "Mês sem dado como linha pontilhada com o texto sem campanha, rótulo mantido",
+    "Nunca faixa reta em zero, que seria lida como distribuição vazia",
+    "Mês com n abaixo de 30 sem curva, com um traço por campanha e n escrito",
+    "Ordem cronológica preservada mesmo com lacunas"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sete meses de 2026, com março sem campanha (lista vazia no dado, e o componente não calcula nada sobre ela) e abril com 11 campanhas, abaixo do piso de 30 do catálogo para estimar curva. O mês vazio não tem linha de base sólida, não tem n e não entra na banda nem no pico global: só a linha pontilhada em text-muted (5,21:1 no claro) e o texto. O mês pequeno desenha um traço de 12 px por campanha em chart-1, sobre a linha de base, e escreve n 11 e amostra pequena. O corpo do preset card mede 574 por 241 com o caso de uso em uma linha e 225 em duas; a conta fecha no pior caso: linha de leitura de 16 px, rodapé de duas linhas de 32 px, dois vãos de 8 px e o desenho de 28 px de pico, passo de 16,8 px (sobreposição de 40%) e eixo de 26 px, 160 px no total. Desvio da ordem de desenho do catálogo: a faixa de cima é desenhada primeiro e a de baixo fica à frente, porque a ordem inversa esconderia o pico da faixa de baixo atrás da base da de cima. A altura é normalizada pelo pico global entre os meses com curva, com piso de 8%; a banda é a de Silverman sobre as campanhas reunidas. A mediana é um corte de 2 px em surface-raised sobre chart-1, o par aprovado de 6,00:1 no claro."
+}

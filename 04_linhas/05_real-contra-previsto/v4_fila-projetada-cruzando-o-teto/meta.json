@@ -1,0 +1,12 @@
+{
+  "title": "Fila projetada que cruza o teto de capacidade",
+  "useCase": "Se a demanda seguir o ritmo atual, em que semana a fila de primeiro contato passa do teto de capacidade?",
+  "demonstrates": [
+    "Cruzamento calculado por interpolação linear em TypeScript",
+    "Semana estimada do cruzamento anotada com formatDate",
+    "Teto em ReferenceLine com ifOverflow extendDomain",
+    "Aviso escrito quando a projeção não cruza dentro do horizonte"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

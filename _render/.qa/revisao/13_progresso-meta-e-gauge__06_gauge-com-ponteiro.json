@@ -1,0 +1,108 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "06_gauge-com-ponteiro",
+  "versoes": {
+    "v1_atingimento-trimestral-com-ponteiro": {
+      "veredito": "aprovado",
+      "nota": "Arco, ponteiro e textos corretos; faixas de baixo contraste ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:28.131Z",
+      "impressao": "aad546b03f75d02a76911cf7920095b556c1a443",
+      "arquivos": {
+        "Chart.tsx": "7ab30202d2e0a5993f669272d900b5e0b86aab80",
+        "data.ts": "5d9f30e4d96fa94630113888a76458a8d5e1294d",
+        "meta.json": "f90ada664b2b67aceb0d52e2e792677f867e6d97"
+      }
+    },
+    "v2_cobertura-de-dado-com-nota": {
+      "veredito": "aprovado",
+      "nota": "Estado, valor, limiares e origem escritos; legenda de baixo contraste e escala do arco ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:33.211Z",
+      "impressao": "217e1211790cded03e113d641e8131fe5a99ba05",
+      "arquivos": {
+        "Chart.tsx": "0bda2603ce26c8913a69d7bf36d9e8b49bd12070",
+        "data.ts": "d47260740924f04f140169ffda5b9dcf270eb34c",
+        "meta.json": "0d66e561a0c86c653ad1c17bef0e753a316f275b"
+      }
+    },
+    "v3_capacidade-contra-teto-medido": {
+      "veredito": "aprovado",
+      "nota": "Teto com traco e rotulo proprio, folga escrita; faixa de estouro pouco entintada fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:37.822Z",
+      "impressao": "8d9b3b57d3be8e4edd31ee49b262e32aad5e2bc3",
+      "arquivos": {
+        "Chart.tsx": "065056f50236766d45a248e6726870ca146c34da",
+        "data.ts": "736cd680edbd602d1c81c34bc70318ef6a710fc0",
+        "meta.json": "ca6de851cf71a726c9cc0296158b947d505c9417"
+      }
+    },
+    "v4_valor-acima-do-maximo": {
+      "veredito": "aprovado",
+      "nota": "Ponteiro travado, dominio fixo declarado e valor real escrito; distancia ao teto so na frase acessivel fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:43.183Z",
+      "impressao": "1580bf322f73e9e3682e32bf21466517d3c75e86",
+      "arquivos": {
+        "Chart.tsx": "d47c8f297ea357e956cfebf6f41c5dee643a00fe",
+        "data.ts": "e00d4c33aaa968b68542d95c75b2c08a0203f029",
+        "meta.json": "3482dc0fef1adfef0abfbf507e16896e92f05e41"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_atingimento-trimestral-com-ponteiro",
+      "veredito": "aprovado",
+      "nota": "Arco, ponteiro e textos corretos; faixas de baixo contraste ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:28.131Z",
+      "impressao": "aad546b03f75d02a76911cf7920095b556c1a443",
+      "arquivos": {
+        "Chart.tsx": "7ab30202d2e0a5993f669272d900b5e0b86aab80",
+        "data.ts": "5d9f30e4d96fa94630113888a76458a8d5e1294d",
+        "meta.json": "f90ada664b2b67aceb0d52e2e792677f867e6d97"
+      }
+    },
+    {
+      "versao": "v2_cobertura-de-dado-com-nota",
+      "veredito": "aprovado",
+      "nota": "Estado, valor, limiares e origem escritos; legenda de baixo contraste e escala do arco ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:33.211Z",
+      "impressao": "217e1211790cded03e113d641e8131fe5a99ba05",
+      "arquivos": {
+        "Chart.tsx": "0bda2603ce26c8913a69d7bf36d9e8b49bd12070",
+        "data.ts": "d47260740924f04f140169ffda5b9dcf270eb34c",
+        "meta.json": "0d66e561a0c86c653ad1c17bef0e753a316f275b"
+      }
+    },
+    {
+      "versao": "v3_capacidade-contra-teto-medido",
+      "veredito": "aprovado",
+      "nota": "Teto com traco e rotulo proprio, folga escrita; faixa de estouro pouco entintada fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:37.822Z",
+      "impressao": "8d9b3b57d3be8e4edd31ee49b262e32aad5e2bc3",
+      "arquivos": {
+        "Chart.tsx": "065056f50236766d45a248e6726870ca146c34da",
+        "data.ts": "736cd680edbd602d1c81c34bc70318ef6a710fc0",
+        "meta.json": "ca6de851cf71a726c9cc0296158b947d505c9417"
+      }
+    },
+    {
+      "versao": "v4_valor-acima-do-maximo",
+      "veredito": "aprovado",
+      "nota": "Ponteiro travado, dominio fixo declarado e valor real escrito; distancia ao teto so na frase acessivel fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:59:43.183Z",
+      "impressao": "1580bf322f73e9e3682e32bf21466517d3c75e86",
+      "arquivos": {
+        "Chart.tsx": "d47c8f297ea357e956cfebf6f41c5dee643a00fe",
+        "data.ts": "e00d4c33aaa968b68542d95c75b2c08a0203f029",
+        "meta.json": "3482dc0fef1adfef0abfbf507e16896e92f05e41"
+      }
+    }
+  ]
+}

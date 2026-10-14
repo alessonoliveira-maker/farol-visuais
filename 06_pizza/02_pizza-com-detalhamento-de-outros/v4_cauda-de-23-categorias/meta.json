@@ -1,0 +1,14 @@
+{
+  "title": "Cauda longa de 23 campanhas abaixo de 1%",
+  "useCase": "Como mostrar 23 campanhas pequenas, cada uma abaixo de 1% dos leads, sem virar uma lista ilegível?",
+  "demonstrates": [
+    "Detalhe com as 10 maiores da cauda e o resto em uma linha escrita",
+    "Sem rolagem: o que não cabe vira contagem escrita, nunca overflow escondido",
+    "Duas checagens em TypeScript recusam desenhar agrupamento desonesto",
+    "Nome de campanha inteiro, sem reticência, pela TIP-7",
+    "Canvas por número, com a conta das linhas escritas na nota"
+  ],
+  "canvas": { "width": 960, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas por número em vez de preset, pela GEO-1, e a conta está no topo do Chart.tsx: com a moldura card o corpo mede 894 x 441,5 px, as quatro linhas escritas tomam 90,5 px, sobram 338 px para as 10 barras, e a espessura sai em 13,04 px, acima do piso de 12 px da ESP-2. No preset largo de 960x400 a mesma conta dá 7,1 px de espessura, isto é, metade do piso. Colisão entre catálogo e CONTRATO, resolvida a favor do CONTRATO: o catálogo pede a lista completa da cauda na frase acessível, e as 23 campanhas passariam de 600 caracteres contra o teto de 250 da ACE-1; a frase diz o tamanho da cauda, o critério e quantas o painel abre, e quem nomeia parte por parte é o desenho, onde as 10 maiores saem com nome e valor e as 13 restantes saem como contagem mais soma, de modo que o escrito ainda fecha o total da ROT-10. Medido à mão em 2026-09-29, nas guardas que o check não mede nesta peça: EIXO-CALMO sai fora de escopo porque a peça não desenha CartesianGrid, que a ROT-2 dispensa em barra com valor escrito, e os dois eixos do painel vão com axisLine e tickLine em false, com o XAxis em hide. OPACIDADE-MARCA sai fora de escopo porque nenhuma marca declara opacidade: as cinco pintam opacas, e a mais fraca é --text-muted, que mede 5,21:1 no escuro e 5,37:1 no claro contra o cartão, acima do piso de 3:1 da WCAG 1.4.11. Percentual conferido somando o que está impresso no preview.svg: 32, 24, 18, 14 e 12 somam 100."
+}

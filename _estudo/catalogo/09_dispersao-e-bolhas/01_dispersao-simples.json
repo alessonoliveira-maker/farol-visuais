@@ -1,0 +1,72 @@
+{
+  "slug": "01_dispersao-simples",
+  "nome": "Dispersão simples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada ponto é uma entidade posicionada por duas medidas quantitativas, uma em cada eixo. É a forma de entrada da família: responde se existe relação entre X e Y, quem foge do padrão e onde há aglomerados. Absorve rótulos com destaque, cor e forma por categoria, envoltória por grupo, escala logarítmica, zoom por área e a micro dispersão de célula.",
+  "quando_usar": [
+    "Relação entre duas medidas de um conjunto de entidades, como ticket contra ciclo de oportunidades ganhas.",
+    "Achar quem foge do padrão e dar nome a poucos pontos (até cerca de 8 rótulos diretos).",
+    "Comparar a nuvem de 2 a 5 grupos no mesmo plano, com forma e cor por grupo.",
+    "Medidas que variam em ordens de grandeza, com eixo em escala logarítmica e marcas em unidades humanas.",
+    "Até cerca de 500 pontos com opacidade moderada; até cerca de 3.000 com ponto pequeno e opacidade 0,35."
+  ],
+  "quando_evitar": [
+    "Uma das medidas é categoria ou tempo: use barras, pontos por categoria (família 17) ou linhas (família 04).",
+    "Acima de cerca de 3.000 pontos: use densidade 2D (modelo 09) ou declare a amostra no rodapé.",
+    "Mais de 5 grupos no mesmo plano: use pequenos múltiplos (modelo 11).",
+    "Leitura por quadrante com cortes de meta: use a família 25.",
+    "Registro sem X ou sem Y não pode virar ponto no zero: ele sai do plano e entra na contagem do rodapé."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-contra-ciclo",
+      "titulo": "Ticket contra ciclo das oportunidades ganhas",
+      "caso_de_uso": "Oportunidades de ticket maior demoram mais para fechar? Ganhas nos últimos 12 meses, ticket em mil reais e ciclo em dias.",
+      "o_que_demonstra": [
+        "ScatterChart com eixos numéricos, unidade e domínio explícito e estável",
+        "Dica própria com o nome da oportunidade e os dois valores formatados",
+        "Opacidade abaixo de 1 para revelar pontos empilhados",
+        "Rodapé com o número de pontos exibidos"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_extremos-rotulados-com-destaque",
+      "titulo": "Executivos nos extremos de win rate",
+      "caso_de_uso": "Quem são os executivos que puxam o win rate para cima e para baixo? 18 executivos fictícios por ticket médio e win rate.",
+      "o_que_demonstra": [
+        "Nuvem em neutro e destaque em cor, desenhado por último para ficar por cima",
+        "LabelList com content filtrado: rótulo só nos 3 maiores e nos 3 menores",
+        "Posição do rótulo escolhida entre 8 candidatas para não colidir",
+        "Destaque com segundo canal: rótulo em peso 700 e anel no ponto"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_origens-com-envoltoria",
+      "titulo": "Território de cada origem de lead",
+      "caso_de_uso": "Inbound, outbound e indicação se comportam diferente? 420 leads por minutos até o contato e interações, com o território de cada origem.",
+      "o_que_demonstra": [
+        "Um Scatter por origem com cor e forma próprias, slots categóricos fixos",
+        "Casco convexo por grupo calculado em pixels sobre os pontos entre P5 e P95",
+        "Polígono com opacidade de até 0,15 para a sobreposição não virar lama",
+        "Grupo maior desenhado primeiro para não cobrir o menor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_tempo-de-contato-em-escala-log",
+      "titulo": "Tempo até o primeiro contato em escala log",
+      "caso_de_uso": "O tempo até o primeiro contato derruba o número de tentativas até a agenda? 1.800 leads, com zeros e horários ausentes fora do plano.",
+      "o_que_demonstra": [
+        "XAxis com scale log, domínio positivo e marcas em 1 min, 1 h e 1 dia",
+        "Aviso de escala logarítmica escrito no rótulo do eixo",
+        "Respostas registradas como 0 viram marcador na borda com contagem",
+        "Leads sem horário de contato saem do plano e entram no rodapé",
+        "Ponto de raio 2 com opacidade 0,35 para volume alto"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

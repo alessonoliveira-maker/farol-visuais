@@ -1,0 +1,108 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "04_grafo-de-rede-por-forcas",
+  "versoes": {
+    "v1_rede-de-indicacoes-entre-clientes": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 60 nós, 72 arestas, 53 de 72 no mesmo produto e 5 grupos refeitos do data.ts; raio pela raiz da receita conferido no preview, de 3,75 a 14 px; aresta em text-muted a 5,21 e 5,37 para 1; 1 cruzamento e nenhum rótulo com aresta ou nó por baixo. Observações no README: Rodrigo T. a 5 px de dois nós alheios e a 33 px do próprio, com chamada que cruza 1 aresta; amostra da régua de área maior que o disco de mesmo valor; sem piso de área; empate de Rita F. com Maria Aparecida S. na frase acessível; TIP-4 na régua.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:46.219Z",
+      "impressao": "10e21b82db3b8f0bd517e62124b41a741704f88d",
+      "arquivos": {
+        "Chart.tsx": "7b4cc14ea7d885e1557cebf05a16d23c4e07fa2a",
+        "data.ts": "3caf114875153905e066f618c8ef40b2207f9df6",
+        "meta.json": "653afba4eab422608bf32bd6d64df8c752ae2d43"
+      }
+    },
+    "v2_clientes-que-mais-indicam": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 36 nós, 33 setas e 21 das 33 nos três (9, 7 e 5) refeitos do data.ts; geometria rodada nos 36 focos e sem foco: 0 px de deslocamento de nó e nenhum rótulo sobre nó, seta ou outro rótulo; desvios de line-strong e de peso 700 declarados no meta. Observações no README: Ricardo L. a 5,8 px de nó alheio e chamada de Marcelo B. a 3 px de outro; chart-1 em dois trabalhos de destaque, com o foco padrão no terceiro colocado; nome dos indicados fora do foco só na dica; raio de 8 px marca os três e não mede grau.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:46.778Z",
+      "impressao": "b44ec77cc7cca6368772442886258b476585a5da",
+      "arquivos": {
+        "Chart.tsx": "b7a8bc8a2a953b79b0002ee4aedafe9f99ad5ad9",
+        "data.ts": "ca5745d0f74b51261d44e21c22e5ec367a823c3a",
+        "meta.json": "75b8dffebf8a04deb1222d15eef08d302e01faa4"
+      }
+    },
+    "v3_coocorrencia-de-produto-em-180-contas": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 180 contas, 322 ligações desenhadas, 236 ocultas, 302 de 322 no mesmo produto, 7 pontes e as 7 contagens da legenda, que somam 180, refeitos do data.ts; espessuras de 1, 1,5 e 2 px em 206, 78 e 38 arestas; seis cores de produto de 5,34 a 9,50 para 1 e Outros em neutro; layout em 96 ms. Observações no README: menos de 2 sem substantivo no painel; 10 discos com aresta alheia por dentro; limiar da ponte fora da tela; degrau do meio da espessura; anel de ponte em token de texto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:54.720Z",
+      "impressao": "b5d8fcb5369396ddf0d8840a0d315f58bd1a5dfd",
+      "arquivos": {
+        "Chart.tsx": "ddbfc1a4a630ecfe1c05d79aec8f0dc4b78128cb",
+        "data.ts": "8eb6f637aa20e1a82decebe7312636c13e2137e0",
+        "meta.json": "7019ccc8525b705109da8bf09ddc2b4c894bcf91"
+      }
+    },
+    "v4_clientes-sem-nenhuma-indicacao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 64 clientes, 39 indicações, 22 isolados (34,4 por cento), 42 ligados em 7 grupos e maior grupo de 25 refeitos do data.ts; isolado vazado em text-muted com o nome escrito, fora da simulação; lista acessível com 39 itens no preview; 1 cruzamento e 4 rótulos sem aresta por baixo. Observações no README: TIP-1 em jan/25 na linha de leitura; fora da simulação é termo de implementação; ordem alfabética corre por linha numa grade que lê por coluna; marca vazada maior que a cheia.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:55.287Z",
+      "impressao": "316f61a725a1344bb5f5ec21dbc77312d1f53419",
+      "arquivos": {
+        "Chart.tsx": "a03d32bfae3880a899dad558dadd8c5ac2c9a74e",
+        "data.ts": "cae80b89e378eb69ed1bb78dd5b2b4382b73d7f7",
+        "meta.json": "4bc8b544ef7c38da78e5afc8fce60b9bec3eaae9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_rede-de-indicacoes-entre-clientes",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 60 nós, 72 arestas, 53 de 72 no mesmo produto e 5 grupos refeitos do data.ts; raio pela raiz da receita conferido no preview, de 3,75 a 14 px; aresta em text-muted a 5,21 e 5,37 para 1; 1 cruzamento e nenhum rótulo com aresta ou nó por baixo. Observações no README: Rodrigo T. a 5 px de dois nós alheios e a 33 px do próprio, com chamada que cruza 1 aresta; amostra da régua de área maior que o disco de mesmo valor; sem piso de área; empate de Rita F. com Maria Aparecida S. na frase acessível; TIP-4 na régua.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:46.219Z",
+      "impressao": "10e21b82db3b8f0bd517e62124b41a741704f88d",
+      "arquivos": {
+        "Chart.tsx": "7b4cc14ea7d885e1557cebf05a16d23c4e07fa2a",
+        "data.ts": "3caf114875153905e066f618c8ef40b2207f9df6",
+        "meta.json": "653afba4eab422608bf32bd6d64df8c752ae2d43"
+      }
+    },
+    {
+      "versao": "v2_clientes-que-mais-indicam",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 36 nós, 33 setas e 21 das 33 nos três (9, 7 e 5) refeitos do data.ts; geometria rodada nos 36 focos e sem foco: 0 px de deslocamento de nó e nenhum rótulo sobre nó, seta ou outro rótulo; desvios de line-strong e de peso 700 declarados no meta. Observações no README: Ricardo L. a 5,8 px de nó alheio e chamada de Marcelo B. a 3 px de outro; chart-1 em dois trabalhos de destaque, com o foco padrão no terceiro colocado; nome dos indicados fora do foco só na dica; raio de 8 px marca os três e não mede grau.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:46.778Z",
+      "impressao": "b44ec77cc7cca6368772442886258b476585a5da",
+      "arquivos": {
+        "Chart.tsx": "b7a8bc8a2a953b79b0002ee4aedafe9f99ad5ad9",
+        "data.ts": "ca5745d0f74b51261d44e21c22e5ec367a823c3a",
+        "meta.json": "75b8dffebf8a04deb1222d15eef08d302e01faa4"
+      }
+    },
+    {
+      "versao": "v3_coocorrencia-de-produto-em-180-contas",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 180 contas, 322 ligações desenhadas, 236 ocultas, 302 de 322 no mesmo produto, 7 pontes e as 7 contagens da legenda, que somam 180, refeitos do data.ts; espessuras de 1, 1,5 e 2 px em 206, 78 e 38 arestas; seis cores de produto de 5,34 a 9,50 para 1 e Outros em neutro; layout em 96 ms. Observações no README: menos de 2 sem substantivo no painel; 10 discos com aresta alheia por dentro; limiar da ponte fora da tela; degrau do meio da espessura; anel de ponte em token de texto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:54.720Z",
+      "impressao": "b5d8fcb5369396ddf0d8840a0d315f58bd1a5dfd",
+      "arquivos": {
+        "Chart.tsx": "ddbfc1a4a630ecfe1c05d79aec8f0dc4b78128cb",
+        "data.ts": "8eb6f637aa20e1a82decebe7312636c13e2137e0",
+        "meta.json": "7019ccc8525b705109da8bf09ddc2b4c894bcf91"
+      }
+    },
+    {
+      "versao": "v4_clientes-sem-nenhuma-indicacao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 64 clientes, 39 indicações, 22 isolados (34,4 por cento), 42 ligados em 7 grupos e maior grupo de 25 refeitos do data.ts; isolado vazado em text-muted com o nome escrito, fora da simulação; lista acessível com 39 itens no preview; 1 cruzamento e 4 rótulos sem aresta por baixo. Observações no README: TIP-1 em jan/25 na linha de leitura; fora da simulação é termo de implementação; ordem alfabética corre por linha numa grade que lê por coluna; marca vazada maior que a cheia.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:51:55.287Z",
+      "impressao": "316f61a725a1344bb5f5ec21dbc77312d1f53419",
+      "arquivos": {
+        "Chart.tsx": "a03d32bfae3880a899dad558dadd8c5ac2c9a74e",
+        "data.ts": "cae80b89e378eb69ed1bb78dd5b2b4382b73d7f7",
+        "meta.json": "4bc8b544ef7c38da78e5afc8fce60b9bec3eaae9"
+      }
+    }
+  ]
+}

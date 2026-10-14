@@ -1,0 +1,14 @@
+{
+  "title": "Oportunidades paradas por etapa",
+  "useCase": "Quais oportunidades abertas estão paradas há mais de 30 dias e em que etapa?",
+  "demonstrates": [
+    "Cor por faixa de dias sem movimento: até 15, 16 a 30 e mais de 30 em --warning",
+    "Ordem dentro da etapa pelo atributo de cor, formando um bloco legível",
+    "Nota direta ligada à etapa com mais paradas, com o colchete na altura do bloco",
+    "Faixa crítica também por forma, com contorno, e não só por cor",
+    "aria-label com o total aberto e o total parado há mais de 30 dias"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio de redação do catálogo: o texto pede 'gradiente', e a COR-9 proíbe gradiente em marca. Nada é degradê: são três faixas discretas (--seq-5, --seq-7 e --warning) e a ordem do preenchimento é que faz o bloco crítico subir para o topo da pilha. Conta do corpo: 574 x 241,5. Altura gasta: abertura 20, vão 8, legenda 16, vão 8, contagem 16, vão 4, pilha mais alta 106 (44 quadrados em 5 colunas, 9 linhas), nome 36: 214 px. Par medido da pilha: --seq-5 e --seq-7 passam de 3:1 contra o cartão nos dois temas (4,89 e 3,72 para o --seq-5), e o --warning mede 8,36 e 5,74."
+}

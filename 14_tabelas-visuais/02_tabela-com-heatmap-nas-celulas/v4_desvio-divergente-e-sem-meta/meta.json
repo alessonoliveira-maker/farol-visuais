@@ -1,0 +1,13 @@
+{
+  "title": "Desvio divergente com células sem meta",
+  "useCase": "Quais áreas e trimestres ficaram acima ou abaixo da meta, e onde nem existe meta cadastrada.",
+  "demonstrates": [
+    "Escala divergente simétrica centrada em 0% com degraus de --negative e --positive",
+    "Sinal + ou − tipográfico escrito na célula, nunca só a cor",
+    "Célula sem meta com contorno tracejado, ícone e texto, sem entrar na escala de desvio",
+    "Opacidade travada em 55% para o texto sobre a marca não reprovar 4,5:1 em nenhum tema"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Sem hachura: a proposta do estudo usava textura diagonal na célula sem meta, mas COR-9 proíbe textura decorativa em marca e fundo. Contorno tracejado + ícone + texto resolve com os mesmos tokens de ausência da seção 17.2."
+}

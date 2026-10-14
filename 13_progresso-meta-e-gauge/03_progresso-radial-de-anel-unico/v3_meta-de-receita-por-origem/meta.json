@@ -1,0 +1,12 @@
+{
+  "title": "Meta de receita repartida por origem",
+  "useCase": "Mostrar, para a diretoria, quanto da meta do trimestre já veio e de onde: cliente atual, indicação, inbound ou mídia paga.",
+  "demonstrates": [
+    "Quatro RadialBar com stackId compartilhado e domínio no valor da meta",
+    "Slots categóricos fixos por origem na ordem 1, 3, 6 e 5, com contorno entre segmentos",
+    "Total no centro com valor absoluto e meta; legenda com valor e percentual por origem",
+    "Ordem dos segmentos estável, vinda da posição no dado e não do valor de cada origem"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

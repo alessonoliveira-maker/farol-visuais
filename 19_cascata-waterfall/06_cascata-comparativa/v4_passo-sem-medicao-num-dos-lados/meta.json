@@ -1,0 +1,17 @@
+{
+  "title": "Duas unidades com um passo sem medição",
+  "useCase": "A Unidade Norte não separa a expansão no financeiro: o que a ponte dela diz e o que fica de fora?",
+  "demonstrates": [
+    "Passo sem medição vazado com contorno --text-muted e palavra",
+    "Total do lado incompleto rotulado como parcial, sem somar zero",
+    "Mesma posição do passo nos dois painéis, mesmo quando vazio",
+    "Zero medido (reajuste da Sul) em traço cheio, diferente do vazado",
+    "Frase acessível declarando qual passo falta e em qual lado"
+  ],
+  "canvas": {
+    "width": 1024,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Desvio de preset (largo 960x400 vira 1024x400, GEO-1): com 894 px de corpo cada coluna ficava com 67 px e o rótulo \"+R$ 190 mil\" (66 px) encostava no vizinho; com 1024 o corpo mede 958 x 281,5, o painel 432 e a coluna 72 px. O vazado tem altura fixa de 22 px que não codifica valor: é só o sinal de que o passo existe e não foi medido, e o nível segue reto até a coluna seguinte. O fim da Norte (R$ 1,12 mi) é início mais os passos medidos, 1.050.000 + 140.000 + 20.000 − 95.000, e por isso vai em contorno tracejado com a palavra parcial. Domínio comum de R$ 0 a R$ 2,0 mi: o maior acumulado é 1.510.000 (Unidade Sul), subido à primeira linha de grade acima. O viewBox tem o tamanho do corpo, 958 x 281,5, escala 1 (GEO-18)."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Meta de etapa nova sem histórico",
+  "useCase": "Distinguir a etapa cuja meta é medição de taxa histórica da etapa nova cuja meta é premissa digitada.",
+  "demonstrates": [
+    "Marcador vazado para meta sem medição por trás, marcador sólido para meta medida",
+    "Rótulo premissa, sem medição, ao lado do marcador vazado",
+    "Atingimento indisponível por formatUnavailable, sem taxa inventada para a etapa nova",
+    "Meta medida e meta digitada distinguidas por forma, não só por cor"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

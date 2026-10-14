@@ -1,0 +1,13 @@
+{
+  "title": "Plataforma em destaque no ranking",
+  "useCase": "Acompanhar a trajetória de uma plataforma no ranking de investimento, com as demais como contexto.",
+  "demonstrates": [
+    "Item destacado em chart-1 e os demais em line-strong",
+    "Rótulo do destaque em peso 700 e posição de cada trimestre escrita",
+    "Desenho por segmento para o destaque ficar por cima nos cruzamentos",
+    "Coluna de faixas alinhada ao centro, com a regra declarada"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Leitura primária é a posição vertical do destaque; a espessura é secundária. Pintura em duas camadas: os neutros primeiro, o destaque por último, para ficar por cima nos cruzamentos."
+}

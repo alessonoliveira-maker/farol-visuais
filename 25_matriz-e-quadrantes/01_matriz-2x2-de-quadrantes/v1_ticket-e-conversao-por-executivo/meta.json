@@ -1,0 +1,14 @@
+{
+  "title": "Ticket médio e conversão por executivo",
+  "useCase": "Quais dos 14 executivos estão acima da mediana do time em ticket médio e em conversão no trimestre?",
+  "demonstrates": [
+    "Cortes na mediana calculados em TypeScript, com o valor escrito no rótulo da linha",
+    "ReferenceArea amarrada às constantes do domínio fixo, nunca a dataMax",
+    "Rótulo direto por ponto com desconflito vertical calculado fora do LabelList",
+    "Título de ação e contagem de itens no canto externo de cada região",
+    "Rodapé com n no plano e n fora por dado ausente, sem ponto no zero"
+  ],
+  "canvas": { "width": 640, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset card (GEO-1): 640x360 dá corpo de 574 x 225 a 241 px, e descontados a linha de leitura (20), o rodapé (20), o topo de 36 px com o título do eixo e o rótulo do corte, e os 44 px do eixo X com o título, sobram cerca de 100 px de plano para 12 rótulos diretos de 12 px. Com 480 de altura o plano passa de 220 px. Mediana calculada sobre os executivos que têm as duas medidas no plano (12), por isso o corte vertical não é a mediana do ticket de todos que venderam. Região pintada por ReferenceArea, só a de ação (ticket e conversão acima) em chart-1 a 7%, as outras em text-muted a 4%; os pontos seguem o mesmo papel: chart-1 na região de ação, text-muted fora dela. Corte MEDIDO em traço sólido line-strong (referência, ACE-6)."
+}

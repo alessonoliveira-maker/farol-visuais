@@ -1,0 +1,75 @@
+{
+  "slug": "03_pictograma-isotype",
+  "nome": "Pictograma isotype",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Fileiras de ícones iguais em que cada ícone vale uma quantidade fixa: mais quantidade é mais ícones, nunca ícone maior, como manda o método Isotype. O modelo absorve a matriz de ícones, a grade de 10 por 10 figuras que traduz uma taxa em x em cada 100 para público amplo. Feito em HTML com Tailwind e ícones do lucide-react repetidos em flex ou grid, com o valor exato escrito no fim de cada fileira. Ícone nunca é fatiado: arredonda para inteiro e o número diz o resto. O ícone precisa ter relação com a unidade, e o de contorno pede no mínimo 14 px com traço perto de 2,5 para ter massa no tema escuro.",
+  "quando_usar": [
+    "Contagem pequena, até cerca de 50 ícones por fileira, com ícone ligado à unidade",
+    "De 2 a 6 fileiras de categorias, lidas por comprimento e por contagem",
+    "Taxa dita como x em cada 100 pessoas para diretoria ou apresentação",
+    "Unidade que é pessoa (lead, cliente, integrante do time), onde a figura humana ajuda"
+  ],
+  "quando_evitar": [
+    "Valores grandes ou decimais: barra horizontal com o número (02/01)",
+    "Unidade que não é pessoa nem objeto reconhecível, como oportunidade ou conta: waffle (22/01)",
+    "Diferenças finas entre categorias próximas: barras horizontais ordenadas (02/01)",
+    "Ícone escalado pelo valor: área mal lida; repetir o ícone ou usar área quadrada (22/05)",
+    "Tempo e categoria ao mesmo tempo: waffle em barras (22/02)",
+    "Público que lê ícones como infantil: waffle 10x10 com a frase escrita (22/01)"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_vitorias-do-semestre-por-origem",
+      "titulo": "Vitórias do semestre por origem",
+      "caso_de_uso": "Comercial: de onde vieram as vitórias do semestre, contadas uma a uma por origem.",
+      "o_que_demonstra": [
+        "Fileiras de ícones do lucide-react em flex com espaçamento fixo, um por vitória",
+        "Ícone Trophy de 16 px com strokeWidth 2,5 para ter massa no tema escuro",
+        "Número exato no fim da fileira e legenda 1 ícone = 1 vitória",
+        "Fileiras ordenadas pelo total, com o nome da origem à esquerda",
+        "Contêiner role img com frase calculada; ícones com aria-hidden"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_clientes-novos-por-indicacao-em-cada-100",
+      "titulo": "Clientes novos por indicação em cada 100",
+      "caso_de_uso": "Diretoria: dizer em linguagem de conselho quantos de cada 100 clientes novos do ano chegaram por indicação.",
+      "o_que_demonstra": [
+        "Matriz de 100 figuras User em grid-cols-10 com o mapa de preenchimento do waffle",
+        "Categoria colorida em bloco contíguo, nunca espalhada, para contar sem esforço",
+        "Hover ou foco na legenda acende os ícones da categoria e esmaece os outros",
+        "Frase 3 em cada 10 escrita em font-display ao lado da matriz",
+        "Transição do destaque desligada com prefers-reduced-motion"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_cada-100-leads-de-midia-paga",
+      "titulo": "O caminho de cada 100 leads de mídia paga",
+      "caso_de_uso": "Marketing: de cada 100 leads de mídia paga, quantos têm telefone, quantos qualificam e quantos chegam à agenda.",
+      "o_que_demonstra": [
+        "Três níveis aninhados na mesma matriz: 58 com telefone, 21 qualificados, 4 com agenda",
+        "Subgrupos contidos um no outro, preenchidos a partir do mesmo canto",
+        "Nível mais avançado em --chart-1 e os anteriores em opacidades menores da mesma cor",
+        "Venda de 0,6 em 100 só em texto, sem ícone fatiado",
+        "Base real no rodapé: 100 equivale a 1.240 leads do trimestre"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_leads-do-mes-em-icones-de-dez",
+      "titulo": "Leads do mês por origem em ícones de dez",
+      "caso_de_uso": "Marketing: leads do mês por origem quando os volumes passam de 300 e uma origem não tem coleta.",
+      "o_que_demonstra": [
+        "Unidade 1 ícone = 10 leads declarada na legenda e no aria-label",
+        "347 leads viram 34 ícones inteiros e o número 347, sem 35º ícone cortado",
+        "Origem com menos de 10 leads sem ícone e com o texto menos de um ícone",
+        "Origem sem coleta com ícone Unplug e formatUnavailable no lugar da fileira",
+        "Acima de 50 ícones por fileira a unidade sobe de novo e o aviso acompanha"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

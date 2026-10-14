@@ -1,0 +1,33 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "03_sunburst",
+  "versoes": {
+    "v1_entradas-por-origem-e-subcanal": {
+      "veredito": "aprovado",
+      "nota": "Sunburst de dois niveis honesto: soma dos filhos fecha o pai, percentuais impressos somam 100, lista de identificacao cobre nome e valor de todo no (ROT-10), halo resolve o texto sobre as seis cores nos dois temas. Observacoes nao bloqueantes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T04:54:39.113Z",
+      "impressao": "51e8d45081915cfd636ffbb6ac1e8ac1399a1d8b",
+      "arquivos": {
+        "Chart.tsx": "cf9ecc7927f875104c80507234cc486bc135d7c7",
+        "data.ts": "1834232069e6740b7fae7f6bdfab2fd972032d9a",
+        "meta.json": "31cd65ab9020c44afc47d5f57612235ec7dd1d23"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_entradas-por-origem-e-subcanal",
+      "veredito": "aprovado",
+      "nota": "Sunburst de dois niveis honesto: soma dos filhos fecha o pai, percentuais impressos somam 100, lista de identificacao cobre nome e valor de todo no (ROT-10), halo resolve o texto sobre as seis cores nos dois temas. Observacoes nao bloqueantes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T04:54:39.113Z",
+      "impressao": "51e8d45081915cfd636ffbb6ac1e8ac1399a1d8b",
+      "arquivos": {
+        "Chart.tsx": "cf9ecc7927f875104c80507234cc486bc135d7c7",
+        "data.ts": "1834232069e6740b7fae7f6bdfab2fd972032d9a",
+        "meta.json": "31cd65ab9020c44afc47d5f57612235ec7dd1d23"
+      }
+    }
+  ]
+}

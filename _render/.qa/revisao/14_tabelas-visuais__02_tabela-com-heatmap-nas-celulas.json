@@ -1,0 +1,173 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "02_tabela-com-heatmap-nas-celulas",
+  "versoes": {
+    "v1_conversao-por-etapa-e-mes": {
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas, escala comum declarada na legenda, mes sem medicao com contorno tracejado e formatUnavailable, nunca zero. Observacoes: nomes de etapa truncados, quebra de palavra em indisponivel e taxa em percentual inteiro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:17.659Z",
+      "impressao": "9fce1578baaca7f04051a0a5da960bbf14813037",
+      "arquivos": {
+        "Chart.tsx": "6145449f71045a32b66b0575caba8cbc16021aad",
+        "data.ts": "e18d4c9942d58837f4f52ff316a974779a019cfd",
+        "meta.json": "754afff9bc193411978263ac501072267ed305d5"
+      }
+    },
+    "v2_cpl-qualificado-com-teto": {
+      "veredito": "aprovado",
+      "nota": "Faixa manual de R$ 60 a R$ 240 com 5 degraus, teto marcado por contorno warning mais icone alem da cor, polaridade invertida escrita na legenda e mes sem veiculacao como indisponivel. Observacoes: nome de plataforma truncado e legenda nao diz que valor fora da faixa encosta no extremo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:23.355Z",
+      "impressao": "0e3cefa2959a864f6a3458f7b45276b44ba0d007",
+      "arquivos": {
+        "Chart.tsx": "b9b46a059a5dc9f45852d633153aa67271ebc9b7",
+        "data.ts": "d9731d0d73fdd44b9167c59af210c36d257f6728",
+        "meta.json": "39b0c81cc5b1d3d8aea7d9eb65b5f29d32febec0"
+      }
+    },
+    "v3_perfil-das-areas-por-coluna": {
+      "veredito": "aprovado",
+      "nota": "Cor por percentil dentro da coluna com direcao do bom lida do dado, zero medido separado de indisponivel e canvas por numero declarado nas notas. Observacoes: empate em R$ 0 marca so uma celula como pior, nome de area truncado e oito elementos em peso 700 pela regra do catalogo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:29.054Z",
+      "impressao": "fb0899ec6b8a239814a92038d401d4dfd94263a9",
+      "arquivos": {
+        "Chart.tsx": "736083e23b811d84ffaa1103e7fb2ab8aead252d",
+        "data.ts": "ac4987650964651897cb4ccc961f6434779cb2f8",
+        "meta.json": "3263164935440625a28c6c0d5df0a7b43595f1d7"
+      }
+    },
+    "v4_desvio-divergente-e-sem-meta": {
+      "veredito": "aprovado",
+      "nota": "Sinal tipografico agora sai em toda celula, inclusive na faixa neutra, o que fecha o bloqueante da rodada anterior; zero medido sem sinal e sem meta com contorno, icone e texto, fora da escala. Contraste do texto sobre positive e negative a 55 por cento conferido nos dois temas. Observacao: desvio de menos 2 por cento ja recebe tom, embora a legenda chame a faixa de dentro de mais ou menos 2 por cento.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:36.131Z",
+      "impressao": "92a1e25e2883db87a8788cb961eff3c8d51c074e",
+      "arquivos": {
+        "Chart.tsx": "349c400242d01f334c1cb485890e349cd7040484",
+        "data.ts": "74c89e3f1b0597bebd6a564053a223c48599cd02",
+        "meta.json": "a32b64e12890a4100b733a603f7cdccd51a45216"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_conversao-por-etapa-e-mes",
+      "veredito": "aprovado",
+      "nota": "Check limpo, contraste medido nos dois temas, ausencia marcada sem virar zero. Observacoes: nomes de linha truncados e taxa em percentual inteiro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:51:32.768Z",
+      "impressao": "9fce1578baaca7f04051a0a5da960bbf14813037",
+      "arquivos": {
+        "Chart.tsx": "6145449f71045a32b66b0575caba8cbc16021aad",
+        "data.ts": "e18d4c9942d58837f4f52ff316a974779a019cfd",
+        "meta.json": "754afff9bc193411978263ac501072267ed305d5"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-com-teto",
+      "veredito": "aprovado",
+      "nota": "Faixa manual, teto com contorno e ícone, polaridade escrita na legenda. Observação: nome de plataforma longo sai truncado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:51:40.232Z",
+      "impressao": "0e3cefa2959a864f6a3458f7b45276b44ba0d007",
+      "arquivos": {
+        "Chart.tsx": "b9b46a059a5dc9f45852d633153aa67271ebc9b7",
+        "data.ts": "d9731d0d73fdd44b9167c59af210c36d257f6728",
+        "meta.json": "39b0c81cc5b1d3d8aea7d9eb65b5f29d32febec0"
+      }
+    },
+    {
+      "versao": "v1_conversao-por-etapa-e-mes",
+      "veredito": "aprovado",
+      "nota": "Check limpo, contraste medido nos dois temas, ausência marcada sem virar zero. Observações: nomes de etapa truncados e taxa em percentual inteiro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:51:47.673Z",
+      "impressao": "9fce1578baaca7f04051a0a5da960bbf14813037",
+      "arquivos": {
+        "Chart.tsx": "6145449f71045a32b66b0575caba8cbc16021aad",
+        "data.ts": "e18d4c9942d58837f4f52ff316a974779a019cfd",
+        "meta.json": "754afff9bc193411978263ac501072267ed305d5"
+      }
+    },
+    {
+      "versao": "v3_perfil-das-areas-por-coluna",
+      "veredito": "aprovado",
+      "nota": "Cor por coluna com direção lida do dado, canvas por número declarado nas notas. Observações: empate no pior da coluna marca só uma célula e seta do cabeçalho se afasta em rótulo de duas linhas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:51:48.160Z",
+      "impressao": "fb0899ec6b8a239814a92038d401d4dfd94263a9",
+      "arquivos": {
+        "Chart.tsx": "736083e23b811d84ffaa1103e7fb2ab8aead252d",
+        "data.ts": "ac4987650964651897cb4ccc961f6434779cb2f8",
+        "meta.json": "3263164935440625a28c6c0d5df0a7b43595f1d7"
+      }
+    },
+    {
+      "versao": "v4_desvio-divergente-e-sem-meta",
+      "veredito": "reprovado",
+      "nota": "Sinal some na faixa neutra: desvio de mais 1 por cento sai como 1% sem o mais, e menos 1 por cento usa hífen no lugar do menos tipográfico. Como a faixa de mais ou menos 2% não recebe cor, a célula fica sem nenhum canal de direção. Corrigir signedPercent para sempre escrever o sinal com U+2212.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:51:54.564Z",
+      "impressao": "b404b8f6bef4359225c1cfdf4e36c54a5488effe",
+      "arquivos": {
+        "Chart.tsx": "95ff6e1b9d9c6751fe43bcba34a9f952b0279836",
+        "data.ts": "74c89e3f1b0597bebd6a564053a223c48599cd02",
+        "meta.json": "a32b64e12890a4100b733a603f7cdccd51a45216"
+      }
+    },
+    {
+      "versao": "v1_conversao-por-etapa-e-mes",
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas, escala comum declarada na legenda, mes sem medicao com contorno tracejado e formatUnavailable, nunca zero. Observacoes: nomes de etapa truncados, quebra de palavra em indisponivel e taxa em percentual inteiro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:17.659Z",
+      "impressao": "9fce1578baaca7f04051a0a5da960bbf14813037",
+      "arquivos": {
+        "Chart.tsx": "6145449f71045a32b66b0575caba8cbc16021aad",
+        "data.ts": "e18d4c9942d58837f4f52ff316a974779a019cfd",
+        "meta.json": "754afff9bc193411978263ac501072267ed305d5"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-com-teto",
+      "veredito": "aprovado",
+      "nota": "Faixa manual de R$ 60 a R$ 240 com 5 degraus, teto marcado por contorno warning mais icone alem da cor, polaridade invertida escrita na legenda e mes sem veiculacao como indisponivel. Observacoes: nome de plataforma truncado e legenda nao diz que valor fora da faixa encosta no extremo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:23.355Z",
+      "impressao": "0e3cefa2959a864f6a3458f7b45276b44ba0d007",
+      "arquivos": {
+        "Chart.tsx": "b9b46a059a5dc9f45852d633153aa67271ebc9b7",
+        "data.ts": "d9731d0d73fdd44b9167c59af210c36d257f6728",
+        "meta.json": "39b0c81cc5b1d3d8aea7d9eb65b5f29d32febec0"
+      }
+    },
+    {
+      "versao": "v3_perfil-das-areas-por-coluna",
+      "veredito": "aprovado",
+      "nota": "Cor por percentil dentro da coluna com direcao do bom lida do dado, zero medido separado de indisponivel e canvas por numero declarado nas notas. Observacoes: empate em R$ 0 marca so uma celula como pior, nome de area truncado e oito elementos em peso 700 pela regra do catalogo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:29.054Z",
+      "impressao": "fb0899ec6b8a239814a92038d401d4dfd94263a9",
+      "arquivos": {
+        "Chart.tsx": "736083e23b811d84ffaa1103e7fb2ab8aead252d",
+        "data.ts": "ac4987650964651897cb4ccc961f6434779cb2f8",
+        "meta.json": "3263164935440625a28c6c0d5df0a7b43595f1d7"
+      }
+    },
+    {
+      "versao": "v4_desvio-divergente-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Sinal tipografico agora sai em toda celula, inclusive na faixa neutra, o que fecha o bloqueante da rodada anterior; zero medido sem sinal e sem meta com contorno, icone e texto, fora da escala. Contraste do texto sobre positive e negative a 55 por cento conferido nos dois temas. Observacao: desvio de menos 2 por cento ja recebe tom, embora a legenda chame a faixa de dentro de mais ou menos 2 por cento.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:59:36.131Z",
+      "impressao": "92a1e25e2883db87a8788cb961eff3c8d51c074e",
+      "arquivos": {
+        "Chart.tsx": "349c400242d01f334c1cb485890e349cd7040484",
+        "data.ts": "74c89e3f1b0597bebd6a564053a223c48599cd02",
+        "meta.json": "a32b64e12890a4100b733a603f7cdccd51a45216"
+      }
+    }
+  ]
+}

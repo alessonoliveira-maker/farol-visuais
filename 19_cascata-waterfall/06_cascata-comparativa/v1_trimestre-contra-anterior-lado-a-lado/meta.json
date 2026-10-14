@@ -1,0 +1,17 @@
+{
+  "title": "Ponte da receita em dois trimestres",
+  "useCase": "A ponte da receita de 2026-T2 e a de 2026-T3 têm a mesma forma? Quatro passos, lado a lado.",
+  "demonstrates": [
+    "Domínio comum calculado sobre os dois conjuntos antes do desenho",
+    "Escala linear valor para pixel escrita à mão em TypeScript",
+    "Eixo de valor só no painel da esquerda, com a escala declarada",
+    "Total de cada lado com rótulo em destaque",
+    "Passo zero em traço de 2 px com o rótulo R$ 0"
+  ],
+  "canvas": {
+    "width": 1024,
+    "height": 460
+  },
+  "frame": "card",
+  "notes": "Desvio de preset (largo 960x400 vira 1024x460, GEO-1): o corpo do largo mede 894 x 281,5. Na largura, com o eixo de 62 px e o vão de 28, cada painel ficava com 402 px e cada coluna com 67 px, e o rótulo \"+R$ 190 mil\" (66 px) encostava no vizinho e \"Reajuste\" em \"Cancelamentos\"; com 1024 o corpo mede 958, o painel 432 e a coluna 72 px. Na altura, a linha de leitura, o título de cada painel, o nome dos passos e o rótulo acima das colunas deixavam 170 px de área de barra para o domínio de R$ 0 a R$ 2,5 mi (68 px por milhão, e o reajuste de R$ 20 mil com 1,4 px); com 460 o corpo mede 958 x 341,5 e a área chega a 249,5 px (100 px por milhão). O viewBox tem o tamanho do corpo, escala 1 (GEO-18). O domínio sobe de R$ 2,03 mi (maior acumulado, 2026-T3) à primeira linha de grade acima, R$ 2,5 mi."
+}

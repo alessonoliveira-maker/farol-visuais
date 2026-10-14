@@ -1,0 +1,71 @@
+{
+  "slug": "01_tabela-com-barras-inline",
+  "nome": "Tabela com barras e marcas inline",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "A tabela continua sendo tabela, mas cada coluna numérica ganha uma marca dentro da célula: barra no trilho, bullet com traço de meta, barra divergente a partir do zero, barra de composição 100% ou ponto com intervalo. A marca mostra o padrão da coluna inteira de uma vez; o número ao lado, fora da marca e com algarismo tabular, responde o valor exato. O domínio é calculado uma vez por coluna sobre o recorte inteiro, nunca por linha nem pela página visível.",
+  "quando_usar": [
+    "Comparar magnitude entre 8 e 40 linhas sem perder o número exato de cada uma",
+    "Várias métricas com unidades diferentes por entidade, cada coluna com a própria escala declarada no cabeçalho",
+    "Valor contra meta ou teto por linha, com a meta normalizada em % quando cada linha tem a sua",
+    "Variação com sinal ou desvio contra referência, com a cor vinda da polaridade da métrica",
+    "Mix de até 5 categorias por linha na mesma ordem em todas as linhas, com o n escrito"
+  ],
+  "quando_evitar": [
+    "Uma métrica e 3 a 6 linhas: barra horizontal simples lê mais rápido (família 02)",
+    "Coluna só com positivos desenhada como divergente: o zero encosta à esquerda e vira barra simples",
+    "Mais de 5 categorias na composição ou linhas com n pequeno sem aviso: agrupe em outros ou mostre a fração",
+    "Pergunta sobre a trajetória de cada linha: use a série por linha (14/03)",
+    "Barra, eixo e rótulo fora de tabela: é microvisual (família 24) ou barra da família 02"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-por-executivo",
+      "titulo": "Receita reconhecida por executivo",
+      "caso_de_uso": "Comercial: quem concentra a receita reconhecida de 2026-T3 entre 12 executivos, sem perder o valor exato de cada um.",
+      "o_que_demonstra": [
+        "Barra em div com largura percentual sobre trilho em surface-overlay",
+        "Domínio da coluna calculado uma vez em useMemo sobre todas as linhas, a partir do zero",
+        "Número à direita em tabular-nums, fora da barra, por formatCurrencyCompact",
+        "Traço vertical da média do time no trilho de todas as linhas, com rótulo no cabeçalho"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_agendas-contra-meta-em-bullet",
+      "titulo": "Agendas da semana contra a meta por SDR",
+      "caso_de_uso": "Pré-vendas: quais SDRs ficaram abaixo da meta semanal de 18 agendas e a que distância dela.",
+      "o_que_demonstra": [
+        "Bullet inline em SVG de viewBox fixo com vectorEffect non-scaling-stroke no traço da meta",
+        "Faixas qualitativas comuns à coluna, de 0 a 70%, 70 a 100% e acima de 100% da meta",
+        "Abaixo da meta com ícone e peso no nome, sem depender só da cor",
+        "Marca de estouro na ponta quando o valor passa do teto da escala, com o número real"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_resultado-por-origem-com-desvio-e-mix",
+      "titulo": "Resultado por origem com desvio e mix de status",
+      "caso_de_uso": "Marketing: por origem, o volume, o saldo de receita atribuída menos custo e o mix de status dos leads em 2026-08.",
+      "o_que_demonstra": [
+        "Três marcas na mesma tabela, cada coluna com domínio próprio declarado no cabeçalho",
+        "Barra divergente com zero calculado por coluna e domínio simétrico",
+        "Composição 100% com flex, ordem fixa das categorias e legenda única no cabeçalho",
+        "Rótulo percentual só em segmento acima de 12% e vão de 1,5 px entre segmentos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_ausente-zero-outlier-e-faixa",
+      "titulo": "Origens com ausência, zero, outlier e faixa",
+      "caso_de_uso": "Marketing: ler origens com CPL indisponível, zero medido, volume 11 vezes maior e margem em faixa que cruza o zero.",
+      "o_que_demonstra": [
+        "Indisponível sem barra, com ícone Unplug e formatUnavailable, diferente de zero medido",
+        "Outlier truncado num teto declarado com marca de corte e o valor real escrito",
+        "Ponto e intervalo inline cruzando o zero, com linha do zero em line-strong",
+        "Linha com n igual a 1 mostra só o ponto e o rótulo n=1, sem intervalo"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

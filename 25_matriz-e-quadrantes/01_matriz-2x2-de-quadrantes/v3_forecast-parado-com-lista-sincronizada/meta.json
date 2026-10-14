@@ -1,0 +1,14 @@
+{
+  "title": "Forecast por valor e dias parada, com lista",
+  "useCase": "Quais das 84 oportunidades do forecast valem mais de R$ 150 mil e estão paradas há mais de 30 dias?",
+  "demonstrates": [
+    "Plano e lista ligados nos dois sentidos: clique na região filtra, hover acende o ponto",
+    "Destaque vindo da lista como segundo Scatter de um item, sem redesenhar a nuvem",
+    "Faixa de indiferença de 8% em torno dos cortes, com itens da fronteira em cinza",
+    "Bloco da região crítica com contagem, valor somado e participação no pipeline vivo",
+    "Oportunidades sem data de movimento no fim da lista, com selo fora do plano"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset largo (GEO-1): 960x400 dá corpo de 894 x 265 a 281 px e, descontados a linha de leitura (28), o rodapé (22), o topo de 36 e os 44 do eixo X com o título, o plano ficaria com cerca de 150 px para 79 pontos, quatro títulos de região e a coluna de lista; com 480 de altura o plano passa de 230 px. A coluna da lista tem 19,5 rem fixos e o plano ocupa o resto (894 menos 312 e o vão de 16 dá cerca de 566 px). Os dois cortes são PREMISSA comercial e vão tracejados com a etiqueta; a faixa de indiferença é de 8% do próprio corte (R$ 12 mil e 2,4 dias) e usa surface-sunken opaca, porque surface-overlay no claro é o branco do cartão (ANO-4). Fronteira e região fora do filtro saem como ponto oco com contorno text-muted, forma própria para a cor não ser o único canal; a crítica é chart-1 preenchida e as demais text-muted preenchidas. Raiz com role group e não img, porque a lista e os botões são interativos e o role img os esconderia do leitor de tela; a frase acessível fica no aria-label da raiz e o plano é aria-hidden. A lista abre com 7 linhas e o botão ver todas expande, e só então ela rola dentro da coluna (overflow-y-auto): o corpo do cartão não passa da moldura no desenho parado, e as 84 linhas não são pintadas à toa. O eixo Y usa 76 px, acima da faixa de 48 a 64 da EIX-6: com 64 o tique R$ 400 mil quebra em duas linhas (REC-2), e pela 14.1 a constante de acabamento cede quando o desvio aparece no render. highlightId aceso na abertura mostra a ligação no preview, que não captura hover. A região de ação a 7% e as outras a 4% não passam 3:1 contra o cartão (1,1:1); o escape OPACIDADE-MARCA vale porque a região é nomeada em texto e os cortes são linhas opacas. As oportunidades sem data de movimento (diasParada nulo) saem do plano e vão para o fim da lista com o selo sem data, sem ponto no zero, e entram no total do pipeline vivo da participação."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Primeiro contato humano em dia útil e fim de semana",
+  "useCase": "Leads que entram no fim de semana esperam quanto a mais pelo primeiro contato humano do que os de dia útil?",
+  "demonstrates": [
+    "Leads ainda sem contato no momento da extração tratados como censura",
+    "Eixo X em minutos com o SLA de 30 minutos como guia vertical",
+    "Percentual ainda sem contato lido no cruzamento com o SLA, para cada curva",
+    "Eixo Y invertido opcional, já contatados, escrito no título do eixo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Sem tabela de em risco: no canvas largo, com legenda, guia e rodapé escritos, o plano não comporta duas linhas de tabela sem cair abaixo de 150 px de curva, e o cruzamento com o SLA é a leitura da peça. A curva é desenhada com o domínio X fixo no maior tempo observado arredondado em 30 minutos, de modo que o SLA de 30 cai numa marca do eixo. O eixo vertical invertido, já contatados, é a propriedade inverted: o título do eixo muda no texto acima do gráfico e os rótulos do cruzamento descem em vez de subir."
+}

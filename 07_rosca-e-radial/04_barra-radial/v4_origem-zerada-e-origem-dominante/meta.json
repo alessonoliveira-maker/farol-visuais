@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem com zero e domínio",
+  "useCase": "Mostrar sete origens do mês quando uma não gerou lead nenhum e outra é bem maior que as demais.",
+  "demonstrates": [
+    "Origem com 0 leads desenha só o trilho e escreve 0, sem inventar arco",
+    "minPointSize em 0, explícito, para o valor zero não ganhar arco falso",
+    "Origem dominante reduz as demais a lascas: o limite do formato fica visível",
+    "Nota no README: acima dessa razão, a barra horizontal (02) lê melhor"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Ponto delicado do modelo, seção 8 do estudo: origem dominante quase 8 vezes a segunda maior comprime as demais em lascas quase ilegíveis; a barra radial ainda funciona como peça de capa mas perde precisão de comparação, e o README do modelo aponta a barra horizontal (02) para leitura precisa."
+}

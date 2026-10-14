@@ -1,0 +1,573 @@
+{
+  "slug": "19_cascata-waterfall",
+  "nome": "Cascata (waterfall)",
+  "modelos": [
+    {
+      "slug": "01_cascata-de-ponte",
+      "nome": "Cascata de ponte",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "A forma canônica da família: coluna de início ancorada no eixo, passos flutuantes de aumento e queda, cada um começando onde o anterior terminou, e coluna de fim ancorada. Responde como um valor virou outro. Absorve a ponte com subtotais, a deitada para rótulos longos, a de variação por componente e a cascata micro de célula de tabela, todas saídas do mesmo Bar de faixa [baixo, alto] com shape customizado.",
+      "quando_usar": [
+        "Explicar a passagem entre dois valores do mesmo indicador com 3 a 12 passos de sinais opostos, como receita de um trimestre para o seguinte.",
+        "Blocos lógicos com parciais que alguém usa, como o custo em três camadas, com subtotal acumulado declarado no rótulo.",
+        "Diferença entre dois períodos decomposta em efeitos calculados (volume, custo, mix), com resíduo explícito quando o modelo não fecha.",
+        "Nomes de passo longos (motivos, linhas de custo): deitar a ponte, com a leitura descendo de cima para baixo.",
+        "A mesma ponte repetida por linha de tabela, com até 8 passos e escala comum, na versão micro."
+      ],
+      "quando_evitar": [
+        "Mais de 12 passos sem agrupar a cauda: agrupar em Demais (n) ou usar a tabela visual da família 14.",
+        "Partes todas positivas em que o total não interessa: barras simples das famílias 02 ou 03.",
+        "Queda etapa a etapa de um mesmo conjunto que só perde: funil com taxa de passo, família 10.",
+        "Variações minúsculas diante de totais grandes com eixo truncado: tirar as colunas de total e mostrar só os efeitos, nunca quebrar o eixo.",
+        "Ordem cronológica em ponte deitada: manter a vertical, com o tempo correndo da esquerda para a direita."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_ponte-da-receita-do-trimestre",
+          "titulo": "Ponte da receita reconhecida do trimestre",
+          "caso_de_uso": "Comercial: receita de R$ 1,72 mi em 2026-T2 para R$ 1,89 mi em 2026-T3, com novos contratos +R$ 214 mil, expansão +R$ 96 mil, reajuste R$ 0 e cancelamentos −R$ 138 mil.",
+          "o_que_demonstra": [
+            "Bar de faixa com dataKey devolvendo [baixo, alto], como no exemplo oficial",
+            "Cor por papel no shape: aumento, queda e total, com sinal no rótulo",
+            "Conector horizontal desenhado pelo próprio shape até a barra seguinte",
+            "Passo de valor zero vira traço de 2 px com o rótulo R$ 0",
+            "Fechamento verificado no dado: soma dos passos igual a fim menos início"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_custo-em-tres-camadas-deitado-com-subtotais",
+          "titulo": "Custo da área em três camadas",
+          "caso_de_uso": "Diretoria, 2026-08: camada 1 marginal R$ 160 mil, camada 2 com a estrutura da área R$ 332 mil acumulados e camada 3 com rateio R$ 390 mil; um retorno de R$ 420 mil vale 2,6x, 1,3x ou 1,1x.",
+          "o_que_demonstra": [
+            "Ponte deitada com layout vertical e largura do eixo de nomes medida",
+            "Subtotal acumulado ancorado no zero, com o nome da camada no rótulo",
+            "Vão entre blocos por linha espaçadora com faixa nula",
+            "Conector vertical centrado na banda da escala categórica",
+            "Anotação única dizendo que a camada precisa vir declarada"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_cpl-por-efeito-com-residual-nao-explicado",
+          "titulo": "Variação do CPL por efeito",
+          "caso_de_uso": "Marketing: CPL de R$ 184 em 2026-07 para R$ 212 em 2026-08, com efeito volume −R$ 9, custo +R$ 26, mix de plataforma +R$ 6 e R$ 5 (18% da diferença) sem explicação.",
+          "o_que_demonstra": [
+            "Passos como efeitos calculados por função pura que devolve o resíduo",
+            "Passo Não explicado hachurado e visível, nunca absorvido em Outros",
+            "Polaridade invertida: CPL que sobe pinta a queda de qualidade",
+            "Unidade da métrica no rótulo e no tique: reais por lead, não reais",
+            "Resíduo acima de 10% da diferença escrito na linha de leitura"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_cascata-micro-da-carteira-por-executivo",
+          "titulo": "Cascata micro da carteira por executivo",
+          "caso_de_uso": "Comercial: tabela de 10 executivos com a carteira de 2026-T2 para 2026-T3 em quatro passos fixos (novas contas, expansão, reajuste, cancelamento); um sem expansão e um sem dado medido.",
+          "o_que_demonstra": [
+            "SVG puro por célula com a mesma função de faixa da ponte grande",
+            "Escala comum a todas as linhas, com domínio sobre o acumulado",
+            "Tipo de cada item vem do dado: total ancorado, passo flutuante",
+            "Passo zero em traço fino e linha sem dado com formatUnavailable",
+            "Sem rótulos internos: passos e valores na dica e na coluna ao lado"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_cascata-de-decomposicao",
+      "nome": "Cascata de decomposição",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Ponte com um único estoque: parte de um total e o consome parte a parte até zero ou até o gap da meta, ou constrói o total a partir do zero. Cada passo é uma parte rotulada com valor e participação. Só ganha da barra simples quando há parte negativa ou quando o resto até zero é a conclusão.",
+      "quando_usar": [
+        "Total quebrado em 4 a 10 partes com ordem defensável (tamanho, bloco de negócio ou sequência de decisão), com ao menos uma parte negativa.",
+        "Ponte até a meta: realizado, contratado e pipeline ponderado consumindo a meta, com o gap restante como último passo.",
+        "Da entrada bruta ao desfecho, subtraindo cada perda em degraus quando a pergunta é para onde foi cada unidade.",
+        "Total medido cujo detalhamento está incompleto, com a parte sem detalhamento declarada."
+      ],
+      "quando_evitar": [
+        "Partes todas positivas e total secundário: barras da família 02 ou rosca da família 07.",
+        "Partes sem ordem de leitura: a mesma decomposição conta histórias diferentes; ordenar ou trocar de forma.",
+        "Muitas partes abaixo de 2% do total: agrupar em Demais com desdobramento, nunca deixar fiapo sem rótulo.",
+        "Quando a pergunta é a taxa de passagem entre etapas: funil com taxa, família 10.",
+        "Quando só importa quanto falta para a meta: progresso e meta, família 13."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_custo-marginal-liquido-do-mes",
+          "titulo": "Custo marginal líquido do mês",
+          "caso_de_uso": "Diretoria, 2026-08: mídia R$ 118 mil, comissão R$ 22 mil, ferramentas R$ 14 mil, brindes R$ 6 mil e desconto de fornecedor −R$ 8 mil constroem o custo marginal de R$ 152 mil.",
+          "o_que_demonstra": [
+            "Construção a partir do zero com uma única coluna de total no fim",
+            "Partes ordenadas do maior ao menor, com o desconto por último",
+            "Rótulo com valor e participação inteira no total",
+            "Parte negativa justificando a cascata no lugar da barra simples"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_ponte-ate-a-meta-anual",
+          "titulo": "Ponte até a meta do ano",
+          "caso_de_uso": "Diretoria, em 2026-09-13: meta de R$ 6,4 mi consumida por realizado R$ 4,1 mi, contratado não reconhecido R$ 0,9 mi e pipeline ponderado R$ 0,8 mi; o gap de R$ 0,6 mi fecha a ponte.",
+          "o_que_demonstra": [
+            "Meta como coluna cheia e partes consumindo até o gap",
+            "Gap em --warning com sinal e palavra, não só com cor",
+            "ReferenceLine da meta com ifOverflow extendDomain",
+            "Anotação: faltam R$ 0,6 mi contando o pipeline ponderado",
+            "Data de corte escrita, porque a ponte muda a cada dia"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-do-mes-ate-os-ganhos",
+          "titulo": "Das entradas do mês aos ganhos",
+          "caso_de_uso": "Pré-vendas e Comercial, 2026-08: 612 entradas menos 41 duplicatas, 58 fora de perímetro, 187 sem contato, 214 declínios por fit, 68 perdas na proposta e 33 em andamento chegam a 11 ganhos.",
+          "o_que_demonstra": [
+            "Decomposição até o desfecho com contagem e substantivo em cada rótulo",
+            "Em andamento como passo próprio, para a diferença não virar perda",
+            "Cauda estreita no fim com rótulo externo e halo",
+            "Domínio de contagem com allowDecimals desligado",
+            "Frase acessível dizendo onde sai a maior parte das entradas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_custo-total-com-parte-sem-detalhamento",
+          "titulo": "Custo total com parte sem detalhamento",
+          "caso_de_uso": "Diretoria, 2026-08: custo total medido de R$ 390 mil, do qual só R$ 314 mil têm linha detalhada; três linhas que a controladoria não devolveu somam R$ 76 mil sem detalhamento.",
+          "o_que_demonstra": [
+            "Parte sem detalhamento hachurada, contada no total e marcada à parte",
+            "Ausência com contorno --text-muted e palavra, nunca zero silencioso",
+            "Parte ausente por último e fora do teto de categorias",
+            "Participação da lacuna escrita no rótulo: 19% do total"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_cascata-temporal-de-saldo",
+      "nome": "Cascata temporal de saldo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Cada passo é um período e o valor do passo é o movimento daquele período; o acumulado é o saldo. O tempo corre da esquerda para a direita, todo período aparece no eixo mesmo sem movimento e o saldo final fica ancorado com rótulo. Em série mais longa, uma Line do acumulado no mesmo ComposedChart substitui os conectores.",
+      "quando_usar": [
+        "Estoque que evolui por período com entradas e saídas, como a fila de pré-vendas ao longo da semana.",
+        "Até 12 períodos com entrada e saída em passos separados, ou até 24 com o movimento líquido por período.",
+        "Saldo que precisa ser lido contra um teto ou um limite, com o período que o cruzou marcado.",
+        "Saldo que pode ficar negativo, como verba de mídia gasta acima do liberado."
+      ],
+      "quando_evitar": [
+        "Mais de 24 períodos: agregar semana em mês ou usar colunas com linha de acumulado, família 08.",
+        "Quando a pergunta é a trajetória do saldo e não a contribuição de cada período: linha da família 04 ou área da família 05.",
+        "Entrada e saída do mesmo período empilhadas na mesma barra: separar em dois passos.",
+        "Períodos com janelas de data diferentes lado a lado sem aviso."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_fila-de-pre-vendas-na-semana",
+          "titulo": "Fila de pré-vendas na semana",
+          "caso_de_uso": "Pré-vendas, semana de 2026-09-07: fila de 84 entradas abertas na segunda, 140 entradas e 152 saídas ao longo de cinco dias, 72 abertas na sexta.",
+          "o_que_demonstra": [
+            "Entrada e saída de cada dia como dois passos, nunca empilhadas",
+            "Saldo inicial e final ancorados no zero com rótulo",
+            "Rótulo de dia agrupando os dois passos no eixo",
+            "Contagem com substantivo no rótulo e na dica"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_dia-em-que-a-fila-passou-do-teto",
+          "titulo": "O dia em que a fila passou do teto",
+          "caso_de_uso": "Pré-vendas, mesma semana em outra unidade: um disparo trouxe 96 entradas na quarta e levou a fila de 80 para 142, acima do teto de 120; a sexta fechou com 104.",
+          "o_que_demonstra": [
+            "ReferenceLine do teto de capacidade com traço tracejado e rótulo",
+            "Destaque em --chart-1 só no passo do disparo, resto neutro",
+            "Peso 700 no rótulo destacado, além da cor",
+            "Anotação curta ancorada no passo que explica o estouro"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_oportunidades-abertas-em-doze-meses",
+          "titulo": "Oportunidades abertas em doze meses",
+          "caso_de_uso": "Comercial, 2025-09 a 2026-08: carteira de 138 para 211 abertas; cada mês soma entradas e subtrai ganhos, perdas e as paradas há mais de 30 dias arquivadas.",
+          "o_que_demonstra": [
+            "ComposedChart com Bar de faixa e Line do acumulado sem pontos",
+            "Movimento líquido por mês, com o detalhe na dica",
+            "Mês sem movimento mantido no eixo com traço e rótulo 0",
+            "Doze meses acima do teto de 8 tiques: rótulo curto a cada dois meses",
+            "Linha de leitura: o estoque cresce enquanto o fluxo não muda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_verba-de-midia-com-saldo-negativo",
+          "titulo": "Saldo da verba de mídia no semestre",
+          "caso_de_uso": "Marketing, 2026-03 a 2026-08: saldo mensal entre liberado e investido de +R$ 6 mil, +R$ 3 mil, R$ 0, −R$ 12 mil, −R$ 9 mil e +R$ 4 mil; o saldo cruza o zero em junho e fecha em −R$ 8 mil.",
+          "o_que_demonstra": [
+            "Barra de faixa atravessando o zero sem série transparente",
+            "Linha do zero em --line-strong sólido por cima do fundo",
+            "Domínio sobre mínimo e máximo do acumulado, não dos passos",
+            "Saldo final negativo ancorado no zero e desenhado para baixo",
+            "Rótulo fora da barra, do lado que tem espaço"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_cascata-de-previsao",
+      "nome": "Cascata de previsão",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Ponte que junta o realizado até hoje com o projetado até o fim do período. O realizado tem preenchimento sólido, o projetado tem hachura declarada em defs, um divisor marca a data de corte e o total final diz que é projeção. A distinção precisa sobreviver sem cor, porque projeção pintada igual a realizado contamina a decisão.",
+      "quando_usar": [
+        "Fechamento de período em andamento: meses ou semanas realizados mais o restante projetado, com 3 a 8 passos.",
+        "Projeção comparada a um plano, com a distância do plano como passo explícito.",
+        "Mudança do forecast entre duas leituras: novas, avanços, perdas e datas que deslizaram.",
+        "Projeção que depende de campo com cobertura baixa, quando a ressalva precisa aparecer no desenho."
+      ],
+      "quando_evitar": [
+        "Projeção como trajetória no tempo: linha ou área com faixa de projeção, famílias 04 e 05.",
+        "Só a pergunta de quanto falta para a meta: progresso e meta, família 13.",
+        "Projeção com incerteza declarada em faixa: cascata com faixa de cenário, modelo 05 desta família.",
+        "Sem data de corte conhecida: sem ela a peça mente calada uma semana depois."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_fechamento-do-trimestre",
+          "titulo": "Fechamento projetado do trimestre",
+          "caso_de_uso": "Comercial, 2026-T3 lido em 2026-09-13: julho R$ 612 mil e agosto R$ 598 mil realizados, setembro com R$ 214 mil realizados e R$ 420 mil projetados, total projetado de R$ 1,84 mi.",
+          "o_que_demonstra": [
+            "Preenchimento sólido para realizado e pattern de hachura para projetado",
+            "Pattern declarado em defs dentro do Recharts, sem imagem externa",
+            "ReferenceLine vertical na data de corte com rótulo realizado até",
+            "Total final com rótulo dizendo projeção, em peso diferente do realizado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_projecao-contra-plano",
+          "titulo": "Projeção do trimestre contra o plano",
+          "caso_de_uso": "Diretoria, 2026-T3: total projetado de R$ 1,84 mi contra plano de R$ 1,95 mi; o passo Distância do plano mostra −R$ 106 mil e a nota diz de onde sai a projeção.",
+          "o_que_demonstra": [
+            "Marca de plano sobre a coluna final, em traço de referência",
+            "Passo explícito de distância do plano com polaridade da receita",
+            "Variação com a base na mesma linha: contra plano de R$ 1,95 mi",
+            "Anotação única sobre a origem da projeção"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_forecast-semanal-da-carteira",
+          "titulo": "O que mudou no forecast da semana",
+          "caso_de_uso": "Comercial, semana de 2026-09-07: forecast de R$ 2,31 mi mais novas R$ 340 mil e avanços R$ 185 mil, menos perdas R$ 260 mil e datas deslizadas R$ 410 mil, chega a R$ 2,17 mi.",
+          "o_que_demonstra": [
+            "Ponte entre duas leituras de forecast com seis passos nomeados",
+            "Coluna final dividida em ganho fechado sólido e ponderado hachurado",
+            "Passo de datas deslizadas destacado como o maior da semana",
+            "Legenda de papéis e de preenchimento acima do gráfico",
+            "Frase acessível citando o deslizamento como principal queda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_projecao-com-cobertura-rasa",
+          "titulo": "Projeção sobre campo pouco preenchido",
+          "caso_de_uso": "Comercial, 2026-09: R$ 214 mil realizados, R$ 180 mil projetados com data de fechamento e R$ 240 mil estimados sem data; só 44 de 100 oportunidades abertas têm a data preenchida.",
+          "o_que_demonstra": [
+            "Dois graus de hachura: projetado com data e estimado sem data",
+            "Hachura mais larga para a parte de menor confiança",
+            "Linha de leitura com a cobertura: projeção sobre 44% das oportunidades",
+            "Procedência PREMISSA deixada ao VisualCard, fora do Chart"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_cascata-com-faixa-de-cenario",
+      "nome": "Cascata com faixa de cenário",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Ponte em que os passos incertos carregam intervalo declarado (mínimo, esperado, máximo) e o total sai como faixa com o esperado marcado. Responde aos cenários com saída em faixa da Diretoria mostrando onde nasce a incerteza, e não só quanto ela mede no fim. O intervalo é desenhado dentro do shape, porque o ErrorBar trabalha sobre valor único e a série aqui é uma faixa.",
+      "quando_usar": [
+        "Projeção de receita, custo ou capacidade em que 2 a 5 passos têm incerteza declarada e o resto é certo.",
+        "Quando a decisão depende de saber qual passo, se medido, estreita a faixa do total.",
+        "Capacidade contra demanda de um período futuro, com a demanda como linha de referência.",
+        "Cenário que pode ultrapassar um teto medido, com a parte inalcançável marcada."
+      ],
+      "quando_evitar": [
+        "Existe número único auditável: ponte simples, modelo 01.",
+        "A pergunta é a distribuição do resultado e não o caminho: distribuição, família 16.",
+        "Cenário como trajetória no tempo: área com faixa, família 05.",
+        "Faixa do total obtida somando mínimos e máximos dos passos sem declarar a regra: infla o intervalo."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-proximo-trimestre-em-faixa",
+          "titulo": "Receita de 2026-T4 em faixa",
+          "caso_de_uso": "Diretoria: base contratada de R$ 1,52 mi certa; novos de R$ 80 mil a R$ 240 mil, expansão de R$ 20 mil a R$ 90 mil e cancelamento de −R$ 110 mil a −R$ 20 mil; saída de R$ 1,56 mi a R$ 1,78 mi.",
+          "o_que_demonstra": [
+            "Passo certo sólido e passo incerto com intervalo desenhado no shape",
+            "Coluna final como faixa translúcida com linha no valor esperado",
+            "Faixa do total vinda da origem, não da soma dos extremos",
+            "Regra da faixa escrita na linha de leitura"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_onde-a-faixa-nasce",
+          "titulo": "Onde nasce a incerteza do trimestre",
+          "caso_de_uso": "Diretoria, mesma projeção de 2026-T4: novos contratos respondem por R$ 160 mil de amplitude, tanto quanto expansão e cancelamento somados; medir esse passo estreita a faixa do total.",
+          "o_que_demonstra": [
+            "Destaque em --chart-1 no passo de maior amplitude, demais neutros",
+            "Amplitude de cada passo escrita ao lado do intervalo",
+            "Anotação curta ancorada no passo que concentra a incerteza",
+            "Peso 700 no rótulo destacado como segundo canal"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_capacidade-contra-demanda-em-2027",
+          "titulo": "Capacidade de pré-vendas contra demanda",
+          "caso_de_uso": "Diretoria, 2027: capacidade instalada de 220 entradas por mês, contratações de +60 a +110, rampa de −40 a −10 e atrito de −35 a −5; saída de 230 a 300 contra demanda projetada de 290.",
+          "o_que_demonstra": [
+            "Unidade de capacidade em todo rótulo: entradas por mês",
+            "ReferenceLine da demanda projetada cruzando a faixa final",
+            "Parte da faixa abaixo da demanda marcada com palavra e sinal",
+            "Passo medido e passos de premissa com o mesmo desenho de intervalo",
+            "Frase acessível dizendo em que parte da faixa a demanda cai"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_cenario-acima-do-teto",
+          "titulo": "Cenário otimista acima do teto",
+          "caso_de_uso": "Diretoria, 2027-T1: receita em faixa de R$ 1,8 mi a R$ 2,4 mi contra teto de atendimento medido de R$ 2,1 mi; a parte acima do teto não é entregável com o time atual.",
+          "o_que_demonstra": [
+            "Trecho da faixa acima do teto hachurado e rotulado",
+            "Teto como referência tracejada com ifOverflow extendDomain",
+            "Esperado marcado mesmo quando cai perto do teto",
+            "No máximo duas anotações: teto e trecho não entregável"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_cascata-comparativa",
+      "nome": "Cascata pareada e em pequenos múltiplos",
+      "abordagem_stack": "svg-puro",
+      "resumo": "A mesma ponte, com os mesmos passos na mesma ordem, repetida para comparar recortes: dois painéis pareados (lado a lado ou espelhados num eixo central) ou uma grade de painéis pequenos por segmento. A comparação é de forma, e só vale com escala comum calculada sobre todos os recortes antes de desenhar qualquer painel. Absorve a pareada e os pequenos múltiplos do estudo.",
+      "quando_usar": [
+        "Dois períodos, plano contra realizado ou duas unidades com a mesma ponte de 4 a 7 passos.",
+        "De 3 a 9 segmentos (executivos, plataformas, unidades) com a mesma ponte, quando onde cada um ganha ou perde importa mais que o total.",
+        "Plano contra realizado com a variância de cada passo numa tira entre os dois painéis.",
+        "Segmentos de volume parecido; os de amostra pequena recebem aviso no próprio painel."
+      ],
+      "quando_evitar": [
+        "Só a diferença entre os dois lados interessa: ponte de variação, versão v3 do modelo 01, com metade da tinta.",
+        "Segmentos com escalas dez vezes diferentes sem normalizar: declarar escalas independentes ou usar percentual do início.",
+        "Comparação só do resultado final: comparação de pontos, família 17, ou barras, família 02.",
+        "Mais de 9 painéis num cartão: rótulos somem; passar para tabela com cascata micro, versão v4 do modelo 01."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_trimestre-contra-anterior-lado-a-lado",
+          "titulo": "Ponte da receita em dois trimestres",
+          "caso_de_uso": "Comercial: 2026-T2 foi de R$ 1,58 mi a R$ 1,72 mi e 2026-T3 de R$ 1,72 mi a R$ 1,89 mi, com os mesmos quatro passos (novos, expansão, reajuste, cancelamentos) lado a lado.",
+          "o_que_demonstra": [
+            "Domínio comum calculado sobre os dois conjuntos antes do desenho",
+            "Escala linear valor para pixel escrita à mão em TypeScript",
+            "Eixo de valor só no painel da esquerda, com a escala declarada",
+            "Total de cada lado com rótulo em destaque"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_plano-e-realizado-espelhados-com-variancia",
+          "titulo": "Plano e realizado espelhados",
+          "caso_de_uso": "Diretoria, 2026-T3: plano de R$ 1,72 mi a R$ 2,00 mi contra realizado de R$ 1,72 mi a R$ 1,89 mi; a tira central mostra novos −R$ 46 mil, reajuste −R$ 30 mil e cancelamentos R$ 48 mil acima do plano.",
+          "o_que_demonstra": [
+            "Eixo central com os nomes dos passos e barras para os dois lados",
+            "Sinal escrito dos dois lados para a distância ao centro não enganar",
+            "Tira de variância em valor e percentual, com polaridade por passo",
+            "Cancelamento acima do plano pintado como piora"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_carteira-por-executivo-em-oito-paineis",
+          "titulo": "Carteira de oito executivos no trimestre",
+          "caso_de_uso": "Comercial, 2026-T3: oito painéis com início, entradas, ganhos, perdas, arquivadas por 30 dias paradas e fim; a taxa de ganho vai de 14% a 57% e um executivo novo tem só 3 oportunidades.",
+          "o_que_demonstra": [
+            "Grade em Tailwind com componente de ponte pequena por célula",
+            "Escala comum a todos os painéis, conforme EIX-9",
+            "Valor escrito só no início, no fim e no maior passo; resto na dica",
+            "Painel com amostra pequena trocado por aviso n=3",
+            "Ordem dos painéis pela carteira final, declarada no subtítulo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_passo-sem-medicao-num-dos-lados",
+          "titulo": "Duas unidades com um passo sem medição",
+          "caso_de_uso": "Diretoria, 2026-T3: Unidade Sul e Unidade Norte na mesma ponte de receita; a Unidade Norte não separa expansão no financeiro, então o passo fica sem medição e o total dela sai parcial.",
+          "o_que_demonstra": [
+            "Passo sem medição vazado com contorno --text-muted e palavra",
+            "Total do lado incompleto rotulado como parcial, sem somar zero",
+            "Mesma posição do passo nos dois painéis, mesmo quando vazio",
+            "Frase acessível declarando qual passo falta e em qual lado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "07_cascata-empilhada",
+      "nome": "Cascata empilhada",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Cada passo flutuante é dividido em segmentos por origem (executivo, plataforma, contrato), respondendo quem contribuiu com o quê em cada passo. A geometria sai inteira em TypeScript, com N retângulos por passo. Duas paletas disputam o mesmo pixel: o preenchimento fica com os componentes e a polaridade vai para o sinal, a seta e o rótulo do líquido. Não se empilha positivo com negativo no mesmo passo.",
+      "quando_usar": [
+        "Ponte de 3 a 6 passos em que cada passo se divide em até 6 componentes do mesmo sinal.",
+        "Quando a pergunta é a contribuição de cada executivo, plataforma ou contrato dentro de cada passo.",
+        "Um componente em foco comparado ao resto, com os demais segmentos em neutro.",
+        "Custo em que só alguns passos se dividem, com a legenda presa ao passo segmentado."
+      ],
+      "quando_evitar": [
+        "Componentes de sinais opostos no mesmo passo: separar em dois passos.",
+        "Mais de 6 componentes por passo: agrupar em Outros (n=X) ou usar a ponte aninhada, modelo 08.",
+        "O total por passo não importa e a comparação é entre componentes: colunas agrupadas, família 03.",
+        "O interesse é o caminho dos componentes entre estágios: Sankey, família 11."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_carteira-do-mes-por-executivo",
+          "titulo": "Carteira do mês por executivo",
+          "caso_de_uso": "Comercial, 2026-08: carteira de 180 abertas, entradas de 64, ganhos de 10 e perdas de 41 divididas entre Bruna T., Caio M., Denise R. e Otávio L.; a carteira fecha em 193.",
+          "o_que_demonstra": [
+            "Geometria de N retângulos por passo calculada em função pura",
+            "Slots categóricos na ordem 1, 3, 6, 5, fixos por executivo",
+            "Rótulo do passo com o líquido e sinal; segmento só na dica",
+            "Separação de 1,5 px entre segmentos vizinhos, conforme COR-5",
+            "Totais sem segmentação e com uma única convenção de cor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_um-executivo-em-foco",
+          "titulo": "Um executivo em foco na carteira",
+          "caso_de_uso": "Comercial, 2026-08: só os segmentos de Denise R. acesos em entradas, ganhos e perdas; ela converte 33,3% (3 de 9) contra mediana de 18,4% do time.",
+          "o_que_demonstra": [
+            "Segmento em foco em --chart-1 e os demais em --line-strong",
+            "Posição do segmento em foco fixa na base de cada passo",
+            "Taxa com volume por formatRateWithVolume na anotação",
+            "Prop highlightId com default vindo do data.ts"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_custo-da-area-com-midia-por-plataforma",
+          "titulo": "Custo da área com mídia por plataforma",
+          "caso_de_uso": "Diretoria, 2026-08: mídia de R$ 118 mil dividida em rede social, busca paga, rede profissional e vídeo; ferramentas de R$ 26 mil por contrato; pessoas R$ 160 mil e comissão R$ 22 mil inteiras; total R$ 326 mil.",
+          "o_que_demonstra": [
+            "Passos segmentados e passos inteiros na mesma ponte",
+            "Legenda de componentes presa ao passo, não ao gráfico inteiro",
+            "Dica com o bruto do segmento e o líquido do passo",
+            "Nomes de plataforma genéricos, sem marca real"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_estorno-separado-em-passo-proprio",
+          "titulo": "Mídia investida e mídia estornada",
+          "caso_de_uso": "Marketing, 2026-08: R$ 124 mil investidos em quatro plataformas e R$ 6 mil de crédito devolvido pela rede profissional; o estorno vira passo próprio e a mídia líquida fica em R$ 118 mil.",
+          "o_que_demonstra": [
+            "Passo de sinal oposto separado em vez de empilhado",
+            "Nota registrando a decisão de separar o estorno",
+            "Mesmo slot de cor da plataforma no passo investido e no estornado",
+            "Fechamento verificado: investido menos estornado igual ao líquido"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_cascata-aninhada",
+      "nome": "Cascata aninhada",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Um passo da ponte se abre numa ponte própria, cuja entrada e saída são o valor do passo pai. É o detalhamento sem trocar de tipo de gráfico: o dado é uma árvore, um seletor de caminho devolve os passos do nível corrente em formato de faixa, a migalha em Tailwind sobe de nível e o shape recebe o clique para descer. O filho precisa somar o pai, garantido no dado.",
+      "quando_usar": [
+        "Ponte com 2 ou 3 níveis reais de hierarquia, em que um passo pede explicação própria.",
+        "Custo, perdas ou receita em que a pergunta seguinte a de onde veio é de que é feito este passo.",
+        "Pai visível acima do filho quando o contexto do total não pode se perder.",
+        "Passo pai com parte sem classificação, que precisa aparecer no filho."
+      ],
+      "quando_evitar": [
+        "Hierarquia sem nível intermediário real: ponte simples com subtotais, versão v2 do modelo 01.",
+        "A hierarquia importa mais que o caminho: treemap ou árvore, família 12.",
+        "Decomposição em alavancas por soma ou produto: árvore de indicadores, família 12, modelo 04.",
+        "Detalhamento sobre uma tabela de números: tabela visual, família 14."
+      ],
+      "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+      "versoes": [
+        {
+          "slug": "v1_custo-total-abrindo-em-marketing",
+          "titulo": "Custo total abrindo em marketing",
+          "caso_de_uso": "Diretoria, 2026-08: custo de R$ 390 mil em pessoas R$ 160 mil, marketing R$ 150 mil, comissão R$ 22 mil e rateio R$ 58 mil; marketing abre em mídia R$ 118 mil, ferramentas R$ 14 mil, agência R$ 12 mil e eventos R$ 6 mil.",
+          "o_que_demonstra": [
+            "Pai em cima e filho embaixo, com o passo aberto emoldurado",
+            "Entrada e saída do filho iguais ao valor do passo pai",
+            "Mesma convenção de cor nos dois níveis",
+            "Indicador de proporção: marketing é 38% do custo total"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_passo-que-mais-cresceu-abre",
+          "titulo": "O passo que mais cresceu se abre",
+          "caso_de_uso": "Diretoria, 2026-08 contra 2026-07: marketing subiu R$ 23 mil, de R$ 127 mil para R$ 150 mil, e ganha moldura com o rótulo abre; o filho vem ordenado por variação, com mídia +R$ 19 mil.",
+          "o_que_demonstra": [
+            "Moldura e ícone lucide no passo com maior variação",
+            "Filho ordenado por variação e não por valor",
+            "Variação com a base na mesma linha, conforme NUM-4",
+            "onClick no shape para descer e foco de teclado equivalente"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_perdas-do-funil-em-tres-niveis",
+          "titulo": "Perdas do trimestre em três níveis",
+          "caso_de_uso": "Comercial e Pré-vendas, 2026-T3: 1.180 perdas em pré-venda 1.030, proposta 110 e negociação 40; pré-venda abre em sem contato 460, não fit 390, sem orçamento 120 e duplicado 60; sem contato abre por canal tentado.",
+          "o_que_demonstra": [
+            "Estado de caminho em React sobre dado em árvore",
+            "Migalha em Tailwind com o caminho e o percentual do total",
+            "Escala recalculada por nível sem perder a proporção no rótulo",
+            "Seletor de caminho puro, testável fora do React"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_filho-que-nao-fecha-o-pai",
+          "titulo": "Perdas na proposta sem motivo registrado",
+          "caso_de_uso": "Comercial, 2026-T3: das 110 perdas na proposta, preço 38, concorrência 29, prazo 21 e sem decisão 9; 13 perdas (12%) não têm motivo e ficam num passo próprio, sem redistribuir.",
+          "o_que_demonstra": [
+            "Passo Sem motivo registrado vazado, por último e visível",
+            "Soma dos filhos verificada contra o pai no dado",
+            "Ausência nunca redistribuída proporcionalmente entre motivos",
+            "Frase acessível com a parte sem classificação"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Ponte até a meta do ano",
+  "useCase": "Quanto falta para a meta anual de R$ 6,4 mi, contando o contratado e o pipeline ponderado?",
+  "demonstrates": [
+    "Meta como coluna cheia e partes consumindo até o gap",
+    "Gap em --warning com sinal e palavra, não só com cor",
+    "ReferenceLine da meta com ifOverflow extendDomain",
+    "Anotação: faltam R$ 600 mil contando o pipeline ponderado",
+    "Data de corte escrita, porque a ponte muda a cada dia"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem desvio de canvas. ESP-6: corpo 574 x 225 px; 5 colunas em 558 px dão passo 111,6 px e barra de 24 px. As partes ficam em cinza neutro (sem polaridade declarada, COR-6); o gap leva --warning com o sinal − e a palavra falta no rótulo. O catálogo escreve R$ 0,6 mi para o gap; formatCurrencyAxis imprime R$ 600 mil abaixo de 1 mi, e vale o formatador. Duas anotações, no limite da ANO-1: a linha de leitura com a data de corte e o rótulo da ReferenceLine da meta."
+}

@@ -1,0 +1,160 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "08_card-de-excecao",
+  "versoes": {
+    "v1_oportunidades-sem-movimento-ha-30-dias": {
+      "veredito": "aprovado",
+      "nota": "Cartao de um nivel correto nos dois temas: borda e icone em warning, contagem com substantivo, criterio literal e link permanente. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:51.327Z",
+      "impressao": "e94b4500732beb1882fa131cf56f0fcc301873ea",
+      "arquivos": {
+        "Chart.tsx": "3163a1a6a59ad6f3051d2b0471b40eb19a325de7",
+        "data.ts": "622395caf36c8acd23735759076e0e126c15aa4c",
+        "meta.json": "21b6046e99b53595c5cf125bb5efcd39784d93d0"
+      }
+    },
+    "v2_paradas-com-severidade-e-denominador": {
+      "veredito": "aprovado",
+      "nota": "Dois niveis por icone e palavra, denominador escrito 9 de 143, cor semantica so no icone e na borda. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:58.065Z",
+      "impressao": "4b15f91a4313814c80f8609f11fe507500344d1d",
+      "arquivos": {
+        "Chart.tsx": "577ea64a1320053f25186829d5d5ed1c4b1fd2d3",
+        "data.ts": "e3d71a57b818dfbd00265e04f544b5dae4b2378a",
+        "meta.json": "1bf42177d500879829d56da53850ec174a6141e2"
+      }
+    },
+    "v3_faixa-de-excecoes-da-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Faixa com quatro reguas ordenadas por severidade e etapa, cabecalho com a ordem de acao e cartao inteiro clicavel. Aviso de frase acessivel em 235 caracteres, dentro do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:04.527Z",
+      "impressao": "ea9760ac412380426d0eb6d7a91fda9a45e6c7a3",
+      "arquivos": {
+        "Chart.tsx": "819a8fdc70d273e705c4a382fc685ca0ad9a0049",
+        "data.ts": "0283c9390b8abde1225139a662a5fbf0f3f4e895",
+        "meta.json": "7e271a780c1c1eba018b37f8eaf827e85196aff5"
+      }
+    },
+    "v4_estado-calmo-e-regua-nao-avaliada": {
+      "veredito": "aprovado",
+      "nota": "Zero medido escrito como 0 e regua sem carga escrita por formatUnavailable em grupo proprio, na mesma altura. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:10.194Z",
+      "impressao": "16e8af21ae6b07fb5288e58374f56489ff2d7b7c",
+      "arquivos": {
+        "Chart.tsx": "23c33618b185ce3102a918adc1203d44e3e014b9",
+        "data.ts": "f1e2077b04ff217fbb08091b223ddcfbc5d042e2",
+        "meta.json": "ce8a0689bd361719461bb801bf9348ae08f3e901"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-sem-movimento-ha-30-dias",
+      "veredito": "aprovado",
+      "nota": "Cartao de excecao de um nivel: borda e icone em warning, contagem com substantivo, criterio literal, data e link permanente; check 0 erro, dois temas legiveis.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T08:32:30.700Z",
+      "impressao": "7300b947f01176b104badca0527a717b0f30d450",
+      "arquivos": {
+        "Chart.tsx": "3163a1a6a59ad6f3051d2b0471b40eb19a325de7",
+        "data.ts": "622395caf36c8acd23735759076e0e126c15aa4c",
+        "meta.json": "be09584bf08c80c59c93424717cb8a0da1a037a1"
+      }
+    },
+    {
+      "versao": "v2_paradas-com-severidade-e-denominador",
+      "veredito": "aprovado",
+      "nota": "Dois niveis separados por icone e palavra, nao so por cor; denominador de 143 escrito e faixas sem sobreposicao; check 0 erro, contraste aprovado nos dois temas.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T08:32:35.485Z",
+      "impressao": "8152fd58424730bbccb837cc2b2e9f31ed873d0c",
+      "arquivos": {
+        "Chart.tsx": "577ea64a1320053f25186829d5d5ed1c4b1fd2d3",
+        "data.ts": "e3d71a57b818dfbd00265e04f544b5dae4b2378a",
+        "meta.json": "3e0b1053842f4201a8c29098d203f44255d8e597"
+      }
+    },
+    {
+      "versao": "v3_faixa-de-excecoes-da-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Faixa com quatro reguas ordenadas por severidade e etapa, cada cartao um unico link esticado, denominador quando ha base; check 0 erro, nada cortado nos dois temas.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T08:32:39.804Z",
+      "impressao": "a3a0f664e2f09328b9d1d58da35601f08baa9186",
+      "arquivos": {
+        "Chart.tsx": "819a8fdc70d273e705c4a382fc685ca0ad9a0049",
+        "data.ts": "0283c9390b8abde1225139a662a5fbf0f3f4e895",
+        "meta.json": "57e3d45f9c56d6b87b09db0133ba149f059e9955"
+      }
+    },
+    {
+      "versao": "v4_estado-calmo-e-regua-nao-avaliada",
+      "veredito": "aprovado",
+      "nota": "Zero medido escrito como 0 e regua sem carga escrita por formatUnavailable em grupo proprio, mesma altura; ausencia nunca vira zero; check 0 erro nos dois temas.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T08:32:44.563Z",
+      "impressao": "bbeeecd6979ae37f3d68ba4cd5f51d6431abe6e3",
+      "arquivos": {
+        "Chart.tsx": "23c33618b185ce3102a918adc1203d44e3e014b9",
+        "data.ts": "f1e2077b04ff217fbb08091b223ddcfbc5d042e2",
+        "meta.json": "e19051d534bd9fc83dd030118573bd0677212603"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-sem-movimento-ha-30-dias",
+      "veredito": "aprovado",
+      "nota": "Cartao de um nivel correto nos dois temas: borda e icone em warning, contagem com substantivo, criterio literal e link permanente. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:51.327Z",
+      "impressao": "e94b4500732beb1882fa131cf56f0fcc301873ea",
+      "arquivos": {
+        "Chart.tsx": "3163a1a6a59ad6f3051d2b0471b40eb19a325de7",
+        "data.ts": "622395caf36c8acd23735759076e0e126c15aa4c",
+        "meta.json": "21b6046e99b53595c5cf125bb5efcd39784d93d0"
+      }
+    },
+    {
+      "versao": "v2_paradas-com-severidade-e-denominador",
+      "veredito": "aprovado",
+      "nota": "Dois niveis por icone e palavra, denominador escrito 9 de 143, cor semantica so no icone e na borda. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:58.065Z",
+      "impressao": "4b15f91a4313814c80f8609f11fe507500344d1d",
+      "arquivos": {
+        "Chart.tsx": "577ea64a1320053f25186829d5d5ed1c4b1fd2d3",
+        "data.ts": "e3d71a57b818dfbd00265e04f544b5dae4b2378a",
+        "meta.json": "1bf42177d500879829d56da53850ec174a6141e2"
+      }
+    },
+    {
+      "versao": "v3_faixa-de-excecoes-da-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Faixa com quatro reguas ordenadas por severidade e etapa, cabecalho com a ordem de acao e cartao inteiro clicavel. Aviso de frase acessivel em 235 caracteres, dentro do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:04.527Z",
+      "impressao": "ea9760ac412380426d0eb6d7a91fda9a45e6c7a3",
+      "arquivos": {
+        "Chart.tsx": "819a8fdc70d273e705c4a382fc685ca0ad9a0049",
+        "data.ts": "0283c9390b8abde1225139a662a5fbf0f3f4e895",
+        "meta.json": "7e271a780c1c1eba018b37f8eaf827e85196aff5"
+      }
+    },
+    {
+      "versao": "v4_estado-calmo-e-regua-nao-avaliada",
+      "veredito": "aprovado",
+      "nota": "Zero medido escrito como 0 e regua sem carga escrita por formatUnavailable em grupo proprio, na mesma altura. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:10.194Z",
+      "impressao": "16e8af21ae6b07fb5288e58374f56489ff2d7b7c",
+      "arquivos": {
+        "Chart.tsx": "23c33618b185ce3102a918adc1203d44e3e014b9",
+        "data.ts": "f1e2077b04ff217fbb08091b223ddcfbc5d042e2",
+        "meta.json": "ce8a0689bd361719461bb801bf9348ae08f3e901"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "CPL qualificado por UF em cada plataforma",
+  "useCase": "Onde o CPL qualificado fica acima da média nacional em cada plataforma?",
+  "demonstrates": [
+    "Hexágono com ponta para cima e linhas ímpares deslocadas meia célula no mesmo grid",
+    "Três pequenos múltiplos lado a lado com uma única escala divergente",
+    "Divergência em --positive e --negative, com o sinal escrito e o centro em cinza",
+    "Macrorregiões afastadas, sem contorno; Norte e Nordeste com o vão comum",
+    "UF sem lead qualificado em contorno pontilhado, distinta do desvio zero"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Hexágono em polígono SVG de escala 1 e não em clip-path de HTML como diz o catálogo: o clip-path não sai no preview (o serializador não o carrega), e o SVG devolve ao check as guardas de texto e contraste. Cada hexágono tem 32 px de largura de célula (30 desenhados), o piso que a spec dá para escrever sigla e valor; três mapas de 280 px cabem em 894 px de corpo com vão de 16. Escala divergente sem token dedicado (TOK-3): extremos em --positive e --negative, centro em --line-strong e degraus leves por color-mix dos dois, numa função só (bucketFill). Polaridade: CPL menor é melhor, então abaixo da média é verde. Os cortes de 5% e 15% valem sobre o desvio já arredondado a inteiro, para a cor nunca contradizer o número escrito. O afastamento por macrorregião (REGION_SHIFT) só empurra para fora: o Norte fica parado e o Centro-Oeste, o Sudeste e o Sul descem de 6 a 12 px, o Nordeste vai 8 px à direita; subir o Norte encostava o TO no MA. Dentro do hexágono o desvio sai sem o símbolo de percentual (a palavra mais larga, −30%, passava da borda de 30 px desenhados); a unidade está na legenda e a dica escreve o %. A vizinhança hexagonal é aproximada e declarada no data.ts."
+}

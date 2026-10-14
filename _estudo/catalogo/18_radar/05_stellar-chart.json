@@ -1,0 +1,73 @@
+{
+  "slug": "05_stellar-chart",
+  "nome": "Stellar chart",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Proposto na Nightingale como alternativa ao radar: cada dimensão vira um espeto afinado que sai do centro até o valor, sem polígono ligando os eixos. Mantém o apelo radial, elimina a área que engana e a linha falsa entre categorias sem vizinhança, e a forma de estrela se sustenta com 5 ou 12 eixos. SVG puro em React, com a geometria do espeto calculada numa função pura em TypeScript.",
+  "quando_usar": [
+    "Perfil de uma entidade em 5 a 12 dimensões na mesma escala, quando a peça pede forma radial mas a leitura precisa ser por distância.",
+    "Mais eixos do que o radar simples aguenta sem virar ruído, com rótulos no raio externo.",
+    "Uma meta ou referência única como círculo tracejado, com os espetos abaixo dela destacados.",
+    "Dimensões sem relação de vizinhança, em que a linha do polígono sugeriria continuidade falsa."
+  ],
+  "quando_evitar": [
+    "Leitura exata de valores ou ranking: barras com rótulo direto (02/01).",
+    "Entidade contra outra série completa: radar comparativo (modelo 02) ou barras agrupadas (02/02).",
+    "Categorias cíclicas com volume: coluna radial (07/06) ou rosa de Nightingale (07/07).",
+    "Espeto com base larga, que volta a ser área: meia base entre 2 e 4 px.",
+    "Mais de 12 dimensões: pirulito radial (07/06) ou tabela com heatmap (14/02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_competencias-do-executivo",
+      "titulo": "Perfil de competências do Executivo 07",
+      "caso_de_uso": "Comercial, 2026-T3: em quais das seis competências do processo o Executivo 07 está forte e em quais precisa de treino?",
+      "o_que_demonstra": [
+        "Função pura espeto(cx, cy, i, n, r) com primeiro eixo no topo e sentido horário",
+        "Meia base de 3 px e espeto em --chart-1, sem polígono entre eixos",
+        "Grade circular leve em --line-subtle com níveis 25, 50, 75 e 100",
+        "viewBox fixo e raiz que escala, com vectorEffect non-scaling-stroke na grade",
+        "role img na raiz e frase acessível com a maior e a menor competência"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_meta-em-circulo-e-espetos-abaixo",
+      "titulo": "Competências com a meta em círculo tracejado",
+      "caso_de_uso": "Comercial, 2026-T3: quais competências do Executivo 07 ficam abaixo do índice 70 combinado no plano de desenvolvimento?",
+      "o_que_demonstra": [
+        "Círculo de meta em 70 com traço tracejado 3 3 de --text-muted e rótulo meta 70",
+        "Abaixo da meta em --chart-1 e peso 700; demais em --line-strong com valor escrito",
+        "Destaque com segundo canal: peso do rótulo, além da cor",
+        "Rótulo com halo na cor do cartão quando cruza o círculo de meta"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_maturidade-em-doze-criterios",
+      "titulo": "Maturidade da área comercial em doze critérios",
+      "caso_de_uso": "Diretoria, plano 2027: como a área comercial pontua nos doze critérios de maturidade e onde estão as lacunas antes do orçamento?",
+      "o_que_demonstra": [
+        "Doze espetos com rótulos horizontais no raio externo fixo, sem texto girado",
+        "textAnchor pelo quadrante: start à direita, end à esquerda, middle no topo e na base",
+        "Nomes longos em duas linhas por tspan, sem abreviação inventada",
+        "Ordem dos critérios vinda do registry, com os correlatos vizinhos",
+        "Canvas card com a lista dos três critérios mais baixos ao lado da estrela"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_zero-sem-dado-e-vizinhos-altos",
+      "titulo": "Stellar com zero medido, sem dado e vizinhos altos",
+      "caso_de_uso": "Comercial, 2026-T3: como distinguir a precisão de forecast medida em zero de um eixo que ainda não foi medido?",
+      "o_que_demonstra": [
+        "Zero medido desenha ponto no centro do eixo e escreve 0",
+        "Eixo sem medição com raio tracejado em --text-muted e a palavra sem dado, sem ponto",
+        "Vizinhos com 95 e 97 e rótulos no raio externo fixo, sem colisão nas pontas",
+        "Anticolisão de rótulos calculada em TypeScript com distância mínima em graus",
+        "Frase acessível que separa eixo zerado de eixo sem medição"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

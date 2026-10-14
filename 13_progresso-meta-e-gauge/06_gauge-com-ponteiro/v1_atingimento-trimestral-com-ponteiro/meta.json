@@ -1,0 +1,14 @@
+{
+  "title": "Atingimento da meta trimestral com ponteiro",
+  "useCase": "Diretoria: em que faixa está o atingimento da meta de receita de 2026-T3 e qual o valor exato por trás do ponteiro?",
+  "demonstrates": [
+    "PieChart com startAngle 180 e endAngle 0 e uma Cell por faixa",
+    "Ângulo do ponteiro por valueToAngle, contínuo e não preso ao meio do setor",
+    "Ponteiro como polígono preenchido com contorno em surface-raised",
+    "Mínimo e máximo nas pontas e o valor em texto grande abaixo do arco",
+    "Faixas por intensidade de um tom, sem semáforo de matiz"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O ponteiro é a forma menos precisa deste catálogo: a posição angular se lê com erro grande, por isso o valor sempre sai escrito por extenso abaixo do arco, nunca só a posição. Ver README, seção Quando evitar, para a alternativa nomeada."
+}

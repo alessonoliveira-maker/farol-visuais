@@ -1,0 +1,121 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "01_histograma",
+  "versoes": {
+    "v1_ciclo-de-fechamento": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A mediana e a média agora devolvem ausência em vez de zero, e a guarda passou a testar a lista que alimenta a conta, não a lista vizinha derivada do domínio, que nunca esvaziava. Desenho publicado idêntico, porque o dado fixo é completo. O buraco de 161 a 168 dias continua marcado no traço de base e declarado no rodapé. Ressalva sem conserto: a frase acessível afirma \"puxada pela cauda longa\", que é conclusão fixa no código e o dado pode desmentir noutro recorte.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.021Z",
+      "impressao": "68d89425f79b2b4a22dcac9f9277da4e8cda1483",
+      "arquivos": {
+        "Chart.tsx": "88b4d6189e6d493afba5b5789a4330f1f6d2f2bb",
+        "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
+        "meta.json": "d598b7f9070269864df19987568b41b531800827"
+      }
+    },
+    "v2_media-contra-mediana": {
+      "veredito": "aprovado",
+      "nota": "Aceita na segunda rodada. A faixa p25 a p75 perdia a borda esquerda atras das barras altas por oclusao de zIndex, 100 contra 300, e o desenho sugeria que a metade dos casos comeca na mediana; resolvido pelo rotulo em duas linhas que escreve o intervalo de 35 a 120 dias. Geometria estava correta desde o inicio.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.046Z",
+      "impressao": "c1779ac8b87965f31d3614e73836cc7135027632",
+      "arquivos": {
+        "Chart.tsx": "b7fe10f6696b3291d78325e21b1700d0f6fd54a2",
+        "data.ts": "85a5ecd8a35df2787396b41bd13d83abeed4ee2e",
+        "meta.json": "f5650992ab1f6f3b1e910a4a989c8a4015b99900"
+      }
+    },
+    "v3_ciclo-por-executivo-em-pequenos-multiplos": {
+      "veredito": "aprovado",
+      "nota": "Aceita na segunda rodada. A ordem dos paineis era por mediana crescente sem nada declarar, e os rotulos liam A, B, C, E, D, F, G, H como erro de digitacao; resolvido pelo rodape que declara a ordem, com tick false em vez de hide para nao levar a grade junto.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.143Z",
+      "impressao": "6b218833555b22610a20d895345760d5a24167cc",
+      "arquivos": {
+        "Chart.tsx": "900a423b14a0c409f6014b53ba641de5ef66e457",
+        "data.ts": "f47f63b34a37ac4a02aaf6becb8f834c8b4f2378",
+        "meta.json": "e6bb2142ceef0533a4da226e5c22bb6b082b5862"
+      }
+    },
+    "v4_receita-com-massa-no-zero": {
+      "veredito": "aprovado",
+      "nota": "Aceita de primeira, e era a mais dificil. Tres estados por forma: zero medido como coluna neutra cortada com marca de quebra, faixa medida sem caso como traco de base, e ausencia que nao desenha e so aparece no rodape por formatUnavailable.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.217Z",
+      "impressao": "8adc96c52bc82ff0bb107dfbd00d353c6258b7e1",
+      "arquivos": {
+        "Chart.tsx": "bcdd6f21bd8f64e21f9e4dbc9bd028dfb3106949",
+        "data.ts": "78d9c7612d6b65ebc4a83b2efab444051388ab78",
+        "meta.json": "17418db5f31c9f04c6ecb8a9f73853bec7dda4e6"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-de-fechamento",
+      "veredito": "aprovado",
+      "nota": "Regua da familia. Ressalva registrada na fila de conserto: a mediana nasce zero quando a amostra e vazia, instancia da armadilha da mediana que nasce zero.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:52.967Z",
+      "impressao": "6e0b26bb13c16bb816335ed601cef4f50c192797",
+      "arquivos": {
+        "Chart.tsx": "f91e639a92614d5caa2369069d4fedd3672e57f2",
+        "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
+        "meta.json": "d598b7f9070269864df19987568b41b531800827"
+      }
+    },
+    {
+      "versao": "v2_media-contra-mediana",
+      "veredito": "aprovado",
+      "nota": "Aceita na segunda rodada. A faixa p25 a p75 perdia a borda esquerda atras das barras altas por oclusao de zIndex, 100 contra 300, e o desenho sugeria que a metade dos casos comeca na mediana; resolvido pelo rotulo em duas linhas que escreve o intervalo de 35 a 120 dias. Geometria estava correta desde o inicio.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.046Z",
+      "impressao": "c1779ac8b87965f31d3614e73836cc7135027632",
+      "arquivos": {
+        "Chart.tsx": "b7fe10f6696b3291d78325e21b1700d0f6fd54a2",
+        "data.ts": "85a5ecd8a35df2787396b41bd13d83abeed4ee2e",
+        "meta.json": "f5650992ab1f6f3b1e910a4a989c8a4015b99900"
+      }
+    },
+    {
+      "versao": "v3_ciclo-por-executivo-em-pequenos-multiplos",
+      "veredito": "aprovado",
+      "nota": "Aceita na segunda rodada. A ordem dos paineis era por mediana crescente sem nada declarar, e os rotulos liam A, B, C, E, D, F, G, H como erro de digitacao; resolvido pelo rodape que declara a ordem, com tick false em vez de hide para nao levar a grade junto.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.143Z",
+      "impressao": "6b218833555b22610a20d895345760d5a24167cc",
+      "arquivos": {
+        "Chart.tsx": "900a423b14a0c409f6014b53ba641de5ef66e457",
+        "data.ts": "f47f63b34a37ac4a02aaf6becb8f834c8b4f2378",
+        "meta.json": "e6bb2142ceef0533a4da226e5c22bb6b082b5862"
+      }
+    },
+    {
+      "versao": "v4_receita-com-massa-no-zero",
+      "veredito": "aprovado",
+      "nota": "Aceita de primeira, e era a mais dificil. Tres estados por forma: zero medido como coluna neutra cortada com marca de quebra, faixa medida sem caso como traco de base, e ausencia que nao desenha e so aparece no rodape por formatUnavailable.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.217Z",
+      "impressao": "8adc96c52bc82ff0bb107dfbd00d353c6258b7e1",
+      "arquivos": {
+        "Chart.tsx": "bcdd6f21bd8f64e21f9e4dbc9bd028dfb3106949",
+        "data.ts": "78d9c7612d6b65ebc4a83b2efab444051388ab78",
+        "meta.json": "17418db5f31c9f04c6ecb8a9f73853bec7dda4e6"
+      }
+    },
+    {
+      "versao": "v1_ciclo-de-fechamento",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A mediana e a média agora devolvem ausência em vez de zero, e a guarda passou a testar a lista que alimenta a conta, não a lista vizinha derivada do domínio, que nunca esvaziava. Desenho publicado idêntico, porque o dado fixo é completo. O buraco de 161 a 168 dias continua marcado no traço de base e declarado no rodapé. Ressalva sem conserto: a frase acessível afirma \"puxada pela cauda longa\", que é conclusão fixa no código e o dado pode desmentir noutro recorte.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.021Z",
+      "impressao": "68d89425f79b2b4a22dcac9f9277da4e8cda1483",
+      "arquivos": {
+        "Chart.tsx": "88b4d6189e6d493afba5b5789a4330f1f6d2f2bb",
+        "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
+        "meta.json": "d598b7f9070269864df19987568b41b531800827"
+      }
+    }
+  ]
+}

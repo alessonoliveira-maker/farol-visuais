@@ -1,0 +1,72 @@
+{
+  "slug": "01_sankey-simples",
+  "nome": "Sankey simples de duas colunas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Nós em duas colunas ligados por faixas com largura proporcional ao volume: de onde vem e onde termina. É a forma mais legível da família e cobre boa parte das perguntas de origem para desfecho e de handoff entre equipes. A orientação vertical, para coluna estreita e celular, entra como versão deste modelo.",
+  "quando_usar": [
+    "Origem para desfecho numa unidade só (leads, agendas ou reais), com até 8 nós por coluna.",
+    "Handoff de uma equipe para outra: quem entrega para quem e em que proporção.",
+    "Cruzamento de duas classificações da mesma população em que a direção de origem para destino é clara.",
+    "Coluna estreita de painel ou celular, na versão vertical, com até 5 nós por nível."
+  ],
+  "quando_evitar": [
+    "Mais de 8 nós por coluna sem agrupar em \"Outros\": as ligações viram fios abaixo de 1 px.",
+    "Caminho com três ou mais etapas e perdas no meio: usar o 02_sankey-multietapa.",
+    "Mesmas unidades mudando de categoria no tempo, sem direção de fluxo: usar o 03_alluvial.",
+    "Funil linear sem ramificação: usar a família 10_funil.",
+    "Leitura exata de cada par origem e destino: usar a matriz de transição (15_mapa-de-calor-e-calendario, 07_matriz-de-transicao)."
+  ],
+  "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+  "versoes": [
+    {
+      "slug": "v1_origem-para-desfecho-dos-leads",
+      "titulo": "Desfecho dos leads por origem",
+      "caso_de_uso": "Marketing, 2026-08: para qual desfecho vão os 1.240 leads de cada origem? Mídia social, Busca paga, Rede profissional, Orgânico e Evento à esquerda; Qualificado, Em nutrição, Descartado e Sem contato à direita.",
+      "o_que_demonstra": [
+        "Sankey nativo com links por índice, montados de um dicionário nome para índice",
+        "node e link customizados com var(--chart-N), sem as cores internas do build",
+        "Margem lateral de 140 px reservada para nome e valor fora do nó",
+        "Cor da ligação herdada da origem, em slot fixo por categoria"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_handoff-sdr-para-executivo-com-foco",
+      "titulo": "Handoff de agendas do SDR para o executivo",
+      "caso_de_uso": "Pré-vendas, 2026-08: para quais executivos cada SDR entregou as 187 agendas realizadas? SDR 1 a SDR 5 à esquerda, Executivo A a H à direita, 40 ligações e o SDR 3 em foco.",
+      "o_que_demonstra": [
+        "Prop highlightId que acende as ligações de um nó e baixa as demais para 15%",
+        "Ligações com menos de 3 agendas agregadas em \"Outros executivos\"",
+        "Anotação na maior saída do foco: SDR 3 para Executivo B, 14 agendas (30% do SDR)",
+        "onMouseEnter(item, type) guardando o índice em estado para o hover no Farol",
+        "Nome do nó em foco em peso 700, porque a cor não é o único canal"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_origem-ausente-com-cobertura",
+      "titulo": "Leads sem origem registrada como nó neutro",
+      "caso_de_uso": "Marketing, 2026-07: 174 dos 1.210 leads chegaram sem origem registrada. Eles entram como nó neutro na coluna de origem, com a cobertura escrita (86% com origem), em vez de sumir do diagrama.",
+      "o_que_demonstra": [
+        "Nó de ausência com contorno --text-muted, sem preenchimento e sempre por último",
+        "Linha de leitura com a cobertura calculada do dado: 1.036 de 1.210 com origem",
+        "sort={false} para o nó de ausência não subir na coluna pelo tamanho",
+        "Ausência fora de \"Outros\" e fora do teto de 6 cores categóricas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_vertical-em-coluna-estreita",
+      "titulo": "Desfecho das agendas em sankey vertical",
+      "caso_de_uso": "Pré-vendas no celular, 2026-08: como terminaram as 248 agendas marcadas de cada origem? Cinco origens no topo; Realizada 187, Remarcada 29, Cancelada 18 e Não compareceu 14 na base.",
+      "o_que_demonstra": [
+        "Layout vertical em TypeScript, porque o Sankey do Recharts não tem orientação",
+        "Nenhum transform no svg: texto e dica continuam na horizontal",
+        "Deslocamento das faixas no nó ordenado pela posição horizontal do destino",
+        "Nome em duas linhas acima do nó em vez de reticência",
+        "viewBox fixo que escala na largura de uma coluna estreita"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

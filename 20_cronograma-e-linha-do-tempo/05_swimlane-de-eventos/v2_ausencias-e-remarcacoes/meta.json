@@ -1,0 +1,14 @@
+{
+  "title": "Reuniões com ausência e remarcação",
+  "useCase": "Pré-vendas: quais reuniões da semana tiveram ausência do lead e para quando cada remarcação foi empurrada.",
+  "demonstrates": [
+    "Reunião com ausência como marca vazada em negative, com legenda textual",
+    "Arco fino em path Q ligando a reunião original à nova data na mesma raia",
+    "Remarcação para outra SDR com arco entre raias e rótulo do destino",
+    "Ausência sem nova data escrita ao lado, sem arco inventado",
+    "Contagem de ausências por raia à direita, com zero escrito"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O catálogo não fixa o número de raias: são 4 SDRs, porque cada raia ganha uma faixa de 22 px acima dos blocos para os arcos da mesma raia, e 4 raias de 48 px fecham em 252 px de altura, dentro dos 265 px do pior cabeçalho do canvas largo. O viewBox tem 894 px de largura, o corpo medido, então a escala sai 1 e o texto fica em 11 px (GEO-18). A SDR 4 não tem ausência e escreve 0 ausências: zero medido, e não raia sem dado. O horário completo de cada bloco vai no title."
+}

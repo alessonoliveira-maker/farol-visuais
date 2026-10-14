@@ -1,0 +1,12 @@
+{
+  "title": "Ciclo de fechamento contra a lognormal",
+  "useCase": "A premissa lognormal do simulador de cenários descreve o ciclo de fechamento medido em 2026?",
+  "demonstrates": [
+    "Função qqNormal sobre o log do ciclo, com posições de plotagem (i + 0,5) / n",
+    "Área quadrada com aspect 1 e o mesmo domínio nos dois eixos",
+    "Diagonal em ReferenceLine com segment e traço tracejado",
+    "Anotação na região da cauda que se afasta da diagonal"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

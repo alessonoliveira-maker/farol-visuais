@@ -1,0 +1,13 @@
+{
+  "title": "Tempo até a decisão por origem",
+  "useCase": "Oportunidades de indicação decidem mais rápido do que as de mídia paga quando as abertas entram na conta?",
+  "demonstrates": [
+    "Duas curvas com cor por origem e a mediana de cada uma rotulada",
+    "Tabela de em risco com uma linha por origem, alinhada às marcas do eixo X",
+    "Censuras de cada curva na cor da própria origem",
+    "n total e n aberto de cada origem na legenda"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Os dois rótulos de mediana empilham acima da guia de 50%, na ordem da legenda, no canto direito onde as curvas já passaram de 50%: ao lado de cada ponto não há espaço, porque a mediana da indicação cai a 37 dias, a poucos pixels do eixo, e o rótulo com o nome da origem não cabe à esquerda. Cada rótulo leva o nome da origem, então a anotação lida sozinha diz de quem é cada número. A tabela de em risco usa as mesmas margens do gráfico, com uma linha por origem e uma amostra de linha na cor dela."
+}

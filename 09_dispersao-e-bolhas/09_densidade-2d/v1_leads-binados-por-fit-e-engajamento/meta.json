@@ -1,0 +1,12 @@
+{
+  "title": "Leads por fit e engajamento em grade",
+  "useCase": "Onde se concentram os 4.200 leads do semestre quando fit e engajamento viram 10 faixas cada?",
+  "demonstrates": [
+    "Binagem em grade regular calculada em TypeScript com bordas fixas",
+    "Círculo por célula com área proporcional à contagem e piso visual declarado",
+    "Célula vazia sem círculo e legenda de tamanho em contagem"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Bordas da grade (GRID_SIZE, BIN_WIDTH) são fixas de propósito: precisam continuar iguais entre filtros para a comparação valer, por isso vivem em constante declarada e não em cálculo automático sobre o recorte."
+}

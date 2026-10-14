@@ -1,0 +1,13 @@
+{
+  "title": "Três cenários com o que virou meta",
+  "useCase": "Entre os cenários conservador, base e otimista de 2027, qual virou meta e a que distância ficou dos outros?",
+  "demonstrates": [
+    "Três marcas distinguíveis por forma e rótulo direto, não só por cor",
+    "Cenário escolhido como meta em --chart-1 e rótulo em peso 700",
+    "Rótulo com halo na cor da superfície quando cruza a faixa (ROT-7)",
+    "Texto calculado: a meta ficou no cenário base, 9% acima do conservador"
+  ],
+  "canvas": { "width": 440, "height": 380 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset kpi-alto: três linhas de cenário, a faixa escrita em 30 px e a premissa não cabem em 360 x 280."
+}

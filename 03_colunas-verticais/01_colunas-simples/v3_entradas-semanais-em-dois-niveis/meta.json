@@ -1,0 +1,13 @@
+{
+  "title": "Entradas semanais da pré-vendas em 26 semanas",
+  "useCase": "Qual a cadência semanal de entradas na pré-vendas em seis meses, sem perder em que mês cada semana caiu?",
+  "demonstrates": [
+    "Dois eixos horizontais: número da semana embaixo e mês em cima, um rótulo por grupo",
+    "Rótulo do mês centralizado pela contagem real de semanas do grupo, com mês de 5 semanas",
+    "Separador entre meses por linha de referência vertical em tom sutil",
+    "maxBarSize pela ESP-6 para 26 categorias, tique de semana reduzido e sem rotação",
+    "Semana corrente com rótulo em peso 700 e a palavra parcial"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

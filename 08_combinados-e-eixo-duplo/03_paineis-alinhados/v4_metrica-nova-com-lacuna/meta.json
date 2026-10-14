@@ -1,0 +1,13 @@
+{
+  "title": "Painéis com métrica medida só desde maio",
+  "useCase": "Como alinhar receita e taxa de conversão quando a taxa só passou a ser medida em mai/2026?",
+  "demonstrates": [
+    "Meses sem medição como null, sem interpolação nem zero",
+    "Largura de eixo fixa com rótulos de tamanhos muito diferentes",
+    "Nota no título do painel dizendo desde quando a métrica existe",
+    "Ausência escrita no próprio painel, sem depender da dica para o nulo"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Preset alto, com a conta das linhas escritas que a GEO-1 pede. Moldura card e pior caso de caso de uso em duas linhas (91 caracteres, contra os 92 de uma linha em 574 px): corpo de 574 x 425 px, menos 24 px da linha de leitura, 40 px dos dois títulos de painel e 12 px do vão entre eles, sobram 349 px de gráfico. No rateio 3:2 isso dá 209 e 140 px de painel, ou 171 e 102 px de plano depois de 8 px de margem e 30 px de eixo x em cada um. A receita está em milhões porque o tique de centenas de milhar (R$ 500 mil, 53,5 px de tinta mais 8 de respiro) passava dos 60 px do eixo e quebrava em duas linhas, cortando o tique do topo: é a REC-2, cuja saída é mudar a unidade do rótulo, nunca a largura do eixo. A nota de desde quando a métrica existe entra no título do painel para não custar uma quarta linha escrita, que é o custo que a GEO-14 mede. O texto da faixa de lacuna é text-muted de 11 px sobre surface-sunken, par medido em 5,98:1 no escuro e 4,65:1 no claro, acima do piso de 4,5:1 da ACE-3 nos dois temas; sem halo, porque a faixa é a única coisa sob a tinta e a ROT-7b proíbe halo nesse caso. A dica do painel de baixo imprime a taxa sem o volume, e o par vem da linha de leitura e da frase acessível por formatRateWithVolume."
+}

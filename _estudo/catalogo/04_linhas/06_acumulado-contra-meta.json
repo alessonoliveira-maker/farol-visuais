@@ -1,0 +1,68 @@
+{
+  "slug": "06_acumulado-contra-meta",
+  "nome": "Acumulado contra meta (burn-up)",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Soma acumulada do realizado desde o início do período contra a trajetória acumulada da meta até o valor final; a distância entre as duas é o adiantamento ou o atraso. Absorve o burn-up de 13_progresso-meta-e-gauge, com ritmo necessário, meta revisada em degrau e cancelamento que faz a curva descer.",
+  "quando_usar": [
+    "Metas aditivas do ano ou do trimestre: receita reconhecida, fechamentos, agendas realizadas.",
+    "Pergunta de se o acumulado está na trajetória e de que ritmo fecha a meta até o fim.",
+    "Meta revisada no meio do período, que precisa aparecer como mudança de escopo."
+  ],
+  "quando_evitar": [
+    "Taxas e médias, que não somam: use 01_linha-simples com meta.",
+    "Progresso num instante só, sem trajetória: use 13_progresso-meta-e-gauge.",
+    "Diferença sombreada entre real e meta como assunto principal: use a área de diferença de 05_areas.",
+    "Negócio sazonal com meta linear sem aviso: derive a trajetória sazonal ou declare a escolha."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-acumulada-contra-meta-anual",
+      "titulo": "Receita reconhecida acumulada contra a meta anual",
+      "caso_de_uso": "A receita reconhecida acumulada de 2026 está acima ou abaixo da trajetória da meta anual de R$ 10 mi?",
+      "o_que_demonstra": [
+        "Acumulado calculado em TypeScript a partir do mensal",
+        "Meses futuros em null, nunca repetindo o último valor",
+        "Meta acumulada linear tracejada e meta anual em ReferenceLine extendDomain",
+        "Eixo a partir do zero com formatCurrencyAxis"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_gap-de-hoje-e-ritmo-necessario",
+      "titulo": "Gap de hoje e ritmo necessário até o fim do trimestre",
+      "caso_de_uso": "Quantos fechamentos faltam contra a trajetória hoje e que ritmo semanal fecha a meta do trimestre?",
+      "o_que_demonstra": [
+        "Gap desenhado com ReferenceLine segment vertical entre real e meta",
+        "Linha do ritmo necessário do dia de corte ao fim do trimestre",
+        "Rótulo do gap com unidade e base nomeada",
+        "Duas anotações no máximo: o gap e o ritmo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_meta-linear-contra-sazonal-com-projecao",
+      "titulo": "Meta linear contra meta sazonal, com projeção",
+      "caso_de_uso": "O atraso da receita acumulada em 2026 é real ou efeito de uma meta linear num negócio sazonal?",
+      "o_que_demonstra": [
+        "Meta sazonal derivada do peso mensal de 2025",
+        "Alternância entre trajetória linear e sazonal por prop",
+        "Projeção tracejada do último mês medido até dezembro",
+        "Rótulo no fim das trajetórias em vez de legenda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_meta-revisada-e-cancelamento",
+      "titulo": "Meta revisada em degrau e acumulado que desce",
+      "caso_de_uso": "Como ler os fechamentos acumulados de 2026 com a meta revisada em 2026-07 e um cancelamento que fez a curva descer?",
+      "o_que_demonstra": [
+        "Meta como Line stepAfter, sem redesenhar o passado com o valor novo",
+        "Revisão da meta anotada com a data e os valores antes e depois",
+        "Queda do acumulado anotada em vez de suavizada",
+        "Domínio que acomoda a descida sem tirar o zero do eixo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

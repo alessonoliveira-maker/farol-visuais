@@ -1,0 +1,12 @@
+{
+  "title": "Mix de origem em 100% por etapa",
+  "useCase": "Mesma base em 100%: como a mistura de origem muda do lead ao ganho, com indicação em destaque.",
+  "demonstrates": [
+    "stackOffset expand com eixo em percentual inteiro",
+    "Percentuais de cada etapa somam 100 pelo maior resto (NUM-2)",
+    "Indicação em cor cheia e as demais origens atenuadas",
+    "Linha de leitura com a subida de indicação, e o total absoluto de cada etapa na ponta"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

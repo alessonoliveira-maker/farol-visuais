@@ -1,0 +1,751 @@
+{
+  "slug": "09_dispersao-e-bolhas",
+  "nome": "Dispersão e bolhas",
+  "modelos": [
+    {
+      "slug": "01_dispersao-simples",
+      "nome": "Dispersão simples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada ponto é uma entidade posicionada por duas medidas quantitativas, uma em cada eixo. É a forma de entrada da família: responde se existe relação entre X e Y, quem foge do padrão e onde há aglomerados. Absorve rótulos com destaque, cor e forma por categoria, envoltória por grupo, escala logarítmica, zoom por área e a micro dispersão de célula.",
+      "quando_usar": [
+        "Relação entre duas medidas de um conjunto de entidades, como ticket contra ciclo de oportunidades ganhas.",
+        "Achar quem foge do padrão e dar nome a poucos pontos (até cerca de 8 rótulos diretos).",
+        "Comparar a nuvem de 2 a 5 grupos no mesmo plano, com forma e cor por grupo.",
+        "Medidas que variam em ordens de grandeza, com eixo em escala logarítmica e marcas em unidades humanas.",
+        "Até cerca de 500 pontos com opacidade moderada; até cerca de 3.000 com ponto pequeno e opacidade 0,35."
+      ],
+      "quando_evitar": [
+        "Uma das medidas é categoria ou tempo: use barras, pontos por categoria (família 17) ou linhas (família 04).",
+        "Acima de cerca de 3.000 pontos: use densidade 2D (modelo 09) ou declare a amostra no rodapé.",
+        "Mais de 5 grupos no mesmo plano: use pequenos múltiplos (modelo 11).",
+        "Leitura por quadrante com cortes de meta: use a família 25.",
+        "Registro sem X ou sem Y não pode virar ponto no zero: ele sai do plano e entra na contagem do rodapé."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-contra-ciclo",
+          "titulo": "Ticket contra ciclo das oportunidades ganhas",
+          "caso_de_uso": "Oportunidades de ticket maior demoram mais para fechar? Ganhas nos últimos 12 meses, ticket em mil reais e ciclo em dias.",
+          "o_que_demonstra": [
+            "ScatterChart com eixos numéricos, unidade e domínio explícito e estável",
+            "Dica própria com o nome da oportunidade e os dois valores formatados",
+            "Opacidade abaixo de 1 para revelar pontos empilhados",
+            "Rodapé com o número de pontos exibidos"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_extremos-rotulados-com-destaque",
+          "titulo": "Executivos nos extremos de win rate",
+          "caso_de_uso": "Quem são os executivos que puxam o win rate para cima e para baixo? 18 executivos fictícios por ticket médio e win rate.",
+          "o_que_demonstra": [
+            "Nuvem em neutro e destaque em cor, desenhado por último para ficar por cima",
+            "LabelList com content filtrado: rótulo só nos 3 maiores e nos 3 menores",
+            "Posição do rótulo escolhida entre 8 candidatas para não colidir",
+            "Destaque com segundo canal: rótulo em peso 700 e anel no ponto"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_origens-com-envoltoria",
+          "titulo": "Território de cada origem de lead",
+          "caso_de_uso": "Inbound, outbound e indicação se comportam diferente? 420 leads por minutos até o contato e interações, com o território de cada origem.",
+          "o_que_demonstra": [
+            "Um Scatter por origem com cor e forma próprias, slots categóricos fixos",
+            "Casco convexo por grupo calculado em pixels sobre os pontos entre P5 e P95",
+            "Polígono com opacidade de até 0,15 para a sobreposição não virar lama",
+            "Grupo maior desenhado primeiro para não cobrir o menor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_tempo-de-contato-em-escala-log",
+          "titulo": "Tempo até o primeiro contato em escala log",
+          "caso_de_uso": "O tempo até o primeiro contato derruba o número de tentativas até a agenda? 1.800 leads, com zeros e horários ausentes fora do plano.",
+          "o_que_demonstra": [
+            "XAxis com scale log, domínio positivo e marcas em 1 min, 1 h e 1 dia",
+            "Aviso de escala logarítmica escrito no rótulo do eixo",
+            "Respostas registradas como 0 viram marcador na borda com contagem",
+            "Leads sem horário de contato saem do plano e entram no rodapé",
+            "Ponto de raio 2 com opacidade 0,35 para volume alto"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "02_dispersao-com-linha-de-referencia",
+      "nome": "Dispersão com tendência ou identidade",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "A dispersão ganha uma linha que dá régua à nuvem: a reta de mínimos quadrados, com ou sem faixa de confiança, resume direção e força da relação; a diagonal de identidade separa quem entregou mais do que o previsto de quem entregou menos. A reta é calculada em TypeScript e só aparece quando passa o piso declarado de R² e de n.",
+      "quando_usar": [
+        "Dizer quanto de Y vem com cada unidade a mais de X, como leads qualificados por mil reais investidos.",
+        "Mostrar a incerteza da inclinação com a faixa de 95% da média, que alarga nas pontas.",
+        "Previsto contra realizado ou meta contra entrega, na mesma unidade, com a diagonal y = x.",
+        "Nuvem com pelo menos 10 pontos e forma visível; abaixo disso a reta não é desenhada."
+      ],
+      "quando_evitar": [
+        "Nuvem espalhada sem forma: a reta dá autoridade ao ruído; use a dispersão simples (modelo 01).",
+        "Medidas de unidades diferentes na diagonal de identidade: a linha y = x não tem sentido.",
+        "Público que lê a faixa de confiança como o lugar onde os pontos deveriam cair: prefira o intervalo de predição ou só a reta.",
+        "Pergunta de causa: a reta mostra associação, nunca efeito.",
+        "Pontos no tempo de uma entidade: use a dispersão conectada (modelo 05)."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_investimento-contra-leads-qualificados",
+          "titulo": "Investimento contra leads qualificados",
+          "caso_de_uso": "Quanto rende cada mil reais a mais de investimento? Campanhas por semana, com a reta de tendência e o retorno marginal escrito.",
+          "o_que_demonstra": [
+            "ComposedChart com Scatter e Line num array único de pontos e extremos da reta",
+            "Mínimos quadrados em TypeScript, reta só entre o menor e o maior X observado",
+            "Rótulo na ponta da reta com inclinação traduzida, R² e n",
+            "Line sem ponto, sem ponto ativo e fora da legenda"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_forecast-contra-fechamento",
+          "titulo": "Forecast contra valor fechado",
+          "caso_de_uso": "O valor no forecast de 30 dias antes bateu com o fechado? Oportunidades do trimestre com diagonal e tolerância de 15%.",
+          "o_que_demonstra": [
+            "Mesmo domínio nos dois eixos e área útil quadrada para a diagonal sair a 45 graus",
+            "ReferenceLine segment para y = x e duas retas de tolerância percentual",
+            "Contagem dentro da tolerância e pontos fora em cor de destaque",
+            "Perdidas com realizado zero fora do plano, num contador com o valor previsto"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_ciclo-contra-ticket-por-produto",
+          "titulo": "Ciclo contra ticket, Produto A e Produto B",
+          "caso_de_uso": "Os dois produtos têm a mesma relação entre ticket e ciclo? Duas retas com a faixa de 95% da média de cada uma.",
+          "o_que_demonstra": [
+            "Area de faixa com dataKey em par baixo e alto, calculada numa grade de 30 valores de X",
+            "Faixa da média declarada no subtítulo, distinta do intervalo de predição",
+            "Duas faixas com opacidade 0,15 cuja sobreposição mostra onde os produtos não se distinguem",
+            "Valor de t pela amostra quando n fica abaixo de 30"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_sem-relacao-detectavel",
+          "titulo": "Frequência contra CTR sem relação linear",
+          "caso_de_uso": "Criativo com mais frequência perde CTR? Com R² 0,07 e n 9 a reta não é desenhada e o gráfico diz por quê.",
+          "o_que_demonstra": [
+            "Piso de R² 0,3 e n de pelo menos 10 aplicado antes de desenhar a reta",
+            "Rótulo que explica a ausência da reta com o R² e o n medidos",
+            "Nuvem mantida intacta, sem resumo estatístico no lugar do gráfico"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_bolhas",
+      "nome": "Bolhas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Dispersão em que a área de cada círculo codifica uma terceira medida de magnitude. X e Y continuam sendo a leitura principal; a área é a pior lida das três e exige legenda de tamanho com círculos de referência. O ZAxis trabalha em área (px²), com domínio começando em zero e as bolhas maiores desenhadas antes. Absorve as bolhas que se movem período a período.",
+      "quando_usar": [
+        "Terceira medida de magnitude por entidade, como investimento de cada campanha sobre CPL contra taxa de qualificação.",
+        "Entre 5 e cerca de 60 bolhas no cartão, com contorno fino na cor do cartão separando vizinhas.",
+        "Narrar a evolução de posição e tamanho de poucas entidades mês a mês, com rastro da selecionada.",
+        "Mostrar onde está o dinheiro dentro de uma nuvem de eficiência."
+      ],
+      "quando_evitar": [
+        "Comparação precisa da terceira medida: o olho compara mal áreas; use barras ordenadas (família 02).",
+        "Mais de cerca de 60 bolhas: a sobreposição esconde as pequenas; use dispersão simples ou pequenos múltiplos.",
+        "Bolhas sem eixos, só para mostrar tamanho: use bolhas empacotadas (família 12).",
+        "Leitura analítica fina de mudança entre períodos: use antes e depois com setas (modelo 06).",
+        "Tamanho pelo raio: exagera as grandes; a área tem que ser proporcional ao valor."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_campanhas-por-cpl-e-qualificacao",
+          "titulo": "Campanhas por CPL, qualificação e investimento",
+          "caso_de_uso": "Campanha de CPL menor traz lead menos qualificado, e onde está o investimento? 36 campanhas fictícias do trimestre.",
+          "o_que_demonstra": [
+            "ZAxis com domain a partir de 0 e range em área para proporção honesta",
+            "Dados ordenados do maior para o menor para as pequenas ficarem por cima",
+            "Legenda de tamanho com 3 círculos de valor redondo e a mesma conta de raio",
+            "Contorno na cor do cartão separando bolhas vizinhas"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_campanhas-acima-do-teto-de-cpl",
+          "titulo": "Campanhas acima do teto de CPL",
+          "caso_de_uso": "Quais campanhas passam do teto de CPL e quanto investimento elas carregam? Três em destaque contra o teto e a meta.",
+          "o_que_demonstra": [
+            "Destaque em uma cor com rótulo em peso 700 e o restante em neutro",
+            "ReferenceLine de teto e de meta com rótulo na margem reservada",
+            "Legenda de tamanho com R$ 5 mil, R$ 20 mil e R$ 50 mil",
+            "Anotação curta com o investimento somado das campanhas acima do teto"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_plataformas-mes-a-mes-com-rastro",
+          "titulo": "Plataformas de mídia mês a mês",
+          "caso_de_uso": "Como CPL, qualificação e investimento das plataformas A, B e C andaram em 12 meses? Mês atual em bolha e rastro da selecionada.",
+          "o_que_demonstra": [
+            "Estado de período trocando os dados com a bolha casada pelo id da plataforma",
+            "Rastro dos meses anteriores da plataforma selecionada em pontos pequenos",
+            "Cor categórica por plataforma em slot fixo e legenda de tamanho comum a todos os meses",
+            "Mês exibido escrito no plano em texto discreto, sem depender da animação"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_investimento-zero-e-valores-desiguais",
+          "titulo": "Campanhas orgânicas e investimento desigual",
+          "caso_de_uso": "Como mostrar campanha sem investimento ao lado de uma que investiu 200 vezes mais sem sumir com as pequenas?",
+          "o_que_demonstra": [
+            "Campanha sem investimento em anel tracejado de tamanho mínimo, com nota escrita",
+            "Piso de área declarado na legenda quando a maior passa 200 vezes a menor",
+            "Zero medido distinto de investimento ausente, que sai do plano e vai ao rodapé"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_bolhas-em-grade-categorica",
+      "nome": "Bolhas em grade categórica",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Os dois eixos são categorias ordenadas e uma bolha centrada em cada cruzamento dá o volume pela área. É o punch card de dia por hora e o dot plot em matriz categórica. Ocupa menos tinta que o mapa de calor e deixa a cor livre para uma segunda medida. A regra que sustenta o modelo é separar zero medido, sem expediente e sem ocorrência.",
+      "quando_usar": [
+        "Volume por dia útil e hora cheia, como agendas marcadas ou respostas de lead.",
+        "Contagem por duas categorias de negócio, como motivo de perda por etapa do funil.",
+        "Matriz esparsa, em que a célula cheia do mapa de calor pesaria demais.",
+        "Tamanho para volume e cor sequencial para uma taxa da mesma célula, com as duas legendas."
+      ],
+      "quando_evitar": [
+        "Pergunta só de onde concentra, com matriz densa: use mapa de calor (família 15), que lê melhor em menos espaço.",
+        "Eixos quantitativos contínuos: use bolhas (modelo 03) ou densidade 2D (modelo 09).",
+        "Mais de cerca de 20 categorias num eixo: agrupe ou quebre em pequenos múltiplos.",
+        "Comparação precisa de valores entre células: escreva o número ou use tabela visual (família 14)."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-dia-e-hora",
+          "titulo": "Agendas marcadas por dia e hora",
+          "caso_de_uso": "Em que dia útil e hora a pré-vendas marca mais agendas? Trimestre inteiro, das 8h às 19h.",
+          "o_que_demonstra": [
+            "ScatterChart com XAxis e YAxis do tipo category e ordem de dia e hora fixa",
+            "ZAxis com domain a partir de 0 e piso de área que mantém o valor 1 visível",
+            "Legenda de tamanho com 3 referências de contagem",
+            "Todas as categorias impressas no eixo, sem rotação de texto"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_melhor-janela-de-comparecimento",
+          "titulo": "Janela com melhor comparecimento",
+          "caso_de_uso": "Qual janela de agenda tem mais comparecimento? A faixa das 10h às 12h de terça a quinta sai marcada com a taxa.",
+          "o_que_demonstra": [
+            "ReferenceArea categórica com fill de superfície rebaixada e texto que diz o que marca",
+            "Taxa de comparecimento com o volume escrito na anotação",
+            "Bolhas fora da faixa mantidas em neutro, sem apagar o contexto"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_motivo-de-perda-por-etapa",
+          "titulo": "Motivo de perda por etapa do funil",
+          "caso_de_uso": "Em que etapa cada motivo de perda aparece? 14 motivos fictícios por 6 etapas, com totais de linha e coluna nas bordas.",
+          "o_que_demonstra": [
+            "Dot plot em matriz com motivos ordenados pelo total e etapas na ordem do funil",
+            "Totais marginais em texto nas bordas, alinhados às categorias",
+            "Área proporcional à contagem com o mesmo domínio de ZAxis em toda a matriz",
+            "Cartão alto para caber todos os rótulos de motivo sem corte"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_zero-contra-sem-expediente",
+          "titulo": "Contatos da pré-vendas com expediente marcado",
+          "caso_de_uso": "Hora sem contato é zero de verdade ou fora do expediente? Sábado e horas antes das 8h viram traço, zero vira ponto mínimo.",
+          "o_que_demonstra": [
+            "Três estados: volume, zero medido em ponto mínimo anelado e sem expediente em traço",
+            "Os três estados explicados na legenda com amostra na forma da marca",
+            "Célula sem ocorrência vazia de verdade, nunca somada ao zero"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_dispersao-conectada",
+      "nome": "Dispersão conectada",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Os pontos de uma entidade são ligados por segmentos retos na ordem do tempo, e a linha desenha a trajetória nas duas medidas ao mesmo tempo. Mostra viradas que duas linhas separadas escondem, mas cobra caro do leitor: ele acompanha quatro coisas mudando juntas. Início vazado, fim cheio e rótulo de período nas pontas e nas viradas são obrigatórios.",
+      "quando_usar": [
+        "Trajetória de uma entidade em duas medidas, como CPL e taxa de qualificação de uma plataforma nos últimos 12 meses.",
+        "Mostrar o mês em que as duas medidas mudaram de direção juntas.",
+        "Uma ou duas entidades, de 6 a cerca de 24 períodos.",
+        "Público analítico que já conhece as duas medidas."
+      ],
+      "quando_evitar": [
+        "Mais de duas entidades no mesmo plano: vira espaguete; mostre uma por vez ou use pequenos múltiplos (modelo 11).",
+        "Público não técnico: duas linhas empilhadas ou indexadas no tempo (família 04) contam o mesmo com menos esforço.",
+        "Só dois momentos por entidade: use antes e depois com setas (modelo 06).",
+        "Curva suavizada: monotone inventa caminho entre meses; a ligação é sempre linear."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_trajetoria-de-uma-plataforma",
+          "titulo": "Trajetória de CPL e qualificação da plataforma A",
+          "caso_de_uso": "Como CPL e taxa de qualificação da plataforma A andaram juntos nos últimos 12 meses?",
+          "o_que_demonstra": [
+            "Scatter com line e lineJointType linear sobre dados ordenados por mês",
+            "Início em anel vazado e fim em ponto cheio com rótulo de mês",
+            "Rótulos de mês só no início, no fim e nas viradas",
+            "Domínio explícito nos dois eixos com unidade"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_virada-anotada",
+          "titulo": "A virada de público da plataforma A",
+          "caso_de_uso": "Em que mês o CPL caiu e a qualificação caiu junto? A virada recebe anotação de uma frase.",
+          "o_que_demonstra": [
+            "Anotação curta ancorada no mês da virada, com halo sobre a linha",
+            "Segmento da virada em cor de destaque e o restante da trajetória em neutro",
+            "No máximo duas anotações por visual"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_tres-plataformas-uma-em-foco",
+          "titulo": "Plataforma em foco entre as três",
+          "caso_de_uso": "Qual trajetória a plataforma escolhida fez contra as outras duas? Seletor acende uma e as demais ficam em traço neutro fino.",
+          "o_que_demonstra": [
+            "Prop highlightId escolhendo a trajetória acesa entre três",
+            "Trajetórias de contexto em traço fino neutro, sem rótulo de mês",
+            "Ordem de desenho com a trajetória acesa por último",
+            "Frase acessível que descreve a trajetória em foco"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_mes-sem-coleta",
+          "titulo": "Trajetória com mês sem coleta",
+          "caso_de_uso": "Como mostrar a trajetória quando um mês não teve coleta? A linha quebra e o mês ausente ganha nota.",
+          "o_que_demonstra": [
+            "Série dividida em duas no mês ausente, sem ligar por cima do buraco",
+            "Ponto fantasma tracejado e nota com o mês sem coleta",
+            "Mês ausente nunca interpolado nem lançado como zero"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_antes-e-depois-com-setas",
+      "nome": "Dispersão de antes e depois com setas",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Cada entidade aparece em dois momentos e uma seta liga a posição antiga à nova. Mostra quem se moveu, para onde e quanto nas duas medidas, e quem cruzou uma divisória. As setas são SVG puro sobre o plano, com a conversão de dado para pixel feita pelos mesmos domínios dos eixos, cor pela direção vinda da polaridade da métrica e recuo da ponta antes do alvo. Absorve o quadrante com trajetória.",
+      "quando_usar": [
+        "Mudança de posição de várias entidades entre dois momentos, como canais de um trimestre para o outro.",
+        "Mostrar quem saiu ou entrou numa região de meta entre dois períodos.",
+        "Até cerca de 15 setas legíveis; acima disso, filtrar para quem mudou de região ou rotular só as maiores.",
+        "Medidas em escala linear com domínio explícito e idêntico nos dois períodos."
+      ],
+      "quando_evitar": [
+        "Muitos momentos por entidade: use dispersão conectada (modelo 05).",
+        "Uma medida só entre dois momentos: use dumbbell ou slope (família 17).",
+        "Escala logarítmica ou domínio automático: a conversão para pixel deixa de bater com os eixos.",
+        "Seta sem indicação de qual ponta é o início: a leitura inverte; a legenda tem que dizer."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_canais-entre-trimestres",
+          "titulo": "Canais de um trimestre para o outro",
+          "caso_de_uso": "Como CPL e taxa de qualificação de 8 canais fictícios mudaram do T2 para o T3?",
+          "o_que_demonstra": [
+            "Geometria de seta em TypeScript com escalas lineares e domínio explícito",
+            "Origem em anel vazado e marker de ponta referenciado por id de useId",
+            "Recuo de 5 px antes do destino para a ponta não sumir sob o ponto",
+            "Legenda que diz qual ponta é o antes e qual é o depois"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_piorou-nas-duas-medidas",
+          "titulo": "Canais que pioraram nas duas medidas",
+          "caso_de_uso": "Quais canais ficaram com CPL maior e qualificação menor ao mesmo tempo? Só eles recebem cor e nome.",
+          "o_que_demonstra": [
+            "Direção boa ou ruim calculada pela polaridade de cada métrica",
+            "Setas que pioraram nas duas em cor semântica com a palavra piorou no rótulo",
+            "Demais setas em neutro, mantidas como contexto"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_origens-cruzando-a-meta",
+          "titulo": "Origens que cruzaram a meta de qualificação",
+          "caso_de_uso": "Quem saiu e quem entrou na região abaixo da meta de ago/26 para set/26? 12 origens de lead fictícias por volume e qualificação.",
+          "o_que_demonstra": [
+            "Divisória fixa na meta de qualificação, igual nos dois períodos",
+            "Só as setas que cruzaram a divisória em cor, as outras em neutro",
+            "Anotação com a contagem de quem saiu e de quem entrou na região crítica",
+            "Rótulo só nas setas acima do percentil 75 de deslocamento"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_entidade-nova-ou-encerrada",
+          "titulo": "Campanhas novas, encerradas e paradas",
+          "caso_de_uso": "Como mostrar campanha sem trimestre anterior, campanha encerrada e campanha que quase não se moveu?",
+          "o_que_demonstra": [
+            "Campanha nova como ponto com anel tracejado, sem seta, e o rótulo nova",
+            "Campanha encerrada como seta que termina num x",
+            "Seta abaixo de 12 px trocada por anel com a legenda mudança pequena",
+            "Os três casos explicados na legenda para seta ausente não virar não mudou"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_dispersao-com-barras-de-erro",
+      "nome": "Dispersão com barras de erro",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada ponto é uma estimativa e carrega um intervalo em Y, em X ou nos dois. Mostra que a taxa de quem trabalhou poucos leads é incerta e evita tratar diferença pequena como diferença real. O intervalo é calculado antes (Wilson para taxa, desvio entre semanas para média) e passado ao ErrorBar como distância a partir do ponto, nunca como limite absoluto.",
+      "quando_usar": [
+        "Taxas por entidade com volumes diferentes, como taxa de agenda por SDR com leads trabalhados no X.",
+        "Separar quem está de fato acima ou abaixo da referência do time de quem só parece estar.",
+        "Estimativas com incerteza conhecida nos dois eixos, como CPL médio e taxa de qualificação por canal.",
+        "De 4 a cerca de 25 pontos, para as barras não se cruzarem."
+      ],
+      "quando_evitar": [
+        "Incerteza desconhecida ou inventada: sem método declarado, use a dispersão simples.",
+        "Barras de erro sobre colunas: criam o viés de achar mais provável o que está dentro da barra; mantenha o ponto.",
+        "Muitos pontos com intervalos largos: vira cerca de traços; use pontos por categoria com intervalo (família 17).",
+        "Público que não sabe o que é intervalo de confiança: escreva o volume junto da taxa."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_taxa-de-agenda-por-sdr",
+          "titulo": "Taxa de agenda por SDR com intervalo",
+          "caso_de_uso": "A taxa de agenda de cada SDR é confiável para o volume que trabalhou? Leads no X e taxa com intervalo de 95% no Y.",
+          "o_que_demonstra": [
+            "Intervalo de Wilson calculado em TypeScript e assimétrico perto de 0% e 100%",
+            "ErrorBar direction y com dataKey em par de distâncias a partir do ponto",
+            "Serifas curtas e traço em tom de texto discreto",
+            "Subtítulo com o tipo de intervalo desenhado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_sdrs-diferentes-do-time",
+          "titulo": "SDRs que se distinguem do time",
+          "caso_de_uso": "Quais SDRs têm taxa de agenda realmente diferente da do time? Só quem tem intervalo que não cruza a linha recebe cor.",
+          "o_que_demonstra": [
+            "ReferenceLine horizontal da taxa do time com rótulo na margem",
+            "Destaque calculado pelo intervalo que não cruza a referência, não pelo ponto",
+            "Rótulo com a taxa e o volume nos destacados"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_canais-com-erro-nos-dois-eixos",
+          "titulo": "Canais com incerteza em CPL e qualificação",
+          "caso_de_uso": "Qual canal é mais barato e mais qualificado quando a incerteza entra na conta? 8 canais com erro nos dois eixos.",
+          "o_que_demonstra": [
+            "Dois ErrorBar no mesmo Scatter, direction x e direction y",
+            "CPL médio com desvio entre semanas e taxa com Wilson, cada um declarado",
+            "Nome do canal em rótulo direto em vez de legenda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_amostra-minima",
+          "titulo": "Canal com amostra insuficiente",
+          "caso_de_uso": "Como mostrar canal com 3 leads, cujo intervalo vai de quase 0 a 100%, sem dar peso a ele?",
+          "o_que_demonstra": [
+            "Piso de volume abaixo do qual o ponto vira vazado e as barras somem",
+            "Texto amostra insuficiente com o volume escrito junto do ponto",
+            "Domínio do eixo calculado sem o intervalo do ponto sem amostra"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_dispersao-com-marginais",
+      "nome": "Dispersão com distribuições marginais",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "O plano de dispersão ganha um histograma de X no topo e um de Y à direita, com os mesmos domínios e as margens alinhadas ao pixel. Responde ao mesmo tempo como as duas medidas se relacionam e como cada uma se distribui, o que revela a forma que a nuvem sobreposta esconde e se um corte caiu num vale ou num pico. Absorve o quadrante com marginais.",
+      "quando_usar": [
+        "Ver relação e forma de cada medida juntas, como ticket contra ciclo com a cauda longa do ticket.",
+        "Nuvem densa de 500 a cerca de 3.000 pontos, em que os marginais mostram o que a sobreposição esconde.",
+        "Conferir se a divisória de um quadrante cai no pico da distribuição.",
+        "Cartão com pelo menos 520 px de largura e altura parecida."
+      ],
+      "quando_evitar": [
+        "Cartão pequeno ou estreito: abaixo de 520 px desligue as marginais e fique com a dispersão simples.",
+        "Pergunta só sobre a distribuição de uma medida: use histograma (família 16).",
+        "Histogramas com domínio ou margens diferentes do plano: as barras deixam de corresponder aos pontos.",
+        "Nuvem enorme sem forma: use densidade 2D (modelo 09)."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-contra-ciclo-com-histogramas",
+          "titulo": "Ticket contra ciclo com as duas distribuições",
+          "caso_de_uso": "Como ticket e ciclo das oportunidades ganhas se distribuem e se relacionam? Histograma de cada medida nas bordas.",
+          "o_que_demonstra": [
+            "Grade de 2 por 2 em Tailwind com ScatterChart e dois BarChart",
+            "Bins calculados em TypeScript sobre o mesmo domínio do plano",
+            "Margens e largura de eixo numa constante única para alinhar ao pixel",
+            "Canto vazio com o número de oportunidades"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_corte-no-pico-da-distribuicao",
+          "titulo": "Corte de CPL no pico da distribuição",
+          "caso_de_uso": "O corte de CPL do quadrante cai num vale ou no pico? 48 campanhas, com o bin do corte destacado no marginal.",
+          "o_que_demonstra": [
+            "Divisória repetida no plano e nas duas faixas, que são gráficos independentes",
+            "Bin que contém o corte em cor de destaque e os demais em neutro",
+            "Nota com quantas campanhas estão a menos de 10% do corte",
+            "Número de bins fixo e declarado no rodapé"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_leads-com-tempo-em-escala-log",
+          "titulo": "Leads por tempo de contato e tentativas",
+          "caso_de_uso": "Que forma tem a massa de 2.000 leads que a nuvem esconde? Minutos até o contato em log e tentativas, com marginais.",
+          "o_que_demonstra": [
+            "Eixo X em escala log com os bins do marginal também em log",
+            "Pontos com opacidade 0,25 e raio pequeno para volume alto",
+            "Marginal mostrando a moda que a sobreposição apaga"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_cauda-longa-recolhida",
+          "titulo": "Ciclo com cauda longa recolhida",
+          "caso_de_uso": "Como não deixar poucas oportunidades de ciclo enorme achatarem o resto? Valores acima do P99 recolhidos na borda.",
+          "o_que_demonstra": [
+            "Barra final acima de com a contagem dos valores além do P99 no marginal",
+            "Marcador na borda do plano para os pontos recolhidos, sem esticar o domínio",
+            "Frase acessível que cita quantos pontos foram recolhidos"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "09_densidade-2d",
+      "nome": "Densidade 2D (binada, hexbin, contorno)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Quando os pontos são tantos que a nuvem vira mancha, o plano é dividido em células (grade regular ou hexágonos) e cada uma mostra a contagem por cor sequencial ou por área; o contorno troca as células por curvas de nível. A identidade do ponto se perde e sobra a massa por região. Geometria e contagem são calculadas em TypeScript; célula vazia não é desenhada. Absorve o quadrante denso.",
+      "quando_usar": [
+        "Milhares de pontos, acima de cerca de 3.000, com a pergunta de onde se concentram.",
+        "Leads por fit e engajamento, sessões do site por tempo e páginas vistas, interações de marketing.",
+        "Quadrante com centenas ou milhares de itens, com contagem por região e divisória na borda de bin.",
+        "Contorno só quando a leitura de picos é essencial e a amostra passa de 500 pontos."
+      ],
+      "quando_evitar": [
+        "Poucas centenas de pontos: use a dispersão simples com opacidade (modelo 01).",
+        "Leitor precisa achar um ponto específico: a célula esconde a identidade; use lista ao lado ou busca.",
+        "Grade com eixos categóricos: use mapa de calor (família 15).",
+        "Grade ou largura de banda que mudam entre filtros: a comparação deixa de valer; guarde as bordas no registry."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-binados-por-fit-e-engajamento",
+          "titulo": "Leads por fit e engajamento em grade",
+          "caso_de_uso": "Onde se concentram os 4.200 leads do semestre quando fit e engajamento viram 10 faixas cada?",
+          "o_que_demonstra": [
+            "Binagem em grade regular calculada em TypeScript com bordas fixas",
+            "Círculo por célula com área proporcional à contagem e piso visual declarado",
+            "Célula vazia sem círculo e legenda de tamanho em contagem"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_hexbin-com-sdr-em-destaque",
+          "titulo": "Hexbin do time com um SDR por cima",
+          "caso_de_uso": "Os leads de um SDR caem onde está a massa do time? Hexágonos do time em escala sequencial e pontos do SDR por cima.",
+          "o_que_demonstra": [
+            "Binagem hexagonal em pixels com vértices calculados por ângulo",
+            "Escala sequencial com legenda em contagem e contorno fino nos hexágonos",
+            "Pontos do SDR selecionado em cor de destaque sobre a camada de densidade",
+            "Hexágono vazio não desenhado, distinto de contagem baixa"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_quadrante-denso-de-sessoes",
+          "titulo": "Sessões do site por tempo e páginas vistas",
+          "caso_de_uso": "Quanto das 9.100 sessões do mês cai em cada região de engajamento? Bins de 24 por 16 com contagem por região.",
+          "o_que_demonstra": [
+            "Divisórias alinhadas à borda de bin para o corte não partir células",
+            "Rampa sequencial discreta de 5 degraus com legenda do que cada tom representa",
+            "Contagem e participação escritas em cada região",
+            "Frase acessível com a região de maior massa"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_concentracao-extrema-por-quantis",
+          "titulo": "Interações com um hexágono dominante",
+          "caso_de_uso": "Como ler a densidade quando um hexágono concentra metade das 40 mil interações? Escala por quantis e rótulo no dominante.",
+          "o_que_demonstra": [
+            "Escala de cor por quantis para o maior bin não saturar o resto",
+            "Contagem escrita no hexágono dominante",
+            "Legenda que declara que os degraus são quantis e não faixas iguais"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "10_matriz-de-dispersao",
+      "nome": "Matriz de dispersão",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Grade com uma dispersão pequena para cada par de medidas e a distribuição de cada medida na diagonal. Serve para explorar de uma vez as relações entre 3 a 5 medidas e escolher qual par merece um gráfico grande. Cada coluna usa o mesmo domínio de X em todas as linhas e cada linha o mesmo de Y; células sem animação, sem dica e com rótulo de eixo só na borda.",
+      "quando_usar": [
+        "Explorar pares entre 3 a 5 medidas de campanha, de SDR ou de oportunidade.",
+        "Escolher qual relação abrir em tamanho grande antes de montar o cartão definitivo.",
+        "Seleção fixa de um grupo destacada nas mesmas entidades em todas as células.",
+        "Até cerca de 300 entidades por célula."
+      ],
+      "quando_evitar": [
+        "Apresentação para diretoria: é visual de exploração; mostre só o par que importa (modelo 01 ou 02).",
+        "Mais de 5 medidas: são 20 ou mais gráficos; use correlograma com cor pela correlação (família 15).",
+        "Domínios diferentes por célula: a comparação entre células mente.",
+        "Cartão pequeno: cada célula precisa de pelo menos cerca de 90 px de lado."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_quatro-medidas-de-campanha",
+          "titulo": "Quatro medidas de campanha em pares",
+          "caso_de_uso": "Entre investimento, CPL, CTR e taxa de qualificação, quais pares de medidas andam juntos em 64 campanhas?",
+          "o_que_demonstra": [
+            "Grade de 4 por 4 em Tailwind com um ScatterChart pequeno por célula",
+            "Domínio compartilhado por coluna e por linha, calculado sobre o conjunto",
+            "Histograma de cada medida na diagonal",
+            "Rótulos de medida só na borda e células sem animação nem dica"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_plataforma-destacada-em-todas-as-celulas",
+          "titulo": "Campanhas da plataforma B em todos os pares",
+          "caso_de_uso": "As campanhas da plataforma B ficam no mesmo lugar em todos os pares? Seleção fixa acesa em todas as células.",
+          "o_que_demonstra": [
+            "Estado de seleção por id compartilhado entre as células",
+            "Selecionadas em cor de destaque por cima e restante em neutro",
+            "Contagem de selecionadas escrita acima da grade"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_cinco-medidas-da-pre-vendas",
+          "titulo": "Cinco medidas da pré-vendas por SDR e semana",
+          "caso_de_uso": "Fila, tentativas, tempo de contato, agendas e SLA se relacionam como? 240 registros de SDR por semana, só o triângulo inferior.",
+          "o_que_demonstra": [
+            "Triângulo inferior da matriz para cortar os pares repetidos de 20 para 10",
+            "Ponto pequeno com opacidade baixa para 240 registros por célula",
+            "Eixo de tempo em escala log aplicado igual em linha e coluna"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_medida-com-muitos-ausentes",
+          "titulo": "Pares com CTR ausente em parte das campanhas",
+          "caso_de_uso": "Como ler os pares quando 30% das campanhas não têm CTR registrado? Cada célula escreve o seu n.",
+          "o_que_demonstra": [
+            "Contagem de pontos exibidos no canto de cada célula",
+            "Registro sem a medida fora só das células que dependem dela",
+            "Nota que diz quantas campanhas não têm CTR, sem lançar zero"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "11_pequenos-multiplos-de-dispersao",
+      "nome": "Pequenos múltiplos de dispersão",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "A mesma dispersão repetida por grupo em painéis do mesmo tamanho, com domínio e cortes idênticos, lado a lado. Resolve a comparação entre grupos sem empilhar nuvens no mesmo plano e responde se a relação ou a massa por região muda entre executivos, regiões, plataformas ou trimestres. O domínio compartilhado é a regra que dá sentido ao modelo. Absorve os pequenos múltiplos de quadrantes.",
+      "quando_usar": [
+        "A mesma relação em 4 a 12 grupos, como ticket contra ciclo por executivo.",
+        "Mais de 5 grupos, que não cabem com cor e forma no mesmo plano.",
+        "Quadrante repetido por plataforma ou trimestre com os mesmos cortes e contagem por região no título.",
+        "Grupos com pelo menos cerca de 10 pontos por painel."
+      ],
+      "quando_evitar": [
+        "Poucos pontos por painel: a comparação vira anedota; use pontos por categoria (família 17).",
+        "Até 5 grupos com nuvens que não se cobrem: use a dispersão simples por categoria (modelo 01).",
+        "Domínio próprio por painel: a mesma posição passa a significar valores diferentes.",
+        "Tela estreita em uma coluna só: mantenha pelo menos duas colunas e role."
+      ],
+      "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-contra-ciclo-por-executivo",
+          "titulo": "Ticket contra ciclo por executivo",
+          "caso_de_uso": "A relação entre ticket e ciclo muda de um executivo para outro? Oito painéis fictícios com os mesmos eixos.",
+          "o_que_demonstra": [
+            "Grade responsiva em Tailwind com um ScatterChart por painel",
+            "Domínio único calculado sobre o conjunto inteiro",
+            "Eixos numéricos só na borda externa da grade",
+            "Mediana do grupo como referência dentro de cada painel"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_time-inteiro-ao-fundo",
+          "titulo": "Cada executivo contra a nuvem do time",
+          "caso_de_uso": "Onde as oportunidades de cada executivo ficam dentro da nuvem do time inteiro? Time em neutro atrás de cada painel.",
+          "o_que_demonstra": [
+            "Nuvem do time em neutro desenhada antes em todos os painéis",
+            "Pontos do executivo do painel em cor de destaque por cima",
+            "Título do painel com nome e número de oportunidades"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_doze-regioes-ordenadas-pela-mediana",
+          "titulo": "Doze regiões comerciais pela mediana do ciclo",
+          "caso_de_uso": "Quais das 12 regiões comerciais fictícias fecham mais rápido para o mesmo ticket? Painéis ordenados pela mediana do ciclo.",
+          "o_que_demonstra": [
+            "Ordem dos painéis por medida, não alfabética",
+            "Doze painéis em grade de 3 colunas com rótulo de eixo só na borda",
+            "Mediana do ciclo escrita no título de cada painel"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_quadrantes-por-trimestre-com-painel-vazio",
+          "titulo": "Quadrantes de executivos por trimestre",
+          "caso_de_uso": "Como a massa por quadrante mudou em seis trimestres, se um tem 2 executivos e outro não tem oportunidades?",
+          "o_que_demonstra": [
+            "Mesmos cortes em todos os painéis e contagem por região no título",
+            "Painel com 2 pontos mantém o tamanho e ganha a nota amostra pequena",
+            "Painel sem dado mantém a moldura com o texto sem oportunidades no período",
+            "Meta que mudou no trimestre escrita no título do painel afetado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

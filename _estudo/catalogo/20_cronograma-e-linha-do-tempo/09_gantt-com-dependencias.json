@@ -1,0 +1,72 @@
+{
+  "slug": "09_gantt-com-dependencias",
+  "nome": "Gantt com dependências e caminho crítico",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Gantt em que conectores em cotovelo ligam o fim de uma tarefa ao início da sucessora e o caminho crítico, a sequência sem folga que define o prazo final, ganha destaque. É SVG puro: escalaTempo e escalaBanda em TypeScript, barras como rect com altura de linha fixa e conectores como path M H V H com ponta de seta. O caminho crítico é calculado antes do render por ordenação topológica e datas cedo e tarde de cada tarefa; ciclo no grafo é erro de dado, listado fora do gráfico e nunca desenhado. Acima de uns 25 conectores a peça vira teia, então só os da tarefa em foco aparecem.",
+  "quando_usar": [
+    "De 5 a cerca de 25 tarefas cujo encadeamento define a data final",
+    "Responder o que atrasa o fim se atrasar, e quanta folga tem cada tarefa",
+    "Planos de implantação de canal, contratação ou preparação de meta com passagens entre áreas",
+    "Mostrar tarefas paralelas e tempo ocioso aproveitável entre dependências"
+  ],
+  "quando_evitar": [
+    "Tarefas independentes entre si: use o Gantt (20/01)",
+    "Centenas de tarefas: agrupe em fases no Gantt hierárquico (20/01) e mostre dependências só em foco",
+    "Não há datas firmes: use o roadmap por horizonte (20/07)",
+    "Relação entre etapas sem tempo: use fluxo (família 11) ou rede e relações (família 27)",
+    "Só os pontos de controle importam: use a linha do tempo de marcos (20/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_plano-de-implantacao-de-canal",
+      "titulo": "Plano de implantação de um canal",
+      "caso_de_uso": "Marketing: como 7 tarefas fictícias de implantação de um canal de mídia dependem umas das outras entre 2026-10-05 e 2026-11-27.",
+      "o_que_demonstra": [
+        "escalaTempo e escalaBanda em TypeScript com altura de linha fixa",
+        "Conector em cotovelo path M H V H saindo do fim e entrando no início",
+        "Ponta de seta por marker cujo id vem de useId",
+        "Ticks semanais na segunda-feira gerados por Date.UTC",
+        "Linha de hoje vinda do dado e viewBox fixo com vectorEffect non-scaling-stroke"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_caminho-critico-com-folga",
+      "titulo": "Caminho crítico e folga das tarefas",
+      "caso_de_uso": "Marketing: quais 4 das 7 tarefas definem a data de entrada no ar e quantos dias de folga têm as demais.",
+      "o_que_demonstra": [
+        "Ordenação topológica e datas cedo e tarde calculadas antes do render",
+        "Tarefas de folga zero em var(--chart-1) e demais em var(--line-strong)",
+        "Folga como trilho tracejado depois da barra, com os dias escritos",
+        "Conectores do caminho crítico mais grossos e legenda textual caminho crítico"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_esteira-da-meta-2027",
+      "titulo": "Esteira de preparação da meta 2027",
+      "caso_de_uso": "Diretoria: 18 tarefas fictícias de dados, pré-vendas e mídia que precisam fechar antes da janela de leitura de 2026-12-14.",
+      "o_que_demonstra": [
+        "18 linhas agrupadas por frente, com rótulo de grupo e separador",
+        "Conectores ocultos por padrão e mostrados só para a tarefa em foco vinda por prop",
+        "Predecessoras e sucessoras da tarefa em foco realçadas e o resto rebaixado",
+        "Faixa sombreada de baixa opacidade na janela de 2026-12-14 a 2027-01-13",
+        "aria-label calculado com tarefas críticas e data final prevista por formatDate"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_dependencia-inconsistente-e-ciclo",
+      "titulo": "Dependências inconsistentes e ciclo",
+      "caso_de_uso": "Pré-vendas: plano com sucessora que começa antes da predecessora terminar e um ciclo entre duas tarefas.",
+      "o_que_demonstra": [
+        "Sucessora sobreposta com cotovelo contornando pela esquerda, sem cruzar a barra",
+        "Conector inconsistente tracejado em var(--negative) com aviso escrito",
+        "Ciclo A → B → A detectado e listado fora do gráfico, sem desenhar a volta",
+        "Caminho crítico indisponível enquanto houver ciclo, com formatUnavailable"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

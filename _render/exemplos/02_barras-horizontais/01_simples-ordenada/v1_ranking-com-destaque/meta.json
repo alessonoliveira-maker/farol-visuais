@@ -1,0 +1,12 @@
+{
+  "title": "Receita nova por executivo no trimestre",
+  "useCase": "Mostrar a posição de uma pessoa no ranking do trimestre sem perder a escala do time inteiro.",
+  "demonstrates": [
+    "Uma cor de destaque e o resto em neutro, com o valor escrito em toda barra",
+    "Linha de leitura calculada do dado: posição e distância para o líder",
+    "Média do time como linha de referência anotada",
+    "Recharts nativo com layout vertical, ordenação no componente e estado vazio"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

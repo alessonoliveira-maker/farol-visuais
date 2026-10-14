@@ -1,0 +1,12 @@
+{
+  "title": "Entradas semanais contra o teto de capacidade",
+  "useCase": "Quanto a entrada de oportunidades passou do teto de capacidade da pré-vendas em cada semana?",
+  "demonstrates": [
+    "Dado dividido em TypeScript em dentro do teto e excedente, empilhados no mesmo stackId",
+    "Só o excedente em negative, com rótulo +N escrito onde ele é maior que zero",
+    "Dica com o valor original e o excedente, não com as duas séries técnicas",
+    "Resumo de quantas semanas estouraram o teto calculado do dado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

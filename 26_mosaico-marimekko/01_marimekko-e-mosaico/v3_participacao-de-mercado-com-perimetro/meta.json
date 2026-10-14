@@ -1,0 +1,18 @@
+{
+  "title": "Participação de mercado por segmento",
+  "useCase": "Diretoria, 2026: qual a nossa fatia em cada segmento e quanto cada segmento pesa no perímetro de mercado declarado?",
+  "demonstrates": [
+    "Subtítulo obrigatório com o perímetro: 4 segmentos, base pública fictícia, 2026",
+    "Etiqueta de procedência em --prov-premissa junto ao total do perímetro",
+    "Nós na base em --chart-1; concorrente A, concorrente B e demais em neutros",
+    "Segmento de 0,5% com 4 px de largura ganha rótulo escalonado com linha conectora",
+    "Seletor que troca as colunas de segmento para região, com a ordem das partes fixa",
+    "Tabela cruzada equivalente em details, com o SVG em aria-hidden"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 500
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset largo do catálogo deixa 281,5 px de corpo, e a conta pede 381. São 32 do subtítulo do perímetro com o seletor, 28 da legenda com valor, 24 da lista de identificação, 24 da tabela fechada e 273 do SVG: 2 de margem, 199 de ladrilhos e 72 de eixo (vão de 8, nome, receita e participação a 14 px, 4 de respiro e 16 da linha escalonada, 2 de folga); 381 mais 118,5 de moldura dá 499,5, arredondado para 500. O viewBox de 894 por 273 é o tamanho da caixa, escala 1 (GEO-18). A etiqueta PREMISSA é a procedência de um número de dentro do gráfico, o total do perímetro, e não a do cartão, que segue com o VisualCard (ANO-6); é o mesmo uso de 25/04 v3 e 12/05. Três neutros para os competidores sem destaque: --text-muted cheio, --line-strong cheio e poço --surface-sunken com contorno, que se separam nos dois temas; o poço não é hachura, que neste modelo quer dizer dado ausente. A participação da coluna sai com uma casa porque com percentual inteiro o segmento de 0,5% leria 0% ou 1% (precisão da ROT-10); a fatia dentro da coluna segue inteira pelo maior resto (NUM-2). O marcador externo do catálogo é o rótulo escalonado da GEO-7, e os quatro ladrilhos dessa coluna entram na lista de identificação (ROT-10). A tabela só entra na árvore com o details aberto, então fechada não ocupa altura; aberta ela cresce o cartão, e quem cola reserva a altura. A largura calculada da coluna de 0,5% é 4,4 px, não os 3 px do catálogo: o número sai da proporção, sem piso. Medido no preview, ladrilho a ladrilho: a participação em área bate com a participação em valor, com desvio de 0,000 p.p. O aviso de CONTRASTE-MARCA que o check deixa é o --line-strong (1,8:1) como neutro de dado da 17.2: no ladrilho ele leva o valor escrito, e na amostra da legenda o valor fica ao lado. O ladrilho da parte destacada leva o nome junto do percentual: --chart-1 contra --text-muted mede 1,12:1 no claro, então o destaque não mora só na cor (TOK-9)."
+}

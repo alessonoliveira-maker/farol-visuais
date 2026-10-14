@@ -1,0 +1,15 @@
+{
+  "title": "Leads contatados em até 30 minutos",
+  "useCase": "Que percentual dos leads do mês recebe o primeiro contato dentro do SLA?",
+  "demonstrates": [
+    "Função ecdf com empates colapsados num ponto por valor distinto",
+    "Line stepAfter com o salto no próprio valor e ponto desligado",
+    "Par de guias no limiar e no percentual, com o rótulo no cruzamento",
+    "Sentido até escrito acima do gráfico, porque a curva invertida seria idêntica",
+    "Marcas do eixo em 0, 25, 50, 75 e 100 por cento",
+    "Leads ainda sem contato fora da curva e contados no rodapé"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A ECDF é o único modelo da família sem parâmetro nenhum: sem bin, sem banda, sem suavização, o que torna duas curvas feitas por pessoas diferentes sobre o mesmo dado idênticas. O custo é de familiaridade, e o par de guias rotulado existe justamente para pagar esse custo, traduzindo a curva inteira numa frase. Empates são colapsados num ponto por valor distinto: gravar um ponto por observação empilharia degraus de altura zero no mesmo x e engordaria o SVG sem mudar a tela. O domínio do eixo vai até o maior valor observado, arredondado em passo de 60 minutos; cortar a cauda esconderia justamente os casos que o SLA deveria pegar."
+}

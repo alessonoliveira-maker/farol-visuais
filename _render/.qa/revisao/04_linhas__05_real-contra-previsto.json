@@ -1,0 +1,108 @@
+{
+  "familia": "04_linhas",
+  "modelo": "05_real-contra-previsto",
+  "versoes": {
+    "v1_receita-real-e-projetada": {
+      "veredito": "aprovado",
+      "nota": "Sólido até o corte e tracejado na projeção, eixo no zero, halo separando o rótulo da linha de hoje; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:15.367Z",
+      "impressao": "ff401d90e16392a7e16c1ce328b9a17022ae9ace",
+      "arquivos": {
+        "Chart.tsx": "59b50d381c2325271a9f680e7f781929f7af97ab",
+        "data.ts": "9aee8e2474fc12515adb44cc74d5b9393eaabfa4",
+        "meta.json": "a2d4355716496939b5e53c0af195a0cc663970ac"
+      }
+    },
+    "v2_forecast-de-fechamentos-com-data-de-corte": {
+      "veredito": "aprovado",
+      "nota": "Corte com formatDate, contagem inteira no eixo e soma projetada que confere com o dado; ressalva só no método declarado contra a série.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:23.254Z",
+      "impressao": "d97c5985f2f3723d74d34c8905a99a0d3ef9970b",
+      "arquivos": {
+        "Chart.tsx": "4efa5a7e796613c050ae6cdbfe65aec2604d26a9",
+        "data.ts": "0506ec1a06c31616b9ed735c3919aad8ef797006",
+        "meta.json": "89a4ad6777ab76f3bfaefe20bd9b533c0b2a1e38"
+      }
+    },
+    "v3_tres-cenarios-de-receita": {
+      "veredito": "aprovado",
+      "nota": "Três tracejados do mesmo ponto medido, base em chart-1 e extremos em neutro com valor escrito ao lado; taxas do texto batem com o dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:27.712Z",
+      "impressao": "a9a61fde621faa40e37101c23465d8cede846ba6",
+      "arquivos": {
+        "Chart.tsx": "6378076c96cccbf0bc109808ac212d05d012de7a",
+        "data.ts": "08560e833003a2473c7b0d03748749542e6c1351",
+        "meta.json": "a20938e97c46cb208542eb0eaeb219d4f2b13a99"
+      }
+    },
+    "v4_fila-projetada-cruzando-o-teto": {
+      "veredito": "aprovado",
+      "nota": "Cruzamento em 07/10/2026 confere com a interpolação entre 49 e 52; teto com extendDomain e duas anotações; tique de 12/10 some, sem bloquear.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:32.116Z",
+      "impressao": "84504d272d7b2de1875cbdb18c940890bd1a9c3e",
+      "arquivos": {
+        "Chart.tsx": "a38d2f1adb70d02fe3197e3c143d0caa970d5e5f",
+        "data.ts": "8099eb8ba75f7a7983502f0be3fad24cce406b7e",
+        "meta.json": "dd4e6366694b579c8378168393db4e9c504706c9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-real-e-projetada",
+      "veredito": "aprovado",
+      "nota": "Sólido até o corte e tracejado na projeção, eixo no zero, halo separando o rótulo da linha de hoje; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:15.367Z",
+      "impressao": "ff401d90e16392a7e16c1ce328b9a17022ae9ace",
+      "arquivos": {
+        "Chart.tsx": "59b50d381c2325271a9f680e7f781929f7af97ab",
+        "data.ts": "9aee8e2474fc12515adb44cc74d5b9393eaabfa4",
+        "meta.json": "a2d4355716496939b5e53c0af195a0cc663970ac"
+      }
+    },
+    {
+      "versao": "v2_forecast-de-fechamentos-com-data-de-corte",
+      "veredito": "aprovado",
+      "nota": "Corte com formatDate, contagem inteira no eixo e soma projetada que confere com o dado; ressalva só no método declarado contra a série.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:23.254Z",
+      "impressao": "d97c5985f2f3723d74d34c8905a99a0d3ef9970b",
+      "arquivos": {
+        "Chart.tsx": "4efa5a7e796613c050ae6cdbfe65aec2604d26a9",
+        "data.ts": "0506ec1a06c31616b9ed735c3919aad8ef797006",
+        "meta.json": "89a4ad6777ab76f3bfaefe20bd9b533c0b2a1e38"
+      }
+    },
+    {
+      "versao": "v3_tres-cenarios-de-receita",
+      "veredito": "aprovado",
+      "nota": "Três tracejados do mesmo ponto medido, base em chart-1 e extremos em neutro com valor escrito ao lado; taxas do texto batem com o dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:27.712Z",
+      "impressao": "a9a61fde621faa40e37101c23465d8cede846ba6",
+      "arquivos": {
+        "Chart.tsx": "6378076c96cccbf0bc109808ac212d05d012de7a",
+        "data.ts": "08560e833003a2473c7b0d03748749542e6c1351",
+        "meta.json": "a20938e97c46cb208542eb0eaeb219d4f2b13a99"
+      }
+    },
+    {
+      "versao": "v4_fila-projetada-cruzando-o-teto",
+      "veredito": "aprovado",
+      "nota": "Cruzamento em 07/10/2026 confere com a interpolação entre 49 e 52; teto com extendDomain e duas anotações; tique de 12/10 some, sem bloquear.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:32.116Z",
+      "impressao": "84504d272d7b2de1875cbdb18c940890bd1a9c3e",
+      "arquivos": {
+        "Chart.tsx": "a38d2f1adb70d02fe3197e3c143d0caa970d5e5f",
+        "data.ts": "8099eb8ba75f7a7983502f0be3fad24cce406b7e",
+        "meta.json": "dd4e6366694b579c8378168393db4e9c504706c9"
+      }
+    }
+  ]
+}

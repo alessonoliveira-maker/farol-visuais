@@ -1,0 +1,12 @@
+{
+  "title": "Tempo de primeiro contato com faixa aceitável",
+  "useCase": "Pré-vendas: quais filas saíram da faixa de 0 a 15 minutos de primeiro contato nas últimas 8 semanas.",
+  "demonstrates": [
+    "Escala fixa comum a todas as linhas, com a faixa normal sombreada em surface-sunken",
+    "Pontos fora da faixa em warning, com a contagem de semanas fora escrita ao lado",
+    "Cabeçalho que diz a escala e o que a faixa marca",
+    "Minutos por formatDecimal com a unidade na coluna do valor atual"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

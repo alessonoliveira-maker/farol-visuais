@@ -1,0 +1,14 @@
+{
+  "title": "Ciclo contra ticket, Produto A e Produto B",
+  "useCase": "Os dois produtos têm a mesma relação entre ticket e ciclo? Faixa de 95% da média da reta, não de predição.",
+  "demonstrates": [
+    "Area de faixa com dataKey em par baixo e alto, numa grade de 30 valores de X",
+    "Faixa da média declarada no rodapé, distinta do intervalo de predição",
+    "Duas faixas a 0,15 cuja sobreposição mostra até onde os produtos não se distinguem",
+    "Valor de t pela amostra, por grau de liberdade, quando n fica abaixo de 30",
+    "Contorno opaco e revestimento na cor do cartão onde as duas faixas se cruzam"
+  ],
+  "canvas": { "width": 960, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: além do plano o cartão escreve a legenda de 12 px com inclinação, R² e n de cada produto e o rodapé de 11 px com a natureza da faixa e o limite da sobreposição, cerca de 50 px, que sobre os 400 px do preset deixariam o plano com pouco mais de 200 px para duas faixas e 46 pontos. Colisão resolvida em favor do contrato: a especificação da versão pede opacidade 0,15 nas faixas e a ACE-5 cobra 3:1 de marca. A faixa a 0,15 mede 1,38:1 no escuro e 1,25:1 no claro contra o cartão, muito abaixo do piso, então a opacidade fica (é ela que torna a sobreposição legível, que é o assunto da versão) e o contraste passa a viver no que carrega a relação: reta opaca em chart-1 com 9,50:1 no escuro e 6,00:1 no claro, em chart-3 com 6,47:1 e 6,18:1, os mesmos números do contorno da faixa e dos pontos. Pela TOK-4 o contorno leva revestimento de surface-raised por baixo, porque chart-1 contra chart-3 mede 1,47:1 no escuro e 1,03:1 no claro e os dois contornos se fundiriam onde se cruzam. A grade sai nos dois sentidos, como a exceção da EIX-3 medida em 2026-09-19 torna obrigatório nas famílias 09, 16, 17 e 25, e o axisLine do AXIS_PROPS é desligado explicitamente, que é a outra metade da mesma exceção. Sem dica, de propósito: a dica de um combinado é por eixo e abriria seis séries de duas grandezas na mesma caixa."
+}

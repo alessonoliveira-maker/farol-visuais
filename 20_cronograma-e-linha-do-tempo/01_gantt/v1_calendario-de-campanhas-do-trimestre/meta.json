@@ -1,0 +1,14 @@
+{
+  "title": "Calendário de campanhas do trimestre",
+  "useCase": "Quais das 8 campanhas ficam no ar entre outubro e dezembro de 2026 e quais correm em paralelo.",
+  "demonstrates": [
+    "BarChart vertical com Bar em tupla de início e fim e YAxis de categoria",
+    "Ticks mensais gerados em TypeScript por Date.UTC e formatados com formatMonthShort",
+    "ReferenceLine de hoje vinda do dado, com rótulo curto no topo",
+    "ReferenceArea em surface-sunken para a janela de congelamento",
+    "Cor fixa por plataforma em var(--chart-N), com rótulo direto no lugar de legenda"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvios do catálogo: a faixa de congelamento usa fill var(--surface-sunken) opaco e não opacidade baixa, porque o contrato manda assim (ANO-4, ACE-5). A barra é uma tupla [início, fim] sem série transparente de deslocamento; o fim é exclusivo (último dia no ar mais um dia) para o dia final ocupar a largura inteira. Sem dica: início, duração e plataforma já estão escritos na linha e a grade mensal dá as datas (DIC-1)."
+}

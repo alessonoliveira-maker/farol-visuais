@@ -1,0 +1,13 @@
+{
+  "title": "Ciclo por executivo em faixas de densidade",
+  "useCase": "Como comparar a forma do ciclo de 12 executivos num espaço onde caberiam só três curvas?",
+  "demonstrates": [
+    "Tiras em SVG com um rect por célula da grade e cor sequencial por token",
+    "Legenda da escala e nota: cor é densidade dentro do grupo, não volume",
+    "Mediana como corte vazado sobre cada tira e n ao lado do nome",
+    "Tira com n abaixo de 15 hachurada e rotulada amostra pequena"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "A mediana é um corte de 2 px na cor do cartão (surface-raised) e não um traço claro: sobre seq-7 o texto primário mede 1,44:1 no tema que reprova primeiro, e o corte vazado é o par aprovado (8,29:1). Os três degraus de cor são seq-5 a seq-7: seq-4 e os de baixo da rampa medem até 2,60 contra o cartão e não se separam dele (TOK-8), e a célula com menos de 5% do pico da tira fica vazia. O piso de 15 negócios para hachurar a tira é o do catálogo; a v4 deste modelo usa o piso de 30 para a curva suavizada, e as duas pedem coisas diferentes: aqui a tira só recusa estimar forma de amostra minúscula. A banda é a de Silverman sobre a amostra reunida, comum a todas as tiras. As tiras vão por mediana crescente, o ciclo mais rápido primeiro, e as de amostra pequena fecham a lista. O SVG usa viewBox 574 por altura calculada, na largura do corpo do preset alto, para o texto de 11 px sair em tamanho real."
+}

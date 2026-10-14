@@ -1,0 +1,14 @@
+{
+  "title": "Plano e realizado espelhados",
+  "useCase": "Onde o realizado de 2026-T3 ficou longe do plano: quais passos explicam os R$ 108 mil a menos no fim?",
+  "demonstrates": [
+    "Eixo central com os nomes dos passos e barras para os dois lados",
+    "Sinal escrito dos dois lados para a distância ao centro não enganar",
+    "Tira de variância em valor e percentual, com polaridade por passo",
+    "Cancelamento acima do plano pintado como piora",
+    "Plano em contorno e realizado cheio, na mesma escala"
+  ],
+  "canvas": { "width": 960, "height": 460 },
+  "frame": "card",
+  "notes": "Desvio de preset (largo 960x400 vira 960x460, GEO-1): seis linhas de 20 px de barra com a linha de leitura, os títulos dos lados e a nota de legenda pedem 6 x 42,6 = 255 px de área de linhas; o corpo do largo (894 x 281,5) deixava 37 px por linha, e a tira central, com nome e variância em duas linhas de texto, não cabia. O corpo de 960 x 460 mede 894 x 341,5 e o viewBox tem esse tamanho, escala 1 (GEO-18). Cada lado reserva 88 px para o rótulo além da maior barra (R$ 2,09 mi, o maior acumulado do plano), e a escala comum a todos os lados é 248 px por R$ 2,09 mi. A variância de passo é medida entre grandezas (|realizado| − |plano|) e lida pela polaridade do passo: cancelamento 48 mil acima do plano é piora, escrito como acima e não como sinal de menos."
+}

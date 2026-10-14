@@ -1,0 +1,33 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "01_dispersao-simples",
+  "versoes": {
+    "v1_ticket-contra-ciclo": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; dispersao legivel nos dois temas, ausencia fora do plano e no rodape, imports e tokens dentro do contrato.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T17:22:18.305Z",
+      "impressao": "79282bbb087ce9ec8341fc1d2bd2aede166b8962",
+      "arquivos": {
+        "Chart.tsx": "9c6b19e731dd3b12354f1311b8bc705f8b1b5bc7",
+        "data.ts": "e9e52c8b3d0af22fd90509e1744ae190a7872ab3",
+        "meta.json": "276a127f61f683e32c150dd53faacff012d36421"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-contra-ciclo",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; dispersao legivel nos dois temas, ausencia fora do plano e no rodape, imports e tokens dentro do contrato.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T17:22:18.305Z",
+      "impressao": "79282bbb087ce9ec8341fc1d2bd2aede166b8962",
+      "arquivos": {
+        "Chart.tsx": "9c6b19e731dd3b12354f1311b8bc705f8b1b5bc7",
+        "data.ts": "e9e52c8b3d0af22fd90509e1744ae190a7872ab3",
+        "meta.json": "276a127f61f683e32c150dd53faacff012d36421"
+      }
+    }
+  ]
+}

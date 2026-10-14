@@ -1,0 +1,14 @@
+{
+  "title": "Clientes ativos por UF",
+  "useCase": "Onde estão os clientes ativos da carteira e quanto a maior UF pesa contra as demais?",
+  "demonstrates": [
+    "Contorno do país em --surface-sunken e círculo no centroide de cada UF",
+    "Raio pela raiz quadrada, com rMax em pixels porque o viewBox tem escala 1",
+    "Pintura do maior para o menor, com preenchimento a 0,70 e contorno em --chart-1",
+    "Legenda de tamanho com três círculos e o último degrau no máximo observado",
+    "Sigla e contagem só nas 5 maiores UFs; UF sem medição em círculo pontilhado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Preenchimento a 0,70 e não a 0,60 como diz o catálogo: --chart-1 precisa de 0,66 para a marca composta fechar 3:1 no tema claro (ACE-5), e 0,60 reprovaria. O contorno do país está em --surface-sunken e não em --surface-overlay, que no claro é o mesmo branco do cartão. Não há malha do IBGE nem ufCentroides.ts, porque a lista de imports é fechada: o contorno de 51 pontos e os centroides a 0,1 grau vivem no data.ts, escritos à mão e declarados como aproximados. O viewBox tem escala 1 (5 px por grau) em vez de graus, para o texto de 11 px chegar com 11 px (GEO-18); a conversão de rMax de pixels para graus fica desnecessária. Roraima vem sem medição e aparece pontilhada com a palavra indisponível, nunca como círculo mínimo. Amapá (12 clientes) sai com raio de 1,8 px, a área honesta: a marca não ganha piso."
+}

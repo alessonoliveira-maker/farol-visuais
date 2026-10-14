@@ -1,0 +1,134 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "03_concordancia-kwic",
+  "versoes": {
+    "v1_ocorrencias-de-concorrente": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção (canvas de 760 x 600, limite de 46 caracteres com a reticência contada). Sem bloqueante: nas 20 linhas, nos dois temas e na página viva, o contexto esquerdo termina em 335,5 px e o termo começa em 343,5 px ou depois, com vão de 8,0 a 10,0 px dos dois lados; o contexto mais largo mede 270 px numa coluna de 302,5 px de texto, folga mínima de 32,5 px até a borda do corpo; as 12 reticências (5 à esquerda, 7 à direita) saem inteiras; o corte das 20 linhas foi reproduzido contra o data.ts (máximo de 45 e 46 caracteres); texto a 5,21:1 ou mais no escuro e 5,37:1 ou mais no claro; frase de 186 caracteres. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:02.742Z",
+      "impressao": "e1111ca1366bb63355dc55564f108490f4933253",
+      "arquivos": {
+        "Chart.tsx": "63d6eade19a4388f05daeee64fa9846dc0d3cf9b",
+        "data.ts": "caf02cbe74b3fc827a273161ca0b553a563ed9e9",
+        "meta.json": "e7d4ffb4ce17eb80e6ba3392c4fb2db8893bae31"
+      }
+    },
+    "v2_ordenado-pelo-contexto-direito": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 6 grupos de 1, 2, 3, 4, 3 e 2 ocorrências conferidos contra o data.ts, somando 15; ja e já no mesmo grupo pela chave sem acento; vão de 9,5 px entre contexto e termo nas 15 linhas e nenhuma tinta cortada, nos dois temas; opção inativa a 9,36:1 e 7,04:1 sobre surface-sunken, ativa marcada por peso e fundo; frase de 143 caracteres. As ordenações por contexto esquerdo e por termo e o vazio foram conferidos só por leitura de código: as duas caem num grupo só com o dado padrão. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:29.474Z",
+      "impressao": "665811b05834980137994b5824f8047979b9de1c",
+      "arquivos": {
+        "Chart.tsx": "d81c274622f6303b158200173693cbc0165f12cb",
+        "data.ts": "74e0757b0fcfcea09009c6ac40fc08a6c66e7508",
+        "meta.json": "50eb8d339135a326b234b9433e78373474769980"
+      }
+    },
+    "v3_concordancia-com-desfecho-e-executivo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 40 linhas visíveis sem corte no canvas de 960x1040, 10 ganhas, 22 perdidas e 8 abertas conferidas contra o data.ts; 612, 1.184 e 204 somam 2.000; desfecho com ícone de forma distinta e palavra; contagem das opções a 5,98:1 e 4,65:1 sobre surface-sunken; folga mínima de 64 px no contexto; data por formatDate; frase de 195 caracteres. Os três filtros e os dois vazios foram conferidos só por leitura de código. Pesado e não reprovado, ANO-6: o rodapé e a frase acessível falam com quem cola (ao colar no Farol, fora do preview). Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:30.042Z",
+      "impressao": "d53c7fdaf6b07e5b1e6487d0325e748e919e19cb",
+      "arquivos": {
+        "Chart.tsx": "1a45ff4943b5337b3bb85eacb8763bc1a8cbdcbf",
+        "data.ts": "c0646dc51b7afba6b247d94cff5ebd84b64c842b",
+        "meta.json": "98ae9e25a5b820eb78f4bfa34ed76323b9b594a6"
+      }
+    },
+    "v4_termo-na-borda-e-sem-ocorrencia": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 5 ocorrências de preço em 7 anotações e 2 grafias conferidas contra o data.ts; vírgula e aspas coladas ao termo e fora do destaque; marcador de início e de fim da anotação em text-muted a 5,21:1 e 5,37:1, sem colapsar a coluna; desconto sem ocorrência em role status com a base de 7 anotações escrita; nenhuma tinta cortada nos dois temas; frase de 126 caracteres. Vazio geral conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:30.672Z",
+      "impressao": "1ec8042e39dd608e426f0b2465c71f1810a67ad1",
+      "arquivos": {
+        "Chart.tsx": "ed6fed578c19feade01cdf7b405ab15ac95d0259",
+        "data.ts": "c6414f8bc9848b68c1405973f08d8df4a87a69fe",
+        "meta.json": "78acd5038e24263de6e659467bec6983bbf7f2b5"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ocorrencias-de-concorrente",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 15, ESP-3 e ROT-9, ilegibilidade da 14.1: o corte em 44 caracteres não cabe na coluna de 242,5 px do canvas de 640. O contexto esquerdo cobre o termo nas linhas 3, 5 e 15 (perda-03, 05 e 15), com cerca de 4, 15 e 5 px de sobreposição, e o direito é cortado na borda em 7 linhas: 1, 2 e 13 no meio da palavra, 8 e 16 sem a reticência, 9 e 19 com ela pela metade. Vale nos dois temas e na página viva. Mudar: orçar CONTEXT_MAX_CHARS pela largura medida, contando a reticência (até 36 no canvas atual), ou alargar o canvas para 720 px ou mais; corrigir o comentário de 450 px e a nota do meta. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__03_concordancia-kwic_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:28.925Z",
+      "impressao": "a619140cce2f721462525ad0073146c84f92210e",
+      "arquivos": {
+        "Chart.tsx": "d70d3fb3f57e765dfa2154881b3b76294774ddc4",
+        "data.ts": "caf02cbe74b3fc827a273161ca0b553a563ed9e9",
+        "meta.json": "a7cbd28fe269e5946740c24a53154f3022e4275c"
+      }
+    },
+    {
+      "versao": "v2_ordenado-pelo-contexto-direito",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 6 grupos de 1, 2, 3, 4, 3 e 2 ocorrências conferidos contra o data.ts, somando 15; ja e já no mesmo grupo pela chave sem acento; vão de 9,5 px entre contexto e termo nas 15 linhas e nenhuma tinta cortada, nos dois temas; opção inativa a 9,36:1 e 7,04:1 sobre surface-sunken, ativa marcada por peso e fundo; frase de 143 caracteres. As ordenações por contexto esquerdo e por termo e o vazio foram conferidos só por leitura de código: as duas caem num grupo só com o dado padrão. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:29.474Z",
+      "impressao": "665811b05834980137994b5824f8047979b9de1c",
+      "arquivos": {
+        "Chart.tsx": "d81c274622f6303b158200173693cbc0165f12cb",
+        "data.ts": "74e0757b0fcfcea09009c6ac40fc08a6c66e7508",
+        "meta.json": "50eb8d339135a326b234b9433e78373474769980"
+      }
+    },
+    {
+      "versao": "v3_concordancia-com-desfecho-e-executivo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 40 linhas visíveis sem corte no canvas de 960x1040, 10 ganhas, 22 perdidas e 8 abertas conferidas contra o data.ts; 612, 1.184 e 204 somam 2.000; desfecho com ícone de forma distinta e palavra; contagem das opções a 5,98:1 e 4,65:1 sobre surface-sunken; folga mínima de 64 px no contexto; data por formatDate; frase de 195 caracteres. Os três filtros e os dois vazios foram conferidos só por leitura de código. Pesado e não reprovado, ANO-6: o rodapé e a frase acessível falam com quem cola (ao colar no Farol, fora do preview). Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:30.042Z",
+      "impressao": "d53c7fdaf6b07e5b1e6487d0325e748e919e19cb",
+      "arquivos": {
+        "Chart.tsx": "1a45ff4943b5337b3bb85eacb8763bc1a8cbdcbf",
+        "data.ts": "c0646dc51b7afba6b247d94cff5ebd84b64c842b",
+        "meta.json": "98ae9e25a5b820eb78f4bfa34ed76323b9b594a6"
+      }
+    },
+    {
+      "versao": "v4_termo-na-borda-e-sem-ocorrencia",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 5 ocorrências de preço em 7 anotações e 2 grafias conferidas contra o data.ts; vírgula e aspas coladas ao termo e fora do destaque; marcador de início e de fim da anotação em text-muted a 5,21:1 e 5,37:1, sem colapsar a coluna; desconto sem ocorrência em role status com a base de 7 anotações escrita; nenhuma tinta cortada nos dois temas; frase de 126 caracteres. Vazio geral conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:22:30.672Z",
+      "impressao": "1ec8042e39dd608e426f0b2465c71f1810a67ad1",
+      "arquivos": {
+        "Chart.tsx": "ed6fed578c19feade01cdf7b405ab15ac95d0259",
+        "data.ts": "c6414f8bc9848b68c1405973f08d8df4a87a69fe",
+        "meta.json": "78acd5038e24263de6e659467bec6983bbf7f2b5"
+      }
+    },
+    {
+      "versao": "v1_ocorrencias-de-concorrente",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção (canvas de 760 x 600, limite de 46 caracteres com a reticência contada). Sem bloqueante: nas 20 linhas, nos dois temas e na página viva, o contexto esquerdo termina em 335,5 px e o termo começa em 343,5 px ou depois, com vão de 8,0 a 10,0 px dos dois lados; o contexto mais largo mede 270 px numa coluna de 302,5 px de texto, folga mínima de 32,5 px até a borda do corpo; as 7 reticências saem inteiras; o corte das 20 linhas foi reproduzido contra o data.ts (máximo de 45 e 46 caracteres); texto a 5,21:1 ou mais no escuro e 5,37:1 ou mais no claro; frase de 186 caracteres. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:32:51.984Z",
+      "impressao": "e1111ca1366bb63355dc55564f108490f4933253",
+      "arquivos": {
+        "Chart.tsx": "63d6eade19a4388f05daeee64fa9846dc0d3cf9b",
+        "data.ts": "caf02cbe74b3fc827a273161ca0b553a563ed9e9",
+        "meta.json": "e7d4ffb4ce17eb80e6ba3392c4fb2db8893bae31"
+      }
+    },
+    {
+      "versao": "v1_ocorrencias-de-concorrente",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção (canvas de 760 x 600, limite de 46 caracteres com a reticência contada). Sem bloqueante: nas 20 linhas, nos dois temas e na página viva, o contexto esquerdo termina em 335,5 px e o termo começa em 343,5 px ou depois, com vão de 8,0 a 10,0 px dos dois lados; o contexto mais largo mede 270 px numa coluna de 302,5 px de texto, folga mínima de 32,5 px até a borda do corpo; as 12 reticências (5 à esquerda, 7 à direita) saem inteiras; o corte das 20 linhas foi reproduzido contra o data.ts (máximo de 45 e 46 caracteres); texto a 5,21:1 ou mais no escuro e 5,37:1 ou mais no claro; frase de 186 caracteres. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:02.742Z",
+      "impressao": "e1111ca1366bb63355dc55564f108490f4933253",
+      "arquivos": {
+        "Chart.tsx": "63d6eade19a4388f05daeee64fa9846dc0d3cf9b",
+        "data.ts": "caf02cbe74b3fc827a273161ca0b553a563ed9e9",
+        "meta.json": "e7d4ffb4ce17eb80e6ba3392c4fb2db8893bae31"
+      }
+    }
+  ]
+}

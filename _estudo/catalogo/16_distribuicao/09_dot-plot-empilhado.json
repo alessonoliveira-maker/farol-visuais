@@ -1,0 +1,69 @@
+{
+  "slug": "09_dot-plot-empilhado",
+  "nome": "Dot plot empilhado e quantile dotplot",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Histograma de unidades: cada observação é um ponto empilhado no seu intervalo, com diâmetro igual à largura do intervalo em pixels. A vantagem no Farol é contar, quando cada ponto é um negócio ou um lead. Desenhado em SVG com grade fixa, diferente do agrupamento original de Wilkinson, para a régua não mudar entre filtros. Absorve o quantile dotplot, em que os 20 pontos são desfechos simulados igualmente prováveis e a leitura é por contagem contra um limiar, com k fixo no produto inteiro.",
+  "quando_usar": [
+    "Amostra pequena, até umas 150 observações, em que contar unidade importa.",
+    "Métrica discreta com poucos valores, como número de tentativas até a agenda.",
+    "Comunicar incerteza de previsão a público não técnico, com 20 desfechos contados contra a meta ou o teto.",
+    "Codificar desfecho no próprio ponto, com forma cheia ou vazada além da cor."
+  ],
+  "quando_evitar": [
+    "Acima de 150 casos sem agregar: histograma (01), ou ponto valendo várias unidades com a unidade escrita.",
+    "Risco de cauda abaixo de 2,5% ou acima de 97,5%: 20 quantis não mostram; ECDF (04) ou meia-olho (12).",
+    "Ponto como unidade de contagem sem distribuição por trás: família 22 de unidades e waffle.",
+    "Valor contínuo em que o valor exato importa: strip ou wheat plot (03)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_dias-ate-primeira-reuniao",
+      "titulo": "Dias até a primeira reunião em pontos",
+      "caso_de_uso": "Quantas das 46 oportunidades do mês chegaram à primeira reunião em cada faixa de 2 dias?",
+      "o_que_demonstra": [
+        "Função empilhar com grade fixa de 2 dias e nível por intervalo",
+        "Diâmetro igual à largura do intervalo em px, calculado após medir a largura",
+        "Eixo Y omitido e n no subtítulo, porque a pilha já é a contagem",
+        "Nota de que a grade é fixa, diferente do agrupamento original de Wilkinson"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_tentativas-ate-a-agenda-com-fila-de-revisao",
+      "titulo": "Tentativas até a agenda com fila de revisão",
+      "caso_de_uso": "Quantos dos 140 leads trabalhados precisaram de mais de 6 tentativas, e quantos desses ainda não agendaram?",
+      "o_que_demonstra": [
+        "Uma pilha por número de tentativas, de 1 a 12, sem bin artificial",
+        "Ponto cheio para lead com agenda e vazado para sem agenda: forma além da cor",
+        "Pilhas acima de 6 tentativas com fundo de destaque e rótulo fila de revisão",
+        "Tooltip por ponto com o código fictício do lead"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_quantile-dotplot-de-cenarios-de-midia",
+      "titulo": "Cenários de orçamento de mídia em 20 desfechos",
+      "caso_de_uso": "Em quantos de 20 desfechos cada cenário de orçamento de mídia passa do teto de capacidade da pré-vendas?",
+      "o_que_demonstra": [
+        "Quantis de 1/k/2 a 1 menos 1/k/2 sobre as amostras do simulador, k fixo em 20",
+        "Quatro cenários lado a lado na mesma régua de entradas qualificadas por mês",
+        "Teto de capacidade como linha e contagem de pontos de cada lado escrita",
+        "Legenda: cada ponto é 1 em 20 desfechos simulados, não um lead"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_cada-ponto-vale-dez-leads",
+      "titulo": "Pontos que valem 10 leads cada",
+      "caso_de_uso": "Como mostrar os 600 leads do mês em pilhas quando um ponto por lead não cabe na altura do cartão?",
+      "o_que_demonstra": [
+        "Unidade escrita na legenda: cada ponto vale 10 leads",
+        "Resto de cada pilha como ponto parcial com rótulo, nunca arredondado em silêncio",
+        "Altura da maior pilha conferida contra a área útil antes de escolher a unidade",
+        "Nota de ponte com a família 22 quando a contagem passa a ser a mensagem"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

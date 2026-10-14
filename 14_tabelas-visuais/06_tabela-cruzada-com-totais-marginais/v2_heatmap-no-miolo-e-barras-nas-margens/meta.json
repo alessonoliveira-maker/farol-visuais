@@ -1,0 +1,13 @@
+{
+  "title": "Miolo em heatmap e barras nos totais",
+  "useCase": "Qual etapa concentra mais oportunidades e quais executivos carregam essa concentração.",
+  "demonstrates": [
+    "Cor do miolo por degraus de seq calculados só sobre as células internas",
+    "Barra horizontal no total de linha e vertical no total de coluna, domínio próprio",
+    "Coluna da etapa proposta destacada no cabeçalho em peso 700 com anotação curta",
+    "Legenda que diz que os totais ficam fora da escala de cor, e ícone de não se aplica"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Escala de cor calculada só sobre as 15 células internas medidas; os 15 não se aplica (papel SDR ou AE) e os totais ficam de fora, para o total geral nunca herdar a cor do maior valor do miolo."
+}

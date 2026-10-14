@@ -1,0 +1,14 @@
+{
+  "title": "Salto de cobertura por mudança de coleta",
+  "useCase": "Marketing: a cobertura de telefone saltou em um mês porque os leads mudaram ou porque a coleta mudou?",
+  "demonstrates": [
+    "12 meses de cobertura em colunas de div com base no zero e o salto de 23% a 61%",
+    "Anotação mudança de coleta em 15/06/2026, por formatDate, sobre a coluna do salto",
+    "Rodapé que lê degrau brusco como coleta e rampa lenta como comportamento",
+    "Meses anteriores sem recálculo retroativo, dito na frase acessível",
+    "Selo atual com o denominador do mês e a variação em pontos percentuais"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: a variação em pontos percentuais sai por formatDecimal com p.p. escrito ao lado, e não por formatPercentPoints, que escreve percentual (DAD-4, contrato seção 8). Corpo de 574 x 225 a 241 px: selo de 32, zona de colunas de 96 mais eixo de 20, rodapé de 2 linhas de 32 e 2 vãos de 8, cerca de 196 px."
+}

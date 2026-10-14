@@ -1,0 +1,57 @@
+{
+  "slug": "03_step-degrau",
+  "nome": "Linha em degrau",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Linha que fica horizontal até a próxima mudança e salta na vertical, afirmando que não existe valor intermediário. Serve para teto de capacidade, tabela de preço, tamanho de equipe e meta revisada. Absorve a área em degrau, que empilha patamares a partir do zero.",
+  "quando_usar": [
+    "Valores que mudam em instantes discretos: teto de agendas por semana, tamanho de equipe, preço de serviço, meta revisada.",
+    "Capacidade em degrau contra demanda contínua na mesma unidade.",
+    "Composição de equipe por função ao longo do ano, empilhada em área em degrau a partir do zero."
+  ],
+  "quando_evitar": [
+    "Grandeza contínua amostrada, como entradas diárias ou CPL: use 01_linha-simples.",
+    "Mudança de posição num ranking: use 08_bump-chart.",
+    "Faixa aceitável que não muda no tempo: use ReferenceArea em 01_linha-simples.",
+    "Estado categórico ao longo do tempo (ativo, pausado): use o tracker de 24_microvisuais-sparklines."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_teto-de-capacidade-da-pre-vendas",
+      "titulo": "Teto de capacidade da pré-vendas em degrau",
+      "caso_de_uso": "Quantas agendas por semana a pré-vendas comporta de 2026-01 a 2026-09, a cada contratação ou saída?",
+      "o_que_demonstra": [
+        "Line type stepAfter porque o teto vale a partir da data da mudança",
+        "Ponto final repetido na data de corte para o último patamar ter largura",
+        "Eixo numérico de tempo para a largura do degrau respeitar a duração",
+        "Motivo de cada mudança na dica e uma anotação na maior delas"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_capacidade-contra-demanda-semanal",
+      "titulo": "Capacidade em degrau contra demanda semanal",
+      "caso_de_uso": "Em quais semanas de 2026 a demanda de entradas passou do teto de capacidade da pré-vendas?",
+      "o_que_demonstra": [
+        "Teto em degrau em --line-strong e demanda em linha comum em --chart-1",
+        "Semanas acima do teto marcadas com ponto e excedente escrito",
+        "Mesma unidade num eixo só, sem área nem eixo duplo",
+        "Frase acessível com o total de semanas acima do teto"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_equipe-por-funcao-em-area-degrau",
+      "titulo": "Equipe por função em área em degrau",
+      "caso_de_uso": "Como pré-vendas, vendas e atendimento mudaram de tamanho em 2026, incluindo a queda temporária das férias coletivas?",
+      "o_que_demonstra": [
+        "Area type stepAfter empilhada com stackId e domínio a partir do zero",
+        "União das datas de mudança em TypeScript para os degraus não desencontrarem",
+        "Degrau para baixo e volta das férias coletivas anotados",
+        "Duas mudanças na mesma data resolvidas pela ordem do registro",
+        "Contorno --surface-raised separando as camadas vizinhas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Marcos do plano comercial 2027",
+  "useCase": "Quando caem os 6 marcos do plano de 2027, do orçamento aprovado à revisão de meta?",
+  "demonstrates": [
+    "ScatterChart com XAxis numérico em milissegundos UTC e Scatter com shape diamond",
+    "Espaçamento pela data real, nunca pela ordem, com ticks mensais gerados em TypeScript",
+    "LabelList com content customizado alternando rótulo acima e abaixo do eixo",
+    "Data do rótulo por formatDate e linha de hoje vinda do dado"
+  ],
+  "canvas": { "width": 960, "height": 320 },
+  "frame": "card",
+  "notes": "Canvas por número: a faixa (960x260) deixa o corpo menos a linha de leitura e o eixo, ou seja cerca de 78 px de plotagem, e cada lado do eixo precisa de cerca de 37 px para nome e data em duas linhas, com 4 px de respiro até a ponta do losango. Com 960x320 o corpo é 894 x 185 (cabeçalho de 2 linhas), plotagem de cerca de 130 px e 62 px de cada lado."
+}

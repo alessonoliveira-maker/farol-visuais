@@ -1,0 +1,12 @@
+{
+  "title": "Ranking de receita reconhecida por executivo",
+  "useCase": "Mostrar quem subiu e quem caiu no ranking de receita reconhecida do trimestre atual contra o anterior.",
+  "demonstrates": [
+    "Coluna de variação de posição com ícone, número de posições e as duas posições escritos",
+    "Variação do valor com sinal tipográfico e o trimestre anterior nomeado na mesma linha",
+    "Posição estável com valor em queda, e posição em alta com valor estável, na mesma tabela",
+    "Frase acessível calculada com o líder e o maior salto do período"
+  ],
+  "canvas": "alto",
+  "notes": "Os oito executivos já estavam no ranking no trimestre anterior; entrada e saída do topo aparecem na v2_top-10-origens-com-entrada-e-saida."
+}

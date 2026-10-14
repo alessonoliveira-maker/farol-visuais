@@ -1,0 +1,12 @@
+{
+  "title": "Agendas do mês por resultado",
+  "useCase": "Das 132 agendas de 2026-08, quantas foram realizadas, remarcadas ou tiveram não comparecimento.",
+  "demonstrates": [
+    "Pie em meia rosca, startAngle 180 e endAngle 0, com o total escrito sobre a base",
+    "InnerRadius em 70% do outerRadius e rótulo em cada ponta do arco",
+    "Nome, contagem e percentual inteiro escritos por categoria, somando 100 pelo maior resto",
+    "Trilho sem faixas de cor: composição não é gauge"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

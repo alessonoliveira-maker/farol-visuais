@@ -1,0 +1,17 @@
+{
+  "title": "Leads por tempo de contato e tentativas",
+  "useCase": "Que forma tem a massa de 2.000 leads que a nuvem esconde? Tempo em escala logarítmica.",
+  "demonstrates": [
+    "Eixo do tempo em escala log com as faixas do marginal também em razão constante",
+    "Centro geométrico da faixa, que é o único ponto que cai no meio dela em pixel",
+    "Faixas de tentativa centradas no inteiro, com o domínio deslocado em meia unidade",
+    "Marginal devolvendo a moda que a sobreposição de 2.000 pontos apaga",
+    "Opacidade de marca escolhida por medição de contraste, não por gosto"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 660
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: além da grade de 2 por 2 o cartão escreve a linha de leitura de 12 px acima e o rodapé de 11 px abaixo, cerca de 48,5 px com os respiros, e o preset largo de 400 px de altura não caberia a grade sozinha. A conta de altura é 118,5 px de moldura, com o caso de uso em uma linha, mais 48,5 px de texto mais 493 px de grade; a de largura é 66 px de moldura mais 894 px de corpo. A altura foi corrigida por medição e não por estimativa: com 560 px a faixa do marginal de tentativas saía com 10,0 px de espessura, abaixo do piso de 12 px da ESP-2, porque 10 faixas não cabem num plano de 250 px com o vão de 30%; a 660 px a faixa mede 14,2 px. COLISÃO COM A ESPECIFICAÇÃO DO CATÁLOGO, resolvida a favor do contrato: o catálogo pede opacidade 0,25 nos pontos e a ACE-5 manda a marca continuar acima de 3:1 depois da composição com o cartão. Medido: chart-1 opaco dá 9,50:1 no escuro e 6,00:1 no claro, a 0,70 cai para 5,30:1 e 3,25:1 e ainda passa, a 0,25 desaba para 1,77:1 e 1,46:1 e a marca deixa de existir no tema claro. A versão fica com 0,70 e raio de 1,5 px, e quem revela a densidade é o marginal, que é o assunto do modelo. A MESMA ESCALA nos dois lados é o que esta versão tem de mais delicado, porque o eixo é logarítmico: as faixas são de RAZÃO constante, 14 faixas de 1,9 vezes cobrindo de 1 minuto a 7 dias, e o centro de cada uma é a média GEOMÉTRICA e não a aritmética. Em escala log o passo uniforme de pixel é passo uniforme de razão, então faixas de razão igual azulejam o domínio sem sobra e o passo band do BarChart cai exatamente sobre o centro geométrico no plano. Faixa de largura fixa em minutos alinharia no começo do eixo e erraria por centenas de pixels no fim. No eixo das tentativas o problema é outro e o domínio vai de 0,5 a 10,5: as faixas têm largura de uma tentativa e são centradas no inteiro, e com domínio de 1 a 10 o centro da primeira cairia em 1,5, meia faixa fora do lugar. A grade sai nos dois sentidos pela EIX-3b e o axisLine herdado de AXIS_PROPS é desligado depois do espalhamento nos dois eixos, pela EIX-5. Sem dica: com 2.000 pontos sobrepostos a dica pega o último ponto pintado, que não é o que o leitor está apontando, então o número exato ficaria mais enganoso que ausente, pela DIC-1. Contraste medido à mão, porque o preview desta família sai com transform e as guardas de marca não medem: faixa neutra em line-strong mede 1,79:1 no escuro e 1,83:1 no claro, abaixo do piso, e vive da isenção da ACE-3 porque a contagem vai escrita acima de cada faixa. ESPESSURA MEDIDA à mão no preview, pela mesma razão do transform: faixa do topo 21,0 px e faixa da direita 14,0 px, as duas acima do piso de 12 px da ESP-2, iguais nos dois temas. O rótulo de contagem fica FORA da marca, então o piso de 18 px do rótulo interno não se aplica."
+}

@@ -1,0 +1,597 @@
+{
+  "slug": "01_cards-e-kpis",
+  "nome": "Cards e KPIs",
+  "modelos": [
+    {
+      "slug": "01_kpi-simples",
+      "nome": "KPI simples com contexto",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Rótulo, número grande em Space Grotesk e o contexto mínimo que impede a leitura errada: período, variação com base nomeada, atual contra anterior e meta, par de numerador e denominador, status com régua escrita, procedência, frescor e estado indisponível. É o átomo da família e absorve todas as variações que se resolvem com texto e ícone; nenhum gráfico, só HTML com Tailwind em moldura stage.",
+      "quando_usar": [
+        "Um número que o público já sabe ler, com rótulo, unidade e período escritos.",
+        "Métrica acompanhada em cadência fixa, em que a variação contra o período anterior decide a leitura.",
+        "Realizado que precisa das três âncoras na mesma leitura: atual, período anterior e meta.",
+        "Taxa ou custo por unidade que mostra numerador e denominador para não promover ruído a tendência.",
+        "Número de planejamento que mistura medição e premissa, ou fonte com carga agendada que precisa de carimbo.",
+        "Métrica sem coleta ou com coleta falha, que ocupa o mesmo espaço do cartão preenchido dizendo por quê."
+      ],
+      "quando_evitar": [
+        "A forma da série recente muda a conclusão: KPI com minigráfico de tendência (modelo 02).",
+        "O julgamento depende de meta, ritmo ou teto desenhados: KPI com régua de meta (modelo 03).",
+        "Projeção ou cenário publicado como ponto único: KPI com faixa (modelo 04).",
+        "O total só faz sentido com a composição: KPI com decomposição (modelo 05).",
+        "Volume que pode ser inflado à custa da qualidade: par de indicadores (modelo 06).",
+        "Uma ou duas medidas dentro de uma frase corrida: frase com número (21/01_frase-com-numero)."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-com-variacao-contra-mes-anterior",
+          "titulo": "Receita reconhecida com variação mensal",
+          "caso_de_uso": "Quanto de receita foi reconhecido em ago/26 e quanto isso se afastou de jul/26?",
+          "o_que_demonstra": [
+            "Número em kpi-number com formatCurrencyCompact e valor exato no title",
+            "Variação com sinal tipográfico, ícone do lucide-react e cor pela polaridade",
+            "Base nomeada na mesma linha: +8,4% contra R$ 1,1 mi em jul/26",
+            "Período sempre escrito e algarismo tabular em todos os números",
+            "Frase acessível com número, unidade, período e comparação"
+          ],
+          "canvas_sugerido": "kpi"
+        },
+        {
+          "slug": "v2_receita-do-trimestre-contra-anterior-e-meta",
+          "titulo": "Receita do trimestre contra anterior e meta",
+          "caso_de_uso": "A receita do 3º trimestre está na meta, e quanto falta em reais para chegar lá?",
+          "o_que_demonstra": [
+            "Hierarquia de três pesos: principal em 30 px, apoios em 14 px, rótulos em 11 px",
+            "Anterior e meta em colunas separadas por espaço, sem divisória (ESP-5)",
+            "Selo de status com forma, ícone e palavra, sem fundo tingido (COR-7)",
+            "Régua do status escrita no cartão: no alvo a partir de 95% da meta",
+            "Veredito calculado do dado: abaixo da meta por R$ 143 mil"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+          "titulo": "CPL qualificado com par, frescor e procedência",
+          "caso_de_uso": "Quanto custou cada lead qualificado em ago/26, de que parcelas vem o número e quando a mídia foi coletada?",
+          "o_que_demonstra": [
+            "Razão com as duas parcelas na mesma janela: R$ 48,6 mil em 412 leads",
+            "Polaridade menor melhor: a queda do CPL pinta --positive, com sinal e ícone",
+            "Ponto de ação aceso porque o CPL segue acima do limiar de R$ 110, mesmo em queda",
+            "Carimbo do dado e não da página, com ícone Clock e prazo de 24 h da fonte",
+            "Etiqueta DERIVADO uma vez, no topo do cartão de moldura stage",
+            "Link esticado com ChevronRight e foco visível para abrir as campanhas"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v4_zero-indisponivel-e-sem-base",
+          "titulo": "Zero, indisponível e sem base lado a lado",
+          "caso_de_uso": "Como quatro cartões da mesma tira dizem zero medido, falta de coleta, falta de base e período parcial sem mentir?",
+          "o_que_demonstra": [
+            "Zero medido em tipografia cheia, com a frase nenhuma venda de mídia paga",
+            "Indisponível com formatUnavailable, ícone Unplug, motivo e última medição válida",
+            "Sem mês anterior medido no lugar da variação, nunca +100% nem Infinity",
+            "Período parcial declarado: 14 de 31 dias contra os mesmos 14 dias de jul/26",
+            "Quatro cartões com a mesma altura e a mesma linha de base do número"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    },
+    {
+      "slug": "02_kpi-com-minigrafico-de-tendencia",
+      "nome": "KPI com minigráfico de tendência",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Número em destaque com um minigráfico subordinado, sem eixo nem grade, que responde uma pergunta só: qual é a forma recente da série. Absorve sparkline, sparkbar, sparkline comparativa com o mesmo período do ano anterior e fita de estado por dia; linha e coluna saem do Recharts em contêiner de altura fixa, a fita sai em HTML. A bandline do estudo fica como extensão da sparkline, sem versão própria.",
+      "quando_usar": [
+        "A forma da série recente muda a conclusão: subida firme, queda ou serra.",
+        "Série com cadência fixa e pelo menos 5 pontos, legível em cerca de 32 px de altura.",
+        "Contagem discreta por dia útil, semana ou campanha, em que a altura de cada coluna importa.",
+        "Série sazonal comparada com o mesmo período do ano anterior, com peso menor na referência.",
+        "Cumprimento diário de SLA ou de coleta, em que importa saber se as falhas vieram em bloco."
+      ],
+      "quando_evitar": [
+        "Menos de 5 pontos ou série sem cadência: KPI simples com variação (modelo 01).",
+        "A sparkline é o visual inteiro, como coluna de tabela: microvisuais e sparklines (24/01).",
+        "O leitor precisa julgar nível com escala livre: fixar o domínio no zero ou escrever a faixa.",
+        "Mais de duas séries no minigráfico: linhas (família 04).",
+        "Fita com mais de cerca de 90 células: mapa de calor e calendário (família 15).",
+        "Muitos cartões comparáveis entre si: grade de scorecards com escala comum (modelo 07)."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-qualificado-com-sparkline-de-12-meses",
+          "titulo": "CPL qualificado com tendência de 12 meses",
+          "caso_de_uso": "O CPL qualificado de ago/26 é um ponto fora da curva ou parte de uma queda firme desde set/25?",
+          "o_que_demonstra": [
+            "LineChart sem eixo, grade nem dica, em contêiner de altura fixa h-8",
+            "Sem área preenchida porque a escala não parte do zero (EIX-2)",
+            "Ponto final cheio em --chart-1 ligado ao número e âncora de 12 meses",
+            "Polaridade menor melhor na variação acima da linha",
+            "Mês sem coleta como null: a linha quebra, sem connectNulls",
+            "Sparkline com aria-hidden porque a frase acessível já traz a tendência"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_entradas-no-handoff-contra-o-teto-diario",
+          "titulo": "Entradas no handoff por dia útil contra o teto",
+          "caso_de_uso": "Em quantos dos últimos 20 dias úteis as entradas na fila de handoff passaram do teto diário de 14?",
+          "o_que_demonstra": [
+            "BarChart mínimo com domínio a partir do zero, mesmo em miniatura (EIX-1)",
+            "ReferenceLine tracejada no teto com ifOverflow extendDomain",
+            "Colunas acima do teto em --negative com a contagem escrita: 3 de 20 dias",
+            "Vão de 2 px entre colunas e largura mínima de 3 px por coluna",
+            "Só dias úteis na série, escrito no rodapé para não ler queda no fim de semana"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_leads-diarios-contra-o-mesmo-periodo-de-2025",
+          "titulo": "Leads por dia contra os mesmos dias de 2025",
+          "caso_de_uso": "Os leads dos últimos 30 dias descolaram de 2025 na curva inteira ou só num dia atípico de campanha?",
+          "o_que_demonstra": [
+            "Série anterior declarada antes no JSX: neutra, 1 px e tracejada, atrás da atual",
+            "Série atual em 2 px com ponto final aceso e rótulo direto 2026 e 2025",
+            "Domínio do YAxis oculto calculado sobre as duas séries juntas",
+            "Alinhamento por dia da semana em função pura, escrito no rodapé",
+            "Pico de campanha na série anterior anotado em vez de cortar a escala"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v4_sla-de-primeiro-contato-em-fita-com-lacunas",
+          "titulo": "SLA de primeiro contato em fita com lacunas",
+          "caso_de_uso": "Quantos dias úteis dos últimos 60 cumpriram o SLA de primeiro contato, com duas semanas sem coleta no meio?",
+          "o_que_demonstra": [
+            "Fita de células em flex gap-px, em HTML, sem BarChart de barras iguais",
+            "Sem coleta em traço neutro, distinto de fora do SLA em --negative",
+            "Fins de semana marcados como não aplicáveis e fora do denominador",
+            "Número sobre dias válidos com o par: 90,9% (30 de 33 dias válidos)",
+            "Extremos da fita rotulados com formatDate, do mais antigo ao mais recente",
+            "Cada célula com title de data e estado, e resumo das falhas em texto"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        }
+      ]
+    },
+    {
+      "slug": "03_kpi-com-regua-de-meta",
+      "nome": "KPI com régua de meta, ritmo ou teto",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Número acompanhado de uma régua horizontal que julga antes do número: barra até a meta, marcador de ritmo esperado pelo tempo decorrido, trilho de capacidade em que chegar a 100% é ruim, ou bullet com faixas qualitativas. Absorve barra de progresso, bullet embutido, trilho de capacidade, ritmo até a meta e anel; trilho e barra em HTML com Tailwind, bullet e marcadores em SVG puro com geometria em TypeScript. O anel fica sem versão própria, porque ângulo compara mal e o progresso protagonista mora na família 13.",
+      "quando_usar": [
+        "Meta acumulada dentro de um período fechado, como a receita do trimestre.",
+        "Meta com prazo e acumulação perto de linear, em que importa saber se o ritmo atual chega.",
+        "Uso contra teto operacional, como fila da pré-vendas ou carteira de vendas, em que chegar a 100% é ruim.",
+        "Realizado contra referência e faixas qualitativas declaradas, para público que já lê bullet.",
+        "Várias réguas empilhadas na mesma escala relativa, como percentual do próprio teto."
+      ],
+      "quando_evitar": [
+        "Métrica sem meta nem teto declarados: KPI simples com variação (modelo 01).",
+        "Meta sazonal ou com degraus: curva de meta acumulada (famílias 13 ou 05).",
+        "O arco ou a barra é o protagonista da peça: progresso, meta e gauge (família 13).",
+        "Vários anéis comparados entre si: barras com base comum, porque ângulo compara mal.",
+        "Diretoria sem legenda diante de bullet: atual contra anterior e meta escritos (modelo 01).",
+        "Teto de planilha exibido sem procedência: declarar PREMISSA antes de desenhar o estouro."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-trimestre-ate-a-meta",
+          "titulo": "Receita do trimestre até a meta",
+          "caso_de_uso": "Quanto da meta de receita do 3º trimestre já foi reconhecido até o último dia fechado?",
+          "o_que_demonstra": [
+            "Trilho de 8 px em --surface-overlay com preenchimento em --chart-1",
+            "role progressbar com aria-valuenow, aria-valuemin e aria-valuemax",
+            "Rodapé com o par: R$ 412 mil de R$ 600 mil e o percentual inteiro",
+            "Preenchimento clampado em 100% e excedente escrito em texto"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_receita-com-ritmo-esperado-e-veredito",
+          "titulo": "Receita do trimestre com ritmo esperado",
+          "caso_de_uso": "No ritmo atual a receita chega à meta do trimestre, ou já está atrás do esperado no dia útil 44 de 63?",
+          "o_que_demonstra": [
+            "Dois marcadores distintos sem cor: meta em traço cheio, ritmo em tracejado curto",
+            "Ritmo por dias úteis decorridos, escrito: 44 de 63 dias úteis",
+            "Veredito calculado: R$ 345 mil de R$ 600 mil, atrás do ritmo por R$ 74 mil",
+            "Projeção linear declarada como piso, com etiqueta DERIVADO",
+            "Trilho em SVG com geometria de regra de três em função pura",
+            "Primeiro dia do período com sem ritmo medido, em vez de divisão por zero"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_filas-da-pre-vendas-contra-o-teto",
+          "titulo": "Filas da pré-vendas contra o teto de capacidade",
+          "caso_de_uso": "Qual das quatro filas da pré-vendas e da carteira de vendas passou do teto mensal, e o teto é medido ou premissa?",
+          "o_que_demonstra": [
+            "Cinco bullets em SVG na mesma escala relativa: percentual do próprio teto",
+            "Faixas de conforto, atenção e estouro em --seq-1 a --seq-3, sem matizes",
+            "Excesso além do teto visível com hachura em pattern, nunca clampado",
+            "Teto como marca em --line-strong e rodapé 186 de 160, estouro de 26",
+            "Origem de cada teto escrita na linha, medido ou premissa, sem selo por linha",
+            "Corte de atenção a partir de 85% do teto declarado no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_metas-com-estouro-zero-e-sem-meta",
+          "titulo": "Metas com estouro, zero no dia 1 e sem meta",
+          "caso_de_uso": "Como a régua se comporta com 118% da meta, com zero no primeiro dia e com executivo novo ainda sem meta?",
+          "o_que_demonstra": [
+            "118% clampado no trilho, com zona de excesso e o texto 18% acima da meta",
+            "Zero no primeiro dia sem cor de alerta, porque ainda não há ritmo medido",
+            "Sem meta com trilho neutro e a frase escrita, sem dividir por zero",
+            "Três réguas com a mesma altura e o mesmo alinhamento do número"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    },
+    {
+      "slug": "04_kpi-com-faixa",
+      "nome": "KPI com faixa de incerteza ou distribuição",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Número de cenário, projeção ou tempo de cauda longa exibido como intervalo e não como ponto: a faixa escrita é o número principal e uma régua em SVG puro mostra a largura relativa contra um domínio declarado, o ponto central discreto e a referência. Absorve a faixa de incerteza de cenários da Diretoria e a distribuição resumida em quartis, mediana e p90 para tempos e valores assimétricos.",
+      "quando_usar": [
+        "Forecast, cenário ou projeção da Diretoria, em que publicar o ponto médio vira compromisso.",
+        "Três cenários, conservador, base e otimista, com a indicação de qual deles virou meta.",
+        "Tempos e valores assimétricos, como tempo até o primeiro contato, ciclo de venda e ticket.",
+        "A mesma estatística comparada entre etapas, com réguas de teto declarado e SLA marcado."
+      ],
+      "quando_evitar": [
+        "Dado já realizado e fechado: KPI simples com variação (modelo 01).",
+        "Faixa que acompanha uma série no tempo: área com banda (família 05).",
+        "Distribuição completa com caixa, atípicos e forma: distribuição (família 16).",
+        "Menos de 30 observações para percentil alto: mediana com o par e p90 suprimido.",
+        "Faixa sem a premissa que a gerou: parece rigor sem ser; escrever a premissa ou não publicar."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-projetada-de-2027-em-faixa",
+          "titulo": "Receita projetada de 2027 em faixa",
+          "caso_de_uso": "Qual é a faixa provável da receita de 2027 com a capacidade atual da pré-vendas, em vez de um ponto único?",
+          "o_que_demonstra": [
+            "Faixa escrita como número principal: R$ 6,8 mi a R$ 8,3 mi",
+            "Escala com domínio declarado, de zero ao teto do plano, e não a própria faixa",
+            "Ponto central em traço fino, com peso visual menor que a faixa",
+            "Premissa escrita em uma linha e etiqueta PREMISSA no cartão",
+            "Geometria da régua em função pura, com viewBox fixo"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_tres-cenarios-e-o-que-virou-meta",
+          "titulo": "Três cenários com o que virou meta",
+          "caso_de_uso": "Entre os cenários conservador, base e otimista de 2027, qual virou meta e a que distância ficou dos outros?",
+          "o_que_demonstra": [
+            "Três marcas distinguíveis por forma e rótulo direto, não só por cor",
+            "Cenário escolhido como meta em --chart-1 e rótulo em peso 700",
+            "Rótulo com halo na cor da superfície quando cruza a faixa (ROT-7)",
+            "Texto calculado: a meta ficou no cenário base, 9% acima do conservador"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_tempos-da-esteira-em-mediana-e-p90",
+          "titulo": "Tempos da esteira em mediana e p90",
+          "caso_de_uso": "Quanto tempo leva cada etapa da esteira, do primeiro contato ao aceite do handoff, olhando a mediana e a cauda?",
+          "o_que_demonstra": [
+            "Três réguas comparáveis com teto declarado no p99, e não do mínimo ao máximo",
+            "Faixa interquartil preenchida, traço na mediana e marcador no p90",
+            "Mediana no número e estatística no rótulo, nunca tempo médio",
+            "SLA de cada etapa como traço vertical tracejado na régua",
+            "Tamanho da amostra escrito em cada cartão: n = 412 leads",
+            "Quantis em função pura com método de interpolação declarado"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v4_retorno-que-cruza-zero-e-amostra-pequena",
+          "titulo": "Retorno que cruza zero e amostra pequena",
+          "caso_de_uso": "Como mostrar um retorno projetado entre −0,3x e 1,4x e um ciclo de venda medido em só 14 oportunidades?",
+          "o_que_demonstra": [
+            "Faixa assimétrica cruzando zero, com a marca do zero em --line-strong",
+            "Sinal tipográfico no limite inferior e a frase: o cenário admite resultado negativo",
+            "p90 suprimido abaixo de n = 30, com o aviso amostra pequena",
+            "Oportunidades ainda abertas declaradas fora da conta: 9 sem desfecho"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_kpi-com-decomposicao",
+      "nome": "KPI com decomposição em partes",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Total em destaque explicado no próprio cartão pelas partes que o formam: filhos que somam, dividem ou explicam o pai, barra única segmentada com ordem estável, ou lista dos maiores contribuintes com a linha de demais que fecha o total e a linha de sem rótulo que preserva a cobertura do dado. Absorve decomposição, KPI hierárquico e lista de contribuição; tudo em HTML com larguras calculadas em funções puras de TypeScript.",
+      "quando_usar": [
+        "O total só faz sentido com a composição, como a receita entre clientes novos e carteira.",
+        "Um número principal explicado por 2 ou 3 filhos com relação declarada: soma, divisão ou explicação.",
+        "Composição de até 5 partes com ordem estável vinda da configuração da métrica, e não do valor.",
+        "Total e os 3 a 5 maiores responsáveis por ele, com demais e sem rótulo em linhas próprias."
+      ],
+      "quando_evitar": [
+        "Mais de 5 componentes, ou a lista virou a protagonista: barras horizontais (família 02).",
+        "Contribuições de sinais opostos lidas como forma: cascata (família 19).",
+        "Filho de filho, com dois níveis ou mais: hierarquia (família 12).",
+        "Composição de vários totais ou ao longo do tempo: colunas empilhadas (família 03).",
+        "Filhos sem relação declarada com o pai: separar em KPIs simples (modelo 01)."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-mes-entre-novos-e-carteira",
+          "titulo": "Receita do mês entre clientes novos e carteira",
+          "caso_de_uso": "De onde veio a receita reconhecida de ago/26: clientes novos ou carteira, e em que proporção?",
+          "o_que_demonstra": [
+            "Filhos em kpi-number de 14 px e rótulo de 11 px, subordinados ao pai de 30 px",
+            "Relação de soma escrita e conferida: os filhos fecham o total exato",
+            "Participação percentual inteira pelo maior resto, somando 100",
+            "Separação entre pai e filhos por espaço, sem divisória (ESP-5)"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_leads-do-mes-por-origem-com-destaque",
+          "titulo": "Leads do mês por origem com mídia paga acesa",
+          "caso_de_uso": "Quanto do volume de leads de ago/26 veio de mídia paga, contra as outras três origens?",
+          "o_que_demonstra": [
+            "Barra única segmentada com larguras percentuais e ordem vinda da configuração",
+            "Mídia paga em --chart-1 e demais origens em neutro com valor escrito",
+            "Separador de 2 px em --surface-raised entre segmentos vizinhos (COR-5)",
+            "Linha de leitura calculada: mídia paga responde por 52% do volume",
+            "Legenda com valor em colunas à direita, na ordem visual dos segmentos"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_leads-com-maiores-origens-e-sem-rotulo",
+          "titulo": "Leads do mês com as cinco maiores origens",
+          "caso_de_uso": "Quais cinco origens explicam os leads de ago/26, quanto fica nas demais e quanto chegou sem origem registrada?",
+          "o_que_demonstra": [
+            "Lista em ol com barra de fundo proporcional ao total, não ao maior item",
+            "Linha demais (9 origens) em --text-muted que fecha a soma do número",
+            "Sem origem registrada em linha própria, com 22% e etiqueta LACUNA",
+            "Função pura que monta topo, demais e sem rótulo e confere a soma",
+            "Desempate determinístico pelo nome e nome longo inteiro, sem reticência",
+            "Nome acessível por item: origem, valor e participação no total"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_receita-com-contribuicoes-que-se-anulam",
+          "titulo": "Variação da receita com contribuições opostas",
+          "caso_de_uso": "Quem puxou a receita do trimestre quando os produtos que subiram e os que caíram quase se anularam?",
+          "o_que_demonstra": [
+            "Barra de largura recusada quando há contribuições de sinais opostos",
+            "Valores com sinal tipográfico + e −, ordenados pelo módulo",
+            "Variação total de zero com participações escritas como sem base, nunca NaN%",
+            "Resíduo nomeado quando os itens listados não fecham a variação total",
+            "Ponteiro escrito para a cascata da família 19 quando a forma importa"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_par-de-indicadores",
+      "nome": "Par de indicadores",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Dois números no mesmo cartão ligados por efeito e contraefeito: o volume perseguido e a qualidade que pode pagar por ele. Cada indicador traz a própria variação com a própria polaridade, um conector escrito nomeia a relação e um veredito calculado resolve as cores opostas. É a resposta de desenho à lei de Goodhart: a métrica perseguida sozinha é otimizada à custa de outra, e o par torna esse custo visível na mesma leitura.",
+      "quando_usar": [
+        "Volume que pode ser inflado à custa da qualidade: agendas e comparecimento, leads e percentual qualificado.",
+        "Par declarado no dicionário de métricas, com a relação escrita e um corte de estabilidade.",
+        "Coorte acompanhada no tempo, em que o contraindicador só fecha dias depois do indicador.",
+        "Tela com dois ou três pares em faixa, cada um com coorte e veredito próprios."
+      ],
+      "quando_evitar": [
+        "As duas medidas não têm relação de efeito e contraefeito: dois KPIs simples (modelo 01).",
+        "Entra uma terceira medida: decomposição (modelo 05) ou atual contra anterior e meta (modelo 01).",
+        "A relação precisa ser vista em muitos pontos ou entidades: dispersão (família 09) ou quadrantes (família 25).",
+        "Volume e qualidade de coortes diferentes lidos na mesma semana: montar a coorte antes de publicar."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-e-comparecimento-da-coorte",
+          "titulo": "Agendas marcadas e comparecimento da coorte",
+          "caso_de_uso": "A pré-vendas marcou mais agendas na semana sem perder comparecimento nessa mesma coorte de agendas?",
+          "o_que_demonstra": [
+            "Indicador de efeito em 30 px e contraindicador um degrau abaixo, em 14 px",
+            "Conector escrito com entre os dois números, nomeando a relação",
+            "Variação de cada indicador com a própria polaridade e a base nomeada",
+            "Comparecimento com o par: 71,2% (84 de 118 agendas)"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_leads-e-percentual-qualificado-com-veredito",
+          "titulo": "Leads e percentual qualificado com veredito",
+          "caso_de_uso": "O volume de leads de ago/26 subiu à custa da qualidade, ou as duas medidas melhoraram juntas?",
+          "o_que_demonstra": [
+            "Leads +34% em --positive e qualificados −9 p.p. em --negative no mesmo cartão",
+            "Variação de taxa em pontos percentuais com formatPercentPoints",
+            "Veredito calculado em texto: o volume subiu à custa da qualidade",
+            "Função pura que devolve um de cinco vereditos a partir das polaridades",
+            "Quadrante de 48 px em SVG com seta do período anterior para o atual"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_tres-pares-do-comercial",
+          "titulo": "Três pares do Comercial em faixa",
+          "caso_de_uso": "Fechamentos, handoff e funil criado melhoraram sem piorar desconto médio, aceite e idade das oportunidades?",
+          "o_que_demonstra": [
+            "Três pares com coorte declarada e veredito próprio em cada cartão",
+            "Polaridades opostas convivendo: desconto e idade média são menor melhor",
+            "Velocidade do handoff com formatHours e taxa de aceite com o par",
+            "Cartões de mesma altura com a linha do veredito reservada em todos"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v4_coorte-aberta-volume-zero-e-par-estavel",
+          "titulo": "Coorte aberta, volume zero e par estável",
+          "caso_de_uso": "Como o par se comporta quando a coorte ainda não fechou, quando não houve volume e quando nada mudou de verdade?",
+          "o_que_demonstra": [
+            "Contraindicador marcado parcial e veredito suprimido até a coorte fechar",
+            "Volume zero com a taxa escrita como sem base, nunca 0% nem NaN",
+            "Os dois deltas dentro do corte: sem mudança relevante e sem cor semântica",
+            "Data de fechamento da coorte escrita com formatDate"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    },
+    {
+      "slug": "07_grade-e-tira-de-kpis",
+      "nome": "Grade e tira de KPIs",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Composição de vários cartões numa peça só: a tira de 3 a 6 métricas diferentes que abre uma tela, e a grade de scorecards com a mesma métrica repetida por entidade. A composição é que garante altura igual, linha de base comum do número, período declarado uma vez, ordem narrativa ou ordenação escrita e, na grade, escala comum para todos os micrográficos. Acima de cerca de 12 cartões com minigráfico, a linha vira polyline em SVG puro.",
+      "quando_usar": [
+        "Cabeçalho de tela com 3 a 6 números de abertura, em ordem da causa para o efeito.",
+        "A mesma métrica comparada entre 6 e 24 entidades, como executivos ou squads.",
+        "Tira em que um cartão primário maior define por onde a leitura começa.",
+        "Várias métricas lidas na mesma janela de tempo, comandadas por um seletor único da tira."
+      ],
+      "quando_evitar": [
+        "Mais de 6 cartões na mesma linha: duas tiras curtas com subtítulo.",
+        "Métricas de unidades diferentes numa grade de scorecards: use a tira, ou tabela.",
+        "Várias métricas por entidade lidas linha a linha: scorecard em tabela (14/04).",
+        "Taxa individual com denominador pequeno em cada entidade: grade de volume absoluto.",
+        "Cartões que aparecem e somem conforme a régua: faixa de card de exceção (modelo 08)."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_tira-de-abertura-do-comercial",
+          "titulo": "Tira de abertura do Comercial",
+          "caso_de_uso": "Qual é o estado do Comercial em ago/26 antes de qualquer gráfico: receita, negócios fechados e ticket médio?",
+          "o_que_demonstra": [
+            "Grade de colunas iguais com items-stretch e h-full, sem altura fixa em pixels",
+            "Período declarado uma vez no cabeçalho da tira, porque é o mesmo para todos",
+            "Linha de variação reservada em todos os cartões para alinhar a base do número",
+            "Unidade colada a cada número: moeda, contagem de negócios e ticket"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_tira-da-pre-vendas-com-primario-e-janela",
+          "titulo": "Tira da pré-vendas com cartão primário e janela",
+          "caso_de_uso": "Como a pré-vendas foi nos últimos 30 dias, lendo primeiro as agendas realizadas e trocando a janela da tira toda?",
+          "o_que_demonstra": [
+            "Cartão primário em duas colunas com sparkline, e os demais compactos",
+            "Um seletor de 7, 30 e 90 dias no cabeçalho da tira, em role radiogroup",
+            "Âncora do delta reescrita pela janela: 30 dias contra os 30 anteriores",
+            "Granularidade escrita quando a janela de 90 dias passa a semanal",
+            "Data de referência vinda do dado e dia corrente fora da conta"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_grade-de-executivos-com-escala-comum",
+          "titulo": "Grade de executivos com escala compartilhada",
+          "caso_de_uso": "Quais dos 12 executivos estão acima da mediana de receita do trimestre, e com que forma nas últimas 13 semanas?",
+          "o_que_demonstra": [
+            "Doze cartões com polyline em SVG puro sobre o mesmo domínio de eixo (EIX-9)",
+            "Cabeçalho que declara ordem e escala: por receita, semanal de R$ 0 a R$ 120 mil",
+            "Mediana tracejada repetida na mesma posição em todos os micrográficos",
+            "Executivo selecionado com peso 700 e --chart-1, demais em neutro",
+            "Posição com o tamanho do grupo em cada cartão: 3º de 12"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_grade-com-novo-amostra-pequena-e-afastado",
+          "titulo": "Grade com executivo novo, amostra pequena e afastado",
+          "caso_de_uso": "Como a grade mantém altura e ordem quando um executivo não tem histórico, outro tem 4 oportunidades e outro está afastado?",
+          "o_que_demonstra": [
+            "Espaço do micrográfico reservado com a frase sem histórico, na mesma altura",
+            "Taxa com o par e sem cor semântica quando o denominador é 4 oportunidades",
+            "Cartão inativo que permanece na grade em vez de sumir",
+            "Ordem alfabética estável escrita no cabeçalho, sem reordenar por valor"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "08_card-de-excecao",
+      "nome": "Card de exceção",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Cartão que existe por causa de uma régua estourada: contagem de casos fora da régua, critério literal, severidade, denominador, data da avaliação e caminho para a lista dos casos. A cor semântica mora na borda esquerda e no ícone, nunca no fundo nem no texto, e o estado calmo ocupa o mesmo lugar para a grade não pular. Exceção de dado, como fonte que não atualizou, tem cartão e grupo próprios.",
+      "quando_usar": [
+        "Régua escrita e datada, como oportunidades sem movimento há mais de 30 dias.",
+        "Tela operacional em que só as exceções merecem olhar e cada uma leva a uma lista de casos.",
+        "Faixa própria de exceções acima da grade de KPIs, que colapsa quando está vazia.",
+        "Separar exceção de negócio de exceção de dado, como régua que não pôde ser avaliada."
+      ],
+      "quando_evitar": [
+        "Painel executivo que precisa de leitura estável: KPI simples com ponto de ação (modelo 01).",
+        "Régua inexistente ou que muda toda semana: calibrar e datar a régua antes de publicar alerta.",
+        "Cartão que aparece todo dia: a régua está errada e o alerta vira ruído ignorado.",
+        "Estado de todos os cartões, bom ou ruim: KPI simples com status e régua escrita (modelo 01)."
+      ],
+      "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-sem-movimento-ha-30-dias",
+          "titulo": "Oportunidades sem movimento há 30 dias",
+          "caso_de_uso": "Quantas oportunidades abertas estão paradas além da régua de 30 dias, e onde está a lista delas?",
+          "o_que_demonstra": [
+            "Borda esquerda de 2 px e ícone TriangleAlert em --warning, sem fundo tingido",
+            "Contagem com o substantivo, 7 oportunidades, e a régua literal logo abaixo",
+            "Link para a lista com afordância permanente, não só na passagem do cursor",
+            "Data da avaliação da régua escrita com formatDate"
+          ],
+          "canvas_sugerido": "kpi"
+        },
+        {
+          "slug": "v2_paradas-com-severidade-e-denominador",
+          "titulo": "Paradas com dois níveis de severidade",
+          "caso_de_uso": "Das 143 oportunidades abertas, quantas estão paradas entre 30 e 90 dias e quantas já passaram de 90?",
+          "o_que_demonstra": [
+            "Dois níveis distintos por forma de ícone e palavra, não só por cor",
+            "Denominador escrito: 7 entre 30 e 90 dias e 2 acima de 90, de 143 abertas",
+            "Nível grave em --negative e o outro em --warning, só no ícone e na borda",
+            "Texto do cartão em --text-primary sobre o fundo do cartão (COR-7)"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_faixa-de-excecoes-da-pre-vendas",
+          "titulo": "Faixa de exceções da pré-vendas",
+          "caso_de_uso": "Quais réguas da pré-vendas estouraram na última avaliação e em que ordem de severidade devem ser atacadas?",
+          "o_que_demonstra": [
+            "Quatro réguas próprias: teto da fila, SLA, agendas sem desfecho e leads sem dono",
+            "Ordenação por severidade e não por ordem de cálculo, escrita no cabeçalho",
+            "Faixa própria acima da grade, que colapsa quando está vazia",
+            "Contagem com denominador quando a base é pequena",
+            "Cada cartão com um único link esticado para a fila de trabalho"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v4_estado-calmo-e-regua-nao-avaliada",
+          "titulo": "Estado calmo e régua não avaliada",
+          "caso_de_uso": "Como dizer que nenhuma régua estourou sem esconder que a régua de mídia não pôde ser avaliada por falta de carga?",
+          "o_que_demonstra": [
+            "Estado calmo neutro, nenhum caso fora das réguas, com a data por formatDate",
+            "Exceção de dado separada da exceção de negócio por espaço, em grupo próprio",
+            "Régua não avaliada com ícone Unplug e a última carga, nunca lida como tudo bem",
+            "Mesma altura do cartão de exceção para a faixa não pular"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    }
+  ]
+}

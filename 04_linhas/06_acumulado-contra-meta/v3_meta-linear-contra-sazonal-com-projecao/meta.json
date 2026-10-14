@@ -1,0 +1,13 @@
+{
+  "title": "Meta linear contra meta sazonal, com projeção",
+  "useCase": "O atraso da receita acumulada em 2026 é real ou efeito de uma meta linear num negócio sazonal?",
+  "demonstrates": [
+    "Meta sazonal derivada do peso mensal de 2025",
+    "Alternância entre trajetória linear e sazonal por prop",
+    "Projeção tracejada do último mês medido até dezembro",
+    "Rótulo no fim das trajetórias em vez de legenda"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "A linha acumula o ano inteiro (jan a dez de 2026): medido até agosto, projetado dali em diante pelo mesmo formato sazonal de 2025. A meta impressa é sempre a anual; a prop metaVariant só troca o caminho até lá."
+}

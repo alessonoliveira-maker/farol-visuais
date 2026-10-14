@@ -1,0 +1,548 @@
+{
+  "slug": "24_microvisuais-sparklines",
+  "nome": "Microvisuais e sparklines",
+  "modelos": [
+    {
+      "slug": "01_sparkline-de-linha",
+      "nome": "Sparkline de linha e área",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Polilinha do tamanho de uma palavra, sem eixo, grade, legenda nem tooltip, colada ao número que ela explica. Lê-se forma, direção e ruptura, nunca valor exato. No Farol é um LineChart ou AreaChart do Recharts com margem mínima, dot desligado e animação desligada; acima de cerca de 120 instâncias por tela a mesma geometria vira path em SVG puro. O modelo absorve as variações que acrescentam uma única camada ao traço: âncoras de valor final e extremos, área preenchida quando o zero é base legítima, faixa de normalidade com fonte declarada, série de referência em tom neutro, cauda de projeção tracejada com faixa de cenário, interpolação em degraus para grandezas que mudam aos saltos e faixa de mínimo e máximo por período. A escala é sempre declarada: por linha compara forma, comum compara nível.",
+      "quando_usar": [
+        "Série contínua de 12 ou mais meses, ou 8 ou mais semanas, ao lado de um KPI de card, numa caixa de 96 a 140 px por 32 a 48 px",
+        "Coluna de tabela com uma série por linha, de 60 a 100 px por 20 a 28 px, quando a pergunta é quais linhas mudaram de comportamento",
+        "Julgar se o valor de hoje está dentro do esperado, com faixa de normalidade de origem declarada (SLA, meta com tolerância, intervalo interquartílico)",
+        "Mostrar realizado e previsto no mesmo traço, com a projeção tracejada e a faixa de cenário que a Diretoria exige",
+        "Comparar a série atual com uma única referência: ano anterior, trajetória necessária para a meta ou média do grupo",
+        "Grandezas que mudam aos saltos (SDRs ativos, meta vigente, teto de capacidade), com interpolação em degraus"
+      ],
+      "quando_evitar": [
+        "Menos de 8 pontos: vira ruído; mostre o número com comparação (01/01_kpi-simples) e a nota série curta",
+        "Leitura de valor exato com eixo e dica: use a linha simples (04/01_linha-simples)",
+        "Valores discretos e contáveis por período: use o sparkbar (24/02_sparkbar)",
+        "Mais de duas séries na mesma caixa: use a linha com múltiplas séries (04/02_multiplas-series)",
+        "Resultado binário por período, bateu ou não bateu: use o win/loss (24/07_win-loss)",
+        "Dezenas de séries longas empilhadas em pouca altura: use o horizon chart (05/09_horizon-chart)",
+        "Área preenchida em série que não parte do zero: fique com a linha, porque a área exagera a variação"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-com-extremos-e-valor-final",
+          "titulo": "Receita reconhecida em 12 meses",
+          "caso_de_uso": "Comercial: a receita reconhecida do mês está em alta, queda ou serra, e quão longe do melhor mês do ano?",
+          "o_que_demonstra": [
+            "LineChart sem eixo, grade, legenda nem dica, com margem de 2 px e animação desligada",
+            "Domínio do mínimo ao máximo da série com folga de 8%, sem o traço encostar na borda",
+            "Ponto final em var(--chart-1) e extremos em --line-strong; o final vence se coincidir",
+            "Valor final em HTML irmão com kpi-number e formatCurrencyCompact, fora do SVG",
+            "Frase acessível com a variação em 12 meses, o último valor e a distância do melhor mês"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_tempo-de-resposta-com-faixa-de-sla",
+          "titulo": "Primeira resposta dentro da faixa de SLA",
+          "caso_de_uso": "Pré-vendas: em quantos dos últimos 20 dias úteis o tempo de primeira resposta saiu da faixa de SLA contratada?",
+          "o_que_demonstra": [
+            "ReferenceArea do SLA em var(--surface-sunken), declarada antes do Line para ficar atrás",
+            "Ponto só nos dias fora da faixa, em var(--negative), com a contagem escrita junto",
+            "Rodapé calculado do dado: 3 de 20 dias fora do SLA, com formatHours nos limites",
+            "Fonte da faixa escrita (SLA contratado), nunca desenhada em volta do que aconteceu",
+            "Faixa com menos contraste que o traço, conferida nos temas escuro e claro"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_meta-2027-com-cauda-de-projecao",
+          "titulo": "Trajetória para a meta 2027 por linha de receita",
+          "caso_de_uso": "Diretoria: em quais das 6 linhas de receita a projeção natural fica abaixo da trajetória necessária para a meta de 2027?",
+          "o_que_demonstra": [
+            "ComposedChart com realizado cheio, previsto tracejado e faixa em Area [baixo, alto]",
+            "Ponto de junção que repete o último realizado para as duas linhas se encostarem",
+            "Trajetória necessária como referência em --text-muted, tracejada 3 3",
+            "ReferenceLine vertical no hoje e escala comum dentro de cada card, própria entre cards",
+            "Rodapé que declara faixa de cenário, não intervalo estatístico",
+            "Cenário alto recortado em realizado mais 20%, com ChevronUp na borda quando estoura"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_origens-em-area-com-lacuna-de-coleta",
+          "titulo": "Leads por origem com lacuna de coleta",
+          "caso_de_uso": "Marketing: qual das 10 origens carrega volume em 18 meses e onde a coleta falhou, sem confundir falha com zero?",
+          "o_que_demonstra": [
+            "Tabela de 10 linhas com AreaChart por célula em escala comum, declarada no cabeçalho",
+            "Área só porque volume de leads parte do zero: domínio de 0 ao máximo da tabela",
+            "Meses sem coleta como null com connectNulls desligado: traço e área interrompem",
+            "Origem com menos de 8 meses sem traço, com formatUnavailable e a nota série curta",
+            "Preenchimento sólido de baixa opacidade em var(--chart-1), sem degradê",
+            "Frase acessível contando os meses sem coleta de cada origem"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_sparkbar",
+      "nome": "Sparkbar",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Colunas verticais do tamanho de uma palavra, uma por período, com base sempre no zero e nenhum eixo. É o microvisual certo para eventos discretos e contáveis (leads do dia, agendas da semana, fechamentos do mês), que não faz sentido interpolar. No Farol é um BarChart do Recharts com eixos escondidos e domínio declarado, Cell por ponto para acender a coluna atual ou as que ficaram abaixo de um piso, e animação desligada. O modelo absorve o sparkbar divergente, com o zero no centro, domínio simétrico e cor pela polaridade da métrica (bom e ruim, não mais e menos), e as barras pareadas mini, que comparam o período atual com uma referência em duas barras finas de mesma origem e mesma escala. O piso de desenho é 3 px por coluna mais 1 px de vão, o que dá cerca de 25 colunas em 100 px.",
+      "quando_usar": [
+        "Contagens discretas por período ao lado de um KPI: agendas por semana, entradas por dia, fechamentos por mês, até cerca de 25 colunas em 100 px",
+        "Variação com sinal em torno do zero, como variação mês a mês da receita ou do CPL, na versão divergente",
+        "Coluna de tabela com a mesma série para 10 a 15 filas ou executivos, em escala comum declarada no cabeçalho",
+        "Atual contra uma referência única (mês anterior, mesmo trimestre do ano anterior, meta), em barras pareadas",
+        "Destacar as colunas que ficaram abaixo de um piso operacional declarado"
+      ],
+      "quando_evitar": [
+        "Série longa que vira franja, como 52 semanas em 100 px: agregue o período ou use o sparkline de linha (24/01_sparkline-de-linha)",
+        "Leitura de valor com eixo e rótulo: use a família 03_colunas-verticais",
+        "Resultado binário, sem magnitude: use o win/loss (24/07_win-loss)",
+        "Série que quase nunca cruza o zero: fique com a coluna simples, sem a versão divergente",
+        "Mais de dois períodos por linha nas barras pareadas: use as barras agrupadas (02/02_barras-agrupadas)",
+        "Variação decomposta em contribuições: use a cascata de ponte (19/01_cascata-de-ponte)",
+        "Frequência de uma distribuição: use o histograma (16/01_histograma)"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-semana-com-semana-atual",
+          "titulo": "Agendas marcadas por semana",
+          "caso_de_uso": "Pré-vendas: as agendas das últimas 16 semanas estão subindo, e como a semana atual se compara?",
+          "o_que_demonstra": [
+            "BarChart com XAxis e YAxis escondidos, domínio de 0 ao máximo e animação desligada",
+            "Cell por coluna: semana atual em var(--chart-1), demais em var(--line-strong)",
+            "barCategoryGap de 30% e piso de 3 px por coluna conferido contra a largura",
+            "Número da semana atual em kpi-number ao lado, com formatInt e o substantivo agendas",
+            "Frase acessível com total, média e posição da semana atual"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_variacao-mensal-do-cpl-divergente",
+          "titulo": "Variação mensal do CPL qualificado",
+          "caso_de_uso": "Marketing: em quais dos últimos 12 meses o CPL qualificado subiu, lembrando que alta é pior?",
+          "o_que_demonstra": [
+            "Domínio simétrico de −m a +m, com m igual ao maior valor absoluto da série",
+            "ReferenceLine no zero em var(--line-strong) sólido atravessando a caixa",
+            "Cor pela polaridade via prop goodDirection: alta em --negative, queda em --positive",
+            "Sequência de 3 altas seguidas anotada com colchete e rótulo de 11 px",
+            "Último valor com sinal tipográfico e formatPercent sobre o valor absoluto"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_filas-da-prevendas-em-escala-comum",
+          "titulo": "Entradas por fila em 13 semanas",
+          "caso_de_uso": "Diretoria: quais das 12 filas da pré-vendas carregam volume, lendo a altura absoluta entre linhas?",
+          "o_que_demonstra": [
+            "Tabela de 12 linhas com um BarChart de 13 colunas por célula, de largura e altura fixas",
+            "Escala comum a todas as filas, com o cabeçalho dizendo mesma escala e o máximo da tabela",
+            "Valor da última semana em coluna à direita com tabular-nums e alinhamento à direita",
+            "Semana de recesso com zero medido desenhada como traço de 1 px na base",
+            "Frase acessível com a fila de maior volume e a de menor"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_barras-pareadas-com-origem-sem-mes-anterior",
+          "titulo": "Leads do mês contra o mês anterior",
+          "caso_de_uso": "Marketing: quais origens cresceram contra o mês anterior, incluindo a origem lançada neste mês e sem base?",
+          "o_que_demonstra": [
+            "Dois Bar horizontais por linha: atual em var(--chart-1), anterior em --line-strong",
+            "Máximo calculado sobre as duas séries de todas as linhas, na mesma escala",
+            "Ordem fixa: atual em cima e referência embaixo, com o valor atual em peso maior",
+            "Origem nova sem barra de referência e o texto sem mês anterior medido para comparar",
+            "Ausência como null fora do desenho, nunca barra zerada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_pilula-de-variacao",
+      "nome": "Pílula de variação e indicador de estado",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Delta, direção e estado escritos no tamanho de uma palavra, colados ao número que qualificam. A pílula traz sinal tipográfico, variação sobre o valor absoluto e glifo do lucide-react (TrendingUp, TrendingDown, Minus), com a base da comparação nomeada na mesma linha. O modelo absorve a seta de tendência no texto, glifo sem número que cabe numa frase ou num cabeçalho e que nunca escala com a magnitude, e o ponto de status, marcador com silhueta distinta por estado (círculo cheio, triângulo, losango, anel vazado) e regra de corte declarada. No Farol é HTML com Tailwind e uma função pura que decide o tom pela polaridade da métrica (goodDirection) e por uma faixa neutra; a polaridade invertida troca só a cor, nunca o glifo. O texto semântico vai direto sobre o cartão, sem fundo tingido, porque bg-positive/15 reprova contraste no tema claro. Base zero, base minúscula e regra ausente têm desenho próprio e nunca viram verde por omissão.",
+      "quando_usar": [
+        "Delta de um KPI contra uma base nomeada (mês anterior, mesmo mês do ano anterior, meta), ao lado do número em card ou célula",
+        "Métricas em que subir é ruim (CPL, CPL qualificado, tempo de resposta), com a polaridade trocando só a cor e nunca o glifo",
+        "Direção dentro de uma frase de leitura ou no cabeçalho de uma coluna, com seta e faixa de estabilidade declarada",
+        "Estado de uma linha contra regra explícita (no prazo, em atenção, atrasado, sem data), com forma, cor e rótulo",
+        "Tabelas longas em que só a minoria fora da regra deve acender e o restante fica em tom neutro"
+      ],
+      "quando_evitar": [
+        "Variação ao longo de vários períodos: use o sparkbar divergente (24/02_sparkbar)",
+        "Base pequena em que o percentual vira manchete: escreva o delta absoluto em vez da pílula percentual",
+        "Estado sem regra de corte declarada: sem regra, o ponto colorido é opinião; mostre o número",
+        "Estado por período em sequência de dezenas de dias: use a faixa de status (24/04_faixa-de-status-tracker)",
+        "Magnitude da mudança como leitura principal: a seta não serve; use a pílula com número ou a barra de desvio em célula (14/01_tabela-com-barras-inline)",
+        "Tabela em que a maioria das linhas ficaria vermelha: revise a regra antes de desenhar o semáforo",
+        "Card de KPI completo com número, contexto e procedência: o modelo mora em 01/01_kpi-simples e a pílula é ingrediente"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-mes-contra-mes-anterior",
+          "titulo": "Receita reconhecida contra o mês anterior",
+          "caso_de_uso": "Comercial: a receita reconhecida do mês subiu ou caiu contra o mês anterior, e sobre qual base?",
+          "o_que_demonstra": [
+            "Sinal + ou − (U+2212) à mão sobre formatPercent do valor absoluto",
+            "Glifo TrendingUp, TrendingDown ou Minus com aria-hidden, junto do sinal e da cor",
+            "Texto em --positive direto sobre o cartão, sem fundo tingido (COR-7)",
+            "Base nomeada na mesma linha: contra R$ 1,2 mi em jul/26, por formatMonthShort",
+            "Faixa neutra de 1% em que o tom vira --text-secondary e o glifo vira Minus"
+          ],
+          "canvas_sugerido": "kpi"
+        },
+        {
+          "slug": "v2_setas-de-tendencia-na-linha-de-leitura",
+          "titulo": "Setas de tendência na frase da pré-vendas",
+          "caso_de_uso": "Pré-vendas: quais indicadores da semana estão estáveis, em alta ou em queda, sem trocar de tela?",
+          "o_que_demonstra": [
+            "ArrowUpRight, ArrowDownRight e ArrowRight inline, alinhadas à linha de base do texto",
+            "Faixa de estabilidade de 5% declarada, abaixo da qual a seta fica horizontal",
+            "Glifo de tamanho fixo em 14 px, sem escalar com a magnitude da mudança",
+            "Número que sustenta cada seta escrito na mesma frase, com tabular-nums",
+            "Tempo de resposta em alta com seta para cima em --negative, pela polaridade da métrica"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_status-do-handoff-por-oportunidade",
+          "titulo": "Estado do aceite no handoff",
+          "caso_de_uso": "Comercial: quais das 16 oportunidades passadas pela pré-vendas estão pendentes fora do prazo de aceite?",
+          "o_que_demonstra": [
+            "Silhueta por estado: Circle, Triangle, Diamond e CircleDashed, sempre com rótulo",
+            "Regra escrita no cabeçalho: fora do prazo é mais de 2 dias úteis sem aceite",
+            "Só o estado crítico em --negative; aceitos e pendentes no prazo em --text-muted",
+            "Duração ao lado do ponto por formatDays, separando problema novo de crônico",
+            "Oportunidade sem data de handoff com anel vazado e a palavra sem data",
+            "Ordem por estado com o crítico no topo e a contagem por estado no resumo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_origens-com-base-zero-e-base-minuscula",
+          "titulo": "Variação de leads por origem com base frágil",
+          "caso_de_uso": "Marketing: quais origens cresceram contra o mês anterior, sem deixar base zero ou minúscula virar manchete?",
+          "o_que_demonstra": [
+            "Base zero escreve sem mês anterior medido para comparar, com glifo Minus neutro",
+            "Base abaixo de 10 leads mostra o delta absoluto (+3 leads) em vez de +150%",
+            "CPL qualificado com goodDirection invertido: alta em --negative e seta para cima",
+            "Investimento sem polaridade em --text-secondary, nunca verde nem vermelho (COR-6)",
+            "Origem sem dado no mês atual com formatUnavailable e ícone Unplug",
+            "Frase acessível contando as origens em alta, em queda e sem base"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_faixa-de-status-tracker",
+      "nome": "Faixa de status e de calor (tracker)",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Fileira de blocos de largura igual, um por período, cada um pintado pelo estado ou pela classe de valor daquele período. Lê-se regularidade e sequência: quantos dias ruins, se estão juntos, se a fila piorou no fim. No Farol é HTML com Tailwind, um flex com gap-px e um filho por bloco, com a classe resolvida por um mapa de estado; acima de cerca de 120 blocos vira SVG com rect para não inflar o DOM. O modelo absorve o tracker de blocos da família 13 (regularidade contra meta), a linha de estado em blocos da família 20 (estado discreto por dia) e a faixa de calor (classe sequencial por período, cor por var(--seq-N) em style, porque a rampa não tem utilitário). Três regras não negociáveis: sem dado é estado próprio, em contorno --text-muted sem preenchimento e fora da contagem; no máximo 4 estados, com o ruim reforçado por altura menor e não só por matiz; e um bloco por período de calendário, inclusive os vazios, senão a fileira mente sobre a sequência.",
+      "quando_usar": [
+        "Estado categórico por período em 30 a 90 blocos: SLA diário, coleta diária de uma fonte, meta semanal com feriados",
+        "Magnitude por período em pouca largura, como 52 semanas de entradas, em 5 classes sequenciais com legenda",
+        "Várias fileiras empilhadas, uma por fila ou por fonte, com o resumo de atingimento à direita de cada uma",
+        "Tela de confiança no dado: responder se o painel de hoje tem coleta completa em todas as fontes",
+        "Sempre com resumo textual ao lado, como 26 de 28 dias com dado dentro do SLA"
+      ],
+      "quando_evitar": [
+        "Valor exato ou contínuo por período: use o sparkbar (24/02_sparkbar) ou o sparkline (24/01_sparkline-de-linha)",
+        "Só dois estados em que a sequência de acerto e falha é a história: use o win/loss (24/07_win-loss)",
+        "Dias arranjados em semanas e meses para ler ciclo de dia da semana: use o calendário (15/04_calendario-estilo-contribuicoes)",
+        "Fila por semana lida como matriz de duas dimensões: use a matriz categórica em cor (15/02_matriz-categorica)",
+        "Estados com duração variável e não por período fixo: use a jornada por entidade (20/04_jornada-por-entidade)",
+        "Cinco ou mais estados: agrupe em até 4 antes do componente, ou o tracker vira mosaico",
+        "Blocos abaixo de 3 px de largura: agregue dias em semanas e diga isso no rótulo"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_sla-diario-da-fila-de-entrada",
+          "titulo": "SLA de primeiro contato em 30 dias",
+          "caso_de_uso": "Pré-vendas: em quantos dos últimos 30 dias a fila de entrada fechou dentro do SLA de primeiro contato?",
+          "o_que_demonstra": [
+            "flex gap-px com 30 blocos flex-1, cantos rounded-sm e altura fixa de 24 px",
+            "Dentro do SLA em --positive; fora em --negative e com altura menor",
+            "Dia sem coleta em contorno --text-muted sem preenchimento, fora da contagem",
+            "Resumo 26 de 28 dias com dado, calculado do array e escrito à direita",
+            "Rótulos só de início e fim por formatDate, sem rótulo intermediário"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_entradas-em-52-semanas-com-semana-corrente",
+          "titulo": "Faixa de calor das entradas em 52 semanas",
+          "caso_de_uso": "Pré-vendas: em que semanas do ano as entradas se concentraram, e como está a semana corrente?",
+          "o_que_demonstra": [
+            "Faixa de calor em 5 classes de --seq-3 a --seq-7 por style, com cortes redondos",
+            "Legenda de classes única fora da faixa, com os limites em formatInt",
+            "Semana corrente com contorno de 1 px em --text-primary e o valor escrito ao lado",
+            "Classe mais baixa distinta do fundo escuro; sem dado nunca usa a menor classe",
+            "Rótulos de mês por formatMonthShort só nas viradas de trimestre"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_coleta-diaria-de-oito-fontes",
+          "titulo": "Coleta diária de 8 fontes em 90 dias",
+          "caso_de_uso": "Diretoria: posso confiar no painel de hoje, e qual fonte de dado falhou ou veio parcial nos últimos 90 dias?",
+          "o_que_demonstra": [
+            "8 fileiras de 90 blocos, rótulo da fonte à esquerda e percentual completo à direita",
+            "4 estados (completa, parcial, falhou, sem agenda) com legenda na ordem visual",
+            "Falhou com altura menor que completa, segundo canal além da cor",
+            "@container com @sm: mostrando só os últimos 30 dias em largura estreita, com nota",
+            "Dias sem agenda fora do denominador do percentual, declarado no resumo",
+            "Fontes com rótulos genéricos (CRM, mídia paga A, analytics), sem marca real"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_meta-semanal-com-feriado-e-sem-coleta",
+          "titulo": "Meta semanal com feriado e coleta interrompida",
+          "caso_de_uso": "Pré-vendas: a meta de agendas foi batida sempre, separando feriado, coleta interrompida e semana fora da meta?",
+          "o_que_demonstra": [
+            "Semana de feriado como bloco neutro em --line-strong, fora da contagem e rotulada",
+            "3 semanas sem coleta em contorno vazado, com a palavra sem dado na legenda",
+            "Resumo 14 de 19 semanas com dado, nunca 14 de 22",
+            "Maior sequência de semanas batidas anotada acima da fileira em 11 px",
+            "Frase acessível contando semanas batidas, fora da meta, feriado e sem coleta"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_medidor-de-cobertura-de-dado",
+      "nome": "Medidor de cobertura de dado",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Selo colado ao indicador que diz quanto do universo tem o dado que sustenta o número ao lado. Não fala do negócio, fala do próprio indicador: um CPL qualificado calculado sobre 40% da base não é o mesmo número que um calculado sobre 95%. Tem duas formas canônicas em HTML com Tailwind: a fração, chip com o percentual e um trilho curto preenchido na proporção, e a barra de qualidade em três segmentos na ordem fixa válido, inválido e ausente. O denominador é texto obrigatório (58% dos leads do período têm telefone); o limiar que rebaixa o número principal é função pura com o corte declarado; ausente é categoria diferente de zero antes de chegar ao componente; e a série da cobertura no tempo separa o degrau de uma mudança de coleta da rampa de uma mudança de comportamento. A pesquisa sobre visualização de dado ausente sustenta a escolha: destacar a lacuna eleva a confiança no painel, escondê-la é que enfraquece.",
+      "quando_usar": [
+        "Ao lado de qualquer número calculado sobre um campo que nem todo registro tem: CPL qualificado, leads por origem, ticket",
+        "Tabela de origens ou de fontes em que a cobertura precisa ordenar a lista e rebaixar o indicador vizinho",
+        "Campo com três estados que o time de dados trata de formas diferentes: válido, malformado e ausente",
+        "Investigar se cobertura baixa é defeito de coleta ou da base, pela forma da série de cobertura no tempo",
+        "Telas de Marketing que exibem leads por origem, onde a cobertura de dado é requisito do público"
+      ],
+      "quando_evitar": [
+        "Fonte com cobertura sempre de 100% por construção: o selo vira ruído",
+        "Cobertura como painel próprio, por campo e por fonte: use a tabela com heatmap nas células (14/02_tabela-com-heatmap-nas-celulas)",
+        "Presença ou ausência de vários atributos por entidade: use a matriz de cobertura binária (25/04_matriz-de-cobertura-binaria)",
+        "Denominador não definido: sem base declarada, a cobertura é ambígua e não deve ser publicada",
+        "Progresso contra meta: use a barra de progresso (13/01_barra-de-progresso-linear)",
+        "Largura mínima aplicada a segmento pequeno: quebra a soma de 100%; agregue antes do componente"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_chip-de-cobertura-no-cpl-qualificado",
+          "titulo": "CPL qualificado com selo de cobertura",
+          "caso_de_uso": "Marketing: o CPL qualificado do mês pode ser lido como está, ou a base que o sustenta é incompleta?",
+          "o_que_demonstra": [
+            "kpi-number do CPL com formatCurrencyCompact e o selo de cobertura logo abaixo",
+            "Trilho de 40 px em --surface-overlay com preenchimento em --chart-1 na proporção",
+            "Denominador por extenso: 58% dos 1.240 leads do período têm qualificação",
+            "Limiar de 50% declarado; acima dele o número principal fica normal",
+            "Par taxa e volume por formatRateWithVolume, sem esconder a base"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_telefone-em-tres-segmentos",
+          "titulo": "Qualidade do campo telefone em três segmentos",
+          "caso_de_uso": "Marketing: da base de leads do trimestre, quanto tem telefone válido, malformado ou nenhum telefone?",
+          "o_que_demonstra": [
+            "flex de três segmentos em ordem fixa: válido, malformado e ausente",
+            "Ausente em contorno --text-muted sem preenchimento, distinto de zero medido",
+            "Vão de 2 px entre segmentos (COR-5) e percentuais inteiros que somam 100",
+            "Rótulos fora da barra com contagem e percentual em colunas à direita",
+            "Malformado em --warning com a palavra corrigível, o que o time de dados ataca"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_origens-com-cpl-rebaixado-por-cobertura",
+          "titulo": "Origens com CPL rebaixado por cobertura",
+          "caso_de_uso": "Marketing: em quais das 14 origens o CPL qualificado não deve ser lido porque a cobertura ficou abaixo de 50%?",
+          "o_que_demonstra": [
+            "Tabela de 14 origens com volume, cobertura e CPL qualificado lado a lado",
+            "Abaixo de 50% o CPL vai para --text-muted com TriangleAlert, sem opacity no texto",
+            "Ordem padrão com as piores coberturas no topo e o critério no cabeçalho",
+            "Origem sem nenhum registro do campo com formatUnavailable no lugar do CPL",
+            "Sem origem declarada por último e visível, nunca somada a outras",
+            "Frase acessível com quantas origens ficaram abaixo do limiar"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_salto-de-cobertura-por-mudanca-de-coleta",
+          "titulo": "Salto de cobertura por mudança de coleta",
+          "caso_de_uso": "Marketing: a cobertura de telefone saltou em um mês porque os leads mudaram ou porque a coleta mudou?",
+          "o_que_demonstra": [
+            "12 meses de cobertura em colunas de div com base no zero e o salto de 23% a 61%",
+            "Anotação mudança de coleta em 15/06/2026, por formatDate, sobre a coluna do salto",
+            "Rodapé que lê degrau brusco como coleta e rampa lenta como comportamento",
+            "Meses anteriores sem recálculo retroativo, dito na frase acessível",
+            "Selo atual com o denominador do mês e a variação por formatPercentPoints"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_marcador-em-trilho",
+      "nome": "Marcador em trilho",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Trilho horizontal que representa uma faixa conhecida e um único marcador onde o valor atual cai. Não há barra crescendo do zero: a leitura é posição, não quantidade. O mesmo desenho responde três perguntas diferentes conforme o que o trilho representa: de 0 a 100 dá percentual, do mínimo ao máximo histórico dá posição relativa, e a faixa aceitável dá julgamento; por isso os limites do trilho são texto visível obrigatório, com a fonte. No Farol é HTML com Tailwind: contêiner relative, faixa de referência como div absoluto com left e width percentuais calculados em TypeScript, marcador posicionado por left percentual e centrado sobre o ponto, valor atual escrito fora do trilho. Valor fora da faixa não fica preso na borda em silêncio: fica na borda com chevron apontando para fora e o número escrito. É o microvisual certo para dizer se o CPL de hoje é alto ou baixo para o que já se viu, sem inventar uma meta que ninguém definiu.",
+      "quando_usar": [
+        "Onde o valor de hoje cai entre o mínimo e o máximo dos últimos 12 meses, quando não há meta definida",
+        "Julgar se o valor está dentro de uma faixa aceitável com fonte declarada, como o SLA contratado",
+        "Participação própria entre concorrentes de um perímetro declarado, uma linha por segmento",
+        "Coluna de tabela com a posição relativa de cada linha dentro da própria faixa, com a escala declarada no cabeçalho",
+        "Card estreito em que uma barra de progresso mentiria por não existir total fixo"
+      ],
+      "quando_evitar": [
+        "Existe meta a atingir: use o bullet chart (13/02_bullet-chart) ou a barra de progresso (13/01_barra-de-progresso-linear)",
+        "Vários pontos por linha com eixo: use o dot plot de Cleveland (17/01_dot-plot-de-cleveland)",
+        "A trajetória até o valor importa: use o sparkline com faixa de normalidade (24/01_sparkline-de-linha)",
+        "Dois instantes, antes e depois: use o dumbbell (17/03_dumbbell)",
+        "Faixa sem definição de fonte: o trilho vira julgamento inventado; mostre só o número",
+        "Distribuição completa das observações: use o strip plot (16/03_strip-plot-e-beeswarm)"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-do-mes-na-faixa-de-12-meses",
+          "titulo": "CPL do mês na faixa de 12 meses",
+          "caso_de_uso": "Marketing: o CPL do mês é alto ou baixo para o que foi visto nos últimos 12 meses?",
+          "o_que_demonstra": [
+            "Trilho de 6 px em --surface-overlay do menor ao maior CPL do período",
+            "Marcador de 12 px em --chart-1 com o valor por formatCurrencyCompact fora do trilho",
+            "Mínimo e máximo escritos nas pontas em 11 px, com o mês de cada extremo",
+            "Frase acessível com a posição dentro da faixa e a distância do máximo"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_tempo-de-resposta-com-faixa-aceitavel",
+          "titulo": "Tempo de resposta contra a faixa aceitável",
+          "caso_de_uso": "Pré-vendas: o tempo mediano de primeira resposta da semana está dentro da faixa aceitável do SLA contratado?",
+          "o_que_demonstra": [
+            "Trilho do mínimo ao máximo histórico com a faixa aceitável em --surface-sunken",
+            "Fonte da faixa escrita junto: SLA contratado, de 5 a 30 minutos",
+            "Marcador fora da faixa com a expressão fora do SLA, sem depender só da cor",
+            "Rótulos de limite sem colisão, omitindo o do meio quando não cabe",
+            "Julgamento pela faixa e pelo texto, sem pintar o trilho de verde ou vermelho"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_participacao-por-segmento-com-perimetro",
+          "titulo": "Participação por segmento dentro do perímetro",
+          "caso_de_uso": "Diretoria: em cada um dos 8 segmentos, onde a participação própria cai entre os concorrentes do perímetro?",
+          "o_que_demonstra": [
+            "Uma linha por segmento, trilho da menor à maior participação do perímetro",
+            "Perímetro declarado no cabeçalho, com o número de concorrentes fictícios de cada linha",
+            "Escala comum de 0% ao maior máximo da tabela, dita no cabeçalho, para comparar nível",
+            "Mediana do perímetro como traço de 1 px em --line-strong dentro do trilho",
+            "Participação por formatPercent com uma casa e posição ordinal com º, como 3º de 11",
+            "Frase acessível com os segmentos acima e abaixo da mediana"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_valor-fora-da-faixa-e-sem-historico",
+          "titulo": "Valor fora da faixa histórica",
+          "caso_de_uso": "Marketing: como marcar a origem cujo CPL passou do máximo de 12 meses e a origem ainda sem histórico?",
+          "o_que_demonstra": [
+            "Marcador preso na borda direita com ChevronRight para fora e o valor escrito",
+            "Rótulo acima do máximo de 12 meses com a distância por formatPercent",
+            "Origem com menos de 6 meses sem trilho e o texto faixa sem histórico suficiente",
+            "Valor indisponível com formatUnavailable e ícone Unplug, sem marcador no zero",
+            "Mínimo e máximo calculados sem o valor atual, dito na frase acessível"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_win-loss",
+      "nome": "Win/loss",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Blocos de altura fixa, para cima quando o período foi bom e para baixo quando foi ruim, com um traço central para o empate e nada para o período sem dado. Joga fora a magnitude de propósito e mostra o que nenhum outro microvisual mostra tão bem: sequência, ou seja, as séries de acerto, as séries de falha e a virada entre elas. No Farol é SVG puro em React com a geometria calculada em TypeScript: largura dividida por N, um rect por período deslocado acima ou abaixo da linha central, viewBox fixo e vectorEffect non-scaling-stroke no traço central. A posição é o segundo canal da cor, o que resolve daltonismo e impressão sem legenda. Só se justifica com desfecho genuinamente binário e regra declarada (bateu o SLA, fechou a meta do mês). Zero medido, empate e sem dado são desenhos diferentes, separados antes de chegar ao componente, e período sem meta atribuída nunca é desenhado como derrota.",
+      "quando_usar": [
+        "Resultado binário por período com regra declarada: semana dentro ou fora do SLA, mês com meta batida ou não",
+        "De 12 a 26 períodos numa célula de 60 a 120 px por 14 a 22 px, mais baixa que o sparkbar porque a altura não carrega valor",
+        "Tabela de executivos ou de filas ordenada por períodos batidos, onde o padrão de sequência separa o irregular de quem decaiu",
+        "Anotar a maior sequência de falhas, leitura que o win/loss faz melhor que qualquer outro microvisual"
+      ],
+      "quando_evitar": [
+        "A magnitude é a história: use o sparkbar divergente (24/02_sparkbar)",
+        "Mais de dois estados medidos por período: use a faixa de status (24/04_faixa-de-status-tracker)",
+        "Valor contínuo julgado contra uma faixa: use o sparkline com faixa de normalidade (24/01_sparkline-de-linha)",
+        "Só o resultado atual contra a regra, sem histórico: use o ponto de status (24/03_pilula-de-variacao)",
+        "Mais de cerca de 40 períodos em 120 px: agregue o período ou use a faixa de status",
+        "Dado bruto com zero por falta de coleta: separe sem dado de zero antes, ou o componente inventa empates"
+      ],
+      "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+      "versoes": [
+        {
+          "slug": "v1_sla-semanal-em-26-semanas",
+          "titulo": "SLA semanal da pré-vendas em 26 semanas",
+          "caso_de_uso": "Pré-vendas: em quantas das últimas 26 semanas a fila fechou dentro do SLA, e a sequência recente é boa?",
+          "o_que_demonstra": [
+            "Um rect de altura fixa por semana, acima da linha central se bateu e abaixo se não",
+            "Bateu em --positive e não bateu em --negative, com a posição como segundo canal",
+            "Geometria em função pura: largura por N, vão de 1 px e viewBox fixo",
+            "Resumo 19 de 26 semanas dentro do SLA escrito ao lado, com tabular-nums",
+            "SVG com aria-hidden e frase acessível na raiz com a contagem e a última semana"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_maior-sequencia-fora-do-sla-anotada",
+          "titulo": "Maior sequência fora do SLA",
+          "caso_de_uso": "Pré-vendas: qual foi a maior sequência de semanas seguidas fora do SLA, e quando ela terminou?",
+          "o_que_demonstra": [
+            "Maior sequência de derrotas calculada em função pura sobre o array",
+            "Colchete de 1 px sob a sequência em --text-muted e rótulo 6 semanas seguidas fora",
+            "Rótulo de 11 px com halo em --surface-raised onde cruza a linha central",
+            "Início e fim da sequência por formatDate na frase acessível",
+            "Empate como traço central de 2 px em --line-strong, que quebra a sequência"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_meta-mensal-por-executivo",
+          "titulo": "Meta mensal por executivo em 12 meses",
+          "caso_de_uso": "Comercial: quais dos 12 executivos batem a meta mensal com regularidade e quais decaíram no semestre?",
+          "o_que_demonstra": [
+            "Tabela de 12 linhas com um SVG de 12 blocos por linha, de largura e altura fixas",
+            "Ordem por meses batidos, com a contagem em coluna à direita e tabular-nums",
+            "Nomes fictícios com inicial de sobrenome e a linha destacada em peso 700",
+            "Meses por formatMonthShort só no cabeçalho, alinhados à grade de blocos",
+            "Frase acessível com o executivo mais regular e a maior sequência recente de falhas"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_meses-sem-meta-empate-e-sem-coleta",
+          "titulo": "Meses sem meta, empate e sem coleta",
+          "caso_de_uso": "Comercial: como mostrar o executivo contratado no meio do ano sem desenhar derrota onde não havia meta?",
+          "o_que_demonstra": [
+            "Meses sem meta atribuída vazios, sem bloco nem traço central, com legenda própria",
+            "Empate medido como traço central; mês sem coleta como contorno --text-muted vazado",
+            "Contagem só sobre meses com meta: 5 de 7, nunca 5 de 12",
+            "Tipo win, loss, tie ou null, com a ausência separada antes do componente",
+            "Frase acessível dizendo sem meta atribuída até abr/26"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

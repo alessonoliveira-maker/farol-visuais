@@ -1,0 +1,12 @@
+{
+  "title": "Cruzamentos entre pontos e meta ausente",
+  "useCase": "Pintar certo uma série que cruza a meta várias vezes entre pontos e tem meses sem meta definida.",
+  "demonstrates": [
+    "Cruzamentos inseridos entre pontos, sem triângulos pintados do lado errado",
+    "Meses com meta null quebram a área em vez de repetir a meta anterior",
+    "Nota curta nomeando os meses sem meta e a contagem de acima/abaixo",
+    "Interpolação em função pura no topo do próprio arquivo",
+    "Série real e meta nomeadas por legenda; saldo do período escrito na tela"
+  ],
+  "canvas": "card"
+}

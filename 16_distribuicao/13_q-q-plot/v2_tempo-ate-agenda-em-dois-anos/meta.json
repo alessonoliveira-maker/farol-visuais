@@ -1,0 +1,12 @@
+{
+  "title": "Tempo até a agenda em 2025 contra 2026",
+  "useCase": "A distribuição do tempo até a agenda mudou de forma entre 2025 e 2026, ou só se deslocou?",
+  "demonstrates": [
+    "Q-Q de duas amostras com quantis interpolados na mesma grade de probabilidades",
+    "Nunca emparelhar por índice quando os tamanhos das amostras diferem",
+    "Pontos da cauda acima da diagonal em destaque, com nota: a cauda ficou mais longa",
+    "n de cada ano na linha de legenda"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

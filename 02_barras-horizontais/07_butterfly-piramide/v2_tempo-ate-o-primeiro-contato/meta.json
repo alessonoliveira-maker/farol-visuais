@@ -1,0 +1,12 @@
+{
+  "title": "Entradas e agendas por tempo até o contato",
+  "useCase": "Quanto a velocidade do primeiro contato muda a chance de agenda, das entradas às agendas realizadas por faixa.",
+  "demonstrates": [
+    "Taxa de conversão escrita no centro, ao lado do rótulo da faixa",
+    "Faixa de menos de 5 minutos em destaque, demais em neutro",
+    "Dois BarChart irmãos em grade de três colunas com eixo de categorias no meio",
+    "Bandas alinhadas por mesma lista, mesma margem e mesmo barCategoryGap"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "06_leque-de-projecao",
+  "nome": "Leque de projeção (fan chart)",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Faixas aninhadas de percentis que se abrem a partir do último dado real: a incerteza cresce com o horizonte e a intensidade é maior no centro. Cada faixa é uma Area de faixa, desenhada da mais larga para a mais estreita, com o real e a mediana em Line por cima; no ponto de junção todas colapsam no valor real. Três cenários discretos não formam leque: são faixa (05_faixa-range-band).",
+  "quando_usar": [
+    "Projeção com método que produz percentis mês a mês ou semana a semana (p05, p25, p50, p75, p95).",
+    "Pergunta de chance: qual a probabilidade de passar da meta ou de encostar no teto até uma data.",
+    "Histórico de pelo menos 12 períodos para a abertura do leque ter base.",
+    "Distribuição assimétrica que precisa aparecer como tal, sem espelhar as faixas."
+  ],
+  "quando_evitar": [
+    "Projeção sem método, ou premissa de planilha apresentada com cara de medição.",
+    "Cenários discretos: faixa com linhas de cenário (05_faixa-range-band).",
+    "Real contra previsto sem incerteza: 04_linhas/05_real-contra-previsto.",
+    "Linha protagonista com banda de erro já estimada: 04_linhas/04_linha-com-banda-de-intervalo.",
+    "Leitor que precisa de um número único: publicar a mediana com a faixa escrita."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-com-leque-ate-dezembro",
+      "titulo": "Receita mensal com leque até dezembro",
+      "caso_de_uso": "Mostrar a receita reconhecida até hoje e a faixa plausível dos meses que faltam de 2026.",
+      "o_que_demonstra": [
+        "Faixas p05 a p95 e p25 a p75 desenhadas da mais larga para a mais estreita",
+        "Faixas colapsadas no último real para o leque não nascer solto",
+        "Mediana tracejada e real sólido em Line por cima das faixas",
+        "ReferenceLine vertical de hoje com rótulo curto"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_chance-de-bater-a-meta",
+      "titulo": "Chance de bater a meta do ano",
+      "caso_de_uso": "Dizer qual a probabilidade de a receita acumulada passar da meta anual fictícia até dezembro de 2026.",
+      "o_que_demonstra": [
+        "Leque sobre o acumulado com meta em ReferenceLine tracejada",
+        "Probabilidade calculada dos percentis e escrita na linha de leitura",
+        "Legenda das faixas com a probabilidade em texto, sem depender de cor",
+        "Assimetria preservada: faixas não espelhadas em torno da mediana"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_agendas-projetadas-contra-teto",
+      "titulo": "Agendas projetadas contra teto de capacidade",
+      "caso_de_uso": "Antecipar em que semana as agendas projetadas começam a encostar no teto de capacidade da pré-vendas.",
+      "o_que_demonstra": [
+        "Leque de agendas semanais com teto em Line stepAfter tracejada",
+        "Primeira semana em que o p75 passa do teto anotada com a data",
+        "No máximo duas anotações: hoje e a semana de encontro (ANO-1)",
+        "Selo de premissa do trecho projetado fica no VisualCard (ANO-6)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_historico-curto",
+      "titulo": "Leque com histórico curto",
+      "caso_de_uso": "Mostrar com honestidade uma projeção feita com menos de 6 meses de histórico, sem esconder que ela abre demais.",
+      "o_que_demonstra": [
+        "Horizonte truncado em 3 meses quando o histórico é curto",
+        "Nota curta com o número de meses usados na projeção",
+        "Borda inferior limitada ao zero numa grandeza que não fica negativa (EIX-1)",
+        "Frase acessível que declara a largura da faixa no último mês"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

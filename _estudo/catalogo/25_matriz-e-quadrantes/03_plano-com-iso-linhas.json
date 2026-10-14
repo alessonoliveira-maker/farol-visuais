@@ -1,0 +1,74 @@
+{
+  "slug": "03_plano-com-iso-linhas",
+  "nome": "Plano com iso-linhas de razão ou produto",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Plano de duas medidas em que a regra de decisão não é uma cruz, e sim uma razão ou um produto dos eixos. Razão constante é reta pela origem, o que dá as iso-linhas de retorno da priorização por impacto e esforço; produto constante é hipérbole, o que dá a fronteira curva de equilíbrio, como vitórias iguais a oportunidades vezes taxa de ganho, ou investimento igual a leads vezes CPL. A reta sai de ReferenceLine com segment cortada na borda do domínio; a curva é um componente filho que lê useXAxisScale e useYAxisScale e desenha um path com passo geométrico, recortado ao domínio. Iso-linha é fundo e divisória de região é traço médio, o subtítulo diz qual das duas leituras é a oficial, a nota traz a fórmula da curva e escore de julgamento leva a etiqueta avaliação do time.",
+  "quando_usar": [
+    "Ordenar uma fila de iniciativas por retorno sobre esforço, e não só agrupar em quatro caixas",
+    "A meta é um produto dos eixos e pode ser atingida por caminhos diferentes de volume ou taxa",
+    "Mostrar que entidades na mesma curva custam igual e entregam volumes diferentes",
+    "A fórmula da fronteira está acordada e cabe numa nota do cartão"
+  ],
+  "quando_evitar": [
+    "O corte é um limiar independente em cada eixo: matriz 2x2 de quadrantes (25/01)",
+    "A fronteira não tem fórmula acordada; curva desenhada a olho inventa regra",
+    "Impacto e esforço pontuados sem critério definido antes da pontuação",
+    "A pergunta é a relação entre as duas medidas: dispersão com tendência ou identidade (09/02)",
+    "Centenas de itens, em que a leitura por curva se perde na nuvem: densidade 2D (09/09)"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_automacoes-por-impacto-e-esforco",
+      "titulo": "Automações de pré-vendas por impacto e esforço",
+      "caso_de_uso": "Pré-vendas: quais das 14 automações do backlog rendem mais impacto por unidade de esforço estimada pelo time.",
+      "o_que_demonstra": [
+        "Iso-linhas de 3x, 2x, 1x e 0,5x com ReferenceLine segment cortada na borda",
+        "Rótulo de razão na ponta de cada iso-linha, em traço de fundo",
+        "Divisórias de região em traço médio, acima das iso-linhas na hierarquia",
+        "Eixos de escore 1 a 5 com contorno tracejado: avaliação do time, não medição",
+        "Deslocamento determinístico para itens na mesma coordenada, avisado no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_vitorias-por-volume-e-taxa-com-meta",
+      "titulo": "Vitórias por volume e taxa de ganho",
+      "caso_de_uso": "Comercial: quais dos 14 executivos chegam às 12 vitórias do trimestre, e por qual caminho de volume ou de taxa.",
+      "o_que_demonstra": [
+        "Hipérboles de 5, 10 e 20 vitórias num path desenhado com useXAxisScale",
+        "Passo geométrico na amostragem para a curva não quebrar perto do eixo",
+        "Curva da meta em traço médio com a região acima dela em tom baixo",
+        "Tooltip com o produto calculado e nota com a fórmula da curva",
+        "Anotação: 4 executivos chegam na meta com metade do volume da equipe"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_campanhas-em-curvas-de-investimento",
+      "titulo": "Campanhas por leads e CPL em curvas de investimento",
+      "caso_de_uso": "Marketing: das 48 campanhas do trimestre, quais custam o mesmo e entregam volumes de lead muito diferentes.",
+      "o_que_demonstra": [
+        "Curvas de R$ 5 mil, 20 mil e 50 mil recortadas ao domínio do plano",
+        "48 pontos neutros com rótulo só nos extremos de cada curva",
+        "Faixa de 10% em torno da curva de R$ 20 mil, com os itens de dentro em cinza",
+        "Legenda que diz o que é cada ponto e a unidade de cada eixo",
+        "Campanhas sem CPL fora do plano, contadas no rodapé"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_escala-log-com-executivos-sem-vitoria",
+      "titulo": "Vitórias em escala log com executivos zerados",
+      "caso_de_uso": "Comercial: o plano de vitórias em escala log, com 3 executivos de zero vitórias que o log não consegue desenhar.",
+      "o_que_demonstra": [
+        "Escala log nos dois eixos, em que as hipérboles viram retas paralelas",
+        "Executivos com taxa zero em faixa própria abaixo do plano, nunca no eixo",
+        "Ticks log com valores redondos declarados à mão",
+        "Nota que explica por que as curvas viraram retas",
+        "Fronteira como zona: quem está a uma vitória da meta aparece em cinza"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

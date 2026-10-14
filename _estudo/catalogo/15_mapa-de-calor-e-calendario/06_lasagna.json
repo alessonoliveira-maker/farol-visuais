@@ -1,0 +1,74 @@
+{
+  "slug": "06_lasagna",
+  "nome": "Lasagna (entidades por tempo)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Cada linha é uma entidade (fila, SDR, oportunidade) e cada coluna é um período (dia ou semana), com a cor da célula para valor ou status naquele período. É o heatmap de séries temporais densas: mostra o padrão de cada entidade ao longo do tempo e os dias em que várias pioraram juntas, o que um gráfico com dezenas de linhas não consegue. SVG com geometria calculada em TypeScript; entidade que ainda não existia não tem célula, e isso é diferente de zero.",
+  "quando_usar": [
+    "Status ou valor diário de muitas entidades: SLA por fila, ocupação por SDR, dias parados por oportunidade.",
+    "De 8 a 200 linhas por 12 a 180 colunas; até uns 10 mil retângulos o SVG aguenta sem agregar.",
+    "Achar colunas que escurecem juntas (um dia ruim para todos) e linhas que destoam do grupo.",
+    "Ordenar as linhas para contar a história: por data de início, por média do período ou por semelhança."
+  ],
+  "quando_evitar": [
+    "Poucas entidades com valor contínuo e pergunta de tendência: múltiplas séries (04, modelo 02).",
+    "Uma entidade só com status por dia: faixa de status tracker (24, modelo 04).",
+    "Padrão de dia da semana por hora, sem entidade: heatmap dia por hora (modelo 01).",
+    "Leitura do valor exato de cada dia: tabela com série por linha (14, modelo 03).",
+    "Mais de 10 mil células sem agregação: fundir dias iguais ou agrupar por semana antes de desenhar."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_sla-diario-por-fila",
+      "titulo": "SLA diário de primeiro contato por fila",
+      "caso_de_uso": "Em quais dos últimos 90 dias as 12 filas de pré-vendas estouraram o SLA de primeiro contato, e foi uma fila ou todas?",
+      "o_que_demonstra": [
+        "Grade SVG de 12 filas por 90 dias com célula estreita e sem vão horizontal",
+        "Três faixas categóricas (dentro do SLA, atenção, estouro) com legenda nomeada",
+        "Rótulo de tempo esparso: só o primeiro dia de cada mês no eixo",
+        "Filas ordenadas pela quantidade de dias em estouro, nunca por nome",
+        "Frase acessível com a fila de mais estouros e os dias em que todas estouraram"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_ocupacao-semanal-por-sdr",
+      "titulo": "Ocupação semanal da agenda por SDR",
+      "caso_de_uso": "Quais dos 9 SDRs passaram de 100% da capacidade de agenda nas últimas 26 semanas, e a sobrecarga é crônica ou pontual?",
+      "o_que_demonstra": [
+        "Linhas ordenadas pela ocupação média do período, a maior no topo",
+        "Escala divergente centrada em 100% da capacidade, com o teto declarado na legenda",
+        "Contorno em --warning nas semanas acima de 100%, além da cor",
+        "Ocupação média de cada SDR escrita à direita da linha por formatPercent",
+        "Semana corrente parcial com borda tracejada e nota de semana em curso"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_dias-parados-das-oportunidades-abertas",
+      "titulo": "Dias parados das oportunidades abertas",
+      "caso_de_uso": "Onde as 200 oportunidades abertas do Comercial ficaram paradas nos últimos 120 dias, e quais nunca voltaram a andar?",
+      "o_que_demonstra": [
+        "Dias seguidos na mesma faixa fundidos num só rect: de 24 mil células para poucos mil",
+        "Cor pelos dias sem movimento em 5 faixas sequenciais, reiniciando a cada movimento",
+        "Oportunidade criada no meio do recorte sem células antes da data de criação",
+        "Linhas ordenadas pela data de criação, com rótulo de linha a cada 25 oportunidades",
+        "Linha de hoje em --line-strong e contagem das paradas há 30 dias ou mais"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_inicio-tardio-e-agregacao-semanal",
+      "titulo": "Início tardio e agregação por semana",
+      "caso_de_uso": "Como mostrar SDRs admitidos em jul/26 sem pintar os meses anteriores de zero, com a grade agregada em semanas num cartão?",
+      "o_que_demonstra": [
+        "Nenhuma célula antes da admissão, com marca discreta no primeiro dia de cada SDR",
+        "Dia sem registro depois da admissão hachurado por padrão SVG, distinto de zero",
+        "Prop de granularidade que agrega 182 dias em 26 semanas, com nota no rodapé",
+        "Semana da admissão calculada só sobre os dias em que o SDR já existia",
+        "Nota de leitura: vazio é antes de existir, hachura é sem registro, 0 é zero"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

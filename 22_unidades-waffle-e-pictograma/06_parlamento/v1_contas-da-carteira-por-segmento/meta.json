@@ -1,0 +1,13 @@
+{
+  "title": "Contas da carteira por segmento",
+  "useCase": "Comercial: como as 120 contas da carteira de um executivo se dividem entre os segmentos atendidos.",
+  "demonstrates": [
+    "Função hemicycle em TypeScript com assentos por fileira proporcionais ao raio",
+    "Grupos atribuídos pela ordem angular global, nunca fileira por fileira",
+    "Raio do ponto pelo menor espaçamento entre vizinhos, medido em toda fileira",
+    "Total no centro da base em font-display e legenda com contagem"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta da GEO-1 no card de 640x360 com o caso de uso em uma linha: corpo de 574 x 241,5 px. Linha de leitura em y 14, hemiciclo de raio 158 com a base em y 228 (316 px de largura) e, ao lado, legenda de 5 linhas de 24 px em 234 px de largura; cabe no preset com sobra. O viewBox é o próprio corpo, então a escala é 1 e o texto chega no tamanho declarado (GEO-18). Desvio do catálogo: o raio do ponto sai do menor espaçamento entre vizinhos de TODAS as fileiras, e não só da interna, porque o arredondamento do maior resto pode apertar outra fileira antes dela. O total do centro usa 14 px, o tamanho de número de apoio da tabela 17.1. O segmento sem cadastro sai em ponto vazado com contorno de --text-muted (5,21:1 e 5,37:1), por último no arco e na legenda."
+}

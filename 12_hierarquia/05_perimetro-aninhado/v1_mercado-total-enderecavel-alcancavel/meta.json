@@ -1,0 +1,12 @@
+{
+  "title": "Mercado total, endereçável e alcançável",
+  "useCase": "Diretoria: de R$ 120 bi de mercado total, R$ 18 bi são endereçáveis, R$ 2,4 bi alcançáveis e R$ 96 mi são nossos.",
+  "demonstrates": [
+    "Quadrados alinhados no canto inferior esquerdo com lado pela raiz quadrada do valor",
+    "Rótulo de cada nível com valor e percentual do nível acima",
+    "Participação quase invisível em escala, com nota em vez de desenho fora de escala",
+    "Nota do perímetro colada ao visual: o que entra e o que fica fora"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

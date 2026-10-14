@@ -1,0 +1,75 @@
+{
+  "slug": "01_matriz-de-adjacencia",
+  "nome": "Matriz de adjacência",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Os mesmos nós nas linhas e nas colunas, e cada célula pintada pela intensidade da ligação entre o par. Não existe cruzamento de aresta, então a rede densa continua legível, e por isso a matriz é também a alternativa acessível de toda a família. A ordem é a informação: em ordem alfabética a matriz parece ruído, ordenada por grupo e grau (ou por baricentro iterativo) os blocos e as pontes aparecem. Em relação simétrica desenha só o triângulo inferior; em relação dirigida desenha a matriz inteira e escreve no canto que a linha é a origem e a coluna é o destino. No Farol é um grid CSS com grid-template-columns auto repeat(n, minmax(0, 1fr)) e células aspect-square até cerca de 30 nós; acima disso a mesma geometria vai para SVG. Absorve a matriz de pares da família 25 (25#23): handoff por par, motivos de perda que andam juntos e matriz esparsa.",
+  "quando_usar": [
+    "Rede densa com 10 a 30 nós em que o grafo livre viraria emaranhado (coocorrência de origens, motivos de perda)",
+    "Confronto direto entre pares do mesmo tipo ou de dois tipos (SDR por executivo) com contagem ou taxa na célula",
+    "Leitura de valor exato do par, que chord e grafo só entregam na dica",
+    "Alternativa acessível ou visão móvel de qualquer outro modelo da família, com as mesmas ligações",
+    "Busca de grupos e pontes quando existe um critério de ordenação declarado (grupo, grau, baricentro)"
+  ],
+  "quando_evitar": [
+    "Poucos nós e ligações esparsas, em que a forma da rede é a mensagem: use o grafo por forças (27/04) ou o arc diagram (27/05)",
+    "Mais de 30 nós num cartão estreito sem rolagem: filtre por peso ou colapse os nós sem par antes",
+    "Movimento de uma etapa para outra com diagonal de permanência: use a matriz de transição (15/07_matriz-de-transicao)",
+    "Duas categorias quaisquer sem leitura de rede, só intensidade: use a matriz categórica (15/02_matriz-categorica)",
+    "Volume com sentido entre poucas entidades, em que a proporção do todo importa: use o chord direcional (11/05)"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_coocorrencia-de-origens-na-jornada",
+      "titulo": "Origens que aparecem juntas na jornada",
+      "caso_de_uso": "Marketing: quais das 12 origens fictícias aparecem na mesma jornada de lead em 2026-08, e se formam blocos por tipo.",
+      "o_que_demonstra": [
+        "Triângulo inferior só, com a diagonal neutra em var(--surface-overlay)",
+        "Ordem por grupo (pago, orgânico, relacionamento) com separador de grupo entre blocos",
+        "Cor por quantil em var(--seq-2) a var(--seq-7) para um par gigante não apagar o resto",
+        "Contagem escrita em cada célula, porque var(--seq-2) e var(--seq-3) contrastam pouco",
+        "Linha e coluna sob o cursor realçadas em var(--surface-overlay) com o par na dica"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_handoff-sdr-por-executivo",
+      "titulo": "Handoffs de SDR para executivo",
+      "caso_de_uso": "Pré-vendas: para quais executivos cada SDR fictício repassou agendas em 2026-T3 e onde o repasse se concentra num par.",
+      "o_que_demonstra": [
+        "Matriz dirigida de 6 SDRs por 9 executivos, com origem e destino escritos no canto",
+        "Percentual da linha escrito na célula com formatPercent, e a contagem na dica",
+        "Par mais concentrado com contorno var(--chart-1) e rótulo em peso 700",
+        "Anotação curta junto do par: SDR 3 repassou 70% para dois executivos",
+        "Totais marginais por SDR e por executivo fora da grade, em var(--text-secondary)"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_motivos-de-perda-que-andam-juntos",
+      "titulo": "Motivos de perda que andam juntos",
+      "caso_de_uso": "Comercial: quais dos 18 motivos fictícios de perda são registrados juntos nas 1.460 perdas de 2026 e que blocos eles formam.",
+      "o_que_demonstra": [
+        "Ordenação por baricentro iterativo calculada em TypeScript dentro de useMemo",
+        "Seletor de ordem visível (nome, frequência, agrupamento) com a ordem padrão declarada",
+        "Bloco de três motivos colados realçado por contorno var(--chart-1) e anotado",
+        "Cabeçalho de coluna girado 90 graus com margem calculada pelo maior rótulo",
+        "Contêiner com rolagem horizontal e cabeçalho de linha fixo abaixo de 480 px"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_matriz-esparsa-e-par-sem-medicao",
+      "titulo": "Origens sem par e pares sem medição",
+      "caso_de_uso": "Marketing: 40 origens com 92% de pares vazios; o que sobra quando se colapsa quem não tem par e onde a fonte não registra a origem.",
+      "o_que_demonstra": [
+        "22 origens sem nenhum par colapsadas no rodapé como 22 origens sem relação",
+        "Matriz reduzida a 18 por 18, ainda em grid CSS, com a contagem do que saiu",
+        "Célula sem medição hachurada por repeating-linear-gradient em var(--text-muted)",
+        "Zero medido desenhado e escrito como 0, distinto da célula sem dado",
+        "Legenda com item próprio para sem dado, depois das classes da rampa"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

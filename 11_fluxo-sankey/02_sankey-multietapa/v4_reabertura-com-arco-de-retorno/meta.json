@@ -1,0 +1,14 @@
+{
+  "title": "Reabertura de oportunidades com arco de retorno",
+  "useCase": "Comercial, 2026, T3: quantas oportunidades perdidas em Proposta voltaram para Diagnóstico, e quantas propostas foram refeitas?",
+  "demonstrates": [
+    "Busca em profundidade no preparo, que separa a ligação que fecha ciclo",
+    "Layout acíclico primeiro; arco de retorno acima das colunas, na mesma escala",
+    "Laço na própria etapa vira contador no nó, sem arco, porque arco ali não mede nada",
+    "Legenda que declara se o total conta oportunidades ou passagens",
+    "Ponta no destino marcando o sentido do retorno, além do arco"
+  ],
+  "canvas": { "width": 1200, "height": 820 },
+  "frame": "card",
+  "notes": "Canvas declarado por número, com a conta escrita (GEO-1). LARGURA: o corpo recebe 1200 menos 66 de moldura, ou seja 1134 px, e o desenho pede 1109 px, que é a soma de 16 de margem esquerda, cinco colunas de 12 px de nó, as faixas de rótulo de 136,2 px (Aberta), 136,2 px (Diagnóstico), 149,4 px (Proposta, a maior porque ali mora a terceira linha \"9 refeitas na etapa\", 19 caracteres em Space Grotesk 11 px), 129,6 px (Negociação) e 129,6 px (Ganha), quatro vãos de curva de 84 px e 16 de margem direita; sobram 25 px. ALTURA: o corpo recebe 820 menos 118,5 de moldura, ou seja 701,5 px, dos quais 24 px vão para a linha de leitura e 24 px para a legenda, sobrando 653,5 px para o Sankey; tirando 114 px de margem superior (56 da pista do arco mais 58 do rótulo de até três linhas do primeiro nó de cada coluna) e 16 px de margem inferior, o plano fica com 523,5 px. A coluna de Diagnóstico é a que governa a escala, porque soma as 420 oportunidades em três nós: gasta 116 px nos dois vãos de 58 px e 407,5 px nos nós, o que dá 0,970 px por oportunidade. Nessa escala a ligação mais fina, as 14 em andamento que saem de Negociação, mede 13,6 px, acima do piso de 12 px da ESP-2, e o arco de retorno de 12 oportunidades mede 11,6 px de espessura, o que com o respiro de 14 px e a ponta de 10 px gasta 36 px dos 56 reservados na pista de cima. O vão entre nós é de 58 px, e não dos 44 px da v1, porque o rótulo pode ter TRÊS linhas neste modelo: nome, contagem e contador de laço. ESCALA DO ARCO: a espessura do arco não é constante escrita à mão; ela é o valor vezes a escala medida na caixa de um nó já desenhado, para o diagrama não passar a ter duas réguas de largura. POR QUE O ARCO PASSA POR CIMA: os dois nós que ele liga são o de caminho de cada coluna, isto é o nó de cima, então por baixo o arco subiria atravessando os nós de perda e os rótulos deles; por cima ele sobe e desce em espaço vazio, à esquerda de onde o rótulo começa. A troca não custou altura, porque os 56 px saíram da margem de baixo e entraram na de cima. UNIDADE DO TOTAL: 420 oportunidades distintas, não 441 passagens, e a legenda declara isso porque o mesmo desenho aceita as duas leituras."
+}

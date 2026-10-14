@@ -1,0 +1,71 @@
+{
+  "slug": "06_matriz-de-risco",
+  "nome": "Matriz de risco em células",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Probabilidade nas linhas, crescendo de baixo para cima, impacto nas colunas, e cada célula com o nível escrito, a contagem de riscos e a lista ao clicar. É o modelo da família com a crítica mais bem documentada: a matriz típica compara sem ambiguidade poucos pares de risco, comprime riscos diferentes na mesma célula, pode dar nota maior ao menor, e multiplicar escalas ordinais é inválido. Por isso o nível vem de uma tabela de consulta acordada, nunca do produto de índices; a cor da célula é resumo grosseiro e anda sempre com número; os três tons passam em simulação de daltonismo; e a cor não decide orçamento. Construído em HTML com CSS Grid do Tailwind, com role grid e navegação por setas, porque a grade é o controle de filtro. O laço percorre as faixas de probabilidade de trás para frente; esquecer isso inverte a matriz sem erro visível.",
+  "quando_usar": [
+    "Catálogo de 10 a 60 riscos avaliados por probabilidade e impacto em faixas com critério numérico",
+    "Conversa de comitê sobre onde cada risco está e o que mudou desde a última revisão",
+    "A grade serve de filtro para a lista de riscos com dono, gatilho e plano de resposta",
+    "Mostrar a compressão de faixa ao comparar 3x3 e 5x5 sobre os mesmos riscos"
+  ],
+  "quando_evitar": [
+    "Decidir orçamento ou prioridade pela cor da célula",
+    "Ordenar riscos pelo produto de probabilidade e impacto em escala ordinal",
+    "Existe estimativa quantitativa de perda com incerteza: dot plot com intervalo (17/02)",
+    "Critérios de faixa vagos; o 5x5 só dá mais formas de discordar",
+    "Intensidade por gradiente sem nome de grupo: matriz categórica em cor (15/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_riscos-do-plano-comercial-5x5",
+      "titulo": "Riscos do plano comercial em 5x5",
+      "caso_de_uso": "Diretoria: onde os 23 riscos do plano comercial de 2027 se concentram por probabilidade e impacto.",
+      "o_que_demonstra": [
+        "Nível lido de tabela de consulta acordada, não do produto de índices",
+        "Laço de probabilidade invertido para a faixa mais provável ficar no topo",
+        "Descritor de faixa com critério numérico nos cabeçalhos",
+        "Célula com nível escrito e contagem, em três tons de baixa saturação",
+        "Zero em dígito sobre a superfície base, distinto de sem dado"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_movimento-desde-o-ultimo-comite",
+      "titulo": "Riscos que mudaram desde o último comitê",
+      "caso_de_uso": "Diretoria: quais riscos subiram ou desceram de nível desde o último comitê e para qual célula foram.",
+      "o_que_demonstra": [
+        "Marca de subida ou descida com o número de níveis na célula de destino",
+        "Célula de origem com contorno tracejado enquanto o risco está em foco",
+        "Anotação: 4 riscos subiram de nível; nenhum desceu",
+        "Segundo canal além da cor: número e densidade de traço"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_mapa-de-risco-dos-cenarios-com-lista",
+      "titulo": "Mapa de risco dos cenários com lista",
+      "caso_de_uso": "Diretoria: quais riscos dos cenários estão na faixa alta e quem é o dono, o gatilho e o plano de resposta de cada um.",
+      "o_que_demonstra": [
+        "Grade como controle de filtro, com role grid e navegação por setas",
+        "Clique na célula abre a lista com dono, gatilho e plano de resposta",
+        "Riscos de dependência de mídia paga, teto de pré-vendas e concentração de receita",
+        "Célula selecionada com contorno e contagem repetida no título da lista"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_compressao-3x3-contra-5x5",
+      "titulo": "Compressão de faixa: 3x3 contra 5x5",
+      "caso_de_uso": "Diretoria: quantos dos mesmos 23 riscos se empilham na mesma célula quando a matriz passa de 5x5 para 3x3.",
+      "o_que_demonstra": [
+        "Duas grades lado a lado sobre os mesmos riscos, com faixas mapeadas por tabela",
+        "Anotação: no 3x3, 11 riscos dividem a célula alta e alta",
+        "Riscos sem impacto avaliado na faixa sem avaliação, fora da grade",
+        "Hachura diagonal para sem dado, distinta da célula com zero"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

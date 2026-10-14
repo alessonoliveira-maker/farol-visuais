@@ -1,0 +1,160 @@
+{
+  "familia": "23_mapas",
+  "modelo": "03_simbolos-proporcionais",
+  "versoes": {
+    "v1_clientes-ativos-no-centroide": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. As duas pontas de linha de chamada caem em arco livre do círculo dono (SP a 3,5 px da tinta de GO, MG a 5,4 px da de ES, nenhum trecho sobre círculo alheio) e o maior círculo da legenda sai inteiro. Sem bloqueante. Observações no README: TIP-3, TIP-1 e TIP-7 seguem abertas, o traço de 1,25 px engorda as marcas mínimas e o preenchimento fica no limiar de 3:1 sobre o contorno do país no tema claro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:12.523Z",
+      "impressao": "e17ad9df6fd5d85c017db14897d4b2886ccc7139",
+      "arquivos": {
+        "Chart.tsx": "a2821f5c0e9a12f7d514a0aec2b75832955b5c09",
+        "data.ts": "9241a1b2aa564cec749f7918083e76aac6359fad",
+        "meta.json": "c055585cb12fa01654d4ad37f746fd9bbd0602a9"
+      }
+    },
+    "v2_bolhas-em-grade-realizado-contra-meta": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. O anel da meta é pintado antes do cheio e só onde a meta não foi batida; a área visível do cheio fica dentro de 2,2 por cento de pi r2 nos dois temas em toda UF de raio a partir de 1,5 px, e a legenda sai sem corte. Sem bloqueante. Observações no README: anel e cheio não se separam entre si e abaixo da meta a marca lê maior que o realizado, RR e AC viram borrão, notes do meta.json descreve o desenho anterior à correção.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:13.104Z",
+      "impressao": "e80dc855c0a16db95a2fc1110551ca8479a469d1",
+      "arquivos": {
+        "Chart.tsx": "797ae70da84a3b4b1547e0ef9653379e28241694",
+        "data.ts": "73ca8dfa3d6cce972d18357f72993f111622281e",
+        "meta.json": "63bced4e15df57af8bb5a3fa8007e4ddc2bd4cdf"
+      }
+    },
+    "v3_dorling-receita-2025-e-2026": {
+      "veredito": "reprovado",
+      "nota": "Perguntas 12 e 18. Seção 14.1, identificação das marcas, e DIC-1: no painel de 2026 o Piauí (círculo em 240 e 59 do painel, raio 5,63, dentro do perímetro) não tem sigla e só se identifica na dica; são 26 siglas de 27, contra 27 de 27 em 2025. O placeLabels reserva uma caixa de 16 por 16 px para uma sigla cuja tinta com halo mede 13 por 12: com a caixa real há 22 posições válidas a até 60 px do círculo, a mais próxima logo abaixo e à direita dele. Medir a caixa pela tinta e tentar as diagonais antes das colunas de margem, até dar 27 siglas em cada painel. Os outros bloqueantes da primeira passada fecharam: nenhum par sobreposto (menor vão de 6,3 px) e legenda do aro com as duas amostras. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:21.156Z",
+      "impressao": "6ee4e1bb57b709d8a5c008f977ece990e761a0d3",
+      "arquivos": {
+        "Chart.tsx": "2b499bea51f0a2278aab23ce169f441289704a30",
+        "data.ts": "9ba266ad9ff2ef3d5fa071f553683c893734c1db",
+        "meta.json": "66f26d53c1787ec4688a26018dfc553dff55d186"
+      }
+    },
+    "v4_saldo-de-clientes-negativo-e-zero": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. O sinal das 24 UFs com saldo não nulo lê em dois canais (cheio contra anel vazado, conferido em tons de cinza nos dois temas) e as três pontas de linha de chamada caem em arco livre (SP a 3,8 px da tinta de GO). Sem bloqueante. Observações no README: o rótulo SC +42 fica mais perto do contorno de PR que do de SC, notes do meta.json descreve o desenho anterior à correção, 18 por cento do anel de MG fica sob GO e DF, e a legenda promete o glifo que só 6 de 24 marcas levam.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:21.708Z",
+      "impressao": "e5a7bdb639dc24a82fc5198fbc07f22e7d648d46",
+      "arquivos": {
+        "Chart.tsx": "bac29087bbc5c77c8965d5606a7cc5c7f21021d3",
+        "data.ts": "dd207194361f82b727f2bc166b35e2a81c2847b9",
+        "meta.json": "3d060916abbd417e1a3e4ead53b03e6d1f8f2069"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_clientes-ativos-no-centroide",
+      "veredito": "reprovado",
+      "nota": "Perguntas 31 e 15. Seção 14.1, identificação das marcas: a ponta da linha de chamada de MG 1.180 cai 3,07 px dentro do círculo de ES (24% da linha corre sobre ele) e a de SP termina em cima do contorno de PR, a 0,5 px do traço de MS; ancorar a linha em parte livre do círculo dono (centro com ponto, ou recusar saída dentro de vizinho ou a menos de 3 px de um). ESP-3 com consequência no render: o maior círculo da legenda sai com o topo cortado em 1,6 px (caixa de 48 px para raio 24 mais traço); dar à caixa o diâmetro mais o traço. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:45.844Z",
+      "impressao": "c90664f393df2481978969ddd7f1931b1e048721",
+      "arquivos": {
+        "Chart.tsx": "a0834a024e7e94bd21d3978e0562b087fb69cef8",
+        "data.ts": "9241a1b2aa564cec749f7918083e76aac6359fad",
+        "meta.json": "c055585cb12fa01654d4ad37f746fd9bbd0602a9"
+      }
+    },
+    {
+      "versao": "v2_bolhas-em-grade-realizado-contra-meta",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 12. GEO-16, GEO-3 e seção 14.1, encoding por área: o tracejado da meta em --surface-raised, pintado por cima do cheio, come de 8% a 43% da área do realizado nas 11 UFs que bateram a meta (AP fica com 57,2%, SE com 74,5%, PB com 76,8%) e a marca vira engrenagem; pintar o anel da meta antes do cheio, sempre em --text-secondary, até a área visível ficar dentro de 2% de pi r2. ESP-3 com consequência no render: o maior círculo da legenda sai com o topo cortado em 1 px; somar 2 px à caixa. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:46.493Z",
+      "impressao": "ccde6079b463838764ac9c2f5355066e9d90fdf2",
+      "arquivos": {
+        "Chart.tsx": "32e9c48b0f783f1fbe2be095d626200f07c1461b",
+        "data.ts": "73ca8dfa3d6cce972d18357f72993f111622281e",
+        "meta.json": "63bced4e15df57af8bb5a3fa8007e4ddc2bd4cdf"
+      }
+    },
+    {
+      "versao": "v3_dorling-receita-2025-e-2026",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15, 12 e 18. Seção 14.1, encoding por área: SC fica em cima de SP nos dois painéis (11,54 px de penetração e 8,1% de SP coberto em 2025; 15,53 px e 11,1% em 2026) porque o grampo da caixa de 206 px desfaz a relaxação; dar altura ao painel ou levar o limite para dentro do laço, até nenhum par ter distância menor que a soma dos raios. Identificação e DIC-1: MA, PI, AL e TO não têm sigla em nenhum painel; passar as colunas de margem ao placeLabels. ROT-4 e ACE-7: a legenda diz Contorno escuro: perímetro, e no tema escuro o contorno do perímetro é claro, sem amostra; nomear pela forma e dar as duas amostras. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:47.061Z",
+      "impressao": "988fe94f2c0771150ca3e9260715b7481ba4b3e6",
+      "arquivos": {
+        "Chart.tsx": "09ae3fbcb6a20d3c4aeea1920d3eb38b5a7acb16",
+        "data.ts": "9ba266ad9ff2ef3d5fa071f553683c893734c1db",
+        "meta.json": "0f7561b99da721916324a33699ad79e3665346a7"
+      }
+    },
+    {
+      "versao": "v4_saldo-de-clientes-negativo-e-zero",
+      "veredito": "reprovado",
+      "nota": "Perguntas 19 e 31. ACE-2: o sinal de 19 das 24 UFs com saldo não nulo depende só da cor, e o verde contra o vermelho mede 1,23:1 no claro e 1,31:1 no escuro; dar um segundo canal a todo círculo (glifo de mais ou de menos desenhado como marca dentro do círculo e rótulo assinado para os pequenos, ou forma declarada na legenda). Seção 14.1, identificação das marcas: a ponta da linha de chamada de SP +50 cai 2,73 px dentro do círculo de PR, pintado por cima e da mesma cor; mesma correção da linha de chamada da v1. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:03:47.614Z",
+      "impressao": "6eea724f18c4bcdc58079ba426d0171fdff4a0d0",
+      "arquivos": {
+        "Chart.tsx": "069b924a5c02af0002e86928f19d52c6e3a07cc9",
+        "data.ts": "dd207194361f82b727f2bc166b35e2a81c2847b9",
+        "meta.json": "3d060916abbd417e1a3e4ead53b03e6d1f8f2069"
+      }
+    },
+    {
+      "versao": "v1_clientes-ativos-no-centroide",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. As duas pontas de linha de chamada caem em arco livre do círculo dono (SP a 3,5 px da tinta de GO, MG a 5,4 px da de ES, nenhum trecho sobre círculo alheio) e o maior círculo da legenda sai inteiro. Sem bloqueante. Observações no README: TIP-3, TIP-1 e TIP-7 seguem abertas, o traço de 1,25 px engorda as marcas mínimas e o preenchimento fica no limiar de 3:1 sobre o contorno do país no tema claro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:12.523Z",
+      "impressao": "e17ad9df6fd5d85c017db14897d4b2886ccc7139",
+      "arquivos": {
+        "Chart.tsx": "a2821f5c0e9a12f7d514a0aec2b75832955b5c09",
+        "data.ts": "9241a1b2aa564cec749f7918083e76aac6359fad",
+        "meta.json": "c055585cb12fa01654d4ad37f746fd9bbd0602a9"
+      }
+    },
+    {
+      "versao": "v2_bolhas-em-grade-realizado-contra-meta",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. O anel da meta é pintado antes do cheio e só onde a meta não foi batida; a área visível do cheio fica dentro de 2,2 por cento de pi r2 nos dois temas em toda UF de raio a partir de 1,5 px, e a legenda sai sem corte. Sem bloqueante. Observações no README: anel e cheio não se separam entre si e abaixo da meta a marca lê maior que o realizado, RR e AC viram borrão, notes do meta.json descreve o desenho anterior à correção.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:13.104Z",
+      "impressao": "e80dc855c0a16db95a2fc1110551ca8479a469d1",
+      "arquivos": {
+        "Chart.tsx": "797ae70da84a3b4b1547e0ef9653379e28241694",
+        "data.ts": "73ca8dfa3d6cce972d18357f72993f111622281e",
+        "meta.json": "63bced4e15df57af8bb5a3fa8007e4ddc2bd4cdf"
+      }
+    },
+    {
+      "versao": "v3_dorling-receita-2025-e-2026",
+      "veredito": "reprovado",
+      "nota": "Perguntas 12 e 18. Seção 14.1, identificação das marcas, e DIC-1: no painel de 2026 o Piauí (círculo em 240 e 59 do painel, raio 5,63, dentro do perímetro) não tem sigla e só se identifica na dica; são 26 siglas de 27, contra 27 de 27 em 2025. O placeLabels reserva uma caixa de 16 por 16 px para uma sigla cuja tinta com halo mede 13 por 12: com a caixa real há 22 posições válidas a até 60 px do círculo, a mais próxima logo abaixo e à direita dele. Medir a caixa pela tinta e tentar as diagonais antes das colunas de margem, até dar 27 siglas em cada painel. Os outros bloqueantes da primeira passada fecharam: nenhum par sobreposto (menor vão de 6,3 px) e legenda do aro com as duas amostras. Parecer em validation/revisao_23_mapas__03_simbolos-proporcionais_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:21.156Z",
+      "impressao": "6ee4e1bb57b709d8a5c008f977ece990e761a0d3",
+      "arquivos": {
+        "Chart.tsx": "2b499bea51f0a2278aab23ce169f441289704a30",
+        "data.ts": "9ba266ad9ff2ef3d5fa071f553683c893734c1db",
+        "meta.json": "66f26d53c1787ec4688a26018dfc553dff55d186"
+      }
+    },
+    {
+      "versao": "v4_saldo-de-clientes-negativo-e-zero",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, depois da correção. O sinal das 24 UFs com saldo não nulo lê em dois canais (cheio contra anel vazado, conferido em tons de cinza nos dois temas) e as três pontas de linha de chamada caem em arco livre (SP a 3,8 px da tinta de GO). Sem bloqueante. Observações no README: o rótulo SC +42 fica mais perto do contorno de PR que do de SC, notes do meta.json descreve o desenho anterior à correção, 18 por cento do anel de MG fica sob GO e DF, e a legenda promete o glifo que só 6 de 24 marcas levam.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:36:21.708Z",
+      "impressao": "e5a7bdb639dc24a82fc5198fbc07f22e7d648d46",
+      "arquivos": {
+        "Chart.tsx": "bac29087bbc5c77c8965d5606a7cc5c7f21021d3",
+        "data.ts": "dd207194361f82b727f2bc166b35e2a81c2847b9",
+        "meta.json": "3d060916abbd417e1a3e4ead53b03e6d1f8f2069"
+      }
+    }
+  ]
+}

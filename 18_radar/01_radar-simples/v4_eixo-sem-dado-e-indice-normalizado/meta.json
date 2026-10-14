@@ -1,0 +1,15 @@
+{
+  "title": "Perfil com eixo sem medição e índice normalizado",
+  "useCase": "Comercial, 2026-T3: como ler o perfil do Executivo 03 quando a precisão de forecast ainda não foi medida?",
+  "demonstrates": [
+    "Eixo sem valor como null e linha interrompida, sem ponta falsa até o centro",
+    "connectNulls desligado e rótulo do eixo com a palavra sem dado em --text-muted",
+    "Zero medido desenha ponto e escreve 0; ausência desenha eixo tracejado e escreve sem dado",
+    "Linha de leitura com o método: índice de 0 a 100 pelo percentil no time",
+    "Dica que escreve sem dado no eixo ausente, sem imprimir zero",
+    "Estado vazio com role status quando todos os eixos chegam sem valor"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Sem preenchimento: o Recharts calcula o ponto sem valor com raio zero e colapsa o polígono no centro (Radar.js, computeRadarPoints), então o shape próprio desenha só o traço, em trechos que param nos vizinhos do eixo ausente. Fechar a área por uma corda inventaria um valor no eixo sem medição."
+}

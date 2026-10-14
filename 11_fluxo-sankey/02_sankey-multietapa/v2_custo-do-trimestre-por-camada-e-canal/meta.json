@@ -1,0 +1,14 @@
+{
+  "title": "Custo do trimestre por camada e canal",
+  "useCase": "Diretoria, 2026, T3: de que camada vem o custo de cada canal, e quanto do custo do trimestre tem ganho atribuído?",
+  "demonstrates": [
+    "Ligação na cor da camada de origem, e neutra depois que o canal soma camadas",
+    "Rótulo do nó em formatCurrencyCompact com percentual inteiro do total",
+    "Camada escrita junto do valor, para ninguém somar retornos de camadas diferentes",
+    "Desfecho sem ganho atribuído como nó vazado, além de nomeado",
+    "Uma unidade só no diagrama, dita na linha de leitura: reais do trimestre"
+  ],
+  "canvas": { "width": 880, "height": 680 },
+  "frame": "card",
+  "notes": "Canvas declarado por número, com a conta escrita (GEO-1). LARGURA: o corpo recebe 880 menos 66 de moldura, ou seja 814 px, e o desenho pede 773 px, que é a soma de 16 de margem esquerda, três colunas de 12 px de nó, as faixas de rótulo de 215,4 px (camadas, onde a linha mais longa é \"Camada 3 · R$ 830,0 mil · 45%\" em 29 caracteres), 146,4 px (canais) e 175,2 px (desfechos), dois vãos de curva de 84 px e 16 de margem direita; sobram 41 px de folga. ALTURA: o corpo recebe 680 menos 118,5 de moldura, ou seja 561,5 px, dos quais 24 px vão para a linha de leitura de 12 px com o vão de 8 px, sobrando 537,5 px para o Sankey; tirando a margem de 44 px em cima e 16 embaixo, o plano fica com 477,5 px, e a coluna de canais, que tem cinco nós e é a que governa a escala, gasta 176 px nos quatro vãos de 44 px e 301,5 px nos nós, o que dá 0,162 px por mil reais. Nessa escala a ligação mais fina do diagrama, os R$ 85 mil da camada 2 para Mídia social, mede 13,8 px, acima do piso de 12 px da ESP-2, e o nó mais baixo, R$ 320 mil, mede 51,9 px. O caso de uso tem 112 caracteres e cabe em uma linha do cabeçalho de 814 px, cujo limite seguro é de cerca de 137; se ele crescer para duas linhas, o corpo perde 16,5 px e a ligação de R$ 85 mil cai para 13,3 px, ainda acima do piso. CONSERVAÇÃO: as três colunas somam R$ 1.860.000 cada, conferido no comentário do data.ts, porque o Sankey do Recharts toma o valor do nó como o maior dos dois lados e um nó desequilibrado reescala o diagrama inteiro em silêncio (REC-33). PERCENTUAL: os valores fictícios foram escolhidos para o percentual inteiro somar 100 em cada uma das três colunas por arredondamento simples (22, 33, 45 nas camadas; 23, 24, 17, 19, 17 nos canais; 53 e 47 nos desfechos), o que dispensa a repartição por maior resto que a NUM-2 exigiria."
+}

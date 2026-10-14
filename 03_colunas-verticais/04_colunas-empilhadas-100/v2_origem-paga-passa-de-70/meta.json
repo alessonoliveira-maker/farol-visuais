@@ -1,0 +1,13 @@
+{
+  "title": "Participação da origem paga no mix",
+  "useCase": "Em que mês a origem paga passou de 70% do mix de leads e o que isso significou em volume?",
+  "demonstrates": [
+    "Origem paga na base em chart-1 e as demais em neutro com contorno de separação",
+    "O n de leads do mês escrito acima de cada coluna, como manda o item 3 da Anatomia",
+    "ReferenceLine em 70% com rótulo de limiar na margem, lida contra a base comum da pilha",
+    "Anotação curta ancorada no mês em que o segmento cruza o limiar",
+    "Percentual sai da marca para fora dela quando a espessura fica abaixo do piso de 18 px"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

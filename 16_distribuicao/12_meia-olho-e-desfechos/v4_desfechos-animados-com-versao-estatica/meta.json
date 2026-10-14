@@ -1,0 +1,14 @@
+{
+  "title": "Desfechos animados com versão estática",
+  "useCase": "Como apresentar 50 desfechos de receita do trimestre ao vivo sem quebrar no PDF nem com movimento reduzido?",
+  "demonstrates": [
+    "Hook de quadro trocando o desfecho a cada 500 ms, com sorteio de semente fixa",
+    "Nenhuma transição entre quadros, para não interpolar desfechos que não existem",
+    "Domínio fixo sobre todos os desfechos e contador desfecho 7 de 50",
+    "Botões de pausar e avançar com ícones do lucide-react",
+    "Com movimento reduzido ou no PDF, quantile dotplot com nota de versão estática"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O preset card fecha, pela conta da GEO-1: com o caso de uso em duas linhas o corpo tem 225 px e a peça soma 212, que são 28 do cabeçalho, 8 de vão, 132 do desenho (20 de margem para o nome da meta, 90 de área e 22 de eixo), 8 de vão e 36 do rodapé em duas linhas. O PREVIEW MOSTRA SÓ A VERSÃO ESTÁTICA: o render emula movimento reduzido, e é exatamente esse o caminho que a peça promete para o PDF. A versão animada não tem retrato; foi conferida por leitura do código e pelo typecheck, e quem revisar precisa abri-la num navegador sem movimento reduzido. Três desvios do texto do catálogo, nenhum de desenho. O modelo é SVG puro e não usa Recharts, então isAnimationActive desligado vira a ausência de qualquer transição entre quadros. O hook que o catálogo chama de useQuadro se chama useFrame, porque identificador é em inglês (seção 9), e troca o quadro por setTimeout rearmado a cada quadro, porque setInterval é proibido (seção 2). E o sorteio de semente fixa aparece duas vezes: no gerador do data.ts e na ordem dos quadros, embaralhada com ORDER_SEED. A versão estática entra por três caminhos: prefers-reduced-motion, mídia print e a prop staticOnly, para exportação em que a consulta de mídia não chega. Atingir a meta é desfecho igual ou maior que ela; a meta é múltipla da faixa de empilhamento, então nenhuma pilha fica dos dois lados da linha. O raio do ponto sai da pilha mais alta e da largura da faixa."
+}

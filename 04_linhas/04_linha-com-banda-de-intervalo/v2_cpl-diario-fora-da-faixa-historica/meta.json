@@ -1,0 +1,11 @@
+{
+  "title": "CPL diário fora da faixa das 8 semanas anteriores",
+  "useCase": "Em quais dias de 2026-08 o CPL saiu da faixa de mínimo e máximo das 8 semanas anteriores?",
+  "demonstrates": [
+    "Faixa móvel de mínimo e máximo calculada em TypeScript por dia",
+    "Dias fora da faixa com ponto, símbolo e valor escrito",
+    "Faixa estatística em tom neutro, distinta de faixa de meta"
+  ],
+  "canvas": "largo",
+  "notes": "Os 56 dias de junho e julho no data.ts são só combustível da janela móvel de 8 semanas; o gráfico exibe apenas agosto, quando a janela já está completa. A faixa usa --line-strong em opacidade 0,18, o mesmo token de neutro de dado da v1, nunca --surface-sunken, que é reservado à faixa de período sem coleta."
+}

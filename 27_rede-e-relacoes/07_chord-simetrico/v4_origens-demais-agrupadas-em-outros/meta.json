@@ -1,0 +1,14 @@
+{
+  "title": "Coocorrência entre muitas origens",
+  "useCase": "Marketing: como ler a coocorrência de 11 origens fictícias sem que as fitas finas sumam, e quando trocar para a matriz.",
+  "demonstrates": [
+    "Seis origens coloridas e Outros com a contagem no rótulo, como Outros (n=5)",
+    "Limiar mínimo de fita com a quantidade de pares ocultos escrita no rodapé",
+    "Alternância chord e matriz no mesmo cartão, com a matriz como visão acessível",
+    "Origem sem dado de jornada fora do círculo, contada à parte",
+    "Lista ordenada de pares como visão móvel abaixo de 400 px"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas alto (640 x 560) no lugar de card. O cartão ganha linha de leitura com a alternância, rótulo de 7 grupos em duas linhas e dois rodapés, e no card o corpo de 574 x 225 deixaria o círculo com menos de 130 px (GEO-1, GEO-14). O neutro de Outros é var(--text-muted) (5,2:1 no escuro), e não var(--line-strong), que mede 1,8:1 e some como marca (ACE-6, TOK-5). A raiz é role figure, e não img, porque a alternância e a matriz são conteúdo interativo e acessível. A matriz mostra todos os pares, também os abaixo do limiar."
+}

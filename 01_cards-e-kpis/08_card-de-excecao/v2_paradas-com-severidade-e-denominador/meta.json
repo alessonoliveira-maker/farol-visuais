@@ -1,0 +1,17 @@
+{
+  "title": "Paradas com dois níveis de severidade",
+  "useCase": "Das 143 oportunidades abertas, quantas estão paradas entre 30 e 90 dias e quantas já passaram de 90?",
+  "demonstrates": [
+    "Dois níveis distintos por forma de ícone e palavra, não só por cor",
+    "Denominador escrito: 9 de 143 abertas, com 2 acima de 90 dias e 7 entre 31 e 90",
+    "Nível grave em --negative e o outro em --warning, só no ícone e na borda",
+    "Texto do cartão em --text-primary sobre o fundo do cartão (COR-7)",
+    "Limites sem sobreposição escritos a partir do dado: 31 a 90 e acima de 90"
+  ],
+  "canvas": {
+    "width": 360,
+    "height": 300
+  },
+  "frame": "stage",
+  "notes": "Altura fixada pela soma de 7 linhas do cartão (cabeçalho com escopo e data, total sobre o denominador, os dois níveis de severidade em grade, a linha da régua, e o rodapé com link ou nota de estado) acima do título e do caso de uso do palco. Nenhum preset serve: kpi-alto (360x280), o mais próximo, fica curto para a lista de dois níveis sem apertar o espaçamento entre linhas."
+}

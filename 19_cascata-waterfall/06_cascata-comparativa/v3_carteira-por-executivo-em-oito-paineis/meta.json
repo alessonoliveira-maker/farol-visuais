@@ -1,0 +1,14 @@
+{
+  "title": "Carteira de oito executivos no trimestre",
+  "useCase": "Onde cada executivo ganha e perde carteira em 2026-T3, com a taxa de ganho e a mesma escala em todos?",
+  "demonstrates": [
+    "Grade em Tailwind com componente de ponte pequena por célula",
+    "Escala comum a todos os painéis, conforme EIX-9",
+    "Valor escrito só no início, no fim e no maior passo; resto na dica",
+    "Painel com amostra pequena trocado por aviso n=3",
+    "Ordem dos painéis pela carteira final, declarada na linha de leitura"
+  ],
+  "canvas": { "width": 960, "height": 520 },
+  "frame": "card",
+  "notes": "Desvio de preset (largo 960x400 vira 960x520, GEO-1): duas linhas de painéis com título, ponte e rodapé de valores pedem 172 px cada, mais a linha de leitura e a legenda (cerca de 44 px) e o vão de 12 px: 2 x 172 + 12 + 44 = 400 px de corpo, contra 281,5 do largo. O corpo de 960 x 520 mede 894 x 401,5. A célula tem 214,5 x 172 e o viewBox dela tem o mesmo tamanho, escala 1 (GEO-18); em coluna mais estreita no Farol o SVG encolhe com a largura. Domínio comum de R$ 0 a R$ 1,5 mi: o maior acumulado é 1.460.000 (Talita V.), subido à primeira linha de grade acima; Lívia T. (3 oportunidades fechadas, abaixo do piso de 10) fica fora do domínio e do desenho. Cores: entradas em --info, ganhas em --positive, perdidas em --negative, arquivadas em --warning; a ordem das cores na legenda é a ordem das colunas."
+}

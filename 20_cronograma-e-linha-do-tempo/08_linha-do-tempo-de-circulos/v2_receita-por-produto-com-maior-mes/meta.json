@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida por produto em 24 meses",
+  "useCase": "Como a receita de 4 produtos se distribuiu entre 2024-10 e 2026-09 e qual mês concentrou o maior valor?",
+  "demonstrates": [
+    "Quatro faixas por 24 meses com o mesmo domain de ZAxis em todas as faixas",
+    "Cor fixa por produto em var(--chart-N) com rótulo de faixa no YAxis",
+    "Maior círculo anotado R$ 1,2 mi por LabelList com content customizado",
+    "Total do período por faixa escrito à direita por formatCurrencyCompact",
+    "Dica com mês por formatMonthShort, produto e valor"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Opacidade 0,72: a ACE-5 pede 0,71 no mínimo para --chart-6, a mais exigente das quatro cores (1, 3, 6 e 5, na ordem da COR-8). O eixo das faixas é numérico com tique escrito pelo nome, e não de categoria (REC-14). Área sem piso, de 0 a 600 px²: o menor mês (R$ 40 mil) tem 20 px² e raio de 2,5 px. Os 24 círculos de uma faixa ficam a cerca de 27 px um do outro e o maior tem 28 px de diâmetro, então só meses vizinhos de valor parecido se tocam. As faixas vão do maior ao menor total, dito na linha de leitura."
+}

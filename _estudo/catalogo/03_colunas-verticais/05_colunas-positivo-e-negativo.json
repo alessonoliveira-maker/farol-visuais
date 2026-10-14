@@ -1,0 +1,71 @@
+{
+  "slug": "05_colunas-positivo-e-negativo",
+  "nome": "Colunas positivo e negativo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Colunas que sobem quando o valor é positivo e descem quando é negativo, ancoradas numa linha de zero desenhada. É a forma do saldo, da variação e do desvio; a cor sai de uma função pura que lê a polaridade da métrica, não o sinal cru, via shape do Bar. Absorve a pilha por sinal: entradas empilhadas para cima, saídas para baixo e o líquido marcado com mais peso que os segmentos.",
+  "quando_usar": [
+    "Saldo ou variação com sinal por período, em até 26 períodos.",
+    "Desvio contra uma referência fixa, como a média do semestre, expresso como diferença.",
+    "Entradas e saídas por período com seus componentes, quando o líquido também precisa ser lido.",
+    "Métrica com polaridade definida, para a cor dizer bom ou ruim acompanhada de sinal."
+  ],
+  "quando_evitar": [
+    "Todos os valores positivos: colunas simples (modelo 01).",
+    "Métrica sem polaridade definida: sem verde nem vermelho, só text-secondary e sinal.",
+    "Variação percentual sobre base pequena ou zero: diferença absoluta ou painel de variação (08/06).",
+    "Só o saldo interessa: sem pilha por sinal, que obriga a subtrair comprimentos de cabeça.",
+    "Decomposição passo a passo de um total entre dois momentos: cascata (19)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_saldo-mensal-de-clientes",
+      "titulo": "Saldo mensal de clientes",
+      "caso_de_uso": "Em quais dos últimos 12 meses entraram mais clientes do que saíram?",
+      "o_que_demonstra": [
+        "Bar com shape escolhendo a cor por uma função pura de polaridade, não pelo sinal cru",
+        "ReferenceLine em zero com line-strong sólido, mais forte que a grade",
+        "Valor acima da coluna positiva e abaixo da negativa, com sinal + e −",
+        "Tique de mês fora da área das colunas que descem"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cpl-qualificado-contra-media",
+      "titulo": "CPL qualificado contra a média do semestre",
+      "caso_de_uso": "Em que meses o custo por lead qualificado ficou acima da média do semestre, onde subir é ruim?",
+      "o_que_demonstra": [
+        "Polaridade invertida: coluna que desce é boa e ganha positive, com a regra escrita",
+        "Domínio simétrico calculado para um mês extremo não espremer os demais",
+        "ReferenceArea em surface-sunken nos três meses seguidos acima da média, com texto",
+        "Média nomeada na linha de leitura, em formatCurrencyCompact"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_movimento-do-funil-por-sinal",
+      "titulo": "Movimento semanal do funil de pré-vendas",
+      "caso_de_uso": "O que entrou, o que saiu e o que sobrou no funil de pré-vendas em cada uma das últimas 13 semanas?",
+      "o_que_demonstra": [
+        "Pilha por sinal nativa: o mesmo stackId empilha entradas para cima e saídas para baixo",
+        "Líquido marcado por Line num ComposedChart, com mais peso visual que os segmentos",
+        "Componentes principais encostados no zero dos dois lados, em ordem espelhada",
+        "Dica em três blocos: entradas, saídas e líquido",
+        "Semana só de saídas com a nota sem entradas na semana"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_saldo-zero-e-mes-sem-dado",
+      "titulo": "Saldo com zero medido e mês sem dado",
+      "caso_de_uso": "Como separar o mês em que o saldo foi exatamente zero do mês que não teve apuração?",
+      "o_que_demonstra": [
+        "Saldo zero desenhado como traço de 2 px sobre a linha de zero e escrito 0",
+        "Mês sem dado vazio, com formatUnavailable no lugar do valor",
+        "Domínio que termina na linha de grade acima do maior valor absoluto, dos dois lados",
+        "Frase acessível que conta meses positivos, negativos, zerados e sem dado"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

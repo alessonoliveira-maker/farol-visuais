@@ -1,0 +1,212 @@
+{
+  "familia": "04_linhas",
+  "modelo": "08_bump-chart",
+  "versoes": {
+    "v1_posicao-de-seis-executivos": {
+      "veredito": "aprovado",
+      "nota": "Check 0 erro; eixo ordinal invertido e dot com a posicao corretos nos dois temas; ressalvas de cursor da dica e frase acessivel perto do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:39:59.940Z",
+      "impressao": "4cbd728a041890aec8bd0fc8c1f81c05b60c172d",
+      "arquivos": {
+        "Chart.tsx": "a2b95323cae5794762e26175cfdc71d50736634f",
+        "data.ts": "fb37c9910509629da12b7ebbcd414a5381066fae",
+        "meta.json": "15436e1058ffdb8da76aff4dce1905a4234fa1fa"
+      }
+    },
+    "v2_origem-que-mais-subiu": {
+      "veredito": "aprovado",
+      "nota": "Destaque e pano de fundo legiveis nos dois temas; halo da anotacao apaga 7 px da propria linha, nao bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:06.027Z",
+      "impressao": "762e28b5f67bdf027700044c6ee13e407b02bf5c",
+      "arquivos": {
+        "Chart.tsx": "7cc0c3175e08639dec7772d4d39907bf51516927",
+        "data.ts": "6b796979993f204379b42ec044d823ea5bba6369",
+        "meta.json": "7f6b5d696dcc34e55d4b8520f70bec2d39cfe563"
+      }
+    },
+    "v3_top-10-criativos-em-12-semanas": {
+      "veredito": "aprovado",
+      "nota": "Lacuna do top 10 nao vira zero e os quem entra e quem sai tem nome; grade e serie neutra quase iguais e empate sem nota, nao bloqueantes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:11.333Z",
+      "impressao": "577eab088c6c42925073d4e35125eeb909686d4a",
+      "arquivos": {
+        "Chart.tsx": "cb93147fa98cca87eca39b9f51c30cd6938004b2",
+        "data.ts": "de6fcb10cbd90a8f735439adad1eb198bbec0eec",
+        "meta.json": "0dd1986a0d598298ac1e1cb84c08eab42b73e1e0"
+      }
+    },
+    "v4_empates-e-squad-pausado": {
+      "veredito": "aprovado",
+      "nota": "Empate e pausa honestos: rank por competicao, pausa em null sem ultima posicao; deslocamento move o circulo e nao so o nome, observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:16.941Z",
+      "impressao": "6d5c7cefd63cf53eea3e434d3385dbef9d4e77ca",
+      "arquivos": {
+        "Chart.tsx": "00ccdcf7f8805a99b424dd5b2e80641bb334dd63",
+        "data.ts": "1d5595589ef939f9fa7018d6aa824595a12ebfac",
+        "meta.json": "4f638ab9533df52a002edfbf4dd8dece1b29e96b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_posicao-de-seis-executivos",
+      "veredito": "aprovado",
+      "nota": "Eixo ordinal invertido, ranking calculado com desempate estavel e nome nas duas pontas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:50:27.247Z",
+      "impressao": "4cbd728a041890aec8bd0fc8c1f81c05b60c172d",
+      "arquivos": {
+        "Chart.tsx": "a2b95323cae5794762e26175cfdc71d50736634f",
+        "data.ts": "fb37c9910509629da12b7ebbcd414a5381066fae",
+        "meta.json": "15436e1058ffdb8da76aff4dce1905a4234fa1fa"
+      }
+    },
+    {
+      "versao": "v2_origem-que-mais-subiu",
+      "veredito": "reprovado",
+      "nota": "data.ts nomeia marca real na origem Midia paga Meta; trocar por rotulo generico de canal, como Midia paga social, que e a convencao do catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:50:32.640Z",
+      "impressao": "6b78d8e1db965168a561f821750fdf62a62e7ade",
+      "arquivos": {
+        "Chart.tsx": "3f85f0bdcba829639b2c0645b0f8d66e0fe76d6e",
+        "data.ts": "3ff02ae28b8151327092c3011f60b569be6d74c6",
+        "meta.json": "7f6b5d696dcc34e55d4b8520f70bec2d39cfe563"
+      }
+    },
+    {
+      "versao": "v3_top-10-criativos-em-12-semanas",
+      "veredito": "reprovado",
+      "nota": "A 10a posicao passa por tres criativos sem nenhum rotulo e le como linha continua: a lacuna prometida na nota nao aparece e a pergunta de quem entra e quem sai fica sem resposta. O empate da ultima semana desloca o proprio ponto em 10 px num passo de 22,6 px e sobrepoe o circulo do 5o ao do 4o.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:50:39.104Z",
+      "impressao": "22e595f6c59ad4faec88a2f58646213a72bd01b6",
+      "arquivos": {
+        "Chart.tsx": "bae907f3bb9a3575f556e55ae0630fef4df2ac27",
+        "data.ts": "de6fcb10cbd90a8f735439adad1eb198bbec0eec",
+        "meta.json": "b14025781b3f0d9d21ddbaad0628f2ae554f54ba"
+      }
+    },
+    {
+      "versao": "v4_empates-e-squad-pausado",
+      "veredito": "aprovado",
+      "nota": "Empate por competicao, desempate estavel e pausa sem herdar ultima posicao, tudo legivel nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:50:40.935Z",
+      "impressao": "6d5c7cefd63cf53eea3e434d3385dbef9d4e77ca",
+      "arquivos": {
+        "Chart.tsx": "00ccdcf7f8805a99b424dd5b2e80641bb334dd63",
+        "data.ts": "1d5595589ef939f9fa7018d6aa824595a12ebfac",
+        "meta.json": "4f638ab9533df52a002edfbf4dd8dece1b29e96b"
+      }
+    },
+    {
+      "versao": "v1_posicao-de-seis-executivos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalvas nao bloqueantes no README: empate nao exercitado pelo dado e valor ausente viraria zero no ranking.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:25:11.421Z",
+      "impressao": "4cbd728a041890aec8bd0fc8c1f81c05b60c172d",
+      "arquivos": {
+        "Chart.tsx": "a2b95323cae5794762e26175cfdc71d50736634f",
+        "data.ts": "fb37c9910509629da12b7ebbcd414a5381066fae",
+        "meta.json": "15436e1058ffdb8da76aff4dce1905a4234fa1fa"
+      }
+    },
+    {
+      "versao": "v2_origem-que-mais-subiu",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalvas no README: frase acessivel com o numero de origens fixo no texto e halo da anotacao apagando metade de um ponto neutro.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:25:18.506Z",
+      "impressao": "762e28b5f67bdf027700044c6ee13e407b02bf5c",
+      "arquivos": {
+        "Chart.tsx": "7cc0c3175e08639dec7772d4d39907bf51516927",
+        "data.ts": "6b796979993f204379b42ec044d823ea5bba6369",
+        "meta.json": "7f6b5d696dcc34e55d4b8520f70bec2d39cfe563"
+      }
+    },
+    {
+      "versao": "v4_empates-e-squad-pausado",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalva no README: no empate o circulo e o numero saem do lugar real e descolam do proprio traco, ao contrario do que a Anatomia item 4 promete.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:25:19.360Z",
+      "impressao": "6d5c7cefd63cf53eea3e434d3385dbef9d4e77ca",
+      "arquivos": {
+        "Chart.tsx": "00ccdcf7f8805a99b424dd5b2e80641bb334dd63",
+        "data.ts": "1d5595589ef939f9fa7018d6aa824595a12ebfac",
+        "meta.json": "4f638ab9533df52a002edfbf4dd8dece1b29e96b"
+      }
+    },
+    {
+      "versao": "v3_top-10-criativos-em-12-semanas",
+      "veredito": "reprovado",
+      "nota": "XAxis sem axisLine false: a linha de eixo em text-muted corre exatamente sobre a 10a posicao e preenche todas as lacunas de quem sai do top 10, que e o que a versao existe para mostrar. Passar axisLine={false} como nas outras tres versoes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:25:24.674Z",
+      "impressao": "0f30800e938614de00036a787e8f992ba48d7cc1",
+      "arquivos": {
+        "Chart.tsx": "a3580028fdf4b5bac90a57e3bf23d2bf34017071",
+        "data.ts": "de6fcb10cbd90a8f735439adad1eb198bbec0eec",
+        "meta.json": "0dd1986a0d598298ac1e1cb84c08eab42b73e1e0"
+      }
+    },
+    {
+      "versao": "v1_posicao-de-seis-executivos",
+      "veredito": "aprovado",
+      "nota": "Check 0 erro; eixo ordinal invertido e dot com a posicao corretos nos dois temas; ressalvas de cursor da dica e frase acessivel perto do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:39:59.940Z",
+      "impressao": "4cbd728a041890aec8bd0fc8c1f81c05b60c172d",
+      "arquivos": {
+        "Chart.tsx": "a2b95323cae5794762e26175cfdc71d50736634f",
+        "data.ts": "fb37c9910509629da12b7ebbcd414a5381066fae",
+        "meta.json": "15436e1058ffdb8da76aff4dce1905a4234fa1fa"
+      }
+    },
+    {
+      "versao": "v2_origem-que-mais-subiu",
+      "veredito": "aprovado",
+      "nota": "Destaque e pano de fundo legiveis nos dois temas; halo da anotacao apaga 7 px da propria linha, nao bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:06.027Z",
+      "impressao": "762e28b5f67bdf027700044c6ee13e407b02bf5c",
+      "arquivos": {
+        "Chart.tsx": "7cc0c3175e08639dec7772d4d39907bf51516927",
+        "data.ts": "6b796979993f204379b42ec044d823ea5bba6369",
+        "meta.json": "7f6b5d696dcc34e55d4b8520f70bec2d39cfe563"
+      }
+    },
+    {
+      "versao": "v3_top-10-criativos-em-12-semanas",
+      "veredito": "aprovado",
+      "nota": "Lacuna do top 10 nao vira zero e os quem entra e quem sai tem nome; grade e serie neutra quase iguais e empate sem nota, nao bloqueantes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:11.333Z",
+      "impressao": "577eab088c6c42925073d4e35125eeb909686d4a",
+      "arquivos": {
+        "Chart.tsx": "cb93147fa98cca87eca39b9f51c30cd6938004b2",
+        "data.ts": "de6fcb10cbd90a8f735439adad1eb198bbec0eec",
+        "meta.json": "0dd1986a0d598298ac1e1cb84c08eab42b73e1e0"
+      }
+    },
+    {
+      "versao": "v4_empates-e-squad-pausado",
+      "veredito": "aprovado",
+      "nota": "Empate e pausa honestos: rank por competicao, pausa em null sem ultima posicao; deslocamento move o circulo e nao so o nome, observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:40:16.941Z",
+      "impressao": "6d5c7cefd63cf53eea3e434d3385dbef9d4e77ca",
+      "arquivos": {
+        "Chart.tsx": "00ccdcf7f8805a99b424dd5b2e80641bb334dd63",
+        "data.ts": "1d5595589ef939f9fa7018d6aa824595a12ebfac",
+        "meta.json": "4f638ab9533df52a002edfbf4dd8dece1b29e96b"
+      }
+    }
+  ]
+}

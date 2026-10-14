@@ -1,0 +1,17 @@
+{
+  "title": "Motivo de perda sugerido contra revisado",
+  "useCase": "O classificador acerta o motivo de perda? Em 1.200 perdas revisadas, o que ele confunde com sem fit?",
+  "demonstrates": [
+    "Revisado nas linhas e sugerido nas colunas, com os dois nomes no cabeçalho",
+    "Normalização por propriedade: bruto, por linha, por coluna e total",
+    "Acerto em cor chapada fora da escala; a rampa cobre só o erro, por quartil",
+    "Painel por classe com precisão, revocação e o coeficiente de Matthews",
+    "Divisão por zero devolve null em TypeScript: linha hachurada e ausência escrita"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 480
+  },
+  "frame": "card",
+  "notes": "Canvas por conta: 960 x 480 na moldura card. O caso de uso tem 100 caracteres e a tabela de fronteira para 894 px de cabeçalho garante uma linha até 153, então o cabeçalho mede 40,5 px e o corpo fica em 894 x 361,5 px pela conta canvas menos 66 de recuo, menos 40,5 de cabeçalho, menos 12 de vão. Nenhum preset fecha: o largo de 960x400 dá 281,5 px de altura e a peça precisa de 361 para a matriz de cinco linhas mais a faixa de normalização, a legenda e as duas linhas de rodapé. O viewBox é 894 x 361 de propósito, para a escala do svg sair 1 e a TAMANHO-TEXTO, a COLISAO-TEXTO e a CONTRASTE-TEXTO medirem a peça; por isso painel, legenda e rodapé são desenhados dentro do mesmo svg, e não como bloco HTML irmão. Quatro desvios declarados. Primeiro: a especificação pede seletor de normalização, e no catálogo ele é uma propriedade com o estado desenhado, porque o preview não grava hover, estado nem interação; quem colar liga o clique à prop mode. Segundo: a EST-2 pede o ícone Unplug junto da ausência, e aqui a ausência sai só com o texto de formatUnavailable, porque um componente do lucide abre um svg aninhado com viewBox próprio dentro do svg da peça, e a escala desse aninhado é justamente o que cega a COLISAO-TEXTO, a CONTRASTE-TEXTO e a TEXTO-NA-MARCA. Terceiro: os três degraus claros da rampa ficam abaixo de 3:1 contra o cartão, seq-1 em 1,14 e 1,21, seq-2 em 1,58 e 1,49 e seq-3 em 2,29 e 1,92, e valem pela isenção da ACE-3, porque cada célula carrega o valor escrito; o quarto degrau, seq-6, mede 6,96 e 5,45. Quarto: a hachura é feita de linhas soltas, e não de pattern, porque o serializador precisa resolver cor concreta em cada traço. Texto por fundo medido nesta produção: text-primary sobre seq-1 a seq-3 mede 6,33 no pior tema, vazado sobre seq-6 mede 5,45, e vazado sobre positive mede 5,34. Duas guardas saíram NÃO MEDIDAS no check e foram conferidas à mão. EIXO-CALMO sai em sem_grade: a peça não usa Recharts, não desenha CartesianGrid e não tem XAxis nem YAxis, então a EIX-5 não tem eixo a medir; a EIX-3b, que torna a grade dos dois sentidos obrigatória em matriz, também não se aplica, porque ela pede os dois eixos quantitativos e lidos por posição e aqui os dois são categóricos, com a separação das células feita pelo vão de 2 px. OPACIDADE-MARCA sai em sem_opacidade_em_marca: conferido por busca no arquivo, não há fillOpacity, opacity, strokeOpacity nem classe bg-token com percentual em lugar nenhum, e toda marca é pintada opaca."
+}

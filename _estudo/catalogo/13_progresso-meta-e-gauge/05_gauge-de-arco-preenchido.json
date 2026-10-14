@@ -1,0 +1,56 @@
+{
+  "slug": "05_gauge-de-arco-preenchido",
+  "nome": "Gauge de arco preenchido",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "O gauge sem ponteiro: um arco de 240 ou 180 graus cresce sobre um arco de fundo completo, com o número grande no centro e mínimo e máximo escritos nas pontas. Perde a pretensão de precisão do velocímetro e ganha leitura por comprimento de arco. É o caso limpo do RadialBarChart, e o PolarAngleAxis numérico com domínio explícito é obrigatório: sem ele a maior barra do conjunto vira arco cheio. A meta aparece como traço sobre o arco quando não coincide com o máximo do domínio. No Farol continua abaixo do bullet: serve para um percentual num cartão, nunca para comparar itens.",
+  "quando_usar": [
+    "Um percentual da meta num cartão pequeno, quando a barra não compõe com o layout",
+    "Até 3 cartões lado a lado com o mesmo arco e o mesmo domínio, cada um lido sozinho",
+    "Meta que não é o fim da escala, marcada como traço sobre o arco"
+  ],
+  "quando_evitar": [
+    "Comparação entre vários gauges: use o painel de bullets (13/02)",
+    "Composição de um total: é meia rosca (família 07)",
+    "Métrica de cartão com delta e sem régua desenhada: é cartão de KPI (família 01)",
+    "Estados qualitativos nomeados: gauge com ponteiro e faixas (13/06) ou bullet (13/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_meta-de-agendas-em-arco",
+      "titulo": "Meta mensal de agendas em arco",
+      "caso_de_uso": "Pré-vendas: que percentual da meta de 90 agendas de 2026-09 já foi marcado, num cartão pequeno de cabeçalho?",
+      "o_que_demonstra": [
+        "RadialBarChart com startAngle 210 e endAngle menos 30, arco de 240 graus",
+        "PolarAngleAxis numérico com domain explícito, sem normalizar pela maior barra",
+        "Mínimo e máximo escritos nas pontas e número grande centrado",
+        "cornerRadius zerado abaixo de um mínimo para a ponta não mentir"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_fechamentos-acima-da-meta",
+      "titulo": "Fechamentos do mês acima da meta",
+      "caso_de_uso": "Comercial: 23 oportunidades ganhas contra a meta de 20 em 2026-08; quanto o time passou e onde a meta fica no arco?",
+      "o_que_demonstra": [
+        "Domínio até 1,2 vez a meta para o excedente caber no arco",
+        "Traço de meta sobre o arco com rótulo curto, separado do máximo",
+        "Excedente em positive com ícone e o texto 15% acima da meta",
+        "Frase acessível com realizado, meta e excedente"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_filas-na-mesma-escala",
+      "titulo": "Filas da pré-vendas na mesma escala",
+      "caso_de_uso": "Pré-vendas: três filas de trabalho no dia, com o mesmo arco e domínio, incluindo uma em zero medido e uma sem coleta.",
+      "o_que_demonstra": [
+        "Três gauges com domínio comum calculado sobre o conjunto",
+        "Par de contagens abaixo de cada arco por formatRateWithVolume",
+        "Zero medido com o arco de fundo sozinho e o número 0",
+        "Sem coleta com arco tracejado e formatUnavailable, nunca 0%"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

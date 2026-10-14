@@ -1,0 +1,14 @@
+{
+  "title": "Qualidade do campo telefone em três segmentos",
+  "useCase": "Marketing: da base de leads do trimestre, quanto tem telefone válido, malformado ou nenhum telefone?",
+  "demonstrates": [
+    "flex de três segmentos em ordem fixa: válido, malformado e ausente",
+    "Ausente em contorno --text-muted sem preenchimento, distinto de zero medido",
+    "Vão de 2 px entre segmentos (COR-5) e percentuais inteiros que somam 100",
+    "Rótulos fora da barra com contagem e percentual em colunas à direita",
+    "Malformado em --warning com a palavra corrigível, o que o time de dados ataca"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Corpo de 574 x 225 a 241 px no card. Conteúdo: cabeçalho de 2 linhas (32), barra de 20 e três linhas de 16 com vãos de 8, mais 2 vãos de 16, cerca de 160 px."
+}

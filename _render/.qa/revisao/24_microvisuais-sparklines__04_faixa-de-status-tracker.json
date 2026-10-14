@@ -1,0 +1,134 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "04_faixa-de-status-tracker",
+  "versoes": {
+    "v1_sla-diario-da-fila-de-entrada": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Conferido no DOM e nos PNGs: 26 de 28 dias com dado igual no corpo e na frase (153 caracteres), dia no limite de 15 min conta como dentro, sem coleta em contorno text-muted a 5,21:1 e 5,37:1 e fora da conta, fora do SLA com 14 px contra 24 px de altura, texto de 11 px a 5,21:1 e 5,37:1. Observações no README: divisória border-l (ESP-5), bloco sem coleta 2 px mais largo que os demais, linha órfã no resumo, legenda em 11 px.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:25.816Z",
+      "impressao": "36805d9bb7b0194e756a7c72fe74b5c6b2131d68",
+      "arquivos": {
+        "Chart.tsx": "bdafb4f75c493f869377dcebcac154e78251e442",
+        "data.ts": "b0bc27c257fb3d754ceeed59a8ddff9a20bd1bef",
+        "meta.json": "13ed6de640b050d536c7b9876659321d4fd536c8"
+      }
+    },
+    "v2_entradas-em-52-semanas-com-semana-corrente": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo atual. 32 perguntas sem bloqueante nos dois temas. Medido no DOM: três classes em seq 5, seq 6 e seq 7 a 4,89, 6,96 e 10,12:1 no escuro e 3,72, 5,45 e 8,29:1 no claro; 52 blocos de 12,36 px com os rótulos de trimestre na coluna do bloco; sem dado em contorno a 5,21 e 5,37:1 e fora da menor classe; semana corrente parcial com contorno, data e valor ao lado; frase de 184 caracteres. Desvio do catálogo (3 classes, e não 5) declarado no meta.json e no README. Observações no README: classes vizinhas a 1,42 e 1,45:1 (TOK-8), contorno da semana corrente a 2,97:1 contra o preenchimento no escuro e latente nas classes altas, NUM-6, ESP-5.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:08:59.554Z",
+      "impressao": "f5eb424651192fcfc1b95579d9bdb42c27bbe29e",
+      "arquivos": {
+        "Chart.tsx": "d0613d5da0e9187268ba939f325c4f2c4c400ec1",
+        "data.ts": "eb5b37527679d48c7098a6e87e7145e362f7be22",
+        "meta.json": "d8eda45664eed4acb233b3b1cb0a2a95ee2feadb"
+      }
+    },
+    "v3_coleta-diaria-de-oito-fontes": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo atual. 32 perguntas sem bloqueante nos dois temas. Medido no DOM com cartão de 960, 738, 737, 390 e 360 px: desvio de coluna entre as 8 fileiras de 0,00 px, bloco de 5,83 px no canvas e de 3,37 px no corte de 672 px, modo estreito com 30 blocos de 9,1 a 21,4 px, nome e percentual numa linha e datas afastadas; amostras da legenda em 12, 8 e 6 px na ordem da fileira; os 8 percentuais conferidos contra o dado; frase de 189 caracteres. Observações no README: frase sem o tipo do gráfico e sem o estado de hoje, altura do modo estreito (464 a 516 px) fora do README, corte em 672 px no lugar do sm do catálogo, vão de 1 px.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:09:00.050Z",
+      "impressao": "df053577399921d4c74e1c870a334da999ad39a8",
+      "arquivos": {
+        "Chart.tsx": "000d1e795142ad36655603a7e82e0b099b2ee01d",
+        "data.ts": "e2226e719c74e7a833d7aa229ff55048a139c80c",
+        "meta.json": "291f7f237b52aa13df6850899034fa339c1d433a"
+      }
+    },
+    "v4_meta-semanal-com-feriado-e-sem-coleta": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Conferido no DOM e nos PNGs: 14 de 19 semanas com dado igual no corpo e na frase (209 caracteres), 23 blocos, semana no limite de 40 conta como batida, feriado e sem coleta fora da conta, barra da sequência a 8,16:1 e 8,13:1. Aviso do check aceito: feriado em line-strong a 1,79:1 e 1,83:1, com a palavra feriado escrita acima do bloco. Observações no README: rótulo só no primeiro feriado, bloco sem dado 2 px mais largo e barra 2,3 px além do sexto bloco, colisão latente dos dois rótulos, frase sem o tipo do gráfico.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:27.427Z",
+      "impressao": "6fa64ba92d185f8ee100b488f6403e14e62fb88e",
+      "arquivos": {
+        "Chart.tsx": "1110ff165bb23a8a6ed668f71e734516d906ca0f",
+        "data.ts": "5def607a2e71386eea9543ff8713f1d89322268c",
+        "meta.json": "6d8e4a3ad9241d9b24b45658837fa22cf7e42362"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_sla-diario-da-fila-de-entrada",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Conferido no DOM e nos PNGs: 26 de 28 dias com dado igual no corpo e na frase (153 caracteres), dia no limite de 15 min conta como dentro, sem coleta em contorno text-muted a 5,21:1 e 5,37:1 e fora da conta, fora do SLA com 14 px contra 24 px de altura, texto de 11 px a 5,21:1 e 5,37:1. Observações no README: divisória border-l (ESP-5), bloco sem coleta 2 px mais largo que os demais, linha órfã no resumo, legenda em 11 px.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:25.816Z",
+      "impressao": "36805d9bb7b0194e756a7c72fe74b5c6b2131d68",
+      "arquivos": {
+        "Chart.tsx": "bdafb4f75c493f869377dcebcac154e78251e442",
+        "data.ts": "b0bc27c257fb3d754ceeed59a8ddff9a20bd1bef",
+        "meta.json": "13ed6de640b050d536c7b9876659321d4fd536c8"
+      }
+    },
+    {
+      "versao": "v2_entradas-em-52-semanas-com-semana-corrente",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20 com reflexo na 11, ACE-3, seção 17.2 (Sequencial) e TOK-8: classe sem número na célula abaixo de 3:1 contra o cartão. Medido: seq-3 a 2,29:1 no escuro e 1,92:1 no claro (3 semanas) e seq-4 a 2,60:1 no claro (10 semanas, a corrente entre elas). Mudar: ficar nos três degraus que passam nos dois temas (seq-5, seq-6 e seq-7), com três classes de corte redondo e legenda de três amostras, declarar o desvio do catálogo no meta.json e alinhar o README. Parecer em validation/revisao_24_microvisuais-sparklines__04_faixa-de-status-tracker_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:26.332Z",
+      "impressao": "cc67ac9a0ac44b059a192edae143ecf61f6f7c92",
+      "arquivos": {
+        "Chart.tsx": "db56fde9363d5c87791fbecc3bb250451083987b",
+        "data.ts": "3b37bc018186c56709e5f197f40b005ec20e4cf4",
+        "meta.json": "f9d0ba6cdc4df406b2f599ee9b2c61b7ef5d664c"
+      }
+    },
+    {
+      "versao": "v3_coleta-diaria-de-oito-fontes",
+      "veredito": "reprovado",
+      "nota": "Três bloqueantes. 1) Pergunta 29, EIX-12: o bloco sem agenda sai 2 px mais largo (7,45 contra 5,45 px) e desloca o mesmo dia em até 27,6 px, 4 dias, entre Analytics e as outras fileiras; todo bloco precisa da mesma largura. 2) Seção 14.1, item 4 do catálogo: no modo estreito as colunas fixas de 280 px deixam 52 px de faixa num cartão de 390 px, bloco de 0,77 px, e as duas datas colam; a 391 px de corpo os 90 dias saem com 0,24 px. Liberar a largura da faixa no modo estreito e subir o corte dos 90 dias para onde o bloco chega a 3 px. 3) Pergunta 12, ROT-4 e ACE-2: amostra de parcial com 14 px, mais alta que a de completa com 12 px, o inverso da fileira. Parecer em validation/revisao_24_microvisuais-sparklines__04_faixa-de-status-tracker_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:26.890Z",
+      "impressao": "8e08b8f6e145541add6ecd8a94d0aca2c221bcea",
+      "arquivos": {
+        "Chart.tsx": "5155c19d922a583db49a9c6058fd943f77aec79a",
+        "data.ts": "e2226e719c74e7a833d7aa229ff55048a139c80c",
+        "meta.json": "dd96a900f50c81ba27290db2e490cab85e7eaad3"
+      }
+    },
+    {
+      "versao": "v4_meta-semanal-com-feriado-e-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Conferido no DOM e nos PNGs: 14 de 19 semanas com dado igual no corpo e na frase (209 caracteres), 23 blocos, semana no limite de 40 conta como batida, feriado e sem coleta fora da conta, barra da sequência a 8,16:1 e 8,13:1. Aviso do check aceito: feriado em line-strong a 1,79:1 e 1,83:1, com a palavra feriado escrita acima do bloco. Observações no README: rótulo só no primeiro feriado, bloco sem dado 2 px mais largo e barra 2,3 px além do sexto bloco, colisão latente dos dois rótulos, frase sem o tipo do gráfico.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:55:27.427Z",
+      "impressao": "6fa64ba92d185f8ee100b488f6403e14e62fb88e",
+      "arquivos": {
+        "Chart.tsx": "1110ff165bb23a8a6ed668f71e734516d906ca0f",
+        "data.ts": "5def607a2e71386eea9543ff8713f1d89322268c",
+        "meta.json": "6d8e4a3ad9241d9b24b45658837fa22cf7e42362"
+      }
+    },
+    {
+      "versao": "v2_entradas-em-52-semanas-com-semana-corrente",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo atual. 32 perguntas sem bloqueante nos dois temas. Medido no DOM: três classes em seq 5, seq 6 e seq 7 a 4,89, 6,96 e 10,12:1 no escuro e 3,72, 5,45 e 8,29:1 no claro; 52 blocos de 12,36 px com os rótulos de trimestre na coluna do bloco; sem dado em contorno a 5,21 e 5,37:1 e fora da menor classe; semana corrente parcial com contorno, data e valor ao lado; frase de 184 caracteres. Desvio do catálogo (3 classes, e não 5) declarado no meta.json e no README. Observações no README: classes vizinhas a 1,42 e 1,45:1 (TOK-8), contorno da semana corrente a 2,97:1 contra o preenchimento no escuro e latente nas classes altas, NUM-6, ESP-5.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:08:59.554Z",
+      "impressao": "f5eb424651192fcfc1b95579d9bdb42c27bbe29e",
+      "arquivos": {
+        "Chart.tsx": "d0613d5da0e9187268ba939f325c4f2c4c400ec1",
+        "data.ts": "eb5b37527679d48c7098a6e87e7145e362f7be22",
+        "meta.json": "d8eda45664eed4acb233b3b1cb0a2a95ee2feadb"
+      }
+    },
+    {
+      "versao": "v3_coleta-diaria-de-oito-fontes",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo atual. 32 perguntas sem bloqueante nos dois temas. Medido no DOM com cartão de 960, 738, 737, 390 e 360 px: desvio de coluna entre as 8 fileiras de 0,00 px, bloco de 5,83 px no canvas e de 3,37 px no corte de 672 px, modo estreito com 30 blocos de 9,1 a 21,4 px, nome e percentual numa linha e datas afastadas; amostras da legenda em 12, 8 e 6 px na ordem da fileira; os 8 percentuais conferidos contra o dado; frase de 189 caracteres. Observações no README: frase sem o tipo do gráfico e sem o estado de hoje, altura do modo estreito (464 a 516 px) fora do README, corte em 672 px no lugar do sm do catálogo, vão de 1 px.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:09:00.050Z",
+      "impressao": "df053577399921d4c74e1c870a334da999ad39a8",
+      "arquivos": {
+        "Chart.tsx": "000d1e795142ad36655603a7e82e0b099b2ee01d",
+        "data.ts": "e2226e719c74e7a833d7aa229ff55048a139c80c",
+        "meta.json": "291f7f237b52aa13df6850899034fa339c1d433a"
+      }
+    }
+  ]
+}

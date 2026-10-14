@@ -1,0 +1,12 @@
+{
+  "title": "Etapa maior que a etapa anterior",
+  "useCase": "Mostrar o aviso e a troca para barras quando uma etapa soma mais que a etapa anterior, em vez de um trapézio que abre para baixo.",
+  "demonstrates": [
+    "Validação de monotonicidade no componente antes de desenhar",
+    "Aviso escrito quando uma etapa é maior que a anterior, com a janela de data explicada",
+    "Troca automática para barras horizontais com o mesmo dado quando a validação falha",
+    "Taxa acima de 100% escrita como tal pelo mesmo formatador, nunca truncada em 100%"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,160 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "06_colunas-contra-meta-ou-limiar",
+  "versoes": {
+    "v1_receita-contra-meta-mensal": {
+      "veredito": "aprovado",
+      "nota": "Colunas do zero, meta em ReferenceLine tracejada com rotulo em margem reservada, halo onde cruza; contador 4 de 6 confere com o dado; so tokens.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:07.139Z",
+      "impressao": "d9cb2f452bf6b6b152746a476ed51720bc84511e",
+      "arquivos": {
+        "Chart.tsx": "c113d01ca7c495c2d88c81d8bd0541f20d168f6a",
+        "data.ts": "f408dabdc953abf249f349503216beecb7546708",
+        "meta.json": "5552d51d7c4fd89f10ea7fb15c75a90e0ebf752b"
+      }
+    },
+    "v2_entradas-contra-teto-com-excedente": {
+      "veredito": "aprovado",
+      "nota": "Pilha dentro e excedente do zero, so o excedente em negative com +N; corte do teto visivel na propria coluna; dica reconstruida com o valor original.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:12.545Z",
+      "impressao": "8b08759365dc8596a2e1e662c2adca1c3438f9a9",
+      "arquivos": {
+        "Chart.tsx": "e23cdc51035dd034301df7a9e040ee0c14328283",
+        "data.ts": "a8816691a01ad2b411006c94abf376a8e63727d3",
+        "meta.json": "9082071759089eea78deff0d8c5b3d3999ba5843"
+      }
+    },
+    "v3_fechamentos-contra-forecast": {
+      "veredito": "aprovado",
+      "nota": "Coluna fantasma proporcional, os dois retangulos do zero; atingimento so fora da faixa de 90 a 110; vies medio confere; forecast com valor escrito ao lado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:17.225Z",
+      "impressao": "b7be542c840e5fe5c55cda5136b7a199e976fce8",
+      "arquivos": {
+        "Chart.tsx": "31cc3447b56190650e9903039d7c49d4622599c0",
+        "data.ts": "7baa210c1e04ba2a705d82d8b5a7dab87dbe7479",
+        "meta.json": "72ce0ed8faa8a7791e02d589a92ed2c18d4880da"
+      }
+    },
+    "v4_demanda-contra-capacidade-em-degraus": {
+      "veredito": "aprovado",
+      "nota": "Capacidade em stepAfter com corte recalculado mes a mes; capacidade zero em jan sai toda em excedente com a palavra, nao vira teto; minPointSize corrigido pelo over.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:22.260Z",
+      "impressao": "842ec4761d84963ac71ce4e2977e835b0718215e",
+      "arquivos": {
+        "Chart.tsx": "372638e2ce9511c02ea0954f6e10f1eae2a0e2a5",
+        "data.ts": "384bb2c3375a16e96e348431fe16745430d900a1",
+        "meta.json": "e45a3c4133a15f35284984a14a49d7a453c80fcd"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-contra-meta-mensal",
+      "veredito": "aprovado",
+      "nota": "Linha de meta, cor por chave e valor em toda coluna; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:04:06.608Z",
+      "impressao": "d9cb2f452bf6b6b152746a476ed51720bc84511e",
+      "arquivos": {
+        "Chart.tsx": "c113d01ca7c495c2d88c81d8bd0541f20d168f6a",
+        "data.ts": "f408dabdc953abf249f349503216beecb7546708",
+        "meta.json": "5552d51d7c4fd89f10ea7fb15c75a90e0ebf752b"
+      }
+    },
+    {
+      "versao": "v2_entradas-contra-teto-com-excedente",
+      "veredito": "aprovado",
+      "nota": "Excedente so onde existe, medido no PNG; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:04:11.498Z",
+      "impressao": "8b08759365dc8596a2e1e662c2adca1c3438f9a9",
+      "arquivos": {
+        "Chart.tsx": "e23cdc51035dd034301df7a9e040ee0c14328283",
+        "data.ts": "a8816691a01ad2b411006c94abf376a8e63727d3",
+        "meta.json": "9082071759089eea78deff0d8c5b3d3999ba5843"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-contra-forecast",
+      "veredito": "aprovado",
+      "nota": "Coluna fantasma correta, viés e atingimento conferem; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:04:12.061Z",
+      "impressao": "b7be542c840e5fe5c55cda5136b7a199e976fce8",
+      "arquivos": {
+        "Chart.tsx": "31cc3447b56190650e9903039d7c49d4622599c0",
+        "data.ts": "7baa210c1e04ba2a705d82d8b5a7dab87dbe7479",
+        "meta.json": "72ce0ed8faa8a7791e02d589a92ed2c18d4880da"
+      }
+    },
+    {
+      "versao": "v4_demanda-contra-capacidade-em-degraus",
+      "veredito": "reprovado",
+      "nota": "Excedente fantasma: mes dentro da capacidade desenha tampa vermelha de 2 px. Fazer o segmento over sumir quando for zero.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:04:16.332Z",
+      "impressao": "5893bb71a837564fb3ad7b8e521110e55f1020c3",
+      "arquivos": {
+        "Chart.tsx": "6f0c8c006cab6957d5cbc9c7a9e34dc2ca88eea4",
+        "data.ts": "384bb2c3375a16e96e348431fe16745430d900a1",
+        "meta.json": "e45a3c4133a15f35284984a14a49d7a453c80fcd"
+      }
+    },
+    {
+      "versao": "v1_receita-contra-meta-mensal",
+      "veredito": "aprovado",
+      "nota": "Colunas do zero, meta em ReferenceLine tracejada com rotulo em margem reservada, halo onde cruza; contador 4 de 6 confere com o dado; so tokens.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:07.139Z",
+      "impressao": "d9cb2f452bf6b6b152746a476ed51720bc84511e",
+      "arquivos": {
+        "Chart.tsx": "c113d01ca7c495c2d88c81d8bd0541f20d168f6a",
+        "data.ts": "f408dabdc953abf249f349503216beecb7546708",
+        "meta.json": "5552d51d7c4fd89f10ea7fb15c75a90e0ebf752b"
+      }
+    },
+    {
+      "versao": "v2_entradas-contra-teto-com-excedente",
+      "veredito": "aprovado",
+      "nota": "Pilha dentro e excedente do zero, so o excedente em negative com +N; corte do teto visivel na propria coluna; dica reconstruida com o valor original.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:12.545Z",
+      "impressao": "8b08759365dc8596a2e1e662c2adca1c3438f9a9",
+      "arquivos": {
+        "Chart.tsx": "e23cdc51035dd034301df7a9e040ee0c14328283",
+        "data.ts": "a8816691a01ad2b411006c94abf376a8e63727d3",
+        "meta.json": "9082071759089eea78deff0d8c5b3d3999ba5843"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-contra-forecast",
+      "veredito": "aprovado",
+      "nota": "Coluna fantasma proporcional, os dois retangulos do zero; atingimento so fora da faixa de 90 a 110; vies medio confere; forecast com valor escrito ao lado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:17.225Z",
+      "impressao": "b7be542c840e5fe5c55cda5136b7a199e976fce8",
+      "arquivos": {
+        "Chart.tsx": "31cc3447b56190650e9903039d7c49d4622599c0",
+        "data.ts": "7baa210c1e04ba2a705d82d8b5a7dab87dbe7479",
+        "meta.json": "72ce0ed8faa8a7791e02d589a92ed2c18d4880da"
+      }
+    },
+    {
+      "versao": "v4_demanda-contra-capacidade-em-degraus",
+      "veredito": "aprovado",
+      "nota": "Capacidade em stepAfter com corte recalculado mes a mes; capacidade zero em jan sai toda em excedente com a palavra, nao vira teto; minPointSize corrigido pelo over.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:13:22.260Z",
+      "impressao": "842ec4761d84963ac71ce4e2977e835b0718215e",
+      "arquivos": {
+        "Chart.tsx": "372638e2ce9511c02ea0954f6e10f1eae2a0e2a5",
+        "data.ts": "384bb2c3375a16e96e348431fe16745430d900a1",
+        "meta.json": "e45a3c4133a15f35284984a14a49d7a453c80fcd"
+      }
+    }
+  ]
+}

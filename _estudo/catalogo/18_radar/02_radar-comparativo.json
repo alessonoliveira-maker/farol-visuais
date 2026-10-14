@@ -1,0 +1,74 @@
+{
+  "slug": "02_radar-comparativo",
+  "nome": "Radar comparativo sobreposto",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas séries no mesmo radar, a entidade e uma referência (média do time, meta, período anterior ou outra entidade), com escala comum fixa e estilos distintos: foco preenchido e referência em contorno tracejado desenhada antes no JSX. A diferença de forma aponta onde a entidade se afasta. Absorve o radar só contorno do estudo (18#3), usado quando o leitor compara forma e não volume.",
+  "quando_usar": [
+    "Entidade contra uma referência em 5 a 8 dimensões na mesma escala: executivo contra a média, plataforma contra plataforma.",
+    "A mensagem é onde as formas divergem, com a diferença numérica na dica.",
+    "Cenários de meta em que a série escolhida é preenchida e as alternativas ficam só em contorno, formando a faixa do cenário.",
+    "Tela que também oferece ver como barras, com a mesma ordem de dimensões."
+  ],
+  "quando_evitar": [
+    "Três ou mais séries que precisam ser lidas uma a uma: pequenos múltiplos (modelo 03) ou barras agrupadas (02/02).",
+    "Comparar valores exatos por dimensão: barras agrupadas (02/02) ou dot plot por dimensão (17/01).",
+    "Duas áreas opacas de opacidade igual, que escondem uma à outra: foco preenchido e referência só em contorno.",
+    "Dimensões de unidades diferentes: coordenadas paralelas com escala por eixo (modelo 06).",
+    "Perfis quase idênticos em que a diferença é o recado: barras ordenadas pela lacuna (02/02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_executivo-contra-media-do-time",
+      "titulo": "Executivo 07 contra a média do time",
+      "caso_de_uso": "Comercial, 2026-T3: em que dimensões do processo o Executivo 07 fica acima ou abaixo da média dos 11 executivos?",
+      "o_que_demonstra": [
+        "Média em tracejado 3 3 de --text-muted e executivo em --chart-1 com fillOpacity 0,28",
+        "Referência declarada antes no JSX para o foco ficar por cima",
+        "domain fixo de 0 a 100 igual para as duas séries",
+        "ChartTooltip com as duas séries e a linha de diferença em pontos com sinal",
+        "Legenda com amostra de área para o foco e de linha tracejada para a média"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_plataforma-a-contra-plataforma-b",
+      "titulo": "Plataforma A contra Plataforma B em seis indicadores",
+      "caso_de_uso": "Marketing, 2026-08: em quais indicadores de mídia a Plataforma B entrega um perfil melhor que a Plataforma A?",
+      "o_que_demonstra": [
+        "Índice de 0 a 100 com CPL e CPL qualificado invertidos e a regra na linha de leitura",
+        "Duas categorias por slot fixo --chart-1 e --chart-3, cor vinda do dado e não da posição",
+        "Anotação na maior lacuna: taxa de agenda 64 contra 38",
+        "Eixo de cobertura de dado vizinho do CPL qualificado, ordem vinda do registry",
+        "Dica com os dois índices e o valor original em R$ e %"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cenario-escolhido-e-alternativas-em-contorno",
+      "titulo": "Cenário base preenchido com alternativas em contorno",
+      "caso_de_uso": "Diretoria, meta 2027: como o cenário base se posiciona entre o pessimista e o otimista em seis alavancas do plano?",
+      "o_que_demonstra": [
+        "Alternativas com fillOpacity 0, strokeWidth 2 e dot, sem peso de área",
+        "Pessimista tracejado e otimista pontilhado: série distinta sem depender só de cor",
+        "radialLines desligado para a linha fina não sumir sobre a grade no escuro",
+        "Exceção declarada à regra de duas séries: as duas em contorno formam a faixa do cenário",
+        "Eixos de receita, fechamentos, ticket, ciclo, win rate e retenção normalizados"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_tres-trimestres-quase-identicos",
+      "titulo": "Três trimestres quase idênticos no mesmo radar",
+      "caso_de_uso": "Pré-vendas, 2026-T1 a 2026-T3: o perfil da fila de inbound mudou entre os trimestres ou as linhas só se embaralham?",
+      "o_que_demonstra": [
+        "Caso limite do emaranhado: três contornos coincidentes em quatro dos seis eixos",
+        "Hover ou foco na legenda esmaece as séries fora de foco por opacidade só na marca",
+        "Pontos de tamanhos diferentes e dica que lista as séries coincidentes no eixo",
+        "Botão ver como barras com aria-pressed, trocando para barras agrupadas na mesma ordem",
+        "Linha de leitura que declara a diferença máxima: 4 pontos entre trimestres"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

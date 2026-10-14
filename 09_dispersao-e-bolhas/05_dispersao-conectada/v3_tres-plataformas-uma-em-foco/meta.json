@@ -1,0 +1,17 @@
+{
+  "title": "Plataforma em foco entre as três",
+  "useCase": "Qual trajetória a plataforma escolhida fez contra as outras duas?",
+  "demonstrates": [
+    "Prop highlightId escolhendo a trajetória acesa entre três",
+    "Trajetórias de contexto em traço fino neutro, sem rótulo de mês",
+    "Ordem de desenho com a trajetória acesa por último",
+    "Frase acessível que descreve a trajetória em foco",
+    "Anticolisão de rótulo com oito posições candidatas presas ao plano"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 440
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1. A conta: a moldura card com largura de 960 desconta 66 px de largura e 135 px de altura com o caso de uso em duas linhas, e o corpo de 894 x 305 recebe a linha de leitura de 12 px com respiro de 8, que são 25 px, mais 255 px de plano, mais a nota de 11 px com respiro de 8, outros 25 px. O preset largo de 960 x 400 deixaria 265 px de corpo e o plano cairia a 215 px, apertado para três trajetórias de doze meses. COR DO TRAÇO, e ela vale para as três: o traço carrega a relação até nas de contexto, porque apagado ele ninguém sabe qual mês virou qual em nenhuma delas, então a ACE-6 cobra 3:1 contra o cartão das três. Medido contra --surface-raised: --chart-1 9,50:1 no escuro e 6,00:1 no claro na acesa, --text-muted 5,21:1 e 5,37:1 no contexto. --line-strong, que a tabela 17.2 indicaria como neutro de contexto, mede 1,79:1 e 1,83:1 e está fora; o traço fino que a especificação pede foi resolvido por ESPESSURA de 1,25 px e não por cor apagada, porque espessura não desconta contraste e opacidade desconta. Sem opacidade em nenhuma marca, então a conta da ACE-5 não entra. Medido a mais, e é o número que nenhuma guarda vê: a acesa contra a de contexto, marca contra marca, dá 1,82:1 no escuro e 1,12:1 no claro, muito abaixo de 3:1. No tema claro as duas têm praticamente a mesma luminância, então a cor sozinha NÃO separa o foco, e é por isso que ele também carrega o dobro de espessura, ponto maior, rótulo de mês que só ele tem e o nome em peso 700, como a ACE-2 pede. As duas de contexto saem na MESMA cor de propósito: quem as separa é o nome na ponta final de cada uma, e não a cor, que aqui é o canal do foco. O dado foi desenhado em três faixas de qualificação que não se cruzam, porque o próprio modelo avisa que três entidades viram espaguete; o foco é a saída disso e a separação por faixa é a segunda. Conferência das guardas, medida nesta peça e não suposta: CONTRASTE-MARCA MEDE esta versão, ao contrário do que acontece nos vizinhos de bolhas, onde ela sai preview_com_transform; ESPESSURA-MARCA sai sem medir, por sem_marca_de_barra. O que continua sem guarda nenhuma é a marca contra a MARCA, porque CONTRASTE-MARCA mede contra o cartão; esse número foi calculado à mão pela fórmula da WCAG sobre os tokens e os dois PNGs foram olhados."
+}

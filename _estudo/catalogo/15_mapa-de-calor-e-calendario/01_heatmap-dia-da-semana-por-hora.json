@@ -1,0 +1,71 @@
+{
+  "slug": "01_heatmap-dia-da-semana-por-hora",
+  "nome": "Heatmap dia da semana por hora",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Grade de 7 linhas (segunda a domingo) por até 24 colunas de hora, com a cor da célula para volume médio ou taxa naquela janela. É o modelo mais pedido pela operação: onde está o pico e se a equipe está lá. Recharts não tem heatmap, então a grade é SVG com geometria calculada em TypeScript. Absorve o heatmap radial de 24 horas como versão de destaque, com a ressalva de precisão.",
+  "quando_usar": [
+    "Janela de pico de um evento recorrente: entradas de lead, respostas, agendas marcadas, tickets de atendimento.",
+    "Cruzar a janela de demanda com a janela de disponibilidade da equipe (almoço, turno, expediente).",
+    "Recorte com eventos suficientes por célula: pelo menos 4 semanas e algumas centenas de eventos no total.",
+    "Pequenos múltiplos por pessoa ou fila, até 8 grades com escala comum."
+  ],
+  "quando_evitar": [
+    "Poucos eventos por célula: a grade vira mancha aleatória; agregar em blocos de 2 horas ou usar colunas por dia (03).",
+    "Pergunta de tendência ao longo das semanas: linha semanal (04) ou lasagna (modelo 06).",
+    "Volume e taxa ao mesmo tempo na mesma célula: punch card da família 09 (modelo 04).",
+    "Uma série só por hora, sem dia da semana: radar de ciclo (18, modelo 04) ou coluna por hora (03).",
+    "Comparação precisa entre dias: a forma radial engana; manter a grade cartesiana."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_entradas-de-lead-por-dia-e-hora",
+      "titulo": "Entradas de lead por dia da semana e hora",
+      "caso_de_uso": "Em que dia e hora chegam os leads de mídia paga, em média por ocorrência do dia, nas últimas 12 semanas?",
+      "o_que_demonstra": [
+        "Grade SVG de 7 por 13 células (8h às 20h) com x por hora e y por dia",
+        "Média por ocorrência do dia no recorte, não soma bruta",
+        "Escala sequencial em 6 faixas de --seq-1 a --seq-7 com legenda e unidade",
+        "Vão de 1 px na cor do cartão entre células e rótulo de hora a cada 2 horas",
+        "Frase acessível com a maior janela, a menor e a média geral"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_pico-contra-janela-do-sdr",
+      "titulo": "Pico de entradas contra a janela do SDR",
+      "caso_de_uso": "A equipe de pré-vendas está disponível na janela em que mais chegam leads, ou o pico cai no horário de almoço?",
+      "o_que_demonstra": [
+        "Contorno da janela de pico calculado sobre a soma de 3 horas consecutivas",
+        "Faixa de indisponibilidade da equipe em --surface-sunken com texto próprio",
+        "Anotação curta: 58% das entradas entre 11h e 14h, 2 de 5 SDRs em almoço",
+        "Texto da célula com contraste condicional por faixa, sem opacidade em texto"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_agendas-por-sdr-em-pequenos-multiplos",
+      "titulo": "Agendas marcadas por hora, uma grade por SDR",
+      "caso_de_uso": "Quais dos 8 SDRs concentram as agendas marcadas no começo da manhã e quem fica sem produção depois das 16h?",
+      "o_que_demonstra": [
+        "8 pequenos múltiplos de 5 dias por 12 horas com domínio comum a todos",
+        "Sábado e domingo fora da grade, com a regra dita no rodapé",
+        "Célula com menos de 5 eventos hachurada por padrão SVG, nunca pintada de --seq-1",
+        "Nome de cada SDR fictício inteiro acima da grade, sem reticência"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_relogio-radial-de-24-horas",
+      "titulo": "Relógio de entradas por hora em anéis por dia",
+      "caso_de_uso": "Em peça de destaque para a diretoria, como mostrar a natureza cíclica das entradas ao longo das 24 horas de cada dia?",
+      "o_que_demonstra": [
+        "Setor anular em path de dois arcos, com 0h no topo e sentido horário",
+        "Sete anéis com segunda no centro e rótulos só em 0h, 6h, 12h e 18h",
+        "Mesma escala sequencial da v1 para permitir comparação lado a lado",
+        "Nota de leitura: anel externo tem célula maior e parece mais intenso"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

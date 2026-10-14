@@ -1,0 +1,13 @@
+{
+  "title": "Metas de 2026 por área",
+  "useCase": "Diretoria: quais das 6 metas de 2026 cada uma das 9 áreas cumpriu, cumpriu em parte ou não cumpriu.",
+  "demonstrates": [
+    "Ícones Check, CircleDashed e X com rótulo acessível em cada célula",
+    "Contagem por linha como 5 de 6 e por coluna no rodapé",
+    "Legenda dos símbolos no topo, uma vez só",
+    "Status semântico com ícone e forma diferentes, não só a cor"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Contagem de linha conta só cumpriu; parcial não entra no numerador. A meta mais frágil no rodapé é calculada do dado, não fixada no texto."
+}

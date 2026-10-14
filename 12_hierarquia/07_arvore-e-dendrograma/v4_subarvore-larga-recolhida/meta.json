@@ -1,0 +1,14 @@
+{
+  "title": "Árvore desbalanceada com ramo recolhido",
+  "useCase": "Diretoria: uma coordenação com 14 funções e outra com 2 cabem no mesmo cartão.",
+  "demonstrates": [
+    "Subárvore larga recolhida por padrão, com a contagem de funções no selo do botão",
+    "Afastamento de subárvores vizinhas pelo contorno, na ideia de Reingold e Tilford",
+    "Estado expandido declarado no data.ts, com botão acessível por teclado",
+    "Profundidade máxima visível fixa e contagem de descendentes ocultos",
+    "Rótulo de nó com filho acima do nó, fora do corredor da aresta"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas conferido por número antes de escolher o nome (GEO-1); o número bateu com o preset card, 640 x 360, e o check avisa que nesse caso o nome se lê melhor, então fica o nome e a conta fica aqui. Corpo medido: 640 menos 2 x 33 de recuo dá 574 px de largura; o caso de uso tem 78 caracteres e a tabela de fronteira do cabeçalho de 574 px garante uma linha até 92, então o desconto de altura é 118,5 e o corpo mede 574 x 241,5 px. O desenho no estado declarado pede 574 x 179 px, medido no preview: seis linhas de 32 px levam a última a 144 px, mais 8 px de tinta dela, mais 25 px do bloco de rótulo que fica acima do primeiro nó, mais 2 de respiro; com a linha de leitura de 16 px e o vão de 12 dá 207 px dos 241,5 disponíveis. Ganho do contorno, medido nesta peça: empilhando por folha a Comercial nasceria 32 px abaixo da Pré-vendas recolhida, e pelo contorno ela nasce a 16 px, porque o nó dela mora no meio das próprias folhas e a coluna de profundidade 2 está vazia sob o ramo recolhido. Estado expandido, declarado para quem colar no Farol: abrir a Pré-vendas leva o desenho a 6 folhas mais a linha de folhas ocultas, e com as três coordenações abertas ao mesmo tempo o conteúdo chega a 387 px, acima dos 241,5 do corpo; o teto de filhos existe justamente para esse crescimento ser limitado e escrito, e quem colar decide se o cartão cresce ou se o teto cai para 4. O selo do nó cortado pela profundidade diz 2 ocultas, sem repetir o substantivo, porque com funções escrito por extenso o rótulo passaria de 574 px; a frase acessível e a linha de leitura carregam o substantivo. O que o check não mediu, conferido à mão: ESPESSURA-MARCA sai marca_html, porque a única coisa em HTML aqui é o botão, que é controle e não marca de dado; o texto do desenho é SVG e foi medido pelas outras guardas. EIXO-CALMO sai sem_grade e OPACIDADE-MARCA sai sem_opacidade_em_marca, e as duas estão certas: não há eixo cartesiano nem opacidade em marca, toda cor é opaca. O botão tem 11 px de texto com 16 px de linha, acima do piso da TIP-2, e mora 16 px acima da linha do nó, fora do corredor horizontal da aresta."
+}

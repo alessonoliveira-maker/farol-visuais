@@ -1,0 +1,13 @@
+{
+  "title": "Executivos nos extremos de win rate",
+  "useCase": "Quem puxa o win rate para cima e para baixo? 18 executivos por ticket médio e win rate.",
+  "demonstrates": [
+    "Nuvem em neutro e destaque em cor, desenhado por último para ficar por cima",
+    "Rótulo direto só nos 3 maiores e nos 3 menores win rate",
+    "Posição do rótulo escolhida entre 8 candidatas para não colidir",
+    "Destaque com segundo canal: anel no ponto e peso 700 no rótulo"
+  ],
+  "canvas": { "width": 640, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: o cartão escreve duas linhas além do gráfico (leitura de 12 px acima, nota de 11 px abaixo), cerca de 52 px, e sobre 234 px de corpo os seis rótulos diretos não têm para onde fugir. A conta é 126 px de moldura mais 52 px de texto mais 262 px de plano."
+}

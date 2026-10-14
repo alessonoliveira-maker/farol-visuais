@@ -1,0 +1,14 @@
+{
+  "title": "Receita do mês com tique de ritmo",
+  "useCase": "Dizer se a receita reconhecida do mês está adiantada ou atrasada contra o ritmo esperado para a data de corte.",
+  "demonstrates": [
+    "Tique radial na fração decorrida do mês, com a posição calculada por uma função polar",
+    "Diferença contra o ritmo em pontos percentuais, com sinal e unidade p.p. escrita",
+    "Fração decorrida vinda do dado: nenhum relógio nem new Date no componente",
+    "Frase acessível que diz adiantado ou atrasado sem depender da leitura do ângulo",
+    "Percentual grande no centro com o valor absoluto e a meta escritos ao lado"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "O catálogo pede a diferença de ritmo por formatPercentPoints; a versão usa formatDecimal com a unidade p.p. escrita à mão, porque formatPercentPoints(14) imprime 14,0% e o sinal de porcentagem confundiria pontos percentuais com taxa. Mesmo desvio já registrado em 01_cards-e-kpis/06_par-de-indicadores e em 07_rosca-e-radial/03_aneis-concentricos-de-dois-periodos/v2."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Receita acumulada por linha de negócio",
+  "useCase": "Contar à diretoria como as quatro linhas de negócio chegaram à receita acumulada dos últimos 8 trimestres.",
+  "demonstrates": [
+    "Marcos fixos no tempo que congelam a animação e mostram um texto curto",
+    "Aviso de que o deslizamento entre trimestres é a animação interpolando, não medição",
+    "Quadro final estático igual ao preview do catálogo, com o marco do último trimestre",
+    "Valor na ponta em moeda compacta atualizado a cada passo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Por padrão o componente monta parado em dez/25, o último trimestre, com o marco de fechamento do ano visível; o botão reproduz a corrida inteira desde mar/24 e para mais tempo em cada trimestre com marco."
+}

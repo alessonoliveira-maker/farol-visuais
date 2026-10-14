@@ -1,0 +1,78 @@
+{
+  "slug": "04_faixa-de-status-tracker",
+  "nome": "Faixa de status e de calor (tracker)",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Fileira de blocos de largura igual, um por período, cada um pintado pelo estado ou pela classe de valor daquele período. Lê-se regularidade e sequência: quantos dias ruins, se estão juntos, se a fila piorou no fim. No Farol é HTML com Tailwind, um flex com gap-px e um filho por bloco, com a classe resolvida por um mapa de estado; acima de cerca de 120 blocos vira SVG com rect para não inflar o DOM. O modelo absorve o tracker de blocos da família 13 (regularidade contra meta), a linha de estado em blocos da família 20 (estado discreto por dia) e a faixa de calor (classe sequencial por período, cor por var(--seq-N) em style, porque a rampa não tem utilitário). Três regras não negociáveis: sem dado é estado próprio, em contorno --text-muted sem preenchimento e fora da contagem; no máximo 4 estados, com o ruim reforçado por altura menor e não só por matiz; e um bloco por período de calendário, inclusive os vazios, senão a fileira mente sobre a sequência.",
+  "quando_usar": [
+    "Estado categórico por período em 30 a 90 blocos: SLA diário, coleta diária de uma fonte, meta semanal com feriados",
+    "Magnitude por período em pouca largura, como 52 semanas de entradas, em 5 classes sequenciais com legenda",
+    "Várias fileiras empilhadas, uma por fila ou por fonte, com o resumo de atingimento à direita de cada uma",
+    "Tela de confiança no dado: responder se o painel de hoje tem coleta completa em todas as fontes",
+    "Sempre com resumo textual ao lado, como 26 de 28 dias com dado dentro do SLA"
+  ],
+  "quando_evitar": [
+    "Valor exato ou contínuo por período: use o sparkbar (24/02_sparkbar) ou o sparkline (24/01_sparkline-de-linha)",
+    "Só dois estados em que a sequência de acerto e falha é a história: use o win/loss (24/07_win-loss)",
+    "Dias arranjados em semanas e meses para ler ciclo de dia da semana: use o calendário (15/04_calendario-estilo-contribuicoes)",
+    "Fila por semana lida como matriz de duas dimensões: use a matriz categórica em cor (15/02_matriz-categorica)",
+    "Estados com duração variável e não por período fixo: use a jornada por entidade (20/04_jornada-por-entidade)",
+    "Cinco ou mais estados: agrupe em até 4 antes do componente, ou o tracker vira mosaico",
+    "Blocos abaixo de 3 px de largura: agregue dias em semanas e diga isso no rótulo"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_sla-diario-da-fila-de-entrada",
+      "titulo": "SLA de primeiro contato em 30 dias",
+      "caso_de_uso": "Pré-vendas: em quantos dos últimos 30 dias a fila de entrada fechou dentro do SLA de primeiro contato?",
+      "o_que_demonstra": [
+        "flex gap-px com 30 blocos flex-1, cantos rounded-sm e altura fixa de 24 px",
+        "Dentro do SLA em --positive; fora em --negative e com altura menor",
+        "Dia sem coleta em contorno --text-muted sem preenchimento, fora da contagem",
+        "Resumo 26 de 28 dias com dado, calculado do array e escrito à direita",
+        "Rótulos só de início e fim por formatDate, sem rótulo intermediário"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_entradas-em-52-semanas-com-semana-corrente",
+      "titulo": "Faixa de calor das entradas em 52 semanas",
+      "caso_de_uso": "Pré-vendas: em que semanas do ano as entradas se concentraram, e como está a semana corrente?",
+      "o_que_demonstra": [
+        "Faixa de calor em 5 classes de --seq-3 a --seq-7 por style, com cortes redondos",
+        "Legenda de classes única fora da faixa, com os limites em formatInt",
+        "Semana corrente com contorno de 1 px em --text-primary e o valor escrito ao lado",
+        "Classe mais baixa distinta do fundo escuro; sem dado nunca usa a menor classe",
+        "Rótulos de mês por formatMonthShort só nas viradas de trimestre"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_coleta-diaria-de-oito-fontes",
+      "titulo": "Coleta diária de 8 fontes em 90 dias",
+      "caso_de_uso": "Diretoria: posso confiar no painel de hoje, e qual fonte de dado falhou ou veio parcial nos últimos 90 dias?",
+      "o_que_demonstra": [
+        "8 fileiras de 90 blocos, rótulo da fonte à esquerda e percentual completo à direita",
+        "4 estados (completa, parcial, falhou, sem agenda) com legenda na ordem visual",
+        "Falhou com altura menor que completa, segundo canal além da cor",
+        "@container com @sm: mostrando só os últimos 30 dias em largura estreita, com nota",
+        "Dias sem agenda fora do denominador do percentual, declarado no resumo",
+        "Fontes com rótulos genéricos (CRM, mídia paga A, analytics), sem marca real"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_meta-semanal-com-feriado-e-sem-coleta",
+      "titulo": "Meta semanal com feriado e coleta interrompida",
+      "caso_de_uso": "Pré-vendas: a meta de agendas foi batida sempre, separando feriado, coleta interrompida e semana fora da meta?",
+      "o_que_demonstra": [
+        "Semana de feriado como bloco neutro em --line-strong, fora da contagem e rotulada",
+        "3 semanas sem coleta em contorno vazado, com a palavra sem dado na legenda",
+        "Resumo 14 de 19 semanas com dado, nunca 14 de 22",
+        "Maior sequência de semanas batidas anotada acima da fileira em 11 px",
+        "Frase acessível contando semanas batidas, fora da meta, feriado e sem coleta"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

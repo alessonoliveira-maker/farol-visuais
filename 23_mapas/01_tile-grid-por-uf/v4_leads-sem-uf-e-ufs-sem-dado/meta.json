@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura de UF na base de leads",
+  "useCase": "Quais UFs não têm lead medido e quantos leads chegaram sem UF?",
+  "demonstrates": [
+    "UF sem dado hachurada, com contorno pontilhado e escrita como sem dado",
+    "Zero medido desenhado com contorno cheio e escrito como 0, distinto do sem dado",
+    "Card lateral com 1.240 leads sem UF, fora da distribuição entre as UFs",
+    "Legenda com item próprio para o zero medido e para o sem dado, depois das classes",
+    "Grade de 7 por 6 que cabe ao lado do card de cobertura"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "card",
+  "notes": "Canvas de 640 por 400 e não o card de 640 por 360 do catálogo: a coluna lateral (card de cobertura, 5 classes, zero medido e sem dado) pede 252 px de altura, e o corpo de 360 só dá 241 (GEO-1). Cinco classes em --seq-1, --seq-2, --seq-3, --seq-6 e --seq-7 e não --seq-3 a --seq-7 (TOK-2, TOK-8); o número está em todo tile. As quebras são quantis das UFs com leads, e não intervalo igual: a contagem é muito assimétrica (SP com 1.280 contra 30 em RO) e o intervalo igual deixaria 20 UFs na primeira classe. O sem dado leva três pistas que não dependem da cor: hachura, contorno pontilhado e as palavras. O zero medido é um tile vazio de contorno cheio com o 0 escrito. O card lateral usa --surface-sunken sem borda (ESP-5). Os 18% saem de 1.240 sobre 6.890, soma das UFs com 5.650. A grade de 7 por 6 é desenhada à mão e não é a br_states_grid2 do geofacet, que não foi verificada em fonte pública; a vizinhança adotada está declarada no data.ts."
+}

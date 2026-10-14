@@ -1,0 +1,160 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "09_matriz-de-comparacao-com-status",
+  "versoes": {
+    "v1_metas-do-ano-por-area": {
+      "veredito": "aprovado",
+      "nota": "Matriz legivel nos dois temas; contagem por linha e por coluna corretas; observacao sobre duas notacoes de contagem.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:04.084Z",
+      "impressao": "9d159c7c732b0182b328f5e557ccb7fa302f68ef",
+      "arquivos": {
+        "Chart.tsx": "c8730acf78fe6499441cb12abcd08fe6422dea0c",
+        "data.ts": "68d07068487c09062cba993b0de3cd425acb8845",
+        "meta.json": "9cdd8d186e27c7e96fff7d67e72a86d782653b8c"
+      }
+    },
+    "v2_cenarios-com-bolas-de-harvey": {
+      "veredito": "aprovado",
+      "nota": "Arco em SVG puro, faixa declarada por criterio e numero ao lado do glifo; empate do contorno e arredondamento em quartos, declarado no rodape.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:09.966Z",
+      "impressao": "ccd246d817cd13965a8ba74a930b1092bd2b83a5",
+      "arquivos": {
+        "Chart.tsx": "987db196c1993a2a9c657c7ddb48f588d4c88a07",
+        "data.ts": "22e60ec4a0ba07e59fc7090944536e5241a88f94",
+        "meta.json": "ddddf3ea3034bf5948a1358d1eb0a9d40ba1e96b"
+      }
+    },
+    "v3_checklist-de-handoff-por-oportunidade": {
+      "veredito": "aprovado",
+      "nota": "18 linhas de 20 px sem corte nem sobreposicao; ordenacao e contagens conferem; alerta do cabecalho fica fora da legenda.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:15.270Z",
+      "impressao": "64dce6b5c955f2cc61deffa38585f22df132d4da",
+      "arquivos": {
+        "Chart.tsx": "6f425bdafc873639eb37c5fbadea8b13a6f67803",
+        "data.ts": "a960d44df038fe92fb2946a9c9afb52979f01a79",
+        "meta.json": "d1958d88abeba61016f972b17c7472ec05a912f7"
+      }
+    },
+    "v4_nao-se-aplica-sem-dado-e-empate": {
+      "veredito": "aprovado",
+      "nota": "Cinco estados com forma e rotulo proprios; denominador por linha exclui nao se aplica e sem dado; frase acessivel a 246 de 250, so aviso.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:20.725Z",
+      "impressao": "f0c4b3c4724afa5b005bf60940f7a461ab184c7b",
+      "arquivos": {
+        "Chart.tsx": "76b1cc052db4d93bef191918e9876c5569f8d2bb",
+        "data.ts": "f0d602d670e8fae0e8961d52d54b5a15e53163b2",
+        "meta.json": "245f2f05eb12136c0394d3d9156096e62eb58695"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_metas-do-ano-por-area",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Legenda, contagem por linha e por coluna corretas nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:05.373Z",
+      "impressao": "9d159c7c732b0182b328f5e557ccb7fa302f68ef",
+      "arquivos": {
+        "Chart.tsx": "c8730acf78fe6499441cb12abcd08fe6422dea0c",
+        "data.ts": "68d07068487c09062cba993b0de3cd425acb8845",
+        "meta.json": "9cdd8d186e27c7e96fff7d67e72a86d782653b8c"
+      }
+    },
+    {
+      "versao": "v2_cenarios-com-bolas-de-harvey",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Arco em SVG, faixa declarada por criterio e nota de rodape explicam o contorno de lider.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:12.178Z",
+      "impressao": "ccd246d817cd13965a8ba74a930b1092bd2b83a5",
+      "arquivos": {
+        "Chart.tsx": "987db196c1993a2a9c657c7ddb48f588d4c88a07",
+        "data.ts": "22e60ec4a0ba07e59fc7090944536e5241a88f94",
+        "meta.json": "ddddf3ea3034bf5948a1358d1eb0a9d40ba1e96b"
+      }
+    },
+    {
+      "versao": "v3_checklist-de-handoff-por-oportunidade",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 18 linhas legiveis nos dois temas, contagem por linha e por coluna conferem com o dado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:12.677Z",
+      "impressao": "64dce6b5c955f2cc61deffa38585f22df132d4da",
+      "arquivos": {
+        "Chart.tsx": "6f425bdafc873639eb37c5fbadea8b13a6f67803",
+        "data.ts": "a960d44df038fe92fb2946a9c9afb52979f01a79",
+        "meta.json": "d1958d88abeba61016f972b17c7472ec05a912f7"
+      }
+    },
+    {
+      "versao": "v4_nao-se-aplica-sem-dado-e-empate",
+      "veredito": "reprovado",
+      "nota": "Item 12 (ROT-4): o anel de lider nao aparece na legenda nem em nota, entao o empate que o catalogo pede fica ilegivel para quem ve. Acrescentar item de legenda ou rodape como o da v2.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:18.042Z",
+      "impressao": "f1c4c40cf1e3f542c20300ee3d9d5d52d5398a82",
+      "arquivos": {
+        "Chart.tsx": "1330f7716e0dcee8b962469f6264a78e3cf0ff8c",
+        "data.ts": "f0d602d670e8fae0e8961d52d54b5a15e53163b2",
+        "meta.json": "3071e9d8de942ea667f64c1b414985249275ddb1"
+      }
+    },
+    {
+      "versao": "v1_metas-do-ano-por-area",
+      "veredito": "aprovado",
+      "nota": "Matriz legivel nos dois temas; contagem por linha e por coluna corretas; observacao sobre duas notacoes de contagem.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:04.084Z",
+      "impressao": "9d159c7c732b0182b328f5e557ccb7fa302f68ef",
+      "arquivos": {
+        "Chart.tsx": "c8730acf78fe6499441cb12abcd08fe6422dea0c",
+        "data.ts": "68d07068487c09062cba993b0de3cd425acb8845",
+        "meta.json": "9cdd8d186e27c7e96fff7d67e72a86d782653b8c"
+      }
+    },
+    {
+      "versao": "v2_cenarios-com-bolas-de-harvey",
+      "veredito": "aprovado",
+      "nota": "Arco em SVG puro, faixa declarada por criterio e numero ao lado do glifo; empate do contorno e arredondamento em quartos, declarado no rodape.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:09.966Z",
+      "impressao": "ccd246d817cd13965a8ba74a930b1092bd2b83a5",
+      "arquivos": {
+        "Chart.tsx": "987db196c1993a2a9c657c7ddb48f588d4c88a07",
+        "data.ts": "22e60ec4a0ba07e59fc7090944536e5241a88f94",
+        "meta.json": "ddddf3ea3034bf5948a1358d1eb0a9d40ba1e96b"
+      }
+    },
+    {
+      "versao": "v3_checklist-de-handoff-por-oportunidade",
+      "veredito": "aprovado",
+      "nota": "18 linhas de 20 px sem corte nem sobreposicao; ordenacao e contagens conferem; alerta do cabecalho fica fora da legenda.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:15.270Z",
+      "impressao": "64dce6b5c955f2cc61deffa38585f22df132d4da",
+      "arquivos": {
+        "Chart.tsx": "6f425bdafc873639eb37c5fbadea8b13a6f67803",
+        "data.ts": "a960d44df038fe92fb2946a9c9afb52979f01a79",
+        "meta.json": "d1958d88abeba61016f972b17c7472ec05a912f7"
+      }
+    },
+    {
+      "versao": "v4_nao-se-aplica-sem-dado-e-empate",
+      "veredito": "aprovado",
+      "nota": "Cinco estados com forma e rotulo proprios; denominador por linha exclui nao se aplica e sem dado; frase acessivel a 246 de 250, so aviso.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:03:20.725Z",
+      "impressao": "f0c4b3c4724afa5b005bf60940f7a461ab184c7b",
+      "arquivos": {
+        "Chart.tsx": "76b1cc052db4d93bef191918e9876c5569f8d2bb",
+        "data.ts": "f0d602d670e8fae0e8961d52d54b5a15e53163b2",
+        "meta.json": "245f2f05eb12136c0394d3d9156096e62eb58695"
+      }
+    }
+  ]
+}

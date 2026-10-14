@@ -1,0 +1,147 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "04_jornada-por-entidade",
+  "versoes": {
+    "v1_oportunidades-ganhas-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Etapas nos slots 1, 3, 6 e 5 medem de 5,39 a 9,50 contra o cartão nos dois temas e os números refeitos do data.ts conferem. Observações no README: amostra redonda na legenda, truncate na linha de leitura, etapa de 1 dia com 1,3 px de tinta, losango positive no hex de chart-4 ao lado de chart-5 e chart-6, vão de categoria de 24 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:16.937Z",
+      "impressao": "f1ddac011d97d97ae930ccd4e080784fbf0dea58",
+      "arquivos": {
+        "Chart.tsx": "64ed2e703c139e2b7bc0decc1fe3dc88e2be7e8b",
+        "data.ts": "fe77b57997545be0139cae135def99aef4244208",
+        "meta.json": "060958be48d01105eb218723e02c368fd457b48e"
+      }
+    },
+    "v2_tempo-parado-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: truncate na linha de leitura com 22,5 px de folga; rótulo em d contra dias no resto da peça; parada dita de etapa já concluída; números sem classe tabular na linha de leitura e na legenda; borda da grade um dia depois de hoje; vão de categoria de 24 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:40.670Z",
+      "impressao": "f015f104ffc9f1ba0e90b9adfb630ceafa6b766d",
+      "arquivos": {
+        "Chart.tsx": "04269f1679c31b3ecedcf5688ef825cc2fa50856",
+        "data.ts": "ded827594ab94355591a54126b89ede18ec7a835",
+        "meta.json": "8ba153943fde72565ffb884530b34ba31e553248"
+      }
+    },
+    "v3_alinhada-pelo-dia-zero": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Slots 1, 3, 6 e 5 acima de 5,39 nos dois temas; medianas 8, 19,5, 39,5 e 57 conferem e o halo das medianas não apaga nenhum segmento. Observações no README: quatro medianas contra a ANO-1 por pedido do catálogo, rótulo só com valor, proposta pela mediana e negociação pela soma, rótulos de mediana sem anticolisão, vão de categoria de 12 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:17.493Z",
+      "impressao": "ccbe3825857bcfdd878951f01fdff13031d6871e",
+      "arquivos": {
+        "Chart.tsx": "9aff0587aee217a8a63727f1c017fdd4b4a5cf54",
+        "data.ts": "2e817c0249209b9ed9e7a42f5789261af8364fe0",
+        "meta.json": "0525be89571457bc10d9fc8f384fef0816f7bf08"
+      }
+    },
+    "v4_marey-com-retorno-de-etapa": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Anel no degrau da própria linha e na cor dela; rótulos de retorno sem halo e fora de qualquer degrau. Observações no README: rótulos a 167 px e 101 px dos anéis com chamada que cruza 4 e 3 degraus e passa a 1,5 px do outro anel; mais lenta, 92 dias a 0,6 px do x de um degrau cinza; trechos horizontais cobertos; oportunidade sem nome no desenho; grade de sete linhas.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:18.102Z",
+      "impressao": "205de3f36c93e5fa763aedd379c484f93ef2e967",
+      "arquivos": {
+        "Chart.tsx": "65e5da8e94605b18363de6a78a3e226b34e17f9a",
+        "data.ts": "2e2ae1db22e408333fd206cd2982c6e0d3162ae9",
+        "meta.json": "55950a9a5d35a4445cf1b8353b193166453704ac"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-ganhas-por-etapa",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20 com reflexo na 11, ACE-3 e TOK-8: a etapa Qualificação em seq-4 mede 2,60:1 contra o cartão no tema claro em 15 segmentos e na amostra da legenda, sem número escrito; usar cor que passe de 3:1 nos dois temas (slots categóricos 1, 3, 6 e 5 por chave de etapa, como em 11/03 v3, ou seq-5 a seq-7 mais neutro com contorno text-muted) e corrigir comentário, nota do meta e Anatomia do README.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:40.195Z",
+      "impressao": "5e963ee409ea4670ed2f24de4f819e0444be3aee",
+      "arquivos": {
+        "Chart.tsx": "ee6dcddd4275260450f6d24aebaa52d9a6dd0e61",
+        "data.ts": "fe77b57997545be0139cae135def99aef4244208",
+        "meta.json": "6d6b694b19de26e0e735771c91517912fafc6e0f"
+      }
+    },
+    {
+      "versao": "v2_tempo-parado-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações no README: truncate na linha de leitura com 22,5 px de folga; rótulo em d contra dias no resto da peça; parada dita de etapa já concluída; números sem classe tabular na linha de leitura e na legenda; borda da grade um dia depois de hoje; vão de categoria de 24 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:40.670Z",
+      "impressao": "f015f104ffc9f1ba0e90b9adfb630ceafa6b766d",
+      "arquivos": {
+        "Chart.tsx": "04269f1679c31b3ecedcf5688ef825cc2fa50856",
+        "data.ts": "ded827594ab94355591a54126b89ede18ec7a835",
+        "meta.json": "8ba153943fde72565ffb884530b34ba31e553248"
+      }
+    },
+    {
+      "versao": "v3_alinhada-pelo-dia-zero",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20 com reflexo na 11, ACE-3 e TOK-8: a etapa Qualificação em seq-4 mede 2,60:1 contra o cartão no tema claro em 40 segmentos e na amostra da legenda, sem número escrito; usar a mesma saída escolhida para a v1 (cor que passe de 3:1 nos dois temas) e corrigir comentário e nota do meta.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:41.133Z",
+      "impressao": "fba7801e1471092b5d61939614ce2a1774cf8e6a",
+      "arquivos": {
+        "Chart.tsx": "1802cdbf113318237db433f4ee15df81ad2565cb",
+        "data.ts": "2e817c0249209b9ed9e7a42f5789261af8364fe0",
+        "meta.json": "5910dcfa106245be74a6853a911c37dc466dcbbe"
+      }
+    },
+    {
+      "versao": "v4_marey-com-retorno-de-etapa",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 marca fina e GEO-4: o halo dos rótulos volta em 24/08/2026 e volta em 02/09/2026 apaga 11,5 px e 9,5 px do degrau de outras duas oportunidades; mover o rótulo para posição ou pista sem traço. Pergunta 3, identificação das marcas da 14.1 e ACE-2: o anel do retorno da Oportunidade 06 cai sobre a linha em destaque da Oportunidade 03 e o desenho lê duas voltas da mais lenta; anel no trecho descendente da própria linha e na cor dela.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:41.594Z",
+      "impressao": "179d3c9caae23105484b7ead332c2e7d39650160",
+      "arquivos": {
+        "Chart.tsx": "36dd655f9ee831a65f84311e880414a1ec6184b8",
+        "data.ts": "2e2ae1db22e408333fd206cd2982c6e0d3162ae9",
+        "meta.json": "55950a9a5d35a4445cf1b8353b193166453704ac"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-ganhas-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Etapas nos slots 1, 3, 6 e 5 medem de 5,39 a 9,50 contra o cartão nos dois temas e os números refeitos do data.ts conferem. Observações no README: amostra redonda na legenda, truncate na linha de leitura, etapa de 1 dia com 1,3 px de tinta, losango positive no hex de chart-4 ao lado de chart-5 e chart-6, vão de categoria de 24 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:16.937Z",
+      "impressao": "f1ddac011d97d97ae930ccd4e080784fbf0dea58",
+      "arquivos": {
+        "Chart.tsx": "64ed2e703c139e2b7bc0decc1fe3dc88e2be7e8b",
+        "data.ts": "fe77b57997545be0139cae135def99aef4244208",
+        "meta.json": "060958be48d01105eb218723e02c368fd457b48e"
+      }
+    },
+    {
+      "versao": "v3_alinhada-pelo-dia-zero",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Slots 1, 3, 6 e 5 acima de 5,39 nos dois temas; medianas 8, 19,5, 39,5 e 57 conferem e o halo das medianas não apaga nenhum segmento. Observações no README: quatro medianas contra a ANO-1 por pedido do catálogo, rótulo só com valor, proposta pela mediana e negociação pela soma, rótulos de mediana sem anticolisão, vão de categoria de 12 por cento declarado.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:17.493Z",
+      "impressao": "ccbe3825857bcfdd878951f01fdff13031d6871e",
+      "arquivos": {
+        "Chart.tsx": "9aff0587aee217a8a63727f1c017fdd4b4a5cf54",
+        "data.ts": "2e817c0249209b9ed9e7a42f5789261af8364fe0",
+        "meta.json": "0525be89571457bc10d9fc8f384fef0816f7bf08"
+      }
+    },
+    {
+      "versao": "v4_marey-com-retorno-de-etapa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, os dois temas abertos. Anel no degrau da própria linha e na cor dela; rótulos de retorno sem halo e fora de qualquer degrau. Observações no README: rótulos a 167 px e 101 px dos anéis com chamada que cruza 4 e 3 degraus e passa a 1,5 px do outro anel; mais lenta, 92 dias a 0,6 px do x de um degrau cinza; trechos horizontais cobertos; oportunidade sem nome no desenho; grade de sete linhas.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:25:18.102Z",
+      "impressao": "205de3f36c93e5fa763aedd379c484f93ef2e967",
+      "arquivos": {
+        "Chart.tsx": "65e5da8e94605b18363de6a78a3e226b34e17f9a",
+        "data.ts": "2e2ae1db22e408333fd206cd2982c6e0d3162ae9",
+        "meta.json": "55950a9a5d35a4445cf1b8353b193166453704ac"
+      }
+    }
+  ]
+}

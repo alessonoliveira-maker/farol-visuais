@@ -1,0 +1,16 @@
+{
+  "title": "Chance de cada cenário bater a meta",
+  "useCase": "Em que percentual dos desfechos de cada cenário a receita de 2027 passa da meta fictícia de R$ 10 mi?",
+  "demonstrates": [
+    "Meta como linha vertical atravessando todas as linhas de cenário",
+    "Parte da meia densidade à direita da meta cheia, e a parte aquém dela vazada",
+    "Texto por cenário com a taxa e o volume: 37,8% (151 de 400) acima da meta",
+    "Mesmo domínio para todos os cenários, calculado no componente pai"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 404
+  },
+  "frame": "card",
+  "notes": "Canvas por número, 640 por 404, pela conta da GEO-1: o preset card dá 241,5 px de corpo com o caso de uso em uma linha, e a peça soma 284 px, que são 16 da linha de leitura, 8 de vão, 216 do desenho (20 de margem para o nome da meta, três linhas de cenário de 58 e 22 de eixo), 8 de vão e 36 do rodapé em duas linhas. O caso de uso ocupa quase toda a largura do corpo numa linha só: se o texto crescer e quebrar, o canvas pede mais 16,5 px. Dois desvios do catálogo, os dois a favor do contrato. Primeiro, o catálogo pede a parte à direita da meta em cor de destaque e não diz o que fazer com a outra: ela sai vazada, com contorno em --text-muted, porque cinza cheio ao lado do ciano mede 1,82:1 no escuro e 1,12:1 no claro (TOK-10) e --line-strong não chega a 3:1 contra o cartão (TOK-5); assim a diferença é de forma e não só de cor (ACE-2). Entre os dois lados fica um vão de 5 px na cor do cartão, por onde a linha da meta passa sem cruzar marca. Segundo, o texto por cenário sai de formatRateWithVolume, com uma casa e o volume (DAD-1, NUM-1), então o exemplo do catálogo, base com 38%, lê 37,8% (151 de 400). A contagem é do dado cru, com desfecho estritamente maior que a meta, e não da área suavizada. O domínio entra pela prop domain, com o default DOMAIN do data.ts, e desfecho fora dele é desenhado na borda."
+}

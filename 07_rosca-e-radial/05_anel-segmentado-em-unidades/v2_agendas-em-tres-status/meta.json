@@ -1,0 +1,13 @@
+{
+  "title": "Agendas da semana em três status",
+  "useCase": "Das 20 agendas da meta, quantas foram realizadas, quantas estão marcadas e quantas ainda faltam.",
+  "demonstrates": [
+    "Realizada em chart-1, marcada em line-strong e faltante só com contorno",
+    "Status em ordem fixa a partir das 12 horas: realizada, marcada, faltante",
+    "Legenda com amostra na forma do segmento e contagem à direita",
+    "Centro com as realizadas e a meta abaixo em text-muted",
+    "Nota que declara em número quanto vale cada segmento do anel"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

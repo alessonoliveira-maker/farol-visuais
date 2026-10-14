@@ -1,0 +1,13 @@
+{
+  "title": "Investimento por plataforma com uma em destaque",
+  "useCase": "Qual das quatro plataformas de mídia paga mais cresceu em investimento mensal desde 2026-01?",
+  "demonstrates": [
+    "Protagonista em --chart-1 desenhada por último; demais em --line-strong",
+    "Halo na cor da superfície para separar cruzamentos com as neutras",
+    "Rótulo final em peso 700 só no destaque e valor escrito nas neutras",
+    "Troca de protagonista reordena as séries, não só a cor"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Rede profissional cruza Busca paga e Rede social duas vezes no meio da série, de propósito, para exercitar o halo da ROT-7."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Carga das filas contra o teto",
+  "useCase": "Em 9 filas, a faixa de carga semanal das últimas 8 semanas em % do teto, com a semana atual marcada.",
+  "demonstrates": [
+    "Shape que desenha a faixa e o traço interno por regra de três",
+    "Traço de 2 px em text-primary com halo de 1 px em surface-raised",
+    "ReferenceLine em 100% do teto atravessando todas as linhas",
+    "Semana atual fora da faixa, com seta de transbordo no fim do eixo",
+    "Carga normalizada em % do teto de cada fila, declarada no subtítulo"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo. (1) Faixa por barra empilhada sobre base invisível (dataKey min, sem preenchimento) mais a barra de largura max menos min, por decisão do dono (ver REC-8). (2) text-strong e surface-base não existem nos tokens: o traço usa text-primary e o halo usa surface-raised, que é o fundo do cartão. (3) O traço da semana atual vem da regra de três sobre a área de plotagem (valor / 150 x largura), com o domínio fixo de 0 a 150 e tiques em 0, 50, 100 e 150, iguais em todo recorte; a fila com 172% trava no fim do eixo e ganha seta, e o valor real está escrito na coluna semana atual à direita. Conta da altura: 9 linhas x 34 px = 306, mais 20 de margem, 26 de eixo, a legenda de 26 e o subtítulo de 20 = 398 px, dentro dos 425 px do corpo do alto com o caso de uso em duas linhas."
+}

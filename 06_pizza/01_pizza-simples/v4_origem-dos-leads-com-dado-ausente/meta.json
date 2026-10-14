@@ -1,0 +1,15 @@
+{
+  "title": "Origem dos leads do mês com dado ausente",
+  "useCase": "Como os leads do mês se dividem por origem quando parte da base chegou sem origem declarada?",
+  "demonstrates": [
+    "Fatia vazada com contorno var(--text-muted), fora da ordenação e por último",
+    "Rótulo externo com linha guia de dois segmentos e anticolisão em TypeScript",
+    "Fatias vizinhas de 3% e 2% empurradas sem as linhas guia se cruzarem",
+    "Cobertura na linha de leitura: 85,9% (292 de 340) leads com origem",
+    "Margem do rótulo derivada do dado, pela largura de glifo das duas fontes",
+    "Estado vazio com role status quando o recorte não tem lead"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o caso de uso tem 91 caracteres e o render mediu que ele cabe em UMA linha do cabeçalho, então o desconto é de 66 px na largura e de 118,5 px na altura e o corpo fica com 574 x 241,5 px, não com os 225 px de duas linhas que a conta pessimista previa. A linha de leitura gasta 24 px e sobram 217,5 px para o gráfico. Medido no preview: a margem lateral saiu em 158 px, o raio em 68,8 px, o centro em x=287 e y=109, o rótulo mais baixo centrado em 164,7 px contra um piso de 202 px, e a tinta mais à esquerda em x=65 dentro de um corpo de 574 px. Quem limita o raio aqui é a altura e não a margem lateral. No cenário de duas linhas de cabeçalho o corpo cairia para 225 px e a conta continuaria fechando. A margem lateral não é constante escrita à mão: ela sai do dado, somando o vão de 10 px, o segundo segmento de 26 px, a largura estimada do maior rótulo do recorte e 4 px de ponta, arredondada para cima em passo de 2 px. Superestimar encolhe o disco, que é visível e inofensivo; subestimar cortaria a tinta na borda do corpo. A estimativa usa duas tabelas de largura de glifo, Space Grotesk para o número e Manrope para o nome, porque uma constante só para as duas erra cerca de 11% em uma delas. Anticolisão por lado, do topo para baixo na ordem de y crescente, que do mesmo lado do disco é a ordem angular: é essa ordem que impede duas linhas guia de se cruzarem, e o par de 3% e 2% é justamente o que a exige. O vão mínimo entre rótulos é de 34 px contra cerca de 29 px de tinta do bloco de duas linhas, o que deixa 5 px, acima do limiar de aviso de 4 px da guarda de colisão. Medido nesta produção contra tokens.css: a linha guia e o contorno da fatia vazada em var(--text-muted) medem 5,21:1 no escuro e 5,37:1 no claro contra o cartão, acima do piso de 3:1 da ACE-6; var(--line-strong), o outro candidato, mede 1,79:1 e 1,83:1 e não serviria. Sem dica: o nome, a contagem e o percentual de cada fatia já estão escritos fora do disco, e a DIC-1 só admite dica que acrescente. O percentual inteiro pelo maior resto soma 100 com a fatia de ausência dentro, que é 44, 37, 3, 2 e 14."
+}

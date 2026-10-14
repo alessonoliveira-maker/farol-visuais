@@ -1,0 +1,611 @@
+{
+  "slug": "04_linhas",
+  "nome": "Linhas",
+  "modelos": [
+    {
+      "slug": "01_linha-simples",
+      "nome": "Linha simples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma métrica ao longo do tempo, com a inclinação como o próprio dado. O modelo concentra as camadas de contexto que o Farol mais pede sobre uma série única: rótulo no último ponto, meta ou limiar, evento datado, média móvel sobre o bruto, seleção de janela e lacuna de coleta declarada.",
+      "quando_usar": [
+        "Uma métrica em série temporal com 4 pontos ou mais: receita reconhecida mensal, entradas diárias, CPL semanal, percentual no SLA.",
+        "Pergunta de subiu ou desceu, quanto e desde quando, com até duas referências desenhadas sobre a série (meta, teto, evento).",
+        "Série diária ruidosa de 60 a 730 pontos, com média móvel declarada e, em tela de análise, seleção de janela.",
+        "Série com coleta interrompida ou fonte que começou tarde, em que a diferença entre zero e não medido muda a leitura."
+      ],
+      "quando_evitar": [
+        "Menos de 3 pontos: vira número com comparação em 01_cards-e-kpis.",
+        "Duas ou mais séries na mesma unidade: use 02_multiplas-series.",
+        "Valor que muda em instantes discretos, como teto de capacidade ou preço: use 03_step-degrau.",
+        "Composição de partes de um todo ou volume que pede área a partir do zero: use 05_areas.",
+        "Linha minúscula em cartão, sem eixo: use a sparkline de 24_microvisuais-sparklines.",
+        "Mais de duas anotações ou mais de 5 eventos na janela: resuma os eventos em lista ou use 20_cronograma-e-linha-do-tempo."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-mensal-com-rotulo-final",
+          "titulo": "Receita reconhecida mensal com rótulo no último mês",
+          "caso_de_uso": "A receita reconhecida de 2026-01 a 2026-08 subiu ou caiu, e quanto fechou em 2026-08?",
+          "o_que_demonstra": [
+            "Calendário mensal completo gerado em TypeScript antes do render",
+            "Line linear de 2 px, sem legenda, com grade só horizontal",
+            "Ponto e rótulo só no último valor válido, com formatCurrencyCompact",
+            "Tique em formatCurrencyAxis com 3 a 5 linhas de grade redondas"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_sla-com-meta-e-evento",
+          "titulo": "Atendimento no SLA contra a meta, com evento datado",
+          "caso_de_uso": "O percentual semanal de leads atendidos no SLA caiu abaixo da meta de 90% depois da troca de escala?",
+          "o_que_demonstra": [
+            "Meta em ReferenceLine tracejada 3 3 com ifOverflow extendDomain",
+            "Evento em ReferenceLine vertical com rótulo curto; no máximo duas anotações",
+            "Semanas abaixo da meta com ponto e símbolo, não só com cor",
+            "Eixo em formatPercent com domínio que acomoda a meta"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-diarias-com-media-movel",
+          "titulo": "Entradas diárias com média móvel de 7 dias",
+          "caso_de_uso": "Nos últimos 180 dias as entradas de leads mudaram de tendência ou só oscilaram dentro do ruído diário?",
+          "o_que_demonstra": [
+            "Bruto em traço fino neutro e média móvel em --chart-1 por cima",
+            "Janela à direita calculada em TypeScript e declarada no rótulo da série",
+            "dot desligado e animação só na entrada para 180 pontos",
+            "Brush com domínio y recalculado para a janela visível"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_origem-com-integracao-interrompida",
+          "titulo": "Leads por dia de uma origem com coleta interrompida",
+          "caso_de_uso": "Quantos leads o formulário do site trouxe por dia quando a integração caiu por 9 dias, sem ler falta de coleta como zero?",
+          "o_que_demonstra": [
+            "null com connectNulls desligado, distinto do zero medido, que é desenhado",
+            "Período sem coleta em ReferenceArea --surface-sunken com o texto sem coleta",
+            "Ponto isolado entre nulos com dot forçado para não sumir",
+            "Último dia parcial em trecho tracejado com a nota parcial até a data"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_multiplas-series",
+      "nome": "Múltiplas séries",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "De duas a cinco linhas na mesma unidade dividindo os eixos para comparar trajetórias. Absorve o destaque de uma série contra o resto neutro, que resolve o espaguete quando só uma importa, e o índice base 100, que compara o ritmo de grandezas diferentes num eixo único sem recorrer a eixo duplo.",
+      "quando_usar": [
+        "Até 4 séries na mesma unidade com rótulo no fim de cada linha; até 5 com legenda próxima.",
+        "Uma série protagonista contra o contexto de 6 a 24 outras, todas desenhadas em neutro.",
+        "Ritmo de crescimento de grandezas diferentes (investimento, leads, agendas) com a base declarada em 100.",
+        "Categorias fixas com cor por slot: plataformas de mídia, verticais de negócio, squads."
+      ],
+      "quando_evitar": [
+        "Mais de 5 séries em que todas importam igualmente: use 09_pequenos-multiplos-de-linha.",
+        "Unidades diferentes em que o nível importa: use painéis alinhados em 08_combinados-e-eixo-duplo; nunca eixo duplo.",
+        "Índice com base nula, próxima de zero ou negativa: mostre o valor absoluto em painéis.",
+        "Partes que somam um total: use área empilhada em 05_areas.",
+        "Só dois momentos por série: use o slope de 17_comparacao-de-pontos."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-bruto-contra-qualificado",
+          "titulo": "CPL bruto contra CPL qualificado",
+          "caso_de_uso": "O CPL qualificado acompanhou o CPL bruto mês a mês em 2026 ou os dois descolaram?",
+          "o_que_demonstra": [
+            "Duas Line na mesma unidade e no mesmo eixo, sem eixo duplo",
+            "Rótulo no fim de cada linha com marcador na cor da série, sem legenda",
+            "Cor por slot fixo da categoria, não pela posição no array",
+            "ChartTooltip com itemSorter pelo valor e formatCurrencyCompact"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_plataforma-em-destaque-com-resto-neutro",
+          "titulo": "Investimento por plataforma com uma em destaque",
+          "caso_de_uso": "Qual das quatro plataformas de mídia paga mais cresceu em investimento mensal desde 2026-01?",
+          "o_que_demonstra": [
+            "Protagonista em --chart-1 de 2,5 px desenhada por último; demais em --line-strong",
+            "Halo na cor da superfície para separar cruzamentos com as neutras",
+            "Rótulo final em peso 700 só no destaque e valor escrito nas neutras",
+            "Troca de protagonista reordena as séries, não só a cor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_indice-base-100-do-funil",
+          "titulo": "Investimento, leads e agendas em índice base 100",
+          "caso_de_uso": "Leads e agendas cresceram no mesmo ritmo que o investimento em mídia, com 2026-01 igual a 100?",
+          "o_que_demonstra": [
+            "Índice calculado em TypeScript como valor sobre a base vezes 100",
+            "ReferenceLine em 100 com a data base escrita no rótulo",
+            "Dica com índice e valor absoluto lado a lado",
+            "Base nula troca para o primeiro ponto válido com aviso escrito"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_doze-executivos-contra-mediana",
+          "titulo": "Doze executivos com um destaque e a mediana do grupo",
+          "caso_de_uso": "Como a receita reconhecida mensal de um executivo se compara à dos outros 11, sem virar espaguete?",
+          "o_que_demonstra": [
+            "Acima de 5 séries: 11 linhas neutras de 1 px e uma em --chart-1",
+            "Mediana do grupo tracejada como segunda referência",
+            "Dica própria com destaque, mediana e extremos, não as 12 séries",
+            "activeDot desligado nas neutras",
+            "Nota com a regra de corte e a saída para pequenos múltiplos"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_step-degrau",
+      "nome": "Linha em degrau",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Linha que fica horizontal até a próxima mudança e salta na vertical, afirmando que não existe valor intermediário. Serve para teto de capacidade, tabela de preço, tamanho de equipe e meta revisada. Absorve a área em degrau, que empilha patamares a partir do zero.",
+      "quando_usar": [
+        "Valores que mudam em instantes discretos: teto de agendas por semana, tamanho de equipe, preço de serviço, meta revisada.",
+        "Capacidade em degrau contra demanda contínua na mesma unidade.",
+        "Composição de equipe por função ao longo do ano, empilhada em área em degrau a partir do zero."
+      ],
+      "quando_evitar": [
+        "Grandeza contínua amostrada, como entradas diárias ou CPL: use 01_linha-simples.",
+        "Mudança de posição num ranking: use 08_bump-chart.",
+        "Faixa aceitável que não muda no tempo: use ReferenceArea em 01_linha-simples.",
+        "Estado categórico ao longo do tempo (ativo, pausado): use o tracker de 24_microvisuais-sparklines."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_teto-de-capacidade-da-pre-vendas",
+          "titulo": "Teto de capacidade da pré-vendas em degrau",
+          "caso_de_uso": "Quantas agendas por semana a pré-vendas comporta de 2026-01 a 2026-09, a cada contratação ou saída?",
+          "o_que_demonstra": [
+            "Line type stepAfter porque o teto vale a partir da data da mudança",
+            "Ponto final repetido na data de corte para o último patamar ter largura",
+            "Eixo numérico de tempo para a largura do degrau respeitar a duração",
+            "Motivo de cada mudança na dica e uma anotação na maior delas"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_capacidade-contra-demanda-semanal",
+          "titulo": "Capacidade em degrau contra demanda semanal",
+          "caso_de_uso": "Em quais semanas de 2026 a demanda de entradas passou do teto de capacidade da pré-vendas?",
+          "o_que_demonstra": [
+            "Teto em degrau em --line-strong e demanda em linha comum em --chart-1",
+            "Semanas acima do teto marcadas com ponto e excedente escrito",
+            "Mesma unidade num eixo só, sem área nem eixo duplo",
+            "Frase acessível com o total de semanas acima do teto"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_equipe-por-funcao-em-area-degrau",
+          "titulo": "Equipe por função em área em degrau",
+          "caso_de_uso": "Como pré-vendas, vendas e atendimento mudaram de tamanho em 2026, incluindo a queda temporária das férias coletivas?",
+          "o_que_demonstra": [
+            "Area type stepAfter empilhada com stackId e domínio a partir do zero",
+            "União das datas de mudança em TypeScript para os degraus não desencontrarem",
+            "Degrau para baixo e volta das férias coletivas anotados",
+            "Duas mudanças na mesma data resolvidas pela ordem do registro",
+            "Contorno --surface-raised separando as camadas vizinhas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_linha-com-banda-de-intervalo",
+      "nome": "Linha com banda de intervalo",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Linha central (mediana, média ou estimativa) sobre uma faixa sombreada de dispersão ou incerteza, com uma nota que diz o que a faixa representa. Banda estatística não é faixa de meta: a faixa aceitável mora em 01_linha-simples como ReferenceArea, e o leque de projeção com bandas aninhadas mora em 05_areas.",
+      "quando_usar": [
+        "Valor central com dispersão: tempo até o primeiro contato em mediana com quartis, ciclo de venda.",
+        "Faixa histórica de comparação: mínimo e máximo das semanas anteriores para achar dias fora do padrão.",
+        "Estimativa com incerteza declarada, como participação de mercado entre dois perímetros."
+      ],
+      "quando_evitar": [
+        "Público que lê a banda como meta: use ReferenceArea em 01_linha-simples com o texto da meta.",
+        "Projeção com bandas aninhadas por probabilidade: use o leque de 05_areas.",
+        "Distribuição completa de um único período: use 16_distribuicao.",
+        "Banda mais saliente que a linha central: reduza a opacidade ou mostre só a linha."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_tempo-ate-primeiro-contato-com-quartis",
+          "titulo": "Tempo até o primeiro contato com faixa entre quartis",
+          "caso_de_uso": "O tempo até o primeiro contato piorou nas últimas 26 semanas, na mediana e na dispersão entre quartis?",
+          "o_que_demonstra": [
+            "ComposedChart com Area de dataKey em par inferior e superior, sem contorno",
+            "Area antes da Line nos filhos para a linha central ficar por cima",
+            "Dica que escreve entre X e Y com formatHours",
+            "Nota curta dizendo que a faixa vai do 1º ao 3º quartil"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cpl-diario-fora-da-faixa-historica",
+          "titulo": "CPL diário fora da faixa das 8 semanas anteriores",
+          "caso_de_uso": "Em quais dias de 2026-08 o CPL saiu da faixa de mínimo e máximo das 8 semanas anteriores?",
+          "o_que_demonstra": [
+            "Faixa móvel de mínimo e máximo calculada em TypeScript por dia",
+            "Dias fora da faixa com ponto, símbolo e valor escrito",
+            "Faixa estatística em tom neutro, distinta de faixa de meta"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_participacao-de-mercado-entre-perimetros",
+          "titulo": "Participação de mercado entre dois perímetros",
+          "caso_de_uso": "A participação de mercado estimada mudou de patamar em 2026, considerando o perímetro restrito e o amplo?",
+          "o_que_demonstra": [
+            "Banda entre perímetro restrito e amplo com a estimativa central por cima",
+            "Revisão de perímetro como uma anotação vertical datada",
+            "Frase acessível com a saída em faixa, nunca um número único",
+            "Eixo percentual com recorte de escala, permitido por ser linha"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_ciclo-de-venda-com-amostra-pequena",
+          "titulo": "Ciclo de venda com banda omitida em amostra pequena",
+          "caso_de_uso": "Qual o ciclo mediano de venda por mês, sem desenhar faixa nos meses com menos de 10 fechamentos?",
+          "o_que_demonstra": [
+            "Bordas da banda em null quando a amostra do mês é menor que 10",
+            "Aviso amostra insuficiente escrito no visual, não só na dica",
+            "Tamanho da amostra junto da mediana em cada mês",
+            "Mediana mantida como ponto isolado quando a faixa some"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_real-contra-previsto",
+      "nome": "Real contra previsto tracejado",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Série contínua que muda de sólido para tracejado no ponto em que deixa de ser medida e passa a ser projeção, com o ponto de junção repetido nas duas chaves para não abrir buraco. É recharts-custom porque o dado precisa ser moldado antes do render e o cruzamento com meta ou teto é calculado em TypeScript.",
+      "quando_usar": [
+        "Realizado até hoje continuando em projeção até o fim do mês, do trimestre ou do ano.",
+        "Forecast de fechamentos ou de receita com data de corte explícita e método declarado.",
+        "Cenários conservador, base e otimista partindo do mesmo último ponto medido.",
+        "Pergunta de quando a trajetória cruza uma meta ou um teto de capacidade."
+      ],
+      "quando_evitar": [
+        "Projeção sem método declarado: mostre só o realizado.",
+        "Incerteza em bandas aninhadas por probabilidade: use o leque de 05_areas.",
+        "Acumulado contra meta anual: use 06_acumulado-contra-meta, que já traz a projeção tracejada.",
+        "Período corrente só incompleto, sem projeção: basta o trecho parcial tracejado de 01_linha-simples."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-real-e-projetada",
+          "titulo": "Receita reconhecida real e projetada até dezembro",
+          "caso_de_uso": "Se o ritmo de 2026-01 a 2026-08 se mantiver, onde a receita reconhecida mensal termina em 2026-12?",
+          "o_que_demonstra": [
+            "Duas Line: real sólida e projetada com strokeDasharray 4 4",
+            "Ponto de junção presente nas duas chaves para não abrir buraco",
+            "ReferenceLine vertical de hoje com rótulo curto",
+            "Dica que rotula projetado e não duplica o ponto de junção"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_forecast-de-fechamentos-com-data-de-corte",
+          "titulo": "Forecast de fechamentos a partir da data de corte",
+          "caso_de_uso": "Quantos fechamentos por semana o forecast espera até 2026-12-31, a partir do corte de 2026-09-14?",
+          "o_que_demonstra": [
+            "Data de corte anotada com formatDate",
+            "Método da projeção em nota; a etiqueta PREMISSA fica no VisualCard",
+            "Contagem inteira com allowDecimals desligado no eixo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_tres-cenarios-de-receita",
+          "titulo": "Três cenários de receita a partir do último mês medido",
+          "caso_de_uso": "Como a receita reconhecida de 2026 fecha nos cenários conservador, base e otimista, a partir do mesmo mês medido?",
+          "o_que_demonstra": [
+            "Três tracejados com pesos diferentes saindo do mesmo ponto de junção",
+            "Rótulo final de cada cenário com formatCurrencyCompact",
+            "Frase acessível com a saída em faixa entre conservador e otimista",
+            "Cenário base em --chart-1 e extremos em neutro, sem leque de área"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_fila-projetada-cruzando-o-teto",
+          "titulo": "Fila projetada que cruza o teto de capacidade",
+          "caso_de_uso": "Se a demanda seguir o ritmo atual, em que semana a fila de primeiro contato passa do teto de capacidade?",
+          "o_que_demonstra": [
+            "Cruzamento calculado por interpolação linear em TypeScript",
+            "Semana estimada do cruzamento anotada com formatDate",
+            "Teto em ReferenceLine com ifOverflow extendDomain",
+            "Aviso escrito quando a projeção não cruza dentro do horizonte"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_acumulado-contra-meta",
+      "nome": "Acumulado contra meta (burn-up)",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Soma acumulada do realizado desde o início do período contra a trajetória acumulada da meta até o valor final; a distância entre as duas é o adiantamento ou o atraso. Absorve o burn-up de 13_progresso-meta-e-gauge, com ritmo necessário, meta revisada em degrau e cancelamento que faz a curva descer.",
+      "quando_usar": [
+        "Metas aditivas do ano ou do trimestre: receita reconhecida, fechamentos, agendas realizadas.",
+        "Pergunta de se o acumulado está na trajetória e de que ritmo fecha a meta até o fim.",
+        "Meta revisada no meio do período, que precisa aparecer como mudança de escopo."
+      ],
+      "quando_evitar": [
+        "Taxas e médias, que não somam: use 01_linha-simples com meta.",
+        "Progresso num instante só, sem trajetória: use 13_progresso-meta-e-gauge.",
+        "Diferença sombreada entre real e meta como assunto principal: use a área de diferença de 05_areas.",
+        "Negócio sazonal com meta linear sem aviso: derive a trajetória sazonal ou declare a escolha."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-acumulada-contra-meta-anual",
+          "titulo": "Receita reconhecida acumulada contra a meta anual",
+          "caso_de_uso": "A receita reconhecida acumulada de 2026 está acima ou abaixo da trajetória da meta anual de R$ 10 mi?",
+          "o_que_demonstra": [
+            "Acumulado calculado em TypeScript a partir do mensal",
+            "Meses futuros em null, nunca repetindo o último valor",
+            "Meta acumulada linear tracejada e meta anual em ReferenceLine extendDomain",
+            "Eixo a partir do zero com formatCurrencyAxis"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_gap-de-hoje-e-ritmo-necessario",
+          "titulo": "Gap de hoje e ritmo necessário até o fim do trimestre",
+          "caso_de_uso": "Quantos fechamentos faltam contra a trajetória hoje e que ritmo semanal fecha a meta do trimestre?",
+          "o_que_demonstra": [
+            "Gap desenhado com ReferenceLine segment vertical entre real e meta",
+            "Linha do ritmo necessário do dia de corte ao fim do trimestre",
+            "Rótulo do gap com unidade e base nomeada",
+            "Duas anotações no máximo: o gap e o ritmo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_meta-linear-contra-sazonal-com-projecao",
+          "titulo": "Meta linear contra meta sazonal, com projeção",
+          "caso_de_uso": "O atraso da receita acumulada em 2026 é real ou efeito de uma meta linear num negócio sazonal?",
+          "o_que_demonstra": [
+            "Meta sazonal derivada do peso mensal de 2025",
+            "Alternância entre trajetória linear e sazonal por prop",
+            "Projeção tracejada do último mês medido até dezembro",
+            "Rótulo no fim das trajetórias em vez de legenda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_meta-revisada-e-cancelamento",
+          "titulo": "Meta revisada em degrau e acumulado que desce",
+          "caso_de_uso": "Como ler os fechamentos acumulados de 2026 com a meta revisada em 2026-07 e um cancelamento que fez a curva descer?",
+          "o_que_demonstra": [
+            "Meta como Line stepAfter, sem redesenhar o passado com o valor novo",
+            "Revisão da meta anotada com a data e os valores antes e depois",
+            "Queda do acumulado anotada em vez de suavizada",
+            "Domínio que acomoda a descida sem tirar o zero do eixo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_sobreposicao-de-periodos",
+      "nome": "Sobreposição de períodos",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Período atual e períodos anteriores desenhados no mesmo eixo de calendário relativo (semana ISO, dia útil do mês) para ler sazonalidade e comparar com o mesmo momento do passado. O pivot é feito em TypeScript por posição relativa, nunca por data civil quando o negócio segue dias úteis.",
+      "quando_usar": [
+        "Ano contra ano por semana ISO: agendas, entradas, fechamentos.",
+        "Mês corrente contra a média dos meses anteriores, alinhado por dia útil.",
+        "Ano corrente contra a faixa de mínimo e máximo dos anos anteriores."
+      ],
+      "quando_evitar": [
+        "Série contínua em que a pergunta é tendência e não sazonalidade: use 01_linha-simples.",
+        "Comparação de só dois momentos agregados: use 17_comparacao-de-pontos.",
+        "Mais de 3 anos anteriores desenhados um a um: resuma em faixa de mínimo e máximo.",
+        "Calendários desalinhados sem normalização declarada: normalize por dia útil ou por fração do período."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-semana-2026-contra-2025",
+          "titulo": "Agendas por semana ISO, 2026 contra 2025",
+          "caso_de_uso": "As agendas semanais de 2026 seguem a sazonalidade de 2025 ou já descolaram até a semana 37?",
+          "o_que_demonstra": [
+            "Pivot em TypeScript por semana ISO com uma chave por ano",
+            "Ano atual em --chart-1 e ano anterior em --line-strong",
+            "Rótulo do ano no fim de cada linha, sem legenda",
+            "Ano corrente termina em null depois da última semana medida"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_receita-por-dia-util-contra-media",
+          "titulo": "Receita do mês por dia útil contra a média de 6 meses",
+          "caso_de_uso": "No 9º dia útil de 2026-09, a receita acumulada do mês está à frente da média dos 6 meses anteriores?",
+          "o_que_demonstra": [
+            "Alinhamento por dia útil, não por data civil",
+            "Média dos 6 meses anteriores como série tracejada de referência",
+            "Diferença de hoje escrita com a base nomeada na mesma linha"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-sobre-faixa-de-tres-anos",
+          "titulo": "Entradas de 2026 sobre a faixa de 2023 a 2025",
+          "caso_de_uso": "As entradas semanais de 2026 ficam dentro da faixa de mínimo e máximo de 2023 a 2025?",
+          "o_que_demonstra": [
+            "Area de faixa com mínimo e máximo dos anos anteriores atrás da linha",
+            "Semanas de 2026 fora da faixa marcadas com ponto e valor",
+            "Nota escrita dizendo quais anos formam a faixa",
+            "Faixa histórica completa e linha atual que para na semana medida"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_meses-com-dias-uteis-diferentes",
+          "titulo": "Meses com 18 e 22 dias úteis normalizados",
+          "caso_de_uso": "Como comparar agendas acumuladas de um mês com 18 dias úteis e outro com 22 sem que o curto pareça queda?",
+          "o_que_demonstra": [
+            "Eixo em fração do mês útil, de 0 a 100%, em vez de dia civil",
+            "Normalização declarada em nota curta no visual",
+            "Mês curto sem pontos inventados para igualar o longo",
+            "Dica com o dia útil real e a fração correspondente"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_bump-chart",
+      "nome": "Bump chart de ranking",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Posição de cada item em cada período ligada por linhas, com o eixo vertical invertido e o 1º lugar no topo. Mostra quem subiu, quem caiu e as trocas de liderança, mas apaga a distância entre posições: a dica traz o valor absoluto e a nota diz que o eixo é posição. Absorve o bump chart de 17_comparacao-de-pontos e o ranking micro de 24_microvisuais-sparklines.",
+      "quando_usar": [
+        "Mudança de posição de 5 a 12 itens ao longo de 4 a 12 períodos: executivos, origens de lead, criativos, squads.",
+        "Pergunta de quem subiu e quem caiu, e não de por quanto.",
+        "Top N com entradas e saídas ao longo do tempo, como a fadiga de um criativo."
+      ],
+      "quando_evitar": [
+        "Distância entre posições importa: use 02_multiplas-series com o valor.",
+        "Só dois momentos: use o slope de 17_comparacao-de-pontos.",
+        "Posição num instante só: use a barra ordenada de 02_barras-horizontais.",
+        "Mais de 12 itens com muitos cruzamentos: filtre um top N ou use pequenos múltiplos.",
+        "Universo que muda de tamanho entre períodos: fixe o universo ou normalize para percentil."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_posicao-de-seis-executivos",
+          "titulo": "Posição de seis executivos por receita trimestral",
+          "caso_de_uso": "Quem subiu e quem caiu no ranking de receita reconhecida nos 8 trimestres encerrados em 2026-06?",
+          "o_que_demonstra": [
+            "YAxis reversed com domínio de 1 a N e tiques inteiros",
+            "Ranking calculado por período em TypeScript com desempate estável",
+            "dot próprio com o número da posição dentro do círculo",
+            "Nome do executivo nas duas pontas, sem legenda"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_origem-que-mais-subiu",
+          "titulo": "Origem de lead que mais subiu no ranking",
+          "caso_de_uso": "Qual origem de lead mais subiu no ranking de volume nos últimos 6 meses, contra as outras sete?",
+          "o_que_demonstra": [
+            "Maior subida em --chart-1 e demais origens em --line-strong",
+            "Rótulo em peso 700 só na origem destacada",
+            "Anotação na maior subida com as posições de início e fim",
+            "Dica com o volume absoluto, porque a posição apaga a magnitude"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_top-10-criativos-em-12-semanas",
+          "titulo": "Top 10 criativos por CPL qualificado em 12 semanas",
+          "caso_de_uso": "Quais criativos entram, saem ou perdem posição aos poucos no top 10 de CPL qualificado em 12 semanas?",
+          "o_que_demonstra": [
+            "Universo fixo do top 10, com fora do top em null",
+            "Linha cortada com ponto anelado na entrada e na saída",
+            "Anticolisão dos rótulos das pontas com a escala do eixo y",
+            "Descida lenta e constante lida como fadiga do criativo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_empates-e-squad-pausado",
+          "titulo": "Ranking com empates e um squad sem operar",
+          "caso_de_uso": "Como desenhar o ranking semanal de SLA dos squads com empates frequentes e um squad parado por 3 semanas?",
+          "o_que_demonstra": [
+            "Regra de empate por competição 1, 2, 2, 4 escrita em nota",
+            "Desempate estável por chave secundária declarada",
+            "Traço interrompido no período sem operar, nunca última posição",
+            "Trecho ausente sem interpolação entre as bordas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "09_pequenos-multiplos-de-linha",
+      "nome": "Pequenos múltiplos de linha",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Um gráfico de linha por categoria da mesma métrica, em grade Tailwind, com o mesmo eixo x, o mesmo array de datas e cursor sincronizado por syncId. Resolve o espaguete quando todas as séries importam e absorve as linhas sincronizadas. Painéis de métricas diferentes, que substituem o eixo duplo, moram em 08_combinados-e-eixo-duplo.",
+      "quando_usar": [
+        "De 4 a 12 categorias da mesma métrica em que todas importam: plataformas, squads, origens de lead.",
+        "Escala comum quando a pergunta é nível; escala independente declarada quando a pergunta é forma.",
+        "Comparar cada categoria com a referência do grupo (mediana, meta) sem sobrepor tudo."
+      ],
+      "quando_evitar": [
+        "Até 4 séries que se leem juntas num eixo só: use 02_multiplas-series.",
+        "Métricas diferentes em painéis alinhados: use 08_combinados-e-eixo-duplo.",
+        "Linha minúscula dentro de cartão ou célula: use 24_microvisuais-sparklines.",
+        "Menos de cerca de 80 px de altura por painel: use tabela com sparkline.",
+        "Mais de 12 painéis: filtre, agrupe em Outros ou pagine."
+      ],
+      "arquivo_estudo": "_estudo/familias/04_linhas.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-por-plataforma-em-quatro-paineis",
+          "titulo": "CPL por plataforma em quatro painéis",
+          "caso_de_uso": "O CPL de cada uma das quatro plataformas de mídia subiu ou caiu em 2026, em escala comum?",
+          "o_que_demonstra": [
+            "Grade Tailwind com um LineChart por plataforma e o mesmo syncId",
+            "Domínio y comum calculado sobre o conjunto dos painéis",
+            "YAxis width constante e igual em todos os painéis",
+            "Eixo x só nos painéis da borda inferior"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_origens-contra-a-mediana-do-grupo",
+          "titulo": "Leads por origem contra a mediana do grupo",
+          "caso_de_uso": "Cada uma das 6 origens de lead está acima ou abaixo da mediana semanal do grupo em 2026?",
+          "o_que_demonstra": [
+            "Série do painel em --chart-1 e mediana do grupo tracejada em neutro",
+            "Nome e último valor no cabeçalho de cada painel",
+            "Painéis ordenados pelo último valor, com a ordem escrita em nota"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_sla-de-doze-squads-em-grade",
+          "titulo": "SLA semanal de 12 squads em grade",
+          "caso_de_uso": "Quais dos 12 squads de pré-vendas ficaram abaixo da meta de 90% de SLA nas últimas 26 semanas?",
+          "o_que_demonstra": [
+            "Grade de 4 por 3 com eixo y comum de 0 a 100%",
+            "Meta tracejada em cada painel e semanas abaixo contadas no cabeçalho",
+            "Painel abaixo da meta sinalizado por ícone e palavra, não só cor",
+            "Animação desligada e tiques limitados em 12 painéis"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_painel-sem-dado-e-escala-independente",
+          "titulo": "Painel sem dado e escala independente declarada",
+          "caso_de_uso": "Como mostrar a forma das entradas de 8 origens de volumes muito diferentes quando uma não tem dado no recorte?",
+          "o_que_demonstra": [
+            "Painel vazio com role status no lugar do gráfico, sem eixo quebrado",
+            "Escala y independente declarada em texto em cada painel",
+            "Mesmo array de datas com null para o syncId casar pelo índice"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

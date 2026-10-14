@@ -1,0 +1,13 @@
+{
+  "title": "Capacidade da pré-vendas contra o teto",
+  "useCase": "Pré-vendas: as 258 entradas de 2026-08 cabem no teto medido de 274 ou já estão na faixa de atenção?",
+  "demonstrates": [
+    "Escala de 0 a 320 com faixa confortável, atenção e estouro acima do teto",
+    "Traço do teto com rótulo próprio, para não ser lido como fronteira comum",
+    "Folga escrita em texto: faltam 16 entradas para o teto",
+    "Polaridade de capacidade: zona de estouro com ícone, nunca verde no cheio"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O ponteiro é a forma menos precisa deste catálogo: a folga contra o teto sai sempre escrita por extenso, nunca só a posição do ponteiro no arco. Ver README, seção Quando evitar, para a alternativa nomeada (bullet chart, 13/02)."
+}

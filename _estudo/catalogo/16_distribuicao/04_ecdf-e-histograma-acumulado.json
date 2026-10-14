@@ -1,0 +1,71 @@
+{
+  "slug": "04_ecdf-e-histograma-acumulado",
+  "nome": "ECDF e histograma acumulado",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Escada que sobe 1/n a cada observação, do menor valor ao maior, com o eixo Y de 0% a 100%. Não depende de bin nem de banda e mostra todo o dado de uma vez, o que a torna a resposta mais honesta para quantos casos ficam abaixo do SLA. Custa intuição: é menos familiar que o histograma e pede par de guias rotulado no cruzamento. Sai do LineChart nativo com Line stepAfter e ReferenceLine nos dois eixos. Absorve o histograma acumulado como versão, com barras somadas em TypeScript e sentido até ou ou mais declarado no eixo.",
+  "quando_usar": [
+    "Responder que percentual dos casos fica abaixo ou acima de um limiar: SLA, prazo, teto de CPL.",
+    "Comparar 2 a 4 grupos ou períodos sem escolher bin, lendo a distância horizontal na altura de 50%.",
+    "Métrica muito assimétrica, na versão ou mais com eixo X logarítmico avisado no rótulo.",
+    "Qualquer tamanho de amostra; acima de dezenas de milhares, reamostrar em uns 200 quantis."
+  ],
+  "quando_evitar": [
+    "Procurar moda, pico ou bimodalidade óbvia: histograma (01) ou densidade (06).",
+    "Casos ainda sem desfecho, como oportunidades abertas: curva de sobrevivência (11).",
+    "Público que nunca viu curva acumulada e não terá nota de leitura: histograma com estatística anotada (01).",
+    "Concentração do total por entidade: curva de Lorenz (10) ou Pareto na família 08 (modelo 04).",
+    "Percentis desenhados ao longo do tempo: faixa em área na família 05 (modelo 05)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_sla-de-primeiro-contato",
+      "titulo": "Leads contatados em até 30 minutos",
+      "caso_de_uso": "Que percentual dos leads do mês recebe o primeiro contato dentro do SLA de 30 minutos?",
+      "o_que_demonstra": [
+        "Função ecdf com empates colapsados e ponto gravado com o percentual já acumulado",
+        "Line stepAfter, com o salto no próprio valor, e dot desligado",
+        "Par de guias no limiar e no percentual, com o rótulo 69% em até 30 min no cruzamento",
+        "Sentido até escrito no título do eixo Y e marcas em 25, 50 e 75%",
+        "Leads sem horário de contato fora da curva e contados no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_histograma-acumulado-com-tres-limiares",
+      "titulo": "Primeiro contato acumulado em três limiares",
+      "caso_de_uso": "Quanto da fila é atendido em 5 minutos, em 30 minutos e em 2 horas, sem somar barras de cabeça?",
+      "o_que_demonstra": [
+        "Histograma acumulado com bins de 5 minutos somados pela função acumular",
+        "Bins ordenados e completos para o degrau não quebrar a monotonicidade",
+        "Marcas em 5, 30 e 120 minutos com três rótulos empilhados à direita",
+        "Parâmetro de sentido 1 ou menos 1 e rótulo do eixo que diz até ou ou mais"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cpl-ou-mais-em-escala-log",
+      "titulo": "Campanhas com CPL acima de cada valor",
+      "caso_de_uso": "Quantas das 1.100 campanhas do ano custam R$ 400 ou mais por lead, lido direto no eixo?",
+      "o_que_demonstra": [
+        "ECDF descendente, na forma ou mais, com eixo X logarítmico avisado no rótulo",
+        "Reamostragem em 200 quantis antes do render, com erro máximo de meio ponto",
+        "Campanhas sem lead ou com CPL zero fora do log e contadas em nota de rodapé",
+        "Guia em R$ 400 com percentual e contagem de campanhas no cruzamento"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_massa-no-zero-e-abertas-fora",
+      "titulo": "Receita acumulada com 41% das oportunidades em zero",
+      "caso_de_uso": "Como ler a acumulada da receita por oportunidade quando 41% valem zero e 87 negócios seguem abertos?",
+      "o_que_demonstra": [
+        "Curva que nasce em 41% no zero, com rótulo próprio no salto inicial",
+        "Oportunidades abertas fora da conta, com nota apontando a curva de sobrevivência",
+        "Domínio fixo do eixo X para o salto não ser lido como defeito do gráfico",
+        "Subtítulo com o n das fechadas e o texto: a curva vale só para as encerradas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

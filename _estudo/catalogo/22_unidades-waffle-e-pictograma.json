@@ -1,0 +1,447 @@
+{
+  "slug": "22_unidades-waffle-e-pictograma",
+  "nome": "Unidades, waffle e pictograma",
+  "modelos": [
+    {
+      "slug": "01_waffle",
+      "nome": "Waffle 10x10",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Grade de 100 quadrados iguais em que cada um vale 1% do total: a fração se lê contando, e as linhas da grade servem de régua. O preenchimento segue ordem fixa, por colunas, de baixo para cima e da esquerda para a direita, para cada categoria formar um bloco contíguo. As contagens por categoria saem pelo método do maior resto, e a grade fecha sempre em 100. O modelo absorve o waffle empilhado de três a cinco categorias, os waffles comparativos em múltiplos com a mesma grade e a mesma unidade, e o micro waffle de contagem de até cerca de 20 unidades reais. Feito em HTML com Tailwind (grid de 100 div com grid-rows-10 explícito), sem Recharts.",
+      "quando_usar": [
+        "Uma fração dita como x de 100, como leads do mês com telefone válido",
+        "Composição de 3 a 5 partes em que a categoria pequena precisa continuar visível",
+        "A mesma fração em 3 a 9 grupos, com a mesma grade, a mesma unidade e o n escrito em cada um",
+        "Contagem pequena e inteira de coisas reais, até cerca de 20 unidades, em cartão ou linha de tabela",
+        "Leitura de diretoria em que 38 de cada 100 comunica melhor que o ângulo de uma rosca"
+      ],
+      "quando_evitar": [
+        "Decimal que decide, como 62,4% contra 62,1%: número com barra de progresso (13/01)",
+        "Mais de 5 categorias: barra 100% empilhada (02) ou treemap (12/01)",
+        "Fração contra meta que pode passar de 100%: barra de progresso e capacidade (13/01)",
+        "Muitos grupos com uma fração cada: tabela com barra em célula (14/01)",
+        "Contagem por categoria sem denominador natural: waffle em barras (22/02)",
+        "Contagem pequena contra total discreto em forma circular: anel segmentado em unidades (07/05)"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-com-telefone-valido",
+          "titulo": "Leads do mês com telefone válido",
+          "caso_de_uso": "Marketing: de cada 100 leads de 2026-08, quantos chegaram com telefone válido para a pré-vendas ligar.",
+          "o_que_demonstra": [
+            "Grid de 100 div com grid-rows-10 explícito para a célula não esticar",
+            "Índice de preenchimento por colunas, de baixo para cima, calculado da posição",
+            "Grade com 62 células e número 62,2% por formatPercent, sem fatiar célula",
+            "Legenda de unidade 1 quadrado = 1% e n = 312 no rodapé",
+            "aria-label com a frase 194 de 312 leads com telefone; células com aria-hidden"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_desfecho-das-oportunidades-encerradas",
+          "titulo": "Desfecho das oportunidades encerradas",
+          "caso_de_uso": "Comercial: de cada 100 oportunidades encerradas no trimestre, quantas foram ganhas, perdidas ou desqualificadas.",
+          "o_que_demonstra": [
+            "Waffle empilhado em blocos contíguos, com contagens pelo maior resto fechando 100",
+            "Só ganhas em --chart-1; perdidas e desqualificadas em dois neutros",
+            "Sem motivo registrado por último, em --line-strong hachurado, fora da ordem",
+            "Transferida com 0,3% listada na legenda como menos de uma célula, sem célula forçada",
+            "Legenda com contagem absoluta e percentual iguais à contagem de células"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cobertura-de-origem-por-plataforma-e-mes",
+          "titulo": "Cobertura de origem por plataforma e mês",
+          "caso_de_uso": "Marketing: em cada plataforma de mídia e mês do trimestre, quantos de cada 100 leads chegaram com origem declarada.",
+          "o_que_demonstra": [
+            "Nove waffles em matriz 3 por 3 com cabeçalho de linha e coluna em grid externo",
+            "Mesma grade, mesma unidade e mesmo tamanho de célula em todos os múltiplos",
+            "Número e n sobre cada waffle; o pior grupo em cor cheia e os demais em neutro",
+            "Selo de amostra pequena abaixo de n = 30, com a fração omitida e o n escrito",
+            "Mês sem coleta em grade tracejada --line-strong com formatUnavailable"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_micro-waffle-de-posicoes-por-fila",
+          "titulo": "Posições de SDR ocupadas por fila",
+          "caso_de_uso": "Diretoria: quantas das 6 posições de cada fila de pré-vendas estão ocupadas e quanto a fila converte em venda.",
+          "o_que_demonstra": [
+            "Micro waffle de 6 unidades reais com quadrado de 6 px e o texto 4 de 6 ao lado",
+            "Vaga aberta em contorno tracejado; posição ocupada em cor cheia",
+            "Nenhuma unidade parcial no tamanho micro: taxa arredondada e escrita por extenso",
+            "Conversão de 0,6% numa grade de 100 vazia, com o chip menos de 1 em 100",
+            "Fila sem dado de ocupação escreve formatUnavailable em vez de grade vazia"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_waffle-em-barras",
+      "nome": "Waffle em barras",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Colunas feitas de células contáveis sobre um eixo de categorias: a altura segue comparável como numa coluna comum, e cada célula vale uma quantidade declarada (1 agenda, 10 leads). O BarChart do Recharts entrega banda, ordenação, dica e ReferenceLine; um shape customizado no Bar desenha os rect de baixo para cima, com o mesmo número de células por linha em todas as barras. O eixo Y fica oculto e o valor vai escrito no topo, porque a altura das células só bate com a escala quando o domínio é calculado da razão entre banda e altura. Só a última célula pode ser parcial, e sempre com aviso na legenda.",
+      "quando_usar": [
+        "Contagem por categoria que o leitor quer contar, até cerca de 300 unidades por barra",
+        "Agendas, reuniões ou vitórias por dia ou mês, em que cada célula é uma coisa real",
+        "Contagem contra uma referência fixa, como meta diária, desenhada como ReferenceLine",
+        "Composição por origem dentro de cada coluna, com poucas categorias e unidade 1"
+      ],
+      "quando_evitar": [
+        "Contagens grandes sem necessidade de contar: colunas comuns (03)",
+        "Mais de 12 a 15 categorias: as células ficam pequenas demais; colunas (03) ou linha (04)",
+        "Valor contínuo em reais ou horas, sem unidade contável honesta: colunas (03)",
+        "Diferença fina entre categorias próximas: barras horizontais ordenadas (02/01)",
+        "Parte de um todo sem eixo de categoria: waffle 10x10 (22/01)",
+        "Distribuição de uma medida por item, como dias no funil: dot plot empilhado (16/09)"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-dia-util",
+          "titulo": "Agendas marcadas por dia útil",
+          "caso_de_uso": "Pré-vendas: quantas agendas o time marcou em cada dia útil da semana, contadas uma a uma.",
+          "o_que_demonstra": [
+            "BarChart nativo com Bar shape customizado que desenha rect de baixo para cima",
+            "perRow fixo e igual para todas as barras, com YAxis oculto",
+            "Valor escrito no topo por LabelList, no lugar do eixo de valor",
+            "Legenda de unidade 1 célula = 1 agenda sempre visível",
+            "Dica por ChartTooltip no mesmo formato do rótulo visível"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_agendas-contra-meta-diaria",
+          "titulo": "Agendas por dia contra a meta diária",
+          "caso_de_uso": "Pré-vendas: em quais dias da semana o time ficou abaixo da meta diária de 18 agendas e por quanto.",
+          "o_que_demonstra": [
+            "ReferenceLine da meta de 18 atravessando as colunas, com rótulo próprio",
+            "Domínio do YAxis calculado da razão banda e altura para a linha cair na célula 18",
+            "Dias abaixo da meta em --chart-1 e os demais em --line-strong",
+            "Distância até a meta escrita no topo da coluna: faltaram 5",
+            "Frase acessível com os dias abaixo da meta e o total da semana"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_vitorias-por-mes-e-origem",
+          "titulo": "Vitórias por mês e origem em 2026",
+          "caso_de_uso": "Comercial: quantas oportunidades foram ganhas em cada mês de 2026 e de qual origem veio cada uma.",
+          "o_que_demonstra": [
+            "Células empilhadas por origem dentro da coluna, na ordem fixa da legenda",
+            "Cor por origem com seriesColor(i), a mesma do restante do painel",
+            "Célula como botão com rótulo que abre a oportunidade, na ordem de preenchimento",
+            "Mês em curso marcado como parcial no rótulo do eixo",
+            "Meses por formatMonthShort e total do mês escrito no topo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_leads-por-mes-em-celulas-de-dez",
+          "titulo": "Leads por mês em células de dez",
+          "caso_de_uso": "Marketing: volume de leads por mês quando um mês passa de 300 e outro mês não tem coleta.",
+          "o_que_demonstra": [
+            "Unidade sobe para 1 célula = 10 leads quando alguma barra passa de 300",
+            "Última célula com largura parcial de 70% e aviso na legenda",
+            "Valor exato 347 escrito no topo, independente do arredondamento das células",
+            "Mês sem coleta com contorno tracejado e formatUnavailable, nunca coluna zerada",
+            "Mês com zero medido desenha só a base e escreve 0"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_pictograma-isotype",
+      "nome": "Pictograma isotype",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Fileiras de ícones iguais em que cada ícone vale uma quantidade fixa: mais quantidade é mais ícones, nunca ícone maior, como manda o método Isotype. O modelo absorve a matriz de ícones, a grade de 10 por 10 figuras que traduz uma taxa em x em cada 100 para público amplo. Feito em HTML com Tailwind e ícones do lucide-react repetidos em flex ou grid, com o valor exato escrito no fim de cada fileira. Ícone nunca é fatiado: arredonda para inteiro e o número diz o resto. O ícone precisa ter relação com a unidade, e o de contorno pede no mínimo 14 px com traço perto de 2,5 para ter massa no tema escuro.",
+      "quando_usar": [
+        "Contagem pequena, até cerca de 50 ícones por fileira, com ícone ligado à unidade",
+        "De 2 a 6 fileiras de categorias, lidas por comprimento e por contagem",
+        "Taxa dita como x em cada 100 pessoas para diretoria ou apresentação",
+        "Unidade que é pessoa (lead, cliente, integrante do time), onde a figura humana ajuda"
+      ],
+      "quando_evitar": [
+        "Valores grandes ou decimais: barra horizontal com o número (02/01)",
+        "Unidade que não é pessoa nem objeto reconhecível, como oportunidade ou conta: waffle (22/01)",
+        "Diferenças finas entre categorias próximas: barras horizontais ordenadas (02/01)",
+        "Ícone escalado pelo valor: área mal lida; repetir o ícone ou usar área quadrada (22/05)",
+        "Tempo e categoria ao mesmo tempo: waffle em barras (22/02)",
+        "Público que lê ícones como infantil: waffle 10x10 com a frase escrita (22/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_vitorias-do-semestre-por-origem",
+          "titulo": "Vitórias do semestre por origem",
+          "caso_de_uso": "Comercial: de onde vieram as vitórias do semestre, contadas uma a uma por origem.",
+          "o_que_demonstra": [
+            "Fileiras de ícones do lucide-react em flex com espaçamento fixo, um por vitória",
+            "Ícone Trophy de 16 px com strokeWidth 2,5 para ter massa no tema escuro",
+            "Número exato no fim da fileira e legenda 1 ícone = 1 vitória",
+            "Fileiras ordenadas pelo total, com o nome da origem à esquerda",
+            "Contêiner role img com frase calculada; ícones com aria-hidden"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_clientes-novos-por-indicacao-em-cada-100",
+          "titulo": "Clientes novos por indicação em cada 100",
+          "caso_de_uso": "Diretoria: dizer em linguagem de conselho quantos de cada 100 clientes novos do ano chegaram por indicação.",
+          "o_que_demonstra": [
+            "Matriz de 100 figuras User em grid-cols-10 com o mapa de preenchimento do waffle",
+            "Categoria colorida em bloco contíguo, nunca espalhada, para contar sem esforço",
+            "Hover ou foco na legenda acende os ícones da categoria e esmaece os outros",
+            "Frase 3 em cada 10 escrita em font-display ao lado da matriz",
+            "Transição do destaque desligada com prefers-reduced-motion"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_cada-100-leads-de-midia-paga",
+          "titulo": "O caminho de cada 100 leads de mídia paga",
+          "caso_de_uso": "Marketing: de cada 100 leads de mídia paga, quantos têm telefone, quantos qualificam e quantos chegam à agenda.",
+          "o_que_demonstra": [
+            "Três níveis aninhados na mesma matriz: 58 com telefone, 21 qualificados, 4 com agenda",
+            "Subgrupos contidos um no outro, preenchidos a partir do mesmo canto",
+            "Nível mais avançado em --chart-1 e os anteriores em opacidades menores da mesma cor",
+            "Venda de 0,6 em 100 só em texto, sem ícone fatiado",
+            "Base real no rodapé: 100 equivale a 1.240 leads do trimestre"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_leads-do-mes-em-icones-de-dez",
+          "titulo": "Leads do mês por origem em ícones de dez",
+          "caso_de_uso": "Marketing: leads do mês por origem quando os volumes passam de 300 e uma origem não tem coleta.",
+          "o_que_demonstra": [
+            "Unidade 1 ícone = 10 leads declarada na legenda e no aria-label",
+            "347 leads viram 34 ícones inteiros e o número 347, sem 35º ícone cortado",
+            "Origem com menos de 10 leads sem ícone e com o texto menos de um ícone",
+            "Origem sem coleta com ícone Unplug e formatUnavailable no lugar da fileira",
+            "Acima de 50 ícones por fileira a unidade sobe de novo e o aviso acompanha"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_unit-chart-por-entidade",
+      "nome": "Unit chart por entidade",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Um marcador por item real (oportunidade, conta, lead), agrupado em colunas por uma categoria e ordenado dentro do grupo pelo atributo que vira cor. Diferente do waffle, a unidade é a entidade e não uma fração: cada quadrado tem chave estável, dica com os dados do item e pode abrir o registro. SVG puro em React, com a grade de cada grupo calculada em TypeScript de baixo para cima e o reagrupamento animado por transform, medindo antes e depois. Filtrar remove marcadores sem reposicionar os demais ao acaso. Acima de cerca de 1.500 itens a unidade é agregada, com aviso escrito.",
+      "quando_usar": [
+        "Cada item importa e pode ser aberto: oportunidades abertas por etapa, contas por executivo",
+        "De 20 a cerca de 1.500 itens, distribuídos em 3 a 8 grupos",
+        "Um atributo por item que vira cor, como dias sem movimento, lido como gradiente no grupo",
+        "Carga contra teto por pessoa, com a moldura do teto desenhada no próprio grupo"
+      ],
+      "quando_evitar": [
+        "Só a contagem por grupo interessa, sem abrir item: waffle em barras (22/02)",
+        "Distribuição de um valor contínuo por item: strip plot e beeswarm (16/03)",
+        "Mais de cerca de 1.500 itens: agregar a unidade ou usar colunas (03)",
+        "Leitura em linha de tabela ou cartão estreito: micro waffle de contagem (22/01)",
+        "Estado de cada item ao longo do tempo: lasagna (15/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-abertas-por-etapa",
+          "titulo": "Oportunidades abertas por etapa",
+          "caso_de_uso": "Comercial: quantas oportunidades estão abertas em cada etapa do funil, vistas uma a uma.",
+          "o_que_demonstra": [
+            "Layout em TypeScript: grade por grupo de baixo para cima com colunas fixas",
+            "Um rect de 10 px por oportunidade com chave estável pelo id",
+            "Contagem no topo de cada grupo e nome da etapa na base",
+            "Dica com etapa, valor por formatCurrencyCompact e dias no funil",
+            "viewBox fixo e escala por className, sem ler a janela"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_oportunidades-paradas-por-etapa",
+          "titulo": "Oportunidades paradas por etapa",
+          "caso_de_uso": "Comercial: quais oportunidades abertas estão sem movimento há mais de 30 dias e em que etapa elas param.",
+          "o_que_demonstra": [
+            "Cor por faixa de dias sem movimento: até 15, 16 a 30 e mais de 30 em --warning",
+            "Ordem dentro da etapa pelo atributo de cor, formando gradiente legível",
+            "Nota direta 19 paradas há mais de 30 dias ligada ao grupo com mais casos",
+            "Faixa crítica também por forma, com contorno, e não só por cor",
+            "aria-label com o total aberto e o total parado há mais de 30 dias"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_carteira-de-contas-por-executivo",
+          "titulo": "Carteira de contas por executivo contra o teto",
+          "caso_de_uso": "Comercial: quantas contas cada um dos 6 executivos carrega contra o teto de 120 e de que segmento elas são.",
+          "o_que_demonstra": [
+            "Seis grupos de até 120 quadrados com moldura tracejada do teto em --line-strong",
+            "Excedente acima do teto em --negative com o número escrito acima da moldura",
+            "Troca de agrupamento para segmento anima o reagrupamento por transform",
+            "Chave estável por conta para a animação não embaralhar; filtro só remove",
+            "Marcador como botão com rótulo, navegável por teclado na ordem de preenchimento"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_leads-por-etapa-com-sem-etapa",
+          "titulo": "Leads por etapa com grupo sem etapa",
+          "caso_de_uso": "Pré-vendas: leads por etapa quando parte não tem etapa registrada e o recorte passa de 1.500 itens.",
+          "o_que_demonstra": [
+            "Grupo sem etapa por último, com marcadores em contorno tracejado",
+            "Recorte de 1.900 leads passa sozinho para 1 quadrado = 10 leads",
+            "Aviso de unidade agregada escrito no topo, e não só na legenda",
+            "Recorte vazio troca o gráfico por bloco role status com ícone Filter"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_area-quadrada-proporcional",
+      "nome": "Área quadrada proporcional",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Quadrados de grade com a mesma célula e totais diferentes: o lado cresce com a raiz quadrada do total, e magnitudes distantes cabem lado a lado em pouco espaço. A célula é a unidade declarada (1 célula = 5 leads, 1 célula = R$ 10 mil), então o leitor ainda pode contar, e a comparação de área, que é aproximada, fica ancorada no número escrito sob cada quadrado. Feito em HTML com Tailwind, com gridTemplateColumns calculado do lado e os quadrados alinhados pela base, deixando a última linha incompleta no topo. Com razão de 100 vezes ou mais entre os totais, o formato deixa de servir e a peça troca de forma.",
+      "quando_usar": [
+        "De 2 a 4 totais na mesma unidade com magnitudes diferentes, até cerca de 100 vezes",
+        "Etapas de funil ou custo contra receita para diretoria, com o número sempre escrito",
+        "Parte de um total acesa dentro do próprio quadrado, como leads que viraram oportunidade"
+      ],
+      "quando_evitar": [
+        "Razão de 100 vezes ou mais: o menor vira uma célula; número com barra (01 ou 13/01)",
+        "Taxa de passo entre etapas como pergunta principal: funil em barras (10/01)",
+        "Comparação precisa entre totais parecidos: barras horizontais ordenadas (02/01)",
+        "Valor negativo ou saldo: área não tem sinal; cascata (19)",
+        "Totais de unidades diferentes no mesmo quadro: separar as peças ou normalizar antes"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_funil-do-semestre-em-celulas",
+          "titulo": "Funil do semestre em células de cinco",
+          "caso_de_uso": "Comercial: o tamanho de leads, oportunidades e vitórias do semestre lado a lado, em células de 5.",
+          "o_que_demonstra": [
+            "Lado por Math.ceil(Math.sqrt(células)) e gridTemplateColumns calculado",
+            "1.284 leads em 257 células, 212 oportunidades em 42 e 38 vitórias em 8",
+            "Quadrados alinhados pela base, com a última linha incompleta no topo",
+            "Número exato sob cada quadrado e arredondamento de células declarado",
+            "Legenda de unidade 1 célula = 5 sempre visível"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_leads-que-viraram-oportunidade",
+          "titulo": "Leads que viraram oportunidade",
+          "caso_de_uso": "Marketing: dentro do total de leads do semestre, quantos viraram oportunidade e quanto do quadrado ficou apagado.",
+          "o_que_demonstra": [
+            "Subconjunto aceso dentro do quadrado maior, preenchido a partir do canto inferior",
+            "Aceso em --chart-1 e restante em --surface-overlay",
+            "Taxa por formatRateWithVolume: 16,5% (212 de 1.284)",
+            "Anotação ligada ao bloco aceso, sem legenda separada"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_custo-e-receita-do-trimestre",
+          "titulo": "Custo e receita do trimestre em blocos de R$ 10 mil",
+          "caso_de_uso": "Diretoria: quanto custou o trimestre na camada declarada e quanto de receita reconhecida entrou, na mesma unidade.",
+          "o_que_demonstra": [
+            "R$ 10 mil por célula: custo em 193 células contra receita em 248",
+            "Valores por formatCurrencyCompact sob cada quadrado",
+            "Camada do custo escrita no rótulo, porque o retorno muda de camada para camada",
+            "Diferença de 55 células acesa no quadrado da receita como folga do trimestre",
+            "Procedência do número em etiqueta --prov, fora da cor dos quadrados"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_quando-a-area-deixa-de-servir",
+          "titulo": "Quando a área deixa de servir",
+          "caso_de_uso": "Diretoria: comparar um total 200 vezes menor e um saldo negativo sem deixar a área mentir.",
+          "o_que_demonstra": [
+            "Razão entre totais checada no componente, com o motivo da troca escrito",
+            "Total 200 vezes menor vira uma célula e a peça troca para número com barra",
+            "Saldo negativo fica fora do desenho e aparece com sinal de menos tipográfico",
+            "Total indisponível escreve formatUnavailable no lugar do quadrado"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_parlamento",
+      "nome": "Parlamento (hemiciclo)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Assentos em fileiras concêntricas de um semicírculo, coloridos por grupo em ordem angular, da esquerda para a direita. Serve quando o conjunto tem um número fixo de lugares (contas de uma carteira com teto, vagas, vitórias do ano) e a pergunta é quem ocupa quanto, com a linha de maioria ou de teto como referência. SVG puro em React: assentos por fileira proporcionais ao raio, grupos atribuídos pela ordem angular global de todos os assentos, e raio do ponto limitado pelo menor espaçamento entre vizinhos. Legível de cerca de 10 a 400 assentos; fora disso, uma fileira só com pontos grandes ou troca de unidade.",
+      "quando_usar": [
+        "Composição de um conjunto com teto natural de lugares, de 10 a cerca de 400 assentos",
+        "Pergunta de maioria: quais grupos juntos passam da metade",
+        "Ocupação de capacidade com lugares vazios visíveis, como carteira contra teto",
+        "Peça de apresentação para diretoria, com o total no centro da base"
+      ],
+      "quando_evitar": [
+        "Contagem sem teto natural: waffle em barras (22/02)",
+        "Mais de cerca de 400 assentos: os pontos somem; waffle (22/01) ou 1 assento = 10",
+        "Composição comparada entre vários grupos: waffles comparativos (22/01) ou barra 100% (02)",
+        "Diferenças finas entre grupos: barras horizontais ordenadas (02/01)",
+        "Dois ou três grupos sem maioria em jogo: semi rosca (07/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+      "versoes": [
+        {
+          "slug": "v1_contas-da-carteira-por-segmento",
+          "titulo": "Contas da carteira por segmento",
+          "caso_de_uso": "Comercial: como as 120 contas da carteira de um executivo se dividem entre os segmentos atendidos.",
+          "o_que_demonstra": [
+            "Função hemicycle em TypeScript com assentos por fileira proporcionais ao raio",
+            "Grupos atribuídos pela ordem angular global, nunca fileira por fileira",
+            "Raio do ponto pelo menor espaçamento entre vizinhos da fileira interna",
+            "Total no centro da base em font-display e legenda com contagem"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_ocupacao-do-teto-de-contas",
+          "titulo": "Ocupação do teto de contas",
+          "caso_de_uso": "Comercial: quantos dos 120 lugares da carteira estão ocupados, por conta ativa e em risco, e quantos sobram.",
+          "o_que_demonstra": [
+            "Lugares vazios em --surface-overlay contando como parte do teto",
+            "Ativas em --chart-1 e em risco em --warning com contorno, não só cor",
+            "Texto 104 de 120 no centro e folga de 16 escrita ao lado",
+            "Dica por grupo com contagem e taxa por formatRateWithVolume"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_vitorias-do-ano-e-linha-de-maioria",
+          "titulo": "Vitórias do ano por origem e maioria",
+          "caso_de_uso": "Diretoria: quais origens juntas respondem por mais da metade das 74 vitórias do ano.",
+          "o_que_demonstra": [
+            "Linha de maioria radial no assento 38, com o rótulo metade das vitórias",
+            "Indicação e cliente ativo à esquerda, para a soma cruzar a linha de maioria",
+            "Anotação indicação e cliente ativo somam 41 ligada ao arco",
+            "Cor por origem com seriesColor(i), igual ao restante do painel",
+            "Grupo sem origem declarada por último, em --line-strong"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_hemiciclo-com-7-e-com-900-lugares",
+          "titulo": "Hemiciclo com 7 e com 900 lugares",
+          "caso_de_uso": "Diretoria: o que o componente faz quando o conjunto tem só 7 lugares ou passa de 400.",
+          "o_que_demonstra": [
+            "Total 7 em uma fileira só, com pontos grandes",
+            "Número de fileiras calculado do total, e não fixo no dado",
+            "Total 900 troca para 1 assento = 10, com aviso escrito sobre a unidade",
+            "Total indisponível escreve formatUnavailable no lugar do arco"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

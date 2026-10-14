@@ -1,0 +1,121 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "03_dumbbell",
+  "versoes": {
+    "v1_sla-por-sdr-semana-anterior-e-atual": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Observações no README: dois rótulos cruzam a grade sem halo (ROT-7), cabeça cheia e conector verde próximos no claro.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:25.910Z",
+      "impressao": "651a094b9001b980c13d6a7a82d01f5d9376ddfa",
+      "arquivos": {
+        "Chart.tsx": "c6d32bc2e5db0f7dd93263c6f9af9879e4b88c0d",
+        "data.ts": "f79d9ddc48a9f1f2cad4139670bfb100cafd6892",
+        "meta.json": "7d9586854236076672954bdfc2100d2e8bafbcca"
+      }
+    },
+    "v2_cpl-por-campanha-em-setas-com-limiar": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 9 de 22 conferido. Observações no README: rótulos cruzam a grade sem halo, amostra da legenda aponta ao contrário, marcador de haste curta neutro acima do limiar é latente, uma casa acima de 10% declarada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:26.459Z",
+      "impressao": "dfcd6bc0e52583aaa3ef6dccf5bb54740fdc2668",
+      "arquivos": {
+        "Chart.tsx": "d596475401170c349d1de94db611320d2c8ab776",
+        "data.ts": "896629f22b75cf39b57f7eb9a35d7fb661743135",
+        "meta.json": "4b113ff6bef50043b22ba02f511c2bd41172ea52"
+      }
+    },
+    "v3_meta-forecast-e-realizado-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 6 de 14 conferido. Observações no README: cabeçalho Delta sem base, marcador único sem legenda, ROW_STEP ímpar, truncate na linha de leitura.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:26.927Z",
+      "impressao": "73620b7e2b88ff3c82824e738b228f2b9a855f82",
+      "arquivos": {
+        "Chart.tsx": "97bfef9358653adafcd7a8321c7fb2777bf275a3",
+        "data.ts": "11e2bd1c6f3481816de6db4268fb6737e8ef7ecc",
+        "meta.json": "be0daaca9604e9c98b92c5694d129cc1ebac658e"
+      }
+    },
+    "v4_micro-halteres-de-cpl-com-mes-ausente": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; os dois bloqueantes do parecer anterior resolvidos (cartão próprio na raiz; bipartido com julho vazado, agosto cheio e vão). Contraste do texto em HTML medido à mão, todos acima de 5:1 nos dois temas. Observações no README: CPL absoluto não escrito e delta sem base na linha, número sem tabular no rodapé, legenda abaixo.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:47:09.159Z",
+      "impressao": "049b313d367d337b94b27887b80b6dcd9d8cb435",
+      "arquivos": {
+        "Chart.tsx": "41805e66657694f24ba6964e9ddf9b7351bd3d6d",
+        "data.ts": "b39c56ce3c1d79f8b0a83ea0b78240aad2a9d7c3",
+        "meta.json": "c47bd3a5383e11baf2c4cba756b7b8da4cc0e3f0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_sla-por-sdr-semana-anterior-e-atual",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Observações no README: dois rótulos cruzam a grade sem halo (ROT-7), cabeça cheia e conector verde próximos no claro.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:25.910Z",
+      "impressao": "651a094b9001b980c13d6a7a82d01f5d9376ddfa",
+      "arquivos": {
+        "Chart.tsx": "c6d32bc2e5db0f7dd93263c6f9af9879e4b88c0d",
+        "data.ts": "f79d9ddc48a9f1f2cad4139670bfb100cafd6892",
+        "meta.json": "7d9586854236076672954bdfc2100d2e8bafbcca"
+      }
+    },
+    {
+      "versao": "v2_cpl-por-campanha-em-setas-com-limiar",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 9 de 22 conferido. Observações no README: rótulos cruzam a grade sem halo, amostra da legenda aponta ao contrário, marcador de haste curta neutro acima do limiar é latente, uma casa acima de 10% declarada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:26.459Z",
+      "impressao": "dfcd6bc0e52583aaa3ef6dccf5bb54740fdc2668",
+      "arquivos": {
+        "Chart.tsx": "d596475401170c349d1de94db611320d2c8ab776",
+        "data.ts": "896629f22b75cf39b57f7eb9a35d7fb661743135",
+        "meta.json": "4b113ff6bef50043b22ba02f511c2bd41172ea52"
+      }
+    },
+    {
+      "versao": "v3_meta-forecast-e-realizado-por-executivo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 6 de 14 conferido. Observações no README: cabeçalho Delta sem base, marcador único sem legenda, ROW_STEP ímpar, truncate na linha de leitura.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:26.927Z",
+      "impressao": "73620b7e2b88ff3c82824e738b228f2b9a855f82",
+      "arquivos": {
+        "Chart.tsx": "97bfef9358653adafcd7a8321c7fb2777bf275a3",
+        "data.ts": "11e2bd1c6f3481816de6db4268fb6737e8ef7ecc",
+        "meta.json": "be0daaca9604e9c98b92c5694d129cc1ebac658e"
+      }
+    },
+    {
+      "versao": "v4_micro-halteres-de-cpl-com-mes-ausente",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-2 com COR-5 e TOK-4: metades do marcador bipartido encostadas e ambas cheias, 1,03:1 no claro e 1,47:1 no escuro; devolver o vazado a julho e pôr vão de 1,5 px ou contorno da superfície, também na legenda. Pergunta 15, seção 17.7: moldura stage sem cartão próprio na raiz (falta rounded-lg border border-line-subtle bg-surface-raised p-4), miolo vazado em cor que não é a do fundo; pôr o cartão e refazer a conta do canvas. Parecer em validation/revisao_17_comparacao-de-pontos__03_dumbbell_2026-10-05.md",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:42:27.444Z",
+      "impressao": "1080b0fb5dbdab98a92925797c3765bc517775bc",
+      "arquivos": {
+        "Chart.tsx": "477a6aed0e41dcd85c498a36693858d3d1442bc6",
+        "data.ts": "b39c56ce3c1d79f8b0a83ea0b78240aad2a9d7c3",
+        "meta.json": "a9e13a6b01df7891d4ceabe9ec25a5d1bef7b0dc"
+      }
+    },
+    {
+      "versao": "v4_micro-halteres-de-cpl-com-mes-ausente",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; os dois bloqueantes do parecer anterior resolvidos (cartão próprio na raiz; bipartido com julho vazado, agosto cheio e vão). Contraste do texto em HTML medido à mão, todos acima de 5:1 nos dois temas. Observações no README: CPL absoluto não escrito e delta sem base na linha, número sem tabular no rodapé, legenda abaixo.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:47:09.159Z",
+      "impressao": "049b313d367d337b94b27887b80b6dcd9d8cb435",
+      "arquivos": {
+        "Chart.tsx": "41805e66657694f24ba6964e9ddf9b7351bd3d6d",
+        "data.ts": "b39c56ce3c1d79f8b0a83ea0b78240aad2a9d7c3",
+        "meta.json": "c47bd3a5383e11baf2c4cba756b7b8da4cc0e3f0"
+      }
+    }
+  ]
+}

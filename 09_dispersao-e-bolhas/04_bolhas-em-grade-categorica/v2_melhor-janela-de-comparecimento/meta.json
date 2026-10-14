@@ -1,0 +1,14 @@
+{
+  "title": "Janela com melhor comparecimento",
+  "useCase": "Qual janela de agenda tem mais comparecimento? A faixa das 10h às 12h de terça a quinta sai marcada com a taxa.",
+  "demonstrates": [
+    "ReferenceArea categórica com shape que completa meio passo de cada lado",
+    "Fundo de superfície rebaixada com texto dizendo o que a faixa marca",
+    "Taxa de comparecimento escrita com o volume, dentro e fora da janela",
+    "Bolhas fora da faixa em neutro cheio, sem apagar o contexto",
+    "Régua de tamanho com dois degraus redondos mais o máximo observado"
+  ],
+  "canvas": { "width": 960, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1. A conta: 118,5 px de moldura card com o caso de uso em uma linha, mais 88,5 px de texto do cartão (linha de leitura de 12 px com respiro, 26 px; régua de tamanho com círculo de 30 px e respiro, 38 px; nota de 11 px com respiro, 24,5 px), mais 252 px de plano, que dá 5 linhas de dia com passo de 36 px. Na largura, 66 px de moldura mais 76 px de eixo de dia mais 32 px de margem deixam 786 px para 11 horas, passo de 71 px contra 30 px de diâmetro máximo de bolha. Duas colisões com a especificação, e nas duas quem vence é o CONTRATO. Primeira, a faixa: a especificação pede fundo de superfície rebaixada e a ANO-4 pede o mesmo token, mas medido aqui surface-sunken dá 1,15:1 contra o cartão nos dois temas e line-strong, usado no contorno, dá 1,79:1 no escuro e 1,83:1 no claro, os dois abaixo do piso de 3:1 da ACE-3; nenhum neutro do Farol alcança esse piso, então a faixa nunca é o único canal: as bolhas de dentro trocam para chart-1, o texto acima da borda diz o que ela marca e a taxa com volume vai escrita na linha de leitura. Segunda, a grade: a exceção da EIX-3b foi reescopada em 2026-09-28 por geometria e não por número de família, e ela pede os dois eixos quantitativos e lidos por posição; aqui os dois eixos são categoria, então vale a EIX-3 como está escrita, com grade só na horizontal. Sem opacidade em marca: chart-1 cheio mede 9,50:1 no escuro e 6,00:1 no claro, e a 0,7 cairia para 3,25:1 no claro. O neutro é text-muted, medido em 5,21:1 e 5,37:1, e não o line-strong da 17.2, porque a isenção daquele token exige valor escrito junto da marca. O piso de área é de 2,6 px de raio: a menor célula tem 4 agendas de 23, vale 17,4% do máximo e desenha 19,9% da área."
+}

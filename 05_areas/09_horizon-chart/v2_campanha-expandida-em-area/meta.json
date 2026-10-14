@@ -1,0 +1,12 @@
+{
+  "title": "Campanha selecionada expandida em área comum",
+  "useCase": "Vencer a curva de aprendizado: a campanha escolhida abre em área comum e as outras seguem em horizonte.",
+  "demonstrates": [
+    "Prop expandedId que abre uma linha em área de altura normal",
+    "Demais séries preservadas em horizonte com a mesma escala",
+    "Linha expandida com nome em peso 700 como segundo canal",
+    "Estado visível no preview, sem depender de clique"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

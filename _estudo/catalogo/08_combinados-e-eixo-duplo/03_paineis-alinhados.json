@@ -1,0 +1,68 @@
+{
+  "slug": "03_paineis-alinhados",
+  "nome": "Painéis alinhados",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Dois ou três gráficos empilhados na vertical sobre o mesmo eixo x, cada um com o seu eixo y à esquerda e a mesma largura de eixo, amarrados por syncId para cursor e dica andarem juntos. É a saída padrão do Farol para duas ou três grandezas de unidades diferentes no mesmo calendário e a forma que a EIX-8 do padrão de acabamento pede no lugar do eixo duplo. Variação sem painel extra: rotular diretamente a segunda série e dispensar o segundo eixo.",
+  "quando_usar": [
+    "Duas ou três métricas de unidades diferentes no mesmo calendário: investimento e CPL qualificado; entradas, agendas e fechamentos.",
+    "Público geral, sem mediação, que precisa ler nível e variação de cada métrica sem escala arbitrária.",
+    "Até 52 períodos por painel, com o painel principal ocupando cerca de dois terços da altura."
+  ],
+  "quando_evitar": [
+    "Espaço vertical mínimo, como faixa ou KPI: rotule a segunda série num gráfico só (v2) ou use 24_microvisuais-sparklines.",
+    "Mais de três painéis: vira pequenos múltiplos em 04_linhas/09_pequenos-multiplos-de-linha.",
+    "Métricas na mesma unidade: um gráfico só, em 04_linhas/02_multiplas-series ou 01_coluna-com-linha.",
+    "Painéis lidos em altura uns contra os outros sem escala comum: aplique a EIX-9 ou a comparação cruzada engana."
+  ],
+  "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+  "versoes": [
+    {
+      "slug": "v1_investimento-sobre-cpl-qualificado",
+      "titulo": "Investimento e CPL qualificado em painéis",
+      "caso_de_uso": "O aumento do investimento mensal em mídia paga veio acompanhado de CPL qualificado mais caro?",
+      "o_que_demonstra": [
+        "Dois ComposedChart com o mesmo syncId e o mesmo array de meses",
+        "YAxis width fixo numa constante e margens laterais idênticas",
+        "XAxis só no painel de baixo, com hide no de cima",
+        "Título de painel com a unidade no lugar da legenda"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_cpl-com-volume-rotulado",
+      "titulo": "CPL com volume de leads rotulado",
+      "caso_de_uso": "Como mostrar o CPL mês a mês e ainda dizer o volume de leads sem abrir um segundo eixo?",
+      "o_que_demonstra": [
+        "Um eixo só, o do CPL, com o volume escrito nos pontos que mudam a leitura",
+        "No máximo duas anotações de volume, com halo sobre a linha",
+        "Rótulo direto como alternativa ao eixo duplo, sem painel extra",
+        "Frase acessível que inclui o volume dos meses anotados"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-agendas-fechamentos",
+      "titulo": "Entradas, agendas e fechamentos sincronizados",
+      "caso_de_uso": "O funil andou junto nas últimas 26 semanas, ou uma etapa travou enquanto as outras seguiam?",
+      "o_que_demonstra": [
+        "Três painéis com syncId e cursor que atravessa todos",
+        "Alturas proporcionais à importância, com o eixo x só no último",
+        "Brush único que recorta os três painéis ao mesmo tempo",
+        "Contagens com allowDecimals false e ticks redondos por painel"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_metrica-nova-com-lacuna",
+      "titulo": "Painéis com métrica medida só desde maio",
+      "caso_de_uso": "Como alinhar receita e taxa de conversão quando a taxa só passou a ser medida em mai/2026?",
+      "o_que_demonstra": [
+        "Meses sem medição como null, sem interpolação nem zero",
+        "Largura de eixo fixa mesmo com rótulos de tamanhos muito diferentes",
+        "Nota curta no painel dizendo desde quando a métrica existe",
+        "Ausência escrita no próprio painel, sem depender da dica para o nulo"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

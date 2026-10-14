@@ -1,0 +1,12 @@
+{
+  "title": "Descarte da pré-vendas por etapa",
+  "useCase": "Por qual motivo a pré-vendas descarta entradas em cada etapa, com o recorte de clientes novos alternável.",
+  "demonstrates": [
+    "Prop apenasClientesNovos com default, recalculando o recorte no componente",
+    "Domínio fixo pelo recorte completo, para a troca não esticar as barras",
+    "Cinco motivos de descarte com o total perdido da etapa nomeado ao lado",
+    "Título e frase acessível declaram qual recorte está ativo"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

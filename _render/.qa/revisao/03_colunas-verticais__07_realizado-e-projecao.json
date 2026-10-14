@@ -1,0 +1,251 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "07_realizado-e-projecao",
+  "versoes": {
+    "v1_receita-do-ano-com-projecao": {
+      "veredito": "aprovado",
+      "nota": "Regime vem do dado, hachura com metodo escrito na peca, totais separados e colunas do zero nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:43.412Z",
+      "impressao": "1a2436f0bf4aad858216d38fe49f66ec1c2dac06",
+      "arquivos": {
+        "Chart.tsx": "5e49289908be4fc24e0ada6ca927942de680db9b",
+        "data.ts": "e1ad2f36226ca5e169e9c89d4648e4c24ed2f77d",
+        "meta.json": "82610d50d78b9046ed74d70c0d9231da3c9f9832"
+      }
+    },
+    "v2_mes-corrente-parcial": {
+      "veredito": "aprovado",
+      "nota": "Mes corrente parcial nao le como queda: ritmo e dias por prop, restante hachurado e projecao rotulada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:50.642Z",
+      "impressao": "20571a46afaffec517d025e7dd8a6082898414c1",
+      "arquivos": {
+        "Chart.tsx": "a245969dde7bc06a7361804cc591765fd80d2283",
+        "data.ts": "eb67a1426f6a2164e42d58cddec2820086f351bb",
+        "meta.json": "ac7fe783ca2b711e3a63e44168b946b08294f801"
+      }
+    },
+    "v3_realizado-previsto-e-meta": {
+      "veredito": "aprovado",
+      "nota": "Previsto restante com piso em zero, meta por coluna e totais escritos sem somar realizado com previsto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:51.327Z",
+      "impressao": "ea51a2c821100c7b6938b43d1461dc1b58834b79",
+      "arquivos": {
+        "Chart.tsx": "38499a9e319d46475fdb310a0d970c00eed10fbd",
+        "data.ts": "4d8885427115c3b9969f3785389f6cb1ee60a961",
+        "meta.json": "28aa3499ae8daf153bf6763afed70fafb68748d4"
+      }
+    },
+    "v4_realizado-acima-do-forecast": {
+      "veredito": "aprovado",
+      "nota": "Tres casos limite honestos: restante zero com aviso, mes sem meta sem traco e mes sem leitura com traco na base; rotulo agora preso ao segmento realizado, com halo, legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:56.738Z",
+      "impressao": "2136d23ce970f38efd8a059e12a1af463fdad1b2",
+      "arquivos": {
+        "Chart.tsx": "ff16e7b039698a845a06acab4d416d6b5962b89b",
+        "data.ts": "a830ea6be71ca3fe44f421237066c166dea08cd8",
+        "meta.json": "7f426e7e48867c51aa8fc2f4862a9f73e83a747b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-ano-com-projecao",
+      "veredito": "reprovado",
+      "nota": "Falta a nota de metodo da projecao na peca; o rotulo diz so a partir de set/26, enquanto o catalogo e o meta.json prometem o metodo escrito",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:52:33.997Z",
+      "impressao": "7181af9d2f7f994bc51a5b58bf9c84308752d906",
+      "arquivos": {
+        "Chart.tsx": "2122339ba74448befc2f3cbd6d2a526deaad9b50",
+        "data.ts": "e1ad2f36226ca5e169e9c89d4648e4c24ed2f77d",
+        "meta.json": "82610d50d78b9046ed74d70c0d9231da3c9f9832"
+      }
+    },
+    {
+      "versao": "v2_mes-corrente-parcial",
+      "veredito": "aprovado",
+      "nota": "Coluna corrente parcial com ritmo nomeado, dias por prop e hachura legivel nos dois temas",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:52:39.877Z",
+      "impressao": "20571a46afaffec517d025e7dd8a6082898414c1",
+      "arquivos": {
+        "Chart.tsx": "a245969dde7bc06a7361804cc591765fd80d2283",
+        "data.ts": "eb67a1426f6a2164e42d58cddec2820086f351bb",
+        "meta.json": "ac7fe783ca2b711e3a63e44168b946b08294f801"
+      }
+    },
+    {
+      "versao": "v3_realizado-previsto-e-meta",
+      "veredito": "aprovado",
+      "nota": "Trio realizado, previsto e meta sem soma indevida; meta por coluna legivel nos dois temas",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:52:40.575Z",
+      "impressao": "ea51a2c821100c7b6938b43d1461dc1b58834b79",
+      "arquivos": {
+        "Chart.tsx": "38499a9e319d46475fdb310a0d970c00eed10fbd",
+        "data.ts": "4d8885427115c3b9969f3785389f6cb1ee60a961",
+        "meta.json": "28aa3499ae8daf153bf6763afed70fafb68748d4"
+      }
+    },
+    {
+      "versao": "v4_realizado-acima-do-forecast",
+      "veredito": "reprovado",
+      "nota": "Em set/26 o rotulo de valor nasce no topo do segmento realizado, dentro da coluna empilhada, e o halo corta a marca em duas; ancorar na ponta livre da coluna",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:52:45.011Z",
+      "impressao": "4e67f5a11f6f8f09c48ecbfe5b11ac0d2f87b00e",
+      "arquivos": {
+        "Chart.tsx": "4a92cac4ac5f0207b07811709c20ef237c2d0618",
+        "data.ts": "a830ea6be71ca3fe44f421237066c166dea08cd8",
+        "meta.json": "5d5554e02e275845b889850f090b305fa0e11b3c"
+      }
+    },
+    {
+      "versao": "v1_receita-do-ano-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Zona de projecao clara, hachura legivel nos dois temas, totais separados.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:17:29.711Z",
+      "impressao": "1a2436f0bf4aad858216d38fe49f66ec1c2dac06",
+      "arquivos": {
+        "Chart.tsx": "5e49289908be4fc24e0ada6ca927942de680db9b",
+        "data.ts": "e1ad2f36226ca5e169e9c89d4648e4c24ed2f77d",
+        "meta.json": "82610d50d78b9046ed74d70c0d9231da3c9f9832"
+      }
+    },
+    {
+      "versao": "v2_mes-corrente-parcial",
+      "veredito": "aprovado",
+      "nota": "Mes parcial honesto: ritmo nomeado, restante hachurado e dias decorridos por prop.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:17:30.294Z",
+      "impressao": "20571a46afaffec517d025e7dd8a6082898414c1",
+      "arquivos": {
+        "Chart.tsx": "a245969dde7bc06a7361804cc591765fd80d2283",
+        "data.ts": "eb67a1426f6a2164e42d58cddec2820086f351bb",
+        "meta.json": "ac7fe783ca2b711e3a63e44168b946b08294f801"
+      }
+    },
+    {
+      "versao": "v3_realizado-previsto-e-meta",
+      "veredito": "aprovado",
+      "nota": "Trio realizado, previsto e meta legível; rótulos só em coluna sem restante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:17:38.038Z",
+      "impressao": "ea51a2c821100c7b6938b43d1461dc1b58834b79",
+      "arquivos": {
+        "Chart.tsx": "38499a9e319d46475fdb310a0d970c00eed10fbd",
+        "data.ts": "4d8885427115c3b9969f3785389f6cb1ee60a961",
+        "meta.json": "28aa3499ae8daf153bf6763afed70fafb68748d4"
+      }
+    },
+    {
+      "versao": "v1_receita-do-ano-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Zona de projeção declarada com o método, hachura legível nos dois temas e totais separados.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:18:40.126Z",
+      "impressao": "1a2436f0bf4aad858216d38fe49f66ec1c2dac06",
+      "arquivos": {
+        "Chart.tsx": "5e49289908be4fc24e0ada6ca927942de680db9b",
+        "data.ts": "e1ad2f36226ca5e169e9c89d4648e4c24ed2f77d",
+        "meta.json": "82610d50d78b9046ed74d70c0d9231da3c9f9832"
+      }
+    },
+    {
+      "versao": "v2_mes-corrente-parcial",
+      "veredito": "aprovado",
+      "nota": "Mês corrente parcial honesto: ritmo nomeado, restante hachurado e dias vindos de prop.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:18:40.754Z",
+      "impressao": "20571a46afaffec517d025e7dd8a6082898414c1",
+      "arquivos": {
+        "Chart.tsx": "a245969dde7bc06a7361804cc591765fd80d2283",
+        "data.ts": "eb67a1426f6a2164e42d58cddec2820086f351bb",
+        "meta.json": "ac7fe783ca2b711e3a63e44168b946b08294f801"
+      }
+    },
+    {
+      "versao": "v3_realizado-previsto-e-meta",
+      "veredito": "aprovado",
+      "nota": "Realizado, previsto e meta sem soma indevida; valor escrito só nas colunas sem restante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:18:47.263Z",
+      "impressao": "ea51a2c821100c7b6938b43d1461dc1b58834b79",
+      "arquivos": {
+        "Chart.tsx": "38499a9e319d46475fdb310a0d970c00eed10fbd",
+        "data.ts": "4d8885427115c3b9969f3785389f6cb1ee60a961",
+        "meta.json": "28aa3499ae8daf153bf6763afed70fafb68748d4"
+      }
+    },
+    {
+      "versao": "v4_realizado-acima-do-forecast",
+      "veredito": "reprovado",
+      "nota": "Em set/26 o rótulo R$ 310,0 mil (só o realizado) nasce no topo da pilha, que chega a R$ 495,0 mil, e se lê como valor da coluna; falta também nomear a hachura e o traço de meta.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:18:47.627Z",
+      "impressao": "67b1ff439b0c64a4b3d9209eebb243c036de5a0f",
+      "arquivos": {
+        "Chart.tsx": "93606dae225811e8b830b38ec360cec2717b18b8",
+        "data.ts": "a830ea6be71ca3fe44f421237066c166dea08cd8",
+        "meta.json": "5d5554e02e275845b889850f090b305fa0e11b3c"
+      }
+    },
+    {
+      "versao": "v1_receita-do-ano-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Regime vem do dado, hachura com metodo escrito na peca, totais separados e colunas do zero nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:43.412Z",
+      "impressao": "1a2436f0bf4aad858216d38fe49f66ec1c2dac06",
+      "arquivos": {
+        "Chart.tsx": "5e49289908be4fc24e0ada6ca927942de680db9b",
+        "data.ts": "e1ad2f36226ca5e169e9c89d4648e4c24ed2f77d",
+        "meta.json": "82610d50d78b9046ed74d70c0d9231da3c9f9832"
+      }
+    },
+    {
+      "versao": "v2_mes-corrente-parcial",
+      "veredito": "aprovado",
+      "nota": "Mes corrente parcial nao le como queda: ritmo e dias por prop, restante hachurado e projecao rotulada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:50.642Z",
+      "impressao": "20571a46afaffec517d025e7dd8a6082898414c1",
+      "arquivos": {
+        "Chart.tsx": "a245969dde7bc06a7361804cc591765fd80d2283",
+        "data.ts": "eb67a1426f6a2164e42d58cddec2820086f351bb",
+        "meta.json": "ac7fe783ca2b711e3a63e44168b946b08294f801"
+      }
+    },
+    {
+      "versao": "v3_realizado-previsto-e-meta",
+      "veredito": "aprovado",
+      "nota": "Previsto restante com piso em zero, meta por coluna e totais escritos sem somar realizado com previsto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:51.327Z",
+      "impressao": "ea51a2c821100c7b6938b43d1461dc1b58834b79",
+      "arquivos": {
+        "Chart.tsx": "38499a9e319d46475fdb310a0d970c00eed10fbd",
+        "data.ts": "4d8885427115c3b9969f3785389f6cb1ee60a961",
+        "meta.json": "28aa3499ae8daf153bf6763afed70fafb68748d4"
+      }
+    },
+    {
+      "versao": "v4_realizado-acima-do-forecast",
+      "veredito": "aprovado",
+      "nota": "Tres casos limite honestos: restante zero com aviso, mes sem meta sem traco e mes sem leitura com traco na base; rotulo agora preso ao segmento realizado, com halo, legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:41:56.738Z",
+      "impressao": "2136d23ce970f38efd8a059e12a1af463fdad1b2",
+      "arquivos": {
+        "Chart.tsx": "ff16e7b039698a845a06acab4d416d6b5962b89b",
+        "data.ts": "a830ea6be71ca3fe44f421237066c166dea08cd8",
+        "meta.json": "7f426e7e48867c51aa8fc2f4862a9f73e83a747b"
+      }
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "06_tabela-cruzada-com-totais-marginais",
+  "nome": "Tabela cruzada com totais marginais",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Contagem ou soma por duas dimensões (executivo por etapa, origem por mês) com total de linha, total de coluna e total geral no canto. O miolo pode receber cor pela mesma função do heatmap e as margens podem receber barras, cada uma com escala própria: o total nunca entra na escala de cor do miolo. O percentual diz o denominador no próprio cabeçalho (do total, da linha, da coluna), e vazio (combinação sem registro) se distingue de zero (registro sem ocorrência).",
+  "quando_usar": [
+    "Duas dimensões categóricas com até cerca de 12 por 12 células e totais que importam",
+    "Ler ao mesmo tempo o peso de cada linha e de cada coluna e o cruzamento entre elas",
+    "Perguntas de percentual por linha ou por coluna com o denominador explícito",
+    "Contagem de oportunidades, leads ou perdas por pessoa e etapa, origem e mês"
+  ],
+  "quando_evitar": [
+    "Mais de 15 por 15 células sem número legível: heatmap matricial (família 15)",
+    "Uma dimensão só: tabela com barras inline (14/01) ou barra da família 02",
+    "Hierarquia de grupo e subgrupo com subtotal: tabela agrupada (14/07)",
+    "Percentual sem dizer o denominador ou total pintado com a mesma escala do miolo"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-por-executivo-e-etapa",
+      "titulo": "Oportunidades abertas por executivo e etapa",
+      "caso_de_uso": "Comercial: onde estão as oportunidades abertas em 2026-09, por executivo e por etapa, com os totais das margens.",
+      "o_que_demonstra": [
+        "CSS grid com coluna de total, linha de total e total geral no canto",
+        "Totais em kpi-number com fundo surface-sunken, separados do miolo por espaço",
+        "Zero escrito como 0 e combinação sem registro como traço neutro",
+        "Contagem por formatInt com o substantivo no cabeçalho"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_heatmap-no-miolo-e-barras-nas-margens",
+      "titulo": "Miolo em heatmap e barras nos totais",
+      "caso_de_uso": "Comercial: qual etapa concentra mais oportunidades e quais executivos carregam essa concentração.",
+      "o_que_demonstra": [
+        "Cor do miolo por degraus de seq calculados só sobre as células internas",
+        "Barras horizontais no total de linha e verticais no total de coluna, escalas próprias",
+        "Coluna da etapa proposta destacada no cabeçalho em peso 700 com anotação curta",
+        "Legenda que diz que os totais ficam fora da escala de cor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_leads-por-origem-e-mes-em-percentual-da-linha",
+      "titulo": "Leads por origem e mês em % da linha",
+      "caso_de_uso": "Marketing: como os leads de 10 origens se distribuíram pelos 12 meses de 2026, lidos como % do total de cada origem.",
+      "o_que_demonstra": [
+        "Prop de modo de percentual com default % da linha e o denominador no cabeçalho",
+        "Célula com percentual inteiro e contagem absoluta na margem",
+        "Soma da linha fechando 100 pelo maior resto",
+        "Meses curtos por formatMonthShort nas 12 colunas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_denominador-e-celulas-vazias",
+      "titulo": "Denominador explícito e origem nova",
+      "caso_de_uso": "Marketing: não ler % da coluna como % do total e não confundir meses antes da criação de uma origem com zero.",
+      "o_que_demonstra": [
+        "Rótulo do denominador repetido no cabeçalho e na célula de canto",
+        "Origem criada em 2026-06 com células vazias antes, em traço e sem cor",
+        "Zero medido escrito como 0 e pintado com o degrau mais baixo",
+        "Nota curta dizendo a diferença entre vazio e zero"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

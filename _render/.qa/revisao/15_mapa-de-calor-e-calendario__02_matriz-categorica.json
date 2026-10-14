@@ -1,0 +1,72 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "02_matriz-categorica",
+  "versoes": {
+    "v1_win-rate-por-executivo-e-segmento": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão de 2026-10-02, sem bloqueante. TIP-2 com GEO-18 quitado: svg da grade em 536 por 436 sobre viewBox de 536 por 436, escala 1, texto em 11, 12 e 14 px nos dois temas, canvas de 640 por 632 com a conta na nota, e as três guardas de preview voltaram a medir. EST-1b quitado: overallRate devolve number ou null, nulo por último na ordem, fora da frase acessível e afastado na distância. Contraste de texto de 5,21:1 a 14,82:1 nos dois temas; totais, ordem das linhas e os cinco destaques conferidos contra o data.ts. Oito observações no README, entre elas a frase acessível que não começa pelo tipo (ACE-1) e a grade de tamanho fixo que transborda em cartão menor que 536 por 510.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:32:44.331Z",
+      "impressao": "59f7c22705caac4cd6fc1bd093bbc2a81ead6f62",
+      "arquivos": {
+        "Chart.tsx": "4d621439146101082c25f664026c705a6a84586e",
+        "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
+        "meta.json": "4ecd8a7ac4db3c6a433f17355323614c0c72b83a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_win-rate-por-executivo-e-segmento",
+      "veredito": "reprovado",
+      "nota": "NUM-1 e precedencia volume junto da taxa: a celula escreve so a taxa e o n vai de 3 a 31, entao 12% com n=4 le igual a 72% com n=21 e a coluna Agronegocio, que responde a pergunta onde a taxa despenca, e a de menor volume. Declarar o volume no desenho. Resto do acabamento integro nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T09:42:35.096Z",
+      "impressao": "9b3af13acd119c68179b9c80336329977e671a55",
+      "arquivos": {
+        "Chart.tsx": "69fa431a6f01d6d5c9f3386c5396f3920f027428",
+        "data.ts": "7e81683c58bade5d8e5c742c94324877faa783cc",
+        "meta.json": "510d801b6111e54591fa193d17bef20641fcb848"
+      }
+    },
+    {
+      "versao": "v1_win-rate-por-executivo-e-segmento",
+      "veredito": "aprovado",
+      "nota": "A recusa de 2026-09-20 foi resolvida na raiz: cada celula agora escreve o volume abaixo da taxa no formato 18 de 27, o cabecalho traz o total fechado por segmento, e amostra abaixo de 8 fechadas ganha contorno pontilhado declarado na legenda. Celula sem caso vira indisponivel em vez de 0%. O contorno cheio marca uma celula por coluna e so entre amostras conclusivas, o que evita ensinar o erro de coroar uma taxa de 3 fechadas. Ressalva sem conserto: o segundo modo de ordenacao, semelhanca de perfil, so existe apos clique e por isso nunca aparece no preview, entao metade da peca fica invisivel para quem consulta a galeria.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.505Z",
+      "impressao": "fc3c44ead084029a64192af7cc0a96ddb2a1589f",
+      "arquivos": {
+        "Chart.tsx": "2370bcfff4c7c488867b6222e8cab5056174ca41",
+        "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
+        "meta.json": "776832c9f34a1cd96f5ae0a2f48ebee783704628"
+      }
+    },
+    {
+      "versao": "v1_win-rate-por-executivo-e-segmento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 10, TIP-2 (armadilha GEO-18): o svg sai em escala 0,843 e 70 textos da grade ficam abaixo de 11 px no preview dos dois temas (volume da célula, total da coluna e indisponível em 9,27 px; nomes de executivo e de segmento em 10,11 px), ao lado da legenda em 11 px; desenhar em escala 1, subindo o canvas por número para perto de 640 por 632 e fixando largura e altura do svg no tamanho do viewBox, e corrigir a nota do meta.json, que afirma o contrário. Pergunta 8, EST-1b: overallRate (Chart.tsx:87) devolve 0 para executivo sem nenhuma fechada; declarar number ou null, ordenar nulo por último e tratar o nulo na frase acessível e na distância. Botões do alternador conferidos nos dois temas e sem defeito: os dois bloqueantes não vêm da mudança do botão. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__02_matriz-categorica_2026-10-02.md.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:24:29.234Z",
+      "impressao": "fc3c44ead084029a64192af7cc0a96ddb2a1589f",
+      "arquivos": {
+        "Chart.tsx": "2370bcfff4c7c488867b6222e8cab5056174ca41",
+        "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
+        "meta.json": "776832c9f34a1cd96f5ae0a2f48ebee783704628"
+      }
+    },
+    {
+      "versao": "v1_win-rate-por-executivo-e-segmento",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão de 2026-10-02, sem bloqueante. TIP-2 com GEO-18 quitado: svg da grade em 536 por 436 sobre viewBox de 536 por 436, escala 1, texto em 11, 12 e 14 px nos dois temas, canvas de 640 por 632 com a conta na nota, e as três guardas de preview voltaram a medir. EST-1b quitado: overallRate devolve number ou null, nulo por último na ordem, fora da frase acessível e afastado na distância. Contraste de texto de 5,21:1 a 14,82:1 nos dois temas; totais, ordem das linhas e os cinco destaques conferidos contra o data.ts. Oito observações no README, entre elas a frase acessível que não começa pelo tipo (ACE-1) e a grade de tamanho fixo que transborda em cartão menor que 536 por 510.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:32:44.331Z",
+      "impressao": "59f7c22705caac4cd6fc1bd093bbc2a81ead6f62",
+      "arquivos": {
+        "Chart.tsx": "4d621439146101082c25f664026c705a6a84586e",
+        "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
+        "meta.json": "4ecd8a7ac4db3c6a433f17355323614c0c72b83a"
+      }
+    }
+  ]
+}

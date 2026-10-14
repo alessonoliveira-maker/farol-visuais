@@ -1,0 +1,12 @@
+{
+  "title": "Campanhas por CPL, qualificação e investimento",
+  "useCase": "Campanha de CPL menor traz lead menos qualificado, e onde está o investimento? 36 campanhas do trimestre.",
+  "demonstrates": [
+    "ZAxis com domain a partir de 0 e range em área para proporção honesta",
+    "Dados ordenados do maior para o menor para as pequenas ficarem por cima",
+    "Legenda de tamanho com 3 círculos de valor redondo e a mesma conta de raio",
+    "Contorno na cor do cartão separando bolhas vizinhas"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

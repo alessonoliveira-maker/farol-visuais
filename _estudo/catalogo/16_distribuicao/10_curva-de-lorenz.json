@@ -1,0 +1,70 @@
+{
+  "slug": "10_curva-de-lorenz",
+  "nome": "Curva de Lorenz",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Entidades ordenadas da menor para a maior, com a fração acumulada de entidades no eixo X e a fração acumulada do total no Y. A diagonal é a igualdade perfeita, e a área entre ela e a curva mede a concentração, resumida no Gini. Responde quanto do total vem de poucos: receita por cliente, investimento por campanha, carteira por executivo. Sai do ComposedChart nativo com Area em par para sombrear a desigualdade e Line linear para a curva. A curva de concentração micro da família 24 usa a mesma geometria, sem eixo.",
+  "quando_usar": [
+    "Mostrar a concentração de um total entre dezenas a milhares de entidades.",
+    "Comparar a concentração de dois períodos ou duas carteiras, com o Gini de cada um na legenda.",
+    "Transformar a curva em frase de negócio: 10% dos clientes respondem por 52% da receita.",
+    "Abrir a lista das entidades que concentram o total a partir de uma faixa da curva."
+  ],
+  "quando_evitar": [
+    "Poucas entidades, como 8 executivos: a curva vira degraus grossos e o Gini fica enviesado; barras ordenadas (02).",
+    "Nomear quem concentra, entidade por entidade: Pareto na família 08 (modelo 04).",
+    "Total com muitos lançamentos negativos, como estornos: a curva desce e perde a leitura.",
+    "Distribuição de uma medida por caso, sem pergunta de concentração: histograma (01) ou ECDF (04)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_concentracao-da-receita-por-cliente",
+      "titulo": "Concentração da receita por cliente",
+      "caso_de_uso": "Quanto da receita reconhecida do ano vem dos 10% maiores entre os 640 clientes da carteira?",
+      "o_que_demonstra": [
+        "Função lorenz com ordenação crescente e Gini pela soma dos trapézios",
+        "Área quadrada de 0 a 100% nos dois eixos e diagonal tracejada",
+        "Area em par sombreando a distância entre a curva e a igualdade",
+        "Rótulo traduzido para leitura de cima: 10% dos clientes, 52% da receita",
+        "Gini e n de clientes na legenda"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_ano-anterior-contra-atual",
+      "titulo": "Concentração da receita em dois anos",
+      "caso_de_uso": "A carteira ficou mais concentrada em poucos clientes de um ano para o outro?",
+      "o_que_demonstra": [
+        "Duas curvas no mesmo quadrado, ano anterior em neutro e atual em --chart-1",
+        "Gini de cada ano na legenda, com o n de clientes de cada período",
+        "Sombreamento só na curva do ano atual, para não somar duas áreas",
+        "Rótulo da diferença na leitura dos 10% maiores entre os dois anos"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_investimento-de-midia-por-campanha",
+      "titulo": "Investimento de mídia concentrado por campanha",
+      "caso_de_uso": "Quantas das 1.100 campanhas do ano consomem 70% do investimento em mídia paga?",
+      "o_que_demonstra": [
+        "Curva de 1.100 pontos reamostrada para o render, com Gini calculado no dado cheio",
+        "Marcação de que 12% das campanhas consomem 70% do investimento",
+        "Faixa clicável que abre a lista das campanhas que concentram o gasto",
+        "Cartão com o quadrado à esquerda e a leitura em texto à direita"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_estornos-e-clientes-sem-receita",
+      "titulo": "Concentração com estornos e clientes sem receita",
+      "caso_de_uso": "Como desenhar a concentração quando há 23 estornos e 30% dos clientes não geraram receita no período?",
+      "o_que_demonstra": [
+        "Lançamentos negativos fora da conta e contados em nota de rodapé",
+        "Clientes com receita zero mantidos, com a curva rente ao eixo X até 30%",
+        "Nota de que tirar os zeros esconderia a desigualdade",
+        "Com menos de 20 entidades, pontos no lugar da curva e Gini não publicado"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "04_bolhas-em-grade-categorica",
+  "versoes": {
+    "v1_agendas-por-dia-e-hora": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A legenda agora lê 5, 15 e 32, montada a partir do máximo do recorte em vez de constante, então a maior bolha da tela passa a ter referência e a régua deixa de precisar de manutenção quando o recorte troca. Segue o precedente da 09/09, que resolveu o mesmo defeito antes.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:35.962Z",
+      "impressao": "2f62f9730101a8db2b491a81b0d9dae432d74044",
+      "arquivos": {
+        "Chart.tsx": "4602936631f120cb5a1161e93bb930ac3969aa76",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "e8d2deeb1607e3329c79ec29994c83cfcf4860dc"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-por-dia-e-hora",
+      "veredito": "reprovado",
+      "nota": "Marca a 2,43:1 no tema claro por fillOpacity 0,55 (ACE-3, piso 3:1, sem valor escrito) e linha de eixo visivel com grade presente (EIX-5, falta axisLine false).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:13:45.536Z",
+      "impressao": "896e3f55690136b23055abef724c162b6a4a5565",
+      "arquivos": {
+        "Chart.tsx": "d83c750e08a3d888ddbe5978918a7a2fd52fafd0",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "14e2ab91d32099acaf021a9881b12a119ee51bf4"
+      }
+    },
+    {
+      "versao": "v1_agendas-por-dia-e-hora",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, dois eixos de categoria com todas as impressas, area do ZAxis a partir de zero e legenda de tamanho pela mesma conta de raio.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:19:30.982Z",
+      "impressao": "1d209928493df36ff725f85c180c76530089e3dc",
+      "arquivos": {
+        "Chart.tsx": "920f04cf5a2cd8c79709fb2741b0faf515792c7c",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "14e2ab91d32099acaf021a9881b12a119ee51bf4"
+      }
+    },
+    {
+      "versao": "v1_agendas-por-dia-e-hora",
+      "veredito": "reprovado",
+      "nota": "Conserto de escala aceito, mas a legenda de tamanho para em 30 com maximo observado de 32, entao a maior bolha do desenho nao tem referencia na legenda. Levar a legenda ate o maximo, ou declarar o maximo no rodape. Aviso de ESPESSURA-MARCA esperado e declarado.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.315Z",
+      "impressao": "e73765edafd0ab37a413fb1225813a8cc3e6bc83",
+      "arquivos": {
+        "Chart.tsx": "6841bfa55fa900ee283b36145360b4e315422097",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "14e2ab91d32099acaf021a9881b12a119ee51bf4"
+      }
+    },
+    {
+      "versao": "v1_agendas-por-dia-e-hora",
+      "veredito": "reprovado",
+      "nota": "Conserto de escala aceito, mas a legenda de tamanho para em 30 com máximo observado de 32, então a maior bolha do desenho não tem referência na legenda. Levar a legenda até o máximo, ou declarar o máximo no rodapé. O aviso de ESPESSURA-MARCA aqui é esperado e declarado.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:19:47.556Z",
+      "impressao": "2f62f9730101a8db2b491a81b0d9dae432d74044",
+      "arquivos": {
+        "Chart.tsx": "4602936631f120cb5a1161e93bb930ac3969aa76",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "e8d2deeb1607e3329c79ec29994c83cfcf4860dc"
+      }
+    },
+    {
+      "versao": "v1_agendas-por-dia-e-hora",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A legenda agora lê 5, 15 e 32, montada a partir do máximo do recorte em vez de constante, então a maior bolha da tela passa a ter referência e a régua deixa de precisar de manutenção quando o recorte troca. Segue o precedente da 09/09, que resolveu o mesmo defeito antes.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:35.962Z",
+      "impressao": "2f62f9730101a8db2b491a81b0d9dae432d74044",
+      "arquivos": {
+        "Chart.tsx": "4602936631f120cb5a1161e93bb930ac3969aa76",
+        "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
+        "meta.json": "e8d2deeb1607e3329c79ec29994c83cfcf4860dc"
+      }
+    }
+  ]
+}

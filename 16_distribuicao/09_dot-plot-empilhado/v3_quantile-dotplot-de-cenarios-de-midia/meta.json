@@ -1,0 +1,12 @@
+{
+  "title": "Cenários de orçamento de mídia em 20 desfechos",
+  "useCase": "Em quantos de 20 desfechos cada cenário de orçamento de mídia passa do teto de capacidade da pré-vendas?",
+  "demonstrates": [
+    "Quantis de 1/k/2 a 1 menos 1/k/2 sobre as amostras do simulador, com k fixo em 20",
+    "Quatro cenários lado a lado na mesma régua de entradas qualificadas por mês",
+    "Teto de capacidade como linha e contagem de pontos de cada lado escrita",
+    "Legenda de que cada ponto é 1 em 20 desfechos simulados, não um lead"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

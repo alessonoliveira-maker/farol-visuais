@@ -1,0 +1,14 @@
+{
+  "title": "Handoffs de SDR para executivo",
+  "useCase": "Pré-vendas: para quais executivos cada SDR repassou agendas em 2026-T3 e onde o repasse se concentra num par.",
+  "demonstrates": [
+    "Matriz dirigida de 6 SDRs por 9 executivos, com origem e destino escritos no canto",
+    "Percentual da linha na célula com formatPercent, e a contagem na leitura do cursor",
+    "Par mais concentrado com contorno e rótulo em peso 700, só entre SDRs de base mínima",
+    "Anotação curta junto do par: o SDR e o quanto repassou a dois executivos",
+    "Totais marginais por SDR e por executivo fora da grade, em text-secondary"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): nenhum preset fecha. O card 640x360 dá corpo de 574 x 225 (caso de uso em 2 linhas) e a matriz precisa de 252: nota de canto 11, rótulos de coluna 17, 6 linhas de 22 com vão de 4 (152), linha de totais 24, legenda 16, mais folgas. O alto 640x560 sobraria 160 px. Canvas 640 x 400 dá 574 x 265 (2 linhas) ou 574 x 281,5 (1 linha). O SVG é desenhado em 574 x 252 com viewBox igual ao tamanho (GEO-18). Desvios do catálogo: (1) o contorno do par mais concentrado é desenhado fora da célula, no vão de 4 px, porque dentro dele cairia sobre a faixa mais escura da rampa, onde --chart-1 quase não difere (TOK-9). (2) Só SDR com pelo menos 10 agendas concorre ao destaque: SDR 6 tem 5 de 7 (71%), maior percentual da matriz, e o pontilhado nas células dele avisa da base pequena. (3) Peso 700 em dois elementos, o rótulo do SDR e o percentual do par (TIP-3). (4) Quatro faixas em seq-2, seq-3, seq-6 e seq-7, porque seq-4 e seq-5 não têm texto legível (TOK-8). (5) Colunas nomeadas por letra (executivo A a I) porque o nome Executivo A não cabe em 38 px sem abreviar (ROT-8); o canto diz o que a letra é. Os percentuais da linha são inteiros e somam 100 pelo maior resto (NUM-2)."
+}

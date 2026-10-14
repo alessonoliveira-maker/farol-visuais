@@ -1,0 +1,69 @@
+{
+  "slug": "07_faixa-de-cenario-contra-meta",
+  "nome": "Faixa de cenário contra meta",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "A saída do planejamento não é um número, é um intervalo. A faixa entre o cenário pessimista e o otimista vira uma barra clara, o cenário base um traço forte dentro dela e a meta um traço externo de desenho diferente. Responde a pergunta que a diretoria faz de verdade: a meta cabe na faixa ou só no melhor caso. Em Recharts, BarChart horizontal com a barra flutuante clássica: série transparente até o piso, silenciada na dica e na legenda, mais a barra visível do piso ao teto, com base e meta como ReferenceLine em extendDomain. Faixa sem nome é decoração: piso e teto dizem a premissa de onde saíram.",
+  "quando_usar": [
+    "Cenários de planejamento com saída em faixa, do pessimista ao otimista, contra uma meta",
+    "Forecast do trimestre com incerteza declarada, lido na reunião de diretoria",
+    "De 1 a 6 linhas, uma por trimestre ou por área, com a meta cruzando todas",
+    "Dizer em qual período a faixa passa a conter a meta"
+  ],
+  "quando_evitar": [
+    "Cenário único, sem incerteza: barra de progresso com projeção (13/01)",
+    "Faixa ao longo do tempo contínuo: área de incerteza (família 05)",
+    "Faixa entre dois pontos sem meta: comparação de pontos (família 17)",
+    "Piso e teto sem premissa declarada: a faixa vira decoração de incerteza"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-projetada-do-trimestre",
+      "titulo": "Receita projetada do trimestre em faixa",
+      "caso_de_uso": "Diretoria: a meta de R$ 5,5 mi de 2026-T4 cabe na faixa entre o cenário pessimista e o otimista, ou só no melhor caso?",
+      "o_que_demonstra": [
+        "Barra flutuante com série transparente até o piso e barra visível até o teto",
+        "Série de apoio silenciada na dica e na legenda",
+        "Cenário base como traço forte e meta como traço de desenho diferente",
+        "ReferenceLine em extendDomain para a meta nunca sumir do eixo"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_pontas-com-premissa",
+      "titulo": "Faixa de cenário com premissas nas pontas",
+      "caso_de_uso": "Diretoria: o que o piso e o teto da faixa de 2026-T4 pressupõem, e a que distância o cenário base está da meta?",
+      "o_que_demonstra": [
+        "Piso e teto rotulados com a premissa de cada ponta, em até duas anotações",
+        "Distância entre base e meta em valor e em percentual",
+        "Rótulos com halo na cor da superfície quando cruzam a linha da meta",
+        "Margem reservada em MARGIN para os rótulos não encostarem nas marcas"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_trimestres-de-2027-contra-meta-anual",
+      "titulo": "Receita acumulada de 2027 contra a meta anual",
+      "caso_de_uso": "Diretoria: em qual trimestre de 2027 a faixa acumulada de receita passa a conter a meta anual de R$ 10 mi?",
+      "o_que_demonstra": [
+        "Quatro linhas com a faixa acumulada por trimestre no mesmo eixo",
+        "Meta anual como uma ReferenceLine vertical cruzando todas as linhas",
+        "Primeiro trimestre que contém a meta marcado com peso e anotação",
+        "Domínio comum calculado sobre o conjunto, a partir do zero"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_meta-fora-da-faixa",
+      "titulo": "Meta fora do alcance do cenário otimista",
+      "caso_de_uso": "Diretoria: nem o cenário otimista de 2027 alcança a meta; qual a lacuna em valor e em percentual até ela?",
+      "o_que_demonstra": [
+        "Faixa inteira à esquerda do traço da meta, sem esticar o eixo para disfarçar",
+        "Lacuna entre o teto da faixa e a meta escrita em valor e em percentual",
+        "Meta dita em texto, porque visualmente parece só um traço distante",
+        "Frase acessível que declara a meta fora da faixa inteira"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

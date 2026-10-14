@@ -1,0 +1,121 @@
+{
+  "familia": "23_mapas",
+  "modelo": "04_tile-map-com-mini-grafico",
+  "versoes": {
+    "v1_leads-mensais-por-uf-escala-compartilhada": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: escala única de 0 a 2.000 conferida no PNG, com a linha de SP no topo e a base no zero; anel no zero medido de RR, linha quebrada em TO e AP com Unplug batem com o data.ts nos dois temas; textos de 4,65:1 para cima e linha a 5,20:1 sobre o tile no pior tema, medidos à mão porque a guarda mede contra o cartão. Observações no README (número rotulado como o do último mês sai do último mês medido, proporção do tile não é fixa no código).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:03.138Z",
+      "impressao": "d643722425e2dbf0cfeb9da6aca04f44e019dfde",
+      "arquivos": {
+        "Chart.tsx": "40fd5059e8728c284a9eaf573769b2f87330e05a",
+        "data.ts": "0089ed2228c34b9de3f8c73e741498c3756c64a3",
+        "meta.json": "dc5cba078c36f66d266b251d3c6d03b6577997f7"
+      }
+    },
+    "v2_tendencia-dos-ultimos-tres-meses": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: as 27 classes (8 em alta, 7 em queda, 9 estáveis e 3 sem base) e as 24 variações escritas batem com o data.ts; sinal, ícone e cor nos três estados; base zerada e base sem coleta escrevem sem base; textos de 4,62:1 para cima sobre o tile e menor vão entre valor e variação de 9,5 px, nos dois temas. Observações no README (AP contada em sem base e desenhada como indisponível, frase acessível cita a maior alta sem o volume, linha de 8 meses pintada pela classe dos 3 últimos, linha de leitura sem tabular-nums, valor de quatro algarismos não cabe ao lado da variação, par positivo sobre o tile fora da tabela 17.10).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:15.546Z",
+      "impressao": "56b5b95a547cb328529bbbe56b56dcf24fae6ae6",
+      "arquivos": {
+        "Chart.tsx": "e7d44d3df89ec8cc5157d38b4df58f56160cff81",
+        "data.ts": "710fd01a4c6706a90d1401baa28c5aea226e880f",
+        "meta.json": "c20e09237a94f0cda65fd2dd860443436ca4ba38"
+      }
+    },
+    "v3_receita-por-produto-no-perimetro": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 12:45, não a nota antiga. Sem bloqueante: escala própria por tile declarada no rodapé; as 90 parcelas maiores que zero têm tinta nos dois temas, e as 28 da Linha Corporativa medem de 2,0 a 7,0 px (menor: MG em T2/26); zeros medidos de MG e DF saem sem a parcela e GO em T4/25 sai tracejado; separador visível em toda fronteira; alturas das 31 barras e os 8 totais batem com o data.ts; textos de 4,65:1 para cima e categóricas de 5,39:1 para cima; preview contra página 0,06% e 0,22%. Observações no README (separador efetivo de 0,5 px, piso de parcela não exercitado e anunciado como 1,8 px, topo da escala coincide com o número escrito só porque as séries terminam no máximo, empates do formato compacto, ramos de último trimestre sem coleta e de total zero).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:53:15.759Z",
+      "impressao": "2b1f74241b355316c5affb20b5a69748c62f46bc",
+      "arquivos": {
+        "Chart.tsx": "5e9f1c10445095dd64a3f8a5ac3d3ab2af519511",
+        "data.ts": "1108c1e8b6e4fee08d94a00e21023540c9c97b73",
+        "meta.json": "8d97c040df213650e7288e7ade9f85a6cb4f6f67"
+      }
+    },
+    "v4_escala-propria-para-ufs-pequenas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 26 máximos escritos batem com o data.ts, cada linha vai de 0 ao máximo do próprio tile, PI e TO quebram a linha, os pontos isolados e o único mês de RR viram bolinha e AP sai com Unplug, nos dois temas; textos de 4,65:1 para cima e selo a 7,43:1 no pior tema. Observações no README (linha de leitura fixa que repete o subtítulo, ramo de UF só com zero medido divide por zero, forma espremida no quinto de cima do tile).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:16.619Z",
+      "impressao": "d07649ba6ec5fb3cf907540e408d92e9b7b623ac",
+      "arquivos": {
+        "Chart.tsx": "3999b41bcb21d26c707de9de19f04bcd46c3130b",
+        "data.ts": "6270ddfbb2ef2047682241f72965894e77389466",
+        "meta.json": "0a775b53acb927b672b57e4be5c3263776afa2e5"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-mensais-por-uf-escala-compartilhada",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: escala única de 0 a 2.000 conferida no PNG, com a linha de SP no topo e a base no zero; anel no zero medido de RR, linha quebrada em TO e AP com Unplug batem com o data.ts nos dois temas; textos de 4,65:1 para cima e linha a 5,20:1 sobre o tile no pior tema, medidos à mão porque a guarda mede contra o cartão. Observações no README (número rotulado como o do último mês sai do último mês medido, proporção do tile não é fixa no código).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:03.138Z",
+      "impressao": "d643722425e2dbf0cfeb9da6aca04f44e019dfde",
+      "arquivos": {
+        "Chart.tsx": "40fd5059e8728c284a9eaf573769b2f87330e05a",
+        "data.ts": "0089ed2228c34b9de3f8c73e741498c3756c64a3",
+        "meta.json": "dc5cba078c36f66d266b251d3c6d03b6577997f7"
+      }
+    },
+    {
+      "versao": "v2_tendencia-dos-ultimos-tres-meses",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: as 27 classes (8 em alta, 7 em queda, 9 estáveis e 3 sem base) e as 24 variações escritas batem com o data.ts; sinal, ícone e cor nos três estados; base zerada e base sem coleta escrevem sem base; textos de 4,62:1 para cima sobre o tile e menor vão entre valor e variação de 9,5 px, nos dois temas. Observações no README (AP contada em sem base e desenhada como indisponível, frase acessível cita a maior alta sem o volume, linha de 8 meses pintada pela classe dos 3 últimos, linha de leitura sem tabular-nums, valor de quatro algarismos não cabe ao lado da variação, par positivo sobre o tile fora da tabela 17.10).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:15.546Z",
+      "impressao": "56b5b95a547cb328529bbbe56b56dcf24fae6ae6",
+      "arquivos": {
+        "Chart.tsx": "e7d44d3df89ec8cc5157d38b4df58f56160cff81",
+        "data.ts": "710fd01a4c6706a90d1401baa28c5aea226e880f",
+        "meta.json": "c20e09237a94f0cda65fd2dd860443436ca4ba38"
+      }
+    },
+    {
+      "versao": "v3_receita-por-produto-no-perimetro",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 15; GEO-16 com COR-5 e seção 14.1. O contorno de 1 px em cada parcela tira 1 px de altura de todas e, na escala única de 78,9 mil reais por px, apaga a Linha Corporativa: 0 px em GO, DF e MG nos dois temas, e 16 das 28 parcelas medidas sem tinta no claro (11 no escuro); zero medido e valor de 60 a 90 mil reais desenham igual. Mudar: separador que não consuma a parcela pequena e escala que deixe toda parcela maior que zero com 2 px ou mais, declarada no rodapé (a conta fecha com escala própria por tile). Parecer em validation/revisao_23_mapas__04_tile-map-com-mini-grafico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:16.086Z",
+      "impressao": "08591a9815c3b6bca6213478a3010ff79bcca3ae",
+      "arquivos": {
+        "Chart.tsx": "5ac30da70bf5f64ab13af0d1a7c3666ca8588369",
+        "data.ts": "1108c1e8b6e4fee08d94a00e21023540c9c97b73",
+        "meta.json": "6c38afaed8a287ca2e5c6a465ce070bedc133bae"
+      }
+    },
+    {
+      "versao": "v4_escala-propria-para-ufs-pequenas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 26 máximos escritos batem com o data.ts, cada linha vai de 0 ao máximo do próprio tile, PI e TO quebram a linha, os pontos isolados e o único mês de RR viram bolinha e AP sai com Unplug, nos dois temas; textos de 4,65:1 para cima e selo a 7,43:1 no pior tema. Observações no README (linha de leitura fixa que repete o subtítulo, ramo de UF só com zero medido divide por zero, forma espremida no quinto de cima do tile).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:40:16.619Z",
+      "impressao": "d07649ba6ec5fb3cf907540e408d92e9b7b623ac",
+      "arquivos": {
+        "Chart.tsx": "3999b41bcb21d26c707de9de19f04bcd46c3130b",
+        "data.ts": "6270ddfbb2ef2047682241f72965894e77389466",
+        "meta.json": "0a775b53acb927b672b57e4be5c3263776afa2e5"
+      }
+    },
+    {
+      "versao": "v3_receita-por-produto-no-perimetro",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 12:45, não a nota antiga. Sem bloqueante: escala própria por tile declarada no rodapé; as 90 parcelas maiores que zero têm tinta nos dois temas, e as 28 da Linha Corporativa medem de 2,0 a 7,0 px (menor: MG em T2/26); zeros medidos de MG e DF saem sem a parcela e GO em T4/25 sai tracejado; separador visível em toda fronteira; alturas das 31 barras e os 8 totais batem com o data.ts; textos de 4,65:1 para cima e categóricas de 5,39:1 para cima; preview contra página 0,06% e 0,22%. Observações no README (separador efetivo de 0,5 px, piso de parcela não exercitado e anunciado como 1,8 px, topo da escala coincide com o número escrito só porque as séries terminam no máximo, empates do formato compacto, ramos de último trimestre sem coleta e de total zero).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T15:53:15.759Z",
+      "impressao": "2b1f74241b355316c5affb20b5a69748c62f46bc",
+      "arquivos": {
+        "Chart.tsx": "5e9f1c10445095dd64a3f8a5ac3d3ab2af519511",
+        "data.ts": "1108c1e8b6e4fee08d94a00e21023540c9c97b73",
+        "meta.json": "8d97c040df213650e7288e7ade9f85a6cb4f6f67"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Funil de mídia em cartões com CPL",
+  "useCase": "Ver quantos leads o mês de mídia paga gerou e quanto custou cada lead qualificado.",
+  "demonstrates": [
+    "Cartão de KPI por etapa com microbarra decorativa de magnitude",
+    "Chip de taxa de passo com o denominador nomeado, nunca só o percentual",
+    "Container query no lugar de largura da janela, com a seta virando para baixo",
+    "Investimento e custo por lead junto do volume, com formatCurrencyCompact",
+    "Números com algarismo tabular em toda etapa"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

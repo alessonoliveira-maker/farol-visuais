@@ -1,0 +1,173 @@
+{
+  "familia": "11_fluxo-sankey",
+  "modelo": "02_sankey-multietapa",
+  "versoes": {
+    "v1_oportunidades-com-perdas-por-motivo": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: os dois da rodada anterior fecharam (neutro em --text-muted, ACE-6; ligação como região fechada, sem transbordo nem rótulo sobre faixa nos dois temas), conservação 420, 268, 131 e 64, check 0 erro. Três observações novas no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:23.653Z",
+      "impressao": "a80f5e073b22ad841eaf1a80bce406b75c4d9303",
+      "arquivos": {
+        "Chart.tsx": "fc16a9445fdb8a989f9d7844a4092e5b874c7dd4",
+        "data.ts": "ea7584e7ef2298dd826d2aced558042032e84096",
+        "meta.json": "80244df29b6a9c928f34665a34106f37bc086cf0"
+      }
+    },
+    "v2_custo-do-trimestre-por-camada-e-canal": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ACE-6 atendida (cor de camada, neutro e contorno vazado em --text-muted), conservação de 1,86 mi nas três colunas, percentuais somam 100, check 0 erro. Quatro observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:13.682Z",
+      "impressao": "cef1da5c56cb6233d3671e8f675a6bacd9f987ee",
+      "arquivos": {
+        "Chart.tsx": "cd30bb91ec6ec0816b7fcb2d557386370e7860b3",
+        "data.ts": "da8e31c53ac4766f2c01475c39f7f947ac2458f8",
+        "meta.json": "5737954a03199b40c4e3f7cb7c22cf54b57b8e8e"
+      }
+    },
+    "v3_jornada-dos-leads-em-ate-tres-toques": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, COR-2 e armadilhas REC-13 e TOK-4: as pistas do corredor são pintadas no último nó, depois de todas as ligações, e duas neutras cobrem a faixa acesa; medido no PNG, ela some por inteiro em 18 colunas e fica abaixo de metade da espessura em 58 de 160, nos dois temas. Desenhar a faixa acesa depois do corredor. O contorno da COR-5 foi atendido.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:24.116Z",
+      "impressao": "af996e0c6c6c98933b98e6ff23f4a10cba041b8b",
+      "arquivos": {
+        "Chart.tsx": "c85d7017f28af4a2f487c8a9d8316cd2c67c8852",
+        "data.ts": "04dbec37e7cb9eb7db787cb88a6afb40a68e46dd",
+        "meta.json": "5dd4030a02ba8ea431a9c18114e274aa6e2efe96"
+      }
+    },
+    "v4_reabertura-com-arco-de-retorno": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ACE-6 atendida (faixas em --chart-1 e --text-muted, arco em --chart-3 na escala das faixas), conservação fechada, arco e rótulos sem colisão nos dois temas, check 0 erro. Duas observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:14.769Z",
+      "impressao": "8313b4dd104882f4967105e0485111005c894438",
+      "arquivos": {
+        "Chart.tsx": "093fd59bdb7f489d3730f2ce7f48b2d756b5d875",
+        "data.ts": "d803a0afde8883431729c3455bf098ff9558e949",
+        "meta.json": "d767730a3c810b43e73e3f924a8b81d7bd38487a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-com-perdas-por-motivo",
+      "veredito": "reprovado",
+      "nota": "Rotulo de no desenhado sobre o feixe de ligacoes: o halo da ROT-7 apaga as faixas finas (3, 8, 10 e 14 oportunidades viram farrapos de 1 a 7 px) e come metade da faixa de 29 ate Ganha na saida do no, nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T23:48:15.947Z",
+      "impressao": "3f1cd5dbbd98f2692b345b420a3ee67c2feaf6da",
+      "arquivos": {
+        "Chart.tsx": "da1b7639a24431e5b21e1c414cf6fee8c54646e3",
+        "data.ts": "844eddc2b42eec1a5a3b8a361048c8d4f459cde4",
+        "meta.json": "f0809afc9a89d3b1c56a206cb5dea7c594087067"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-com-perdas-por-motivo",
+      "veredito": "reprovado",
+      "nota": "ROT-7 marca fina: o halo do rotulo dos nos de perda apaga as faixas de 3, 8, 12 e 15 oportunidades que saem de Proposta e de Negociacao, partindo-as em farrapos nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T00:14:23.561Z",
+      "impressao": "0fc899ab6f906bb1e5106b389550159632cd4aca",
+      "arquivos": {
+        "Chart.tsx": "f3725d1a432f8ed662e510bdc779cab86bcead4c",
+        "data.ts": "ea7584e7ef2298dd826d2aced558042032e84096",
+        "meta.json": "3b2460b03473018ee743e1ba7f3ef0eae4e41e14"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-com-perdas-por-motivo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: conservacao fechada em todas as etapas, rotulo direto em todo no, halo so sobre area cheia, check 0 erro.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T00:47:47.728Z",
+      "impressao": "361c3b29973493a717e07fec1d35c43e3d680829",
+      "arquivos": {
+        "Chart.tsx": "5c8a900c0c27766ce128b4b0aebd8f381b0a7b2f",
+        "data.ts": "ea7584e7ef2298dd826d2aced558042032e84096",
+        "meta.json": "80244df29b6a9c928f34665a34106f37bc086cf0"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-com-perdas-por-motivo",
+      "veredito": "reprovado",
+      "nota": "Pergunta 32 e 20, ACE-6: 16 das 20 ligações em --line-strong medem 1,79:1 e 1,83:1; trocar o neutro por --text-muted. Pergunta 15, ESP-3 e ROT-7: traço grosso de Aberta a Diagnóstico transborda o nó de destino e fica sob o rótulo de Perdida: sem perfil; desenhar a ligação como região fechada (ribbonPath da v2).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:13.154Z",
+      "impressao": "361c3b29973493a717e07fec1d35c43e3d680829",
+      "arquivos": {
+        "Chart.tsx": "5c8a900c0c27766ce128b4b0aebd8f381b0a7b2f",
+        "data.ts": "ea7584e7ef2298dd826d2aced558042032e84096",
+        "meta.json": "80244df29b6a9c928f34665a34106f37bc086cf0"
+      }
+    },
+    {
+      "versao": "v2_custo-do-trimestre-por-camada-e-canal",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ACE-6 atendida (cor de camada, neutro e contorno vazado em --text-muted), conservação de 1,86 mi nas três colunas, percentuais somam 100, check 0 erro. Quatro observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:13.682Z",
+      "impressao": "cef1da5c56cb6233d3671e8f675a6bacd9f987ee",
+      "arquivos": {
+        "Chart.tsx": "cd30bb91ec6ec0816b7fcb2d557386370e7860b3",
+        "data.ts": "da8e31c53ac4766f2c01475c39f7f947ac2458f8",
+        "meta.json": "5737954a03199b40c4e3f7cb7c22cf54b57b8e8e"
+      }
+    },
+    {
+      "versao": "v3_jornada-dos-leads-em-ate-tres-toques",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, COR-5 e TOK-4: faixas neutras opacas sem separação se fundem nos cruzamentos; a chegada do corredor ao nó Qualificado vira um bloco só e a faixa acesa é coberta por quatro neutras. Contorno de 1,5 a 2 px em --surface-raised em cada faixa e faixa acesa desenhada por último.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:14.232Z",
+      "impressao": "9423eba1a30d95911370288dff35edb92d9815ab",
+      "arquivos": {
+        "Chart.tsx": "cbfa97c9c64a33355a2b095324d495a9ca83d226",
+        "data.ts": "04dbec37e7cb9eb7db787cb88a6afb40a68e46dd",
+        "meta.json": "5dd4030a02ba8ea431a9c18114e274aa6e2efe96"
+      }
+    },
+    {
+      "versao": "v4_reabertura-com-arco-de-retorno",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ACE-6 atendida (faixas em --chart-1 e --text-muted, arco em --chart-3 na escala das faixas), conservação fechada, arco e rótulos sem colisão nos dois temas, check 0 erro. Duas observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:15:14.769Z",
+      "impressao": "8313b4dd104882f4967105e0485111005c894438",
+      "arquivos": {
+        "Chart.tsx": "093fd59bdb7f489d3730f2ce7f48b2d756b5d875",
+        "data.ts": "d803a0afde8883431729c3455bf098ff9558e949",
+        "meta.json": "d767730a3c810b43e73e3f924a8b81d7bd38487a"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-com-perdas-por-motivo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: os dois da rodada anterior fecharam (neutro em --text-muted, ACE-6; ligação como região fechada, sem transbordo nem rótulo sobre faixa nos dois temas), conservação 420, 268, 131 e 64, check 0 erro. Três observações novas no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:23.653Z",
+      "impressao": "a80f5e073b22ad841eaf1a80bce406b75c4d9303",
+      "arquivos": {
+        "Chart.tsx": "fc16a9445fdb8a989f9d7844a4092e5b874c7dd4",
+        "data.ts": "ea7584e7ef2298dd826d2aced558042032e84096",
+        "meta.json": "80244df29b6a9c928f34665a34106f37bc086cf0"
+      }
+    },
+    {
+      "versao": "v3_jornada-dos-leads-em-ate-tres-toques",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, COR-2 e armadilhas REC-13 e TOK-4: as pistas do corredor são pintadas no último nó, depois de todas as ligações, e duas neutras cobrem a faixa acesa; medido no PNG, ela some por inteiro em 18 colunas e fica abaixo de metade da espessura em 58 de 160, nos dois temas. Desenhar a faixa acesa depois do corredor. O contorno da COR-5 foi atendido.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:24.116Z",
+      "impressao": "af996e0c6c6c98933b98e6ff23f4a10cba041b8b",
+      "arquivos": {
+        "Chart.tsx": "c85d7017f28af4a2f487c8a9d8316cd2c67c8852",
+        "data.ts": "04dbec37e7cb9eb7db787cb88a6afb40a68e46dd",
+        "meta.json": "5dd4030a02ba8ea431a9c18114e274aa6e2efe96"
+      }
+    }
+  ]
+}

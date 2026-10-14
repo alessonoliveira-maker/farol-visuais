@@ -1,0 +1,13 @@
+{
+  "title": "Fila de pré-vendas na semana",
+  "useCase": "Como a fila de pré-vendas foi de 84 para 72 leads, dia a dia, entre entradas e saídas?",
+  "demonstrates": [
+    "Entrada e saída de cada dia como dois passos, nunca empilhadas",
+    "Saldo inicial e final ancorados no zero com rótulo",
+    "Rótulo de dia agrupando os dois passos no eixo",
+    "Contagem com substantivo no rótulo e na dica"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas largo em vez de card. Doze colunas (dois totais e dez passos) no corpo do card, 574 px, dão passo de (574 − 16) / 12 = 46,5 px e barra de 16,6 px, e o rótulo de total com substantivo (\"84 leads\", cerca de 56 px) não cabe na coluna. No largo o corpo é 894 x 265 px, passo de (894 − 16) / 12 = 73,2 px e barra de 24 px. Entradas em --chart-3, saídas em --chart-6 e totais em --chart-1: fila sem polaridade declarada não usa verde nem vermelho (COR-6), e a linha de leitura nomeia as duas cores."
+}

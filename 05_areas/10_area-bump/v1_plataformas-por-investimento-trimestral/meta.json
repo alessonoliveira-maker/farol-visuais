@@ -1,0 +1,13 @@
+{
+  "title": "Plataformas por investimento trimestral",
+  "useCase": "Ver quais das 6 plataformas fictícias subiram ou caíram no ranking de investimento e com quanto em 8 trimestres.",
+  "demonstrates": [
+    "Ordem por período e espessura proporcional com escala comum",
+    "Faixas ligadas por curvas cúbicas horizontais com controle no meio do intervalo",
+    "Rótulos de início e fim com posição ordinal e valor",
+    "Nota que declara as duas codificações: posição e espessura"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Leitura primária é a posição vertical (ranking); a espessura é secundária (investimento). Pintura na ordem de entrada do dado, sem destaque."
+}

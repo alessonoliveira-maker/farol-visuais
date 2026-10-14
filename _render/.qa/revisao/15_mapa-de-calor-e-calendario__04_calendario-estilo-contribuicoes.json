@@ -1,0 +1,59 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "04_calendario-estilo-contribuicoes",
+  "versoes": {
+    "v1_fechamentos-por-dia-em-2026": {
+      "veredito": "reprovado",
+      "nota": "Conserto do DAD-9 aceito: a borda tracejada fecha a medição em 14/09/2026 e o número levou a data. Volta por outro defeito, que é o assunto do subtítulo: o dia com zero fechamento usa --surface-overlay, 1,00:1 contra o cartão no claro, então o dia útil sem fechar some justamente na pergunta que a peça faz. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:24.983Z",
+      "impressao": "a2026f103aade599879f7c4e5221bfe83b22bc6b",
+      "arquivos": {
+        "Chart.tsx": "eff510b6d4c958dc40019fac8ba7d83e22e6727c",
+        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
+        "meta.json": "1f89b761149db3b41c5d3b22de1ab9a95e24133c"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_fechamentos-por-dia-em-2026",
+      "veredito": "reprovado",
+      "nota": "O dado vai de 2026-01-01 a 2026-09-14 e o ano nao acabou, mas so a frase acessivel declara o recorte, dizendo fechamentos no ano ate 14/09/2026. O titulo afirma em 2026, o numero em destaque diz 374 fechamentos no ano e o rodape nao menciona periodo em curso, entao quem enxerga conclui que outubro a dezembro fecharam zero e quem usa leitor de tela recebe a informacao certa. E a inversao do principio do contrato: o essencial ficou so no que nao se ve. A 15/03 desta mesma familia ja resolve isso com tracejado para periodo em curso. Resto da peca aceito nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.874Z",
+      "impressao": "c34f8f6a58ceccb618f7950acf4447a976175365",
+      "arquivos": {
+        "Chart.tsx": "2cdeab597578870b013695346d734f9f014d65c0",
+        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
+        "meta.json": "e13cce401376efb50d7debd140774d2e96f59b7b"
+      }
+    },
+    {
+      "versao": "v1_fechamentos-por-dia-em-2026",
+      "veredito": "reprovado",
+      "nota": "Armadilha DAD-9. O dado vai de 2026-01-01 a 2026-09-14 e o ano não acabou, mas só a frase acessível declara o recorte, dizendo \"fechamentos no ano até 14/09/2026\". O título afirma \"em 2026\", o número em destaque diz \"374 fechamentos no ano\" e o rodapé não menciona período em curso, então quem enxerga conclui que outubro a dezembro fecharam zero e quem usa leitor de tela recebe a informação certa. É a inversão do princípio do contrato: o essencial ficou só no que não se vê. A 15/03 desta mesma família já resolve isso com tracejado para período em curso. Resto da peça aceito nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:20:18.832Z",
+      "impressao": "c34f8f6a58ceccb618f7950acf4447a976175365",
+      "arquivos": {
+        "Chart.tsx": "2cdeab597578870b013695346d734f9f014d65c0",
+        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
+        "meta.json": "e13cce401376efb50d7debd140774d2e96f59b7b"
+      }
+    },
+    {
+      "versao": "v1_fechamentos-por-dia-em-2026",
+      "veredito": "reprovado",
+      "nota": "Conserto do DAD-9 aceito: a borda tracejada fecha a medição em 14/09/2026 e o número levou a data. Volta por outro defeito, que é o assunto do subtítulo: o dia com zero fechamento usa --surface-overlay, 1,00:1 contra o cartão no claro, então o dia útil sem fechar some justamente na pergunta que a peça faz. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:24.983Z",
+      "impressao": "a2026f103aade599879f7c4e5221bfe83b22bc6b",
+      "arquivos": {
+        "Chart.tsx": "eff510b6d4c958dc40019fac8ba7d83e22e6727c",
+        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
+        "meta.json": "1f89b761149db3b41c5d3b22de1ab9a95e24133c"
+      }
+    }
+  ]
+}

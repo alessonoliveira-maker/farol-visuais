@@ -1,0 +1,13 @@
+{
+  "title": "Borboleta família contra empresa",
+  "useCase": "Comparar dois funis lado a lado, com a mesma escala, e ver em qual etapa um supera o outro.",
+  "demonstrates": [
+    "stackOffset sign com a série da esquerda negativa e ReferenceLine em x zero",
+    "Domínio simétrico calculado do maior valor dos dois lados, com folga para o rótulo",
+    "Valor absoluto na ponta livre dos dois lados, nunca no eixo",
+    "Etapa inexistente escrita como não se aplica, nunca como zero",
+    "Linha de leitura na etapa em que a razão entre os lados inverte"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

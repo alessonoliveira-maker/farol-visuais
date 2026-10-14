@@ -1,0 +1,13 @@
+{
+  "title": "Oportunidades abertas por executivo e etapa",
+  "useCase": "Onde estão as oportunidades abertas em 2026-09, por executivo e por etapa, com os totais das margens.",
+  "demonstrates": [
+    "CSS grid com coluna de total, linha de total e total geral no canto",
+    "Totais em kpi-number com fundo surface-sunken, separados do miolo por espaço",
+    "Combinação sem caso por papel do executivo, com ícone e texto, fora das somas",
+    "Contagem por formatInt, zero medido escrito como 0"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Cada executivo é SDR ou executivo de contas; o papel decide quais etapas ele cobre. A etapa fora do papel é não se aplica, nunca zero, e sai das somas de linha, coluna e total geral."
+}

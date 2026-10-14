@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por SDR no mês",
+  "useCase": "Pré-vendas: quantas agendas cada um dos 8 SDRs marcou em agosto, do maior para o menor.",
+  "demonstrates": [
+    "Bar horizontal com shape de haste de 2 px e disco de 5,5 px",
+    "Eixo ancorado no zero, obrigatório porque a haste promete a base",
+    "Valor à direita do disco com formatação de contagem",
+    "Ordem decrescente declarada na linha de leitura"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

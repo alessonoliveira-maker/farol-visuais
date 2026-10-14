@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura de origem por plataforma e mês",
+  "useCase": "Em cada plataforma e mês do trimestre, quantos de cada 100 leads chegaram com origem declarada?",
+  "demonstrates": [
+    "Nove waffles em matriz 3 por 3 com cabeçalhos de linha e coluna em grid externo",
+    "Mesma grade, mesma unidade e mesmo tamanho de célula em todos os múltiplos",
+    "Número e n sobre cada waffle; o pior grupo em cor cheia e os demais em neutro",
+    "Selo de amostra pequena abaixo de n = 30, com a fração omitida e o n escrito",
+    "Mês sem coleta em grade tracejada com formatUnavailable"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo, decisão D8: a grade é 5 por 5 (25 quadrados de 4%), e não 10 por 10, porque nove waffles de 100 div somam 900 div, acima do teto de cerca de 400 da família. Conta: 9 x 25 = 225 div. Cada quadrado vale 4 pontos percentuais, o número escrito é a taxa exata do dado e a legenda declara a unidade. Destaque com segundo canal (COR-2, TOK-9): peso 700 no número e a palavra pior grupo junto do n, porque chart-1 contra text-muted mede 1,12:1 no claro e 1,82:1 no escuro. Célula vazia com contorno line-strong, como na v1."
+}

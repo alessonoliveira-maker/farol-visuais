@@ -1,0 +1,108 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "07_arvore-de-palavras",
+  "versoes": {
+    "v1_raiz-nao-nas-objecoes": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 61 de 69 frases com a raiz, 11 folhas e 7 ramos podados conferidos contra o data.ts; fonte de 36, 23, 17, 15, 14 e 13 px confere com a raiz quadrada da parcela (tenho, 24 de 61, pede 22,6 px e sai com 23); conector em text-muted a 5,21:1 no escuro e 5,37:1 no claro; frase de 210 caracteres; viewBox de 574 px em escala 1; diferença de 0,00% nos dois temas. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:31.175Z",
+      "impressao": "f100825c9d01a52a256c1bdf6bf7de3d0e9fee8b",
+      "arquivos": {
+        "Chart.tsx": "e44e759bbe866fa6615bb8628aa1935cbaea3de6",
+        "data.ts": "5eb6e7a9c33f193a5f19f6a26ccf742cc53a3048",
+        "meta.json": "7e7f64c3fd0bcd120e2fb3348b355f03ea443af6"
+      }
+    },
+    "v2_ramos-que-levam-a-perda": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 91 ligações com a raiz, 10 folhas, 4 ramos podados e as 10 parcelas conferidos contra o data.ts; a regra acende só 7 de 9 e 7 de 10 e deixa de fora 6 de 12 (metade exata), 4 de 6 e 3 de 5 (volume); peso 700 em duas folhas, raiz em 600; destaque em chart-1 a 9,50:1 e 6,00:1 contra o cartão, sustentado por peso e por traço de 3 px contra 1,5 px, porque marca contra marca mede só 1,16:1 e 1,35:1 no texto; frase de 208 caracteres; diferença de 0,00%. Observações no README: tamanho da palavra sem declaração na nota e recorte só na frase acessível (DAD-9).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:31.782Z",
+      "impressao": "44dc0a6e93052d97df89f75e5b7efcf17b7c9669",
+      "arquivos": {
+        "Chart.tsx": "0068d1e0400009df4cdf0b3efa87e3658d64c82e",
+        "data.ts": "17811fd82785b62336a50c68bce0abed183a759f",
+        "meta.json": "9798edb38781a85b5e1f915187db6841d8b15e09"
+      }
+    },
+    "v3_arvore-dupla-com-raiz-preco": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 194 de 500 anotações, 3 grafias (166, 14 e 14), 6 folhas de prefixo e 10 de sufixo, 3 ramos e 16 anotações podados conferidos contra o data.ts; os dois lados usam a mesma escala e se alinham pela raiz em y de 120 px; fonte de 23 a 12 px confere com a raiz quadrada; conector a 5,21:1 e 5,37:1; frase de 218 caracteres; viewBox de 894 px em escala 1; diferença de 0,03% nos dois temas. Clique, teclado e botão de voltar conferidos só por leitura de código, com a raiz concorrente simulada à mão. Observações no README, entre elas o estado vazio depois da troca de raiz.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:40.217Z",
+      "impressao": "d5dc7c722eb5701b9b6aa332b29a2f80dd3f036e",
+      "arquivos": {
+        "Chart.tsx": "813268abd8464a9bf31390799dd3f70406a17568",
+        "data.ts": "1267802213daee9551f70a52349fe7ca80ece3b4",
+        "meta.json": "81279121d4505aa112dc0e2c15d0184922313c77"
+      }
+    },
+    "v4_raiz-rara-vira-concordancia": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 4 ocorrências em 82 respostas e as 4 janelas de 6 palavras conferidas contra o data.ts (reticência à esquerda na linha 1 e à direita na linha 4, direita vazia na 2, esquerda vazia na 3); termo centrado em 315,1 px, contextos a 12 px da coluna do termo; ícone de aviso a 8,36:1 e 5,74:1; três tamanhos (13, 12 e 11 px), nenhum peso 700; frase de 202 caracteres; diferença de 0,08% e 0,09%. Caminho da árvore (prazo, 27 ocorrências) e estado vazio (frete) conferidos só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:40.794Z",
+      "impressao": "346326b55c389b4f0e48a13b9ebe3045d908721e",
+      "arquivos": {
+        "Chart.tsx": "e75eee233b77af05cef00dbd78c37b3a1c4f70dd",
+        "data.ts": "fa5b77ff10255091a1b04cd5b7c06a26fdb3b316",
+        "meta.json": "436c495307db542ab69fa7bc942242860035f952"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_raiz-nao-nas-objecoes",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 61 de 69 frases com a raiz, 11 folhas e 7 ramos podados conferidos contra o data.ts; fonte de 36, 23, 17, 15, 14 e 13 px confere com a raiz quadrada da parcela (tenho, 24 de 61, pede 22,6 px e sai com 23); conector em text-muted a 5,21:1 no escuro e 5,37:1 no claro; frase de 210 caracteres; viewBox de 574 px em escala 1; diferença de 0,00% nos dois temas. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:31.175Z",
+      "impressao": "f100825c9d01a52a256c1bdf6bf7de3d0e9fee8b",
+      "arquivos": {
+        "Chart.tsx": "e44e759bbe866fa6615bb8628aa1935cbaea3de6",
+        "data.ts": "5eb6e7a9c33f193a5f19f6a26ccf742cc53a3048",
+        "meta.json": "7e7f64c3fd0bcd120e2fb3348b355f03ea443af6"
+      }
+    },
+    {
+      "versao": "v2_ramos-que-levam-a-perda",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 91 ligações com a raiz, 10 folhas, 4 ramos podados e as 10 parcelas conferidos contra o data.ts; a regra acende só 7 de 9 e 7 de 10 e deixa de fora 6 de 12 (metade exata), 4 de 6 e 3 de 5 (volume); peso 700 em duas folhas, raiz em 600; destaque em chart-1 a 9,50:1 e 6,00:1 contra o cartão, sustentado por peso e por traço de 3 px contra 1,5 px, porque marca contra marca mede só 1,16:1 e 1,35:1 no texto; frase de 208 caracteres; diferença de 0,00%. Observações no README: tamanho da palavra sem declaração na nota e recorte só na frase acessível (DAD-9).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:31.782Z",
+      "impressao": "44dc0a6e93052d97df89f75e5b7efcf17b7c9669",
+      "arquivos": {
+        "Chart.tsx": "0068d1e0400009df4cdf0b3efa87e3658d64c82e",
+        "data.ts": "17811fd82785b62336a50c68bce0abed183a759f",
+        "meta.json": "9798edb38781a85b5e1f915187db6841d8b15e09"
+      }
+    },
+    {
+      "versao": "v3_arvore-dupla-com-raiz-preco",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 194 de 500 anotações, 3 grafias (166, 14 e 14), 6 folhas de prefixo e 10 de sufixo, 3 ramos e 16 anotações podados conferidos contra o data.ts; os dois lados usam a mesma escala e se alinham pela raiz em y de 120 px; fonte de 23 a 12 px confere com a raiz quadrada; conector a 5,21:1 e 5,37:1; frase de 218 caracteres; viewBox de 894 px em escala 1; diferença de 0,03% nos dois temas. Clique, teclado e botão de voltar conferidos só por leitura de código, com a raiz concorrente simulada à mão. Observações no README, entre elas o estado vazio depois da troca de raiz.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:40.217Z",
+      "impressao": "d5dc7c722eb5701b9b6aa332b29a2f80dd3f036e",
+      "arquivos": {
+        "Chart.tsx": "813268abd8464a9bf31390799dd3f70406a17568",
+        "data.ts": "1267802213daee9551f70a52349fe7ca80ece3b4",
+        "meta.json": "81279121d4505aa112dc0e2c15d0184922313c77"
+      }
+    },
+    {
+      "versao": "v4_raiz-rara-vira-concordancia",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 4 ocorrências em 82 respostas e as 4 janelas de 6 palavras conferidas contra o data.ts (reticência à esquerda na linha 1 e à direita na linha 4, direita vazia na 2, esquerda vazia na 3); termo centrado em 315,1 px, contextos a 12 px da coluna do termo; ícone de aviso a 8,36:1 e 5,74:1; três tamanhos (13, 12 e 11 px), nenhum peso 700; frase de 202 caracteres; diferença de 0,08% e 0,09%. Caminho da árvore (prazo, 27 ocorrências) e estado vazio (frete) conferidos só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:17:40.794Z",
+      "impressao": "346326b55c389b4f0e48a13b9ebe3045d908721e",
+      "arquivos": {
+        "Chart.tsx": "e75eee233b77af05cef00dbd78c37b3a1c4f70dd",
+        "data.ts": "fa5b77ff10255091a1b04cd5b7c06a26fdb3b316",
+        "meta.json": "436c495307db542ab69fa7bc942242860035f952"
+      }
+    }
+  ]
+}

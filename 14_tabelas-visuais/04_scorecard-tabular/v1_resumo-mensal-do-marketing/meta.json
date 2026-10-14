@@ -1,0 +1,13 @@
+{
+  "title": "Resumo mensal do Marketing",
+  "useCase": "Marketing: como leads, MQL, CPL, CPL qualificado, agendas e investimento de ago/26 ficaram contra meta e contra jul/26.",
+  "demonstrates": [
+    "Colunas de valor, meta, atingimento e variação, com número à direita em tabular nums",
+    "Variação com sinal tipográfico e base nomeada na mesma linha",
+    "Ícones TrendingUp, TrendingDown e Minus com aria hidden e texto ao lado",
+    "Formato por unidade de cada linha via formatValue"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Atingimento inverte a razão para métricas que precisam cair (CPL): meta dividida pelo valor, não valor dividido pela meta, para o critério de bom e ruim ficar escrito na fórmula da nota de rodapé, não só na cor."
+}

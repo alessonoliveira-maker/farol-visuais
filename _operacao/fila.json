@@ -1,0 +1,1323 @@
+{
+  "gerado_em": "2026-09-30",
+  "como_usar": "Lido por _operacao/fila.mjs. A ORDEM é decisão (PLAN.md, Fase 2) e pode ser editada à mão; o ESTADO nunca vive aqui, vem de _render/.qa/pendencias.json.",
+  "regras": {
+    "versoes_por_modelo": "todas",
+    "llm_produtor_padrao": "sonnet",
+    "llm_revisor": "opus",
+    "llm_corretor": "sonnet",
+    "llm_ferramenta": "opus",
+    "pool": {
+      "produzir": 2,
+      "revisar": 1
+    }
+  },
+  "producao": [
+    {
+      "ordem": 1,
+      "alvo": "16_distribuicao/06_densidade-kde",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "05_areas/01_area-simples/v1_entradas-mensais-de-leads",
+        "16_distribuicao/01_histograma/v1_ciclo-de-fechamento"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 2,
+      "alvo": "16_distribuicao/07_violino-e-raincloud",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "16_distribuicao/02_box-plot/v1_primeiro-contato-por-sdr",
+        "16_distribuicao/03_strip-plot-e-beeswarm/v1_cpl-das-campanhas-por-plataforma"
+      ],
+      "llm": "opus",
+      "nota": "Geometria de KDE mais jitter determinístico em SVG puro."
+    },
+    {
+      "ordem": 3,
+      "alvo": "16_distribuicao/08_ridgeline",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "05_areas/04_areas-sobrepostas/v1_capacidade-e-agendas-realizadas",
+        "16_distribuicao/06_densidade-kde"
+      ],
+      "llm": "sonnet",
+      "nota": "Produzir depois de 16/06, que é o guia mais próximo."
+    },
+    {
+      "ordem": 4,
+      "alvo": "16_distribuicao/09_dot-plot-empilhado",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "16_distribuicao/03_strip-plot-e-beeswarm/v1_cpl-das-campanhas-por-plataforma",
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 5,
+      "alvo": "16_distribuicao/10_curva-de-lorenz",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "04_linhas/01_linha-simples/v1_receita-mensal-com-rotulo-final",
+        "16_distribuicao/04_ecdf-e-histograma-acumulado/v1_sla-de-primeiro-contato"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 6,
+      "alvo": "16_distribuicao/11_curva-de-sobrevivencia",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "04_linhas/03_step-degrau/v1_teto-de-capacidade-da-pre-vendas",
+        "16_distribuicao/04_ecdf-e-histograma-acumulado/v1_sla-de-primeiro-contato"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 7,
+      "alvo": "16_distribuicao/12_meia-olho-e-desfechos",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/07_dispersao-com-barras-de-erro/v1_taxa-de-agenda-por-sdr",
+        "16_distribuicao/02_box-plot/v1_primeiro-contato-por-sdr"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 8,
+      "alvo": "16_distribuicao/13_q-q-plot",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 3,
+      "guia": [
+        "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia/v1_investimento-contra-leads-qualificados"
+      ],
+      "llm": "sonnet",
+      "nota": "Modelo com 3 versões planejadas."
+    },
+    {
+      "ordem": 9,
+      "alvo": "17_comparacao-de-pontos/01_dot-plot-de-cleveland",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora",
+        "02_barras-horizontais/01_barras-simples-ordenadas/v1_receita-por-executivo"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 10,
+      "alvo": "17_comparacao-de-pontos/02_dot-plot-com-intervalo",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/07_dispersao-com-barras-de-erro/v1_taxa-de-agenda-por-sdr",
+        "17_comparacao-de-pontos/01_dot-plot-de-cleveland"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 11,
+      "alvo": "17_comparacao-de-pontos/03_dumbbell",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/06_antes-e-depois-com-setas/v1_canais-entre-trimestres",
+        "02_barras-horizontais/02_barras-agrupadas/v1_agendas-marcadas-e-realizadas"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 12,
+      "alvo": "17_comparacao-de-pontos/04_range-plot",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "02_barras-horizontais/01_barras-simples-ordenadas/v1_receita-por-executivo",
+        "05_areas/05_faixa-range-band/v1_participacao-de-mercado-por-perimetro"
+      ],
+      "llm": "sonnet",
+      "nota": "Barra flutuante: base invisível empilhada (ver REC-8)."
+    },
+    {
+      "ordem": 13,
+      "alvo": "17_comparacao-de-pontos/05_lollipop",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "02_barras-horizontais/01_barras-simples-ordenadas/v1_receita-por-executivo",
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 14,
+      "alvo": "17_comparacao-de-pontos/06_slope-chart",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "04_linhas/08_bump-chart/v1_posicao-de-seis-executivos",
+        "09_dispersao-e-bolhas/06_antes-e-depois-com-setas/v1_canais-entre-trimestres"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 15,
+      "alvo": "24_microvisuais-sparklines/01_sparkline-de-linha",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "01_cards-e-kpis/02_kpi-com-minigrafico-de-tendencia/v1_cpl-qualificado-com-sparkline-de-12-meses"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 16,
+      "alvo": "24_microvisuais-sparklines/02_sparkbar",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "01_cards-e-kpis/02_kpi-com-minigrafico-de-tendencia/v1_cpl-qualificado-com-sparkline-de-12-meses",
+        "03_colunas-verticais/01_colunas-simples/v1_leads-por-mes"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 17,
+      "alvo": "24_microvisuais-sparklines/03_pilula-de-variacao",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "01_cards-e-kpis/01_kpi-simples/v1_receita-com-variacao-contra-mes-anterior",
+        "01_cards-e-kpis/06_par-de-indicadores/v1_agendas-e-comparecimento-da-coorte"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 18,
+      "alvo": "24_microvisuais-sparklines/04_faixa-de-status-tracker",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/04_calendario-estilo-contribuicoes/v1_fechamentos-por-dia-em-2026",
+        "01_cards-e-kpis/07_grade-e-tira-de-kpis/v1_tira-de-abertura-do-comercial"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 19,
+      "alvo": "24_microvisuais-sparklines/05_medidor-de-cobertura-de-dado",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "13_progresso-meta-e-gauge/01_barra-de-progresso-linear/v1_receita-do-trimestre-contra-meta"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 20,
+      "alvo": "24_microvisuais-sparklines/06_marcador-em-trilho",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "13_progresso-meta-e-gauge/01_barra-de-progresso-linear/v1_receita-do-trimestre-contra-meta",
+        "13_progresso-meta-e-gauge/02_bullet-chart/v1_receita-com-faixas-de-estado"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 21,
+      "alvo": "24_microvisuais-sparklines/07_win-loss",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "03_colunas-verticais/05_colunas-positivo-e-negativo/v1_saldo-mensal-de-clientes",
+        "02_barras-horizontais/06_barras-divergentes/v1_variacao-de-cpl-por-plataforma"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 22,
+      "alvo": "19_cascata-waterfall/01_cascata-de-ponte",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "03_colunas-verticais/03_colunas-empilhadas/v1_leads-por-origem-com-total",
+        "03_colunas-verticais/05_colunas-positivo-e-negativo/v1_saldo-mensal-de-clientes"
+      ],
+      "llm": "sonnet",
+      "nota": "Produzir primeiro na família: os outros sete usam esta v1 como guia. Ver REC-8."
+    },
+    {
+      "ordem": 23,
+      "alvo": "19_cascata-waterfall/02_cascata-de-decomposicao",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "03_colunas-verticais/03_colunas-empilhadas/v1_leads-por-origem-com-total"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 24,
+      "alvo": "19_cascata-waterfall/03_cascata-temporal-de-saldo",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "03_colunas-verticais/05_colunas-positivo-e-negativo/v1_saldo-mensal-de-clientes"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 25,
+      "alvo": "19_cascata-waterfall/04_cascata-de-previsao",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "03_colunas-verticais/07_realizado-e-projecao/v1_receita-do-ano-com-projecao"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 26,
+      "alvo": "19_cascata-waterfall/05_cascata-com-faixa-de-cenario",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "13_progresso-meta-e-gauge/07_faixa-de-cenario-contra-meta/v1_receita-projetada-do-trimestre"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 27,
+      "alvo": "19_cascata-waterfall/06_cascata-comparativa",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "02_barras-horizontais/07_butterfly-piramide/v1_leads-e-oportunidades-por-porte"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 28,
+      "alvo": "19_cascata-waterfall/07_cascata-empilhada",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "03_colunas-verticais/03_colunas-empilhadas/v1_leads-por-origem-com-total"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 29,
+      "alvo": "19_cascata-waterfall/08_cascata-aninhada",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "12_hierarquia/02_treemap-aninhado/v1_pipeline-por-executivo-e-produto"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 30,
+      "alvo": "25_matriz-e-quadrantes/01_matriz-2x2-de-quadrantes",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/01_dispersao-simples/v1_ticket-contra-ciclo",
+        "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia/v1_investimento-contra-leads-qualificados"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 31,
+      "alvo": "25_matriz-e-quadrantes/02_matriz-agregada-de-celulas",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento",
+        "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v1_conversao-por-etapa-e-mes"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 32,
+      "alvo": "25_matriz-e-quadrantes/03_plano-com-iso-linhas",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/09_densidade-2d/v1_leads-binados-por-fit-e-engajamento",
+        "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia/v1_investimento-contra-leads-qualificados"
+      ],
+      "llm": "opus",
+      "nota": "Iso-linhas calculadas em TypeScript, sem biblioteca."
+    },
+    {
+      "ordem": 33,
+      "alvo": "25_matriz-e-quadrantes/04_matriz-de-cobertura-binaria",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/09_matriz-de-comparacao-com-status/v1_metas-do-ano-por-area",
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 34,
+      "alvo": "25_matriz-e-quadrantes/05_matriz-de-decisao-ponderada",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/04_scorecard-tabular/v1_resumo-mensal-do-marketing",
+        "14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais/v1_oportunidades-por-executivo-e-etapa"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 35,
+      "alvo": "25_matriz-e-quadrantes/06_matriz-de-risco",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento",
+        "14_tabelas-visuais/02_tabela-com-heatmap-nas-celulas/v1_conversao-por-etapa-e-mes"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 36,
+      "alvo": "25_matriz-e-quadrantes/07_matriz-raci",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/09_matriz-de-comparacao-com-status/v1_metas-do-ano-por-area",
+        "14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais/v1_oportunidades-por-executivo-e-etapa"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 37,
+      "alvo": "20_cronograma-e-linha-do-tempo/01_gantt",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "02_barras-horizontais/01_barras-simples-ordenadas/v1_receita-por-executivo",
+        "02_barras-horizontais/05_barras-contra-meta/v1_realizado-sobre-meta-sobreposta"
+      ],
+      "llm": "sonnet",
+      "nota": "Produzir primeiro na família. Barra flutuante por base invisível (REC-8)."
+    },
+    {
+      "ordem": 38,
+      "alvo": "20_cronograma-e-linha-do-tempo/02_linha-do-tempo-de-marcos",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "04_linhas/01_linha-simples/v1_receita-mensal-com-rotulo-final",
+        "09_dispersao-e-bolhas/05_dispersao-conectada/v1_trajetoria-de-uma-plataforma"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 39,
+      "alvo": "20_cronograma-e-linha-do-tempo/03_stepper-de-etapas",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "10_funil/07_funil-em-cartoes-de-etapa/v1_faixa-de-marketing-com-cpl",
+        "13_progresso-meta-e-gauge/01_barra-de-progresso-linear/v1_receita-do-trimestre-contra-meta"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 40,
+      "alvo": "20_cronograma-e-linha-do-tempo/04_jornada-por-entidade",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "20_cronograma-e-linha-do-tempo/01_gantt",
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 41,
+      "alvo": "20_cronograma-e-linha-do-tempo/05_swimlane-de-eventos",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/06_lasagna/v1_sla-diario-por-fila",
+        "20_cronograma-e-linha-do-tempo/01_gantt"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 42,
+      "alvo": "20_cronograma-e-linha-do-tempo/06_feed-vertical-de-eventos",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/08_tabela-com-linha-expansivel/v1_oportunidades-perdidas-com-historico",
+        "01_cards-e-kpis/08_card-de-excecao/v1_oportunidades-sem-movimento-ha-30-dias"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 43,
+      "alvo": "20_cronograma-e-linha-do-tempo/07_roadmap-por-horizonte",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/07_tabela-agrupada-com-subtotais/v1_pipeline-por-time-comercial",
+        "20_cronograma-e-linha-do-tempo/03_stepper-de-etapas"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 44,
+      "alvo": "20_cronograma-e-linha-do-tempo/08_linha-do-tempo-de-circulos",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora",
+        "20_cronograma-e-linha-do-tempo/02_linha-do-tempo-de-marcos"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 45,
+      "alvo": "20_cronograma-e-linha-do-tempo/09_gantt-com-dependencias",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "20_cronograma-e-linha-do-tempo/01_gantt",
+        "11_fluxo-sankey/01_sankey-simples/v1_origem-para-desfecho-dos-leads"
+      ],
+      "llm": "opus",
+      "nota": "Aresta de dependência carrega a relação: ACE-6 (3:1 nos dois temas)."
+    },
+    {
+      "ordem": 46,
+      "alvo": "22_unidades-waffle-e-pictograma/01_waffle",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "_render/exemplos/22_unidades-waffle-e-pictograma",
+        "01_cards-e-kpis/05_kpi-com-decomposicao/v1_receita-do-mes-entre-novos-e-carteira"
+      ],
+      "llm": "sonnet",
+      "nota": "Conflito registrado no README do catálogo: catálogo pede html-tailwind, molde é SVG puro; v3 planejada soma 900 div acima do teto de cerca de 400. Ver DECISOES_PENDENTES D8; até decisão, seguir o catálogo e reduzir a grade da v3."
+    },
+    {
+      "ordem": 47,
+      "alvo": "22_unidades-waffle-e-pictograma/02_waffle-em-barras",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "22_unidades-waffle-e-pictograma/01_waffle",
+        "02_barras-horizontais/03_barras-empilhadas/v1_pipeline-por-estagio"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 48,
+      "alvo": "22_unidades-waffle-e-pictograma/03_pictograma-isotype",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "22_unidades-waffle-e-pictograma/01_waffle"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 49,
+      "alvo": "22_unidades-waffle-e-pictograma/04_unit-chart-por-entidade",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "_render/exemplos/22_unidades-waffle-e-pictograma",
+        "22_unidades-waffle-e-pictograma/01_waffle"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 50,
+      "alvo": "22_unidades-waffle-e-pictograma/05_area-quadrada-proporcional",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/01_treemap/v1_receita-por-produto",
+        "22_unidades-waffle-e-pictograma/01_waffle"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 51,
+      "alvo": "22_unidades-waffle-e-pictograma/06_parlamento",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "07_rosca-e-radial/02_semi-rosca/v1_agendas-do-mes-por-resultado",
+        "_render/exemplos/22_unidades-waffle-e-pictograma"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 52,
+      "alvo": "18_radar/01_radar-simples",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "07_rosca-e-radial/04_barra-radial/v1_agendas-por-sdr-na-semana"
+      ],
+      "llm": "sonnet",
+      "nota": "RadarChart do Recharts: conferir a sonda de props no dossiê antes de usar PolarRadiusAxis."
+    },
+    {
+      "ordem": 53,
+      "alvo": "18_radar/02_radar-comparativo",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "18_radar/01_radar-simples",
+        "04_linhas/02_multiplas-series/v1_cpl-bruto-contra-qualificado"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 54,
+      "alvo": "18_radar/03_radar-em-pequenos-multiplos",
+      "abordagem": "recharts-nativo",
+      "versoes_planejadas": 4,
+      "guia": [
+        "18_radar/01_radar-simples",
+        "04_linhas/09_pequenos-multiplos-de-linha/v1_cpl-por-plataforma-em-quatro-paineis"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 55,
+      "alvo": "18_radar/04_radar-de-ciclo",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "18_radar/01_radar-simples",
+        "07_rosca-e-radial/06_coluna-radial/v1_entradas-por-hora-do-dia"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 56,
+      "alvo": "18_radar/05_stellar-chart",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "07_rosca-e-radial/07_rosa-de-nightingale/v1_investimento-de-midia-por-mes",
+        "07_rosca-e-radial/06_coluna-radial/v1_entradas-por-hora-do-dia"
+      ],
+      "llm": "opus",
+      "nota": "Área proporcional ao valor, nunca raio (GEO-3)."
+    },
+    {
+      "ordem": 57,
+      "alvo": "18_radar/06_coordenadas-paralelas",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "11_fluxo-sankey/04_parallel-sets/v1_origem-porte-e-desfecho-das-agendas",
+        "11_fluxo-sankey/03_alluvial/v1_temperatura-dos-leads-em-tres-meses"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 58,
+      "alvo": "21_texto-e-nuvem-de-palavras/01_frase-com-numero",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "01_cards-e-kpis/01_kpi-simples/v1_receita-com-variacao-contra-mes-anterior"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 59,
+      "alvo": "21_texto-e-nuvem-de-palavras/02_citacao-e-verbatim",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "01_cards-e-kpis/08_card-de-excecao/v1_oportunidades-sem-movimento-ha-30-dias",
+        "14_tabelas-visuais/08_tabela-com-linha-expansivel/v1_oportunidades-perdidas-com-historico"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 60,
+      "alvo": "21_texto-e-nuvem-de-palavras/03_concordancia-kwic",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "14_tabelas-visuais/01_tabela-com-barras-inline/v1_receita-por-executivo"
+      ],
+      "llm": "sonnet",
+      "nota": "Virtualização fica para a colagem (import não permitido); README do catálogo já registra."
+    },
+    {
+      "ordem": 61,
+      "alvo": "21_texto-e-nuvem-de-palavras/04_nuvem-de-palavras",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/08_circle-packing/v1_criativos-por-campanha"
+      ],
+      "llm": "opus",
+      "nota": "Empacotamento determinístico: nada de Math.random (DAD-3); posições calculadas ou fixas no data.ts."
+    },
+    {
+      "ordem": 62,
+      "alvo": "21_texto-e-nuvem-de-palavras/05_dispersao-lexical-no-tempo",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora",
+        "15_mapa-de-calor-e-calendario/01_heatmap-dia-da-semana-por-hora/v1_entradas-de-lead-por-dia-e-hora"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 63,
+      "alvo": "21_texto-e-nuvem-de-palavras/06_dispersao-de-termos",
+      "abordagem": "recharts-custom",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/01_dispersao-simples/v1_ticket-contra-ciclo",
+        "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia/v1_investimento-contra-leads-qualificados"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 64,
+      "alvo": "21_texto-e-nuvem-de-palavras/07_arvore-de-palavras",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/07_arvore-e-dendrograma/v1_estrutura-da-area-comercial"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 65,
+      "alvo": "23_mapas/01_tile-grid-por-uf",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento"
+      ],
+      "llm": "sonnet",
+      "nota": "Grade de UFs do Brasil não verificada em fonte pública (README do catálogo); declarar a vizinhança adotada no data.ts."
+    },
+    {
+      "ordem": 66,
+      "alvo": "23_mapas/02_coropletico-por-uf",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "23_mapas/01_tile-grid-por-uf",
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento"
+      ],
+      "llm": "opus",
+      "nota": "Sem geometria de UF nos imports permitidos: coroplético sobre tile ou hexágono, declarado no README."
+    },
+    {
+      "ordem": 67,
+      "alvo": "23_mapas/03_simbolos-proporcionais",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/03_bolhas/v1_campanhas-por-cpl-e-qualificacao",
+        "23_mapas/01_tile-grid-por-uf"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 68,
+      "alvo": "23_mapas/04_tile-map-com-mini-grafico",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "23_mapas/01_tile-grid-por-uf",
+        "01_cards-e-kpis/02_kpi-com-minigrafico-de-tendencia/v1_cpl-qualificado-com-sparkline-de-12-meses"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 69,
+      "alvo": "23_mapas/05_mapa-de-perimetro-e-localizador",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/05_perimetro-aninhado/v1_mercado-total-enderecavel-alcancavel",
+        "23_mapas/01_tile-grid-por-uf"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 70,
+      "alvo": "23_mapas/06_mapa-de-pontos",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "09_dispersao-e-bolhas/01_dispersao-simples/v1_ticket-contra-ciclo",
+        "23_mapas/01_tile-grid-por-uf"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 71,
+      "alvo": "26_mosaico-marimekko/01_marimekko-e-mosaico",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "10_funil/06_funil-empilhado-por-composicao/v1_origem-do-lead-ao-ganho-em-volume",
+        "02_barras-horizontais/04_barras-empilhadas-100/v1_mix-de-origem-por-segmento"
+      ],
+      "llm": "opus",
+      "nota": "Produzir primeiro na família. Falta par de tokens divergentes para resíduo (README do catálogo): usar --chart-1 contra neutro e declarar."
+    },
+    {
+      "ordem": 72,
+      "alvo": "26_mosaico-marimekko/02_bar-mekko-variwide",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "26_mosaico-marimekko/01_marimekko-e-mosaico"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 73,
+      "alvo": "26_mosaico-marimekko/03_spineplot",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "26_mosaico-marimekko/01_marimekko-e-mosaico",
+        "02_barras-horizontais/04_barras-empilhadas-100/v1_mix-de-origem-por-segmento"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 74,
+      "alvo": "27_rede-e-relacoes/01_matriz-de-adjacencia",
+      "abordagem": "html-tailwind",
+      "versoes_planejadas": 4,
+      "guia": [
+        "15_mapa-de-calor-e-calendario/07_matriz-de-transicao/v1_movimentos-entre-etapas-no-trimestre",
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica/v1_win-rate-por-executivo-e-segmento"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 75,
+      "alvo": "27_rede-e-relacoes/02_grafo-bipartido",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "11_fluxo-sankey/01_sankey-simples/v1_origem-para-desfecho-dos-leads",
+        "11_fluxo-sankey/04_parallel-sets/v1_origem-porte-e-desfecho-das-agendas"
+      ],
+      "llm": "opus",
+      "nota": "Aresta carrega a relação: ACE-6."
+    },
+    {
+      "ordem": 76,
+      "alvo": "27_rede-e-relacoes/03_grafo-em-grade",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "27_rede-e-relacoes/02_grafo-bipartido",
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica/v1_agendas-por-dia-e-hora"
+      ],
+      "llm": "sonnet",
+      "nota": ""
+    },
+    {
+      "ordem": 77,
+      "alvo": "27_rede-e-relacoes/04_grafo-de-rede-por-forcas",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/08_circle-packing/v1_criativos-por-campanha"
+      ],
+      "llm": "opus",
+      "nota": "Layout por forças precisa ser determinístico: iterações fixas com semente fixa, ou posições pré-calculadas no data.ts (DAD-3)."
+    },
+    {
+      "ordem": 78,
+      "alvo": "27_rede-e-relacoes/05_arc-diagram",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "11_fluxo-sankey/05_chord-direcional-de-fluxo/v1_repasses-entre-funcoes",
+        "27_rede-e-relacoes/02_grafo-bipartido"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 79,
+      "alvo": "27_rede-e-relacoes/06_grafo-radial-e-circular",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "12_hierarquia/07_arvore-e-dendrograma/v1_estrutura-da-area-comercial",
+        "11_fluxo-sankey/05_chord-direcional-de-fluxo/v1_repasses-entre-funcoes"
+      ],
+      "llm": "opus",
+      "nota": ""
+    },
+    {
+      "ordem": 80,
+      "alvo": "27_rede-e-relacoes/07_chord-simetrico",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "11_fluxo-sankey/05_chord-direcional-de-fluxo/v1_repasses-entre-funcoes"
+      ],
+      "llm": "sonnet",
+      "nota": "Irmão direto do chord direcional já aprovado."
+    },
+    {
+      "ordem": 81,
+      "alvo": "27_rede-e-relacoes/08_hierarchical-edge-bundling",
+      "abordagem": "svg-puro",
+      "versoes_planejadas": 4,
+      "guia": [
+        "27_rede-e-relacoes/06_grafo-radial-e-circular",
+        "12_hierarquia/07_arvore-e-dendrograma/v1_estrutura-da-area-comercial",
+        "11_fluxo-sankey/05_chord-direcional-de-fluxo/v1_repasses-entre-funcoes"
+      ],
+      "llm": "opus",
+      "nota": ""
+    }
+  ],
+  "lotes": [
+    {
+      "n": 1,
+      "tipo": "ferramenta",
+      "itens": [
+        "F0.1"
+      ],
+      "regra": "um agente visuais-ferramenta, sozinho; texto do item em PLAN.md, Fase 0"
+    },
+    {
+      "n": 2,
+      "tipo": "ferramenta",
+      "itens": [
+        "F0.2",
+        "F0.5"
+      ],
+      "regra": "dois agentes em sequência (F0.5 depende de F0.2), nenhum outro em voo"
+    },
+    {
+      "n": 3,
+      "tipo": "ferramenta",
+      "itens": [
+        "F0.3",
+        "F0.4"
+      ],
+      "regra": "dois agentes em sequência, nenhum outro em voo"
+    },
+    {
+      "n": 4,
+      "tipo": "corrigir e revisar",
+      "modelos": [
+        "09_dispersao-e-bolhas/03_bolhas",
+        "15_mapa-de-calor-e-calendario/08_heatmap-de-correlacao",
+        "16_distribuicao/03_strip-plot-e-beeswarm"
+      ],
+      "manuais": [
+        {
+          "alvo": "11_fluxo-sankey/01_sankey-simples",
+          "agente": "visuais-revisor",
+          "llm": "opus",
+          "prompt": "Modelo: 11_fluxo-sankey/01_sankey-simples. Versões a julgar: todas (revisao_desatualizada pela emenda ACE-6 de 2026-09-20; julgue o traço que carrega a relação, 3:1 nos dois temas)."
+        },
+        {
+          "alvo": "11_fluxo-sankey/02_sankey-multietapa",
+          "agente": "visuais-revisor",
+          "llm": "opus",
+          "prompt": "Modelo: 11_fluxo-sankey/02_sankey-multietapa. Versões a julgar: todas (revisao_desatualizada pela emenda ACE-6 de 2026-09-20; julgue o traço que carrega a relação, 3:1 nos dois temas)."
+        },
+        {
+          "alvo": "09_dispersao-e-bolhas/05_dispersao-conectada",
+          "agente": "visuais-revisor",
+          "llm": "opus",
+          "prompt": "Modelo: 09_dispersao-e-bolhas/05_dispersao-conectada. Versões a julgar: todas (revisao_desatualizada pela emenda ACE-6 de 2026-09-20; julgue o traço que carrega a relação, 3:1 nos dois temas)."
+        },
+        {
+          "alvo": "09_dispersao-e-bolhas/06_antes-e-depois-com-setas",
+          "agente": "visuais-revisor",
+          "llm": "opus",
+          "prompt": "Modelo: 09_dispersao-e-bolhas/06_antes-e-depois-com-setas. Versões a julgar: todas (revisao_desatualizada pela emenda ACE-6 de 2026-09-20; julgue o traço que carrega a relação, 3:1 nos dois temas)."
+        }
+      ],
+      "regra": "corretor e depois revisor por modelo reprovado; os quatro manuais vão direto ao revisor"
+    },
+    {
+      "n": 5,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "16_distribuicao/06_densidade-kde",
+        "16_distribuicao/07_violino-e-raincloud",
+        "16_distribuicao/08_ridgeline",
+        "16_distribuicao/09_dot-plot-empilhado",
+        "16_distribuicao/10_curva-de-lorenz",
+        "16_distribuicao/11_curva-de-sobrevivencia"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 6,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "16_distribuicao/12_meia-olho-e-desfechos",
+        "16_distribuicao/13_q-q-plot",
+        "17_comparacao-de-pontos/01_dot-plot-de-cleveland",
+        "17_comparacao-de-pontos/02_dot-plot-com-intervalo",
+        "17_comparacao-de-pontos/03_dumbbell",
+        "17_comparacao-de-pontos/04_range-plot"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 7,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "17_comparacao-de-pontos/05_lollipop",
+        "17_comparacao-de-pontos/06_slope-chart",
+        "24_microvisuais-sparklines/01_sparkline-de-linha",
+        "24_microvisuais-sparklines/02_sparkbar",
+        "24_microvisuais-sparklines/03_pilula-de-variacao",
+        "24_microvisuais-sparklines/04_faixa-de-status-tracker"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 8,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "24_microvisuais-sparklines/05_medidor-de-cobertura-de-dado",
+        "24_microvisuais-sparklines/06_marcador-em-trilho",
+        "24_microvisuais-sparklines/07_win-loss",
+        "19_cascata-waterfall/01_cascata-de-ponte",
+        "19_cascata-waterfall/02_cascata-de-decomposicao",
+        "19_cascata-waterfall/03_cascata-temporal-de-saldo"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 9,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "19_cascata-waterfall/04_cascata-de-previsao",
+        "19_cascata-waterfall/05_cascata-com-faixa-de-cenario",
+        "19_cascata-waterfall/06_cascata-comparativa",
+        "19_cascata-waterfall/07_cascata-empilhada",
+        "19_cascata-waterfall/08_cascata-aninhada",
+        "25_matriz-e-quadrantes/01_matriz-2x2-de-quadrantes"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 10,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "25_matriz-e-quadrantes/02_matriz-agregada-de-celulas",
+        "25_matriz-e-quadrantes/03_plano-com-iso-linhas",
+        "25_matriz-e-quadrantes/04_matriz-de-cobertura-binaria",
+        "25_matriz-e-quadrantes/05_matriz-de-decisao-ponderada",
+        "25_matriz-e-quadrantes/06_matriz-de-risco",
+        "25_matriz-e-quadrantes/07_matriz-raci"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 11,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "20_cronograma-e-linha-do-tempo/01_gantt",
+        "20_cronograma-e-linha-do-tempo/02_linha-do-tempo-de-marcos",
+        "20_cronograma-e-linha-do-tempo/03_stepper-de-etapas",
+        "20_cronograma-e-linha-do-tempo/04_jornada-por-entidade",
+        "20_cronograma-e-linha-do-tempo/05_swimlane-de-eventos",
+        "20_cronograma-e-linha-do-tempo/06_feed-vertical-de-eventos"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 12,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "20_cronograma-e-linha-do-tempo/07_roadmap-por-horizonte",
+        "20_cronograma-e-linha-do-tempo/08_linha-do-tempo-de-circulos",
+        "20_cronograma-e-linha-do-tempo/09_gantt-com-dependencias",
+        "22_unidades-waffle-e-pictograma/01_waffle",
+        "22_unidades-waffle-e-pictograma/02_waffle-em-barras",
+        "22_unidades-waffle-e-pictograma/03_pictograma-isotype"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 13,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "22_unidades-waffle-e-pictograma/04_unit-chart-por-entidade",
+        "22_unidades-waffle-e-pictograma/05_area-quadrada-proporcional",
+        "22_unidades-waffle-e-pictograma/06_parlamento",
+        "18_radar/01_radar-simples",
+        "18_radar/02_radar-comparativo",
+        "18_radar/03_radar-em-pequenos-multiplos"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 14,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "18_radar/04_radar-de-ciclo",
+        "18_radar/05_stellar-chart",
+        "18_radar/06_coordenadas-paralelas",
+        "21_texto-e-nuvem-de-palavras/01_frase-com-numero",
+        "21_texto-e-nuvem-de-palavras/02_citacao-e-verbatim",
+        "21_texto-e-nuvem-de-palavras/03_concordancia-kwic"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 15,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "21_texto-e-nuvem-de-palavras/04_nuvem-de-palavras",
+        "21_texto-e-nuvem-de-palavras/05_dispersao-lexical-no-tempo",
+        "21_texto-e-nuvem-de-palavras/06_dispersao-de-termos",
+        "21_texto-e-nuvem-de-palavras/07_arvore-de-palavras",
+        "23_mapas/01_tile-grid-por-uf",
+        "23_mapas/02_coropletico-por-uf"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 16,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "23_mapas/03_simbolos-proporcionais",
+        "23_mapas/04_tile-map-com-mini-grafico",
+        "23_mapas/05_mapa-de-perimetro-e-localizador",
+        "23_mapas/06_mapa-de-pontos",
+        "26_mosaico-marimekko/01_marimekko-e-mosaico",
+        "26_mosaico-marimekko/02_bar-mekko-variwide"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 17,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "26_mosaico-marimekko/03_spineplot",
+        "27_rede-e-relacoes/01_matriz-de-adjacencia",
+        "27_rede-e-relacoes/02_grafo-bipartido",
+        "27_rede-e-relacoes/03_grafo-em-grade",
+        "27_rede-e-relacoes/04_grafo-de-rede-por-forcas",
+        "27_rede-e-relacoes/05_arc-diagram"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 18,
+      "tipo": "produzir e revisar",
+      "modelos": [
+        "27_rede-e-relacoes/06_grafo-radial-e-circular",
+        "27_rede-e-relacoes/07_chord-simetrico",
+        "27_rede-e-relacoes/08_hierarchical-edge-bundling"
+      ],
+      "regra": "produtor, portão do check, depois revisor; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 19,
+      "tipo": "revisar",
+      "modelos": [
+        "02_barras-horizontais/09_bar-list",
+        "06_pizza/01_pizza-simples",
+        "06_pizza/02_pizza-com-detalhamento-de-outros",
+        "06_pizza/03_pizza-de-fracao-unica",
+        "06_pizza/04_pizzas-em-small-multiples",
+        "06_pizza/05_pizza-de-raio-variavel",
+        "06_pizza/06_pizzas-proporcionais-ao-total",
+        "07_rosca-e-radial/02_semi-rosca",
+        "07_rosca-e-radial/04_barra-radial",
+        "08_combinados-e-eixo-duplo/01_coluna-com-linha",
+        "08_combinados-e-eixo-duplo/02_eixo-duplo-com-dominios-calculados",
+        "08_combinados-e-eixo-duplo/03_paineis-alinhados"
+      ],
+      "regra": "revisor por modelo; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 20,
+      "tipo": "revisar",
+      "modelos": [
+        "08_combinados-e-eixo-duplo/04_pareto",
+        "08_combinados-e-eixo-duplo/05_colunas-com-linha-de-acumulado",
+        "08_combinados-e-eixo-duplo/06_real-contra-referencia-com-painel-de-variacao",
+        "09_dispersao-e-bolhas/01_dispersao-simples",
+        "09_dispersao-e-bolhas/02_dispersao-com-linha-de-referencia",
+        "09_dispersao-e-bolhas/04_bolhas-em-grade-categorica",
+        "09_dispersao-e-bolhas/05_dispersao-conectada",
+        "09_dispersao-e-bolhas/06_antes-e-depois-com-setas",
+        "09_dispersao-e-bolhas/07_dispersao-com-barras-de-erro",
+        "09_dispersao-e-bolhas/08_dispersao-com-marginais",
+        "09_dispersao-e-bolhas/09_densidade-2d",
+        "09_dispersao-e-bolhas/10_matriz-de-dispersao"
+      ],
+      "regra": "revisor por modelo; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 21,
+      "tipo": "revisar",
+      "modelos": [
+        "09_dispersao-e-bolhas/11_pequenos-multiplos-de-dispersao",
+        "10_funil/06_funil-empilhado-por-composicao",
+        "11_fluxo-sankey/01_sankey-simples",
+        "11_fluxo-sankey/02_sankey-multietapa",
+        "11_fluxo-sankey/03_alluvial",
+        "11_fluxo-sankey/04_parallel-sets",
+        "11_fluxo-sankey/05_chord-direcional-de-fluxo",
+        "12_hierarquia/01_treemap",
+        "12_hierarquia/02_treemap-aninhado",
+        "12_hierarquia/03_sunburst",
+        "12_hierarquia/04_arvore-de-indicadores",
+        "12_hierarquia/05_perimetro-aninhado"
+      ],
+      "regra": "revisor por modelo; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 22,
+      "tipo": "revisar",
+      "modelos": [
+        "12_hierarquia/06_icicle",
+        "12_hierarquia/07_arvore-e-dendrograma",
+        "12_hierarquia/08_circle-packing",
+        "13_progresso-meta-e-gauge/01_barra-de-progresso-linear",
+        "13_progresso-meta-e-gauge/03_progresso-radial-de-anel-unico",
+        "13_progresso-meta-e-gauge/04_aneis-concentricos",
+        "13_progresso-meta-e-gauge/05_gauge-de-arco-preenchido",
+        "14_tabelas-visuais/01_tabela-com-barras-inline",
+        "14_tabelas-visuais/04_scorecard-tabular",
+        "14_tabelas-visuais/05_ranking-com-variacao-de-posicao",
+        "14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais",
+        "14_tabelas-visuais/07_tabela-agrupada-com-subtotais"
+      ],
+      "regra": "revisor por modelo; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 23,
+      "tipo": "revisar",
+      "modelos": [
+        "14_tabelas-visuais/08_tabela-com-linha-expansivel",
+        "15_mapa-de-calor-e-calendario/01_heatmap-dia-da-semana-por-hora",
+        "15_mapa-de-calor-e-calendario/02_matriz-categorica",
+        "15_mapa-de-calor-e-calendario/03_cohort-em-triangulo",
+        "15_mapa-de-calor-e-calendario/04_calendario-estilo-contribuicoes",
+        "15_mapa-de-calor-e-calendario/05_calendario-mensal-em-grade",
+        "15_mapa-de-calor-e-calendario/06_lasagna",
+        "15_mapa-de-calor-e-calendario/07_matriz-de-transicao",
+        "16_distribuicao/01_histograma",
+        "16_distribuicao/02_box-plot",
+        "16_distribuicao/04_ecdf-e-histograma-acumulado",
+        "16_distribuicao/05_histograma-comparativo"
+      ],
+      "regra": "revisor por modelo; corretor uma vez se reprovar; pool 3"
+    },
+    {
+      "n": 24,
+      "tipo": "fechamento",
+      "itens": [
+        "Fase 3"
+      ],
+      "regra": "galeria, STATUS, README, commit, memória"
+    }
+  ]
+}

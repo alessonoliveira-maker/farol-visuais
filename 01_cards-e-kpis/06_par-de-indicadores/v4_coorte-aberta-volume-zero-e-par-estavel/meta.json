@@ -1,0 +1,15 @@
+{
+  "title": "Coorte aberta, volume zero e par estável",
+  "useCase": "Como o par se comporta quando a coorte ainda não fechou, quando não houve volume e quando nada mudou de verdade?",
+  "demonstrates": [
+    "Contraindicador marcado parcial e veredito suprimido até a coorte fechar",
+    "Volume zero com a taxa escrita como sem base, nunca 0% nem NaN",
+    "Os dois deltas dentro do corte: sem mudança relevante e sem cor semântica",
+    "Data de fechamento da coorte escrita com formatDate",
+    "Zero medido em tipografia cheia, com a queda contra o mês anterior",
+    "Estado do par calculado antes do desenho: aberto, sem base ou lido"
+  ],
+  "canvas": { "width": 1120, "height": 320 },
+  "frame": "stage",
+  "notes": "Mesmo canvas da v3, para as duas faixas terem cartões da mesma largura. A faixa de 960 x 260 não cabe a linha parcial com a data de fechamento."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Iniciativas de 2027 contra a linha de base",
+  "useCase": "Quanto de cada iniciativa do plano de 2027 está concluído e quais já passaram da data planejada.",
+  "demonstrates": [
+    "Shape customizado no Bar: trilho do planejado e preenchimento até o percentual concluído",
+    "Fim real convertido em pixels por useXAxisScale dentro do shape",
+    "Atraso escrito como +12 d e trecho em var(--negative) só nas atrasadas",
+    "Esperado até hoje calculado como (hoje − início) / (fim − início) contra o percentual",
+    "Linha sem plano desenha só o realizado tracejado com a etiqueta sem plano"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Atraso é a distância entre o fim planejado e a entrega, ou entre o fim planejado e hoje quando a iniciativa segue aberta; entregue antes do prazo escreve no prazo. O trilho é var(--surface-sunken) com contorno var(--line-strong), porque o fundo sozinho some no tema claro. Sem dica: concluído, esperado e atraso já estão em coluna na linha (DIC-1). Cada linha tem 25 px de banda e a barra fica com 24% de vão para sobrar 12 px de espessura (ESP-2, que pede de 30% a 40% de vão em barras mais folgadas)."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Agendas da semana acima da meta",
+  "useCase": "Quanto a semana passou da meta de 90 agendas quando inbound e outbound somam 104.",
+  "demonstrates": [
+    "RadialBarChart com endAngle 180 e um RadialBar por canal no mesmo stackId",
+    "PolarAngleAxis domínio de zero até o maior entre a soma e a meta, tique desligado",
+    "Meta marcada por um traço de referência sobre o arco, na posição real do valor",
+    "Soma acima da meta enche o arco sem passar dos 180 graus nem distorcer os canais",
+    "Centro 104 de 90 em Label do PolarRadiusAxis e selo com o excedente sobre a meta",
+    "cornerRadius só na ponta final do arco, nunca em cada gomo"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

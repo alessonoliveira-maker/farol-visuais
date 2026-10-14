@@ -1,0 +1,69 @@
+{
+  "slug": "02_pizza-com-detalhamento-de-outros",
+  "nome": "Pizza com detalhamento de Outros",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Pizza com as maiores partes e uma fatia Outros que se abre ao lado numa barra ou numa lista (bar of pie), ligada por conectores calculados a partir dos ângulos da fatia. A variante interativa é o drilldown: clicar numa fatia troca a pizza pelo detalhe dela, com trilha de navegação e o total do nível pai à vista.",
+  "quando_usar": [
+    "Cauda longa que precisa existir sem poluir a pizza: até 4 fatias maiores e Outros, com a composição aberta ao lado.",
+    "Quem lê precisa saber o que Outros contém sem trocar de tela: origens de lead menores, submotivos de perda.",
+    "Hierarquia rasa de dois níveis em que o nível pai é a mensagem e o nível filho é consulta."
+  ],
+  "quando_evitar": [
+    "A cauda é a mensagem: barra horizontal com top N (02).",
+    "Outros maior que a maior fatia: o teto está baixo ou a categoria está mal definida; rever o agrupamento antes.",
+    "Hierarquia com três níveis ou mais: sunburst (12/03).",
+    "Celular ou card estreito, onde os conectores quebram: pizza simples com legenda tabular (modelo 01)."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_origens-de-lead-com-outros-aberto",
+      "titulo": "Origens de lead com Outros aberto ao lado",
+      "caso_de_uso": "De onde vieram os leads do mês e o que compõe a fatia Outros, sem perder a noção do todo?",
+      "o_que_demonstra": [
+        "Pie principal e BarChart com layout vertical lado a lado em flex",
+        "Conectores em path num SVG sobreposto, a partir dos ângulos da fatia Outros",
+        "Outros em neutro, sempre a última fatia, com o total repetido no detalhe",
+        "Detalhe com valor escrito em cada barra e a mesma unidade da pizza"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_parceiro-cresceu-dentro-de-outros",
+      "titulo": "Parceiro cresceu dentro de Outros",
+      "caso_de_uso": "Qual origem pequena, escondida em Outros, mudou de patamar no mês e merece sair do agrupamento?",
+      "o_que_demonstra": [
+        "Barra do parceiro em --chart-1 no detalhe e as demais em neutro",
+        "Anotação com base nomeada: 18 leads contra 6 em jul/26",
+        "Pizza principal intacta: o destaque vive só no painel de detalhe",
+        "Rótulo com halo na cor da superfície quando cruza o conector"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_motivos-de-perda-com-drilldown",
+      "titulo": "Motivos de perda com drilldown por fatia",
+      "caso_de_uso": "Dentro do motivo preço, qual submotivo pesa mais nas perdas: acima do orçamento, taxa ou ticket mínimo?",
+      "o_que_demonstra": [
+        "Estado level em React que troca o data da pizza ao clicar na fatia",
+        "Trilha Todos > Preço clicável e total do nível pai sempre visível",
+        "Cor por categoria vinda do dado, sem seriesColor sobre array ordenada",
+        "Trilha e lista equivalente focáveis por teclado",
+        "Preview com o nível filho aberto, porque o render não captura clique"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_cauda-de-23-categorias",
+      "titulo": "Cauda longa de 23 campanhas abaixo de 1%",
+      "caso_de_uso": "Como mostrar 23 campanhas pequenas, cada uma abaixo de 1% dos leads, sem transformar o detalhe numa lista ilegível?",
+      "o_que_demonstra": [
+        "Detalhe com as 10 maiores da cauda e a linha final mais 13 abaixo de 0,5%",
+        "Sem rolagem: o que não cabe vira contagem escrita, nunca overflow escondido",
+        "Checagem em TypeScript de que Outros não passa da maior fatia",
+        "Nome de campanha inteiro, sem reticência, e lista completa na frase acessível"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

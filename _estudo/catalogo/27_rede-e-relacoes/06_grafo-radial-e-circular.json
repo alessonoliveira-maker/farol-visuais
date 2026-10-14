@@ -1,0 +1,75 @@
+{
+  "slug": "06_grafo-radial-e-circular",
+  "nome": "Grafo radial e circular",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Duas variações de posição fixa, sem simulação. A egocêntrica põe uma entidade no centro e as relações em anéis de distância: vizinhos de primeiro grau em ângulos iguais no raio r1 e de segundo grau no raio r2, próximos do vizinho que os liga. A circular põe todos os nós no perímetro, ordenados por categoria e, dentro dela, por grau, e desenha as ligações por dentro como curva quadrática com o ponto de controle no centro (M xi,yi Q cx,cy xj,yj), o que evita o emaranhado das retas. Absorve o chord sem fita (27#7): a mesma circular com linhas finas de espessura única, para ler existência de ligação e não quanto. Rótulos da metade esquerda giram 180 graus e alinham à direita; o segundo grau que transborda o anel vira mais N escrito.",
+  "quando_usar": [
+    "Rede centrada numa entidade: parceiro de indicação, cliente âncora, executivo e sua carteira",
+    "Todos os nós num círculo agrupados por categoria, com até cerca de 24 nós rotulados",
+    "Relação binária (existe ou não) em que o peso não importa, na forma de chord sem fita",
+    "Cartão quadrado em que o grafo livre mudaria de forma e o arc diagram não cabe",
+    "Mostrar alcance de primeiro e segundo grau de uma entidade"
+  ],
+  "quando_evitar": [
+    "Muitas ligações longas cruzando o centro: use a matriz de adjacência (27/01)",
+    "O peso da relação é a mensagem: use o chord simétrico (27/07)",
+    "As folhas pertencem a uma hierarquia e as ligações podem ser agrupadas: use o edge bundling (27/08)",
+    "Pertencimento de pai para filho em anéis: use a árvore radial (12/07_arvore-e-dendrograma)",
+    "Tela de 400 px com mais de 12 nós: ofereça a lista ordenada de pares"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_egocentrica-parceiro-de-indicacao",
+      "titulo": "Alcance do parceiro de indicação P07",
+      "caso_de_uso": "Comercial: quantas contas o parceiro fictício P07 indicou e quantas essas contas indicaram depois, em dois anéis.",
+      "o_que_demonstra": [
+        "Nó central em var(--chart-1) com rótulo em peso 700, distinto do resto",
+        "9 contas no primeiro anel em ângulos iguais e 14 no segundo junto de quem as ligou",
+        "Anéis de referência em var(--line-subtle) com o grau escrito no anel",
+        "Contagem por anel escrita fora do círculo, como 9 diretas e 14 indiretas",
+        "Rótulos girados pelo ângulo e virados 180 graus na metade esquerda"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_circular-coocorrencia-de-origens",
+      "titulo": "Origens na mesma jornada, em círculo",
+      "caso_de_uso": "Marketing: com quais origens a origem selecionada aparece na mesma jornada, entre 12 origens fictícias agrupadas por tipo.",
+      "o_que_demonstra": [
+        "12 origens em três arcos de grupo (pago, orgânico, relacionamento) com vão entre grupos",
+        "Ligação em curva quadrática com controle no centro, sem reta pelo meio",
+        "Origem selecionada por highlightId acende as ligações em var(--chart-1)",
+        "Ligações fora de foco em var(--line-strong) com opacidade baixa",
+        "Nome do grupo escrito fora do círculo, no meio do arco do grupo"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_equipes-que-compartilham-oportunidades",
+      "titulo": "Equipes que já dividiram oportunidades",
+      "caso_de_uso": "Comercial: quais das 16 equipes internas fictícias já compartilharam oportunidades em 2026 e quais nunca dividiram nenhuma.",
+      "o_que_demonstra": [
+        "Chord sem fita: linhas curvas finas de espessura única, leitura de existência",
+        "Número de parceiras de cada equipe escrito junto do rótulo",
+        "Equipe isolada no círculo em contorno var(--text-muted) com 0 relações escrito",
+        "Nota escrita de que a espessura não codifica quantidade",
+        "Ordem por categoria e grau para os grupos não se espalharem pelo círculo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_parceiro-sem-indicacao-no-periodo",
+      "titulo": "Parceiro sem indicação no trimestre",
+      "caso_de_uso": "Comercial: o que mostrar quando o parceiro fictício P12 não indicou ninguém em 2026-T3, sem parecer erro de carga.",
+      "o_que_demonstra": [
+        "Estado vazio com ícone lucide Filter e frase sem indicações em 2026-T3",
+        "Histórico dos trimestres anteriores em var(--line-strong), rotulado como anterior",
+        "Nó central mantido, sem anel atual, para a ausência ter lugar",
+        "Diferença escrita entre sem indicação medida e parceiro sem dado carregado",
+        "Frase acessível com a última indicação registrada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

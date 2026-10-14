@@ -1,0 +1,14 @@
+{
+  "title": "Ticket médio e receita por origem",
+  "useCase": "Comercial, 2026 até agosto: qual origem traz ticket alto com poucas vitórias e qual sustenta a receita reconhecida no volume?",
+  "demonstrates": [
+    "Sete origens com largura pelas vitórias e altura pelo ticket médio",
+    "Área lida como receita e escrita por formatCurrencyCompact em cada coluna",
+    "Coluna alta e estreita com anotação: ticket alto em poucas vitórias",
+    "Rótulos das colunas finas puxados para cima com linha guia, sem sobreposição",
+    "Linha do ticket médio geral em tracejado 3 3 de --text-muted"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo como no catálogo. A conta da GEO-1 fecha: corpo de 894 por 281,5 px com o caso de uso em uma linha, 24 da linha de leitura e 257 do SVG, de viewBox 894 por 257 em escala 1 (GEO-18); 34 de margem superior para o rótulo puxado da coluna mais alta, 8 de vão, duas linhas de nome, a linha de vitórias e a de rodapé a 14 px cada, 4 de folga e 2 de base, sobrando 153 px de plotagem; 84 px à direita ficam para o rótulo do ticket médio. Desvios do catálogo. Primeiro: a etiqueta --prov-medido no total de receita não é desenhada, porque o Chart não desenha etiqueta de procedência (ANO-6): ela é do VisualCard, que a coloca uma vez por cartão. Segundo: a linha do ticket médio só passa por fora das colunas mais altas que ela (TOK-10), já que nenhum token contrasta ao mesmo tempo com o cartão e com a coluna. Terceiro: a anotação de ticket alto em poucas vitórias é a terceira linha do rótulo puxado da coluna mais alta, calculada do dado (menos de 5% da largura), em vez de texto solto. Quarto: o neutro --line-strong como preenchimento mede 1,8:1 contra o cartão, e a guarda de contraste de marca avisa; o valor está escrito dentro ou junto de cada coluna (ACE-3). Os vãos de 2 px saem antes da partilha de largura (GEO-16), então a área de cada coluna é exatamente proporcional à receita. Três colunas ficam finas demais para o próprio texto e o rótulo delas sobe, da direita para a esquerda, até não encostar em outro rótulo (ROT-9)."
+}

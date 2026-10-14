@@ -1,0 +1,13 @@
+{
+  "title": "Custo mensal em três camadas",
+  "useCase": "Mostrar como o custo de cada mês se reparte entre mídia, equipe e estrutura, e em que meses a mídia pesa mais.",
+  "demonstrates": [
+    "Setores empilhados com raio acumulado pela raiz quadrada do total, não da camada isolada",
+    "Teto fixo com o corte declarado: tarja de quebra, marca fora do anel e valor escrito",
+    "Desenho em SVG puro com arcPath próprio, necessário porque o Pie do Recharts não empilha",
+    "Três camadas em slots de cor 1, 3 e 6, com separador entre faixas",
+    "Legenda acima com amostra e total anual de cada camada"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

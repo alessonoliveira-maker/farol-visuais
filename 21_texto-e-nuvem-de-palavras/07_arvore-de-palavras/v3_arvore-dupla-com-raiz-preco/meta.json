@@ -1,0 +1,13 @@
+{
+  "title": "Árvore dupla com raiz preço",
+  "useCase": "Comercial: o que se escreve antes e depois de preço em 500 anotações fictícias de oportunidades perdidas em 2026.",
+  "demonstrates": [
+    "Prefixo à esquerda e sufixo à direita da mesma raiz, com larguras medidas",
+    "Chave sem acento e em minúsculas; exibida a forma original mais frequente",
+    "Poda por contagem mínima de 8 com contador de ramos omitidos",
+    "Clique numa palavra recomputa a trie com ela como raiz"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do preset largo: corpo de 894 x 281,5 px com o caso de uso em uma linha (113 caracteres). Linha de leitura 24 px, desenho 217 px (10 folhas do lado do sufixo, de 20 a 24 px cada, mais 12 px de respiro) e nota 24 px somam 265 px. Para caber no preset, o piso da palavra é 12 px e a linha da folha 20 px, contra 13 e 22 px da v1 e da v2. O viewBox tem a largura do corpo, 894 px, para a escala sair 1 (GEO-18). Profundidade de 3 palavras de cada lado da raiz. O clique numa palavra e o botão de voltar não aparecem no preview, que é estático; a dica da raiz lista as três grafias que a chave juntou. TIP-2 como na v1: o tamanho da palavra é a marca. Peso 700 só na raiz."
+}

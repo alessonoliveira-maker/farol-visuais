@@ -1,0 +1,14 @@
+{
+  "title": "Leads do mês contra o mês anterior",
+  "useCase": "Quais origens cresceram contra o mês anterior, incluindo a origem lançada neste mês e sem base?",
+  "demonstrates": [
+    "Dois Bar horizontais por linha: atual em --chart-1, anterior em --line-strong",
+    "Máximo calculado sobre as duas séries de todas as linhas, na mesma escala",
+    "Ordem fixa: atual em cima e referência embaixo, com o valor atual em peso maior",
+    "Origem nova sem barra de referência e o texto sem mês anterior medido para comparar",
+    "Ausência como null fora do desenho, nunca barra zerada"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Corpo do canvas card com moldura card: 574 x 225 a 241,5 px. Seis linhas de 24 px mais 8 px de vão, mais o cabeçalho de 11 px: perto de 210 px. A célula de barras tem uma só categoria e duas barras de 9 px com vão de 4 px, por isso barCategoryGap é 0 (o respiro entre linhas é o vão de 8 px do próprio grid). A legenda é texto (em cima ago/26, embaixo jul/26) e não amostra de cor, porque --line-strong mede 1,79:1 contra o cartão (TOK-5) e uma amostra não tem valor escrito; nas barras ele vale porque o valor do mês anterior está escrito ao lado."
+}

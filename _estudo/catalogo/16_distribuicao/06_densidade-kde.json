@@ -1,0 +1,70 @@
+{
+  "slug": "06_densidade-kde",
+  "nome": "Densidade (KDE)",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Curva suave estimada a partir dos pontos, com kernel gaussiano calculado em TypeScript sobre uma grade de uns 120 valores e banda de Silverman comum a todos os grupos. Responde a mesma pergunta do histograma sem o degrau do bin, trocando a largura do bin pela banda, que precisa aparecer no rodapé. Sai do AreaChart nativo. Toda curva é recortada no mínimo e no máximo observados e em zero quando a métrica não pode ser negativa. Absorve densidades sobrepostas e a faixa de densidade em cor como versões.",
+  "quando_usar": [
+    "Forma suave de uma medida com amostra grande, a partir de umas 100 observações por curva.",
+    "Sobrepor 2 a 4 grupos de forma parecida sem o borrão das barras sobrepostas.",
+    "Muitas distribuições empilhadas em pouco espaço, em tiras com a densidade na cor.",
+    "Marcar uma faixa de decisão e dizer que parte da área cai dentro dela."
+  ],
+  "quando_evitar": [
+    "Menos de 30 observações: a curva inventa forma; strip ou beeswarm (03).",
+    "Métrica com massa num valor, como 41% de zeros: histograma com o bin do zero separado (01).",
+    "Grupos com n muito diferente e densidade normalizada: declarar a escala ou usar histograma comparativo (05).",
+    "Muitos grupos com ordem natural, como mês a mês: ridgeline (08).",
+    "Densidade de duas variáveis ao mesmo tempo: hexbin e contorno na família 09 (modelo 09)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-de-fechamento",
+      "titulo": "Densidade do ticket de fechamento",
+      "caso_de_uso": "Onde se concentra o ticket dos 208 negócios ganhos no ano, e a curva tem mais de um pico?",
+      "o_que_demonstra": [
+        "Kernel gaussiano sobre grade de 120 pontos e banda pela regra de Silverman",
+        "Grade recortada no observado e cortada em zero, métrica declarada não negativa",
+        "Area monotone com preenchimento leve e mediana em ReferenceLine",
+        "Eixo Y omitido com nota de altura relativa e rodapé n 208 · banda R$ 8,2 mil"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cpl-de-dois-canais-sobrepostos",
+      "titulo": "CPL de busca contra social em densidades",
+      "caso_de_uso": "Em que faixa de CPL os canais de busca e social custam igual, e qual tem a cauda mais cara?",
+      "o_que_demonstra": [
+        "Duas Area sem stackId com fillOpacity de 0,25 e contorno forte",
+        "Densidades calculadas sobre a mesma grade de x e com a mesma banda",
+        "Região de cruzamento hachurada com o rótulo R$ 180 a R$ 240",
+        "Legenda com o n de cada canal e a normalização declarada"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_ciclo-por-executivo-em-faixas-de-cor",
+      "titulo": "Ciclo por executivo em faixas de densidade",
+      "caso_de_uso": "Como comparar a forma do ciclo de 12 executivos num espaço onde caberiam só três curvas?",
+      "o_que_demonstra": [
+        "Tiras em SVG com um rect por célula da grade e cor sequencial por token",
+        "Legenda da escala e nota: cor é densidade dentro do grupo, não volume",
+        "Mediana como traço claro sobre cada tira e n ao lado do nome",
+        "Tira com n abaixo de 15 hachurada e rotulada amostra pequena"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_amostra-curta-cai-para-pontos",
+      "titulo": "Densidade que recusa amostra curta",
+      "caso_de_uso": "O que a peça mostra quando o filtro deixa só 22 negócios, ou uma plataforma com 9 campanhas?",
+      "o_que_demonstra": [
+        "Regra de piso: abaixo de 30 observações a curva vira strip de pontos",
+        "Nota n 22: pontos individuais, sem curva, no lugar do rodapé de banda",
+        "Grupo minúsculo em strip na mesma régua das curvas dos grupos grandes",
+        "Abaixo de 5 observações, só o valor em texto"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

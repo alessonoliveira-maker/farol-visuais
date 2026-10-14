@@ -1,0 +1,121 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "03_stepper-de-etapas",
+  "versoes": {
+    "v1_etapas-do-handoff": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: vão desigual em volta do marcador de 28 px, linha de leitura no rodapé, frase acessível sem flexão de número, moldura stage.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:23.865Z",
+      "impressao": "193e161081f338332a27d1be5dd5deeb967a12fa",
+      "arquivos": {
+        "Chart.tsx": "6f130afb8a6fb979853dc641c8356aa6c4590d64",
+        "data.ts": "a657dbbf46facd7510b48207f4c391b74656a558",
+        "meta.json": "856cb85583d253bff5a2d52657b066f4d6f1bc6b"
+      }
+    },
+    "v2_tempo-entre-passos-com-sla": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: número fora de algarismo tabular em três frases corridas (TIP-1), frase acessível não nomeia a passagem que estourou, alerta distinto do conector normal só por ícone e texto (TOK-9).",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:24.396Z",
+      "impressao": "1cbaddbf17b8768b89e8b7ffb95eef87bc1d128f",
+      "arquivos": {
+        "Chart.tsx": "2b53145ccd526dd593394871213e6d17730d8fbd",
+        "data.ts": "a3921e20180a42fb881f79a3035de870151bc12a",
+        "meta.json": "4d46888934794fc6abae9ea5f073d3c52cf12c35"
+      }
+    },
+    "v3_stepper-compacto-em-tabela": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante, julgado pelo arquivo atual. Medido nos dois temas: linha sem etapa sem marcador nenhum e com formatUnavailable (EST-2); marcador da mesma etapa na mesma coluna de pixel nas 13 linhas, desvio zero (EIX-12); pior contraste 5,05:1. Observações no README: linha de leitura não avisa a linha sem etapa no fim e não tem aria-hidden, anel atual de 14 px, Space Grotesk em peso 400 na coluna de dias, folga de 2 px nas colunas Código e Conta.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:28:30.655Z",
+      "impressao": "696b4a077e499a6133037ead53de46f326d4844e",
+      "arquivos": {
+        "Chart.tsx": "e7c69a61001776d70b48a60b0fc404670b119094",
+        "data.ts": "731db28dc8b79510ebcf3cd4a8d07c63fb6291a6",
+        "meta.json": "9557a23cf8d4558733386bfbcf39f45314f52887"
+      }
+    },
+    "v4_etapa-pulada-retorno-e-bloqueio": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: ponta da seta sai 4,75 px fora da perna só no preview.svg, por defeito do serializador (página viva certa); empilhamento vertical conferido só pelo código; data fora de algarismo tabular na linha de leitura.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:25.356Z",
+      "impressao": "61916a17cc74148c743484267323cff97738b463",
+      "arquivos": {
+        "Chart.tsx": "a5eb9fcbbea726606d5c32c0fcb7e52517788ce8",
+        "data.ts": "884ec4ed919b59fbb23bd849922dea7960b88b1d",
+        "meta.json": "a4e7b6028ee4c7e78da7376ae2a552c6946c18ff"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_etapas-do-handoff",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: vão desigual em volta do marcador de 28 px, linha de leitura no rodapé, frase acessível sem flexão de número, moldura stage.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:23.865Z",
+      "impressao": "193e161081f338332a27d1be5dd5deeb967a12fa",
+      "arquivos": {
+        "Chart.tsx": "6f130afb8a6fb979853dc641c8356aa6c4590d64",
+        "data.ts": "a657dbbf46facd7510b48207f4c391b74656a558",
+        "meta.json": "856cb85583d253bff5a2d52657b066f4d6f1bc6b"
+      }
+    },
+    {
+      "versao": "v2_tempo-entre-passos-com-sla",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: número fora de algarismo tabular em três frases corridas (TIP-1), frase acessível não nomeia a passagem que estourou, alerta distinto do conector normal só por ícone e texto (TOK-9).",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:24.396Z",
+      "impressao": "1cbaddbf17b8768b89e8b7ffb95eef87bc1d128f",
+      "arquivos": {
+        "Chart.tsx": "2b53145ccd526dd593394871213e6d17730d8fbd",
+        "data.ts": "a3921e20180a42fb881f79a3035de870151bc12a",
+        "meta.json": "4d46888934794fc6abae9ea5f073d3c52cf12c35"
+      }
+    },
+    {
+      "versao": "v3_stepper-compacto-em-tabela",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EST-2 e DAD-2: a linha com etapa nula desenha cinco marcadores de etapa futura, que a legenda lê como nenhuma etapa feita; não desenhar marcador de estado quando a etapa é desconhecida. Pergunta 29, EIX-12: o marcador da mesma etapa cai em três colunas de pixel conforme o estado, 6 px de desvio num passo de 14 px; pôr cada marcador numa célula fixa de 14 px com a marca centrada. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__03_stepper-de-etapas_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:24.892Z",
+      "impressao": "428da8e9d22a8b647e79c919826562da3ceb8171",
+      "arquivos": {
+        "Chart.tsx": "20bd2e41ae84e27c05c604deb71764cbb1969139",
+        "data.ts": "731db28dc8b79510ebcf3cd4a8d07c63fb6291a6",
+        "meta.json": "9557a23cf8d4558733386bfbcf39f45314f52887"
+      }
+    },
+    {
+      "versao": "v4_etapa-pulada-retorno-e-bloqueio",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante. Observações no README: ponta da seta sai 4,75 px fora da perna só no preview.svg, por defeito do serializador (página viva certa); empilhamento vertical conferido só pelo código; data fora de algarismo tabular na linha de leitura.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:19:25.356Z",
+      "impressao": "61916a17cc74148c743484267323cff97738b463",
+      "arquivos": {
+        "Chart.tsx": "a5eb9fcbbea726606d5c32c0fcb7e52517788ce8",
+        "data.ts": "884ec4ed919b59fbb23bd849922dea7960b88b1d",
+        "meta.json": "a4e7b6028ee4c7e78da7376ae2a552c6946c18ff"
+      }
+    },
+    {
+      "versao": "v3_stepper-compacto-em-tabela",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante, julgado pelo arquivo atual. Medido nos dois temas: linha sem etapa sem marcador nenhum e com formatUnavailable (EST-2); marcador da mesma etapa na mesma coluna de pixel nas 13 linhas, desvio zero (EIX-12); pior contraste 5,05:1. Observações no README: linha de leitura não avisa a linha sem etapa no fim e não tem aria-hidden, anel atual de 14 px, Space Grotesk em peso 400 na coluna de dias, folga de 2 px nas colunas Código e Conta.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:28:30.655Z",
+      "impressao": "696b4a077e499a6133037ead53de46f326d4844e",
+      "arquivos": {
+        "Chart.tsx": "e7c69a61001776d70b48a60b0fc404670b119094",
+        "data.ts": "731db28dc8b79510ebcf3cd4a8d07c63fb6291a6",
+        "meta.json": "9557a23cf8d4558733386bfbcf39f45314f52887"
+      }
+    }
+  ]
+}

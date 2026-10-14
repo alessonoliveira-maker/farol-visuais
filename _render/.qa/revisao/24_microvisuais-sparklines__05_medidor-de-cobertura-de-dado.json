@@ -1,0 +1,108 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "05_medidor-de-cobertura-de-dado",
+  "versoes": {
+    "v1_chip-de-cobertura-no-cpl-qualificado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: R$ 48 por formatCurrencyCompact, trilho de 40 px com 23 px preenchidos (57,5% para 58,1% do dado), denominador 58,1% (720 de 1.240) e limiar de 50% escritos, todo texto acima de 5:1 contra o palco e contra o selo. Observações no README: frase acessível sem o valor do CPL e com 1240 cru (ACE-1, DAD-5), 58% e 58,1% lado a lado, stage sem cartão próprio (17.7), demonstrates do meta cita o ramo abaixo do limiar que o dado padrão não desenha, TIP-1 em frase corrida, fidelidade 0,74 e 0,78 por cento por deslocamento do subtítulo da moldura (pergunta 21).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:39.651Z",
+      "impressao": "36874b0266029ac8e48dcbd4c2dda9fbc3745201",
+      "arquivos": {
+        "Chart.tsx": "a04372fe62f136d55ed3befa3a4e6d92ee1a0973",
+        "data.ts": "01a941ee363d2afb2ae6990d570ce2f0eb03a777",
+        "meta.json": "a9194c996f0f0f587cbd3de5bdd56666bb9173d0"
+      }
+    },
+    "v2_telefone-em-tres-segmentos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: três segmentos na ordem fixa medindo 341, 74 e 155 px com vãos de 2 px, 60, 13 e 27 somam 100 pelo maior resto e 2.318, 502 e 1.040 somam os 3.860 do cabeçalho, ausente em contorno --text-muted a 5,2:1 e 5,4:1, toda parte com nome e número sem interação (ROT-10), fidelidade 0,02 e 0,04 por cento. Observações no README: estado fora da lista escreve sem dado ao lado de 0% (EST-2, mora no ramo), percentual da linha de leitura por String e não por formatPercent, contorno do ausente 1,4 px fora da proporção, amostra redonda para marca retangular (ROT-4), vazio com Unplug e não Filter (EST-1), TIP-1 em frase corrida.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:40.193Z",
+      "impressao": "642caa859cef083de31e6f59e766f336cf482fff",
+      "arquivos": {
+        "Chart.tsx": "3f4b2c098afc0d5f7190266224498e96bc2db20b",
+        "data.ts": "441108adcced4ad657ec223482c8b2b8e388dc37",
+        "meta.json": "65d2c572e465ec53dcc09f6b78d8f1ff9ced1817"
+      }
+    },
+    "v3_origens-com-cpl-rebaixado-por-cobertura": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 14 origens na ordem declarada no cabeçalho, 7 abaixo de 50% conferidas contra o data.ts (Telefone ativo em 50% exatos fica normal), microbarras de 32 px a até 1 px do dado, CPL rebaixado em --text-muted a 5,2:1 e 5,4:1 com TriangleAlert, zero medido com trilho vazio e 0%, CPL sem registro por formatUnavailable, menor vão entre textos 23,5 px. Observações no README: indisponível com TriangleAlert e sem Unplug (EST-2), ramo de origem sem leads transborda a caixa de 36 px, rebaixado sem texto para leitor de tela na célula (ACE-2), trilho resolve 3 pontos por pixel, vazio com Unplug e não Filter (EST-1), fidelidade 0,70 e 0,76 por cento, sendo 0,40 e 0,42 no corpo (pergunta 21).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:46.259Z",
+      "impressao": "ce4e5a9b6133b571dbb6b6f2afa565f625360f46",
+      "arquivos": {
+        "Chart.tsx": "e06b38017dc51f65759f457c592672ec32fc0a35",
+        "data.ts": "591c14cc282fc08831dda33efa47b41f8632bd17",
+        "meta.json": "51961564003a19089455717e8206f746cbaf96aa"
+      }
+    },
+    "v4_salto-de-cobertura-por-mudanca-de-coleta": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 12 colunas com base no zero e altura a até 1 px do dado em escala de 0 a 100% (20 px para 21%, 58 px para 61%), salto de 23% para 61% com guia tracejada e data por formatDate, queda de 1,0 p.p. contra 62% em ago/26 com sinal tipográfico e base na linha (NUM-3, NUM-4, DAD-4), tiques com 10 px ou mais de vão, fidelidade 0,27 e 0,40 por cento. Observações no README: colunas 4 px acima da linha de base, mudança no dia 15 com junho inteiro já em 61%, redação do rodapé, fallback da frase que troca nulo por zero (EST-1b, mora no ramo), mês sem leads sem palavra, destaque em 24 px, vazio com Unplug e não Filter (EST-1), TIP-1 em frase corrida.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:46.737Z",
+      "impressao": "f1b422f89507a9de55052f9315272bba14c8a4f4",
+      "arquivos": {
+        "Chart.tsx": "8ea12d3649d4fd9e313ed8e207b413d4daf213c2",
+        "data.ts": "e855b5650066d91b03ca32a628e990ea88591cd6",
+        "meta.json": "b50bf312eb52ff226a9be89a1c7508bc4205548b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_chip-de-cobertura-no-cpl-qualificado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: R$ 48 por formatCurrencyCompact, trilho de 40 px com 23 px preenchidos (57,5% para 58,1% do dado), denominador 58,1% (720 de 1.240) e limiar de 50% escritos, todo texto acima de 5:1 contra o palco e contra o selo. Observações no README: frase acessível sem o valor do CPL e com 1240 cru (ACE-1, DAD-5), 58% e 58,1% lado a lado, stage sem cartão próprio (17.7), demonstrates do meta cita o ramo abaixo do limiar que o dado padrão não desenha, TIP-1 em frase corrida, fidelidade 0,74 e 0,78 por cento por deslocamento do subtítulo da moldura (pergunta 21).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:39.651Z",
+      "impressao": "36874b0266029ac8e48dcbd4c2dda9fbc3745201",
+      "arquivos": {
+        "Chart.tsx": "a04372fe62f136d55ed3befa3a4e6d92ee1a0973",
+        "data.ts": "01a941ee363d2afb2ae6990d570ce2f0eb03a777",
+        "meta.json": "a9194c996f0f0f587cbd3de5bdd56666bb9173d0"
+      }
+    },
+    {
+      "versao": "v2_telefone-em-tres-segmentos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: três segmentos na ordem fixa medindo 341, 74 e 155 px com vãos de 2 px, 60, 13 e 27 somam 100 pelo maior resto e 2.318, 502 e 1.040 somam os 3.860 do cabeçalho, ausente em contorno --text-muted a 5,2:1 e 5,4:1, toda parte com nome e número sem interação (ROT-10), fidelidade 0,02 e 0,04 por cento. Observações no README: estado fora da lista escreve sem dado ao lado de 0% (EST-2, mora no ramo), percentual da linha de leitura por String e não por formatPercent, contorno do ausente 1,4 px fora da proporção, amostra redonda para marca retangular (ROT-4), vazio com Unplug e não Filter (EST-1), TIP-1 em frase corrida.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:40.193Z",
+      "impressao": "642caa859cef083de31e6f59e766f336cf482fff",
+      "arquivos": {
+        "Chart.tsx": "3f4b2c098afc0d5f7190266224498e96bc2db20b",
+        "data.ts": "441108adcced4ad657ec223482c8b2b8e388dc37",
+        "meta.json": "65d2c572e465ec53dcc09f6b78d8f1ff9ced1817"
+      }
+    },
+    {
+      "versao": "v3_origens-com-cpl-rebaixado-por-cobertura",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 14 origens na ordem declarada no cabeçalho, 7 abaixo de 50% conferidas contra o data.ts (Telefone ativo em 50% exatos fica normal), microbarras de 32 px a até 1 px do dado, CPL rebaixado em --text-muted a 5,2:1 e 5,4:1 com TriangleAlert, zero medido com trilho vazio e 0%, CPL sem registro por formatUnavailable, menor vão entre textos 23,5 px. Observações no README: indisponível com TriangleAlert e sem Unplug (EST-2), ramo de origem sem leads transborda a caixa de 36 px, rebaixado sem texto para leitor de tela na célula (ACE-2), trilho resolve 3 pontos por pixel, vazio com Unplug e não Filter (EST-1), fidelidade 0,70 e 0,76 por cento, sendo 0,40 e 0,42 no corpo (pergunta 21).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:46.259Z",
+      "impressao": "ce4e5a9b6133b571dbb6b6f2afa565f625360f46",
+      "arquivos": {
+        "Chart.tsx": "e06b38017dc51f65759f457c592672ec32fc0a35",
+        "data.ts": "591c14cc282fc08831dda33efa47b41f8632bd17",
+        "meta.json": "51961564003a19089455717e8206f746cbaf96aa"
+      }
+    },
+    {
+      "versao": "v4_salto-de-cobertura-por-mudanca-de-coleta",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: 12 colunas com base no zero e altura a até 1 px do dado em escala de 0 a 100% (20 px para 21%, 58 px para 61%), salto de 23% para 61% com guia tracejada e data por formatDate, queda de 1,0 p.p. contra 62% em ago/26 com sinal tipográfico e base na linha (NUM-3, NUM-4, DAD-4), tiques com 10 px ou mais de vão, fidelidade 0,27 e 0,40 por cento. Observações no README: colunas 4 px acima da linha de base, mudança no dia 15 com junho inteiro já em 61%, redação do rodapé, fallback da frase que troca nulo por zero (EST-1b, mora no ramo), mês sem leads sem palavra, destaque em 24 px, vazio com Unplug e não Filter (EST-1), TIP-1 em frase corrida.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:43:46.737Z",
+      "impressao": "f1b422f89507a9de55052f9315272bba14c8a4f4",
+      "arquivos": {
+        "Chart.tsx": "8ea12d3649d4fd9e313ed8e207b413d4daf213c2",
+        "data.ts": "e855b5650066d91b03ca32a628e990ea88591cd6",
+        "meta.json": "b50bf312eb52ff226a9be89a1c7508bc4205548b"
+      }
+    }
+  ]
+}

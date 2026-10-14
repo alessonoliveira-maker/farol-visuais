@@ -1,0 +1,108 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "06_cascata-comparativa",
+  "versoes": {
+    "v1_trimestre-contra-anterior-lado-a-lado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Domínio comum de R$ 0 a R$ 2,5 mi nos dois painéis (99,8 px por milhão, conferido em quatro totais), totais no zero, passo zero em traço de 2 px com R$ 0 escrito, sinal à mão e base na mesma linha, conector em text-muted a 5,21:1 e 5,37:1, rótulos a mais de 4 px entre si nos dois temas, fidelidade de 0,006%. Observações no README: millions() e formatCurrencyAxis em rótulo direto (NUM-1), TICK_STEP fixo (EIX-4), tique sem peso declarado (TIP-4), linha de leitura só declara a escala (ANO-5), rótulo de queda acima do topo (ROT-2), trimestre cru na tela (NUM-7).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:14.312Z",
+      "impressao": "824d283c7c7885684c3fe7204cebc385aac8f6f5",
+      "arquivos": {
+        "Chart.tsx": "35c7550aecd2cd439944745d9afc766eeda792d0",
+        "data.ts": "ac6d666a323abcb1badbebde1a69b09751aac25a",
+        "meta.json": "8f57e1f6cbfef853660da701bd065a781564d1cb"
+      }
+    },
+    "v2_plano-e-realizado-espelhados-com-variancia": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 14 e a 19 com ressalva de redação. Os dois lados na mesma escala a partir do eixo central (118,7 px por milhão: fim do plano 238,5 px, fim do realizado 224,5 px), sinal escrito dos dois lados, variâncias conferidas (novos 46 mil a menos, expansão 16 mil a mais, reajuste 30 mil a menos, cancelamentos 48 mil acima, fim 108 mil abaixo), polaridade vinda do dado com cancelamento acima do plano em negative, zero do reajuste em traço com R$ 0, fidelidade de 0,007%. Observações no README: base da variação só no cabeçalho da coluna (NUM-4), veredito na cor e na linha de leitura (ACE-2), período só na frase acessível (DAD-9), variância por grandeza erra se o passo trocar de sinal, contorno do plano soma 1,5 px, linha de leitura sem quebra.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:29.237Z",
+      "impressao": "6ca47e09adef6d73978627c0aa010ddbef480895",
+      "arquivos": {
+        "Chart.tsx": "2b34f231f726520519e801add5384402bf8501ef",
+        "data.ts": "0959cf1743e9b4c842d9d0dd5eec281f01a8d3d8",
+        "meta.json": "2e2b019c90aac4b51278c4b49784f5d3a4a80511"
+      }
+    },
+    "v3_carteira-por-executivo-em-oito-paineis": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10, a 11 e a 18 com ressalva. Escala comum conferida em seis totais das duas linhas da grade (68 px por milhão), oito fechamentos batem com o dado, ordem pela carteira final declarada na linha de leitura, taxa de ganho com volume, painel de n=3 trocado por aviso, legenda na ordem das colunas, marcas e textos acima do piso nos dois temas (HTML conferido à mão), fidelidade de 0,059%. Observações no README: zero medido de Camila R. em traço neutro sem o R$ 0 escrito, só no title (EST-3, a mais próxima de bloquear); Entradas em --info, token de texto com o hex de --chart-3 (17.2); linha de leitura e aviso sem tabular-nums (TIP-1); volume da taxa sem substantivo (NUM-6); n=3 repetido três vezes; período fora do corpo (DAD-9); GRID_STEP fixo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:29.794Z",
+      "impressao": "7adfe2eadda6a03db9de2763a0df1f8750d005b0",
+      "arquivos": {
+        "Chart.tsx": "ac5684d72c7592d56f0c04715f11e64a60a680e7",
+        "data.ts": "57b76ab6d58a2a45e6c5a3c377b69feb31720ede",
+        "meta.json": "39f913971da94f97f0015d37146679023db3ae2a"
+      }
+    },
+    "v4_passo-sem-medicao-num-dos-lados": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 15 com ressalva medida. Passo nulo vazado em contorno text-muted tracejado (5,21:1 e 5,37:1) com a palavra sem medição, sem altura de valor e na mesma coluna do outro painel; total da Norte em contorno tracejado com a palavra parcial, sem somar zero (1,05 mi mais 140, 20 e menos 95 mil); zero medido da Sul em traço cheio com R$ 0; escala comum conferida em quatro totais (90,75 px por milhão); frase acessível diz o passo e o lado; fidelidade de 0,007%. Observações no README: dois pares de rótulo em canto a 3,67 e 3,97 px que ainda se leem soltos (aviso da COLISAO-TEXTO), parcial vem do dado e não do passo nulo, sem conferência de fechamento, período fora do dado e do corpo (DAD-9), millions() e formatCurrencyAxis (NUM-1), TICK_STEP fixo, tique sem peso declarado (TIP-4).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:30.269Z",
+      "impressao": "c7571f86e4a0262c49d7063c70c618bd7d6b4eb5",
+      "arquivos": {
+        "Chart.tsx": "dd3bfe359aacf8332150fd08ec6839b54c9a86e8",
+        "data.ts": "bfaf2912ee28a7dca5c808c0a2dda0342f864a32",
+        "meta.json": "22c5953ecab125c4d9294458609d9e4e3dc9ef49"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_trimestre-contra-anterior-lado-a-lado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Domínio comum de R$ 0 a R$ 2,5 mi nos dois painéis (99,8 px por milhão, conferido em quatro totais), totais no zero, passo zero em traço de 2 px com R$ 0 escrito, sinal à mão e base na mesma linha, conector em text-muted a 5,21:1 e 5,37:1, rótulos a mais de 4 px entre si nos dois temas, fidelidade de 0,006%. Observações no README: millions() e formatCurrencyAxis em rótulo direto (NUM-1), TICK_STEP fixo (EIX-4), tique sem peso declarado (TIP-4), linha de leitura só declara a escala (ANO-5), rótulo de queda acima do topo (ROT-2), trimestre cru na tela (NUM-7).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:14.312Z",
+      "impressao": "824d283c7c7885684c3fe7204cebc385aac8f6f5",
+      "arquivos": {
+        "Chart.tsx": "35c7550aecd2cd439944745d9afc766eeda792d0",
+        "data.ts": "ac6d666a323abcb1badbebde1a69b09751aac25a",
+        "meta.json": "8f57e1f6cbfef853660da701bd065a781564d1cb"
+      }
+    },
+    {
+      "versao": "v2_plano-e-realizado-espelhados-com-variancia",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 14 e a 19 com ressalva de redação. Os dois lados na mesma escala a partir do eixo central (118,7 px por milhão: fim do plano 238,5 px, fim do realizado 224,5 px), sinal escrito dos dois lados, variâncias conferidas (novos 46 mil a menos, expansão 16 mil a mais, reajuste 30 mil a menos, cancelamentos 48 mil acima, fim 108 mil abaixo), polaridade vinda do dado com cancelamento acima do plano em negative, zero do reajuste em traço com R$ 0, fidelidade de 0,007%. Observações no README: base da variação só no cabeçalho da coluna (NUM-4), veredito na cor e na linha de leitura (ACE-2), período só na frase acessível (DAD-9), variância por grandeza erra se o passo trocar de sinal, contorno do plano soma 1,5 px, linha de leitura sem quebra.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:29.237Z",
+      "impressao": "6ca47e09adef6d73978627c0aa010ddbef480895",
+      "arquivos": {
+        "Chart.tsx": "2b34f231f726520519e801add5384402bf8501ef",
+        "data.ts": "0959cf1743e9b4c842d9d0dd5eec281f01a8d3d8",
+        "meta.json": "2e2b019c90aac4b51278c4b49784f5d3a4a80511"
+      }
+    },
+    {
+      "versao": "v3_carteira-por-executivo-em-oito-paineis",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10, a 11 e a 18 com ressalva. Escala comum conferida em seis totais das duas linhas da grade (68 px por milhão), oito fechamentos batem com o dado, ordem pela carteira final declarada na linha de leitura, taxa de ganho com volume, painel de n=3 trocado por aviso, legenda na ordem das colunas, marcas e textos acima do piso nos dois temas (HTML conferido à mão), fidelidade de 0,059%. Observações no README: zero medido de Camila R. em traço neutro sem o R$ 0 escrito, só no title (EST-3, a mais próxima de bloquear); Entradas em --info, token de texto com o hex de --chart-3 (17.2); linha de leitura e aviso sem tabular-nums (TIP-1); volume da taxa sem substantivo (NUM-6); n=3 repetido três vezes; período fora do corpo (DAD-9); GRID_STEP fixo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:29.794Z",
+      "impressao": "7adfe2eadda6a03db9de2763a0df1f8750d005b0",
+      "arquivos": {
+        "Chart.tsx": "ac5684d72c7592d56f0c04715f11e64a60a680e7",
+        "data.ts": "57b76ab6d58a2a45e6c5a3c377b69feb31720ede",
+        "meta.json": "39f913971da94f97f0015d37146679023db3ae2a"
+      }
+    },
+    {
+      "versao": "v4_passo-sem-medicao-num-dos-lados",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 15 com ressalva medida. Passo nulo vazado em contorno text-muted tracejado (5,21:1 e 5,37:1) com a palavra sem medição, sem altura de valor e na mesma coluna do outro painel; total da Norte em contorno tracejado com a palavra parcial, sem somar zero (1,05 mi mais 140, 20 e menos 95 mil); zero medido da Sul em traço cheio com R$ 0; escala comum conferida em quatro totais (90,75 px por milhão); frase acessível diz o passo e o lado; fidelidade de 0,007%. Observações no README: dois pares de rótulo em canto a 3,67 e 3,97 px que ainda se leem soltos (aviso da COLISAO-TEXTO), parcial vem do dado e não do passo nulo, sem conferência de fechamento, período fora do dado e do corpo (DAD-9), millions() e formatCurrencyAxis (NUM-1), TICK_STEP fixo, tique sem peso declarado (TIP-4).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:18:30.269Z",
+      "impressao": "c7571f86e4a0262c49d7063c70c618bd7d6b4eb5",
+      "arquivos": {
+        "Chart.tsx": "dd3bfe359aacf8332150fd08ec6839b54c9a86e8",
+        "data.ts": "bfaf2912ee28a7dca5c808c0a2dda0342f864a32",
+        "meta.json": "22c5953ecab125c4d9294458609d9e4e3dc9ef49"
+      }
+    }
+  ]
+}

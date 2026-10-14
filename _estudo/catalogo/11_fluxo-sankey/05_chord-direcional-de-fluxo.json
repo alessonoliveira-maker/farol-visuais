@@ -1,0 +1,70 @@
+{
+  "slug": "05_chord-direcional-de-fluxo",
+  "nome": "Chord direcional de fluxo",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Entidades dispostas no círculo, cada uma com arco externo proporcional ao total; fitas internas ligam pares com espessura proporcional ao fluxo em cada sentido e cor da origem. Serve para trocas mútuas entre até 8 entidades que não têm coluna de origem nem de destino.",
+  "quando_usar": [
+    "Trocas nos dois sentidos entre até 8 entidades: repasses entre funções, reatribuição de oportunidades entre executivos.",
+    "Mostrar a assimetria de ida e volta entre pares, quando a pergunta é quem entrega mais do que recebe.",
+    "Painel com interação de foco e com a matriz a um clique como alternativa acessível."
+  ],
+  "quando_evitar": [
+    "Origem e destino claros e distintos: usar o 01_sankey-simples.",
+    "Relação sem volume ou simétrica: usar o chord simétrico (27_rede-e-relacoes, 07_chord-simetrico).",
+    "Consulta de valor exato ou comparação fina entre pares: usar a matriz de adjacência (27_rede-e-relacoes, 01_matriz-de-adjacencia).",
+    "Mais de 8 entidades sem agrupar em \"Outras\": as fitas fracas somem e os cruzamentos dominam.",
+    "Visual sem hover e sem foco: a roda fica ilegível; nesse caso usar a matriz."
+  ],
+  "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+  "versoes": [
+    {
+      "slug": "v1_repasses-entre-funcoes",
+      "titulo": "Repasses entre funções no trimestre",
+      "caso_de_uso": "Comercial, 2026-T3: quantas oportunidades cada função repassou para as outras, nos dois sentidos? Pré-vendas, Executivo, Relacionamento e Especialista de produto, com 412 repasses.",
+      "o_que_demonstra": [
+        "Geometria do chord em TypeScript a partir da matriz m[i][j], sem biblioteca",
+        "Ângulo do grupo pela soma da linha, descontado o padAngle",
+        "Fita com m[i][j] na borda de i e m[j][i] na borda de j, na cor da origem",
+        "Flag de arco grande do SVG ligada quando o ângulo passa de π",
+        "Nome do grupo horizontal fora do arco, sem rotação de texto"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_foco-na-pre-vendas",
+      "titulo": "Repasses de e para a Pré-vendas",
+      "caso_de_uso": "Comercial, 2026-T3: a Pré-vendas entrega mais do que recebe? Só as fitas dela acesas, com ida e volta anotadas: 186 repasses para Executivo e 23 devoluções.",
+      "o_que_demonstra": [
+        "Prop highlightId que mantém só as fitas do grupo e baixa as demais para 15%",
+        "Anotação de ida e volta no par principal, com as duas contagens",
+        "Nome do grupo em foco em peso 700, além da cor",
+        "Ordem dos grupos estável entre filtros, para o foco não embaralhar a roda"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_reatribuicao-entre-executivos",
+      "titulo": "Reatribuição de oportunidades entre executivos",
+      "caso_de_uso": "Comercial, 2026-T3: entre quais executivos as oportunidades trocaram de dono? Executivo A a H, 8 grupos no teto do modelo, com 137 reatribuições nos dois sentidos.",
+      "o_que_demonstra": [
+        "Oito grupos ordenados por volume para reduzir cruzamentos",
+        "Slots categóricos 1 a 6 e nome escrito em cada arco para os slots 7 e 8",
+        "Pares com menos de 3 reatribuições fora do desenho, somados ao arco",
+        "Linha de leitura com o par de maior troca e o saldo líquido dele"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_muitas-equipes-com-saida-para-matriz",
+      "titulo": "Catorze equipes agrupadas com saída para matriz",
+      "caso_de_uso": "Diretoria, 2026-T3: os repasses entre 14 equipes não cabem na roda. As seis maiores ficam, as oito menores viram \"Outras\" e o botão \"ver como matriz\" fica a um clique.",
+      "o_que_demonstra": [
+        "Colapso das entidades pequenas em \"Outras (n=8)\" com a contagem no nome",
+        "Botão com ícone do lucide que troca a roda pela matriz de adjacência",
+        "Troca interna entre as equipes de \"Outras\" declarada na legenda, sem fita",
+        "Frase acessível que cita quantas equipes foram agrupadas e o peso delas"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

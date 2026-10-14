@@ -1,0 +1,12 @@
+{
+  "title": "Leads por dia de uma origem com coleta interrompida",
+  "useCase": "Quantos leads o formulário do site trouxe por dia quando a integração caiu por 9 dias, sem ler falta de coleta como zero?",
+  "demonstrates": [
+    "null com connectNulls desligado, distinto do zero medido, que é desenhado",
+    "Período sem coleta em ReferenceArea --surface-sunken com o texto sem coleta",
+    "Ponto isolado entre nulos com dot forçado para não sumir",
+    "Último dia parcial em trecho tracejado com a nota parcial até a data"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

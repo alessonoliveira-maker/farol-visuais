@@ -1,0 +1,69 @@
+{
+  "slug": "04_pareto",
+  "nome": "Pareto",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Colunas ou barras em ordem decrescente e uma linha com o percentual acumulado do total, de 0 a 100%, para achar as poucas causas que concentram o efeito. O eixo do acumulado é derivado do eixo das colunas, por isso a combinação é legítima; fixando o eixo das colunas de 0 ao total, o percentual vira só outra rotulagem da mesma escala. Ordenação, agrupamento em Outros e acumulado são calculados em TypeScript antes do render, e o destaque das categorias até o corte sai do shape da Bar.",
+  "quando_usar": [
+    "Priorizar causas que concentram o efeito: motivos de perda, motivos de desqualificação, origens de lead sem dado.",
+    "De 4 a cerca de 12 categorias visíveis mais Outros no fim; cauda maior vai agrupada com a contagem no rótulo.",
+    "Quantidade ou valor sempre positivos, com a pergunta de concentração explícita: quantos motivos fazem 80%."
+  ],
+  "quando_evitar": [
+    "Menos de 4 categorias: barras ordenadas em 02_barras-horizontais/01_barras-simples-ordenadas.",
+    "Categorias com ordem própria, como etapas ou faixas de ticket: ordenar por valor destrói a ordem; use 03_colunas-verticais/01_colunas-simples.",
+    "Valores negativos ou estornos: a curva acumulada perde sentido; use 03_colunas-verticais/05_colunas-positivo-e-negativo ou 19_cascata-waterfall.",
+    "Concentração de uma distribuição contínua, como ticket por cliente: 16_distribuicao/10_curva-de-lorenz.",
+    "Quantidade e valor misturados no mesmo gráfico: ordenam diferente; ofereça alternância (v3)."
+  ],
+  "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+  "versoes": [
+    {
+      "slug": "v1_perdas-por-motivo",
+      "titulo": "Perdas do trimestre por motivo",
+      "caso_de_uso": "Quais motivos explicam a maior parte das oportunidades perdidas no trimestre?",
+      "o_que_demonstra": [
+        "Ordenação decrescente com desempate estável por nome, antes do render",
+        "Outros sempre no fim, mesmo quando maior que a última categoria",
+        "Eixo das colunas de 0 ao total: a 1ª coluna toca o 1º ponto da linha",
+        "Acumulado sobre valores brutos, arredondado só na exibição"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_corte-em-80-por-cento",
+      "titulo": "Motivos que somam 80% das perdas",
+      "caso_de_uso": "Quantos motivos de perda cruzam a marca de 80% e merecem plano de ação antes dos demais?",
+      "o_que_demonstra": [
+        "Categorias até o corte em chart-1 pelo shape da Bar, demais em line-strong",
+        "ReferenceLine em 80% no eixo do acumulado, com rótulo na margem",
+        "Anotação com a contagem de motivos que cruzam o corte",
+        "Destaque com peso 700 no rótulo, não só com cor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_quantidade-contra-valor-por-etapa",
+      "titulo": "Perdas em quantidade e em valor por etapa",
+      "caso_de_uso": "Os motivos que mais derrubam oportunidades são os que mais custam em R$, na pré-venda e na venda?",
+      "o_que_demonstra": [
+        "Alternância em HTML entre quantidade e valor perdido, sem misturar",
+        "Pequenos múltiplos por etapa com o mesmo domínio de percentual",
+        "Barras horizontais com layout vertical para caber rótulos longos",
+        "Corte de 80% recalculado por etapa e por modo, com a contagem escrita"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_cauda-longa-e-poucos-motivos",
+      "titulo": "Cauda longa de motivos e período quase vazio",
+      "caso_de_uso": "Como manter o pareto legível com 40 motivos, e o que mostrar num período com só 2 motivos de perda?",
+      "o_que_demonstra": [
+        "Top 10 mais Outros (30 motivos) com a contagem no rótulo",
+        "minPointSize para as categorias minúsculas continuarem visíveis",
+        "Troca para barras simples abaixo de 4 categorias, com aviso escrito",
+        "Estado vazio no lugar do gráfico quando o período não tem perdas"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

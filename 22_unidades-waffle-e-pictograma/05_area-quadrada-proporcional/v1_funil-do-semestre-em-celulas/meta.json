@@ -1,0 +1,13 @@
+{
+  "title": "Funil do semestre em células de cinco",
+  "useCase": "Comercial: o tamanho de leads, oportunidades e vitórias do semestre lado a lado, em células de 5.",
+  "demonstrates": [
+    "Lado por Math.ceil(Math.sqrt(células)) e gridTemplateColumns calculado",
+    "1.284 leads em 257 células, 212 oportunidades em 42 e 38 vitórias em 8",
+    "Quadrados alinhados pela base, com a última linha incompleta no topo",
+    "Número exato sob cada quadrado e arredondamento de células declarado",
+    "Legenda de unidade 1 célula = 5 sempre visível"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

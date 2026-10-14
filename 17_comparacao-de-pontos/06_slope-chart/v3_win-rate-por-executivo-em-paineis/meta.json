@@ -1,0 +1,14 @@
+{
+  "title": "Win rate por executivo em painéis",
+  "useCase": "Como o win rate de 14 executivos mudou do 1º para o 2º semestre, de 10% a 70%?",
+  "demonstrates": [
+    "Grade em Tailwind com um micro slope em SVG por painel",
+    "Mesma escala vertical nos 14 painéis, calculada uma vez",
+    "Reta cinza da média da empresa repetida em todos os painéis",
+    "Painéis ordenados pela variação em pontos percentuais, declarada",
+    "Componente de micro slope reaproveitável em cartão de KPI"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo conforme o catálogo. Conta: corpo de 894 x 265 px (card, caso de uso em duas linhas): linha de leitura 16 + vão 8 + duas fileiras de painéis (16 de nome + 68 do micro slope + 14 de delta = 98, vão de 16) + vão 8 + nota de 14 = 262. O micro slope tem width e height iguais ao viewBox (120 x 68), escala 1. A média da empresa é a razão de ganhas por decididas somadas, e não a média das taxas. A média é tracejada em text-muted a 1 px, e não line-strong, porque line-strong mede 1,8:1 como traço de dado (ACE-6)."
+}

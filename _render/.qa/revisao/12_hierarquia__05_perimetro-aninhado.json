@@ -1,0 +1,46 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "05_perimetro-aninhado",
+  "versoes": {
+    "v1_mercado-total-enderecavel-alcancavel": {
+      "veredito": "aprovado",
+      "nota": "Area proporcional a raiz quadrada do valor, niveis nomeados com valor e base declarada, contraste ok nos dois temas; observacoes de acabamento no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T06:06:16.342Z",
+      "impressao": "be254e1277f49d4cb005ef37f89bd4044e0318a5",
+      "arquivos": {
+        "Chart.tsx": "c8ed178738799d7f31206232642209f755477d75",
+        "data.ts": "ad0a261b9ef55fd78d36481f0e472df35d72eb76",
+        "meta.json": "dbc3564d58f951f90bb9431a2f1ce073bb1f1ebf"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_mercado-total-enderecavel-alcancavel",
+      "veredito": "reprovado",
+      "nota": "Nota de escala colide com o contorno tracejado nos dois temas; coluna de percentual sem base declarada.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T05:51:26.494Z",
+      "impressao": "6d8783467c9258eaea2334f82541e57c4d5bc155",
+      "arquivos": {
+        "Chart.tsx": "9890eeefeb5f9542d82d127276802292c8c03daa",
+        "data.ts": "ad0a261b9ef55fd78d36481f0e472df35d72eb76",
+        "meta.json": "dbc3564d58f951f90bb9431a2f1ce073bb1f1ebf"
+      }
+    },
+    {
+      "versao": "v1_mercado-total-enderecavel-alcancavel",
+      "veredito": "aprovado",
+      "nota": "Area proporcional a raiz quadrada do valor, niveis nomeados com valor e base declarada, contraste ok nos dois temas; observacoes de acabamento no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T06:06:16.342Z",
+      "impressao": "be254e1277f49d4cb005ef37f89bd4044e0318a5",
+      "arquivos": {
+        "Chart.tsx": "c8ed178738799d7f31206232642209f755477d75",
+        "data.ts": "ad0a261b9ef55fd78d36481f0e472df35d72eb76",
+        "meta.json": "dbc3564d58f951f90bb9431a2f1ce073bb1f1ebf"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Entradas no handoff por dia útil contra o teto",
+  "useCase": "Em quantos dos últimos 20 dias úteis as entradas na fila de handoff passaram do teto diário de 14?",
+  "demonstrates": [
+    "BarChart mínimo com domínio a partir do zero, mesmo em miniatura",
+    "ReferenceLine tracejada no teto com ifOverflow extendDomain",
+    "Colunas acima do teto em --negative com a contagem escrita no rodapé",
+    "Vão entre colunas e largura mínima por coluna para não sumir no tema escuro",
+    "Só dias úteis na série, escrito no rodapé para não ler queda no fim de semana"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

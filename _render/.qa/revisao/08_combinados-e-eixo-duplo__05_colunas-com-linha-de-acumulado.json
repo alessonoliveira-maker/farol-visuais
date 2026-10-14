@@ -1,0 +1,33 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "05_colunas-com-linha-de-acumulado",
+  "versoes": {
+    "v1_receita-mensal-e-acumulado-do-ano": {
+      "veredito": "aprovado",
+      "nota": "Eixo duplo sinalizado por cor e titulo por serie, zeros alinhados, meses futuros nulos sem coluna zerada, meta no eixo do acumulado; check 0 erros e contraste AA nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:36:05.694Z",
+      "impressao": "88c61de02dabdd180f916be69eda2a6d40afcd10",
+      "arquivos": {
+        "Chart.tsx": "a01cffe7c36bf68cfdc9851b5048ae42ac2325bd",
+        "data.ts": "ae0fb61aa79566c483908d9856ab723a577cb531",
+        "meta.json": "6280c054ab7e617d97c1a71270b3317a80b1ad33"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-mensal-e-acumulado-do-ano",
+      "veredito": "aprovado",
+      "nota": "Eixo duplo sinalizado por cor e titulo por serie, zeros alinhados, meses futuros nulos sem coluna zerada, meta no eixo do acumulado; check 0 erros e contraste AA nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:36:05.694Z",
+      "impressao": "88c61de02dabdd180f916be69eda2a6d40afcd10",
+      "arquivos": {
+        "Chart.tsx": "a01cffe7c36bf68cfdc9851b5048ae42ac2325bd",
+        "data.ts": "ae0fb61aa79566c483908d9856ab723a577cb531",
+        "meta.json": "6280c054ab7e617d97c1a71270b3317a80b1ad33"
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "07_butterfly-piramide",
+  "nome": "Butterfly ou pirâmide",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Dois gráficos de barras espelhados sobre o mesmo eixo de categorias, um crescendo para a esquerda e outro para a direita, com as faixas na ordem natural. No Recharts, o lado esquerdo recebe valores negados no seletor e o eixo usa domínio simétrico com Math.abs no tickFormatter, no LabelList e na dica, para que o sinal negativo nunca vaze para o texto. A alternativa mais controlável são dois BarChart irmãos numa grade de três colunas, com o XAxis da esquerda em reversed. Os dois lados dividem a mesma escala, senão a comparação é falsa. Absorve a pirâmide de termos entre dois grupos, com cada lado normalizado pelo tamanho do próprio grupo.",
+  "quando_usar": [
+    "Duas populações sobre as mesmas faixas: leads e oportunidades por porte, entradas e agendas por tempo até o contato.",
+    "Faixas com ordem natural, de 4 a cerca de 12, lidas de baixo para cima.",
+    "Mostrar as duas magnitudes e não só a diferença entre elas.",
+    "Termos citados por dois grupos, como ganhas e perdidas, em percentual das respostas de cada grupo."
+  ],
+  "quando_evitar": [
+    "Só a diferença entre os dois lados importa: barras divergentes de sinal (06_barras-divergentes).",
+    "Lados com ordens de grandeza muito diferentes na mesma escala absoluta: percentual do próprio total ou dois cards.",
+    "Mais de dois grupos: barras agrupadas (02_barras-agrupadas) ou pequenos múltiplos.",
+    "Passagem sequencial entre etapas com taxa de conversão: funil (10_funil).",
+    "Dois pontos por categoria em que a distância é o dado: dumbbell (17_comparacao-de-pontos)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-e-oportunidades-por-porte",
+      "titulo": "Leads e oportunidades por faixa de porte",
+      "caso_de_uso": "Em que faixa de porte da conta entra lead e em que faixa sai oportunidade, lado a lado nas cinco faixas.",
+      "o_que_demonstra": [
+        "Lado esquerdo negado no seletor com domínio simétrico calculado nos dois conjuntos",
+        "Math.abs no tickFormatter, no LabelList e na dica",
+        "Faixas na ordem natural, da menor para a maior",
+        "Título de cada lado acima do respectivo bloco"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_tempo-ate-o-primeiro-contato",
+      "titulo": "Entradas e agendas por tempo até o contato",
+      "caso_de_uso": "Quanto a velocidade do primeiro contato muda a chance de agenda, das entradas às agendas realizadas por faixa.",
+      "o_que_demonstra": [
+        "Taxa de conversão escrita no centro, ao lado do rótulo da faixa",
+        "Faixa de menos de 5 minutos em destaque, demais em neutro",
+        "Dois BarChart irmãos em grade de três colunas com eixo de categorias no meio",
+        "Bandas alinhadas por mesma lista, mesma margem e mesmo barCategoryGap"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_termos-em-ganhas-e-perdidas",
+      "titulo": "Termos em oportunidades ganhas e perdidas",
+      "caso_de_uso": "Quais termos das anotações aparecem mais nas oportunidades ganhas do que nas perdidas, em percentual de cada grupo.",
+      "o_que_demonstra": [
+        "Pirâmide de termos normalizada pelo tamanho de cada grupo",
+        "Termos ordenados pela diferença, com o critério escrito no subtítulo",
+        "Diferença acima de 10 p.p. em cor cheia, demais translúcidos",
+        "Termo ausente num lado com traço e 0%, nunca removido"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_escalas-de-grandeza-diferentes",
+      "titulo": "Leads e oportunidades em escalas independentes",
+      "caso_de_uso": "Espelhar 10 mil leads contra 80 oportunidades sem que a escala comum apague o lado pequeno.",
+      "o_que_demonstra": [
+        "Detecção de razão acima de 20 entre os totais dos dois lados",
+        "Troca para percentual do próprio total com aviso escalas independentes no título",
+        "Valor absoluto preservado na dica de cada barra",
+        "Faixa sem observação num lado escreve indisponível no lugar da barra"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

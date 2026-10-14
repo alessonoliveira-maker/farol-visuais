@@ -1,0 +1,71 @@
+{
+  "slug": "04_jornada-por-entidade",
+  "nome": "Jornada por entidade",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma linha por oportunidade ou lead, com segmentos contíguos coloridos pela etapa em que a entidade esteve: mostra a sequência e a duração de cada estado e revela gargalo quando muitas linhas repetem o mesmo segmento longo. No Recharts é um BarChart com layout vertical, um Bar por etapa em tupla [entrada, saída] e stackId comum, ou BarStack como no exemplo de barras empilhadas com intervalo. A cor é ordinal (rampa var(--seq-N) de claridade crescente), não categórica, para que mais adiante no funil seja legível. Em datas de calendário ou alinhada pelo dia zero da criação. Absorve o diagrama de Marey, em que cada entidade vira uma polilinha em degrau subindo de etapa em etapa.",
+  "quando_usar": [
+    "Tempo em cada etapa do funil caso a caso, de 10 a cerca de 60 entidades",
+    "Achar gargalo: a mesma etapa longa se repetindo em muitas linhas",
+    "Comparar ciclos alinhando todas as entidades pelo dia zero da criação",
+    "Velocidade de passagem e retornos de etapa, na variante de Marey"
+  ],
+  "quando_evitar": [
+    "Só a etapa atual importa: use o stepper (20/03)",
+    "Volume agregado por etapa sem identidade de entidade: use o funil (família 10)",
+    "Transições entre etapas em massa: use o Sankey (família 11) ou a matriz de transição (15/07)",
+    "Muitas etapas curtas e ilegíveis: agrupe em fases antes de desenhar",
+    "Centenas de entidades: use a lasagna (15/06) ou o Marey em SVG puro"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-ganhas-por-etapa",
+      "titulo": "Jornada das oportunidades ganhas no trimestre",
+      "caso_de_uso": "Comercial: quanto tempo cada uma das 15 oportunidades ganhas em 2026-T3 ficou em qualificação, diagnóstico, proposta e negociação.",
+      "o_que_demonstra": [
+        "Um Bar por etapa com dataKey em tupla [entradaMs, saidaMs] e stackId comum",
+        "Rampa ordinal var(--seq-2) a var(--seq-6) na ordem do funil, com legenda na mesma ordem",
+        "Linhas ordenadas pela data de criação e marca final de desfecho ganho",
+        "Dica com etapa, dias e datas de entrada e saída por formatDate"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_tempo-parado-em-destaque",
+      "titulo": "Oportunidades com etapa parada",
+      "caso_de_uso": "Comercial: em quais das 12 oportunidades abertas algum segmento passou de 30 dias sem movimento, e em que etapa.",
+      "o_que_demonstra": [
+        "Segmento acima de 30 dias com hachura em pattern de SVG cujo id vem de useId",
+        "Rótulo parada 42 d escrito na ponta do segmento, não só na dica",
+        "Demais segmentos rebaixados para var(--line-strong) quando há destaque",
+        "Última etapa das abertas termina na data de hoje vinda do dado com ponta aberta"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_alinhada-pelo-dia-zero",
+      "titulo": "Ciclo de venda alinhado pela criação",
+      "caso_de_uso": "Comercial: em 40 oportunidades fictícias de 2026, qual etapa mais pesa no ciclo total quando todas partem do mesmo dia zero.",
+      "o_que_demonstra": [
+        "Valores convertidos em dias desde a criação e XAxis numérico em dias",
+        "Linhas ordenadas pelo ciclo total, da mais curta à mais longa",
+        "ReferenceLine vertical na mediana acumulada de cada etapa com rótulo curto",
+        "Barras finas com barCategoryGap pequeno e YAxis sem rótulo, lista nomeada na dica"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_marey-com-retorno-de-etapa",
+      "titulo": "Progressão por etapa com retornos",
+      "caso_de_uso": "Comercial: quais das 10 oportunidades do trimestre passaram rápido, quais pararam e quais voltaram de etapa.",
+      "o_que_demonstra": [
+        "LineChart com YAxis numérico do índice da etapa e tickFormatter com o nome da etapa",
+        "Um Line type stepAfter por oportunidade com data própria e dot desligado",
+        "Retorno de etapa como trecho descendente com marcador e data da volta",
+        "Oportunidade aberta terminando em hoje com traço tracejado e rótulo em aberto",
+        "Duas linhas em cor de destaque, a mais rápida e a mais lenta, e o resto em cinza"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

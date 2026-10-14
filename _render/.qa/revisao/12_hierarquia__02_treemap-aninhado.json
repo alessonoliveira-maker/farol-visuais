@@ -1,0 +1,46 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "02_treemap-aninhado",
+  "versoes": {
+    "v1_pipeline-por-executivo-e-produto": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: grupos com area exata (variacao de 2,5%), toda folha acima de 3:1 nos dois temas, todo produto nomeado com valor na lista de identificacao (ROT-10), zero fora do desenho com motivo. Observacoes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T04:30:22.781Z",
+      "impressao": "2f7e34e2c0f184d6aff57a35d4971dd0b0969b46",
+      "arquivos": {
+        "Chart.tsx": "b8898d427ffeb5bb0499a51984881ddf280b9add",
+        "data.ts": "68f91ac7a5ed23914bac98f8e050b3ea1bcba3b7",
+        "meta.json": "ba9e72c7349703bca227b31a03446003b160de74"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_pipeline-por-executivo-e-produto",
+      "veredito": "reprovado",
+      "nota": "Rotulo de folha cortado pela borda do selo e caindo sobre a marca (1,53:1); folhas diluidas abaixo de 3:1 nos dois temas; 20 de 24 produtos sem nome e valor (ROT-10); selo cobre a folha de maior valor do grupo B; color-mix em oklch gira o matiz e as folhas de C caem nas cores de F e A.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T03:46:21.173Z",
+      "impressao": "927d3cef3d1795eb0e33b26b4e2e28858a1d75fd",
+      "arquivos": {
+        "Chart.tsx": "c7cc669a9c4a44979360331187b229c597c71921",
+        "data.ts": "533fb4c41b64ee03146b6f07efef152fca745e7a",
+        "meta.json": "eb887e8e4289e584cf53f934bcb2925a16ca4c64"
+      }
+    },
+    {
+      "versao": "v1_pipeline-por-executivo-e-produto",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: grupos com area exata (variacao de 2,5%), toda folha acima de 3:1 nos dois temas, todo produto nomeado com valor na lista de identificacao (ROT-10), zero fora do desenho com motivo. Observacoes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T04:30:22.781Z",
+      "impressao": "2f7e34e2c0f184d6aff57a35d4971dd0b0969b46",
+      "arquivos": {
+        "Chart.tsx": "b8898d427ffeb5bb0499a51984881ddf280b9add",
+        "data.ts": "68f91ac7a5ed23914bac98f8e050b3ea1bcba3b7",
+        "meta.json": "ba9e72c7349703bca227b31a03446003b160de74"
+      }
+    }
+  ]
+}

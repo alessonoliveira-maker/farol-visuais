@@ -1,0 +1,14 @@
+{
+  "title": "Plano de implantação de um canal",
+  "useCase": "Marketing: como 7 tarefas fictícias de implantação de um canal de mídia dependem umas das outras entre 2026-10-05 e 2026-11-27.",
+  "demonstrates": [
+    "escalaTempo e escalaBanda em TypeScript com altura de linha fixa",
+    "Conector em cotovelo path M H V H saindo do fim e entrando no início",
+    "Ponta de seta por marker cujo id vem de useId",
+    "Ticks semanais na segunda-feira gerados por Date.UTC",
+    "Linha de hoje vinda do dado e viewBox fixo com vectorEffect non-scaling-stroke"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "CANVAS CONFERIDO CONTRA A CONTA (GEO-1): cabe no preset largo com sobra de 1,5 px. O corpo do largo com caso de uso em uma linha mede 894 x 281,5 px. As linhas reais: 28 px de linha de leitura (20 de texto mais 8 de respiro) e 252 px de SVG, que são 18 px de faixa do topo (rótulo de hoje e cabeçalho da coluna), 7 linhas de 30 px e 24 px de eixo. O viewBox é 894 x 252, a largura exata do corpo, então a escala do preview é 1 e os 11 px declarados chegam com 11 px (GEO-18); a altura do viewBox sai do número de tarefas. GEOMETRIA. O eixo vai da segunda 2026-10-05 ao fim de 2026-11-27, 54 dias em 586 px, ou 10,85 px por dia; o vão do fim de semana entre uma tarefa que termina na sexta e a sucessora que começa na segunda mede 21,7 px, e nele cabem a perna do cotovelo a 10 px do fim e a seta de 6 px. Sem esse vão o conector contorna pela esquerda, passando entre as duas linhas (ramo que a v4 exercita). A barra tem 14 px numa linha de 30. TOKENS, MEDIDOS. O conector carrega a relação e por isso usa --text-muted, 5,21:1 no escuro e 5,37:1 no claro, e não --line-strong, que mede 1,79:1 e 1,83:1 (ACE-6). Conector e linha de hoje levam por baixo um fio de 5 px em --surface-raised, que é a saída da TOK-10 para traço que cruza barra preenchida; com este dado só a linha de hoje cruza barra. A seta não usa orient: todo conector entra na barra pela esquerda. DECISÕES. O valor de cada linha vai numa coluna de término alinhada à direita, e não na ponta da barra, porque a ponta é de onde o conector sai. O tique semanal escreve a data inteira por formatDate, já que o Farol não tem formatador de dia e mês (pedido registrado no README). Sem dica: nome, término e dependências já estão no desenho parado (DIC-1)."
+}

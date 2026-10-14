@@ -1,0 +1,13 @@
+{
+  "title": "Entradas diárias com média móvel de 7 dias",
+  "useCase": "Nos últimos 180 dias as entradas de leads mudaram de tendência ou só oscilaram dentro do ruído diário?",
+  "demonstrates": [
+    "Bruto em traço fino neutro e média móvel em --chart-1 por cima",
+    "Rótulo e marcador no fim de cada linha, recalculados sobre a fatia visível do Brush",
+    "Janela de 7 dias declarada no rótulo da média móvel",
+    "dot ligado só no último ponto visível de cada linha; animação só na entrada",
+    "Brush com domínio y recalculado para a janela visível"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

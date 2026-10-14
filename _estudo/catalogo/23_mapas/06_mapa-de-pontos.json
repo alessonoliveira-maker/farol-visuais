@@ -1,0 +1,74 @@
+{
+  "slug": "06_mapa-de-pontos",
+  "nome": "Mapa de pontos",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Pontos de mesmo tamanho em coordenadas sobre a malha neutra do IBGE, um ponto por item ou um ponto a cada N itens, para ler distribuição, agrupamento e lacuna. Mesmo sistema de coordenadas do coroplético: fora do grupo escalado, x = lon e y = −lat. Até alguns milhares de itens cabem como circle; acima disso, um único path por cor com subcaminhos de círculo. Com um ponto a cada N itens, a posição dentro da UF é sorteada por gerador com semente fixa e teste de ponto dentro do polígono em TypeScript, e o mapa diz que a posição é ilustrativa. Item sem município nunca vai para o centroide.",
+  "quando_usar": [
+    "Localização de itens individuais com coordenada confiável, como eventos, escritórios ou clientes por cidade",
+    "Densidade e aglomeração em escala nacional, com um ponto a cada N itens",
+    "Raio de atuação em torno de poucos pontos de referência",
+    "Distribuição por categoria com até 5 cores, quando a mistura no espaço importa"
+  ],
+  "quando_evitar": [
+    "Dado só com UF, sem município ou coordenada: use o tile grid (23/01) ou os símbolos proporcionais (23/03)",
+    "Densidade 2D de duas medidas sem geografia: use a densidade 2D (09/09_densidade-2d)",
+    "Ligação entre pontos: use a família 27 de rede e relações",
+    "Deslocamento de volume entre locais: use a família 11 de fluxo e sankey",
+    "Contagem exata por cidade: use a tabela com barras inline (14/01_tabela-com-barras-inline)"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_eventos-presenciais-por-cidade",
+      "titulo": "Eventos presenciais de 2026 por cidade",
+      "caso_de_uso": "Marketing: onde aconteceram os 42 eventos presenciais fictícios de 2026 e que regiões ficaram sem evento.",
+      "o_que_demonstra": [
+        "Ponto um para um em cx = lon e cy = −lat fora do grupo escalado da malha",
+        "Raio fixo convertido de pixels para graus pela largura do viewBox",
+        "Pontos em var(--chart-1) com fill-opacity e contorno var(--surface-raised)",
+        "Anotação curta no padrão que o leitor deve ver, como nenhum evento no Norte",
+        "Contagem por macrorregião escrita abaixo do mapa"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_raio-de-atuacao-dos-escritorios",
+      "titulo": "Clientes dentro do raio dos escritórios",
+      "caso_de_uso": "Comercial: quantos clientes fictícios ficam a até 100 km de um dos 3 escritórios fictícios e quantos ficam fora.",
+      "o_que_demonstra": [
+        "Raio de 100 km como elipse em graus, com rx corrigido pelo cosseno da latitude",
+        "Distância por haversine em TypeScript para classificar dentro e fora do raio",
+        "Clientes dentro em var(--chart-1) e fora em var(--line-strong) com contagem escrita",
+        "Escritório como ícone lucide Building2 posicionado na coordenada",
+        "Legenda que declara o raio como aproximado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_um-ponto-a-cada-cinco-leads-por-origem",
+      "titulo": "Leads de 2026 por origem, 1 ponto a cada 5",
+      "caso_de_uso": "Marketing: como os 9.800 leads fictícios de 2026 se espalham pelo território conforme a origem.",
+      "o_que_demonstra": [
+        "Posição sorteada dentro da UF por gerador com semente fixa, sem Math.random",
+        "Teste de ponto dentro do polígono por ray casting sobre os anéis da UF",
+        "Um único path por origem com subcaminhos de círculo em vez de milhares de circle",
+        "Cor fixa por origem em var(--chart-1) a var(--chart-5) com legenda 1 ponto = 5 leads",
+        "Aviso escrito de que a posição dentro da UF é ilustrativa"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_leads-sem-municipio-fora-do-mapa",
+      "titulo": "Leads com e sem município informado",
+      "caso_de_uso": "Marketing: quantos leads fictícios não têm município e por isso não podem virar ponto no mapa.",
+      "o_que_demonstra": [
+        "Card à parte com 320 leads sem município e o percentual do total",
+        "Nenhum ponto no centroide da UF, para não criar aglomerado falso",
+        "Lista das UFs com mais leads sem município, com contagem escrita",
+        "Estado vazio com ícone lucide Filter quando o recorte não tem ponto",
+        "Frase acessível que soma pontos desenhados e leads fora do mapa"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

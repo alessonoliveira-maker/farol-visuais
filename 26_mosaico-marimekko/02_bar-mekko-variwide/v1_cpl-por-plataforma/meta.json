@@ -1,0 +1,14 @@
+{
+  "title": "CPL e investimento por plataforma",
+  "useCase": "Marketing, 2026-08: qual plataforma de mídia paga tem o CPL mais alto e quanto do investimento do mês ela concentra?",
+  "demonstrates": [
+    "x acumulado pelos leads e altura pelo CPL numa escala linear a partir de zero",
+    "Tiques do eixo Y com passo bonito de 1, 2, 2,5 ou 5 vezes potência de 10",
+    "Colunas ordenadas pelo CPL decrescente, com a largura como peso",
+    "Rótulo com CPL e investimento por formatCurrencyCompact e leads no eixo X",
+    "Eixo X acumulado de leads com o total do mês escrito no fim"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card como no catálogo. A conta da GEO-1 fecha: o corpo do card com o caso de uso em duas linhas tem 574 por 225 px, e são 24 da linha de leitura e 201 do SVG, de viewBox 574 por 201 em escala 1 (GEO-18). Dos 201, 10 de margem superior, 8 de vão, duas linhas de nome, a linha de leads e a de rodapé a 14 px cada, 4 de folga e 2 de base; sobram cerca de 117 px de plotagem. Os vãos de 2 px saem antes da partilha de largura (GEO-16), então a área de cada coluna é exatamente proporcional ao investimento. Desvio: o neutro das colunas é --line-strong como no catálogo, com o valor escrito dentro ou junto da coluna (ACE-3); o rótulo da coluna baixa, que não cabe dentro, vai acima dela com halo."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Painéis com histórico curto e sem volume",
+  "useCase": "Como mostrar quem tem só dois meses de histórico e quem não teve volume, sem esticar dado nem esconder o vazio?",
+  "demonstrates": [
+    "Meses antes da entrada marcados como sem histórico, no mesmo eixo dos outros painéis",
+    "Painel todo em zero desenha marca mínima na base, com a nota sem volume no período",
+    "Zero medido separado de mês sem histórico no mesmo painel, nunca pela dica",
+    "Frase acessível que lista os painéis com histórico curto e sem volume"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Aviso ESPESSURA-MARCA no painel Base própria: os 2px medidos são o traço mínimo do zero medido (EST-3), não a barra principal do modelo; as demais colunas do painel medem o mesmo que as da v1. É a mesma exceção que a ESP-2 já reconhece para marca de densidade."
+}

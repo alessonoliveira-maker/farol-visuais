@@ -1,0 +1,69 @@
+{
+  "slug": "03_pizza-de-fracao-unica",
+  "nome": "Pizza de fração única",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Pizza de dois setores: a parte, em cor de destaque a partir das 12 horas, e o restante como trilho neutro. Funciona como glifo ao lado de um número grande, porque o todo está implícito na forma; repetida em célula de tabela, de 16 a 24 px, vira um path de arco em SVG puro, mais barato que um PieChart por linha.",
+  "quando_usar": [
+    "Uma parte contra o restante de um todo existente, entre 5% e 95%, lida num relance como um quarto, metade ou três quartos.",
+    "Glifo de 24 a 48 px ao lado do número de KPI, reforçando a fração sem ocupar o card.",
+    "Coluna de glifos repetidos numa tabela, com o percentual sempre escrito ao lado."
+  ],
+  "quando_evitar": [
+    "Fração abaixo de 5% ou acima de 95%: vira lasca ou disco; número com barra de progresso (13).",
+    "Caminho até uma meta que pode ser ultrapassada: progresso e meta (13).",
+    "Mais de uma parte relevante: pizza simples (modelo 01).",
+    "Comparar a mesma fração entre muitos grupos com precisão: barra em célula (14)."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_indicacao-nas-oportunidades-ganhas",
+      "titulo": "Indicação nas oportunidades ganhas",
+      "caso_de_uso": "Que fração das oportunidades ganhas no trimestre veio de indicação?",
+      "o_que_demonstra": [
+        "Dois itens no Pie: parte em --chart-1 e restante em --line-strong",
+        "Restante fora de --surface-overlay, que some no tema claro",
+        "Número em kpi-number ao lado do glifo, nunca dentro da pizza cheia",
+        "Volume junto da fração: 38,0% (19 de 50) por formatRateWithVolume"
+      ],
+      "canvas_sugerido": "kpi"
+    },
+    {
+      "slug": "v2_tique-do-trimestre-anterior",
+      "titulo": "Fração com tique do trimestre anterior",
+      "caso_de_uso": "A fração de ganhos por indicação subiu contra o trimestre anterior, e quanto?",
+      "o_que_demonstra": [
+        "Tique radial em 25% no contorno, com o mesmo centro e raio do Pie",
+        "Ângulo do tique calculado em TypeScript na convenção de ângulo do Recharts",
+        "Variação com sinal e base nomeada: +13 pontos percentuais contra 25%",
+        "Rótulo do tique curto, em --text-muted e fora do disco"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_glifos-de-cobertura-na-tabela-de-origens",
+      "titulo": "Cobertura de qualificação por origem de lead",
+      "caso_de_uso": "Em cada origem, que fração dos leads do mês tem qualificação registrada para entrar no CPL qualificado?",
+      "o_que_demonstra": [
+        "Glifo de 20 px em path de arco calculado em TypeScript, sem PieChart por linha",
+        "Tabela em HTML com Tailwind e percentual à direita em tabular-nums",
+        "Mesma geometria e mesma cor em todas as linhas, percentual sempre escrito",
+        "Arco de 100% desenhado como círculo, caso que o path de arco único não cobre",
+        "Origem com menos de 10 leads mostra o par volume e fração"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_zero-indisponivel-e-extremos",
+      "titulo": "Zero, indisponível e frações extremas",
+      "caso_de_uso": "Como o glifo separa fração medida em zero, fração indisponível e frações abaixo de 5% ou acima de 95%?",
+      "o_que_demonstra": [
+        "0% medido desenha o trilho vazio e escreve 0%",
+        "Indisponível com contorno tracejado --text-muted e formatUnavailable()",
+        "Abaixo de 5% ou acima de 95% o glifo dá lugar ao número",
+        "Quatro estados lado a lado com o mesmo diâmetro e o ícone Unplug"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

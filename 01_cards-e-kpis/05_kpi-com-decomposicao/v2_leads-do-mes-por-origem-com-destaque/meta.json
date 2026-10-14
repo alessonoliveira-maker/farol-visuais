@@ -1,0 +1,14 @@
+{
+  "title": "Leads do mês por origem com mídia paga acesa",
+  "useCase": "Quanto do volume de leads de ago/26 veio de mídia paga, contra as outras três origens?",
+  "demonstrates": [
+    "Barra única segmentada com larguras percentuais e ordem vinda da configuração",
+    "Mídia paga em --chart-1 e demais origens em neutro com valor escrito",
+    "Separador de 2 px em --surface-raised entre segmentos vizinhos (COR-5)",
+    "Linha de leitura calculada: mídia paga responde por 52% do volume",
+    "Legenda com valor em colunas à direita, na ordem visual dos segmentos"
+  ],
+  "canvas": { "width": 360, "height": 360 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset kpi-alto: a legenda de quatro linhas com 10 px entre itens (17.7) não cabe nos 182 px de corpo do preset; 340 px de altura ainda deixava a última linha da legenda encostar no padding inferior (ESP-3), corrigido para 360."
+}

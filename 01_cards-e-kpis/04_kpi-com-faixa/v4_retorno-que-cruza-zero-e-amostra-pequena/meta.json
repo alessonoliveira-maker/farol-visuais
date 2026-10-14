@@ -1,0 +1,12 @@
+{
+  "title": "Retorno que cruza zero e amostra pequena",
+  "useCase": "Como mostrar um retorno projetado entre −0,3x e 1,4x e um ciclo de venda medido em só 14 oportunidades?",
+  "demonstrates": [
+    "Faixa assimétrica cruzando zero, com a marca do zero em --line-strong",
+    "Sinal tipográfico no limite inferior e a frase: o cenário admite resultado negativo",
+    "p90 suprimido abaixo de n = 30, com o aviso amostra pequena",
+    "Oportunidades ainda abertas declaradas fora da conta: 9 sem desfecho"
+  ],
+  "canvas": "card",
+  "frame": "stage"
+}

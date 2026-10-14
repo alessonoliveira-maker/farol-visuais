@@ -1,0 +1,135 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "10_corrida-de-barras",
+  "versoes": {
+    "v1_origens-mes-a-mes": {
+      "veredito": "aprovado",
+      "nota": "Barra do zero, valor escrito em cada marca, chave pela categoria, tokens e imports do contrato; observacoes so de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:40.505Z",
+      "impressao": "09b176e6a6cbb27e1c52103aefc8384a5bd44043",
+      "arquivos": {
+        "Chart.tsx": "faf8e59381f9f77830c55fd3e3196573819a09d7",
+        "data.ts": "0048c6de206664a8eba10038b048dcf7c1fd4cc9",
+        "meta.json": "10502b100dbcf82b6ae5479240ce31adfcafdbb9"
+      }
+    },
+    "v2_receita-acumulada-com-marcos": {
+      "veredito": "aprovado",
+      "nota": "Marcos e aviso de interpolacao implementados, moeda compacta na ponta, barra do zero; observacoes de acabamento e de leitor de tela.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:46.736Z",
+      "impressao": "6dd8c568c7d14a39d0caefef323bc8929fbe1ce8",
+      "arquivos": {
+        "Chart.tsx": "5520ef9ec2670432a982df4a632087226ff68fee",
+        "data.ts": "648976ed72a1a9f7ea4e569ebe0e4e633b32a1d2",
+        "meta.json": "3a11bca4aa1f5e37bb25b94912a7259646a3cc14"
+      }
+    },
+    "v3_entrada-e-saida-do-top-10": {
+      "veredito": "aprovado",
+      "nota": "Sem coleta congela o ultimo valor com textura e rotulo, opacidade so na marca e nunca no texto; observacoes de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:47.534Z",
+      "impressao": "28d9ff2d80dfaff8b5eebc9ffb33565f8dcbc43b",
+      "arquivos": {
+        "Chart.tsx": "726a9062bad39f9be94ff59a31161fc9710a1b9b",
+        "data.ts": "f9a920e361f95a0be2b4bfe51e782bc15ac997e5",
+        "meta.json": "6d4eb7eadebc35a7ae59faa8fc5db4f8effdbc92"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origens-mes-a-mes",
+      "veredito": "reprovado",
+      "nota": "Rotulo 'Trafego pago Meta' no data.ts imprime marca de empresa real na tela; trocar por nome generico de canal, como os vizinhos google_ads e linkedin_ads ja fazem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:43.458Z",
+      "impressao": "7a7c99bdccc4431dfa10886a713c5e7f683678b6",
+      "arquivos": {
+        "Chart.tsx": "faf8e59381f9f77830c55fd3e3196573819a09d7",
+        "data.ts": "67c942f2e99ef070f533fdcef4e642f03e444242",
+        "meta.json": "10502b100dbcf82b6ae5479240ce31adfcafdbb9"
+      }
+    },
+    {
+      "versao": "v1_origens-mes-a-mes",
+      "veredito": "reprovado",
+      "nota": "Rótulo \"Tráfego pago Meta\" imprime marca de empresa real na tela; usar nome genérico de canal, como já fazem os rótulos de google_ads e linkedin_ads no mesmo data.ts.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:52.383Z",
+      "impressao": "7a7c99bdccc4431dfa10886a713c5e7f683678b6",
+      "arquivos": {
+        "Chart.tsx": "faf8e59381f9f77830c55fd3e3196573819a09d7",
+        "data.ts": "67c942f2e99ef070f533fdcef4e642f03e444242",
+        "meta.json": "10502b100dbcf82b6ae5479240ce31adfcafdbb9"
+      }
+    },
+    {
+      "versao": "v2_receita-acumulada-com-marcos",
+      "veredito": "aprovado",
+      "nota": "Corrida honesta: barra do zero, valor escrito em toda linha, aviso de interpolação e marco no quadro final; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:47:00.601Z",
+      "impressao": "6dd8c568c7d14a39d0caefef323bc8929fbe1ce8",
+      "arquivos": {
+        "Chart.tsx": "5520ef9ec2670432a982df4a632087226ff68fee",
+        "data.ts": "648976ed72a1a9f7ea4e569ebe0e4e633b32a1d2",
+        "meta.json": "3a11bca4aa1f5e37bb25b94912a7259646a3cc14"
+      }
+    },
+    {
+      "versao": "v3_entrada-e-saida-do-top-10",
+      "veredito": "reprovado",
+      "nota": "ACE-4: opacity 0,32 no <g> que contém os textos joga rótulo, posição e valor de quem sai do topo para cerca de 1,7:1 no claro e 2,0:1 no escuro, abaixo de AA; distinguir o fora do topo sem opacidade sobre texto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:47:01.278Z",
+      "impressao": "f1d9910be019544bf0e8b0a441177c21b0f3b5e8",
+      "arquivos": {
+        "Chart.tsx": "b6d20d1cb6a0165263a1d60567c55ab99ad1d94a",
+        "data.ts": "f9a920e361f95a0be2b4bfe51e782bc15ac997e5",
+        "meta.json": "6d4eb7eadebc35a7ae59faa8fc5db4f8effdbc92"
+      }
+    },
+    {
+      "versao": "v1_origens-mes-a-mes",
+      "veredito": "aprovado",
+      "nota": "Barra do zero, valor escrito em cada marca, chave pela categoria, tokens e imports do contrato; observacoes so de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:40.505Z",
+      "impressao": "09b176e6a6cbb27e1c52103aefc8384a5bd44043",
+      "arquivos": {
+        "Chart.tsx": "faf8e59381f9f77830c55fd3e3196573819a09d7",
+        "data.ts": "0048c6de206664a8eba10038b048dcf7c1fd4cc9",
+        "meta.json": "10502b100dbcf82b6ae5479240ce31adfcafdbb9"
+      }
+    },
+    {
+      "versao": "v2_receita-acumulada-com-marcos",
+      "veredito": "aprovado",
+      "nota": "Marcos e aviso de interpolacao implementados, moeda compacta na ponta, barra do zero; observacoes de acabamento e de leitor de tela.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:46.736Z",
+      "impressao": "6dd8c568c7d14a39d0caefef323bc8929fbe1ce8",
+      "arquivos": {
+        "Chart.tsx": "5520ef9ec2670432a982df4a632087226ff68fee",
+        "data.ts": "648976ed72a1a9f7ea4e569ebe0e4e633b32a1d2",
+        "meta.json": "3a11bca4aa1f5e37bb25b94912a7259646a3cc14"
+      }
+    },
+    {
+      "versao": "v3_entrada-e-saida-do-top-10",
+      "veredito": "aprovado",
+      "nota": "Sem coleta congela o ultimo valor com textura e rotulo, opacidade so na marca e nunca no texto; observacoes de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:07:47.534Z",
+      "impressao": "28d9ff2d80dfaff8b5eebc9ffb33565f8dcbc43b",
+      "arquivos": {
+        "Chart.tsx": "726a9062bad39f9be94ff59a31161fc9710a1b9b",
+        "data.ts": "f9a920e361f95a0be2b4bfe51e782bc15ac997e5",
+        "meta.json": "6d4eb7eadebc35a7ae59faa8fc5db4f8effdbc92"
+      }
+    }
+  ]
+}

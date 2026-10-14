@@ -1,0 +1,108 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "06_parlamento",
+  "versoes": {
+    "v1_contas-da-carteira-por-segmento": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 48, 30, 18, 18 e 6 pontos contados nos dois previews (120), vão de 2,00 px entre pontos, percentuais somam 100, ausência vazada e por último, marcas de 5,39:1 para cima e textos de 5,21:1 para cima nos dois temas. Observações no README (contagem da legenda sem substantivo na linha, legenda lateral com 50% da altura do corpo, texto do demonstrates diferente do catálogo com desvio declarado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:57.060Z",
+      "impressao": "d0167cca5b2cbeba6b3940088432ebd2a4df009d",
+      "arquivos": {
+        "Chart.tsx": "b7c55eff9a0da94bc85529d848c20a08e1ee9222",
+        "data.ts": "0f1d35df2ec7cb0146d00b26db701af56551624a",
+        "meta.json": "a5c3eff244eed41262641d4bb2e1a6baea28eaae"
+      }
+    },
+    "v2_ocupacao-do-teto-de-contas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 91 cheios, 13 anéis com miolo e 16 vazados contados nos dois previews (120), mesmo raio de fora nas três formas, rótulos diretos somam o teto, amostras a 14,9 px ou mais do arco, marcas de 5,21:1 para cima. Pergunta 18 com ressalva: dica feita à mão pela saída da REC-6, porque svg-puro não tem onde montar o ChartTooltip. Observações no README (borda e sombra da dica, ramos de rótulo fora do dado padrão, desvio do catálogo declarado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:57.555Z",
+      "impressao": "5591c47a72ad526caa0f3f3d6775bca6f8668c3f",
+      "arquivos": {
+        "Chart.tsx": "a05e7080d50636c98bb376607d0a05feeff5d3d1",
+        "data.ts": "63cfcad210dbc83cdcc3743886ef1af199c90db1",
+        "meta.json": "ee39e1d1a85964e3a8042c73e2ebbc92da5022d6"
+      }
+    },
+    "v3_vitorias-do-ano-e-linha-de-maioria": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 23, 18, 17, 9, 2 e 5 pontos contados (74), 37 de cada lado da linha da metade, colchete abraça só os 41 somados, linha passa a 2,69 px dos assentos, percentuais somam 100, traços de 5,21:1 para cima. Observações no README, a principal: o colchete nasce em x = 0 do corpo e perde metade do traço (0,75 px) nos primeiros 16 px, sem partir a marca; também o par chart-6 e chart-2 no claro (delta E 4,1 em deuteranopia), o traço da linha fora da 17.2 e o ano parcial sem corte na tela.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:58.074Z",
+      "impressao": "f707756c9ca46d51826d954afce6f29d5bb12c1d",
+      "arquivos": {
+        "Chart.tsx": "2e1f30b3ba7d1aed30a0ba5a401342bc5fe866a6",
+        "data.ts": "272b1f1f9d1dd145eaed25e6abd6bbcc5def071a",
+        "meta.json": "f6b9972cb89cce47ba399cc2030e0d8a9d24d4f8"
+      }
+    },
+    "v4_hemiciclo-com-7-e-com-900-lugares": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx das 06:40, render refeito na revisão). Sem bloqueante: 7 pontos em 1 fileira (4, 2, 1), 90 pontos em 5 fileiras (52, 27, 11) com o aviso de que cada ponto vale 10 contas, legenda com as contagens reais somando 7 e 900, total nulo escrito por formatUnavailable com Unplug e sem arco. Observações no README (participação em pontos difere até 1 ponto percentual da legenda, frase acessível sem os grupos).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:58.607Z",
+      "impressao": "2a8742a3f326eec1a41bad771227626dbd46d9b4",
+      "arquivos": {
+        "Chart.tsx": "6d59db88e5c61e5f7a84b0b2f0959d1a4e48c3c5",
+        "data.ts": "c1ec2f8db8474a5a68d05158c10ae3c2dc3c279d",
+        "meta.json": "da2d9e4d55c7c24f4a7d392e8fe171e6f185d9dc"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_contas-da-carteira-por-segmento",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 48, 30, 18, 18 e 6 pontos contados nos dois previews (120), vão de 2,00 px entre pontos, percentuais somam 100, ausência vazada e por último, marcas de 5,39:1 para cima e textos de 5,21:1 para cima nos dois temas. Observações no README (contagem da legenda sem substantivo na linha, legenda lateral com 50% da altura do corpo, texto do demonstrates diferente do catálogo com desvio declarado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:57.060Z",
+      "impressao": "d0167cca5b2cbeba6b3940088432ebd2a4df009d",
+      "arquivos": {
+        "Chart.tsx": "b7c55eff9a0da94bc85529d848c20a08e1ee9222",
+        "data.ts": "0f1d35df2ec7cb0146d00b26db701af56551624a",
+        "meta.json": "a5c3eff244eed41262641d4bb2e1a6baea28eaae"
+      }
+    },
+    {
+      "versao": "v2_ocupacao-do-teto-de-contas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 91 cheios, 13 anéis com miolo e 16 vazados contados nos dois previews (120), mesmo raio de fora nas três formas, rótulos diretos somam o teto, amostras a 14,9 px ou mais do arco, marcas de 5,21:1 para cima. Pergunta 18 com ressalva: dica feita à mão pela saída da REC-6, porque svg-puro não tem onde montar o ChartTooltip. Observações no README (borda e sombra da dica, ramos de rótulo fora do dado padrão, desvio do catálogo declarado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:57.555Z",
+      "impressao": "5591c47a72ad526caa0f3f3d6775bca6f8668c3f",
+      "arquivos": {
+        "Chart.tsx": "a05e7080d50636c98bb376607d0a05feeff5d3d1",
+        "data.ts": "63cfcad210dbc83cdcc3743886ef1af199c90db1",
+        "meta.json": "ee39e1d1a85964e3a8042c73e2ebbc92da5022d6"
+      }
+    },
+    {
+      "versao": "v3_vitorias-do-ano-e-linha-de-maioria",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 23, 18, 17, 9, 2 e 5 pontos contados (74), 37 de cada lado da linha da metade, colchete abraça só os 41 somados, linha passa a 2,69 px dos assentos, percentuais somam 100, traços de 5,21:1 para cima. Observações no README, a principal: o colchete nasce em x = 0 do corpo e perde metade do traço (0,75 px) nos primeiros 16 px, sem partir a marca; também o par chart-6 e chart-2 no claro (delta E 4,1 em deuteranopia), o traço da linha fora da 17.2 e o ano parcial sem corte na tela.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:58.074Z",
+      "impressao": "f707756c9ca46d51826d954afce6f29d5bb12c1d",
+      "arquivos": {
+        "Chart.tsx": "2e1f30b3ba7d1aed30a0ba5a401342bc5fe866a6",
+        "data.ts": "272b1f1f9d1dd145eaed25e6abd6bbcc5def071a",
+        "meta.json": "f6b9972cb89cce47ba399cc2030e0d8a9d24d4f8"
+      }
+    },
+    {
+      "versao": "v4_hemiciclo-com-7-e-com-900-lugares",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx das 06:40, render refeito na revisão). Sem bloqueante: 7 pontos em 1 fileira (4, 2, 1), 90 pontos em 5 fileiras (52, 27, 11) com o aviso de que cada ponto vale 10 contas, legenda com as contagens reais somando 7 e 900, total nulo escrito por formatUnavailable com Unplug e sem arco. Observações no README (participação em pontos difere até 1 ponto percentual da legenda, frase acessível sem os grupos).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:55:58.607Z",
+      "impressao": "2a8742a3f326eec1a41bad771227626dbd46d9b4",
+      "arquivos": {
+        "Chart.tsx": "6d59db88e5c61e5f7a84b0b2f0959d1a4e48c3c5",
+        "data.ts": "c1ec2f8db8474a5a68d05158c10ae3c2dc3c279d",
+        "meta.json": "da2d9e4d55c7c24f4a7d392e8fe171e6f185d9dc"
+      }
+    }
+  ]
+}

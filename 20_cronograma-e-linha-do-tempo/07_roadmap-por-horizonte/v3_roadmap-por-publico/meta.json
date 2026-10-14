@@ -1,0 +1,13 @@
+{
+  "title": "Roadmap por público em quatro faixas",
+  "useCase": "Diretoria: 24 iniciativas fictícias de quatro públicos distribuídas em agora, próximo e depois.",
+  "demonstrates": [
+    "Grade de 4 faixas por 3 horizontes com rótulo de faixa fixo à esquerda",
+    "Cor fixa por público em var(--chart-N) só na borda esquerda do cartão",
+    "Selo com data e ícone CalendarCheck na iniciativa que já foi para o Gantt",
+    "Contagem por célula e container query que empilha os horizontes no estreito"
+  ],
+  "canvas": "alto",
+  "frame": "stage",
+  "notes": "Moldura stage: o corpo mede 600 x 470 px (640 x 560 menos 40 de largura e 90 de altura). Conta da altura: subtítulo 16 + vão 8 + cabeçalho 24 + vão 8 + quatro faixas de 76, 92, 92 e 92 px com 3 vãos de 8 + rodapé 16 + vão 8 = 456. A faixa é a célula mais alta: três cartões de uma linha (28 px com vão de 4). Por isso título até cerca de 20 caracteres e selo de data só em célula com no máximo dois cartões. Cores por público em ordem 1, 3, 6, 5 (COR-8), fixas por faixa."
+}

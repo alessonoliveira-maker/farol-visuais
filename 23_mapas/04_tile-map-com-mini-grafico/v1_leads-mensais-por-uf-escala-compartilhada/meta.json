@@ -1,0 +1,14 @@
+{
+  "title": "Leads mensais por UF em 2026",
+  "useCase": "Pré-vendas: como as entradas de leads evoluíram em cada UF de jan/26 a ago/26, na mesma escala.",
+  "demonstrates": [
+    "Grade de 7 por 6 com tile de proporção fixa e sigla no canto superior",
+    "Path de linha calculado em TypeScript num viewBox fixo por tile, sem Recharts",
+    "Escala Y única para as 27 UFs, declarada na nota como mesma escala",
+    "Último valor escrito em cada tile com formatInt e className font-display",
+    "Zero medido com anel vazado, mês sem coleta com a linha quebrada"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Grade de 7 colunas e não a de 8 do catálogo (br_states_grid1): a coluna 1 da grade de 8 não tem UF, e a de 7 é a vizinhança do modelo 23/01 sem a sobra; a grade é desenhada à mão e não foi verificada contra o geofacet. Formatador: o catálogo diz formatNumber, que não existe no Farol; o número vai por formatInt. A linha é --chart-1 com vectorEffect non-scaling-stroke, o que permite o SVG esticar sem engordar o traço; o anel do zero medido é HTML porque o SVG esticado deformaria o círculo. A escala vai de 0 ao múltiplo de 500 acima do maior valor medido (SP, 1.840, dá 2.000). RR zera em fev/26 (anel), TO não tem coleta em mar/26 (linha quebrada) e AP não tem nenhum mês medido (Unplug e indisponível)."
+}

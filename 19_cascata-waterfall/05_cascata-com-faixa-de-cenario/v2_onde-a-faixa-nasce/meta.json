@@ -1,0 +1,13 @@
+{
+  "title": "Onde nasce a incerteza do trimestre",
+  "useCase": "Qual passo da projeção de 2026-T4 concentra a incerteza: medir qual deles estreita a faixa do total?",
+  "demonstrates": [
+    "Destaque em --chart-1 no passo de maior amplitude, demais neutros",
+    "Amplitude de cada passo escrita junto do intervalo",
+    "Anotação curta ancorada no passo que concentra a incerteza",
+    "Peso 700 no rótulo destacado como segundo canal"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas 960x480 em vez de largo (960x400): com o eixo a partir do zero (EIX-1), passos de R$ 20 mil a R$ 240 mil sobre uma saída de R$ 1,78 mi só têm intervalo legível com cerca de 200 px de plotagem; no largo sobrariam uns 125 px. Conta: 480 − 135 = 345 px de corpo; menos leitura (44), legenda (24), margem de 62 e eixo de 28, restam cerca de 187 px. A amplitude fica escrita sobre o intervalo e não ao lado: ao lado ela cruza o conector que sai do fim do passo. Peso 700 em dois elementos (TIP-3): o valor esperado e a amplitude do passo destacado. A moeda do milhão sai com duas casas por formatDecimal (formatCurrencyCompact arredonda para uma)."
+}

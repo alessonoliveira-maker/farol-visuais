@@ -1,0 +1,15 @@
+{
+  "title": "Dias parados por etapa do funil",
+  "useCase": "Em que etapa as oportunidades abertas ficam paradas por mais tempo, e quais são os casos extremos?",
+  "demonstrates": [
+    "Layout horizontal com oito etapas em ordem de funil e n ao lado de cada caixa",
+    "Caso além do teto do eixo vira marcador na borda, com código e valor escritos",
+    "Outlier clicável devolvendo o código da oportunidade para o drill da página",
+    "Limiar de 30 dias em ReferenceLine com ifOverflow extendDomain",
+    "Dado de 1.900 linhas gerado com semente fixa e limitado por construção",
+    "Rótulo de borda sobe da linha do bigode, porque o halo apagaria o traço de 1 px"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "A ordem é de funil, do topo para a base, e não por mediana: reordenar por valor responderia a pergunta da peça antes de o leitor olhar, e apagaria o fato de que o gargalo está perto do fim, em Aprovação interna, com mediana de 46 dias contra 6 na Triagem. O teto do eixo é 180 dias e vem da régua da operação, não do maior valor da amostra: os dois casos além dele, de 412 e de 206 dias, vão como marcador na borda com o código e o número escritos, porque esticar o eixo até 412 comprimiria as oito caixas em menos de um terço da largura útil e cortá-los apagaria justamente a oportunidade que alguém precisa abrir hoje. O rótulo do marcador sobe 13 px do centro da banda: no centro ele cruzaria o bigode da própria etapa, e pela ROT-7 o halo de 4 px apagaria um traço de 1 px em vez de deixá-lo ver, que é o caso da exceção da marca fina. O código escrito no rodapé é só o do caso mais distante, e isso é medição e não escolha: são 34 casos além da cerca, cada código mede cerca de 60 px em 11 px de texto, e a banda de cada etapa tem cerca de 38 px de altura. O dado de 1.900 linhas nasce de um gerador congruente linear com semente fixa em vez de vir digitado, e a forma é limitada entre um piso e um teto por construção, para os únicos casos fora do domínio serem os dois declarados. Pendência declarada: o clique no ponto não tem equivalente de teclado dentro do Chart, porque o corpo do gráfico é aria-hidden e a frase da raiz é o canal de leitura; quem colar no Farol expõe o mesmo drill numa lista ou no menu do VisualCard."
+}

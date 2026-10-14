@@ -1,0 +1,212 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "04_barras-empilhadas-100",
+  "versoes": {
+    "v1_mix-de-origem-por-segmento": {
+      "veredito": "aprovado",
+      "nota": "Expand com percentual no dado, n a direita e ausencia vazada por ultimo; dois temas sem corte.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:16.255Z",
+      "impressao": "a48a3cddf283e68bb45455c3fa5e7b1abcfe4ee2",
+      "arquivos": {
+        "Chart.tsx": "511d615c02e7a050e66218764b9a23addce348a5",
+        "data.ts": "0b79f58043ad837cbe72b402b12266a0c5b7a2c8",
+        "meta.json": "b33d7a5354cd6d4091c7e0d4c92e2ffb652caad2"
+      }
+    },
+    "v2_motivos-de-perda-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Doze barras ordenadas pela base, rotulo interno com contraste, n e linha do time sem colisao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:20.612Z",
+      "impressao": "c80cddf9c1747274d55813ff5a56fc72a129f475",
+      "arquivos": {
+        "Chart.tsx": "9e1957e7f29bc7af6da0c291bc51441af51a839b",
+        "data.ts": "94141652ca0fcd39c49e7e36be23d687f9064132",
+        "meta.json": "3af9fe93f065ed31e02d6fbc9cde5b5c54d87230"
+      }
+    },
+    "v3_barra-unica-investimento-do-mes": {
+      "veredito": "aprovado",
+      "nota": "Faixa unica soma 100 com total em moeda e legenda com percentual; arredondamento por resto no ultimo fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:26.060Z",
+      "impressao": "66b6b097b8b67779adfad9bffc9ce9860a7b2781",
+      "arquivos": {
+        "Chart.tsx": "40345f4f21fd10b0262e01dbd66114d6c0bd365e",
+        "data.ts": "91c259fbfebe4e0ad1dd2d95f7a3111fd20f4a2c",
+        "meta.json": "51b9f791c611cfe2d992da938ff9f2fc89207068"
+      }
+    },
+    "v4_n-baixo-e-sem-casos": {
+      "veredito": "aprovado",
+      "nota": "Tres estados separados: n baixo com selo, sem casos e indisponivel por formatUnavailable, sem barra zerada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:30.138Z",
+      "impressao": "ab4e79304653d012e130a8d23b60f89765ac6259",
+      "arquivos": {
+        "Chart.tsx": "1ae80984ff19c19aa9a191ac6d2058fae2873ea3",
+        "data.ts": "f01571f2857a472cd5b8d36bc1479689a4ba9b72",
+        "meta.json": "9e99766d40c48a20548f86730f069e978b94bb89"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_mix-de-origem-por-segmento",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalva: o percentual da ausencia so aparece em Pequenas contas; em Medias e Grandes o rotulo e suprimido pelo limiar de largura.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T10:36:04.761Z",
+      "impressao": "6b3937299d9b7e55735bd4724ae31ebd91b6dddd",
+      "arquivos": {
+        "Chart.tsx": "7636c7d04cf56f31bdfd70fd991276729801118f",
+        "data.ts": "0b79f58043ad837cbe72b402b12266a0c5b7a2c8",
+        "meta.json": "b555865924a6e7d23401ef1e3a1233cb5027ffca"
+      }
+    },
+    {
+      "versao": "v2_motivos-de-perda-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Bloqueante item 13 ROT-7: o rotulo do segmento vazado colide com o proprio contorno (Joaquim D. 11%, Lorena B. 13%) nos dois temas; a barra tem 10 px e a caixa interna 8,5 px contra texto de 12 px. Suprimir o rotulo quando a altura interna nao comportar o texto ou dar altura de barra maior.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T10:36:14.533Z",
+      "impressao": "10c958a04d2b869cdac2621b0d4b73db53c6b893",
+      "arquivos": {
+        "Chart.tsx": "08addb0bbdcd032ff30d019faaf3fd017452708f",
+        "data.ts": "94141652ca0fcd39c49e7e36be23d687f9064132",
+        "meta.json": "eb104a976aa6628e31030c747ea6a26fd5c8fbf9"
+      }
+    },
+    {
+      "versao": "v3_barra-unica-investimento-do-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalvas: Outras (3) usa contorno tracejado, que e a linguagem da ausencia no resto do modelo, e no tema claro o tracejado quase some; a soma das larguras da 100% mais 6 px de vao dentro de um contentor com overflow hidden.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T10:36:19.149Z",
+      "impressao": "66b6b097b8b67779adfad9bffc9ce9860a7b2781",
+      "arquivos": {
+        "Chart.tsx": "40345f4f21fd10b0262e01dbd66114d6c0bd365e",
+        "data.ts": "91c259fbfebe4e0ad1dd2d95f7a3111fd20f4a2c",
+        "meta.json": "51b9f791c611cfe2d992da938ff9f2fc89207068"
+      }
+    },
+    {
+      "versao": "v4_n-baixo-e-sem-casos",
+      "veredito": "reprovado",
+      "nota": "Bloqueante item 20 ACE-3: na linha de n baixo (Squad Cedro) o percentual fica sobre o segmento em opacidade 0,5 e mede 3,55:1 no tema escuro e 2,23:1 no claro, abaixo de AA. Tirar o texto de cima da marca apagada ou marcar o n baixo sem baixar a opacidade do fundo do rotulo.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T10:36:25.035Z",
+      "impressao": "b4515eaecec7d264f8a783db499c355648f20e45",
+      "arquivos": {
+        "Chart.tsx": "94f058d0191a23bb82d80513e53313b564532d07",
+        "data.ts": "f01571f2857a472cd5b8d36bc1479689a4ba9b72",
+        "meta.json": "7db3ba533072846eec8e64155a0f5b66e5f2c31c"
+      }
+    },
+    {
+      "versao": "v1_mix-de-origem-por-segmento",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro, dois temas conferidos. Ressalva de limiar: o percentual da fatia de ausencia aparece em Pequenas contas (9%) e some em Medias (10%) e Grandes (8%).",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:31:05.210Z",
+      "impressao": "6b3937299d9b7e55735bd4724ae31ebd91b6dddd",
+      "arquivos": {
+        "Chart.tsx": "7636c7d04cf56f31bdfd70fd991276729801118f",
+        "data.ts": "0b79f58043ad837cbe72b402b12266a0c5b7a2c8",
+        "meta.json": "b555865924a6e7d23401ef1e3a1233cb5027ffca"
+      }
+    },
+    {
+      "versao": "v2_motivos-de-perda-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. A colisao do rotulo com o contorno vazado da revisao anterior esta resolvida pelo piso de altura: nos dois temas nenhum rotulo se sobrepoe. Ressalva: a fatia de ausencia nunca imprime o proprio percentual.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:31:10.038Z",
+      "impressao": "c06316cfb26fcb32fcd62a8fe61d3de1f2e6125f",
+      "arquivos": {
+        "Chart.tsx": "3cefcc5ee5503f14b3932978c50fbc685679bcb1",
+        "data.ts": "94141652ca0fcd39c49e7e36be23d687f9064132",
+        "meta.json": "eb104a976aa6628e31030c747ea6a26fd5c8fbf9"
+      }
+    },
+    {
+      "versao": "v3_barra-unica-investimento-do-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalvas: o arredondamento e piso mais resto no ultimo segmento, e nao maior resto da NUM-2, o que leva Outras de 13,7% a 15%; o tracejado de Outras usa a linguagem da ausencia e quase some no tema claro.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:31:15.167Z",
+      "impressao": "66b6b097b8b67779adfad9bffc9ce9860a7b2781",
+      "arquivos": {
+        "Chart.tsx": "40345f4f21fd10b0262e01dbd66114d6c0bd365e",
+        "data.ts": "91c259fbfebe4e0ad1dd2d95f7a3111fd20f4a2c",
+        "meta.json": "51b9f791c611cfe2d992da938ff9f2fc89207068"
+      }
+    },
+    {
+      "versao": "v4_n-baixo-e-sem-casos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O texto sobre a marca apagada da revisao anterior saiu: a linha de n baixo nao tem mais rotulo, entao nenhum texto fica abaixo de AA. Ressalvas: a marca apagada mede 2,23:1 no claro e indisponivel e texto literal, sem formatUnavailable nem icone.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:31:20.170Z",
+      "impressao": "2e512ce3f8268a8ae481548ac7ff9df51a8e18b6",
+      "arquivos": {
+        "Chart.tsx": "fbdbf0c4d351c4b1ca4b7bcbdb3bd3edf6632840",
+        "data.ts": "f01571f2857a472cd5b8d36bc1479689a4ba9b72",
+        "meta.json": "7db3ba533072846eec8e64155a0f5b66e5f2c31c"
+      }
+    },
+    {
+      "versao": "v1_mix-de-origem-por-segmento",
+      "veredito": "aprovado",
+      "nota": "Expand com percentual no dado, n a direita e ausencia vazada por ultimo; dois temas sem corte.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:16.255Z",
+      "impressao": "a48a3cddf283e68bb45455c3fa5e7b1abcfe4ee2",
+      "arquivos": {
+        "Chart.tsx": "511d615c02e7a050e66218764b9a23addce348a5",
+        "data.ts": "0b79f58043ad837cbe72b402b12266a0c5b7a2c8",
+        "meta.json": "b33d7a5354cd6d4091c7e0d4c92e2ffb652caad2"
+      }
+    },
+    {
+      "versao": "v2_motivos-de-perda-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Doze barras ordenadas pela base, rotulo interno com contraste, n e linha do time sem colisao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:20.612Z",
+      "impressao": "c80cddf9c1747274d55813ff5a56fc72a129f475",
+      "arquivos": {
+        "Chart.tsx": "9e1957e7f29bc7af6da0c291bc51441af51a839b",
+        "data.ts": "94141652ca0fcd39c49e7e36be23d687f9064132",
+        "meta.json": "3af9fe93f065ed31e02d6fbc9cde5b5c54d87230"
+      }
+    },
+    {
+      "versao": "v3_barra-unica-investimento-do-mes",
+      "veredito": "aprovado",
+      "nota": "Faixa unica soma 100 com total em moeda e legenda com percentual; arredondamento por resto no ultimo fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:26.060Z",
+      "impressao": "66b6b097b8b67779adfad9bffc9ce9860a7b2781",
+      "arquivos": {
+        "Chart.tsx": "40345f4f21fd10b0262e01dbd66114d6c0bd365e",
+        "data.ts": "91c259fbfebe4e0ad1dd2d95f7a3111fd20f4a2c",
+        "meta.json": "51b9f791c611cfe2d992da938ff9f2fc89207068"
+      }
+    },
+    {
+      "versao": "v4_n-baixo-e-sem-casos",
+      "veredito": "aprovado",
+      "nota": "Tres estados separados: n baixo com selo, sem casos e indisponivel por formatUnavailable, sem barra zerada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:56:30.138Z",
+      "impressao": "ab4e79304653d012e130a8d23b60f89765ac6259",
+      "arquivos": {
+        "Chart.tsx": "1ae80984ff19c19aa9a191ac6d2058fae2873ea3",
+        "data.ts": "f01571f2857a472cd5b8d36bc1479689a4ba9b72",
+        "meta.json": "9e99766d40c48a20548f86730f069e978b94bb89"
+      }
+    }
+  ]
+}

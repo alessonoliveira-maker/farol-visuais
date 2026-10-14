@@ -1,0 +1,121 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "09_dot-plot-empilhado",
+  "versoes": {
+    "v1_dias-ate-primeira-reuniao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; contagens por faixa, mediana e faixa mais cheia conferidas contra o data.ts nos dois temas; 3 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:43.052Z",
+      "impressao": "8e2aa0dd0c65c9041f63d686aa3c102838cff7f8",
+      "arquivos": {
+        "Chart.tsx": "6d22659202612d35baf03089c73b40944d74df84",
+        "data.ts": "c4189e783c13db3682cbabb1eb885769f47ae6bf",
+        "meta.json": "bfa8c78eb2544b9d2cbddf71dacb445c2bee8264"
+      }
+    },
+    "v2_tentativas-ate-a-agenda-com-fila-de-revisao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 140 leads, fila de 32 com 20 sem agenda e 33 vazados conferidos contra o data.ts; cheio contra vazado legível nos dois temas; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:43.513Z",
+      "impressao": "94383d5cc01312534ff603a1aa479fd3af08156e",
+      "arquivos": {
+        "Chart.tsx": "8cb6ad5a77d98b195af4a5642a3f670181036109",
+        "data.ts": "52380295aff203c71ed16c0cf5bebf455da0fc9e",
+        "meta.json": "212169136b9561c68ec539df9554c0fb5f68ecf9"
+      }
+    },
+    "v3_quantile-dotplot-de-cenarios-de-midia": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, julgado o arquivo atual; over é number | null e o cenário sem amostra sai da ordem, da frase e da linha de leitura; 14, 9, 3 e 0 desfechos acima do teto recalculados do data.ts e contados no preview nos dois temas; 7 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:34:45.799Z",
+      "impressao": "f37acb15d7126b994a2a0536647a3d4d1663f3e6",
+      "arquivos": {
+        "Chart.tsx": "3de1d606f66ce4dfaf8dbc2c5b64694860194cf9",
+        "data.ts": "04f1ce193e63a991551677b617e26f59cd03f32b",
+        "meta.json": "b8fec7ed476fffffe95ce735ca21aef956c6184c"
+      }
+    },
+    "v4_cada-ponto-vale-dez-leads": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 600 leads, inteiros e restos de cada pilha conferidos contra o data.ts; raio do parcial segue a raiz da fração; 5 observações no README, a principal é o contorno de 1 px que tira até 17% da área visível do parcial (GEO-16)",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:44.479Z",
+      "impressao": "d2228b1fed3697e1b65500fbc4d561bc7a161518",
+      "arquivos": {
+        "Chart.tsx": "2ffc7d2c54b0dfca14ea91a55f700dca10304a17",
+        "data.ts": "49f427f5092b052c46448f4d1004d091d6982cf1",
+        "meta.json": "fa6b2aecd4ce8bfaf87a51eaa44b55862dd42489"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_dias-ate-primeira-reuniao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; contagens por faixa, mediana e faixa mais cheia conferidas contra o data.ts nos dois temas; 3 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:43.052Z",
+      "impressao": "8e2aa0dd0c65c9041f63d686aa3c102838cff7f8",
+      "arquivos": {
+        "Chart.tsx": "6d22659202612d35baf03089c73b40944d74df84",
+        "data.ts": "c4189e783c13db3682cbabb1eb885769f47ae6bf",
+        "meta.json": "bfa8c78eb2544b9d2cbddf71dacb445c2bee8264"
+      }
+    },
+    {
+      "versao": "v2_tentativas-ate-a-agenda-com-fila-de-revisao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 140 leads, fila de 32 com 20 sem agenda e 33 vazados conferidos contra o data.ts; cheio contra vazado legível nos dois temas; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:43.513Z",
+      "impressao": "94383d5cc01312534ff603a1aa479fd3af08156e",
+      "arquivos": {
+        "Chart.tsx": "8cb6ad5a77d98b195af4a5642a3f670181036109",
+        "data.ts": "52380295aff203c71ed16c0cf5bebf455da0fc9e",
+        "meta.json": "212169136b9561c68ec539df9554c0fb5f68ecf9"
+      }
+    },
+    {
+      "versao": "v3_quantile-dotplot-de-cenarios-de-midia",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EST-1b e EST-2: cenário sem amostra recebe over 0 (Chart.tsx:108), vai para o fim da ordem e a frase acessível diz que ele passa do teto em 0 desfechos; over deve ser number | null, com o nulo fora da ordem de risco, da frase e da linha de leitura. Parecer em validation/revisao_16_distribuicao__09_dot-plot-empilhado_2026-10-05.md",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:44.017Z",
+      "impressao": "2df5fd9c36349f7afa6a1971fdc9020eb1daae1b",
+      "arquivos": {
+        "Chart.tsx": "8ec136948e6c24e343040398610d8391ee03a77b",
+        "data.ts": "04f1ce193e63a991551677b617e26f59cd03f32b",
+        "meta.json": "b8fec7ed476fffffe95ce735ca21aef956c6184c"
+      }
+    },
+    {
+      "versao": "v4_cada-ponto-vale-dez-leads",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 600 leads, inteiros e restos de cada pilha conferidos contra o data.ts; raio do parcial segue a raiz da fração; 5 observações no README, a principal é o contorno de 1 px que tira até 17% da área visível do parcial (GEO-16)",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:30:44.479Z",
+      "impressao": "d2228b1fed3697e1b65500fbc4d561bc7a161518",
+      "arquivos": {
+        "Chart.tsx": "2ffc7d2c54b0dfca14ea91a55f700dca10304a17",
+        "data.ts": "49f427f5092b052c46448f4d1004d091d6982cf1",
+        "meta.json": "fa6b2aecd4ce8bfaf87a51eaa44b55862dd42489"
+      }
+    },
+    {
+      "versao": "v3_quantile-dotplot-de-cenarios-de-midia",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, julgado o arquivo atual; over é number | null e o cenário sem amostra sai da ordem, da frase e da linha de leitura; 14, 9, 3 e 0 desfechos acima do teto recalculados do data.ts e contados no preview nos dois temas; 7 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:34:45.799Z",
+      "impressao": "f37acb15d7126b994a2a0536647a3d4d1663f3e6",
+      "arquivos": {
+        "Chart.tsx": "3de1d606f66ce4dfaf8dbc2c5b64694860194cf9",
+        "data.ts": "04f1ce193e63a991551677b617e26f59cd03f32b",
+        "meta.json": "b8fec7ed476fffffe95ce735ca21aef956c6184c"
+      }
+    }
+  ]
+}

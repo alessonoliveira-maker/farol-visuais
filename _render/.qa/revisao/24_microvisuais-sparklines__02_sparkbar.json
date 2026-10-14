@@ -1,0 +1,121 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "02_sparkbar",
+  "versoes": {
+    "v1_agendas-por-semana-com-semana-atual": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: domínio do zero ao máximo, neutro em text-muted a 0,72 medido à mão em 3,04:1 no claro e 3,35:1 no escuro (a guarda OPACIDADE-MARCA não mediu), frase e corpo com os mesmos números. Observações no README: o ponto da semana atual sobe a tinta da coluna 3,5 px e passa 2 px acima da coluna de 34, texto do meta sobre animação, par marca contra marca no notes, semana parcial sem campo no tipo, truncate na linha da média.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:27.890Z",
+      "impressao": "41b02e96b89b530f8037b947060780fc25fbdd43",
+      "arquivos": {
+        "Chart.tsx": "a95dbb6675ca50d467a4cf39e3c511fbcae793a5",
+        "data.ts": "fe89d68120ced6744b51960904b5d69b86a6d050",
+        "meta.json": "eac4cf018def0bd35eab8b61c8dd70a64d97c7ef"
+      }
+    },
+    "v2_variacao-mensal-do-cpl-divergente": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: domínio simétrico, zero em line-strong, cor pela polaridade, colchete e rótulo sem colisão, sinal tipográfico igual no corpo e na frase. Observações no README: variação exatamente zero sai com sinal de menos, seta para cima e vermelho (mora no ramo), rótulo do colchete 17,7 px fora do centro, ANO-2, TIP-1, redação do meta, e diferença de render pouco acima de meio por cento que vem do serializador e não do componente.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:28.414Z",
+      "impressao": "a5bffbb1624739b02f0c052562f512eda815c7b6",
+      "arquivos": {
+        "Chart.tsx": "a51e63b6db17b9184d151eaab19f8f20a33a7eee",
+        "data.ts": "a98c0203acef860cd414e16cc5238815af48263e",
+        "meta.json": "33ec3ab2131b5e16b4149af33dbc4fc49862c667"
+      }
+    },
+    "v3_filas-da-prevendas-em-escala-comum": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas, sobre o arquivo corrigido: piso de altura de 1 px (3,8 entradas na escala de 0 a 96), 16 das 144 colunas positivas no piso, todas de 1 a 3 entradas, nenhuma fila igual a outra no preview.svg, coluna de 96 com os 25 px da escala e base comum nas 12 células. Traço do zero em text-muted com 11 px contra 5 px da coluna, 5,21:1 e 5,37:1 contra o cartão. Texto medido à mão: 5,21 a 17,96:1. Observações no README: unidade em Última e máx. 96, ramo do ?? 0, rx na coluna de 1 px, texto centrado contra coluna na base, período das 13 semanas fora da tela, peso do 96, espessura de 5 px contra 4,7 px no comentário.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:53:33.623Z",
+      "impressao": "af21d8dd4e1d49517358b2662697fc859565ae9c",
+      "arquivos": {
+        "Chart.tsx": "d5dda426c3abbe550b129ca3b6ad60a2f2788de7",
+        "data.ts": "02fe76557ec13c00b5ac7a92af985726dd9ac2e3",
+        "meta.json": "5606696ebec9e66798301a5733ad42893b46b0b1"
+      }
+    },
+    "v4_barras-pareadas-com-origem-sem-mes-anterior": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: escala comum às duas séries, ausência como null sem barra e com o texto da EST-4, line-strong com o valor do mês anterior escrito na mesma linha (isenção da tabela 17.2, aviso CONTRASTE-MARCA esperado), variação com sinal, ícone e base. Observações no README: 29 desalinhado na origem sem base, comentário do data.ts promete origem estável que sai como queda de 1,6, mês anterior zero sem declaração, constantes escritas na linha, sobra de 34 px no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:29.377Z",
+      "impressao": "eb2eca3839487d46faaf7a3b4d7bb7eca9621d2a",
+      "arquivos": {
+        "Chart.tsx": "fc25befbe09f01e40611f28223b46184d694e06e",
+        "data.ts": "21193de62e09dd594657e5f53c5897e8537bab06",
+        "meta.json": "c6060105d1fcf2f86065f0964f185fbe96401561"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-por-semana-com-semana-atual",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: domínio do zero ao máximo, neutro em text-muted a 0,72 medido à mão em 3,04:1 no claro e 3,35:1 no escuro (a guarda OPACIDADE-MARCA não mediu), frase e corpo com os mesmos números. Observações no README: o ponto da semana atual sobe a tinta da coluna 3,5 px e passa 2 px acima da coluna de 34, texto do meta sobre animação, par marca contra marca no notes, semana parcial sem campo no tipo, truncate na linha da média.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:27.890Z",
+      "impressao": "41b02e96b89b530f8037b947060780fc25fbdd43",
+      "arquivos": {
+        "Chart.tsx": "a95dbb6675ca50d467a4cf39e3c511fbcae793a5",
+        "data.ts": "fe89d68120ced6744b51960904b5d69b86a6d050",
+        "meta.json": "eac4cf018def0bd35eab8b61c8dd70a64d97c7ef"
+      }
+    },
+    {
+      "versao": "v2_variacao-mensal-do-cpl-divergente",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: domínio simétrico, zero em line-strong, cor pela polaridade, colchete e rótulo sem colisão, sinal tipográfico igual no corpo e na frase. Observações no README: variação exatamente zero sai com sinal de menos, seta para cima e vermelho (mora no ramo), rótulo do colchete 17,7 px fora do centro, ANO-2, TIP-1, redação do meta, e diferença de render pouco acima de meio por cento que vem do serializador e não do componente.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:28.414Z",
+      "impressao": "a5bffbb1624739b02f0c052562f512eda815c7b6",
+      "arquivos": {
+        "Chart.tsx": "a51e63b6db17b9184d151eaab19f8f20a33a7eee",
+        "data.ts": "a98c0203acef860cd414e16cc5238815af48263e",
+        "meta.json": "33ec3ab2131b5e16b4149af33dbc4fc49862c667"
+      }
+    },
+    {
+      "versao": "v3_filas-da-prevendas-em-escala-comum",
+      "veredito": "reprovado",
+      "nota": "Perguntas 7 e 3, EIX-9 e seção 14.1 (encoding): o piso de altura de 3 px vale 11,5 entradas na escala comum de 0 a 96; 50 das 144 colunas positivas saem no piso e as filas Programa de afiliados, Telefone receptivo e Cadastro manual da recepção ficam idênticas pixel a pixel, com somas de 86, 85 e 23 e última semana de 11, 4 e 3 escrita ao lado. Baixar o piso para 1 px e alinhar comentário, meta e README. Parecer em validation/revisao_24_microvisuais-sparklines__02_sparkbar_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:28.905Z",
+      "impressao": "b9b8213b432196fd56932fba8ff51a23820dfd5e",
+      "arquivos": {
+        "Chart.tsx": "77a990e16ba2321f3d2cfe0f589afe262564ebfc",
+        "data.ts": "02fe76557ec13c00b5ac7a92af985726dd9ac2e3",
+        "meta.json": "a00e625f400527441b312e022b3c9e9524477ff2"
+      }
+    },
+    {
+      "versao": "v4_barras-pareadas-com-origem-sem-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: escala comum às duas séries, ausência como null sem barra e com o texto da EST-4, line-strong com o valor do mês anterior escrito na mesma linha (isenção da tabela 17.2, aviso CONTRASTE-MARCA esperado), variação com sinal, ícone e base. Observações no README: 29 desalinhado na origem sem base, comentário do data.ts promete origem estável que sai como queda de 1,6, mês anterior zero sem declaração, constantes escritas na linha, sobra de 34 px no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:44:29.377Z",
+      "impressao": "eb2eca3839487d46faaf7a3b4d7bb7eca9621d2a",
+      "arquivos": {
+        "Chart.tsx": "fc25befbe09f01e40611f28223b46184d694e06e",
+        "data.ts": "21193de62e09dd594657e5f53c5897e8537bab06",
+        "meta.json": "c6060105d1fcf2f86065f0964f185fbe96401561"
+      }
+    },
+    {
+      "versao": "v3_filas-da-prevendas-em-escala-comum",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas, sobre o arquivo corrigido: piso de altura de 1 px (3,8 entradas na escala de 0 a 96), 16 das 144 colunas positivas no piso, todas de 1 a 3 entradas, nenhuma fila igual a outra no preview.svg, coluna de 96 com os 25 px da escala e base comum nas 12 células. Traço do zero em text-muted com 11 px contra 5 px da coluna, 5,21:1 e 5,37:1 contra o cartão. Texto medido à mão: 5,21 a 17,96:1. Observações no README: unidade em Última e máx. 96, ramo do ?? 0, rx na coluna de 1 px, texto centrado contra coluna na base, período das 13 semanas fora da tela, peso do 96, espessura de 5 px contra 4,7 px no comentário.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:53:33.623Z",
+      "impressao": "af21d8dd4e1d49517358b2662697fc859565ae9c",
+      "arquivos": {
+        "Chart.tsx": "d5dda426c3abbe550b129ca3b6ad60a2f2788de7",
+        "data.ts": "02fe76557ec13c00b5ac7a92af985726dd9ac2e3",
+        "meta.json": "5606696ebec9e66798301a5733ad42893b46b0b1"
+      }
+    }
+  ]
+}

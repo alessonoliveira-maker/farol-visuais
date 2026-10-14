@@ -1,0 +1,74 @@
+{
+  "slug": "04_tile-map-com-mini-grafico",
+  "nome": "Tile map com mini gráfico por UF",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Pequenos múltiplos arranjados como mapa (o geofaceting): a grade de UFs do modelo 01 e, dentro de cada tile, um mini gráfico da UF (linha, área ou barras) com a sigla no canto e o último valor escrito. A grade é HTML com Tailwind; o mini gráfico é um path SVG pré-calculado em TypeScript dentro do tile, mais leve que 27 instâncias de ResponsiveContainer do Recharts. A escolha entre escala Y compartilhada (compara UFs, achata as pequenas) e escala própria (mostra a forma, impede comparação) é declarada em texto no próprio visual.",
+  "quando_usar": [
+    "Tendência mensal de cada UF mantendo a posição geográfica, com 6 a 12 pontos por série",
+    "Comparar formas de evolução entre regiões, como Sul crescendo e Nordeste estável",
+    "Composição por produto dentro de cada UF de um perímetro de até cerca de 12 UFs",
+    "Canvas alto, com tiles de pelo menos 80 px de largura para o mini gráfico ser legível"
+  ],
+  "quando_evitar": [
+    "Mais de um indicador por tile: divida em dois mapas ou vá para a tabela com série por linha (14/03_tabela-com-serie-por-linha)",
+    "Valor exato por UF e mês: use a matriz categórica (15/02_matriz-categorica)",
+    "Só o último valor importa: use o tile grid por UF (23/01)",
+    "Sparkline isolada fora de mapa: o componente é da família 24 (24/01_sparkline-de-linha)",
+    "Comparação de linhas de poucas UFs no mesmo eixo: use os pequenos múltiplos de linha (04/09_pequenos-multiplos-de-linha)"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-mensais-por-uf-escala-compartilhada",
+      "titulo": "Leads mensais por UF em 2026",
+      "caso_de_uso": "Pré-vendas: como as entradas fictícias de jan/26 a ago/26 evoluíram em cada UF, na mesma escala.",
+      "o_que_demonstra": [
+        "Grade br_states_grid1 com tile de proporção fixa e sigla no canto superior",
+        "Path de linha calculado em TypeScript num viewBox fixo por tile, sem Recharts",
+        "Escala Y única para as 27 UFs, declarada no subtítulo como mesma escala",
+        "Último valor escrito em cada tile com formatNumber e className font-display",
+        "Linha em var(--chart-1) com vectorEffect non-scaling-stroke"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_tendencia-dos-ultimos-tres-meses",
+      "titulo": "UFs em alta e em queda nos últimos 3 meses",
+      "caso_de_uso": "Marketing: quais UFs aceleraram ou perderam leads qualificados fictícios entre jun/26 e ago/26.",
+      "o_que_demonstra": [
+        "Classificação de tendência em TypeScript pela variação dos 3 últimos meses",
+        "Linha em var(--positive) na alta, var(--negative) na queda e var(--line-strong) na estável",
+        "Ícone lucide TrendingUp ou TrendingDown e variação com sinal escrita no tile",
+        "Último ponto marcado e último valor em negrito",
+        "Contagem no subtítulo, como 6 UFs em alta e 4 em queda"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_receita-por-produto-no-perimetro",
+      "titulo": "Receita por produto nas UFs do perímetro",
+      "caso_de_uso": "Diretoria: como a receita reconhecida fictícia se reparte entre três produtos por trimestre nas UFs do perímetro.",
+      "o_que_demonstra": [
+        "Mini barras empilhadas por trimestre com um slot fixo de var(--chart-N) por produto",
+        "UFs fora do perímetro em var(--surface-sunken) com a sigla e sem gráfico",
+        "Legenda única de produtos acima da grade, sem legenda por tile",
+        "Total do último trimestre escrito com formatCurrencyCompact",
+        "Nota de que os números valem só para o perímetro declarado"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_escala-propria-para-ufs-pequenas",
+      "titulo": "Agendas por UF com escala própria",
+      "caso_de_uso": "Pré-vendas: ver a forma da série de agendas fictícias em UFs com volume 100 vezes menor que a maior UF.",
+      "o_que_demonstra": [
+        "Escala Y independente por tile com selo escala própria em cada um",
+        "Máximo da série escrito no tile, para a forma não ser lida como volume",
+        "Mês sem medição quebra a linha em vez de cair para zero",
+        "UF sem nenhum mês medido mostra ícone lucide Unplug e formatUnavailable",
+        "Aviso no subtítulo de que os tiles não se comparam entre si"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Agendas marcadas da meta semanal",
+  "useCase": "Mostrar quantas das 20 agendas da meta semanal a SDR já marcou até quarta-feira.",
+  "demonstrates": [
+    "Pie com 20 itens de value 1 e fill por status vindo do dado",
+    "paddingAngle calculado por Math.min(3, 120 / N)",
+    "Centro 12 de 20 em kpi-number, sem rótulo por segmento",
+    "Sem cornerRadius, para o segmento curto não virar pílula",
+    "Legenda que declara em número quanto vale cada segmento do anel"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card"
+}

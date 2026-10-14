@@ -1,0 +1,13 @@
+{
+  "title": "Histórico com evento sem data",
+  "useCase": "Comercial: histórico importado com um evento sem data e uma anotação de 3.000 caracteres, sem quebrar a leitura.",
+  "demonstrates": [
+    "Evento sem data fora da ordem cronológica, no fim, sob o rótulo data desconhecida",
+    "Anotação longa truncada com line-clamp-3 e botão ver mais",
+    "Autor ausente escrito como formatUnavailable em vez de campo vazio",
+    "Dois eventos no mesmo minuto mantidos em ordem estável pelo id"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Preset alto em vez do card sugerido: cinco cartões (quatro de uma linha com cerca de 36 px e a anotação de três linhas com botão, cerca de 104 px), vãos de 8 px e a linha de leitura de 28 px somam cerca de 300 px de corpo, e o corpo do card 640x360 tem 225 px (menos 135 px de cabeçalho de 2 linhas). O resumo em line-clamp-3 não contradiz a TIP-7: a anotação não é nome de marca desenhada, o texto inteiro fica no DOM e o botão ver mais o abre; a frase acessível não repete as 3.000 caracteres, só diz o tamanho."
+}

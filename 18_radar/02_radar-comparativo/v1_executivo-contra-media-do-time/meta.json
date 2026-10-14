@@ -1,0 +1,14 @@
+{
+  "title": "Executivo 07 contra a média do time",
+  "useCase": "Comercial, 2026-T3: em que dimensões do processo o Executivo 07 fica acima ou abaixo da média dos 11 executivos?",
+  "demonstrates": [
+    "Média em tracejado 3 3 de --text-muted e executivo em --chart-1 preenchido",
+    "Referência antes no JSX e elevada por zIndex, para não sumir sob a área",
+    "Domínio fixo de 0 a 100 igual para as duas séries",
+    "Dica com as duas séries e a linha de diferença em pontos com sinal",
+    "Legenda com amostra de área para o foco e de linha tracejada para a média"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O preenchimento sai com 0,66 de opacidade, não 0,28 como o catálogo sugere: a ACE-5 pede que a área composta de --chart-1 fique acima de 3:1 no tema claro e o mínimo calculado é 0,66. O catálogo manda declarar a referência antes para o foco ficar por cima, e isso vale na ordem do JSX; mas com 0,66 de área o tracejado sob o foco sumiria justamente onde o executivo passa da média, então a referência sobe por zIndex (250, acima da grade em 150 e da área em 100). O contrato vence."
+}

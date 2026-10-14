@@ -1,0 +1,70 @@
+{
+  "slug": "02_barras-agrupadas",
+  "nome": "Barras agrupadas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas ou três barras lado a lado por categoria, uma por série, todas partindo do zero, com cor fixa por série e legenda na ordem das barras. Vários Bar sem stackId; barGap controla o respiro dentro do grupo e barCategoryGap o respiro entre grupos. A leitura piora a cada série acrescentada, então o modelo para em três. Absorve as barras paralelas por dimensão, que são a saída cartesiana do radar comparativo (entidade contra referência em cada dimensão), e os pequenos múltiplos de barras por métrica, que resolvem o caso em que as métricas têm unidades diferentes e não cabem num eixo comum.",
+  "quando_usar": [
+    "Comparar 2 ou 3 séries dentro de cada categoria: marcadas e realizadas, trimestre atual e anterior.",
+    "De 3 a cerca de 8 categorias; acima disso o grupo afina demais e a leitura vira ruído.",
+    "Perfil de uma entidade contra a média em várias dimensões na mesma escala de 0 a 100, no lugar de um radar.",
+    "Várias métricas de unidades diferentes para as mesmas entidades, em pequenos múltiplos com eixo próprio por painel."
+  ],
+  "quando_evitar": [
+    "Mais de 3 séries por categoria: pequenos múltiplos (v4 deste modelo) ou linhas (04_linhas).",
+    "A pergunta é a mudança entre dois momentos: dumbbell ou slope (17_comparacao-de-pontos).",
+    "A soma das séries é o assunto: barras empilhadas (03_barras-empilhadas).",
+    "Realizado contra uma referência na mesma banda: barras contra meta (05_barras-contra-meta).",
+    "Poucos números que o leitor precisa ler exatos: tabela (14_tabelas-visuais)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-marcadas-e-realizadas",
+      "titulo": "Agendas marcadas e realizadas por canal",
+      "caso_de_uso": "Em que canal de entrada a pré-vendas marca agenda que não acontece, comparando marcadas e realizadas.",
+      "o_que_demonstra": [
+        "Dois Bar sem stackId com barGap e barCategoryGap explícitos",
+        "Canais ordenados pela série principal, não pela soma",
+        "Legenda no topo na ordem das barras e cor fixa por série",
+        "Valor na ponta de cada barra com formatador único"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_executivo-contra-media-por-dimensao",
+      "titulo": "Executivo 07 contra a média do time",
+      "caso_de_uso": "Em quais das seis dimensões de desempenho o Executivo 07 fica abaixo da média do time, sem recorrer a radar.",
+      "o_que_demonstra": [
+        "Barras paralelas por dimensão numa escala comum de 0 a 100",
+        "Entidade em cor de destaque e média em neutro na mesma banda",
+        "Dimensões ordenadas pela lacuna, da maior diferença negativa à maior positiva",
+        "Lacuna escrita ao lado de cada par com sinal de menos tipográfico"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_leads-por-origem-em-tres-meses",
+      "titulo": "Leads por origem nos últimos três meses",
+      "caso_de_uso": "Como cada uma das sete origens de lead evoluiu de jun/26 a ago/26, com uma origem nova sem histórico.",
+      "o_que_demonstra": [
+        "Três séries por origem com o mês mais recente em cor forte e anteriores em tons de neutro",
+        "Origens ordenadas pelo mês mais recente",
+        "Origem sem histórico escreve indisponível no espaço dos meses sem coleta",
+        "Valor nulo não desenha barra de zero"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_pequenos-multiplos-por-metrica",
+      "titulo": "Cinco métricas de mídia por plataforma",
+      "caso_de_uso": "Comparar plataformas em CPL, CTR, taxa de agenda, cobertura de telefone e custo, que não cabem num eixo só.",
+      "o_que_demonstra": [
+        "Um BarChart por métrica com domínio e unidade próprios por painel",
+        "Mesmas plataformas na mesma ordem em todos os painéis",
+        "Plataforma selecionada em destaque em todos os painéis, demais em neutro",
+        "Painel de CPL com menor é melhor no título, sem inverter o eixo"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

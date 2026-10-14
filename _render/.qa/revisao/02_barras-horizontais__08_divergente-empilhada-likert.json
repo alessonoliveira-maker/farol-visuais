@@ -1,0 +1,407 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "08_divergente-empilhada-likert",
+  "versoes": {
+    "v1_qualidade-do-lead-no-handoff": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, pilha centrada e neutro em coluna propria. Aviso de frase acessivel em 238 de 250 nao reprova.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:27.315Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    "v2_saldo-liquido-por-polo": {
+      "veredito": "aprovado",
+      "nota": "Conserto do zero aceito nos dois temas: saldo nulo desenha marca propria em vez de nada.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.580Z",
+      "impressao": "11d20b382b49a6d1fce8463ee2b8524f966b8487",
+      "arquivos": {
+        "Chart.tsx": "df36f6c4f480dde46cbafc69a738977b8ba41974",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "07ca07058bce1fc7cc2364ae78d87959fcb305e4"
+      }
+    },
+    "v3_avaliacao-por-origem-mini": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Mini com centro comum nas 12 origens e neutro em numero na coluna propria.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:36.456Z",
+      "impressao": "47a410a0637123d9182a0e60b88191c01735787f",
+      "arquivos": {
+        "Chart.tsx": "cc09a7da9cac5a6bf3265fe52ac5ab939566c4e4",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    "v4_escala-par-e-n-baixo": {
+      "veredito": "aprovado",
+      "nota": "Check limpo. Escala par com zero na fronteira, selo n baixo a 11 px e item sem resposta em indisponivel.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:40.868Z",
+      "impressao": "2f5ebded9c895673f1b4c5a0d1e8f7655f790204",
+      "arquivos": {
+        "Chart.tsx": "f6fa4b8b6ccb20e6f1dc8009b25a4b56b600ef04",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Check limpo, legenda ancorada no zero, neutro em coluna propria com percentual escrito, texto sobre segmento acima de 5:1 nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:06:59.895Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "reprovado",
+      "nota": "ROT-4: pilha de 4 pontos da escala sem legenda e colunas de soma de polo sem cabecalho; o leitor nao sabe o que cada cor e cada numero significa.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:07:04.760Z",
+      "impressao": "4f83f1c81a823ee9d5f532e65471d2bce2e15ce1",
+      "arquivos": {
+        "Chart.tsx": "6cde67cd8a20c43ce9b043307ae72da55df9ea8f",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "fcdb5e32847c8e0aee2ef4309d032cb711885264"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "reprovado",
+      "nota": "Marcas reais no data.ts (Meta Ads, Google Ads, LinkedIn Ads); pilha sem legenda; frase acessivel e meta.json afirmam uma unica barra pendendo para a esquerda quando sao duas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:07:09.434Z",
+      "impressao": "93fc34653e212bd3976c8810be94c67065621309",
+      "arquivos": {
+        "Chart.tsx": "c6e720f273db5265c6b00293d918ffc6bd8ef584",
+        "data.ts": "cd015eb4afc98461e6d6f41420135d44a23bc29c",
+        "meta.json": "46cc87b88e99defc3c3390d6caec8f11753bf269"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "reprovado",
+      "nota": "ACE-4 e COR-9: opacity-60 no svg que contem os rotulos derruba o texto da linha de n baixo para 2,5:1 no claro e 3,0:1 no escuro; aplicar a opacidade so nos rects.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T15:07:14.170Z",
+      "impressao": "bab49c16aaf9d5d8c5e91f914521d8796f9d009d",
+      "arquivos": {
+        "Chart.tsx": "a3df336204e03dfd2cc68bafde4b05ed3f1dfe6f",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Pilha centrada no zero comum, neutro em coluna propria com a escolha escrita na legenda, rotulos com contraste AA nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:01:05.636Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "reprovado",
+      "nota": "Neutro sumiu da tela: sem coluna, sem legenda e sem nota, o percentual impresso por linha nao soma 100 (ate 27 pontos invisiveis). Mostrar o neutro como na v1.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:01:11.181Z",
+      "impressao": "8c0f71d82028debb84f169b5f13d1d4edab0c91c",
+      "arquivos": {
+        "Chart.tsx": "10a81eea417da695fa20404f65c3967e28a75af8",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "3d321be62fe65f7fbb0581d5e45e19122bccb22c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Pilha centrada, neutro em coluna propria declarado na legenda, texto sobre segmento de 5,39:1 a 10,06:1 nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:10:49.586Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ordem por saldo, somas de polo e saldo em coluna nomeada; nenhum encoding desonesto.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:10:55.227Z",
+      "impressao": "8c0f71d82028debb84f169b5f13d1d4edab0c91c",
+      "arquivos": {
+        "Chart.tsx": "10a81eea417da695fa20404f65c3967e28a75af8",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "3d321be62fe65f7fbb0581d5e45e19122bccb22c"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Doze linhas mini com centro alinhado, neutro em numero ao lado e rotulo de 11 px legivel nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:10:55.719Z",
+      "impressao": "90b80d92fd681235e9c59c54849e80c27d2ee15c",
+      "arquivos": {
+        "Chart.tsx": "e10ebd56fca4baa1cd579a460b84cb6553c76401",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "reprovado",
+      "nota": "ACE-3: na linha de n baixo o fillOpacity 0,6 derruba o percentual escrito dentro do segmento para 2,47 a 2,83 no claro e 3,08 a 4,49 no escuro, abaixo do piso de 4,5 para texto. Sinalizar n baixo sem opacidade ou tirar o rotulo de dentro da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:11:00.841Z",
+      "impressao": "09680f351a5ed1111972f726fedb5ebacf87603f",
+      "arquivos": {
+        "Chart.tsx": "7596bf025fc62b097b8286d7b9ed3d9c07bbe5d9",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Pilha centrada correta, neutro em coluna propria declarado na legenda, texto sobre segmento acima de 5,3:1 nos dois temas; sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:32:09.860Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "reprovado",
+      "nota": "Neutro da escala de 5 pontos sai da pilha e nao aparece em lugar nenhum: legenda mostra 4 pontos e as colunas de polo somam menos de 100 sem declarar o resto. Escrever o neutro em coluna ou na legenda, como na v1.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:32:14.812Z",
+      "impressao": "8c0f71d82028debb84f169b5f13d1d4edab0c91c",
+      "arquivos": {
+        "Chart.tsx": "10a81eea417da695fa20404f65c3967e28a75af8",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "3d321be62fe65f7fbb0581d5e45e19122bccb22c"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "aprovado",
+      "nota": "Densidade de tabela com centro alinhado e neutro escrito em numero por linha; sem bloqueante. Observacoes: truncate no nome da origem e abreviacao resp.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:32:21.096Z",
+      "impressao": "90b80d92fd681235e9c59c54849e80c27d2ee15c",
+      "arquivos": {
+        "Chart.tsx": "e10ebd56fca4baa1cd579a460b84cb6553c76401",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "aprovado",
+      "nota": "Escala par com zero na fronteira, n baixo com selo e opacidade so na marca, item sem resposta em indisponivel; sem bloqueante. Observacoes: selo em 10 px e frase acessivel com oracao fixa.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:32:21.651Z",
+      "impressao": "38239f2e00671a74e619536333d4b5be946f5307",
+      "arquivos": {
+        "Chart.tsx": "23d8afce538a90e9d751092c66ea860e31a57fcf",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Pilha centrada correta, soma 100 com o neutro na coluna, texto sobre segmento acima de 5,3:1 nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:54:31.214Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "aprovado",
+      "nota": "Neutro agora escrito em coluna propria: negativo, positivo e neutro somam 100 em toda linha; saldo com sinal e cor semantica.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:54:37.679Z",
+      "impressao": "a09f1c55017a66771fe68ccc6160fda17e978d47",
+      "arquivos": {
+        "Chart.tsx": "91079a3f92aefab74542e6e1c15c44da97216e08",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "07ca07058bce1fc7cc2364ae78d87959fcb305e4"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "aprovado",
+      "nota": "Densidade de tabela com centro comum as 12 linhas; as duas origens de saldo negativo pendem para a esquerda e a frase acessivel nomeia as duas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:54:42.257Z",
+      "impressao": "90b80d92fd681235e9c59c54849e80c27d2ee15c",
+      "arquivos": {
+        "Chart.tsx": "e10ebd56fca4baa1cd579a460b84cb6553c76401",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "aprovado",
+      "nota": "Escala par com zero na fronteira, item sem resposta escreve indisponivel e nao vira zero; selo n baixo acompanha a opacidade.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T16:54:47.007Z",
+      "impressao": "38239f2e00671a74e619536333d4b5be946f5307",
+      "arquivos": {
+        "Chart.tsx": "23d8afce538a90e9d751092c66ea860e31a57fcf",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Escala de 5 pontos coerente, neutro fora da pilha, soma 100 por linha; aviso de frase acessivel a 238 de 250.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:13:46.412Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "aprovado",
+      "nota": "Negativo, positivo e neutro fecham 100 em toda linha; saldo confere e ordenacao pelo saldo esta certa.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:13:50.569Z",
+      "impressao": "707c19ff99afbf3860c76ecbdc0ba6a28aff9574",
+      "arquivos": {
+        "Chart.tsx": "429e92c2d88df9e0ea9c75be3892197b38460efa",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "07ca07058bce1fc7cc2364ae78d87959fcb305e4"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "aprovado",
+      "nota": "Doze origens legiveis nos dois temas, centro comum, frase acessivel nomeia as duas origens negativas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:13:55.132Z",
+      "impressao": "47a410a0637123d9182a0e60b88191c01735787f",
+      "arquivos": {
+        "Chart.tsx": "cc09a7da9cac5a6bf3265fe52ac5ab939566c4e4",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "aprovado",
+      "nota": "Escala par com zero na fronteira, ausencia escrita como indisponivel e n baixo sinalizado por selo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:13:59.207Z",
+      "impressao": "38239f2e00671a74e619536333d4b5be946f5307",
+      "arquivos": {
+        "Chart.tsx": "23d8afce538a90e9d751092c66ea860e31a57fcf",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v1_qualidade-do-lead-no-handoff",
+      "veredito": "aprovado",
+      "nota": "Check limpo, pilha centrada e neutro em coluna propria. Aviso de frase acessivel em 238 de 250 nao reprova.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:27.315Z",
+      "impressao": "86eed1847c7cf3aaf37d76eb40a4916618ced4c7",
+      "arquivos": {
+        "Chart.tsx": "4af4444fd2ae99bbdc8ae6e7872a7fec69585c74",
+        "data.ts": "f6fe945228571952074e6963ead7fba66bbe1602",
+        "meta.json": "16459a8facd0429f63203f15154ed08f6870a2b2"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Os tres percentuais fecham 100 em todas as linhas e o saldo bate com a diferenca entre polos.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:32.061Z",
+      "impressao": "707c19ff99afbf3860c76ecbdc0ba6a28aff9574",
+      "arquivos": {
+        "Chart.tsx": "429e92c2d88df9e0ea9c75be3892197b38460efa",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "07ca07058bce1fc7cc2364ae78d87959fcb305e4"
+      }
+    },
+    {
+      "versao": "v3_avaliacao-por-origem-mini",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Mini com centro comum nas 12 origens e neutro em numero na coluna propria.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:36.456Z",
+      "impressao": "47a410a0637123d9182a0e60b88191c01735787f",
+      "arquivos": {
+        "Chart.tsx": "cc09a7da9cac5a6bf3265fe52ac5ab939566c4e4",
+        "data.ts": "15509908c1eeb2dd0bfe76831930798caabc6111",
+        "meta.json": "893e87b5acca85db90b5ba0f760856ebd030ebb5"
+      }
+    },
+    {
+      "versao": "v4_escala-par-e-n-baixo",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Escala par com zero na fronteira, selo n baixo a 11 px e item sem resposta em indisponivel.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:22:40.868Z",
+      "impressao": "2f5ebded9c895673f1b4c5a0d1e8f7655f790204",
+      "arquivos": {
+        "Chart.tsx": "f6fa4b8b6ccb20e6f1dc8009b25a4b56b600ef04",
+        "data.ts": "ab1484f0d31367d33f2fc8a8d5054c8fb9a2480e",
+        "meta.json": "617da70f30733c2582f271255284a4f91f72c72c"
+      }
+    },
+    {
+      "versao": "v2_saldo-liquido-por-polo",
+      "veredito": "aprovado",
+      "nota": "Conserto do zero aceito nos dois temas: saldo nulo desenha marca propria em vez de nada.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.580Z",
+      "impressao": "11d20b382b49a6d1fce8463ee2b8524f966b8487",
+      "arquivos": {
+        "Chart.tsx": "df36f6c4f480dde46cbafc69a738977b8ba41974",
+        "data.ts": "14ca3eca2615d620abd97d3fd9e75155748ebada",
+        "meta.json": "07ca07058bce1fc7cc2364ae78d87959fcb305e4"
+      }
+    }
+  ]
+}

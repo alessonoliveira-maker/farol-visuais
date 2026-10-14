@@ -1,0 +1,108 @@
+{
+  "familia": "04_linhas",
+  "modelo": "06_acumulado-contra-meta",
+  "versoes": {
+    "v1_receita-acumulada-contra-meta-anual": {
+      "veredito": "aprovado",
+      "nota": "Burn-up correto: acumulado somado em TS, meses futuros em null, eixo do zero e meta anual em ReferenceLine. Sem bloqueante; a meta tracejada fica sem nome na linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:11.523Z",
+      "impressao": "f7273b13e2844196a95ea9d447cd5b01ce1f72b5",
+      "arquivos": {
+        "Chart.tsx": "cde087cd37de63aaedab21e8812dc8a73c98c005",
+        "data.ts": "8eebda8ca8f9c0834c5da7bf2e37fb7396a8c6f4",
+        "meta.json": "03ad814e5a509928d8fa3a91942b3f6027a02eef"
+      }
+    },
+    "v2_gap-de-hoje-e-ritmo-necessario": {
+      "veredito": "aprovado",
+      "nota": "Gap e ritmo legiveis nos dois temas, duas anotacoes no limite. Sem bloqueante; o rotulo do gap diz meta onde a base e a trajetoria da quinzena.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:16.385Z",
+      "impressao": "2104183f522da58f0bf5d1ba1c8b248d5f404ddf",
+      "arquivos": {
+        "Chart.tsx": "28438f49a76ef98153fa680ffe7e5b23de0f92e1",
+        "data.ts": "9e1cae01a0c1aa944a0f4446b03160258428dc64",
+        "meta.json": "0107ad197a9239bb30430eb812b3245686899329"
+      }
+    },
+    "v3_meta-linear-contra-sazonal-com-projecao": {
+      "veredito": "aprovado",
+      "nota": "Meta sazonal derivada do peso de 2025, projecao tracejada e rotulo no fim de cada trajetoria. Sem bloqueante; o preview mostra so a variante sazonal, como o catalogo pede.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:20.985Z",
+      "impressao": "62dcede7d85df4c08299d6a52ffb1eff4d478580",
+      "arquivos": {
+        "Chart.tsx": "488e0e931d4cb70d0949cdb9a32b79dd597084cb",
+        "data.ts": "ffa709d0cdd7efa8e534548a935c17753dd411a9",
+        "meta.json": "ea7abb963d4592bbcfacd629ca9ff272db4203d4"
+      }
+    },
+    "v4_meta-revisada-e-cancelamento": {
+      "veredito": "aprovado",
+      "nota": "Meta em stepAfter sem reescrever o passado, revisao anotada e queda do estorno marcada. Sem bloqueante; o ultimo degrau da meta quase nao aparece na borda direita.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:26.228Z",
+      "impressao": "4252513ec8438a4721888e846238f8a9932e9bdf",
+      "arquivos": {
+        "Chart.tsx": "c0cb39d4a67630adc452f4d6a0547bc711bc56df",
+        "data.ts": "c09f5ff292ad14a166b4de7bcced481ce778d6f3",
+        "meta.json": "ba24de47481522959b87e4e0e7d7626736ec234f"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-acumulada-contra-meta-anual",
+      "veredito": "aprovado",
+      "nota": "Burn-up correto: acumulado somado em TS, meses futuros em null, eixo do zero e meta anual em ReferenceLine. Sem bloqueante; a meta tracejada fica sem nome na linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:11.523Z",
+      "impressao": "f7273b13e2844196a95ea9d447cd5b01ce1f72b5",
+      "arquivos": {
+        "Chart.tsx": "cde087cd37de63aaedab21e8812dc8a73c98c005",
+        "data.ts": "8eebda8ca8f9c0834c5da7bf2e37fb7396a8c6f4",
+        "meta.json": "03ad814e5a509928d8fa3a91942b3f6027a02eef"
+      }
+    },
+    {
+      "versao": "v2_gap-de-hoje-e-ritmo-necessario",
+      "veredito": "aprovado",
+      "nota": "Gap e ritmo legiveis nos dois temas, duas anotacoes no limite. Sem bloqueante; o rotulo do gap diz meta onde a base e a trajetoria da quinzena.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:16.385Z",
+      "impressao": "2104183f522da58f0bf5d1ba1c8b248d5f404ddf",
+      "arquivos": {
+        "Chart.tsx": "28438f49a76ef98153fa680ffe7e5b23de0f92e1",
+        "data.ts": "9e1cae01a0c1aa944a0f4446b03160258428dc64",
+        "meta.json": "0107ad197a9239bb30430eb812b3245686899329"
+      }
+    },
+    {
+      "versao": "v3_meta-linear-contra-sazonal-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Meta sazonal derivada do peso de 2025, projecao tracejada e rotulo no fim de cada trajetoria. Sem bloqueante; o preview mostra so a variante sazonal, como o catalogo pede.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:20.985Z",
+      "impressao": "62dcede7d85df4c08299d6a52ffb1eff4d478580",
+      "arquivos": {
+        "Chart.tsx": "488e0e931d4cb70d0949cdb9a32b79dd597084cb",
+        "data.ts": "ffa709d0cdd7efa8e534548a935c17753dd411a9",
+        "meta.json": "ea7abb963d4592bbcfacd629ca9ff272db4203d4"
+      }
+    },
+    {
+      "versao": "v4_meta-revisada-e-cancelamento",
+      "veredito": "aprovado",
+      "nota": "Meta em stepAfter sem reescrever o passado, revisao anotada e queda do estorno marcada. Sem bloqueante; o ultimo degrau da meta quase nao aparece na borda direita.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:52:26.228Z",
+      "impressao": "4252513ec8438a4721888e846238f8a9932e9bdf",
+      "arquivos": {
+        "Chart.tsx": "c0cb39d4a67630adc452f4d6a0547bc711bc56df",
+        "data.ts": "c09f5ff292ad14a166b4de7bcced481ce778d6f3",
+        "meta.json": "ba24de47481522959b87e4e0e7d7626736ec234f"
+      }
+    }
+  ]
+}

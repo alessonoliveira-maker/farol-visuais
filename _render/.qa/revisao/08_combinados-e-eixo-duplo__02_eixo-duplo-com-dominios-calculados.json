@@ -1,0 +1,121 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "02_eixo-duplo-com-dominios-calculados",
+  "versoes": {
+    "v1_leads-e-percentual-qualificado": {
+      "veredito": "aprovado",
+      "nota": "Check limpo; eixo duplo sinalizado por cor de eixo e titulo, zeros alinhados e mesmo numero de marcas nos dois lados; dois temas legiveis, sem corte nem sobreposicao; imports, tokens e dado ficticio dentro do contrato.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:47:52.245Z",
+      "impressao": "3dcf3f476a24db28e6c27dc9b00ef0c0e8090b27",
+      "arquivos": {
+        "Chart.tsx": "c1aa8b1f7ae37f8ae185f9103c8d77cb29107b55",
+        "data.ts": "24c5cd39cb96886f3e7ceca826b17677037b80bc",
+        "meta.json": "1eda204a3e97112746277fe85ddc3386e664c243"
+      }
+    },
+    "v2_cpl-e-leads-em-duas-linhas": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: a frase acessivel escreve a ausencia do ultimo mes pelo nome, sem indice de reposicao, e o rotulo de fim de linha se ancora no ultimo ponto presente de cada serie. Eixo unico de indice 75 a 175 com a base num tique, renuncia a EIX-8 declarada, forma do ponto e rotulo direto como segundo canal, dois temas legiveis sem corte. Seis observacoes no README (motivo da ausencia fixo, mes do meio sem lead sem palavra, piso de marcas do dominio, activeDot e ordem da dica, constante solta, nota com 192 caracteres).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:47:38.006Z",
+      "impressao": "23aaeeaa4a54f5541d8bbf726d17476434f40bf3",
+      "arquivos": {
+        "Chart.tsx": "3c5999f3e97d8d699d334c050e59c0013e150a5b",
+        "data.ts": "97a2db1ab4a727c340e589ca79fe7b9376eeee98",
+        "meta.json": "efb45d44c46e93e817b465dd1b68767c720b3807"
+      }
+    },
+    "v3_agendas-e-comparecimento-26-semanas": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: colunas do zero em [0, 40], taxa no teto natural, cinco marcas em fracoes iguais coincidentes na grade, zero medido escrito, semana invalida vazada e nomeada, vaos com connectNulls false, revestimento TOK-10 no claro. Eixo duplo com sinal, no regime da v1. Seis observacoes no README (frase acessivel: semana mais vazia e verbo fixo; rodape de ausencia; peso 700 no zero; amostra da dica).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:41:01.523Z",
+      "impressao": "43c8e0c59957639b9cebac49a51039aa1d70b268",
+      "arquivos": {
+        "Chart.tsx": "0377a0d42beb67fedb7dbb7af0f86822c9f81a93",
+        "data.ts": "faae3c9c9157a308739a905cad243397bb25d264",
+        "meta.json": "1aee55cfbfa26ddccceefd37651bdcbdc9218099"
+      }
+    },
+    "v4_antipadrao-colunas-em-dois-eixos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: tetos 60 mil e 600, empate em R$ 100 e R$ 75 e inversao de 3 para 1 conferidos contra o data.ts; paineis da correcao com a mesma escala de categoria, margem e eixo de 64 px, mesma coluna de pixels (EIX-12); cheio contra vazado como segundo canal. Seis observacoes no README (frase acessivel sem a conclusao e com formatCurrencyAxis, ramo antipattern false, syncId, unidade na guarda).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:41:02.144Z",
+      "impressao": "f6b50fca8c1b41a94e4c93d0520559861a7235f4",
+      "arquivos": {
+        "Chart.tsx": "3165a0f1ea631b864abd73049f4967b9d37914d9",
+        "data.ts": "9eb01ea6492e0b00b387aca7151357b705f31293",
+        "meta.json": "90b0dc96e308d88265ba1cd7b8b88f499606e8d0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-e-percentual-qualificado",
+      "veredito": "aprovado",
+      "nota": "Check limpo; eixo duplo sinalizado por cor de eixo e titulo, zeros alinhados e mesmo numero de marcas nos dois lados; dois temas legiveis, sem corte nem sobreposicao; imports, tokens e dado ficticio dentro do contrato.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:47:52.245Z",
+      "impressao": "3dcf3f476a24db28e6c27dc9b00ef0c0e8090b27",
+      "arquivos": {
+        "Chart.tsx": "c1aa8b1f7ae37f8ae185f9103c8d77cb29107b55",
+        "data.ts": "24c5cd39cb96886f3e7ceca826b17677037b80bc",
+        "meta.json": "1eda204a3e97112746277fe85ddc3386e664c243"
+      }
+    },
+    {
+      "versao": "v2_cpl-e-leads-em-duas-linhas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8 (reflexo 12 e 19), EIX-10, EST-1b, DAD-2, DAD-5: com o ultimo mes sem lead, a frase acessivel usa costIndex ?? INDEX_BASE e anuncia indice 100 para um custo que nao existe, enquanto o corpo diz sem indice; no mesmo ramo o renderEndLabel so desenha em rows.length - 1 e a linha do custo termina sem nome. Escrever a ausencia na frase como o corpo escreve e ancorar o rotulo no ultimo ponto presente. Parecer em validation/revisao_08_combinados-e-eixo-duplo__02_eixo-duplo-com-dominios-calculados_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:40:54.641Z",
+      "impressao": "ee0612207f6746cb9f763d237b8317900d154a95",
+      "arquivos": {
+        "Chart.tsx": "3002e994e60e95c516a0a3bbdbe510abe08c2989",
+        "data.ts": "97a2db1ab4a727c340e589ca79fe7b9376eeee98",
+        "meta.json": "efb45d44c46e93e817b465dd1b68767c720b3807"
+      }
+    },
+    {
+      "versao": "v3_agendas-e-comparecimento-26-semanas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: colunas do zero em [0, 40], taxa no teto natural, cinco marcas em fracoes iguais coincidentes na grade, zero medido escrito, semana invalida vazada e nomeada, vaos com connectNulls false, revestimento TOK-10 no claro. Eixo duplo com sinal, no regime da v1. Seis observacoes no README (frase acessivel: semana mais vazia e verbo fixo; rodape de ausencia; peso 700 no zero; amostra da dica).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:41:01.523Z",
+      "impressao": "43c8e0c59957639b9cebac49a51039aa1d70b268",
+      "arquivos": {
+        "Chart.tsx": "0377a0d42beb67fedb7dbb7af0f86822c9f81a93",
+        "data.ts": "faae3c9c9157a308739a905cad243397bb25d264",
+        "meta.json": "1aee55cfbfa26ddccceefd37651bdcbdc9218099"
+      }
+    },
+    {
+      "versao": "v4_antipadrao-colunas-em-dois-eixos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: tetos 60 mil e 600, empate em R$ 100 e R$ 75 e inversao de 3 para 1 conferidos contra o data.ts; paineis da correcao com a mesma escala de categoria, margem e eixo de 64 px, mesma coluna de pixels (EIX-12); cheio contra vazado como segundo canal. Seis observacoes no README (frase acessivel sem a conclusao e com formatCurrencyAxis, ramo antipattern false, syncId, unidade na guarda).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:41:02.144Z",
+      "impressao": "f6b50fca8c1b41a94e4c93d0520559861a7235f4",
+      "arquivos": {
+        "Chart.tsx": "3165a0f1ea631b864abd73049f4967b9d37914d9",
+        "data.ts": "9eb01ea6492e0b00b387aca7151357b705f31293",
+        "meta.json": "90b0dc96e308d88265ba1cd7b8b88f499606e8d0"
+      }
+    },
+    {
+      "versao": "v2_cpl-e-leads-em-duas-linhas",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: a frase acessivel escreve a ausencia do ultimo mes pelo nome, sem indice de reposicao, e o rotulo de fim de linha se ancora no ultimo ponto presente de cada serie. Eixo unico de indice 75 a 175 com a base num tique, renuncia a EIX-8 declarada, forma do ponto e rotulo direto como segundo canal, dois temas legiveis sem corte. Seis observacoes no README (motivo da ausencia fixo, mes do meio sem lead sem palavra, piso de marcas do dominio, activeDot e ordem da dica, constante solta, nota com 192 caracteres).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:47:38.006Z",
+      "impressao": "23aaeeaa4a54f5541d8bbf726d17476434f40bf3",
+      "arquivos": {
+        "Chart.tsx": "3c5999f3e97d8d699d334c050e59c0013e150a5b",
+        "data.ts": "97a2db1ab4a727c340e589ca79fe7b9376eeee98",
+        "meta.json": "efb45d44c46e93e817b465dd1b68767c720b3807"
+      }
+    }
+  ]
+}

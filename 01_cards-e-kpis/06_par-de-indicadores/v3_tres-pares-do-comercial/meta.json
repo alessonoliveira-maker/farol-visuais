@@ -1,0 +1,15 @@
+{
+  "title": "Três pares do Comercial em faixa",
+  "useCase": "Fechamentos, handoff e funil criado melhoraram sem piorar desconto médio, aceite e idade das oportunidades?",
+  "demonstrates": [
+    "Três pares com coorte declarada e veredito próprio em cada cartão",
+    "Polaridades opostas convivendo: desconto e idade média são menor melhor",
+    "Velocidade do handoff com formatHours e taxa de aceite com o par",
+    "Cartões de mesma altura com a linha do veredito reservada em todos",
+    "Veredito que concorda com o artigo de cada medida: do desconto, da idade",
+    "Faixa por container query: três colunas no largo, empilhada no estreito"
+  ],
+  "canvas": { "width": 1120, "height": 320 },
+  "frame": "stage",
+  "notes": "Canvas maior que a faixa de 960 x 260: com 296 px por cartão a linha do aceite com o par e a base quebrava, e o veredito de duas linhas não cabia na altura."
+}

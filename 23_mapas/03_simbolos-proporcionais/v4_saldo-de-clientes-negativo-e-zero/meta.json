@@ -1,0 +1,14 @@
+{
+  "title": "Saldo de clientes no trimestre por UF",
+  "useCase": "Onde a carteira cresceu ou encolheu no 3º trimestre de 2026, inclusive com saldo zero?",
+  "demonstrates": [
+    "Tamanho pelo valor absoluto e cor pelo sinal, em --positive e --negative",
+    "Sinal + e − tipográfico escrito no rótulo, nunca só na cor",
+    "Saldo zero como círculo mínimo vazado com a sigla, para a UF não sumir",
+    "Dica com o saldo assinado e as entradas e saídas do trimestre",
+    "Nota que aponta as setas para cima e para baixo como alternativa ao círculo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Preenchimento a 0,80 e contorno sólido na mesma cor, acima da opacidade mínima de --positive (0,70) e --negative (0,66) medida para os dois temas (ACE-5). O saldo zero é um anel pontilhado de 4 px de raio, vazado e com a sigla e o 0 escritos, e o saldo de 1 em módulo é um círculo cheio de 3,1 px de raio: a diferença entre medido e zero lê na marca, cheia ou vazada, sem depender do texto. O tamanho segue a área pelo valor absoluto sem piso. Polaridade: mais clientes é bom, então o saldo positivo é --positive. O contorno do país é desenhado à mão e os centroides são aproximados; o catálogo não tem a malha do IBGE. Escala 1 no viewBox (5 px por grau) para o texto chegar com 11 px (GEO-18)."
+}

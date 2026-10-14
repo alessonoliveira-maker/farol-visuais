@@ -1,0 +1,13 @@
+{
+  "title": "Realizado contra meta por etapa",
+  "useCase": "O funil comercial do trimestre cabe na meta de cada etapa, e quanto falta em cada uma até o fim do período.",
+  "demonstrates": [
+    "Bar com shape próprio e traço de meta posicionado pelo retângulo de background",
+    "Domínio fixo para o traço de meta aparecer mesmo com realizado zero",
+    "Atingimento com o denominador escrito: percentual e par realizado de meta",
+    "Meta declarada como sendo da etapa, não do resultado final consolidado",
+    "Anotação da fração do trimestre já decorrida"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

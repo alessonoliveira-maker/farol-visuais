@@ -1,0 +1,12 @@
+{
+  "title": "Horizon com valor fora de escala",
+  "useCase": "Mostrar um dia com desvio de 10 vezes o passo sem esmagar a leitura das demais séries.",
+  "demonstrates": [
+    "Faixa saturada no teto com marcador de fora de escala",
+    "Valor original escrito na anotação, não o valor recortado",
+    "Passo mantido comum mesmo com o valor extremo",
+    "Frase acessível que nomeia a série e o dia fora de escala"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

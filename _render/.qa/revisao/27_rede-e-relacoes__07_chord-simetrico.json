@@ -1,0 +1,134 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "07_chord-simetrico",
+  "versoes": {
+    "v1_produtos-na-mesma-carteira": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, sem bloqueante. Os três pares abaixo do piso (6, 5 e 3 clientes) saem sem fita e contados no rodapé; as fitas de 8, 9 e 12 clientes têm cor contínua de ponta a ponta nos dois temas; arcos a menos de 0,2 ponto percentual do valor; tinta dos rótulos de 10 a 13 px do anel; marcas de 5,21 para cima contra o cartão. Observações no README: rodapé de quatro linhas encolheu a roda para 254 px, número do piso velho no comentário, piso em unidade do viewBox e caixa quadrada só quando a altura é o lado curto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:47:04.741Z",
+      "impressao": "32a5a90da51e66bc128bf6ebb8d7ab814633c0a9",
+      "arquivos": {
+        "Chart.tsx": "30a28d268f0e8d9b786b222759f9164dd22cb754",
+        "data.ts": "f9e7c138994b9670902c2de3059d57077c477f53",
+        "meta.json": "3a3ee08c0478fd356c953828345cb82b4a96b34f"
+      }
+    },
+    "v2_produto-mais-associado-ao-credito-estruturado": {
+      "veredito": "reprovado",
+      "nota": "Segunda passada. Pergunta 12, ROT-2 com a seção 14.1 (identificação das marcas): no canvas alto a caixa da roda mede cerca de 331 por 425 px, o SVG desenha num quadrado de 331 e a camada de rótulos estica na altura; a tinta dos rótulos fica de 15 a 45 px do anel (10 a 13 na v1) e o rótulo Outros fica à mesma distância do arco de Cartão e do arco de Outros (38,9 e 39,0 px), com os seis arcos na mesma cor. Mudar: caixa quadrada nos dois limites, lado igual ao menor entre largura e altura do pai. Pergunta 14, seção 8 e o que demonstra: o percentual do painel e da frase acessível sai de String com o sinal à mão, e meta.json e README dizem formatPercent; usar formatPercent(x / 100, 0) mantendo o maior resto. Parecer na seção Segunda passada de validation/revisao_27_rede-e-relacoes__07_chord-simetrico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:47:05.268Z",
+      "impressao": "d5a06e53f3dd18e03ccafdf1cbb53e226c2f5591",
+      "arquivos": {
+        "Chart.tsx": "317fdc2949a192a9ef6f46778cea94b5d895712d",
+        "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
+        "meta.json": "4d0fced7eba5d5e5514f6c849390e4e82c6735ff"
+      }
+    },
+    "v3_clientes-com-um-produto-so": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. A faixa só este produto ocupa no arco a mesma parte que tem no dado nas seis (de 0,186 a 1,000), as oito fitas têm tinta contínua (a menor, de 25 clientes, com 6,4 px), totais e frase conferem com o data.ts, contraste e tamanhos na régua nos dois temas. Observações no README: o denominador de 870 clientes soma pares, linha de leitura em duas linhas, 140 sem substantivo, legenda no rodapé e contorno a alinhar com o conserto das irmãs.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:46.134Z",
+      "impressao": "ae3623e568370f0a4d82452e0d8a4d55f4af0a59",
+      "arquivos": {
+        "Chart.tsx": "a57194b7e9aae006d3262ef4ce3ca408ebdadc88",
+        "data.ts": "159ef48ca4ad74f8af979ce64a94acc69f09db12",
+        "meta.json": "acd00e3be3d31f3f80f7eca8a92b7d544692c3dc"
+      }
+    },
+    "v4_origens-demais-agrupadas-em-outros": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Seis origens e Outros (n=5), limiar com os 3 pares ocultos contados, origem sem jornada fora do círculo, matriz e lista conferidas em página viva nos dois temas, sem transbordo. Observações no README, as duas primeiras de peso: três fitas acima do limiar ficam sem cor por 5 a 9 px no gargalo (as pontas têm 2,5 a 3,9 px e a cor identifica o par) com o limiar em leads e não em px, e os 3 pares internos de Outros (25 leads) são descartados sem linha na tela.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:46.655Z",
+      "impressao": "11544527d776dade8fc024007203edaaf4a7247d",
+      "arquivos": {
+        "Chart.tsx": "860b03abd86320995053fe0bf999c5e8e4d67036",
+        "data.ts": "516dbc983b36baa2c8ef20703d3dafb70659403c",
+        "meta.json": "0aad904db3b98b373f5c109c1ac47073bff1b09d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_produtos-na-mesma-carteira",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, COR-5 com GEO-16 (seção 14.1, marca sem tinta): o contorno de 1,44 px consome as fitas finas. As de 3 e 5 clientes não deixam tinta nenhuma, a de 6 vira vestígio e as de 8 e 9 ficam em tocos; no arco de Outros só 2 dos 5 pares aparecem (23 de 37 clientes), sem aviso, e o par de 3 se confunde com o par ausente. Mudar: contorno que não come a própria fita (pintado por baixo do preenchimento, fitas finas por último) ou par abaixo de um piso em px sem fita e contado no rodapé, como a v4. Parecer em validation/revisao_27_rede-e-relacoes__07_chord-simetrico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:37.599Z",
+      "impressao": "2b9697e7b1eb8579858bc80f10d2b901f9f2e7bb",
+      "arquivos": {
+        "Chart.tsx": "b342be0d25042f79bab4033f86375c09033b1f1a",
+        "data.ts": "f9e7c138994b9670902c2de3059d57077c477f53",
+        "meta.json": "3a3ee08c0478fd356c953828345cb82b4a96b34f"
+      }
+    },
+    {
+      "versao": "v2_produto-mais-associado-ao-credito-estruturado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6 (e 14), NUM-2: os seis percentuais do painel somam 101 (44, 27, 19, 6, 4 e 1) sobre os 218 clientes; fechar pelo maior resto (Conta digital passa a 5). Pergunta 15, COR-5 com GEO-16 (seção 14.1): das 6 fitas do foco, a de Outros (3) não tem tinta, a de Cartão (8) é vestígio numa ponta e a de Conta digital (12) parte no meio por 11 a 13 px, com o círculo de 126 px; dar tinta própria à fita do foco ou declarar o par sem fita, e rever o canvas. Parecer em validation/revisao_27_rede-e-relacoes__07_chord-simetrico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:38.183Z",
+      "impressao": "15b3e075ab282d6c16ae66a4b774020e219f571f",
+      "arquivos": {
+        "Chart.tsx": "c0aa0329ed4a88a5b446ac8e03295308a57bbe16",
+        "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
+        "meta.json": "8e9a9bada67210dae9af3d571ccfe07699aaec7c"
+      }
+    },
+    {
+      "versao": "v3_clientes-com-um-produto-so",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. A faixa só este produto ocupa no arco a mesma parte que tem no dado nas seis (de 0,186 a 1,000), as oito fitas têm tinta contínua (a menor, de 25 clientes, com 6,4 px), totais e frase conferem com o data.ts, contraste e tamanhos na régua nos dois temas. Observações no README: o denominador de 870 clientes soma pares, linha de leitura em duas linhas, 140 sem substantivo, legenda no rodapé e contorno a alinhar com o conserto das irmãs.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:46.134Z",
+      "impressao": "ae3623e568370f0a4d82452e0d8a4d55f4af0a59",
+      "arquivos": {
+        "Chart.tsx": "a57194b7e9aae006d3262ef4ce3ca408ebdadc88",
+        "data.ts": "159ef48ca4ad74f8af979ce64a94acc69f09db12",
+        "meta.json": "acd00e3be3d31f3f80f7eca8a92b7d544692c3dc"
+      }
+    },
+    {
+      "versao": "v4_origens-demais-agrupadas-em-outros",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Seis origens e Outros (n=5), limiar com os 3 pares ocultos contados, origem sem jornada fora do círculo, matriz e lista conferidas em página viva nos dois temas, sem transbordo. Observações no README, as duas primeiras de peso: três fitas acima do limiar ficam sem cor por 5 a 9 px no gargalo (as pontas têm 2,5 a 3,9 px e a cor identifica o par) com o limiar em leads e não em px, e os 3 pares internos de Outros (25 leads) são descartados sem linha na tela.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:20:46.655Z",
+      "impressao": "11544527d776dade8fc024007203edaaf4a7247d",
+      "arquivos": {
+        "Chart.tsx": "860b03abd86320995053fe0bf999c5e8e4d67036",
+        "data.ts": "516dbc983b36baa2c8ef20703d3dafb70659403c",
+        "meta.json": "0aad904db3b98b373f5c109c1ac47073bff1b09d"
+      }
+    },
+    {
+      "versao": "v1_produtos-na-mesma-carteira",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, sem bloqueante. Os três pares abaixo do piso (6, 5 e 3 clientes) saem sem fita e contados no rodapé; as fitas de 8, 9 e 12 clientes têm cor contínua de ponta a ponta nos dois temas; arcos a menos de 0,2 ponto percentual do valor; tinta dos rótulos de 10 a 13 px do anel; marcas de 5,21 para cima contra o cartão. Observações no README: rodapé de quatro linhas encolheu a roda para 254 px, número do piso velho no comentário, piso em unidade do viewBox e caixa quadrada só quando a altura é o lado curto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:47:04.741Z",
+      "impressao": "32a5a90da51e66bc128bf6ebb8d7ab814633c0a9",
+      "arquivos": {
+        "Chart.tsx": "30a28d268f0e8d9b786b222759f9164dd22cb754",
+        "data.ts": "f9e7c138994b9670902c2de3059d57077c477f53",
+        "meta.json": "3a3ee08c0478fd356c953828345cb82b4a96b34f"
+      }
+    },
+    {
+      "versao": "v2_produto-mais-associado-ao-credito-estruturado",
+      "veredito": "reprovado",
+      "nota": "Segunda passada. Pergunta 12, ROT-2 com a seção 14.1 (identificação das marcas): no canvas alto a caixa da roda mede cerca de 331 por 425 px, o SVG desenha num quadrado de 331 e a camada de rótulos estica na altura; a tinta dos rótulos fica de 15 a 45 px do anel (10 a 13 na v1) e o rótulo Outros fica à mesma distância do arco de Cartão e do arco de Outros (38,9 e 39,0 px), com os seis arcos na mesma cor. Mudar: caixa quadrada nos dois limites, lado igual ao menor entre largura e altura do pai. Pergunta 14, seção 8 e o que demonstra: o percentual do painel e da frase acessível sai de String com o sinal à mão, e meta.json e README dizem formatPercent; usar formatPercent(x / 100, 0) mantendo o maior resto. Parecer na seção Segunda passada de validation/revisao_27_rede-e-relacoes__07_chord-simetrico_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:47:05.268Z",
+      "impressao": "d5a06e53f3dd18e03ccafdf1cbb53e226c2f5591",
+      "arquivos": {
+        "Chart.tsx": "317fdc2949a192a9ef6f46778cea94b5d895712d",
+        "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
+        "meta.json": "4d0fced7eba5d5e5514f6c849390e4e82c6735ff"
+      }
+    }
+  ]
+}

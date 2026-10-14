@@ -1,0 +1,14 @@
+{
+  "title": "Temperatura dos leads de junho a agosto",
+  "useCase": "Ver como a temperatura dos mesmos leads mudou mês a mês, sem perder de vista quem ficou parado.",
+  "demonstrates": [
+    "Geometria de alluvial em TypeScript, sem relaxamento que mova blocos",
+    "Ordem de categorias igual em todas as colunas, para o olho rastrear o bloco",
+    "Saídas do bloco ordenadas pelo destino e entradas ordenadas pela origem",
+    "Cor pela categoria de origem em slot fixo, dita na legenda",
+    "Vão de cerca de 2 px entre blocos empilhados na mesma coluna",
+    "Faixa em cor cheia com contorno de superfície, sem perda de contraste por opacidade"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

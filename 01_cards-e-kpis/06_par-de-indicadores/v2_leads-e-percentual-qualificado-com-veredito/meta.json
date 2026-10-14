@@ -1,0 +1,14 @@
+{
+  "title": "Leads e percentual qualificado com veredito",
+  "useCase": "O volume de leads de ago/26 subiu à custa da qualidade, ou as duas medidas melhoraram juntas?",
+  "demonstrates": [
+    "Leads +34% em --positive e qualificados −9,2 p.p. em --negative no mesmo cartão",
+    "Variação de taxa em pontos percentuais, com a unidade p.p. escrita",
+    "Veredito calculado em texto: o volume subiu à custa da qualidade",
+    "Função pura que devolve um de cinco vereditos a partir das polaridades",
+    "Quadrante de 48 px em SVG com seta do período anterior para o atual"
+  ],
+  "canvas": { "width": 400, "height": 340 },
+  "frame": "stage",
+  "notes": "O ponto percentual sai de formatDecimal com a unidade p.p.: formatPercentPoints do Farol imprime 9,2% e confundiria variação de taxa com taxa. Canvas maior que kpi-alto para caber a linha do veredito com o quadrante."
+}

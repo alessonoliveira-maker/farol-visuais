@@ -1,0 +1,17 @@
+{
+  "title": "Oportunidades sem movimento há 30 dias",
+  "useCase": "Quantas oportunidades abertas estão paradas além da régua de 30 dias, e onde está a lista delas?",
+  "demonstrates": [
+    "Borda esquerda de 2 px e ícone TriangleAlert em --warning, sem fundo tingido",
+    "Contagem com o substantivo, 7 oportunidades, e a régua literal logo abaixo",
+    "Link para a lista com afordância permanente, não só na passagem do cursor",
+    "Data da avaliação da régua escrita com formatDate",
+    "Régua sem caso e régua não avaliada no mesmo lugar, com role status"
+  ],
+  "canvas": {
+    "width": 360,
+    "height": 240
+  },
+  "frame": "stage",
+  "notes": "Altura fixada pela soma de 5 linhas do cartão (ícone mais escopo mais data, número mais substantivo, critério, e rodapé com link ou nota de estado) acima do título e do caso de uso do palco. Nenhum preset serve: kpi (360x180) cabe só o número com uma linha de contexto, sem espaço para o critério literal e o link; kpi-alto (360x280) sobraria abaixo das 5 linhas reais."
+}

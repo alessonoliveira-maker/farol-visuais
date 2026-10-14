@@ -1,0 +1,13 @@
+{
+  "title": "CPL com volume de leads rotulado",
+  "useCase": "Como mostrar o CPL mês a mês e ainda dizer o volume de leads sem abrir um segundo eixo?",
+  "demonstrates": [
+    "Um eixo só, o do CPL, com o volume escrito nos pontos que mudam a leitura",
+    "Duas anotações de volume, o teto da ANO-1, ancoradas por dataKey próprio",
+    "Rótulo direto como alternativa ao eixo duplo, sem painel extra",
+    "Frase acessível que inclui o volume dos meses anotados"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Preset card, com a conta das linhas escritas que a GEO-1 pede. Moldura card: corpo de 574 x 241,5 px com o caso de uso em uma linha (86 caracteres, abaixo dos 92 de uma linha em 574 px) e 574 x 225 px se ele quebrar em duas. As linhas escritas são 2: leitura de 12 px (16 px mais 8 de respiro) e título da série de 12 px (16 px mais 4), 44 px no total. Sobram 181 px de gráfico no pior caso, menos 20 px de margem superior reservada ao rótulo de volume e 30 px de eixo x, o que deixa 131 px de plano para 4 degraus de grade de 32,75 px cada. A anotação leva o halo da ROT-7 porque a tinta cruza a linha do CPL: o primeiro render, com respiro de 10 px, saiu com a linha atravessando o texto, e a correção foi respiro de 16 px mais halo. Não é caso de vazado, porque não há marca preenchida inteira sob a tinta (ROT-7b)."
+}

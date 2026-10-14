@@ -1,0 +1,14 @@
+{
+  "title": "Vitórias em escala log com executivos zerados",
+  "useCase": "Comercial: o plano de vitórias em escala log, com 3 executivos de zero vitórias que o log não consegue desenhar.",
+  "demonstrates": [
+    "Escala log nos dois eixos, em que as hipérboles viram retas paralelas",
+    "Executivos com taxa zero em faixa própria abaixo do plano, nunca no eixo",
+    "Ticks log com valores redondos declarados à mão",
+    "Nota que explica por que as curvas viraram retas",
+    "Fronteira como zona: quem está a uma vitória da meta aparece em cinza"
+  ],
+  "canvas": { "width": 640, "height": 520 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset card (GEO-1): 640x360 dá corpo de 574 x 225 a 241 px e, descontados a linha de leitura (24), as duas linhas de rodapé com a nota da escala (40), o topo de 24 px, os 46 px do eixo X com a faixa de taxa zero e os 20 do título, sobrariam cerca de 70 px de plano para duas décadas de taxa; com 520 de altura o plano passa de 220 px. Em escala log nos dois eixos a curva de vitórias iguais é uma reta, então cada uma sai de ReferenceLine com segment, com os dois extremos calculados em clipHyperbola e postos dentro do domínio fixo de 8 a 250 oportunidades e 1% a 100%. As retas de fundo são 3, 6 e 24 vitórias porque, com a meta de 12, cada uma dobra a anterior e o vão entre elas sai igual, que é a propriedade que a versão ensina. A zona é a meta mais ou menos 1 vitória, de 11 a 13: quem cai nela é ponto oco com contorno text-muted, inclusive quem fez exatamente 12 ou 13, porque uma vitória de diferença não separa ninguém; acima da zona é chart-1 e abaixo é text-muted cheio. A zona vai em text-muted a 18%, perto de 1,3:1 contra o cartão: o escape OPACIDADE-MARCA vale porque é zona de fronteira, e a reta da meta no meio dela é opaca, com o valor na margem. Os 3 executivos sem vitória têm taxa zero MEDIDA, que o log não desenha: ficam numa faixa surface-sunken abaixo do plano, no mesmo eixo X, com o tique 0% ao lado. Por causa dela o tickMargin do eixo X é 30 e não os 8 da EIX-5: o tique precisa descer até depois da faixa. Tiques declarados à mão: 10, 20, 50, 100 e 200 no X e 1%, 3%, 10%, 30% e 100% no Y. As guardas de contraste e de espessura de marca não medem dispersão (preview com transform): chart-1 mede 9,50:1 e 6,00:1 contra o cartão, e text-muted 5,21:1 e 5,37:1."
+}

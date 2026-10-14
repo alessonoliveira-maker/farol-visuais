@@ -1,0 +1,14 @@
+{
+  "title": "Concentração do pipeline em um executivo",
+  "useCase": "Comercial: quanto do pipeline aberto depende de um único executivo e de quais produtos é feita essa fatia.",
+  "demonstrates": [
+    "Um executivo aceso em chart-1 e os demais no neutro de dado text-muted",
+    "Valor do grupo igual à soma dos filhos, calculado no componente e nunca declarado",
+    "Profundidade fora da cor: o produto herda a cor do executivo, sem diluição",
+    "Squarify próprio nos filhos, com faixa de cabeçalho reservada só no topo",
+    "Nome e valor avaliados como par, na célula e na faixa do grupo"
+  ],
+  "canvas": { "width": 960, "height": 680 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), e a conta: a moldura card num canvas de 960 px de largura desconta 66 px de largura e 118,5 px de altura, porque o caso de uso tem 106 caracteres e a faixa de 894 px garante uma linha até 153; o corpo mede 894 x 561,5 px. A peça gasta 23 px na linha de leitura mais 8 px de respiro, 225 px na lista de identificação de 8 executivos e 24 produtos em três colunas e 21 px na linha do produto fora do desenho, o que deixa cerca de 284 px de altura para o treemap. O preset largo de 960x400 deixaria 281,5 px de corpo inteiro e a pilha não caberia. Três colisões entre a especificação do catálogo e o CONTRATO, as três resolvidas a favor do contrato. A primeira: o catálogo pede que as folhas dos grupos não destacados perdessem saturação, e a ACE-5 cobra da marca com opacidade os mesmos 3:1 da marca opaca, medindo chart-1 composto a 0,6 sobre o cartão em 4,22:1 no escuro e 2,69:1 no claro; o recuo de ênfase passou a ser o neutro de dado text-muted, que mede 5,21:1 e 5,37:1 por si. A segunda: o catálogo pede contorno forte no grupo destacado e neutro nos demais, e o contorno na cor da própria folha seria invisível contra ela, então o bloco de produtos recua 3 px do contorno e o vão revela o cartão, que é o que faz o contorno existir na tela nos dois temas. A terceira: a especificação chama de anotação a frase que diz a concentração, e a ANO-2 limita anotação a 50 caracteres; a conclusão vai na linha de leitura da ANO-5, calculada do dado, com a base da comparação na mesma frase pela NUM-4. Contraste medido à mão, sempre contra o que fica atrás: surface-raised vazado sobre chart-1 6,00:1 no claro e 9,50:1 no escuro, sobre text-muted 5,37:1 e 5,21:1; text-primary sobre o cartão 17,96:1 e 14,53:1; text-secondary sobre o cartão 8,13:1 e 8,16:1; as duas marcas contra o cartão em 6,00:1 e 9,50:1 e em 5,37:1 e 5,21:1, acima do piso de 3:1 da WCAG 1.4.11. O texto da célula é vazado e sem halo pela ROT-7b, porque tem a marca inteira por baixo. A peça não desenha dica (DIC-1): tudo o que ela diria está escrito na faixa do grupo, na célula ou na lista."
+}

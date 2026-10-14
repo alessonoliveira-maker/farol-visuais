@@ -1,0 +1,13 @@
+{
+  "title": "Composição com semanas sem nenhum lead",
+  "useCase": "Evitar que uma semana sem nenhum lead apareça como faixa cheia arbitrária ou como 0% na composição.",
+  "demonstrates": [
+    "Total zero tratado como lacuna antes do render, sem divisão por zero",
+    "ReferenceArea em surface-sunken com texto marcando a semana sem base (ANO-4)",
+    "Nota com a contagem de semanas sem base",
+    "Frase acessível com a participação final de cada parte"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "As duas semanas de total zero são medição real, não falta de coleta; ainda assim a participação não existe nesse ponto, e a peça também escreve o total da última semana com lead, para a família nunca esconder o volume."
+}

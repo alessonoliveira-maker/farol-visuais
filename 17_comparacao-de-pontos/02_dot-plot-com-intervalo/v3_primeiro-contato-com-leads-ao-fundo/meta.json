@@ -1,0 +1,14 @@
+{
+  "title": "Primeiro contato com os leads ao fundo",
+  "useCase": "Minutos até o primeiro contato por SDR: a mediana na frente e os 900 leads de agosto atrás.",
+  "demonstrates": [
+    "Dois Scatter: os casos primeiro na árvore, a mediana por cima",
+    "Deslocamento vertical por hash do id do lead, nunca Math.random",
+    "Casos de 3 px e mediana opaca de 6 px",
+    "ReferenceLine no teto de SLA e n ao lado de cada SDR",
+    "Teto de escala declarado, com marca de estouro para os casos acima"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: os casos não usam opacidade 0,25. A ACE-5 e a guarda OPACIDADE-MARCA exigem 3:1 depois da composição, e o mínimo medido de --text-muted sobre a zebra é 0,80; a nuvem usa --text-muted com 0,80 de opacidade e a sobreposição de casos escurece a faixa onde há mais leads. Conta da altura: 6 linhas x 30 px = 180, mais 20 de margem superior, 26 de eixo, 24 de linha de leitura e 22 de nota = 272 px, dentro dos 281,5 px do corpo do largo com caso de uso em uma linha."
+}

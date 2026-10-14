@@ -1,0 +1,14 @@
+{
+  "title": "Fechamentos por dia no ano em curso",
+  "useCase": "Em que dias do ano a casa fecha, e quantos dias úteis passam em branco?",
+  "demonstrates": [
+    "Geometria do ano em SVG: semana na coluna, dia da semana na linha, tudo em UTC",
+    "Contorno em degrau separando os meses, calculado do último dia de cada mês",
+    "Zero medido em neutro, separado das cinco faixas de cor que começam no primeiro fechamento",
+    "Fim da medição em degrau tracejado, com a data junto do número em destaque",
+    "Contorno no melhor dia e a contagem de dias úteis em branco escritas na legenda"
+  ],
+  "canvas": "faixa",
+  "frame": "card",
+  "notes": "Célula de 12 px com vão de 3 px é o que faz 37 semanas caberem na faixa sem passar do corpo. Não há número dentro da célula, que teria 12 px de lado: o que segura a ACE-2 é a legenda com as faixas numeradas, o contorno do melhor dia com o valor escrito e a frase acessível, que traz total, pico e dias úteis vazios. O primeiro dia do ano cai numa quinta, então a coluna 0 nasce com três células a menos, e é o deslocamento que o cálculo de posição resolve. O ano não acabou, então o recorte aparece onde o número aparece: o degrau tracejado marca o último dia medido, a legenda nomeia o degrau e o número em destaque escreve a data. As três saem do próprio dado, e o título não cita mês nenhum para não envelhecer na primeira atualização."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Faixa diária de entradas por semana",
+  "useCase": "Mínimo e máximo de entradas por dia em 26 semanas, com uma semana sem coleta e o teto diário.",
+  "demonstrates": [
+    "Colunas de faixa em BarChart vertical com base invisível empilhada",
+    "Rótulo de semana a cada quatro colunas e data exata na dica, sem girar texto",
+    "Semana sem coleta sem coluna, com contorno tracejado e a palavra, nunca zero",
+    "Semana de faixa nula desenhada como traço com anel",
+    "ReferenceLine no teto diário, com rótulo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvios do catálogo. (1) Faixa por barra empilhada sobre base invisível (dataKey min, sem preenchimento) mais a barra de largura max menos min, por decisão do dono (ver REC-8). (2) A semana sem coleta tem min e max nulos: na pilha o Recharts entrega o nulo ao shape como altura zero na base, e o shape o recusa pelo payload; a marca (contorno tracejado e a palavra sem coleta) sai da área de plotagem pela posição da categoria, e a semana de um só dia coletado, de altura zero, só existe porque o shape é declarado. (3) Conta do corpo: a coluna mede (894 - 36 - 8) / 26 x (1 - 2 x 30%) = 13,1 px, acima do piso de 12; o gráfico preenche o corpo de 265 px do largo, descontadas a nota de 24 px e a margem de 24 px de cima, com 26 px de eixo. A capacidade diária fica no rótulo sobre as seis primeiras semanas, que a série mantém abaixo da linha."
+}

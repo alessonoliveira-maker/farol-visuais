@@ -1,0 +1,13 @@
+{
+  "title": "Receita de 2026-T4 em faixa",
+  "useCase": "Qual receita esperar em 2026-T4, de R$ 1,56 mi a R$ 1,78 mi, e quais passos carregam a incerteza?",
+  "demonstrates": [
+    "Passo certo sólido e passo incerto com intervalo desenhado no shape",
+    "Coluna final como faixa translúcida com linha no valor esperado",
+    "Faixa do total vinda da origem, não da soma dos extremos",
+    "Regra da faixa escrita na linha de leitura"
+  ],
+  "canvas": { "width": 640, "height": 500 },
+  "frame": "card",
+  "notes": "Canvas 640x500 em vez do card sugerido (GEO-1): com o eixo a partir do zero (EIX-1), passos de R$ 20 mil a R$ 90 mil sobre uma saída de R$ 1,78 mi só têm intervalo legível com cerca de 230 px de plotagem; no card de 640x360 sobrariam uns 90 px e o intervalo de Expansão teria 3 px. Conta do corpo: 500 − 135 (cabeçalho de 2 linhas) = 365 px; menos linha de leitura de 2 linhas (44), nota de legenda (24), margem de 40 e eixo de 28, restam cerca de 229 px para 1,78 mi. A moeda do milhão sai com duas casas (R$ 1,56 mi) por formatDecimal, porque formatCurrencyCompact arredonda para uma casa e esconderia a faixa; pedido ao Farol nas Referências do README."
+}

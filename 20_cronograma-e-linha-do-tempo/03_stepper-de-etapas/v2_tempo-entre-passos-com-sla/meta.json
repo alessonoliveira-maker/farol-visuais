@@ -1,0 +1,13 @@
+{
+  "title": "Tempo entre passos contra o SLA",
+  "useCase": "Pré-vendas: quanto tempo a oportunidade levou entre cada passo do handoff e em qual passagem o SLA de 2 dias estourou.",
+  "demonstrates": [
+    "Rótulo de duração em dias sobre cada conector, por formatDays",
+    "Conector acima do SLA em warning com ícone AlertTriangle e o limite escrito",
+    "Passo atual contando dias em aberto a partir da data de referência do dado",
+    "Atraso escrito em texto e ícone, sem depender só da cor do conector"
+  ],
+  "canvas": { "width": 960, "height": 300 },
+  "frame": "stage",
+  "notes": "Desvio do catálogo: canvas por número (960 x 300) em vez do preset faixa (960 x 260). A conta: corpo de stage = 960 − 40 por 300 − 90 = 920 x 210 px; cabeçalho 16 + linha do conector com rótulo de duas linhas 64 + rótulo, data e dias em aberto 50 + frase de leitura 16 + três vãos de 12 = 182 px, o que não cabe nos 170 px da faixa. A duração sai por formatDays (4 dias) em vez de 4 d, para não inventar abreviação (ROT-8). A passagem que fica exatamente no limite (2 dias) não estoura: SLA é teto, e estourar é passar dele."
+}

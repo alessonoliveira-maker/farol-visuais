@@ -1,0 +1,14 @@
+{
+  "title": "Vitórias do ano por origem e maioria",
+  "useCase": "Diretoria: quais origens juntas respondem por mais da metade das 74 vitórias do ano.",
+  "demonstrates": [
+    "Linha de maioria radial no assento 38, com o rótulo metade das vitórias",
+    "Indicação e cliente ativo à esquerda, para a soma cruzar a linha de maioria",
+    "Anotação indicação e cliente ativo somam 41 ligada ao arco",
+    "Cor por origem com seriesColor no slot da origem, igual ao restante do painel",
+    "Grupo sem origem declarada por último, em ponto vazado de --text-muted"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta da GEO-1 no card de 640x360 com o caso de uso em uma linha: corpo de 574 x 241,5 px. Linha de leitura em y 14, rótulo da linha da metade em y 48, hemiciclo de raio 160 com a base em y 230 e legenda de 6 linhas de 24 px ao lado; cabe no preset. O viewBox é o próprio corpo, então a escala é 1 (GEO-18). Desvios do catálogo, pelo contrato: o grupo sem origem não usa --line-strong, que mede 1,79:1 e 1,83:1 contra o cartão (TOK-5), e sai em ponto vazado com contorno de --text-muted; a cor sai de seriesColor aplicado ao slot fixo da origem, e não ao índice do array (COR-3). Para a linha atravessar a faixa sem cortar ponto (TOK-10), os assentos são contados em pares por fileira e um corredor de 3 px se soma ao vão no meio: com 74 assentos ficam 37 de cada lado e o assento 38 é o primeiro à direita da linha. A anotação é a linha de leitura do topo, ligada por uma chamada ao colchete que abraça só os 41 assentos somados (ROT-11)."
+}

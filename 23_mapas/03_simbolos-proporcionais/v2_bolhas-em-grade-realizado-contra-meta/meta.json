@@ -1,0 +1,14 @@
+{
+  "title": "Receita realizada contra meta por UF",
+  "useCase": "Em que UFs a receita do trimestre já cobre a meta, sem círculos sobrepostos?",
+  "demonstrates": [
+    "Círculo centrado no tile da grade de 8 por 6, com a grade invisível",
+    "Meta como círculo vazado tracejado e realizado cheio, na mesma escala de área",
+    "Maior círculo limitado à célula, para nunca invadir o vizinho",
+    "Ícone Check e percentual escrito nas UFs que bateram a meta",
+    "UF com meta e sem realizado mostra só o tracejado e a palavra indisponível"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto (640 por 560) e não quadrado como sugere o catálogo: a célula leva o círculo, a sigla e a linha do percentual (63 px de altura por 70 de largura), e seis linhas dessas mais a legenda passam do corpo do quadrado (422 por 355). Os dois círculos usam a mesma escala de área, com o máximo em R_MAX = 18 px e o teto sendo o maior valor entre meta e realizado de todas as UFs. Preenchimento opaco, sem opacidade, porque a meta tracejada precisa ler por cima ou por baixo do cheio: quando o realizado passa da meta, o tracejado cai dentro do cheio e vai em --surface-raised (6:1 contra --chart-1 no claro); quando não passa, fica fora do cheio e vai em --text-secondary sobre o cartão. Bateu a meta é realizado maior ou igual à meta, medido antes do arredondamento, então Sergipe (exatamente 100%) leva o visto. A grade é a mesma do tile grid do catálogo, desenhada à mão e com vizinhança aproximada."
+}

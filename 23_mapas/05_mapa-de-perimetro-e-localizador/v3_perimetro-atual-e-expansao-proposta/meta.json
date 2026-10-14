@@ -1,0 +1,15 @@
+{
+  "title": "Perímetro atual e expansão proposta",
+  "useCase": "Diretoria: que UFs a expansão fictícia de 2027 acrescenta e qual participação ela pode render, em faixa.",
+  "demonstrates": [
+    "Contorno cheio para o perímetro atual e tracejado para as UFs da expansão",
+    "Painel lateral com a participação atual medida e a estimada em faixa, de 5,1% a 6,8%",
+    "Etiquetas de procedência var(--prov-medido) e var(--prov-premissa) em cada número",
+    "Legenda que diferencia perímetro vigente, expansão e fora do perímetro",
+    "Frase acessível com as UFs de cada grupo e a faixa estimada",
+    "Ponto medido e faixa de premissa na mesma escala, com o traço que têm no mapa"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo, a malha: neste catálogo não há a malha do IBGE (lista de imports fechada e cinco arquivos por versão), então o mapa usa a malha de hexágonos do coroplético da família, declarada no data.ts. Leitura adotada da faixa: os 5,1% a 6,8% são a participação que o plano assume nas 4 UFs novas, sobre o mercado delas, e não a do perímetro ampliado; o painel e a nota do rodapé dizem isso, porque a faixa fica inteira abaixo dos 7,4% medidos e leria como queda. As duas etiquetas de procedência são por número e não a etiqueta do cartão que a ANO-6 reserva ao VisualCard: o painel mistura medição e premissa, e uma etiqueta única diria o grau errado para um dos dois. Contorno em var(--text-primary), 1,5 px visíveis, pelas duas passadas: a expansão é desenhada antes e o perímetro vigente depois, então na divisa entre os dois aparece o contorno cheio. Tracejado com traço e vão de um sexto do lado do hexágono (4,23 px) e deslocamento de meio traço: cabem 3 ciclos exatos por lado e todo vértice ganha um traço inteiro. Marca contra marca, medido à mão (TOK-9): perímetro vigente contra a malha de fora 10,9:1 no escuro e 5,2:1 no claro; a expansão tem o mesmo preenchimento da malha de fora (1,00:1), de propósito, e quem a separa é só o contorno tracejado, que mede 16,7:1 e 15,6:1 contra esse fundo, mais a sigla em peso 600 e em var(--text-primary). Fora do perímetro em var(--surface-sunken) com traço de 1 px em var(--line-strong), e não em var(--surface-overlay), que some no tema claro (TOK-1). Conta do canvas largo: caso de uso de 103 caracteres, uma linha, corpo de 894 por 281,5 px; mapa de 291 por 247 px (hexágono de 44 px); vão de 32 px; painel de 571 px com cerca de 254 px de linhas escritas; a faixa é um SVG fixo de 560 por 56 px em escala 1."
+}

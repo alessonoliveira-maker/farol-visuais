@@ -1,0 +1,13 @@
+{
+  "title": "Participação antes e depois do perímetro novo",
+  "useCase": "Diretoria: incluir outra região leva o alcançável de R$ 2,4 bi a R$ 3,2 bi e a participação de 4% a 3%, sem venda a menos.",
+  "demonstrates": [
+    "Dois perímetros lado a lado na mesma escala de área",
+    "Nota da mudança de perímetro com o que passou a entrar",
+    "Etiqueta de procedência por nível: fonte pública, derivado, premissa e medido",
+    "Participação em reais igual nos dois quadros, para mostrar que só o denominador mudou"
+  ],
+  "canvas": { "width": 960, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1) em vez do preset largo, e a conta diz por quê: o conteúdo mede 832 por 290 px, e em altura o preset largo deixa 281,5 px de corpo, 8,5 px a menos. Em largura, 200 do primeiro quadro, 24 de vão, 200 do segundo, 28 de vão e 380 da lista de identificação; em altura, 17 da linha de leitura, 8 de vão, 242 do bloco de desenho (16 de rótulo de coluna, 4 de vão, 200 de quadro, 6 de vão e 16 da linha de participação), 8 de vão e 15 da nota da mudança. Os 960 por 440 px deixam 894 por 321,5 px de corpo, com folga de 62 por 31,5 px, e o caso de uso de 122 caracteres cabe numa linha (o teto em cabeçalho de 894 px é 153). O quadro de 200 px não é estético: o lado da participação é 2,64% do lado do quadro, então em 200 px ela desenha 5,3 px, o mesmo tamanho da v1; encolher o quadro para caber no preset largo levaria a marca menor do visual a 4,6 px. Escala comum aos dois quadros (EIX-9): o lado de todo quadrado sai da raiz da razão entre o valor e o MAIOR valor dos dois recortes, R$ 138,0 bi, então o quadro da esquerda nasce com 186,5 px de lado contra 200 px do da direita, e a comparação de área entre os dois é legítima. A participação é o mesmo quadrado de 5,3 px nos dois quadros, que é a mensagem. Procedência por nível em vez da etiqueta única do cartão: a cascata mistura estatística publicada, conta derivada, premissa de cobertura e medição na base própria, e a etiqueta do VisualCard daria um grau só para as quatro (ANO-6). medido aparece em dois níveis, com a fonte escrita ao lado, porque o Farol não tem token para fonte pública e o grau de confiança das duas linhas é o mesmo; o que as separa é a fonte, e ela vai por extenso, nunca só por cor (ACE-2). Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-primary 14,53:1 e 17,96:1, text-secondary 8,16:1 e 8,13:1, text-muted 5,21:1 e 5,37:1, prov-medido 7,36:1 e 5,34:1, prov-derivado 6,52:1 e 6,11:1, prov-premissa 8,36:1 e 5,74:1, chart-1 9,50:1 e 6,00:1, todos contra surface-raised e acima do piso de 4,5:1 da ACE-3."
+}

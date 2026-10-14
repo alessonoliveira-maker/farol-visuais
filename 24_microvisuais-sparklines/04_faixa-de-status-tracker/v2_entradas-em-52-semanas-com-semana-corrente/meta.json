@@ -1,0 +1,14 @@
+{
+  "title": "Faixa de calor das entradas em 52 semanas",
+  "useCase": "Em que semanas do ano as entradas se concentraram, e como está a semana corrente?",
+  "demonstrates": [
+    "Faixa de calor em 3 classes, seq 5 a seq 7 por style, com cortes redondos (50 e 80)",
+    "Legenda de classes única fora da faixa, com os limites em formatInt",
+    "Semana corrente com contorno de 1 px em texto principal e o valor escrito ao lado",
+    "Classes a 3:1 contra o cartão nos dois temas; sem dado fora da menor classe",
+    "Rótulos de mês por formatMonthShort só nas viradas de trimestre"
+  ],
+  "canvas": "faixa",
+  "frame": "card",
+  "notes": "Canvas faixa como o catálogo sugere: 52 blocos de cerca de 13 px cabem em 894 px com o painel de leitura à direita (GEO-10). Desvio do catálogo, que pede cinco classes de seq 3 a seq 7: seq 3 e seq 4 ficam abaixo de 3:1 contra o cartão (TOK-8, ACE-3), então a faixa usa só seq 5, seq 6 e seq 7, três classes. A ordem das classes mora na posição, na legenda com os limites escritos e na frase acessível, e a cor sozinha não ordena. A semana corrente tem valor parcial e está dito com data junto do número."
+}

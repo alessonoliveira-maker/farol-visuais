@@ -1,0 +1,72 @@
+{
+  "slug": "04_nuvem-de-palavras",
+  "nome": "Nuvem de palavras",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Termos com tamanho de fonte pelo peso, contado como quantas respostas citam o termo, arranjados de forma compacta. Duas variantes: a nuvem em espiral, em SVG puro com layout calculado em TypeScript (do maior para o menor, espiral arquimediana a partir do centro, colisão de retângulos medidos com measureText depois de document.fonts.ready, descarte contado do que não cabe, sem rotação e sem aleatoriedade), e a nuvem alinhada (tag cloud), em HTML com flex-wrap, degraus por quantil e cada termo como botão de filtro. É a forma mais pedida e a mais criticada da família: palavra longa ganha ênfase indevida e a área não se compara com precisão. Serve para ambientação e exploração rápida; para ranking, a lista de termos lê melhor.",
+  "quando_usar": [
+    "Visão impressionista de 30 a 100 termos, quando a pergunta é o assunto e não o valor exato",
+    "Exploração rápida antes de escolher o termo que vai para a concordância KWIC (03)",
+    "Tags clicáveis que filtram o painel inteiro, na variante alinhada com 4 ou 5 degraus",
+    "Destacar os poucos termos que mudaram, com o resto do vocabulário em tom neutro"
+  ],
+  "quando_evitar": [
+    "Ranking ou comparação precisa de valores: use a bar list de termos (02/09)",
+    "Comparar dois períodos ou dois grupos: use barras divergentes (02/06) ou a dispersão de termos (06)",
+    "Menos de 30 respostas ou menos de 15 termos: a nuvem inventa padrão; mostre a lista com aviso de amostra pequena",
+    "Tamanho linear no valor ou rotação livre: infla termos longos e piora a leitura; use raiz quadrada e texto horizontal",
+    "Layout com Math.random ou refeito a cada redimensionamento: a nuvem troca de lugar; calcule determinístico e por breakpoint"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_motivos-de-perda-em-espiral",
+      "titulo": "Motivos de perda livres do trimestre",
+      "caso_de_uso": "Comercial: quais palavras mais aparecem nos 412 motivos de perda escritos livremente em 2026-T3.",
+      "o_que_demonstra": [
+        "Espiral arquimediana determinística do maior para o menor, com folga de 2 px",
+        "Fonte por raiz quadrada entre 12 e 48 px, largura medida com measureText",
+        "Peso contado por resposta que cita o termo, não por ocorrência",
+        "Termos descartados contados na nota: 12 termos fora da nuvem",
+        "Lista ordenada equivalente em sr-only para leitor de tela"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_termos-que-cresceram",
+      "titulo": "Termos de perda que cresceram no trimestre",
+      "caso_de_uso": "Comercial: quais termos dos motivos de perda cresceram mais de 50% contra 2026-T2, sem perder o vocabulário inteiro.",
+      "o_que_demonstra": [
+        "Destaque em --chart-1 e peso 700 só nos termos acima do corte de 50%",
+        "Demais termos em --text-muted, ainda legíveis no tema escuro",
+        "Dica com contagem atual, contagem anterior e variação com a base nomeada",
+        "Termo sem base anterior marcado como novo, fora do cálculo de variação"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_termos-de-busca-em-nuvem-alinhada",
+      "titulo": "Termos de busca paga em nuvem alinhada",
+      "caso_de_uso": "Marketing: quais termos de busca paga trouxeram mais leads em ago/26 e quais têm maioria qualificada, clicando para filtrar.",
+      "o_que_demonstra": [
+        "Variante tag cloud em HTML: flex flex-wrap items-baseline e cinco degraus por quantil",
+        "Cada termo é um button com aria-pressed; o selecionado filtra e mostra a contagem",
+        "Maioria qualificada em --chart-1 com peso 600; as demais em text-text-secondary",
+        "Ordem alfabética declarada no subtítulo, com a ordem por peso no seletor",
+        "Dica com leads, percentual qualificado e CPL qualificado por formatCurrencyCompact"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_amostra-pequena-e-termo-longo",
+      "titulo": "Amostra pequena e termo longo",
+      "caso_de_uso": "Pré-vendas: o que a peça mostra quando há só 22 respostas e um termo longo como planejamento sucessório lidera.",
+      "o_que_demonstra": [
+        "Abaixo de 30 respostas ou 15 termos, lista ordenada com aviso de amostra pequena",
+        "Teto de tamanho para termo longo, com o valor exato escrito na dica",
+        "A mesma função de layout decide entre nuvem e lista pela contagem",
+        "Recorte sem texto no período troca a peça por estado vazio com role status"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

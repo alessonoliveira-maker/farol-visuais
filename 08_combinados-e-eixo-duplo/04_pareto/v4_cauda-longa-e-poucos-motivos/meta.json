@@ -1,0 +1,13 @@
+{
+  "title": "Cauda longa de motivos e período quase vazio",
+  "useCase": "Como manter o pareto legível com 40 motivos, e o que mostrar num recorte com 2 ou 3 deles?",
+  "demonstrates": [
+    "Top 10 nomeado e a cauda somada no fim, com a contagem no tique",
+    "minPointSize de 3 px para a coluna de 2 perdas em 308 continuar visível",
+    "Abaixo de 4 motivos a curva sai e ficam colunas simples, com aviso escrito",
+    "Recorte sem perda medida troca o gráfico inteiro por estado vazio"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas pelo preset largo, com sobra (GEO-1): o caso de uso tem 89 caracteres e cabe em uma linha do cabeçalho de 894 px, então o corpo mede 894 x 281,5 px. A conta das linhas escritas: linha de leitura de 12 px com respiro, 24 px; corpo do gráfico 257,5 px, sendo MARGIN.top de 34 px para o rótulo de contagem, 185,5 px de plano e 38 px de eixo X, que são o tickMargin de 8 mais duas linhas de 11 px no tique da cauda (EIX-6b). A banda sai de (894 menos 8 de margem esquerda, menos 8 de direita, menos 40 do eixo de percentual) dividido por 11 categorias, 76,2 px, e com barCategoryGap de 34% a espessura daria 24,4 px, limitada pelo maxBarSize de 24 da ESP-2. No recorte de menos de 4 motivos entra uma segunda linha escrita, o aviso, que come outros 20 px do plano e ainda deixa a coluna acima do piso de 12 px, porque ali são no máximo 3 bandas. O neutro da coluna da cauda é --line-strong, que mede 1,79:1 e 1,83:1 contra o cartão e sai como aviso da guarda CONTRASTE-MARCA; ele é permitido pela isenção da ACE-3, porque o valor está escrito em cima da coluna, e é o mesmo uso do molde 02_barras-horizontais/01_simples-ordenada."
+}

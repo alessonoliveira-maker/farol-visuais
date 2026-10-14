@@ -1,0 +1,17 @@
+{
+  "title": "Campanhas com CPL qualificado abaixo da mediana",
+  "useCase": "Marketing: quais campanhas de 2026-08 têm CPL qualificado abaixo da mediana.",
+  "demonstrates": [
+    "Campanhas abaixo da mediana em positive e as demais em neutro",
+    "Mediana calculada no preparo, devolvendo null em lista vazia, e escrita na legenda",
+    "Rótulo com nome e CPL qualificado só nos círculos com raio suficiente",
+    "Vão de 2 px na tela por escala resolvida em quatro passadas",
+    "Rótulo interno liberado por soma de glifos contra a meia diagonal da caixa"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 480
+  },
+  "frame": "card",
+  "notes": "Canvas por número em 640x480, e não o quadrado sugerido pelo catálogo, porque nenhum preset fecha depois da conta das linhas escritas. A conta: o corpo mede 574 x 361,5 px (caso de uso de 76 caracteres, uma linha garantida até 92 em 574 px de cabeçalho); a peça escreve 1 linha de leitura de 12 px, 1 linha de legenda de veredito de 12 px, 3 linhas de legenda de canal de 12 px com passo de 26 px e uma lista de identificação de 11 px com passo de 15 px, e o desenho fica com 380 x 309,5 px. O preset alto (640x560) também caberia, mas sobrariam 110 px de faixa vazia embaixo, porque o empacotamento destas 3 caixas mede 380 x 281 px e a escala fica presa na largura. No quadrado o corpo cairia para 422 x 355,5 px e a coluna lateral de 170 px deixaria 228 px de desenho, estreito demais para o rótulo dentro do círculo. Desenho, legenda, rótulo e lista vivem todos no mesmo svg, com viewBox igual ao corpo medido: a escala sai 1, o texto de 12 px chega à tela como 12 px e as guardas de colisão e de contraste passam a medir a peça, o que um bloco de HTML irmão desfaria por encolher a caixa do svg (GEO-18). A área codifica o volume de leads qualificados da campanha, com raio pela raiz quadrada do valor e sem raio mínimo, então ela sai exatamente proporcional; o anel do canal NÃO codifica área, porque o raio dele nasce do espaço que as campanhas ocuparam no empacotamento e não da soma delas, e quem compara canal é o número escrito na legenda lateral (GEO-3). O vão entre círculos empurra as marcas e nunca desconta raio de nenhuma delas, que é o que preserva a codificação por área (GEO-16). O rótulo interno usa 12 px, o tamanho que a 17.1 dá ao rótulo direto, e só é liberado quando a meia diagonal da caixa de tinta mais 4 px de folga não passa do raio. Quatro guardas saíram NÃO MEDIDAS nesta peça e foram conferidas à mão. ESPESSURA-MARCA saiu sem_marca_de_barra, porque não há Bar do Recharts: o piso que importa aqui é o do rótulo interno, 18 px de marca para texto de 12 px, e a menor campanha rotulada tem 66,06 px de diâmetro, medido no preview. FORMATO-ACESSIVEL saiu frase_sem_formatador, porque todo número passa por um helper local em vez de chamar o formatador no meio da frase; a frase e o corpo usam os MESMOS helpers, então o mesmo valor não tem como sair com duas precisões. EIXO-CALMO saiu sem_grade e OPACIDADE MARCA saiu sem_opacidade_em_marca, os dois por ausência: a peça não tem eixo cartesiano, não tem grade e não pede opacidade em nenhuma marca. Medido no preview: a área desenhada de cada uma das 10 folhas contra a participação do valor dela bate com desvio máximo de 0,0004 ponto percentual, e o vão mínimo entre duas folhas é 2,12 px, acima do piso de 1,5 px da COR-5."
+}

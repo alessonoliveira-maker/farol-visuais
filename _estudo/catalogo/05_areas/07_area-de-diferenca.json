@@ -1,0 +1,72 @@
+{
+  "slug": "07_area-de-diferenca",
+  "nome": "Área de diferença contra meta",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "O espaço entre a série real e a referência é pintado de uma cor onde o real fica acima e de outra onde fica abaixo, com sinal escrito para não depender de cor. Contra referência constante basta uma Area sobre o desvio com corte duro de cor no zero, calculado com useYAxisScale; contra meta variável são duas Area de faixa, depois de inserir em TypeScript os pontos de cruzamento por interpolação linear, com eixo x numérico e curva linear.",
+  "quando_usar": [
+    "Real contra meta ou limiar definido por período, quando o saldo acima e abaixo é a pergunta.",
+    "Resultado que cruza o zero: lucro e prejuízo, saldo de carteira.",
+    "De 12 a cerca de 365 pontos, com o saldo acumulado ou a contagem de dias abaixo no título.",
+    "Métrica com polaridade clara, em que acima ser bom ou ruim é conhecido (COR-6)."
+  ],
+  "quando_evitar": [
+    "Referência sem definição por período: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+    "Só o acumulado contra a meta importa: burn-up (04_linhas/06_acumulado-contra-meta).",
+    "Poucos períodos com variação escrita por mês: 08_combinados-e-eixo-duplo/06_real-contra-referencia-com-painel-de-variacao.",
+    "Métrica sem polaridade: verde e vermelho mentiriam (COR-6).",
+    "Curva monotone ou eixo categórico: o cruzamento calculado não cai onde a cor troca."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_resultado-mensal-contra-zero",
+      "titulo": "Resultado mensal contra o zero",
+      "caso_de_uso": "Ver em que meses o resultado operacional ficou positivo ou negativo e quanto isso somou no ano.",
+      "o_que_demonstra": [
+        "Area sobre o valor com baseValue 0 e corte de cor com parada dura no zero",
+        "Altura do corte por useYAxisScale com gradientUnits userSpaceOnUse",
+        "Parada dura que codifica sinal, sem degradê decorativo (COR-9)",
+        "ReferenceLine y 0 em line-strong sólido (EIX-5)",
+        "Saldo do ano com + ou − tipográfico na linha de leitura"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_receita-contra-meta-mensal",
+      "titulo": "Receita reconhecida contra meta mensal",
+      "caso_de_uso": "Mostrar os meses acima e abaixo da meta mensal variável e o saldo acumulado do ano contra ela.",
+      "o_que_demonstra": [
+        "Duas Area de faixa: acima [meta, max] e abaixo [min, meta]",
+        "Pontos de cruzamento inseridos por interpolação linear em TypeScript",
+        "Eixo x numérico de datas e type linear para a curva passar no cruzamento",
+        "Meta tracejada em text-muted e saldo com sinal no rótulo de fim",
+        "Sem chart-2 nem chart-4 num visual que pinta variação semântica (COR-8)"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_sla-diario-contra-limiar",
+      "titulo": "SLA diário contra o limiar de 90%",
+      "caso_de_uso": "Contar quantos dos últimos 180 dias o SLA de primeiro contato ficou abaixo de 90% e quanto faltou.",
+      "o_que_demonstra": [
+        "180 pontos diários contra limiar constante, desenhados como série de desvio",
+        "Dias abaixo contados e o déficit somado na linha de leitura",
+        "Cor de alerta só abaixo do limiar, acompanhada de sinal (ACE-2)",
+        "Ticks mensais e animação desligada para série longa"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_cruzamentos-e-meta-ausente",
+      "titulo": "Cruzamentos entre pontos e meta ausente",
+      "caso_de_uso": "Pintar certo uma série que cruza a meta várias vezes entre pontos e tem meses sem meta definida.",
+      "o_que_demonstra": [
+        "Cruzamentos inseridos entre pontos, sem triângulos pintados do lado errado",
+        "Meses com meta null quebram a área em vez de repetir a meta anterior",
+        "Nota curta nomeando os meses sem meta definida",
+        "Interpolação em função pura no topo do próprio arquivo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

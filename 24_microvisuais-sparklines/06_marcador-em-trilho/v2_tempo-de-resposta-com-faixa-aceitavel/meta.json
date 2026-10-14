@@ -1,0 +1,14 @@
+{
+  "title": "Tempo de resposta contra a faixa aceitável",
+  "useCase": "Pré-vendas: o tempo mediano de primeira resposta da semana está dentro da faixa aceitável do SLA contratado?",
+  "demonstrates": [
+    "Trilho do mínimo ao máximo histórico com a faixa aceitável em --surface-sunken",
+    "Fonte da faixa escrita junto: SLA contratado, de 5 a 30 minutos",
+    "Marcador fora da faixa com a expressão fora do SLA, sem depender só da cor",
+    "Rótulos de limite sem colisão, omitindo o do meio quando não cabe",
+    "Julgamento pela faixa e pelo texto, sem pintar o trilho de verde ou vermelho"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "O trilho de 6 px é --line-strong e não --surface-overlay, que no tema claro é o branco do cartão. A faixa em --surface-sunken tem 16 px de altura e bordas de 1 px em --text-muted para se ver nos dois temas. Os rótulos dos limites da faixa saem quando a distância até outro rótulo, numa largura nominal de 280 px, não comporta o texto; a faixa continua escrita por extenso na legenda. Se a semana atual passar do histórico, o trilho estende até ela e a ponta passa a dizer semana atual."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Agendas marcadas por semana",
+  "useCase": "As agendas das últimas 16 semanas estão subindo, e como a semana atual se compara?",
+  "demonstrates": [
+    "BarChart com XAxis e YAxis escondidos, domínio de 0 ao máximo e animação desligada",
+    "Cell por coluna: semana atual em --chart-1, demais neutras, com ponto no topo",
+    "barCategoryGap de 30% e piso de 3 px por coluna conferido contra a largura",
+    "Número da semana atual em kpi-number ao lado, com formatInt e o substantivo agendas",
+    "Frase acessível com total, média e posição da semana atual"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Desvio do catálogo: as demais colunas saem em --text-muted a 0,72 de opacidade e não em --line-strong, porque --line-strong mede 1,79:1 contra o cartão (TOK-5, ACE-3) e nenhuma coluna tem o valor escrito junto. Como --chart-1 contra --text-muted mede só 1,12:1 no claro (TOK-9), o destaque não mora na cor: a semana atual leva um ponto de contorno no topo e o número ao lado. Corpo do canvas kpi-alto com moldura stage: 328 x 181,5 px. Passo: (328 − 32 de padding − 4 de margem) / 16 = 18,25 px; espessura 18,25 × (1 − 2 × 0,30) = 7,3 px, acima do piso de 3 px do sparkbar."
+}

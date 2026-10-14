@@ -1,0 +1,14 @@
+{
+  "title": "Semana com não comparecimento acima de 15%",
+  "useCase": "Em qual das quatro semanas o não comparecimento passou de 15% das agendas marcadas?",
+  "demonstrates": [
+    "Só a categoria não compareceu acesa, o resto da semana em neutro",
+    "Percentual escrito só para a fatia acesa, com peso 700 na semana acima do limite",
+    "Anotação curta com o valor do limite, só na pizza que o ultrapassa",
+    "Frase acessível que nomeia a semana acima do limite",
+    "Fatia acesa sempre às 12 horas, na mesma posição angular em toda a grade"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo no lugar do preset faixa que o catálogo sugeria. A célula ganhou quatro linhas escritas (rótulo da semana, percentual com volume, contagem da outra parte e a anotação do limite), e o corpo de 894 por 141,5 px do preset faixa não fecha o cartão (GEO-1). Em largo o corpo mede 894 por 281,5 px, com o caso de uso de 83 caracteres em uma linha do cabeçalho, e a pizza fica com 116 px de diâmetro. Desvio declarado: o percentual da fatia acesa vai logo abaixo do disco e não dentro dele, porque entre 8% e 19% a corda da fatia é menor que a tinta de 18,5% (5 de 27) e o rótulo interno atravessaria a borda, que é o defeito da v1 deste modelo já registrado na fila de TEXTO NA MARCA."
+}

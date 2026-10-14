@@ -1,0 +1,13 @@
+{
+  "title": "Riscos que mudaram desde o último comitê",
+  "useCase": "Diretoria: quais riscos subiram ou desceram de nível desde o último comitê e para qual célula foram.",
+  "demonstrates": [
+    "Marca de subida ou descida com o número de níveis na célula de destino",
+    "Célula de origem com contorno tracejado enquanto o risco está em foco",
+    "Anotação: 4 riscos subiram de nível; nenhum desceu",
+    "Segundo canal além da cor: número e densidade de traço"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Só conta como movimento a mudança de NÍVEL pela tabela de consulta, não de célula: risco que andou de célula dentro do mesmo nível não leva marca. O número da marca é a diferença de níveis (baixo, médio, alto), então a subida de baixo para alto vale +2. Origem tracejada e destino em contorno cheio valem para o risco em foco; clicar numa célula marcada troca o foco, e o foco inicial é o primeiro movimento do dado. Mesma grade, mesmas faixas e mesma rampa da v1; a conta de altura é a da v1 mais uma linha de 16 px na nota (cerca de 346 de 355 px)."
+}

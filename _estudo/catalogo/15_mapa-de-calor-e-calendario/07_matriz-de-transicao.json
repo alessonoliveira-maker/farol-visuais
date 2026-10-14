@@ -1,0 +1,74 @@
+{
+  "slug": "07_matriz-de-transicao",
+  "nome": "Matriz de transição, de-para e confusão",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Matriz quadrada com a mesma lista de estados nos dois eixos: origem nas linhas, destino nas colunas e contagem ou percentual na célula. Na transição entre etapas, acima da diagonal é avanço e abaixo é retrocesso; na matriz de-para entre duas datas, a linha de entradas e a coluna de saídas fecham os totais; na matriz de confusão, a diagonal é acerto e o resto é tipo de erro. A diagonal fica fora da escala de cor, porque permanência ou acerto costuma ser o maior número e achata todo o resto.",
+  "quando_usar": [
+    "De onde para onde as oportunidades se moveram entre etapas do funil num trimestre.",
+    "Comparar a foto de duas datas: quem ficou, avançou, regrediu, entrou e saiu.",
+    "Auditar uma classificação automática: temperatura prevista contra desfecho, motivo sugerido contra motivo revisado.",
+    "De 3 a 10 estados por eixo, com contagem escrita na célula e percentual da linha na dica."
+  ],
+  "quando_evitar": [
+    "Caminho por vários estágios em sequência, com o volume do fluxo como leitura: Sankey multietapa (11, modelo 02).",
+    "Só o volume por etapa, sem origem e destino: funil (10).",
+    "Dimensões diferentes nos dois eixos: matriz categórica em cor (modelo 02).",
+    "Relação simétrica entre entidades, sem direção: matriz de adjacência (27, modelo 01).",
+    "Estados sem ordem natural (origem, canal) lidos como avanço e retrocesso: desligar os dois tons do triângulo."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_movimentos-entre-etapas-no-trimestre",
+      "titulo": "Movimentos entre etapas do funil no trimestre",
+      "caso_de_uso": "Das 1.340 oportunidades do trimestre, entre 2026-06-30 e 2026-09-14, quem ficou, avançou, regrediu, entrou e saiu?",
+      "o_que_demonstra": [
+        "Seis etapas nos dois eixos na ordem do funil, com de nas linhas e para nas colunas",
+        "Linha extra nova no trimestre e colunas ganha e perdida para os totais fecharem",
+        "Diagonal de permanência fora do domínio de cor, com contorno e número escrito",
+        "Contagem na célula e percentual da linha na dica por formatRateWithVolume",
+        "Cinco totais separados: permaneceram, avançaram, regrediram, entraram e saíram"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_retrocessos-em-destaque",
+      "titulo": "Retrocessos entre etapas em destaque",
+      "caso_de_uso": "Quantas oportunidades voltaram de proposta para etapas anteriores no trimestre, e em quais pares de etapas o retrocesso se concentra?",
+      "o_que_demonstra": [
+        "Abaixo da diagonal em rampa de --negative por color-mix; acima, rampa --seq",
+        "Duas legendas, avanço e retrocesso, cada uma com seu próprio domínio",
+        "Percentual por linha: de quem saiu de proposta, para onde foi",
+        "Anotação na maior célula de retrocesso: 14% das propostas voltaram para descoberta",
+        "Retrocesso marcado também por seta no rótulo da célula, não só pela cor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_motivo-de-perda-sugerido-contra-revisado",
+      "titulo": "Motivo de perda sugerido contra revisado",
+      "caso_de_uso": "O classificador de texto acerta o motivo de perda? Em 1.200 perdas fictícias, quais motivos ele confunde com sem fit?",
+      "o_que_demonstra": [
+        "Matriz de confusão com real nas linhas e previsto nas colunas, escrito no cabeçalho",
+        "Seletor de normalização: bruto, por linha (revocação), por coluna (precisão), total",
+        "Escala e legenda próprias por modo; em bruto só o fora da diagonal ganha cor",
+        "Painel lateral com precisão e revocação por classe e o coeficiente de Matthews",
+        "Divisão por zero tratada em TypeScript: linha sem casos vira null e hachura"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_diagonal-dominante-e-estagio-extinto",
+      "titulo": "Diagonal dominante, etapa vazia e estágio extinto",
+      "caso_de_uso": "Como manter a matriz legível quando 80% das oportunidades não se moveram, uma etapa ficou vazia e outra foi extinta?",
+      "o_que_demonstra": [
+        "Diagonal em --surface-overlay com valor escrito e fora do domínio da escala",
+        "Etapa contrato sem movimentos: linha vazia com o rótulo sem movimento no período",
+        "Estágio extinto em 2026-08-01 como coluna hachurada, com nota de mudança de processo",
+        "Linha com menos de 20 casos esmaecida e com o n escrito na margem",
+        "Estado fora do dicionário contado à parte no rodapé, nunca descartado em silêncio"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

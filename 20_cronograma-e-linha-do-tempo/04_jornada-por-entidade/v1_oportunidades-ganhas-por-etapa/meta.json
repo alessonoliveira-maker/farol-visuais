@@ -1,0 +1,13 @@
+{
+  "title": "Jornada das oportunidades ganhas por etapa",
+  "useCase": "Quanto tempo cada uma das 15 oportunidades ganhas no trimestre ficou em cada etapa do funil.",
+  "demonstrates": [
+    "Um Bar por etapa na mesma pilha, com o vão da criação como série sem marca",
+    "Cor por identidade de etapa, com a legenda escrita na ordem do funil",
+    "Linhas ordenadas pela data de criação e losango de fechamento ganho na ponta",
+    "Dica com etapa, dias e datas de entrada e saída por formatDate"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo. 1) A tupla [entrada, saída] com stackId não empilha no Recharts (a pilha soma valores, não intervalos); cada linha vira o vão da criação mais quatro durações em dias, a mesma pivotagem do Gantt empacotado (20/01 v4). 2) Sem rampa sequencial: só --seq-5 a --seq-7 passam de 3:1 nos dois temas (TOK-8) e o funil tem quatro etapas, então a cor é a identidade da etapa (slots categóricos 1, 3, 6 e 5) e a ordem mora na posição e na legenda escrita; o contorno de cartão separa os vizinhos. 3) Vão de categoria de 24% e não de 30%: com 15 linhas no corpo de 574 x 441,5 a banda mede cerca de 24 px, e 24% de cada lado deixa a barra com 12,5 px, o piso da ESP-2. Canvas alto fecha: 441,5 menos a linha de leitura, a legenda e o eixo."
+}

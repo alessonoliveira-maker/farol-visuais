@@ -1,0 +1,13 @@
+{
+  "title": "Participação no alcançável contra a meta",
+  "useCase": "Diretoria: quanto dos R$ 2,4 bi alcançáveis já é nosso (4%) e quanto falta para a meta de participação de 6%.",
+  "demonstrates": [
+    "Painel lateral ampliado do nível alcançável ligado ao quadro maior por linhas finas",
+    "Meta de participação como contorno tracejado dentro do alcançável",
+    "Escala do painel ampliado declarada no próprio painel",
+    "Distância para a meta escrita em reais e em pontos percentuais"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas: o preset largo fecha por conta, então ele fica. O corpo do preset largo na moldura card mede 894 por 281,5 px, com o caso de uso de 109 caracteres numa linha só (o teto de uma linha em cabeçalho de 894 px é 153). O conteúdo desenhado mede 776 por 250 px: em largura, 180 do quadro geral, 88 do cone, 180 do painel, 28 de vão e 300 da coluna de identificação; em altura, 17 da linha de leitura, 8 de vão, 202 do bloco de desenho (16 de rótulo de coluna, 4 de vão, 180 de quadro e 2 da faixa da linha de baixo do cone), 8 de vão e 15 da nota do perímetro. Sobram 118 px de largura e 31,5 px de altura. Ampliação: o quadro geral e o painel têm o mesmo lado de 180 px de propósito, e é isso que torna a ampliação calculável do dado em vez de escrita à mão. O lado do alcançável dentro do quadro geral é 180 vezes a raiz de 2,4 bi sobre 120 bi, ou 25,46 px, então o painel amplia o lado 7,1 vezes e a área 50 vezes, que é exatamente o mercado total dividido pelo alcançável. A meta sai do hue do dado: ela é referência, não série, e vai em contorno tracejado de text-muted, que mede 5,21:1 no escuro e 5,37:1 no claro contra o cartão. O cone é text-muted pela ACE-6, porque o traço carrega a relação (ele diz qual quadrado virou painel) e line-strong mediria 1,79:1 e 1,83:1. Onde o cone passa por trás de um contorno do quadro geral o contorno pinta em cima e o traço se interrompe, que é a saída da TOK-10 para guia que cruza marca. Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-primary 14,53:1 e 17,96:1, text-secondary 8,16:1 e 8,13:1, text-muted 5,21:1 e 5,37:1, chart-1 9,50:1 e 6,00:1, todos contra surface-raised e acima do piso de 4,5:1 da ACE-3. Nenhum texto fica por dentro de marca preenchida, então a ROT-6 não entra: o rótulo do destaque mora fora do quadrado, à direita dele."
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "02_matriz-agregada-de-celulas",
+  "nome": "Matriz agregada de células (2x2, 3x3)",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Some com os pontos e fica só a grade: cada célula nomeia um grupo e carrega contagem, soma da medida de negócio e, quando cabe, cartões com os itens. Serve ao 2x2 agregado de cartão pequeno, ao nine-box 3x3 de calibração de carteira e à matriz de Eisenhower com a ação escrita em cada caixa. Construído em HTML com CSS Grid do Tailwind, cada célula um botão com aria-label que filtra o painel, sem Recharts, porque o SVG não paga nada aqui. A caixa é derivada por regra auditável e não arrastada; item sem um dos atributos vai para faixa própria e nunca cai por padrão numa caixa; zero e sem dado têm desenhos diferentes; nenhuma célula tem área proporcional ao valor; e eixo de julgamento humano leva contorno tracejado com a legenda avaliação do time, não medição.",
+  "quando_usar": [
+    "A pergunta é quanto cai em cada grupo e ninguém vai procurar item individual",
+    "Resumo executivo de quatro números em cartão pequeno, com a caixa melhor sempre no mesmo canto",
+    "Calibração de carteira em três faixas por eixo, com zonas diagonais de ação",
+    "Itens acionáveis distribuídos por regra em quatro caixas, cada uma com um verbo",
+    "Os dois eixos já são categóricos ou foram cortados em faixas declaradas"
+  ],
+  "quando_evitar": [
+    "É preciso achar entidade específica pela posição: matriz 2x2 de quadrantes (25/01)",
+    "Os eixos são medidas contínuas e a posição dentro da célula importa (25/01)",
+    "A célula existe para ler intensidade por gradiente: matriz categórica em cor (15/02)",
+    "Área da célula proporcional ao valor: mosaico e marimekko (família 26)",
+    "Caixa que vira lista infinita, sem limite de cartões visíveis",
+    "Largura abaixo de cerca de 360 px, onde a grade empilha e deixa de ser matriz"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-por-origem-e-documento-em-2x2",
+      "titulo": "Leads por origem identificada e documento válido",
+      "caso_de_uso": "Marketing: quantos leads do mês têm origem identificada, documento válido, os dois ou nenhum.",
+      "o_que_demonstra": [
+        "Grade 2x2 com gap-px sobre fundo de divisória, cada caixa um botão que filtra",
+        "Seta de sentido e rótulo nos dois eixos, fora da grade",
+        "Número grande, rótulo da região e participação sobre o total em cada caixa",
+        "Caixa sem origem nem documento com borda chart-3 e ícone da lucide",
+        "Nenhuma caixa com área proporcional ao valor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_fila-da-sdr-em-eisenhower",
+      "titulo": "Fila da SDR por urgência e valor potencial",
+      "caso_de_uso": "Pré-vendas: como os 64 leads da fila se dividem entre fazer agora, agendar, redistribuir e descartar.",
+      "o_que_demonstra": [
+        "Caixa derivada por regra de SLA e valor, com a regra escrita no rodapé",
+        "Verbo de ação no título e contagem com vencidos, como 18, sendo 5 vencidos",
+        "Cartões ordenados por vencimento, até seis por caixa e depois +n",
+        "Ícone de relógio da lucide em chart-3 só nos cartões vencidos",
+        "Leads sem valor potencial em faixa própria abaixo da grade, sem engordar descartar"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_carteira-em-abc-e-xyz",
+      "titulo": "Carteira em ABC e XYZ",
+      "caso_de_uso": "Comercial: como 180 contas se dividem por receita reconhecida e previsibilidade mensal, e quanta receita há em cada célula.",
+      "o_que_demonstra": [
+        "Grade 3x3 com o critério de cada faixa no cabeçalho e o tipo de corte no subtítulo",
+        "Zonas diagonais pela soma dos índices, em três tons baixos",
+        "Contagem, soma de receita e participação no total em cada célula",
+        "Célula A e Z destacada: receita alta que entra no forecast como faixa",
+        "Navegação por setas entre células e aria-label com os números"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_nine-box-com-celula-vazia-e-lotada",
+      "titulo": "Nine-box com célula vazia e célula lotada",
+      "caso_de_uso": "Comercial: calibração de 60 contas por potencial e relacionamento, com uma célula sem contas e outra com 41.",
+      "o_que_demonstra": [
+        "Eixos de julgamento com contorno tracejado e legenda avaliação do time",
+        "Célula vazia com 0 contas em tom apagado, sem sumir da grade",
+        "Célula central com seis chips ordenados por potencial, +35 e botão de abrir lista",
+        "Seta de posição prevista no chip, como no desenho da matriz GE",
+        "Contas sem avaliação fora da grade, em faixa própria com contagem"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

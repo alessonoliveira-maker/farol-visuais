@@ -1,0 +1,14 @@
+{
+  "title": "Estoque da fila de pré-vendas contra o teto",
+  "useCase": "Saber em que dias o estoque da fila, por etapa, passou do teto de capacidade e qual etapa inchou.",
+  "demonstrates": [
+    "Quatro etapas empilhadas na ordem do processo, não pelo tamanho",
+    "Teto em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+    "Dias acima do teto contados e escritos na linha de leitura",
+    "120 pontos diários com animação desligada e tiques mensais",
+    "Nulo decidido antes do render: lacuna de medição interrompe as quatro camadas juntas",
+    "Legenda na ordem visual da pilha, de cima para baixo, com a etapa que mais incha destacada"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

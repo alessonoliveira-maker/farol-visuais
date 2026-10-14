@@ -1,0 +1,14 @@
+{
+  "title": "Etapa de cada oportunidade em aberto",
+  "useCase": "Comercial: em que etapa do processo estão as 14 oportunidades abertas do trimestre, lidas numa coluna da tabela.",
+  "demonstrates": [
+    "Variante compacta com marcadores de 8 px e sem rótulo, alinhada à linha da tabela",
+    "Nome da etapa atual em texto ao lado dos marcadores para leitura exata",
+    "Ordenação pela etapa atual e depois pelos dias parados, calculada no componente",
+    "Legenda única dos estados no cabeçalho da coluna, não uma por linha",
+    "Oportunidade sem etapa registrada escrita como indisponível, nunca como etapa zero"
+  ],
+  "canvas": "alto",
+  "frame": "stage",
+  "notes": "Moldura stage em vez de card: o corpo mede 600 x 454 px medidos (640 x 560 menos 40 de largura; o cabeçalho de duas linhas pede 106 de altura), o que acomoda as 14 linhas de 24 px, o cabeçalho e a linha de contagem; no card seriam 574 x 425, com o mesmo conteúdo mais apertado. O marcador do passo atual mede 14 px (anel de 2 px com miolo de 6 px) e os demais 8 px: o anel maior é a pista de forma que dispensa a cor, e o vazado do futuro é um contorno de 8 px."
+}

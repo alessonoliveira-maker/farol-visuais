@@ -1,0 +1,13 @@
+{
+  "title": "Origem, porte e desfecho das agendas",
+  "useCase": "Como origem, porte da empresa e desfecho se combinam nas 248 agendas marcadas pela pré-vendas em 2026-08?",
+  "demonstrates": [
+    "Três eixos como barras finas segmentadas, com nome da categoria e contagem",
+    "Faixas coloridas pela primeira dimensão, em slots fixos",
+    "Geometria compartilhada com o alluvial, sem seta e sem ordem temporal",
+    "Vão entre segmentos do eixo e faixas ordenadas pelo segmento de destino"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Rótulo de nome e contagem fica numa raia reservada acima de cada segmento, nos três eixos, para não depender de margem lateral livre no eixo do meio."
+}

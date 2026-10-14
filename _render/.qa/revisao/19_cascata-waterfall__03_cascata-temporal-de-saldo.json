@@ -1,0 +1,134 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "03_cascata-temporal-de-saldo",
+  "versoes": {
+    "v1_fila-de-pre-vendas-na-semana": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cascata fecha no dado e no desenho (1,81 px por lead em quatro marcas), totais no zero, entrada e saída em passos separados com o dia agrupando o par, pares de texto de 5,21:1 a 17,96:1 nos dois temas, conector lido como referência pela ACE-6. Observações no README: rótulos de passo sem substantivo (NUM-6), rótulos sem halo (ROT-7), linha de leitura repete o subtítulo, dado sem passo zero, vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:15:58.752Z",
+      "impressao": "66523c52505c0f0e5968ca777a250805161f6203",
+      "arquivos": {
+        "Chart.tsx": "f59dfb3fc1e98442b9dea1ae470365c61bf77edc",
+        "data.ts": "db6812a3310cac0922dd4e67bb35f83893a1dae9",
+        "meta.json": "782fba61025b38f10618cc5b7ea53505002a6fcb"
+      }
+    },
+    "v2_dia-em-que-a-fila-passou-do-teto": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no arquivo corrigido. Teto com zIndex 100 abaixo da Bar e respiro de 4 px: nenhum rótulo a menos de 4,4 px do tracejado nos dois temas; escala conferida em 11 marcas (1,057 px por lead) e teto em 120; destaque único em chart-1 com peso 700 e anotação. Observações no README: 104 leads fica acima do teto, a 5,8 px do traço e 22,7 px da própria barra; rótulos de passo sem substantivo (NUM-6); rótulo do teto dentro da área (ANO-3); traço 4 4; vazio sem ícone Filter; linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:29:35.573Z",
+      "impressao": "60dc92c5ddd99ba6287eef5f290c5f60a34ea97e",
+      "arquivos": {
+        "Chart.tsx": "3f1245ba21b7cee0a1b40cc77ddad1c8383d83e6",
+        "data.ts": "7cc8e59489c4301d79763c182847e97a5790e5f4",
+        "meta.json": "4866df6036b231156b853332e50cfce5f09cc4f9"
+      }
+    },
+    "v3_oportunidades-abertas-em-doze-meses": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no arquivo corrigido. Faixas neutras em line-strong com o sinal no texto (COR-6 resolvida), Line em chart-1 como único destaque; escala conferida em 5 marcas (2,767 px por oportunidade), vértices da Line no topo das faixas, zero de fev/26 com traço e rótulo 0, base 138 e fecho 211 escritos. Observações no README: toco do traço de zero sob a Line; fev/26 não nomeado nas frases; ago/26 sem tique; rótulos sem substantivo (NUM-6); zero do desenho em 138 declarado no notes; vazio sem ícone Filter; tiques e linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:29:36.061Z",
+      "impressao": "ffacdc2cbcce51a5a833142a6ee162b32a35f55d",
+      "arquivos": {
+        "Chart.tsx": "731860fc1699b7d47c52694f1dbe3ddc5746ab62",
+        "data.ts": "91767e16c17db7e0fba8a3a354019b1982d56c17",
+        "meta.json": "50cc20fe962aca6285eb9e1d188f459031dfe3ae"
+      }
+    },
+    "v4_verba-de-midia-com-saldo-negativo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala conferida em cinco marcas (6,70 px por mil reais), faixa de junho atravessa o zero, total final ancorado no zero e desenhado para baixo, mês de saldo zero em traço com R$ 0, domínio pelo acumulado, rótulos a 3,5 px ou mais dos conectores. Observações no README: formatCurrencyAxis em rótulo direto (NUM-1), polaridade implícita no sinal do saldo (COR-6), halo inerte contra a linha do zero (REC-13), vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:16:08.888Z",
+      "impressao": "7c7e77df99b041edb8d132a16a4cb0d3d63702fd",
+      "arquivos": {
+        "Chart.tsx": "e1d60c30f257cd1ae5111620a6057c98642d637f",
+        "data.ts": "17c7dbc15296717586d6c29bc2508320ca1808ad",
+        "meta.json": "0bfb807e8c1d7d4dccb082730349063daca147b3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_fila-de-pre-vendas-na-semana",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cascata fecha no dado e no desenho (1,81 px por lead em quatro marcas), totais no zero, entrada e saída em passos separados com o dia agrupando o par, pares de texto de 5,21:1 a 17,96:1 nos dois temas, conector lido como referência pela ACE-6. Observações no README: rótulos de passo sem substantivo (NUM-6), rótulos sem halo (ROT-7), linha de leitura repete o subtítulo, dado sem passo zero, vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:15:58.752Z",
+      "impressao": "66523c52505c0f0e5968ca777a250805161f6203",
+      "arquivos": {
+        "Chart.tsx": "f59dfb3fc1e98442b9dea1ae470365c61bf77edc",
+        "data.ts": "db6812a3310cac0922dd4e67bb35f83893a1dae9",
+        "meta.json": "782fba61025b38f10618cc5b7ea53505002a6fcb"
+      }
+    },
+    {
+      "versao": "v2_dia-em-que-a-fila-passou-do-teto",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, ROT-7 com REC-13 (emenda de 2026-09-29), 14.1 leitura apertada: o tracejado do teto passa a 1,5 px do topo do rótulo da saída de quinta e do 104 leads do total final, mais perto que a barra de cada um (6 px), e é pintado por cima do halo (ReferenceLine zIndex 400, Bar 300), então o total lê como legenda do teto. Mudar: zIndex explícito no teto abaixo de 300 para o halo abrir o traço, respiro de 4 px entre rótulo e traço, corrigir o comentário da linha 264. Parecer em validation/revisao_19_cascata-waterfall__03_cascata-temporal-de-saldo_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:16:07.860Z",
+      "impressao": "fe7d6c1ec03e52eeb5daa3f0ee60e0354711840e",
+      "arquivos": {
+        "Chart.tsx": "59e52398a57b902afc41d6101fe16fae82fd3097",
+        "data.ts": "7cc8e59489c4301d79763c182847e97a5790e5f4",
+        "meta.json": "4866df6036b231156b853332e50cfce5f09cc4f9"
+      }
+    },
+    {
+      "versao": "v3_oportunidades-abertas-em-doze-meses",
+      "veredito": "reprovado",
+      "nota": "Pergunta 11, COR-6 (papel de cor, 14.1): as faixas e os rótulos saem em verde e vermelho semânticos pelo sinal do líquido (Chart.tsx:95 e 177), sem polaridade declarada; a carteira aberta encolhe quando se ganha negócio, então o sinal não é polaridade, e a v1 já trata a fila como métrica sem polaridade. Mudar: faixa neutra em line-strong com rótulo em text-secondary, ou o par chart-3 e chart-6 da v1; cor semântica só com goodDirection declarado no dado. Parecer em validation/revisao_19_cascata-waterfall__03_cascata-temporal-de-saldo_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:16:08.392Z",
+      "impressao": "37fa2e105704b9f764783935f865f27343565b4b",
+      "arquivos": {
+        "Chart.tsx": "d38856753f9d0bff103ca0cf69c9c70df9198c89",
+        "data.ts": "91767e16c17db7e0fba8a3a354019b1982d56c17",
+        "meta.json": "50cc20fe962aca6285eb9e1d188f459031dfe3ae"
+      }
+    },
+    {
+      "versao": "v4_verba-de-midia-com-saldo-negativo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala conferida em cinco marcas (6,70 px por mil reais), faixa de junho atravessa o zero, total final ancorado no zero e desenhado para baixo, mês de saldo zero em traço com R$ 0, domínio pelo acumulado, rótulos a 3,5 px ou mais dos conectores. Observações no README: formatCurrencyAxis em rótulo direto (NUM-1), polaridade implícita no sinal do saldo (COR-6), halo inerte contra a linha do zero (REC-13), vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:16:08.888Z",
+      "impressao": "7c7e77df99b041edb8d132a16a4cb0d3d63702fd",
+      "arquivos": {
+        "Chart.tsx": "e1d60c30f257cd1ae5111620a6057c98642d637f",
+        "data.ts": "17c7dbc15296717586d6c29bc2508320ca1808ad",
+        "meta.json": "0bfb807e8c1d7d4dccb082730349063daca147b3"
+      }
+    },
+    {
+      "versao": "v2_dia-em-que-a-fila-passou-do-teto",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no arquivo corrigido. Teto com zIndex 100 abaixo da Bar e respiro de 4 px: nenhum rótulo a menos de 4,4 px do tracejado nos dois temas; escala conferida em 11 marcas (1,057 px por lead) e teto em 120; destaque único em chart-1 com peso 700 e anotação. Observações no README: 104 leads fica acima do teto, a 5,8 px do traço e 22,7 px da própria barra; rótulos de passo sem substantivo (NUM-6); rótulo do teto dentro da área (ANO-3); traço 4 4; vazio sem ícone Filter; linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:29:35.573Z",
+      "impressao": "60dc92c5ddd99ba6287eef5f290c5f60a34ea97e",
+      "arquivos": {
+        "Chart.tsx": "3f1245ba21b7cee0a1b40cc77ddad1c8383d83e6",
+        "data.ts": "7cc8e59489c4301d79763c182847e97a5790e5f4",
+        "meta.json": "4866df6036b231156b853332e50cfce5f09cc4f9"
+      }
+    },
+    {
+      "versao": "v3_oportunidades-abertas-em-doze-meses",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no arquivo corrigido. Faixas neutras em line-strong com o sinal no texto (COR-6 resolvida), Line em chart-1 como único destaque; escala conferida em 5 marcas (2,767 px por oportunidade), vértices da Line no topo das faixas, zero de fev/26 com traço e rótulo 0, base 138 e fecho 211 escritos. Observações no README: toco do traço de zero sob a Line; fev/26 não nomeado nas frases; ago/26 sem tique; rótulos sem substantivo (NUM-6); zero do desenho em 138 declarado no notes; vazio sem ícone Filter; tiques e linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:29:36.061Z",
+      "impressao": "ffacdc2cbcce51a5a833142a6ee162b32a35f55d",
+      "arquivos": {
+        "Chart.tsx": "731860fc1699b7d47c52694f1dbe3ddc5746ab62",
+        "data.ts": "91767e16c17db7e0fba8a3a354019b1982d56c17",
+        "meta.json": "50cc20fe962aca6285eb9e1d188f459031dfe3ae"
+      }
+    }
+  ]
+}

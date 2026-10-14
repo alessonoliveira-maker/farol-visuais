@@ -1,0 +1,57 @@
+{
+  "slug": "13_q-q-plot",
+  "nome": "Q-Q plot",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Quantis observados contra quantis de uma referência, seja uma distribuição teórica ou outra amostra. Pontos sobre a diagonal dizem mesma forma, e o afastamento sistemático diz onde a forma difere: cauda mais longa, teto, assimetria. A geometria é de dispersão, mas a pergunta é de distribuição, e por isso o modelo fica aqui. Sai do ScatterChart nativo com ReferenceLine em segmento para a diagonal, área quadrada e o inverso da normal aproximado em TypeScript. É peça de público técnico e de conferência de premissa.",
+  "quando_usar": [
+    "Conferir se a premissa de forma usada no simulador de cenários descreve o dado medido.",
+    "Comparar a forma de duas amostras, como dois anos, com quantis interpolados na mesma grade.",
+    "Diagnosticar teto, piso ou truncamento vindos do sistema de origem.",
+    "Amostras a partir de umas 50 observações, para público técnico."
+  ],
+  "quando_evitar": [
+    "Painel executivo ou público que nunca viu um Q-Q: histograma com estatística anotada (01) ou ECDF (04).",
+    "Pergunta de cauda extrema com a aproximação simples: trocar a função e conferir contra tabela antes.",
+    "Relação entre duas variáveis diferentes: dispersão na família 09.",
+    "Comparar grupos por resumo: box plot com pontos (02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-contra-lognormal",
+      "titulo": "Ciclo de fechamento contra a lognormal",
+      "caso_de_uso": "A premissa lognormal usada no simulador de cenários descreve o ciclo de fechamento medido em 2026?",
+      "o_que_demonstra": [
+        "Função qqNormal sobre o log do ciclo, com posições de plotagem (i + 0,5) / n",
+        "Área quadrada com aspect 1 e o mesmo domínio nos dois eixos",
+        "Diagonal em ReferenceLine com segment e traço tracejado",
+        "Anotação na região da cauda que se afasta da diagonal"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_tempo-ate-agenda-em-dois-anos",
+      "titulo": "Tempo até a agenda em 2025 contra 2026",
+      "caso_de_uso": "A distribuição do tempo até a agenda mudou de forma entre 2025 e 2026, ou só se deslocou?",
+      "o_que_demonstra": [
+        "Q-Q de duas amostras com quantis interpolados na mesma grade de probabilidades",
+        "Nunca emparelhar por índice quando os tamanhos das amostras diferem",
+        "Pontos da cauda acima da diagonal em destaque, com nota: a cauda ficou mais longa",
+        "n de cada ano no subtítulo"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_atingimento-com-teto",
+      "titulo": "Atingimento de meta com teto de 150%",
+      "caso_de_uso": "O desvio no topo do atingimento de meta é forma real ou efeito do teto de 150% do sistema de origem?",
+      "o_que_demonstra": [
+        "Pontos achatados no topo formando uma linha horizontal em 150%",
+        "ReferenceLine no teto com rótulo e nota que atribui o desvio ao teto",
+        "Casos no teto contados no rodapé, fora da leitura de forma",
+        "Diagonal mantida para mostrar que o miolo segue a referência"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

@@ -1,0 +1,699 @@
+{
+  "slug": "05_areas",
+  "nome": "Áreas",
+  "modelos": [
+    {
+      "slug": "01_area-simples",
+      "nome": "Área simples com gradiente",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma série temporal preenchida do zero até a linha: o preenchimento codifica volume e a leitura é de tendência e massa, não de valor pontual. No acabamento do catálogo o gradiente do estudo vira preenchimento plano em opacidade baixa, porque a COR-9 do CONTRATO proíbe gradiente decorativo; contorno de 2 px, base sempre no zero. Absorve os pequenos múltiplos de área, uma área por categoria com escala comum.",
+      "quando_usar": [
+        "Uma série em que o volume ao longo do tempo importa: entradas de lead, receita reconhecida, investimento.",
+        "De 10 a cerca de 200 pontos; com menos de 10 datas, colunas leem melhor.",
+        "Várias séries da mesma unidade cuja forma individual importa mais que a soma: pequenos múltiplos com escala comum.",
+        "Pergunta de crescimento ou perda de força, em que o valor exato fica na dica ou num rótulo de fim."
+      ],
+      "quando_evitar": [
+        "Eixo que não começa no zero ou recorte de escala: linha simples (04_linhas/01_linha-simples).",
+        "Série com valores negativos ou saldo contra referência: área de diferença (07_area-de-diferenca).",
+        "Comparar trajetórias de várias séries no mesmo quadro: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+        "Menos de 3 pontos: vira número com comparação (EIX-11).",
+        "Área mínima atrás do número de um cartão de KPI: sparkline de linha e área (24_microvisuais-sparklines/01_sparkline-de-linha)."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_entradas-mensais-de-leads",
+          "titulo": "Entradas mensais de leads",
+          "caso_de_uso": "Quanto entrou de lead por mês em 2026 e se o volume está crescendo ou perdendo força.",
+          "o_que_demonstra": [
+            "AreaChart nativo com preenchimento plano em opacidade baixa e contorno de 2 px",
+            "Domínio a partir do zero com ticks redondos calculados no componente",
+            "Curva monotone, que não ultrapassa os pontos nem cruza a base",
+            "Série única sem legenda e com a unidade no tique"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_receita-com-mes-parcial",
+          "titulo": "Receita reconhecida com mês parcial",
+          "caso_de_uso": "Ler a receita mensal do ano sem confundir o mês corrente, ainda aberto, com uma queda real.",
+          "o_que_demonstra": [
+            "Último trecho tracejado e ponto vazado para o período incompleto (EIX-10)",
+            "Nota curta de parcial até 2026-09-14 impressa por formatDate",
+            "Média mensal em ReferenceLine tracejada com rótulo na margem reservada",
+            "Tique de moeda por formatCurrencyAxis e rótulo de fim por formatCurrencyCompact"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_leads-por-origem-em-multiplos",
+          "titulo": "Leads por origem em pequenos múltiplos",
+          "caso_de_uso": "Ver a forma semanal de cada uma das 8 origens de lead sem a pilha esconder as camadas do meio.",
+          "o_que_demonstra": [
+            "Grade HTML com Tailwind e um AreaChart pequeno por origem",
+            "Domínio y calculado sobre o conjunto: escala comum declarada (EIX-9)",
+            "Painéis ordenados pelo total de 52 semanas, não pelo alfabeto",
+            "Eixos só nas bordas da grade e animação desligada",
+            "Total de cada origem escrito no título curto do painel"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_lacuna-de-coleta",
+          "titulo": "Entradas semanais com lacuna de coleta",
+          "caso_de_uso": "Separar semana sem coleta de semana com zero entrada, sem a área despencar até a base onde falta dado.",
+          "o_que_demonstra": [
+            "null com connectNulls desligado quebrando a área (EIX-10)",
+            "Zero medido desenhado como zero, distinto da lacuna (EST-3)",
+            "ReferenceArea em surface-sunken com texto nomeando o intervalo sem coleta",
+            "Frase acessível que conta as semanas ausentes"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_area-empilhada",
+      "nome": "Área empilhada",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Camadas em que cada série começa onde a anterior termina; o topo da pilha é o total. Responde total e composição ao mesmo tempo, com a camada mais importante na base, a única com referência comum. Absorve a área divergente, com stackOffset sign pondo entradas acima e saídas abaixo do zero, e a área empilhada micro, o mix de 2 a 4 componentes sem eixo dentro de um cartão.",
+      "quando_usar": [
+        "Total e partes importam juntos, com 2 a 6 camadas e 10 ou mais datas.",
+        "A camada da base é a pergunta principal e as de cima dão contexto.",
+        "Fluxo com entradas e saídas por camada, com stackOffset sign e saldo líquido em linha.",
+        "Mix de 2 a 4 componentes num cartão pequeno, com ordem canônica igual em todas as instâncias."
+      ],
+      "quando_evitar": [
+        "Pergunta sobre qual camada do meio cresceu: pequenos múltiplos (01_area-simples, versão v3).",
+        "Participação importa mais que o total: área 100% (03_area-100).",
+        "Menos de cerca de 10 datas: colunas empilhadas (03_colunas-verticais).",
+        "Mais de 6 categorias coloridas sem agrupar em Outros com a contagem (COR-4).",
+        "Negativos empilhados sem stackOffset sign, ou categoria que alterna sinal numa chave só.",
+        "Muitas categorias com padrão sazonal e sem necessidade de valor exato: streamgraph (08_streamgraph)."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_custo-em-tres-camadas",
+          "titulo": "Custo mensal em três camadas",
+          "caso_de_uso": "Quanto o custo total de 2026 cresceu e quanto disso veio do custo direto, do alocado e da estrutura.",
+          "o_que_demonstra": [
+            "Area com stackId comum e a camada principal como primeiro filho, na base",
+            "Legenda na ordem visual da pilha, de cima para baixo (ROT-4)",
+            "Slots categóricos na ordem 1, 3, 6 com separador surface-raised (COR-5, COR-8)",
+            "Total do último mês escrito no topo da pilha"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_mix-de-investimento-em-cartao",
+          "titulo": "Mix de investimento em cartão pequeno",
+          "caso_de_uso": "Mostrar no cartão de mídia se a plataforma em foco ganhou peso no investimento dos últimos 12 meses.",
+          "o_que_demonstra": [
+            "Área empilhada micro com XAxis e YAxis escondidos, e não removidos",
+            "Plataforma em foco em chart-1 e as outras em line-strong com separador",
+            "Teto de 4 componentes, com Outros agregado antes de chegar ao componente",
+            "Ordem de empilhamento canônica, fixa entre instâncias e meses",
+            "Participação final de cada componente escrita na frase acessível"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_estoque-da-fila-contra-teto",
+          "titulo": "Estoque da fila de pré-vendas contra o teto",
+          "caso_de_uso": "Saber em que dias o estoque da fila, por etapa, passou do teto de capacidade e qual etapa inchou.",
+          "o_que_demonstra": [
+            "Quatro etapas empilhadas na ordem do processo, não pelo tamanho",
+            "Teto em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+            "Dias acima do teto contados e escritos na linha de leitura",
+            "120 pontos diários com animação desligada e ticks mensais",
+            "Nulo decidido antes do render: zero verdadeiro ou lacuna em todas as camadas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_entradas-e-saidas-de-oportunidades",
+          "titulo": "Entradas e saídas de oportunidades por semana",
+          "caso_de_uso": "Ver se o funil está enchendo ou esvaziando: oportunidades que entram contra as que saem por ganho ou perda.",
+          "o_que_demonstra": [
+            "stackOffset sign com entradas positivas e saídas negativas na mesma pilha",
+            "Linha do zero em line-strong e saldo líquido em Line dentro do ComposedChart",
+            "Tique e rótulo com sinal de menos tipográfico (U+2212) nas saídas",
+            "Semanas de saldo negativo sinalizadas com símbolo e texto, não só cor",
+            "Camada que alterna sinal separada em duas chaves com a mesma cor"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_area-100",
+      "nome": "Área 100%",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Área empilhada normalizada em que cada instante soma 100%: mostra como a participação de cada parte evoluiu quando o total não é a notícia. O Recharts normaliza no render com stackOffset expand e o payload continua absoluto, então percentual de rótulo e de dica é calculado no componente. Instante com total zero é lacuna, nunca 0%.",
+      "quando_usar": [
+        "Evolução de participação com 2 a 6 partes coloridas e 10 ou mais datas.",
+        "Cobertura de dado ao longo do tempo: quanto da base segue sem origem declarada depois de uma correção.",
+        "Mix comparado entre períodos de totais muito diferentes, com painel de total sincronizado abaixo."
+      ],
+      "quando_evitar": [
+        "O total mudou muito e isso é a notícia: área empilhada (02_area-empilhada) ou painel de total junto.",
+        "Participação de um único instante: pizza (06_pizza) ou waffle (22_unidades-waffle-e-pictograma).",
+        "Poucos períodos: colunas 100% (03_colunas-verticais).",
+        "Camada de ausência pintada como categoria real ou somada a Outros."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_participacao-do-investimento-por-plataforma",
+          "titulo": "Participação do investimento por plataforma",
+          "caso_de_uso": "Ver como o investimento mensal de 2026 se redistribuiu entre quatro plataformas fictícias de mídia paga.",
+          "o_que_demonstra": [
+            "stackOffset expand com eixo de 0% a 100% por formatPercent",
+            "Rótulo da camada dentro da área onde há espaço, no lugar da legenda",
+            "Percentual inteiro somando 100 pelo maior resto (NUM-2)",
+            "Cor fixa por plataforma vinda do dado, não da posição (COR-3)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_leads-sem-origem-apos-correcao",
+          "titulo": "Leads sem origem depois da correção de coleta",
+          "caso_de_uso": "Mostrar que a fatia de leads sem origem declarada caiu depois da correção de coleta de 2026-06-02.",
+          "o_que_demonstra": [
+            "Camada de ausência no topo, vazada com contorno text-muted e sem preenchimento",
+            "ReferenceLine vertical na data da correção com rótulo curto",
+            "Participação da ausência antes e depois escrita na linha de leitura",
+            "Ausência fora do teto de 6 cores e nunca somada a Outros"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_origens-com-painel-de-total",
+          "titulo": "Leads por origem com painel de total",
+          "caso_de_uso": "Ler a composição semanal das origens de lead sem perder de vista que o total caiu no mesmo período.",
+          "o_que_demonstra": [
+            "Seis origens coloridas, Outras (n=2) e Sem origem declarada por último",
+            "Dois gráficos alinhados com o mesmo eixo X e syncId, sem eixo duplo (EIX-8)",
+            "Painel de total em área simples abaixo da área 100%",
+            "Legenda na ordem visual da pilha, de cima para baixo (ROT-4)",
+            "52 semanas com ticks mensais por formatMonthShort"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_semanas-sem-nenhum-lead",
+          "titulo": "Composição com semanas sem nenhum lead",
+          "caso_de_uso": "Evitar que uma semana sem nenhum lead apareça como faixa cheia arbitrária ou como 0% na composição.",
+          "o_que_demonstra": [
+            "Total zero tratado como lacuna antes do render, sem divisão por zero",
+            "ReferenceArea em surface-sunken com texto marcando a semana sem base (ANO-4)",
+            "Nota com a contagem de semanas sem base",
+            "Frase acessível com a participação final de cada parte"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_areas-sobrepostas",
+      "nome": "Áreas sobrepostas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas áreas da mesma unidade partindo do zero, uma atrás da outra e sem stackId: a de fundo é o envelope (capacidade, total) e a da frente é a parte (realizado, atendido). Absorve a área com linha, em que a medida protagonista vira Line sobre a massa; é a saída quando a interseção transparente começa a parecer uma terceira categoria.",
+      "quando_usar": [
+        "Exatamente duas grandezas na mesma unidade, uma contida na outra: capacidade e realizado, demanda e atendimento.",
+        "Capacidade ou envelope em área clara e medida protagonista em linha saturada por cima.",
+        "Capacidade planejada conhecida até dezembro e demanda real que para em hoje.",
+        "Capacidade que muda por contratação, em área de degrau (stepAfter)."
+      ],
+      "quando_evitar": [
+        "Três ou mais séries: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+        "Unidades diferentes: painéis alinhados (08_combinados-e-eixo-duplo/03_paineis-alinhados).",
+        "A pergunta é quanto uma passou da outra: área de diferença (07_area-de-diferenca).",
+        "Parte que pode passar do todo sem que isso seja erro de dado: linhas, não áreas contidas.",
+        "Transparência que cria uma terceira cor lida como categoria."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_capacidade-e-agendas-realizadas",
+          "titulo": "Capacidade de agendas e agendas realizadas",
+          "caso_de_uso": "Ver quanto da capacidade semanal de agendas da pré-vendas foi de fato usada de janeiro a setembro de 2026.",
+          "o_que_demonstra": [
+            "Duas Area sem stackId: fundo em line-strong e frente em chart-1",
+            "Contorno forte e preenchimento leve para a interseção não virar cor nova",
+            "Rótulo direto dentro de cada área, sem legenda",
+            "Ocupação média escrita na linha de leitura com formatPercent"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_demanda-em-linha-contra-capacidade",
+          "titulo": "Demanda de entradas contra capacidade",
+          "caso_de_uso": "Mostrar em que semanas a demanda de entradas passou da capacidade de atendimento e em quanto.",
+          "o_que_demonstra": [
+            "ComposedChart com Area de capacidade em stepAfter antes da Line de demanda",
+            "Semanas acima da capacidade com ponto em negative e rótulo do excedente",
+            "Área clara e linha saturada, como pede o guia de eixo duplo do estudo 08",
+            "Excedente com sinal e palavra, não só cor (ACE-2)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_capacidade-anual-com-projecao",
+          "titulo": "Capacidade e demanda com trecho projetado",
+          "caso_de_uso": "Ver a capacidade planejada até dezembro contra a demanda real até hoje e a projetada depois.",
+          "o_que_demonstra": [
+            "Área de capacidade até 2026-12 e demanda real sólida até 2026-09-14",
+            "Demanda projetada tracejada a partir de hoje, com ReferenceLine vertical",
+            "52 semanas com ticks mensais por formatMonthShort",
+            "Selo de premissa do trecho projetado fica no VisualCard, não no Chart (ANO-6)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_recesso-e-semana-sem-coleta",
+          "titulo": "Semana de recesso e semana sem coleta",
+          "caso_de_uso": "Distinguir capacidade zero no recesso de semana em que a demanda simplesmente não foi coletada.",
+          "o_que_demonstra": [
+            "Degrau até zero para capacidade medida em zero (EST-3)",
+            "null com connectNulls desligado para a demanda sem coleta (EIX-10)",
+            "As duas ausências com desenho e texto diferentes, no máximo duas anotações",
+            "Frase acessível que nomeia as duas semanas e o motivo de cada uma"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_faixa-range-band",
+      "nome": "Faixa (range band)",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Área entre uma borda inferior e uma superior, sem linha central obrigatória: mostra envelope, perímetro ou intervalo de cenários. No Recharts é uma Area cujo dataKey devolve o par [inferior, superior]; baseValue é ignorado e a dica recebe array. Quando a linha central é a protagonista, o visual mora em 04_linhas/04_linha-com-banda-de-intervalo.",
+      "quando_usar": [
+        "Mínimo e máximo históricos como contexto para a série do ano corrente.",
+        "Medida que depende de definição, como participação de mercado entre perímetro restrito e amplo.",
+        "Cenários discretos (pessimista e otimista) desenhados como faixa com linhas de cenário, sem fingir distribuição.",
+        "De 12 a cerca de 104 períodos, com as bordas rotuladas."
+      ],
+      "quando_evitar": [
+        "Só a média importa: linha simples (04_linhas/01_linha-simples).",
+        "A linha central é a mensagem e a faixa é incerteza em volta dela: 04_linhas/04_linha-com-banda-de-intervalo.",
+        "Incerteza por percentis que cresce com o horizonte: leque de projeção (06_leque-de-projecao).",
+        "Faixa sem rótulo nas bordas, que acaba lida como meta.",
+        "Bordas que se cruzam sem normalização: área de diferença (07_area-de-diferenca)."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_participacao-de-mercado-por-perimetro",
+          "titulo": "Participação de mercado por perímetro",
+          "caso_de_uso": "Mostrar a participação mensal entre o perímetro restrito e o amplo, sem escolher um número único que engane.",
+          "o_que_demonstra": [
+            "Area de faixa com dataKey em par [restrito, amplo]",
+            "Bordas rotuladas no fim da faixa com o nome de cada perímetro",
+            "Domínio de percentual a partir do zero (EIX-1)",
+            "Bordas normalizadas com mínimo e máximo antes do render"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_envelope-historico-com-ano-atual",
+          "titulo": "Envelope histórico com o ano atual",
+          "caso_de_uso": "Ver se as entradas semanais de 2026 estão dentro do mínimo e do máximo de 2023 a 2025.",
+          "o_que_demonstra": [
+            "Faixa neutra de mínimo e máximo por semana do ano",
+            "Linha de 2026 em chart-1 por cima, destaque único do visual",
+            "Semanas fora do envelope marcadas com ponto e contagem na linha de leitura",
+            "Semana corrente parcial com ponto vazado (EIX-10)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_cenarios-de-receita-2027",
+          "titulo": "Cenários de receita acumulada para 2027",
+          "caso_de_uso": "Mostrar a faixa entre o cenário pessimista e o otimista de receita acumulada contra a meta anual fictícia.",
+          "o_que_demonstra": [
+            "Faixa entre cenários discretos com as linhas de cenário nas bordas",
+            "Meta em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+            "Saída em faixa escrita como intervalo com formatCurrencyCompact",
+            "Rótulo que diz cenário, não probabilidade",
+            "Faixas sobrepostas desenhadas da mais larga para a mais estreita"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_perimetro-amplo-sem-dado",
+          "titulo": "Faixa com perímetro amplo ausente",
+          "caso_de_uso": "Mostrar meses em que só o perímetro restrito foi medido, sem desenhar faixa inventada até o amplo.",
+          "o_que_demonstra": [
+            "Faixa omitida onde uma borda é null, com a borda existente em linha",
+            "ReferenceArea em surface-sunken com texto nomeando os meses sem dado",
+            "formatUnavailable no rótulo do perímetro ausente (EST-2)",
+            "Nenhuma interpolação entre trechos com faixa (EIX-10)"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_leque-de-projecao",
+      "nome": "Leque de projeção (fan chart)",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Faixas aninhadas de percentis que se abrem a partir do último dado real: a incerteza cresce com o horizonte e a intensidade é maior no centro. Cada faixa é uma Area de faixa, desenhada da mais larga para a mais estreita, com o real e a mediana em Line por cima; no ponto de junção todas colapsam no valor real. Três cenários discretos não formam leque: são faixa (05_faixa-range-band).",
+      "quando_usar": [
+        "Projeção com método que produz percentis mês a mês ou semana a semana (p05, p25, p50, p75, p95).",
+        "Pergunta de chance: qual a probabilidade de passar da meta ou de encostar no teto até uma data.",
+        "Histórico de pelo menos 12 períodos para a abertura do leque ter base.",
+        "Distribuição assimétrica que precisa aparecer como tal, sem espelhar as faixas."
+      ],
+      "quando_evitar": [
+        "Projeção sem método, ou premissa de planilha apresentada com cara de medição.",
+        "Cenários discretos: faixa com linhas de cenário (05_faixa-range-band).",
+        "Real contra previsto sem incerteza: 04_linhas/05_real-contra-previsto.",
+        "Linha protagonista com banda de erro já estimada: 04_linhas/04_linha-com-banda-de-intervalo.",
+        "Leitor que precisa de um número único: publicar a mediana com a faixa escrita."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-com-leque-ate-dezembro",
+          "titulo": "Receita mensal com leque até dezembro",
+          "caso_de_uso": "Mostrar a receita reconhecida até hoje e a faixa plausível dos meses que faltam de 2026.",
+          "o_que_demonstra": [
+            "Faixas p05 a p95 e p25 a p75 desenhadas da mais larga para a mais estreita",
+            "Faixas colapsadas no último real para o leque não nascer solto",
+            "Mediana tracejada e real sólido em Line por cima das faixas",
+            "ReferenceLine vertical de hoje com rótulo curto"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_chance-de-bater-a-meta",
+          "titulo": "Chance de bater a meta do ano",
+          "caso_de_uso": "Dizer qual a probabilidade de a receita acumulada passar da meta anual fictícia até dezembro de 2026.",
+          "o_que_demonstra": [
+            "Leque sobre o acumulado com meta em ReferenceLine tracejada",
+            "Probabilidade calculada dos percentis e escrita na linha de leitura",
+            "Legenda das faixas com a probabilidade em texto, sem depender de cor",
+            "Assimetria preservada: faixas não espelhadas em torno da mediana"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_agendas-projetadas-contra-teto",
+          "titulo": "Agendas projetadas contra teto de capacidade",
+          "caso_de_uso": "Antecipar em que semana as agendas projetadas começam a encostar no teto de capacidade da pré-vendas.",
+          "o_que_demonstra": [
+            "Leque de agendas semanais com teto em Line stepAfter tracejada",
+            "Primeira semana em que o p75 passa do teto anotada com a data",
+            "No máximo duas anotações: hoje e a semana de encontro (ANO-1)",
+            "Selo de premissa do trecho projetado fica no VisualCard (ANO-6)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_historico-curto",
+          "titulo": "Leque com histórico curto",
+          "caso_de_uso": "Mostrar com honestidade uma projeção feita com menos de 6 meses de histórico, sem esconder que ela abre demais.",
+          "o_que_demonstra": [
+            "Horizonte truncado em 3 meses quando o histórico é curto",
+            "Nota curta com o número de meses usados na projeção",
+            "Borda inferior limitada ao zero numa grandeza que não fica negativa (EIX-1)",
+            "Frase acessível que declara a largura da faixa no último mês"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_area-de-diferenca",
+      "nome": "Área de diferença contra meta",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "O espaço entre a série real e a referência é pintado de uma cor onde o real fica acima e de outra onde fica abaixo, com sinal escrito para não depender de cor. Contra referência constante basta uma Area sobre o desvio com corte duro de cor no zero, calculado com useYAxisScale; contra meta variável são duas Area de faixa, depois de inserir em TypeScript os pontos de cruzamento por interpolação linear, com eixo x numérico e curva linear.",
+      "quando_usar": [
+        "Real contra meta ou limiar definido por período, quando o saldo acima e abaixo é a pergunta.",
+        "Resultado que cruza o zero: lucro e prejuízo, saldo de carteira.",
+        "De 12 a cerca de 365 pontos, com o saldo acumulado ou a contagem de dias abaixo no título.",
+        "Métrica com polaridade clara, em que acima ser bom ou ruim é conhecido (COR-6)."
+      ],
+      "quando_evitar": [
+        "Referência sem definição por período: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+        "Só o acumulado contra a meta importa: burn-up (04_linhas/06_acumulado-contra-meta).",
+        "Poucos períodos com variação escrita por mês: 08_combinados-e-eixo-duplo/06_real-contra-referencia-com-painel-de-variacao.",
+        "Métrica sem polaridade: verde e vermelho mentiriam (COR-6).",
+        "Curva monotone ou eixo categórico: o cruzamento calculado não cai onde a cor troca."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_resultado-mensal-contra-zero",
+          "titulo": "Resultado mensal contra o zero",
+          "caso_de_uso": "Ver em que meses o resultado operacional ficou positivo ou negativo e quanto isso somou no ano.",
+          "o_que_demonstra": [
+            "Area sobre o valor com baseValue 0 e corte de cor com parada dura no zero",
+            "Altura do corte por useYAxisScale com gradientUnits userSpaceOnUse",
+            "Parada dura que codifica sinal, sem degradê decorativo (COR-9)",
+            "ReferenceLine y 0 em line-strong sólido (EIX-5)",
+            "Saldo do ano com + ou − tipográfico na linha de leitura"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_receita-contra-meta-mensal",
+          "titulo": "Receita reconhecida contra meta mensal",
+          "caso_de_uso": "Mostrar os meses acima e abaixo da meta mensal variável e o saldo acumulado do ano contra ela.",
+          "o_que_demonstra": [
+            "Duas Area de faixa: acima [meta, max] e abaixo [min, meta]",
+            "Pontos de cruzamento inseridos por interpolação linear em TypeScript",
+            "Eixo x numérico de datas e type linear para a curva passar no cruzamento",
+            "Meta tracejada em text-muted e saldo com sinal no rótulo de fim",
+            "Sem chart-2 nem chart-4 num visual que pinta variação semântica (COR-8)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_sla-diario-contra-limiar",
+          "titulo": "SLA diário contra o limiar de 90%",
+          "caso_de_uso": "Contar quantos dos últimos 180 dias o SLA de primeiro contato ficou abaixo de 90% e quanto faltou.",
+          "o_que_demonstra": [
+            "180 pontos diários contra limiar constante, desenhados como série de desvio",
+            "Dias abaixo contados e o déficit somado na linha de leitura",
+            "Cor de alerta só abaixo do limiar, acompanhada de sinal (ACE-2)",
+            "Ticks mensais e animação desligada para série longa"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_cruzamentos-e-meta-ausente",
+          "titulo": "Cruzamentos entre pontos e meta ausente",
+          "caso_de_uso": "Pintar certo uma série que cruza a meta várias vezes entre pontos e tem meses sem meta definida.",
+          "o_que_demonstra": [
+            "Cruzamentos inseridos entre pontos, sem triângulos pintados do lado errado",
+            "Meses com meta null quebram a área em vez de repetir a meta anterior",
+            "Nota curta nomeando os meses sem meta definida",
+            "Interpolação em função pura no topo do próprio arquivo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_streamgraph",
+      "nome": "Streamgraph",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Área empilhada deslocada em torno de um eixo central (stackOffset wiggle ou silhouette), de forma orgânica e sem eixo y numérico. Serve para a impressão geral de sazonalidade e de peso relativo entre muitas categorias; o valor exato vai nos rótulos das maiores camadas e na dica. A ordem das camadas é decisão de dado tomada em TypeScript, porque o Recharts empilha na ordem dos filhos. Absorve o streamgraph ordenado, que reordena as camadas por tamanho a cada período e por isso sai do Recharts para SVG puro.",
+      "quando_usar": [
+        "De 6 a cerca de 30 categorias com padrão temporal (sazonalidade, picos) em 30 ou mais períodos.",
+        "Visão exploratória de onde o volume se concentrou ao longo do ano.",
+        "Mudança na ordem de tamanho entre categorias como a própria história, na variação ordenada."
+      ],
+      "quando_evitar": [
+        "Leitura de valor exato ou comparação fina entre camadas: área empilhada (02_area-empilhada) ou pequenos múltiplos.",
+        "Dado sem padrão temporal: vira uma faixa monótona sem leitura.",
+        "Valores negativos: a forma só aceita positivos.",
+        "Tela estática sem rótulo nas camadas maiores: a forma perde o sentido sem o nome.",
+        "Poucos períodos na variação ordenada: bump chart (04_linhas/08_bump-chart)."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-por-campanha-no-ano",
+          "titulo": "Leads por campanha ao longo do ano",
+          "caso_de_uso": "Ver em que semanas do ano as campanhas fictícias concentraram a geração de leads e qual delas pesou mais.",
+          "o_que_demonstra": [
+            "AreaChart com stackOffset silhouette, mesmo stackId e YAxis escondido",
+            "Seis campanhas coloridas e Outras (n=6) em neutro (COR-4)",
+            "Ordem das camadas decidida em TypeScript: maiores ao centro, alternando lados",
+            "Rótulo dentro das camadas maiores com o total de leads do ano"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_picos-sazonais-com-destaque",
+          "titulo": "Picos sazonais com campanha em destaque",
+          "caso_de_uso": "Explicar os dois picos do ano e mostrar que uma única campanha carregou quase todo o segundo.",
+          "o_que_demonstra": [
+            "Campanha em destaque em chart-1 e as demais em line-strong com separador",
+            "Destaque por prop highlightId, visível no preview sem depender de hover",
+            "Dois picos anotados com texto curto e valor (ANO-1, ANO-2)",
+            "Rótulo da campanha em destaque em peso 700 como segundo canal (COR-2)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_origens-ordenadas-por-tamanho",
+          "titulo": "Origens de lead ordenadas por tamanho",
+          "caso_de_uso": "Mostrar como a ordem de tamanho de 10 origens de lead mudou em 24 meses, com a maior sempre ao centro.",
+          "o_que_demonstra": [
+            "SVG puro: ordem e bordas de cada camada calculadas por período em TypeScript",
+            "Camadas ligadas por curvas cúbicas horizontais entre períodos",
+            "Ordem de pintura pela ordem de destino para não abrir buracos nas trocas",
+            "Cor fixa por origem em todos os períodos (COR-3)",
+            "Empate desempatado pela ordem do período anterior, regra declarada"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_criativos-de-vida-curta",
+          "titulo": "Criativos que entram e saem no período",
+          "caso_de_uso": "Evitar que dezenas de criativos de vida curta virem camadas finas e ilegíveis na forma do ano.",
+          "o_que_demonstra": [
+            "Agrupamento em Outros abaixo de 3% de participação, com a regra no rodapé",
+            "Contagem de criativos agrupados escrita no rótulo de Outros",
+            "Criativo fora do ar como zero verdadeiro, não como lacuna",
+            "Pontos agregados por semana e animação desligada para 30 camadas"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "09_horizon-chart",
+      "nome": "Horizon chart",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Cada série é cortada em faixas de mesma altura que se sobrepõem numa linha baixa: intensidade discreta indica magnitude e matiz indica sinal, com negativos espelhados para cima. Cabem de 10 a cerca de 50 séries numa tela, para achar padrão e exceção, não para ler valor. Com poucas linhas, cada faixa é uma Area com dataKey em clamp e domínio fixo; com 20 ou mais, SVG puro com um path por faixa. Absorve o horizonte micro, linhas de 16 a 28 px empilhadas às dezenas.",
+      "quando_usar": [
+        "De 10 a 50 séries longas na mesma unidade, para achar onde e quando algo saiu do normal.",
+        "Desvio contra uma referência (média, meta) em que o sinal importa.",
+        "Tela de analista recorrente, com legenda de faixas ao lado.",
+        "Passo comum a todas as linhas quando a comparação de nível entre séries é a pergunta."
+      ],
+      "quando_evitar": [
+        "Público que nunca viu a forma ou tela de apresentação: pequenos múltiplos (01_area-simples, versão v3).",
+        "Leitura de valor exato: tabela visual (14_tabelas-visuais) ou linha.",
+        "Grade de intensidade por período sem forma de onda: 15_mapa-de-calor-e-calendario.",
+        "Mais de 3 faixas por sinal, ou passo sem declarar se é comum ou por série.",
+        "Matiz negativa mais saturada que a positiva, que faz a tela inteira parecer crise."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_desvio-do-cpl-por-campanha",
+          "titulo": "Desvio do CPL contra a média por campanha",
+          "caso_de_uso": "Achar em quais das 12 campanhas fictícias e em que dias o CPL fugiu da própria média de 30 dias.",
+          "o_que_demonstra": [
+            "Uma Area por faixa com dataKey em clamp e YAxis escondido de domínio fixo",
+            "Três faixas por sinal com opacidade crescente só na marca",
+            "Polaridade da métrica: CPL acima da média é alerta (COR-6)",
+            "Legenda de faixas com o valor de corte de cada tom e passo comum declarado"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_campanha-expandida-em-area",
+          "titulo": "Campanha selecionada expandida em área comum",
+          "caso_de_uso": "Vencer a curva de aprendizado: a campanha escolhida abre em área comum e as outras seguem em horizonte.",
+          "o_que_demonstra": [
+            "Prop expandedId que abre uma linha em área de altura normal",
+            "Demais séries preservadas em horizonte com a mesma escala",
+            "Linha expandida com nome em peso 700 como segundo canal",
+            "Estado visível no preview, sem depender de clique"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_sla-de-30-equipes",
+          "titulo": "SLA diário de 30 equipes contra a meta",
+          "caso_de_uso": "Achar em 180 dias quais das 30 equipes fictícias de pré-vendas passaram mais tempo abaixo da meta de SLA.",
+          "o_que_demonstra": [
+            "SVG puro com um path por faixa e clipPath, sem 30 instâncias do Recharts",
+            "Linhas micro de 16 px ordenadas pelo pior trimestre, não pelo nome",
+            "Separação sutil entre linhas para as vizinhas não parecerem escorrer",
+            "Nome da equipe à esquerda e escala comum obrigatória (EIX-9)"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_valor-fora-de-escala",
+          "titulo": "Horizon com valor fora de escala",
+          "caso_de_uso": "Mostrar um dia com desvio de 10 vezes o passo sem esmagar a leitura das demais séries.",
+          "o_que_demonstra": [
+            "Faixa saturada no teto com marcador de fora de escala",
+            "Valor original escrito na anotação, não o valor recortado",
+            "Passo mantido comum mesmo com o valor extremo",
+            "Frase acessível que nomeia a série e o dia fora de escala"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "10_area-bump",
+      "nome": "Area bump",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Bump chart em que a posição vertical codifica o ranking e a espessura da faixa codifica o valor em cada período; as faixas se ligam por curvas cúbicas horizontais. Responde ao mesmo tempo quem lidera e com quanto. O Recharts não faz a forma: por período, ordenar os itens, calcular espessura com escala comum e empilhar com espaçamento fixo em TypeScript, desenhando cada item como path fechado.",
+      "quando_usar": [
+        "De 4 a 8 itens em 4 a 12 períodos, quando ranking e volume importam juntos.",
+        "Troca de liderança entre plataformas, origens ou produtos com diferença de tamanho relevante.",
+        "Leitura de trajetória de um item em destaque contra os demais como contexto."
+      ],
+      "quando_evitar": [
+        "Mais de 8 itens: bump chart de ranking (04_linhas/08_bump-chart) ou agrupar.",
+        "Só o ranking importa: bump chart de ranking (04_linhas/08_bump-chart).",
+        "Só o volume importa: área empilhada (02_area-empilhada).",
+        "Comparação fina de valores entre itens: a espessura acaba lida como posição."
+      ],
+      "arquivo_estudo": "_estudo/familias/05_areas.md",
+      "versoes": [
+        {
+          "slug": "v1_plataformas-por-investimento-trimestral",
+          "titulo": "Plataformas por investimento trimestral",
+          "caso_de_uso": "Ver quais das 6 plataformas fictícias subiram ou caíram no ranking de investimento e com quanto em 8 trimestres.",
+          "o_que_demonstra": [
+            "Ordem por período e espessura proporcional com escala comum",
+            "Faixas ligadas por cúbicas horizontais com controle no meio do intervalo",
+            "Rótulos de início e fim com posição ordinal e valor",
+            "Nota que declara as duas codificações: posição e espessura"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_plataforma-em-destaque",
+          "titulo": "Plataforma em destaque no ranking",
+          "caso_de_uso": "Acompanhar a trajetória de uma plataforma no ranking de investimento, com as demais como contexto.",
+          "o_que_demonstra": [
+            "Item destacado em chart-1 e os demais em line-strong",
+            "Rótulo do destaque em peso 700 e posição de cada trimestre escrita",
+            "Desenho por segmento para o destaque ficar por cima nos cruzamentos",
+            "Coluna de faixas alinhada ao centro, com a regra declarada"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_item-zerado-num-periodo",
+          "titulo": "Area bump com item zerado num período",
+          "caso_de_uso": "Mostrar uma origem que não gerou nenhum lead num trimestre sem sumir do ranking nem inventar volume.",
+          "o_que_demonstra": [
+            "Espessura mínima de 1 px para zero medido, com a regra na nota (EST-3)",
+            "Caminho interrompido quando o valor é null, distinto do zero",
+            "Empates desempatados pela ordem do período anterior",
+            "Frase acessível com o líder de cada ponta e o item zerado"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

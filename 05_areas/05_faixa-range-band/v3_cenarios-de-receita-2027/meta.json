@@ -1,0 +1,14 @@
+{
+  "title": "Cenários de receita acumulada para 2027",
+  "useCase": "Mostrar a faixa entre o cenário pessimista e o otimista de receita acumulada contra a meta anual fictícia.",
+  "demonstrates": [
+    "Faixa entre cenários discretos com as linhas de cenário nas bordas",
+    "Meta em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+    "Saída em faixa escrita como intervalo com formatCurrencyCompact",
+    "Rótulo que diz cenário, não probabilidade",
+    "Faixas sobrepostas desenhadas da mais larga para a mais estreita"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Método declarado: quatro cenários discretos do modelo de planejamento comercial (pessimista, conservador, moderado, otimista), trajetórias fixas do modelo, não percentis nem intervalo de confiança. A faixa ampla vai de pessimista a otimista; a faixa restrita, desenhada por cima, vai de conservador a moderado."
+}

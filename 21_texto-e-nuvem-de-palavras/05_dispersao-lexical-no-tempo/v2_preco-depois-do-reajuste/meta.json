@@ -1,0 +1,13 @@
+{
+  "title": "Preço adensando depois do reajuste de taxa",
+  "useCase": "Comercial: o termo preço passou a aparecer mais nas perdas depois do reajuste fictício de taxa em 2026-07-01?",
+  "demonstrates": [
+    "ReferenceLine na data do reajuste com rótulo curto na margem superior reservada",
+    "Contagem antes e depois escrita à direita de cada faixa, em destaque no termo preço",
+    "Destaque em --chart-1 só na faixa de preço; as demais faixas em tom neutro",
+    "Janelas antes e depois de mesma duração, com a regra escrita sob o gráfico"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: as faixas neutras usam --text-muted e não --line-strong, que mede 1,79:1 no escuro e 1,83:1 no claro e some como traço de dado (TOK-5, ACE-6). Opacidade de 0,75 por menção, acima dos pisos de 0,72 de --text-muted e 0,66 de --chart-1 (ACE-5). A contagem antes e depois aparece em todas as faixas, com destaque só no preço, para a comparação mostrar que as outras ficaram estáveis. Janelas de 91 dias: 2026-04-01 a 2026-06-30 e 2026-07-01 a 2026-09-29. O termo em destaque vai para o alto: o primeiro termo das linhas do Scatter vai para a base e o domain do YAxis de categoria não reordena, observado no render."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Termos em oportunidades ganhas e perdidas",
+  "useCase": "Quais termos das anotações aparecem mais nas oportunidades ganhas do que nas perdidas, em percentual de cada grupo.",
+  "demonstrates": [
+    "Pirâmide de termos normalizada pelo tamanho de cada grupo",
+    "Termos ordenados pela diferença, com o critério escrito acima das barras",
+    "Diferença acima de 10 p.p. em cor cheia, demais translúcidos",
+    "Termo ausente num lado com traço e 0%, nunca removido"
+  ],
+  "canvas": { "width": 640, "height": 1170 },
+  "frame": "card",
+  "notes": "O critério de ordem mora numa nota do próprio Chart, e não só no subtítulo, para não se perder quando o visual for colado sem o subtítulo. Desvio de preset (alto 640x560 vira 640x1170, 2026-09-18): com 14 termos, duas séries por faixa e barCategoryGap 26%, a marca ficava em 4 px; a altura subiu pela conta invertida da ESP-6 até a marca chegar ao teto de maxBarSize (14 px), sem afinar a barra nem cortar termo."
+}

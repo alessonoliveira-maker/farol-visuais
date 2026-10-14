@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida real e projetada até dezembro",
+  "useCase": "Se o ritmo de 2026-01 a 2026-08 se mantiver, onde a receita reconhecida mensal termina em 2026-12?",
+  "demonstrates": [
+    "Duas Line: real sólida e projetada com strokeDasharray 4 4",
+    "Ponto de junção presente nas duas chaves para não abrir buraco",
+    "ReferenceLine vertical de hoje com rótulo curto",
+    "Dica que rotula projetado e não duplica o ponto de junção"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

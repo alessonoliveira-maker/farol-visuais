@@ -1,0 +1,14 @@
+{
+  "title": "Meta, forecast e realizado por executivo",
+  "useCase": "Comercial: em 14 executivos, onde o forecast e o realizado do trimestre ficam em relação à meta.",
+  "demonstrates": [
+    "Três marcadores por linha convertidos em pixel dentro da faixa por regra de três",
+    "Forma e tamanho crescentes da meta ao realizado, não só cor",
+    "Ordem pela distância entre realizado e meta, declarada na linha de leitura",
+    "Três valores iguais viram marcador único, com os três na dica",
+    "Tabela irmã com os três valores e o delta, alinhada às linhas"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo, o contrato vence: canvas largo em vez de alto. A tabela irmã com os três valores e o delta são quatro colunas de 84 px (336 px) ao lado do haltere, e no canvas alto de 574 px de corpo sobrariam cerca de 100 px para o plano, pouco para separar três marcadores. No largo o corpo tem 894 px: 136 de nomes, 336 de tabela e cerca de 420 de plano. Conta da altura: 14 linhas x 15 px = 210 px, mais 16 de cabeçalho das colunas, 24 de eixo e uma linha de leitura de 16 px com respiro, dentro dos 281,5 px do corpo. A tabela é desenhada pelo segundo eixo Y, na mesma banda de cada linha, para as duas leituras nunca desalinharem."
+}

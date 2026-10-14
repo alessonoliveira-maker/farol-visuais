@@ -1,0 +1,73 @@
+{
+  "slug": "06_coordenadas-paralelas",
+  "nome": "Coordenadas paralelas",
+  "abordagem_stack": "svg-puro",
+  "resumo": "O radar desenrolado: dimensões como eixos verticais paralelos e cada entidade como uma linha que os atravessa. Aceita muito mais perfis que o radar, mostra padrões de grupo e deixa cada eixo com escala própria quando as unidades diferem, desde que mínimo e máximo estejam rotulados. SVG puro com escala por eixo em TypeScript e um path por entidade; com escala comum normalizada, a variante simples cabe num LineChart com eixo categórico.",
+  "quando_usar": [
+    "De 6 a 60 perfis em 4 a 8 métricas, quando a pergunta é padrão de grupo e entidade fora do padrão.",
+    "Métricas de unidades diferentes (R$, %, dias) que o radar só aceitaria normalizadas.",
+    "Uma entidade ou grupo em foco contra o conjunto esmaecido.",
+    "Aba de análise, com leitor que tem hábito do gráfico ou com uma linha de leitura que ensina a ler."
+  ],
+  "quando_evitar": [
+    "Leitores sem hábito do gráfico num painel operacional: barras agrupadas (02/02) ou tabela com heatmap (14/02).",
+    "Relação entre eixos que não são vizinhos: dispersão (09) para o par de métricas que importa.",
+    "Muitas linhas sem destaque nem filtro, o espaguete: foco em uma entidade e seleção por faixa num eixo.",
+    "Escalas diferentes sem mínimo e máximo rotulados em cada eixo, que o leitor lê como escala única.",
+    "Uma entidade só: radar simples (modelo 01) ou barras (02/01)."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_perfil-de-catorze-origens",
+      "titulo": "Perfil de catorze origens de lead em seis métricas",
+      "caso_de_uso": "Marketing, 2026-08: quais das catorze origens de lead compartilham perfil e quais formam um grupo à parte?",
+      "o_que_demonstra": [
+        "Seis eixos verticais com escala comum de 0 a 100 e níveis 0, 50 e 100",
+        "Um path por origem com posição calculada em função pura de escala",
+        "Ordem dos eixos que reduz cruzamentos, com as métricas correlatas vizinhas",
+        "Linhas em --line-strong com 1,5 px e dica com os seis valores da origem sob o ponteiro"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_indicacao-de-cliente-em-foco",
+      "titulo": "Indicação de cliente em foco entre as origens",
+      "caso_de_uso": "Marketing, 2026-08: em que métricas a origem indicação de cliente se descola das outras treze?",
+      "o_que_demonstra": [
+        "Origem em foco em --chart-1 com 2,5 px e desenhada por último",
+        "Treze origens em --line-strong com opacidade 0,3 só na marca",
+        "Rótulo direto no fim da linha em foco e valor escrito em cada eixo",
+        "Troca de foco por clique na linha ou na lista lateral, com aria-pressed",
+        "Anotação na maior distância: taxa de agenda 71 contra mediana 28"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_escala-propria-por-eixo",
+      "titulo": "Origens com escala própria em cada eixo",
+      "caso_de_uso": "Marketing e Comercial, 2026-T3: como as origens se comparam em CPL, taxa de agenda, win rate, ticket e ciclo sem normalizar as unidades?",
+      "o_que_demonstra": [
+        "Escala por eixo: CPL em R$, taxas em %, ticket em R$ mil e ciclo em dias",
+        "Mínimo e máximo rotulados no pé e no topo de cada eixo com o formatador da unidade",
+        "Nota cada eixo tem sua escala na linha de leitura",
+        "CPL e ciclo marcados menor é melhor no título do eixo, sem inverter o eixo em silêncio",
+        "Domínio de cada eixo arredondado para fora a partir dos valores do recorte"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_quarenta-e-oito-campanhas-com-lacunas",
+      "titulo": "Quarenta e oito campanhas com filtro e métrica ausente",
+      "caso_de_uso": "Marketing, 2026-T3: entre 48 campanhas, quais combinam CPL baixo com taxa de agenda alta, sabendo que 9 ainda não têm ciclo medido?",
+      "o_que_demonstra": [
+        "Seleção por faixa num eixo, em estado React, que acende as campanhas dentro dela",
+        "Campanhas fora da seleção esmaecidas, com contagem 7 de 48 selecionadas",
+        "Métrica ausente quebra o path, com marcador vazado na faixa sem dado abaixo do eixo",
+        "Linha de leitura: 9 de 48 campanhas sem ciclo medido",
+        "Estado vazio com role status quando a seleção não encontra campanha"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

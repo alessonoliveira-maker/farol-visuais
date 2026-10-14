@@ -1,0 +1,71 @@
+{
+  "slug": "07_funil-em-cartoes-de-etapa",
+  "nome": "Funil em cartões de etapa",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Sequência de cartões KPI, um por etapa, ligados por chips de conversão e setas, com uma microbarra de magnitude em cada cartão. Os números fazem o trabalho e o funil cabe numa faixa de topo de página. Absorve o funil com tempo e SLA entre etapas, em que o conector carrega a mediana e o p90 da passagem.",
+  "quando_usar": [
+    "Faixa de KPIs no topo das telas de Marketing e Pré-vendas, com 3 a 6 etapas.",
+    "Leitura numérica com custo junto do volume, como CPL e CPL qualificado.",
+    "Prazo entre etapas com SLA, quando há carimbo de data confiável em cada passagem.",
+    "Largura de celular: os cartões empilham e a seta vira para baixo."
+  ],
+  "quando_evitar": [
+    "Quando a proporção visual é a mensagem principal: usar o 01_funil-em-barras-com-taxa-de-passo.",
+    "Mais de 6 etapas numa faixa: os cartões ficam estreitos demais; usar barras.",
+    "Mediana de tempo calculada só com quem já passou, sem mostrar quantos ainda estão na etapa.",
+    "Um único indicador com meta: usar a família 01_cards-e-kpis."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_faixa-de-marketing-com-cpl",
+      "titulo": "Funil de mídia em cartões com CPL",
+      "caso_de_uso": "Marketing, 2026-08: Impressões 2,4 mi, Cliques 38,6 mil, Leads 1.240 e Leads qualificados 318, com investimento de R$ 119 mil, CPL de R$ 96 e CPL qualificado de R$ 374.",
+      "o_que_demonstra": [
+        "Cartão em --surface-raised com borda --border, na moldura stage",
+        "Microbarra com largura em percentual da primeira etapa",
+        "Chip de taxa de passo com ChevronRight que vira ChevronDown ao empilhar",
+        "Container query no lugar de largura da janela",
+        "Números com tabular-nums e moeda por formatCurrencyCompact"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_passo-que-piorou-contra-o-mes-anterior",
+      "titulo": "Passo que piorou contra o mês anterior",
+      "caso_de_uso": "Marketing, 2026-08 contra 2026-07: a taxa de Leads para qualificados caiu de 31,2% (345 de 1.105) para 25,6% (318 de 1.240); só esse chip fica em vermelho de alerta.",
+      "o_que_demonstra": [
+        "Chip em --negative só no passo que piorou além do limiar",
+        "Variação com a base nomeada: 25,6% contra 31,2% no mês anterior",
+        "Dica do chip com os volumes dos dois meses",
+        "Demais chips em --text-muted para o destaque não competir"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_tempo-e-sla-entre-etapas",
+      "titulo": "Tempo e SLA entre etapas da pré-vendas",
+      "caso_de_uso": "Pré-vendas, semana 2026-W37: Entrada para primeira tentativa com mediana de 38 min e p90 de 5 h contra SLA de 1 h útil; Conexão para agenda marcada com mediana de 2,1 dias; cada conector mostra quantos passaram e quantos seguem na etapa.",
+      "o_que_demonstra": [
+        "Conector com mediana e p90, colorido pela faixa de SLA",
+        "p90 fora do SLA em --negative mesmo com a mediana dentro",
+        "Contagem de quem passou e de quem ainda está na etapa, contra a censura",
+        "Unidade no rótulo: horas úteis ou dias corridos",
+        "SVG inline mínimo para os conectores dentro do HTML"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_etapa-sem-medicao",
+      "titulo": "Cartões com etapa sem medição",
+      "caso_de_uso": "Marketing, 2026-08, plataforma de rede profissional sem evento de conversão configurado: Impressões e Cliques medidos, Leads sem medição e as taxas vizinhas sem base para cálculo.",
+      "o_que_demonstra": [
+        "Cartão indisponível com formatUnavailable e ícone Unplug, nunca zero",
+        "Taxas vizinhas indisponíveis, sem cálculo sobre a etapa anterior",
+        "Microbarra omitida no cartão sem medição",
+        "Frase acessível diz qual etapa não tem medição"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

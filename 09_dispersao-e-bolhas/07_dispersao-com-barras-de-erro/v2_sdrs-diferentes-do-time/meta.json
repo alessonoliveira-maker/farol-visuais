@@ -1,0 +1,13 @@
+{
+  "title": "SDRs que se distinguem do time",
+  "useCase": "Quais SDRs têm taxa de agenda realmente diferente da do time? Só quem tem intervalo que não cruza a linha recebe cor.",
+  "demonstrates": [
+    "ReferenceLine da taxa do time com o nome na margem reservada",
+    "Destaque decidido pelo intervalo que não cruza a referência, não pelo ponto",
+    "Rótulo direto com nome, taxa e volume só nos destacados",
+    "Duas taxas iguais com vereditos opostos, decididos pelo volume"
+  ],
+  "canvas": { "width": 880, "height": 470 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: além do plano o cartão escreve duas linhas, a leitura de 12 px acima e a nota de 11 px abaixo, cerca de 50 px, e os quatro rótulos de duas linhas precisam de plano largo para fugir das barras de erro. A conta de altura é 135 px de moldura, com o caso de uso em duas linhas, mais 50 px de texto mais 285 px de plano; a de largura é 66 px de moldura mais 814 px de corpo. A margem direita de 124 px é reserva do nome da referência, fora das marcas, como a ANO-3 pede, e não sobra. O QUE A BARRA REPRESENTA está escrito em três lugares, porque desvio padrão, erro padrão, intervalo de 95% e faixa de mínimo a máximo produzem barras de tamanhos muito diferentes sobre o mesmo dado: o glifo de serifa na linha de leitura, a própria linha de leitura que nomeia o intervalo de Wilson e o nível, e a frase acessível da raiz. É a mesma classe de defeito que a GEO-12 registra, critério que decide o desenho e não aparece no cartão, e a nota de rodapé fecha o par declarando também o critério do destaque. O traço é DADO e não referência, então vale a ACE-6 e não o 1,79:1 de line-strong: positive mede 7,36:1 no escuro e 5,34:1 no claro, negative 5,50:1 e 6,36:1, text-muted 5,21:1 e 5,37:1, todos acima do piso de 3:1. A linha do time é referência, e só ela usa line-strong. A linha de eixo herdada de AXIS_PROPS sai desligada nos dois eixos, pela EIX-5, e a grade vai nos dois sentidos pela EIX-3b, porque os dois eixos são quantitativos e lidos por posição."
+}

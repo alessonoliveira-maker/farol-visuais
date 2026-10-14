@@ -1,0 +1,12 @@
+{
+  "title": "Origens de lead com Outros aberto ao lado",
+  "useCase": "De onde vieram os leads do mês e o que compõe a fatia Outros, sem perder a noção do todo?",
+  "demonstrates": [
+    "Pie principal e BarChart com layout vertical lado a lado em flex",
+    "Conectores em path num SVG sobreposto, a partir dos ângulos da fatia Outros",
+    "Outros em neutro, sempre a última fatia, com o total repetido no detalhe",
+    "Detalhe com valor escrito em cada barra e a mesma unidade da pizza"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

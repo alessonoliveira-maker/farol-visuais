@@ -1,0 +1,72 @@
+{
+  "slug": "07_grade-e-tira-de-kpis",
+  "nome": "Grade e tira de KPIs",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Composição de vários cartões numa peça só: a tira de 3 a 6 métricas diferentes que abre uma tela, e a grade de scorecards com a mesma métrica repetida por entidade. A composição é que garante altura igual, linha de base comum do número, período declarado uma vez, ordem narrativa ou ordenação escrita e, na grade, escala comum para todos os micrográficos. Acima de cerca de 12 cartões com minigráfico, a linha vira polyline em SVG puro.",
+  "quando_usar": [
+    "Cabeçalho de tela com 3 a 6 números de abertura, em ordem da causa para o efeito.",
+    "A mesma métrica comparada entre 6 e 24 entidades, como executivos ou squads.",
+    "Tira em que um cartão primário maior define por onde a leitura começa.",
+    "Várias métricas lidas na mesma janela de tempo, comandadas por um seletor único da tira."
+  ],
+  "quando_evitar": [
+    "Mais de 6 cartões na mesma linha: duas tiras curtas com subtítulo.",
+    "Métricas de unidades diferentes numa grade de scorecards: use a tira, ou tabela.",
+    "Várias métricas por entidade lidas linha a linha: scorecard em tabela (14/04).",
+    "Taxa individual com denominador pequeno em cada entidade: grade de volume absoluto.",
+    "Cartões que aparecem e somem conforme a régua: faixa de card de exceção (modelo 08)."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_tira-de-abertura-do-comercial",
+      "titulo": "Tira de abertura do Comercial",
+      "caso_de_uso": "Qual é o estado do Comercial em ago/26 antes de qualquer gráfico: receita, negócios fechados e ticket médio?",
+      "o_que_demonstra": [
+        "Grade de colunas iguais com items-stretch e h-full, sem altura fixa em pixels",
+        "Período declarado uma vez no cabeçalho da tira, porque é o mesmo para todos",
+        "Linha de variação reservada em todos os cartões para alinhar a base do número",
+        "Unidade colada a cada número: moeda, contagem de negócios e ticket"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_tira-da-pre-vendas-com-primario-e-janela",
+      "titulo": "Tira da pré-vendas com cartão primário e janela",
+      "caso_de_uso": "Como a pré-vendas foi nos últimos 30 dias, lendo primeiro as agendas realizadas e trocando a janela da tira toda?",
+      "o_que_demonstra": [
+        "Cartão primário em duas colunas com sparkline, e os demais compactos",
+        "Um seletor de 7, 30 e 90 dias no cabeçalho da tira, em role radiogroup",
+        "Âncora do delta reescrita pela janela: 30 dias contra os 30 anteriores",
+        "Granularidade escrita quando a janela de 90 dias passa a semanal",
+        "Data de referência vinda do dado e dia corrente fora da conta"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_grade-de-executivos-com-escala-comum",
+      "titulo": "Grade de executivos com escala compartilhada",
+      "caso_de_uso": "Quais dos 12 executivos estão acima da mediana de receita do trimestre, e com que forma nas últimas 13 semanas?",
+      "o_que_demonstra": [
+        "Doze cartões com polyline em SVG puro sobre o mesmo domínio de eixo (EIX-9)",
+        "Cabeçalho que declara ordem e escala: por receita, semanal de R$ 0 a R$ 120 mil",
+        "Mediana tracejada repetida na mesma posição em todos os micrográficos",
+        "Executivo selecionado com peso 700 e --chart-1, demais em neutro",
+        "Posição com o tamanho do grupo em cada cartão: 3º de 12"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_grade-com-novo-amostra-pequena-e-afastado",
+      "titulo": "Grade com executivo novo, amostra pequena e afastado",
+      "caso_de_uso": "Como a grade mantém altura e ordem quando um executivo não tem histórico, outro tem 4 oportunidades e outro está afastado?",
+      "o_que_demonstra": [
+        "Espaço do micrográfico reservado com a frase sem histórico, na mesma altura",
+        "Taxa com o par e sem cor semântica quando o denominador é 4 oportunidades",
+        "Cartão inativo que permanece na grade em vez de sumir",
+        "Ordem alfabética estável escrita no cabeçalho, sem reordenar por valor"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

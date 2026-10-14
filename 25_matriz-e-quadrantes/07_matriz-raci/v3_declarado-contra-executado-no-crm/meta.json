@@ -1,0 +1,13 @@
+{
+  "title": "RACI declarado contra executado no CRM",
+  "useCase": "Comercial: em cada etapa, quantas vezes o papel declarado de fato registrou a etapa no CRM no trimestre.",
+  "demonstrates": [
+    "Letra declarada com etiqueta PREMISSA e percentual executado com etiqueta MEDIDO",
+    "Divergência acima de 30 pontos percentuais em destaque na célula",
+    "Papel sem letra que executa com frequência marcado na célula vazia",
+    "Nota: RACI é declaração de processo, não medição"
+  ],
+  "canvas": { "width": 720, "height": 640 },
+  "frame": "card",
+  "notes": "Desvio da ANO-6: o catálogo pede as etiquetas PREMISSA e MEDIDO dentro do visual, porque o ponto da versão é separar o declarado do medido na mesma célula, e a etiqueta única do VisualCard não faz essa separação; elas aparecem só na legenda, uma vez, e o VisualCard do destino continua dono da procedência do cartão. Regra de divergência: papel com R declarado diverge quando executa menos de 70% dos registros (100 menos o percentual, acima de 30 p.p.); papel sem R diverge quando executa mais de 30%. Conta (GEO-1): corpo de 654 x 521,5 px (720 menos 66; 640 menos 118,5); leitura 17, legenda de 2 linhas 36, cabeçalho 40, 8 etapas a 46 = 368, nota 34, vãos 32, medido 495 de conteúdo."
+}

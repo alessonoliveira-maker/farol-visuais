@@ -1,0 +1,12 @@
+{
+  "title": "Leads por mês com o mês corrente parcial",
+  "useCase": "O mês em curso está mesmo abaixo dos anteriores, ou só faltam dias para fechar?",
+  "demonstrates": [
+    "Dias decorridos e dias no mês recebidos por prop, nunca pelo relógio do navegador",
+    "Mês corrente em chart-1, com a palavra parcial e a fração de dias decorridos",
+    "Restante projetado hachurado no topo da coluna corrente, com o ritmo diário nomeado",
+    "Meses fechados em neutro com valor só no maior e no último fechado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

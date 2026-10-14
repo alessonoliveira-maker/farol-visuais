@@ -1,0 +1,70 @@
+{
+  "slug": "03_tabela-com-serie-por-linha",
+  "nome": "Tabela com sparkline ou tracker por linha",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Uma coluna de largura fixa com um micrográfico por linha: sparkline de linha, área ou colunas com a trajetória recente, ou uma faixa de blocos com o status de cada dia ou semana (tracker). O último ponto é marcado e ligado ao número da coluna vizinha. O caminho do path é calculado em TypeScript, sem uma instância de Recharts por linha, e o cabeçalho declara qual escala foi usada, porque é ela que decide o que se pode comparar entre as linhas.",
+  "quando_usar": [
+    "Mostrar a trajetória de 8 a 50 entidades ao lado do valor atual, em 8 a 26 períodos",
+    "Série com faixa aceitável comum a todas as linhas (SLA, taxa mínima) e pontos fora dela",
+    "Status diário ou semanal recente por entidade, com resumo em texto como 26 de 30 dias no SLA",
+    "Tabela de acompanhamento em que a forma da série e o número atual precisam ficar lado a lado"
+  ],
+  "quando_evitar": [
+    "Pergunta sobre o valor de um ponto específico da série: use tabela de meses ou heatmap (14/02)",
+    "Escala própria por linha quando a pergunta é magnitude entre linhas: use escala comum a partir do zero",
+    "Série com menos de 3 pontos: vira número com comparação (família 01)",
+    "Blocos de tracker abaixo de 4 px: agregue por semana",
+    "Micrográfico isolado em cartão ou texto corrido: é a família 24"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-semanais-por-sdr",
+      "titulo": "Agendas semanais por SDR nas últimas 12 semanas",
+      "caso_de_uso": "Pré-vendas: como a produção semanal de agendas de cada SDR evoluiu e quanto ela vale na semana atual.",
+      "o_que_demonstra": [
+        "Path de sparkline calculado em função pura, sem Recharts por linha",
+        "Escala própria por linha declarada no cabeçalho como leitura de forma",
+        "Último ponto em chart-1 ligado ao número da semana na coluna vizinha",
+        "SVG da célula com aria-hidden e o valor legível no texto da linha"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_sla-de-primeiro-contato-com-faixa",
+      "titulo": "Tempo de primeiro contato com faixa aceitável",
+      "caso_de_uso": "Pré-vendas: quais filas saíram da faixa de 0 a 15 minutos de primeiro contato nas últimas 8 semanas.",
+      "o_que_demonstra": [
+        "Escala fixa comum a todas as linhas, com a faixa normal sombreada em surface-sunken",
+        "Pontos fora da faixa em warning, com a contagem de semanas fora escrita ao lado",
+        "Cabeçalho que diz a escala e o que a faixa marca",
+        "Minutos por formatDecimal com a unidade na coluna do valor atual"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_tracker-de-sla-por-fila",
+      "titulo": "SLA diário por fila nos últimos 30 dias",
+      "caso_de_uso": "Pré-vendas: em quais dias cada uma das 8 filas estourou o SLA e quantos dias ficou dentro dele.",
+      "o_que_demonstra": [
+        "Faixa de blocos em flex com largura igual e vão de 2 px, um bloco por dia útil",
+        "Status dentro, atenção e estouro em positive, warning e negative com legenda",
+        "Resumo em texto à direita, como 26 de 30 dias no SLA, que não depende da cor",
+        "Marca de hoje no último bloco e contagem de estouros em ordem decrescente"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_serie-curta-buraco-e-calendario-irregular",
+      "titulo": "Séries curtas, buracos e calendário irregular",
+      "caso_de_uso": "Pré-vendas: ler SDRs recém admitidos, semanas sem carga de dado e feriados sem confundir nada disso com falha.",
+      "o_que_demonstra": [
+        "Série curta desenhada só nas posições finais, sem esticar para a largura toda",
+        "Semana sem carga quebra o path, sem connectNulls, com nota de lacuna",
+        "Feriado e fim de semana em neutro, dia sem dado com hachura, nenhum pintado como falha",
+        "Dias antes da admissão sem bloco e resumo com denominador ajustado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "08_divergente-empilhada-likert",
+  "nome": "Divergente empilhada Likert",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Pilha de categorias ordinais centrada entre os polos: discordâncias ou notas ruins à esquerda do zero, concordâncias ou notas boas à direita. O deslocamento de cada item é calculado em TypeScript e os retângulos saem em SVG com escala linear escrita à mão, porque no Recharts o neutro dividido exige campos duplicados e a dica precisa reconstruir o valor original. A decisão do neutro é editorial: o Farol adota o neutro numa coluna própria, fora da pilha, porque dividir ao meio sugere que metade de quem não opinou é a favor; a escolha vai escrita na legenda. O centro fica no mesmo lugar em todas as linhas e o n de cada item fica à vista. Absorve a versão mini, uma barra por linha para cards e tabelas densas.",
+  "quando_usar": [
+    "Escala ordinal com polos: avaliação de 5 pontos, concordância, satisfação.",
+    "Leitura do equilíbrio entre os polos por item, quando a forma geral importa mais que a comparação exata.",
+    "De 3 a cerca de 15 itens com o mesmo conjunto de respostas.",
+    "Avaliação de qualidade de lead por origem ou por critério no handoff entre pré-vendas e vendas."
+  ],
+  "quando_evitar": [
+    "Categorias nominais sem polo: barras empilhadas 100% (04_barras-empilhadas-100).",
+    "A pergunta é qual item tem mais positivo: 100% alinhada à esquerda (04_barras-empilhadas-100) compara melhor.",
+    "Uma nota média por item basta: barras simples ordenadas (01_barras-simples-ordenadas) ou ponto (17_comparacao-de-pontos).",
+    "Itens com n muito baixo sem espaço para o selo: tabela (14_tabelas-visuais).",
+    "Valores numéricos com sinal, não escala ordinal: barras divergentes de sinal (06_barras-divergentes)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_qualidade-do-lead-no-handoff",
+      "titulo": "Qualidade do lead no handoff por critério",
+      "caso_de_uso": "Como os executivos avaliam os leads recebidos da pré-vendas nos seis critérios da escala de 5 pontos.",
+      "o_que_demonstra": [
+        "SVG puro com escala linear e deslocamento por item calculados em TypeScript",
+        "Negativos à esquerda e positivos à direita em rampas de dois matizes",
+        "Neutro numa coluna própria, fora da pilha, com a escolha escrita na legenda",
+        "Centro alinhado entre linhas pelo maior lado do conjunto",
+        "n de cada critério escrito à direita"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_saldo-liquido-por-polo",
+      "titulo": "Saldo líquido de avaliação por critério",
+      "caso_de_uso": "Quais critérios de handoff têm mais avaliação positiva que negativa, ordenados pelo saldo entre os polos.",
+      "o_que_demonstra": [
+        "Percentual somado de cada polo escrito nas pontas da pilha",
+        "Saldo positivo menos negativo em pontos percentuais ao lado da barra",
+        "Itens ordenados pelo saldo, com o critério escrito no subtítulo",
+        "Percentual dentro do segmento só quando cabe"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_avaliacao-por-origem-mini",
+      "titulo": "Avaliação de qualidade por origem do lead",
+      "caso_de_uso": "Qual das 12 origens de lead o time de vendas avalia mal, numa barra mini por linha dentro de card alto.",
+      "o_que_demonstra": [
+        "Barra divergente mini por linha com o centro alinhado em todas as linhas",
+        "Origem com saldo negativo como a única barra que pende para a esquerda",
+        "Neutro dominante lido pela coluna separada, não pela barra curta",
+        "Mesma geometria em TypeScript reaproveitada em densidade de tabela"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_escala-par-e-n-baixo",
+      "titulo": "Escala de 4 pontos com itens de n baixo",
+      "caso_de_uso": "Ler uma pesquisa interna de escala par, sem ponto neutro, em que alguns itens tiveram menos de 10 respostas.",
+      "o_que_demonstra": [
+        "Escala par sem neutro, com o zero na fronteira entre os polos",
+        "Item com n abaixo de 10 em opacidade reduzida e selo n baixo",
+        "Item sem respostas escreve indisponível no lugar da pilha",
+        "Legenda ordenada do polo negativo ao positivo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

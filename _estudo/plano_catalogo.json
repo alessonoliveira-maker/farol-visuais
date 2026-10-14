@@ -1,0 +1,2200 @@
+{
+ "familias": [
+  {
+   "slug": "01_cards-e-kpis",
+   "nome": "Cards e KPIs",
+   "modelos": [
+    {
+     "slug": "01_kpi-simples",
+     "nome": "KPI simples com contexto",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#2 Variação contra período anterior",
+      "01#3 Comparativo atual, anterior e meta",
+      "01#9 Big number com contexto",
+      "01#10 Razão com numerador e denominador",
+      "01#13 Status semáforo",
+      "01#14 Etiqueta de procedência",
+      "01#15 Indisponível",
+      "01#20 Posição no ranking",
+      "01#23 Clicável com drill",
+      "01#27 Seletor de janela",
+      "01#29 Em carregamento",
+      "01#30 Frescor do dado",
+      "01#33 Ponto de ação",
+      "21#10 Número em destaque com frase"
+     ]
+    },
+    {
+     "slug": "02_kpi-com-minigrafico-de-tendencia",
+     "nome": "KPI com minigráfico de tendência",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#4 Sparkline",
+      "01#5 Sparkbar",
+      "01#19 Tracker de estado",
+      "01#26 Bandline",
+      "01#31 Sparkline comparativa"
+     ]
+    },
+    {
+     "slug": "03_kpi-com-regua-de-meta",
+     "nome": "KPI com régua de meta, ritmo ou teto",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#6 Barra de progresso até a meta",
+      "01#7 Bullet embutido",
+      "01#8 Trilho de capacidade contra teto",
+      "01#22 Ritmo até a meta",
+      "01#32 Anel de progresso"
+     ]
+    },
+    {
+     "slug": "04_kpi-com-faixa",
+     "nome": "KPI com faixa de incerteza ou distribuição",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#12 Faixa de incerteza",
+      "01#34 Distribuição resumida"
+     ]
+    },
+    {
+     "slug": "05_kpi-com-decomposicao",
+     "nome": "KPI com decomposição em partes",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#11 Decomposição",
+      "01#18 KPI hierárquico",
+      "01#28 Lista de contribuição"
+     ]
+    },
+    {
+     "slug": "06_par-de-indicadores",
+     "nome": "Par de indicadores",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#25 KPI com par de indicadores"
+     ]
+    },
+    {
+     "slug": "07_grade-e-tira-de-kpis",
+     "nome": "Grade e tira de KPIs",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#16 Grade de scorecards",
+      "01#17 Tira de KPIs"
+     ]
+    },
+    {
+     "slug": "08_card-de-excecao",
+     "nome": "Card de exceção",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+     "variacoes_absorvidas": [
+      "01#21 Card de exceção"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "01#24 KPI em texto corrido -> 21/01_frase-com-numero",
+    "Sparkline como visual inteiro -> 24/01",
+    "Progresso protagonista -> 13",
+    "Scorecard em tabela -> 14/04"
+   ]
+  },
+  {
+   "slug": "02_barras-horizontais",
+   "nome": "Barras horizontais",
+   "modelos": [
+    {
+     "slug": "01_barras-simples-ordenadas",
+     "nome": "Barras simples ordenadas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "02#2 Barras com destaque"
+     ]
+    },
+    {
+     "slug": "02_barras-agrupadas",
+     "nome": "Barras agrupadas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "18#10 Barras paralelas por dimensão",
+      "18#11 Pequenos múltiplos de barras por métrica"
+     ]
+    },
+    {
+     "slug": "03_barras-empilhadas",
+     "nome": "Barras empilhadas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "02#7 Empilhadas em grupos"
+     ]
+    },
+    {
+     "slug": "04_barras-empilhadas-100",
+     "nome": "Barras empilhadas 100%",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "02#15 Barra única de composição"
+     ]
+    },
+    {
+     "slug": "05_barras-contra-meta",
+     "nome": "Barras contra meta",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "02#4 Barras sobrepostas",
+      "02#14 Barras com marcador de meta",
+      "08#5 Barras com marcador de meta"
+     ]
+    },
+    {
+     "slug": "06_barras-divergentes",
+     "nome": "Barras divergentes de sinal",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "02#9 Empilhadas por sinal",
+      "21#4 Word shift"
+     ]
+    },
+    {
+     "slug": "07_butterfly-piramide",
+     "nome": "Butterfly ou pirâmide",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "21#5 Pirâmide de termos entre dois grupos"
+     ]
+    },
+    {
+     "slug": "08_divergente-empilhada-likert",
+     "nome": "Divergente empilhada Likert",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "24#38 Barra divergente empilhada mini"
+     ]
+    },
+    {
+     "slug": "09_bar-list",
+     "nome": "Bar list",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": [
+      "14#10 Lista de barras com rótulo",
+      "21#3 Lista de termos com barras"
+     ]
+    },
+    {
+     "slug": "10_corrida-de-barras",
+     "nome": "Corrida de barras",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "02#13 Barras com trilho -> 13/01",
+    "02#16 Barra de faixa -> 17/04",
+    "02#17 Lollipop -> 17/05",
+    "Gantt -> 20",
+    "Funil -> 10",
+    "Cascata horizontal -> 19",
+    "Histograma -> 16",
+    "Marimekko -> 26"
+   ]
+  },
+  {
+   "slug": "03_colunas-verticais",
+   "nome": "Colunas verticais",
+   "modelos": [
+    {
+     "slug": "01_colunas-simples",
+     "nome": "Colunas simples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": [
+      "03#16 Eixo de tempo em dois níveis",
+      "03#17 Anotação de evento"
+     ]
+    },
+    {
+     "slug": "02_colunas-agrupadas",
+     "nome": "Colunas agrupadas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_colunas-empilhadas",
+     "nome": "Colunas empilhadas com total",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": [
+      "03#5 Agrupadas e empilhadas"
+     ]
+    },
+    {
+     "slug": "04_colunas-empilhadas-100",
+     "nome": "Colunas empilhadas 100%",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_colunas-positivo-e-negativo",
+     "nome": "Colunas positivo e negativo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": [
+      "03#7 Empilhadas por sinal"
+     ]
+    },
+    {
+     "slug": "06_colunas-contra-meta-ou-limiar",
+     "nome": "Colunas contra meta ou limiar",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": [
+      "03#8 Linha de meta ou média",
+      "03#9 Excedente acima do limiar",
+      "03#10 Colunas sobrepostas",
+      "08#6 Coluna fantasma",
+      "08#11 Colunas com limiar e excedente"
+     ]
+    },
+    {
+     "slug": "07_realizado-e-projecao",
+     "nome": "Realizado e projeção hachurada",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": [
+      "03#12 Destaque do período atual",
+      "08#10 Realizado, previsto e meta"
+     ]
+    },
+    {
+     "slug": "08_colunas-em-small-multiples",
+     "nome": "Colunas em small multiples",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "03#13 Painel de variação -> 08/06",
+    "03#14 Colunas de faixa -> 17/04",
+    "Coluna com linha e Pareto -> 08",
+    "Histograma -> 16",
+    "Coluna em célula -> 24/02"
+   ]
+  },
+  {
+   "slug": "04_linhas",
+   "nome": "Linhas",
+   "modelos": [
+    {
+     "slug": "01_linha-simples",
+     "nome": "Linha simples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "04#4 Pontos e rótulo final",
+      "04#8 Anotação de eventos",
+      "04#9 Meta ou limiar",
+      "04#13 Média móvel sobre o bruto",
+      "04#15 Lacuna de dado declarada",
+      "04#16 Brush e zoom",
+      "20#13 Faixas e marcos sobre série",
+      "21#13 Anotação narrativa sobre gráfico"
+     ]
+    },
+    {
+     "slug": "02_multiplas-series",
+     "nome": "Múltiplas séries",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "04#3 Destaque de uma série",
+      "04#10 Índice base 100"
+     ]
+    },
+    {
+     "slug": "03_step-degrau",
+     "nome": "Linha em degrau",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "05#12 Área em degrau"
+     ]
+    },
+    {
+     "slug": "04_linha-com-banda-de-intervalo",
+     "nome": "Linha com banda de intervalo",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_real-contra-previsto",
+     "nome": "Real contra previsto tracejado",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_acumulado-contra-meta",
+     "nome": "Acumulado contra meta (burn-up)",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "13#20 Burn-up acumulado contra meta"
+     ]
+    },
+    {
+     "slug": "07_sobreposicao-de-periodos",
+     "nome": "Sobreposição de períodos",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_bump-chart",
+     "nome": "Bump chart de ranking",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "17#19 Bump chart de ranking",
+      "24#39 Ranking micro"
+     ]
+    },
+    {
+     "slug": "09_pequenos-multiplos-de-linha",
+     "nome": "Pequenos múltiplos de linha",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/04_linhas.md",
+     "variacoes_absorvidas": [
+      "04#14 Linhas sincronizadas"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "Slope e arrow -> 17",
+    "Connected scatter -> 09/05",
+    "Leque e área de diferença -> 05",
+    "Painéis de métricas distintas -> 08/03",
+    "Sparkline -> 24/01"
+   ]
+  },
+  {
+   "slug": "05_areas",
+   "nome": "Áreas",
+   "modelos": [
+    {
+     "slug": "01_area-simples",
+     "nome": "Área simples com gradiente",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": [
+      "05#14 Pequenos múltiplos de área"
+     ]
+    },
+    {
+     "slug": "02_area-empilhada",
+     "nome": "Área empilhada",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": [
+      "05#11 Área divergente",
+      "24#11 Área empilhada micro"
+     ]
+    },
+    {
+     "slug": "03_area-100",
+     "nome": "Área 100%",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_areas-sobrepostas",
+     "nome": "Áreas sobrepostas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": [
+      "08#7 Área com linha"
+     ]
+    },
+    {
+     "slug": "05_faixa-range-band",
+     "nome": "Faixa (range band)",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_leque-de-projecao",
+     "nome": "Leque de projeção (fan chart)",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_area-de-diferenca",
+     "nome": "Área de diferença contra meta",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_streamgraph",
+     "nome": "Streamgraph",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": [
+      "05#5 Streamgraph ordenado"
+     ]
+    },
+    {
+     "slug": "09_horizon-chart",
+     "nome": "Horizon chart",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": [
+      "24#10 Horizonte micro"
+     ]
+    },
+    {
+     "slug": "10_area-bump",
+     "nome": "Area bump",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/05_areas.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "05#12 Área em degrau -> 04/03",
+    "Linha com banda protagonista -> 04/04",
+    "Ridgeline -> 16/08",
+    "Sparkarea -> 24/01"
+   ]
+  },
+  {
+   "slug": "06_pizza",
+   "nome": "Pizza",
+   "modelos": [
+    {
+     "slug": "01_pizza-simples",
+     "nome": "Pizza simples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": [
+      "06#2 Rótulos externos",
+      "06#3 Fatia em destaque",
+      "06#10 Legenda tabular"
+     ]
+    },
+    {
+     "slug": "02_pizza-com-detalhamento-de-outros",
+     "nome": "Pizza com detalhamento de Outros",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_pizza-de-fracao-unica",
+     "nome": "Pizza de fração única",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_pizzas-em-small-multiples",
+     "nome": "Pizzas e roscas em small multiples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": [
+      "07#12 Roscas em small multiples"
+     ]
+    },
+    {
+     "slug": "05_pizza-de-raio-variavel",
+     "nome": "Pizza de raio variável",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_pizzas-proporcionais-ao-total",
+     "nome": "Pizzas proporcionais ao total",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/06_pizza.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "06#4 Pizza em semicírculo -> 07/02",
+    "Pizza com agulha -> 13/06",
+    "Pizza quadrada -> 22/01",
+    "Sunburst -> 12/03"
+   ]
+  },
+  {
+   "slug": "07_rosca-e-radial",
+   "nome": "Rosca e radial",
+   "modelos": [
+    {
+     "slug": "01_rosca-com-total-central",
+     "nome": "Rosca com total central",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": [
+      "07#2 Rosca com fatia ativa"
+     ]
+    },
+    {
+     "slug": "02_semi-rosca",
+     "nome": "Semi rosca",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": [
+      "06#4 Pizza em semicírculo"
+     ]
+    },
+    {
+     "slug": "03_aneis-concentricos-de-dois-periodos",
+     "nome": "Anéis concêntricos de dois períodos",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_barra-radial",
+     "nome": "Barra radial",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": [
+      "07#9 Barra radial empilhada"
+     ]
+    },
+    {
+     "slug": "05_anel-segmentado-em-unidades",
+     "nome": "Anel segmentado em unidades",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_coluna-radial",
+     "nome": "Coluna radial (barplot circular)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": [
+      "18#9 Pirulito radial",
+      "20#19 Linha do tempo radial ou espiral"
+     ]
+    },
+    {
+     "slug": "07_rosa-de-nightingale",
+     "nome": "Rosa de Nightingale",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+     "variacoes_absorvidas": [
+      "18#8 Colunas radiais e rosa"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "07#3 Rosca aninhada hierárquica -> 12/03",
+    "07#6 Progresso circular -> 13/03",
+    "07#7 Anéis de atividade -> 13/04",
+    "07#12 Roscas em small multiples -> 06/04",
+    "Radar -> 18",
+    "Corda -> 27"
+   ]
+  },
+  {
+   "slug": "08_combinados-e-eixo-duplo",
+   "nome": "Combinados e eixo duplo",
+   "modelos": [
+    {
+     "slug": "01_coluna-com-linha",
+     "nome": "Coluna com linha (eixo único)",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": [
+      "08#9 Empilhadas ou agrupadas com linha"
+     ]
+    },
+    {
+     "slug": "02_eixo-duplo-com-dominios-calculados",
+     "nome": "Eixo duplo com domínios calculados",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": [
+      "08#3 Linha e linha em eixo duplo",
+      "08#14 Colunas em eixo duplo (antipadrão)"
+     ]
+    },
+    {
+     "slug": "03_paineis-alinhados",
+     "nome": "Painéis alinhados",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_pareto",
+     "nome": "Pareto",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_colunas-com-linha-de-acumulado",
+     "nome": "Colunas com linha de acumulado",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_real-contra-referencia-com-painel-de-variacao",
+     "nome": "Real contra referência com painel de variação",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+     "variacoes_absorvidas": [
+      "08#13 Real contra orçamento",
+      "03#13 Colunas com painel de variação"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "08#5 Barras com marcador de meta -> 02/05",
+    "08#6 Coluna fantasma -> 03/06",
+    "08#7 Área com linha -> 05/04",
+    "08#10 Realizado, previsto e meta -> 03/07",
+    "08#11 Limiar e excedente -> 03/06",
+    "Bullet -> 13/02"
+   ]
+  },
+  {
+   "slug": "09_dispersao-e-bolhas",
+   "nome": "Dispersão e bolhas",
+   "modelos": [
+    {
+     "slug": "01_dispersao-simples",
+     "nome": "Dispersão simples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "09#4 Rótulos e destaque",
+      "09#8 Por categoria",
+      "09#16 Envoltória por grupo",
+      "09#19 Escala logarítmica",
+      "09#20 Zoom e seleção por área",
+      "24#19 Micro dispersão"
+     ]
+    },
+    {
+     "slug": "02_dispersao-com-linha-de-referencia",
+     "nome": "Dispersão com tendência ou identidade",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "09#2 Linha de tendência",
+      "09#3 Faixa de confiança",
+      "09#5 Linha de identidade"
+     ]
+    },
+    {
+     "slug": "03_bolhas",
+     "nome": "Bolhas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "09#21 Bolhas animadas no tempo"
+     ]
+    },
+    {
+     "slug": "04_bolhas-em-grade-categorica",
+     "nome": "Bolhas em grade categórica",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "15#2 Punch card",
+      "17#21 Dot plot em matriz categórica"
+     ]
+    },
+    {
+     "slug": "05_dispersao-conectada",
+     "nome": "Dispersão conectada",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_antes-e-depois-com-setas",
+     "nome": "Dispersão de antes e depois com setas",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "25#8 Quadrante com trajetória"
+     ]
+    },
+    {
+     "slug": "07_dispersao-com-barras-de-erro",
+     "nome": "Dispersão com barras de erro",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_dispersao-com-marginais",
+     "nome": "Dispersão com distribuições marginais",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "25#11 Quadrante com marginais"
+     ]
+    },
+    {
+     "slug": "09_densidade-2d",
+     "nome": "Densidade 2D (binada, hexbin, contorno)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "09#13 Binada em grade",
+      "09#14 Hexbin",
+      "09#15 Contorno de densidade",
+      "25#10 Quadrante denso"
+     ]
+    },
+    {
+     "slug": "10_matriz-de-dispersao",
+     "nome": "Matriz de dispersão",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "11_pequenos-multiplos-de-dispersao",
+     "nome": "Pequenos múltiplos de dispersão",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+     "variacoes_absorvidas": [
+      "25#24 Pequenos múltiplos de quadrantes"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "Quadrante com cortes -> 25/01",
+    "Correlograma -> 15/08",
+    "Strip e beeswarm -> 16/03",
+    "Dumbbell -> 17/03",
+    "Bolhas empacotadas -> 12/08"
+   ]
+  },
+  {
+   "slug": "10_funil",
+   "nome": "Funil",
+   "modelos": [
+    {
+     "slug": "01_funil-em-barras-com-taxa-de-passo",
+     "nome": "Funil em barras com taxa de passo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": [
+      "10#3 Barras centralizadas com conectores de perda",
+      "10#7 Colunas com drop off",
+      "24#37 Funil micro"
+     ]
+    },
+    {
+     "slug": "02_funil-classico-trapezoidal",
+     "nome": "Funil clássico trapezoidal",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": [
+      "10#8 Funil cônico contínuo"
+     ]
+    },
+    {
+     "slug": "03_funil-com-perdas-por-etapa",
+     "nome": "Funil com perdas por etapa",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_funil-comparativo",
+     "nome": "Funil comparativo entre períodos ou segmentos",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": [
+      "10#6 Funil espelhado (borboleta)"
+     ]
+    },
+    {
+     "slug": "05_funil-com-meta-sobreposta",
+     "nome": "Funil com meta sobreposta",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_funil-empilhado-por-composicao",
+     "nome": "Funil empilhado por composição",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_funil-em-cartoes-de-etapa",
+     "nome": "Funil em cartões de etapa",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/10_funil.md",
+     "variacoes_absorvidas": [
+      "10#12 Tempo e SLA entre etapas"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "Funil ramificado -> 11/02",
+    "Cascata de perdas -> 19/02",
+    "Coorte de conversão -> 15/03",
+    "Área quadrada -> 22/05"
+   ]
+  },
+  {
+   "slug": "11_fluxo-sankey",
+   "nome": "Fluxo e Sankey",
+   "modelos": [
+    {
+     "slug": "01_sankey-simples",
+     "nome": "Sankey simples de duas colunas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+     "variacoes_absorvidas": [
+      "11#3 Sankey vertical"
+     ]
+    },
+    {
+     "slug": "02_sankey-multietapa",
+     "nome": "Sankey multietapa com perdas",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+     "variacoes_absorvidas": [
+      "11#4 Sankey de custo ou receita",
+      "11#5 Sankey de caminhos",
+      "11#6 Fluxo com retorno"
+     ]
+    },
+    {
+     "slug": "03_alluvial",
+     "nome": "Alluvial",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_parallel-sets",
+     "nome": "Parallel sets",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_chord-direcional-de-fluxo",
+     "nome": "Chord direcional de fluxo",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Matriz de transição -> 15/07",
+    "Rede e chord simétrico -> 27",
+    "Funil linear -> 10",
+    "Bump -> 04/08"
+   ]
+  },
+  {
+   "slug": "12_hierarquia",
+   "nome": "Hierarquia",
+   "modelos": [
+    {
+     "slug": "01_treemap",
+     "nome": "Treemap",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": [
+      "12#3 Treemap com detalhamento",
+      "12#4 Treemap com cor por variação"
+     ]
+    },
+    {
+     "slug": "02_treemap-aninhado",
+     "nome": "Treemap aninhado com rótulo de grupo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": [
+      "12#9 Treemap Voronoi"
+     ]
+    },
+    {
+     "slug": "03_sunburst",
+     "nome": "Sunburst",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": [
+      "12#6 Sunburst com detalhamento",
+      "07#3 Rosca aninhada hierárquica"
+     ]
+    },
+    {
+     "slug": "04_arvore-de-indicadores",
+     "nome": "Árvore de indicadores (driver tree)",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_perimetro-aninhado",
+     "nome": "Perímetro aninhado",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_icicle",
+     "nome": "Icicle (partição retangular)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_arvore-e-dendrograma",
+     "nome": "Árvore e dendrograma",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": [
+      "12#11 Árvore radial"
+     ]
+    },
+    {
+     "slug": "08_circle-packing",
+     "nome": "Circle packing",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Marimekko -> 26/01",
+    "Anéis sem hierarquia -> 07/03",
+    "Tabela em árvore -> 14/07",
+    "Grafo com arestas cruzadas -> 27",
+    "Mapa de perímetro geográfico -> 23/05"
+   ]
+  },
+  {
+   "slug": "13_progresso-meta-e-gauge",
+   "nome": "Progresso, meta e gauge",
+   "modelos": [
+    {
+     "slug": "01_barra-de-progresso-linear",
+     "nome": "Barra de progresso e capacidade contra teto",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": [
+      "13#3 Barra com ritmo esperado e projeção",
+      "13#14 Termômetro",
+      "13#16 Lista de metas por pessoa",
+      "13#18 Capacidade contra teto",
+      "02#13 Barras com trilho",
+      "24#15 Barra com teto de capacidade"
+     ]
+    },
+    {
+     "slug": "02_bullet-chart",
+     "nome": "Bullet chart",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": [
+      "13#2 Barra com faixas qualitativas",
+      "13#5 Painel de bullets alinhados",
+      "13#6 Bullet vertical em coluna",
+      "24#14 Bullet micro"
+     ]
+    },
+    {
+     "slug": "03_progresso-radial-de-anel-unico",
+     "nome": "Progresso radial de anel único",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": [
+      "13#13 Progresso radial empilhado",
+      "07#6 Progresso circular",
+      "24#25 Micro anel"
+     ]
+    },
+    {
+     "slug": "04_aneis-concentricos",
+     "nome": "Anéis concêntricos de metas",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": [
+      "07#7 Anéis de atividade"
+     ]
+    },
+    {
+     "slug": "05_gauge-de-arco-preenchido",
+     "nome": "Gauge de arco preenchido",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_gauge-com-ponteiro",
+     "nome": "Gauge semicircular com ponteiro e faixas",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": [
+      "13#10 Gauge com faixas e nota"
+     ]
+    },
+    {
+     "slug": "07_faixa-de-cenario-contra-meta",
+     "nome": "Faixa de cenário contra meta",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "13#7 Bullet em célula -> 14/01",
+    "13#15 Tracker de blocos -> 24/04",
+    "13#17 Régua de marcos -> 20/02",
+    "13#20 Burn-up -> 04/06",
+    "KPI com régua subordinada -> 01/03",
+    "Waffle de meta -> 22/01"
+   ]
+  },
+  {
+   "slug": "14_tabelas-visuais",
+   "nome": "Tabelas visuais",
+   "modelos": [
+    {
+     "slug": "01_tabela-com-barras-inline",
+     "nome": "Tabela com barras e marcas inline",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": [
+      "14#6 Bullet inline",
+      "14#7 Barras divergentes inline",
+      "14#8 Composição 100% inline",
+      "14#11 Ponto e intervalo inline",
+      "13#7 Bullet em célula",
+      "24#12 Barra de dado em célula",
+      "24#13 Barra de composição mini",
+      "24#28 Barra de desvio em célula"
+     ]
+    },
+    {
+     "slug": "02_tabela-com-heatmap-nas-celulas",
+     "nome": "Tabela com heatmap nas células",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": [
+      "18#14 Tabela realçada de perfil"
+     ]
+    },
+    {
+     "slug": "03_tabela-com-serie-por-linha",
+     "nome": "Tabela com sparkline ou tracker por linha",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": [
+      "14#9 Faixa de status temporal"
+     ]
+    },
+    {
+     "slug": "04_scorecard-tabular",
+     "nome": "Scorecard tabular com procedência",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": [
+      "14#16 Cobertura e procedência do dado"
+     ]
+    },
+    {
+     "slug": "05_ranking-com-variacao-de-posicao",
+     "nome": "Ranking com variação de posição",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_tabela-cruzada-com-totais-marginais",
+     "nome": "Tabela cruzada com totais marginais",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_tabela-agrupada-com-subtotais",
+     "nome": "Tabela agrupada com subtotais e linha fixa",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_tabela-com-linha-expansivel",
+     "nome": "Tabela com linha expansível",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "09_matriz-de-comparacao-com-status",
+     "nome": "Matriz de comparação com status",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+     "variacoes_absorvidas": [
+      "25#21 Matriz de comparação de itens"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "14#10 Bar list -> 02/09",
+    "Microvisual fora da tabela -> 24",
+    "Matriz sem texto -> 15/02",
+    "Cartões com poucos KPIs -> 01/07"
+   ]
+  },
+  {
+   "slug": "15_mapa-de-calor-e-calendario",
+   "nome": "Mapa de calor e calendário",
+   "modelos": [
+    {
+     "slug": "01_heatmap-dia-da-semana-por-hora",
+     "nome": "Heatmap dia da semana por hora",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "15#14 Heatmap radial de 24 horas"
+     ]
+    },
+    {
+     "slug": "02_matriz-categorica",
+     "nome": "Matriz categórica em cor",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "15#9 Totais marginais",
+      "15#10 Eixo agrupado",
+      "15#12 Células de tamanho variável",
+      "15#13 Ordenado por semelhança"
+     ]
+    },
+    {
+     "slug": "03_cohort-em-triangulo",
+     "nome": "Cohort de conversão em triângulo",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_calendario-estilo-contribuicoes",
+     "nome": "Calendário estilo contribuições",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "15#5 Matriz anual dia do mês por mês",
+      "24#34 Grade de atividade micro"
+     ]
+    },
+    {
+     "slug": "05_calendario-mensal-em-grade",
+     "nome": "Calendário mensal em grade",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "20#14 Calendário de marcos"
+     ]
+    },
+    {
+     "slug": "06_lasagna",
+     "nome": "Lasagna (entidades por tempo)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_matriz-de-transicao",
+     "nome": "Matriz de transição, de-para e confusão",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "25#17 Matriz de confusão",
+      "25#18 Matriz de-para"
+     ]
+    },
+    {
+     "slug": "08_heatmap-de-correlacao",
+     "nome": "Heatmap de correlação",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+     "variacoes_absorvidas": [
+      "25#19 Matriz de correlação"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "15#2 Punch card -> 09/04",
+    "Faixa de calor em célula -> 24/04",
+    "Tabela com heatmap -> 14/02",
+    "Radar de ciclo -> 18/04"
+   ]
+  },
+  {
+   "slug": "16_distribuicao",
+   "nome": "Distribuição",
+   "modelos": [
+    {
+     "slug": "01_histograma",
+     "nome": "Histograma",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#2 Estatística anotada",
+      "16#4 Polígono de frequência",
+      "16#5 Densidade sobreposta",
+      "16#8 Pequenos múltiplos",
+      "16#30 Stem and leaf",
+      "24#35 Histograma micro"
+     ]
+    },
+    {
+     "slug": "02_box-plot",
+     "nome": "Box plot",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#14 Entalhe e largura variável",
+      "16#15 Letter-value (boxen)",
+      "16#16 Box com jitter",
+      "16#29 Faixa de percentis",
+      "24#17 Boxplot micro"
+     ]
+    },
+    {
+     "slug": "03_strip-plot-e-beeswarm",
+     "nome": "Strip plot e beeswarm",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#22 Beeswarm",
+      "16#23 Barcode (rug)",
+      "16#36 Wheat plot",
+      "17#4 Dot strip plot",
+      "24#16 Strip plot micro"
+     ]
+    },
+    {
+     "slug": "04_ecdf-e-histograma-acumulado",
+     "nome": "ECDF e histograma acumulado",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#3 Histograma acumulado"
+     ]
+    },
+    {
+     "slug": "05_histograma-comparativo",
+     "nome": "Histograma comparativo entre grupos",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#6 Sobrepostos",
+      "16#7 Espelhado (pirâmide)",
+      "16#34 Empilhado por categoria"
+     ]
+    },
+    {
+     "slug": "06_densidade-kde",
+     "nome": "Densidade (KDE)",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#9 Faixa de densidade em cor",
+      "16#11 Densidades sobrepostas"
+     ]
+    },
+    {
+     "slug": "07_violino-e-raincloud",
+     "nome": "Violino e raincloud",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#18 Marcadores internos",
+      "16#19 Meio violino e raincloud",
+      "16#20 Sina plot",
+      "16#33 Bean plot"
+     ]
+    },
+    {
+     "slug": "08_ridgeline",
+     "nome": "Ridgeline",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "09_dot-plot-empilhado",
+     "nome": "Dot plot empilhado e quantile dotplot",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#25 Quantile dotplot"
+     ]
+    },
+    {
+     "slug": "10_curva-de-lorenz",
+     "nome": "Curva de Lorenz",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "24#40 Curva de concentração micro"
+     ]
+    },
+    {
+     "slug": "11_curva-de-sobrevivencia",
+     "nome": "Curva de sobrevivência (Kaplan-Meier)",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "12_meia-olho-e-desfechos",
+     "nome": "Meia-olho e desfechos hipotéticos",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": [
+      "16#35 HOP animado"
+     ]
+    },
+    {
+     "slug": "13_q-q-plot",
+     "nome": "Q-Q plot",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Resumo sem forma -> 17/02",
+    "Pareto -> 08/04",
+    "Percentis ao longo do tempo -> 05/05",
+    "Unidade contável -> 22",
+    "Densidade 2D -> 09/09"
+   ]
+  },
+  {
+   "slug": "17_comparacao-de-pontos",
+   "nome": "Comparação de pontos",
+   "modelos": [
+    {
+     "slug": "01_dot-plot-de-cleveland",
+     "nome": "Dot plot de Cleveland",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#2 Agrupado",
+      "17#3 Pequenos múltiplos",
+      "17#5 Desvio",
+      "17#20 Pareado em colunas",
+      "17#23 Marca direcional",
+      "18#12 Dot plot por dimensão"
+     ]
+    },
+    {
+     "slug": "02_dot-plot-com-intervalo",
+     "nome": "Dot plot com intervalo e distribuição ao fundo",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#22 Resumo e distribuição ao fundo"
+     ]
+    },
+    {
+     "slug": "03_dumbbell",
+     "nome": "Dumbbell e arrow plot",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#8 Dumbbell agrupado",
+      "17#9 Connected de três pontos",
+      "17#10 Arrow plot",
+      "24#18 Micro dumbbell"
+     ]
+    },
+    {
+     "slug": "04_range-plot",
+     "nome": "Range plot",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#12 Marcador interno",
+      "02#16 Barra de faixa (span)",
+      "03#14 Colunas de faixa"
+     ]
+    },
+    {
+     "slug": "05_lollipop",
+     "nome": "Lollipop",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#14 Lollipop vertical",
+      "17#15 Lollipop divergente",
+      "17#16 Lollipop agrupado",
+      "02#17 Lollipop horizontal"
+     ]
+    },
+    {
+     "slug": "06_slope-chart",
+     "nome": "Slope chart",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+     "variacoes_absorvidas": [
+      "17#18 Slope em painéis",
+      "24#31 Micro slope"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "17#4 Dot strip -> 16/03",
+    "17#19 Bump -> 04/08",
+    "17#21 Matriz categórica -> 09/04",
+    "Bullet com faixas -> 13/02",
+    "Coordenadas paralelas -> 18/06"
+   ]
+  },
+  {
+   "slug": "18_radar",
+   "nome": "Radar",
+   "modelos": [
+    {
+     "slug": "01_radar-simples",
+     "nome": "Radar simples",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": [
+      "18#4 Faixa de referência"
+     ]
+    },
+    {
+     "slug": "02_radar-comparativo",
+     "nome": "Radar comparativo sobreposto",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": [
+      "18#3 Só contorno"
+     ]
+    },
+    {
+     "slug": "03_radar-em-pequenos-multiplos",
+     "nome": "Radar em pequenos múltiplos",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_radar-de-ciclo",
+     "nome": "Radar de ciclo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_stellar-chart",
+     "nome": "Stellar chart",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_coordenadas-paralelas",
+     "nome": "Coordenadas paralelas",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/18_radar.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "18#8 Rosa -> 07/07",
+    "18#9 Pirulito radial -> 07/06",
+    "18#10 e 18#11 Barras -> 02/02",
+    "18#12 Dot plot -> 17/01",
+    "18#14 Tabela realçada -> 14/02"
+   ]
+  },
+  {
+   "slug": "19_cascata-waterfall",
+   "nome": "Cascata (waterfall)",
+   "modelos": [
+    {
+     "slug": "01_cascata-de-ponte",
+     "nome": "Cascata de ponte",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": [
+      "19#2 Com subtotais",
+      "19#3 Horizontal",
+      "19#4 Variação por componente",
+      "24#36 Cascata micro"
+     ]
+    },
+    {
+     "slug": "02_cascata-de-decomposicao",
+     "nome": "Cascata de decomposição",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_cascata-temporal-de-saldo",
+     "nome": "Cascata temporal de saldo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_cascata-de-previsao",
+     "nome": "Cascata de previsão",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_cascata-com-faixa-de-cenario",
+     "nome": "Cascata com faixa de cenário",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_cascata-comparativa",
+     "nome": "Cascata pareada e em pequenos múltiplos",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": [
+      "19#9 Pequenos múltiplos",
+      "19#11 Pareada"
+     ]
+    },
+    {
+     "slug": "07_cascata-empilhada",
+     "nome": "Cascata empilhada",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_cascata-aninhada",
+     "nome": "Cascata aninhada",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Funil com taxa -> 10",
+    "Sankey -> 11",
+    "Driver tree -> 12/04",
+    "Acumulado em eixo duplo -> 08/05"
+   ]
+  },
+  {
+   "slug": "20_cronograma-e-linha-do-tempo",
+   "nome": "Cronograma e linha do tempo",
+   "modelos": [
+    {
+     "slug": "01_gantt",
+     "nome": "Gantt",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": [
+      "20#2 Progresso e linha de base",
+      "20#4 Hierárquico com tabela",
+      "20#5 Linha do tempo empacotada"
+     ]
+    },
+    {
+     "slug": "02_linha-do-tempo-de-marcos",
+     "nome": "Linha do tempo de marcos",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": [
+      "20#10 Narrativa com rótulos alternados",
+      "13#17 Régua de marcos"
+     ]
+    },
+    {
+     "slug": "03_stepper-de-etapas",
+     "nome": "Stepper de etapas",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_jornada-por-entidade",
+     "nome": "Jornada por entidade",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": [
+      "20#17 Diagrama de Marey"
+     ]
+    },
+    {
+     "slug": "05_swimlane-de-eventos",
+     "nome": "Swimlane de eventos e agenda",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": [
+      "20#15 Agenda em grade"
+     ]
+    },
+    {
+     "slug": "06_feed-vertical-de-eventos",
+     "nome": "Linha do tempo vertical em cartões",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_roadmap-por-horizonte",
+     "nome": "Roadmap por horizonte",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_linha-do-tempo-de-circulos",
+     "nome": "Linha do tempo de círculos",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": [
+      "24#41 Linha do tempo de eventos micro"
+     ]
+    },
+    {
+     "slug": "09_gantt-com-dependencias",
+     "nome": "Gantt com dependências e caminho crítico",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "20#8 Tracker -> 24/04",
+    "20#13 Faixas sobre série -> 04/01",
+    "20#14 Calendário de marcos -> 15/05",
+    "20#19 Radial -> 07/06",
+    "Burn-up -> 04/06"
+   ]
+  },
+  {
+   "slug": "21_texto-e-nuvem-de-palavras",
+   "nome": "Texto e nuvem de palavras",
+   "modelos": [
+    {
+     "slug": "01_frase-com-numero",
+     "nome": "Frase com número e legenda embutida",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": [
+      "01#24 KPI em texto corrido"
+     ]
+    },
+    {
+     "slug": "02_citacao-e-verbatim",
+     "nome": "Citação em destaque e verbatim realçado",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_concordancia-kwic",
+     "nome": "Concordância KWIC",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_nuvem-de-palavras",
+     "nome": "Nuvem de palavras",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": [
+      "21#2 Nuvem alinhada (tag cloud)"
+     ]
+    },
+    {
+     "slug": "05_dispersao-lexical-no-tempo",
+     "nome": "Dispersão lexical ao longo do tempo",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_dispersao-de-termos",
+     "nome": "Dispersão de termos (scattertext)",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_arvore-de-palavras",
+     "nome": "Árvore de palavras",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "21#3 Lista de termos -> 02/09",
+    "21#4 Word shift -> 02/06",
+    "21#5 Pirâmide de termos -> 02/07",
+    "21#10 Número em destaque -> 01/01",
+    "21#13 Anotação narrativa -> 04/01"
+   ]
+  },
+  {
+   "slug": "22_unidades-waffle-e-pictograma",
+   "nome": "Unidades, waffle e pictograma",
+   "modelos": [
+    {
+     "slug": "01_waffle",
+     "nome": "Waffle 10x10",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": [
+      "22#2 Empilhado multicategoria",
+      "22#3 Waffles comparativos",
+      "24#24 Micro waffle de contagem"
+     ]
+    },
+    {
+     "slug": "02_waffle-em-barras",
+     "nome": "Waffle em barras",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_pictograma-isotype",
+     "nome": "Pictograma isotype",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": [
+      "22#6 Matriz de ícones"
+     ]
+    },
+    {
+     "slug": "04_unit-chart-por-entidade",
+     "nome": "Unit chart por entidade",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_area-quadrada-proporcional",
+     "nome": "Área quadrada proporcional",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_parlamento",
+     "nome": "Parlamento (hemiciclo)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Anel segmentado -> 07/05",
+    "Dot plot de Wilkinson -> 16/09",
+    "Calendário de células -> 15/04"
+   ]
+  },
+  {
+   "slug": "23_mapas",
+   "nome": "Mapas",
+   "modelos": [
+    {
+     "slug": "01_tile-grid-por-uf",
+     "nome": "Tile grid map por UF",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": [
+      "23#2 Tile grid hexagonal"
+     ]
+    },
+    {
+     "slug": "02_coropletico-por-uf",
+     "nome": "Coroplético por UF",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": [
+      "23#8 Coroplético bivariado"
+     ]
+    },
+    {
+     "slug": "03_simbolos-proporcionais",
+     "nome": "Símbolos proporcionais",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": [
+      "23#4 Bolhas por UF em grade",
+      "23#9 Cartograma de Dorling"
+     ]
+    },
+    {
+     "slug": "04_tile-map-com-mini-grafico",
+     "nome": "Tile map com mini gráfico por UF",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_mapa-de-perimetro-e-localizador",
+     "nome": "Mapa de perímetro e localizador",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_mapa-de-pontos",
+     "nome": "Mapa de pontos",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/23_mapas.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Fluxo geográfico -> 11",
+    "Conexões -> 27",
+    "UF por mês -> 15/02",
+    "Ranking de UFs -> 02/01"
+   ]
+  },
+  {
+   "slug": "24_microvisuais-sparklines",
+   "nome": "Microvisuais e sparklines",
+   "modelos": [
+    {
+     "slug": "01_sparkline-de-linha",
+     "nome": "Sparkline de linha e área",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": [
+      "24#2 Extremos e valor final",
+      "24#3 Sparkline de área",
+      "24#4 Faixa de normalidade",
+      "24#5 Série de comparação",
+      "24#6 Cauda de projeção",
+      "24#26 Em degraus",
+      "24#27 Faixa por período"
+     ]
+    },
+    {
+     "slug": "02_sparkbar",
+     "nome": "Sparkbar",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": [
+      "24#8 Sparkbar divergente",
+      "24#30 Barras pareadas mini"
+     ]
+    },
+    {
+     "slug": "03_pilula-de-variacao",
+     "nome": "Pílula de variação e indicador de estado",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": [
+      "24#21 Seta de tendência no texto",
+      "24#33 Ponto de status"
+     ]
+    },
+    {
+     "slug": "04_faixa-de-status-tracker",
+     "nome": "Faixa de status e de calor (tracker)",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": [
+      "24#23 Faixa de calor",
+      "13#15 Tracker de blocos",
+      "20#8 Linha de estado em blocos"
+     ]
+    },
+    {
+     "slug": "05_medidor-de-cobertura-de-dado",
+     "nome": "Medidor de cobertura de dado",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_marcador-em-trilho",
+     "nome": "Marcador em trilho",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_win-loss",
+     "nome": "Win/loss",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "24#10 -> 05/09",
+    "24#11 -> 05/02",
+    "24#12, 24#13, 24#28 -> 14/01",
+    "24#14 -> 13/02",
+    "24#15 -> 13/01",
+    "24#16 -> 16/03",
+    "24#17 -> 16/02",
+    "24#18 -> 17/03",
+    "24#19 -> 09/01",
+    "24#24 -> 22/01",
+    "24#25 -> 13/03",
+    "24#31 -> 17/06",
+    "24#34 -> 15/04",
+    "24#35 -> 16/01",
+    "24#36 -> 19/01",
+    "24#37 -> 10/01",
+    "24#38 -> 02/08",
+    "24#39 -> 04/08",
+    "24#40 -> 16/10",
+    "24#41 -> 20/08",
+    "KPI que hospeda o microvisual -> 01/02"
+   ]
+  },
+  {
+   "slug": "25_matriz-e-quadrantes",
+   "nome": "Matriz e quadrantes",
+   "modelos": [
+    {
+     "slug": "01_matriz-2x2-de-quadrantes",
+     "nome": "Matriz 2x2 de quadrantes",
+     "abordagem_stack": "recharts-nativo",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": [
+      "25#2 Corte estatístico",
+      "25#3 Corte por meta declarada",
+      "25#4 Rótulos diretos",
+      "25#5 Com bolhas",
+      "25#6 Sumário por região",
+      "25#9 Quadrante em posto",
+      "25#16 Mapa perceptual",
+      "25#25 Lista sincronizada",
+      "25#27 Variação centrada no zero"
+     ]
+    },
+    {
+     "slug": "02_matriz-agregada-de-celulas",
+     "nome": "Matriz agregada de células (2x2, 3x3)",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": [
+      "25#7 Matriz 2x2 agregada",
+      "25#14 Nine-box 3x3",
+      "25#15 Eisenhower com cartões"
+     ]
+    },
+    {
+     "slug": "03_plano-com-iso-linhas",
+     "nome": "Plano com iso-linhas de razão ou produto",
+     "abordagem_stack": "recharts-custom",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": [
+      "25#12 Impacto x esforço com iso-linhas",
+      "25#26 Fronteira curva de equilíbrio"
+     ]
+    },
+    {
+     "slug": "04_matriz-de-cobertura-binaria",
+     "nome": "Matriz de cobertura binária",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_matriz-de-decisao-ponderada",
+     "nome": "Matriz de decisão ponderada",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_matriz-de-risco",
+     "nome": "Matriz de risco em células",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "07_matriz-raci",
+     "nome": "Matriz de responsabilidade (RACI)",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "25#8 Trajetória -> 09/06",
+    "25#10 Denso -> 09/09",
+    "25#11 Marginais -> 09/08",
+    "25#17 Confusão e 25#18 De-para -> 15/07",
+    "25#19 Correlação -> 15/08",
+    "25#21 Comparação de itens -> 14/09",
+    "25#23 Matriz de pares -> 27/01",
+    "25#24 Pequenos múltiplos -> 09/11"
+   ]
+  },
+  {
+   "slug": "26_mosaico-marimekko",
+   "nome": "Mosaico e marimekko",
+   "modelos": [
+    {
+     "slug": "01_marimekko-e-mosaico",
+     "nome": "Marimekko 100% e mosaico",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+     "variacoes_absorvidas": [
+      "26#3 Marimekko divergente",
+      "26#4 Mosaico de duas variáveis",
+      "26#5 Mosaico com resíduos"
+     ]
+    },
+    {
+     "slug": "02_bar-mekko-variwide",
+     "nome": "Bar mekko (variwide)",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_spineplot",
+     "nome": "Spineplot, spinograma e double decker",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+     "variacoes_absorvidas": [
+      "26#7 Spinograma",
+      "26#8 Double decker"
+     ]
+    }
+   ],
+   "referencias_cruzadas": [
+    "Empilhada 100% -> 02/04 e 03/04",
+    "Treemap -> 12/01",
+    "Parallel sets -> 11/04",
+    "Tabela cruzada -> 14/06"
+   ]
+  },
+  {
+   "slug": "27_rede-e-relacoes",
+   "nome": "Rede e relações",
+   "modelos": [
+    {
+     "slug": "01_matriz-de-adjacencia",
+     "nome": "Matriz de adjacência",
+     "abordagem_stack": "html-tailwind",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": [
+      "25#23 Matriz de pares"
+     ]
+    },
+    {
+     "slug": "02_grafo-bipartido",
+     "nome": "Grafo bipartido",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "03_grafo-em-grade",
+     "nome": "Grafo em grade",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "04_grafo-de-rede-por-forcas",
+     "nome": "Grafo de rede dirigido por forças",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "05_arc-diagram",
+     "nome": "Arc diagram",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "06_grafo-radial-e-circular",
+     "nome": "Grafo radial e circular",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": [
+      "27#7 Chord sem fita"
+     ]
+    },
+    {
+     "slug": "07_chord-simetrico",
+     "nome": "Chord simétrico de relação",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    },
+    {
+     "slug": "08_hierarchical-edge-bundling",
+     "nome": "Hierarchical edge bundling",
+     "abordagem_stack": "svg-puro",
+     "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+     "variacoes_absorvidas": []
+    }
+   ],
+   "referencias_cruzadas": [
+    "Chord direcional e Sankey bipartido -> 11",
+    "Árvore e organograma -> 12/07",
+    "Transição com cor -> 15/07",
+    "Conexões geográficas -> 23"
+   ]
+  }
+ ],
+ "observacoes": "Os 27 estudos existem em disco (_estudo/familias); 01, 16, 17, 24 e 25 foram planejados com os resumos passados no pedido, conferidos contra os títulos dos estudos. Plano final: 205 modelos, fundidos a partir de cerca de 400 modelos listados pelos pesquisadores. Convenção: em variacoes_absorvidas, FF#k é o k-ésimo modelo da tabela do estudo da família FF (a lista não repete o modelo base); em referencias_cruzadas, -> FF/NN aponta para o slug NN da família FF; nenhum FF#k aparece absorvido em dois modelos. Moradias decididas entre famílias: tracker de estado em 24/04 (vinha também de 01, 13, 14 e 20; na tabela fica em 14/03); burn-up em 04/06; bump chart em 04/08; semicírculo em 07/02; progresso radial e anéis de metas em 13/03 e 13/04; capacidade contra teto é versão de 13/01 (o card fica em 01/03); correlação, transição, de-para e confusão em 15; bar list em 02/09; faixa e lollipop em 17; punch card e matriz de pontos em 09/04; texto com número em 21/01 e big number em 01/01; marcas dentro de célula em 14/01. 16 ficou acima do alvo (13) e 09 com 11 porque as formas são estruturalmente distintas; 26 ficou com 3 porque marimekko e mosaico são a mesma geometria. Microvisuais de 24 que só encolhem outro modelo viraram referência cruzada. Pendências herdadas dos estudos: assinaturas de hooks do Recharts 3.10 (useXAxisScale, usePlotArea, useXAxisInverseScale) a conferir no build; portais de design sem peça verificada em várias famílias."
+}

@@ -1,0 +1,212 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "05_colunas-positivo-e-negativo",
+  "versoes": {
+    "v1_saldo-mensal-de-clientes": {
+      "veredito": "aprovado",
+      "nota": "Colunas ancoradas no zero, cor por polaridade, sinal tipografico no rotulo; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:35.257Z",
+      "impressao": "7cac4a1d8bb31d5b29825d4179e86699149e11bb",
+      "arquivos": {
+        "Chart.tsx": "5f5d5cbe6751eb2ab1f917820a85c70d27f98671",
+        "data.ts": "ec5c5df1abe7723dfdf40ed2d9292899f530a79e",
+        "meta.json": "02b482e23a2e992e43ab1f9c9dbbf484acb611f9"
+      }
+    },
+    "v2_cpl-qualificado-contra-media": {
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida escrita, media nomeada na linha de zero, faixa com texto sem colisao; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:40.643Z",
+      "impressao": "b8aacc70a1d384ec30db91a81bbe06e962ab5ce0",
+      "arquivos": {
+        "Chart.tsx": "35ef70f9f36832e6f3541b5eb16301be6c9574db",
+        "data.ts": "e822ff8da81de9cace8d21931db2ee2f1c423627",
+        "meta.json": "026cf975ea34bee4ae5de5640b31fe21f3e92447"
+      }
+    },
+    "v3_movimento-do-funil-por-sinal": {
+      "veredito": "aprovado",
+      "nota": "Pilha por sinal desce do zero com stackOffset sign, liquido em linha, semana sem entradas anotada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:44.945Z",
+      "impressao": "3c2c9ab28cd86a8003cc3787eb378dae82084c41",
+      "arquivos": {
+        "Chart.tsx": "ec8bc1aff2bda722e3938d81c9cb2975c07a26f2",
+        "data.ts": "3394a9281ef9162d2c718db0910555da089836e1",
+        "meta.json": "1edf5255218414ba0d991f9124980c07b42f65ed"
+      }
+    },
+    "v4_saldo-zero-e-mes-sem-dado": {
+      "veredito": "aprovado",
+      "nota": "Zero medido em traco e mes sem apuracao vazio com indisponivel, nunca igualados; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:49.595Z",
+      "impressao": "6d2efbadc0d9ad0f7120c487876c06326c90218e",
+      "arquivos": {
+        "Chart.tsx": "e5c57193588539b22382c472c9c48887167f76b2",
+        "data.ts": "7228ce0376adb3bb0b599621949c5cab83dbe764",
+        "meta.json": "edbdd1d54bbb26981e17ee1cb1665a0a1f22bb33"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_saldo-mensal-de-clientes",
+      "veredito": "aprovado",
+      "nota": "Colunas com sinal corretas nos dois temas; rotulos legiveis; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:47:06.827Z",
+      "impressao": "7cac4a1d8bb31d5b29825d4179e86699149e11bb",
+      "arquivos": {
+        "Chart.tsx": "5f5d5cbe6751eb2ab1f917820a85c70d27f98671",
+        "data.ts": "ec5c5df1abe7723dfdf40ed2d9292899f530a79e",
+        "meta.json": "02b482e23a2e992e43ab1f9c9dbbf484acb611f9"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-contra-media",
+      "veredito": "reprovado",
+      "nota": "Rotulo da media na linha de zero nasce embaixo da coluna de ago/26 e fica ilegivel nos dois temas: mover para a margem reservada e aplicar halo (ROT-7, checklist 13).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:47:11.744Z",
+      "impressao": "6de2e89f7e72641e79aa1ad4e5739d31811dccea",
+      "arquivos": {
+        "Chart.tsx": "84f0003a0b29f9d7c9f149541ef1708087a44c50",
+        "data.ts": "e822ff8da81de9cace8d21931db2ee2f1c423627",
+        "meta.json": "026cf975ea34bee4ae5de5640b31fe21f3e92447"
+      }
+    },
+    {
+      "versao": "v3_movimento-do-funil-por-sinal",
+      "veredito": "reprovado",
+      "nota": "Falta stackOffset sign no ComposedChart: as saidas negativas sao empilhadas de forma cumulativa, desenhadas acima do zero e cobrindo parte das entradas, o oposto do que o modelo promete (checklist 1 e 8).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:47:16.647Z",
+      "impressao": "09b65b7c30725d966dab4bc589bf0cdf98bcf7c5",
+      "arquivos": {
+        "Chart.tsx": "8b5dac57697e14877d4a7838d9e117ad9f2dcf80",
+        "data.ts": "3394a9281ef9162d2c718db0910555da089836e1",
+        "meta.json": "1edf5255218414ba0d991f9124980c07b42f65ed"
+      }
+    },
+    {
+      "versao": "v4_saldo-zero-e-mes-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Zero medido e mes sem apuracao ficam distintos e legiveis; sem bloqueante, so observacoes de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:47:21.143Z",
+      "impressao": "6d2efbadc0d9ad0f7120c487876c06326c90218e",
+      "arquivos": {
+        "Chart.tsx": "e5c57193588539b22382c472c9c48887167f76b2",
+        "data.ts": "7228ce0376adb3bb0b599621949c5cab83dbe764",
+        "meta.json": "edbdd1d54bbb26981e17ee1cb1665a0a1f22bb33"
+      }
+    },
+    {
+      "versao": "v1_saldo-mensal-de-clientes",
+      "veredito": "aprovado",
+      "nota": "Colunas com sinal corretas nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:00:24.306Z",
+      "impressao": "7cac4a1d8bb31d5b29825d4179e86699149e11bb",
+      "arquivos": {
+        "Chart.tsx": "5f5d5cbe6751eb2ab1f917820a85c70d27f98671",
+        "data.ts": "ec5c5df1abe7723dfdf40ed2d9292899f530a79e",
+        "meta.json": "02b482e23a2e992e43ab1f9c9dbbf484acb611f9"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-contra-media",
+      "veredito": "reprovado",
+      "nota": "Rotulo +R$ 38 de jun/26 encosta no texto da ReferenceArea e le como +R$ 383; afastar ou reposicionar a nota (checklist 15, ESP-3).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:00:29.305Z",
+      "impressao": "90dbdc5eb4d637c976234e2bb56f932a0bd3b8d3",
+      "arquivos": {
+        "Chart.tsx": "d6d22240530afe94efed55952d41af7dd0f76273",
+        "data.ts": "e822ff8da81de9cace8d21931db2ee2f1c423627",
+        "meta.json": "026cf975ea34bee4ae5de5640b31fe21f3e92447"
+      }
+    },
+    {
+      "versao": "v3_movimento-do-funil-por-sinal",
+      "veredito": "aprovado",
+      "nota": "Pilha por sinal desce do zero nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:00:34.413Z",
+      "impressao": "3c2c9ab28cd86a8003cc3787eb378dae82084c41",
+      "arquivos": {
+        "Chart.tsx": "ec8bc1aff2bda722e3938d81c9cb2975c07a26f2",
+        "data.ts": "3394a9281ef9162d2c718db0910555da089836e1",
+        "meta.json": "1edf5255218414ba0d991f9124980c07b42f65ed"
+      }
+    },
+    {
+      "versao": "v4_saldo-zero-e-mes-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Zero medido e mes sem apuracao separados e legiveis; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:00:34.984Z",
+      "impressao": "6d2efbadc0d9ad0f7120c487876c06326c90218e",
+      "arquivos": {
+        "Chart.tsx": "e5c57193588539b22382c472c9c48887167f76b2",
+        "data.ts": "7228ce0376adb3bb0b599621949c5cab83dbe764",
+        "meta.json": "edbdd1d54bbb26981e17ee1cb1665a0a1f22bb33"
+      }
+    },
+    {
+      "versao": "v1_saldo-mensal-de-clientes",
+      "veredito": "aprovado",
+      "nota": "Colunas ancoradas no zero, cor por polaridade, sinal tipografico no rotulo; sem bloqueante nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:35.257Z",
+      "impressao": "7cac4a1d8bb31d5b29825d4179e86699149e11bb",
+      "arquivos": {
+        "Chart.tsx": "5f5d5cbe6751eb2ab1f917820a85c70d27f98671",
+        "data.ts": "ec5c5df1abe7723dfdf40ed2d9292899f530a79e",
+        "meta.json": "02b482e23a2e992e43ab1f9c9dbbf484acb611f9"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-contra-media",
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida escrita, media nomeada na linha de zero, faixa com texto sem colisao; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:40.643Z",
+      "impressao": "b8aacc70a1d384ec30db91a81bbe06e962ab5ce0",
+      "arquivos": {
+        "Chart.tsx": "35ef70f9f36832e6f3541b5eb16301be6c9574db",
+        "data.ts": "e822ff8da81de9cace8d21931db2ee2f1c423627",
+        "meta.json": "026cf975ea34bee4ae5de5640b31fe21f3e92447"
+      }
+    },
+    {
+      "versao": "v3_movimento-do-funil-por-sinal",
+      "veredito": "aprovado",
+      "nota": "Pilha por sinal desce do zero com stackOffset sign, liquido em linha, semana sem entradas anotada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:44.945Z",
+      "impressao": "3c2c9ab28cd86a8003cc3787eb378dae82084c41",
+      "arquivos": {
+        "Chart.tsx": "ec8bc1aff2bda722e3938d81c9cb2975c07a26f2",
+        "data.ts": "3394a9281ef9162d2c718db0910555da089836e1",
+        "meta.json": "1edf5255218414ba0d991f9124980c07b42f65ed"
+      }
+    },
+    {
+      "versao": "v4_saldo-zero-e-mes-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Zero medido em traco e mes sem apuracao vazio com indisponivel, nunca igualados; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:28:49.595Z",
+      "impressao": "6d2efbadc0d9ad0f7120c487876c06326c90218e",
+      "arquivos": {
+        "Chart.tsx": "e5c57193588539b22382c472c9c48887167f76b2",
+        "data.ts": "7228ce0376adb3bb0b599621949c5cab83dbe764",
+        "meta.json": "edbdd1d54bbb26981e17ee1cb1665a0a1f22bb33"
+      }
+    }
+  ]
+}

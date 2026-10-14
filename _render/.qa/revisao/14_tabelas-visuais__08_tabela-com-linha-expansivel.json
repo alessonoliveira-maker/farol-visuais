@@ -1,0 +1,160 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "08_tabela-com-linha-expansivel",
+  "versoes": {
+    "v1_oportunidades-perdidas-com-historico": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, painel de etapas legivel nos dois temas, total do rodape soma todas as linhas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:08.720Z",
+      "impressao": "39cc53eb1fda8b13aa4f944cdf58467d437b6d5c",
+      "arquivos": {
+        "Chart.tsx": "0a3a385ba0d2c8df49f44ed0688b5cd1e982cb07",
+        "data.ts": "c160b8ce70243227002e880d9bc1e9be3052739b",
+        "meta.json": "0841d143db5ff21e6676b4c7010bd200486c95e3"
+      }
+    },
+    "v2_executivo-com-serie-e-motivos": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, motivos somam 100 pelo maior resto, dominante com cor e peso; rotulo truncado e nao bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:13.713Z",
+      "impressao": "ce7afecf76a1cee04af2e7dde361d858b91e50ac",
+      "arquivos": {
+        "Chart.tsx": "e170ff77b1c256c4d53e1c9aaf6f322093bc50d6",
+        "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
+        "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
+      }
+    },
+    "v3_filas-com-mapa-de-entradas": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, mapa sequencial com valor escrito em toda celula e escala comum declarada na legenda.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:18.762Z",
+      "impressao": "680e1a021870e87023ffe86b16ec9d9ccd742f2d",
+      "arquivos": {
+        "Chart.tsx": "e238bee8110412758d94758386a68b6e1ab7c796",
+        "data.ts": "b0705dfa7e2e45becc29282efaf8b0dbdd65b5c5",
+        "meta.json": "af6f566a0368eec8d40471f0a4eb3dedb214fee7"
+      }
+    },
+    "v4_detalhe-sem-dado-e-varias-abertas": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, vazio e indisponivel com textos e icones distintos, marca real ja removida do data.ts.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:23.706Z",
+      "impressao": "f9946556873d2a0381b270ee5c1c569975946c09",
+      "arquivos": {
+        "Chart.tsx": "62e0f2abe2b4880903e8518a5d6f4ff724f3663d",
+        "data.ts": "bcc5c16ea71a79ece96a6b30e7a6b8d29fe9d7e2",
+        "meta.json": "cf5c248fc4638943d1f4d0ea37d4a6a016bfe53d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-perdidas-com-historico",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis; ressalva de quebra do valor em duas linhas na coluna estreita.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:51:51.401Z",
+      "impressao": "39cc53eb1fda8b13aa4f944cdf58467d437b6d5c",
+      "arquivos": {
+        "Chart.tsx": "0a3a385ba0d2c8df49f44ed0688b5cd1e982cb07",
+        "data.ts": "c160b8ce70243227002e880d9bc1e9be3052739b",
+        "meta.json": "0841d143db5ff21e6676b4c7010bd200486c95e3"
+      }
+    },
+    {
+      "versao": "v2_executivo-com-serie-e-motivos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; rotulo do 4o motivo sai truncado e o fallback de serie vazia usa travessao no lugar de formatUnavailable.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:51:57.031Z",
+      "impressao": "ce7afecf76a1cee04af2e7dde361d858b91e50ac",
+      "arquivos": {
+        "Chart.tsx": "e170ff77b1c256c4d53e1c9aaf6f322093bc50d6",
+        "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
+        "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
+      }
+    },
+    {
+      "versao": "v3_filas-com-mapa-de-entradas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; escala sequencial com numero em toda celula passa AA nos dois temas, medido em 5,45 no pior par.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:52:03.135Z",
+      "impressao": "680e1a021870e87023ffe86b16ec9d9ccd742f2d",
+      "arquivos": {
+        "Chart.tsx": "e238bee8110412758d94758386a68b6e1ab7c796",
+        "data.ts": "b0705dfa7e2e45becc29282efaf8b0dbdd65b5c5",
+        "meta.json": "af6f566a0368eec8d40471f0a4eb3dedb214fee7"
+      }
+    },
+    {
+      "versao": "v4_detalhe-sem-dado-e-varias-abertas",
+      "veredito": "reprovado",
+      "nota": "data.ts linha 45 usa a marca real Bitrix24 no campo company; trocar por empresa ficticia e levar o motivo do painel vazio para o texto da dica.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:52:08.860Z",
+      "impressao": "7a43d07e6162e3e543da3262588bf48443d58cf3",
+      "arquivos": {
+        "Chart.tsx": "959c31a9362e7518b7a267ea03a97b1187842a11",
+        "data.ts": "9045b16f38938187c9d1603d620f1068af3155ca",
+        "meta.json": "cf5c248fc4638943d1f4d0ea37d4a6a016bfe53d"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-perdidas-com-historico",
+      "veredito": "aprovado",
+      "nota": "Check limpo, painel de etapas legivel nos dois temas, total do rodape soma todas as linhas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:08.720Z",
+      "impressao": "39cc53eb1fda8b13aa4f944cdf58467d437b6d5c",
+      "arquivos": {
+        "Chart.tsx": "0a3a385ba0d2c8df49f44ed0688b5cd1e982cb07",
+        "data.ts": "c160b8ce70243227002e880d9bc1e9be3052739b",
+        "meta.json": "0841d143db5ff21e6676b4c7010bd200486c95e3"
+      }
+    },
+    {
+      "versao": "v2_executivo-com-serie-e-motivos",
+      "veredito": "aprovado",
+      "nota": "Check limpo, motivos somam 100 pelo maior resto, dominante com cor e peso; rotulo truncado e nao bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:13.713Z",
+      "impressao": "ce7afecf76a1cee04af2e7dde361d858b91e50ac",
+      "arquivos": {
+        "Chart.tsx": "e170ff77b1c256c4d53e1c9aaf6f322093bc50d6",
+        "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
+        "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
+      }
+    },
+    {
+      "versao": "v3_filas-com-mapa-de-entradas",
+      "veredito": "aprovado",
+      "nota": "Check limpo, mapa sequencial com valor escrito em toda celula e escala comum declarada na legenda.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:18.762Z",
+      "impressao": "680e1a021870e87023ffe86b16ec9d9ccd742f2d",
+      "arquivos": {
+        "Chart.tsx": "e238bee8110412758d94758386a68b6e1ab7c796",
+        "data.ts": "b0705dfa7e2e45becc29282efaf8b0dbdd65b5c5",
+        "meta.json": "af6f566a0368eec8d40471f0a4eb3dedb214fee7"
+      }
+    },
+    {
+      "versao": "v4_detalhe-sem-dado-e-varias-abertas",
+      "veredito": "aprovado",
+      "nota": "Check limpo, vazio e indisponivel com textos e icones distintos, marca real ja removida do data.ts.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:02:23.706Z",
+      "impressao": "f9946556873d2a0381b270ee5c1c569975946c09",
+      "arquivos": {
+        "Chart.tsx": "62e0f2abe2b4880903e8518a5d6f4ff724f3663d",
+        "data.ts": "bcc5c16ea71a79ece96a6b30e7a6b8d29fe9d7e2",
+        "meta.json": "cf5c248fc4638943d1f4d0ea37d4a6a016bfe53d"
+      }
+    }
+  ]
+}

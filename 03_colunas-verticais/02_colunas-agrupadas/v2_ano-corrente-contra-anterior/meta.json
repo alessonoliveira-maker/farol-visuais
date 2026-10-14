@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida: 2026 contra 2025",
+  "useCase": "Em que meses o ano corrente se afastou do anterior, sem ler as 24 colunas uma a uma?",
+  "demonstrates": [
+    "Legenda no topo com amostra quadrada: 2025 em neutro, 2026 em chart-1 (ROT-4)",
+    "Diferença anotada só no mês de maior distância, com a base nomeada na mesma linha",
+    "Meses de 2026 ainda não fechados sem coluna, com nota de período parcial escrita no corpo",
+    "Rótulo direto com o ano escrito junto do valor, para não ler como se fosse do outro ano",
+    "Tique de moeda por formatCurrencyAxis com largura do eixo em constante"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Passo pela ESP-6: corpo do cartão largo aproximadamente 894 x 274 px, disponível aproximadamente 894 menos 56 do eixo de moeda menos 8 de margem = 830 px para 12 meses, passo aproximadamente 69,2 px. Com barGap de 1 px e barCategoryGap no piso de 30 por cento: espessura = (69,2 x 0,40 menos 1) dividido por 2, aproximadamente 13,3 px, acima do piso de 12 px da ESP-2. O valor só é escrito no mês de dezembro de 2025 (o maior e o último da série anterior) e em agosto de 2026 (o maior e o último mês fechado do ano corrente); cada um dos dois carrega o ano junto do valor, em uma segunda linha, para não ler como se fosse do outro ano quando o eixo só mostra o mês. A legenda no topo nomeia as duas cores e escreve a nota de período parcial, o que também amplia a isenção da ACE-3 para o token neutro: além do valor escrito no mês de referência, a cor agora tem rótulo textual permanente."
+}

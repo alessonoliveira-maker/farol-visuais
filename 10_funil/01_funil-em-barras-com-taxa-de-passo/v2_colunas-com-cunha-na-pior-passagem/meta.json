@@ -1,0 +1,13 @@
+{
+  "title": "Colunas com cunha na pior passagem",
+  "useCase": "Em qual passo do funil de marketing a queda de agosto foi maior, sem deixar impressões e cliques esmagarem as colunas finais.",
+  "demonstrates": [
+    "Bar com shape próprio: coluna em 55% da banda e cunha de perda nos 45% restantes",
+    "barCategoryGap zero, exceção declarada à ESP-2, para a cunha encostar na coluna seguinte",
+    "Pior cunha em negative com o denominador do passo escrito; as demais em texto muted a 20%",
+    "Última coluna sem cunha e divisão por zero tratada antes do desenho",
+    "Etapas de ordem de grandeza maior citadas fora do gráfico, nunca na mesma escala"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

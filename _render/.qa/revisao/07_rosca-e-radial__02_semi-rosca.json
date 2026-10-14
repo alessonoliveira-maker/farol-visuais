@@ -1,0 +1,186 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "02_semi-rosca",
+  "versoes": {
+    "v1_agendas-do-mes-por-resultado": {
+      "veredito": "aprovado",
+      "nota": "Meia rosca correta: tres partes, percentual inteiro somando 100 pelo maior resto, total sobre a base, slots 1, 3 e 6.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:07:59.994Z",
+      "impressao": "04d9bf71811edf8ea964465410baa21d190622d0",
+      "arquivos": {
+        "Chart.tsx": "4a5e76917b6cfa5f6f775e6770cd4a715349c28a",
+        "data.ts": "47218e46178683b3db8043a076aad40d6f05b7cd",
+        "meta.json": "40b99892e03e2fa88c2750ef2ea0297a7189f3c9"
+      }
+    },
+    "v2_agendas-por-canal-com-marca-de-metade": {
+      "veredito": "aprovado",
+      "nota": "Marca de metade legivel pelo rotulo 50 por cento; tique coberto pelo arco e ponto solto no miolo ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:08:04.801Z",
+      "impressao": "954e96ee5b3c78f271087f1016528d006547674d",
+      "arquivos": {
+        "Chart.tsx": "323fa93abfc953c83354216ffa0465fb2742ea8d",
+        "data.ts": "3c69243efe6acf116aace3cb0236159e5818928b",
+        "meta.json": "b52568d5711035c23589ae4518d6b12f23b7ce27"
+      }
+    },
+    "v3_resultado-das-agendas-por-fila": {
+      "veredito": "aprovado",
+      "nota": "Tres arcos de mesmo diametro, cor fixa por id do resultado, total no centro e taxa com volume na fila de 11 agendas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:08:11.501Z",
+      "impressao": "81557d34b2058306a64ba9f33f97ca1a5e9d11a5",
+      "arquivos": {
+        "Chart.tsx": "2fb841cac51fe6dff59bacd74958f2aa0a72a3fa",
+        "data.ts": "7bbb91a96f9b347d34e2aa34551ac400fd5d0d5c",
+        "meta.json": "29d6d875b6732d61e218313b2d499e10a24591fd"
+      }
+    },
+    "v4_agendas-acima-da-meta-semanal": {
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes da manhã de 2026-10-14 estão resolvidos: data vazio vira bloco role=status com Filter de 16 px, e a meta é traço com halo pintado depois dos dois arcos, no raio real da banda, visível nos dois temas. Domínio em max(soma, meta) com gomos proporcionais (77,9 e 102,1 graus), frase de 129 caracteres, check sem erro. Traço sólido em text-primary, emenda arredondada, sentido da varredura e peso 400 do rótulo da meta ficam como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:39:56.148Z",
+      "impressao": "4a8521d6253e8bd7789bf10ef21dad7da2ebdb57",
+      "arquivos": {
+        "Chart.tsx": "d9401c76355c0459aa44dbc160435d5391b4c6a4",
+        "data.ts": "d3781881baf9c1336bb33219513d4f7408307b22",
+        "meta.json": "bd601fad123624e83078423eec133a4ee771d3b9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-do-mes-por-resultado",
+      "veredito": "aprovado",
+      "nota": "Meia rosca limpa nos dois temas, percentual inteiro somando 100 pelo maior resto, total sobre a base e nenhum rotulo cortado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:53:58.981Z",
+      "impressao": "04d9bf71811edf8ea964465410baa21d190622d0",
+      "arquivos": {
+        "Chart.tsx": "4a5e76917b6cfa5f6f775e6770cd4a715349c28a",
+        "data.ts": "47218e46178683b3db8043a076aad40d6f05b7cd",
+        "meta.json": "40b99892e03e2fa88c2750ef2ea0297a7189f3c9"
+      }
+    },
+    {
+      "versao": "v2_agendas-por-canal-com-marca-de-metade",
+      "veredito": "aprovado",
+      "nota": "Tique fixo de 50% honesto, linha de leitura calculada do dado e rotulos sem colisao; o tique some por tras do arco, observacao no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:54:03.239Z",
+      "impressao": "954e96ee5b3c78f271087f1016528d006547674d",
+      "arquivos": {
+        "Chart.tsx": "323fa93abfc953c83354216ffa0465fb2742ea8d",
+        "data.ts": "3c69243efe6acf116aace3cb0236159e5818928b",
+        "meta.json": "b52568d5711035c23589ae4518d6b12f23b7ce27"
+      }
+    },
+    {
+      "versao": "v3_resultado-das-agendas-por-fila",
+      "veredito": "reprovado",
+      "nota": "A fila outbound imprime 56%, 27% e 18%, que somam 101: arredondamento simples em vez do maior resto da NUM-2.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:54:06.844Z",
+      "impressao": "e91106840eae24c5c77ed73d7eafa8f3554dc00c",
+      "arquivos": {
+        "Chart.tsx": "cc4bccdb4cead057568a81ecd954d5317521bf7a",
+        "data.ts": "7bbb91a96f9b347d34e2aa34551ac400fd5d0d5c",
+        "meta.json": "29d6d875b6732d61e218313b2d499e10a24591fd"
+      }
+    },
+    {
+      "versao": "v4_agendas-acima-da-meta-semanal",
+      "veredito": "reprovado",
+      "nota": "Inbound 45 e outbound 59 saem com o mesmo arco de 90 graus porque o dominio para na meta; o corte do segundo gomo nao e sinalizado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:54:10.832Z",
+      "impressao": "a5ca754b5e1b798b25e4d8e9aaf16ff823539efc",
+      "arquivos": {
+        "Chart.tsx": "69225b380486f213f51e941f361c23331c37e9e4",
+        "data.ts": "d3781881baf9c1336bb33219513d4f7408307b22",
+        "meta.json": "ae3867610e5009a3cf382740b1b35d47e516b8db"
+      }
+    },
+    {
+      "versao": "v1_agendas-do-mes-por-resultado",
+      "veredito": "aprovado",
+      "nota": "Meia rosca correta: tres partes, percentual inteiro somando 100 pelo maior resto, total sobre a base, slots 1, 3 e 6.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:07:59.994Z",
+      "impressao": "04d9bf71811edf8ea964465410baa21d190622d0",
+      "arquivos": {
+        "Chart.tsx": "4a5e76917b6cfa5f6f775e6770cd4a715349c28a",
+        "data.ts": "47218e46178683b3db8043a076aad40d6f05b7cd",
+        "meta.json": "40b99892e03e2fa88c2750ef2ea0297a7189f3c9"
+      }
+    },
+    {
+      "versao": "v2_agendas-por-canal-com-marca-de-metade",
+      "veredito": "aprovado",
+      "nota": "Marca de metade legivel pelo rotulo 50 por cento; tique coberto pelo arco e ponto solto no miolo ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:08:04.801Z",
+      "impressao": "954e96ee5b3c78f271087f1016528d006547674d",
+      "arquivos": {
+        "Chart.tsx": "323fa93abfc953c83354216ffa0465fb2742ea8d",
+        "data.ts": "3c69243efe6acf116aace3cb0236159e5818928b",
+        "meta.json": "b52568d5711035c23589ae4518d6b12f23b7ce27"
+      }
+    },
+    {
+      "versao": "v3_resultado-das-agendas-por-fila",
+      "veredito": "aprovado",
+      "nota": "Tres arcos de mesmo diametro, cor fixa por id do resultado, total no centro e taxa com volume na fila de 11 agendas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:08:11.501Z",
+      "impressao": "81557d34b2058306a64ba9f33f97ca1a5e9d11a5",
+      "arquivos": {
+        "Chart.tsx": "2fb841cac51fe6dff59bacd74958f2aa0a72a3fa",
+        "data.ts": "7bbb91a96f9b347d34e2aa34551ac400fd5d0d5c",
+        "meta.json": "29d6d875b6732d61e218313b2d499e10a24591fd"
+      }
+    },
+    {
+      "versao": "v4_agendas-acima-da-meta-semanal",
+      "veredito": "aprovado",
+      "nota": "Meta em posicao real no dominio, centro 104 de 90 e selo do excedente; tique coberto pelo arco e canto do gomo ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:08:12.007Z",
+      "impressao": "9d60cf93b127ba49bcba20bdc8ec328f9f45a8a3",
+      "arquivos": {
+        "Chart.tsx": "22b4eeb26d02a23ac31272564a40e103a98e9889",
+        "data.ts": "d3781881baf9c1336bb33219513d4f7408307b22",
+        "meta.json": "bd601fad123624e83078423eec133a4ee771d3b9"
+      }
+    },
+    {
+      "versao": "v4_agendas-acima-da-meta-semanal",
+      "veredito": "reprovado",
+      "nota": "Perguntas 16 e 8, EST-1 e 14.1 (ausência exibida como zero): não há bloco role=status; com data vazio a peça desenha 104 de 90 virando 0 de 90, Inbound 0, Outbound 0 e a frase Faltam 90 agendas (Chart.tsx:123 a 128, row?.inbound ?? 0). Trocar por bloco role=status com Filter de 16 px antes do gráfico. Pergunta 13, ANO-3, REC-13 e TOK-10 (tique perdido): o MetaTick entra antes dos dois RadialBar e o arco pinta por cima; do traço de 72 a 113 px de raio sobram dois traços de 3 px soltos a 3 px da borda externa (banda de 74 a 101 px), e o demonstrates 'traço de referência sobre o arco' não aparece. Desenhar a meta depois dos arcos, no raio real da banda, com halo de superfície ou em dois trechos encostados nas duas bordas. Parecer em validation/revisao_07_rosca-e-radial__02_semi-rosca_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:30:30.407Z",
+      "impressao": "51ef55b144795e9372ba9fb55166ed2b35a95a34",
+      "arquivos": {
+        "Chart.tsx": "79dac4951eda6ed8a06108a0061a226daf430576",
+        "data.ts": "d3781881baf9c1336bb33219513d4f7408307b22",
+        "meta.json": "bd601fad123624e83078423eec133a4ee771d3b9"
+      }
+    },
+    {
+      "versao": "v4_agendas-acima-da-meta-semanal",
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes da manhã de 2026-10-14 estão resolvidos: data vazio vira bloco role=status com Filter de 16 px, e a meta é traço com halo pintado depois dos dois arcos, no raio real da banda, visível nos dois temas. Domínio em max(soma, meta) com gomos proporcionais (77,9 e 102,1 graus), frase de 129 caracteres, check sem erro. Traço sólido em text-primary, emenda arredondada, sentido da varredura e peso 400 do rótulo da meta ficam como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:39:56.148Z",
+      "impressao": "4a8521d6253e8bd7789bf10ef21dad7da2ebdb57",
+      "arquivos": {
+        "Chart.tsx": "d9401c76355c0459aa44dbc160435d5391b4c6a4",
+        "data.ts": "d3781881baf9c1336bb33219513d4f7408307b22",
+        "meta.json": "bd601fad123624e83078423eec133a4ee771d3b9"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Receita projetada do trimestre em faixa",
+  "useCase": "Diretoria: a meta de R$ 5,5 mi de 2026-T4 cabe na faixa entre o pessimista e o otimista, ou só no melhor caso?",
+  "demonstrates": [
+    "Barra flutuante: série de piso invisível empilhada mais a faixa visível até o teto",
+    "Cenário base como traço sólido dentro da faixa, meta como traço tracejado fora dela",
+    "ReferenceLine da meta em extendDomain, para não sumir quando passa do maior valor",
+    "Piso e teto nomeados com a premissa de cada ponta, não só o valor",
+    "Nota de método: até quando o histórico é fechado e a partir de quando é projeção"
+  ],
+  "canvas": { "width": 960, "height": 320 },
+  "frame": "card",
+  "notes": "Meta de período (trimestral). asOf declara o último mês fechado que alimenta as três premissas; o trimestre inteiro ainda não começou em asOf, logo a faixa toda é projeção. Canvas 960x320 (ESP-6): a nota de método de uma linha embaixo do gráfico não cabia na altura do preset faixa (260) sem espremer a marca abaixo do piso da ESP-2."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Agendas projetadas contra teto de capacidade",
+  "useCase": "Antecipar em que semana as agendas projetadas começam a encostar no teto de capacidade da pré-vendas.",
+  "demonstrates": [
+    "Leque de agendas semanais com teto em Line stepAfter tracejada",
+    "Primeira semana em que o p75 passa do teto anotada com a data",
+    "No máximo duas anotações: hoje e a semana de encontro (ANO-1)",
+    "Selo de premissa do trecho projetado fica no VisualCard (ANO-6)"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Método declarado: bootstrap da variação semanal das últimas 12 semanas (2.000 reamostragens) sobre o último valor real; a partir de S28 o desenho é estimativa, não medição. Teto de 45 agendas por semana é capacidade medida da pré-vendas, não percentil. Quem colar no Farol adiciona o selo PREMISSA do VisualCard sobre o trecho projetado."
+}

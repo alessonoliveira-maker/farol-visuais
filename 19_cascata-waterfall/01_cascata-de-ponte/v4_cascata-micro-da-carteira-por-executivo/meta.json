@@ -1,0 +1,14 @@
+{
+  "title": "Cascata micro da carteira por executivo",
+  "useCase": "Como a carteira de cada executivo foi de 2026-T2 a 2026-T3, em quatro passos e na mesma escala?",
+  "demonstrates": [
+    "SVG puro por célula com a mesma função de faixa da ponte grande",
+    "Escala comum a todas as linhas, com domínio sobre o acumulado",
+    "Tipo de cada item vem do dado: total ancorado, passo flutuante",
+    "Passo zero em traço fino e linha sem dado com formatUnavailable",
+    "Sem rótulos internos: passos e valores na dica e na coluna ao lado"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o total ancorado é a variação líquida da carteira, não os dois saldos. Passos de R$ 30 mil diante de carteiras de R$ 1 a 2 mi ficariam com 1 px (quando evitar do modelo: tirar os totais e mostrar só os efeitos); os saldos vão nas colunas Carteira e Variação. Domínio comum de R$ 0 a R$ 270 mil: o maior acumulado entre as nove linhas medidas. Dez linhas de 34 px em 574 x 441 px."
+}

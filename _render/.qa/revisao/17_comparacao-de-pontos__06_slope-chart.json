@@ -1,0 +1,108 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "06_slope-chart",
+  "versoes": {
+    "v1_participacao-por-canal-entre-anos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim (a 3 não se aplica: slope tem dois pontos por definição). Somas de 100 conferidas nas duas colunas. Observações no README: total de leads por ano ausente (DAD-7), nomes na cor da série, número sem tabular-nums na linha de leitura (TIP-1), Anatomia do README diz domínio do zero e a escala começa no degrau abaixo do menor valor.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:03.703Z",
+      "impressao": "349c120654a4e9233814d73a181d758e6d9c0f5c",
+      "arquivos": {
+        "Chart.tsx": "7cbfca445ee4c673ce42791003545aff70e9d2bd",
+        "data.ts": "5c5153ed01b70ba89be0def54481d36245984963",
+        "meta.json": "d7461f3f7b25c6902dcf3777d419fb085bce3abc"
+      }
+    },
+    "v2_plataformas-que-trocaram-de-posicao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cruzamento, sete deltas e halo da anotação conferidos nos dois temas. Observações no README: coluna do delta sem base nomeada (NUM-4), rótulos a 7,9 e 6,9 px do ponto sem traço guia (limiar de 8 px), deltas alinhados à esquerda (TIP-6), nome a 4,5 px da borda esquerda, só o primeiro cruzamento é destacado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:04.236Z",
+      "impressao": "6ca9032d69ff8941415417d92ad87f7b2f734c63",
+      "arquivos": {
+        "Chart.tsx": "ede925cd337e21f64ecfd2c9a7755639616f3ee4",
+        "data.ts": "d5e923b4681de1a68e718fa318a3ce2d9616218f",
+        "meta.json": "a223d77087f05fe4bbd75a761422bc9e3649edfa"
+      }
+    },
+    "v3_win-rate-por-executivo-em-paineis": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala comum de zero a 70, média por razão das somas e ordem dos 14 painéis conferidas. Observações no README: delta com uma casa e taxa sem casa (NUM-1), volume só como faixa no rodapé (DAD-1), linha do zero em line-subtle, números sem tabular-nums (TIP-1), executivo sem base some sem aviso.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:04.766Z",
+      "impressao": "a76d8f29e59dd9ae891ae4d6801fa7f2600fa3ae",
+      "arquivos": {
+        "Chart.tsx": "715108d055512c812328555b7ff74377b1189bf7",
+        "data.ts": "754e0df0fc9ed9faf49cbe6404ed7da218128e5c",
+        "meta.json": "8587c93daa8d2740e229fa8022fc57962d652306"
+      }
+    },
+    "v4_empate-e-entrada-no-meio-do-ano": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Empate exato, ausência sem ponto nem reta e rodapé conferidos nos dois temas. Observações no README: win rate de oito executivos sem volume (NUM-1, DAD-1), palavra de ausência na altura de um valor da escala, EST-2 sem o ícone Unplug, anel vazado em valor medido, rodapé sem tabular-nums (TIP-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:05.300Z",
+      "impressao": "0b5538aaac579e7d6fbb41403b415e6b1417d3a7",
+      "arquivos": {
+        "Chart.tsx": "f3b08ffb535f4f0d648f387527c8c9e8615d8259",
+        "data.ts": "e8838d182c220a3338bcd336da6959fb36fb4496",
+        "meta.json": "dfd292979ce044a78673c66b6d9c46b8ac60c181"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_participacao-por-canal-entre-anos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim (a 3 não se aplica: slope tem dois pontos por definição). Somas de 100 conferidas nas duas colunas. Observações no README: total de leads por ano ausente (DAD-7), nomes na cor da série, número sem tabular-nums na linha de leitura (TIP-1), Anatomia do README diz domínio do zero e a escala começa no degrau abaixo do menor valor.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:03.703Z",
+      "impressao": "349c120654a4e9233814d73a181d758e6d9c0f5c",
+      "arquivos": {
+        "Chart.tsx": "7cbfca445ee4c673ce42791003545aff70e9d2bd",
+        "data.ts": "5c5153ed01b70ba89be0def54481d36245984963",
+        "meta.json": "d7461f3f7b25c6902dcf3777d419fb085bce3abc"
+      }
+    },
+    {
+      "versao": "v2_plataformas-que-trocaram-de-posicao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cruzamento, sete deltas e halo da anotação conferidos nos dois temas. Observações no README: coluna do delta sem base nomeada (NUM-4), rótulos a 7,9 e 6,9 px do ponto sem traço guia (limiar de 8 px), deltas alinhados à esquerda (TIP-6), nome a 4,5 px da borda esquerda, só o primeiro cruzamento é destacado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:04.236Z",
+      "impressao": "6ca9032d69ff8941415417d92ad87f7b2f734c63",
+      "arquivos": {
+        "Chart.tsx": "ede925cd337e21f64ecfd2c9a7755639616f3ee4",
+        "data.ts": "d5e923b4681de1a68e718fa318a3ce2d9616218f",
+        "meta.json": "a223d77087f05fe4bbd75a761422bc9e3649edfa"
+      }
+    },
+    {
+      "versao": "v3_win-rate-por-executivo-em-paineis",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala comum de zero a 70, média por razão das somas e ordem dos 14 painéis conferidas. Observações no README: delta com uma casa e taxa sem casa (NUM-1), volume só como faixa no rodapé (DAD-1), linha do zero em line-subtle, números sem tabular-nums (TIP-1), executivo sem base some sem aviso.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:04.766Z",
+      "impressao": "a76d8f29e59dd9ae891ae4d6801fa7f2600fa3ae",
+      "arquivos": {
+        "Chart.tsx": "715108d055512c812328555b7ff74377b1189bf7",
+        "data.ts": "754e0df0fc9ed9faf49cbe6404ed7da218128e5c",
+        "meta.json": "8587c93daa8d2740e229fa8022fc57962d652306"
+      }
+    },
+    {
+      "versao": "v4_empate-e-entrada-no-meio-do-ano",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Empate exato, ausência sem ponto nem reta e rodapé conferidos nos dois temas. Observações no README: win rate de oito executivos sem volume (NUM-1, DAD-1), palavra de ausência na altura de um valor da escala, EST-2 sem o ícone Unplug, anel vazado em valor medido, rodapé sem tabular-nums (TIP-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:36:05.300Z",
+      "impressao": "0b5538aaac579e7d6fbb41403b415e6b1417d3a7",
+      "arquivos": {
+        "Chart.tsx": "f3b08ffb535f4f0d648f387527c8c9e8615d8259",
+        "data.ts": "e8838d182c220a3338bcd336da6959fb36fb4496",
+        "meta.json": "dfd292979ce044a78673c66b6d9c46b8ac60c181"
+      }
+    }
+  ]
+}

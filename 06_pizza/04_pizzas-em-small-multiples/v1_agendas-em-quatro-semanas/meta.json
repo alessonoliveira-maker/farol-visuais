@@ -1,0 +1,12 @@
+{
+  "title": "Resultado das agendas em quatro semanas",
+  "useCase": "Como se divide o resultado das agendas (realizada, remarcada, não compareceu) em cada uma das últimas quatro semanas?",
+  "demonstrates": [
+    "Um PieChart por célula em grid do Tailwind, como no exemplo Pie Chart in Grid",
+    "Ordem fixa de categorias entre as pizzas, sem ordenar cada uma por valor",
+    "Legenda única no topo, na ordem angular, com amostra quadrada",
+    "Mesmo diâmetro e total de agendas escrito sob cada pizza"
+  ],
+  "canvas": "faixa",
+  "frame": "card"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Trajetória para a meta 2027 por linha de receita",
+  "useCase": "Em quais das 6 linhas de receita a projeção natural fica abaixo da trajetória para a meta de 2027?",
+  "demonstrates": [
+    "ComposedChart com realizado cheio, previsto tracejado e faixa em Area [baixo, alto]",
+    "Ponto de junção que repete o último realizado para as duas linhas se encostarem",
+    "Trajetória necessária como referência em --text-muted, tracejada 3 3",
+    "ReferenceLine vertical no hoje e escala comum dentro de cada card, própria entre cards",
+    "Rodapé que declara faixa de cenário, não intervalo estatístico",
+    "Cenário alto recortado em 20% acima do maior valor, com ChevronUp na borda quando estoura"
+  ],
+  "canvas": "largo",
+  "frame": "stage",
+  "notes": "O recorte do cenário alto usa 20% acima do maior valor entre realizado, projeção e meta do próprio card (e não só do realizado), para a reta da projeção nunca ser cortada: o catálogo diz realizado mais 20%, mas num card que cresce o previsto passa do realizado. Corpo do canvas largo com moldura stage: 920 x 310 px, em grade de 3 colunas por 2 linhas."
+}

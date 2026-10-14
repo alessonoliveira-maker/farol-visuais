@@ -1,0 +1,71 @@
+{
+  "slug": "03_alluvial",
+  "nome": "Alluvial",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Colunas são momentos; blocos empilhados são categorias com altura proporcional à contagem, na mesma ordem em todas as colunas; faixas ligam as unidades que mantiveram ou mudaram de categoria entre colunas vizinhas. O que importa é a correspondência das mesmas unidades, não a direção física de um fluxo.",
+  "quando_usar": [
+    "A mesma população mudando de categoria entre 3 e 5 momentos: temperatura do lead, faixa de receita do cliente.",
+    "Ver quem esfriou, esquentou ou manteve a classificação de um mês para o outro.",
+    "Coorte com entrada e saída da base declaradas como categorias, com até 6 categorias por coluna."
+  ],
+  "quando_evitar": [
+    "População que muda entre colunas sem categoria de entrada e saída: as alturas não fecham e a leitura mente.",
+    "Volume que atravessa etapas com perdas: usar o 02_sankey-multietapa.",
+    "Mais de 6 categorias ou só dois momentos com leitura exata: usar a matriz de transição (15_mapa-de-calor-e-calendario, 07_matriz-de-transicao).",
+    "Ranking de posição entre períodos: usar o bump chart (04_linhas, 08_bump-chart).",
+    "Composição no tempo sem rastrear as unidades: usar áreas empilhadas da família 05_areas."
+  ],
+  "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+  "versoes": [
+    {
+      "slug": "v1_temperatura-dos-leads-em-tres-meses",
+      "titulo": "Temperatura dos leads de junho a agosto",
+      "caso_de_uso": "Marketing, 2026-06 a 2026-08: como a temperatura dos mesmos 1.240 leads mudou mês a mês? Quente, Morno, Frio e Descartado, em ordem fixa nas três colunas.",
+      "o_que_demonstra": [
+        "Geometria de alluvial em TypeScript, sem relaxamento que mova blocos",
+        "Ordem de categorias igual em todas as colunas, para o olho rastrear o bloco",
+        "Saídas do bloco ordenadas pelo destino e entradas ordenadas pela origem",
+        "Cor pela categoria de origem em slot fixo, dita na legenda",
+        "Vão de 2 px entre blocos empilhados na mesma coluna"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_leads-quentes-que-esfriaram",
+      "titulo": "Leads quentes que esfriaram em agosto",
+      "caso_de_uso": "Marketing, 2026-07 para 2026-08: quantos dos 214 leads quentes esfriaram? Só as faixas de Quente para Morno (46) e de Quente para Frio (21) em opacidade cheia, as demais em neutro.",
+      "o_que_demonstra": [
+        "Prop highlight com as transições em foco e as demais faixas a 15%",
+        "Duas anotações no máximo, com a contagem escrita junto da faixa",
+        "Nome das categorias em foco em peso 700, além da cor",
+        "Frase acessível que diz quantos esfriaram e de qual total"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_faixa-de-receita-dos-clientes-em-quatro-trimestres",
+      "titulo": "Faixa de receita dos clientes em quatro trimestres",
+      "caso_de_uso": "Diretoria, 2025-T4 a 2026-T3: os 312 clientes sobem ou descem de faixa de receita mensal? Até R$ 5 mil, R$ 5 a 15 mil, R$ 15 a 40 mil e acima de R$ 40 mil, com \"Ainda não cliente\" e \"Encerrou\" como categorias.",
+      "o_que_demonstra": [
+        "Quatro colunas com 6 categorias cada, no teto de cores do modelo",
+        "Entrada e saída da base como categorias, para a população fechar em toda coluna",
+        "Faixas ordinais na rampa --seq-N, com a contagem escrita no bloco",
+        "Categorias fora da base em neutro, abaixo das faixas de receita",
+        "Percentual da coluna na dica, com o mesmo formato do rótulo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_classificacao-que-passou-a-existir",
+      "titulo": "Classificação nova sem histórico anterior",
+      "caso_de_uso": "Marketing, 2026-06 a 2026-08: a temperatura Morno só passou a existir em julho. Em junho, 388 leads ficam no bloco \"Sem classificação\", que se reparte nas colunas seguintes.",
+      "o_que_demonstra": [
+        "Bloco de ausência com contorno --text-muted, sem preenchimento e por último",
+        "Categoria que nasce no meio da série sem bloco zerado nas colunas anteriores",
+        "Anotação curta na coluna de julho: \"Morno criado em jul/26\"",
+        "Faixas que saem da ausência em neutro até ganharem categoria"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Produto novo com ticket sem medição",
+  "useCase": "Diretoria: a receita de um produto novo depende de um ticket que ninguém mediu, e o resultado herda a incerteza.",
+  "demonstrates": [
+    "Selo premissa no ticket médio, com faixa de R$ 60,0 mil a R$ 300,0 mil",
+    "Aviso derivado no nó de resultado: ele herda a incerteza da premissa",
+    "Nó de lacuna em contorno tracejado, sem valor inventado e sem microbarra",
+    "Faixa do resultado pela regra declarada, escrita junto do cartão",
+    "Aresta tracejada e sem operador até o nó que só aponta a medição que falta"
+  ],
+  "canvas": { "width": 820, "height": 400 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1) em vez do preset card sugerido pelo catálogo, e a conta diz por quê: três colunas de 208 px com passo de 256 medem 720 px de largura, contra os 640 px do preset, e a altura do conteúdo é 211 px de árvore mais o vão de 12 px e a linha de rodapé de 15 px, ou 238 px, contra os 234 px que o preset card deixa de corpo. Os 820 por 400 px deixam cerca de 754 por 274 px de corpo, com folga de 34 por 36 px. O tipo do dado difere do das irmãs porque a faixa é opcional: dar range ao nó de lacuna seria a ausência virando número, que é a DAD-2, então ele sai com formatUnavailable() e sem microbarra. O contorno tracejado é text-muted, o par que a ACE-8 aprova como contorno de ausência (5,21:1 e 5,37:1), e não vermelho, que a EST-2 proíbe; a identificação de lacuna fica no selo de procedência, em prov-lacuna. A aresta até esse nó também é tracejada e não recebe selo de operador, porque ali o filho não compõe o valor do pai, ele aponta a fonte que falta. Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-secondary 8,16:1 e 8,13:1, text-primary 14,53:1 e 17,96:1, text-muted 5,21:1 e 5,37:1, warning 8,36:1 e 5,74:1, prov-premissa 8,36:1 e 5,74:1, prov-derivado 6,52:1 e 6,11:1, prov-lacuna 5,50:1 e 6,36:1, todos contra surface-raised e todos acima do piso de 4,5:1 da ACE-3. O conector saiu de line-strong, que a v1 usa e que mede 1,79:1 e 1,83:1, para text-muted, porque pela ACE-6 a aresta de uma árvore carrega a relação e precisa de 3:1."
+}

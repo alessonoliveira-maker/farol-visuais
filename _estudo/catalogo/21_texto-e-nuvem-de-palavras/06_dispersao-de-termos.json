@@ -1,0 +1,70 @@
+{
+  "slug": "06_dispersao-de-termos",
+  "nome": "Dispersão de termos (scattertext)",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Cada termo é um ponto: o eixo X é a frequência, ou o rank, no grupo A e o eixo Y a frequência no grupo B. Termos sobre a diagonal são comuns aos dois grupos; os que se afastam dela são característicos de um. Popularizada pelo Scattertext, a forma responde qual vocabulário distingue dois grupos num universo grande de termos, algo que barras não comportam. No Recharts é um ScatterChart com dois eixos numéricos em rank ou em escala log (somando 1 e declarando), a diagonal por ReferenceLine com segment e rótulos por LabelList com content customizado, que só desenha os rótulos aprovados por um algoritmo guloso de colisão calculado em TypeScript.",
+  "quando_usar": [
+    "Achar os termos típicos de cada um de dois grupos, entre 100 e 300 termos",
+    "Ganhas contra perdidas, CPL abaixo contra acima da mediana, antes contra depois de uma mudança",
+    "Público analítico de Marketing ou de RevOps, que vai explorar com busca e dica",
+    "Quando as barras divergentes (02/06) cortariam termos demais para caber"
+  ],
+  "quando_evitar": [
+    "Público não analítico ou apresentação: use barras divergentes de mudança de vocabulário (02/06)",
+    "Menos de 30 termos: a pirâmide de termos (02/07) mostra as duas magnitudes com o nome em cada barra",
+    "Mais de 300 termos sem frequência mínima: vira nuvem de pontos; filtre antes de desenhar",
+    "Escala log com zero: o ponto some; use rank ou some 1 e declare no subtítulo",
+    "Grupos de tamanhos muito diferentes em contagem bruta: o maior domina; use a proporção de cada grupo"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_ganhas-contra-perdidas",
+      "titulo": "Termos de oportunidades ganhas contra perdidas",
+      "caso_de_uso": "Comercial: quais termos das anotações são típicos das oportunidades ganhas e quais das perdidas, entre 100 termos de 2026.",
+      "o_que_demonstra": [
+        "ScatterChart com eixos em rank nos dois grupos e domínio igual",
+        "Diagonal por ReferenceLine com segment em --text-muted tracejado 3 3",
+        "Quinze rótulos escolhidos por algoritmo guloso de colisão em TypeScript",
+        "Cantos nomeados, típico de ganhas e típico de perdidas, sem legenda"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_busca-destaca-um-termo",
+      "titulo": "Busca que destaca um termo na dispersão",
+      "caso_de_uso": "Comercial: onde fica o termo prazo entre ganhas e perdidas, e quais frases fictícias sustentam essa posição.",
+      "o_que_demonstra": [
+        "Prop de termo buscado que acende o ponto em --chart-1 com rótulo em peso 700",
+        "Demais pontos em --line-strong com opacidade, sem competir com o destaque",
+        "Três frases do termo abaixo do gráfico, em concordância curta",
+        "Termo buscado inexistente escreve termo não encontrado no recorte"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_titulos-de-criativos-por-cpl",
+      "titulo": "Palavras de títulos de criativos por CPL",
+      "caso_de_uso": "Marketing: quais palavras de títulos de criativos são típicas dos anúncios com CPL abaixo da mediana de ago/26, entre 250 termos.",
+      "o_que_demonstra": [
+        "Eixos em escala log com frequência somada de 1, declarada no subtítulo",
+        "250 pontos com rótulo só nos 20 termos de maior distinção",
+        "Frequência mínima de 3 anúncios aplicada antes e escrita na nota",
+        "Dica com os dois grupos, a contagem de anúncios e o CPL qualificado médio"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_termos-raros-e-grupos-desbalanceados",
+      "titulo": "Termos raros agregados e grupos desbalanceados",
+      "caso_de_uso": "Pré-vendas: como ler a dispersão quando 142 termos aparecem uma vez em cada grupo e um grupo tem 40 anotações contra 400.",
+      "o_que_demonstra": [
+        "Termos de frequência 1 e 1 agregados num marcador único com a contagem",
+        "Proporção por grupo no lugar da contagem, com o n de cada grupo no subtítulo",
+        "Termo presente num grupo só fica sobre o eixo, com o valor 0 escrito na dica",
+        "Aviso de grupo pequeno quando um dos lados tem menos de 50 anotações"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "06_dispersao-de-termos",
+  "versoes": {
+    "v1_ganhas-contra-perdidas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: os 12 nomes sem linha têm o ponto dono como o mais próximo da tinta (7,9 a 9,3 px do dono, vizinho a 10,9 px ou mais) e o primeiro de cada lado, demonstração e concorrente, tem linha de chamada em text-muted a 5,21:1 e 5,37:1; o rodapé declara que o nome sai onde cabe; marcas a 5,21, 9,50 e 6,47:1 no escuro e a 5,37, 6,00 e 6,18:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu; contagens 27, 31 e 42 refeitas do data.ts; página contra SVG a 0,007%. Observações no README: 14 nomes e não 15, três deles em termos comuns (66ª, 83ª e 97ª da ordem de distância), 10 dos 15 mais distantes sem nome e o nome demonstração a 8,5 px do ponto de objeção.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:03.931Z",
+      "impressao": "2dcb373ef65b061c280d487f400d87666be324fc",
+      "arquivos": {
+        "Chart.tsx": "c7408e4ba04134294369208ce250e042a8566d26",
+        "data.ts": "a5ddcd1388912831a93ed654c9df7fbbd78e9d03",
+        "meta.json": "2ce3375412f5d33eb18fe1315616f28bb44203f3"
+      }
+    },
+    "v2_busca-destaca-um-termo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: prazo em 43º entre as ganhas e 1º entre as perdidas confere com o data.ts refeito (empate triplo em 70 anotações, posição média 43); destaque com três canais (--chart-1, anel e nome em 700, o único 700 da peça); nome a 12,9 px do ponto dono e a 27,1 px do vizinho mais próximo; marcas a 5,21:1 e 9,50:1 no escuro e a 5,37:1 e 6,00:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu (preview_com_transform); página contra SVG a 0,005% nos dois temas. O desvio do catálogo (--text-muted opaco no lugar de --line-strong com opacidade) está declarado e é o que o contrato manda (TOK-5, ACE-5). Termo inexistente e estado vazio conferidos só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:53.695Z",
+      "impressao": "b807782a2c94a25fb5b8e957d859f7483065e853",
+      "arquivos": {
+        "Chart.tsx": "ebb277bb71a5c6b19c954aa94fceba764a1f810c",
+        "data.ts": "4cf63cbc99e1b8ee8cd022ec181b1c7a2c9e39d0",
+        "meta.json": "56762483f5244dbdf50f53661bd55620226bbc14"
+      }
+    },
+    "v3_titulos-de-criativos-por-cpl": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: os 11 nomes têm o ponto dono como o mais próximo da tinta (6,9 a 8,5 px do dono, vizinho a 9,2 px ou mais), só em palavras típicas, e nenhuma das 18 típicas divide ponto com outra; as 6 de maior distinção têm nome, entre elas grátis, que a frase acessível cita; contagens 12, 6 e 232 e as 15 palavras abaixo do mínimo refeitas do data.ts; opacidade de 0,8 a 3,55:1 no pior caso (text-muted no claro). Observações no README: 11 nomes contra os 20 do demonstrates, 7 típicas sem nome e a sobreposição das 232 sem diferença em 87 posições. Fora do veredito: página contra SVG a 0,64% no escuro e 0,66% no claro, defeito da ferramenta no espaço depois de CPL, que desloca também o cabeçalho do cartão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:09.585Z",
+      "impressao": "fc46c47032071a7d0a1ec162708d0243ce46c145",
+      "arquivos": {
+        "Chart.tsx": "a6897205be82409f822af2e90cbb7b8b93799c49",
+        "data.ts": "2855af0912103d3b95cdb8fa9b7521275df406f4",
+        "meta.json": "480f598e116c4ef4bae31ba63fe7b7d0d5f13c30"
+      }
+    },
+    "v4_termos-raros-e-grupos-desbalanceados": {
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Pergunta 12, seção 14.1 (identificação das marcas) e primeiro item do demonstrates: o anel do marcador único está desenhado em 0,25% de telefone e 2,5% de vídeo sem a contagem e sem nome. O texto 142 termos, 1 menção em cada grupo não existe no preview.svg nem nos dois PNGs, o corpo do cartão não cita o anel em lugar nenhum e o anel não tem dica: 142 dos 188 termos ficam numa marca sem identificação. Causa: o rótulo do marcador passou a entrar no teste do ponto dono em tryPlace; a única vaga dentro do plano e sem marca (dx 8, dy 4) é recusada porque 11 pontos ficam mais perto da caixa de 211 px que o centro do anel (dono a 12,0 px, boleto a 5,9 px), e não há saída quando nenhuma vaga serve. Tirar o rótulo do marcador desse teste ou escrever a contagem numa linha fora do plano com a amostra do anel, e nunca desenhar o anel sem a contagem. O bloqueante da primeira passada está resolvido: os 10 nomes têm o dono como ponto mais próximo (7,9 a 9,3 px, vizinho a 12,3 px ou mais). Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:16.220Z",
+      "impressao": "fdc306da7858f6840b4b3c7c11f10a8f3593328c",
+      "arquivos": {
+        "Chart.tsx": "49a2c0c52659c807601662374c334893202e3d2d",
+        "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
+        "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ganhas-contra-perdidas",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 31, seção 14.1 (identificação das marcas) e ROT-7: 5 dos 15 nomes ficam mais perto de um ponto alheio que do ponto dono (financeiro a 15,1 px do dono e a 6,3 px do ponto de pacote; negociação 15,1 contra 8,5 de pagamento; garantia 15,1 contra 11,8 de indicação; indicação 9,3 contra 6,1 de instalação; urgência 8,5 contra 7,1 de reajuste), e financeiro e pacote se leem trocados; recusar a vaga em que outro ponto fica mais perto da tinta que o dono e dar linha de chamada à vaga distante. Pergunta 18, DIC-1 e ACE-1: demonstração, o termo mais distante da diagonal e citado na frase acessível, não tem nome no desenho, 6 dos 15 mais distantes ficam sem nome e os nomes descem até a 30ª posição da ordem, sem aviso na tela; garantir o nome do primeiro de cada lado e declarar que o nome depende de caber. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:53.152Z",
+      "impressao": "2903465ea99709217a76a6e19009878b6852ae64",
+      "arquivos": {
+        "Chart.tsx": "d1bad6a24f719fc87869ed14ac42f9b0f576f369",
+        "data.ts": "a5ddcd1388912831a93ed654c9df7fbbd78e9d03",
+        "meta.json": "2ce3375412f5d33eb18fe1315616f28bb44203f3"
+      }
+    },
+    {
+      "versao": "v2_busca-destaca-um-termo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: prazo em 43º entre as ganhas e 1º entre as perdidas confere com o data.ts refeito (empate triplo em 70 anotações, posição média 43); destaque com três canais (--chart-1, anel e nome em 700, o único 700 da peça); nome a 12,9 px do ponto dono e a 27,1 px do vizinho mais próximo; marcas a 5,21:1 e 9,50:1 no escuro e a 5,37:1 e 6,00:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu (preview_com_transform); página contra SVG a 0,005% nos dois temas. O desvio do catálogo (--text-muted opaco no lugar de --line-strong com opacidade) está declarado e é o que o contrato manda (TOK-5, ACE-5). Termo inexistente e estado vazio conferidos só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:53.695Z",
+      "impressao": "b807782a2c94a25fb5b8e957d859f7483065e853",
+      "arquivos": {
+        "Chart.tsx": "ebb277bb71a5c6b19c954aa94fceba764a1f810c",
+        "data.ts": "4cf63cbc99e1b8ee8cd022ec181b1c7a2c9e39d0",
+        "meta.json": "56762483f5244dbdf50f53661bd55620226bbc14"
+      }
+    },
+    {
+      "versao": "v3_titulos-de-criativos-por-cpl",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 31, seção 14.1 (identificação das marcas) e ROT-7: 5 dos 20 nomes ficam mais perto de ponto alheio que do ponto dono. bônus flutua entre cinco posições de pontos cinza, com 17 palavras alheias mais perto que o dono (5,4 a 6,1 px contra 8,5), e o ponto dele guarda três palavras (bônus, reduza e inverno); entenda cai na vaga à direita da pilha de dobre e entregue (6,9 px contra 8,1 do dono, que está acima); parcelas fica a 4,9 px do ponto de aprovado e a 7,7 do dono; testado a 6,6 de aproveite contra 7,7; veja a 5,3 do ponto de testado contra 7,0. Recusar a vaga em que outro ponto fica mais perto da tinta que o dono, não nomear ponto que guarda mais de uma palavra e parar os nomes nas palavras típicas. Fora do veredito: página contra SVG a 0,64% e 0,66%, defeito da ferramenta no espaço depois de CPL. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:05.681Z",
+      "impressao": "5fa72ad7996987b0c5e267911774eb9ba013db58",
+      "arquivos": {
+        "Chart.tsx": "33d1558a1755b3021722c4e3da7c1028f61ef47a",
+        "data.ts": "2855af0912103d3b95cdb8fa9b7521275df406f4",
+        "meta.json": "480f598e116c4ef4bae31ba63fe7b7d0d5f13c30"
+      }
+    },
+    {
+      "versao": "v4_termos-raros-e-grupos-desbalanceados",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 31, seção 14.1 (identificação das marcas) e ROT-7: o nome condição fica debaixo do ponto de crédito, a 6,1 px dele e a 9,3 px do ponto dono, dois pontos da mesma cor a 1 p.p. um do outro no eixo do telefone. É 1 de 10 nomes, o caso mais brando do modelo, com a mesma raiz da v1 e da v3: a vaga é aceita só por não cobrir marca, sem conferir se o dono é o ponto mais próximo. Recusar a vaga em que outro ponto fica mais perto da tinta que o dono. O resto confere: proporção por grupo com domínio igual, marcador único com 142 termos em 0,25% e 2,5%, três termos de um grupo só sobre o eixo, aviso de grupo pequeno com 2,5 p.p., contagens 5, 19 e 22 refeitas do data.ts. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:06.290Z",
+      "impressao": "0873bf3557008dce887b3cd02c339b674506753f",
+      "arquivos": {
+        "Chart.tsx": "c28cf1eb771d016583bd6754117d92f5c5584cac",
+        "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
+        "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
+      }
+    },
+    {
+      "versao": "v1_ganhas-contra-perdidas",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 31, seção 14.1 (identificação das marcas) e ROT-7: 5 dos 15 nomes ficam mais perto de um ponto alheio que do ponto dono (financeiro a 15,1 px do dono e a 6,3 px do ponto de pacote; negociação 15,1 contra 8,5 de pagamento; garantia 15,1 contra 11,8 de indicação; indicação 9,3 contra 6,1 de instalação; urgência 8,5 contra 7,1 de reajuste); o ponto de pacote fica com dois nomes e o de financeiro com nenhum. Recusar a vaga em que outro ponto fica mais perto da tinta que o dono e dar linha de chamada à vaga distante. Pergunta 18, DIC-1 e ACE-1: demonstração, o termo mais distante da diagonal e citado na frase acessível, não tem nome no desenho; 6 dos 15 mais distantes ficam sem nome e os nomes descem até a 30ª posição da ordem, sem aviso na tela. Garantir o nome do primeiro de cada lado e declarar que o nome depende de caber. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:08:11.870Z",
+      "impressao": "2903465ea99709217a76a6e19009878b6852ae64",
+      "arquivos": {
+        "Chart.tsx": "d1bad6a24f719fc87869ed14ac42f9b0f576f369",
+        "data.ts": "a5ddcd1388912831a93ed654c9df7fbbd78e9d03",
+        "meta.json": "2ce3375412f5d33eb18fe1315616f28bb44203f3"
+      }
+    },
+    {
+      "versao": "v4_termos-raros-e-grupos-desbalanceados",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Pergunta 31, seção 14.1 (identificação das marcas) e ROT-7: o nome condição fica debaixo do ponto de crédito, a 6,1 px dele e a 9,3 px do ponto dono, dois pontos da mesma cor a 1 p.p. um do outro no eixo do telefone, e crédito não tem nome que desfaça a leitura. Pela mesma medida cliente fica a 6,8 px do ponto de taxa e a 8,0 do dono, mas está na vaga padrão e não sustenta o veredito sozinho. É o caso mais brando do modelo, com a mesma raiz da v1 e da v3: a vaga é aceita só por não cobrir marca, sem conferir se o dono é o ponto mais próximo. Recusar a vaga em que outro ponto fica mais perto da tinta que o dono. O resto confere: proporção por grupo com domínio igual, marcador único com 142 termos em 0,25% e 2,5%, três termos de um grupo só sobre o eixo, aviso de grupo pequeno com 2,5 p.p., contagens 5, 19 e 22 refeitas do data.ts. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:08:12.436Z",
+      "impressao": "0873bf3557008dce887b3cd02c339b674506753f",
+      "arquivos": {
+        "Chart.tsx": "c28cf1eb771d016583bd6754117d92f5c5584cac",
+        "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
+        "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
+      }
+    },
+    {
+      "versao": "v1_ganhas-contra-perdidas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: os 12 nomes sem linha têm o ponto dono como o mais próximo da tinta (7,9 a 9,3 px do dono, vizinho a 10,9 px ou mais) e o primeiro de cada lado, demonstração e concorrente, tem linha de chamada em text-muted a 5,21:1 e 5,37:1; o rodapé declara que o nome sai onde cabe; marcas a 5,21, 9,50 e 6,47:1 no escuro e a 5,37, 6,00 e 6,18:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu; contagens 27, 31 e 42 refeitas do data.ts; página contra SVG a 0,007%. Observações no README: 14 nomes e não 15, três deles em termos comuns (66ª, 83ª e 97ª da ordem de distância), 10 dos 15 mais distantes sem nome e o nome demonstração a 8,5 px do ponto de objeção.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:03.931Z",
+      "impressao": "2dcb373ef65b061c280d487f400d87666be324fc",
+      "arquivos": {
+        "Chart.tsx": "c7408e4ba04134294369208ce250e042a8566d26",
+        "data.ts": "a5ddcd1388912831a93ed654c9df7fbbd78e9d03",
+        "meta.json": "2ce3375412f5d33eb18fe1315616f28bb44203f3"
+      }
+    },
+    {
+      "versao": "v3_titulos-de-criativos-por-cpl",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Sem bloqueante: os 11 nomes têm o ponto dono como o mais próximo da tinta (6,9 a 8,5 px do dono, vizinho a 9,2 px ou mais), só em palavras típicas, e nenhuma das 18 típicas divide ponto com outra; as 6 de maior distinção têm nome, entre elas grátis, que a frase acessível cita; contagens 12, 6 e 232 e as 15 palavras abaixo do mínimo refeitas do data.ts; opacidade de 0,8 a 3,55:1 no pior caso (text-muted no claro). Observações no README: 11 nomes contra os 20 do demonstrates, 7 típicas sem nome e a sobreposição das 232 sem diferença em 87 posições. Fora do veredito: página contra SVG a 0,64% no escuro e 0,66% no claro, defeito da ferramenta no espaço depois de CPL, que desloca também o cabeçalho do cartão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:09.585Z",
+      "impressao": "fc46c47032071a7d0a1ec162708d0243ce46c145",
+      "arquivos": {
+        "Chart.tsx": "a6897205be82409f822af2e90cbb7b8b93799c49",
+        "data.ts": "2855af0912103d3b95cdb8fa9b7521275df406f4",
+        "meta.json": "480f598e116c4ef4bae31ba63fe7b7d0d5f13c30"
+      }
+    },
+    {
+      "versao": "v4_termos-raros-e-grupos-desbalanceados",
+      "veredito": "reprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Pergunta 12, seção 14.1 (identificação das marcas) e primeiro item do demonstrates: o anel do marcador único está desenhado em 0,25% de telefone e 2,5% de vídeo sem a contagem e sem nome. O texto 142 termos, 1 menção em cada grupo não existe no preview.svg nem nos dois PNGs, o corpo do cartão não cita o anel em lugar nenhum e o anel não tem dica: 142 dos 188 termos ficam numa marca sem identificação. Causa: o rótulo do marcador passou a entrar no teste do ponto dono em tryPlace; a única vaga dentro do plano e sem marca (dx 8, dy 4) é recusada porque 11 pontos ficam mais perto da caixa de 211 px que o centro do anel (dono a 12,0 px, boleto a 5,9 px), e não há saída quando nenhuma vaga serve. Tirar o rótulo do marcador desse teste ou escrever a contagem numa linha fora do plano com a amostra do anel, e nunca desenhar o anel sem a contagem. O bloqueante da primeira passada está resolvido: os 10 nomes têm o dono como ponto mais próximo (7,9 a 9,3 px, vizinho a 12,3 px ou mais). Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:16.220Z",
+      "impressao": "fdc306da7858f6840b4b3c7c11f10a8f3593328c",
+      "arquivos": {
+        "Chart.tsx": "49a2c0c52659c807601662374c334893202e3d2d",
+        "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
+        "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
+      }
+    }
+  ]
+}

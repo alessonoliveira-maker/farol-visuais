@@ -1,0 +1,17 @@
+{
+  "title": "Corte de custo por lead no pico da distribuição",
+  "useCase": "O corte do quadrante cai num vale ou na faixa mais cheia? 48 campanhas do semestre.",
+  "demonstrates": [
+    "Divisória repetida no plano e nas duas faixas, que são gráficos independentes",
+    "Uma só conta de posição, compartilhada pelos três gráficos, no lugar de ReferenceLine",
+    "Faixa que contém o corte acesa em chart-1 e as outras em neutro, com a contagem escrita",
+    "Número de faixas fixo e declarado no rodapé, junto dos dois cortes",
+    "Nota com quantas campanhas ficam a menos de um décimo do corte de custo"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 620
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset alto, pela GEO-1: além da grade de 2 por 2 o cartão escreve a linha de leitura de 12 px acima e o rodapé de 11 px em duas linhas abaixo, cerca de 65 px que nenhum preset devolve. A conta de altura é 118,5 px de moldura, com o caso de uso em uma linha, mais 65 px de texto, sendo a leitura em uma linha e o rodapé em duas, mais 436 px de grade; a de largura é 66 px de moldura mais 574 px de corpo. As duas quebras de linha saíram de medição no render, não de estimativa. A DIVISÓRIA NÃO É ReferenceLine, e essa é a decisão central: os dois marginais são gráficos independentes, com o eixo de categoria em escala band, e ali o x de uma ReferenceLine não encontra categoria nenhuma e a linha não desenha, que é a REC-24. Os três gráficos chamam a mesma função fractionOf com o mesmo domínio, então a divisória do plano e a das faixas caem no mesmo pixel por construção e não por conferência. A MESMA ESCALA vale para as faixas pela mesma razão: elas azulejam o domínio inteiro em largura igual, e só nessa condição o passo band do BarChart coincide com o passo linear do plano. Medido na v1 deste modelo, faixa de R$ 100 mil com centro em R$ 50 mil cai em 149,17 px no histograma e em 149,17 px no plano. A grade sai nos dois sentidos pela EIX-3b, em line-subtle, sem tique e sem linha de eixo, e o axisLine herdado de AXIS_PROPS é desligado depois do espalhamento nos dois eixos, pela EIX-5. Contraste medido à mão, porque o preview desta família sai com transform e as guardas CONTRASTE-MARCA e ESPESSURA-MARCA não medem: ponto e faixa acesa em chart-1 medem 9,50:1 no escuro e 6,00:1 no claro; faixa neutra em line-strong mede 1,79:1 e 1,83:1, abaixo do piso de 3:1, e vive da isenção da ACE-3 porque a contagem vai escrita ao lado de cada faixa; divisória em text-muted mede 5,21:1 e 5,37:1. MARCA CONTRA MARCA, que nenhuma guarda mede: chart-1 contra line-strong mede 5,32:1 no escuro e 3,27:1 no claro, então a faixa acesa se separa das vizinhas nos dois temas; ainda assim o destaque não vive só de cor, porque a linha de leitura nomeia a faixa e o rodapé nomeia o corte, pela COR-2. Sem opacidade em marca nenhuma, pela ACE-5. ESPESSURA MEDIDA à mão no preview, pela mesma razão do transform: faixa do topo 21,0 px e faixa da direita 15,0 px, as duas acima do piso de 12 px da ESP-2, iguais nos dois temas. O rótulo de contagem fica FORA da marca, então o piso de 18 px do rótulo interno não se aplica."
+}

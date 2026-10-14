@@ -1,0 +1,14 @@
+{
+  "title": "Território de cada origem de lead",
+  "useCase": "Inbound, outbound e indicação se comportam diferente? 420 leads por minutos até o contato e interações.",
+  "demonstrates": [
+    "Um Scatter por origem com cor e forma próprias, slots categóricos fixos",
+    "Casco convexo por grupo calculado em pixels sobre os pontos entre P5 e P95",
+    "Polígono com preenchimento de 0,15 para a sobreposição não virar lama",
+    "Grupo maior desenhado primeiro para não cobrir o menor",
+    "Contorno com revestimento na cor do cartão onde dois territórios se cruzam"
+  ],
+  "canvas": { "width": 960, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: o cartão escreve três linhas além do gráfico (legenda com amostra de forma, mediana por origem, nota da envoltória e dos leads sem contato), cerca de 74 px, e sobre 274 px de corpo o plano ficaria com 200 px para 420 pontos e três envoltórias."
+}

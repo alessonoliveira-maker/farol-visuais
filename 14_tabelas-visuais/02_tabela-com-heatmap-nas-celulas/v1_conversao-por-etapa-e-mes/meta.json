@@ -1,0 +1,13 @@
+{
+  "title": "Conversão por etapa do funil e mês",
+  "useCase": "Em quais meses de 2026 cada etapa do funil converteu melhor ou pior, com a taxa exata em cada célula.",
+  "demonstrates": [
+    "Quantização em 5 degraus de --seq-1 a --seq-7 por função pura, escala comum às 12 colunas",
+    "Texto por degrau, de --text-primary a --accent-cyan-contrast, medido nos dois temas",
+    "Legenda de escala com os limites e a unidade, e vão de 2 px entre células",
+    "Mês sem medição com contorno tracejado e formatUnavailable(), nunca lido como 0%"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Cinco degraus, não sete: --seq-4 não tem par de texto acima de 4,5:1 nos dois temas e --seq-5 inverte a régua entre eles (o par que passa no escuro reprova no claro). Os dois saem da escala; ver README, seção Anatomia."
+}

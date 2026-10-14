@@ -1,0 +1,59 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "01_treemap",
+  "versoes": {
+    "v1_receita-por-produto": {
+      "veredito": "aprovado",
+      "nota": "Treemap de uma serie em chart-1 com nome e valor avaliados como par e lista de identificacao cobrindo toda celula; sem bloqueante nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T03:16:37.682Z",
+      "impressao": "2200710b9cc431b61238455b301a11ee6c380b9a",
+      "arquivos": {
+        "Chart.tsx": "a44fb131ff29cb012bb773a1f1b2d96fdbf128f0",
+        "data.ts": "c22887a10f041d1dafe004854820972c5f5c41b4",
+        "meta.json": "d7879e3a9659ca663e4af23de34afd3da89536f3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-por-produto",
+      "veredito": "reprovado",
+      "nota": "Celula de R$ 550 mil e celula de Seguros saem mudas nos dois temas; vao entre celulas pintado em surface-canvas em vez de surface-raised.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T02:42:45.061Z",
+      "impressao": "91ca965d1e35da43c8b31c05f3e02abaa5ee91c3",
+      "arquivos": {
+        "Chart.tsx": "9be4e343e3bb199949b714f30e21d778881aa0dd",
+        "data.ts": "1af78d50e15d904950987f8b3a1a4fa5a5f76052",
+        "meta.json": "b5be258516e3668225fa904464025b9c33c7bd67"
+      }
+    },
+    {
+      "versao": "v1_receita-por-produto",
+      "veredito": "reprovado",
+      "nota": "Cambio e Estruturacao de FIDC saem sem nome e sem valor nos dois temas e Seguros traz nome sem numero: identificacao so na dica (ROT-10, checklist 27).",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T02:57:55.229Z",
+      "impressao": "f58216cd579c2a4278886a1ca87f0b17e37b0e1a",
+      "arquivos": {
+        "Chart.tsx": "398c37bf91f7a8993cfa9bcf0679258aab63e055",
+        "data.ts": "c22887a10f041d1dafe004854820972c5f5c41b4",
+        "meta.json": "24d47599fc00115af6f2c204c5f5ab283505daf2"
+      }
+    },
+    {
+      "versao": "v1_receita-por-produto",
+      "veredito": "aprovado",
+      "nota": "Treemap de uma serie em chart-1 com nome e valor avaliados como par e lista de identificacao cobrindo toda celula; sem bloqueante nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T03:16:37.682Z",
+      "impressao": "2200710b9cc431b61238455b301a11ee6c380b9a",
+      "arquivos": {
+        "Chart.tsx": "a44fb131ff29cb012bb773a1f1b2d96fdbf128f0",
+        "data.ts": "c22887a10f041d1dafe004854820972c5f5c41b4",
+        "meta.json": "d7879e3a9659ca663e4af23de34afd3da89536f3"
+      }
+    }
+  ]
+}

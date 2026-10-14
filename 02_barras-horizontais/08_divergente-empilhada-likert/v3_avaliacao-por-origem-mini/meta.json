@@ -1,0 +1,13 @@
+{
+  "title": "Avaliação de qualidade por origem do lead",
+  "useCase": "Qual das 12 origens de lead o time de vendas avalia mal, numa barra mini por linha dentro de card alto.",
+  "demonstrates": [
+    "Barra divergente mini por linha com o centro alinhado em todas as linhas",
+    "Origens com saldo negativo como as barras que pendem para a esquerda",
+    "Neutro dominante lido pela coluna separada em número, não pela barra curta",
+    "Mesma geometria em TypeScript reaproveitada em densidade de tabela"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Mesmos slots de cor da v1 e v2. Linha a 28 px em vez de 36 para caber as 12 origens no canvas alto."
+}

@@ -1,0 +1,446 @@
+{
+  "slug": "18_radar",
+  "nome": "Radar",
+  "modelos": [
+    {
+      "slug": "01_radar-simples",
+      "nome": "Radar simples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Um polígono translúcido para uma entidade sobre 5 a 8 eixos que saem do centro, todos na mesma escala declarada (índice de 0 a 100 ou nota de 1 a 5), com centro no zero e ordem de eixos vinda do registry. Lê perfil, não ranking nem magnitude. Absorve a faixa de referência do estudo (18#4): a coroa entre o mínimo e o máximo do grupo desenhada por shape do Radar, com a entidade em linha por cima.",
+      "quando_usar": [
+        "Perfil de uma entidade em 5 a 8 dimensões na mesma escala: executivo, SDR, origem de lead, área.",
+        "A pergunta é onde a entidade é forte e onde é fraca, e o valor exato cabe na dica e no vértice.",
+        "Posição da entidade dentro da faixa do grupo (mínimo a máximo de ao menos 8 membros), com a coroa como contexto.",
+        "Público que já lê o formato e um botão ver como barras ao lado, com os mesmos dados."
+      ],
+      "quando_evitar": [
+        "Ranking ou comparação de magnitude entre dimensões: barras agrupadas (02/02).",
+        "Menos de 5 ou mais de 8 eixos: barras com rótulo direto (02/01) ou stellar chart (modelo 05) com muitos eixos.",
+        "Métricas de unidades diferentes sem normalização declarada: pequenos múltiplos de barras (02/02) ou coordenadas paralelas com escala por eixo (modelo 06).",
+        "Entidade contra outra entidade ou contra a média: radar comparativo (modelo 02).",
+        "Faixa do grupo com menos de 8 membros, em que mínimo e máximo são as próprias pessoas: dot plot por dimensão (17/01).",
+        "Quem precisa do valor exato de cada dimensão para decidir: tabela com heatmap nas células (14/02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_perfil-de-qualidade-da-origem",
+          "titulo": "Perfil de qualidade da origem formulário do site",
+          "caso_de_uso": "Marketing, 2026-08: em que dimensões de qualidade a origem formulário do site é forte e onde ela perde o lead?",
+          "o_que_demonstra": [
+            "Composição mínima: PolarGrid, PolarAngleAxis, PolarRadiusAxis e um Radar",
+            "domain fixo de 0 a 100 no PolarRadiusAxis, centro no zero e sem innerRadius",
+            "Seis eixos: telefone 58, e-mail corporativo 41, cargo 36, fit 62, resposta 47 e agenda 22",
+            "Série em --chart-1 com fillOpacity 0,28 e grade em --line-subtle",
+            "outerRadius de 72% para os rótulos laterais não baterem na borda do cartão"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_perfil-do-sdr-com-eixo-mais-fraco",
+          "titulo": "Perfil do SDR 04 no trimestre com o eixo mais fraco",
+          "caso_de_uso": "Pré-vendas, 2026-T3: qual dimensão puxa o SDR 04 para baixo e merece a conversa de acompanhamento desta semana?",
+          "o_que_demonstra": [
+            "gridType circle e radialLines leves, com três níveis rotulados num único ângulo",
+            "Valor escrito em cada vértice por label do Radar, em font-display tabular",
+            "Eixo mais fraco (comparecimento 31) com ponto maior e rótulo em peso 700",
+            "Anotação curta de até 50 caracteres calculada do dado, não digitada",
+            "Frase acessível que nomeia a dimensão mais forte e a mais fraca"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_executivo-na-faixa-do-time",
+          "titulo": "Executivo 07 dentro da faixa do time em oito dimensões",
+          "caso_de_uso": "Comercial, 2026-T3: em quais das oito dimensões do processo o Executivo 07 sai da faixa dos 11 executivos do time?",
+          "o_que_demonstra": [
+            "Coroa entre mínimo e máximo como um path com fill-rule evenodd no shape do Radar",
+            "Grade visível dentro da coroa, sem o truque de pintar o mínimo com a cor do cartão",
+            "Executivo em linha --chart-1 por cima; vértices fora da faixa vazados e com valor",
+            "Nomes longos quebrados em duas linhas por tspan num tick customizado",
+            "Legenda faixa do time, mínimo a máximo de 11 executivos, com amostra de área"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_eixo-sem-dado-e-indice-normalizado",
+          "titulo": "Perfil com eixo sem medição e índice normalizado",
+          "caso_de_uso": "Comercial, 2026-T3: como ler o perfil do Executivo 03 quando a precisão de forecast ainda não foi medida no trimestre?",
+          "o_que_demonstra": [
+            "Eixo sem valor como null e polígono interrompido, sem ponta falsa até o centro",
+            "connectNulls desligado e rótulo do eixo com a palavra sem dado em --text-muted",
+            "Linha de leitura com o método: índice de 0 a 100 pelo percentil no time",
+            "Dica que escreve sem dado no eixo ausente, sem imprimir zero",
+            "Estado vazio com role status quando todos os eixos chegam sem valor"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "02_radar-comparativo",
+      "nome": "Radar comparativo sobreposto",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas séries no mesmo radar, a entidade e uma referência (média do time, meta, período anterior ou outra entidade), com escala comum fixa e estilos distintos: foco preenchido e referência em contorno tracejado desenhada antes no JSX. A diferença de forma aponta onde a entidade se afasta. Absorve o radar só contorno do estudo (18#3), usado quando o leitor compara forma e não volume.",
+      "quando_usar": [
+        "Entidade contra uma referência em 5 a 8 dimensões na mesma escala: executivo contra a média, plataforma contra plataforma.",
+        "A mensagem é onde as formas divergem, com a diferença numérica na dica.",
+        "Cenários de meta em que a série escolhida é preenchida e as alternativas ficam só em contorno, formando a faixa do cenário.",
+        "Tela que também oferece ver como barras, com a mesma ordem de dimensões."
+      ],
+      "quando_evitar": [
+        "Três ou mais séries que precisam ser lidas uma a uma: pequenos múltiplos (modelo 03) ou barras agrupadas (02/02).",
+        "Comparar valores exatos por dimensão: barras agrupadas (02/02) ou dot plot por dimensão (17/01).",
+        "Duas áreas opacas de opacidade igual, que escondem uma à outra: foco preenchido e referência só em contorno.",
+        "Dimensões de unidades diferentes: coordenadas paralelas com escala por eixo (modelo 06).",
+        "Perfis quase idênticos em que a diferença é o recado: barras ordenadas pela lacuna (02/02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_executivo-contra-media-do-time",
+          "titulo": "Executivo 07 contra a média do time",
+          "caso_de_uso": "Comercial, 2026-T3: em que dimensões do processo o Executivo 07 fica acima ou abaixo da média dos 11 executivos?",
+          "o_que_demonstra": [
+            "Média em tracejado 3 3 de --text-muted e executivo em --chart-1 com fillOpacity 0,28",
+            "Referência declarada antes no JSX para o foco ficar por cima",
+            "domain fixo de 0 a 100 igual para as duas séries",
+            "ChartTooltip com as duas séries e a linha de diferença em pontos com sinal",
+            "Legenda com amostra de área para o foco e de linha tracejada para a média"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_plataforma-a-contra-plataforma-b",
+          "titulo": "Plataforma A contra Plataforma B em seis indicadores",
+          "caso_de_uso": "Marketing, 2026-08: em quais indicadores de mídia a Plataforma B entrega um perfil melhor que a Plataforma A?",
+          "o_que_demonstra": [
+            "Índice de 0 a 100 com CPL e CPL qualificado invertidos e a regra na linha de leitura",
+            "Duas categorias por slot fixo --chart-1 e --chart-3, cor vinda do dado e não da posição",
+            "Anotação na maior lacuna: taxa de agenda 64 contra 38",
+            "Eixo de cobertura de dado vizinho do CPL qualificado, ordem vinda do registry",
+            "Dica com os dois índices e o valor original em R$ e %"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cenario-escolhido-e-alternativas-em-contorno",
+          "titulo": "Cenário base preenchido com alternativas em contorno",
+          "caso_de_uso": "Diretoria, meta 2027: como o cenário base se posiciona entre o pessimista e o otimista em seis alavancas do plano?",
+          "o_que_demonstra": [
+            "Alternativas com fillOpacity 0, strokeWidth 2 e dot, sem peso de área",
+            "Pessimista tracejado e otimista pontilhado: série distinta sem depender só de cor",
+            "radialLines desligado para a linha fina não sumir sobre a grade no escuro",
+            "Exceção declarada à regra de duas séries: as duas em contorno formam a faixa do cenário",
+            "Eixos de receita, fechamentos, ticket, ciclo, win rate e retenção normalizados"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_tres-trimestres-quase-identicos",
+          "titulo": "Três trimestres quase idênticos no mesmo radar",
+          "caso_de_uso": "Pré-vendas, 2026-T1 a 2026-T3: o perfil da fila de inbound mudou entre os trimestres ou as linhas só se embaralham?",
+          "o_que_demonstra": [
+            "Caso limite do emaranhado: três contornos coincidentes em quatro dos seis eixos",
+            "Hover ou foco na legenda esmaece as séries fora de foco por opacidade só na marca",
+            "Pontos de tamanhos diferentes e dica que lista as séries coincidentes no eixo",
+            "Botão ver como barras com aria-pressed, trocando para barras agrupadas na mesma ordem",
+            "Linha de leitura que declara a diferença máxima: 4 pontos entre trimestres"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_radar-em-pequenos-multiplos",
+      "nome": "Radar em pequenos múltiplos",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Um radar pequeno por entidade, lado a lado numa grade do Tailwind, todos com os mesmos eixos, a mesma ordem e o mesmo domínio fixo. Troca a sobreposição pela repetição, que é a saída que Few, Storytelling with Data e Flourish recomendam quando há mais de duas séries. Eixos numerados nas miniaturas e uma legenda comum de eixos; miniaturas ordenadas por critério declarado.",
+      "quando_usar": [
+        "Comparar os perfis de 4 a 12 entidades sem sobrepor polígonos: SDRs, filas, origens, áreas.",
+        "A pergunta é quais perfis se parecem e qual foge do padrão, e não o valor exato de cada eixo.",
+        "Referência comum (média do time) repetida em contorno em cada miniatura.",
+        "Cartão largo com espaço para miniaturas de pelo menos 140 px."
+      ],
+      "quando_evitar": [
+        "Mais de 12 entidades, em que a miniatura fica pequena demais para ler: tabela com heatmap nas células (14/02) ou matriz categórica (15/02).",
+        "Cada miniatura com domínio próprio, o que torna falsa a comparação entre elas: domínio calculado sobre o conjunto.",
+        "Uma entidade só contra a referência: radar comparativo (modelo 02).",
+        "Quem é melhor em cada dimensão: dot plot por dimensão (17/01) ou tabela realçada (14/02).",
+        "Métricas de unidades diferentes por entidade: pequenos múltiplos de barras por métrica (02/02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_perfil-de-oito-sdrs",
+          "titulo": "Perfil de oito SDRs lado a lado",
+          "caso_de_uso": "Pré-vendas, 2026-T3: quais dos oito SDRs têm perfil parecido e quem foge do padrão do time em seis dimensões?",
+          "o_que_demonstra": [
+            "Um RadarChart por célula de grid com data e domain de 0 a 100 compartilhados",
+            "Miniaturas ordenadas pelo índice médio, com o critério escrito na linha de leitura",
+            "Eixos numerados de 1 a 6 nas miniaturas e legenda comum com o nome de cada eixo",
+            "Título de miniatura com o nome e o índice médio em font-display tabular",
+            "Frase acessível que cita o maior e o menor índice médio"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_media-do-time-em-cada-miniatura",
+          "titulo": "SDRs com a média do time em cada miniatura",
+          "caso_de_uso": "Pré-vendas, 2026-T3: quais SDRs ficam abaixo da média do time em mais dimensões e em quais eixos isso acontece?",
+          "o_que_demonstra": [
+            "Série do SDR em --chart-1 preenchida e média em contorno tracejado 3 3 de --text-muted",
+            "Mesma média desenhada em todas as miniaturas, calculada uma vez fora do map",
+            "Contagem no título: 4 de 6 eixos abaixo da média, em peso 700 só no pior caso",
+            "Miniatura selecionada por clique com aria-pressed e contorno de foco visível"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_filas-de-trabalho-da-prevendas",
+          "titulo": "Perfil das seis filas de trabalho da pré-vendas",
+          "caso_de_uso": "Pré-vendas, 2026-08: em que dimensões cada fila (formulário, WhatsApp, lista outbound, reengajamento, indicação, evento) se afasta das demais?",
+          "o_que_demonstra": [
+            "Seis miniaturas em grade de 3 por 2 com a mesma ordem de cinco eixos",
+            "Tempo de primeira resposta invertido no índice, com a regra escrita na legenda de eixos",
+            "Fila de evento sem medição de comparecimento: eixo interrompido e sem dado na miniatura",
+            "Dentro do SLA como eixo vizinho do tempo de resposta, dimensões correlatas juntas",
+            "Volume de entradas da fila ao lado do título para ler perfil com base"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_vinte-entidades-alem-do-teto",
+          "titulo": "Vinte origens de lead além do teto de miniaturas",
+          "caso_de_uso": "Marketing, 2026-08: o que fazer quando o recorte traz 20 origens e as miniaturas deixam de ser legíveis?",
+          "o_que_demonstra": [
+            "Teto de 12 miniaturas como constante no topo do arquivo",
+            "Acima do teto, aviso com role status no lugar da grade e o número de origens do recorte",
+            "Recomendação escrita de trocar para a tabela com heatmap nas células (14/02)",
+            "Mostra as 12 primeiras pelo volume de leads e declara as 8 restantes, sem cortar calado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "04_radar-de-ciclo",
+      "nome": "Radar de ciclo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Eixos que são posições de um ciclo (24 horas, 7 dias, 12 meses), com o início no topo, sentido horário, grade circular e rótulos só nos quartos do ciclo. É o único caso em que Few aceita o radar: o relógio preserva a continuidade entre o fim e o começo, e a madrugada fica ligada à noite. Custom porque o tick só desenha os quartos e as marcações de expediente e de período ausente entram por camada SVG sobre o RadarChart.",
+      "quando_usar": [
+        "Uma série naturalmente cíclica de 7 a 24 posições em que a mensagem é a continuidade: entradas por hora, atividade por dia da semana.",
+        "Comparar dois regimes do mesmo ciclo, como dia útil contra fim de semana, com o foco preenchido e o outro em contorno.",
+        "Marcar no próprio relógio a janela que importa para a operação, como o expediente da pré-vendas.",
+        "Ano corrente em 12 meses com os meses futuros declarados como ausentes."
+      ],
+      "quando_evitar": [
+        "Comparação fina de valores entre horas: colunas por hora (03/01) ou linha (04).",
+        "Leitura de dia e hora juntos: heatmap dia da semana por hora (15/01).",
+        "Ciclo que não fecha, como uma série de 30 dias corridos: linha (04).",
+        "Volume por setor com apelo visual e área proporcional: rosa de Nightingale (07/07) ou coluna radial (07/06).",
+        "Começar o ciclo fora do topo ou girar em sentido anti-horário: manter startAngle 90 e endAngle -270."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_entradas-de-lead-por-hora-do-dia",
+          "titulo": "Entradas de lead por hora do dia",
+          "caso_de_uso": "Pré-vendas, 2026-08: em que horas do dia os leads chegam e quanto da demanda cai fora do horário comercial?",
+          "o_que_demonstra": [
+            "24 eixos com startAngle 90 e endAngle -270: 0h no topo e sentido horário",
+            "PolarGrid gridType circle e tick customizado que só escreve 0h, 6h, 12h e 18h",
+            "Área leve em --chart-1 com a média de entradas por hora no mês e unidade na dica",
+            "domain de 0 ao primeiro nível redondo acima do pico, calculado no componente",
+            "Linha de leitura com o pico: 14h, média de 9,2 entradas"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_dia-util-contra-fim-de-semana",
+          "titulo": "Entradas em dia útil contra fim de semana",
+          "caso_de_uso": "Pré-vendas, 2026-08: a demanda de fim de semana tem outro relógio e pede plantão num horário diferente?",
+          "o_que_demonstra": [
+            "Dia útil preenchido em --chart-1 e fim de semana em contorno --chart-3",
+            "Médias por hora nas duas séries para comparar regimes de tamanho diferente",
+            "Anotação na madrugada: atividade de fim de semana começa às 21h",
+            "Legenda com amostra de área e de linha e dica com as duas médias por hora"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_resposta-fora-do-sla-com-expediente",
+          "titulo": "Primeira resposta fora do SLA com o expediente marcado",
+          "caso_de_uso": "Pré-vendas, 2026-08: as respostas fora do SLA se concentram fora do expediente ou também acontecem dentro dele?",
+          "o_que_demonstra": [
+            "Setor do expediente, das 8h às 18h, desenhado por Customized com arco em --surface-sunken",
+            "Texto dizendo o que o setor marca, sem ReferenceArea, que não existe no polar",
+            "Percentual fora do SLA por hora com formatRateWithVolume na dica",
+            "Grade e série desenhadas por cima do setor, na ordem correta de camadas",
+            "Linha de leitura: 71% dos estouros entre 18h e 8h"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_doze-meses-com-ano-parcial",
+          "titulo": "Agendas realizadas por mês com o ano parcial",
+          "caso_de_uso": "Pré-vendas, 2026: como ler o ciclo mensal de agendas realizadas quando setembro está em curso e outubro a dezembro ainda não existem?",
+          "o_que_demonstra": [
+            "Meses futuros como null: polígono aberto, sem recolher ao centro",
+            "Rótulo a medir em --text-muted nos eixos de outubro a dezembro",
+            "Setembro parcial com trecho tracejado 4 4 e nota parcial até a data do dado",
+            "Janeiro e dezembro vizinhos no topo, preservando a virada do ano",
+            "Frase acessível que declara 8 meses fechados, 1 parcial e 3 ausentes"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "05_stellar-chart",
+      "nome": "Stellar chart",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Proposto na Nightingale como alternativa ao radar: cada dimensão vira um espeto afinado que sai do centro até o valor, sem polígono ligando os eixos. Mantém o apelo radial, elimina a área que engana e a linha falsa entre categorias sem vizinhança, e a forma de estrela se sustenta com 5 ou 12 eixos. SVG puro em React, com a geometria do espeto calculada numa função pura em TypeScript.",
+      "quando_usar": [
+        "Perfil de uma entidade em 5 a 12 dimensões na mesma escala, quando a peça pede forma radial mas a leitura precisa ser por distância.",
+        "Mais eixos do que o radar simples aguenta sem virar ruído, com rótulos no raio externo.",
+        "Uma meta ou referência única como círculo tracejado, com os espetos abaixo dela destacados.",
+        "Dimensões sem relação de vizinhança, em que a linha do polígono sugeriria continuidade falsa."
+      ],
+      "quando_evitar": [
+        "Leitura exata de valores ou ranking: barras com rótulo direto (02/01).",
+        "Entidade contra outra série completa: radar comparativo (modelo 02) ou barras agrupadas (02/02).",
+        "Categorias cíclicas com volume: coluna radial (07/06) ou rosa de Nightingale (07/07).",
+        "Espeto com base larga, que volta a ser área: meia base entre 2 e 4 px.",
+        "Mais de 12 dimensões: pirulito radial (07/06) ou tabela com heatmap (14/02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_competencias-do-executivo",
+          "titulo": "Perfil de competências do Executivo 07",
+          "caso_de_uso": "Comercial, 2026-T3: em quais das seis competências do processo o Executivo 07 está forte e em quais precisa de treino?",
+          "o_que_demonstra": [
+            "Função pura espeto(cx, cy, i, n, r) com primeiro eixo no topo e sentido horário",
+            "Meia base de 3 px e espeto em --chart-1, sem polígono entre eixos",
+            "Grade circular leve em --line-subtle com níveis 25, 50, 75 e 100",
+            "viewBox fixo e raiz que escala, com vectorEffect non-scaling-stroke na grade",
+            "role img na raiz e frase acessível com a maior e a menor competência"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_meta-em-circulo-e-espetos-abaixo",
+          "titulo": "Competências com a meta em círculo tracejado",
+          "caso_de_uso": "Comercial, 2026-T3: quais competências do Executivo 07 ficam abaixo do índice 70 combinado no plano de desenvolvimento?",
+          "o_que_demonstra": [
+            "Círculo de meta em 70 com traço tracejado 3 3 de --text-muted e rótulo meta 70",
+            "Abaixo da meta em --chart-1 e peso 700; demais em --line-strong com valor escrito",
+            "Destaque com segundo canal: peso do rótulo, além da cor",
+            "Rótulo com halo na cor do cartão quando cruza o círculo de meta"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_maturidade-em-doze-criterios",
+          "titulo": "Maturidade da área comercial em doze critérios",
+          "caso_de_uso": "Diretoria, plano 2027: como a área comercial pontua nos doze critérios de maturidade e onde estão as lacunas antes do orçamento?",
+          "o_que_demonstra": [
+            "Doze espetos com rótulos horizontais no raio externo fixo, sem texto girado",
+            "textAnchor pelo quadrante: start à direita, end à esquerda, middle no topo e na base",
+            "Nomes longos em duas linhas por tspan, sem abreviação inventada",
+            "Ordem dos critérios vinda do registry, com os correlatos vizinhos",
+            "Canvas card com a lista dos três critérios mais baixos ao lado da estrela"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_zero-sem-dado-e-vizinhos-altos",
+          "titulo": "Stellar com zero medido, sem dado e vizinhos altos",
+          "caso_de_uso": "Comercial, 2026-T3: como distinguir a precisão de forecast medida em zero de um eixo que ainda não foi medido?",
+          "o_que_demonstra": [
+            "Zero medido desenha ponto no centro do eixo e escreve 0",
+            "Eixo sem medição com raio tracejado em --text-muted e a palavra sem dado, sem ponto",
+            "Vizinhos com 95 e 97 e rótulos no raio externo fixo, sem colisão nas pontas",
+            "Anticolisão de rótulos calculada em TypeScript com distância mínima em graus",
+            "Frase acessível que separa eixo zerado de eixo sem medição"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "06_coordenadas-paralelas",
+      "nome": "Coordenadas paralelas",
+      "abordagem_stack": "svg-puro",
+      "resumo": "O radar desenrolado: dimensões como eixos verticais paralelos e cada entidade como uma linha que os atravessa. Aceita muito mais perfis que o radar, mostra padrões de grupo e deixa cada eixo com escala própria quando as unidades diferem, desde que mínimo e máximo estejam rotulados. SVG puro com escala por eixo em TypeScript e um path por entidade; com escala comum normalizada, a variante simples cabe num LineChart com eixo categórico.",
+      "quando_usar": [
+        "De 6 a 60 perfis em 4 a 8 métricas, quando a pergunta é padrão de grupo e entidade fora do padrão.",
+        "Métricas de unidades diferentes (R$, %, dias) que o radar só aceitaria normalizadas.",
+        "Uma entidade ou grupo em foco contra o conjunto esmaecido.",
+        "Aba de análise, com leitor que tem hábito do gráfico ou com uma linha de leitura que ensina a ler."
+      ],
+      "quando_evitar": [
+        "Leitores sem hábito do gráfico num painel operacional: barras agrupadas (02/02) ou tabela com heatmap (14/02).",
+        "Relação entre eixos que não são vizinhos: dispersão (09) para o par de métricas que importa.",
+        "Muitas linhas sem destaque nem filtro, o espaguete: foco em uma entidade e seleção por faixa num eixo.",
+        "Escalas diferentes sem mínimo e máximo rotulados em cada eixo, que o leitor lê como escala única.",
+        "Uma entidade só: radar simples (modelo 01) ou barras (02/01)."
+      ],
+      "arquivo_estudo": "_estudo/familias/18_radar.md",
+      "versoes": [
+        {
+          "slug": "v1_perfil-de-catorze-origens",
+          "titulo": "Perfil de catorze origens de lead em seis métricas",
+          "caso_de_uso": "Marketing, 2026-08: quais das catorze origens de lead compartilham perfil e quais formam um grupo à parte?",
+          "o_que_demonstra": [
+            "Seis eixos verticais com escala comum de 0 a 100 e níveis 0, 50 e 100",
+            "Um path por origem com posição calculada em função pura de escala",
+            "Ordem dos eixos que reduz cruzamentos, com as métricas correlatas vizinhas",
+            "Linhas em --line-strong com 1,5 px e dica com os seis valores da origem sob o ponteiro"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_indicacao-de-cliente-em-foco",
+          "titulo": "Indicação de cliente em foco entre as origens",
+          "caso_de_uso": "Marketing, 2026-08: em que métricas a origem indicação de cliente se descola das outras treze?",
+          "o_que_demonstra": [
+            "Origem em foco em --chart-1 com 2,5 px e desenhada por último",
+            "Treze origens em --line-strong com opacidade 0,3 só na marca",
+            "Rótulo direto no fim da linha em foco e valor escrito em cada eixo",
+            "Troca de foco por clique na linha ou na lista lateral, com aria-pressed",
+            "Anotação na maior distância: taxa de agenda 71 contra mediana 28"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_escala-propria-por-eixo",
+          "titulo": "Origens com escala própria em cada eixo",
+          "caso_de_uso": "Marketing e Comercial, 2026-T3: como as origens se comparam em CPL, taxa de agenda, win rate, ticket e ciclo sem normalizar as unidades?",
+          "o_que_demonstra": [
+            "Escala por eixo: CPL em R$, taxas em %, ticket em R$ mil e ciclo em dias",
+            "Mínimo e máximo rotulados no pé e no topo de cada eixo com o formatador da unidade",
+            "Nota cada eixo tem sua escala na linha de leitura",
+            "CPL e ciclo marcados menor é melhor no título do eixo, sem inverter o eixo em silêncio",
+            "Domínio de cada eixo arredondado para fora a partir dos valores do recorte"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_quarenta-e-oito-campanhas-com-lacunas",
+          "titulo": "Quarenta e oito campanhas com filtro e métrica ausente",
+          "caso_de_uso": "Marketing, 2026-T3: entre 48 campanhas, quais combinam CPL baixo com taxa de agenda alta, sabendo que 9 ainda não têm ciclo medido?",
+          "o_que_demonstra": [
+            "Seleção por faixa num eixo, em estado React, que acende as campanhas dentro dela",
+            "Campanhas fora da seleção esmaecidas, com contagem 7 de 48 selecionadas",
+            "Métrica ausente quebra o path, com marcador vazado na faixa sem dado abaixo do eixo",
+            "Linha de leitura: 9 de 48 campanhas sem ciclo medido",
+            "Estado vazio com role status quando a seleção não encontra campanha"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

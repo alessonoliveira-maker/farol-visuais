@@ -1,0 +1,13 @@
+{
+  "title": "Custo marginal líquido do mês",
+  "useCase": "De quais partes se compõe o custo marginal de R$ 152 mil de ago/26, já descontado o fornecedor?",
+  "demonstrates": [
+    "Construção a partir do zero com uma única coluna de total no fim",
+    "Partes ordenadas do maior ao menor, com o desconto por último",
+    "Rótulo com valor e participação inteira, somando 100% pelo maior resto",
+    "Parte negativa justificando a cascata no lugar da barra simples"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem desvio de canvas. ESP-6: corpo 574 x 225 px; 6 colunas em 558 px dão passo 93 px e barra de 24 px. Partes em cinza neutro e total em chart-1: o catálogo não declara polaridade para as partes (COR-6); só o desconto, que reduz custo, leva --positive, com sinal no rótulo."
+}

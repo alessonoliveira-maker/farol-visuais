@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura com campo fora da coleta",
+  "useCase": "Marketing: 4 fontes de lead, uma sem telefone na coleta, o que não quer dizer telefone ausente na base.",
+  "demonstrates": [
+    "Três estados distintos: ponto cheio, anel vazio e hachura diagonal",
+    "Campo fora da coleta da fonte hachurado, nunca igual ao anel de campo vazio",
+    "Nota: preenchimento desconhecido, campo fora da coleta e não ausente na base",
+    "Percentual do rodapé calculado só sobre as fontes que coletam o campo",
+    "Legenda dos três estados sempre visível"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O catálogo diz coluna inteira hachurada, mas as linhas são as fontes e a coleta é por fonte: com uma única fonte sem telefone, a hachura cobre a célula dela e não a coluna. O rodapé de telefone mede 2 de 3 fontes preenchidas entre as que coletam, e a fonte fora da coleta não entra no denominador."
+}

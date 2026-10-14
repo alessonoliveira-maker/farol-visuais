@@ -1,0 +1,15 @@
+{
+  "title": "Parceiro sem indicação no trimestre",
+  "useCase": "Comercial: o que mostrar quando o parceiro fictício P12 não indicou ninguém em 2026-T3, sem parecer erro de carga.",
+  "demonstrates": [
+    "Estado vazio com ícone lucide Filter e frase sem indicações no trimestre",
+    "Histórico anterior em var(--text-muted) vazado e tracejado, rotulado como anterior",
+    "Nó central mantido, sem anel atual, para a ausência ter lugar",
+    "Diferença escrita entre sem indicação medida e parceiro sem dado carregado",
+    "Frase acessível com a última indicação registrada",
+    "Carteira não carregada troca o cartão por formatUnavailable com o ícone Unplug"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): card 640x360 com moldura card dá corpo de 574 x 225 px, porque o caso de uso tem 114 caracteres e ocupa duas linhas em 574 px de cabeçalho. O svg do grafo tem viewBox de 220 x 225, a altura do corpo, e a escala sai 1 (GEO-18); o texto ao lado é HTML e fica com 338 px, descontado o vão de 16. No svg: centro em 106 x 112, anel do histórico com 72 px de raio e a caixa do código chegando a 91 px do centro na vertical (21 no topo, 203 na base) e a 101 px na horizontal. No texto: 9 linhas de 16 px em dois blocos, 176 px com os vãos, dentro dos 225. DESVIOS DECLARADOS DO CATÁLOGO, com o contrato vencendo. (1) O catálogo pede o histórico em var(--line-strong); o raio do histórico ainda diz quem foi indicado (ACE-6) e var(--line-strong) mede 1,79:1 no escuro e 1,83:1 no claro (TOK-5). Ficou var(--text-muted), 5,21:1 e 5,37:1, e o que marca o histórico como anterior é a forma, nó vazado e raio tracejado, mais a palavra anterior escrita no anel. (2) O catálogo escreve o período como 2026-T3; na tela ele sai por extenso, 3º trimestre de 2026, porque o formato de dado não é formato de tela (NUM-7). (3) A EST-1 pede a frase de vazio em var(--text-muted) quando o vazio substitui o gráfico inteiro; aqui o nó central e o histórico ficam, então a frase é a linha de leitura do cartão, em var(--text-secondary) com o achado em peso 600, e a raiz é role img com a frase acessível. O estado de carteira não carregada, esse sim, substitui tudo e segue a EST-2 à letra. Os três estados do componente: zero medido (o desenho do preview), ausência de dado (loaded falso) e trimestre com indicação, que desenha o anel de dentro cheio; só o primeiro aparece no preview. O que as guardas de texto não medem aqui: o bloco da direita é HTML e sai texto_em_html; o svg do grafo é medido. A ordem do anel do histórico é por data, da mais recente à mais antiga, declarada no texto (GEO-12)."
+}

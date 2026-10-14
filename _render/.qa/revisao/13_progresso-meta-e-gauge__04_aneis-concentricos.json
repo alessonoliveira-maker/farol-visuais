@@ -1,0 +1,122 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "04_aneis-concentricos",
+  "versoes": {
+    "v1_tres-metas-da-semana": {
+      "veredito": "aprovado",
+      "nota": "Check limpo e leitura correta nos dois temas; observacoes de acabamento no README",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:23.478Z",
+      "impressao": "9f090a3ba1c5b8d1bd89d3766c3075a391f580e8",
+      "arquivos": {
+        "Chart.tsx": "2a42ef7b742a8114abf00f30ee7792528050ee83",
+        "data.ts": "818dca07678696bbbba7a3d3b557e6afa333e2ba",
+        "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
+      }
+    },
+    "v2_quem-fechou-as-tres-metas": {
+      "veredito": "aprovado",
+      "nota": "Pequenos multiplos na mesma escala, legenda e par valor/meta legiveis nos dois temas",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:32.292Z",
+      "impressao": "611cc084f90cac7fd706316a6fc6e24b44b43f96",
+      "arquivos": {
+        "Chart.tsx": "4f67456597a4607ed05e47a27b222e05ce796296",
+        "data.ts": "9ef083d7311ba208c0f7ee3295409b612faac799",
+        "meta.json": "c4fa7f1ff475555045e3988ce704558651090478"
+      }
+    },
+    "v3_meta-proporcional-e-sem-meta": {
+      "veredito": "aprovado",
+      "nota": "Ausencia de meta tratada como ausencia e estouro travado com percentual escrito; so observacoes de redacao",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:32.780Z",
+      "impressao": "bbbe136927674cfc6cd5556102d8d6f41915e6aa",
+      "arquivos": {
+        "Chart.tsx": "c271beb8449fcbbc1593b9fa3e903139435277ee",
+        "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_tres-metas-da-semana",
+      "veredito": "aprovado",
+      "nota": "Lista lateral resolve o vies do formato: valor, meta e o que falta por anel. Trilho some no tema claro e o anel aberto fica sem icone.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:56:02.180Z",
+      "impressao": "9f090a3ba1c5b8d1bd89d3766c3075a391f580e8",
+      "arquivos": {
+        "Chart.tsx": "2a42ef7b742a8114abf00f30ee7792528050ee83",
+        "data.ts": "818dca07678696bbbba7a3d3b557e6afa333e2ba",
+        "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
+      }
+    },
+    {
+      "versao": "v2_quem-fechou-as-tres-metas",
+      "veredito": "reprovado",
+      "nota": "Os tres aneis e os tres numeros saem sem legenda e sem meta escrita: nao da para saber qual anel e qual meta nem se cada uma fechou.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:56:08.251Z",
+      "impressao": "b8f464927b782ff9f43e7e109196bb8e601bcede",
+      "arquivos": {
+        "Chart.tsx": "a416a841b90a80174c194dea56e1e6451df99585",
+        "data.ts": "9ef083d7311ba208c0f7ee3295409b612faac799",
+        "meta.json": "30bb25930005b71e7a741bbfa22b2a01d9ef81e1"
+      }
+    },
+    {
+      "versao": "v3_meta-proporcional-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Sem meta, estouro e meta proporcional aparecem nomeados, sem virar zero. Concordancia de faltam 1 agendas e trilho invisivel no claro ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:56:13.761Z",
+      "impressao": "bbbe136927674cfc6cd5556102d8d6f41915e6aa",
+      "arquivos": {
+        "Chart.tsx": "c271beb8449fcbbc1593b9fa3e903139435277ee",
+        "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
+      }
+    },
+    {
+      "versao": "v1_tres-metas-da-semana",
+      "veredito": "aprovado",
+      "nota": "Check limpo e leitura correta nos dois temas; observacoes de acabamento no README",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:23.478Z",
+      "impressao": "9f090a3ba1c5b8d1bd89d3766c3075a391f580e8",
+      "arquivos": {
+        "Chart.tsx": "2a42ef7b742a8114abf00f30ee7792528050ee83",
+        "data.ts": "818dca07678696bbbba7a3d3b557e6afa333e2ba",
+        "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
+      }
+    },
+    {
+      "versao": "v2_quem-fechou-as-tres-metas",
+      "veredito": "aprovado",
+      "nota": "Pequenos multiplos na mesma escala, legenda e par valor/meta legiveis nos dois temas",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:32.292Z",
+      "impressao": "611cc084f90cac7fd706316a6fc6e24b44b43f96",
+      "arquivos": {
+        "Chart.tsx": "4f67456597a4607ed05e47a27b222e05ce796296",
+        "data.ts": "9ef083d7311ba208c0f7ee3295409b612faac799",
+        "meta.json": "c4fa7f1ff475555045e3988ce704558651090478"
+      }
+    },
+    {
+      "versao": "v3_meta-proporcional-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Ausencia de meta tratada como ausencia e estouro travado com percentual escrito; so observacoes de redacao",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:14:32.780Z",
+      "impressao": "bbbe136927674cfc6cd5556102d8d6f41915e6aa",
+      "arquivos": {
+        "Chart.tsx": "c271beb8449fcbbc1593b9fa3e903139435277ee",
+        "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
+      }
+    }
+  ]
+}

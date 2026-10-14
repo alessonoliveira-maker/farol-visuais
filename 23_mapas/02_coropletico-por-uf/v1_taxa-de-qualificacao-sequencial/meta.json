@@ -1,0 +1,15 @@
+{
+  "title": "Qualificação de leads por UF",
+  "useCase": "Como a taxa de qualificação dos leads de 2026 se distribui pelo território?",
+  "demonstrates": [
+    "Malha de hexágonos no lugar do contorno real, casada pelo código do IBGE da linha",
+    "Tabela de código do IBGE para sigla e nome no data.ts",
+    "5 classes por quantis em TypeScript, sem separar taxas empatadas",
+    "Sigla e taxa em todo hexágono, com texto claro ou escuro conforme a classe",
+    "Legenda em degraus com o intervalo observado e a contagem de UFs de cada classe",
+    "Lista das 5 maiores taxas ao lado, com o volume que sustenta cada uma"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo, por decisão do dono: sem contorno real das UFs. A lista de imports da seção 6 é fechada e a versão só aceita cinco arquivos (seção 1), então não existe ufPaths.ts; o coroplético é pintado sobre uma malha de hexágonos desenhada à mão e declarada no data.ts. Com isso saem o grupo scale(0.0001, -0.0001) e o non-scaling-stroke: o SVG é desenhado em escala 1 (GEO-18), o que mantém o texto em 11 px e devolve as guardas de texto. Fica do catálogo o casamento pelo código do IBGE, com a tabela de código para sigla. Rampa em --seq-1, --seq-2, --seq-3, --seq-6 e --seq-7, e não de --seq-3 a --seq-7: --seq-4 e --seq-5 não têm texto legível nos dois temas (TOK-2), e as duas classes mais baixas, que medem 1,14:1 a 1,58:1 contra o cartão (TOK-8), levam contorno de 1 px em --line-strong. Rótulo só nas UFs grandes com chamada externa para as pequenas deixou de fazer sentido: na malha todo hexágono tem o mesmo tamanho e leva sigla e taxa. A classe sai da taxa já arredondada a uma casa, para a cor nunca contradizer o número escrito, e o limite do quantil pertence à classe de baixo, então TO e AL, empatados em 10,9%, ficam juntos e as classes saem com 7, 4, 6, 5 e 5 UFs. Conta do canvas card: corpo de 574 por 241,5 px; mapa de 264 por 224 px (hexágono de 40 px, 6,5 células de largura e 6 linhas); coluna lateral de 294 px com legenda de 106 px, vão de 12 e lista de 106 px."
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "03_spineplot",
+  "nome": "Spineplot, spinograma e double decker",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Caso especial do mosaico em que uma variável explicativa divide a largura e um desfecho, de preferência binário, divide a altura: largura pela frequência de x e altura pela proporção de y dentro de cada x. Responde se a taxa de um desfecho muda ao longo de x e quanto pesa cada x. O modelo absorve o spinograma, com x contínuo cortado em faixas de limites declarados, e o double decker, com duas ou três variáveis explicativas aninhadas na largura e o desfecho na altura. SVG puro em React com o mesmo layout do marimekko, vão de 1 px entre colunas e a parte de interesse na base, a única com linha de base comum.",
+  "quando_usar": [
+    "Taxa de um desfecho binário, como ganho ou agenda realizada, ao longo de 3 a 8 categorias de x com pesos diferentes",
+    "x contínuo que o negócio já corta em faixas, como horas até o primeiro contato ou dias sem movimento (spinograma)",
+    "Desfecho ao longo de duas variáveis explicativas combinadas, com até 12 colunas finais (double decker)",
+    "Comparar cada coluna com a taxa global, desenhada como linha de referência que atravessa o gráfico"
+  ],
+  "quando_evitar": [
+    "Categorias de x com peso parecido, em que a largura não informa: colunas empilhadas 100% (03/04)",
+    "Desfecho com mais de 3 estados: marimekko 100% (modelo 01)",
+    "Distribuição de x sem desfecho: histograma (16/01)",
+    "Passagem dos casos entre etapas ou estados: parallel sets (11/04)",
+    "Mais de três variáveis explicativas ou colunas finais abaixo de 4 px: tabela cruzada com totais marginais (14/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+  "versoes": [
+    {
+      "slug": "v1_ganho-por-faixa-de-porte",
+      "titulo": "Taxa de ganho por faixa de porte",
+      "caso_de_uso": "Comercial, 2026: a taxa de ganho muda com a faixa de porte da conta, e quanto das oportunidades encerradas cai em cada faixa?",
+      "o_que_demonstra": [
+        "Colunas encostadas com vão de 1 px e largura pelas oportunidades encerradas",
+        "Ganho na base em --chart-1 e perdido acima em --line-strong",
+        "Faixas na ordem natural do porte, do menor para o maior",
+        "Taxa por formatRateWithVolume sobre cada coluna, como 25,0% (7 de 28)",
+        "Categorias do desfecho rotuladas à direita, no lugar de legenda"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_qualificacao-por-tempo-ate-contato",
+      "titulo": "Qualificação por tempo até o primeiro contato",
+      "caso_de_uso": "Pré-vendas, 2026-08: leads contatados dentro do SLA de 1 hora qualificam mais do que os contatados depois?",
+      "o_que_demonstra": [
+        "Spinograma com faixas até 1 h, 1 a 4 h, 4 a 24 h e acima de 24 h",
+        "Limites numéricos escritos no eixo X, vindos da regra de SLA do painel",
+        "Faixa do SLA marcada com fundo --surface-overlay e rótulo dentro do SLA",
+        "Linha da taxa global de qualificação em tracejado 3 3 de --text-muted",
+        "Anotação na faixa acima de 24 h com a queda em pontos percentuais"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_qualificado-por-plataforma-e-formato",
+      "titulo": "Lead qualificado por plataforma e formato",
+      "caso_de_uso": "Marketing, 2026-T3: que combinação de plataforma e formato do criativo entrega a maior proporção de lead qualificado?",
+      "o_que_demonstra": [
+        "Double decker: plataforma e formato aninhados na largura, qualificado na altura",
+        "Layout recursivo com vão de 4 px entre plataformas e 1 px entre formatos",
+        "Rótulo do eixo X em duas linhas: formato em cima, plataforma embaixo",
+        "Colunas acima da taxa global em --chart-1 cheio; as demais em --line-strong",
+        "Combinação sem veiculação como linha fina marcada com a frase sem anúncio",
+        "Nove colunas finais; as abaixo de 4 px agregadas em outros formatos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_porte-desconhecido-e-amostra-pequena",
+      "titulo": "Ganho com porte desconhecido e amostra pequena",
+      "caso_de_uso": "Comercial, 2026: como ler a taxa de ganho quando 30% das oportunidades não têm porte e uma faixa tem só 4 casos?",
+      "o_que_demonstra": [
+        "Porte desconhecido como coluna larga hachurada à direita, fora da ordem natural",
+        "Subtítulo com a cobertura: 70% das oportunidades com faixa de porte informada",
+        "Faixa com n = 4 com selo de amostra pequena e taxa por formatRateWithVolume",
+        "Faixa sem ganho desenha só a parte perdida e escreve 0,0% (0 de 11)",
+        "Linha da taxa global calculada só com porte informado, dito na legenda"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

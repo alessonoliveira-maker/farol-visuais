@@ -1,0 +1,72 @@
+{
+  "slug": "01_colunas-simples",
+  "nome": "Colunas simples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma coluna por período ou por categoria curta, todas nascendo do zero, lado a lado na ordem do tempo. É a forma padrão para responder quanto entrou em cada período e a base dos outros modelos da família. Absorve duas variações do estudo: o eixo de tempo em dois níveis (semana sob o mês) e a anotação de evento (campanha no ar, regra nova).",
+  "quando_usar": [
+    "Uma medida por período discreto (semana, mês, trimestre), com até cerca de 30 períodos visíveis.",
+    "Poucas categorias curtas e não temporais em que a magnitude importa mais que a tendência.",
+    "Série em que um evento explica um degrau e precisa ficar marcado no próprio gráfico, com até três eventos na janela.",
+    "Série longa em que o eixo precisa mostrar a hierarquia do tempo: semanas sob o mês, meses sob o ano."
+  ],
+  "quando_evitar": [
+    "Rótulo de categoria longo, como motivo de perda ou nome de campanha: barras horizontais (02).",
+    "Tendência contínua em muitos períodos, sem interesse no volume de cada um: linhas (04).",
+    "Diferença que só aparece com o eixo começando acima de zero: ponto ou linha (17, 04).",
+    "Mais de três eventos na mesma janela: numerar e listar no rodapé, ou separar em outro visual.",
+    "Distribuição de uma variável contínua, com colunas que se tocam: histograma (16/01).",
+    "Coluna minúscula dentro de célula ou card, sem eixo: sparkbar (24/02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-por-mes",
+      "titulo": "Leads por mês nos últimos 12 meses",
+      "caso_de_uso": "Quanto entrou em cada mês e qual foi o maior mês, sem obrigar a ler as 12 colunas uma a uma?",
+      "o_que_demonstra": [
+        "BarChart nativo com domínio em zero, grade só horizontal e maxBarSize travado",
+        "Valor escrito só no maior mês e no último, não em todas as colunas",
+        "Série preenchida em TypeScript para o eixo ordinal não esconder mês faltante",
+        "Linha de leitura calculada do dado apontando o mês de pico"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_campanha-no-ar",
+      "titulo": "Leads por semana com a campanha marcada",
+      "caso_de_uso": "O degrau de volume nas últimas 16 semanas coincide com as semanas em que a campanha esteve no ar?",
+      "o_que_demonstra": [
+        "ReferenceArea em surface-sunken cobrindo as 6 semanas da campanha, com texto",
+        "ReferenceLine vertical na semana de estreia, com etiqueta acima da área de plotagem",
+        "Data do evento mapeada para a semana no dado, com a data exata guardada para a dica",
+        "Total do período da campanha escrito na faixa, no teto de duas anotações"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-semanais-em-dois-niveis",
+      "titulo": "Entradas semanais da pré-vendas em 26 semanas",
+      "caso_de_uso": "Qual a cadência semanal de entradas na pré-vendas em seis meses, sem perder em que mês cada semana caiu?",
+      "o_que_demonstra": [
+        "Dois XAxis com xAxisId: número da semana embaixo e mês em cima, uma vez por grupo",
+        "Rótulo do mês centralizado pela contagem real de semanas, com mês de 5 semanas",
+        "Separador entre meses por ReferenceLine vertical em line-subtle",
+        "maxBarSize 18 e tique do nível de baixo reduzido, sem rotação de texto",
+        "Semana corrente com rótulo em peso 700 e a palavra parcial"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_semana-sem-coleta",
+      "titulo": "Entradas semanais com semana sem coleta",
+      "caso_de_uso": "Como separar a semana que não teve coleta da semana que mediu zero, sem a série mentir sobre a cadência?",
+      "o_que_demonstra": [
+        "Período ausente preenchido com null antes do render, em vez de sumir do eixo",
+        "Marca vazada em text-muted com formatUnavailable no lugar da semana sem coleta",
+        "Zero medido desenhado como zero e escrito 0, diferente da ausência",
+        "Frase acessível que conta semanas medidas, zeradas e sem coleta"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

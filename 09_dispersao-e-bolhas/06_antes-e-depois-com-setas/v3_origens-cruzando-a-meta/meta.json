@@ -1,0 +1,17 @@
+{
+  "title": "Origens que cruzaram a meta de qualificação",
+  "useCase": "Quem saiu e quem entrou na faixa abaixo da meta de qualificação de ago/26 para set/26? 12 origens fictícias.",
+  "demonstrates": [
+    "Divisória fixa na meta de qualificação, idêntica nos dois períodos",
+    "Só as setas que cruzaram a divisória em cor, as outras em neutro que mede 3:1",
+    "Anotação com a contagem de quem entrou e de quem saiu da faixa crítica",
+    "Nome nas setas que cruzaram e nas de maior deslocamento",
+    "Percentil que devolve nulo para lista vazia, nunca zero"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 440
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1, com a conta pela tabela medida da moldura: 960 menos 66 px de recuo dá 894 px de corpo, e 440 menos 118,5 px (2 x 33 de recuo, 40,5 de cabeçalho de uma linha e 12 de vão) dá 321,5 px. Fora do plano o cartão escreve cinco linhas, a leitura de 12 px, duas linhas de legenda de 12 px, a anotação de 11 px com as contagens e o rodapé de 11 px que nomeia os eixos, o que soma 124 px e deixa 197 px de plano. A divisória da meta é referência e não dado, pelo teste da ACE-6: tapada, a posição das setas continua dizendo quem está abaixo, então ela vive em --text-muted (papel Referência da 17.2) com o número escrito ao lado. Já a seta carrega a relação, e por isso o neutro dela é --text-muted (5,21:1 no escuro, 5,37:1 no claro) e nunca --line-strong (1,79:1 e 1,83:1). As duas regras da versão são independentes de propósito, cor pelo cruzamento e nome pelo deslocamento: no dado fixo as três nomeadas também cruzaram, mas a quarta maior distância é de uma origem que não cruzou e ficou a 0,20 px do corte, que mede 63,37 px contra os 63,17 px dela, então o caso misto existe no modelo e não está desenhado neste recorte."
+}

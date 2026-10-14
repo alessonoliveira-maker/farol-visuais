@@ -1,0 +1,13 @@
+{
+  "title": "Dado sem hierarquia e criativos sem lead",
+  "useCase": "Marketing: o que desenhar quando o recorte não tem grupo nem lead em todo criativo.",
+  "demonstrates": [
+    "Guarda de profundidade 1 que troca para barras horizontais com aviso",
+    "Criativos com zero lead fora do desenho, listados com o motivo",
+    "Estado vazio quando nenhuma folha tem valor positivo",
+    "Chip que não cabe na linha sai contado, nunca desenhado fora do corpo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card (640x360), o preset sugerido pelo catálogo, e ele fecha com folga: o corpo mede 574 x 241,5 px (caso de uso de 83 caracteres, uma linha garantida até 92 em 574 px de cabeçalho) e a peça escreve 1 linha de leitura de 12 px, 1 linha de aviso de 12 px, 5 faixas de barra com passo de 30 px (150 px), 1 linha de motivo e 1 linha de chips de 11 px com passo de 15 px, fechando em 233 px de tinta e sobrando 8,5 px. O passo de 30 px vem da ESP-2 pelo outro lado: com 40% de barra sobre o passo a marca sai em 12 px, que é o piso, e o rótulo fica FORA da barra, na ponta livre, então o piso de 18 px do rótulo interno não se aplica. O dado publicado tem profundidade 1, então o preview mostra o caminho das barras; o caminho do empacotamento existe no mesmo componente e é exercitado por qualquer recorte com filhos, o que o preview não fotografa. Tensão declarada entre duas regras: a EST-3 manda desenhar a marca do zero medido e a ROT-10 diz que valor zero não tem área e sai do desenho para a lista de identificação. Aqui vale a segunda, porque a régua é do encoding do modelo, que é área; a primeira é honrada escrevendo o zero na lista, ao lado de um marcador vazado. Desenho, aviso, barras e lista vivem no mesmo svg, com viewBox igual ao corpo medido, para a escala sair 1 e o texto de 11 px chegar à tela como 11 px (GEO-18). Quatro guardas saíram NÃO MEDIDAS nesta peça e foram conferidas à mão. ESPESSURA-MARCA saiu marca_fora_do_bar, porque a barra é desenhada à mão e não existe Bar a que aplicar o piso geral; a marca mede 12 px, que é o próprio piso, e o rótulo fica FORA dela, então o piso de 18 px do rótulo interno não se aplica. FORMATO-ACESSIVEL saiu frase_sem_formatador, porque todo número passa por um helper local; a frase e o corpo usam os MESMOS helpers. EIXO-CALMO saiu sem_grade e OPACIDADE MARCA saiu sem_opacidade_em_marca, os dois por ausência: sem eixo, sem grade e sem opacidade em marca nenhuma. A frase acessível mede 196 caracteres com o dado publicado, dentro da faixa de 100 a 250 da ACE-1 e abaixo do aviso de 235."
+}

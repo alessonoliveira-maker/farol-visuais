@@ -1,0 +1,46 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "01_heatmap-dia-da-semana-por-hora",
+  "versoes": {
+    "v1_entradas-de-lead-por-dia-e-hora": {
+      "veredito": "aprovado",
+      "nota": "Heatmap correto para a pergunta de dia por hora. NUM-6 da rodada anterior resolvido: a linha de leitura repete a unidade. Contraste de texto na celula conferido a mao nos dois temas, minimo 5,45:1, e as faixas seq-4 e seq-5 ficaram fora com motivo medido. Sem bloqueante.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T09:21:55.441Z",
+      "impressao": "a686d36b8efd784ed42e0cc128afc40053ee16cc",
+      "arquivos": {
+        "Chart.tsx": "572fe13a9214d2ac340ff6f3832b391444224092",
+        "data.ts": "2a0e123042875764454e17ffaf834d22e951c1fc",
+        "meta.json": "7ad423d15d51543ad8bd6c57e9732d287181511d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_entradas-de-lead-por-dia-e-hora",
+      "veredito": "reprovado",
+      "nota": "NUM-6: a linha de leitura escreve 6,3 e 2,5 sem substantivo nem unidade, e o leitor pode ler o pico como 6,3 leads na hora quando o valor e media por ocorrencia do dia; escrever a unidade na propria frase. Resto do acabamento integro nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T09:14:47.844Z",
+      "impressao": "9d1a4b18ec7d17476c2aa5f36ae58d0af0d053d2",
+      "arquivos": {
+        "Chart.tsx": "12fb30a762c498d95907ea64218cbcb9063afb60",
+        "data.ts": "2a0e123042875764454e17ffaf834d22e951c1fc",
+        "meta.json": "7ad423d15d51543ad8bd6c57e9732d287181511d"
+      }
+    },
+    {
+      "versao": "v1_entradas-de-lead-por-dia-e-hora",
+      "veredito": "aprovado",
+      "nota": "Heatmap correto para a pergunta de dia por hora. NUM-6 da rodada anterior resolvido: a linha de leitura repete a unidade. Contraste de texto na celula conferido a mao nos dois temas, minimo 5,45:1, e as faixas seq-4 e seq-5 ficaram fora com motivo medido. Sem bloqueante.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T09:21:55.441Z",
+      "impressao": "a686d36b8efd784ed42e0cc128afc40053ee16cc",
+      "arquivos": {
+        "Chart.tsx": "572fe13a9214d2ac340ff6f3832b391444224092",
+        "data.ts": "2a0e123042875764454e17ffaf834d22e951c1fc",
+        "meta.json": "7ad423d15d51543ad8bd6c57e9732d287181511d"
+      }
+    }
+  ]
+}

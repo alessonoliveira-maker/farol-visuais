@@ -1,0 +1,264 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "07_rosa-de-nightingale",
+  "versoes": {
+    "v1_investimento-de-midia-por-mes": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A fórmula agora faz a área do setor proporcional ao valor, e conferi o achado central do conserto: a fórmula velha já tinha Math.sqrt, mas por dentro do piso de raio, e como a área de um setor de anel vale r ao quadrado menos rMin ao quadrado, a meia correção continuava exagerando o pequeno. É pior que o raio linear, porque tem raiz quadrada escrita no código e passa por conserto feito. Desvio de até 2,16 pontos percentuais zerado nos doze meses. A grade passou a ser pintada depois das pétalas, então a referência deixa de sumir nos meses altos, e o rodapé declara que a grandeza lida é a área e que o ângulo é igual nos doze.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:34.936Z",
+      "impressao": "149c3c3fcf7e031a387da8e77d9e84b3257c27f1",
+      "arquivos": {
+        "Chart.tsx": "439af4006e5a9ea6638afd7c08e36d64ca1b79c0",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "6316b1875d44ec1c644f7d1e54ea44617e428e8c"
+      }
+    },
+    "v2_meses-acima-da-media": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Fórmula nova também no anel da média, e o anel passou a ser pintado por cima, então a referência deixa de sumir justamente sob os meses acima dela, que são o assunto da peça. Conferi a assimetria que me incomodou, de os meses acima da média não carregarem o valor: é deliberada e está no contrato, porque a cor neutra só vale com o número ao lado (17.2) e o destaque não pode viver só da cor (COR-2). O código está certo e minha estranheza não procedia.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.000Z",
+      "impressao": "ac0dd29c975354243dad546b651d09951c0908ae",
+      "arquivos": {
+        "Chart.tsx": "4070ec9b4e32d75e5c9ffd340c7adaeb12828f58",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "232fac639a60638c62d9e33efcb83e853e09ae2b"
+      }
+    },
+    "v3_custo-mensal-em-tres-camadas": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. O corte de escala virou desenho: a marca de jul/25 passa para fora do anel do topo, duas tarjas em arco na cor do cartão a atravessam, e o valor real vai escrito no perímetro e no rodapé, no precedente da coluna cortada de 16_distribuicao/01/v4. O dado foi mudado para exercitar o caso, porque teto que nunca é alcançado deixa o corte sem prova. As três camadas conferem: 16,8 / 60,6 / 22,6% de valor contra a mesma repartição de área. Ressalva sem conserto: o rótulo do anel interno, R$ 20,0 mil, carrega uma tarja de fundo que corta o desenho e fica com cara de remendo nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.058Z",
+      "impressao": "7e4f82285a5d6dc077d1980536929516e5229fc8",
+      "arquivos": {
+        "Chart.tsx": "2fae990432ee89c6b24483a951cd93aa3df9d0df",
+        "data.ts": "f28b953e17fbcf45270db0bb7b7ef87835aefa32",
+        "meta.json": "e3bb09f3d8bf43031eff996d4db07621c1c5801a"
+      }
+    },
+    "v4_ano-com-meses-a-realizar": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Fórmula nova, e o piso de raio do mês sem dado caiu de 0,4 para 0,28 do vão com motivo medido: na conta nova 0,4 equivalia a R$ 11,3 mil contra R$ 14,2 mil do menor mês fechado, ou seja o contorno passaria a parecer um valor. Mês parcial e mês a realizar continuam distintos por forma e por rótulo, não só por cor, e o relógio dá lugar natural ao mês que ainda não aconteceu, que é o argumento mais forte da rosa neste catálogo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.117Z",
+      "impressao": "16103022fb3eed24372b5beb5250ef16a1d6548b",
+      "arquivos": {
+        "Chart.tsx": "70d7e31f2c85d0d5369236722e00bfd2582bf0d6",
+        "data.ts": "03586530ede79180009996cc64bb150b81ce6010",
+        "meta.json": "1efa4a4f9bd3e7227a9187e6594c526ad3f56004"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_investimento-de-midia-por-mes",
+      "veredito": "aprovado",
+      "nota": "Rosa coerente nos dois temas, escala e meses legiveis; observacoes de redacao e de grade no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:09:09.518Z",
+      "impressao": "39d63df0a21a3d4dc4b81672ab7cb35306560164",
+      "arquivos": {
+        "Chart.tsx": "28fb7ac300f1553cecc1389d96a692cdddd17998",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "9d46aad376fd8510cf2beb4e021a7f0ccc89c4bb"
+      }
+    },
+    {
+      "versao": "v2_meses-acima-da-media",
+      "veredito": "aprovado",
+      "nota": "Media, acima e abaixo leem bem; neutro com valor escrito atende a isencao; falta o valor do maior mes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:09:13.581Z",
+      "impressao": "e5992a7b1e949f2db5a6f6c255743549ef6ab898",
+      "arquivos": {
+        "Chart.tsx": "56d01aef217483c95a966eb8b1802c2394983fa3",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "aa0d88bccefd4c2f22bfee42a32901a4f580de36"
+      }
+    },
+    {
+      "versao": "v3_custo-mensal-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Empilhamento em SVG proprio funciona nos dois temas; grade interna e rotulo de 20 mil ficam ocultos sob a pilha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:09:18.004Z",
+      "impressao": "167275c8e08783dad29bc76880729c36a151f41c",
+      "arquivos": {
+        "Chart.tsx": "77c65ab564aab285a900bd1164a80bb7e333eb96",
+        "data.ts": "4acfdd3cf54c9321ece9d1be49131573235a5ca7",
+        "meta.json": "f9271ccca735fb8a049b479e3d41c0bcf6f216aa"
+      }
+    },
+    {
+      "versao": "v4_ano-com-meses-a-realizar",
+      "veredito": "reprovado",
+      "nota": "Falta o rotulo a realizar nos meses sem dado e a data do parcial na tela; as duas coisas o catalogo e o meta prometem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:09:22.452Z",
+      "impressao": "a9ae8e0f6e156c10762c6c8b7878d61fcb9ebbfc",
+      "arquivos": {
+        "Chart.tsx": "a14983f5e21b19fb0db999c23d2c05d78d889203",
+        "data.ts": "03586530ede79180009996cc64bb150b81ce6010",
+        "meta.json": "e4a0f46fa870bd3dfd2d780ffc13d6b668c63a75"
+      }
+    },
+    {
+      "versao": "v1_investimento-de-midia-por-mes",
+      "veredito": "aprovado",
+      "nota": "Rosa legivel nos dois temas, raiz quadrada no raio, escala e meses no perimetro; ressalva de area pelo furo central fica em observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:19:27.807Z",
+      "impressao": "39d63df0a21a3d4dc4b81672ab7cb35306560164",
+      "arquivos": {
+        "Chart.tsx": "28fb7ac300f1553cecc1389d96a692cdddd17998",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "9d46aad376fd8510cf2beb4e021a7f0ccc89c4bb"
+      }
+    },
+    {
+      "versao": "v2_meses-acima-da-media",
+      "veredito": "aprovado",
+      "nota": "Media, destaque por peso e valor escrito no neutro cumprem COR-2 e a isencao do line-strong; anel ocluso e valor do pico ausente ficam em observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:19:33.639Z",
+      "impressao": "e5992a7b1e949f2db5a6f6c255743549ef6ab898",
+      "arquivos": {
+        "Chart.tsx": "56d01aef217483c95a966eb8b1802c2394983fa3",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "aa0d88bccefd4c2f22bfee42a32901a4f580de36"
+      }
+    },
+    {
+      "versao": "v3_custo-mensal-em-tres-camadas",
+      "veredito": "reprovado",
+      "nota": "Furo central quebra a proporcao das camadas: Estrutura de 8,2 mil desenha mais area que Midia de 11 mil no mesmo mes; e o rotulo R$ 20,0 mil fica coberto pelas petalas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:19:39.598Z",
+      "impressao": "167275c8e08783dad29bc76880729c36a151f41c",
+      "arquivos": {
+        "Chart.tsx": "77c65ab564aab285a900bd1164a80bb7e333eb96",
+        "data.ts": "4acfdd3cf54c9321ece9d1be49131573235a5ca7",
+        "meta.json": "f9271ccca735fb8a049b479e3d41c0bcf6f216aa"
+      }
+    },
+    {
+      "versao": "v4_ano-com-meses-a-realizar",
+      "veredito": "reprovado",
+      "nota": "Rotulo a realizar sai em 9 px, abaixo do piso de 11 px da TIP-2; o resto do tratamento de parcial e de mes sem dado esta correto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:19:44.856Z",
+      "impressao": "49ed70e886807d368edc01dcb6cd440c3dd60afd",
+      "arquivos": {
+        "Chart.tsx": "d1b592eb2d89e9d13cc4e8acbef4c00512f8515f",
+        "data.ts": "03586530ede79180009996cc64bb150b81ce6010",
+        "meta.json": "e4a0f46fa870bd3dfd2d780ffc13d6b668c63a75"
+      }
+    },
+    {
+      "versao": "v1_investimento-de-midia-por-mes",
+      "veredito": "aprovado",
+      "nota": "Rosa legivel nos dois temas, raiz quadrada no raio, escala e nomes de mes horizontais; ressalva de area pelo furo central segue em observacao, por ser o metodo escrito no catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:44:59.448Z",
+      "impressao": "39d63df0a21a3d4dc4b81672ab7cb35306560164",
+      "arquivos": {
+        "Chart.tsx": "28fb7ac300f1553cecc1389d96a692cdddd17998",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "9d46aad376fd8510cf2beb4e021a7f0ccc89c4bb"
+      }
+    },
+    {
+      "versao": "v2_meses-acima-da-media",
+      "veredito": "aprovado",
+      "nota": "Media no miolo, destaque por peso e valor escrito no neutro atendem COR-2 e a isencao do line-strong; anel ocluso e valor do pico ausente ficam em observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:45:04.406Z",
+      "impressao": "e5992a7b1e949f2db5a6f6c255743549ef6ab898",
+      "arquivos": {
+        "Chart.tsx": "56d01aef217483c95a966eb8b1802c2394983fa3",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "aa0d88bccefd4c2f22bfee42a32901a4f580de36"
+      }
+    },
+    {
+      "versao": "v3_custo-mensal-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Correcoes conferidas: o raio agora compensa o furo e a area de cada camada volta a ser proporcional, e a escala e pintada por cima das petalas com halo legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:45:09.627Z",
+      "impressao": "8419b4f23794346e3c4f86baaf25f34b267a0a6c",
+      "arquivos": {
+        "Chart.tsx": "2df28ba8bd3d8a20af5606d12c498de6f4cfe7e3",
+        "data.ts": "4acfdd3cf54c9321ece9d1be49131573235a5ca7",
+        "meta.json": "f9271ccca735fb8a049b479e3d41c0bcf6f216aa"
+      }
+    },
+    {
+      "versao": "v4_ano-com-meses-a-realizar",
+      "veredito": "aprovado",
+      "nota": "Correcao conferida: rotulo a realizar sai em 11 px no preview, dentro da TIP-2; mes sem dado com contorno tracejado e rotulo, parcial com nota de corte e escala so sobre meses fechados.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:45:14.956Z",
+      "impressao": "bd56f2a4cd45dc7ffa8dda935e0caa61db6cbd75",
+      "arquivos": {
+        "Chart.tsx": "bb5067e6562d9b80522fbc94feb61288b051f1c6",
+        "data.ts": "03586530ede79180009996cc64bb150b81ce6010",
+        "meta.json": "e4a0f46fa870bd3dfd2d780ffc13d6b668c63a75"
+      }
+    },
+    {
+      "versao": "v1_investimento-de-midia-por-mes",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A fórmula agora faz a área do setor proporcional ao valor, e conferi o achado central do conserto: a fórmula velha já tinha Math.sqrt, mas por dentro do piso de raio, e como a área de um setor de anel vale r ao quadrado menos rMin ao quadrado, a meia correção continuava exagerando o pequeno. É pior que o raio linear, porque tem raiz quadrada escrita no código e passa por conserto feito. Desvio de até 2,16 pontos percentuais zerado nos doze meses. A grade passou a ser pintada depois das pétalas, então a referência deixa de sumir nos meses altos, e o rodapé declara que a grandeza lida é a área e que o ângulo é igual nos doze.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:34.936Z",
+      "impressao": "149c3c3fcf7e031a387da8e77d9e84b3257c27f1",
+      "arquivos": {
+        "Chart.tsx": "439af4006e5a9ea6638afd7c08e36d64ca1b79c0",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "6316b1875d44ec1c644f7d1e54ea44617e428e8c"
+      }
+    },
+    {
+      "versao": "v2_meses-acima-da-media",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Fórmula nova também no anel da média, e o anel passou a ser pintado por cima, então a referência deixa de sumir justamente sob os meses acima dela, que são o assunto da peça. Conferi a assimetria que me incomodou, de os meses acima da média não carregarem o valor: é deliberada e está no contrato, porque a cor neutra só vale com o número ao lado (17.2) e o destaque não pode viver só da cor (COR-2). O código está certo e minha estranheza não procedia.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.000Z",
+      "impressao": "ac0dd29c975354243dad546b651d09951c0908ae",
+      "arquivos": {
+        "Chart.tsx": "4070ec9b4e32d75e5c9ffd340c7adaeb12828f58",
+        "data.ts": "a552619b54ab664a0c51a671fcf3f24b6b58ea81",
+        "meta.json": "232fac639a60638c62d9e33efcb83e853e09ae2b"
+      }
+    },
+    {
+      "versao": "v3_custo-mensal-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. O corte de escala virou desenho: a marca de jul/25 passa para fora do anel do topo, duas tarjas em arco na cor do cartão a atravessam, e o valor real vai escrito no perímetro e no rodapé, no precedente da coluna cortada de 16_distribuicao/01/v4. O dado foi mudado para exercitar o caso, porque teto que nunca é alcançado deixa o corte sem prova. As três camadas conferem: 16,8 / 60,6 / 22,6% de valor contra a mesma repartição de área. Ressalva sem conserto: o rótulo do anel interno, R$ 20,0 mil, carrega uma tarja de fundo que corta o desenho e fica com cara de remendo nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.058Z",
+      "impressao": "7e4f82285a5d6dc077d1980536929516e5229fc8",
+      "arquivos": {
+        "Chart.tsx": "2fae990432ee89c6b24483a951cd93aa3df9d0df",
+        "data.ts": "f28b953e17fbcf45270db0bb7b7ef87835aefa32",
+        "meta.json": "e3bb09f3d8bf43031eff996d4db07621c1c5801a"
+      }
+    },
+    {
+      "versao": "v4_ano-com-meses-a-realizar",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Fórmula nova, e o piso de raio do mês sem dado caiu de 0,4 para 0,28 do vão com motivo medido: na conta nova 0,4 equivalia a R$ 11,3 mil contra R$ 14,2 mil do menor mês fechado, ou seja o contorno passaria a parecer um valor. Mês parcial e mês a realizar continuam distintos por forma e por rótulo, não só por cor, e o relógio dá lugar natural ao mês que ainda não aconteceu, que é o argumento mais forte da rosa neste catálogo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:36:35.117Z",
+      "impressao": "16103022fb3eed24372b5beb5250ef16a1d6548b",
+      "arquivos": {
+        "Chart.tsx": "70d7e31f2c85d0d5369236722e00bfd2582bf0d6",
+        "data.ts": "03586530ede79180009996cc64bb150b81ce6010",
+        "meta.json": "1efa4a4f9bd3e7227a9187e6594c526ad3f56004"
+      }
+    }
+  ]
+}

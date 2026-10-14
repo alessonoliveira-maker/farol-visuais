@@ -1,0 +1,74 @@
+{
+  "slug": "02_box-plot",
+  "nome": "Box plot",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Cinco números por grupo: Q1, mediana e Q3 formam a caixa, os bigodes vão até o último valor dentro das cercas de 1,5 IQR e o que passa delas vira ponto. É o resumo mais compacto da família e também o mais mal lido, então no Farol nunca vai sozinho num cartão de decisão: vem com os pontos por cima ou com o histograma ao lado. Montado como no exemplo oficial do Recharts, com Bar de par [q1, q3], shape da mediana, ErrorBar medido a partir de Q3 e Scatter de outliers. Absorve box com jitter, entalhe e largura variável como versões; letter-value, faixa de percentis e box micro ficam como extensões.",
+  "quando_usar": [
+    "Resumir de 4 a 20 grupos da mesma métrica em pouco espaço: minutos até o contato por SDR, dias parados por etapa.",
+    "Público que já lê quartil, ou peça acompanhada da nota de leitura caixa: metade central dos casos.",
+    "Grupos com pelo menos umas 20 observações; com os pontos por cima, até algumas centenas por grupo.",
+    "Comparar medianas e tamanho de amostra juntos, com entalhe e largura proporcional à raiz de n."
+  ],
+  "quando_evitar": [
+    "Distribuição bimodal ou com buraco: a caixa apaga os picos; violino ou raincloud (07) ou strip (03).",
+    "Grupo com menos de 5 casos: só os pontos e o n em texto, sem caixa.",
+    "Milhares de casos por grupo com cauda importante: letter-value, derivado deste modelo, ou densidade (06).",
+    "Só o resumo importa e não há forma por trás: comparação de pontos na família 17 (modelo 02).",
+    "Faixa de percentis desenhada ao longo do tempo: faixa em área na família 05 (modelo 05)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_primeiro-contato-por-sdr",
+      "titulo": "Minutos até o primeiro contato por SDR",
+      "caso_de_uso": "Algum dos seis SDRs demora mais para fazer o primeiro contato, e quantos casos estouram o SLA de 30 minutos?",
+      "o_que_demonstra": [
+        "Bar com dataKey em par [q1, q3] e shape próprio desenhando a mediana",
+        "ErrorBar medido a partir de Q3, com caixa opaca para o bigode não cruzar por dentro",
+        "Outliers num Scatter à parte, com tooltip que nomeia o lead fictício",
+        "ReferenceLine no SLA de 30 minutos e n no rótulo de cada categoria",
+        "Traço mínimo de 2 px quando o IQR é zero e método de quartil declarado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_pontos-sobre-a-caixa-e-prazo",
+      "titulo": "Horas até a agenda com os pontos sobre a caixa",
+      "caso_de_uso": "Quantos leads de cada SDR passam do prazo de 48 horas até a agenda, e a caixa esconde algum aglomerado?",
+      "o_que_demonstra": [
+        "Caixa vazada com todos os pontos por cima, raio de 2,5 px e opacidade 0,45",
+        "Jitter determinístico por hash FNV do id do lead, nunca Math.random",
+        "Amplitude do jitter derivada da largura da banda, sem invadir o grupo vizinho",
+        "Cor responde ao limiar: pontos acima de 48 horas em --danger, demais em neutro",
+        "allowDuplicatedCategory desligado no XAxis e percentual acima do prazo no subtítulo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_dias-parados-por-etapa",
+      "titulo": "Dias parados por etapa do funil",
+      "caso_de_uso": "Em que etapa as 1.900 oportunidades abertas ficam paradas por mais tempo, e quais são os casos extremos?",
+      "o_que_demonstra": [
+        "Layout horizontal com oito etapas em ordem de funil e n ao lado de cada caixa",
+        "Outlier clicável com código fictício OP 10482 abrindo o drill da oportunidade",
+        "Outlier de 412 dias fora do domínio vira marcador na borda com o valor escrito",
+        "ReferenceLine em 30 dias, o limiar de oportunidade parada",
+        "Nota de leitura no rodapé: caixa é a metade central, bigode vai até a cerca"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_entalhe-largura-e-grupo-minusculo",
+      "titulo": "CPL qualificado com entalhe e largura por amostra",
+      "caso_de_uso": "As medianas de CPL qualificado das plataformas diferem de fato, sabendo que uma delas tem só 9 campanhas?",
+      "o_que_demonstra": [
+        "Caixa entalhada em path de dez vértices, entalhe de 1,58 IQR sobre raiz de n",
+        "Largura pela raiz de n contra o nMax fixado sobre todos os grupos antes do filtro",
+        "Entalhe maior que a caixa cortado, tracejado e com aviso de amostra pequena",
+        "Grupo com n 4 sem caixa: só os quatro pontos e o texto n 4",
+        "Legenda curta: largura é tamanho da amostra, entalhe compara medianas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "03_barras-empilhadas",
+  "versoes": {
+    "v1_pipeline-por-estagio": {
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check 0 erro. Zero na base, ordem igual em pilha, legenda e dica, total na ponta, slots 1/3/6/5. Legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:07.692Z",
+      "impressao": "26838fb2231501d34909dbaae9f240fefda8dc52",
+      "arquivos": {
+        "Chart.tsx": "4fd8706e03d4d2ebccd412da0d799866dbe71dd3",
+        "data.ts": "f19aba2d3567fef5a319551227c69babf64f8f7d",
+        "meta.json": "8f1ccb11e0acb7a75b99bbd63a5eaa21175180b1"
+      }
+    },
+    "v2_paradas-na-base": {
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check 0 erro. Parado na base em cor de aviso com a palavra escrita, ordem pelo segmento parado, zero parado sai como 0 por cento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:35.113Z",
+      "impressao": "e814885e2ea61df801d348e03e3674ffd3518f9a",
+      "arquivos": {
+        "Chart.tsx": "4d9d0fdbfbeccf27617a4acb6e56733669406127",
+        "data.ts": "4a026b5da1f6d9d84a0fd16dbf87de62bfca39ae",
+        "meta.json": "02b80a146edb6fd0b4bf764a1758b67203db8c31"
+      }
+    },
+    "v3_leads-por-cobertura-de-dado": {
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check ok sem aviso. Sem contato por ultimo, vazado e visivel, rotulo some abaixo de 24 px, texto sobre chart-1 em accent-cyan-contrast.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:41.141Z",
+      "impressao": "a819c6aaaf2d281f75dd584df0c8329e826d17f5",
+      "arquivos": {
+        "Chart.tsx": "a41887236fe70b79259e685878ddaf32de980c52",
+        "data.ts": "645fb9ec255404a0e1b579a75a0f8de595c3b4c0",
+        "meta.json": "486670e049b6ab35bf9148cbd6e7f8c58ad7ca60"
+      }
+    },
+    "v4_orcado-e-realizado-em-grupos": {
+      "veredito": "aprovado",
+      "nota": "Conserto de zero e de redacao aceito nos dois temas. A frase final diz Nenhuma plataforma passou do orcado no periodo, porque mostOver e eleita pelo desvio com sinal e nao pelo modulo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.380Z",
+      "impressao": "99270c6eecd55aeac494466617e99f78fe60e038",
+      "arquivos": {
+        "Chart.tsx": "35bc39c95a562cc48c253030b373164767743521",
+        "data.ts": "6a1b5621dbd59f421a58705dcad5dba4f023b946",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_pipeline-por-estagio",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta: base no zero, ordem igual na pilha, legenda e dica, total na ponta, slots 1/3/6/5 da COR-8 e vao de 2 px. Legivel nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:39:24.829Z",
+      "impressao": "26838fb2231501d34909dbaae9f240fefda8dc52",
+      "arquivos": {
+        "Chart.tsx": "4fd8706e03d4d2ebccd412da0d799866dbe71dd3",
+        "data.ts": "f19aba2d3567fef5a319551227c69babf64f8f7d",
+        "meta.json": "8f1ccb11e0acb7a75b99bbd63a5eaa21175180b1"
+      }
+    },
+    {
+      "versao": "v2_paradas-na-base",
+      "veredito": "aprovado",
+      "nota": "Segmento parado na base em cor de aviso, ordenado por ele, total e percentual escritos com a palavra parado. Neutro graduado por opacidade fica fraco no tema escuro: observacao.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:39:29.119Z",
+      "impressao": "e814885e2ea61df801d348e03e3674ffd3518f9a",
+      "arquivos": {
+        "Chart.tsx": "4d9d0fdbfbeccf27617a4acb6e56733669406127",
+        "data.ts": "4a026b5da1f6d9d84a0fd16dbf87de62bfca39ae",
+        "meta.json": "02b80a146edb6fd0b4bf764a1758b67203db8c31"
+      }
+    },
+    {
+      "versao": "v3_leads-por-cobertura-de-dado",
+      "veredito": "reprovado",
+      "nota": "Marca real no dado: Anuncio Meta e Google Ads no data.ts, contra a secao 3 do CONTRATO (zero marca de empresa real). Trocar por origem generica, como o modelo 01 ja faz.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:39:33.273Z",
+      "impressao": "6c9186a146ea5757eaeb4b980c013a4a4f1a4bfd",
+      "arquivos": {
+        "Chart.tsx": "de8f5e6ba997ef141c1bc716175a79b959c691e2",
+        "data.ts": "6fa68e6040687a165b040b35f7fcfd15e9afce31",
+        "meta.json": "e94d9f52c411ec35e36de7f9604be12153653314"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-em-grupos",
+      "veredito": "reprovado",
+      "nota": "Quatro marcas reais no data.ts (Meta, Google, LinkedIn, TikTok) contra a secao 3 do CONTRATO, e o cabecalho do arquivo afirma nenhuma marca real. Trocar por plataforma generica.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:39:37.242Z",
+      "impressao": "d56777b63d8fc25d9dd87768141e076b87a0ef5e",
+      "arquivos": {
+        "Chart.tsx": "a47f331b866c3df08c612ecf142bc07962dcea77",
+        "data.ts": "47eacb0e8eb85206fd207ec9e56071792f30618e",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    },
+    {
+      "versao": "v1_pipeline-por-estagio",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta: base no zero, mesma ordem na pilha, legenda e dica, total na ponta, slots 1/3/6/5 da COR-8 e vao de 2 px. Legivel nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:00:14.252Z",
+      "impressao": "26838fb2231501d34909dbaae9f240fefda8dc52",
+      "arquivos": {
+        "Chart.tsx": "4fd8706e03d4d2ebccd412da0d799866dbe71dd3",
+        "data.ts": "f19aba2d3567fef5a319551227c69babf64f8f7d",
+        "meta.json": "8f1ccb11e0acb7a75b99bbd63a5eaa21175180b1"
+      }
+    },
+    {
+      "versao": "v2_paradas-na-base",
+      "veredito": "aprovado",
+      "nota": "Parado na base em cor de aviso, ordenado por ele, total e percentual escritos com a palavra parado; zero parado sai 0%. Neutro graduado por opacidade fica fraco no escuro: observacao.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:00:18.887Z",
+      "impressao": "e814885e2ea61df801d348e03e3674ffd3518f9a",
+      "arquivos": {
+        "Chart.tsx": "4d9d0fdbfbeccf27617a4acb6e56733669406127",
+        "data.ts": "4a026b5da1f6d9d84a0fd16dbf87de62bfca39ae",
+        "meta.json": "02b80a146edb6fd0b4bf764a1758b67203db8c31"
+      }
+    },
+    {
+      "versao": "v3_leads-por-cobertura-de-dado",
+      "veredito": "aprovado",
+      "nota": "Marca real removida do data.ts: origens genericas. Sem contato vazado, por ultimo e visivel; rotulo suprimido abaixo de 24 px; texto sobre chart-1 em accent-cyan-contrast.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:00:23.315Z",
+      "impressao": "8f8ccd499d3da32c161f26599b56bbaf0ea9c8ab",
+      "arquivos": {
+        "Chart.tsx": "de8f5e6ba997ef141c1bc716175a79b959c691e2",
+        "data.ts": "645fb9ec255404a0e1b579a75a0f8de595c3b4c0",
+        "meta.json": "e94d9f52c411ec35e36de7f9604be12153653314"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-em-grupos",
+      "veredito": "aprovado",
+      "nota": "Marcas reais removidas: plataformas genericas. Duas pilhas no zero, mesma cor por componente, orcado tracejado, desvio com sinal e cor semantica, sem orcado escrito na ponta.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:00:27.615Z",
+      "impressao": "40e60925d63d18ef8053c5039506da06ad888335",
+      "arquivos": {
+        "Chart.tsx": "a47f331b866c3df08c612ecf142bc07962dcea77",
+        "data.ts": "6a1b5621dbd59f421a58705dcad5dba4f023b946",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    },
+    {
+      "versao": "v1_pipeline-por-estagio",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Base no zero, ordem igual na pilha, legenda e dica, total na ponta livre por x mais width, slots 1/3/6/5 da COR-8. Legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:58:02.406Z",
+      "impressao": "26838fb2231501d34909dbaae9f240fefda8dc52",
+      "arquivos": {
+        "Chart.tsx": "4fd8706e03d4d2ebccd412da0d799866dbe71dd3",
+        "data.ts": "f19aba2d3567fef5a319551227c69babf64f8f7d",
+        "meta.json": "8f1ccb11e0acb7a75b99bbd63a5eaa21175180b1"
+      }
+    },
+    {
+      "versao": "v2_paradas-na-base",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Parado na base em cor de aviso com a palavra junto, ordenado pelo proprio segmento, total e percentual na ponta, zero parado escrito como 0 por cento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:58:07.517Z",
+      "impressao": "e814885e2ea61df801d348e03e3674ffd3518f9a",
+      "arquivos": {
+        "Chart.tsx": "4d9d0fdbfbeccf27617a4acb6e56733669406127",
+        "data.ts": "4a026b5da1f6d9d84a0fd16dbf87de62bfca39ae",
+        "meta.json": "02b80a146edb6fd0b4bf764a1758b67203db8c31"
+      }
+    },
+    {
+      "versao": "v3_leads-por-cobertura-de-dado",
+      "veredito": "aprovado",
+      "nota": "Check ok, sem aviso. Sem contato vazado, por ultimo e visivel; rotulo de segmento suprimido abaixo de 24 px; texto sobre chart-1 em accent-cyan-contrast. Origens genericas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:58:12.237Z",
+      "impressao": "3011b9f5e585b54f7432ca9a961948f2f2f244ff",
+      "arquivos": {
+        "Chart.tsx": "a41887236fe70b79259e685878ddaf32de980c52",
+        "data.ts": "645fb9ec255404a0e1b579a75a0f8de595c3b4c0",
+        "meta.json": "d6ef464da9bff5f1b6695f26f2b4ee239fd550ce"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-em-grupos",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Duas pilhas no zero, mesma cor por componente, orcado tracejado, desvio com sinal tipografico e cor semantica, plataforma sem orcado escrita na ponta.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:58:18.277Z",
+      "impressao": "40e60925d63d18ef8053c5039506da06ad888335",
+      "arquivos": {
+        "Chart.tsx": "a47f331b866c3df08c612ecf142bc07962dcea77",
+        "data.ts": "6a1b5621dbd59f421a58705dcad5dba4f023b946",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    },
+    {
+      "versao": "v1_pipeline-por-estagio",
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check 0 erro. Zero na base, ordem igual em pilha, legenda e dica, total na ponta, slots 1/3/6/5. Legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:07.692Z",
+      "impressao": "26838fb2231501d34909dbaae9f240fefda8dc52",
+      "arquivos": {
+        "Chart.tsx": "4fd8706e03d4d2ebccd412da0d799866dbe71dd3",
+        "data.ts": "f19aba2d3567fef5a319551227c69babf64f8f7d",
+        "meta.json": "8f1ccb11e0acb7a75b99bbd63a5eaa21175180b1"
+      }
+    },
+    {
+      "versao": "v2_paradas-na-base",
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check 0 erro. Parado na base em cor de aviso com a palavra escrita, ordem pelo segmento parado, zero parado sai como 0 por cento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:35.113Z",
+      "impressao": "e814885e2ea61df801d348e03e3674ffd3518f9a",
+      "arquivos": {
+        "Chart.tsx": "4d9d0fdbfbeccf27617a4acb6e56733669406127",
+        "data.ts": "4a026b5da1f6d9d84a0fd16dbf87de62bfca39ae",
+        "meta.json": "02b80a146edb6fd0b4bf764a1758b67203db8c31"
+      }
+    },
+    {
+      "versao": "v3_leads-por-cobertura-de-dado",
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check ok sem aviso. Sem contato por ultimo, vazado e visivel, rotulo some abaixo de 24 px, texto sobre chart-1 em accent-cyan-contrast.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:41.141Z",
+      "impressao": "a819c6aaaf2d281f75dd584df0c8329e826d17f5",
+      "arquivos": {
+        "Chart.tsx": "a41887236fe70b79259e685878ddaf32de980c52",
+        "data.ts": "645fb9ec255404a0e1b579a75a0f8de595c3b4c0",
+        "meta.json": "486670e049b6ab35bf9148cbd6e7f8c58ad7ca60"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-em-grupos",
+      "veredito": "aprovado",
+      "nota": "Revisao independente 2026-09-18. Check 0 erro, so aviso de frase em 241 de 250. Duas pilhas na mesma escala, mesma cor por componente, sem orcado escrito na ponta.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:47.068Z",
+      "impressao": "40e60925d63d18ef8053c5039506da06ad888335",
+      "arquivos": {
+        "Chart.tsx": "a47f331b866c3df08c612ecf142bc07962dcea77",
+        "data.ts": "6a1b5621dbd59f421a58705dcad5dba4f023b946",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-em-grupos",
+      "veredito": "aprovado",
+      "nota": "Conserto de zero e de redacao aceito nos dois temas. A frase final diz Nenhuma plataforma passou do orcado no periodo, porque mostOver e eleita pelo desvio com sinal e nao pelo modulo.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.380Z",
+      "impressao": "99270c6eecd55aeac494466617e99f78fe60e038",
+      "arquivos": {
+        "Chart.tsx": "35bc39c95a562cc48c253030b373164767743521",
+        "data.ts": "6a1b5621dbd59f421a58705dcad5dba4f023b946",
+        "meta.json": "deb7cdb5814f8150b1ffc8ec17017c19f6b607ce"
+      }
+    }
+  ]
+}

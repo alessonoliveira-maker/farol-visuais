@@ -1,0 +1,69 @@
+{
+  "slug": "05_ranking-com-variacao-de-posicao",
+  "nome": "Ranking com variação de posição",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Tabela ordenada por uma métrica que mostra, além da posição e do valor, quanto cada item andou desde o período anterior: ícone ArrowUp, ArrowDown ou Minus com o número de posições, selo novo para quem entrou e linha fantasma para quem saiu do topo. Responde quem subiu e quem caiu, o que a barra ordenada sozinha não mostra. A posição anterior é calculada no seletor de dados; a célula recebe posição, posição anterior, valor e valor anterior, e a regra de empate e a direção da métrica ficam declaradas.",
+  "quando_usar": [
+    "Top 10 a 25 de uma métrica em que a mudança de posição contra o período anterior é a notícia",
+    "Entradas e saídas do topo que precisam aparecer sem abrir outra tela",
+    "Ranking com valor, variação absoluta e percentual e barra do valor atual na mesma linha",
+    "Métrica em que menor é melhor (ciclo em dias, CPL), com a ordem invertida escrita na legenda"
+  ],
+  "quando_evitar": [
+    "Poucos itens com valores quase iguais: a posição oscila por ruído, mostre o valor com barra (14/01)",
+    "Trajetória de posições em muitos períodos: bump chart ou slope (família 17)",
+    "Top N de uma métrica em espaço estreito sem variação: lista de barras (família 02)",
+    "Item sem período anterior tratado como subiu 999: ele é novo"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-trimestre",
+      "titulo": "Ranking de receita reconhecida do trimestre",
+      "caso_de_uso": "Comercial: quem subiu e quem caiu no ranking de receita reconhecida de 2026-T3 contra 2026-T2.",
+      "o_que_demonstra": [
+        "Posição anterior menos posição atual maior que zero lida como subiu",
+        "Ícone lucide com aria-hidden e o número de posições escrito ao lado",
+        "Ordinal com º na coluna de posição e valor por formatCurrencyCompact",
+        "Frase acessível com o líder e o maior salto do período"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_top-10-origens-com-entrada-e-saida",
+      "titulo": "Top 10 origens por leads qualificados",
+      "caso_de_uso": "Marketing: quais origens entraram e quais saíram do top 10 de leads qualificados de 2026-09 contra 2026-08.",
+      "o_que_demonstra": [
+        "Selo novo em texto para item sem posição anterior, no lugar da seta",
+        "Linha fantasma no fim em text-muted com o rótulo saiu do top 10",
+        "Linha fantasma fora do domínio das barras e fora da contagem de posições",
+        "Variação do valor com base nomeada para quem já estava no ranking"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_executivos-com-tres-variacoes",
+      "titulo": "Executivos com posição, valor e trajetória",
+      "caso_de_uso": "Comercial: por executivo, o salto de posição, a variação em R$ e em % e as posições dos últimos 6 meses até 2026-08.",
+      "o_que_demonstra": [
+        "Delta de posição, delta em R$ e delta em % em colunas separadas e alinhadas à direita",
+        "Barra inline do valor atual com domínio comum da coluna",
+        "Micrográfico de posições em SVG com eixo invertido, primeira posição no topo",
+        "Destaque do executivo selecionado em peso 700 e chart-1, demais em line-strong"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_empate-e-menor-e-melhor",
+      "titulo": "Empate na posição e ranking de ciclo",
+      "caso_de_uso": "Comercial: dois executivos com a mesma receita e ranking de ciclo de venda em que subir é cair de 48 para 39 dias.",
+      "o_que_demonstra": [
+        "Competição padrão 1, 2, 2, 4 com rótulo 4= e critério secundário declarado",
+        "Ordenação crescente para métrica de menor é melhor, escrita na legenda",
+        "Cor da variação pela polaridade: redução de dias em positive com sinal −",
+        "Dias por formatDays e base nomeada na variação"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

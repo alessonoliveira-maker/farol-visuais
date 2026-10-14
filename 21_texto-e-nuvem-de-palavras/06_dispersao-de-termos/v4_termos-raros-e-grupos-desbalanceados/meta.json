@@ -1,0 +1,13 @@
+{
+  "title": "Termos raros e grupos desbalanceados",
+  "useCase": "Pré-vendas: como ler a dispersão com 142 termos citados uma vez em cada grupo e grupos de 40 e de 400 anotações.",
+  "demonstrates": [
+    "Termos de frequência 1 e 1 agregados num marcador único com a contagem",
+    "Proporção por grupo no lugar da contagem, com o n de cada grupo no subtítulo",
+    "Termo presente num grupo só fica sobre o eixo, com o valor 0 escrito na dica",
+    "Aviso de grupo pequeno quando um dos lados tem menos de 50 anotações"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O eixo de cada grupo é a proporção das anotações dele que citam o termo; o domínio é igual nos dois para a diagonal valer como mesma proporção. Termo citado só num grupo fica sobre o eixo e a dica escreve 0,0% com a base. O marcador único é um anel vazado em 1 de 400 no telefone e 1 de 40 no vídeo, e os termos do data.ts foram escolhidos para nenhum cair debaixo dele. Típico de um grupo: 5 pontos percentuais de diferença. O aviso diz quanto uma menção a mais move o termo no grupo pequeno: 100 dividido pelas anotações, 2,5 p.p. em 40."
+}

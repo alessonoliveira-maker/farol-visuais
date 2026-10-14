@@ -1,0 +1,199 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "07_faixa-de-cenario-contra-meta",
+  "versoes": {
+    "v1_receita-projetada-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Faixa flutuante legivel nos dois temas; eixo do zero, meta em extendDomain, piso e teto escritos.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:17:51.572Z",
+      "impressao": "cd26da236291ee0ccdb9739a796107ae54d296d1",
+      "arquivos": {
+        "Chart.tsx": "35ae8e3a1b58dce27b4df1a0b406c9cea80e62aa",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    "v2_pontas-com-premissa": {
+      "veredito": "aprovado",
+      "nota": "Premissa de cada ponta legivel, halo protege o cruzamento com a meta; faixa estreita no canvas card e nada mais.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:17:58.003Z",
+      "impressao": "e346c24b1f07c1ead09407d30ebfa3ad834f5bc8",
+      "arquivos": {
+        "Chart.tsx": "2f988b49878f78b76a880ae4892a61c2b8825f9f",
+        "data.ts": "c7962ac4a4f5e0b0f22be233965c60ea1f16f3fe",
+        "meta.json": "b3c6d7f4c5bf719628283018fb1df4ad0f50c906"
+      }
+    },
+    "v3_trimestres-de-2027-contra-meta-anual": {
+      "veredito": "aprovado",
+      "nota": "Quatro faixas no mesmo eixo, meta anual como linha unica; T4 marcado por peso e anotacao, sem colisao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:18:03.667Z",
+      "impressao": "a07266c48fbe4f5364b2f3edcc2e0ca8fce57fe2",
+      "arquivos": {
+        "Chart.tsx": "141a56c58c08d3fb5dd7d0d9cba1f7b0228ef1b2",
+        "data.ts": "053b7ef461e2a78670ded1a565770003cab3b64d",
+        "meta.json": "2bcbd297d84338dcd2d78cc2f8c16950c89ac81c"
+      }
+    },
+    "v4_meta-fora-da-faixa": {
+      "veredito": "aprovado",
+      "nota": "Caso limite honesto: faixa inteira a esquerda da meta, eixo do zero e lacuna escrita em valor e percentual.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:18:09.797Z",
+      "impressao": "786d211b46c29fe1db1a0398259efd385e38aac5",
+      "arquivos": {
+        "Chart.tsx": "6c4dceb16436f0d807302fca5a89f59d44976934",
+        "data.ts": "aa94b934f10578c1111c16476360b6882f7f4bb0",
+        "meta.json": "726c8a5ed9da4d4a190920d5627c1041d1c1db22"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-projetada-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "A linha tracejada da meta e desenhada por cima do rotulo base R$ 5,3 mi e cruza o digito 3 nos dois temas; o halo nao protege porque a ReferenceLine pinta depois da barra (checklist 13, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:04:43.158Z",
+      "impressao": "b40fa751eca6b3db55a691f58151086ca4882f4f",
+      "arquivos": {
+        "Chart.tsx": "5edb52b369ec618788fcabc59b0d3d38563e9443",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "A linha tracejada da meta é desenhada por cima do rótulo base R$ 5,3 mi e cruza o dígito 3 nos dois temas; o halo não protege porque a ReferenceLine pinta depois da barra (checklist 13, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:04:52.566Z",
+      "impressao": "b40fa751eca6b3db55a691f58151086ca4882f4f",
+      "arquivos": {
+        "Chart.tsx": "5edb52b369ec618788fcabc59b0d3d38563e9443",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "A linha tracejada da meta é desenhada por cima do rótulo base R$ 5,3 mi e cruza o dígito 3 nos dois temas; o halo não protege porque a ReferenceLine pinta depois da barra (checklist 13, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:05:01.726Z",
+      "impressao": "b40fa751eca6b3db55a691f58151086ca4882f4f",
+      "arquivos": {
+        "Chart.tsx": "5edb52b369ec618788fcabc59b0d3d38563e9443",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "A linha tracejada da meta passa por cima do rótulo base R$ 5,3 mi e cruza o dígito 3 nos dois temas; o halo não protege porque a ReferenceLine pinta depois da barra (checklist 13, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:05:36.049Z",
+      "impressao": "b40fa751eca6b3db55a691f58151086ca4882f4f",
+      "arquivos": {
+        "Chart.tsx": "5edb52b369ec618788fcabc59b0d3d38563e9443",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    {
+      "versao": "v2_pontas-com-premissa",
+      "veredito": "reprovado",
+      "nota": "A linha da meta cruza a tinta do rótulo base R$ 5,3 mi sem halo efetivo, justamente a técnica que o meta.json diz demonstrar (checklist 13, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:05:36.100Z",
+      "impressao": "cca88d20e136c31929693704f46197a06f0a9e85",
+      "arquivos": {
+        "Chart.tsx": "7d8e4add32c7de7637d6eb5c1077f733a942c538",
+        "data.ts": "c7962ac4a4f5e0b0f22be233965c60ea1f16f3fe",
+        "meta.json": "b3c6d7f4c5bf719628283018fb1df4ad0f50c906"
+      }
+    },
+    {
+      "versao": "v3_trimestres-de-2027-contra-meta-anual",
+      "veredito": "reprovado",
+      "nota": "O rótulo de 2027-T4 sai cortado na borda do canvas e a linha da meta atravessa o dígito 3 de R$ 9,3 mi; o traço do cenário base fica sem identificação nas quatro faixas (checklist 12, 13 e 15).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:05:36.170Z",
+      "impressao": "3f3dbe004c87fc8cd1196d64ed94472c89bb554c",
+      "arquivos": {
+        "Chart.tsx": "57882b5931ec7cd5deca99fa1fab58b123422aef",
+        "data.ts": "053b7ef461e2a78670ded1a565770003cab3b64d",
+        "meta.json": "2bcbd297d84338dcd2d78cc2f8c16950c89ac81c"
+      }
+    },
+    {
+      "versao": "v4_meta-fora-da-faixa",
+      "veredito": "aprovado",
+      "nota": "Faixa inteira à esquerda da meta, lacuna escrita em valor e em percentual, sem colisão de texto nos dois temas; observações de redação e de tique registradas no README.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:05:36.230Z",
+      "impressao": "786d211b46c29fe1db1a0398259efd385e38aac5",
+      "arquivos": {
+        "Chart.tsx": "6c4dceb16436f0d807302fca5a89f59d44976934",
+        "data.ts": "aa94b934f10578c1111c16476360b6882f7f4bb0",
+        "meta.json": "726c8a5ed9da4d4a190920d5627c1041d1c1db22"
+      }
+    },
+    {
+      "versao": "v1_receita-projetada-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Faixa flutuante legivel nos dois temas; eixo do zero, meta em extendDomain, piso e teto escritos.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:17:51.572Z",
+      "impressao": "cd26da236291ee0ccdb9739a796107ae54d296d1",
+      "arquivos": {
+        "Chart.tsx": "35ae8e3a1b58dce27b4df1a0b406c9cea80e62aa",
+        "data.ts": "f39f1a2edd77ef9405f66c3438c3b70ac0c6601f",
+        "meta.json": "93d3e16bbf49978147bb8731b17bc09c478539c6"
+      }
+    },
+    {
+      "versao": "v2_pontas-com-premissa",
+      "veredito": "aprovado",
+      "nota": "Premissa de cada ponta legivel, halo protege o cruzamento com a meta; faixa estreita no canvas card e nada mais.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:17:58.003Z",
+      "impressao": "e346c24b1f07c1ead09407d30ebfa3ad834f5bc8",
+      "arquivos": {
+        "Chart.tsx": "2f988b49878f78b76a880ae4892a61c2b8825f9f",
+        "data.ts": "c7962ac4a4f5e0b0f22be233965c60ea1f16f3fe",
+        "meta.json": "b3c6d7f4c5bf719628283018fb1df4ad0f50c906"
+      }
+    },
+    {
+      "versao": "v3_trimestres-de-2027-contra-meta-anual",
+      "veredito": "aprovado",
+      "nota": "Quatro faixas no mesmo eixo, meta anual como linha unica; T4 marcado por peso e anotacao, sem colisao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:18:03.667Z",
+      "impressao": "a07266c48fbe4f5364b2f3edcc2e0ca8fce57fe2",
+      "arquivos": {
+        "Chart.tsx": "141a56c58c08d3fb5dd7d0d9cba1f7b0228ef1b2",
+        "data.ts": "053b7ef461e2a78670ded1a565770003cab3b64d",
+        "meta.json": "2bcbd297d84338dcd2d78cc2f8c16950c89ac81c"
+      }
+    },
+    {
+      "versao": "v4_meta-fora-da-faixa",
+      "veredito": "aprovado",
+      "nota": "Caso limite honesto: faixa inteira a esquerda da meta, eixo do zero e lacuna escrita em valor e percentual.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:18:09.797Z",
+      "impressao": "786d211b46c29fe1db1a0398259efd385e38aac5",
+      "arquivos": {
+        "Chart.tsx": "6c4dceb16436f0d807302fca5a89f59d44976934",
+        "data.ts": "aa94b934f10578c1111c16476360b6882f7f4bb0",
+        "meta.json": "726c8a5ed9da4d4a190920d5627c1041d1c1db22"
+      }
+    }
+  ]
+}

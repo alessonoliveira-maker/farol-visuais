@@ -1,0 +1,15 @@
+{
+  "title": "Origens que se cruzam na jornada",
+  "useCase": "Marketing: quais das 7 origens fictícias aparecem juntas na jornada dos leads de 2026-08, ordenadas por volume.",
+  "demonstrates": [
+    "Semicírculo por comando A do path, com raio pela metade da distância no eixo",
+    "Espessura pela raiz do peso e raio do nó pela raiz do grau, com régua do dado",
+    "Ordem por volume declarada acima do eixo e conferível no volume escrito em cada nó",
+    "Arcos em var(--text-muted) e o par mais forte em var(--chart-1), com o valor escrito",
+    "Rótulos sob o eixo sem giro, com quebra em duas linhas quando o nome passa do passo",
+    "Valor do par posicionado por anticolisão, sem halo sobre traço fino"
+  ],
+  "canvas": { "width": 640, "height": 430 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o semicírculo cresce com a distância, então a altura sai do arco mais longo. Sete nós em 574 px, com 44 px de recuo, dão passo de 81 px; o par mais distante do dado tem 4 passos e pede raio de 162 px, dentro dos 164 px reservados aos arcos. Com 6 px de topo e 56 px de nó e rótulo de três linhas (nome em até duas, volume na terceira), o SVG mede 226 px; com a linha de leitura (28 px) e as duas linhas de ordem e régua (40 px) o corpo pede 294 px, e o card entrega 225 px com o caso de uso em duas linhas. Em 640 x 430 o corpo mede 295 px e o viewBox de 574 x 226 sai em escala 1 (GEO-18). Desvios do catálogo, com o contrato vencendo. Um: os arcos saem de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), 5,21:1 e 5,37:1, porque o arco carrega a relação (ACE-6); fora do destaque ele baixa por opacidade medida de 0,76, que composta mede 3,58:1 e 3,28:1 (ACE-5), para o par em var(--chart-1) não depender só do matiz no tema claro (TOK-9). Dois: a ordem por volume vai declarada numa linha do corpo, porque o subtítulo é do VisualCard e o Chart não o desenha. O valor do par mais forte tenta ficar por dentro do arco e depois acima do topo, e não leva halo (GEO-4); sem lugar livre ele fica só na linha de leitura. Com dado de arco mais longo que 164 px todos os arcos achatam pelo mesmo fator, como na v2, e deixam de ser semicírculo. A espessura tem piso de 1,5 px, que só o par de 12 leads alcança."
+}

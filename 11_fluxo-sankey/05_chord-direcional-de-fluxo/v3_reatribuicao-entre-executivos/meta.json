@@ -1,0 +1,18 @@
+{
+  "title": "Reatribuição de oportunidades entre executivos",
+  "useCase": "Comercial, 2026-T3: entre quais executivos as oportunidades trocaram de dono?",
+  "demonstrates": [
+    "Oito grupos na ordem decrescente de volume, para reduzir cruzamentos",
+    "Slots categóricos 1 a 6 e neutro do sétimo em diante, pelo teto da COR-4",
+    "Nome escrito em todo arco, o canal que identifica os dois grupos sem cor",
+    "Par abaixo de 3 trocas fora do desenho, com a sub-fatia reservada no arco",
+    "Anotação que declara quantos pares saíram, porque arco maior é fato do desenho",
+    "Linha de leitura com o par de maior troca e o saldo líquido dele"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 560
+  },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta escrita. Moldura card com canvas de 960 px de largura: recuo de 33 px por lado, desconto de 66 px de largura e de 118,5 px de altura com o caso de uso em uma linha, então o corpo mede 894 x 441,5 px, e o viewBox repete esse par para a escala do SVG sair 1 (11 px declarados são 11 px na tela). O caso de uso tem 77 caracteres, abaixo dos 153 que a tabela de fronteira mede como uma linha garantida num cabeçalho de 894 px. Linhas escritas: 1 de leitura de 12 px na base 13, 2 por grupo (nome e contagem, 11 px) em 8 grupos e 1 de anotação de 11 px na base 437,5. Altura: roda de raio 168 centrada em (447, 220); as caixas de rótulo vão de 26,8 a 411,0 px, conferido caixa a caixa pela soma POR GLIFO dos 18 textos, com respiro mínimo de 4 px entre caixas. Largura: o rótulo mais largo é a contagem, 29 reatribuições enviadas a 134,6 px em Manrope de 11 px, e os rótulos deste dado ficam entre 130,1 e 768,3 px dos 894 disponíveis. O raio e o afastamento do rótulo foram CORRIGIDOS por medição depois do primeiro render: com raio 170 e âncora em R + 10, a CONTRASTE-TEXTO acusou 2% da tinta de 8 reatribuições enviadas sobre o próprio arco do Executivo H, a 1,00:1, isto é texto invisível, porque o bloco de duas linhas desce 15,4 px abaixo da âncora e a borda do disco é curva. Com raio 168, âncora em R + 18 e recuo horizontal de 6 px, a caixa mais próxima fica a 4,5 px do arco. A anotação tem 48 caracteres, dentro dos 50 da ANO-2. O rótulo diz reatribuições enviadas, e não o número solto, por achado da revisão da v1: arco é o que a entidade ENVIA, e o número sem qualificador é lido como tudo o que passou por ela. A soma das reatribuições dos pares cortados não é escrita à parte porque ela já está dentro da contagem de cada arco. GUARDAS QUE NÃO MEDIRAM, conferidas à mão: a ESPESSURA-MARCA sai sem_marca_de_barra, porque o piso geral de 12 px é o outro lado do maxBarSize e só existe dentro de um <Bar> do Recharts; medido aqui, a ponta mais fina de fita desenhada tem 6,8 px (1 reatribuição em R_INNER de 158), abaixo daquele piso de propósito, porque nesta forma a espessura É o dado e engrossá-la publicaria um número que não existe; o corte das fitas fracas está no limiar de 3 e não na espessura. Nenhum rótulo é desenhado por dentro de marca, então o piso de rótulo interno não se aplica. A EIXO-CALMO sai sem_grade e a OPACIDADE-MARCA sai sem_opacidade_em_marca: a peça não tem eixo cartesiano nem declara opacidade em lugar nenhum."
+}

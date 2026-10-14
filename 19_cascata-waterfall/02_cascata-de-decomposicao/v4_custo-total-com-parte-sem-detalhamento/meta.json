@@ -1,0 +1,13 @@
+{
+  "title": "Custo total com parte sem detalhamento",
+  "useCase": "Do custo total de R$ 390 mil, quanto tem linha detalhada e quanto ainda não foi devolvido?",
+  "demonstrates": [
+    "Parte sem detalhamento hachurada, contada no total e marcada à parte",
+    "Ausência com contorno --text-muted e palavra, nunca zero silencioso",
+    "Parte ausente por último e fora do teto de categorias",
+    "Participação da lacuna escrita no rótulo: 19% do total"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem desvio de canvas. ESP-6: corpo 574 x 225 px; 7 colunas em 558 px dão passo 79,7 px e barra de 24 px. A parte sem detalhamento é a diferença entre o total medido e a soma das linhas (R$ 76 mil), calculada no componente; as linhas ficam em cinza neutro, o total em chart-1 e a lacuna hachurada com contorno --text-muted. A lacuna fica antes da coluna de total, como última parte, e não conta no teto de seis categorias coloridas (COR-4)."
+}

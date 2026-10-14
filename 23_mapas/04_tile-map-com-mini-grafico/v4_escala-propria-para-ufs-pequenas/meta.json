@@ -1,0 +1,15 @@
+{
+  "title": "Agendas por UF com escala própria",
+  "useCase": "Pré-vendas: ver a forma da série de agendas em UFs de volume muito menor, sem comparar tiles entre si.",
+  "demonstrates": [
+    "Escala Y independente por tile com selo escala própria em cada um",
+    "Máximo da série escrito no tile, para a forma não ser lida como volume",
+    "Mês sem medição quebra a linha em vez de cair para zero",
+    "Ponto isolado entre meses sem medição desenhado como bolinha",
+    "UF sem nenhum mês medido com Unplug e formatUnavailable",
+    "Aviso na linha de leitura de que os tiles não se comparam entre si"
+  ],
+  "canvas": { "width": 960, "height": 720 },
+  "frame": "card",
+  "notes": "Canvas por número porque o selo escala própria, escrito por extenso (ROT-8 não admite sigla inventada), tem cerca de 80 px e não cabe nos 78 px de tile do preset alto; com 960x720 o tile mede 124 px. Grade de 7 colunas, não a de 8 do catálogo. O aviso de que os tiles não se comparam está na linha de leitura do corpo e no useCase, e não num subtítulo próprio, porque o subtítulo é da moldura. A escala de cada tile vai de 0 ao máximo da UF, e o máximo está escrito no tile; sem o zero na base a forma exageraria a oscilação das UFs pequenas. SP chega a 655 agendas por mês e RR mede 2, mais de 300 vezes menos. PI e TO têm meses sem medição (linha quebrada), TO tem um ponto isolado em mar/26 (bolinha), RR tem um único mês medido e AP nenhum (Unplug e indisponível)."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Variação da receita com contribuições opostas",
+  "useCase": "Quem puxou a receita do trimestre quando os produtos que subiram e os que caíram quase se anularam?",
+  "demonstrates": [
+    "Barra de largura recusada quando há contribuições de sinais opostos",
+    "Valores com sinal tipográfico + e −, ordenados pelo módulo",
+    "Variação total de zero com participações escritas como sem base, nunca NaN%",
+    "Resíduo nomeado quando os itens listados não fecham a variação total",
+    "Ponteiro escrito para a cascata da família 19 quando a forma importa"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset card: seis linhas de contribuição (cinco produtos e o resíduo) mais a nota de participação sem base e o ponteiro para a cascata não cabem nos 328 px de corpo do preset de 360 px de altura (ESP-3); ajustado para 400, o mesmo canvas da v3 deste modelo."
+}

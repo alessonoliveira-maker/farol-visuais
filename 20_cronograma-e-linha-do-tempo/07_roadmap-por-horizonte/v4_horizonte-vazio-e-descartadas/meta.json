@@ -1,0 +1,13 @@
+{
+  "title": "Roadmap com horizonte vazio e descartadas",
+  "useCase": "Marketing: a coluna depois ainda não tem iniciativa priorizada e 3 ideias foram descartadas no ciclo de 2026-09.",
+  "demonstrates": [
+    "Coluna vazia mantida com o texto sem iniciativa priorizada, sem colapsar a grade",
+    "Quarta coluna descartado rebaixada em text-text-muted com motivo curto",
+    "Iniciativa sem público declarado em tom neutro var(--line-strong), por último",
+    "Título longo com line-clamp-2 e texto completo no atributo title"
+  ],
+  "canvas": "largo",
+  "frame": "stage",
+  "notes": "Moldura stage: corpo de 920 x 310 px. Quatro colunas de cerca de 215 px. Conta da altura da coluna mais cheia (descartado): cabeçalho 24 + vão 8 + 3 cartões de 3 linhas (16 título + 16 público + 16 motivo + 16 de respiro = 64) com 2 vãos de 6 = 236, mais subtítulo 16 + vão 12 = 264, dentro dos 310. O título longo da coluna agora ocupa duas linhas por line-clamp-2; o title no li guarda o texto inteiro, e a frase acessível não repete os títulos. O mês do ciclo sai por formatMonthLong no subtítulo."
+}

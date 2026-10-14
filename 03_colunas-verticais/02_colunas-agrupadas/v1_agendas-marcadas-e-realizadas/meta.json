@@ -1,0 +1,13 @@
+{
+  "title": "Agendas marcadas e realizadas por mês",
+  "useCase": "Em cada um dos últimos 6 meses, quantas agendas marcadas viraram reunião realizada?",
+  "demonstrates": [
+    "Dois Bar irmãos sem stackId, com barGap curto e barCategoryGap entre 30% e 40%",
+    "Cor por slot fixo da série, nos slots 1 e 3, com legenda na ordem das colunas",
+    "Taxa de realização com volume na dica, por formatRateWithVolume",
+    "Tique de contagem com allowDecimals desligado e de 3 a 5 linhas de grade"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Passo pela ESP-6: corpo do cartão com cerca de 526 px de largura de plotagem para 6 meses dá passo de 87,7 px; com barGap de 1 px e barCategoryGap de 30% (o teto do vão, para maximizar a espessura), a espessura prevista é (87,7 x 0,40 − 1) / 2 = 17,0 px, dentro do piso de 12 px da ESP-2. Conferido no preview.svg, não só na constante declarada."
+}

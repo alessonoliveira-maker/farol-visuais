@@ -1,0 +1,14 @@
+{
+  "title": "Fechamentos contra o forecast do mês",
+  "useCase": "Quanto foi fechado contra o forecast declarado no início de cada mês e qual o viés da previsão?",
+  "demonstrates": [
+    "Coluna fantasma: forecast largo em contorno atrás do fechado estreito e sólido",
+    "Um só Bar com shape desenhando os dois retângulos a partir do payload",
+    "Atingimento escrito só nos meses abaixo de 90% ou acima de 110%",
+    "Fechado que passa do forecast lido como informação, sem moldura ali",
+    "Viés médio do forecast no período calculado do dado na linha de leitura"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo, não card: medido no preview, o par de rótulos empilhados de cada mês passa de 100 px de largura nos meses fora da faixa (sufixo NN%), e o passo de 84,3 px que o card daria para 6 meses (ESP-6) faz um rótulo invadir o do vizinho. Largo dá passo de 137,7 px, com folga."
+}

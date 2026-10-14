@@ -1,0 +1,225 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "04_colunas-empilhadas-100",
+  "versoes": {
+    "v1_mix-de-origem-com-n": {
+      "veredito": "aprovado",
+      "nota": "Mix por mes honesto: n de cada mes escrito, percentuais inteiros somando 100 e slots 1, 3, 6. Observacoes de legenda sem mes e ordem da legenda seguem no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:33.554Z",
+      "impressao": "345afb9ee37d306cd2620de6ad4bc69b3f9d42f8",
+      "arquivos": {
+        "Chart.tsx": "93b6a3b9359bf0de015462025eee7d4a6f0ef2ed",
+        "data.ts": "a99d17f78a3eb27e7cba91d1cc8f9bd66f8eb287",
+        "meta.json": "d47a4f9791c2305825daed8e2f1d3fd4ae0c3ab1"
+      }
+    },
+    "v2_origem-paga-passa-de-70": {
+      "veredito": "aprovado",
+      "nota": "Limiar de 70% legivel nos dois temas, piso de 18 px respeitado e rotulo de 7% sai da marca com halo. Peso 700 em seis rotulos fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:38.869Z",
+      "impressao": "65bb6ae317f8556fa527e8c84990df4340cde0d9",
+      "arquivos": {
+        "Chart.tsx": "4065da4bfc22fddd32829394b5ec9f24ad175070",
+        "data.ts": "d96b8b4826607f41390c4b242a5e1028db14ea90",
+        "meta.json": "a64f4c127e81f360f7774c9da7a60d279dd47beb"
+      }
+    },
+    "v3_perdas-por-motivo-por-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Caso denso correto: ordem fixa pelo trimestre recente, ausencia vazada por ultimo, n por trimestre abaixo do eixo e legenda sem corte.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:43.558Z",
+      "impressao": "6a0f0bba5f0c3028d4d1764f5f746945c6e439f1",
+      "arquivos": {
+        "Chart.tsx": "b9ce809a282bb3b4f0c914ab7d555d59eb715b50",
+        "data.ts": "6d0f8df42f63a77296ae52d3ab810de2afb7b8f9",
+        "meta.json": "284d53793aaf8f8d37af2099bf3f68aa6c0944b2"
+      }
+    },
+    "v4_amostra-pequena-e-sem-registro": {
+      "veredito": "aprovado",
+      "nota": "Amostra pequena e zero medido separados sem opacidade sobre a marca; trimestre de zero nao vira coluna cheia e o n escreve 0 perdas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:47.757Z",
+      "impressao": "027e1377ca7edbe1b042be3321d0913b896317f8",
+      "arquivos": {
+        "Chart.tsx": "ca6f7e7eddf994c316b4ac7cbade5af0ec022229",
+        "data.ts": "5d42b4583ca0f7d3a34f3dd07b98e743855e7793",
+        "meta.json": "329425a7348b9fa5e2677c3419d029ac53be8791"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_mix-de-origem-com-n",
+      "veredito": "aprovado",
+      "nota": "Mix por mês legível nos dois temas, n acima de cada coluna, percentuais somam 100 pelo maior resto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:37:26.814Z",
+      "impressao": "345afb9ee37d306cd2620de6ad4bc69b3f9d42f8",
+      "arquivos": {
+        "Chart.tsx": "93b6a3b9359bf0de015462025eee7d4a6f0ef2ed",
+        "data.ts": "a99d17f78a3eb27e7cba91d1cc8f9bd66f8eb287",
+        "meta.json": "d47a4f9791c2305825daed8e2f1d3fd4ae0c3ab1"
+      }
+    },
+    {
+      "versao": "v2_origem-paga-passa-de-70",
+      "veredito": "reprovado",
+      "nota": "O caso de uso pergunta o volume e nenhum n aparece na tela: escrever o n de cada mes acima da coluna, como na v1.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:37:33.932Z",
+      "impressao": "037348b034de2734d0a49b25c62feb1ead07b0bd",
+      "arquivos": {
+        "Chart.tsx": "15d0a01073dcf04a56c1abe3ddfbf887cbd8444a",
+        "data.ts": "d96b8b4826607f41390c4b242a5e1028db14ea90",
+        "meta.json": "65d7461403b8cd946163670abdf664020ea1867c"
+      }
+    },
+    {
+      "versao": "v2_origem-paga-passa-de-70",
+      "veredito": "reprovado",
+      "nota": "O caso de uso pergunta o volume e nenhum n aparece na tela: escrever o n de cada mês acima da coluna, como na v1.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:37:41.492Z",
+      "impressao": "037348b034de2734d0a49b25c62feb1ead07b0bd",
+      "arquivos": {
+        "Chart.tsx": "15d0a01073dcf04a56c1abe3ddfbf887cbd8444a",
+        "data.ts": "d96b8b4826607f41390c4b242a5e1028db14ea90",
+        "meta.json": "65d7461403b8cd946163670abdf664020ea1867c"
+      }
+    },
+    {
+      "versao": "v3_perdas-por-motivo-por-trimestre",
+      "veredito": "reprovado",
+      "nota": "Legenda corta Sem retorno do cont... e o nome inteiro não está na frase acessível: alargar LEGEND_WIDTH ou encurtar o rótulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:37:41.789Z",
+      "impressao": "143a9bb595905c4a4b796df6c1ecefcc91d1284c",
+      "arquivos": {
+        "Chart.tsx": "44d9b35a2a4708b94b5812bbaf1fc4d9408321a1",
+        "data.ts": "6d0f8df42f63a77296ae52d3ab810de2afb7b8f9",
+        "meta.json": "92fa14540a70af736a60cc750590122b6503a163"
+      }
+    },
+    {
+      "versao": "v4_amostra-pequena-e-sem-registro",
+      "veredito": "aprovado",
+      "nota": "Amostra pequena marcada por contorno tracejado e trimestre sem registro vazio; os dois estados leem bem nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:37:46.522Z",
+      "impressao": "063ccfe5ca738794564e65e8bfa66a3c91ecfbd6",
+      "arquivos": {
+        "Chart.tsx": "2f7c742c49356f698abad7c65ee2bcb1bbbbb14b",
+        "data.ts": "5d42b4583ca0f7d3a34f3dd07b98e743855e7793",
+        "meta.json": "d99b2c82864a76e436c248b719ff127121d16588"
+      }
+    },
+    {
+      "versao": "v1_mix-de-origem-com-n",
+      "veredito": "aprovado",
+      "nota": "Mix por mes legivel nos dois temas, n acima de cada coluna, percentuais somam 100 pelo maior resto; observacoes de legenda no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:49:27.404Z",
+      "impressao": "345afb9ee37d306cd2620de6ad4bc69b3f9d42f8",
+      "arquivos": {
+        "Chart.tsx": "93b6a3b9359bf0de015462025eee7d4a6f0ef2ed",
+        "data.ts": "a99d17f78a3eb27e7cba91d1cc8f9bd66f8eb287",
+        "meta.json": "d47a4f9791c2305825daed8e2f1d3fd4ae0c3ab1"
+      }
+    },
+    {
+      "versao": "v2_origem-paga-passa-de-70",
+      "veredito": "reprovado",
+      "nota": "O n de cada mês não aparece no desenho e o volume que o caso de uso pergunta fica só na dica; escrever o n acima de cada coluna.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:49:33.677Z",
+      "impressao": "037348b034de2734d0a49b25c62feb1ead07b0bd",
+      "arquivos": {
+        "Chart.tsx": "15d0a01073dcf04a56c1abe3ddfbf887cbd8444a",
+        "data.ts": "d96b8b4826607f41390c4b242a5e1028db14ea90",
+        "meta.json": "65d7461403b8cd946163670abdf664020ea1867c"
+      }
+    },
+    {
+      "versao": "v3_perdas-por-motivo-por-trimestre",
+      "veredito": "reprovado",
+      "nota": "A legenda corta o nome da série em Sem retorno do cont reticências, contra a TIP-7; alargar LEGEND_WIDTH ou encurtar o rótulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:49:38.463Z",
+      "impressao": "143a9bb595905c4a4b796df6c1ecefcc91d1284c",
+      "arquivos": {
+        "Chart.tsx": "44d9b35a2a4708b94b5812bbaf1fc4d9408321a1",
+        "data.ts": "6d0f8df42f63a77296ae52d3ab810de2afb7b8f9",
+        "meta.json": "92fa14540a70af736a60cc750590122b6503a163"
+      }
+    },
+    {
+      "versao": "v4_amostra-pequena-e-sem-registro",
+      "veredito": "reprovado",
+      "nota": "Falta o n por trimestre no desenho: as 4 perdas e as 90 do caso de uso não aparecem e o volume vive só na dica; escrever o n sob o eixo como na v3.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:49:43.175Z",
+      "impressao": "063ccfe5ca738794564e65e8bfa66a3c91ecfbd6",
+      "arquivos": {
+        "Chart.tsx": "2f7c742c49356f698abad7c65ee2bcb1bbbbb14b",
+        "data.ts": "5d42b4583ca0f7d3a34f3dd07b98e743855e7793",
+        "meta.json": "d99b2c82864a76e436c248b719ff127121d16588"
+      }
+    },
+    {
+      "versao": "v1_mix-de-origem-com-n",
+      "veredito": "aprovado",
+      "nota": "Mix por mes honesto: n de cada mes escrito, percentuais inteiros somando 100 e slots 1, 3, 6. Observacoes de legenda sem mes e ordem da legenda seguem no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:33.554Z",
+      "impressao": "345afb9ee37d306cd2620de6ad4bc69b3f9d42f8",
+      "arquivos": {
+        "Chart.tsx": "93b6a3b9359bf0de015462025eee7d4a6f0ef2ed",
+        "data.ts": "a99d17f78a3eb27e7cba91d1cc8f9bd66f8eb287",
+        "meta.json": "d47a4f9791c2305825daed8e2f1d3fd4ae0c3ab1"
+      }
+    },
+    {
+      "versao": "v2_origem-paga-passa-de-70",
+      "veredito": "aprovado",
+      "nota": "Limiar de 70% legivel nos dois temas, piso de 18 px respeitado e rotulo de 7% sai da marca com halo. Peso 700 em seis rotulos fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:38.869Z",
+      "impressao": "65bb6ae317f8556fa527e8c84990df4340cde0d9",
+      "arquivos": {
+        "Chart.tsx": "4065da4bfc22fddd32829394b5ec9f24ad175070",
+        "data.ts": "d96b8b4826607f41390c4b242a5e1028db14ea90",
+        "meta.json": "a64f4c127e81f360f7774c9da7a60d279dd47beb"
+      }
+    },
+    {
+      "versao": "v3_perdas-por-motivo-por-trimestre",
+      "veredito": "aprovado",
+      "nota": "Caso denso correto: ordem fixa pelo trimestre recente, ausencia vazada por ultimo, n por trimestre abaixo do eixo e legenda sem corte.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:43.558Z",
+      "impressao": "6a0f0bba5f0c3028d4d1764f5f746945c6e439f1",
+      "arquivos": {
+        "Chart.tsx": "b9ce809a282bb3b4f0c914ab7d555d59eb715b50",
+        "data.ts": "6d0f8df42f63a77296ae52d3ab810de2afb7b8f9",
+        "meta.json": "284d53793aaf8f8d37af2099bf3f68aa6c0944b2"
+      }
+    },
+    {
+      "versao": "v4_amostra-pequena-e-sem-registro",
+      "veredito": "aprovado",
+      "nota": "Amostra pequena e zero medido separados sem opacidade sobre a marca; trimestre de zero nao vira coluna cheia e o n escreve 0 perdas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:10:47.757Z",
+      "impressao": "027e1377ca7edbe1b042be3321d0913b896317f8",
+      "arquivos": {
+        "Chart.tsx": "ca6f7e7eddf994c316b4ac7cbade5af0ec022229",
+        "data.ts": "5d42b4583ca0f7d3a34f3dd07b98e743855e7793",
+        "meta.json": "329425a7348b9fa5e2677c3419d029ac53be8791"
+      }
+    }
+  ]
+}

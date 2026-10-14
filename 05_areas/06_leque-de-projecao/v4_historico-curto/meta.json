@@ -1,0 +1,13 @@
+{
+  "title": "Leque com histórico curto",
+  "useCase": "Mostrar com honestidade uma projeção feita com menos de 6 meses de histórico, sem esconder que ela abre demais.",
+  "demonstrates": [
+    "Horizonte truncado em 3 meses quando o histórico é curto",
+    "Nota curta com o número de meses usados na projeção",
+    "Borda inferior limitada ao zero numa grandeza que não fica negativa (EIX-1)",
+    "Frase acessível que declara a largura da faixa no último mês"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Método declarado: bootstrap da variação mensal dos 5 meses de real disponíveis (2.000 reamostragens); menos que o piso de cerca de 12 meses que a família recomenda, por isso o horizonte é truncado em 3 meses em vez de 5. O p05 de out/2026 é 0 porque a reamostragem bruta projetava um valor negativo e contrato ativo não fica abaixo de zero."
+}

@@ -1,0 +1,481 @@
+{
+  "slug": "13_progresso-meta-e-gauge",
+  "nome": "Progresso, meta e gauge",
+  "modelos": [
+    {
+      "slug": "01_barra-de-progresso-linear",
+      "nome": "Barra de progresso e capacidade contra teto",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Um trilho, uma barra que cresce dentro dele e um traço de referência. Quando a referência é meta, a pergunta é quanto falta; quando é teto de capacidade, a polaridade inverte e a pergunta vira quanto sobra ou quanto estourou. O domínio vai até o maior entre valor e referência com folga, para que passar de 100% caiba com marca própria em vez de travar a barra. Com prazo, entra a segunda régua da família: o ritmo esperado na data de corte, que chega pronta no dado. Feito em HTML com Tailwind, sem Recharts, para caber em cartão, lista e linha de tabela.",
+      "quando_usar": [
+        "Uma medida contra uma meta ou um teto declarado, em cartão com pouco espaço",
+        "Meta com prazo lida no meio do período, com o ritmo esperado para a data de corte",
+        "Lista de 4 a 15 pessoas ou filas com metas diferentes, normalizada em percentual da meta",
+        "Demanda contra teto de capacidade medido, com a folga ou o estouro escrito ao lado",
+        "Acumulado que só sobe, como meta de campanha, no lugar de um termômetro decorado"
+      ],
+      "quando_evitar": [
+        "Existe régua qualitativa acordada (ruim, aceitável, bom): use o bullet chart (13/02)",
+        "Meta ou teto sem dono nem medição: a folga vira ficção; mostre só o número em cartão de KPI (01/03)",
+        "Muitas categorias ordenadas sem nenhuma referência: é barra horizontal comum (família 02)",
+        "Acompanhamento dia a dia do acumulado contra a meta: use o burn-up (04/06)",
+        "Mais de 15 linhas com várias colunas numéricas: é bullet em célula de tabela (14/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-trimestre-contra-meta",
+          "titulo": "Receita reconhecida do trimestre contra a meta",
+          "caso_de_uso": "Comercial: quanto da meta de R$ 5,0 mi de 2026-T3 já foi reconhecido e quanto falta para fechar o trimestre.",
+          "o_que_demonstra": [
+            "Trilho e barra em div com largura percentual, sem Recharts",
+            "Domínio em Math.max de valor e meta vezes 1,05, com folga para o traço",
+            "Par de números por formatCurrencyCompact e o que falta escrito em texto",
+            "Ponta arredondada trocada por rounded-sm abaixo de 4% do trilho",
+            "Frase acessível com valor, meta, percentual e o que falta"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_agendas-no-ritmo-do-mes",
+          "titulo": "Agendas do mês contra o ritmo esperado",
+          "caso_de_uso": "Pré-vendas: no dia 18 de 30, as 41 agendas marcadas estão no ritmo para bater a meta de 90 do mês?",
+          "o_que_demonstra": [
+            "Ritmo esperado como traço pontilhado com rótulo, a partir de elapsedRatio do dado",
+            "Lacuna até o ritmo destacada e escrita: 13 agendas atrás do ritmo",
+            "Projeção tracejada na mesma cor do realizado, dita como premissa em texto",
+            "Modo de ritmo declarado no rótulo, linear ou pela curva histórica",
+            "Nenhum new Date no componente: a data de corte vem no dado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cota-por-executivo",
+          "titulo": "Atingimento da cota por executivo",
+          "caso_de_uso": "Comercial: quem está acima, na linha ou abaixo da cota de 2026-T3 entre 8 executivos com metas de valores diferentes.",
+          "o_que_demonstra": [
+            "Lista em HTML com barra em percentual da meta e valor absoluto ao lado",
+            "Ordenação por atingimento, nunca por nome nem por variação",
+            "Mediana da equipe como traço vertical comum a todas as linhas",
+            "Excedente acima de 100% em tom próprio, com o percentual escrito",
+            "Escala comum sobre o conjunto para o comprimento se comparar entre linhas",
+            "Pessoa sem meta definida no fim com o texto sem meta, fora da mediana"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_filas-contra-teto-com-estouro",
+          "titulo": "Demanda das filas contra o teto de capacidade",
+          "caso_de_uso": "Pré-vendas: qual fila cabe no teto do mês, qual estourou e em qual o teto ainda é premissa ou falta coleta.",
+          "o_que_demonstra": [
+            "Polaridade invertida: barra neutra até o teto e excedente em negative com ícone",
+            "Escala comum até 1,3 vez o teto ou a maior demanda, para o estouro caber",
+            "Folga ou estouro escrito: faltam 43 entradas, 38 acima do teto",
+            "Teto de premissa em traço mais apagado e dito no rótulo, sem cor de procedência",
+            "Fila sem coleta com trilho tracejado e formatUnavailable, nunca barra zerada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_bullet-chart",
+      "nome": "Bullet chart",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "O modelo central da família e a recomendação do Farol no lugar do gauge. Cinco peças, na especificação de Stephen Few: rótulo, escala linear, barra principal com cerca de um terço da espessura do contêiner, traço perpendicular da meta e de duas a cinco faixas qualitativas por intensidade de um único tom. Em Recharts, BarChart com layout vertical, faixas como ReferenceArea pintadas antes da barra e meta como ReferenceLine depois dela, sempre em extendDomain para a meta não sumir. A polaridade da métrica decide a ordem das faixas, e empilhar vários bullets com rótulos alinhados é o que faz o formato ganhar do mostrador.",
+      "quando_usar": [
+        "Medida, meta e régua qualitativa declarada no mesmo espaço, o caso geral da família",
+        "Painel de 3 a 8 métricas ou pessoas com metas diferentes, normalizadas em percentual da meta",
+        "Métrica de custo com polaridade invertida, como CPL, em que menos é melhor",
+        "Coluna estreita e alta com 2 a 5 itens de rótulo curto, na versão vertical",
+        "Qualquer pedido de gauge em que a leitura precisa ser precisa ou comparada"
+      ],
+      "quando_evitar": [
+        "Faixas sem dono nem data de definição: sem régua acordada, use a barra de progresso (13/01)",
+        "Público que nunca viu o formato e nenhuma anotação de primeira leitura no painel",
+        "Escala compartilhada entre métricas de unidades diferentes: normalize ou dê escala por linha",
+        "Mais de 5 faixas qualitativas, ou faixas pintadas em semáforo de matiz",
+        "Dezenas de linhas numa tabela: é bullet em célula (14/01)",
+        "Rótulo longo na versão vertical, que obrigaria a girar o texto: volte para a horizontal"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-com-faixas-de-estado",
+          "titulo": "Receita reconhecida com faixas de estado",
+          "caso_de_uso": "Comercial: a receita de 2026-T3 está na faixa ruim, aceitável ou boa da régua do trimestre, e a que distância da meta?",
+          "o_que_demonstra": [
+            "BarChart com layout vertical, faixas em ReferenceArea e meta em ReferenceLine",
+            "Ordem de pintura no JSX: faixas, depois a barra e só então a meta",
+            "ifOverflow em extendDomain para a meta não sumir quando passa do maior valor",
+            "barSize calculado como 34% da altura conhecida, não decidido pelo Recharts",
+            "Três faixas por intensidade de um tom, a mais clara marcando a zona ruim"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_cpl-com-polaridade-invertida",
+          "titulo": "CPL do mês com régua invertida",
+          "caso_de_uso": "Marketing: o CPL de 2026-08 está dentro da faixa aceitável definida na revisão de 2026-06, sabendo que menor é melhor?",
+          "o_que_demonstra": [
+            "Polaridade lower-is-better declarada no dado, invertendo a sequência das faixas",
+            "Anotação da origem da faixa, com a data da revisão que a definiu",
+            "Variação contra o mês anterior com sinal tipográfico e a base na mesma linha",
+            "Cor semântica pela polaridade: CPL subindo é negative, sempre com ícone"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_painel-de-metas-comerciais",
+          "titulo": "Painel de metas comerciais do trimestre",
+          "caso_de_uso": "Comercial: das cinco metas de 2026-T3, quais estão na faixa aceitável de 80% a 100% e qual ficou abaixo dela?",
+          "o_que_demonstra": [
+            "Um BarChart só, uma categoria por métrica e faixas atravessando todas as linhas",
+            "Métricas normalizadas em percentual da meta, unidade original no rótulo e na dica",
+            "Rótulos alinhados à esquerda para as pontas se compararem na vertical",
+            "Única métrica abaixo da faixa com ícone e peso no rótulo, sem depender da cor",
+            "Valor absoluto escrito ao fim de cada linha por formatValue"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_orcamento-por-plataforma-em-coluna",
+          "titulo": "Orçamento de mídia por plataforma em coluna",
+          "caso_de_uso": "Marketing: quanto do orçamento de 2026-08 cada plataforma consumiu contra o planejado, com uma sem veiculação no mês.",
+          "o_que_demonstra": [
+            "Bullet vertical com ReferenceArea em y1 e y2 e meta como ReferenceLine em y",
+            "Faixa de conforto entre 85% e 105% do planejado por intensidade",
+            "Plataforma sem veiculação com trilho tracejado e texto, nunca 0% pintado",
+            "Coluna acima de 105% com o excedente marcado e o valor real escrito",
+            "Rótulo curto visível e nome completo na frase acessível, sem texto girado"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_progresso-radial-de-anel-unico",
+      "nome": "Progresso radial de anel único",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Anel fechado com o trecho cumprido preenchido e o número no centro. É o radial mais inofensivo da família, porque o leitor reconhece quase fechado e mal começou sem precisar ler ângulo. Em Recharts, RadialBarChart começando no topo, com startAngle 90 e endAngle menos 270, e PolarAngleAxis numérico com domínio explícito: sem ele o valor único vira anel cheio em silêncio. Aceita um tique de ritmo esperado e o empilhamento por origem com stackId, até 4 partes. Acima de 100% o anel trava na volta cheia e o excedente vai escrito em texto, nunca numa segunda volta ilegível.",
+      "quando_usar": [
+        "Um percentual isolado contra 100% num cartão pequeno, ao lado do número",
+        "Até quatro cartões com percentuais independentes lado a lado, cada um com o próprio anel",
+        "Avanço contra a meta repartido por origem, com até 4 segmentos e o total no centro",
+        "Leitura de ritmo com um tique na fração do período já decorrida"
+      ],
+      "quando_evitar": [
+        "Comparar valores entre itens: ângulo lê mal; use bullet (13/02) ou barra (13/01)",
+        "Coluna de tabela com dezenas de anéis: use a barra em célula (14/01)",
+        "Composição de um total sem meta: é rosca (família 07)",
+        "Mais de 4 origens no anel empilhado: vira confete; use barra empilhada (família 02)",
+        "Valor que passa muito de 100% como caso comum: prefira a barra com excedente (13/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-do-mes-no-anel",
+          "titulo": "Agendas do mês em anel",
+          "caso_de_uso": "Pré-vendas: das 90 agendas previstas para 2026-09, quantas já estão marcadas e que percentual isso representa?",
+          "o_que_demonstra": [
+            "RadialBarChart com startAngle 90 e endAngle menos 270, começando no topo",
+            "PolarAngleAxis numérico com domain de zero até a meta e tick desligado",
+            "Número central em div absoluto com kpi-number, fora do viewBox",
+            "Anel com pelo menos 10 px de espessura e trilho visível no tema escuro",
+            "Ponta reta perto de 0% e de 100% para a ponta não mentir alguns pontos"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_receita-do-mes-com-tique-de-ritmo",
+          "titulo": "Receita do mês com tique de ritmo",
+          "caso_de_uso": "Comercial: com 60% do mês decorrido, os 74% da meta de receita reconhecida estão adiantados ou atrasados?",
+          "o_que_demonstra": [
+            "Tique radial na fração decorrida, com posição calculada pela função polar",
+            "Diferença contra o ritmo em pontos percentuais por formatPercentPoints",
+            "Fração decorrida vinda do dado, sem relógio no componente",
+            "Frase acessível que diz adiantado ou atrasado sem depender do ângulo"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_meta-de-receita-por-origem",
+          "titulo": "Meta de receita repartida por origem",
+          "caso_de_uso": "Diretoria: quanto da meta de 2026-T3 já veio e de onde: cliente atual, indicação, inbound ou mídia paga?",
+          "o_que_demonstra": [
+            "Quatro RadialBar com stackId compartilhado e domínio no valor da meta",
+            "Slots categóricos fixos por origem na ordem 1, 3, 6 e 5, com vão entre segmentos",
+            "Total no centro e legenda lateral com valor e percentual de cada parte",
+            "Ordem dos segmentos estável, vinda do dado e não do valor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_orcamento-com-estouro-e-ausencia",
+          "titulo": "Consumo de orçamento com estouro e ausência",
+          "caso_de_uso": "Marketing: três plataformas em 2026-08, uma com 112% do orçamento consumido, uma em zero medido e uma sem coleta.",
+          "o_que_demonstra": [
+            "Anel travado na volta cheia, sem segunda volta, com 12% acima escrito fora",
+            "Estouro de custo em negative com ícone, seguindo a polaridade da métrica",
+            "Zero medido desenha só o trilho e escreve 0",
+            "Sem coleta com trilho tracejado e formatUnavailable no centro",
+            "Mesmo domínio nos três anéis e valor absoluto abaixo do percentual"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_aneis-concentricos",
+      "nome": "Anéis concêntricos de metas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Três anéis encaixados, um por meta independente do mesmo dono e do mesmo período. A leitura é binária por anel: fechou ou não fechou. O defeito não tem conserto dentro do formato: com o mesmo percentual, o anel de fora desenha um arco fisicamente mais longo, então o número de cada meta vai escrito numa lista ao lado e o formato nunca serve para comparar as metas entre si. Em Recharts, RadialBarChart com os valores já normalizados em percentual da meta e PolarAngleAxis numérico de 0 a 100, que mantém a escala honesta em todos os anéis; valor bruto e meta vivem na legenda e na dica.",
+      "quando_usar": [
+        "De 2 a 3 metas independentes da mesma pessoa ou equipe no mesmo período",
+        "Leitura de quem fechou todas as metas, numa grade de até 6 pessoas na mesma escala",
+        "Cartão de abertura da pré-vendas com entradas, agendas e SLA da semana"
+      ],
+      "quando_evitar": [
+        "Comparar uma meta com a outra: o anel de fora parece maior; use o painel de bullets (13/02)",
+        "Mais de 3 anéis, ou 4 sem raio externo grande: os internos ficam minúsculos",
+        "Várias entidades em dimensões comparáveis: radar (família 18) ou tabela visual (14/01)",
+        "Meta revisada no meio do período: o anel fechado apaga o histórico; use o burn-up (04/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_tres-metas-da-semana",
+          "titulo": "Três metas da pré-vendas na semana",
+          "caso_de_uso": "Pré-vendas: na semana de 2026-09-07, a equipe fechou as metas de entradas tratadas, agendas marcadas e SLA cumprido?",
+          "o_que_demonstra": [
+            "Um RadialBar por meta com background como trilho e cornerRadius moderado",
+            "Valores normalizados em TypeScript e PolarAngleAxis de 0 a 100",
+            "Legenda lateral tabular com valor bruto, meta e percentual por anel",
+            "Anel que não fechou com ícone e o que falta escrito na legenda",
+            "Ordem dos anéis por importância, declarada no dado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_quem-fechou-as-tres-metas",
+          "titulo": "Quem fechou as três metas da semana",
+          "caso_de_uso": "Pré-vendas: entre 6 pessoas, quem fechou entradas, agendas e SLA na semana e quem ficou devendo alguma delas?",
+          "o_que_demonstra": [
+            "Pequenos múltiplos com a mesma escala e o mesmo raio em todas as pessoas",
+            "Três números embaixo de cada trio, com algarismo tabular",
+            "Selo de três metas fechadas com ícone e texto, não só cor",
+            "Slots de cor fixos por meta, iguais em todos os trios"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_meta-proporcional-e-sem-meta",
+          "titulo": "Anéis com meta proporcional, sem meta e estouro",
+          "caso_de_uso": "Pré-vendas: pessoa que entrou na quarta tem meta proporcional em duas metas, nenhuma na terceira e passou de 100% numa.",
+          "o_que_demonstra": [
+            "Anel sem meta só com o trilho tracejado e o texto sem meta na legenda",
+            "Selo de meta proporcional com os dias úteis considerados",
+            "Anel acima de 100% travado na volta cheia, com o percentual real escrito",
+            "Frase acessível que nomeia a ausência em vez de somar zero"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_gauge-de-arco-preenchido",
+      "nome": "Gauge de arco preenchido",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "O gauge sem ponteiro: um arco de 240 ou 180 graus cresce sobre um arco de fundo completo, com o número grande no centro e mínimo e máximo escritos nas pontas. Perde a pretensão de precisão do velocímetro e ganha leitura por comprimento de arco. É o caso limpo do RadialBarChart, e o PolarAngleAxis numérico com domínio explícito é obrigatório: sem ele a maior barra do conjunto vira arco cheio. A meta aparece como traço sobre o arco quando não coincide com o máximo do domínio. No Farol continua abaixo do bullet: serve para um percentual num cartão, nunca para comparar itens.",
+      "quando_usar": [
+        "Um percentual da meta num cartão pequeno, quando a barra não compõe com o layout",
+        "Até 3 cartões lado a lado com o mesmo arco e o mesmo domínio, cada um lido sozinho",
+        "Meta que não é o fim da escala, marcada como traço sobre o arco"
+      ],
+      "quando_evitar": [
+        "Comparação entre vários gauges: use o painel de bullets (13/02)",
+        "Composição de um total: é meia rosca (família 07)",
+        "Métrica de cartão com delta e sem régua desenhada: é cartão de KPI (família 01)",
+        "Estados qualitativos nomeados: gauge com ponteiro e faixas (13/06) ou bullet (13/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_meta-de-agendas-em-arco",
+          "titulo": "Meta mensal de agendas em arco",
+          "caso_de_uso": "Pré-vendas: que percentual da meta de 90 agendas de 2026-09 já foi marcado, num cartão pequeno de cabeçalho?",
+          "o_que_demonstra": [
+            "RadialBarChart com startAngle 210 e endAngle menos 30, arco de 240 graus",
+            "PolarAngleAxis numérico com domain explícito, sem normalizar pela maior barra",
+            "Mínimo e máximo escritos nas pontas e número grande centrado",
+            "cornerRadius zerado abaixo de um mínimo para a ponta não mentir"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_fechamentos-acima-da-meta",
+          "titulo": "Fechamentos do mês acima da meta",
+          "caso_de_uso": "Comercial: 23 oportunidades ganhas contra a meta de 20 em 2026-08; quanto o time passou e onde a meta fica no arco?",
+          "o_que_demonstra": [
+            "Domínio até 1,2 vez a meta para o excedente caber no arco",
+            "Traço de meta sobre o arco com rótulo curto, separado do máximo",
+            "Excedente em positive com ícone e o texto 15% acima da meta",
+            "Frase acessível com realizado, meta e excedente"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_filas-na-mesma-escala",
+          "titulo": "Filas da pré-vendas na mesma escala",
+          "caso_de_uso": "Pré-vendas: três filas de trabalho no dia, com o mesmo arco e domínio, incluindo uma em zero medido e uma sem coleta.",
+          "o_que_demonstra": [
+            "Três gauges com domínio comum calculado sobre o conjunto",
+            "Par de contagens abaixo de cada arco por formatRateWithVolume",
+            "Zero medido com o arco de fundo sozinho e o número 0",
+            "Sem coleta com arco tracejado e formatUnavailable, nunca 0%"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_gauge-com-ponteiro",
+      "nome": "Gauge semicircular com ponteiro e faixas",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "O velocímetro: arco de 180 graus dividido em faixas por intensidade, ponteiro apontando o valor e número grande. É o formato mais pedido e o mais criticado da família; o acabamento do Farol o registra como armadilha e nomeia o bullet como alternativa. Existe para o pedido de diretoria de uma peça única de destaque, com três exigências: mínimo e máximo escritos, valor em texto grande e um gauge por tela. Em Recharts, PieChart semicircular com uma Cell por faixa; o ângulo do ponteiro sai do valor por valueToAngle, nunca do midAngle do setor. Absorve a variante com nota, em que o estado vira palavra no centro e o número fica de apoio.",
+      "quando_usar": [
+        "Pedido explícito de diretoria por uma métrica só, como peça única de destaque",
+        "Avaliação qualitativa com 3 a 5 estados nomeados e limiares com dono e data",
+        "Capacidade contra teto medido em apresentação, com a zona de estouro no arco"
+      ],
+      "quando_evitar": [
+        "Qualquer caso em que a barra caiba: o mesmo dado em bullet lê melhor (13/02)",
+        "Mais de um gauge na mesma tela, ou comparação entre itens",
+        "Medida contínua sem estados definidos: arco preenchido (13/05) ou barra (13/01)",
+        "Limiares inventados na hora, sem origem declarada na legenda",
+        "Valor que passa do máximo com frequência: a barra com excedente (13/01) mostra melhor"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_atingimento-trimestral-com-ponteiro",
+          "titulo": "Atingimento da meta trimestral com ponteiro",
+          "caso_de_uso": "Diretoria: em que faixa está o atingimento da meta de receita de 2026-T3 e qual o valor exato por trás do ponteiro?",
+          "o_que_demonstra": [
+            "PieChart com startAngle 180 e endAngle 0 e uma Cell por faixa",
+            "Ângulo do ponteiro por valueToAngle, contínuo e não preso ao meio do setor",
+            "Ponteiro como polígono preenchido com contorno em surface-raised",
+            "Mínimo e máximo nas pontas e o valor em texto grande abaixo do arco",
+            "Faixas por intensidade de um tom, sem semáforo de matiz"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cobertura-de-dado-com-nota",
+          "titulo": "Cobertura de dado do funil com nota de estado",
+          "caso_de_uso": "Comercial: a cobertura de campos mínimos das oportunidades está em atenção, e a quantos pontos da faixa saudável?",
+          "o_que_demonstra": [
+            "Estado como palavra no centro e o valor numérico de apoio logo abaixo",
+            "Quatro setores nomeados com limiares declarados e a origem na legenda",
+            "Distância até a fronteira mais próxima escrita em pontos percentuais",
+            "Texto central em div absoluto por Tailwind, fora do viewBox do Recharts"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_capacidade-contra-teto-medido",
+          "titulo": "Capacidade da pré-vendas contra o teto",
+          "caso_de_uso": "Pré-vendas: as 258 entradas de 2026-08 cabem no teto medido de 274 ou já estão na faixa de atenção?",
+          "o_que_demonstra": [
+            "Escala de 0 a 320 com faixa confortável, atenção e estouro acima do teto",
+            "Traço do teto com rótulo próprio, para não ser lido como fronteira comum",
+            "Folga escrita em texto: faltam 16 entradas para o teto",
+            "Polaridade de capacidade: zona de estouro com ícone, nunca verde no cheio"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_valor-acima-do-maximo",
+          "titulo": "Ponteiro travado com valor acima do máximo",
+          "caso_de_uso": "Diretoria: 338 entradas na pré-vendas em 2026-09 contra um arco que vai até 320; como mostrar o estouro sem esticar a escala?",
+          "o_que_demonstra": [
+            "Ponteiro travado no fim do arco pela trava de valueToAngle",
+            "Marca de transbordo na ponta e o valor real escrito em texto grande",
+            "Domínio fixo declarado, sem esticar em silêncio nem dar segunda volta",
+            "Frase acessível que diz o valor real e quanto passou do máximo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_faixa-de-cenario-contra-meta",
+      "nome": "Faixa de cenário contra meta",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "A saída do planejamento não é um número, é um intervalo. A faixa entre o cenário pessimista e o otimista vira uma barra clara, o cenário base um traço forte dentro dela e a meta um traço externo de desenho diferente. Responde a pergunta que a diretoria faz de verdade: a meta cabe na faixa ou só no melhor caso. Em Recharts, BarChart horizontal com a barra flutuante clássica: série transparente até o piso, silenciada na dica e na legenda, mais a barra visível do piso ao teto, com base e meta como ReferenceLine em extendDomain. Faixa sem nome é decoração: piso e teto dizem a premissa de onde saíram.",
+      "quando_usar": [
+        "Cenários de planejamento com saída em faixa, do pessimista ao otimista, contra uma meta",
+        "Forecast do trimestre com incerteza declarada, lido na reunião de diretoria",
+        "De 1 a 6 linhas, uma por trimestre ou por área, com a meta cruzando todas",
+        "Dizer em qual período a faixa passa a conter a meta"
+      ],
+      "quando_evitar": [
+        "Cenário único, sem incerteza: barra de progresso com projeção (13/01)",
+        "Faixa ao longo do tempo contínuo: área de incerteza (família 05)",
+        "Faixa entre dois pontos sem meta: comparação de pontos (família 17)",
+        "Piso e teto sem premissa declarada: a faixa vira decoração de incerteza"
+      ],
+      "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-projetada-do-trimestre",
+          "titulo": "Receita projetada do trimestre em faixa",
+          "caso_de_uso": "Diretoria: a meta de R$ 5,5 mi de 2026-T4 cabe na faixa entre o cenário pessimista e o otimista, ou só no melhor caso?",
+          "o_que_demonstra": [
+            "Barra flutuante com série transparente até o piso e barra visível até o teto",
+            "Série de apoio silenciada na dica e na legenda",
+            "Cenário base como traço forte e meta como traço de desenho diferente",
+            "ReferenceLine em extendDomain para a meta nunca sumir do eixo"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_pontas-com-premissa",
+          "titulo": "Faixa de cenário com premissas nas pontas",
+          "caso_de_uso": "Diretoria: o que o piso e o teto da faixa de 2026-T4 pressupõem, e a que distância o cenário base está da meta?",
+          "o_que_demonstra": [
+            "Piso e teto rotulados com a premissa de cada ponta, em até duas anotações",
+            "Distância entre base e meta em valor e em percentual",
+            "Rótulos com halo na cor da superfície quando cruzam a linha da meta",
+            "Margem reservada em MARGIN para os rótulos não encostarem nas marcas"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_trimestres-de-2027-contra-meta-anual",
+          "titulo": "Receita acumulada de 2027 contra a meta anual",
+          "caso_de_uso": "Diretoria: em qual trimestre de 2027 a faixa acumulada de receita passa a conter a meta anual de R$ 10 mi?",
+          "o_que_demonstra": [
+            "Quatro linhas com a faixa acumulada por trimestre no mesmo eixo",
+            "Meta anual como uma ReferenceLine vertical cruzando todas as linhas",
+            "Primeiro trimestre que contém a meta marcado com peso e anotação",
+            "Domínio comum calculado sobre o conjunto, a partir do zero"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_meta-fora-da-faixa",
+          "titulo": "Meta fora do alcance do cenário otimista",
+          "caso_de_uso": "Diretoria: nem o cenário otimista de 2027 alcança a meta; qual a lacuna em valor e em percentual até ela?",
+          "o_que_demonstra": [
+            "Faixa inteira à esquerda do traço da meta, sem esticar o eixo para disfarçar",
+            "Lacuna entre o teto da faixa e a meta escrita em valor e em percentual",
+            "Meta dita em texto, porque visualmente parece só um traço distante",
+            "Frase acessível que declara a meta fora da faixa inteira"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    }
+  ]
+}

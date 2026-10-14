@@ -1,0 +1,14 @@
+{
+  "title": "CPL qualificado com tendência de 12 meses",
+  "useCase": "O CPL qualificado de ago/26 é um ponto fora da curva ou parte de uma queda firme desde set/25?",
+  "demonstrates": [
+    "LineChart do Recharts sem eixo, grade nem dica, em contêiner de altura fixa",
+    "Sem área preenchida porque a escala não parte do zero",
+    "Ponto final aceso em --chart-1, ligado à cor do número",
+    "Polaridade menor melhor: queda do CPL pinta a variação de positivo",
+    "Mês sem coleta como null: a linha quebra ali, sem connectNulls",
+    "Sparkline com aria-hidden porque a frase acessível já traz a tendência"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

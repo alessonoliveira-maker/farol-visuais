@@ -1,0 +1,12 @@
+{
+  "title": "Ticket contra ciclo das oportunidades ganhas",
+  "useCase": "Oportunidades de ticket maior demoram mais para fechar? Ganhas nos últimos 12 meses, ticket em reais e ciclo em dias.",
+  "demonstrates": [
+    "ScatterChart com eixos numéricos, unidade e domínio explícito e estável",
+    "Dica própria com o nome da oportunidade e os dois valores formatados",
+    "Opacidade abaixo de 1 para revelar pontos empilhados",
+    "Rodapé com o número de pontos exibidos e o de pontos sem dado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

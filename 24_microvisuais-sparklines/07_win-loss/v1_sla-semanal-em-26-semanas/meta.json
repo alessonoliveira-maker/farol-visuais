@@ -1,0 +1,14 @@
+{
+  "title": "SLA semanal da pré-vendas em 26 semanas",
+  "useCase": "Em quantas das últimas 26 semanas a fila fechou dentro do SLA, e a sequência recente é boa?",
+  "demonstrates": [
+    "Um bloco de altura fixa por semana, acima da linha central se bateu e abaixo se não",
+    "Bateu em positive e não bateu em negative, com a posição como segundo canal",
+    "Geometria em função pura: largura por N, vão de 2 px e viewBox fixo",
+    "Resumo 19 de 26 semanas dentro do SLA escrito junto, com tabular-nums",
+    "Frase acessível na raiz com a contagem e a sequência até a última semana"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "Canvas kpi-alto com moldura card dá corpo de 302 x 155,5 px (cabeçalho de duas linhas). O SVG leva viewBox de 300 x 28 e preserveAspectRatio none: só as marcas esticam, e todo texto fica em HTML para não encolher abaixo de 11 px. Vão de 2 px entre blocos e 2 px de cada lado da linha central, no lugar do 1 px do catálogo, porque blocos vizinhos da mesma cor pedem 1,5 px ou mais (COR-5). A linha central é line subtle: a de line strong mede 1,79:1 e aqui só separa, não carrega dado."
+}

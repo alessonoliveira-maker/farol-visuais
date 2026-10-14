@@ -1,0 +1,12 @@
+{
+  "title": "Agendas semanais por SDR nas últimas 12 semanas",
+  "useCase": "Pré-vendas: como a produção semanal de agendas de cada SDR evoluiu e quanto ela vale na semana atual.",
+  "demonstrates": [
+    "Path de sparkline calculado em função pura, sem Recharts por linha",
+    "Escala própria por linha, declarada no cabeçalho como leitura de forma, não de comparação",
+    "Último ponto em chart-1 ligado ao número da semana na coluna vizinha",
+    "SVG da célula com aria-hidden e o valor legível no texto da linha"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

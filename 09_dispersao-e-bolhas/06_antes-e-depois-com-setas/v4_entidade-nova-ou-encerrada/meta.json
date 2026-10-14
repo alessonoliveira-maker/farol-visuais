@@ -1,0 +1,17 @@
+{
+  "title": "Campanhas novas, encerradas e paradas",
+  "useCase": "Como mostrar campanha sem trimestre anterior, campanha encerrada e campanha que quase não se moveu?",
+  "demonstrates": [
+    "Campanha nova como ponto com anel tracejado, sem seta, e a palavra nova no rótulo",
+    "Campanha encerrada como seta que termina num x, nunca em ponto cheio",
+    "Seta abaixo de 12 px trocada por anel, com a razão medida no comentário",
+    "Os três casos explicados na legenda, para seta ausente não virar não mudou",
+    "Ausência do período anterior como nulo no dado, nunca como zero"
+  ],
+  "canvas": {
+    "width": 1040,
+    "height": 460
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1, com a conta pela tabela medida da moldura: 1040 menos 66 px de recuo dá 974 px de corpo, e 460 menos 118,5 px (2 x 33 de recuo, 40,5 de cabeçalho de uma linha e 12 de vão) dá 341,5 px. Fora do plano o cartão escreve cinco faixas, a leitura de 12 px, duas linhas de legenda de 12 px, a fileira reservada de 12 px para o nome sem posição livre e as duas linhas de 11 px do tique e do rodapé, o que soma 124 px e deixa 217 px de plano. A largura é maior que o preset largo porque as 8 campanhas são nomeadas uma a uma, e o nome mais comprido tem 26 caracteres. Série única em --chart-1 (9,50:1 no escuro, 6,00:1 no claro), porque o que distingue os três casos é a forma e não a cor. O anel da mudança pequena fica no ponto médio entre os dois períodos, não no destino, para nenhum dos dois parecer o único medido. O rodapé escreve custo por lead por extenso, e não a sigla CPL, por medição: com a sigla o SVG aberto sozinho derivava do desenho da página em 0,24% dos pixels a partir dela, e sem ela a diferença é 0,00%."
+}

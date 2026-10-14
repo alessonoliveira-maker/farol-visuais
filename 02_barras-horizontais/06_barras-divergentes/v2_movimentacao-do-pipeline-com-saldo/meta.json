@@ -1,0 +1,14 @@
+{
+  "title": "Movimentação do pipeline por executivo",
+  "useCase": "De onde vem o saldo do pipeline de cada executivo na semana: entradas e avanços contra perdas e desqualificações.",
+  "demonstrates": [
+    "Valores assinados no dado com stackId comum, empilhando por sinal sem configuração",
+    "Tons frios para o que entra e quentes para o que sai, com vão entre segmentos",
+    "Marcador de saldo líquido por ReferenceDot na mesma escala do eixo",
+    "Saldo em moeda compacta com sinal explícito e zero no neutro, sem sinal",
+    "Legenda na ordem visual das marcas, do polo que sai ao polo que entra"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Ingrid S. exercita o saldo exatamente zero: entradas e avanços de 240 mil contra perdas e desqualificações de 240 mil. Ela é a única linha em que a barra existe dos dois lados e o saldo não pende para nenhum, então marcador e número saem em neutro, nunca em --positive."
+}

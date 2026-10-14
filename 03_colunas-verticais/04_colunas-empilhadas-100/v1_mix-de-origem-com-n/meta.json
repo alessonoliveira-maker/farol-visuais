@@ -1,0 +1,12 @@
+{
+  "title": "Mix de origem dos leads por mês",
+  "useCase": "Como a composição de origem dos leads mudou nos últimos 6 meses e quantos leads cada mês teve?",
+  "demonstrates": [
+    "Normalização com percentual inteiro pelo maior resto, direto no stackOffset expand",
+    "O n de cada mês escrito acima da coluna com o substantivo, porque o 100% esconde o volume",
+    "Mídia paga e indicação nas pontas da pilha, únicas com referência comum entre colunas",
+    "Percentual fora da pilha, na legenda do último mês, sem espaço certo dentro do segmento"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

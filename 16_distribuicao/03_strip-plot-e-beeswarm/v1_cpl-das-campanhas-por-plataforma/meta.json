@@ -1,0 +1,15 @@
+{
+  "title": "CPL de cada campanha por tipo de mídia",
+  "useCase": "Como se espalha o custo por lead das campanhas do trimestre em cada tipo de mídia?",
+  "demonstrates": [
+    "ScatterChart com eixo numérico de um lado e categoria do outro, um Scatter por faixa",
+    "Ponto opaco com contorno na cor da superfície, sem opacidade na marca",
+    "Mediana de cada faixa como traço curto desenhado por cima dos pontos",
+    "Meta de CPL em ReferenceLine com o rótulo fora da área de plotagem",
+    "n ao lado do nome da faixa e uma campanha nomeada por ponto",
+    "allowDuplicatedCategory desligado, sem o qual cada ponto abre uma banda nova"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O eixo de categoria é tipo de mídia e não plataforma, porque o recorte por fornecedor não sobrevive à troca de fornecedor, e porque marca real não entra no catálogo. A ordem é pela mediana, do mais barato ao mais caro, e o teto do eixo é arredondado em passo de 50 reais para não encolher junto com o filtro. O ZAxis existe só para travar o raio do ponto: sem ele o Recharts passa a variar o tamanho, e tamanho aqui não carrega informação nenhuma. Campanha sem lead não tem CPL calculável e fica fora da faixa, contada no rodapé, porque denominador zero não vira nem zero nem infinito."
+}

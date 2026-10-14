@@ -1,0 +1,134 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "01_coluna-com-linha",
+  "versoes": {
+    "v1_receita-mensal-contra-meta": {
+      "veredito": "aprovado",
+      "nota": "Colunas de receita e linha de meta no mesmo eixo, dominio do zero, rotulo direto com halo; check sem erro e contraste AA nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:31:00.741Z",
+      "impressao": "9fb3b2bef5817cead7ca840f102cb88c97b8f49d",
+      "arquivos": {
+        "Chart.tsx": "a3081ebf8a6ab3f3bf6d594275286a3ccc57e030",
+        "data.ts": "6464113eb1e810874f83aabc377d004ddd8c35f2",
+        "meta.json": "714d7b255f1a87214588b762e36ed34e698d8f31"
+      }
+    },
+    "v2_fechamentos-com-media-movel": {
+      "veredito": "reprovado",
+      "nota": "Catálogo, item 4 de o que demonstra (destaque da semana corrente com peso 700), e REC-5; sem pergunta própria, a mais próxima é a 18 (DIC-1). O rótulo 3 da semana parcial deixou de ser desenhado nos dois temas: renderPartialValue usa rows[index], e o index do LabelList conta os retângulos desenhados, então com a lacuna de 2026-07-27 a coluna parcial é o retângulo 10 e rows[10] não é parcial. O preview não tem nenhum texto em peso 700 e o README afirma que tem. Tirar o rótulo da dependência de index (dataKey próprio ou camada própria como a MissingWeekMarks) e conferir o 3 em peso 700 acima da coluna vazada com a lacuna mantida. Calendário, lacuna, média sobre o calendário e linha por trás das colunas conferidos e certos. Parecer em validation/revisao_08_combinados-e-eixo-duplo__01_coluna-com-linha_2026-10-02_segunda.md.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:41:00.089Z",
+      "impressao": "7da6a0a1888bd0f7f95401e7c31c918e2fc59099",
+      "arquivos": {
+        "Chart.tsx": "59c3fd88976ad57fc124867b935aec429b028585",
+        "data.ts": "bc16ddba974c458bb4e517da619511d5c5ba3a5e",
+        "meta.json": "373c84bee487538af4f1404c0885f2e137bbf81b"
+      }
+    },
+    "v3_fila-por-etapa-contra-teto": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: 6 semanas acima do teto conferidas contra o data.ts, total escrito em toda coluna, teto por ReferenceLine com extendDomain. Seis observações no README: rótulo de total cortado pelo teto em 6 semanas, teto sem amostra na legenda, janelas do revestimento dentro das colunas, plural fixo, data sem algarismo tabular, vermelho do rótulo vizinho do slot 5.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:24:10.372Z",
+      "impressao": "75b1f138c7474e702bcb28d230e2efc67586d672",
+      "arquivos": {
+        "Chart.tsx": "f9630f1619b0ed34196fe415dd00149df75e80a2",
+        "data.ts": "a909f9f8f1859b58c6e96e93704da6eca54fd62a",
+        "meta.json": "0f33e3309cb28bc8333c5e97b795c542844cdddb"
+      }
+    },
+    "v4_meta-ausente-e-estorno": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Linha da meta por trás das colunas, sem revestimento, medida no preview.svg: nov/26 com topo em y=42,41 contra linha de 42,78 a 45,03 (coluna cobre a linha, sem vão), jun/26 lendo abaixo, fev/26 e set/26 sem fio solto; confirmado por coluna de pixels nos dois PNGs. Tique −R$ 200 mil em uma linha com 82 px; meta.json acertado. Quatro observações no README: medidas fora da nota do meta.json, linha e coluna separadas só por matiz no claro em jun/26, comentário de signedCurrency desatualizado, useCase com redação diferente do catálogo.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:41:00.593Z",
+      "impressao": "4128b3b36a6e9783d9464717f8d54585e03ff5f7",
+      "arquivos": {
+        "Chart.tsx": "0e657978d88688f7891d8c7da2e51743c40bc288",
+        "data.ts": "42d00a1370ec122bb3bfb26a54ef7bac78324077",
+        "meta.json": "8318c1a5359077c3f29765e3fa5d5c9a23967ae3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-mensal-contra-meta",
+      "veredito": "aprovado",
+      "nota": "Colunas de receita e linha de meta no mesmo eixo, dominio do zero, rotulo direto com halo; check sem erro e contraste AA nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:31:00.741Z",
+      "impressao": "9fb3b2bef5817cead7ca840f102cb88c97b8f49d",
+      "arquivos": {
+        "Chart.tsx": "a3081ebf8a6ab3f3bf6d594275286a3ccc57e030",
+        "data.ts": "6464113eb1e810874f83aabc377d004ddd8c35f2",
+        "meta.json": "714d7b255f1a87214588b762e36ed34e698d8f31"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-com-media-movel",
+      "veredito": "reprovado",
+      "nota": "Catálogo, item 3 de o que demonstra (calendário completo gerado em TypeScript no eixo categórico): sem pergunta própria no checklist, a mais próxima é a 8 (EIX-10). O Chart usa as linhas de data como vêm e a média móvel fatia por índice, então semana ausente some do eixo e a janela de 4 semanas passa a cobrir 5 ou mais sem nenhum sinal; o item saiu do meta.json sem desvio declarado. Gerar o calendário semanal em função pura, tratar a semana ausente como lacuna declarada (média nula na janela que a contém) e devolver o item ao meta.json e ao README. Parecer em validation/revisao_08_combinados-e-eixo-duplo__01_coluna-com-linha_2026-10-02.md.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:24:07.547Z",
+      "impressao": "77a5e1ce21b17cde353c4b2b8b2a173ed9996055",
+      "arquivos": {
+        "Chart.tsx": "82ff19085e8c4cc70e9e27cf58fb1f638d23d011",
+        "data.ts": "e57c86c2f74fdc797f8da88e3c758b2677ea86cc",
+        "meta.json": "f874e62b8e1b0879fecdbee75ed25b2686685273"
+      }
+    },
+    {
+      "versao": "v3_fila-por-etapa-contra-teto",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas: 6 semanas acima do teto conferidas contra o data.ts, total escrito em toda coluna, teto por ReferenceLine com extendDomain. Seis observações no README: rótulo de total cortado pelo teto em 6 semanas, teto sem amostra na legenda, janelas do revestimento dentro das colunas, plural fixo, data sem algarismo tabular, vermelho do rótulo vizinho do slot 5.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:24:10.372Z",
+      "impressao": "75b1f138c7474e702bcb28d230e2efc67586d672",
+      "arquivos": {
+        "Chart.tsx": "f9630f1619b0ed34196fe415dd00149df75e80a2",
+        "data.ts": "a909f9f8f1859b58c6e96e93704da6eca54fd62a",
+        "meta.json": "0f33e3309cb28bc8333c5e97b795c542844cdddb"
+      }
+    },
+    {
+      "versao": "v4_meta-ausente-e-estorno",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, TOK-10 e seção 14.1 (marca coberta, com consequência no render): o revestimento de 6 px da linha da meta cobre o topo da coluna de nov/26, que bateu a meta por R$ 6,4 mil (topo 1,49 px acima da linha) e aparece terminando 3 px abaixo dela, com vão, nos dois temas; fev/26 vira um fio de 1,4 px. Tirar o revestimento de cima do topo das colunas (segunda saída da TOK-10, ou anel só no ponto) e conferir nov/26 nos dois PNGs. Na mesma passada, atualizar a nota e o quinto item do meta.json, que ainda dizem 80 px e formatador com hífen. O tique −R$ 200 mil está em uma linha só com 82 px, conferido no PNG e no preview.svg. Parecer em validation/revisao_08_combinados-e-eixo-duplo__01_coluna-com-linha_2026-10-02.md.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:24:14.177Z",
+      "impressao": "601b3d623485945902ccd84d4d65857e6ea91869",
+      "arquivos": {
+        "Chart.tsx": "01cc8dd0d2ec358b5fc9d65252c928cff84e658d",
+        "data.ts": "42d00a1370ec122bb3bfb26a54ef7bac78324077",
+        "meta.json": "a0c7e245a5c21cef57768cae9cf287eac490df18"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-com-media-movel",
+      "veredito": "reprovado",
+      "nota": "Catálogo, item 4 de o que demonstra (destaque da semana corrente com peso 700), e REC-5; sem pergunta própria, a mais próxima é a 18 (DIC-1). O rótulo 3 da semana parcial deixou de ser desenhado nos dois temas: renderPartialValue usa rows[index], e o index do LabelList conta os retângulos desenhados, então com a lacuna de 2026-07-27 a coluna parcial é o retângulo 10 e rows[10] não é parcial. O preview não tem nenhum texto em peso 700 e o README afirma que tem. Tirar o rótulo da dependência de index (dataKey próprio ou camada própria como a MissingWeekMarks) e conferir o 3 em peso 700 acima da coluna vazada com a lacuna mantida. Calendário, lacuna, média sobre o calendário e linha por trás das colunas conferidos e certos. Parecer em validation/revisao_08_combinados-e-eixo-duplo__01_coluna-com-linha_2026-10-02_segunda.md.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:41:00.089Z",
+      "impressao": "7da6a0a1888bd0f7f95401e7c31c918e2fc59099",
+      "arquivos": {
+        "Chart.tsx": "59c3fd88976ad57fc124867b935aec429b028585",
+        "data.ts": "bc16ddba974c458bb4e517da619511d5c5ba3a5e",
+        "meta.json": "373c84bee487538af4f1404c0885f2e137bbf81b"
+      }
+    },
+    {
+      "versao": "v4_meta-ausente-e-estorno",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Linha da meta por trás das colunas, sem revestimento, medida no preview.svg: nov/26 com topo em y=42,41 contra linha de 42,78 a 45,03 (coluna cobre a linha, sem vão), jun/26 lendo abaixo, fev/26 e set/26 sem fio solto; confirmado por coluna de pixels nos dois PNGs. Tique −R$ 200 mil em uma linha com 82 px; meta.json acertado. Quatro observações no README: medidas fora da nota do meta.json, linha e coluna separadas só por matiz no claro em jun/26, comentário de signedCurrency desatualizado, useCase com redação diferente do catálogo.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:41:00.593Z",
+      "impressao": "4128b3b36a6e9783d9464717f8d54585e03ff5f7",
+      "arquivos": {
+        "Chart.tsx": "0e657978d88688f7891d8c7da2e51743c40bc288",
+        "data.ts": "42d00a1370ec122bb3bfb26a54ef7bac78324077",
+        "meta.json": "8318c1a5359077c3f29765e3fa5d5c9a23967ae3"
+      }
+    }
+  ]
+}

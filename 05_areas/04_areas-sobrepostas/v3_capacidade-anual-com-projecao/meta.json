@@ -1,0 +1,12 @@
+{
+  "title": "Capacidade e demanda com trecho projetado",
+  "useCase": "Ver a capacidade planejada até dezembro contra a demanda real até hoje e a projetada depois.",
+  "demonstrates": [
+    "Área de capacidade até 2026-12 e demanda real sólida até 2026-09-14",
+    "Demanda projetada tracejada a partir de hoje, com ReferenceLine vertical",
+    "52 semanas com ticks mensais por formatMonthShort",
+    "Selo de premissa do trecho projetado fica no VisualCard, não no Chart (ANO-6)"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

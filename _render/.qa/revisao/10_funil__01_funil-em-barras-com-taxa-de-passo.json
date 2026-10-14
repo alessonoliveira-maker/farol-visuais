@@ -1,0 +1,212 @@
+{
+  "familia": "10_funil",
+  "modelo": "01_funil-em-barras-com-taxa-de-passo",
+  "versoes": {
+    "v1_barras-com-trilho-e-taxa-de-passo": {
+      "veredito": "aprovado",
+      "nota": "Check limpo; barras no zero, trilho da entrada, taxa de passo com denominador e valor absoluto em toda etapa; dois temas legiveis. Observacoes: halo sobre o trilho e identificador em portugues.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:23.841Z",
+      "impressao": "aa419ffbff2024e14eb2c4465168a5ec504cc45f",
+      "arquivos": {
+        "Chart.tsx": "b8d87603788ed396ad019db790a8a7144d8d9758",
+        "data.ts": "355fbafdfe81378fa8192d1a45b29e512ddee196",
+        "meta.json": "35875c016e3bfa15df2a34e233c9e73c03568ed3"
+      }
+    },
+    "v2_colunas-com-cunha-na-pior-passagem": {
+      "veredito": "aprovado",
+      "nota": "Halo agora cobre as tres linhas da pior cunha: medido 5,45:1 no escuro e 6,41:1 no claro, acima de AA. Colunas no zero, cunha proporcional, etapas excluidas declaradas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:29.395Z",
+      "impressao": "71fc2d30dcf1f9fa3f014a3a04cef25da67d255e",
+      "arquivos": {
+        "Chart.tsx": "12ee55cca6c8ff967701ab42cfff8152d8ea8628",
+        "data.ts": "49c83e960b2331c2e6d2196313c06fa73a751969",
+        "meta.json": "21b00b26624468be712437dd64e5e72c3420efdd"
+      }
+    },
+    "v3_funil-micro-por-origem-em-tabela": {
+      "veredito": "aprovado",
+      "nota": "Colunas ancoradas no zero com numero escrito em toda celula; etapa maior que a anterior sai no tamanho real. Observacoes: escala por linha na coluna Entradas e Sem origem em cor de serie.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:34.406Z",
+      "impressao": "4f97b27ab293c03030a6f405ce38d49cd631fd49",
+      "arquivos": {
+        "Chart.tsx": "16ab07e0941b57dbfded8afb9ff2a746e7944b08",
+        "data.ts": "24a574a5298a932e2a3295833c4e3f148b78ab5a",
+        "meta.json": "6b5a26196d7f5ce3437154a6019ea66e440fd030"
+      }
+    },
+    "v4_barras-centralizadas-com-etapa-zerada": {
+      "veredito": "aprovado",
+      "nota": "Etapa zerada aparece com traco e 0 escrito, conector vira triangulo, valor e duas taxas em toda etapa compensam a falta de linha de base. Observacao: traco mede 2 px contra 1 px do catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:39.720Z",
+      "impressao": "040fc8250e055dc514ef92ccfaa156da2d930778",
+      "arquivos": {
+        "Chart.tsx": "a4abb250f1be102602ed0683c36a9f93b8dcf11d",
+        "data.ts": "1b18714002db3de0daa7a74c6ab19b9f423301e2",
+        "meta.json": "ffa7c4bc99b1977cecdb18c68c5f042997847026"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_barras-com-trilho-e-taxa-de-passo",
+      "veredito": "aprovado",
+      "nota": "Trilho de 100% honesto, rotulo ancorado na ponta livre e taxa de passo com perda absoluta; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:02:42.297Z",
+      "impressao": "aa419ffbff2024e14eb2c4465168a5ec504cc45f",
+      "arquivos": {
+        "Chart.tsx": "b8d87603788ed396ad019db790a8a7144d8d9758",
+        "data.ts": "355fbafdfe81378fa8192d1a45b29e512ddee196",
+        "meta.json": "35875c016e3bfa15df2a34e233c9e73c03568ed3"
+      }
+    },
+    {
+      "versao": "v2_colunas-com-cunha-na-pior-passagem",
+      "veredito": "reprovado",
+      "nota": "ACE-3 e COR-7: texto em --negative sobre a cunha em --negative 0,38 mede 3,07:1 no escuro e 3,28:1 no claro, abaixo de AA.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:02:47.360Z",
+      "impressao": "0e21a7a0d151ca17aac4ccf083e8eb48d7a9ca2a",
+      "arquivos": {
+        "Chart.tsx": "3c0c8cb7141ba5d9a7a02b68da10f2c40e905d5f",
+        "data.ts": "49c83e960b2331c2e6d2196313c06fa73a751969",
+        "meta.json": "21b00b26624468be712437dd64e5e72c3420efdd"
+      }
+    },
+    {
+      "versao": "v3_funil-micro-por-origem-em-tabela",
+      "veredito": "aprovado",
+      "nota": "Escala por linha com volume escrito em toda celula e a etapa que sobe desenhada no tamanho real; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:02:52.288Z",
+      "impressao": "4f97b27ab293c03030a6f405ce38d49cd631fd49",
+      "arquivos": {
+        "Chart.tsx": "16ab07e0941b57dbfded8afb9ff2a746e7944b08",
+        "data.ts": "24a574a5298a932e2a3295833c4e3f148b78ab5a",
+        "meta.json": "6b5a26196d7f5ce3437154a6019ea66e440fd030"
+      }
+    },
+    {
+      "versao": "v4_barras-centralizadas-com-etapa-zerada",
+      "veredito": "aprovado",
+      "nota": "Etapa zerada aparece com traco e 0 escrito, conector vira triangulo e as duas taxas em toda etapa; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:02:56.912Z",
+      "impressao": "040fc8250e055dc514ef92ccfaa156da2d930778",
+      "arquivos": {
+        "Chart.tsx": "a4abb250f1be102602ed0683c36a9f93b8dcf11d",
+        "data.ts": "1b18714002db3de0daa7a74c6ab19b9f423301e2",
+        "meta.json": "ffa7c4bc99b1977cecdb18c68c5f042997847026"
+      }
+    },
+    {
+      "versao": "v1_barras-com-trilho-e-taxa-de-passo",
+      "veredito": "aprovado",
+      "nota": "Trilho e taxas honestos, check limpo, legivel nos dois temas; ressalvas de redacao ficam no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:21:51.797Z",
+      "impressao": "aa419ffbff2024e14eb2c4465168a5ec504cc45f",
+      "arquivos": {
+        "Chart.tsx": "b8d87603788ed396ad019db790a8a7144d8d9758",
+        "data.ts": "355fbafdfe81378fa8192d1a45b29e512ddee196",
+        "meta.json": "35875c016e3bfa15df2a34e233c9e73c03568ed3"
+      }
+    },
+    {
+      "versao": "v2_colunas-com-cunha-na-pior-passagem",
+      "veredito": "reprovado",
+      "nota": "Halo da pior cunha cobre so duas das tres linhas: a base de 922 sairam fica sobre a cunha a 3,07:1 no escuro e 3,29:1 no claro, abaixo de AA.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:21:57.005Z",
+      "impressao": "950294cc150c34db9c556b9dea7e4d7b14c42b1c",
+      "arquivos": {
+        "Chart.tsx": "d76d63b275a67a71939183e0827f17f43e410ec0",
+        "data.ts": "49c83e960b2331c2e6d2196313c06fa73a751969",
+        "meta.json": "21b00b26624468be712437dd64e5e72c3420efdd"
+      }
+    },
+    {
+      "versao": "v3_funil-micro-por-origem-em-tabela",
+      "veredito": "aprovado",
+      "nota": "Tabela micro legivel, taxa com denominador nomeado e etapa acima da anterior no tamanho real; escala por linha e o title ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:22:01.994Z",
+      "impressao": "4f97b27ab293c03030a6f405ce38d49cd631fd49",
+      "arquivos": {
+        "Chart.tsx": "16ab07e0941b57dbfded8afb9ff2a746e7944b08",
+        "data.ts": "24a574a5298a932e2a3295833c4e3f148b78ab5a",
+        "meta.json": "6b5a26196d7f5ce3437154a6019ea66e440fd030"
+      }
+    },
+    {
+      "versao": "v4_barras-centralizadas-com-etapa-zerada",
+      "veredito": "aprovado",
+      "nota": "Etapa zerada aparece como traco com 0 ganhos escrito, duas taxas em toda etapa compensam a falta de linha de base; traco de 2 px e observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:22:07.194Z",
+      "impressao": "040fc8250e055dc514ef92ccfaa156da2d930778",
+      "arquivos": {
+        "Chart.tsx": "a4abb250f1be102602ed0683c36a9f93b8dcf11d",
+        "data.ts": "1b18714002db3de0daa7a74c6ab19b9f423301e2",
+        "meta.json": "ffa7c4bc99b1977cecdb18c68c5f042997847026"
+      }
+    },
+    {
+      "versao": "v1_barras-com-trilho-e-taxa-de-passo",
+      "veredito": "aprovado",
+      "nota": "Check limpo; barras no zero, trilho da entrada, taxa de passo com denominador e valor absoluto em toda etapa; dois temas legiveis. Observacoes: halo sobre o trilho e identificador em portugues.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:23.841Z",
+      "impressao": "aa419ffbff2024e14eb2c4465168a5ec504cc45f",
+      "arquivos": {
+        "Chart.tsx": "b8d87603788ed396ad019db790a8a7144d8d9758",
+        "data.ts": "355fbafdfe81378fa8192d1a45b29e512ddee196",
+        "meta.json": "35875c016e3bfa15df2a34e233c9e73c03568ed3"
+      }
+    },
+    {
+      "versao": "v2_colunas-com-cunha-na-pior-passagem",
+      "veredito": "aprovado",
+      "nota": "Halo agora cobre as tres linhas da pior cunha: medido 5,45:1 no escuro e 6,41:1 no claro, acima de AA. Colunas no zero, cunha proporcional, etapas excluidas declaradas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:29.395Z",
+      "impressao": "71fc2d30dcf1f9fa3f014a3a04cef25da67d255e",
+      "arquivos": {
+        "Chart.tsx": "12ee55cca6c8ff967701ab42cfff8152d8ea8628",
+        "data.ts": "49c83e960b2331c2e6d2196313c06fa73a751969",
+        "meta.json": "21b00b26624468be712437dd64e5e72c3420efdd"
+      }
+    },
+    {
+      "versao": "v3_funil-micro-por-origem-em-tabela",
+      "veredito": "aprovado",
+      "nota": "Colunas ancoradas no zero com numero escrito em toda celula; etapa maior que a anterior sai no tamanho real. Observacoes: escala por linha na coluna Entradas e Sem origem em cor de serie.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:34.406Z",
+      "impressao": "4f97b27ab293c03030a6f405ce38d49cd631fd49",
+      "arquivos": {
+        "Chart.tsx": "16ab07e0941b57dbfded8afb9ff2a746e7944b08",
+        "data.ts": "24a574a5298a932e2a3295833c4e3f148b78ab5a",
+        "meta.json": "6b5a26196d7f5ce3437154a6019ea66e440fd030"
+      }
+    },
+    {
+      "versao": "v4_barras-centralizadas-com-etapa-zerada",
+      "veredito": "aprovado",
+      "nota": "Etapa zerada aparece com traco e 0 escrito, conector vira triangulo, valor e duas taxas em toda etapa compensam a falta de linha de base. Observacao: traco mede 2 px contra 1 px do catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:40:39.720Z",
+      "impressao": "040fc8250e055dc514ef92ccfaa156da2d930778",
+      "arquivos": {
+        "Chart.tsx": "a4abb250f1be102602ed0683c36a9f93b8dcf11d",
+        "data.ts": "1b18714002db3de0daa7a74c6ab19b9f423301e2",
+        "meta.json": "ffa7c4bc99b1977cecdb18c68c5f042997847026"
+      }
+    }
+  ]
+}

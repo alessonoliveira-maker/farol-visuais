@@ -1,0 +1,12 @@
+{
+  "title": "Desvio do CPL contra a média por campanha",
+  "useCase": "Achar em quais das 12 campanhas fictícias e em que dias o CPL fugiu da própria média de 30 dias.",
+  "demonstrates": [
+    "Uma Area por faixa com dataKey em clamp e YAxis escondido de domínio fixo",
+    "Três faixas por sinal com opacidade crescente só na marca",
+    "Polaridade da métrica: CPL acima da média é alerta (COR-6)",
+    "Legenda de faixas com o valor de corte de cada tom e passo comum declarado"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

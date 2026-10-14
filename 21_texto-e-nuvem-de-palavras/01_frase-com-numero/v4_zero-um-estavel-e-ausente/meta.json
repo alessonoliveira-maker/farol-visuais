@@ -1,0 +1,13 @@
+{
+  "title": "Frases diante de zero, um, estável e ausência",
+  "useCase": "Pré-vendas: a mesma função de frase com nenhuma agenda, 1 agenda, variação estável, base zero e dado não coletado.",
+  "demonstrates": [
+    "Singular, plural e zero por extenso: nenhuma agenda, 1 agenda, 2 agendas",
+    "Corte de estabilidade declarado: estável (0,4%) sem cor semântica",
+    "Base anterior zero escrita como sem base de comparação, nunca +Infinity%",
+    "Dado não coletado com formatUnavailable e o motivo, nunca um zero falso",
+    "Empate no título dinâmico nomeia as duas plataformas empatadas"
+  ],
+  "canvas": "alto",
+  "notes": "Conta do corpo no preset alto com moldura card: 574 x 441,5 px (425 com duas linhas no cabeçalho). Sete linhas de 24 a 48 px com vão de 12 px cabem com sobra, então o preset serve sem número."
+}

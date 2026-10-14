@@ -1,0 +1,15 @@
+{
+  "title": "Receita por produto nas UFs do perímetro",
+  "useCase": "Diretoria: como a receita reconhecida se reparte entre três produtos por trimestre nas UFs do perímetro.",
+  "demonstrates": [
+    "Mini barras empilhadas por trimestre com slot fixo de --chart-N por produto",
+    "UFs fora do perímetro em --surface-sunken com a sigla e sem gráfico",
+    "Legenda única de produtos acima da grade, sem legenda por tile",
+    "Escala própria por tile declarada no rodapé e separador só entre parcelas",
+    "Total do último trimestre escrito com formatCurrencyCompact",
+    "Trimestre sem coleta tracejado e UF sem nenhum dado como indisponível"
+  ],
+  "canvas": { "width": 960, "height": 720 },
+  "frame": "card",
+  "notes": "Canvas por número porque no preset alto (640x560) o tile mede 78 px de largura e o total em reais compacto (R$ 670,0 mil, cerca de 80 px) não cabe na linha da sigla; com 960x720 o tile ganha 124 px de largura e as barras ganham altura. Grade de 7 colunas, não a de 8 do catálogo. Slots 1, 3 e 6 para os três produtos, pela ordem de atribuição da COR-8, fixos por produto e não por posição. A legenda lista do topo da pilha para a base, na ordem em que o olho desce pela barra. Os produtos são genéricos (Linha Base, Linha Plus e Linha Corporativa) para não usar nome real. Cada tile tem escala própria, de 0 ao maior total trimestral da UF, declarada no rodapé: a altura não compara UFs, o total escrito compara. Toda parcela maior que zero tem piso de 0,9 unidade da caixa (cerca de 1,8 px), desvio máximo de cerca de 1 px em parcela pequena. Zero medido (MG na Linha Corporativa até T1/26, DF em T2/26) não desenha segmento, e a parcela medida pequena sempre aparece, então as duas barras se distinguem. GO tem T4/25 sem coleta (contorno tracejado) e ES não tem trimestre medido (Unplug e indisponível). A separação é um traço de 1 px em --surface-raised só nas fronteiras internas da pilha (non-scaling-stroke), sem contorno nos retângulos, para não consumir a parcela pequena. Trimestre com algum produto null conta como sem coleta (tracejado)."
+}

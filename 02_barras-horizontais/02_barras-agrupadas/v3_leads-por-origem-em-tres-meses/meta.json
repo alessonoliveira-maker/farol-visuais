@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem nos últimos três meses",
+  "useCase": "Como cada uma das sete origens de lead evoluiu de jun/26 a ago/26, com uma origem nova sem histórico.",
+  "demonstrates": [
+    "Três séries por origem com o mês mais recente no tom forte e os anteriores apagados",
+    "Origens ordenadas pelo mês mais recente",
+    "Origem sem histórico escreve indisponível no espaço dos meses sem coleta",
+    "Valor nulo não desenha barra de zero",
+    "Linha de leitura com a maior queda desde o primeiro mês"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

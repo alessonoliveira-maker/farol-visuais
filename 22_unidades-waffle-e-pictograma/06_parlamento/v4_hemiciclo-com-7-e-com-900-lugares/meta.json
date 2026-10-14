@@ -1,0 +1,13 @@
+{
+  "title": "Hemiciclo com 7 e com 900 lugares",
+  "useCase": "Diretoria: o que o componente faz quando o conjunto tem só 7 lugares ou passa de 400.",
+  "demonstrates": [
+    "Total 7 em uma fileira só, com pontos grandes",
+    "Número de fileiras calculado do total, e não fixo no dado",
+    "Total 900 troca para 1 assento = 10, com aviso escrito sobre a unidade",
+    "Total indisponível escreve formatUnavailable no lugar do arco"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta da GEO-1 no largo de 960x400 com o caso de uso em uma linha: corpo de 894 x 281,5 px, em três painéis de 282 px com 24 px entre eles. Em cada painel: título em y 13, hemiciclo de raio 132 com a base em y 166, aviso de unidade em y 186 e três linhas de legenda de 22 px até y 256; cabe no preset. O viewBox é o próprio corpo, então a escala é 1 (GEO-18). Com 900 lugares o ponto vale 10 e os 90 pontos são repartidos entre os grupos pelo maior resto (52, 27 e 11 para 517, 268 e 115); a legenda escreve a contagem real, nunca a de pontos. O painel sem total escreve formatUnavailable com o ícone Unplug no lugar do arco, sem moldura e sem arco fantasma."
+}

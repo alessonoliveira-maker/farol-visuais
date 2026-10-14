@@ -1,0 +1,71 @@
+{
+  "slug": "01_treemap",
+  "nome": "Treemap",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Retângulos lado a lado cuja área é proporcional ao valor de cada categoria, preenchendo um espaço fixo. É o modelo mais eficiente em espaço da família; aceita cor por categoria, cor por variação com sinal e detalhamento nível a nível com trilha de volta.",
+  "quando_usar": [
+    "Parte do todo com 8 a 40 categorias, quando a barra ficaria longa demais para o cartão",
+    "Uma hierarquia explorada um nível por vez, com trilha de navegação sempre visível",
+    "Área para tamanho (investimento, receita) e cor para desempenho com sinal (variação, desvio contra meta)",
+    "Leitura de concentração: poucos itens grandes e uma cauda de itens pequenos"
+  ],
+  "quando_evitar": [
+    "Menos de 6 categorias: barra horizontal ordenada lê melhor (família 02)",
+    "Pergunta de quanto a mais com precisão: comparar área é grosseiro, prefira barras",
+    "Valores negativos ou zero: não cabem em área; ficam fora do desenho e numa lista à parte",
+    "Dois ou três níveis que precisam ser vistos de uma vez: use o treemap aninhado (12/02)",
+    "Métrica de cor sem ponto neutro claro: a escala divergente perde o sentido"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-por-produto",
+      "titulo": "Receita reconhecida por produto no trimestre",
+      "caso_de_uso": "Comercial: de quais produtos vieram os R$ 4,6 mi de receita reconhecida em 2026-T3.",
+      "o_que_demonstra": [
+        "Recharts Treemap com content customizado e isAnimationActive desligado",
+        "Rótulo de nome e valor só acima de 64 por 36 px; abaixo disso, só tooltip",
+        "aspectRatio próximo de quadrado e nodeGap na cor de surface-canvas",
+        "Filtro de valor menor ou igual a zero antes do desenho, com lista fora do gráfico"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_produto-que-mais-cresceu",
+      "titulo": "Produto que mais cresceu no trimestre",
+      "caso_de_uso": "Comercial: qual produto mais cresceu contra 2026-T2 e quanto ele pesa na receita de 2026-T3.",
+      "o_que_demonstra": [
+        "Contorno em accent-amber no retângulo destacado e os demais em chart-1 com opacidade 0,6",
+        "Anotação curta calculada do dado: crescimento em pontos e participação no total",
+        "Destaque escolhido no data.ts, nunca inferido no render"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cpl-qualificado-por-campanha",
+      "titulo": "Investimento e variação do CPL qualificado",
+      "caso_de_uso": "Marketing: onde está o dinheiro de 2026-08 e em quais campanhas o CPL qualificado piorou contra 2026-07.",
+      "o_que_demonstra": [
+        "Área igual ao investimento e cor igual à variação, em escala divergente de cinco faixas",
+        "Escala invertida (subir o CPL é ruim) escrita na legenda, com teto simétrico de 50%",
+        "Rótulo só nas campanhas com piora acima de 30%; as demais ficam no tooltip",
+        "Campanha nova sem mês anterior em neutro hachurado com o rótulo nova",
+        "Opacidade menor para retângulos abaixo de 1% do investimento total"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_detalhamento-com-ramo-vazio",
+      "titulo": "Investimento com detalhamento e ramo sem dado",
+      "caso_de_uso": "Marketing: navegar do investimento de 2026-08 por plataforma até o criativo, sem quebrar em campanha sem criativos.",
+      "o_que_demonstra": [
+        "Detalhamento plataforma, campanha e criativo com trilha de navegação sempre visível",
+        "Cabeçalho do nível com o peso do ramo no todo, como Busca paga 34% do investimento",
+        "Estado vazio sem criativos registrados, com botão de voltar, no lugar de retângulo único",
+        "Caminho inicial declarado no data.ts para o preview mostrar o ramo vazio",
+        "key com a assinatura do filtro para remontar quando o ramo deixa de existir"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

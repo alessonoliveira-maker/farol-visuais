@@ -1,0 +1,13 @@
+{
+  "title": "SLA de primeiro contato por SDR",
+  "useCase": "Pré-vendas: quanto o SLA de primeiro contato de cada SDR mudou da semana passada para esta.",
+  "demonstrates": [
+    "Bar de faixa com shape que desenha conector e duas cabeças",
+    "Sentido lido do payload, porque a faixa chega sempre como menor e maior",
+    "Cabeça inicial vazada em chart-3 e final cheia em chart-1, com legenda de ponta",
+    "Conector pela polaridade: minutos que caem são bons",
+    "Rótulo direto do delta com sinal e isAnimationActive desligado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

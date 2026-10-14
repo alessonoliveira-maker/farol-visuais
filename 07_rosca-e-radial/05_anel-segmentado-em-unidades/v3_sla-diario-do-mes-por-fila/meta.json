@@ -1,0 +1,13 @@
+{
+  "title": "SLA diário do mês por fila",
+  "useCase": "Em quantos dias úteis de junho cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta.",
+  "demonstrates": [
+    "Três anéis de 22 segmentos, mesmo diâmetro e mesma ordem de dias",
+    "Estado por dia com palavra na legenda: cumprido, estourado, sem expediente",
+    "Dia sem expediente em contorno text-muted e fora da contagem do centro",
+    "Centro de cada anel com dias cumpridos sobre dias com expediente",
+    "Nota que declara em número quanto vale cada segmento do anel"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

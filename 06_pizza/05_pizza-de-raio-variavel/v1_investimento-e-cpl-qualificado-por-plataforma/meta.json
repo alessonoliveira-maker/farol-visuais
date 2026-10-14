@@ -1,0 +1,14 @@
+{
+  "title": "Investimento e CPL qualificado por plataforma",
+  "useCase": "Onde está o investimento do mês e quanto custa cada lead qualificado em cada uma das três plataformas de mídia?",
+  "demonstrates": [
+    "Pie com shape customizado que devolve um Sector com raio calculado por item",
+    "Raio por raiz quadrada do CPL sobre o maior CPL, entre um piso e o raio máximo",
+    "Anéis de escala em círculo no mesmo SVG, com rótulo em reais",
+    "Legenda dupla: uma explica o ângulo (participação), outra explica o raio (CPL)",
+    "Dica com as duas métricas da fatia: investimento e CPL qualificado"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Peça de análise exploratória (ver Quando evitar no README): o produto de ângulo e raio pede dica e legenda dupla, não serve como painel operacional de leitura rápida."
+}

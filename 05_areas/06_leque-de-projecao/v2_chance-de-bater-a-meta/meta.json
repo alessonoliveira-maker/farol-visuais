@@ -1,0 +1,13 @@
+{
+  "title": "Chance de bater a meta do ano",
+  "useCase": "Dizer qual a probabilidade de a receita acumulada passar da meta anual fictícia até dezembro de 2026.",
+  "demonstrates": [
+    "Leque sobre o acumulado com meta em ReferenceLine tracejada",
+    "Probabilidade calculada dos percentis e escrita na linha de leitura",
+    "Legenda das faixas com a probabilidade em texto, sem depender de cor",
+    "Assimetria preservada: faixas não espelhadas em torno da mediana"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Método declarado: bootstrap da variação mensal dos últimos 12 meses (2.000 reamostragens), acumulado sobre o último valor real; a partir de ago/2026 o desenho é estimativa. A probabilidade de superar a meta vem de interpolação linear entre os cinco percentis de dez/26 (CDF por partes), nunca de sorteio."
+}

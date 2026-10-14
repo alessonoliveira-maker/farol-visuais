@@ -1,0 +1,14 @@
+{
+  "title": "Leads com e sem município informado",
+  "useCase": "Quantos leads não têm município e por isso não podem virar ponto no mapa?",
+  "demonstrates": [
+    "Card à parte com 320 leads sem município e o percentual do total",
+    "Nenhum ponto no centroide da UF, para não criar aglomerado falso",
+    "Lista das UFs com mais leads sem município, com contagem escrita",
+    "Estado vazio com ícone lucide Filter quando o recorte não tem ponto",
+    "Frase acessível que soma pontos desenhados e leads fora do mapa"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Preenchimento a 0,80 (ACE-5). O viewBox tem escala 1 (5,8 px por grau), e não graus, para o texto de 11 px chegar com 11 px (GEO-18). Não há malha do IBGE: contorno e coordenadas das cidades ficam no data.ts, escritos à mão e aproximados. Um ponto a cada 20 leads com município, em cacho de espiral de girassol com distância fixa entre centros, então a área do cacho cresce com a contagem; cachos vizinhos se afastam por relaxamento de ordem fixa e a tela diz que a posição em volta da cidade é ilustrativa. O estado vazio distingue recorte sem lead de recorte em que todos os leads vieram sem município."
+}

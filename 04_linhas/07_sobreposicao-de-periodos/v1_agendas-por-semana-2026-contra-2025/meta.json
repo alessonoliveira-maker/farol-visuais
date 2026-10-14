@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por semana ISO, 2026 contra 2025",
+  "useCase": "As agendas semanais de 2026 seguem a sazonalidade de 2025 ou já descolaram até a semana 37?",
+  "demonstrates": [
+    "Pivot em TypeScript por semana ISO com uma chave por ano",
+    "Ano atual em chart 1 e ano anterior em neutro de linha",
+    "Rótulo do ano no fim de cada linha, sem legenda",
+    "Ano corrente termina em nulo depois da última semana medida"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

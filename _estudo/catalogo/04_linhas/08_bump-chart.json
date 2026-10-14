@@ -1,0 +1,69 @@
+{
+  "slug": "08_bump-chart",
+  "nome": "Bump chart de ranking",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Posição de cada item em cada período ligada por linhas, com o eixo vertical invertido e o 1º lugar no topo. Mostra quem subiu, quem caiu e as trocas de liderança, mas apaga a distância entre posições: a dica traz o valor absoluto e a nota diz que o eixo é posição. Absorve o bump chart de 17_comparacao-de-pontos e o ranking micro de 24_microvisuais-sparklines.",
+  "quando_usar": [
+    "Mudança de posição de 5 a 12 itens ao longo de 4 a 12 períodos: executivos, origens de lead, criativos, squads.",
+    "Pergunta de quem subiu e quem caiu, e não de por quanto.",
+    "Top N com entradas e saídas ao longo do tempo, como a fadiga de um criativo."
+  ],
+  "quando_evitar": [
+    "Distância entre posições importa: use 02_multiplas-series com o valor.",
+    "Só dois momentos: use o slope de 17_comparacao-de-pontos.",
+    "Posição num instante só: use a barra ordenada de 02_barras-horizontais.",
+    "Mais de 12 itens com muitos cruzamentos: filtre um top N ou use pequenos múltiplos.",
+    "Universo que muda de tamanho entre períodos: fixe o universo ou normalize para percentil."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_posicao-de-seis-executivos",
+      "titulo": "Posição de seis executivos por receita trimestral",
+      "caso_de_uso": "Quem subiu e quem caiu no ranking de receita reconhecida nos 8 trimestres encerrados em 2026-06?",
+      "o_que_demonstra": [
+        "YAxis reversed com domínio de 1 a N e tiques inteiros",
+        "Ranking calculado por período em TypeScript com desempate estável",
+        "dot próprio com o número da posição dentro do círculo",
+        "Nome do executivo nas duas pontas, sem legenda"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_origem-que-mais-subiu",
+      "titulo": "Origem de lead que mais subiu no ranking",
+      "caso_de_uso": "Qual origem de lead mais subiu no ranking de volume nos últimos 6 meses, contra as outras sete?",
+      "o_que_demonstra": [
+        "Maior subida em --chart-1 e demais origens em --line-strong",
+        "Rótulo em peso 700 só na origem destacada",
+        "Anotação na maior subida com as posições de início e fim",
+        "Dica com o volume absoluto, porque a posição apaga a magnitude"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_top-10-criativos-em-12-semanas",
+      "titulo": "Top 10 criativos por CPL qualificado em 12 semanas",
+      "caso_de_uso": "Quais criativos entram, saem ou perdem posição aos poucos no top 10 de CPL qualificado em 12 semanas?",
+      "o_que_demonstra": [
+        "Universo fixo do top 10, com fora do top em null",
+        "Linha cortada com ponto anelado na entrada e na saída",
+        "Anticolisão dos rótulos das pontas com a escala do eixo y",
+        "Descida lenta e constante lida como fadiga do criativo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_empates-e-squad-pausado",
+      "titulo": "Ranking com empates e um squad sem operar",
+      "caso_de_uso": "Como desenhar o ranking semanal de SLA dos squads com empates frequentes e um squad parado por 3 semanas?",
+      "o_que_demonstra": [
+        "Regra de empate por competição 1, 2, 2, 4 escrita em nota",
+        "Desempate estável por chave secundária declarada",
+        "Traço interrompido no período sem operar, nunca última posição",
+        "Trecho ausente sem interpolação entre as bordas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Desvio da média nacional de qualificação",
+  "useCase": "Quais UFs ficam acima ou abaixo da média nacional de 16,4% e qual se afasta mais?",
+  "demonstrates": [
+    "Divergente em --positive e --negative com três intensidades por mistura opaca",
+    "Centro da escala no tom mais próximo do fundo, nos dois temas",
+    "UF de maior desvio com contorno grosso e anotação com sinal e pontos percentuais",
+    "Sinal + e − tipográfico em todo valor, para a cor não ser o único canal",
+    "Legenda simétrica com a média escrita no meio e a contagem de UFs por degrau",
+    "Desvio medido entre os dois números já arredondados, para a conta fechar na tela"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo, por decisão do dono: sem contorno real das UFs (lista de imports fechada na seção 6 e cinco arquivos por versão na seção 1); o coroplético é pintado sobre a malha de hexágonos do data.ts, em escala 1 (GEO-18). Segundo desvio, a favor do contrato: as três intensidades não saem por fill-opacity, como diz o catálogo, e sim por color-mix opaco da cor do lado com --surface-raised (20%, 50% e cor cheia), numa função só (bucketFill, TOK-3). A cor que chega à tela é a mesma da opacidade, mas a marca fica opaca e a conta de texto vale sobre ela (ACE-5, TOK-6). Medido nos dois temas: a mistura de 20% fica entre 1,30:1 e 1,45:1 contra o cartão e a de 50% entre 2,13:1 e 2,81:1, abaixo de 3:1 por desenho, porque o catálogo pede o centro perto do fundo; vale a isenção da ACE-3, já que o desvio está escrito em todo hexágono, e o centro e a intensidade fraca levam contorno de 1 px em --line-strong. Texto: --text-primary mede 5,16:1 ou mais sobre as misturas e --surface-raised 5,34:1 ou mais sobre a cor cheia. Polaridade: qualificar mais é melhor, então acima da média é --positive. O hexágono escreve o desvio sem a unidade (o texto com p.p. passaria dos 38 px desenhados); a unidade está no título da legenda, na anotação e na dica. Os limites de 2,0 e 5,0 p.p. valem sobre o desvio já arredondado e pertencem à classe mais forte: SP, com −2,0, e PA, com −5,0, exercitam os dois. Conta do canvas card: corpo de 574 por 241,5 px; mapa de 264 por 224 px; coluna lateral de 294 px com linha de leitura, anotação do maior desvio (antes da legenda, porque é a resposta da pergunta) e legenda de 8 linhas, 190 px no total."
+}

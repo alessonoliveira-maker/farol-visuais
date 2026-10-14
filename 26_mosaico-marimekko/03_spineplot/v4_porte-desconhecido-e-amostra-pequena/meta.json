@@ -1,0 +1,17 @@
+{
+  "title": "Ganho com porte desconhecido e amostra pequena",
+  "useCase": "Comercial, 2026: como ler a taxa de ganho quando 30% das oportunidades não têm porte e uma faixa tem só 4 casos?",
+  "demonstrates": [
+    "Porte desconhecido como coluna larga hachurada à direita, fora da ordem natural",
+    "Subtítulo com a cobertura: 70% das oportunidades com faixa de porte informada",
+    "Faixa com n = 4 com selo de amostra pequena e taxa por formatRateWithVolume",
+    "Faixa sem ganho desenha só a parte perdida e escreve 0,0% (0 de 11)",
+    "Linha da taxa global calculada só com porte informado, dito na legenda"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 440
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset card deixa 225 px de corpo com o caso de uso em duas linhas, e a conta pede 305. São 24 do subtítulo da cobertura, 24 da legenda em uma linha e 257 do SVG, dos quais 30 de etiqueta de taxa, 141 de ladrilhos, 42 de eixo em três linhas, 6 de vão, 36 de dois rótulos escalonados com respiro e 2 de folga; 305 mais 135 de moldura dá 440. O viewBox de 574 por 257 é o tamanho da caixa, escala 1 (GEO-18). As faixas Grande (11 casos) e Muito grande (4) têm 10,6 e 3,8 px de largura e não comportam a taxa sobre a coluna; vão para rótulo escalonado com fio conector, e o selo amostra pequena fica no de Muito grande (menos de 10 casos). A faixa sem ganho não desenha a parte de ganho e escreve 0,0% (0 de 11); o zero medido leva um fio de 2 px de --chart-1 na base, para não ler como ausência. O porte desconhecido tem largura pelos 156 casos, vão de 6 px das conhecidas e hachura de --text-muted nas duas partes, porque não entra na leitura por porte. A taxa global sai só das faixas com porte informado (97 de 365) e a legenda diz isso. Os vãos saem antes da partilha de largura e de altura (GEO-16). A parte perdida usa --line-strong como o catálogo pede; o valor vem escrito, e por isso o aviso de CONTRASTE-MARCA é conhecido."
+}

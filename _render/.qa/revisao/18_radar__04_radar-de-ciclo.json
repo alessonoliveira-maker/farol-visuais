@@ -1,0 +1,147 @@
+{
+  "familia": "18_radar",
+  "modelo": "04_radar-de-ciclo",
+  "versoes": {
+    "v1_entradas-de-lead-por-hora-do-dia": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 0h no topo e sentido horário conferidos no PNG, domínio de 0 a 10 em cinco anéis calculado do pico, raio do pico às 14h conferido contra o dado (285 em 31 dias, 9,2 por hora, 116 px de 126,3), parcela fora do expediente refeita à mão (697 de 3.001). Preenchimento a 0,66 mede 4,88:1 no escuro e 3,00:1 no claro, no limite do piso. Observações no README: linha de leitura em duas linhas; TIP-1 na linha de leitura; escala sem unidade; frase acessível sem verbo no segundo período; estado Unplug junta sem base e tudo zero; dica à mão e não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:41:16.486Z",
+      "impressao": "2fa8f9491612d55a5958142cbb134bf2ab6e5f83",
+      "arquivos": {
+        "Chart.tsx": "39d2c3e60b3458fc824109693347654ec3ee14f2",
+        "data.ts": "b2ed31e22757c1e0bb58d9a43962e03aaafc681a",
+        "meta.json": "d3633592597d0f14e6336b5f99a788260117333a"
+      }
+    },
+    "v2_dia-util-contra-fim-de-semana": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Revestimento de 5,5 px em surface-raised sob o contorno do fim de semana e contorno do dia útil repintado por cima: medido nos pixels, contorno 6,47:1 e 6,18:1 contra o revestimento, revestimento 4,88:1 e 3,00:1 contra o preenchimento. Raios conferidos contra o dado: 14h com 9,6, 22h com 4,6, virada às 21h com 4,1. Observações no README: preenchimento em cima do piso da ACE-5 no claro; linha de leitura repete o começo do título; seguem as da primeira revisão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:57:58.285Z",
+      "impressao": "47114be4272ba3d71410d58116e9b17927777c1a",
+      "arquivos": {
+        "Chart.tsx": "216c1febad095c1f8d4fa9d0b1eb8efd22c772b3",
+        "data.ts": "09c7738092e814ed1f99fd719d4ca5a4e98c1b99",
+        "meta.json": "fa94af43e6a6018bf484f9105fdb85cd764e9dc1"
+      }
+    },
+    "v3_resposta-fora-do-sla-com-expediente": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Hora 3, de total 0, sem vértice nem aresta, com raio pontilhado e palavra na legenda; zero medido da hora 4 vazado no centro e nomeado. Preenchimento a 0,72 mede 3,12:1 sobre o setor e 3,42:1 sobre o cartão no claro, medido nos pixels. Parcela fora do expediente refeita à mão: 276 de 391. Observações no README: hora medida isolada entre duas ausentes não desenha, ramo que o dado padrão não exercita; só o último nível da escala é escrito; zero medido sem a hora; pico sem valor no corpo; frase acessível a 14 do teto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:01.757Z",
+      "impressao": "6def1b4db7905579016052251b75d6226d22279f",
+      "arquivos": {
+        "Chart.tsx": "db9957abab81241cc9e57b8c9a698a126ef088be",
+        "data.ts": "bc09ec531180b8d9acd1af4c42f8f9aea3ddab68",
+        "meta.json": "3d23ef6ee06ad6e604bd8beae6691f6b143e4565"
+      }
+    },
+    "v4_doze-meses-com-ano-parcial": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Escala em 60 e 80 no vão de jan a fev, longe dos três raios pontilhados, que saem inteiros nos dois temas. Setembro com trecho 4 4, ponto vazado e nota parcial até 18/09/2026; out a dez sem vértice, com a medir e raio pontilhado; dez a jan aberto. Raios conferidos contra o dado em domínio de 0 a 80. Observações no README: 80 da escala a 13,4 px do 38 de fevereiro, GEO-15, lê como escala; pontuação e concordância da linha de leitura em ramos não exercitados; escala some sem vão perto do topo ou da base.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:04.580Z",
+      "impressao": "c63369ca0e726954c582d8fe31366e82ee07d778",
+      "arquivos": {
+        "Chart.tsx": "93570ee908605b59e788113f1c8808432b86ec6a",
+        "data.ts": "1109e904403592ade422801c91d9414fbbaf87a5",
+        "meta.json": "b091e48100e6a64777aa1eedf5f4efa2bb5d5378"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_entradas-de-lead-por-hora-do-dia",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 0h no topo e sentido horário conferidos no PNG, domínio de 0 a 10 em cinco anéis calculado do pico, raio do pico às 14h conferido contra o dado (285 em 31 dias, 9,2 por hora, 116 px de 126,3), parcela fora do expediente refeita à mão (697 de 3.001). Preenchimento a 0,66 mede 4,88:1 no escuro e 3,00:1 no claro, no limite do piso. Observações no README: linha de leitura em duas linhas; TIP-1 na linha de leitura; escala sem unidade; frase acessível sem verbo no segundo período; estado Unplug junta sem base e tudo zero; dica à mão e não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:41:16.486Z",
+      "impressao": "2fa8f9491612d55a5958142cbb134bf2ab6e5f83",
+      "arquivos": {
+        "Chart.tsx": "39d2c3e60b3458fc824109693347654ec3ee14f2",
+        "data.ts": "b2ed31e22757c1e0bb58d9a43962e03aaafc681a",
+        "meta.json": "d3633592597d0f14e6336b5f99a788260117333a"
+      }
+    },
+    {
+      "versao": "v2_dia-util-contra-fim-de-semana",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 32, ACE-3 e ACE-6 (COR-5, TOK-4): das 5h às 20h o contorno do fim de semana corre sobre o preenchimento do dia útil e mede 1,33:1 no escuro e 2,06:1 no claro contra ele, abaixo de 3:1. Mudar: revestimento na cor da superfície (surface-raised) por baixo do contorno, sem partir o contorno do dia útil nos dois cruzamentos, e números do par na nota do meta.json (TOK-9). Parecer em validation/revisao_18_radar__04_radar-de-ciclo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:41:17.036Z",
+      "impressao": "059fc6c728ae96ec23071c6cac37b6e0f4272612",
+      "arquivos": {
+        "Chart.tsx": "e23d67ee9e547b0bd3cc65aa2b7d094ee37aac57",
+        "data.ts": "09c7738092e814ed1f99fd719d4ca5a4e98c1b99",
+        "meta.json": "8bfc62a897553f4e183ffb68a710aaca55203a79"
+      }
+    },
+    {
+      "versao": "v3_resposta-fora-do-sla-com-expediente",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EIX-10 e EST-2 (ACE-2, DAD-2): hora com total 0 vira rate null e o Radar padrão põe o vértice no centro (recharts 3.10.1, Radar.js linha 129), igual ao zero medido da hora 4; o comentário de renderDot diz o contrário. Mudar: partir preenchimento e contorno na hora nula por shape próprio como na v4, marcar o eixo ausente com raio pontilhado e palavra, nomear o zero medido na tela e exercitar o caso no data.ts. Perguntas 20 e 30, ACE-5 e ACE-3: o preenchimento a 0,66 mede 2,76:1 sobre o setor do expediente no claro; subir a opacidade até 3:1 contra o setor. Parecer em validation/revisao_18_radar__04_radar-de-ciclo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:41:25.742Z",
+      "impressao": "364286099b550b50a46a76b0c460f83c40938302",
+      "arquivos": {
+        "Chart.tsx": "6b6de3488b54d2bb857f536699b9675896b3799b",
+        "data.ts": "62b5d7dd9cc051d29d86e3aec76c3f5e4b712146",
+        "meta.json": "c56bbbff71bd438e730892bbf7169500ed783f08"
+      }
+    },
+    {
+      "versao": "v4_doze-meses-com-ano-parcial",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 marca fina (GEO-4, GEO-15): o rótulo 20 da escala e o halo dele cobrem três pontos seguidos do raio de ausência de novembro, 20 px sem ponto num passo de 5 px, nos dois temas, e o 80 cai na linha do nome nov, a cerca de 9 px. Mudar: tirar a escala de cima do raio (não escrever o nível que não cabe entre os dois raios, ou levar a escala a um vão sem raio pontilhado) e afastar o último nível do nome do mês. Parecer em validation/revisao_18_radar__04_radar-de-ciclo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:41:26.292Z",
+      "impressao": "6678896618b8dfb8d35cdcd143a57e8c8e3e484f",
+      "arquivos": {
+        "Chart.tsx": "d97ca27958ffaaea1837a5a7445841bb4b8879fd",
+        "data.ts": "1109e904403592ade422801c91d9414fbbaf87a5",
+        "meta.json": "b091e48100e6a64777aa1eedf5f4efa2bb5d5378"
+      }
+    },
+    {
+      "versao": "v2_dia-util-contra-fim-de-semana",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Revestimento de 5,5 px em surface-raised sob o contorno do fim de semana e contorno do dia útil repintado por cima: medido nos pixels, contorno 6,47:1 e 6,18:1 contra o revestimento, revestimento 4,88:1 e 3,00:1 contra o preenchimento. Raios conferidos contra o dado: 14h com 9,6, 22h com 4,6, virada às 21h com 4,1. Observações no README: preenchimento em cima do piso da ACE-5 no claro; linha de leitura repete o começo do título; seguem as da primeira revisão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:57:58.285Z",
+      "impressao": "47114be4272ba3d71410d58116e9b17927777c1a",
+      "arquivos": {
+        "Chart.tsx": "216c1febad095c1f8d4fa9d0b1eb8efd22c772b3",
+        "data.ts": "09c7738092e814ed1f99fd719d4ca5a4e98c1b99",
+        "meta.json": "fa94af43e6a6018bf484f9105fdb85cd764e9dc1"
+      }
+    },
+    {
+      "versao": "v3_resposta-fora-do-sla-com-expediente",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Hora 3, de total 0, sem vértice nem aresta, com raio pontilhado e palavra na legenda; zero medido da hora 4 vazado no centro e nomeado. Preenchimento a 0,72 mede 3,12:1 sobre o setor e 3,42:1 sobre o cartão no claro, medido nos pixels. Parcela fora do expediente refeita à mão: 276 de 391. Observações no README: hora medida isolada entre duas ausentes não desenha, ramo que o dado padrão não exercita; só o último nível da escala é escrito; zero medido sem a hora; pico sem valor no corpo; frase acessível a 14 do teto.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:01.757Z",
+      "impressao": "6def1b4db7905579016052251b75d6226d22279f",
+      "arquivos": {
+        "Chart.tsx": "db9957abab81241cc9e57b8c9a698a126ef088be",
+        "data.ts": "bc09ec531180b8d9acd1af4c42f8f9aea3ddab68",
+        "meta.json": "3d23ef6ee06ad6e604bd8beae6691f6b143e4565"
+      }
+    },
+    {
+      "versao": "v4_doze-meses-com-ano-parcial",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado sobre o arquivo de hoje. Escala em 60 e 80 no vão de jan a fev, longe dos três raios pontilhados, que saem inteiros nos dois temas. Setembro com trecho 4 4, ponto vazado e nota parcial até 18/09/2026; out a dez sem vértice, com a medir e raio pontilhado; dez a jan aberto. Raios conferidos contra o dado em domínio de 0 a 80. Observações no README: 80 da escala a 13,4 px do 38 de fevereiro, GEO-15, lê como escala; pontuação e concordância da linha de leitura em ramos não exercitados; escala some sem vão perto do topo ou da base.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:04.580Z",
+      "impressao": "c63369ca0e726954c582d8fe31366e82ee07d778",
+      "arquivos": {
+        "Chart.tsx": "93570ee908605b59e788113f1c8808432b86ec6a",
+        "data.ts": "1109e904403592ade422801c91d9414fbbaf87a5",
+        "meta.json": "b091e48100e6a64777aa1eedf5f4efa2bb5d5378"
+      }
+    }
+  ]
+}

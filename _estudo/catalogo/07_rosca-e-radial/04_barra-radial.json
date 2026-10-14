@@ -1,0 +1,68 @@
+{
+  "slug": "04_barra-radial",
+  "nome": "Barra radial",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Barras categóricas desenhadas como arcos concêntricos com origem angular comum, em que o comprimento angular é o valor. Serve como peça de capa para ranking curto, com trilho, valor escrito na ponta e arco maior limitado a 270 graus para não parecer 100%. Absorve a barra radial empilhada: cada arco dividido em até três segmentos de composição.",
+  "quando_usar": [
+    "Ranking curto de 3 a 7 categorias como peça de capa de painel, com o valor escrito em cada arco",
+    "Composição em arco com 2 ou 3 segmentos por categoria, na variante empilhada",
+    "Espaço quadrado em que uma barra horizontal deixaria muito vazio"
+  ],
+  "quando_evitar": [
+    "Comparação precisa entre valores próximos: barra horizontal ordenada (02)",
+    "Uma categoria muito maior que as demais, que viram lascas: barra horizontal (02)",
+    "Mais de 3 segmentos empilhados: barra empilhada horizontal (02 ou 03)",
+    "Metas diferentes por item: anéis de metas ou bullet (13)"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-sdr-na-semana",
+      "titulo": "Agendas por SDR na semana",
+      "caso_de_uso": "Pré-vendas: quantas agendas cada um dos seis SDRs marcou na semana de 2026-09-07 a 2026-09-11.",
+      "o_que_demonstra": [
+        "RadialBarChart com RadialBar e background em surface-overlay como trilho",
+        "PolarAngleAxis type number com domínio no maior valor e arco máximo de 270 graus",
+        "Maior valor no anel externo, ordem declarada e valor escrito na ponta",
+        "Uma série numa cor só, sem arco-íris por pessoa"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_sdr-em-foco-no-ranking",
+      "titulo": "Agendas por SDR com uma pessoa em foco",
+      "caso_de_uso": "Pré-vendas: onde está a SDR selecionada no ranking de agendas da semana, sem perder a escala do time.",
+      "o_que_demonstra": [
+        "highlightId do data.ts: arco destacado em chart-1 e demais em line-strong",
+        "Nome e valor do destaque em peso 700, além da cor",
+        "Clique na legenda troca o foco e um segundo clique desmarca",
+        "Linha de leitura calculada com a posição em ordinal, como 2º de 6"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-da-semana-por-status-de-sla",
+      "titulo": "Entradas da semana por status de SLA",
+      "caso_de_uso": "Pré-vendas: em quais dias úteis as entradas ficaram fora do SLA ou pendentes, com o feriado de segunda sem expediente.",
+      "o_que_demonstra": [
+        "Um RadialBar por status no mesmo stackId, com no máximo três segmentos",
+        "Separação por stroke em surface-raised, sem cornerRadius em cada gomo",
+        "Dia sem expediente com trilho vazio e rótulo, nunca arco zerado",
+        "Total de entradas escrito na ponta de cada arco"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_origem-zerada-e-origem-dominante",
+      "titulo": "Leads por origem com zero e domínio",
+      "caso_de_uso": "Marketing: como ler sete origens do mês quando uma teve 0 leads e outra é oito vezes maior que a segunda.",
+      "o_que_demonstra": [
+        "Origem com 0 leads desenha só o trilho e escreve 0",
+        "minPointSize desligado para não inventar arco em valor zero",
+        "Origem dominante reduz as demais a lascas: o limite do formato fica visível",
+        "Limite documentado no README: com essa razão, trocar por barra horizontal (02)"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

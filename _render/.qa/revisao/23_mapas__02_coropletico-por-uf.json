@@ -1,0 +1,121 @@
+{
+  "familia": "23_mapas",
+  "modelo": "02_coropletico-por-uf",
+  "versoes": {
+    "v1_taxa-de-qualificacao-sequencial": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. As 27 taxas, as 5 classes por quantis com 7, 4, 6, 5 e 5 UFs e as 5 maiores refeitas contra o data.ts. Texto de 5,45:1 a 14,82:1 nos dois temas; classes baixas abaixo de 3:1 isentas pelo valor escrito em todo hexágono, ACE-3. Malha de hexágonos no lugar do contorno real declarada e amparada na nota da fila. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:53.421Z",
+      "impressao": "a033af61c5337dc0f1b1a458a32737d8f2d5e111",
+      "arquivos": {
+        "Chart.tsx": "f800eccb89c2bad70c14e71a0a257997e2ffd2ed",
+        "data.ts": "2fb01f9d7af7edd59f0201086fb75f7389164de7",
+        "meta.json": "cc84527545f5f9f7032da9b5a5ed4da28b2acc1a"
+      }
+    },
+    "v2_desvio-da-media-nacional": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Os 27 desvios, a média nacional e a contagem dos 7 degraus refeitos contra o data.ts. Texto de 5,14:1 a 13,51:1 nos dois temas; misturas abaixo de 3:1 isentas pelo desvio escrito em todo hexágono, ACE-3. Observações no README: unidade p.p. fora do hexágono e volume só na dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:54.024Z",
+      "impressao": "211ebd800579248ac3039b049b12ad623092e8fa",
+      "arquivos": {
+        "Chart.tsx": "cfef16c20bb638d48b85a5f49af4e336c9108340",
+        "data.ts": "57e3a191c75efaa9bd33739e7380d12cfbb7594a",
+        "meta.json": "fc54184e171824affe0e459ed6f7a1edaa939477"
+      }
+    },
+    "v3_macrorregiao-com-drill-para-uf": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Médias das 5 regiões e das 9 UFs do Nordeste, posições e cobertura refeitas contra o data.ts; canais de 5 a 10,2 px entre regiões, sem sobreposição. A visão de macrorregiões, com selectedRegion nulo, foi conferida só por leitura de código, porque não está no preview. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:54.610Z",
+      "impressao": "e2115c64b70444686ed162bf9af76e0558e1e3c2",
+      "arquivos": {
+        "Chart.tsx": "6fb33d3621269cdf68a2aee07bb1d207c388f655",
+        "data.ts": "7dfd4fc2c908d75e904d69b438001b913fe99603",
+        "meta.json": "56e50a2e27e700ac3a9a3b17d6bd6b150faa1df0"
+      }
+    },
+    "v4_bivariado-com-variavel-ausente": {
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15. ROT-7, ESP-3 e seção 14.1, constante com consequência no render: a linha do CPL está a 22 px do centro, na parte do hexágono que afunila, e sai da própria marca em 16 de 24 hexágonos nos dois temas. Na AC e na RR, de amostra pequena, cruza o anel pontilhado sem halo (25,0% e 11,6% da tinta fora do preenchimento; par a 1,78:1 no escuro e 2,21:1 no claro); em 10 células cheias de 2,0% a 2,7% da tinta cai no vão a 1,00:1 e some; taxa e CPL a 0,75 px de tinta a tinta. Mudar: taxa no centro, sigla 14 px acima e CPL 14 px abaixo (VALUE_STEP 14), medido em bancada sem tinta fora nos 24; corrigir a frase do notes sobre a faixa reta. O bloqueante anterior (valor fora da marca) está resolvido. Parecer em validation/revisao_23_mapas__02_coropletico-por-uf_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:53:14.574Z",
+      "impressao": "797f68bb72973df6d82d106c9197cfab104b122f",
+      "arquivos": {
+        "Chart.tsx": "f6249e2ded8d4bc30314c1483cbe592ce1d5f931",
+        "data.ts": "57ffe9a1718e45a250a50ca05470c8af70c435aa",
+        "meta.json": "3665dd261db2cd1ade313f39f21cfe1a8a287d01"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_taxa-de-qualificacao-sequencial",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. As 27 taxas, as 5 classes por quantis com 7, 4, 6, 5 e 5 UFs e as 5 maiores refeitas contra o data.ts. Texto de 5,45:1 a 14,82:1 nos dois temas; classes baixas abaixo de 3:1 isentas pelo valor escrito em todo hexágono, ACE-3. Malha de hexágonos no lugar do contorno real declarada e amparada na nota da fila. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:53.421Z",
+      "impressao": "a033af61c5337dc0f1b1a458a32737d8f2d5e111",
+      "arquivos": {
+        "Chart.tsx": "f800eccb89c2bad70c14e71a0a257997e2ffd2ed",
+        "data.ts": "2fb01f9d7af7edd59f0201086fb75f7389164de7",
+        "meta.json": "cc84527545f5f9f7032da9b5a5ed4da28b2acc1a"
+      }
+    },
+    {
+      "versao": "v2_desvio-da-media-nacional",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Os 27 desvios, a média nacional e a contagem dos 7 degraus refeitos contra o data.ts. Texto de 5,14:1 a 13,51:1 nos dois temas; misturas abaixo de 3:1 isentas pelo desvio escrito em todo hexágono, ACE-3. Observações no README: unidade p.p. fora do hexágono e volume só na dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:54.024Z",
+      "impressao": "211ebd800579248ac3039b049b12ad623092e8fa",
+      "arquivos": {
+        "Chart.tsx": "cfef16c20bb638d48b85a5f49af4e336c9108340",
+        "data.ts": "57e3a191c75efaa9bd33739e7380d12cfbb7594a",
+        "meta.json": "fc54184e171824affe0e459ed6f7a1edaa939477"
+      }
+    },
+    {
+      "versao": "v3_macrorregiao-com-drill-para-uf",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não. Médias das 5 regiões e das 9 UFs do Nordeste, posições e cobertura refeitas contra o data.ts; canais de 5 a 10,2 px entre regiões, sem sobreposição. A visão de macrorregiões, com selectedRegion nulo, foi conferida só por leitura de código, porque não está no preview. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:33:54.610Z",
+      "impressao": "e2115c64b70444686ed162bf9af76e0558e1e3c2",
+      "arquivos": {
+        "Chart.tsx": "6fb33d3621269cdf68a2aee07bb1d207c388f655",
+        "data.ts": "7dfd4fc2c908d75e904d69b438001b913fe99603",
+        "meta.json": "56e50a2e27e700ac3a9a3b17d6bd6b150faa1df0"
+      }
+    },
+    {
+      "versao": "v4_bivariado-com-variavel-ausente",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, com reflexo na 19 e na 30. ACE-3 e ACE-2, seção 14.1, contraste bloqueia sempre: as 4 células tênues da paleta 3x3 medem de 1,24:1 a 2,62:1 contra o cartão nos dois temas e o hexágono só escreve a sigla, sem valor que ative a isenção; 9 das 24 UFs classificadas caem nelas e a classe delas só existe na cor. Mudar: escrever taxa e CPL em cada hexágono, com célula maior e canvas por número, ou levar as 9 células a 3:1 contra o cartão com a sigla a 4,5:1. Parecer em validation/revisao_23_mapas__02_coropletico-por-uf_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:34:00.115Z",
+      "impressao": "258c0bcab7a31b255b8000af1ed22b1543c698a9",
+      "arquivos": {
+        "Chart.tsx": "e8d3c3e2000d9219701d3cdfd41f81bacda75db0",
+        "data.ts": "57ffe9a1718e45a250a50ca05470c8af70c435aa",
+        "meta.json": "50031bfef4f266ce23d456ab03eb63b2a951433d"
+      }
+    },
+    {
+      "versao": "v4_bivariado-com-variavel-ausente",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15. ROT-7, ESP-3 e seção 14.1, constante com consequência no render: a linha do CPL está a 22 px do centro, na parte do hexágono que afunila, e sai da própria marca em 16 de 24 hexágonos nos dois temas. Na AC e na RR, de amostra pequena, cruza o anel pontilhado sem halo (25,0% e 11,6% da tinta fora do preenchimento; par a 1,78:1 no escuro e 2,21:1 no claro); em 10 células cheias de 2,0% a 2,7% da tinta cai no vão a 1,00:1 e some; taxa e CPL a 0,75 px de tinta a tinta. Mudar: taxa no centro, sigla 14 px acima e CPL 14 px abaixo (VALUE_STEP 14), medido em bancada sem tinta fora nos 24; corrigir a frase do notes sobre a faixa reta. O bloqueante anterior (valor fora da marca) está resolvido. Parecer em validation/revisao_23_mapas__02_coropletico-por-uf_2026-10-13.md, segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:53:14.574Z",
+      "impressao": "797f68bb72973df6d82d106c9197cfab104b122f",
+      "arquivos": {
+        "Chart.tsx": "f6249e2ded8d4bc30314c1483cbe592ce1d5f931",
+        "data.ts": "57ffe9a1718e45a250a50ca05470c8af70c435aa",
+        "meta.json": "3665dd261db2cd1ade313f39f21cfe1a8a287d01"
+      }
+    }
+  ]
+}

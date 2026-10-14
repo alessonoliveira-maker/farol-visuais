@@ -1,0 +1,13 @@
+{
+  "title": "Investimento, leads e agendas em índice base 100",
+  "useCase": "Leads e agendas cresceram no mesmo ritmo que o investimento em mídia, com 2026-01 igual a 100?",
+  "demonstrates": [
+    "Índice calculado em TypeScript como valor sobre a base vezes 100",
+    "ReferenceLine em 100 com a base escrita no rótulo",
+    "Rótulo final com índice e valor absoluto lado a lado, por série",
+    "Base nula troca para o primeiro ponto válido, com o aviso escrito no rodapé"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A dica usa só o índice (ChartTooltip com um formato só); o valor absoluto lado a lado fica no rótulo final escrito no gráfico, não na dica, porque o contrato não permite formatos diferentes numa mesma dica."
+}

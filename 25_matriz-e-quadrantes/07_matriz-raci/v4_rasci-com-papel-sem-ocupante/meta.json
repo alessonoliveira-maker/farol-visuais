@@ -1,0 +1,16 @@
+{
+  "title": "RASCI com papel sem ocupante",
+  "useCase": "Pré-vendas: variante RASCI da redistribuição de fila, com um papel sem ocupante desde 2026-08-01.",
+  "demonstrates": [
+    "Letra S de suporte na legenda e no glifo, sem mudar a regra do A único",
+    "Coluna do papel vago hachurada, com as letras declaradas mantidas",
+    "Nota: papel sem ocupante desde 2026-08-01",
+    "Alerta na etapa cujo único A está no papel vago"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 500
+  },
+  "frame": "card",
+  "notes": "Desvio do preset largo (960 x 400, corpo de 894 x 281,5): a conta (GEO-1) não fecha. Linha de leitura 17 + legenda 20 + nota 17 + 3 vãos de 8 = 78; cabeçalho 56 (papel vago em 4 linhas); 6 etapas a 42 = 252; total 386, contra 281,5 do largo. Com 960 x 500 o corpo é de 894 x 381,5 e o render não acusa transbordo. A hachura é SVG com linhas calculadas na largura fixa da coluna (80 px), sem gradiente; as letras do papel vago ficam sobre fundo do cartão para a hachura não atravessá-las."
+}

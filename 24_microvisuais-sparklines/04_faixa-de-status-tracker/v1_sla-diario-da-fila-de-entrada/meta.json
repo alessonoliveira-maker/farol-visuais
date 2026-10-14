@@ -1,0 +1,14 @@
+{
+  "title": "SLA de primeiro contato em 30 dias",
+  "useCase": "Em quantos dos últimos 30 dias a fila de entrada fechou dentro do SLA de primeiro contato?",
+  "demonstrates": [
+    "Flex com gap de 1 px e 30 blocos flex 1, cantos pequenos e altura fixa de 24 px",
+    "Dentro do SLA em positivo; fora em negativo e com altura menor, segundo canal além da cor",
+    "Dia sem coleta em contorno de texto mudo sem preenchimento, fora da contagem",
+    "Resumo de 26 de 28 dias com dado, calculado do array e escrito à direita",
+    "Rótulos só de início e fim por formatDate, sem rótulo intermediário"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card como o catálogo sugere: o corpo de 574 px dá blocos de cerca de 11 px e sobra largura para o resumo à direita. O dia 15 está exatamente em 15 minutos e conta como dentro, porque o SLA é até 15 min. O estado de cada dia sai do próprio número, e o resumo e a frase acessível usam as mesmas contagens do corpo."
+}

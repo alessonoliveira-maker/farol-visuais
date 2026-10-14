@@ -1,0 +1,121 @@
+{
+  "familia": "23_mapas",
+  "modelo": "05_mapa-de-perimetro-e-localizador",
+  "versoes": {
+    "v1_miniatura-ao-lado-do-card-de-participacao": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Participação, par e data conferidos contra o data.ts; contraste do texto medido à mão nos dois temas, porque as guardas não leem HTML. Observações no README: malha de fora abaixo de 3:1 como pano de fundo, folga de 13 px na legenda escrita, ramo sem mercado lido só no código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:07.555Z",
+      "impressao": "0512bc4007ee732781444b3dfe44c3e989bbdd90",
+      "arquivos": {
+        "Chart.tsx": "83b7f75c6a81b4fbcebc443649a867d522f1cdbb",
+        "data.ts": "90a9c08e813b53c28304bf0e362a5900cb7ba02d",
+        "meta.json": "eb4bb3c0882421826e3c2631f0ac146825c4e1c0"
+      }
+    },
+    "v2_participacao-so-dentro-do-perimetro": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Sete taxas, quebras de 4 em 4 pontos, classes e soma das parcelas conferidas contra o data.ts; texto sobre os três degraus mede de 5,45 a 10,72 nos dois temas. Observações no README: volume por UF só na dica (DAD-1), legenda com 51 por cento do corpo ao lado do mapa (ROT-4), peso herdado no percentual (TIP-4).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:17.640Z",
+      "impressao": "b661ee7e6b5edc1f6fbb761f4996e7f9c81140cf",
+      "arquivos": {
+        "Chart.tsx": "aaa60e70ba11e891ec3c70c6655ba141a05f2645",
+        "data.ts": "c8bf35a41b5e66a3441f6cb6f8c00bbf97243e24",
+        "meta.json": "610b24ab7388c64d2d86076edd12425f43095de3"
+      }
+    },
+    "v3_perimetro-atual-e-expansao-proposta": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Participação medida, faixa de receita estimada e escala de 0 a 8 conferidas contra o data.ts; tracejado e contorno cheio lidos nos dois temas. Observações no README: etiquetas MEDIDO e PREMISSA dentro do Chart contra a ANO-6, pedidas pelo catálogo e declaradas no notes; a faixa repete os dois números do painel; número de 24 px fora da tabela 17.1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:18.490Z",
+      "impressao": "848325d0693418b846587befaac6b4df9906addb",
+      "arquivos": {
+        "Chart.tsx": "4d7d44c7c14eb3c6b0db1dd3cd129a1b2d96c075",
+        "data.ts": "85b2de5509e9031a18ff893bdb6f519c300f6418",
+        "meta.json": "1a741981b6b395f9c8a64c716ac29881f9a42c36"
+      }
+    },
+    "v4_perimetro-que-mudou-de-vigencia": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. As quatro participações levam receita e mercado por formatCurrencyCompact, e cada par refaz o percentual ao lado (8,3%, 7,4%, 2,1% e 14,5%); os dois mercados imprimem valores diferentes; ausência por formatUnavailable com Unplug; nada cortado nos dois temas, com cerca de 27 px de sobra no pé; contraste de texto de 4,65 a 17,96 e preview contra página em 0,06%. check com 0 erro e 1 aviso (frase acessível com 244 de 250). Observações no README: frase perto do teto, modo previous sem PNG, borda do selo, legenda abaixo do mapa, peso do destaque, nota do meta com conta antiga.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:50:08.819Z",
+      "impressao": "725ef37f091de5a4cc287f46c77a1395e90b4876",
+      "arquivos": {
+        "Chart.tsx": "b1403dba1b015f306e450d6d6c4d38b9cf3c673c",
+        "data.ts": "571bb3a2e8bb7d89317fa75ed68d80e10fe51cf7",
+        "meta.json": "489e28f8aadef25c1d9e41c7fc11c6528a641791"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_miniatura-ao-lado-do-card-de-participacao",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Participação, par e data conferidos contra o data.ts; contraste do texto medido à mão nos dois temas, porque as guardas não leem HTML. Observações no README: malha de fora abaixo de 3:1 como pano de fundo, folga de 13 px na legenda escrita, ramo sem mercado lido só no código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:07.555Z",
+      "impressao": "0512bc4007ee732781444b3dfe44c3e989bbdd90",
+      "arquivos": {
+        "Chart.tsx": "83b7f75c6a81b4fbcebc443649a867d522f1cdbb",
+        "data.ts": "90a9c08e813b53c28304bf0e362a5900cb7ba02d",
+        "meta.json": "eb4bb3c0882421826e3c2631f0ac146825c4e1c0"
+      }
+    },
+    {
+      "versao": "v2_participacao-so-dentro-do-perimetro",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Sete taxas, quebras de 4 em 4 pontos, classes e soma das parcelas conferidas contra o data.ts; texto sobre os três degraus mede de 5,45 a 10,72 nos dois temas. Observações no README: volume por UF só na dica (DAD-1), legenda com 51 por cento do corpo ao lado do mapa (ROT-4), peso herdado no percentual (TIP-4).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:17.640Z",
+      "impressao": "b661ee7e6b5edc1f6fbb761f4996e7f9c81140cf",
+      "arquivos": {
+        "Chart.tsx": "aaa60e70ba11e891ec3c70c6655ba141a05f2645",
+        "data.ts": "c8bf35a41b5e66a3441f6cb6f8c00bbf97243e24",
+        "meta.json": "610b24ab7388c64d2d86076edd12425f43095de3"
+      }
+    },
+    {
+      "versao": "v3_perimetro-atual-e-expansao-proposta",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Participação medida, faixa de receita estimada e escala de 0 a 8 conferidas contra o data.ts; tracejado e contorno cheio lidos nos dois temas. Observações no README: etiquetas MEDIDO e PREMISSA dentro do Chart contra a ANO-6, pedidas pelo catálogo e declaradas no notes; a faixa repete os dois números do painel; número de 24 px fora da tabela 17.1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:18.490Z",
+      "impressao": "848325d0693418b846587befaac6b4df9906addb",
+      "arquivos": {
+        "Chart.tsx": "4d7d44c7c14eb3c6b0db1dd3cd129a1b2d96c075",
+        "data.ts": "85b2de5509e9031a18ff893bdb6f519c300f6418",
+        "meta.json": "1a741981b6b395f9c8a64c716ac29881f9a42c36"
+      }
+    },
+    {
+      "versao": "v4_perimetro-que-mudou-de-vigencia",
+      "veredito": "reprovado",
+      "nota": "Perguntas 14 e 25, NUM-1, armadilha DAD-1 e Precedência da seção 17 (volume junto da taxa): as quatro participações da tabela saem sem receita nem mercado, em nenhum texto do cartão, nem em dica nem na frase acessível. Escrever o par com formatCurrencyCompact sob cada percentual medido, ajustar o dado para os dois mercados não imprimirem o mesmo valor arredondado e refazer a conta do canvas pela GEO-1. Parecer em validation/revisao_23_mapas__05_mapa-de-perimetro-e-localizador_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:07:19.166Z",
+      "impressao": "9a2dfcb84d14ae575b836541f5c61909cb4a9581",
+      "arquivos": {
+        "Chart.tsx": "e94aeee150aa599f7bac7497d0af1b5c6a03ff43",
+        "data.ts": "5d1bcc181003c17b3aef1a865faa38028e168e48",
+        "meta.json": "74cb07f843200d7ca278137ca8e3a5a44828559e"
+      }
+    },
+    {
+      "versao": "v4_perimetro-que-mudou-de-vigencia",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. As quatro participações levam receita e mercado por formatCurrencyCompact, e cada par refaz o percentual ao lado (8,3%, 7,4%, 2,1% e 14,5%); os dois mercados imprimem valores diferentes; ausência por formatUnavailable com Unplug; nada cortado nos dois temas, com cerca de 27 px de sobra no pé; contraste de texto de 4,65 a 17,96 e preview contra página em 0,06%. check com 0 erro e 1 aviso (frase acessível com 244 de 250). Observações no README: frase perto do teto, modo previous sem PNG, borda do selo, legenda abaixo do mapa, peso do destaque, nota do meta com conta antiga.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:50:08.819Z",
+      "impressao": "725ef37f091de5a4cc287f46c77a1395e90b4876",
+      "arquivos": {
+        "Chart.tsx": "b1403dba1b015f306e450d6d6c4d38b9cf3c673c",
+        "data.ts": "571bb3a2e8bb7d89317fa75ed68d80e10fe51cf7",
+        "meta.json": "489e28f8aadef25c1d9e41c7fc11c6528a641791"
+      }
+    }
+  ]
+}

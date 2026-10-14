@@ -1,0 +1,68 @@
+{
+  "slug": "05_funil-com-meta-sobreposta",
+  "nome": "Funil com meta sobreposta",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Realizado e meta por etapa no mesmo desenho: o realizado como barra cheia, a meta como traço vertical na mesma escala e o percentual de atingimento escrito ao lado. Responde se o funil realizado cabe na meta e quanto falta em cada etapa, e obriga a declarar se a meta vem de medição histórica ou é premissa.",
+  "quando_usar": [
+    "Diretoria e Comercial acompanhando realizado contra meta por etapa dentro do período, com 3 a 7 etapas.",
+    "Meta de ganhos desdobrada para trás pelas taxas históricas, para dizer quantas oportunidades faltam em cada etapa.",
+    "Pré-vendas com meta semanal por etapa e faixas de atingimento."
+  ],
+  "quando_evitar": [
+    "Meta sem origem declarada: rotular premissa ou não desenhar o marcador.",
+    "Uma meta única do período, sem etapas: usar a família 13_progresso-meta-e-gauge.",
+    "Meta e realizado em escalas diferentes: o domínio é um só e fixo.",
+    "Período em curso comparado com a meta cheia sem dizer quanto do período já passou."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_realizado-contra-meta-do-trimestre",
+      "titulo": "Realizado contra meta por etapa",
+      "caso_de_uso": "Diretoria, 2026-T3 com realizado até 2026-09-14 (83% do trimestre decorrido): Aberta 420 de 460, Diagnóstico 268 de 290, Proposta 131 de 150, Negociação 64 de 75 e Ganha 29 de 36.",
+      "o_que_demonstra": [
+        "Bar com shape próprio e traço de meta posicionado pelo retângulo de background",
+        "Domínio fixo, para a meta aparecer mesmo com realizado zero",
+        "Percentual de atingimento escrito ao lado de cada barra",
+        "Anotação da fração do trimestre já decorrida"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cor-por-faixa-de-atingimento",
+      "titulo": "Atingimento da meta semanal por faixa",
+      "caso_de_uso": "Pré-vendas, semana 2026-W37: Entradas 1.180 de 1.100, Conexão 612 de 650, Agenda marcada 248 de 290, Agenda realizada 187 de 240 e Handoff aceito 142 de 190.",
+      "o_que_demonstra": [
+        "Cor por faixa: --positive a partir de 100%, --accent-amber de 80 a 99%",
+        "Abaixo de 80% em --negative, com a faixa escrita e não só pintada",
+        "Limites das faixas como prop com default, sem número mágico no shape",
+        "Legenda das três faixas acima do gráfico"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_meta-desdobrada-pelas-taxas-historicas",
+      "titulo": "Meta de ganhos desdobrada por etapa",
+      "caso_de_uso": "Diretoria, 2026-T4: meta de 36 ganhos dividida pelas taxas de passo dos últimos quatro trimestres (62%, 52%, 44% e 52%) pede 497 abertas, 308 diagnósticos, 160 propostas e 70 negociações, comparadas com o que já está no funil em 2026-09-14.",
+      "o_que_demonstra": [
+        "Meta calculada de trás para frente no componente, arredondada para cima",
+        "Taxas históricas escritas no rodapé como origem da meta",
+        "Barra do que já existe no funil contra o marcador do necessário",
+        "Falta por etapa escrita como número e com o substantivo (NUM-6)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_etapa-nova-sem-historico",
+      "titulo": "Meta de etapa nova sem histórico",
+      "caso_de_uso": "Comercial, 2026-T3: a etapa Comitê de investimento foi criada no trimestre e não tem taxa histórica; a meta dela é premissa digitada, não medição, e o atingimento não tem base para ser calculado.",
+      "o_que_demonstra": [
+        "Marcador vazado para meta sem medição por trás",
+        "Rótulo premissa, sem medição ao lado do marcador",
+        "Atingimento indisponível por formatUnavailable, sem taxa inventada",
+        "Meta medida e meta digitada distinguidas por forma, não só por cor"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

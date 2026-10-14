@@ -1,0 +1,17 @@
+{
+  "title": "Eventos de mídia sob o CPL qualificado",
+  "useCase": "Que eventos de 2026 coincidem com o degrau do CPL qualificado mostrado no sparkline logo acima?",
+  "demonstrates": [
+    "ScatterChart sem eixos visíveis, com XAxis hide e o mesmo domain do sparkline",
+    "Forma por tipo de evento, no máximo três: circle, triangle e diamond",
+    "ZAxis de range fixo quando o evento não tem magnitude",
+    "Eventos no mesmo pixel agrupados numa marca com contador e lista na dica",
+    "Dica que descreve o evento sem afirmar efeito sobre o CPL"
+  ],
+  "canvas": {
+    "width": 360,
+    "height": 320
+  },
+  "frame": "card",
+  "notes": "Canvas por número, 360 x 320: o kpi-alto (360 x 280) deixa o corpo de 302 x 155,5 e a conta não fecha, porque a linha de leitura ocupa duas linhas (cerca de 40 px), o sparkline pede 56, a régua 28 e a linha de datas mais a legenda 36, ou seja cerca de 160 px com os vãos. Com 320 de altura o corpo é 302 x 195,5. A largura da régua entra no agrupamento por ResizeObserver, então o limite de 10 px vale em pixels e não em dias. A marca agrupada é um círculo de 8 px de raio com o número dentro e vale para tipos misturados; a forma própria nunca recebe raio (REC-31), por isso ela desenha o próprio círculo. Sparkline sem área e com ponto final, escalado do menor ao maior valor (EIX-2)."
+}

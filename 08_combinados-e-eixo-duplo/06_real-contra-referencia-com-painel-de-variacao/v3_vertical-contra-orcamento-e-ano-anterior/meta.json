@@ -1,0 +1,17 @@
+{
+  "title": "Receita por vertical contra orçamento e 2025",
+  "useCase": "Cada vertical bateu o orçamento e também 2025, ou uma referência esconde a outra?",
+  "demonstrates": [
+    "Verticais fictícias no eixo x com dois painéis de variação empilhados",
+    "Um painel por referência, cada um com a sua escala escrita",
+    "Maior desvio anotado por painel, no máximo dois no visual inteiro",
+    "syncId por categoria amarrando os três painéis",
+    "As três marcas do painel principal num shape só, porque o zIndex manda"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 700
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1). Corpo de 574 x 581,5 px (640 menos 2 x 33 de recuo; 700 menos 66, menos 40,5 de cabeçalho de uma linha, menos 12 de vão). O caso de uso mede 478,7 px de tinta a 12 px em Manrope contra 574 px de caixa, com 95 px de folga, então o cabeçalho tem uma linha. Altura: linha de leitura 24 px, dois vãos de 12 px, painel de desvio contra orçamento com 144 px (h-36), painel de desvio contra 2025 com 166 px e o principal com o resto, 223,5 px. Os 22 px de diferença entre os dois painéis de desvio são deliberados: o de cima esconde o eixo de categoria e recebe essa altura de volta para o próprio plano (REC-17), então sem a compensação o de baixo ficaria com o corpo menor; com 144 e 166 px os dois planos medem 96 px. O painel do meio também leva 8 px de margem inferior, porque sem ela o tique da borda de baixo nasce fora da caixa do gráfico e o painel seguinte o corta ao meio, medido no segundo render. ESP-6: plano de 478 px (574 menos 84 de eixo, menos 12 de margem), passo de 79,67 px para 6 verticais; o fantasma daria 31,87 px e o teto de 24 px da ESP-2 o corta, o sólido central mede 15,6 px, acima do piso de 12 px. TENSÃO DECLARADA da EIX-6: o eixo declara 84 px e não os 48 a 64 do teto, porque o tique mais largo, com o sinal U+2212 antes do símbolo (−R$ 300 mil, 61,79 px de tinta em Space Grotesk), só fica em uma linha a partir de 81 px (emenda da EIX-6 de 2026-10-02, medida no render), e 80 o quebrava em duas linhas; a conta anterior era a de R$ -300 mil, 59,43 px com o hífen e 18 px de sobrecarga, 77,43 px; nenhum tique de moeda com a unidade escrita cabe em 64 px, e a decisão é do dono do catálogo. As duas escalas de desvio são diferentes de propósito, e cada título escreve a sua: o desvio contra o orçamento cabe em 150 mil e o desvio contra 2025 precisa de 300 mil, e uma escala comum achataria o primeiro painel até o desvio virar traço. A ordem das três marcas do painel principal é garantida por um shape só, porque entre tipos de marca diferentes quem decide é o zIndex do pacote e não a ordem do JSX. GUARDA NÃO MEDIDA, conferida à mão: a OPACIDADE-MARCA saiu sem_opacidade_em_marca porque nenhuma marca desta versão declara opacidade; conferido por leitura do Chart.tsx, não há opacity, fillOpacity nem classe bg-token/pct em marca de dado. GUARDA NÃO MEDIDA, conferida à mão: a FORMATO-ACESSIVEL saiu frase_sem_formatador porque o percentual da frase e o do corpo saem do helper local signedPercent, e a guarda só conta chamadas de @/lib/format; conferido linha a linha, a frase e a linha de leitura usam a MESMA chamada com o MESMO argumento, signedPercent(fracaoDivergente), e as contagens saem por String nos dois lados, então não há o mesmo número em dois formatos."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Meta mensal de agendas em arco",
+  "useCase": "Pré-vendas: que percentual da meta de 90 agendas de 2026-09 já foi marcado, num cartão pequeno de cabeçalho?",
+  "demonstrates": [
+    "RadialBarChart com startAngle 210 e endAngle -30, arco de 240 graus",
+    "PolarAngleAxis numérico com domain explícito, sem normalizar pela maior barra",
+    "Mínimo e máximo escritos nas pontas e número grande centrado",
+    "cornerRadius zerado abaixo de um mínimo para a ponta não mentir",
+    "Origem da meta escrita por extenso, para o limite do arco não parecer arbitrário"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "O domínio vai só até a própria meta, sem folga de excedente: esta versão é a leitura de dentro de 0 a 100%, e o caso de passar de 100% fica com a v2. A frase de origem da meta responde à decisão do dono para este modelo: sem dizer de onde sai o limite, o arco só diz 'cheio' ou 'vazio'."
+}

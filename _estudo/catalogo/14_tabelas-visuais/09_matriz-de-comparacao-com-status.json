@@ -1,0 +1,69 @@
+{
+  "slug": "09_matriz-de-comparacao-com-status",
+  "nome": "Matriz de comparação com status",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Entidades ou opções de um lado, critérios do outro e um símbolo em cada cruzamento: cumpriu, parcial, não cumpriu, não se aplica e sem dado, cada um com forma própria e rótulo acessível, nunca só cor. A variante com bolas de Harvey desenha o preenchimento em quartos como arco SVG calculado em TypeScript, não como caractere Unicode, e leva o número ao lado, porque o glifo quantiza e esconde diferença. Contagem por linha e por coluna fecha a leitura de padrão: qual opção é cheia e qual critério ninguém atende.",
+  "quando_usar": [
+    "Cumprimento de 4 a 10 critérios qualitativos por 5 a 25 entidades",
+    "Comparação de 3 a 8 opções contra critérios com direção escrita, com o número junto do glifo",
+    "Checklist de etapas ou requisitos em que a pendência por linha e por coluna é a pergunta",
+    "Quadro de metas por área em que o sim, parcial ou não é a decisão, não o valor"
+  ],
+  "quando_evitar": [
+    "Quando existe o número por trás do status e ele importa: mostre o número (14/01 ou 14/02)",
+    "Matriz sem texto e com valor contínuo: heatmap (família 15)",
+    "Status só por cor ou não se aplica igual a sem dado: dê forma e palavra a cada estado",
+    "Mais de 25 linhas por 10 critérios: agrupe ou filtre pelas pendências"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_metas-do-ano-por-area",
+      "titulo": "Metas de 2026 por área",
+      "caso_de_uso": "Diretoria: quais das 6 metas de 2026 cada uma das 9 áreas cumpriu, cumpriu em parte ou não cumpriu.",
+      "o_que_demonstra": [
+        "Ícones Check, CircleDashed e X com rótulo acessível em cada célula",
+        "Contagem por linha como 5 de 6 e por coluna no rodapé",
+        "Legenda dos símbolos no topo, uma vez só",
+        "Status semântico com ícone e forma diferentes, não só a cor"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_cenarios-com-bolas-de-harvey",
+      "titulo": "Cenários da Diretoria com bolas de Harvey",
+      "caso_de_uso": "Diretoria: como 4 cenários de 2027 se comparam em 6 critérios, com o glifo e o valor real lado a lado.",
+      "o_que_demonstra": [
+        "Arco de Harvey em SVG calculado em função pura para 0, 1/4, 1/2, 3/4 e 1",
+        "Direção por critério escrita na linha e fração invertida quando menor é melhor",
+        "Número junto do glifo e contorno no líder de cada critério",
+        "Faixa de normalização declarada no rodapé, não mínimo e máximo da tela"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_checklist-de-handoff-por-oportunidade",
+      "titulo": "Checklist de handoff por oportunidade",
+      "caso_de_uso": "Pré-vendas: quais de 18 oportunidades passadas ao Comercial em 2026-09 ainda têm pendências nos 7 critérios do handoff.",
+      "o_que_demonstra": [
+        "Ordenação pelas pendências, com a linha mais pendente no topo",
+        "Contagem por linha e por coluna, com o critério mais descumprido destacado",
+        "Cabeçalho de critério curto sem sigla inventada e com o nome inteiro na frase acessível",
+        "Linhas compactas de 20 px com ícones de 14 px e texto horizontal"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_nao-se-aplica-sem-dado-e-empate",
+      "titulo": "Não se aplica, sem dado e empate",
+      "caso_de_uso": "Marketing: comparar 5 plataformas fictícias sem confundir critério que não se aplica com campo não preenchido.",
+      "o_que_demonstra": [
+        "Cinco estados com formas distintas: check, parcial, X, traço e círculo tracejado",
+        "Sem dado com a palavra na legenda e na frase acessível, fora da contagem",
+        "Empate no líder marca as duas colunas e não escolhe uma",
+        "Contagem por linha com denominador que exclui não se aplica"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

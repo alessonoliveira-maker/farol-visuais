@@ -1,0 +1,68 @@
+{
+  "slug": "06_pizzas-proporcionais-ao-total",
+  "nome": "Pizzas proporcionais ao total",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Pizzas lado a lado em que a área de cada uma é proporcional ao total do seu todo e as fatias mostram a composição. O raio sai de rMax vezes a raiz de total sobre o maior total, as pizzas se alinham pela base, o total vai escrito sob cada uma e uma legenda de tamanho ancora a leitura de área, que o olho subestima.",
+  "quando_usar": [
+    "Composição de 2 a 6 todos com totais muito diferentes, quando a diferença fina de total não importa.",
+    "Total e composição precisam aparecer juntos numa leitura aproximada, com o total escrito.",
+    "Série curta de períodos em que o crescimento do todo é parte da mensagem."
+  ],
+  "quando_evitar": [
+    "Diferença de total pequena: small multiples de mesmo diâmetro (modelo 04).",
+    "Total e composição com leitura precisa: barra empilhada (03) ou marimekko (26).",
+    "Mais de seis todos: barra empilhada (03), ou SVG puro num SVG só se a forma for mantida.",
+    "Raio proporcional ao total em vez da área: erro clássico que infla a diferença."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-por-trimestre-e-tipo-de-cliente",
+      "titulo": "Receita reconhecida por trimestre e tipo de cliente",
+      "caso_de_uso": "Como a receita reconhecida variou do 3º trimestre de 2025 ao 2º de 2026 e como se dividiu por tipo de cliente?",
+      "o_que_demonstra": [
+        "Um PieChart por trimestre em contêineres de mesmo tamanho, alinhados pela base",
+        "outerRadius pela raiz quadrada do total sobre o maior total, em TypeScript",
+        "Total escrito sob cada pizza em formatCurrencyCompact",
+        "Cor por tipo de cliente fixa entre as pizzas, nos slots 1, 3 e 6"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_legenda-de-tamanho",
+      "titulo": "Legenda de tamanho com dois círculos de referência",
+      "caso_de_uso": "Quanto maior foi a receita de um trimestre contra outro, lida pela área e confirmada por uma escala?",
+      "o_que_demonstra": [
+        "Círculos de R$ 500 mil e R$ 2.000 mil na mesma escala de área das pizzas",
+        "Círculos vazados em --text-muted, alinhados pela base como as pizzas",
+        "Mesma função de raio nas pizzas e na legenda, sem constante duplicada",
+        "Anotação curta: a área é aproximada e o total escrito manda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_leads-por-plataforma-e-qualificacao",
+      "titulo": "Leads do semestre por plataforma e qualificação",
+      "caso_de_uso": "Quanto cada plataforma de mídia trouxe de leads no semestre e que parte deles foi qualificada?",
+      "o_que_demonstra": [
+        "Três pizzas pelo volume de leads com fatias por estado de qualificação",
+        "Ordem natural das fatias: qualificado, em análise, desqualificado",
+        "Qualificado em --chart-1 e os demais estados em neutro, sem cor semântica",
+        "Frase acessível com o total e a fração qualificada de cada plataforma"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_mes-com-campanha-pausada",
+      "titulo": "Mês com campanha pausada abaixo do mínimo",
+      "caso_de_uso": "Como mostrar um mês com total 40 vezes menor, pequeno demais para desenhar a composição?",
+      "o_que_demonstra": [
+        "Diâmetro abaixo de 24 px vira ponto com o total: 12 leads, composição omitida",
+        "Constante MIN_DIAMETER no topo do arquivo decide entre pizza e ponto",
+        "Escala comum sobre o conjunto, sem reescalar por causa do mês pequeno",
+        "Mês sem dado escreve indisponível, distinto do mês pequeno"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

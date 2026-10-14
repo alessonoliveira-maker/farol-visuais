@@ -1,0 +1,14 @@
+{
+  "title": "Origens sem par e pares sem medição",
+  "useCase": "Marketing: 40 origens com 92% de pares em zero; o que sobra ao colapsar quem não tem par e onde a fonte não mede.",
+  "demonstrates": [
+    "22 origens sem nenhum par colapsadas no rodapé como 22 origens sem relação",
+    "Matriz reduzida a 18 por 18 com a contagem do que saiu",
+    "Célula sem medição hachurada em text-muted, sem número",
+    "Zero medido desenhado e escrito como 0, distinto da célula sem dado",
+    "Legenda com item próprio para sem medição, depois das classes da rampa"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): alto 640x560 com moldura card dá corpo de 574 x 425 (2 linhas de caso de uso). O desenho tem cabeçalho de colunas 16, 18 linhas de 18 com vão de 2 (358), vão de 10 e rodapé de duas linhas (30): 414 px, sobra 11. O SVG tem viewBox igual ao tamanho (GEO-18). Desvios do catálogo: (1) a hachura é um pattern de SVG (id de useId), não repeating-linear-gradient de CSS, porque a grade é SVG como nos guias aprovados e o gradiente de CSS não sai no preview de um SVG nativo; o contorno de 1 px em text-muted garante que a célula hachurada se veja mesmo no tamanho do cartão. (2) 'Matriz de 18 por 18' é o triângulo inferior, já que a relação é simétrica. (3) Quartis em seq-2, seq-3, seq-6 e seq-7, porque seq-4 e seq-5 não têm texto legível (TOK-8). Origem que tem par sem medição fica na matriz mesmo sem par positivo (Parceiro e Diretório setorial), senão a lacuna da fonte sumiria junto com as colapsadas. Os 92% são calculados do dado: pares em zero medido sobre os 780 pares das 40 origens."
+}

@@ -1,0 +1,91 @@
+# Densidade 2D (binada, hexbin, contorno)
+
+## O que é
+
+Quando os pontos de uma dispersão são tantos que a nuvem vira mancha, o plano é dividido em células (grade regular ou hexágonos) e cada uma mostra a contagem por cor sequencial ou por área; o contorno troca as células por curvas de nível. A identidade do ponto individual se perde de propósito e sobra a massa por região: lê se onde a concentração é maior, não quem é cada item. Geometria e contagem são calculadas em TypeScript sobre bordas de bin fixas, e célula vazia simplesmente não é desenhada.
+
+## Quando usar
+
+- Milhares de pontos, acima de cerca de 3.000, com a pergunta de onde eles se concentram.
+- Leads por fit e engajamento, sessões do site por tempo e páginas vistas, interações de marketing em volume alto.
+- Quadrante com centenas ou milhares de itens, com contagem por região e divisória na borda de um bin.
+- Contorno só quando a leitura de picos é essencial e a amostra passa de 500 pontos.
+
+## Quando evitar
+
+- Poucas centenas de pontos: a mancha ainda não existe; use dispersão simples com opacidade (modelo 01).
+- O leitor precisa achar um ponto específico: a célula esconde a identidade; ofereça lista ao lado ou busca.
+- Os dois eixos são categóricos, e não quantitativos contínuos: use mapa de calor (família 15).
+- A grade ou a largura de banda mudam entre filtros: a comparação deixa de valer; guarde as bordas fixas.
+- **A pergunta exige mais de três níveis de intensidade lidos pela cor.** A rampa do Farol tem três degraus usáveis (ver a nota de paleta abaixo) e eles não se separam entre si; acima disso a intensidade precisa sair da cor, e o modelo passa a competir com o mapa de calor de célula grande (família 15), que aceita o número escrito dentro.
+
+## Anatomia
+
+1. Grade de fundo nos dois eixos, em `--line-subtle`, com tiques em posição redonda e rótulos numéricos em `font-display` (algarismo tabular), conforme a exceção de grade nos dois sentidos da `EIX-3b`: os dois eixos são quantitativos e lidos por posição.
+2. A célula: círculo de área proporcional à contagem (`v1`), quadrado em grade regular (`v3`) ou hexágono de topo pontudo com vértices calculados por ângulo (`v2` e `v4`), sempre com contorno `--surface-raised` de 1 px separando vizinhas que não contrastam entre si (`COR-5`). **Célula vazia não é desenhada**, e é justamente por isso que nenhuma faixa pode sumir contra o cartão.
+3. A escala de intensidade, em três degraus: `--seq-5`, `--seq-6` e `--seq-7`, os únicos que passam de 3:1 contra `--surface-raised` nos dois temas. O raio ou o lado da célula repete a faixa como canal redundante, porque os três degraus medem entre si 1,42:1, 1,45:1 e 2,07:1.
+4. A legenda de faixa, de posição fixa, com o **nome** da faixa e a **contagem** de cada uma escritas (`formatInt`), e a faixa de cima terminando no máximo observado, nunca numa constante (`ROT-5b`). A legenda declara também como os cortes nascem: área proporcional (`v1`), raiz da contagem (`v2`), potências da contagem (`v3`) ou quantil (`v4`).
+5. Linha de leitura no topo, `--text-secondary`, 12 px, calculada do dado: nomeia a região ou a célula de maior concentração (`ANO-5`). A frase acessível da raiz repete esta linha inteira, nunca uma versão dela com outro formatador.
+6. Rótulos de eixo horizontais, `--text-muted`, 11 px, nomeando a grandeza e o domínio de cada lado (`TIP-5`: nunca rotacionados), mais o total do recorte em `kpi-number` de 14 px com a legenda do que ele conta.
+7. Quando há divisória de quadrante (`v3`), ela nasce de **índice de bin** e usa `--text-muted`: pela `ACE-6` a divisória carrega a relação, e `--line-strong` mede 1,79:1 e 1,83:1. A contagem de cada região fica numa **lista de identificação ao lado** (`ROT-10`), com um pictograma de quadrante por linha, porque a célula de 11 px não aguenta o halo que um rótulo dentro do plano exigiria (`GEO-4`).
+
+## A lacuna de paleta que atinge este modelo, medida
+
+Medido em 2026-09-28 contra `--surface-raised`, a rampa inteira mede, no escuro, 1,14 / 1,58 / 2,29 / 3,38 / 4,89 / 6,96 / 10,12 e, no claro, 1,21 / 1,49 / 1,92 / 2,60 / 3,72 / 5,45 / 8,29. **Só `--seq-5`, `--seq-6` e `--seq-7` passam de 3:1 nos dois temas**, porque as cores de papel invertem de luminância entre eles. É a armadilha `TOK-8`, e ela morde mais fundo aqui do que em qualquer outra família: neste modelo **célula não desenhada QUER DIZER ausência**, então um degrau invisível não deixa a peça feia, deixa a peça mentirosa, porque a contagem baixa passa a ler como zero.
+
+Medido também nesta sessão, e isto **não está no `TOK-8`**: os três degraus úteis **não se separam entre si**. `--seq-5` contra `--seq-6` mede 1,42:1, `--seq-6` contra `--seq-7` mede 1,45:1 e `--seq-5` contra `--seq-7` mede 2,07:1, os três abaixo do piso de 3:1 da `WCAG 1.4.11` que a própria `TOK-8` usa para escolhê-los. É a `TOK-9` aplicada à saída da `TOK-8`: eles passam contra o fundo e reprovam um contra o outro. Consequência de projeto: **a cor aqui distingue a célula do cartão, e a ordem tem que vir de outro canal**, que nas versões deste modelo é o tamanho da célula mais o nome e a contagem escritos na legenda.
+
+Terceira medição, na camada de destaque: **nenhuma das oito cores categóricas do Farol se separa dos três degraus**. O melhor caso é `--chart-7` com 1,16:1 e o pior é `--chart-6` com 1,01:1; `--chart-1`, que a `COR-8` reserva ao destaque, mede 1,07:1. Por isso o ponto de destaque da `v2` sai com anel de `--surface-raised`, que mede de 3,72:1 a 10,12:1 contra os degraus: o anel é o que torna o ponto visível, não acabamento.
+
+As três medições são de decisão do dono da paleta, não de desenho, e estão registradas nas notas de cada versão.
+
+## Versões
+
+- `v1_leads-binados-por-fit-e-engajamento`: leads do semestre binados em 10 faixas de fit por 10 de engajamento. Demonstra a binagem em grade regular com bordas fixas calculadas em TypeScript, o círculo por célula com área proporcional à contagem e piso visual declarado, e a célula vazia que fica sem círculo em vez de virar zero desenhado. Preview: [escuro](./v1_leads-binados-por-fit-e-engajamento/preview.svg) · [claro](./v1_leads-binados-por-fit-e-engajamento/preview-claro.svg).
+- `v2_hexbin-com-sdr-em-destaque`: os 6.796 leads do time numa rede hexagonal, com os 21 leads de uma SDR desenhados por cima. Demonstra a rede montada em pixel com vértices por ângulo, a escala de três degraus com a contagem de cada faixa escrita, o raio do hexágono repetindo a faixa, e o anel na cor do cartão que separa o ponto de destaque da camada de densidade. Preview: [escuro](./v2_hexbin-com-sdr-em-destaque/preview.svg) · [claro](./v2_hexbin-com-sdr-em-destaque/preview-claro.svg).
+- `v3_quadrante-denso-de-sessoes`: 9.100 sessões numa grade de 24 por 16, com as divisórias do quadrante na borda de um bin. Demonstra o corte declarado em índice de bin, a contagem e a participação das quatro regiões numa lista com pictograma de quadrante, as participações inteiras somando 100 pelo maior resto, e os limites de faixa em potências da contagem. Preview: [escuro](./v3_quadrante-denso-de-sessoes/preview.svg) · [claro](./v3_quadrante-denso-de-sessoes/preview-claro.svg).
+- `v4_concentracao-extrema-por-quantis`: 40.000 interações numa rede hexagonal em que um hexágono leva metade delas. Demonstra os cortes de faixa por quantil, a legenda que declara que os degraus são quantis e não faixas de igual largura, e a contagem escrita no hexágono dominante com halo. Preview: [escuro](./v4_concentracao-extrema-por-quantis/preview.svg) · [claro](./v4_concentracao-extrema-por-quantis/preview-claro.svg).
+
+## Como colar no Farol
+
+1. O dado que chega à versão já precisa estar agregado (contagem por célula ou por hexágono), nunca a lista crua: quem cola calcula a binagem no seletor da página ou no backend, com a mesma régua de bordas (seção 16, passo 4). A exceção é a camada de destaque da `v2`, que é individual de propósito.
+2. Mantenha as bordas fixas entre filtros: `GRID_SIZE` e `BIN_WIDTH` na `v1`, `HEX_COLS`, `HEX_ROWS` e `HEX_R` na `v2` e na `v4`, `GRID_COLS`, `GRID_ROWS`, `COL_SPLIT` e `ROW_SPLIT` na `v3`. Mudar a grade de um recorte para outro invalida a comparação célula a célula, que é o ponto delicado do modelo.
+3. Os limites de faixa saem do máximo observado a cada recorte, então eles se movem com o filtro de propósito. O que não pode se mover é a **quantidade** de faixas nem a régua que as gera, porque a legenda declara essa régua em palavra.
+4. Na `v2`, `highlightLeads` e `highlightName` são o que a página passa quando alguém escolhe uma pessoa na sidebar; sem eles a peça desenha a densidade do time e a legenda de destaque continua correta, porque o número dela sai do próprio array.
+5. Ligue `caption` ao texto do que o total representa no contexto real, e confira no tema claro: as três medições da seção de paleta acima reprovam no claro, não no escuro.
+
+## Referências
+
+- [Vega-Lite, 2D Histogram Scatterplot](https://vega.github.io/vega-lite/examples/circle_binned.html): observar os dois eixos binados em até 10 faixas e o tamanho pela contagem.
+- [From Data to Viz, 2D density](https://www.data-to-viz.com/graph/density2d.html): observar hexbin, histograma 2D e contorno como as três formas, o alerta de amostra pequena e a sensibilidade à largura de banda.
+- [Observable Plot, hexbin](https://raw.githubusercontent.com/observablehq/plot/main/docs/transforms/hexbin.md): observar largura do bin em pixels, saídas por cor e por raio e a dica de contorno.
+- [RAWGraphs, hexagonal binning (metadata)](https://raw.githubusercontent.com/rawgraphs/rawgraphs-charts/master/src/hexagonalBinning/metadata.js): observar a descrição de densidade em vez de pontos, por cor ou área.
+- [Observable Plot, density](https://raw.githubusercontent.com/observablehq/plot/main/docs/marks/density.md): observar a largura de banda padrão de 20 px, os limiares e a analogia com mapa topográfico.
+- [Visier, Quadrant visual](https://docs.visier.com/developer/Analytics/visual%20types/2x2%20scatter%20plot.htm): observar o teto declarado de 3.000 itens e o detalhe fora do plano.
+- [Observable Plot, cell mark](https://observablehq.github.io/plot/marks/cell): observar `inset` e `fill`, que definem o desenho de cada bin da grade.
+- Pedido ao dono da paleta, registrado aqui como a seção 6 do CONTRATO manda: **uma rampa sequencial com quatro ou mais degraus acima de 3:1 contra o cartão nos dois temas, e com degraus vizinhos separados entre si**. Sem ela, este modelo fica com três níveis de intensidade que a cor não ordena, e nenhuma das quatro versões pode oferecer mais.
+
+## Divergências entre o catálogo e o CONTRATO, resolvidas a favor do CONTRATO
+
+- **`v3`, cinco degraus contra três.** O catálogo pede "rampa sequencial discreta de 5 degraus com legenda do que cada tom representa". A `TOK-8` mede três degraus usáveis, e a isenção da `ACE-3` (valor escrito na marca) não se aplica, porque a célula da `v3` mede 23 por 11 px e não caberia número nenhum. Entregue com três faixas, cada uma com nome e contagem escritos, e com o tamanho da célula repetindo a faixa. Escrito também na nota do `meta.json`.
+- **`v4`, quantis em três cortes.** O catálogo não fixa quantos quantis, e três degraus usáveis significam tercis, nunca quartis nem quintis. A legenda diz "1º terço", "2º terço" e "3º terço" e a nota do painel avisa que a largura dos degraus não se compara.
+- **`v3`, contagem dentro da região contra contagem ao lado.** O catálogo pede "contagem e participação escritas em cada região". A primeira versão fez exatamente isso, com halo (`ROT-7`), e o render mostrou o defeito que a `GEO-4` descreve: a célula mede 17 por 11 px, muito abaixo dos 18 px em que o halo passa despercebido, e o rótulo da região de maior massa abriu um rombo justamente no trecho mais cheio do desenho. A saída da `GEO-4` e da `GEO-2` é a mesma, em marca fina quem sai do lugar é o texto, então os números foram para uma lista de identificação ao lado (`ROT-10`), cada linha com um pictograma de quadrante que diz de que região é aquele número. No plano ficaram só as duas divisórias.
+- **`v2` e `v4`, nenhuma cor de destaque serve.** O catálogo pede "pontos do SDR selecionado em cor de destaque sobre a camada de densidade". Medido, a cor de destaque não existe: nenhuma das oito categóricas passa de 1,16:1 contra os três degraus. O destaque foi entregue por **forma** (círculo contra hexágono), **anel** na cor do cartão (3,72:1 a 10,12:1), **rótulo próprio na legenda** e **contagem na linha de leitura**, que é o que a `ACE-2` e a `TOK-9` pedem. A cor `--chart-1` ficou por convenção da `COR-8`, não por medição, porque nenhuma escolha de cor ali muda o resultado.
+
+## Observações da revisão (não bloqueantes)
+
+- `v1`: o piso de área (`AREA_MIN`) comprime a faixa baixa da escala; uma célula de 3 leads e uma de 10 desenham círculos quase idênticos, e o piso está declarado só no comentário do código e no `notes`, nunca na tela.
+- `v1`: o comentário de `AREA_MAX` diz que o teto evita fundir bolhas vizinhas, mas o passo da grade é de 15,4 px e o raio máximo chega a 9,4 px, então as células acima de cerca de 300 leads se sobrepõem; quem as separa é o contorno `--surface-raised` de 1 px da COR-5, e o comentário promete mais do que a conta entrega.
+- `v1`: a legenda de tamanho para em 350 enquanto a maior célula tem 395 leads; trazer o máximo do recorte como terceira referência calibraria justamente a bolha que carrega a conclusão **(fechado na Correção de 2026-09-25.)**
+- `v1`: a participação sai em `formatPercent(..., 1)` e imprime 9,4%, enquanto a NUM-1 pede percentual de composição inteiro; o volume escrito ao lado (395 leads) sustenta a leitura, por isso fica como nota.
+- `v1`: a legenda lateral ocupa cerca de 42% da altura do corpo em três linhas, acima do que a ROT-4 descreve; a regra nasceu de legenda categórica e o catálogo pede legenda de tamanho aqui, então o ponto fica registrado como tensão entre as duas e não como defeito da versão. **As `v2`, `v3` e `v4` não repetem isso:** a legenda delas é uma fileira horizontal de três faixas, entre 23% e 26% da altura do corpo, dentro do teto da ROT-4.
+- `v1` (revisão de 2026-09-19): o eixo de engajamento não tem rótulo numérico nenhum, enquanto o de fit imprime 0 a 100 de 20 em 20; o domínio de Y sai só do título "Engajamento, 0 a 100 ↑" e o leitor conta linhas de grade para localizar a faixa de 80 a 90 que a linha de leitura nomeia. O item 1 da Anatomia promete rótulos numéricos na grade dos dois eixos, então a tela entrega menos do que o próprio README descreve. **As `v2`, `v3` e `v4` imprimem rótulo nos dois eixos.**
+- `v1`: são 6 linhas de grade por eixo (0, 20, 40, 60, 80 e 100) num corpo de 234 px, contra o teto de 5 da EIX-4; as duas externas fecham a moldura do plano e sobram 4 internas, e por isso o ponto fica como nota. Se a densidade incomodar, `[0, 50, 100]` continua caindo em borda de bin. **As `v2`, `v3` e `v4` usam 5 ou 4 tiques por eixo.**
+- `v1`: os números da legenda (10, 100 e 350) saem alinhados à esquerda numa coluna, e a TIP-6 com a ROT-5 pedem número em coluna alinhado à direita; com três ordens de grandeza a unidade de cada valor não se alinha. **Na `v3` a contagem da faixa sai alinhada à direita numa coluna; na `v2` e na `v4` ela sai centrada sob a amostra, porque a legenda é uma fileira e não uma coluna.**
+- `v1`: o plano ocupa 154 das 574 unidades de largura do corpo e o terço direito do canvas fica vazio abaixo da legenda; a legenda lateral custa mais largura do que usa, e uma legenda de uma linha embaixo, como em `03_bolhas` e `04_bolhas-em-grade-categorica`, devolveria essa largura ao plano.
+- `v1`: a guarda `ESPESSURA-MARCA` do `npm run check` não mede esta versão e reporta `preview_com_transform`, porque a legenda vive dentro de um grupo com `transform`; o silêncio da guarda aqui não é aprovação dela, e a conferência de tamanho de marca foi feita à mão sobre os dois PNGs.
+- `v2`, `v3` e `v4`: a guarda `EIXO-CALMO` sai `sem_grade` nas quatro versões do modelo, porque ela procura `CartesianGrid` do Recharts e a grade aqui é desenhada à mão em SVG. Medido à mão no lugar dela: **nenhuma das versões desenha linha de eixo**, só linha de grade em `--line-subtle` e tique de texto; o afastamento do tique é de 16 px abaixo do plano e de 6 px à esquerda dele, contra os 8 px que a `EIX-5` pede para o `tickMargin` de um eixo do Recharts. O 16 vem de o rótulo ficar sob a borda inferior do plano, sem eixo entre os dois.
+- `v2` e `v4`: a `ESPESSURA-MARCA` não aplica o piso geral de 12 px a marca desenhada fora de um `<Bar>`. Medido à mão: o menor hexágono desenhado tem **12,9 px de largura por 14,9 px de altura** (fator de raio 0,62 sobre `HEX_R` de 12), acima do piso. Na `v3` a menor célula desenhada tem **12,7 px de largura por 6,1 px de altura** (fator 0,55 sobre 23 por 11 px): a altura fica **abaixo** do piso de 12 px, e fica registrado aqui porque o piso nasceu de barra do Recharts, onde a espessura é a única dimensão da marca; numa célula de grade a leitura é de área e o teto de altura é a própria linha da grade, de 11 px, que nenhuma constante de acabamento pode aumentar sem tirar linhas do plano.
+- `v2`: onde o time tem massa, os 21 pontos da SDR se sobrepõem entre si, e quem os mantém contáveis é o anel na cor do cartão, não a cor de preenchimento. Num recorte com muito mais pontos de destaque a camada individual deixa de servir, e a pergunta passa a pedir um segundo hexbin ao lado, do próprio destaque, com a mesma rede.
+- `v1`: o `npm run render` deste modelo regravou também os dois preview da `v1`, porque o render trabalha por modelo. O conteúdo não regrediu, o `check` segue `ok` e nenhum arquivo de origem da `v1` foi tocado; o que mudou no byte foi a saída do renderizador de hoje, que abre o `<style>` com uma regra de herança que a versão gravada antes não tinha, mais o carimbo de origem.
+- `v4`: o rótulo do hexágono dominante leva halo de 4 px sobre a camada de densidade. Pela `GEO-4` isso é seguro acima de 18 px de marca e o hexágono tem 24 px de altura, mas o halo ainda apaga uma faixa de cerca de 15 px por 105 px de hexágonos vizinhos. A alternativa seria uma pista reservada fora do plano com linha de chamada, e ela custa altura de corpo que o canvas `card` não tem.

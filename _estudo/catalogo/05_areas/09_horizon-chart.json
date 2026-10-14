@@ -1,0 +1,70 @@
+{
+  "slug": "09_horizon-chart",
+  "nome": "Horizon chart",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Cada série é cortada em faixas de mesma altura que se sobrepõem numa linha baixa: intensidade discreta indica magnitude e matiz indica sinal, com negativos espelhados para cima. Cabem de 10 a cerca de 50 séries numa tela, para achar padrão e exceção, não para ler valor. Com poucas linhas, cada faixa é uma Area com dataKey em clamp e domínio fixo; com 20 ou mais, SVG puro com um path por faixa. Absorve o horizonte micro, linhas de 16 a 28 px empilhadas às dezenas.",
+  "quando_usar": [
+    "De 10 a 50 séries longas na mesma unidade, para achar onde e quando algo saiu do normal.",
+    "Desvio contra uma referência (média, meta) em que o sinal importa.",
+    "Tela de analista recorrente, com legenda de faixas ao lado.",
+    "Passo comum a todas as linhas quando a comparação de nível entre séries é a pergunta."
+  ],
+  "quando_evitar": [
+    "Público que nunca viu a forma ou tela de apresentação: pequenos múltiplos (01_area-simples, versão v3).",
+    "Leitura de valor exato: tabela visual (14_tabelas-visuais) ou linha.",
+    "Grade de intensidade por período sem forma de onda: 15_mapa-de-calor-e-calendario.",
+    "Mais de 3 faixas por sinal, ou passo sem declarar se é comum ou por série.",
+    "Matiz negativa mais saturada que a positiva, que faz a tela inteira parecer crise."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_desvio-do-cpl-por-campanha",
+      "titulo": "Desvio do CPL contra a média por campanha",
+      "caso_de_uso": "Achar em quais das 12 campanhas fictícias e em que dias o CPL fugiu da própria média de 30 dias.",
+      "o_que_demonstra": [
+        "Uma Area por faixa com dataKey em clamp e YAxis escondido de domínio fixo",
+        "Três faixas por sinal com opacidade crescente só na marca",
+        "Polaridade da métrica: CPL acima da média é alerta (COR-6)",
+        "Legenda de faixas com o valor de corte de cada tom e passo comum declarado"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_campanha-expandida-em-area",
+      "titulo": "Campanha selecionada expandida em área comum",
+      "caso_de_uso": "Vencer a curva de aprendizado: a campanha escolhida abre em área comum e as outras seguem em horizonte.",
+      "o_que_demonstra": [
+        "Prop expandedId que abre uma linha em área de altura normal",
+        "Demais séries preservadas em horizonte com a mesma escala",
+        "Linha expandida com nome em peso 700 como segundo canal",
+        "Estado visível no preview, sem depender de clique"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_sla-de-30-equipes",
+      "titulo": "SLA diário de 30 equipes contra a meta",
+      "caso_de_uso": "Achar em 180 dias quais das 30 equipes fictícias de pré-vendas passaram mais tempo abaixo da meta de SLA.",
+      "o_que_demonstra": [
+        "SVG puro com um path por faixa e clipPath, sem 30 instâncias do Recharts",
+        "Linhas micro de 16 px ordenadas pelo pior trimestre, não pelo nome",
+        "Separação sutil entre linhas para as vizinhas não parecerem escorrer",
+        "Nome da equipe à esquerda e escala comum obrigatória (EIX-9)"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_valor-fora-de-escala",
+      "titulo": "Horizon com valor fora de escala",
+      "caso_de_uso": "Mostrar um dia com desvio de 10 vezes o passo sem esmagar a leitura das demais séries.",
+      "o_que_demonstra": [
+        "Faixa saturada no teto com marcador de fora de escala",
+        "Valor original escrito na anotação, não o valor recortado",
+        "Passo mantido comum mesmo com o valor extremo",
+        "Frase acessível que nomeia a série e o dia fora de escala"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

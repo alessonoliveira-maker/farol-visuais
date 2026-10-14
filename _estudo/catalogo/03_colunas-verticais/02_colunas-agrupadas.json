@@ -1,0 +1,70 @@
+{
+  "slug": "02_colunas-agrupadas",
+  "nome": "Colunas agrupadas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas ou três colunas lado a lado dentro de cada período, uma por série, sobre um eixo numérico único. Compara estados ou momentos da mesma medida: marcado contra realizado, ano corrente contra anterior, plataforma contra plataforma. A leitura degrada rápido acima de três séries por período.",
+  "quando_usar": [
+    "Duas ou três séries da mesma grandeza por período, em até 12 períodos.",
+    "A comparação entre as partes de cada período importa mais que o total do período.",
+    "Ano corrente contra ano anterior, com o ano antigo em neutro e o atual em destaque.",
+    "Séries que começam ou param no meio da janela, desde que a ausência fique dita em palavras."
+  ],
+  "quando_evitar": [
+    "Mais de três séries por período: small multiples (modelo 08) ou linhas (04).",
+    "Séries de ordem de grandeza diferente, como leads e vendas: painéis alinhados (08/03), nunca eixo duplo.",
+    "O total do período é a pergunta principal: colunas empilhadas com total (modelo 03).",
+    "Uma série é a referência da outra, como meta e realizado: colunas contra meta (modelo 06), que deixa o papel explícito.",
+    "Diferença entre as séries é a mensagem: painel de variação (08/06)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-marcadas-e-realizadas",
+      "titulo": "Agendas marcadas e realizadas por mês",
+      "caso_de_uso": "Em cada um dos últimos 6 meses, quantas agendas marcadas viraram reunião realizada?",
+      "o_que_demonstra": [
+        "Dois Bar irmãos sem stackId, com barGap curto e barCategoryGap entre 30% e 40%",
+        "Cor por slot fixo da série, nos slots 1 e 3, com legenda na ordem das colunas",
+        "Taxa de realização com volume na dica, por formatRateWithVolume",
+        "Tique de contagem com allowDecimals desligado e de 3 a 5 linhas de grade"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_ano-corrente-contra-anterior",
+      "titulo": "Receita reconhecida: 2026 contra 2025",
+      "caso_de_uso": "Em que meses o ano corrente se afastou do anterior, sem ler as 24 colunas uma a uma?",
+      "o_que_demonstra": [
+        "Ano anterior em neutro e ano corrente em chart-1: dois momentos, não duas coisas",
+        "Diferença anotada só no mês de maior distância, com a base nomeada na mesma linha",
+        "Meses de 2026 ainda não fechados sem coluna, em vez de coluna zerada",
+        "Tique de moeda por formatCurrencyAxis com largura do eixo em constante"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_leads-por-plataforma-de-midia",
+      "titulo": "Leads por plataforma de mídia paga",
+      "caso_de_uso": "Como se compara o volume mensal de leads das três plataformas de mídia paga e quanto cada uma somou no semestre?",
+      "o_que_demonstra": [
+        "Três Bar por mês nos slots 1, 3 e 6, com vão de 1,5 px entre colunas vizinhas",
+        "Rodapé em HTML com o total por plataforma, número à direita e algarismo tabular",
+        "maxBarSize ajustado para 18 colunas não virarem traço",
+        "Dica que lista as plataformas na ordem visual, não na alfabética"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_plataforma-que-estreou-em-maio",
+      "titulo": "Leads por plataforma com estreia em maio",
+      "caso_de_uso": "Como mostrar uma plataforma que só começou a rodar em maio sem sugerir que antes ela investiu e não trouxe nada?",
+      "o_que_demonstra": [
+        "Valor null antes da estreia: a coluna não existe, e zero medido continua desenhado",
+        "Nota curta junto da legenda com o mês de entrada da plataforma",
+        "Grupo com duas colunas mantém a largura das colunas, sem engordar as que sobraram",
+        "Frase acessível que separa meses sem operação de meses com zero leads"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

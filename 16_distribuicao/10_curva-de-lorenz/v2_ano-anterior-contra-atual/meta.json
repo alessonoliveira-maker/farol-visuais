@@ -1,0 +1,13 @@
+{
+  "title": "Concentração da receita em dois anos",
+  "useCase": "A carteira ficou mais concentrada em poucos clientes de um ano para o outro?",
+  "demonstrates": [
+    "Duas curvas no mesmo quadrado, ano anterior em neutro e atual em --chart-1",
+    "Gini de cada ano na legenda, com o n de clientes de cada período",
+    "Sombreamento só na curva do ano atual, para não somar duas áreas",
+    "Rótulo da diferença na leitura dos 10% maiores entre os dois anos"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Os dois anos têm n diferente, então as curvas são amostradas numa grade comum de 101 posições (0% a 100%, passo de 1%) por interpolação linear entre clientes vizinhos; o Gini sai da lista cheia de cada ano, não da grade. O ano anterior usa --text-muted, que passa de 3:1 nos dois temas, porque --line-strong não se vê como marca de dado (1,79:1 e 1,83:1). A diferença em p.p. é calculada entre os percentuais já arredondados, para a frase não somar diferente do que mostra."
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "08_ridgeline",
+  "nome": "Ridgeline",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Uma densidade por grupo, deslocada na vertical e parcialmente sobreposta à vizinha, todas na mesma régua horizontal. É o modelo para muitas distribuições, sobretudo com ordem natural como mês a mês, e escala até dezenas de faixas. Desenhado em SVG puro, com um path por faixa, preenchimento opaco e ordem de desenho de trás para a frente, porque no Recharts as N séries de Area com base deslocada engessam o tooltip. A altura usa normalização global com piso de 8%, e ridgeline feito de histogramas é proibido.",
+  "quando_usar": [
+    "De 6 a umas 30 distribuições da mesma métrica, em ordem cronológica ou por mediana.",
+    "Ver se a forma muda ao longo do tempo: ciclo encurtando, CPL ficando mais caro mês a mês.",
+    "Destacar um grupo contra o conjunto, com as demais faixas em neutro.",
+    "Cada faixa com amostra suficiente para densidade, a partir de umas 30 observações."
+  ],
+  "quando_evitar": [
+    "Dois ou três grupos: densidades sobrepostas (06) ou histograma comparativo (05).",
+    "Leitura de valor exato ou de volume por grupo: box plot com pontos (02) ou pequenos múltiplos (01).",
+    "Faixas feitas de histograma: as barras de faixas diferentes se alinham de forma confusa.",
+    "Percentis ao longo do tempo como mensagem principal: faixa em área na família 05 (modelo 05)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-mes-a-mes",
+      "titulo": "Ciclo de fechamento mês a mês",
+      "caso_de_uso": "O ciclo de fechamento está encurtando ao longo dos 12 meses do ano, ou só a média mudou?",
+      "o_que_demonstra": [
+        "Um path por faixa com translate vertical e sobreposição de 40% da altura",
+        "Preenchimento opaco e desenho de dezembro para janeiro, de trás para a frente",
+        "Normalização global com piso de 8% e nota no rodapé",
+        "Densidades na mesma grade e banda, com rótulo do mês e n à esquerda"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_executivo-em-foco",
+      "titulo": "Ciclo por executivo com um em foco",
+      "caso_de_uso": "Onde fica a distribuição de ciclo do executivo escolhido em relação aos outros 11, ordenados por mediana?",
+      "o_que_demonstra": [
+        "Faixas ordenadas por mediana, com a ordem declarada no subtítulo",
+        "Todas as faixas em --line-strong e a do executivo em --chart-1",
+        "Mediana do executivo em foco marcada com o valor escrito",
+        "Seleção vinda do filtro sem mudar a ordem nem a escala das faixas"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_cpl-por-campanha-em-18-meses",
+      "titulo": "CPL das campanhas ao longo de 18 meses",
+      "caso_de_uso": "Como a distribuição de CPL das campanhas mudou mês a mês nos últimos 18 meses?",
+      "o_que_demonstra": [
+        "Dezoito faixas em cerca de 420 px, com rótulo de mês só a cada três",
+        "Mediana de cada faixa como traço fino sobre a curva",
+        "Eixo X único embaixo, em reais, e banda comum escrita no rodapé",
+        "Tooltip por faixa com mês, n de campanhas e mediana"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_mes-sem-campanha",
+      "titulo": "Ridgeline com mês sem dado",
+      "caso_de_uso": "Como manter o eixo temporal honesto quando um mês não teve campanha ativa e outro teve só 11?",
+      "o_que_demonstra": [
+        "Mês sem dado como linha pontilhada com o texto sem campanha, rótulo mantido",
+        "Nunca faixa reta em zero, que seria lida como distribuição vazia",
+        "Mês com n abaixo de 30 sem curva, com um traço por campanha e n escrito",
+        "Ordem cronológica preservada mesmo com lacunas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

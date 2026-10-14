@@ -1,0 +1,66 @@
+{
+  "slug": "08_circle-packing",
+  "nome": "Circle packing",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Cada nó é um círculo, com os filhos dentro do pai e área aproximadamente proporcional ao valor. Mostra bem o agrupamento e mal o tamanho; o layout é uma aproximação em espiral com teste de colisão, calculada em TypeScript e memorizada pela assinatura do dado.",
+  "quando_usar": [
+    "Quando a mensagem é o agrupamento: quais itens pertencem a qual grupo e quais grupos são maiores",
+    "Até 2 ou 3 níveis e cerca de 60 folhas, com rótulo só nos círculos grandes",
+    "Peça de visão geral em que o tamanho aproximado basta"
+  ],
+  "quando_evitar": [
+    "Comparação de valores: área de círculo é das leituras mais imprecisas; use barras ou treemap (12/01)",
+    "Um nível só, sem hierarquia: vira bolhas soltas; use barras (família 02) ou bolhas (família 09)",
+    "Espaço apertado: o modelo desperdiça muito espaço entre círculos; use treemap",
+    "Valores zero ou negativos: não cabem em área; liste à parte"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_criativos-por-campanha",
+      "titulo": "Criativos agrupados por campanha",
+      "caso_de_uso": "Marketing: quais campanhas concentram os criativos que mais geraram leads em 2026-08.",
+      "o_que_demonstra": [
+        "Raio proporcional à raiz quadrada do valor, nunca ao valor",
+        "Empacotamento em espiral por raio decrescente com teste de colisão",
+        "Raio do pai pelo maior distância mais raio dos filhos, com margem",
+        "Layout em useMemo com a assinatura do dado para ficar determinístico"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_cpl-qualificado-abaixo-da-mediana",
+      "titulo": "Campanhas com CPL qualificado abaixo da mediana",
+      "caso_de_uso": "Marketing: quais campanhas de 2026-08 têm CPL qualificado abaixo da mediana e quanto de lead elas trazem.",
+      "o_que_demonstra": [
+        "Campanhas abaixo da mediana em positive e as demais em neutro",
+        "Mediana calculada no preparo e escrita na legenda",
+        "Rótulo com nome e CPL qualificado só nos círculos com raio suficiente"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_entradas-por-origem-subcanal-e-desfecho",
+      "titulo": "Entradas por origem, subcanal e desfecho",
+      "caso_de_uso": "Pré-vendas: como as entradas de 2026-08 se agrupam por origem e subcanal, e qual desfecho domina cada grupo.",
+      "o_que_demonstra": [
+        "Três níveis com a raiz omitida do desenho para ganhar legibilidade",
+        "Cor por desfecho nas folhas e contorno por origem nos grupos",
+        "Rótulo de grupo no arco superior do círculo e rótulo de folha só nos grandes",
+        "Legenda de área com três círculos de referência, avisando que o tamanho é aproximado"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_um-nivel-so-e-zeros",
+      "titulo": "Dado sem hierarquia e criativos sem lead",
+      "caso_de_uso": "Marketing: quando o recorte não tem grupo e há criativos com zero lead, o componente não pode fingir estrutura.",
+      "o_que_demonstra": [
+        "Guarda que detecta profundidade 1 e troca para barras horizontais com aviso",
+        "Criativos com zero lead fora do desenho, listados com o motivo",
+        "Estado vazio quando nenhuma folha tem valor positivo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

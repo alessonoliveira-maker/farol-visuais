@@ -1,0 +1,160 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "02_linha-do-tempo-de-marcos",
+  "versoes": {
+    "v1_marcos-do-plano-comercial-2027": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: rótulo ancorado no centro do losango, 4,1 px acima e 4,3 px abaixo entre a tinta e a ponta, halo sem cortar marca nos dois temas; posições conferidas contra as datas. Sem bloqueante; observações no README.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:43.312Z",
+      "impressao": "51dc6a65d6db61d78da7fe1a332c1508c1c87436",
+      "arquivos": {
+        "Chart.tsx": "277f0b02b78139bff6a36f5b8c294c24a1a07327",
+        "data.ts": "ab1913fd6b523964d2b0a8f4b7db08ef47777d7b",
+        "meta.json": "ffad195bbca64629986e66584f64ab1f7625dee0"
+      }
+    },
+    "v2_regua-de-marcos-com-estado": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: âncora no centro do losango, rótulo de cima a 4,6 px e de baixo a 8 px da ponta, sem a ponta do marco em curso entrar no nome; quatro estados legíveis nos dois temas e atraso de 14 dias conferido. Sem bloqueante; observações no README.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:43.842Z",
+      "impressao": "717d87bd33e04caf24ee2628694542cb0956811b",
+      "arquivos": {
+        "Chart.tsx": "ccd74022323bb60fc4c057e31cb88da37b4f55ef",
+        "data.ts": "3915dbff75802b673199c9f65dd9ef0840f36c4a",
+        "meta.json": "d6c986405972d59c72490a81638b27edcc94e9ae"
+      }
+    },
+    "v3_narrativa-do-ano-da-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 8 px entre cartões do mesmo lado (x de 4, 212, 420, 628 e 66, 274, 482, 690), cada conector dentro do próprio cartão, taxa derivada das contagens e escrita com volume, +40% com a base na mesma linha. Sem bloqueante; observações no README, entre elas o meta.json que diz linha de leitura onde quem declara a escala é o subtítulo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:47.168Z",
+      "impressao": "44e583a8dea80f3de9b31ddeacba714d21956325",
+      "arquivos": {
+        "Chart.tsx": "15102afb8f9dd1da63eb6102c883c67edd28abc7",
+        "data.ts": "9bca72f611dc8afc54ceec1ecb5da12b7d2c1600",
+        "meta.json": "5034148175d7397f0e9e2850231fe7ac1a35270e"
+      }
+    },
+    "v4_marcos-por-publico-com-semana-lotada": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 20 de 20 losangos com rótulo e linha guia (15 na primeira altura, 5 na segunda), dois agrupamentos com contador, 2 sem data na coluna a definir, posições conferidas contra as datas. Sem bloqueante; observações no README, entre elas dois rótulos que cruzam a linha de hoje com halo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:47.684Z",
+      "impressao": "9b44795984fe150b66da8da11d30264781b70d3e",
+      "arquivos": {
+        "Chart.tsx": "923ad0c7a999ddf421bf4035ec2863e41c3fe449",
+        "data.ts": "18dff07be2d4d8bd3ad6e1e133f6108cc92f63da",
+        "meta.json": "a801fcbbd17c3d1ed03b42a635a90a584bec084b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_marcos-do-plano-comercial-2027",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 31, ROT-7 e GEO-4: o rótulo ancora no canto da caixa do símbolo (5,9 px à esquerda e 5,9 px acima do centro do losango), e o halo dos rótulos de baixo corta a ponta inferior de 4 dos 6 losangos; Metas por executivo começa embaixo do losango de Orçamento aprovado e corta a ponta dele. Ancorar em x + width/2 e y + height/2 e deixar ao menos 4 px entre a tinta do rótulo e a ponta do losango dos dois lados. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__02_linha-do-tempo-de-marcos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:29:21.456Z",
+      "impressao": "765b36f2e5e1f73d3a3bc49492320b429899c41b",
+      "arquivos": {
+        "Chart.tsx": "f4ed45041c04faa373bb98495549c99e61ad70fa",
+        "data.ts": "ab1913fd6b523964d2b0a8f4b7db08ef47777d7b",
+        "meta.json": "ec5ae7ae69fa52389ec6739f79d7225ce3ae86f7"
+      }
+    },
+    {
+      "versao": "v2_regua-de-marcos-com-estado",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 31, ROT-7: mesmo defeito de âncora da v1 (rótulo no canto da caixa do símbolo, 8 px à esquerda e 8 px acima do centro); os rótulos de baixo encostam na ponta do losango com 0 px de respiro contra 12 px nos de cima, e a ponta do marco em curso entra na linha de Novo painel de metas, entre painel e de. Ancorar em x + width/2 e y + height/2 e conferir 4 px de respiro dos dois lados. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__02_linha-do-tempo-de-marcos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:29:22.000Z",
+      "impressao": "345d31d9568e84165ca4774748b261b0f1b17c6c",
+      "arquivos": {
+        "Chart.tsx": "3cb4236fa67bacf68452c88279e081eb01cc0ff8",
+        "data.ts": "3915dbff75802b673199c9f65dd9ef0840f36c4a",
+        "meta.json": "6309d92fec26c1ddf96ed67aa299ef660df3b452"
+      }
+    },
+    {
+      "versao": "v3_narrativa-do-ano-da-pre-vendas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3: cartões do mesmo lado se sobrepõem e viram um bloco só (Meta de agenda revista com Script de abertura novo, 20,5 px; Painel de agenda por SDR com Dois turnos de contato, 19,2 px; Nova lista de contas encosta em Nova cadência de contatos); garantir 8 px entre vizinhos do mesmo lado, inclusive depois do ajuste de borda. Perguntas 14 e 25, NUM-1, NUM-4 e DAD-1: taxa de agenda de 15,0% para 21,0% sem volume, e +40% sem a base na mesma linha no cartão e na frase acessível; declarar contagens no data.ts, derivar a taxa com retorno number ou null, escrever com formatRateWithVolume e nomear a base. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__02_linha-do-tempo-de-marcos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:29:30.289Z",
+      "impressao": "43767eb71f908aae36e13c1047300925464ee00f",
+      "arquivos": {
+        "Chart.tsx": "f4dc51cf3506dc73e100e04af82ace4f1a0002ab",
+        "data.ts": "ebced23e1a9a01a5ea9da8028e08ec54b28e61ca",
+        "meta.json": "6b691d4096652c0b8d9d2d3a18c96ece048d8580"
+      }
+    },
+    {
+      "versao": "v4_marcos-por-publico-com-semana-lotada",
+      "veredito": "reprovado",
+      "nota": "Perguntas 12 e 18, TIP-7 e DIC-1: o marco Campanha de reativação (Marketing, 24/05/2027) sai sem nome e sem linha guia, com o nome só na dica, e o texto mais próximo dele é o fim de Reformulação do site, 3,9 px acima. Nenhum losango de marco único pode ficar anônimo: a escada precisa realocar o vizinho em vez de omitir (Reformulação do site na altura 2 libera a altura 1 para Campanha de reativação), e a nota do meta.json que autoriza a omissão sai. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__02_linha-do-tempo-de-marcos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:29:30.839Z",
+      "impressao": "af2725574b986af5b7496bd272fecf1b56e1c308",
+      "arquivos": {
+        "Chart.tsx": "f3ee21d57f9a481f11d1b73ed700259bcb144b12",
+        "data.ts": "18dff07be2d4d8bd3ad6e1e133f6108cc92f63da",
+        "meta.json": "86398f8f051fe20813b96863c2474cf93aeedce1"
+      }
+    },
+    {
+      "versao": "v1_marcos-do-plano-comercial-2027",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: rótulo ancorado no centro do losango, 4,1 px acima e 4,3 px abaixo entre a tinta e a ponta, halo sem cortar marca nos dois temas; posições conferidas contra as datas. Sem bloqueante; observações no README.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:43.312Z",
+      "impressao": "51dc6a65d6db61d78da7fe1a332c1508c1c87436",
+      "arquivos": {
+        "Chart.tsx": "277f0b02b78139bff6a36f5b8c294c24a1a07327",
+        "data.ts": "ab1913fd6b523964d2b0a8f4b7db08ef47777d7b",
+        "meta.json": "ffad195bbca64629986e66584f64ab1f7625dee0"
+      }
+    },
+    {
+      "versao": "v2_regua-de-marcos-com-estado",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: âncora no centro do losango, rótulo de cima a 4,6 px e de baixo a 8 px da ponta, sem a ponta do marco em curso entrar no nome; quatro estados legíveis nos dois temas e atraso de 14 dias conferido. Sem bloqueante; observações no README.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:43.842Z",
+      "impressao": "717d87bd33e04caf24ee2628694542cb0956811b",
+      "arquivos": {
+        "Chart.tsx": "ccd74022323bb60fc4c057e31cb88da37b4f55ef",
+        "data.ts": "3915dbff75802b673199c9f65dd9ef0840f36c4a",
+        "meta.json": "d6c986405972d59c72490a81638b27edcc94e9ae"
+      }
+    },
+    {
+      "versao": "v3_narrativa-do-ano-da-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 8 px entre cartões do mesmo lado (x de 4, 212, 420, 628 e 66, 274, 482, 690), cada conector dentro do próprio cartão, taxa derivada das contagens e escrita com volume, +40% com a base na mesma linha. Sem bloqueante; observações no README, entre elas o meta.json que diz linha de leitura onde quem declara a escala é o subtítulo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:47.168Z",
+      "impressao": "44e583a8dea80f3de9b31ddeacba714d21956325",
+      "arquivos": {
+        "Chart.tsx": "15102afb8f9dd1da63eb6102c883c67edd28abc7",
+        "data.ts": "9bca72f611dc8afc54ceec1ecb5da12b7d2c1600",
+        "meta.json": "5034148175d7397f0e9e2850231fe7ac1a35270e"
+      }
+    },
+    {
+      "versao": "v4_marcos-por-publico-com-semana-lotada",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 20 de 20 losangos com rótulo e linha guia (15 na primeira altura, 5 na segunda), dois agrupamentos com contador, 2 sem data na coluna a definir, posições conferidas contra as datas. Sem bloqueante; observações no README, entre elas dois rótulos que cruzam a linha de hoje com halo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:57:47.684Z",
+      "impressao": "9b44795984fe150b66da8da11d30264781b70d3e",
+      "arquivos": {
+        "Chart.tsx": "923ad0c7a999ddf421bf4035ec2863e41c3fe449",
+        "data.ts": "18dff07be2d4d8bd3ad6e1e133f6108cc92f63da",
+        "meta.json": "a801fcbbd17c3d1ed03b42a635a90a584bec084b"
+      }
+    }
+  ]
+}

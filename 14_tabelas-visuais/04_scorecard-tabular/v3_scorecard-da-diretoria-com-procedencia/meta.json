@@ -1,0 +1,13 @@
+{
+  "title": "Scorecard da Diretoria com procedência",
+  "useCase": "Diretoria: 15 métricas agrupadas por área, cada uma dizendo se o número é medido, derivado, premissa ou lacuna.",
+  "demonstrates": [
+    "Selo de procedência por linha em texto com tokens prov, desenhado no próprio Chart",
+    "Linhas agrupadas por área com rótulo de grupo, sem borda interna",
+    "Linha LACUNA sem valor, com formatUnavailable e o motivo curto",
+    "Legenda dos quatro selos no topo, uma vez só"
+  ],
+  "canvas": { "width": 640, "height": 760 },
+  "frame": "card",
+  "notes": "Altura sai da conta de 15 linhas de métrica mais 3 linhas de grupo e a legenda dos quatro selos (ESP-2, exceção declarada): o preset alto (640x560) cortava a lista antes da área Vendas. Legenda por extenso em vez de pílula colorida: o critério de cada selo fica escrito, não só na cor do texto."
+}

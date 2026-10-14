@@ -1,0 +1,12 @@
+{
+  "title": "Séries curtas, buracos e calendário irregular",
+  "useCase": "Pré-vendas: ler SDRs recém admitidos, semanas sem carga de dado e o recesso da equipe sem confundir nada disso com falha.",
+  "demonstrates": [
+    "Série curta desenhada só nas posições finais, sem esticar para a largura toda",
+    "Semana sem carga quebra o path, sem connectNulls, com marca de lacuna",
+    "Recesso comum em neutro, lacuna individual com forma própria; nada pintado como falha",
+    "Semanas antes da admissão sem traço e resumo com denominador ajustado"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

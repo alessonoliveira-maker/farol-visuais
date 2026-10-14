@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida contra a meta mensal",
+  "useCase": "Em quantos meses a receita reconhecida bateu a meta mensal e em quais ficou abaixo?",
+  "demonstrates": [
+    "ReferenceLine da meta com ifOverflow extendDomain e rótulo numa margem reservada",
+    "Meses acima da meta em chart-1 e abaixo em neutro, com valor escrito em toda coluna",
+    "Contador de meses acima da meta calculado do dado na linha de leitura",
+    "Traço de referência tracejado em text-muted, com halo onde cruza rótulo de coluna"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

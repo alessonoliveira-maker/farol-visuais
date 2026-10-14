@@ -1,0 +1,13 @@
+{
+  "title": "Origem que mais ganhou peso",
+  "useCase": "Marketing: qual origem mais mudou de participação entre jul/26 e ago/26 e quantos pontos percentuais ganhou.",
+  "demonstrates": [
+    "Diferença calculada sobre a fração real, não sobre o percentual já arredondado",
+    "Nome e diferença do destaque em peso 700; demais categorias sem rótulo de variação",
+    "Unidade p.p. escrita à mão porque formatPercentPoints imprime a diferença como taxa",
+    "Nota curta sobre a distorção: o anel externo parece maior para a mesma fração"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Sem dica interativa: o preview é estático e todo valor essencial já está escrito na legenda (DIC-1). formatPercentPoints não foi usado porque imprime a diferença como percentual (7,4%) em vez de pontos percentuais; o contorno segue o de 01_cards-e-kpis/06."
+}

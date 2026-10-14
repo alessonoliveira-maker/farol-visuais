@@ -1,0 +1,14 @@
+{
+  "title": "Conversão de lead em agenda por mês de entrada",
+  "useCase": "Os leads que entram agora marcam agenda mais rápido do que os que entraram no começo do ano?",
+  "demonstrates": [
+    "Triângulo que nasce do dado: cohort novo não tem período que ainda não viveu",
+    "Duas ausências distintas: célula vazia é futuro, célula tracejada é mês em curso",
+    "Média do rodapé ponderada pelo tamanho do cohort e só sobre período fechado",
+    "Coluna de tamanho do cohort com barra, para taxa alta de cohort pequeno não enganar",
+    "Escala de cor comum à tabela inteira, nunca por linha"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto em vez do card sugerido no catálogo: nove cohorts mais cabeçalho e rodapé pedem 297 px de tabela contra os 242 px de corpo do card, e compactar a linha derrubaria o texto abaixo do piso de 11 px da TIP-2. O mês corrente vive no dado (CURRENT_MONTH), não no relógio: preview e teste precisam desenhar a mesma diagonal em qualquer data. A taxa sai com uma casa por NUM-1, e o volume que a sustenta é o tamanho do cohort, escrito uma vez por linha na coluna Leads, em vez de repetido em cada uma das 42 células."
+}

@@ -1,0 +1,121 @@
+{
+  "familia": "06_pizza",
+  "modelo": "06_pizzas-proporcionais-ao-total",
+  "versoes": {
+    "v1_receita-por-trimestre-e-tipo-de-cliente": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, area proporcional a raiz do total, base alinhada, percentuais somam 100 por pizza e contraste ok nos dois temas. Observacoes: margem padrao do PieChart tira 5 px de raio de cada pizza e frase acessivel tem contagem fixa.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:15:12.468Z",
+      "impressao": "46104bd606f4fa971e10fdfbfded26fc96e45b2a",
+      "arquivos": {
+        "Chart.tsx": "d31ac6fc524d45c87adea31af33155b1db85ab25",
+        "data.ts": "0a0b39547b04dc8ccae71a6c06a4c380bd823371",
+        "meta.json": "af978c59ef70bbbbc98306092520e66411baa0a1"
+      }
+    },
+    "v2_legenda-de-tamanho": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Área pela raiz do total medida pela RAIO-CONTRA-AREA, régua com degrau de cima no maior total observado (ROT-5b) e pela mesma radiusForTotal, base alinhada entre régua e pizzas, rótulo do degrau de baixo dentro do círculo grande sem tocar traço (GEO-19), percentuais somam 100 pelo maior resto (45/33/22, 43/34/23, 42/33/25, 42/34/24), vazado sem halo nos dois temas (ROT-7b). Observações no README: cor por índice, trimestre vazio some, degrau de baixo não redondo, rótulo de trimestre sem tabular-nums.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:22.237Z",
+      "impressao": "242796bb47d0aa8179600243cfc62a64efbb2c6f",
+      "arquivos": {
+        "Chart.tsx": "0cee22ad7eceeac6271aa18e2494395f0d668cb9",
+        "data.ts": "b3268dbfd95a301263508caf689ba8a0305549a0",
+        "meta.json": "9c23c042377bd5b5d125a72eedaf18c44d51cf3f"
+      }
+    },
+    "v3_leads-por-plataforma-e-qualificacao": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O bloqueante da revisão anterior (pergunta 19, ACE-1) foi resolvido: a frase acessível traz as três plataformas com formatRateWithVolume, mesmo formatador do corpo, 219 caracteres, e fecha na melhor fração. Área pela raiz do volume (76, 53,74 e 38 px), bases alinhadas, contagens impressas somam 2.480, 1.240 e 620, taxas fecham 100,0, nenhum texto sobre marca, contraste conferido à mão nos dois temas. Observações no README: frase sem teto passa de 250 com 5 plataformas, notes do meta.json com 218 e guarda trocada, contorno come 1 px do raio visível, biggest vestigial.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:47.622Z",
+      "impressao": "6ab21a709bd8bb890da74bdaec9908a339f180cb",
+      "arquivos": {
+        "Chart.tsx": "d12e53ae0e3778dd785e34759f434b73dfceb5fc",
+        "data.ts": "9a5f4216c78e86815bd9bfd6fa2749132952d73a",
+        "meta.json": "555093bc4140eab2a3cc6a669d6b4eb490ab7615"
+      }
+    },
+    "v4_mes-com-campanha-pausada": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. MIN_DIAMETER decide só o desenho das fatias e o ponto de jul/26 mantém o raio da escala comum (11,38 px, área conferida pela RAIO-CONTRA-AREA), palco de altura fixa alinha as bases, ago/26 escreve formatUnavailable() com Unplug e sem marca (EST-2), distinto do mês pequeno, percentuais 42/35/23, 43/36/21 e 42/35/23 pelo maior resto, vazado sem halo nos dois temas. Observações no README: frase com 5 pizzas e trecho do ponto em texto fixo, concordância com dois meses ausentes, cor por índice, rótulo de mês sem tabular-nums.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:31.792Z",
+      "impressao": "6a687e5fae72c042b098bfde0cb350a6ee47d17b",
+      "arquivos": {
+        "Chart.tsx": "3956cb20efc44d46ebd33e5c8219fffd2eceea5b",
+        "data.ts": "46f3bfcd9d2c37883b29e4dc086198bdfd4eab7c",
+        "meta.json": "8265d92a3a63158702461ef8585689d000258da9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-por-trimestre-e-tipo-de-cliente",
+      "veredito": "aprovado",
+      "nota": "Check limpo, area proporcional a raiz do total, base alinhada, percentuais somam 100 por pizza e contraste ok nos dois temas. Observacoes: margem padrao do PieChart tira 5 px de raio de cada pizza e frase acessivel tem contagem fixa.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:15:12.468Z",
+      "impressao": "46104bd606f4fa971e10fdfbfded26fc96e45b2a",
+      "arquivos": {
+        "Chart.tsx": "d31ac6fc524d45c87adea31af33155b1db85ab25",
+        "data.ts": "0a0b39547b04dc8ccae71a6c06a4c380bd823371",
+        "meta.json": "af978c59ef70bbbbc98306092520e66411baa0a1"
+      }
+    },
+    {
+      "versao": "v2_legenda-de-tamanho",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Área pela raiz do total medida pela RAIO-CONTRA-AREA, régua com degrau de cima no maior total observado (ROT-5b) e pela mesma radiusForTotal, base alinhada entre régua e pizzas, rótulo do degrau de baixo dentro do círculo grande sem tocar traço (GEO-19), percentuais somam 100 pelo maior resto (45/33/22, 43/34/23, 42/33/25, 42/34/24), vazado sem halo nos dois temas (ROT-7b). Observações no README: cor por índice, trimestre vazio some, degrau de baixo não redondo, rótulo de trimestre sem tabular-nums.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:22.237Z",
+      "impressao": "242796bb47d0aa8179600243cfc62a64efbb2c6f",
+      "arquivos": {
+        "Chart.tsx": "0cee22ad7eceeac6271aa18e2494395f0d668cb9",
+        "data.ts": "b3268dbfd95a301263508caf689ba8a0305549a0",
+        "meta.json": "9c23c042377bd5b5d125a72eedaf18c44d51cf3f"
+      }
+    },
+    {
+      "versao": "v3_leads-por-plataforma-e-qualificacao",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-1 e item 4 do O que demonstra do catálogo: a frase acessível do preview não traz o total e a fração qualificada de cada plataforma, como o catálogo e o próprio meta.json prometem; cita o volume só de Rede social, a fração só de Busca paga e não nomeia Portal de notícias. Montar a frase com as três plataformas, cada uma com formatRateWithVolume(qualificado, total), por exemplo em 218 caracteres, e manter a conclusão da melhor fração. Parecer em validation/revisao_06_pizza__06_pizzas-proporcionais-ao-total_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:28.167Z",
+      "impressao": "96b2578946cfb0788ef93423b792d159f3e92340",
+      "arquivos": {
+        "Chart.tsx": "3a443a5d19b320dd6f056a83bbce3edce214eebd",
+        "data.ts": "9a5f4216c78e86815bd9bfd6fa2749132952d73a",
+        "meta.json": "fcc3b2c2a7a138f08013e3deabb58fbf12bda866"
+      }
+    },
+    {
+      "versao": "v4_mes-com-campanha-pausada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. MIN_DIAMETER decide só o desenho das fatias e o ponto de jul/26 mantém o raio da escala comum (11,38 px, área conferida pela RAIO-CONTRA-AREA), palco de altura fixa alinha as bases, ago/26 escreve formatUnavailable() com Unplug e sem marca (EST-2), distinto do mês pequeno, percentuais 42/35/23, 43/36/21 e 42/35/23 pelo maior resto, vazado sem halo nos dois temas. Observações no README: frase com 5 pizzas e trecho do ponto em texto fixo, concordância com dois meses ausentes, cor por índice, rótulo de mês sem tabular-nums.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:24:31.792Z",
+      "impressao": "6a687e5fae72c042b098bfde0cb350a6ee47d17b",
+      "arquivos": {
+        "Chart.tsx": "3956cb20efc44d46ebd33e5c8219fffd2eceea5b",
+        "data.ts": "46f3bfcd9d2c37883b29e4dc086198bdfd4eab7c",
+        "meta.json": "8265d92a3a63158702461ef8585689d000258da9"
+      }
+    },
+    {
+      "versao": "v3_leads-por-plataforma-e-qualificacao",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O bloqueante da revisão anterior (pergunta 19, ACE-1) foi resolvido: a frase acessível traz as três plataformas com formatRateWithVolume, mesmo formatador do corpo, 219 caracteres, e fecha na melhor fração. Área pela raiz do volume (76, 53,74 e 38 px), bases alinhadas, contagens impressas somam 2.480, 1.240 e 620, taxas fecham 100,0, nenhum texto sobre marca, contraste conferido à mão nos dois temas. Observações no README: frase sem teto passa de 250 com 5 plataformas, notes do meta.json com 218 e guarda trocada, contorno come 1 px do raio visível, biggest vestigial.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:47.622Z",
+      "impressao": "6ab21a709bd8bb890da74bdaec9908a339f180cb",
+      "arquivos": {
+        "Chart.tsx": "d12e53ae0e3778dd785e34759f434b73dfceb5fc",
+        "data.ts": "9a5f4216c78e86815bd9bfd6fa2749132952d73a",
+        "meta.json": "555093bc4140eab2a3cc6a669d6b4eb490ab7615"
+      }
+    }
+  ]
+}

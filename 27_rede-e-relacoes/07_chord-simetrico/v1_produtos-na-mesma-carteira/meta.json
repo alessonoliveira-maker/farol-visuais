@@ -1,0 +1,14 @@
+{
+  "title": "Produtos que convivem na carteira",
+  "useCase": "Comercial: quantos clientes fictícios têm cada par entre os 7 produtos da oferta, com o total de cada um no arco.",
+  "demonstrates": [
+    "Arco externo e fita em path SVG com geometria calculada em TypeScript",
+    "Fita simétrica com as duas pontas da mesma largura",
+    "Cor por produto em slots fixos na ordem 1, 3, 6, 5, 2, 4 e Outros neutro",
+    "Nota de como ler junto do visual: fita mais larga, mais clientes com os dois",
+    "Subarcos ordenados pelo peso e vãos entre grupos em radianos fixos"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O neutro de Outros é var(--text-muted) (5,2:1 no escuro), e não var(--line-strong), que mede 1,8:1 e some como marca (ACE-6, TOK-5). A cor da fita é a do grupo de índice menor no par, convenção do chord direcional da família 11. O total do arco soma os pares do grupo: um cliente com três produtos conta em cada par."
+}

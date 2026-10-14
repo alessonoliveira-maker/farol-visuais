@@ -1,0 +1,15 @@
+{
+  "title": "Competências com a meta em círculo tracejado",
+  "useCase": "Comercial, 2026-T3: quais competências do Executivo 07 ficam abaixo do índice 70 combinado no plano de desenvolvimento?",
+  "demonstrates": [
+    "Círculo de meta em 70 com traço tracejado 3 3 de --text-muted e rótulo meta 70",
+    "Abaixo da meta em --chart-1 e peso 600; demais em --line-strong com valor escrito",
+    "Destaque com segundo canal: peso do rótulo, além da cor",
+    "Rótulo com halo na cor do cartão quando cruza o círculo de meta",
+    "Índice em cima da meta não conta como abaixo: a comparação é estrita",
+    "Área do espeto linear no valor: largura fixa, só o comprimento muda (GEO-3)"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Desvio do catálogo, TIP-3: o catálogo pede peso 700 nos eixos abaixo da meta, e no dado padrão são três eixos, isto é seis elementos em 700 entre nome e valor, contra o teto de dois da regra. O contrato vence: o destaque usa peso 600 contra 400 dos demais, e a posição da ponta em relação ao círculo tracejado é o terceiro canal. Nota do dono, GEO-3: a marca é um trapézio de largura fixa, 6 px na base e 2 px na ponta, então a área vale 4 px vezes o comprimento e cresce em linha com o índice; 82 pontos desenham 328 px² e 38 pontos desenham 152 px², razão de 2,16 nos dois. A guarda RAIO-CONTRA-AREA não mede trapézio (sem_marca_de_area), então a conferência foi à mão, pela área do polígono de cada path do preview contra o data.ts: desvio de participação abaixo de 0,001 ponto percentual. O zero mora num anel de 12 px, para as bases não se sobreporem no miolo, e 1 ponto vale 1 px. Neutro em --line-strong mede 1,79:1 no escuro e 1,83:1 no claro e só vale porque o valor de cada espeto vai escrito na ponta dele (TOK-5). O círculo de meta é pintado antes dos espetos, para a ponta que passa dele ficar por cima. Rótulo de eixo que pousaria a menos de 10 px do círculo salta para 8 px fora dele: no primeiro render o tracejado passava colado ao 59 e lia como apóstrofo; o halo fica para o que ainda cruza, como o 75 da escala. O rótulo meta 70 mora no vão oposto ao dos rótulos da escala: no mesmo vão cairia a 5 px do anel de 75. Canvas: corpo de 422 por 355,5; a linha de leitura e o rodapé tiram 22 px cada e sobram 311,5 para o viewBox de 422 por 308, em escala 1 (GEO-18)."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Termo na borda da frase e termo sem ocorrência",
+  "useCase": "Pré-vendas: ler ocorrências em que o termo abre ou fecha a anotação, e o que aparece quando ele não ocorre no recorte.",
+  "demonstrates": [
+    "Contexto vazio com marcador discreto em text-muted, sem colapsar a coluna",
+    "Grafias preco e preço agrupadas pela chave e exibidas como foram escritas",
+    "Pontuação colada ao termo preservada no contexto e fora do destaque",
+    "Termo sem ocorrência troca a grade por estado vazio com role status"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Seis origens com uma em foco",
+  "useCase": "Como destacar a origem em discussão mantendo as outras cinco como contexto na mesma escala?",
+  "demonstrates": [
+    "Painel em foco em chart-1 com o nome e o total em peso 700; os demais em neutro",
+    "Total de cada painel ao lado do nome, em algarismo tabular",
+    "syncId comum para o cursor da dica andar junto nos seis painéis",
+    "Foco recebido pela prop highlightId, com default no data.ts"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Variação mensal do CPL qualificado",
+  "useCase": "Em quais dos últimos 12 meses o CPL qualificado subiu, lembrando que alta é pior?",
+  "demonstrates": [
+    "Domínio simétrico de −m a +m, com m igual ao maior valor absoluto da série",
+    "ReferenceLine no zero em --line-strong sólido atravessando a caixa",
+    "Cor pela polaridade via prop goodDirection: alta em --negative, queda em --positive",
+    "Sequência de 3 altas seguidas anotada com colchete e rótulo de 11 px",
+    "Último valor com sinal tipográfico e formatPercent sobre o valor absoluto"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Corpo do canvas kpi-alto com moldura stage: 328 x 181,5 px. Coluna com menos de 2 px de altura é desenhada com 2 px para o mês quase parado não sumir (mar/26, −0,3%); a variação exata está na frase acessível. O colchete usa useXAxisScale e usePlotArea para achar as colunas, e a margem de 22 px no topo reserva o rótulo."
+}

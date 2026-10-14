@@ -1,0 +1,13 @@
+{
+  "title": "Fila da SDR por urgência e valor",
+  "useCase": "Pré-vendas: como os 64 leads da fila se dividem entre fazer agora, agendar, redistribuir e descartar.",
+  "demonstrates": [
+    "Caixa derivada por regra de SLA e valor, com a regra escrita no rodapé",
+    "Verbo de ação no título e contagem com vencidos, como 18, sendo 5 vencidos",
+    "Cartões ordenados por vencimento, até seis por caixa e depois +n",
+    "Ícone de relógio da lucide em chart-3 só nos cartões vencidos",
+    "Leads sem valor potencial em faixa própria abaixo da grade, sem engordar descartar"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Desvio semanal do CPL contra a média",
+  "useCase": "Mostrar em quais das 52 semanas de 2025 o CPL ficou acima ou abaixo da média do ano.",
+  "demonstrates": [
+    "Pirulito radial: haste e ponto, com menos tinta que 52 colunas",
+    "Zero num anel intermediário, com hastes para dentro e para fora",
+    "CPL abaixo da média em positive e acima em negative, sempre com sinal",
+    "Anel do zero em line-strong sólido e as duas semanas extremas com o valor escrito"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Com 52 hastes não cabe rótulo em cada uma; as duas anotações (melhor e pior semana) e a escala do zero cobrem o valor escrito exigido."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Custo da área em três camadas",
+  "useCase": "Quanto custa a área em cada camada, e quanto vale o retorno de R$ 420 mil sobre cada uma?",
+  "demonstrates": [
+    "Ponte deitada com layout vertical e largura do eixo de nomes medida",
+    "Subtotal acumulado ancorado no zero, com o nome da camada no rótulo",
+    "Vão entre blocos por linha espaçadora com faixa nula",
+    "Conector vertical centrado na banda da escala categórica",
+    "Anotação única dizendo que a camada precisa vir declarada"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Passos em cinza (text-secondary) e subtotais em chart-1: custo sem polaridade declarada no catálogo, então COR-6 manda neutro e o destaque fica nas camadas. Dez linhas em 574 x 441 px: banda 38,5 px, barra ≈ 16 px (acima do piso de 12 px da ESP-2)."
+}

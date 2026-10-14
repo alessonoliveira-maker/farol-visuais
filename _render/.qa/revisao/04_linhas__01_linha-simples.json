@@ -1,0 +1,160 @@
+{
+  "familia": "04_linhas",
+  "modelo": "01_linha-simples",
+  "versoes": {
+    "v1_receita-mensal-com-rotulo-final": {
+      "veredito": "aprovado",
+      "nota": "Linha mensal limpa nos dois temas; ressalva do tique de moeda quebrando em duas linhas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:05.089Z",
+      "impressao": "15f1ca4916d1c708bb799055aa0b1d9013122708",
+      "arquivos": {
+        "Chart.tsx": "07df0fde05f825e430cad856f27fdaf87c0a1b19",
+        "data.ts": "ee76e29e785300dce008007ba23ab69665511d9a",
+        "meta.json": "742d727af05b54d86f4cdc328264393369172dbd"
+      }
+    },
+    "v2_sla-com-meta-e-evento": {
+      "veredito": "aprovado",
+      "nota": "Meta e evento corretos, abaixo da meta marcado por simbolo; ressalva do tique mensal em serie semanal.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:06.078Z",
+      "impressao": "470255e585461eeee151bb1794a56913ddeaa403",
+      "arquivos": {
+        "Chart.tsx": "91a9b96ba7c7bdc45842d6b8d4a59e45abbfef36",
+        "data.ts": "54c39de38ba77da8863f7d9d7f8022a5b7279849",
+        "meta.json": "9556fcd002604c1bce54fdf5df27dbe1cbe8dfb7"
+      }
+    },
+    "v3_entradas-diarias-com-media-movel": {
+      "veredito": "aprovado",
+      "nota": "Rotulo e ponto finais das duas linhas agora renderizam sobre a fatia do Brush; ressalva do tique mensal em serie diaria.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:11.968Z",
+      "impressao": "c780651efd158e0827f85a7137745ef23264c706",
+      "arquivos": {
+        "Chart.tsx": "4d27f0325d5e5c57e93386d39d4320106441285a",
+        "data.ts": "7d59b3f7a6bc63fbaf2cf9e9e17ed5e921b7d69c",
+        "meta.json": "24ad218c3c5163eccf24cf561bcb1683dff15f1c"
+      }
+    },
+    "v4_origem-com-integracao-interrompida": {
+      "veredito": "aprovado",
+      "nota": "Lacuna declarada, ponto isolado e cauda parcial corretos; ressalva do dado sem zero medido para contrastar.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:12.619Z",
+      "impressao": "880d2b17f02c49c2fb5c7fcbe9b551ed30676f77",
+      "arquivos": {
+        "Chart.tsx": "3401f4961fee87ca88cfeee12f091c97312e2e54",
+        "data.ts": "d73a9de6661fbda40da40efbfc51e029276e8e9e",
+        "meta.json": "962ad003f8e8b360e9fba0d556b2fcd324e87424"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-mensal-com-rotulo-final",
+      "veredito": "aprovado",
+      "nota": "Linha mensal legivel nos dois temas; rotulo final e grade redonda corretos.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:42:26.535Z",
+      "impressao": "15f1ca4916d1c708bb799055aa0b1d9013122708",
+      "arquivos": {
+        "Chart.tsx": "07df0fde05f825e430cad856f27fdaf87c0a1b19",
+        "data.ts": "ee76e29e785300dce008007ba23ab69665511d9a",
+        "meta.json": "742d727af05b54d86f4cdc328264393369172dbd"
+      }
+    },
+    {
+      "versao": "v2_sla-com-meta-e-evento",
+      "veredito": "aprovado",
+      "nota": "Meta e evento corretos; ressalva de tique mensal repetido em série semanal.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:42:31.993Z",
+      "impressao": "470255e585461eeee151bb1794a56913ddeaa403",
+      "arquivos": {
+        "Chart.tsx": "91a9b96ba7c7bdc45842d6b8d4a59e45abbfef36",
+        "data.ts": "54c39de38ba77da8863f7d9d7f8022a5b7279849",
+        "meta.json": "9556fcd002604c1bce54fdf5df27dbe1cbe8dfb7"
+      }
+    },
+    {
+      "versao": "v3_entradas-diarias-com-media-movel",
+      "veredito": "reprovado",
+      "nota": "Rótulo e ponto finais da média móvel não renderizam com Brush: as duas séries ficam sem identificação no PNG.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:42:37.112Z",
+      "impressao": "6730394800338544e618e89fc7572fd054bdc58b",
+      "arquivos": {
+        "Chart.tsx": "c68a7021772420dd0107e83de8e31e0f1931d05a",
+        "data.ts": "7d59b3f7a6bc63fbaf2cf9e9e17ed5e921b7d69c",
+        "meta.json": "bf07ba1c1b63d62451fb935382237075cccdcbd3"
+      }
+    },
+    {
+      "versao": "v4_origem-com-integracao-interrompida",
+      "veredito": "aprovado",
+      "nota": "Lacuna declarada e ponto isolado corretos; cauda tracejada do dia parcial fica curta na borda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:42:42.544Z",
+      "impressao": "880d2b17f02c49c2fb5c7fcbe9b551ed30676f77",
+      "arquivos": {
+        "Chart.tsx": "3401f4961fee87ca88cfeee12f091c97312e2e54",
+        "data.ts": "d73a9de6661fbda40da40efbfc51e029276e8e9e",
+        "meta.json": "962ad003f8e8b360e9fba0d556b2fcd324e87424"
+      }
+    },
+    {
+      "versao": "v1_receita-mensal-com-rotulo-final",
+      "veredito": "aprovado",
+      "nota": "Linha mensal limpa nos dois temas; ressalva do tique de moeda quebrando em duas linhas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:05.089Z",
+      "impressao": "15f1ca4916d1c708bb799055aa0b1d9013122708",
+      "arquivos": {
+        "Chart.tsx": "07df0fde05f825e430cad856f27fdaf87c0a1b19",
+        "data.ts": "ee76e29e785300dce008007ba23ab69665511d9a",
+        "meta.json": "742d727af05b54d86f4cdc328264393369172dbd"
+      }
+    },
+    {
+      "versao": "v2_sla-com-meta-e-evento",
+      "veredito": "aprovado",
+      "nota": "Meta e evento corretos, abaixo da meta marcado por simbolo; ressalva do tique mensal em serie semanal.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:06.078Z",
+      "impressao": "470255e585461eeee151bb1794a56913ddeaa403",
+      "arquivos": {
+        "Chart.tsx": "91a9b96ba7c7bdc45842d6b8d4a59e45abbfef36",
+        "data.ts": "54c39de38ba77da8863f7d9d7f8022a5b7279849",
+        "meta.json": "9556fcd002604c1bce54fdf5df27dbe1cbe8dfb7"
+      }
+    },
+    {
+      "versao": "v3_entradas-diarias-com-media-movel",
+      "veredito": "aprovado",
+      "nota": "Rotulo e ponto finais das duas linhas agora renderizam sobre a fatia do Brush; ressalva do tique mensal em serie diaria.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:11.968Z",
+      "impressao": "c780651efd158e0827f85a7137745ef23264c706",
+      "arquivos": {
+        "Chart.tsx": "4d27f0325d5e5c57e93386d39d4320106441285a",
+        "data.ts": "7d59b3f7a6bc63fbaf2cf9e9e17ed5e921b7d69c",
+        "meta.json": "24ad218c3c5163eccf24cf561bcb1683dff15f1c"
+      }
+    },
+    {
+      "versao": "v4_origem-com-integracao-interrompida",
+      "veredito": "aprovado",
+      "nota": "Lacuna declarada, ponto isolado e cauda parcial corretos; ressalva do dado sem zero medido para contrastar.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:55:12.619Z",
+      "impressao": "880d2b17f02c49c2fb5c7fcbe9b551ed30676f77",
+      "arquivos": {
+        "Chart.tsx": "3401f4961fee87ca88cfeee12f091c97312e2e54",
+        "data.ts": "d73a9de6661fbda40da40efbfc51e029276e8e9e",
+        "meta.json": "962ad003f8e8b360e9fba0d556b2fcd324e87424"
+      }
+    }
+  ]
+}

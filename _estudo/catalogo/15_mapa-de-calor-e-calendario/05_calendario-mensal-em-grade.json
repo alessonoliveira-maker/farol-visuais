@@ -1,0 +1,69 @@
+{
+  "slug": "05_calendario-mensal-em-grade",
+  "nome": "Calendário mensal em grade",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "O mês desenhado como calendário de parede: 7 colunas, 6 linhas reservadas, número do dia no canto de cada célula e a cor pelo valor. Lê como agenda, o que ajuda públicos operacionais. É HTML com grid do Tailwind porque o texto do dia e do valor precisa escalar com a fonte. Absorve o calendário de marcos da família 20, em que a célula carrega chips de evento e períodos atravessam dias em vez de cor.",
+  "quando_usar": [
+    "Leitura de um mês com o número do dia visível: reuniões realizadas, agendas marcadas, SLA por dia.",
+    "Público operacional que pensa em agenda e precisa achar o dia de hoje e a próxima semana.",
+    "Marcar dias que passaram de um limite (capacidade, teto de agendas) com ícone além da cor.",
+    "Prazos e marcos do mês (fechamento, revisão de forecast) e janelas que atravessam semanas."
+  ],
+  "quando_evitar": [
+    "Comparação entre muitos meses: calendário estilo contribuições (modelo 04).",
+    "Efeito de dia do mês ao longo do ano: matriz dia do mês por mês (modelo 04, v3).",
+    "Eventos com hora de início e fim no mesmo dia: agenda em grade ou cronograma (20).",
+    "Pergunta de tendência diária: colunas por dia (03) ou linha (04)."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_reunioes-realizadas-em-setembro",
+      "titulo": "Reuniões realizadas por dia em setembro",
+      "caso_de_uso": "Em que dias de set/26 o time comercial realizou mais reuniões com prospects, e quais dias úteis ficaram vazios?",
+      "o_que_demonstra": [
+        "grid-cols-7 com semana na segunda e 6 linhas reservadas sem salto de layout",
+        "Número do dia no canto e contagem de reuniões no centro da célula",
+        "Cor por faixa via style com var(--seq-N), texto com contraste por faixa",
+        "Dias de agosto e outubro nas pontas sem cor e em --text-muted"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_dias-acima-da-capacidade-de-agenda",
+      "titulo": "Dias acima da capacidade de agenda",
+      "caso_de_uso": "Em quais dias de ago/26 a pré-vendas marcou mais de 22 agendas, acima do teto que o time de vendas consegue atender?",
+      "o_que_demonstra": [
+        "Borda em --warning e ícone lucide AlertTriangle nos dias acima do teto",
+        "Teto declarado na linha de leitura: 5 de 21 dias úteis acima de 22 agendas",
+        "Destaque com segundo canal: ícone e peso de fonte, não só a cor",
+        "Frase acessível com os dias acima do teto e o maior valor do mês"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_mes-de-seis-semanas-com-feriado",
+      "titulo": "Mês de seis semanas com feriado e dia corrente",
+      "caso_de_uso": "Como ler um mês que ocupa 6 semanas, com feriado nacional e o dia de hoje, sem confundir feriado com dia sem agenda?",
+      "o_que_demonstra": [
+        "Mês de 6 semanas gerado em TypeScript a partir do deslocamento do dia 1",
+        "Feriado com ícone e célula neutra, sem cor de valor",
+        "Dia corrente com anel de foco e dias futuros sem valor desenhado",
+        "Dia com zero agendas escrito 0 e distinto do feriado"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_calendario-de-marcos-com-janela-de-leitura",
+      "titulo": "Marcos de dezembro e janela de leitura",
+      "caso_de_uso": "Quais prazos do planejamento caem em dez/26 e onde começa a janela de leitura conclusiva que vai até 2027-01-13?",
+      "o_que_demonstra": [
+        "Chips de evento na célula com teto de 2 e resumo +N para dia lotado",
+        "Período de 2026-12-14 em diante como barra que atravessa semanas",
+        "Segmento por semana com cantos arredondados só nas pontas reais",
+        "Hoje, fins de semana e recesso fictício marcados sem cor de valor"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

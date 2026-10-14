@@ -1,0 +1,13 @@
+{
+  "title": "Plataforma nova sem mês anterior",
+  "useCase": "Marketing: como ler a composição quando uma plataforma entrou em ago/26 e não existia em jul/26.",
+  "demonstrates": [
+    "Categoria nova no fim da ordem, presente só no anel externo",
+    "Anel interno fecha 100% com as categorias que existiam no período, nunca com a nova em 0%",
+    "Legenda marca a categoria nova como sem dado em jul/26 em text-muted",
+    "Variação da categoria nova declarada como sem base de comparação, não como p.p. calculado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "previous vem null no data.ts para a categoria nova, nunca 0 (EST-4). O anel interno recebe só as três categorias com dado; o Recharts normaliza cada Pie pelo seu próprio total, então o interno fecha 100% sozinho."
+}

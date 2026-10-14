@@ -1,0 +1,13 @@
+{
+  "title": "Perdas sem motivo registrado",
+  "useCase": "Quanto da perda de cada etapa não tem motivo registrado, separado dos motivos conhecidos e nomeado sobre o total perdido.",
+  "demonstrates": [
+    "Segmento sem motivo registrado em hachura neutra, separado dos motivos coloridos",
+    "Percentual sem motivo por formatRateWithVolume sobre o perdido da própria etapa",
+    "Padrão de hachura declarado em defs, com useId para não colidir entre instâncias",
+    "Lacuna de dado tratada como lacuna, nunca somada a um motivo real"
+  ],
+  "canvas": { "width": 640, "height": 420 },
+  "frame": "card",
+  "notes": "Altura sobe do preset card (360) por causa da ACE-3: a isenção de contraste do segmento em andamento exige o valor escrito, e o rótulo de fechamento passou de duas para três linhas (seguiram e perdidos, sem motivo, em andamento). A conta da ESP-6 para as 4 etapas com esse passo de texto só fecha em 420 px de canvas, 60 px acima do preset, com folga para o vão de 4 px entre a última linha de uma etapa e o título da etapa seguinte."
+}

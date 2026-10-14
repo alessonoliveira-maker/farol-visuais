@@ -1,0 +1,13 @@
+{
+  "title": "Nine-box com célula vazia e lotada",
+  "useCase": "Comercial: calibração de 60 contas por potencial e relacionamento, com uma célula sem contas e outra com 41.",
+  "demonstrates": [
+    "Eixos de julgamento com contorno tracejado e legenda avaliação do time",
+    "Célula vazia com 0 contas em tom apagado, sem sumir da grade",
+    "Célula central com seis chips ordenados por potencial, +35 e botão de abrir lista",
+    "Seta de posição prevista no chip, como no desenho da matriz GE",
+    "Contas sem avaliação fora da grade, em faixa própria com contagem"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

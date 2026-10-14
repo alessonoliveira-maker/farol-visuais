@@ -1,0 +1,121 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "08_linha-do-tempo-de-circulos",
+  "versoes": {
+    "v1_fechamentos-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: áreas de 36,87 a 700,00 px² no preview.svg, proporcionais ao valor, e régua que termina no máximo do recorte; bolha a 0,72 mede 5,55:1 no escuro e 3,42:1 no claro; sobreposições separadas pelo contorno; página e arquivo iguais. Sem bloqueante; observações no README (grade nos dois sentidos fora da letra da EIX-3b, título por semana com um círculo por fechamento).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:57.021Z",
+      "impressao": "422108252993894a85f05c6ee5872d385260276f",
+      "arquivos": {
+        "Chart.tsx": "0ded9cd3bbc581bf4631d104cb3d243ba9d31d7a",
+        "data.ts": "5adc375a4dc2762118e88938532e382f027fba02",
+        "meta.json": "585217960379c1d784f02c3b6583cf8637346549"
+      }
+    },
+    "v2_receita-por-produto-com-maior-mes": {
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: áreas de 20,00 a 600,02 px² com o mesmo domínio nas quatro faixas; totais por faixa e os 52% conferidos contra o dado; slots 1, 3, 6 e 5 por chave; cores a 0,72 medem de 3,10:1 a 3,62:1 no claro; rótulo do maior mês com halo e sem corte. Sem bloqueante; observações no README (Total em 24 meses escrito à mão, totais alinhados à esquerda, último círculo tangente à borda da grade).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:57.511Z",
+      "impressao": "f8f23839080b7ed300e305e89e0778e75f6d1525",
+      "arquivos": {
+        "Chart.tsx": "e44cee02d20428aa00a73872a04e09783d09defd",
+        "data.ts": "4ee9fe8777256f9eaccca43241b287bc91917d4f",
+        "meta.json": "4d41f703ad48971fcb9e158a761085590343f95b"
+      }
+    },
+    "v3_regua-micro-de-eventos-sob-sparkline": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: a amostra de Agrupados virou o disco de 8 px de raio com algarismo dentro, 14 px de tinta na legenda e na régua nos dois temas, contra 8 px da amostra de Verba; o ZAxis com dataKey e domain entrega os 70 px² declarados, com raio de 4,72 px no preview.svg; sparkline e régua na mesma escala, desvio abaixo de 0,001 px; contrastes de 5,21:1 a 10,06:1; página e arquivo iguais. Sem bloqueante; 8 observações no README: algarismo 2 fixo na amostra, losango da amostra em outra proporção, limiar de agrupamento de 10 px sem conta refeita, entre outras.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:06:25.563Z",
+      "impressao": "8aae7d16ba2becec5af6afc58c4781079bfb0f28",
+      "arquivos": {
+        "Chart.tsx": "24a68268519db17dbf2d0f8e443c226b7ba1888b",
+        "data.ts": "7977358072bdbb403382f37f64dae6b025b6f983",
+        "meta.json": "4cc0de0e76e71b0fadf490845774e8447309f541"
+      }
+    },
+    "v4_estornos-e-meses-sem-coleta": {
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: estorno com área do valor absoluto (33,33 a 1.500,00 px² no preview.svg) e sinal tipográfico no rótulo; mês sem coleta em faixa com formatUnavailable e nunca zero; zero medido com ponto e rótulo próprios; soma dos quatro estornos conferida. Sem bloqueante; observações no README (anel do estorno a 1,01:1 contra a bolha no escuro, isento pelo valor escrito; tique de faixa em duas linhas; grade nos dois sentidos).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:58.520Z",
+      "impressao": "30bdacaa2aece8e8856f6260292bfc090d76c62f",
+      "arquivos": {
+        "Chart.tsx": "4fe38f5e52b52d477c5612e86575767443c2344d",
+        "data.ts": "3b207877e13caf3588139207a5bc5cb636959b87",
+        "meta.json": "a12e1876d4f2c3739e27635c5d5e526dd5a5e3a0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_fechamentos-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: áreas de 36,87 a 700,00 px² no preview.svg, proporcionais ao valor, e régua que termina no máximo do recorte; bolha a 0,72 mede 5,55:1 no escuro e 3,42:1 no claro; sobreposições separadas pelo contorno; página e arquivo iguais. Sem bloqueante; observações no README (grade nos dois sentidos fora da letra da EIX-3b, título por semana com um círculo por fechamento).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:57.021Z",
+      "impressao": "422108252993894a85f05c6ee5872d385260276f",
+      "arquivos": {
+        "Chart.tsx": "0ded9cd3bbc581bf4631d104cb3d243ba9d31d7a",
+        "data.ts": "5adc375a4dc2762118e88938532e382f027fba02",
+        "meta.json": "585217960379c1d784f02c3b6583cf8637346549"
+      }
+    },
+    {
+      "versao": "v2_receita-por-produto-com-maior-mes",
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: áreas de 20,00 a 600,02 px² com o mesmo domínio nas quatro faixas; totais por faixa e os 52% conferidos contra o dado; slots 1, 3, 6 e 5 por chave; cores a 0,72 medem de 3,10:1 a 3,62:1 no claro; rótulo do maior mês com halo e sem corte. Sem bloqueante; observações no README (Total em 24 meses escrito à mão, totais alinhados à esquerda, último círculo tangente à borda da grade).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:57.511Z",
+      "impressao": "f8f23839080b7ed300e305e89e0778e75f6d1525",
+      "arquivos": {
+        "Chart.tsx": "e44cee02d20428aa00a73872a04e09783d09defd",
+        "data.ts": "4ee9fe8777256f9eaccca43241b287bc91917d4f",
+        "meta.json": "4d41f703ad48971fcb9e158a761085590343f95b"
+      }
+    },
+    {
+      "versao": "v3_regua-micro-de-eventos-sob-sparkline",
+      "veredito": "reprovado",
+      "nota": "Pergunta 12, ROT-4 e identificação das marcas (14.1): a amostra de Agrupados é um disco liso de 10 px ao lado do disco liso de 8 px de Verba, e a marca agrupada na régua é um disco de 14,5 px com contador; desenhar a amostra na forma da marca, com o algarismo dentro, ou dar ao agrupado forma que nenhum tipo usa. Na mesma passada: o ZAxis sem dataKey nem domain não entrega o range, as marcas saem com 64 px² e não com os 70 declarados (REC-31). Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__08_linha-do-tempo-de-circulos_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:58.013Z",
+      "impressao": "019a54e01a57d149716c841288a71d1879a4fb84",
+      "arquivos": {
+        "Chart.tsx": "534e9681cdd97657daf7c253165a8a43362b18b8",
+        "data.ts": "7977358072bdbb403382f37f64dae6b025b6f983",
+        "meta.json": "4cc0de0e76e71b0fadf490845774e8447309f541"
+      }
+    },
+    {
+      "versao": "v4_estornos-e-meses-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "Primeira passada, arquivo de hoje: estorno com área do valor absoluto (33,33 a 1.500,00 px² no preview.svg) e sinal tipográfico no rótulo; mês sem coleta em faixa com formatUnavailable e nunca zero; zero medido com ponto e rótulo próprios; soma dos quatro estornos conferida. Sem bloqueante; observações no README (anel do estorno a 1,01:1 contra a bolha no escuro, isento pelo valor escrito; tique de faixa em duas linhas; grade nos dois sentidos).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:48:58.520Z",
+      "impressao": "30bdacaa2aece8e8856f6260292bfc090d76c62f",
+      "arquivos": {
+        "Chart.tsx": "4fe38f5e52b52d477c5612e86575767443c2344d",
+        "data.ts": "3b207877e13caf3588139207a5bc5cb636959b87",
+        "meta.json": "a12e1876d4f2c3739e27635c5d5e526dd5a5e3a0"
+      }
+    },
+    {
+      "versao": "v3_regua-micro-de-eventos-sob-sparkline",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: a amostra de Agrupados virou o disco de 8 px de raio com algarismo dentro, 14 px de tinta na legenda e na régua nos dois temas, contra 8 px da amostra de Verba; o ZAxis com dataKey e domain entrega os 70 px² declarados, com raio de 4,72 px no preview.svg; sparkline e régua na mesma escala, desvio abaixo de 0,001 px; contrastes de 5,21:1 a 10,06:1; página e arquivo iguais. Sem bloqueante; 8 observações no README: algarismo 2 fixo na amostra, losango da amostra em outra proporção, limiar de agrupamento de 10 px sem conta refeita, entre outras.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:06:25.563Z",
+      "impressao": "8aae7d16ba2becec5af6afc58c4781079bfb0f28",
+      "arquivos": {
+        "Chart.tsx": "24a68268519db17dbf2d0f8e443c226b7ba1888b",
+        "data.ts": "7977358072bdbb403382f37f64dae6b025b6f983",
+        "meta.json": "4cc0de0e76e71b0fadf490845774e8447309f541"
+      }
+    }
+  ]
+}

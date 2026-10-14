@@ -1,0 +1,264 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "01_barras-simples-ordenadas",
+  "versoes": {
+    "v1_receita-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barras do zero, rotulo na ponta livre, leitura limpa nos dois temas. Aviso de espessura de 8 px da ESP-2 nao reprova.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:28.374Z",
+      "impressao": "dbe0a34e60341c2361f9b374a2e8187642c9af91",
+      "arquivos": {
+        "Chart.tsx": "a1262f0d1ccd5d18fab7d7abfdd4561c74a38a07",
+        "data.ts": "450d67162b8bfaa172056e1425d6ccb6a409c9bc",
+        "meta.json": "ee0e9e7472c8345d76be5cda4f85e1d55c9ee0ca"
+      }
+    },
+    "v2_destaque-contra-sla": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; alerta com palavra e sinal, ReferenceLine com extendDomain e halo onde o rotulo cruza. Rotulo do excesso e observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:48.698Z",
+      "impressao": "1d9c101ef8d7b44d2554132aad056b11bda7cbfc",
+      "arquivos": {
+        "Chart.tsx": "46954ed777e9eb10b17a2b55bab303d8ed0db654",
+        "data.ts": "e35ee6e4650cbe5379cdc775a5056661c97aa8a9",
+        "meta.json": "5e566e21b11370223b0a3165dfebaec93a392018"
+      }
+    },
+    "v3_campanhas-com-cauda-agregada": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barra de 20 px comporta o nome de 12 px dentro, cauda em neutro e rotulada, canvas por numero agora declarado em notes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:57.750Z",
+      "impressao": "fd3422f04f3d51a8c97b79c6a5e5a2d3ef464c41",
+      "arquivos": {
+        "Chart.tsx": "f9d54287e08f8e738a4f6930a0095ccc731ef044",
+        "data.ts": "a6c361ac474246c74d39a8da2c6a431057c2f48f",
+        "meta.json": "f7f19cc4e221cef559fefc54a1969d2c9a5f1a88"
+      }
+    },
+    "v4_zero-indisponivel-e-empate": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; zero escreve 0 sem fabricar barra, sem coleta escreve indisponivel, empate repete a posicao 1. Peso 700 em seis pecas e observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:03.155Z",
+      "impressao": "521a02d68d4dbf1a3a677f93d2e284a2d563a9dd",
+      "arquivos": {
+        "Chart.tsx": "cd67dbc9cfca7b65f90c3bf5600b588a9b56e5b3",
+        "data.ts": "7085f72aca2cda0a733f4c347b4ba22082f0219d",
+        "meta.json": "22460988688f5c1405855d26ba98d915c581b1e6"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Ranking correto e legível nos dois temas; sem bloqueante. Observações: barra sai com 8 px porque o barCategoryGap vale dos dois lados, e o corpo sobra vazio no fim do canvas.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:08:38.406Z",
+      "impressao": "dbe0a34e60341c2361f9b374a2e8187642c9af91",
+      "arquivos": {
+        "Chart.tsx": "a1262f0d1ccd5d18fab7d7abfdd4561c74a38a07",
+        "data.ts": "450d67162b8bfaa172056e1425d6ccb6a409c9bc",
+        "meta.json": "ee0e9e7472c8345d76be5cda4f85e1d55c9ee0ca"
+      }
+    },
+    {
+      "versao": "v2_destaque-contra-sla",
+      "veredito": "aprovado",
+      "nota": "Destaque por regra de dado, SLA rotulado e halo funcionando; sem bloqueante. Observações: rótulos 3,6 h e 3,1 h encostam na linha do SLA e o corpo sobra vazio no canvas alto.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:08:42.938Z",
+      "impressao": "7fc6528de4f065247ca718afaa5b6a9df04991ba",
+      "arquivos": {
+        "Chart.tsx": "d916d00a0ee5b980cf7549adf5b1cfedeb870c44",
+        "data.ts": "e35ee6e4650cbe5379cdc775a5056661c97aa8a9",
+        "meta.json": "5e566e21b11370223b0a3165dfebaec93a392018"
+      }
+    },
+    {
+      "versao": "v3_campanhas-com-cauda-agregada",
+      "veredito": "reprovado",
+      "nota": "Nome dentro da barra fica ilegível: o texto de 12 px é mais alto que a barra de 9 px e o que sobra some no fundo (1,0:1 no claro, 1,08:1 no escuro). Engrossar a barra ou levar o nome para fora. E o data.ts cita marcas reais (LinkedIn, Google Ads, YouTube, Instagram): trocar por campanha genérica.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:08:47.792Z",
+      "impressao": "c1b8404786164ae013280d10c995a2e37e5de097",
+      "arquivos": {
+        "Chart.tsx": "80728dbceb83e3a387394d3de8075ba04f57c84e",
+        "data.ts": "849fbc3b5b08ba4f3d16cdc3447b510601130e08",
+        "meta.json": "dde29a3c1444538cb9ebd87ba872d6e34db881c1"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-empate",
+      "veredito": "aprovado",
+      "nota": "Zero, indisponível e empate separados e legíveis nos dois temas; sem bloqueante. Observações: o empate leva peso 700 a seis elementos (TIP-3 pede dois) e o corpo sobra vazio no fim do canvas.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:08:52.308Z",
+      "impressao": "521a02d68d4dbf1a3a677f93d2e284a2d563a9dd",
+      "arquivos": {
+        "Chart.tsx": "cd67dbc9cfca7b65f90c3bf5600b588a9b56e5b3",
+        "data.ts": "7085f72aca2cda0a733f4c347b4ba22082f0219d",
+        "meta.json": "22460988688f5c1405855d26ba98d915c581b1e6"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Ranking correto, zero na origem, valor na ponta e contraste ok nos dois temas; barra fina e sobra de canvas ficam como observacao.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:36:59.791Z",
+      "impressao": "dbe0a34e60341c2361f9b374a2e8187642c9af91",
+      "arquivos": {
+        "Chart.tsx": "a1262f0d1ccd5d18fab7d7abfdd4561c74a38a07",
+        "data.ts": "450d67162b8bfaa172056e1425d6ccb6a409c9bc",
+        "meta.json": "ee0e9e7472c8345d76be5cda4f85e1d55c9ee0ca"
+      }
+    },
+    {
+      "versao": "v2_destaque-contra-sla",
+      "veredito": "aprovado",
+      "nota": "Alerta com palavra e sinal, linha do SLA rotulada e halo mantem os rotulos legiveis; rotulo do excesso em vez do tempo medido fica como observacao.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:37:04.279Z",
+      "impressao": "7fc6528de4f065247ca718afaa5b6a9df04991ba",
+      "arquivos": {
+        "Chart.tsx": "d916d00a0ee5b980cf7549adf5b1cfedeb870c44",
+        "data.ts": "e35ee6e4650cbe5379cdc775a5056661c97aa8a9",
+        "meta.json": "5e566e21b11370223b0a3165dfebaec93a392018"
+      }
+    },
+    {
+      "versao": "v3_campanhas-com-cauda-agregada",
+      "veredito": "aprovado",
+      "nota": "Top 15 mais cauda neutra, nome dentro da barra com contraste medido 6,00 no claro e 10,06 no escuro, nada cortado; desalinho da contagem e canvas alto ficam como observacao.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:37:08.992Z",
+      "impressao": "bb68ae13a8ec8f9d44217624626e7348b94172ca",
+      "arquivos": {
+        "Chart.tsx": "f9d54287e08f8e738a4f6930a0095ccc731ef044",
+        "data.ts": "a6c361ac474246c74d39a8da2c6a431057c2f48f",
+        "meta.json": "56d26e5265f8302602cd04728265a85170cbd395"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-empate",
+      "veredito": "aprovado",
+      "nota": "Zero escreve 0 agendas, sem coleta escreve indisponivel e o empate repete a posicao 1; peso 700 em seis elementos e falta do icone Unplug ficam como observacao.",
+      "data": "2026-09-16",
+      "registradoEm": "2026-09-16T09:37:13.355Z",
+      "impressao": "521a02d68d4dbf1a3a677f93d2e284a2d563a9dd",
+      "arquivos": {
+        "Chart.tsx": "cd67dbc9cfca7b65f90c3bf5600b588a9b56e5b3",
+        "data.ts": "7085f72aca2cda0a733f4c347b4ba22082f0219d",
+        "meta.json": "22460988688f5c1405855d26ba98d915c581b1e6"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; ranking honesto do zero, valor na ponta em toda barra e linha de leitura conferida no dado. Barra de 8 px so aviso da ESP-2.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:42:56.065Z",
+      "impressao": "dbe0a34e60341c2361f9b374a2e8187642c9af91",
+      "arquivos": {
+        "Chart.tsx": "a1262f0d1ccd5d18fab7d7abfdd4561c74a38a07",
+        "data.ts": "450d67162b8bfaa172056e1425d6ccb6a409c9bc",
+        "meta.json": "ee0e9e7472c8345d76be5cda4f85e1d55c9ee0ca"
+      }
+    },
+    {
+      "versao": "v2_destaque-contra-sla",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; cor por shape com Rectangle, alerta com sinal e palavra, ReferenceLine com halo. Rotulo de excesso nomeia a base, entao nao engana.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:43:00.480Z",
+      "impressao": "1d9c101ef8d7b44d2554132aad056b11bda7cbfc",
+      "arquivos": {
+        "Chart.tsx": "46954ed777e9eb10b17a2b55bab303d8ed0db654",
+        "data.ts": "e35ee6e4650cbe5379cdc775a5056661c97aa8a9",
+        "meta.json": "5e566e21b11370223b0a3165dfebaec93a392018"
+      }
+    },
+    {
+      "versao": "v3_campanhas-com-cauda-agregada",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barra de 20 px acima do piso de rotulo interno, par accent-cyan-contrast sobre chart-1 aprovado nos dois temas, cauda em neutro fora da ordenacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:43:05.963Z",
+      "impressao": "bb68ae13a8ec8f9d44217624626e7348b94172ca",
+      "arquivos": {
+        "Chart.tsx": "f9d54287e08f8e738a4f6930a0095ccc731ef044",
+        "data.ts": "a6c361ac474246c74d39a8da2c6a431057c2f48f",
+        "meta.json": "56d26e5265f8302602cd04728265a85170cbd395"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-empate",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; zero medido escrito sem barra fabricada, indisponivel em texto apagado fora do ranking e empate com a posicao 1 repetida.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:43:10.497Z",
+      "impressao": "521a02d68d4dbf1a3a677f93d2e284a2d563a9dd",
+      "arquivos": {
+        "Chart.tsx": "cd67dbc9cfca7b65f90c3bf5600b588a9b56e5b3",
+        "data.ts": "7085f72aca2cda0a733f4c347b4ba22082f0219d",
+        "meta.json": "22460988688f5c1405855d26ba98d915c581b1e6"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barras do zero, rotulo na ponta livre, leitura limpa nos dois temas. Aviso de espessura de 8 px da ESP-2 nao reprova.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:28.374Z",
+      "impressao": "dbe0a34e60341c2361f9b374a2e8187642c9af91",
+      "arquivos": {
+        "Chart.tsx": "a1262f0d1ccd5d18fab7d7abfdd4561c74a38a07",
+        "data.ts": "450d67162b8bfaa172056e1425d6ccb6a409c9bc",
+        "meta.json": "ee0e9e7472c8345d76be5cda4f85e1d55c9ee0ca"
+      }
+    },
+    {
+      "versao": "v2_destaque-contra-sla",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; alerta com palavra e sinal, ReferenceLine com extendDomain e halo onde o rotulo cruza. Rotulo do excesso e observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:48.698Z",
+      "impressao": "1d9c101ef8d7b44d2554132aad056b11bda7cbfc",
+      "arquivos": {
+        "Chart.tsx": "46954ed777e9eb10b17a2b55bab303d8ed0db654",
+        "data.ts": "e35ee6e4650cbe5379cdc775a5056661c97aa8a9",
+        "meta.json": "5e566e21b11370223b0a3165dfebaec93a392018"
+      }
+    },
+    {
+      "versao": "v3_campanhas-com-cauda-agregada",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barra de 20 px comporta o nome de 12 px dentro, cauda em neutro e rotulada, canvas por numero agora declarado em notes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:11:57.750Z",
+      "impressao": "fd3422f04f3d51a8c97b79c6a5e5a2d3ef464c41",
+      "arquivos": {
+        "Chart.tsx": "f9d54287e08f8e738a4f6930a0095ccc731ef044",
+        "data.ts": "a6c361ac474246c74d39a8da2c6a431057c2f48f",
+        "meta.json": "f7f19cc4e221cef559fefc54a1969d2c9a5f1a88"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-empate",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; zero escreve 0 sem fabricar barra, sem coleta escreve indisponivel, empate repete a posicao 1. Peso 700 em seis pecas e observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:12:03.155Z",
+      "impressao": "521a02d68d4dbf1a3a677f93d2e284a2d563a9dd",
+      "arquivos": {
+        "Chart.tsx": "cd67dbc9cfca7b65f90c3bf5600b588a9b56e5b3",
+        "data.ts": "7085f72aca2cda0a733f4c347b4ba22082f0219d",
+        "meta.json": "22460988688f5c1405855d26ba98d915c581b1e6"
+      }
+    }
+  ]
+}

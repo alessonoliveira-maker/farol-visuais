@@ -1,0 +1,17 @@
+{
+  "title": "Doze cenários de orçamento em gradiente",
+  "useCase": "Como comparar doze cenários de orçamento num cartão em que doze meias densidades não caberiam?",
+  "demonstrates": [
+    "linearGradient com um stop por ponto da grade e opacidade pela densidade",
+    "id do gradiente por useId, com limpeza de caracteres para o url(#id)",
+    "Linhas de 16 px com ponto e intervalos nomeados sobre o gradiente",
+    "Teto fictício de 300 entradas por mês com a massa no teto como barra própria",
+    "Piso de 66% na opacidade para a faixa medir 3:1 contra o cartão nos dois temas"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 586
+  },
+  "frame": "card",
+  "notes": "Canvas por número, 640 por 586, pela conta da GEO-1: o preset alto dá 441,5 px de corpo com o caso de uso em uma linha, e a peça soma 466 px, que são 16 da linha de leitura, 8 de vão, 378 do desenho (20 de margem para os nomes de coluna, doze linhas de 28 e 22 de eixo), 8 de vão e 56 do rodapé em três linhas. Cada cenário a mais pede 28 px. Colisão entre o catálogo e o contrato, resolvida a favor do contrato: o catálogo pede opacidade pela densidade, que levaria a cauda a zero, e a ACE-5 exige que a cor composta da marca meça 3:1 contra o cartão. A opacidade continua linear na densidade, mas entre 0,66 e 1: 0,66 é a opacidade mínima medida para --chart-1 nos dois temas, e a faixa termina, com borda, no menor e no maior desfecho abaixo do teto. Como o piso deixa só 0,34 de excursão, a densidade é normalizada pelo pico de cada linha e não do conjunto; quem compara dispersão entre linhas lê a largura da faixa e os traços, e o rodapé diz que a cor vale dentro da linha. A COR-9 não colide: o gradiente aqui é o dado, não enfeite. As guardas não medem esta marca: OPACIDADE-MARCA sai sem_opacidade_em_marca porque o alfa é calculado, e CONTRASTE-MARCA não resolve preenchimento em url(); a medição é a da tabela de opacidade mínima do dossiê. Os traços e o ponto têm por baixo um contorno de 1,5 px na cor do cartão, porque o traço claro sobre o ciano mede 1,53:1 (TOK-10). Os percentis saem de todos os desfechos, inclusive os parados no teto, e a faixa só dos que ficaram abaixo dele; a massa no teto é barra à parte, em que 100% valeriam 48 px, com piso de 2 px quando a contagem não é zero."
+}

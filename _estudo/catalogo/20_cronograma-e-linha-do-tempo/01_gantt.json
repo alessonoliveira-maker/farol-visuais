@@ -1,0 +1,75 @@
+{
+  "slug": "01_gantt",
+  "nome": "Gantt",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma linha por atividade e o tempo no eixo horizontal: cada barra vai da data de início à data de fim, e a leitura revela paralelismo, lacunas e o que está no ar hoje. No Recharts é um BarChart com layout vertical e dataKey em tupla [inicioMs, fimMs], sem série transparente de deslocamento. Os ticks de calendário (primeiro dia do mês, segunda-feira) são gerados em TypeScript, as datas entram por Date.UTC e a data de hoje vem no dado, nunca do relógio. O modelo absorve o Gantt de progresso com linha de base, o Gantt hierárquico com colunas de tabela e a linha do tempo empacotada.",
+  "quando_usar": [
+    "Períodos com início e fim declarados, de 5 a cerca de 30 linhas, quando a duração e a sobreposição importam",
+    "Calendário de campanhas, flights de mídia, janelas de contratação e iniciativas com datas comprometidas",
+    "Planejado contra realizado com percentual concluído, quando existe linha de base registrada",
+    "Fases com entregas filhas e colunas curtas de dono e status ao lado da trilha",
+    "Muitos intervalos curtos e anônimos que cabem empacotados em poucas faixas"
+  ],
+  "quando_evitar": [
+    "Encadeamento entre tarefas define o prazo: use o Gantt com dependências (20/09)",
+    "Só a ordem importa e não há datas firmes: use o roadmap por horizonte (20/07) ou o stepper (20/03)",
+    "Eventos sem duração: use a linha do tempo de marcos (20/02)",
+    "Sequência de estados de cada oportunidade: use a jornada por entidade (20/04)",
+    "Centenas de linhas com identidade fixa: agregue ou vá para a lasagna da família 15"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_calendario-de-campanhas-do-trimestre",
+      "titulo": "Calendário de campanhas do trimestre",
+      "caso_de_uso": "Marketing: quais das 8 campanhas fictícias ficam no ar entre 2026-10-01 e 2026-12-31 e quais correm em paralelo.",
+      "o_que_demonstra": [
+        "BarChart layout vertical com Bar em tupla [inicioMs, fimMs] e YAxis de categoria",
+        "Ticks mensais gerados em TypeScript por Date.UTC e formatados com formatMonthShort",
+        "ReferenceLine de hoje em 2026-11-12 vinda do dado, com rótulo curto no topo",
+        "ReferenceArea com opacidade baixa na janela de congelamento de 2026-12-20 a 2026-12-31",
+        "Cor fixa por plataforma em var(--chart-N) com rótulo direto em vez de legenda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_progresso-contra-linha-de-base",
+      "titulo": "Iniciativas de 2027 contra a linha de base",
+      "caso_de_uso": "Diretoria: quanto de cada uma das 6 iniciativas do plano 2027 está concluído e quais já passaram da data planejada.",
+      "o_que_demonstra": [
+        "Shape customizado no Bar: trilho do planejado e preenchimento até o percentual concluído",
+        "Realizado com datas próprias convertido em pixels por useXAxisScale dentro do shape",
+        "Atraso escrito como +12 d à direita e cor var(--negative) só nas atrasadas",
+        "Esperado até hoje calculado como (hoje − início) / (fim − início) contra o percentual",
+        "Linha sem plano registrado desenha só o realizado tracejado com a etiqueta sem plano"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_plano-hierarquico-por-publico",
+      "titulo": "Plano de iniciativas por público",
+      "caso_de_uso": "Diretoria: como as entregas de Comercial, Pré-vendas, Marketing e Diretoria se distribuem em 2027, com dono e status.",
+      "o_que_demonstra": [
+        "Três níveis (público, iniciativa, entrega) achatados em linhas com indentação no tick",
+        "Tick customizado do YAxis com colunas de texto para dono fictício e status",
+        "Barra de agrupamento mais fina com envoltória de min(início) e max(fim) das filhas",
+        "Status com ícone e palavra junto da cor, nunca só a cor da barra",
+        "Linha de hoje atravessando os três níveis e grade vertical por trimestre"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_criativos-empacotados-com-periodo-aberto",
+      "titulo": "Criativos no ar empacotados em faixas",
+      "caso_de_uso": "Marketing: 35 criativos entram no ar no mesmo dia de lançamento; quantos seguem ativos e quais não têm data de fim.",
+      "o_que_demonstra": [
+        "Empacotamento guloso determinístico em TypeScript, ordenado por início e depois por id",
+        "Dado pivotado por faixa, um Bar por posição com stackId comum, como no TimelineExample",
+        "Teto de 8 faixas com o excedente numa barra +N e a lista completa na dica",
+        "Criativo sem data de fim desenhado até hoje com ponta tracejada e rótulo em aberto",
+        "Criativo sem data de início fora do eixo, listado abaixo como sem data, nunca no zero"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

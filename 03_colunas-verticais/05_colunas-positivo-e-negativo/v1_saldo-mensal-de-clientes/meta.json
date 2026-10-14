@@ -1,0 +1,12 @@
+{
+  "title": "Saldo mensal de clientes",
+  "useCase": "Em quais dos últimos 12 meses entraram mais clientes do que saíram?",
+  "demonstrates": [
+    "Bar com shape escolhendo a cor por uma função pura de polaridade, não pelo sinal cru",
+    "ReferenceLine em zero com line-strong sólido, mais forte que a grade",
+    "Valor acima da coluna positiva e abaixo da negativa, com sinal + e −",
+    "Tique de mês fora da área das colunas que descem, pelo posicionamento padrão do eixo"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "02_bullet-chart",
+  "nome": "Bullet chart",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "O modelo central da família e a recomendação do Farol no lugar do gauge. Cinco peças, na especificação de Stephen Few: rótulo, escala linear, barra principal com cerca de um terço da espessura do contêiner, traço perpendicular da meta e de duas a cinco faixas qualitativas por intensidade de um único tom. Em Recharts, BarChart com layout vertical, faixas como ReferenceArea pintadas antes da barra e meta como ReferenceLine depois dela, sempre em extendDomain para a meta não sumir. A polaridade da métrica decide a ordem das faixas, e empilhar vários bullets com rótulos alinhados é o que faz o formato ganhar do mostrador.",
+  "quando_usar": [
+    "Medida, meta e régua qualitativa declarada no mesmo espaço, o caso geral da família",
+    "Painel de 3 a 8 métricas ou pessoas com metas diferentes, normalizadas em percentual da meta",
+    "Métrica de custo com polaridade invertida, como CPL, em que menos é melhor",
+    "Coluna estreita e alta com 2 a 5 itens de rótulo curto, na versão vertical",
+    "Qualquer pedido de gauge em que a leitura precisa ser precisa ou comparada"
+  ],
+  "quando_evitar": [
+    "Faixas sem dono nem data de definição: sem régua acordada, use a barra de progresso (13/01)",
+    "Público que nunca viu o formato e nenhuma anotação de primeira leitura no painel",
+    "Escala compartilhada entre métricas de unidades diferentes: normalize ou dê escala por linha",
+    "Mais de 5 faixas qualitativas, ou faixas pintadas em semáforo de matiz",
+    "Dezenas de linhas numa tabela: é bullet em célula (14/01)",
+    "Rótulo longo na versão vertical, que obrigaria a girar o texto: volte para a horizontal"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-com-faixas-de-estado",
+      "titulo": "Receita reconhecida com faixas de estado",
+      "caso_de_uso": "Comercial: a receita de 2026-T3 está na faixa ruim, aceitável ou boa da régua do trimestre, e a que distância da meta?",
+      "o_que_demonstra": [
+        "BarChart com layout vertical, faixas em ReferenceArea e meta em ReferenceLine",
+        "Ordem de pintura no JSX: faixas, depois a barra e só então a meta",
+        "ifOverflow em extendDomain para a meta não sumir quando passa do maior valor",
+        "barSize calculado como 34% da altura conhecida, não decidido pelo Recharts",
+        "Três faixas por intensidade de um tom, a mais clara marcando a zona ruim"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_cpl-com-polaridade-invertida",
+      "titulo": "CPL do mês com régua invertida",
+      "caso_de_uso": "Marketing: o CPL de 2026-08 está dentro da faixa aceitável definida na revisão de 2026-06, sabendo que menor é melhor?",
+      "o_que_demonstra": [
+        "Polaridade lower-is-better declarada no dado, invertendo a sequência das faixas",
+        "Anotação da origem da faixa, com a data da revisão que a definiu",
+        "Variação contra o mês anterior com sinal tipográfico e a base na mesma linha",
+        "Cor semântica pela polaridade: CPL subindo é negative, sempre com ícone"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_painel-de-metas-comerciais",
+      "titulo": "Painel de metas comerciais do trimestre",
+      "caso_de_uso": "Comercial: das cinco metas de 2026-T3, quais estão na faixa aceitável de 80% a 100% e qual ficou abaixo dela?",
+      "o_que_demonstra": [
+        "Um BarChart só, uma categoria por métrica e faixas atravessando todas as linhas",
+        "Métricas normalizadas em percentual da meta, unidade original no rótulo e na dica",
+        "Rótulos alinhados à esquerda para as pontas se compararem na vertical",
+        "Única métrica abaixo da faixa com ícone e peso no rótulo, sem depender da cor",
+        "Valor absoluto escrito ao fim de cada linha por formatValue"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_orcamento-por-plataforma-em-coluna",
+      "titulo": "Orçamento de mídia por plataforma em coluna",
+      "caso_de_uso": "Marketing: quanto do orçamento de 2026-08 cada plataforma consumiu contra o planejado, com uma sem veiculação no mês.",
+      "o_que_demonstra": [
+        "Bullet vertical com ReferenceArea em y1 e y2 e meta como ReferenceLine em y",
+        "Faixa de conforto entre 85% e 105% do planejado por intensidade",
+        "Plataforma sem veiculação com trilho tracejado e texto, nunca 0% pintado",
+        "Coluna acima de 105% com o excedente marcado e o valor real escrito",
+        "Rótulo curto visível e nome completo na frase acessível, sem texto girado"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

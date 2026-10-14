@@ -1,0 +1,160 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "01_tabela-com-barras-inline",
+  "versoes": {
+    "v1_receita-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Barra do zero, dominio unico por coluna, valor fora da marca e media tracejada; trilho some no tema claro, sem perda de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:40.318Z",
+      "impressao": "cf7fff129e91cecc6aed38be6904f0b08c144c8e",
+      "arquivos": {
+        "Chart.tsx": "af4c3c46a2f7fd8577740f9ff59a597d24064581",
+        "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
+        "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
+      }
+    },
+    "v2_agendas-contra-meta-em-bullet": {
+      "veredito": "aprovado",
+      "nota": "Bullet do zero com meta, estouro marcado e alerta com icone e peso; faixas qualitativas quase indistinguiveis e marca no piso de 12 px.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:45.586Z",
+      "impressao": "f9108158104c8cab2407c4a1a383b9e21c8d9ed7",
+      "arquivos": {
+        "Chart.tsx": "660f65e4e428958b1ce3d06893cc34ff6e87d836",
+        "data.ts": "c5ca965bea77df6c107fc9e00107c5043e19198d",
+        "meta.json": "75dff55377775f8c4e29c4f0c5bcee4d8bdff439"
+      }
+    },
+    "v3_resultado-por-origem-com-desvio-e-mix": {
+      "veredito": "aprovado",
+      "nota": "Tres marcas com dominio proprio no cabecalho, divergente com zero simetrico e mix sem chart-2 nem chart-4; rotulo do mix acima de 4,5 a 1 nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:50.843Z",
+      "impressao": "714a515085f03dc817a6b55c81d8a67ee41bd171",
+      "arquivos": {
+        "Chart.tsx": "8334ed7ca0d5e24b446c452a717d9329a6f04b28",
+        "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
+        "meta.json": "e7a50b8777825062e64adf44f984e1e74ca8ec58"
+      }
+    },
+    "v4_ausente-zero-outlier-e-faixa": {
+      "veredito": "aprovado",
+      "nota": "Indisponivel, zero medido, truncamento declarado e n igual a 1 separados; a marca de corte aparece no render de pagina e some no preview por defeito do serializador.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:56.307Z",
+      "impressao": "a4cfc876881557250f2a521921331b1c946fe5f0",
+      "arquivos": {
+        "Chart.tsx": "377aa3eacbec10fc1608daad9a1f0f27a5b8443f",
+        "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
+        "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "reprovado",
+      "nota": "useMemo do dominio e chamado depois do retorno do estado vazio, o que quebra a regra de hooks e derruba o componente quando o filtro esvazia a lista",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:03:06.657Z",
+      "impressao": "57207da411d6ff56970cf37c65e536f9d6ecc0ba",
+      "arquivos": {
+        "Chart.tsx": "0173705184bac0d49df3334c5c9353175779de2d",
+        "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
+        "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
+      }
+    },
+    {
+      "versao": "v2_agendas-contra-meta-em-bullet",
+      "veredito": "reprovado",
+      "nota": "as faixas qualitativas em surface overlay somem no tema claro e medem 1,05 para 1 entre si no escuro, entao o bullet nao entrega a faixa que o catalogo declara",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:03:11.422Z",
+      "impressao": "49146c02e9f3c9488367fc6c3e748bfee2b580b6",
+      "arquivos": {
+        "Chart.tsx": "978d0fa309482f6b0718450adaccd72ca434a6ae",
+        "data.ts": "c5ca965bea77df6c107fc9e00107c5043e19198d",
+        "meta.json": "75dff55377775f8c4e29c4f0c5bcee4d8bdff439"
+      }
+    },
+    {
+      "versao": "v3_resultado-por-origem-com-desvio-e-mix",
+      "veredito": "reprovado",
+      "nota": "useMemo dos dominios e chamado depois do retorno do estado vazio, o que quebra a regra de hooks e derruba o componente quando o filtro esvazia a lista",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:03:16.011Z",
+      "impressao": "780867416c19bf99712758224f8eeb4f721ce246",
+      "arquivos": {
+        "Chart.tsx": "35b5ff320096e2e8c93d2d379d9f7ecbfbcf2015",
+        "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
+        "meta.json": "e7a50b8777825062e64adf44f984e1e74ca8ec58"
+      }
+    },
+    {
+      "versao": "v4_ausente-zero-outlier-e-faixa",
+      "veredito": "reprovado",
+      "nota": "useMemo dos dominios e chamado depois do retorno do estado vazio, o que quebra a regra de hooks e derruba o componente quando o filtro esvazia a lista",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:03:20.675Z",
+      "impressao": "d993a7a3eab99f699cb15c4e5d6e3b6ed6d3ddb2",
+      "arquivos": {
+        "Chart.tsx": "56beb047534b51b6c117b8c8f24fe206731981d0",
+        "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
+        "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Barra do zero, dominio unico por coluna, valor fora da marca e media tracejada; trilho some no tema claro, sem perda de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:40.318Z",
+      "impressao": "cf7fff129e91cecc6aed38be6904f0b08c144c8e",
+      "arquivos": {
+        "Chart.tsx": "af4c3c46a2f7fd8577740f9ff59a597d24064581",
+        "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
+        "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
+      }
+    },
+    {
+      "versao": "v2_agendas-contra-meta-em-bullet",
+      "veredito": "aprovado",
+      "nota": "Bullet do zero com meta, estouro marcado e alerta com icone e peso; faixas qualitativas quase indistinguiveis e marca no piso de 12 px.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:45.586Z",
+      "impressao": "f9108158104c8cab2407c4a1a383b9e21c8d9ed7",
+      "arquivos": {
+        "Chart.tsx": "660f65e4e428958b1ce3d06893cc34ff6e87d836",
+        "data.ts": "c5ca965bea77df6c107fc9e00107c5043e19198d",
+        "meta.json": "75dff55377775f8c4e29c4f0c5bcee4d8bdff439"
+      }
+    },
+    {
+      "versao": "v3_resultado-por-origem-com-desvio-e-mix",
+      "veredito": "aprovado",
+      "nota": "Tres marcas com dominio proprio no cabecalho, divergente com zero simetrico e mix sem chart-2 nem chart-4; rotulo do mix acima de 4,5 a 1 nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:50.843Z",
+      "impressao": "714a515085f03dc817a6b55c81d8a67ee41bd171",
+      "arquivos": {
+        "Chart.tsx": "8334ed7ca0d5e24b446c452a717d9329a6f04b28",
+        "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
+        "meta.json": "e7a50b8777825062e64adf44f984e1e74ca8ec58"
+      }
+    },
+    {
+      "versao": "v4_ausente-zero-outlier-e-faixa",
+      "veredito": "aprovado",
+      "nota": "Indisponivel, zero medido, truncamento declarado e n igual a 1 separados; a marca de corte aparece no render de pagina e some no preview por defeito do serializador.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:21:56.307Z",
+      "impressao": "a4cfc876881557250f2a521921331b1c946fe5f0",
+      "arquivos": {
+        "Chart.tsx": "377aa3eacbec10fc1608daad9a1f0f27a5b8443f",
+        "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
+        "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
+      }
+    }
+  ]
+}

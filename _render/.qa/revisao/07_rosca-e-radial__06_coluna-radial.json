@@ -1,0 +1,160 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "06_coluna-radial",
+  "versoes": {
+    "v1_entradas-por-hora-do-dia": {
+      "veredito": "aprovado",
+      "nota": "Check limpo; escala escrita nos aneis resolve o vies do raio; ressalvas so de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:29.684Z",
+      "impressao": "acb65c5fec1fe4a77d74fd56a01a0dd68b4ae0ca",
+      "arquivos": {
+        "Chart.tsx": "c09536bae1947fd0b58a2de69e1b6f5326090d36",
+        "data.ts": "6c71ccd79a59368a8902b180182775cca377838f",
+        "meta.json": "d2497a10d0d1bdd074a4e1d46767c258ac00306d"
+      }
+    },
+    "v2_janela-de-atendimento-e-pico": {
+      "veredito": "aprovado",
+      "nota": "Janela e pico corretos; fora da janela bate com o filtro; texto da faixa so na linha de leitura.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:34.891Z",
+      "impressao": "89e5e97121847120145c6e07cb48a9fc845edf3d",
+      "arquivos": {
+        "Chart.tsx": "07c8a987eeec475391d22d5d24e403bd80164ee2",
+        "data.ts": "e85a2bf62c8102ef50ebd91e3b44c5e5add6666d",
+        "meta.json": "6c79728b5edf3d8cc7c1ac7e6da342881c937a98"
+      }
+    },
+    "v3_leads-por-dia-do-ano": {
+      "veredito": "aprovado",
+      "nota": "365 colunas por mes leem a sazonalidade; rotulos de escala sairam do feixe e nao colidem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:40.465Z",
+      "impressao": "84a210b81b7ed09428652beaa375b9e83670acda",
+      "arquivos": {
+        "Chart.tsx": "18bd46366e793a6c33ee5d92396dcf08420be553",
+        "data.ts": "4f32e42812d67a386c5288dfa8269de3cea75142",
+        "meta.json": "90ba46bc9015ea0545a4960dda83dd1ef711f2f6"
+      }
+    },
+    "v4_desvio-semanal-do-cpl": {
+      "veredito": "aprovado",
+      "nota": "Zero no anel intermediario com direcao e cor; duas anotacoes extremas com sinal tipografico.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:40.954Z",
+      "impressao": "27a7913114751166e2c77dd105ee31a0143f2514",
+      "arquivos": {
+        "Chart.tsx": "b201dcfe663cfba6bbe770e6a2ceab025188ea93",
+        "data.ts": "3b5848785435827d49a8a86d4a81758c64e9b092",
+        "meta.json": "8f89f4f801e79eae3500a6f293dfb7f1678fc6a8"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_entradas-por-hora-do-dia",
+      "veredito": "aprovado",
+      "nota": "Ciclo de 24h correto, escala escrita nos 4 aneis sem colisao, colunas do zero do anel interno; so observacoes de formatacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:06:06.418Z",
+      "impressao": "acb65c5fec1fe4a77d74fd56a01a0dd68b4ae0ca",
+      "arquivos": {
+        "Chart.tsx": "c09536bae1947fd0b58a2de69e1b6f5326090d36",
+        "data.ts": "6c71ccd79a59368a8902b180182775cca377838f",
+        "meta.json": "d2497a10d0d1bdd074a4e1d46767c258ac00306d"
+      }
+    },
+    {
+      "versao": "v2_janela-de-atendimento-e-pico",
+      "veredito": "aprovado",
+      "nota": "Faixa da janela atras das colunas, anotacao de pico limpa e fora dos aneis, linha de leitura calculada do dado; so observacoes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:06:16.285Z",
+      "impressao": "89e5e97121847120145c6e07cb48a9fc845edf3d",
+      "arquivos": {
+        "Chart.tsx": "07c8a987eeec475391d22d5d24e403bd80164ee2",
+        "data.ts": "e85a2bf62c8102ef50ebd91e3b44c5e5add6666d",
+        "meta.json": "6c79728b5edf3d8cc7c1ac7e6da342881c937a98"
+      }
+    },
+    {
+      "versao": "v3_leads-por-dia-do-ano",
+      "veredito": "reprovado",
+      "nota": "Halo do rotulo media 41 apaga um retangulo sobre cerca de 23 colunas de dez/25 nos dois temas, partindo as marcas ao meio (ROT-7, checklist 13 e 15).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:06:21.114Z",
+      "impressao": "4cb573f1c2987f86e1036bde7505017b291e1e72",
+      "arquivos": {
+        "Chart.tsx": "5cccc52267318d99716bed34f4091213c04f9c93",
+        "data.ts": "4f32e42812d67a386c5288dfa8269de3cea75142",
+        "meta.json": "90ba46bc9015ea0545a4960dda83dd1ef711f2f6"
+      }
+    },
+    {
+      "versao": "v4_desvio-semanal-do-cpl",
+      "veredito": "reprovado",
+      "nota": "Rotulos de escala e de semana 28 cortam hastes dos pirulitos pelo halo e pontos caem sobre o texto media R$ 38,70; semana 47 comeca fora do viewBox (checklist 13 e 15).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:06:26.759Z",
+      "impressao": "325478b5cc06e2ca4b7cdcca97c3f58603322516",
+      "arquivos": {
+        "Chart.tsx": "730c45056cf485a64f2f1c5b1bce86bfb43d6b8b",
+        "data.ts": "3b5848785435827d49a8a86d4a81758c64e9b092",
+        "meta.json": "8f89f4f801e79eae3500a6f293dfb7f1678fc6a8"
+      }
+    },
+    {
+      "versao": "v1_entradas-por-hora-do-dia",
+      "veredito": "aprovado",
+      "nota": "Check limpo; escala escrita nos aneis resolve o vies do raio; ressalvas so de acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:29.684Z",
+      "impressao": "acb65c5fec1fe4a77d74fd56a01a0dd68b4ae0ca",
+      "arquivos": {
+        "Chart.tsx": "c09536bae1947fd0b58a2de69e1b6f5326090d36",
+        "data.ts": "6c71ccd79a59368a8902b180182775cca377838f",
+        "meta.json": "d2497a10d0d1bdd074a4e1d46767c258ac00306d"
+      }
+    },
+    {
+      "versao": "v2_janela-de-atendimento-e-pico",
+      "veredito": "aprovado",
+      "nota": "Janela e pico corretos; fora da janela bate com o filtro; texto da faixa so na linha de leitura.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:34.891Z",
+      "impressao": "89e5e97121847120145c6e07cb48a9fc845edf3d",
+      "arquivos": {
+        "Chart.tsx": "07c8a987eeec475391d22d5d24e403bd80164ee2",
+        "data.ts": "e85a2bf62c8102ef50ebd91e3b44c5e5add6666d",
+        "meta.json": "6c79728b5edf3d8cc7c1ac7e6da342881c937a98"
+      }
+    },
+    {
+      "versao": "v3_leads-por-dia-do-ano",
+      "veredito": "aprovado",
+      "nota": "365 colunas por mes leem a sazonalidade; rotulos de escala sairam do feixe e nao colidem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:40.465Z",
+      "impressao": "84a210b81b7ed09428652beaa375b9e83670acda",
+      "arquivos": {
+        "Chart.tsx": "18bd46366e793a6c33ee5d92396dcf08420be553",
+        "data.ts": "4f32e42812d67a386c5288dfa8269de3cea75142",
+        "meta.json": "90ba46bc9015ea0545a4960dda83dd1ef711f2f6"
+      }
+    },
+    {
+      "versao": "v4_desvio-semanal-do-cpl",
+      "veredito": "aprovado",
+      "nota": "Zero no anel intermediario com direcao e cor; duas anotacoes extremas com sinal tipografico.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:28:40.954Z",
+      "impressao": "27a7913114751166e2c77dd105ee31a0143f2514",
+      "arquivos": {
+        "Chart.tsx": "b201dcfe663cfba6bbe770e6a2ceab025188ea93",
+        "data.ts": "3b5848785435827d49a8a86d4a81758c64e9b092",
+        "meta.json": "8f89f4f801e79eae3500a6f293dfb7f1678fc6a8"
+      }
+    }
+  ]
+}

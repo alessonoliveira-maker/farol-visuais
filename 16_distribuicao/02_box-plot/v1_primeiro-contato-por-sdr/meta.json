@@ -1,0 +1,18 @@
+{
+  "title": "Minutos até o primeiro contato por SDR",
+  "useCase": "Alguma fila demora mais para fazer o primeiro contato, e quantos leads estouram o SLA?",
+  "demonstrates": [
+    "Bar com dataKey em par de q1 e q3, e shape próprio desenhando a mediana",
+    "Bigode desenhado no shape porque o ErrorBar mede a distância a partir de q3",
+    "Outliers num Scatter à parte, com o código do caso mais distante escrito",
+    "SLA de 30 minutos em ReferenceLine e o percentual acima dele escrito",
+    "n de cada fila no rótulo da categoria, método de quartil e ordem declarados",
+    "Traço mínimo de 2 px previsto para quando o intervalo interquartil é zero"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 460
+  },
+  "frame": "card",
+  "notes": "O data.ts entrega uma observação por lead, não os cinco números: o método de quartil muda a caixa em amostra pequena, e com o dado cru a convenção fica declarada num lugar só. As filas são ordenadas pela mediana, nunca alfabeticamente. O ErrorBar continua declarado, com traço transparente, para a peça registrar a montagem do exemplo oficial do Recharts e o motivo de não usá-la: a distância é medida a partir de q3, então a linha de baixo atravessa a caixa inteira e, no tema escuro, parece uma segunda mediana. A ordem das filas e o código do outlier mais distante vão escritos no rodapé: a mediana que ordena não aparece em número no desenho, e dezenove códigos não cabem sobre os pontos, que dentro da mesma fila chegam a 4 px um do outro contra cerca de 35 px de texto. O canvas sai do preset card por altura, 640 por 460: com as seis filas dentro dos 234 px do corpo do card, a banda de cada fila ficava do tamanho da própria caixa, que tem 20 px, e as caixas encostavam umas nas outras; as cinco linhas de rodapé que a peça precisa escrever tiravam ainda mais. A altura declarada comporta seis filas com folga entre as caixas, e cada fila a mais pede cerca de 30 px."
+}

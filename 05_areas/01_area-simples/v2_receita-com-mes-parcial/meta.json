@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida com mês parcial",
+  "useCase": "Ler a receita mensal do ano sem confundir o mês corrente, ainda aberto, com uma queda real.",
+  "demonstrates": [
+    "Último trecho tracejado para o período incompleto, sem confundir com queda real",
+    "Nota curta de parcial até 14/09/2026 impressa por formatDate",
+    "Média dos meses fechados em ReferenceLine tracejada com rótulo na margem reservada",
+    "Tique de moeda por formatCurrencyAxis e dica em formatCurrencyCompact"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

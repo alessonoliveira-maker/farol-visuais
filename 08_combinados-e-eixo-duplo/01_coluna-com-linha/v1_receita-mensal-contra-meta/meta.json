@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida contra meta mensal",
+  "useCase": "Cada mês de 2026 bateu a meta de receita reconhecida, e por quanto ficou acima ou abaixo dela?",
+  "demonstrates": [
+    "ComposedChart com Bar antes de Line no mesmo YAxis",
+    "Linha de meta com pontos e rótulo direto no último mês",
+    "Dica única com realizado, meta e diferença em moeda compacta",
+    "Domínio a partir do zero com ticks redondos calculados no componente"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

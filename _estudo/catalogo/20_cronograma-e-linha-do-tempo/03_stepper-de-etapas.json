@@ -1,0 +1,69 @@
+{
+  "slug": "03_stepper-de-etapas",
+  "nome": "Stepper de etapas",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Sequência horizontal de passos com estado (concluído, atual, futuro, pulado, bloqueado) e sem escala de tempo: responde em que ponto do processo uma coisa está. Os marcadores são círculos com número ou ícone lucide, ligados por conectores preenchidos até o passo atual, com rótulo e data de conclusão abaixo. É uma lista ordenada em HTML com flex e Tailwind; no espaço estreito vira coluna vertical por container query. Os estados precisam ser distinguíveis sem cor: check no concluído, anel e peso maior no atual, vazado no futuro, tracejado no pulado.",
+  "quando_usar": [
+    "Processo linear de 3 a 7 passos em que a pergunta é onde a entidade está agora",
+    "Handoff entre pré-vendas e executivo, com o tempo gasto entre um passo e o seguinte",
+    "Coluna compacta de etapa dentro de uma tabela de oportunidades",
+    "Mostrar exceção de percurso: etapa pulada, retorno ou passo bloqueado"
+  ],
+  "quando_evitar": [
+    "Quando a duração em escala real importa: use o Gantt (20/01) ou a jornada por entidade (20/04)",
+    "Processo não linear com ramificações: use um fluxo da família 11",
+    "Comparar muitas entidades pela distribuição de etapa: use o funil (família 10)",
+    "Mais de 7 passos: agrupe em fases ou use a régua de marcos (20/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_etapas-do-handoff",
+      "titulo": "Etapas do handoff de uma oportunidade",
+      "caso_de_uso": "Pré-vendas: em que etapa do handoff está a oportunidade fictícia OP-0412, do lead qualificado ao aceite do executivo.",
+      "o_que_demonstra": [
+        "Lista ordenada com flex, conector h-px flex-1 preenchido até o passo atual",
+        "Concluído com ícone Check, atual com anel e texto em peso maior, futuro vazado",
+        "Data de conclusão por formatDate abaixo de cada passo concluído",
+        "Raiz com role e aria-label calculado: passo 3 de 4, reunião realizada"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_tempo-entre-passos-com-sla",
+      "titulo": "Tempo entre passos contra o SLA",
+      "caso_de_uso": "Pré-vendas: quanto tempo a oportunidade levou entre cada passo do handoff e em qual passagem o SLA de 2 dias estourou.",
+      "o_que_demonstra": [
+        "Rótulo de duração em dias sobre cada conector, como 4 d",
+        "Conector acima do SLA em var(--warning) com ícone AlertTriangle e texto do limite",
+        "Passo atual contando dias em aberto a partir da data de referência vinda do dado",
+        "Estado de atraso escrito em texto, sem depender só da cor do conector"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_stepper-compacto-em-tabela",
+      "titulo": "Etapa de cada oportunidade em aberto",
+      "caso_de_uso": "Comercial: em que etapa do processo estão as 14 oportunidades abertas do trimestre, lidas numa coluna da tabela.",
+      "o_que_demonstra": [
+        "Variante compacta só com marcadores de 8 px e sem rótulo, alinhada à linha da tabela",
+        "Nome da etapa atual em texto ao lado dos marcadores para leitura exata",
+        "Ordenação da tabela pela etapa atual e depois pelos dias parados",
+        "Cabeçalho da coluna com legenda única dos estados em vez de legenda por linha"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_etapa-pulada-retorno-e-bloqueio",
+      "titulo": "Percurso com etapa pulada e retorno",
+      "caso_de_uso": "Comercial: a oportunidade pulou o diagnóstico, voltou de proposta para qualificação e está bloqueada à espera de documento.",
+      "o_que_demonstra": [
+        "Etapa pulada com marcador tracejado e a palavra pulada, nunca parecida com concluída",
+        "Seta de retorno em SVG curto por cima do conector, com a data da volta",
+        "Passo bloqueado com ícone Lock e motivo em texto de apoio",
+        "Container query que empilha os passos na vertical abaixo de 480 px"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

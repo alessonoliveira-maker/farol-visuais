@@ -1,0 +1,13 @@
+{
+  "title": "Checklist de handoff por oportunidade",
+  "useCase": "Pré-vendas: quais de 18 oportunidades passadas ao Comercial em 2026-09 ainda têm pendências nos 7 critérios do handoff.",
+  "demonstrates": [
+    "Ordenação pelas pendências, com a linha mais pendente no topo",
+    "Contagem por linha e por coluna, com o critério mais descumprido destacado",
+    "Cabeçalho de critério curto sem sigla inventada e com o nome inteiro na frase acessível",
+    "Linhas compactas de 20 px com ícones de 14 px e texto horizontal"
+  ],
+  "canvas": { "width": 960, "height": 636 },
+  "frame": "card",
+  "notes": "Canvas por número, não preset: 18 linhas de 20 px mais cabeçalho, rodapé de contagem e legenda passam de 434 px de corpo do preset alto (ESP-2). Orçamento estimado é calculado como o critério mais descumprido pelo próprio dado (16 de 18 pendências), não fixado no texto; o ícone de alerta some se outro critério ultrapassar esse total no futuro."
+}

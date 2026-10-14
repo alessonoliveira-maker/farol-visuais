@@ -1,0 +1,13 @@
+{
+  "title": "Grade com executivo novo, amostra pequena e afastado",
+  "useCase": "Como a grade mantém altura e ordem quando um executivo não tem histórico, outro tem 4 oportunidades e outro está afastado?",
+  "demonstrates": [
+    "Espaço do micrográfico reservado com a frase sem histórico, na mesma altura",
+    "Taxa com o par e sem cor semântica quando o denominador é 4 oportunidades",
+    "Cartão inativo que permanece na grade em vez de sumir",
+    "Ordem alfabética estável escrita no cabeçalho, sem reordenar por valor",
+    "Faixa neutra de 2 pontos evita opor cores entre executivos quase empatados"
+  ],
+  "canvas": "largo",
+  "frame": "stage"
+}

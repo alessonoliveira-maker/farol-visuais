@@ -1,0 +1,70 @@
+{
+  "slug": "04_cascata-de-previsao",
+  "nome": "Cascata de previsão",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Ponte que junta o realizado até hoje com o projetado até o fim do período. O realizado tem preenchimento sólido, o projetado tem hachura declarada em defs, um divisor marca a data de corte e o total final diz que é projeção. A distinção precisa sobreviver sem cor, porque projeção pintada igual a realizado contamina a decisão.",
+  "quando_usar": [
+    "Fechamento de período em andamento: meses ou semanas realizados mais o restante projetado, com 3 a 8 passos.",
+    "Projeção comparada a um plano, com a distância do plano como passo explícito.",
+    "Mudança do forecast entre duas leituras: novas, avanços, perdas e datas que deslizaram.",
+    "Projeção que depende de campo com cobertura baixa, quando a ressalva precisa aparecer no desenho."
+  ],
+  "quando_evitar": [
+    "Projeção como trajetória no tempo: linha ou área com faixa de projeção, famílias 04 e 05.",
+    "Só a pergunta de quanto falta para a meta: progresso e meta, família 13.",
+    "Projeção com incerteza declarada em faixa: cascata com faixa de cenário, modelo 05 desta família.",
+    "Sem data de corte conhecida: sem ela a peça mente calada uma semana depois."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_fechamento-do-trimestre",
+      "titulo": "Fechamento projetado do trimestre",
+      "caso_de_uso": "Comercial, 2026-T3 lido em 2026-09-13: julho R$ 612 mil e agosto R$ 598 mil realizados, setembro com R$ 214 mil realizados e R$ 420 mil projetados, total projetado de R$ 1,84 mi.",
+      "o_que_demonstra": [
+        "Preenchimento sólido para realizado e pattern de hachura para projetado",
+        "Pattern declarado em defs dentro do Recharts, sem imagem externa",
+        "ReferenceLine vertical na data de corte com rótulo realizado até",
+        "Total final com rótulo dizendo projeção, em peso diferente do realizado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_projecao-contra-plano",
+      "titulo": "Projeção do trimestre contra o plano",
+      "caso_de_uso": "Diretoria, 2026-T3: total projetado de R$ 1,84 mi contra plano de R$ 1,95 mi; o passo Distância do plano mostra −R$ 106 mil e a nota diz de onde sai a projeção.",
+      "o_que_demonstra": [
+        "Marca de plano sobre a coluna final, em traço de referência",
+        "Passo explícito de distância do plano com polaridade da receita",
+        "Variação com a base na mesma linha: contra plano de R$ 1,95 mi",
+        "Anotação única sobre a origem da projeção"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_forecast-semanal-da-carteira",
+      "titulo": "O que mudou no forecast da semana",
+      "caso_de_uso": "Comercial, semana de 2026-09-07: forecast de R$ 2,31 mi mais novas R$ 340 mil e avanços R$ 185 mil, menos perdas R$ 260 mil e datas deslizadas R$ 410 mil, chega a R$ 2,17 mi.",
+      "o_que_demonstra": [
+        "Ponte entre duas leituras de forecast com seis passos nomeados",
+        "Coluna final dividida em ganho fechado sólido e ponderado hachurado",
+        "Passo de datas deslizadas destacado como o maior da semana",
+        "Legenda de papéis e de preenchimento acima do gráfico",
+        "Frase acessível citando o deslizamento como principal queda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_projecao-com-cobertura-rasa",
+      "titulo": "Projeção sobre campo pouco preenchido",
+      "caso_de_uso": "Comercial, 2026-09: R$ 214 mil realizados, R$ 180 mil projetados com data de fechamento e R$ 240 mil estimados sem data; só 44 de 100 oportunidades abertas têm a data preenchida.",
+      "o_que_demonstra": [
+        "Dois graus de hachura: projetado com data e estimado sem data",
+        "Hachura mais larga para a parte de menor confiança",
+        "Linha de leitura com a cobertura: projeção sobre 44% das oportunidades",
+        "Procedência PREMISSA deixada ao VisualCard, fora do Chart"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

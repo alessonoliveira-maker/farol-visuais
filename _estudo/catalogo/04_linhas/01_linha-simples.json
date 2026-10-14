@@ -1,0 +1,71 @@
+{
+  "slug": "01_linha-simples",
+  "nome": "Linha simples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma métrica ao longo do tempo, com a inclinação como o próprio dado. O modelo concentra as camadas de contexto que o Farol mais pede sobre uma série única: rótulo no último ponto, meta ou limiar, evento datado, média móvel sobre o bruto, seleção de janela e lacuna de coleta declarada.",
+  "quando_usar": [
+    "Uma métrica em série temporal com 4 pontos ou mais: receita reconhecida mensal, entradas diárias, CPL semanal, percentual no SLA.",
+    "Pergunta de subiu ou desceu, quanto e desde quando, com até duas referências desenhadas sobre a série (meta, teto, evento).",
+    "Série diária ruidosa de 60 a 730 pontos, com média móvel declarada e, em tela de análise, seleção de janela.",
+    "Série com coleta interrompida ou fonte que começou tarde, em que a diferença entre zero e não medido muda a leitura."
+  ],
+  "quando_evitar": [
+    "Menos de 3 pontos: vira número com comparação em 01_cards-e-kpis.",
+    "Duas ou mais séries na mesma unidade: use 02_multiplas-series.",
+    "Valor que muda em instantes discretos, como teto de capacidade ou preço: use 03_step-degrau.",
+    "Composição de partes de um todo ou volume que pede área a partir do zero: use 05_areas.",
+    "Linha minúscula em cartão, sem eixo: use a sparkline de 24_microvisuais-sparklines.",
+    "Mais de duas anotações ou mais de 5 eventos na janela: resuma os eventos em lista ou use 20_cronograma-e-linha-do-tempo."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-mensal-com-rotulo-final",
+      "titulo": "Receita reconhecida mensal com rótulo no último mês",
+      "caso_de_uso": "A receita reconhecida de 2026-01 a 2026-08 subiu ou caiu, e quanto fechou em 2026-08?",
+      "o_que_demonstra": [
+        "Calendário mensal completo gerado em TypeScript antes do render",
+        "Line linear de 2 px, sem legenda, com grade só horizontal",
+        "Ponto e rótulo só no último valor válido, com formatCurrencyCompact",
+        "Tique em formatCurrencyAxis com 3 a 5 linhas de grade redondas"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_sla-com-meta-e-evento",
+      "titulo": "Atendimento no SLA contra a meta, com evento datado",
+      "caso_de_uso": "O percentual semanal de leads atendidos no SLA caiu abaixo da meta de 90% depois da troca de escala?",
+      "o_que_demonstra": [
+        "Meta em ReferenceLine tracejada 3 3 com ifOverflow extendDomain",
+        "Evento em ReferenceLine vertical com rótulo curto; no máximo duas anotações",
+        "Semanas abaixo da meta com ponto e símbolo, não só com cor",
+        "Eixo em formatPercent com domínio que acomoda a meta"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-diarias-com-media-movel",
+      "titulo": "Entradas diárias com média móvel de 7 dias",
+      "caso_de_uso": "Nos últimos 180 dias as entradas de leads mudaram de tendência ou só oscilaram dentro do ruído diário?",
+      "o_que_demonstra": [
+        "Bruto em traço fino neutro e média móvel em --chart-1 por cima",
+        "Janela à direita calculada em TypeScript e declarada no rótulo da série",
+        "dot desligado e animação só na entrada para 180 pontos",
+        "Brush com domínio y recalculado para a janela visível"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_origem-com-integracao-interrompida",
+      "titulo": "Leads por dia de uma origem com coleta interrompida",
+      "caso_de_uso": "Quantos leads o formulário do site trouxe por dia quando a integração caiu por 9 dias, sem ler falta de coleta como zero?",
+      "o_que_demonstra": [
+        "null com connectNulls desligado, distinto do zero medido, que é desenhado",
+        "Período sem coleta em ReferenceArea --surface-sunken com o texto sem coleta",
+        "Ponto isolado entre nulos com dot forçado para não sumir",
+        "Último dia parcial em trecho tracejado com a nota parcial até a data"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

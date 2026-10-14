@@ -1,0 +1,13 @@
+{
+  "title": "Leads por campanha com cauda agregada",
+  "useCase": "Quais das 40 campanhas do mês trouxeram mais leads, sem espremer 40 barras num card só.",
+  "demonstrates": [
+    "Top 15 ordenado e uma barra final Outras 25 campanhas em neutro, fora da ordenação",
+    "Nome longo dentro da barra por rótulo insideLeft e contagem na ponta",
+    "Nome que não cabe na barra curta sai para depois da ponta, sem reticência",
+    "Cauda somada entrando no domínio sem roubar a primeira posição"
+  ],
+  "canvas": { "width": 640, "height": 940 },
+  "frame": "card",
+  "notes": "Altura fixada por número, desvio de preset declarado (ESP-6): o passo ROW_STEP de 50 px vezes as 16 categorias do corpo, o top 15 mais a barra final Outras 25 campanhas, mais a margem do corpo e a moldura do cartão dão os 940 px declarados."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Meta revisada em degrau e acumulado que desce",
+  "useCase": "Como ler os fechamentos acumulados de 2026 com a meta revisada em 2026-07 e um cancelamento que fez a curva descer?",
+  "demonstrates": [
+    "Meta como Line stepAfter, sem redesenhar o passado com o valor novo",
+    "Revisão da meta anotada com a data e os valores antes e depois",
+    "Queda do acumulado anotada em vez de suavizada",
+    "Domínio que acomoda a descida sem tirar o zero do eixo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A meta é sempre a anual: R$ 9,0 milhões até junho, revisada para R$ 10,2 milhões a partir de julho. O acumulado cobre janeiro a agosto de 2026, com o estorno de agosto derrubando a curva."
+}

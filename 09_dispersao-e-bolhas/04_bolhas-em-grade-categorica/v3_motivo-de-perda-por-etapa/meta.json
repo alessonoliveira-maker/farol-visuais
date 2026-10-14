@@ -1,0 +1,14 @@
+{
+  "title": "Motivo de perda por etapa do funil",
+  "useCase": "Em que etapa cada motivo de perda aparece? 14 motivos por 6 etapas, com os totais de linha e de coluna nas bordas.",
+  "demonstrates": [
+    "Dot plot em matriz com motivos ordenados pelo total e etapas na ordem do funil",
+    "Totais marginais em camada própria, alinhados pelas escalas dos dois eixos",
+    "Área proporcional à contagem com o mesmo domínio de ZAxis em toda a matriz",
+    "Shape próprio para a contagem zero não sair do tamanho do piso de área",
+    "Régua de tamanho com dois degraus redondos mais o máximo observado"
+  ],
+  "canvas": { "width": 820, "height": 680 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset alto, pela GEO-1. A conta de altura: 118,5 px de moldura card com o caso de uso em uma linha, mais 82,5 px de texto do cartão (linha de leitura de 12 px com respiro, 26 px; régua de tamanho com círculo de 24 px e respiro, 32 px; nota de 11 px com respiro, 24,5 px), mais 479 px de plano, que descontando 26 px de margem de cima, 8 px de baixo e cerca de 24 px de eixo de etapa dá 421 px para 14 motivos, passo de 30,1 px contra 24 px de diâmetro máximo de bolha. A conta de largura: 66 px de moldura, 180 px de eixo de motivo para caber Resolveu por conta própria em uma linha sem reticência, 8 px e 48 px de margem, e 518 px de plano para 6 etapas, passo de 86,3 px. O preset alto de 640 por 560 não fecha nem na largura nem na altura. Uma colisão com o CONTRATO, declarada e não escondida: a EST-3 manda o zero medido desenhar a marca e escrever 0, e aqui os 29 cruzamentos medidos com zero perda não recebem bolha; o rodapé os conta por escrito. A razão é a mesma que a correção de 2026-09-25 da v1 deste modelo registrou: com piso de área o zero desenha uma bolha do tamanho do piso e passa a ler como volume, e num passo de 30 px escrever 29 zeros de 11 px encheria a matriz de texto no lugar de dado. O piso de área é de 2,4 px de raio: a menor célula tem 1 perda de 24, vale 4,2% do máximo e desenha 8,0% da área, e a distorção existe para a contagem 1 continuar visível. A exceção da EIX-3b foi reescopada em 2026-09-28 por geometria, e ela pede os dois eixos quantitativos e lidos por posição; aqui os dois são categoria, então vale a EIX-3 como está escrita, com grade só na horizontal. Sem opacidade em marca: chart-1 cheio mede 9,50:1 no escuro e 6,00:1 no claro. Os totais em text-secondary medem 8,16:1 no escuro e 8,13:1 no claro contra o cartão, e a palavra total em text-muted mede 5,21:1 e 5,37:1."
+}

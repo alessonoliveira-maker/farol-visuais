@@ -1,0 +1,71 @@
+{
+  "slug": "05_faixa-range-band",
+  "nome": "Faixa (range band)",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Área entre uma borda inferior e uma superior, sem linha central obrigatória: mostra envelope, perímetro ou intervalo de cenários. No Recharts é uma Area cujo dataKey devolve o par [inferior, superior]; baseValue é ignorado e a dica recebe array. Quando a linha central é a protagonista, o visual mora em 04_linhas/04_linha-com-banda-de-intervalo.",
+  "quando_usar": [
+    "Mínimo e máximo históricos como contexto para a série do ano corrente.",
+    "Medida que depende de definição, como participação de mercado entre perímetro restrito e amplo.",
+    "Cenários discretos (pessimista e otimista) desenhados como faixa com linhas de cenário, sem fingir distribuição.",
+    "De 12 a cerca de 104 períodos, com as bordas rotuladas."
+  ],
+  "quando_evitar": [
+    "Só a média importa: linha simples (04_linhas/01_linha-simples).",
+    "A linha central é a mensagem e a faixa é incerteza em volta dela: 04_linhas/04_linha-com-banda-de-intervalo.",
+    "Incerteza por percentis que cresce com o horizonte: leque de projeção (06_leque-de-projecao).",
+    "Faixa sem rótulo nas bordas, que acaba lida como meta.",
+    "Bordas que se cruzam sem normalização: área de diferença (07_area-de-diferenca)."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_participacao-de-mercado-por-perimetro",
+      "titulo": "Participação de mercado por perímetro",
+      "caso_de_uso": "Mostrar a participação mensal entre o perímetro restrito e o amplo, sem escolher um número único que engane.",
+      "o_que_demonstra": [
+        "Area de faixa com dataKey em par [restrito, amplo]",
+        "Bordas rotuladas no fim da faixa com o nome de cada perímetro",
+        "Domínio de percentual a partir do zero (EIX-1)",
+        "Bordas normalizadas com mínimo e máximo antes do render"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_envelope-historico-com-ano-atual",
+      "titulo": "Envelope histórico com o ano atual",
+      "caso_de_uso": "Ver se as entradas semanais de 2026 estão dentro do mínimo e do máximo de 2023 a 2025.",
+      "o_que_demonstra": [
+        "Faixa neutra de mínimo e máximo por semana do ano",
+        "Linha de 2026 em chart-1 por cima, destaque único do visual",
+        "Semanas fora do envelope marcadas com ponto e contagem na linha de leitura",
+        "Semana corrente parcial com ponto vazado (EIX-10)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_cenarios-de-receita-2027",
+      "titulo": "Cenários de receita acumulada para 2027",
+      "caso_de_uso": "Mostrar a faixa entre o cenário pessimista e o otimista de receita acumulada contra a meta anual fictícia.",
+      "o_que_demonstra": [
+        "Faixa entre cenários discretos com as linhas de cenário nas bordas",
+        "Meta em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+        "Saída em faixa escrita como intervalo com formatCurrencyCompact",
+        "Rótulo que diz cenário, não probabilidade",
+        "Faixas sobrepostas desenhadas da mais larga para a mais estreita"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_perimetro-amplo-sem-dado",
+      "titulo": "Faixa com perímetro amplo ausente",
+      "caso_de_uso": "Mostrar meses em que só o perímetro restrito foi medido, sem desenhar faixa inventada até o amplo.",
+      "o_que_demonstra": [
+        "Faixa omitida onde uma borda é null, com a borda existente em linha",
+        "ReferenceArea em surface-sunken com texto nomeando os meses sem dado",
+        "formatUnavailable no rótulo do perímetro ausente (EST-2)",
+        "Nenhuma interpolação entre trechos com faixa (EIX-10)"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

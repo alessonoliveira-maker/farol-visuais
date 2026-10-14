@@ -1,0 +1,70 @@
+{
+  "slug": "06_coluna-radial",
+  "nome": "Coluna radial (barplot circular)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Barras que saem de um círculo interno para fora, uma por categoria ou por passo de um ciclo, desenhadas como setores de anel com geometria calculada em TypeScript. Só se paga com muitas categorias ou com ciclo real, como hora do dia e dia do ano. Absorve o pirulito radial (haste e ponto, com menos tinta) e a linha do tempo radial (janela de período sobre o ciclo).",
+  "quando_usar": [
+    "Ciclo com sentido circular: 24 horas, 7 dias, 12 meses ou 365 dias",
+    "Muitas categorias, 40 ou mais, com padrão evidente e ordenação por valor",
+    "Janela de tempo sobreposta ao ciclo, como o horário de atendimento",
+    "Desvio contra a média com negativos, usando o zero num anel intermediário"
+  ],
+  "quando_evitar": [
+    "Série temporal sem ciclo: colunas (03) ou linha (04)",
+    "Menos de uns 40 itens sem ciclo: barra horizontal (02)",
+    "Pergunta sobre dia da semana dentro do ano: calendário (15)",
+    "Comparar durações por comprimento de arco em raios diferentes ou espiral de vários anos (20)"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_entradas-por-hora-do-dia",
+      "titulo": "Entradas por hora do dia",
+      "caso_de_uso": "Pré-vendas: em que horas do dia chegam as 1.842 entradas de 2026-08, para escalar a fila.",
+      "o_que_demonstra": [
+        "SVG puro com arcPath de setor de anel, sem retângulo girado",
+        "Círculo interno com mais da metade do raio para conter a distorção",
+        "Anéis de grade em line-subtle com valores num único ângulo",
+        "Rótulos de hora horizontais a cada 3 horas, ancorados pelo quadrante",
+        "viewBox fixo e escala pelo pai com aspect-square"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_janela-de-atendimento-e-pico",
+      "titulo": "Janela de atendimento e pico de entradas",
+      "caso_de_uso": "Pré-vendas: quanto das entradas chega fora da janela das 9h às 18h e em que hora fica o pico do dia.",
+      "o_que_demonstra": [
+        "Faixa angular da janela em surface-sunken, com texto do que ela marca",
+        "Anotação no pico das 11h com nome e valor, em até 50 caracteres",
+        "Ângulo pela posição no ciclo de 24 horas, herdado da linha do tempo radial",
+        "Parte fora da janela calculada no componente e escrita na linha de leitura"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_leads-por-dia-do-ano",
+      "titulo": "Leads por dia de 2025",
+      "caso_de_uso": "Marketing: em que meses de 2025 a entrada diária de leads subiu, para ler a sazonalidade da mídia paga.",
+      "o_que_demonstra": [
+        "365 colunas finas agrupadas por mês, com vão angular entre os grupos",
+        "Rótulo de mês por formatMonthShort no perímetro, sem rótulo diário",
+        "Anel de referência da média diária em traço tracejado text-muted",
+        "Geometria das 365 colunas calculada uma vez com useMemo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_desvio-semanal-do-cpl",
+      "titulo": "Desvio semanal do CPL contra a média",
+      "caso_de_uso": "Marketing: em quais das 52 semanas de 2025 o CPL ficou acima ou abaixo da média do ano.",
+      "o_que_demonstra": [
+        "Pirulito radial: haste e ponto, com menos tinta que 52 colunas",
+        "Zero num anel intermediário, com hastes para dentro e para fora",
+        "CPL abaixo da média em positive e acima em negative, sempre com sinal",
+        "Anel do zero em line-strong sólido e escala escrita num único ângulo"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

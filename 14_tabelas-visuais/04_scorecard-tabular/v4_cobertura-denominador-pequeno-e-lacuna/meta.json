@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura de campos com denominador pequeno",
+  "useCase": "Marketing: quanto de telefone, cargo e cidade existe por origem, e onde a taxa de agendamento não merece percentual cheio.",
+  "demonstrates": [
+    "Barra de cobertura de 0 a 100% ao lado do percentual, em telefone e cargo",
+    "Percentual e fração sempre lado a lado, nunca só um dos dois",
+    "Abaixo de 10 leads a fração vem em destaque e o percentual em apoio",
+    "Cobertura de telefone ou cargo abaixo de 50% em texto muted com ícone, sem opacidade",
+    "Coluna cidade inteira em lacuna, motivo declarado uma vez no rodapé, não por célula"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Evento regional e Webinar piloto têm menos de 10 leads de propósito, para provar o degrau da fração; Webinar piloto tem 0 agendas de 2 leads, zero medido e não indisponível."
+}

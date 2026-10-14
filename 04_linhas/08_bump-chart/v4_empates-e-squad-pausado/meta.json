@@ -1,0 +1,12 @@
+{
+  "title": "Ranking semanal de SLA com empates e um squad pausado",
+  "useCase": "Como desenhar o ranking semanal de SLA dos squads com empates frequentes e um squad parado por 3 semanas?",
+  "demonstrates": [
+    "Regra de empate por competição (1º, 2º, 2º, 4º) escrita em nota",
+    "Desempate estável por chave secundária declarada",
+    "Traço interrompido no período sem operar, nunca última posição",
+    "Trecho ausente sem interpolação entre as bordas do buraco"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

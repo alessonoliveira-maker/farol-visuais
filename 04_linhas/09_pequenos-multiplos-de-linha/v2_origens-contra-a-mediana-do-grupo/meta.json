@@ -1,0 +1,12 @@
+{
+  "title": "Leads por origem contra a mediana do grupo",
+  "useCase": "Cada uma das seis origens de lead está acima ou abaixo da mediana semanal do grupo entre 2026-01-05 e 2026-03-16?",
+  "demonstrates": [
+    "Série do painel em destaque e mediana do grupo tracejada em neutro, na mesma escala",
+    "Nome e último valor no cabeçalho de cada painel, sem truncar nome longo",
+    "Painéis ordenados pelo último valor, com a ordem escrita em nota",
+    "Origem com semanas de pico irregular ao lado de origens estáveis"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

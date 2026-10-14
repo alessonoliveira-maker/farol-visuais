@@ -1,0 +1,14 @@
+{
+  "title": "SDRs com a média do time em cada miniatura",
+  "useCase": "Pré-vendas, 2026-T3: quais SDRs ficam abaixo da média do time em mais dimensões e em quais eixos?",
+  "demonstrates": [
+    "SDR em --chart-1 preenchido e média em contorno tracejado 3 3 de --text-muted",
+    "A mesma média desenhada em todas as miniaturas, calculada uma vez fora do map",
+    "Contagem no título, 4 de 6 eixos abaixo da média, em peso 700 só no pior caso",
+    "Miniatura selecionada por clique com aria-pressed e contorno de foco visível",
+    "Miniaturas ordenadas pelo número de eixos abaixo da média, com o critério escrito"
+  ],
+  "canvas": { "width": 960, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas por número, não o largo sugerido (960x400): o corpo do largo mede 894 x 281,5 e, descontados a linha de leitura, a legenda e o vão entre as fileiras, cada miniatura ficaria com cerca de 90 px de altura. Com 960x640 o corpo mede 894 x 521,5 e cada fileira fica com cerca de 200 px. O peso 700 vai só na contagem do pior caso (um elemento), dentro do limite de dois da TIP-3. Eixo abaixo da média compara o índice com a média já arredondada, a mesma que a dica escreve, para a contagem e o número visível nunca discordarem. A média leva revestimento de 4 px em --surface-raised por baixo do tracejado (TOK-4): o par tracejado contra o revestimento mede o mesmo que --text-muted contra o cartão (5,21:1 no escuro e 5,37:1 no claro, medido pelo revisor), em vez de 1,07:1 e 1,79:1 contra o preenchimento. A seleção é uma borda --line-strong e não troca o fundo, então o preenchimento a 0,66 segue em 4,85:1 no escuro e 3,01:1 no claro."
+}

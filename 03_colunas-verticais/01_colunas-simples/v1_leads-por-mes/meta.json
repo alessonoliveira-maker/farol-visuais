@@ -1,0 +1,12 @@
+{
+  "title": "Leads por mês nos últimos 12 meses",
+  "useCase": "Quanto entrou em cada mês e qual foi o maior mês, sem obrigar a ler as 12 colunas uma a uma?",
+  "demonstrates": [
+    "BarChart nativo com domínio em zero, grade só horizontal e maxBarSize pela ESP-6",
+    "Valor escrito só no mês de pico e no último mês, não em todas as colunas",
+    "Série completada em TypeScript para o eixo ordinal não esconder mês faltante",
+    "Linha de leitura calculada do dado apontando o mês de pico"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

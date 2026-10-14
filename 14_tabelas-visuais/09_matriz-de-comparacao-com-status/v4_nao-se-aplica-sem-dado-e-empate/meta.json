@@ -1,0 +1,13 @@
+{
+  "title": "Não se aplica, sem dado e empate",
+  "useCase": "Marketing: comparar 5 plataformas fictícias sem confundir critério que não se aplica com campo não preenchido.",
+  "demonstrates": [
+    "Cinco estados com formas distintas: check, ponto parcial, X, traço e círculo tracejado",
+    "Não se aplica e sem dado nunca são célula vazia: ícone, rótulo e chip de fundo próprios",
+    "Empate no líder marca todas as colunas empatadas, de duas a cinco, sem escolher uma",
+    "Denominador da contagem por linha exclui não se aplica e sem dado, linha a linha"
+  ],
+  "canvas": { "width": 960, "height": 486 },
+  "frame": "card",
+  "notes": "Canvas largo por número, não pelo preset: a legenda de 5 estados mais 8 linhas de critério passam da altura do largo padrão (400 px). Não se aplica e sem dado usam o mesmo texto muted (par medido e aprovado na tabela 17.10), mas cada um ganha um chip de fundo próprio (surface-overlay contra surface-sunken) para nunca lerem como a mesma ausência nem como célula vazia, que é o defeito que a decisão do dono pediu para corrigir."
+}

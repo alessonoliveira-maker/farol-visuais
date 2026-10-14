@@ -1,0 +1,121 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "03_pictograma-isotype",
+  "versoes": {
+    "v1_vitorias-do-semestre-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 17, 13, 11, 6, 3 e 2 troféus contados no PNG nos dois temas, somam os 52 escritos, ausência por último em text-muted, vazio com role status, contrastes de texto e marca conferidos à mão. Observações no README (número da fileira sem substantivo, nome da ausência em text-secondary, fileira comporta 19 troféus na largura do card).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:07.939Z",
+      "impressao": "0b22467acadad3f83235ea1900181a413cc4b9b5",
+      "arquivos": {
+        "Chart.tsx": "c5be0bed6a5f456405a50b291aa0aada93e13f13",
+        "data.ts": "92c8b0c4629aa2475b09c020109f72f9f8e91ce8",
+        "meta.json": "8ce2f044955fa7505cfb4bb7a7d8766161065e18"
+      }
+    },
+    "v2_clientes-novos-por-indicacao-em-cada-100": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 31, 29, 20, 15 e 5 figuras amostradas no PNG nos dois temas, maior resto fecha 100, toda parte com nome, contagem e percentual na legenda, marcas de 5,21:1 a 9,50:1 contra o cartão. Observações no README (412 sem tabular-nums na frase de apoio, 412 escrito duas vezes, contagem fora de coluna, apagado do foco em line-strong e redação do notes, ausência separada da vizinha só pela cor).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:08.441Z",
+      "impressao": "cd83b2457f661fcd3764a13b82c8b7f4d8c708e9",
+      "arquivos": {
+        "Chart.tsx": "ad7c9b1c2f56a69b1d85a644bbcbf0fe219e018e",
+        "data.ts": "01cece4c29e38879ae782081aebdce524c9a96d1",
+        "meta.json": "ce8a4892d3242bd5881e02704efd1d6a8f3ce73f"
+      }
+    },
+    "v3_cada-100-leads-de-midia-paga": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante. Os dois da primeira passada estão resolvidos no render: a lista ganhou a linha 42 não têm telefone, 521 leads, com amostra em line-strong e valor escrito ao lado (isenção da 17.2), e 42 mais 58 fecham os 100; os níveis aninhados dizem o nível por recuo de 12 px e pela palavra desses, e a venda tem marcador vazado. Medido nos dois PNGs: 4, 17, 37 e 42 figuras, marcas coloridas de 3,72:1 a 10,12:1, textos de 5,21:1 a 17,96:1, frase acessível de 202 caracteres. Observações no README (rótulo fixo menos de uma figura em ramo sem render, ordem da lista, contagens só na lista aria-hidden, último degrau separado só pela figura cheia, redação, período sem ano, notes do meta).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:10:39.848Z",
+      "impressao": "19039e667d729cf68d3045126071d99f4432a664",
+      "arquivos": {
+        "Chart.tsx": "14d37ef36feeb871de804ece38c0ad71986d3495",
+        "data.ts": "5d838aaa3b07f700696fccfc3b7723d1fe5ef602",
+        "meta.json": "688c878164452a29beb42ac840f9ef114aeb750c"
+      }
+    },
+    "v4_leads-do-mes-em-icones-de-dez": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 34, 21 e 16 ícones contados no PNG nos dois temas, sem ícone fatiado, origem de 8 leads com o texto menos de um ícone, origem sem coleta com Unplug e formatUnavailable e fora do total de 735. Observações no README (teto de 50 ícones contra 37 que cabem na fileira, ramo da unidade ampliada sem render, mês só na frase acessível, número da fileira sem substantivo).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:16.845Z",
+      "impressao": "4103aa22fff92aa698b5dc6f43633b63acdc1fa7",
+      "arquivos": {
+        "Chart.tsx": "302ca6c14506f7962ea3df0c08f8c2f89dc45c8b",
+        "data.ts": "faecefad880e208381cbe645e85a87f543fed0e6",
+        "meta.json": "b1c1e3a2af1a0e2dad676afbfdf4cc2c6d5d8d54"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_vitorias-do-semestre-por-origem",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 17, 13, 11, 6, 3 e 2 troféus contados no PNG nos dois temas, somam os 52 escritos, ausência por último em text-muted, vazio com role status, contrastes de texto e marca conferidos à mão. Observações no README (número da fileira sem substantivo, nome da ausência em text-secondary, fileira comporta 19 troféus na largura do card).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:07.939Z",
+      "impressao": "0b22467acadad3f83235ea1900181a413cc4b9b5",
+      "arquivos": {
+        "Chart.tsx": "c5be0bed6a5f456405a50b291aa0aada93e13f13",
+        "data.ts": "92c8b0c4629aa2475b09c020109f72f9f8e91ce8",
+        "meta.json": "8ce2f044955fa7505cfb4bb7a7d8766161065e18"
+      }
+    },
+    {
+      "versao": "v2_clientes-novos-por-indicacao-em-cada-100",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 31, 29, 20, 15 e 5 figuras amostradas no PNG nos dois temas, maior resto fecha 100, toda parte com nome, contagem e percentual na legenda, marcas de 5,21:1 a 9,50:1 contra o cartão. Observações no README (412 sem tabular-nums na frase de apoio, 412 escrito duas vezes, contagem fora de coluna, apagado do foco em line-strong e redação do notes, ausência separada da vizinha só pela cor).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:08.441Z",
+      "impressao": "cd83b2457f661fcd3764a13b82c8b7f4d8c708e9",
+      "arquivos": {
+        "Chart.tsx": "ad7c9b1c2f56a69b1d85a644bbcbf0fe219e018e",
+        "data.ts": "01cece4c29e38879ae782081aebdce524c9a96d1",
+        "meta.json": "ce8a4892d3242bd5881e02704efd1d6a8f3ce73f"
+      }
+    },
+    {
+      "versao": "v3_cada-100-leads-de-midia-paga",
+      "veredito": "reprovado",
+      "nota": "Dois bloqueantes. Perguntas 27 e 20, ROT-10, ACE-3 e 17.2 (armadilha TOK-5): as 42 figuras sem telefone estão em line-strong, 1,79:1 no escuro e 1,83:1 no claro medidos no PNG, sem nome nem número na tela; escrever a parte na lista com amostra e valor (42, 521 leads). Perguntas 27 e 12, ROT-10 na precisão de 2026-09-20: a lista imprime 58, 21, 4 e 0,6 como irmãos, cada um com amostra, e só 37 figuras têm a cor ao lado do 58 e 17 a cor ao lado do 21; cada linha passa a dizer o seu nível por recuo ou por palavra. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__03_pictograma-isotype_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:16.325Z",
+      "impressao": "78c5406c7c96df995e679e212353130d1ecafbab",
+      "arquivos": {
+        "Chart.tsx": "ff98cae7829b9c0e09600883140c714a52001045",
+        "data.ts": "5d838aaa3b07f700696fccfc3b7723d1fe5ef602",
+        "meta.json": "688c878164452a29beb42ac840f9ef114aeb750c"
+      }
+    },
+    {
+      "versao": "v4_leads-do-mes-em-icones-de-dez",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 34, 21 e 16 ícones contados no PNG nos dois temas, sem ícone fatiado, origem de 8 leads com o texto menos de um ícone, origem sem coleta com Unplug e formatUnavailable e fora do total de 735. Observações no README (teto de 50 ícones contra 37 que cabem na fileira, ramo da unidade ampliada sem render, mês só na frase acessível, número da fileira sem substantivo).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:49:16.845Z",
+      "impressao": "4103aa22fff92aa698b5dc6f43633b63acdc1fa7",
+      "arquivos": {
+        "Chart.tsx": "302ca6c14506f7962ea3df0c08f8c2f89dc45c8b",
+        "data.ts": "faecefad880e208381cbe645e85a87f543fed0e6",
+        "meta.json": "b1c1e3a2af1a0e2dad676afbfdf4cc2c6d5d8d54"
+      }
+    },
+    {
+      "versao": "v3_cada-100-leads-de-midia-paga",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante. Os dois da primeira passada estão resolvidos no render: a lista ganhou a linha 42 não têm telefone, 521 leads, com amostra em line-strong e valor escrito ao lado (isenção da 17.2), e 42 mais 58 fecham os 100; os níveis aninhados dizem o nível por recuo de 12 px e pela palavra desses, e a venda tem marcador vazado. Medido nos dois PNGs: 4, 17, 37 e 42 figuras, marcas coloridas de 3,72:1 a 10,12:1, textos de 5,21:1 a 17,96:1, frase acessível de 202 caracteres. Observações no README (rótulo fixo menos de uma figura em ramo sem render, ordem da lista, contagens só na lista aria-hidden, último degrau separado só pela figura cheia, redação, período sem ano, notes do meta).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:10:39.848Z",
+      "impressao": "19039e667d729cf68d3045126071d99f4432a664",
+      "arquivos": {
+        "Chart.tsx": "14d37ef36feeb871de804ece38c0ad71986d3495",
+        "data.ts": "5d838aaa3b07f700696fccfc3b7723d1fe5ef602",
+        "meta.json": "688c878164452a29beb42ac840f9ef114aeb750c"
+      }
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "06_barras-divergentes",
+  "versoes": {
+    "v1_variacao-de-cpl-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro. Dominio simetrico, cor pela polaridade de custo, raio na ponta livre, rotulo fora da ponta com menos tipografico e base escrita ao lado; plataforma sem mes anterior declara a falta em vez de zero. Legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:29:44.429Z",
+      "impressao": "abae6a5661b51c5c09847b1c5c5a8c80574e0f2f",
+      "arquivos": {
+        "Chart.tsx": "8b42428d7147f887ad037b284398d7f56bfc7dbc",
+        "data.ts": "5164868b024da38e36c3366d089c4249b991088f",
+        "meta.json": "86807d53e2a10370b8903a214513a382e6ed406d"
+      }
+    },
+    "v2_movimentacao-do-pipeline-com-saldo": {
+      "veredito": "aprovado",
+      "nota": "Conserto do zero e do sinal aceito nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.484Z",
+      "impressao": "726fc45157764e6135c930bf8564ab73e0a8fe31",
+      "arquivos": {
+        "Chart.tsx": "18689be1e61ada20435efc68b0f6a79b8dabd093",
+        "data.ts": "c22a55a19fd138139e55149b1f6b1081a2d68ea5",
+        "meta.json": "c8feb6662347dacbb62dccf5234786e39a0aaf50"
+      }
+    },
+    "v3_termos-de-perda-que-mais-mudaram": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro. Frase acessivel agora mede 179 caracteres, dentro da ACE-1; barra do termo novo sai na cor de crescimento e info fica so no selo de texto. Ressalvas: dois blocos de texto antes do grafico e pp impresso com sinal de porcentagem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:29:55.699Z",
+      "impressao": "a84fc0c2a357dca54c73023a3a5335168dc537b4",
+      "arquivos": {
+        "Chart.tsx": "55f6b9ea981949d0893bbb167bb97d69d0bffa3d",
+        "data.ts": "3201802e7d3e1cc822dacee1f581783dc151d45a",
+        "meta.json": "3c3e33622e4815c2d6c0f4ceab0eb3e2d22d120a"
+      }
+    },
+    "v4_todos-os-valores-negativos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro e sem aviso de espessura. Sinal unico recolhe o lado vazio, zero fica na borda direita como base da barra espelhada, fila sem variacao escreve 0 sem barra e sem sinal, e a linha de leitura declara o caso.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:30:00.693Z",
+      "impressao": "581ed634bdc8bcb58ff8a1c5f0fc4b2c4f828464",
+      "arquivos": {
+        "Chart.tsx": "51e9737698ec3e23b030581f8ca5a7fd6b768a42",
+        "data.ts": "30415cff74c0c153b565b9dd45b54e948cfaefec",
+        "meta.json": "b0d8c08cf13ebbe79bc7f3e527e3862eff8bd6b6"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_variacao-de-cpl-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ressalva: o render acusa o SVG isolado diferindo da pagina em mais de 0,5% dos pixels, so no desenho do texto, nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:33:56.869Z",
+      "impressao": "abae6a5661b51c5c09847b1c5c5a8c80574e0f2f",
+      "arquivos": {
+        "Chart.tsx": "8b42428d7147f887ad037b284398d7f56bfc7dbc",
+        "data.ts": "5164868b024da38e36c3366d089c4249b991088f",
+        "meta.json": "86807d53e2a10370b8903a214513a382e6ed406d"
+      }
+    },
+    {
+      "versao": "v2_movimentacao-do-pipeline-com-saldo",
+      "veredito": "reprovado",
+      "nota": "Checklist 15 (ESP-3): o cabecalho saldo sai cortado no topo nos dois temas, porque fica em plot.y menos 10 com MARGIN.top de 12; suba a margem do topo para 22, como na v1 e na v4.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:34:02.516Z",
+      "impressao": "79a75a769e93444cab5928c0a41de644c90fd627",
+      "arquivos": {
+        "Chart.tsx": "732274cfdb0f55f078d74a276bbc9dded45024d0",
+        "data.ts": "c22a55a19fd138139e55149b1f6b1081a2d68ea5",
+        "meta.json": "725e1319a0ecc510c29872e375b3febbab456c7e"
+      }
+    },
+    {
+      "versao": "v3_termos-de-perda-que-mais-mudaram",
+      "veredito": "reprovado",
+      "nota": "Checklist 11 (17.2, um token com um papel so): --info tem o mesmo hex de --chart-3 nos dois temas, entao a barra nova sai na cor de quem perdeu peso; pinte a barra nova na cor de crescimento e deixe o selo novo como canal.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:34:07.792Z",
+      "impressao": "8e0bde6827e60ed4b8d6da52c53e51a3876abab0",
+      "arquivos": {
+        "Chart.tsx": "287c5fb9db19d7b3589bf184e14c85968bc1fc40",
+        "data.ts": "3201802e7d3e1cc822dacee1f581783dc151d45a",
+        "meta.json": "3c3e33622e4815c2d6c0f4ceab0eb3e2d22d120a"
+      }
+    },
+    {
+      "versao": "v4_todos-os-valores-negativos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Sinal unico recolhido, zero na borda direita, fila sem variacao escreve 0 sem barra; legivel nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:34:12.503Z",
+      "impressao": "581ed634bdc8bcb58ff8a1c5f0fc4b2c4f828464",
+      "arquivos": {
+        "Chart.tsx": "51e9737698ec3e23b030581f8ca5a7fd6b768a42",
+        "data.ts": "30415cff74c0c153b565b9dd45b54e948cfaefec",
+        "meta.json": "b0d8c08cf13ebbe79bc7f3e527e3862eff8bd6b6"
+      }
+    },
+    {
+      "versao": "v1_variacao-de-cpl-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Dominio simetrico, cor por polaridade de custo, rotulo com menos tipografico e plataforma sem base declarada em vez de zero. Ressalva: diff do SVG isolado contra a pagina fica no subtitulo da moldura.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:56:26.952Z",
+      "impressao": "abae6a5661b51c5c09847b1c5c5a8c80574e0f2f",
+      "arquivos": {
+        "Chart.tsx": "8b42428d7147f887ad037b284398d7f56bfc7dbc",
+        "data.ts": "5164868b024da38e36c3366d089c4249b991088f",
+        "meta.json": "86807d53e2a10370b8903a214513a382e6ed406d"
+      }
+    },
+    {
+      "versao": "v2_movimentacao-do-pipeline-com-saldo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O corte do cabecalho saldo foi resolvido com MARGIN.top 22. Pilha por sinal em chart-1, 3, 6, 5 sem chart-2 nem chart-4, saldo marcado e escrito. Ressalva: saldo zero sai em positive.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:56:32.051Z",
+      "impressao": "857d2118563b9acb4b6b0a4a1786a04d08165778",
+      "arquivos": {
+        "Chart.tsx": "f74f49ad5e95b04d1f05b8545590ef180432893d",
+        "data.ts": "c22a55a19fd138139e55149b1f6b1081a2d68ea5",
+        "meta.json": "725e1319a0ecc510c29872e375b3febbab456c7e"
+      }
+    },
+    {
+      "versao": "v3_termos-de-perda-que-mais-mudaram",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. A barra do termo novo agora sai na cor de crescimento e info fica so no selo de texto. Ressalvas: frase acessivel passa de 250 caracteres e o selo repete o hex de chart-3.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:56:37.082Z",
+      "impressao": "4e0c844ed836a556d8b9eaf8f4f65647f9c86983",
+      "arquivos": {
+        "Chart.tsx": "129bf27f4141c25a07d2bd6d904f46f592cee30b",
+        "data.ts": "3201802e7d3e1cc822dacee1f581783dc151d45a",
+        "meta.json": "3c3e33622e4815c2d6c0f4ceab0eb3e2d22d120a"
+      }
+    },
+    {
+      "versao": "v4_todos-os-valores-negativos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Sinal unico recolhe o lado vazio, zero fica na borda direita, fila sem variacao escreve 0 sem barra e sem sinal; legivel nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:56:41.748Z",
+      "impressao": "581ed634bdc8bcb58ff8a1c5f0fc4b2c4f828464",
+      "arquivos": {
+        "Chart.tsx": "51e9737698ec3e23b030581f8ca5a7fd6b768a42",
+        "data.ts": "30415cff74c0c153b565b9dd45b54e948cfaefec",
+        "meta.json": "b0d8c08cf13ebbe79bc7f3e527e3862eff8bd6b6"
+      }
+    },
+    {
+      "versao": "v1_variacao-de-cpl-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro. Dominio simetrico, cor pela polaridade de custo, raio na ponta livre, rotulo fora da ponta com menos tipografico e base escrita ao lado; plataforma sem mes anterior declara a falta em vez de zero. Legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:29:44.429Z",
+      "impressao": "abae6a5661b51c5c09847b1c5c5a8c80574e0f2f",
+      "arquivos": {
+        "Chart.tsx": "8b42428d7147f887ad037b284398d7f56bfc7dbc",
+        "data.ts": "5164868b024da38e36c3366d089c4249b991088f",
+        "meta.json": "86807d53e2a10370b8903a214513a382e6ed406d"
+      }
+    },
+    {
+      "versao": "v2_movimentacao-do-pipeline-com-saldo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro. Pilha por sinal com stackId comum, slots chart-1, 3, 6, 5 sem chart-2 nem chart-4, vao entre segmentos, saldo marcado por ReferenceDot e escrito com sinal e cor pela polaridade. Ressalva: saldo zero sai em positive.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:29:49.936Z",
+      "impressao": "857d2118563b9acb4b6b0a4a1786a04d08165778",
+      "arquivos": {
+        "Chart.tsx": "f74f49ad5e95b04d1f05b8545590ef180432893d",
+        "data.ts": "c22a55a19fd138139e55149b1f6b1081a2d68ea5",
+        "meta.json": "725e1319a0ecc510c29872e375b3febbab456c7e"
+      }
+    },
+    {
+      "versao": "v3_termos-de-perda-que-mais-mudaram",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro. Frase acessivel agora mede 179 caracteres, dentro da ACE-1; barra do termo novo sai na cor de crescimento e info fica so no selo de texto. Ressalvas: dois blocos de texto antes do grafico e pp impresso com sinal de porcentagem.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:29:55.699Z",
+      "impressao": "a84fc0c2a357dca54c73023a3a5335168dc537b4",
+      "arquivos": {
+        "Chart.tsx": "55f6b9ea981949d0893bbb167bb97d69d0bffa3d",
+        "data.ts": "3201802e7d3e1cc822dacee1f581783dc151d45a",
+        "meta.json": "3c3e33622e4815c2d6c0f4ceab0eb3e2d22d120a"
+      }
+    },
+    {
+      "versao": "v4_todos-os-valores-negativos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Check 0 erro e sem aviso de espessura. Sinal unico recolhe o lado vazio, zero fica na borda direita como base da barra espelhada, fila sem variacao escreve 0 sem barra e sem sinal, e a linha de leitura declara o caso.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:30:00.693Z",
+      "impressao": "581ed634bdc8bcb58ff8a1c5f0fc4b2c4f828464",
+      "arquivos": {
+        "Chart.tsx": "51e9737698ec3e23b030581f8ca5a7fd6b768a42",
+        "data.ts": "30415cff74c0c153b565b9dd45b54e948cfaefec",
+        "meta.json": "b0d8c08cf13ebbe79bc7f3e527e3862eff8bd6b6"
+      }
+    },
+    {
+      "versao": "v2_movimentacao-do-pipeline-com-saldo",
+      "veredito": "aprovado",
+      "nota": "Conserto do zero e do sinal aceito nos dois temas.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.484Z",
+      "impressao": "726fc45157764e6135c930bf8564ab73e0a8fe31",
+      "arquivos": {
+        "Chart.tsx": "18689be1e61ada20435efc68b0f6a79b8dabd093",
+        "data.ts": "c22a55a19fd138139e55149b1f6b1081a2d68ea5",
+        "meta.json": "c8feb6662347dacbb62dccf5234786e39a0aaf50"
+      }
+    }
+  ]
+}

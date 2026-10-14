@@ -1,0 +1,15 @@
+{
+  "title": "Origens com escala própria em cada eixo",
+  "useCase": "Marketing e Comercial, 2026-T3: como as origens se comparam em CPL, taxa de agenda, win rate, ticket e ciclo sem normalizar as unidades?",
+  "demonstrates": [
+    "Escala por eixo: custo por lead em R$, taxas em %, ticket em R$ mil e ciclo em dias",
+    "Mínimo e máximo rotulados no pé e no topo de cada eixo com o formatador da unidade",
+    "Nota cada eixo tem sua escala na linha de leitura",
+    "Custo por lead e ciclo marcados menor é melhor sob o título, sem inverter o eixo",
+    "Domínio de cada eixo arredondado para fora a partir dos valores do recorte",
+    "Zero medido toca o pé do eixo; métrica ausente vira anel vazado na faixa de baixo"
+  ],
+  "canvas": { "width": 960, "height": 442 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta das linhas escritas. O caso de uso tem 135 caracteres e cabe em uma linha a 894 px (limite seguro de 153), então o corpo desta moldura mede 894 x 323,5 px, e o viewBox do SVG repete esse número para a escala sair 1 (GEO-18). Linhas escritas: 1 de leitura (base em 13), 1 de título de eixo (40), 1 de polaridade (54), 1 de máximo (70), 1 de mínimo (14 px abaixo do pé) e a faixa de ausência (22 px), mais a coluna de 14 nomes com passo de 14 px, que pede 182 px. Sobram 207,5 px de eixo (de 76 a 283,5). O preset largo (960 x 400) deixaria 165,5 px, menos do que a coluna de nomes pede. DESVIO DECLARADO, cor da linha, o mesmo da v1: a ACE-6 diz que traço que carrega a relação é dado e mede 3:1, e --line-strong mede 1,79:1 e 1,83:1; as linhas vão em --text-muted (5,21:1 e 5,37:1). DOMÍNIOS, conferidos à mão contra o dado: custo por lead de R$ 0 a R$ 186 vira R$ 0 a R$ 200 (passo 20); taxa de agenda de 9,8% a 71,0% vira 0% a 80% (passo 10); win rate de 0,0% a 45,9% vira 0% a 50% (passo 5); ticket médio de R$ 38,2 mil a R$ 142,3 mil vira R$ 20 mil a R$ 160 mil (passo 20 mil); ciclo de 38 a 104 dias vira 30 a 110 dias (passo 10). O passo é o redondo (1, 2 ou 5 vezes potência de 10) igual ou acima de um décimo da amplitude. O domínio NÃO é forçado ao zero porque a marca é posição em linha, e não barra (EIX-1); por isso o mínimo vai escrito. POLARIDADE: o eixo de custo e o de ciclo não são invertidos; menor é melhor vai escrito sob o título. NOMES À DIREITA, no último eixo, porque o ciclo espalha as origens (38 a 104 dias em 30 a 110) e o custo por lead as amontoa no pé (8 das 14 abaixo de R$ 30). ZERO E AUSÊNCIA na mesma linha: Lista de terceiros tem win rate de 0,0% (0 de 12), que toca o pé do eixo, e não tem ticket nem ciclo, que viram dois anéis vazados na faixa de baixo; o nome dela desce para a faixa. A linha se encerra no último eixo medido, sem interpolar (EIX-10). GUARDAS QUE SE CALAM: ESPESSURA-MARCA sai sem marca de barra; a conferência do traço é do olho, nos dois temas."
+}

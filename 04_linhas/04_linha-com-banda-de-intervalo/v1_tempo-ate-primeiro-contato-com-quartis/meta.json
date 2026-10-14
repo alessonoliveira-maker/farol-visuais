@@ -1,0 +1,12 @@
+{
+  "title": "Tempo até o primeiro contato com faixa entre quartis",
+  "useCase": "O tempo até o primeiro contato piorou nas últimas 26 semanas, na mediana e na dispersão entre quartis?",
+  "demonstrates": [
+    "ComposedChart com Area de dataKey em par inferior e superior, sem contorno",
+    "Area antes da Line nos filhos para a linha central ficar por cima",
+    "Dica que escreve entre X e Y com formatHours",
+    "Nota curta dizendo que a faixa vai do 1º ao 3º quartil"
+  ],
+  "canvas": "card",
+  "notes": "A faixa usa --line-strong em baixa opacidade (0,18), o token de neutro de dado da 17.2, para ficar distinta da faixa de meta, que é ReferenceArea em --surface-sunken. A nota abaixo do título e a dica nomeiam o método (P25 a P75) porque banda sem método declarado é a leitura inventada que o dono da marca pediu para nunca acontecer."
+}

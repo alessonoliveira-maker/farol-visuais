@@ -1,0 +1,14 @@
+{
+  "title": "Meta semanal com feriado e coleta interrompida",
+  "useCase": "A meta de agendas foi batida sempre, separando feriado, coleta interrompida e semana fora da meta?",
+  "demonstrates": [
+    "Semana de feriado como bloco neutro em line strong, fora da contagem e rotulada",
+    "3 semanas sem coleta em contorno vazado, com a palavra sem dado na legenda",
+    "Resumo de 14 de 19 semanas com dado, nunca 14 de 23",
+    "Maior sequência de semanas batidas anotada acima da fileira em 11 px",
+    "Frase acessível contando semanas batidas, fora da meta, feriado e sem coleta"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o catálogo diz que o resumo nunca é 14 de 22, mas 19 semanas com dado mais 3 sem coleta mais 1 de feriado fecham 23 semanas, porque o feriado também fica fora da conta. A fileira tem então 23 blocos, e a conta do resumo segue 14 de 19. A sequência de 6 semanas é interrompida por semana fora da meta, sem coleta ou feriado, porque a faixa não pode afirmar o que não foi medido. A 18ª semana está exatamente na meta de 40 e conta como batida. O bloco de feriado usa line strong a 1,79:1 contra o cartão, o que a guarda CONTRASTE-MARCA anota como aviso: o catálogo pede o neutro fora da rampa, o bloco leva a palavra feriado escrita acima e a legenda o nomeia."
+}

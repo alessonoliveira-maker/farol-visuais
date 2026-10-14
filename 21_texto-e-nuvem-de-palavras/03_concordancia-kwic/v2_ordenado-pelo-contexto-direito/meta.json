@@ -1,0 +1,12 @@
+{
+  "title": "Concordância ordenada pelo contexto direito",
+  "useCase": "Comercial: quais sentidos de concorrente se repetem, como concorrente mais barato ou concorrente já atende.",
+  "demonstrates": [
+    "Ordenação pela primeira palavra do contexto direito, pela chave sem acento",
+    "Grupos de sentido separados por espaço vertical, sem divisória",
+    "Contagem por grupo à direita em tabular-nums, com o substantivo ocorrências",
+    "Seletor de ordenação entre contexto esquerdo, termo e contexto direito"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

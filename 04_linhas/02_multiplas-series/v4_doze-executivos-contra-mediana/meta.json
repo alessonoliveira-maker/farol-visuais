@@ -1,0 +1,14 @@
+{
+  "title": "Doze executivos com um destaque e a mediana do grupo",
+  "useCase": "Como a receita reconhecida mensal de um executivo se compara à dos outros 11, sem virar espaguete?",
+  "demonstrates": [
+    "Acima de 5 séries: 11 linhas neutras de 1 px e uma em --chart-1",
+    "Mediana do grupo tracejada como segunda referência",
+    "Dica própria com destaque, mediana e extremos, não as 12 séries",
+    "activeDot desligado nas neutras",
+    "Nota com a regra de corte e a saída para pequenos múltiplos"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O destaque nasce abaixo da mediana e termina acima dela, de propósito, para a linha de leitura mostrar a virada."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Indicação nas oportunidades ganhas",
+  "useCase": "Que fração das oportunidades ganhas no trimestre veio de indicação?",
+  "demonstrates": [
+    "Dois itens no Pie: parte em --chart-1 e restante em --line-strong",
+    "Restante fora de --surface-overlay, que some no tema claro",
+    "Número em kpi-number ao lado do glifo, nunca dentro da pizza cheia",
+    "Volume junto da fração: 38,0% (19 de 50) por formatRateWithVolume"
+  ],
+  "canvas": "kpi",
+  "frame": "stage"
+}

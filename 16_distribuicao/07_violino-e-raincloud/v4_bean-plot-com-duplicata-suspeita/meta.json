@@ -1,0 +1,17 @@
+{
+  "title": "Bean plot do primeiro contato com duplicata",
+  "useCase": "Por que 37 leads aparecem com exatamente 0 minuto até o primeiro contato, e em que canal eles estão?",
+  "demonstrates": [
+    "Um traço cheio por minuto com lead dentro do feijão, sem opacidade",
+    "Traço cheio na base com a nota: possível carimbo automático, conferir a coleta",
+    "Mediana do grupo e mediana geral pontilhada, no lugar da média do original",
+    "Grupo com n 9 sem densidade: só os traços e o texto n 9",
+    "Valor que concentra um quinto do grupo fica fora da curva, que não espalha o pico"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 530
+  },
+  "frame": "card",
+  "notes": "O canvas sai do preset card por altura. A conta: quatro faixas de 60 px mais 16 de topo e 22 de eixo dão 278 px de desenho; linha de leitura, legenda de duas linhas, rodapé de três linhas e os três vãos somam 132 px, então o corpo pede 410 px contra os 241,5 do card com o caso de uso em uma linha; a altura de 530 dá 411,5. O svg é desenhado com viewBox de 574 px de largura, a largura do corpo, para a escala sair 1 (GEO-18). Desvio do catálogo, declarado: a especificação pede opacidade que acumula, mas 338 traços caíam em 121 posições e a opacidade saturava no terceiro, além de clarear no tema escuro (GEO-11). O traço agora é cheio e único por minuto com lead, sem direção de cor, e a legenda diz isso. A massa continua separada: o valor com 20 por cento ou mais do grupo, e pelo menos 10 casos, sai da curva e vira um traço cheio em negative, de 3 px e mais alto que o feijão, com a contagem escrita ao lado. A densidade do que ficou na curva é multiplicada pela fração do grupo que ficou, para a área tirada não voltar ao resto. As medianas continuam contando os 37 leads, e o rodapé diz isso: até a coleta ser conferida eles são dado. O canal com 9 leads fica abaixo do piso de 30 e não ganha curva."
+}

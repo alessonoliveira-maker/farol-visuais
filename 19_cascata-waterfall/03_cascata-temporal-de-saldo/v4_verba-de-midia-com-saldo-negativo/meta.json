@@ -1,0 +1,14 @@
+{
+  "title": "Saldo da verba de mídia no semestre",
+  "useCase": "Em que mês o saldo da verba de mídia cruzou o zero, e em quanto o semestre fechou?",
+  "demonstrates": [
+    "Barra de faixa atravessando o zero sem série transparente",
+    "Linha do zero em --line-strong sólido por cima do fundo",
+    "Domínio sobre mínimo e máximo do acumulado, não dos passos",
+    "Saldo final negativo ancorado no zero e desenhado para baixo",
+    "Rótulo fora da barra, do lado que tem espaço"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Domínio de −R$ 12 mil a +R$ 9 mil, os extremos do acumulado, com 18% do vão (R$ 3,8 mil) a mais embaixo para o rótulo do passo que desce, já que o eixo de mês fica na base do desenho e não no zero. Sem eixo de valor: todo valor vem escrito. Passo que desce escreve o rótulo na ponta livre, abaixo da barra; passo que sobe, acima. Conta de ESP-6 no card: 7 colunas (6 meses e o saldo final), passo (574 − 16) / 7 = 79,7 px e barra de 24 px."
+}

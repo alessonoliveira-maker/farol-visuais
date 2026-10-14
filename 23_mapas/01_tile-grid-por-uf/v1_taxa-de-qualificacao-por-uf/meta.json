@@ -1,0 +1,14 @@
+{
+  "title": "Taxa de qualificação de leads por UF",
+  "useCase": "Em que UFs os leads mais se qualificam, com todas pesando igual?",
+  "demonstrates": [
+    "Grade de 8 por 6 como constante Record de UF para linha e coluna",
+    "Cinco classes de cor com quebras calculadas em TypeScript",
+    "Sigla e taxa escritas em cada tile, com a cor só de apoio",
+    "Legenda em degraus com o limite de cada classe",
+    "Contorno pontilhado onde o volume de leads é raso demais"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Rampa de cinco classes em --seq-1, --seq-2, --seq-3, --seq-6 e --seq-7, e não em --seq-3 a --seq-7 como diz o catálogo: --seq-4 e --seq-5 não têm texto legível nos dois temas (TOK-2, TOK-8), e como há número em todo tile a cor vira apoio de varredura. A grade de 8 por 6 é desenhada à mão e não é a br_states_grid1 do geofacet, que não foi verificada em fonte pública; a vizinhança adotada está declarada no data.ts. As quebras são de intervalo igual em pontos inteiros: do piso da menor taxa (4%) ao teto da maior (24%), passo de 4 p.p. O tile com menos de 50 leads leva contorno pontilhado, pois uma taxa de 1 qualificado em 24 não é conclusiva; a dica nativa traz o par taxa e volume por formatRateWithVolume."
+}

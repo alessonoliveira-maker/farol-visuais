@@ -1,0 +1,13 @@
+{
+  "title": "CPL das campanhas ao longo de 18 meses",
+  "useCase": "Como a distribuição de CPL das campanhas mudou mês a mês nos últimos 18 meses?",
+  "demonstrates": [
+    "Dezoito faixas em um corpo de cerca de 385 px, com rótulo de mês só a cada três",
+    "Mediana de cada faixa como traço fino sobre a curva",
+    "Eixo X único embaixo, em reais, e banda comum escrita no rodapé",
+    "Dica por faixa com mês, n de campanhas e mediana"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O catálogo diz cerca de 420 px para as 18 faixas, e o corpo do preset alto mede 574 por 425 com a linha de leitura de uma linha e o rodapé; descontadas as duas linhas e o eixo, sobram cerca de 385 px, que é o que o desenho usa: pico de 31 px, sobreposição de 40%, passo de 18,6 px, 17 passos mais o pico mais o eixo. O n de cada mês não fica à esquerda como na v1, porque 18 nomes de mês e 18 contagens em 11 px, a cada 18,6 px, virariam um muro de texto; o n está na dica. Desvio da ordem de desenho do catálogo: a faixa de cima (o mês mais antigo) é desenhada primeiro e a de baixo fica à frente, porque a ordem inversa esconderia o pico da faixa de baixo atrás da base da de cima. A altura é normalizada pelo pico global, com piso de 8%; a banda é a de Silverman sobre as campanhas reunidas, comum aos 18 meses, escrita em reais no rodapé. A mediana é um corte de 1,5 px em surface-raised sobre chart-1, o par aprovado de 6,00:1 no claro. A dica é SVG dentro do próprio viewBox, com fundo surface-overlay e borda line-subtle, no desenho do ChartTooltip; ela não aparece no preview, que não tem hover. O viewBox tem 574 de largura, a do corpo do preset alto, para o texto de 11 px sair em tamanho real."
+}

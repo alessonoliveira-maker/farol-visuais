@@ -1,0 +1,14 @@
+{
+  "title": "Semana de agendas por SDR",
+  "useCase": "Pré-vendas: como ficaram as reuniões de 30 e 60 minutos de SDR 1 a SDR 5 entre 09/11 e 13/11.",
+  "demonstrates": [
+    "Escala de tempo e escala de banda escritas em TypeScript, sem biblioteca de escala",
+    "Separadores de dia com rótulo de data e só o expediente de 9h a 18h desenhado",
+    "Raias com fundo alternado em surface-sunken e rótulo fixo à esquerda",
+    "Reuniões que se cruzam em sub-faixas, com a raia crescendo em vez de sobrepor",
+    "viewBox do tamanho do corpo e separadores com non-scaling-stroke"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "As funções do catálogo escalaTempo e escalaBanda aparecem como timeScale e bandScale, porque identificador é em inglês (seção 9). O viewBox tem 894 px de largura, o corpo medido do canvas largo em moldura card, e a altura calculada cabe nos 265 px do pior cabeçalho, então a escala sai 1 e o texto fica em 11 px (GEO-18). A cor separa reunião de até 30 min (chart-1) de 60 min (chart-3), com legenda escrita. O horário completo de cada reunião vai no title do bloco."
+}

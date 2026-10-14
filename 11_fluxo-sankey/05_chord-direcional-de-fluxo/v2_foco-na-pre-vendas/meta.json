@@ -1,0 +1,18 @@
+{
+  "title": "Repasses de e para a Pré-vendas",
+  "useCase": "Comercial, 2026-T3: a Pré-vendas entrega mais repasses do que recebe?",
+  "demonstrates": [
+    "Prop highlightId que acende só as fitas que tocam o grupo em foco",
+    "Apagado por token neutro opaco, porque opacidade em marca reprova na ACE-5",
+    "Fita acesa na cor do parceiro, para dizer para onde o repasse vai",
+    "Anotação de ida e volta do par principal, com as duas contagens",
+    "Nome do grupo em foco em peso 700, além da cor, e ordem da roda estável",
+    "viewBox igual ao corpo medido, escala 1, para as guardas de texto medirem"
+  ],
+  "canvas": {
+    "width": 666,
+    "height": 520
+  },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta escrita. Moldura card com canvas de 666 px de largura: recuo de 33 px por lado, desconto de 66 px de largura e de 118,5 px de altura com o caso de uso em uma linha, então o corpo mede 600 x 401,5 px, e o viewBox repete esse par para a escala do SVG sair 1 (11 px declarados são 11 px na tela). O caso de uso tem 69 caracteres, abaixo dos 98 que a tabela de fronteira mede como uma linha garantida num cabeçalho de 600 px. Largura: a raia de rótulo é dimensionada pela soma POR GLIFO do rótulo mais largo, Especialista de produto a 123,1 px em Manrope de 11 px, e o pior caso (rótulo às 3 horas) pede 300 + 148 + 18 + 6 + 123,1 = 595,1 px dos 600 disponíveis; os 10 rótulos deste dado ficam entre 7,4 e 587,6 px. Altura: linha de leitura de 12 px na base 13, roda de raio 148 centrada em (300, 200) e anotação de 11 px na base 397,5; as caixas de rótulo vão de 42,1 a 376,5 px. O raio e o afastamento do rótulo foram CORRIGIDOS por medição depois do primeiro render: com raio 156 e âncora em R + 10, a CONTRASTE-TEXTO acusou 1% da tinta de 92 repasses enviados sobre a marca, a 1,13:1, porque o bloco de duas linhas desce 15,4 px abaixo da âncora e a borda do disco é curva. Com raio 148, âncora em R + 18 e recuo horizontal de 6 px, a caixa mais próxima fica a 7,8 px do arco. DESVIO DECLARADO: o catálogo pede baixar as fitas não destacadas para 15%, e o contrato vence. A ACE-5 mede a opacidade mínima das cores de papel entre 0,63 e 0,77 para a marca composta ficar em 3:1 pela WCAG 1.4.11, então 15% sairia como erro; o apagado é o neutro opaco --line-strong da 17.2, que fica em 1,79:1 e 1,83:1 de propósito, com o valor de cada arco escrito ao lado. A CONTRASTE-MARCA acusa esse uso como AVISO, com esses dois números, e o aviso é esperado: ela mesma registra que ali duas regras do contrato se cruzam e que quem decide é quem escreve a régua. SEGUNDO DESVIO: a fita acesa leva a cor do PARCEIRO, não a da origem canônica da v1, porque a revisão da v1 mediu que a fita no mesmo tom do arco cola nele e a metade da roda passa a ler como meio disco cheio. O rótulo de cada arco diz repasses enviados, também por achado da revisão da v1, em que o número solto era lido como tudo o que passou pela função. GUARDAS QUE NÃO MEDIRAM, conferidas à mão: a ESPESSURA-MARCA sai sem_marca_de_barra, porque o piso geral de 12 px é o outro lado do maxBarSize e só existe dentro de um <Bar> do Recharts; medido aqui, a fita mais fina tem 21,4 px no pé (16 repasses em R_INNER de 138), e nenhum rótulo é desenhado por dentro de marca, então o piso de rótulo interno também não se aplica. A EIXO-CALMO sai sem_grade e a OPACIDADE-MARCA sai sem_opacidade_em_marca: a peça não tem eixo cartesiano nem declara opacidade em lugar nenhum, que é justamente a decisão desta versão."
+}

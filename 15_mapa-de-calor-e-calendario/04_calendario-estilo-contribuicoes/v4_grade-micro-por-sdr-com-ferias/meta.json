@@ -1,0 +1,13 @@
+{
+  "title": "Atividades registradas por SDR em agosto",
+  "useCase": "Quem registra atividade no começo da semana e quem deixa tudo para a sexta?",
+  "demonstrates": [
+    "Seis grades micro de 7 dias por semana, células de 10 px e vão de 2 px",
+    "Escala comum de 4 faixas para as seis pessoas, calculada sobre o conjunto",
+    "Duas semanas de férias com contorno vazado, nunca pintadas na classe zero",
+    "Feriado com contorno pontilhado para o vazio não parecer ociosidade"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas no preset card, com a conta escrita (GEO-1). Largura = 28 de rótulo de dia da semana + 3 blocos de 174, sendo cada bloco 70 de grade mais 8 mais 96 de texto, + 2 vãos de 12 = 574, que é exatamente o corpo do preset card de 640 x 360 na moldura card; altura = 18 de linha de leitura + 12 + 2 fileiras de 82 + 14 de vão + 12 + 16 de legenda = 236, contra os 241,5 px de corpo que o caso de uso de 74 caracteres deixa, abaixo do teto de 92 numa linha de 574 px. O viewBox é 574 x 236 e a escala fica em 1. O catálogo pedia 5 semanas por 7 dias, e o desenho saiu com 6 colunas: agosto de 2026 começa num sábado e termina numa segunda, então as semanas de segunda a domingo que contêm o mês são seis, não cinco, e forçar cinco perderia o dia 1, o dia 2 ou o dia 31. As pontas que caem fora de agosto não existem no dado e não se desenham, o que é a máscara do mês. A rampa tem quatro faixas e só três degraus do Farol medem acima de 3:1 contra o cartão nos dois temas, seq-5, seq-6 e seq-7. A faixa mais baixa é então seq-5 num quadrado de 6 px dentro da célula de 10 px: tamanho é a segunda pista, e o contorno ficou reservado para férias, que é vazado, e feriado, que é pontilhado, os dois em text-muted, que mede 5,21:1 e 5,37:1. Zero medido é traço no centro da célula, no mesmo neutro, e isso separa três coisas que o desenho não pode misturar: trabalhou e não registrou, estava de férias, e o dia não era de trabalho para ninguém."
+}

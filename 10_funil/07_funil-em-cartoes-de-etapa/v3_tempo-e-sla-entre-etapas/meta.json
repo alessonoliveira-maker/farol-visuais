@@ -1,0 +1,13 @@
+{
+  "title": "Tempo e SLA entre etapas da pré-vendas",
+  "useCase": "Achar em qual passagem da pré-vendas o tempo de resposta estoura o prazo combinado.",
+  "demonstrates": [
+    "Conector com mediana e p90, colorido pela faixa de SLA em horas",
+    "P90 fora do SLA em vermelho mesmo com a mediana dentro do prazo",
+    "Contagem de quem passou e de quem ainda está na etapa, contra a censura",
+    "Unidade escrita em todo tempo: minuto, hora útil ou dia corrido",
+    "SVG inline mínimo para o traço do conector dentro do HTML"
+  ],
+  "canvas": "largo",
+  "frame": "stage"
+}

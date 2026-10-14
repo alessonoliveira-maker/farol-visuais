@@ -1,0 +1,13 @@
+{
+  "title": "Mapa de risco dos cenários com lista",
+  "useCase": "Diretoria: quais riscos dos cenários estão na faixa alta e quem é o dono, o gatilho e o plano de resposta de cada um.",
+  "demonstrates": [
+    "Grade como controle de filtro, com role grid e navegação por setas",
+    "Clique na célula abre a lista com dono, gatilho e plano de resposta",
+    "Riscos de dependência de mídia paga, teto de pré-vendas e concentração de receita",
+    "Célula selecionada com contorno e contagem repetida no título da lista"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Altura de célula de 34 px (e não os 44 da v1) para a grade caber no corpo de 894 x 265: 16 de título, 34 de cabeçalho, 5 x 34 + 4 x 2 de linhas, cerca de 230 px. A lista fica à direita e rola por dentro se a célula tiver mais riscos que a altura comporta; no dado há no máximo 3 por célula. Dono é sempre um papel, nunca uma pessoa. O foco inicial é a célula provável e maior, que reúne os três riscos que a espec pede. A seta para cima sobe a probabilidade, porque a faixa mais provável está no topo."
+}

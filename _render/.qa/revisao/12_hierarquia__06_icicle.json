@@ -1,0 +1,72 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "06_icicle",
+  "versoes": {
+    "v1_perdas-por-motivo-e-submotivo": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, particao honesta e lista de identificacao com o nivel preservado; sem bloqueante.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T07:29:19.765Z",
+      "impressao": "64830972e5cca95f4e635172f10040a40556205b",
+      "arquivos": {
+        "Chart.tsx": "93f8d7aef151e797400a9f65fabcf8a79d9de24d",
+        "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
+        "meta.json": "c930cf3c6bd4a2b7a8813765a989acef97d28e73"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_perdas-por-motivo-e-submotivo",
+      "veredito": "reprovado",
+      "nota": "Rotulo ausente em 12 de 13 submotivos e 2 de 7 motivos (ROT-10) e nome de marca cortado por reticencia sem o texto inteiro na frase acessivel (TIP-7).",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T06:23:31.980Z",
+      "impressao": "5420c4be8efd87b26710384d737e0b181ac0b952",
+      "arquivos": {
+        "Chart.tsx": "51245833c26c7ff2b058e0ecd9e271b52a416206",
+        "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
+        "meta.json": "87511c523d9ffb8190e03388b634d85c06f15d43"
+      }
+    },
+    {
+      "versao": "v1_perdas-por-motivo-e-submotivo",
+      "veredito": "reprovado",
+      "nota": "Lista de identificacao mistura motivo e submotivo sem marcar o nivel: sob Timing da decisao imprime 20, 13 e 7 sob a categoria de 20; e nenhuma das 14 marcas mudas fica identificavel.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T06:49:27.432Z",
+      "impressao": "abdd572c6bb446beb1213eeb809b27e194eb230f",
+      "arquivos": {
+        "Chart.tsx": "7f5707a649f7fac1c6a6330bf8d107f39c3df1fd",
+        "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
+        "meta.json": "35c6ef3bf5b671ab9b2d2b0bf7161403e4259f04"
+      }
+    },
+    {
+      "versao": "v1_perdas-por-motivo-e-submotivo",
+      "veredito": "reprovado",
+      "nota": "Desenho espremido a 42% da escala: texto do icicle sai a 5 px (TIP-2) e a lista de identificacao ocupa 65% do corpo (ROT-4). Numeros da lista sem unidade (NUM-6).",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T07:05:56.193Z",
+      "impressao": "fe2608487d95e67cea99338c9728eb13f639ca7d",
+      "arquivos": {
+        "Chart.tsx": "5b73818feca7685b567d42f3bbef71f48678bebe",
+        "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
+        "meta.json": "3798bb1bb6189d7b008180fbc888cfe2acc639a3"
+      }
+    },
+    {
+      "versao": "v1_perdas-por-motivo-e-submotivo",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, particao honesta e lista de identificacao com o nivel preservado; sem bloqueante.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T07:29:19.765Z",
+      "impressao": "64830972e5cca95f4e635172f10040a40556205b",
+      "arquivos": {
+        "Chart.tsx": "93f8d7aef151e797400a9f65fabcf8a79d9de24d",
+        "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
+        "meta.json": "c930cf3c6bd4a2b7a8813765a989acef97d28e73"
+      }
+    }
+  ]
+}

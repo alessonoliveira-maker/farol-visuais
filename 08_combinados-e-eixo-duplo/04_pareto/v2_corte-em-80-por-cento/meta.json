@@ -1,0 +1,13 @@
+{
+  "title": "Motivos que somam 80% das perdas",
+  "useCase": "Quantos motivos de perda cruzam a marca de 80% e merecem plano de ação antes dos demais?",
+  "demonstrates": [
+    "Corte calculado do dado: acende até o motivo que cruza os 80%",
+    "Cor por shape da Bar, com o neutro depois do corte e o valor escrito",
+    "Linha de referência no eixo do acumulado com rótulo na margem esquerda",
+    "Peso no rótulo além da cor, com o teto de dois elementos em 700"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas pelo preset card, com sobra (GEO-1): o caso de uso tem 88 caracteres e cabe em uma linha do cabeçalho de 574 px, então o corpo mede 574 x 241,5 px. A conta das linhas escritas: linha de leitura de 12 px com respiro, 24 px; corpo do gráfico 217,5 px, sendo MARGIN.top de 34 px para o rótulo de contagem, 153,5 px de plano e 30 px de eixo X. A banda sai de (574 menos 68 de margem esquerda, menos 8 de direita, menos 40 do eixo de percentual) dividido por 6 categorias, 76,3 px, e com barCategoryGap de 34% a espessura daria 24,4 px, limitada pelo maxBarSize de 24 da ESP-2. A margem esquerda é de 68 px porque o rótulo do corte mede 49,8 px de tinta mais 8 de respiro, e com 58 px o render cortou a primeira letra. Desvio declarado: a especificação da versão pede peso 700 no rótulo do destaque, e o grupo do corte tem 3 motivos; pela TIP-3, que admite 700 em no máximo dois elementos, o 700 ficou no nome e no valor do motivo líder e o resto do grupo carrega 600 contra 400. O neutro das colunas depois do corte é --line-strong, que mede 1,79:1 e 1,83:1 contra o cartão e por isso sai como aviso da guarda CONTRASTE-MARCA; ele é permitido aqui pela isenção da ACE-3, porque o valor está escrito em cima de cada coluna, e é o mesmo uso do molde 02_barras-horizontais/01_simples-ordenada."
+}

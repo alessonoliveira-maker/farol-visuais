@@ -1,0 +1,14 @@
+{
+  "title": "Carteira de contas por executivo contra o teto",
+  "useCase": "Quantas contas cada executivo carrega contra o teto de 120 e de que segmento elas são?",
+  "demonstrates": [
+    "Seis grupos de até 128 quadrados, com moldura tracejada do teto em --text-muted",
+    "Excedente acima do teto em --negative, com o número escrito sobre a moldura",
+    "Troca de agrupamento para segmento anima o reagrupamento por transform",
+    "Chave estável por conta para a animação não embaralhar; filtro só remove",
+    "Marcador como botão com rótulo, navegável por teclado na ordem de preenchimento"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvios do catálogo. 1) 'Até 120 quadrados' vira até 128: o excedente acima do teto precisa existir no dado para ser desenhado, e a moldura continua sendo de 120. 2) O filtro não tem controle na peça: ele é a prop data com menos contas, e a ordem de preenchimento não muda, então os marcadores restantes só sobem para o vão deixado. 3) As contas acima do teto são as que ficam depois da 120ª na ordem de preenchimento (por segmento, depois por id), o que o dado não diz de outro modo. Conta do corpo: largo com 1 linha de caso de uso dá 894 x 281,5. Altura gasta: seletor 28, vão 8, faixa do excedente 16, pilha mais alta 190 (cerca de 189 contas do maior segmento em 12 colunas, 16 linhas), vão 6 e nome 32: 280 px. A raiz é role group, e não img, porque os marcadores são botões e um img esconderia os filhos. O excedente em --negative muda a cor do segmento nessas contas; por isso a legenda traz o par. Três segmentos e não quatro: o 4º slot disponível seria --chart-5 (rosa, parecido com --negative no escuro) ou --chart-4 (verde, parecido com --chart-1 no claro), então a peça fica nos slots 1, 3 e 6. 4) Moldura do teto em --text-muted com tracejado 3 3, e não em --line-strong como diz o catálogo: line-strong media 1,79:1 contra o cartão e a moldura é referência (17.2). A tabulação segue a ordem de preenchimento: os botões são desenhados no DOM na ordem do layout."
+}

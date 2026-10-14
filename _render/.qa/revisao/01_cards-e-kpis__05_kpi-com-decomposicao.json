@@ -1,0 +1,225 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "05_kpi-com-decomposicao",
+  "versoes": {
+    "v1_receita-do-mes-entre-novos-e-carteira": {
+      "veredito": "aprovado",
+      "nota": "sem bloqueante na segunda passada; soma exata e 7% mais 93% fecham 100; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:31.940Z",
+      "impressao": "ce6441bab6cc0d1af017290bf8d4e56a552bccb9",
+      "arquivos": {
+        "Chart.tsx": "58060f60e772ec3898bceca267ccdfc5303fb9f3",
+        "data.ts": "87bf9480fb9b82092f1c9090aab159b0b42d3d47",
+        "meta.json": "1b05ad0a59a6148c6a96fe6ac36e8b423f0133b9"
+      }
+    },
+    "v2_leads-do-mes-por-origem-com-destaque": {
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; legenda cabe no canvas de 360 px nos dois temas, bloqueante ESP-3 anterior corrigido; observações no README",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:32.540Z",
+      "impressao": "e4976d224df7a40706592da460c9cf0037eb41de",
+      "arquivos": {
+        "Chart.tsx": "b56dc569cf7e0448766ddf8ba331fce285e2939c",
+        "data.ts": "337331a6a4e5d08d3e9f5a64cdadaff8833cea02",
+        "meta.json": "d31b7206c012add3eb62d0b6ca3afcb51ea3a445"
+      }
+    },
+    "v3_leads-com-maiores-origens-e-sem-rotulo": {
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; linhas fecham 520 leads e percentuais somam 100; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:33.042Z",
+      "impressao": "883b8cbc10402176620ea360e0b51723da510ac2",
+      "arquivos": {
+        "Chart.tsx": "2536438dee508f0dd6edd4456511a94dd78a7607",
+        "data.ts": "f8990f61a66d1fbe61a45474faa486ea9b046790",
+        "meta.json": "4864bdab9d39466a90d8649034d270c57f76ef90"
+      }
+    },
+    "v4_receita-com-contribuicoes-que-se-anulam": {
+      "veredito": "aprovado",
+      "nota": "Conserto aceito nos dois temas: contribuicao nula agora aparece declarada em vez de sumir na soma.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.896Z",
+      "impressao": "165f3ba2b8e3812eb659037803a7c6548e22578d",
+      "arquivos": {
+        "Chart.tsx": "802769c000dae5db565a877f2e8a248ae2ece2f5",
+        "data.ts": "ad2d3dada72c624790f3faeb951935535af80402",
+        "meta.json": "336d07362d8814ba1334cb30e055638bcad683d6"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-mes-entre-novos-e-carteira",
+      "veredito": "aprovado",
+      "nota": "Checklist sem nao; itens 3, 4 a 9, 13, 18 nao se aplicam (cartao sem eixo, sem anotacao, sem dica). Soma dos filhos confere o total exato, filho pequeno de 7% legivel ao lado do grande, residuo e indisponivel tratados.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:58:21.871Z",
+      "impressao": "ce6441bab6cc0d1af017290bf8d4e56a552bccb9",
+      "arquivos": {
+        "Chart.tsx": "58060f60e772ec3898bceca267ccdfc5303fb9f3",
+        "data.ts": "87bf9480fb9b82092f1c9090aab159b0b42d3d47",
+        "meta.json": "1b05ad0a59a6148c6a96fe6ac36e8b423f0133b9"
+      }
+    },
+    {
+      "versao": "v2_leads-do-mes-por-origem-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Checklist sem nao. Corrigidos dois defeitos reais achados na conferencia visual: item 15, ESP linha de leitura com truncate colidia com spans internos e virava fatia ilegivel (ellipsis com marcacao aninhada); e item 15, a barra segmentada tinha altura zero porque o serializador nao copia altura fixa de um container flex para filhos em h-full percentual. Corrigido tirando truncate da linha e dando altura fixa direto a cada segmento.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:58:29.856Z",
+      "impressao": "046d3b45785fd9bcb66d18722166d72ed6b837f3",
+      "arquivos": {
+        "Chart.tsx": "b56dc569cf7e0448766ddf8ba331fce285e2939c",
+        "data.ts": "337331a6a4e5d08d3e9f5a64cdadaff8833cea02",
+        "meta.json": "5e6e626d57ce5b91125550363848f9bf55b9f09d"
+      }
+    },
+    {
+      "versao": "v3_leads-com-maiores-origens-e-sem-rotulo",
+      "veredito": "aprovado",
+      "nota": "Checklist sem nao. Percentuais top5, demais e sem origem somam 100 exato, nome longo inteiro sem reticencia, empate de 37 na fronteira do quinto lugar resolvido pelo nome, LACUNA com contorno neutro e por ultimo fora de outros.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:58:35.984Z",
+      "impressao": "883b8cbc10402176620ea360e0b51723da510ac2",
+      "arquivos": {
+        "Chart.tsx": "2536438dee508f0dd6edd4456511a94dd78a7607",
+        "data.ts": "f8990f61a66d1fbe61a45474faa486ea9b046790",
+        "meta.json": "4864bdab9d39466a90d8649034d270c57f76ef90"
+      }
+    },
+    {
+      "versao": "v4_receita-com-contribuicoes-que-se-anulam",
+      "veredito": "aprovado",
+      "nota": "Checklist sem nao. Corrigido defeito real: a lista de contribuicoes usava flex-1 com justify-center, e a folga vertical amplificava uma pequena diferenca de metrica de fonte entre a pagina e o SVG isolado (2,87% e 3,00%, acima do limite de 2%); trocado por mt-auto no molde ja usado nas v1 e v2, caiu para 0,03% e 0,06%. Sinal tipografico correto, residuo negativo nomeado, participacao sem base quando a variacao total e zero.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T12:58:43.298Z",
+      "impressao": "553ddf194535b017b04fd1b5c6f56ee4cc4c4f8a",
+      "arquivos": {
+        "Chart.tsx": "da8947e3db3b2e8411ec0e477fa11f3b18271fe4",
+        "data.ts": "ad2d3dada72c624790f3faeb951935535af80402",
+        "meta.json": "04a2abe72346794604bcded7f681ec0a2669277f"
+      }
+    },
+    {
+      "versao": "v1_receita-do-mes-entre-novos-e-carteira",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:04:47.520Z",
+      "impressao": "ce6441bab6cc0d1af017290bf8d4e56a552bccb9",
+      "arquivos": {
+        "Chart.tsx": "58060f60e772ec3898bceca267ccdfc5303fb9f3",
+        "data.ts": "87bf9480fb9b82092f1c9090aab159b0b42d3d47",
+        "meta.json": "1b05ad0a59a6148c6a96fe6ac36e8b423f0133b9"
+      }
+    },
+    {
+      "versao": "v2_leads-do-mes-por-origem-com-destaque",
+      "veredito": "reprovado",
+      "nota": "item 15, ESP-3: a última linha da legenda cruza a borda inferior do cartão nos dois temas; aumentar o canvas ou compactar a legenda",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:04:48.007Z",
+      "impressao": "046d3b45785fd9bcb66d18722166d72ed6b837f3",
+      "arquivos": {
+        "Chart.tsx": "b56dc569cf7e0448766ddf8ba331fce285e2939c",
+        "data.ts": "337331a6a4e5d08d3e9f5a64cdadaff8833cea02",
+        "meta.json": "5e6e626d57ce5b91125550363848f9bf55b9f09d"
+      }
+    },
+    {
+      "versao": "v3_leads-com-maiores-origens-e-sem-rotulo",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:04:48.520Z",
+      "impressao": "883b8cbc10402176620ea360e0b51723da510ac2",
+      "arquivos": {
+        "Chart.tsx": "2536438dee508f0dd6edd4456511a94dd78a7607",
+        "data.ts": "f8990f61a66d1fbe61a45474faa486ea9b046790",
+        "meta.json": "4864bdab9d39466a90d8649034d270c57f76ef90"
+      }
+    },
+    {
+      "versao": "v4_receita-com-contribuicoes-que-se-anulam",
+      "veredito": "reprovado",
+      "nota": "item 15, ESP-3: a nota final cruza a borda inferior nos dois temas; item 1: falta o ponteiro para a cascata da família 19 prometido no meta",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:04:49.036Z",
+      "impressao": "553ddf194535b017b04fd1b5c6f56ee4cc4c4f8a",
+      "arquivos": {
+        "Chart.tsx": "da8947e3db3b2e8411ec0e477fa11f3b18271fe4",
+        "data.ts": "ad2d3dada72c624790f3faeb951935535af80402",
+        "meta.json": "04a2abe72346794604bcded7f681ec0a2669277f"
+      }
+    },
+    {
+      "versao": "v1_receita-do-mes-entre-novos-e-carteira",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante na segunda passada; soma exata e 7% mais 93% fecham 100; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:31.940Z",
+      "impressao": "ce6441bab6cc0d1af017290bf8d4e56a552bccb9",
+      "arquivos": {
+        "Chart.tsx": "58060f60e772ec3898bceca267ccdfc5303fb9f3",
+        "data.ts": "87bf9480fb9b82092f1c9090aab159b0b42d3d47",
+        "meta.json": "1b05ad0a59a6148c6a96fe6ac36e8b423f0133b9"
+      }
+    },
+    {
+      "versao": "v2_leads-do-mes-por-origem-com-destaque",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; legenda cabe no canvas de 360 px nos dois temas, bloqueante ESP-3 anterior corrigido; observações no README",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:32.540Z",
+      "impressao": "e4976d224df7a40706592da460c9cf0037eb41de",
+      "arquivos": {
+        "Chart.tsx": "b56dc569cf7e0448766ddf8ba331fce285e2939c",
+        "data.ts": "337331a6a4e5d08d3e9f5a64cdadaff8833cea02",
+        "meta.json": "d31b7206c012add3eb62d0b6ca3afcb51ea3a445"
+      }
+    },
+    {
+      "versao": "v3_leads-com-maiores-origens-e-sem-rotulo",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; linhas fecham 520 leads e percentuais somam 100; observações no README do modelo",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:33.042Z",
+      "impressao": "883b8cbc10402176620ea360e0b51723da510ac2",
+      "arquivos": {
+        "Chart.tsx": "2536438dee508f0dd6edd4456511a94dd78a7607",
+        "data.ts": "f8990f61a66d1fbe61a45474faa486ea9b046790",
+        "meta.json": "4864bdab9d39466a90d8649034d270c57f76ef90"
+      }
+    },
+    {
+      "versao": "v4_receita-com-contribuicoes-que-se-anulam",
+      "veredito": "aprovado",
+      "nota": "sem bloqueante; nota e ponteiro para a cascata dentro do cartão, bloqueantes anteriores corrigidos; observações no README",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:19:33.522Z",
+      "impressao": "50791e70257dce916ebcaf9dfd7fcb7783a3db10",
+      "arquivos": {
+        "Chart.tsx": "97b5d4417243ed88b59607a67e8bbd06d6a38fbb",
+        "data.ts": "ad2d3dada72c624790f3faeb951935535af80402",
+        "meta.json": "336d07362d8814ba1334cb30e055638bcad683d6"
+      }
+    },
+    {
+      "versao": "v4_receita-com-contribuicoes-que-se-anulam",
+      "veredito": "aprovado",
+      "nota": "Conserto aceito nos dois temas: contribuicao nula agora aparece declarada em vez de sumir na soma.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.896Z",
+      "impressao": "165f3ba2b8e3812eb659037803a7c6548e22578d",
+      "arquivos": {
+        "Chart.tsx": "802769c000dae5db565a877f2e8a248ae2ece2f5",
+        "data.ts": "ad2d3dada72c624790f3faeb951935535af80402",
+        "meta.json": "336d07362d8814ba1334cb30e055638bcad683d6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "01_sparkline-de-linha",
+  "versoes": {
+    "v1_receita-com-extremos-e-valor-final": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: ponto final inteiro (cx 288, borda a 292,25 num SVG de 294 px), alta de 32 por cento igual no corpo e na frase acessível, extremos em text-muted a 5,21:1 e 5,37:1, domínio do mínimo ao máximo com folga e sem área. Observações no README: frase do ramo estável; seguem da primeira passada TIP-7, DAD-9, pior mês sem nome e TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:10.168Z",
+      "impressao": "879beb825f0d9933301d90a889b2c9b3edf0c4a8",
+      "arquivos": {
+        "Chart.tsx": "605f126d35a2d99b2c4b18d53165bdd52d0b4143",
+        "data.ts": "ca943777b524f86f4df2912532227f120f5dcc3e",
+        "meta.json": "aaf70f02037d97f4dc17d75acecb3f819dc2814e"
+      }
+    },
+    "v2_tempo-de-resposta-com-faixa-de-sla": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: faixa do SLA a 1,15:1 atrás do traço, pontos fora da faixa acima do piso, último ponto inteiro, contagem e mediana iguais no corpo e na frase. Observações no README: contagem sempre em text-negative mesmo com zero dia fora (COR-6, mora no ramo), truncate com o limite do SLA na cauda (TIP-7), número sem tabular-nums na linha de apoio (TIP-1), redação do meta.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:25:12.735Z",
+      "impressao": "8bc8230f649a371d8d9a9d2fd3e70c28dfaa91e8",
+      "arquivos": {
+        "Chart.tsx": "3c4d8c4062d7d07b808d7fad74eae70e5dda1c56",
+        "data.ts": "41053b2a00e2611e9b87d4763eb762e2fc3f24e1",
+        "meta.json": "598f9a2bf0083c06a19a3257915a43b999751bc6"
+      }
+    },
+    "v3_meta-2027-com-cauda-de-projecao": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: seta desenhada depois do gráfico, inteira e numa cor só sobre a faixa (9,36:1 no escuro, 7,04:1 no claro), faixa com fillOpacity 1 a 1,15:1, hoje na mesma coluna nos seis cartões, escala própria declarada, 3 de 6 igual no corpo e na frase. Observações no README: selo com meta zero (EST-4, mora no ramo), hoje lido só do primeiro cartão, tracejados a 1,12:1 entre si no claro, redação do selo.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:10.648Z",
+      "impressao": "d07c0a91ae29e4550d924c94450e33bebb503327",
+      "arquivos": {
+        "Chart.tsx": "61517e4c4c53906289ce3e0793770bdb7949bc94",
+        "data.ts": "7603ad500db9c16242bddaa3502f8955adcb8179",
+        "meta.json": "ab92e74e1b5c6d4ee63281c2802555030f020802"
+      }
+    },
+    "v4_origens-em-area-com-lacuna-de-coleta": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: zero medido em chart-1 opaco por cima do fio da base (6,00:1 contra 1,29:1 da lacuna no claro), cartão próprio na moldura stage, área a 4,85:1 no escuro e 3,01:1 no claro, coluna Coleta (meses) sem leitura invertida, frase nomeando as origens sem coleta. Observações no README: opacidade 0,66 no piso sem folga (pixel a 2,997:1), p-3 no cartão, concordância da frase, moldura stage em tabela.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:11.143Z",
+      "impressao": "8d7159236dc91bf3a901dfd7a821d3c3b4e7815b",
+      "arquivos": {
+        "Chart.tsx": "c9430688df44b56edad79ebb284e59379688af08",
+        "data.ts": "c0cc7bd3bc5d0d70d1d61e992c469a8250aeeb96",
+        "meta.json": "b90bf21762d53fc8c3ea753c940c981a44417967"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-com-extremos-e-valor-final",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3: o ponto final sai cortado pela borda direita do SVG nos dois temas (cx 292 num SVG de 294 px, raio 3,5 mais contorno); dar margem horizontal de pelo menos 6 px. Pergunta 19, ACE-1 e DAD-5: o corpo escreve a alta com zero casa (+32) e a frase acessível com uma (32,1); calcular o texto da variação uma vez e usar nos dois lugares. Parecer em validation/revisao_24_microvisuais-sparklines__01_sparkline-de-linha_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:25:12.207Z",
+      "impressao": "05a8c7630b055d05d1d00873b22bb3ec6fe84806",
+      "arquivos": {
+        "Chart.tsx": "c0c44c8fc6bf214a2c78b221f6192bb23aa659f8",
+        "data.ts": "ca943777b524f86f4df2912532227f120f5dcc3e",
+        "meta.json": "cd0ca3c1f4d565219f5759f0e14728a7910778da"
+      }
+    },
+    {
+      "versao": "v2_tempo-de-resposta-com-faixa-de-sla",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas: faixa do SLA a 1,15:1 atrás do traço, pontos fora da faixa acima do piso, último ponto inteiro, contagem e mediana iguais no corpo e na frase. Observações no README: contagem sempre em text-negative mesmo com zero dia fora (COR-6, mora no ramo), truncate com o limite do SLA na cauda (TIP-7), número sem tabular-nums na linha de apoio (TIP-1), redação do meta.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:25:12.735Z",
+      "impressao": "8bc8230f649a371d8d9a9d2fd3e70c28dfaa91e8",
+      "arquivos": {
+        "Chart.tsx": "3c4d8c4062d7d07b808d7fad74eae70e5dda1c56",
+        "data.ts": "41053b2a00e2611e9b87d4763eb762e2fc3f24e1",
+        "meta.json": "598f9a2bf0083c06a19a3257915a43b999751bc6"
+      }
+    },
+    {
+      "versao": "v3_meta-2027-com-cauda-de-projecao",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13, 20 e 30, ROT-7, ACE-3, ACE-5 e REC-13: a seta que avisa o recorte do cenário alto fica por baixo da faixa de cenário e mede 2,07:1 no escuro e 2,21:1 no claro, partida em dois tons; desenhar o ChevronUp depois do ResponsiveContainer e declarar fillOpacity 1 na Area da faixa, que hoje herda 0,6 do pacote. Parecer em validation/revisao_24_microvisuais-sparklines__01_sparkline-de-linha_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:25:13.267Z",
+      "impressao": "312ec31af07f661e2ba8d6590403311ab60541b7",
+      "arquivos": {
+        "Chart.tsx": "263f4f4b78e8e1de817f254102df93c0d8ad4bb1",
+        "data.ts": "7603ad500db9c16242bddaa3502f8955adcb8179",
+        "meta.json": "ab92e74e1b5c6d4ee63281c2802555030f020802"
+      }
+    },
+    {
+      "versao": "v4_origens-em-area-com-lacuna-de-coleta",
+      "veredito": "reprovado",
+      "nota": "Perguntas 8 e 20, EST-3, ACE-3 e REC-13: a linha de base cobre o traço do zero medido (2,19:1 no claro), que fica quase igual ao mês sem coleta; passar zIndex abaixo de 100 na ReferenceLine. Pergunta 30, ACE-5: moldura stage sem cartão, área composta a 2,89:1 contra o palco no tema claro. Pergunta 14, NUM-6: 6 de 18 meses sob o cabeçalho Meses sem coleta afirma o contrário do dado. Pergunta 19, ACE-1: a frase acessível não nomeia as origens sem coleta, que o catálogo promete. Parecer em validation/revisao_24_microvisuais-sparklines__01_sparkline-de-linha_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:25:13.787Z",
+      "impressao": "7640f444f4579f4a9bd40830403f2aa130e957af",
+      "arquivos": {
+        "Chart.tsx": "6117bbd5fcf338d29f577ec8e451a1d5844e96b6",
+        "data.ts": "c0cc7bd3bc5d0d70d1d61e992c469a8250aeeb96",
+        "meta.json": "b90bf21762d53fc8c3ea753c940c981a44417967"
+      }
+    },
+    {
+      "versao": "v1_receita-com-extremos-e-valor-final",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: ponto final inteiro (cx 288, borda a 292,25 num SVG de 294 px), alta de 32 por cento igual no corpo e na frase acessível, extremos em text-muted a 5,21:1 e 5,37:1, domínio do mínimo ao máximo com folga e sem área. Observações no README: frase do ramo estável; seguem da primeira passada TIP-7, DAD-9, pior mês sem nome e TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:10.168Z",
+      "impressao": "879beb825f0d9933301d90a889b2c9b3edf0c4a8",
+      "arquivos": {
+        "Chart.tsx": "605f126d35a2d99b2c4b18d53165bdd52d0b4143",
+        "data.ts": "ca943777b524f86f4df2912532227f120f5dcc3e",
+        "meta.json": "aaf70f02037d97f4dc17d75acecb3f819dc2814e"
+      }
+    },
+    {
+      "versao": "v3_meta-2027-com-cauda-de-projecao",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: seta desenhada depois do gráfico, inteira e numa cor só sobre a faixa (9,36:1 no escuro, 7,04:1 no claro), faixa com fillOpacity 1 a 1,15:1, hoje na mesma coluna nos seis cartões, escala própria declarada, 3 de 6 igual no corpo e na frase. Observações no README: selo com meta zero (EST-4, mora no ramo), hoje lido só do primeiro cartão, tracejados a 1,12:1 entre si no claro, redação do selo.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:10.648Z",
+      "impressao": "d07c0a91ae29e4550d924c94450e33bebb503327",
+      "arquivos": {
+        "Chart.tsx": "61517e4c4c53906289ce3e0793770bdb7949bc94",
+        "data.ts": "7603ad500db9c16242bddaa3502f8955adcb8179",
+        "meta.json": "ab92e74e1b5c6d4ee63281c2802555030f020802"
+      }
+    },
+    {
+      "versao": "v4_origens-em-area-com-lacuna-de-coleta",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, 32 perguntas sem bloqueante nos dois temas. Conferido no arquivo atual: zero medido em chart-1 opaco por cima do fio da base (6,00:1 contra 1,29:1 da lacuna no claro), cartão próprio na moldura stage, área a 4,85:1 no escuro e 3,01:1 no claro, coluna Coleta (meses) sem leitura invertida, frase nomeando as origens sem coleta. Observações no README: opacidade 0,66 no piso sem folga (pixel a 2,997:1), p-3 no cartão, concordância da frase, moldura stage em tabela.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:43:11.143Z",
+      "impressao": "8d7159236dc91bf3a901dfd7a821d3c3b4e7815b",
+      "arquivos": {
+        "Chart.tsx": "c9430688df44b56edad79ebb284e59379688af08",
+        "data.ts": "c0cc7bd3bc5d0d70d1d61e992c469a8250aeeb96",
+        "meta.json": "b90bf21762d53fc8c3ea753c940c981a44417967"
+      }
+    }
+  ]
+}

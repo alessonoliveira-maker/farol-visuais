@@ -1,0 +1,14 @@
+{
+  "title": "Plano de iniciativas por público",
+  "useCase": "Como as entregas de cada público se distribuem em 2027, com dono e status.",
+  "demonstrates": [
+    "Três níveis (público, iniciativa, entrega) achatados em linhas com indentação no tick",
+    "Tick customizado do YAxis com colunas de texto para dono fictício e status",
+    "Barra de agrupamento mais fina com envoltória de min(início) e max(fim) das filhas",
+    "Status com ícone e palavra junto da cor, nunca só a cor da barra",
+    "Linha de hoje atravessando os três níveis e grade vertical por trimestre"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Cada uma das 16 linhas tem cerca de 22 px de banda; com 20% de vão a entrega fica com 12 px (ESP-2 pede de 30% a 40% de vão, que só cabe com menos linhas). O agrupamento usa var(--text-muted) em faixa de 5 px porque não carrega status. Planejada é var(--surface-sunken) com contorno var(--line-strong), mais o anel e a palavra no rótulo. Sem dica: dono, status e nome já estão escritos na linha (DIC-1)."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Redistribuição entre filas de pré-vendas",
+  "useCase": "Pré-vendas: como os leads são redistribuídos entre 4 origens ao longo de 5 etapas de qualificação.",
+  "demonstrates": [
+    "Célula com mais de um nó vira pilha interna com contagem, como 3 filas",
+    "Pontas de várias arestas da mesma célula deslocadas alguns pixels por aresta",
+    "Espessura da aresta em três faixas pelo número de leads redistribuídos",
+    "Caminho selecionado por highlightId aceso em var(--chart-1), resto no neutro",
+    "Retorno para etapa anterior desenhado por fora da grade para não cruzar nós"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo, com o contrato vencendo: a seta sai de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), que mede 5,21:1 e 5,37:1, porque a seta carrega a relação (ACE-6). Canvas alto: o corpo mede 574 x 425 px, e a linha de leitura (28 px), a legenda das faixas (24 px) e o viewBox de 574 x 372 somam 424. O catálogo pede o resto esmaecido, e a ACE-5 só o aceita medido: o neutro baixa para 0,76 de opacidade, que compõe 3,58:1 no escuro e 3,28:1 no claro, contra o piso de 0,72 do --text-muted. A espessura reparte de 1 ao maior volume observado em três faixas (ROT-5b). O retorno corre pelo corredor de 16 px à direita da grade, e por isso a origem e o destino dele são os nós mais à direita das suas linhas."
+}

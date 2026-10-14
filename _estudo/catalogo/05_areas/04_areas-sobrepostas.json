@@ -1,0 +1,70 @@
+{
+  "slug": "04_areas-sobrepostas",
+  "nome": "Áreas sobrepostas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas áreas da mesma unidade partindo do zero, uma atrás da outra e sem stackId: a de fundo é o envelope (capacidade, total) e a da frente é a parte (realizado, atendido). Absorve a área com linha, em que a medida protagonista vira Line sobre a massa; é a saída quando a interseção transparente começa a parecer uma terceira categoria.",
+  "quando_usar": [
+    "Exatamente duas grandezas na mesma unidade, uma contida na outra: capacidade e realizado, demanda e atendimento.",
+    "Capacidade ou envelope em área clara e medida protagonista em linha saturada por cima.",
+    "Capacidade planejada conhecida até dezembro e demanda real que para em hoje.",
+    "Capacidade que muda por contratação, em área de degrau (stepAfter)."
+  ],
+  "quando_evitar": [
+    "Três ou mais séries: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+    "Unidades diferentes: painéis alinhados (08_combinados-e-eixo-duplo/03_paineis-alinhados).",
+    "A pergunta é quanto uma passou da outra: área de diferença (07_area-de-diferenca).",
+    "Parte que pode passar do todo sem que isso seja erro de dado: linhas, não áreas contidas.",
+    "Transparência que cria uma terceira cor lida como categoria."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_capacidade-e-agendas-realizadas",
+      "titulo": "Capacidade de agendas e agendas realizadas",
+      "caso_de_uso": "Ver quanto da capacidade semanal de agendas da pré-vendas foi de fato usada de janeiro a setembro de 2026.",
+      "o_que_demonstra": [
+        "Duas Area sem stackId: fundo em line-strong e frente em chart-1",
+        "Contorno forte e preenchimento leve para a interseção não virar cor nova",
+        "Rótulo direto dentro de cada área, sem legenda",
+        "Ocupação média escrita na linha de leitura com formatPercent"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_demanda-em-linha-contra-capacidade",
+      "titulo": "Demanda de entradas contra capacidade",
+      "caso_de_uso": "Mostrar em que semanas a demanda de entradas passou da capacidade de atendimento e em quanto.",
+      "o_que_demonstra": [
+        "ComposedChart com Area de capacidade em stepAfter antes da Line de demanda",
+        "Semanas acima da capacidade com ponto em negative e rótulo do excedente",
+        "Área clara e linha saturada, como pede o guia de eixo duplo do estudo 08",
+        "Excedente com sinal e palavra, não só cor (ACE-2)"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_capacidade-anual-com-projecao",
+      "titulo": "Capacidade e demanda com trecho projetado",
+      "caso_de_uso": "Ver a capacidade planejada até dezembro contra a demanda real até hoje e a projetada depois.",
+      "o_que_demonstra": [
+        "Área de capacidade até 2026-12 e demanda real sólida até 2026-09-14",
+        "Demanda projetada tracejada a partir de hoje, com ReferenceLine vertical",
+        "52 semanas com ticks mensais por formatMonthShort",
+        "Selo de premissa do trecho projetado fica no VisualCard, não no Chart (ANO-6)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_recesso-e-semana-sem-coleta",
+      "titulo": "Semana de recesso e semana sem coleta",
+      "caso_de_uso": "Distinguir capacidade zero no recesso de semana em que a demanda simplesmente não foi coletada.",
+      "o_que_demonstra": [
+        "Degrau até zero para capacidade medida em zero (EST-3)",
+        "null com connectNulls desligado para a demanda sem coleta (EIX-10)",
+        "As duas ausências com desenho e texto diferentes, no máximo duas anotações",
+        "Frase acessível que nomeia as duas semanas e o motivo de cada uma"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

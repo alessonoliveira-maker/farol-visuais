@@ -1,0 +1,13 @@
+{
+  "title": "Movimento semanal do funil de pré-vendas",
+  "useCase": "O que entrou, o que saiu e o que sobrou no funil de pré-vendas em cada uma das últimas 13 semanas?",
+  "demonstrates": [
+    "Pilha por sinal nativa: o mesmo stackId empilha entradas para cima e saídas para baixo",
+    "Líquido marcado por Line num ComposedChart, com mais peso visual que os segmentos",
+    "Componentes principais encostados no zero dos dois lados, em ordem espelhada",
+    "Dica com os quatro componentes e o líquido, na ordem visual da pilha",
+    "Semana só de saídas com a nota sem entradas na semana"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

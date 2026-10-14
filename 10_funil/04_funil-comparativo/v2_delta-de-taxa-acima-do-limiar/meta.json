@@ -1,0 +1,13 @@
+{
+  "title": "Variação da taxa de passo entre trimestres",
+  "useCase": "Mostrar em qual transição a taxa de passo mudou de um trimestre para o outro e por quantos pontos.",
+  "demonstrates": [
+    "LabelList content com seta e variação em pontos percentuais",
+    "Cor positiva quando a taxa subiu e negativa quando caiu, só acima do limiar",
+    "Limiar de 5 pontos percentuais como prop com default",
+    "Variação sempre nomeia a base de comparação na mesma linha"
+  ],
+  "canvas": { "width": 960, "height": 460 },
+  "frame": "card",
+  "notes": "Canvas numérico: quatro transições com rótulo de categoria longo (etapa para etapa) e anotação de delta com base nomeada pedem mais largura e altura que os presets padrão (ESP-2/ESP-6). Passo de cerca de 84 px por categoria mantém a espessura das duas barras acima do piso de 12 px."
+}

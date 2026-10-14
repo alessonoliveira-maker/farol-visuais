@@ -1,0 +1,13 @@
+{
+  "title": "Oportunidades com etapa parada",
+  "useCase": "Em quais das 12 oportunidades abertas alguma etapa passou de 30 dias sem movimento, e em qual.",
+  "demonstrates": [
+    "Segmento acima de 30 dias com hachura em pattern de SVG cujo id vem de useId",
+    "Rótulo com a etapa e parada 42 d escrito depois da ponta de hoje, não só na dica",
+    "Demais segmentos rebaixados para o neutro com contorno quando há destaque",
+    "Última etapa das abertas termina em hoje, vindo do dado, com a ponta tracejada"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Os segmentos sem parada usam --surface-sunken com contorno --text-muted, e não --line-strong como área (1,79:1 contra o cartão, aviso do CONTRASTE-MARCA). O rótulo da parada fica depois da ponta de hoje, numa margem reservada de 156 px, e não colado ao segmento: quando a etapa parada é do meio da jornada, a ponta do segmento não é livre (a etapa seguinte vem logo depois), então o rótulo repete a etapa por escrito e a hachura mostra qual trecho é. Mais de uma etapa parada na mesma oportunidade: a hachura marca todas e o rótulo escreve a pior. As linhas ordenam pela pior parada, da maior para a menor, para a mensagem ocupar a primeira linha. Vão de categoria de 24% e não de 30%: com 12 linhas a banda mede cerca de 30 px e a barra fica com 15 px."
+}

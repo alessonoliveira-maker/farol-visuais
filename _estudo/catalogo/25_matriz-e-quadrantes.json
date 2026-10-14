@@ -1,0 +1,518 @@
+{
+  "slug": "25_matriz-e-quadrantes",
+  "nome": "Matriz e quadrantes",
+  "modelos": [
+    {
+      "slug": "01_matriz-2x2-de-quadrantes",
+      "nome": "Matriz 2x2 de quadrantes",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas medidas numéricas nos eixos, uma divisória vertical, uma horizontal e um ponto por entidade: é a dispersão que virou classificação. A pergunta deixa de ser se X e Y se relacionam e passa a ser em que região cada entidade caiu e que ação essa região pede. O limiar é a decisão inteira, então toda divisória diz o que é, o valor e a procedência (MEDIDO em traço sólido, PREMISSA tracejado), e cada região mostra quantos itens tem e, quando faz sentido, quanto eles somam. Construído com ScatterChart, duas ReferenceLine e ReferenceArea de fundo entre 4% e 8% de opacidade, sobre domínio fixo amarrado a constantes, porque a área com ifOverflow discard some calada quando o filtro encolhe os dados. Corte estatístico, corte por meta, rótulos diretos, bolhas, sumário por região, lista sincronizada e variação centrada no zero entram como versões.",
+      "quando_usar": [
+        "Classificar de 8 a 60 entidades por duas medidas, com uma ação nomeada para cada região",
+        "Existe corte com procedência: mediana da própria série, meta, SLA, break-even ou teto de capacidade",
+        "Terceira medida aditiva (investimento, receita, fila) que pesa na leitura da região, em bolha",
+        "O leitor precisa do plano e da lista de itens ao mesmo tempo, em cartão largo",
+        "Os dois eixos são variações com sinal entre dois períodos e o zero é o corte natural"
+      ],
+      "quando_evitar": [
+        "A pergunta é a relação entre X e Y, não o grupo: dispersão simples (09/01)",
+        "Só interessam os quatro números, sem procurar item: matriz agregada de células (25/02)",
+        "Mais de cerca de 120 entidades, onde o rótulo morre: densidade 2D (09/09)",
+        "Movimento de cada entidade entre dois períodos: dispersão de antes e depois com setas (09/06)",
+        "A regra de decisão é razão ou produto dos dois eixos: plano com iso-linhas (25/03)",
+        "A mesma classificação repetida por segmento ou período: pequenos múltiplos de dispersão (09/11)",
+        "Quase toda a amostra cai numa só região: trocar o corte ou passar a postos antes de insistir no 2x2"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-e-conversao-por-executivo",
+          "titulo": "Ticket médio e conversão por executivo",
+          "caso_de_uso": "Comercial: quais dos 14 executivos estão acima da mediana do time em ticket médio e em conversão no trimestre.",
+          "o_que_demonstra": [
+            "Cortes na mediana calculados em TypeScript, com o valor escrito no rótulo da linha",
+            "ReferenceArea amarrada às constantes do domínio fixo, nunca a dataMax",
+            "Rótulo direto por ponto com desconflito vertical calculado fora do LabelList",
+            "Título de ação e contagem de itens no canto externo de cada região",
+            "Rodapé com n no plano e n fora por dado ausente, sem ponto no zero"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_campanhas-contra-break-even-com-bolhas",
+          "titulo": "Campanhas contra break-even, com investimento",
+          "caso_de_uso": "Marketing: quais das 30 campanhas pagam o lead abaixo do break-even de R$ 4,20 e batem a meta de 18% de qualificação.",
+          "o_que_demonstra": [
+            "Corte de premissa tracejado com etiqueta e corte medido sólido no mesmo plano",
+            "ZAxis com domain a partir de zero, maiores desenhadas antes e legenda de tamanho",
+            "Blocos de resumo em HTML sobre o gráfico: contagem, investimento e participação",
+            "Taxa da região recalculada sobre os totais, nunca média das médias",
+            "Anotação na região de CPL baixo e qualificação baixa: volume barato que não vira nada",
+            "Classificação pelo centro da bolha, escrita na legenda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_forecast-parado-com-lista-sincronizada",
+          "titulo": "Forecast por valor e dias parada, com lista",
+          "caso_de_uso": "Comercial: quais das 84 oportunidades do forecast valem mais de R$ 150 mil e estão paradas há mais de 30 dias.",
+          "o_que_demonstra": [
+            "Plano e lista ligados nos dois sentidos: clique na região filtra, hover acende o ponto",
+            "Destaque vindo da lista como segundo Scatter de um item, sem redesenhar a nuvem",
+            "Faixa de indiferença de 8% em torno dos cortes, com itens da fronteira em cinza",
+            "Bloco da região crítica com contagem, valor somado e participação no pipeline vivo",
+            "Oportunidades sem data de movimento no fim da lista, com selo fora do plano"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_variacao-de-origens-centrada-no-zero",
+          "titulo": "Variação de volume e qualificação por origem",
+          "caso_de_uso": "Marketing: de agosto para setembro, quais das 22 origens de lead cresceram em volume e perderam qualificação.",
+          "o_que_demonstra": [
+            "Domínio simétrico em torno do zero calculado em TypeScript, com teto para extremos",
+            "Ticks com sinal explícito e unidades separadas: % no volume, p.p. na taxa",
+            "Origem com +480% presa na borda, com marca de fora da escala e o valor real",
+            "Base mínima de 30 leads: origens abaixo dela e origens novas vão para o rodapé",
+            "Rótulo de ação nos quatro quadrantes, sem verde e vermelho saturados"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_matriz-agregada-de-celulas",
+      "nome": "Matriz agregada de células (2x2, 3x3)",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Some com os pontos e fica só a grade: cada célula nomeia um grupo e carrega contagem, soma da medida de negócio e, quando cabe, cartões com os itens. Serve ao 2x2 agregado de cartão pequeno, ao nine-box 3x3 de calibração de carteira e à matriz de Eisenhower com a ação escrita em cada caixa. Construído em HTML com CSS Grid do Tailwind, cada célula um botão com aria-label que filtra o painel, sem Recharts, porque o SVG não paga nada aqui. A caixa é derivada por regra auditável e não arrastada; item sem um dos atributos vai para faixa própria e nunca cai por padrão numa caixa; zero e sem dado têm desenhos diferentes; nenhuma célula tem área proporcional ao valor; e eixo de julgamento humano leva contorno tracejado com a legenda avaliação do time, não medição.",
+      "quando_usar": [
+        "A pergunta é quanto cai em cada grupo e ninguém vai procurar item individual",
+        "Resumo executivo de quatro números em cartão pequeno, com a caixa melhor sempre no mesmo canto",
+        "Calibração de carteira em três faixas por eixo, com zonas diagonais de ação",
+        "Itens acionáveis distribuídos por regra em quatro caixas, cada uma com um verbo",
+        "Os dois eixos já são categóricos ou foram cortados em faixas declaradas"
+      ],
+      "quando_evitar": [
+        "É preciso achar entidade específica pela posição: matriz 2x2 de quadrantes (25/01)",
+        "Os eixos são medidas contínuas e a posição dentro da célula importa (25/01)",
+        "A célula existe para ler intensidade por gradiente: matriz categórica em cor (15/02)",
+        "Área da célula proporcional ao valor: mosaico e marimekko (família 26)",
+        "Caixa que vira lista infinita, sem limite de cartões visíveis",
+        "Largura abaixo de cerca de 360 px, onde a grade empilha e deixa de ser matriz"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-por-origem-e-documento-em-2x2",
+          "titulo": "Leads por origem identificada e documento válido",
+          "caso_de_uso": "Marketing: quantos leads do mês têm origem identificada, documento válido, os dois ou nenhum.",
+          "o_que_demonstra": [
+            "Grade 2x2 com gap-px sobre fundo de divisória, cada caixa um botão que filtra",
+            "Seta de sentido e rótulo nos dois eixos, fora da grade",
+            "Número grande, rótulo da região e participação sobre o total em cada caixa",
+            "Caixa sem origem nem documento com borda chart-3 e ícone da lucide",
+            "Nenhuma caixa com área proporcional ao valor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_fila-da-sdr-em-eisenhower",
+          "titulo": "Fila da SDR por urgência e valor potencial",
+          "caso_de_uso": "Pré-vendas: como os 64 leads da fila se dividem entre fazer agora, agendar, redistribuir e descartar.",
+          "o_que_demonstra": [
+            "Caixa derivada por regra de SLA e valor, com a regra escrita no rodapé",
+            "Verbo de ação no título e contagem com vencidos, como 18, sendo 5 vencidos",
+            "Cartões ordenados por vencimento, até seis por caixa e depois +n",
+            "Ícone de relógio da lucide em chart-3 só nos cartões vencidos",
+            "Leads sem valor potencial em faixa própria abaixo da grade, sem engordar descartar"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_carteira-em-abc-e-xyz",
+          "titulo": "Carteira em ABC e XYZ",
+          "caso_de_uso": "Comercial: como 180 contas se dividem por receita reconhecida e previsibilidade mensal, e quanta receita há em cada célula.",
+          "o_que_demonstra": [
+            "Grade 3x3 com o critério de cada faixa no cabeçalho e o tipo de corte no subtítulo",
+            "Zonas diagonais pela soma dos índices, em três tons baixos",
+            "Contagem, soma de receita e participação no total em cada célula",
+            "Célula A e Z destacada: receita alta que entra no forecast como faixa",
+            "Navegação por setas entre células e aria-label com os números"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_nine-box-com-celula-vazia-e-lotada",
+          "titulo": "Nine-box com célula vazia e célula lotada",
+          "caso_de_uso": "Comercial: calibração de 60 contas por potencial e relacionamento, com uma célula sem contas e outra com 41.",
+          "o_que_demonstra": [
+            "Eixos de julgamento com contorno tracejado e legenda avaliação do time",
+            "Célula vazia com 0 contas em tom apagado, sem sumir da grade",
+            "Célula central com seis chips ordenados por potencial, +35 e botão de abrir lista",
+            "Seta de posição prevista no chip, como no desenho da matriz GE",
+            "Contas sem avaliação fora da grade, em faixa própria com contagem"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "03_plano-com-iso-linhas",
+      "nome": "Plano com iso-linhas de razão ou produto",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Plano de duas medidas em que a regra de decisão não é uma cruz, e sim uma razão ou um produto dos eixos. Razão constante é reta pela origem, o que dá as iso-linhas de retorno da priorização por impacto e esforço; produto constante é hipérbole, o que dá a fronteira curva de equilíbrio, como vitórias iguais a oportunidades vezes taxa de ganho, ou investimento igual a leads vezes CPL. A reta sai de ReferenceLine com segment cortada na borda do domínio; a curva é um componente filho que lê useXAxisScale e useYAxisScale e desenha um path com passo geométrico, recortado ao domínio. Iso-linha é fundo e divisória de região é traço médio, o subtítulo diz qual das duas leituras é a oficial, a nota traz a fórmula da curva e escore de julgamento leva a etiqueta avaliação do time.",
+      "quando_usar": [
+        "Ordenar uma fila de iniciativas por retorno sobre esforço, e não só agrupar em quatro caixas",
+        "A meta é um produto dos eixos e pode ser atingida por caminhos diferentes de volume ou taxa",
+        "Mostrar que entidades na mesma curva custam igual e entregam volumes diferentes",
+        "A fórmula da fronteira está acordada e cabe numa nota do cartão"
+      ],
+      "quando_evitar": [
+        "O corte é um limiar independente em cada eixo: matriz 2x2 de quadrantes (25/01)",
+        "A fronteira não tem fórmula acordada; curva desenhada a olho inventa regra",
+        "Impacto e esforço pontuados sem critério definido antes da pontuação",
+        "A pergunta é a relação entre as duas medidas: dispersão com tendência ou identidade (09/02)",
+        "Centenas de itens, em que a leitura por curva se perde na nuvem: densidade 2D (09/09)"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_automacoes-por-impacto-e-esforco",
+          "titulo": "Automações de pré-vendas por impacto e esforço",
+          "caso_de_uso": "Pré-vendas: quais das 14 automações do backlog rendem mais impacto por unidade de esforço estimada pelo time.",
+          "o_que_demonstra": [
+            "Iso-linhas de 3x, 2x, 1x e 0,5x com ReferenceLine segment cortada na borda",
+            "Rótulo de razão na ponta de cada iso-linha, em traço de fundo",
+            "Divisórias de região em traço médio, acima das iso-linhas na hierarquia",
+            "Eixos de escore 1 a 5 com contorno tracejado: avaliação do time, não medição",
+            "Deslocamento determinístico para itens na mesma coordenada, avisado no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_vitorias-por-volume-e-taxa-com-meta",
+          "titulo": "Vitórias por volume e taxa de ganho",
+          "caso_de_uso": "Comercial: quais dos 14 executivos chegam às 12 vitórias do trimestre, e por qual caminho de volume ou de taxa.",
+          "o_que_demonstra": [
+            "Hipérboles de 5, 10 e 20 vitórias num path desenhado com useXAxisScale",
+            "Passo geométrico na amostragem para a curva não quebrar perto do eixo",
+            "Curva da meta em traço médio com a região acima dela em tom baixo",
+            "Tooltip com o produto calculado e nota com a fórmula da curva",
+            "Anotação: 4 executivos chegam na meta com metade do volume da equipe"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_campanhas-em-curvas-de-investimento",
+          "titulo": "Campanhas por leads e CPL em curvas de investimento",
+          "caso_de_uso": "Marketing: das 48 campanhas do trimestre, quais custam o mesmo e entregam volumes de lead muito diferentes.",
+          "o_que_demonstra": [
+            "Curvas de R$ 5 mil, 20 mil e 50 mil recortadas ao domínio do plano",
+            "48 pontos neutros com rótulo só nos extremos de cada curva",
+            "Faixa de 10% em torno da curva de R$ 20 mil, com os itens de dentro em cinza",
+            "Legenda que diz o que é cada ponto e a unidade de cada eixo",
+            "Campanhas sem CPL fora do plano, contadas no rodapé"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_escala-log-com-executivos-sem-vitoria",
+          "titulo": "Vitórias em escala log com executivos zerados",
+          "caso_de_uso": "Comercial: o plano de vitórias em escala log, com 3 executivos de zero vitórias que o log não consegue desenhar.",
+          "o_que_demonstra": [
+            "Escala log nos dois eixos, em que as hipérboles viram retas paralelas",
+            "Executivos com taxa zero em faixa própria abaixo do plano, nunca no eixo",
+            "Ticks log com valores redondos declarados à mão",
+            "Nota que explica por que as curvas viraram retas",
+            "Fronteira como zona: quem está a uma vitória da meta aparece em cinza"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_matriz-de-cobertura-binaria",
+      "nome": "Matriz de cobertura binária",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Entidades nas linhas, atributos nas colunas e um estado por célula: presente, vazio ou não coletado. Responde quem tem e quem não tem cada atributo, como quais origens de lead entregam telefone, cargo, empresa, UTM e consentimento; na forma agregada, no estilo UpSet, conta as combinações de campos presentes, com matriz de pontos ligados e barras de tamanho por combinação e por atributo. Construído em HTML com CSS Grid do Tailwind, com a barra como div de largura percentual na mesma linha da grade, o que garante alinhamento sem sincronizar dois gráficos; SVG puro só acima de cerca de 40 linhas. O ponto delicado é o terceiro estado: campo que a coleta não traz não é campo vazio na base, e pintar os dois igual transforma defeito de coleta em defeito de base. Preenchimento baixo num campo que a origem trata como obrigatório é sintoma de coleta.",
+      "quando_usar": [
+        "Saber quais entidades têm cada atributo, em até cerca de 12 linhas por 10 colunas",
+        "Auditar cobertura de dado por origem antes de julgar CPL qualificado ou atribuição",
+        "Contar combinações de 4 a 30 atributos presentes, onde o diagrama de Venn já não lê",
+        "Separar campo vazio na base de campo fora da coleta"
+      ],
+      "quando_evitar": [
+        "O valor é quantitativo e não binário: tabela com heatmap nas células (14/02)",
+        "Poucas opções comparadas em vários critérios com glifo: matriz de comparação com status (14/09)",
+        "Um único percentual de cobertura por linha de tabela: medidor de cobertura de dado (24/05)",
+        "Relação entre entidades do mesmo tipo: matriz de adjacência (27/01)",
+        "Dezenas de combinações sem corte: mostrar as 12 maiores e agrupar o resto"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_campos-entregues-por-origem",
+          "titulo": "Campos entregues por origem de lead",
+          "caso_de_uso": "Marketing: quais das 8 origens de lead entregam telefone, cargo, empresa, UTM, cidade e consentimento.",
+          "o_que_demonstra": [
+            "Ponto cheio para presente e anel vazio para ausente, na grade de origens por campos",
+            "Percentual de preenchimento no rodapé de cada coluna",
+            "Linhas ordenadas pelo total de campos presentes, declarado no subtítulo",
+            "Célula de pelo menos 44 px com aria-label de origem, campo e estado"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_combinacoes-de-campos-no-estilo-upset",
+          "titulo": "Combinações de campos preenchidos",
+          "caso_de_uso": "Marketing: quais combinações de campos preenchidos são mais comuns entre 8.400 leads e quantos leads cada uma reúne.",
+          "o_que_demonstra": [
+            "Matriz de pontos com traço ligando os campos presentes em cada combinação",
+            "Barra por combinação à direita e por campo no topo, em divs alinhadas à grade",
+            "Chave de combinação montada em TypeScript e ordenada por tamanho",
+            "As 9 maiores combinações e o resto em demais combinações, com contagem",
+            "Anotação: a maior combinação é só e-mail e nome"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_cobertura-por-origem-com-limiar-de-80",
+          "titulo": "Cobertura por origem com limiar de julgamento",
+          "caso_de_uso": "Marketing: em quais origens a cobertura de cada campo passa de 80%, o piso declarado para julgar a origem.",
+          "o_que_demonstra": [
+            "Célula com o percentual preenchido e ponto cheio só acima do limiar de 80%",
+            "Limiar escrito no subtítulo com etiqueta de procedência PREMISSA",
+            "Origem abaixo do piso em campo crítico com aviso herdado pelo cartão de CPL",
+            "Telefone em destaque: preenchimento baixo em campo obrigatório é sintoma de coleta"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_campo-fora-da-coleta",
+          "titulo": "Cobertura com campo fora da coleta",
+          "caso_de_uso": "Marketing: 4 fontes de lead, uma delas sem telefone na coleta, o que não quer dizer telefone ausente na base.",
+          "o_que_demonstra": [
+            "Três estados distintos: ponto cheio, anel vazio e hachura diagonal",
+            "Coluna inteira hachurada quando o campo está fora da coleta da fonte",
+            "Nota: preenchimento desconhecido, campo fora da coleta e não ausente na base",
+            "Percentual do rodapé calculado só sobre as fontes que coletam o campo",
+            "Legenda dos três estados sempre visível"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_matriz-de-decisao-ponderada",
+      "nome": "Matriz de decisão ponderada",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Opções nas linhas, critérios nas colunas, peso visível por critério, nota por célula e total por opção. É a matriz de escolha entre desenhos, cenários ou alternativas quando a decisão precisa ser auditável. O desenho enfrenta as fraquezas registradas do método: os critérios eliminatórios em passa e não passa são avaliados antes de qualquer soma, e a opção que falha um deles sai do ranking riscada com o motivo, mesmo com o maior total; o peso é dado de primeira classe e fica na tela; critério com medida real usa a medida normalizada, e a nota ordinal fica só para o que não tem medida, marcada como julgamento. Construído em HTML com CSS Grid do Tailwind, com a decomposição do total em barra empilhada de divs e a sensibilidade do vencedor a variações de peso calculada em TypeScript. Nota ausente nunca vira zero na soma.",
+      "quando_usar": [
+        "Escolher entre 3 e 6 opções com pesos explícitos e acordados por critério",
+        "Existem requisitos obrigatórios que eliminam opção antes de qualquer soma",
+        "A diretoria precisa ver por que o vencedor vence, critério a critério",
+        "Testar se a escolha se sustenta quando algum peso varia"
+      ],
+      "quando_evitar": [
+        "Os pesos não foram acordados; a matriz dá cara de ciência a um palpite",
+        "Comparar opções em critérios, sem peso nem total: matriz de comparação com status (14/09)",
+        "Perfil de uma opção só em muitos critérios: radar (família 18)",
+        "Muitos critérios menores diluindo um requisito obrigatório, sem faixa eliminatória",
+        "Notas ordinais somadas quando há medida real, como custo em reais ou prazo em dias"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_desenhos-de-remuneracao-variavel",
+          "titulo": "Três desenhos de remuneração variável",
+          "caso_de_uso": "Comercial: qual dos três desenhos fictícios de remuneração variável pontua melhor nos cinco critérios acordados.",
+          "o_que_demonstra": [
+            "Barra fina de peso acima de cada coluna, com o peso escrito",
+            "Célula com a nota e a contribuição ponderada logo abaixo",
+            "Total normalizado pela soma dos pesos, em coluna fixa à direita",
+            "Líder de cada critério com contorno, sem cor saturada"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_decomposicao-do-total-por-criterio",
+          "titulo": "De onde vem o total de cada desenho",
+          "caso_de_uso": "Comercial: em quais critérios o desenho vencedor abre vantagem e em quais ele empata ou perde.",
+          "o_que_demonstra": [
+            "Coluna de total como barra empilhada de divs, um segmento por critério",
+            "Mesma cor por critério no segmento e no cabeçalho da coluna",
+            "Anotação: o vencedor ganha quase só em simplicidade de apuração",
+            "Diferença para o segundo colocado escrita ao lado do total"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_cenarios-de-orcamento-2027-com-eliminatorio",
+          "titulo": "Cenários de orçamento 2027 com eliminatório",
+          "caso_de_uso": "Diretoria: qual dos 4 cenários de orçamento de 2027 vence nos 7 critérios e cabe na capacidade medida de pré-vendas.",
+          "o_que_demonstra": [
+            "Faixa eliminatória em passa e não passa avaliada antes de qualquer soma",
+            "Cenário de maior total riscado com o motivo, fora do ranking",
+            "Critérios com medida real normalizados e notas ordinais marcadas como julgamento",
+            "Etiqueta de procedência por critério: MEDIDO, PREMISSA ou DERIVADO",
+            "Receita em faixa na célula, com a nota calculada sobre o ponto médio e aviso"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_decisao-sensivel-ao-peso",
+          "titulo": "Decisão sensível ao peso de custo",
+          "caso_de_uso": "Diretoria: o cenário vencedor continua vencendo se o peso de algum critério variar 20% para mais ou para menos?",
+          "o_que_demonstra": [
+            "Sensibilidade calculada em TypeScript variando cada peso em 20%",
+            "Selo decisão sensível ao peso de custo no lugar da coroa de vencedor",
+            "Cenário que vence com o peso alterado, indicado na mesma tabela",
+            "Nota ausente mostrada como sem nota e total marcado incompleto, nunca zero"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "06_matriz-de-risco",
+      "nome": "Matriz de risco em células",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Probabilidade nas linhas, crescendo de baixo para cima, impacto nas colunas, e cada célula com o nível escrito, a contagem de riscos e a lista ao clicar. É o modelo da família com a crítica mais bem documentada: a matriz típica compara sem ambiguidade poucos pares de risco, comprime riscos diferentes na mesma célula, pode dar nota maior ao menor, e multiplicar escalas ordinais é inválido. Por isso o nível vem de uma tabela de consulta acordada, nunca do produto de índices; a cor da célula é resumo grosseiro e anda sempre com número; os três tons passam em simulação de daltonismo; e a cor não decide orçamento. Construído em HTML com CSS Grid do Tailwind, com role grid e navegação por setas, porque a grade é o controle de filtro. O laço percorre as faixas de probabilidade de trás para frente; esquecer isso inverte a matriz sem erro visível.",
+      "quando_usar": [
+        "Catálogo de 10 a 60 riscos avaliados por probabilidade e impacto em faixas com critério numérico",
+        "Conversa de comitê sobre onde cada risco está e o que mudou desde a última revisão",
+        "A grade serve de filtro para a lista de riscos com dono, gatilho e plano de resposta",
+        "Mostrar a compressão de faixa ao comparar 3x3 e 5x5 sobre os mesmos riscos"
+      ],
+      "quando_evitar": [
+        "Decidir orçamento ou prioridade pela cor da célula",
+        "Ordenar riscos pelo produto de probabilidade e impacto em escala ordinal",
+        "Existe estimativa quantitativa de perda com incerteza: dot plot com intervalo (17/02)",
+        "Critérios de faixa vagos; o 5x5 só dá mais formas de discordar",
+        "Intensidade por gradiente sem nome de grupo: matriz categórica em cor (15/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_riscos-do-plano-comercial-5x5",
+          "titulo": "Riscos do plano comercial em 5x5",
+          "caso_de_uso": "Diretoria: onde os 23 riscos do plano comercial de 2027 se concentram por probabilidade e impacto.",
+          "o_que_demonstra": [
+            "Nível lido de tabela de consulta acordada, não do produto de índices",
+            "Laço de probabilidade invertido para a faixa mais provável ficar no topo",
+            "Descritor de faixa com critério numérico nos cabeçalhos",
+            "Célula com nível escrito e contagem, em três tons de baixa saturação",
+            "Zero em dígito sobre a superfície base, distinto de sem dado"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_movimento-desde-o-ultimo-comite",
+          "titulo": "Riscos que mudaram desde o último comitê",
+          "caso_de_uso": "Diretoria: quais riscos subiram ou desceram de nível desde o último comitê e para qual célula foram.",
+          "o_que_demonstra": [
+            "Marca de subida ou descida com o número de níveis na célula de destino",
+            "Célula de origem com contorno tracejado enquanto o risco está em foco",
+            "Anotação: 4 riscos subiram de nível; nenhum desceu",
+            "Segundo canal além da cor: número e densidade de traço"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_mapa-de-risco-dos-cenarios-com-lista",
+          "titulo": "Mapa de risco dos cenários com lista",
+          "caso_de_uso": "Diretoria: quais riscos dos cenários estão na faixa alta e quem é o dono, o gatilho e o plano de resposta de cada um.",
+          "o_que_demonstra": [
+            "Grade como controle de filtro, com role grid e navegação por setas",
+            "Clique na célula abre a lista com dono, gatilho e plano de resposta",
+            "Riscos de dependência de mídia paga, teto de pré-vendas e concentração de receita",
+            "Célula selecionada com contorno e contagem repetida no título da lista"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_compressao-3x3-contra-5x5",
+          "titulo": "Compressão de faixa: 3x3 contra 5x5",
+          "caso_de_uso": "Diretoria: quantos dos mesmos 23 riscos se empilham na mesma célula quando a matriz passa de 5x5 para 3x3.",
+          "o_que_demonstra": [
+            "Duas grades lado a lado sobre os mesmos riscos, com faixas mapeadas por tabela",
+            "Anotação: no 3x3, 11 riscos dividem a célula alta e alta",
+            "Riscos sem impacto avaliado na faixa sem avaliação, fora da grade",
+            "Hachura diagonal para sem dado, distinta da célula com zero"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "07_matriz-raci",
+      "nome": "Matriz de responsabilidade (RACI)",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Etapas de um processo nas linhas, papéis nas colunas e uma letra por célula: R executa, A responde em última instância, C é consultado em via dupla e I é informado em via única. A regra de governança é uma só, exatamente um A por etapa, e a validação roda em TypeScript e vira coluna de alerta à direita. No Farol serve ao handoff de pré-vendas para vendas e ganha interesse quando cruza o declarado (PREMISSA) com quem de fato registrou a etapa no CRM (MEDIDO). Construído como tabela semântica em HTML com Tailwind, com th scope, porque a matriz é documento e precisa de leitor de tela; a forma do glifo carrega a diferença entre letras (A cheio, R contornado, C e I só texto) e a cor só reforça. Célula com duas letras é legítima e não pode quebrar o layout; variantes com letra extra, como RASCI, mantêm a regra do A único.",
+      "quando_usar": [
+        "Declarar quem executa, responde, é consultado e é informado em cada etapa do handoff",
+        "Auditar governança: etapa sem A, com dois A ou sem ninguém que execute",
+        "Ver a carga de cada papel em quantidade de R e de A",
+        "Comparar o processo declarado com o executado no CRM, com etiquetas separadas"
+      ],
+      "quando_evitar": [
+        "O processo ainda não tem dono definido; a matriz congela um desenho que não existe",
+        "Quem passa oportunidade para quem e em que volume: matriz de adjacência (27/01)",
+        "Estado de execução de cada etapa ao longo do tempo: faixa de status (24/04)",
+        "Ordem e duração das etapas no calendário: cronograma e linha do tempo (família 20)"
+      ],
+      "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+      "versoes": [
+        {
+          "slug": "v1_handoff-declarado",
+          "titulo": "Handoff de pré-vendas para vendas declarado",
+          "caso_de_uso": "Comercial: quem executa, responde, é consultado e é informado nas 8 etapas do handoff de pré-vendas para vendas.",
+          "o_que_demonstra": [
+            "Tabela semântica com th scope nas etapas e nos papéis",
+            "Glifo por forma: A cheio, R contornado, C e I só texto",
+            "Etapas na ordem do processo, declarada no subtítulo",
+            "Legenda das quatro letras sempre visível",
+            "Célula com duas letras sem quebrar a largura da coluna"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_alertas-de-governanca-do-handoff",
+          "titulo": "Alertas de governança do handoff",
+          "caso_de_uso": "Comercial: quais etapas do handoff estão sem responsável final ou com dois, e qual papel concentra a execução.",
+          "o_que_demonstra": [
+            "Validação em TypeScript: exatamente um A e pelo menos um R por etapa",
+            "Coluna de alerta com ícone da lucide e o texto do problema",
+            "Etapa registrar perda sem A em tom de alerta, com segundo canal além da cor",
+            "Rodapé com a carga de R e A por papel: executivo com 6 R e nenhum apoio"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_declarado-contra-executado-no-crm",
+          "titulo": "RACI declarado contra executado no CRM",
+          "caso_de_uso": "Comercial: em cada etapa, quantas vezes o papel declarado de fato registrou a etapa no CRM no trimestre.",
+          "o_que_demonstra": [
+            "Letra declarada com etiqueta PREMISSA e percentual executado com etiqueta MEDIDO",
+            "Divergência acima de 30 pontos percentuais em destaque na célula",
+            "Papel sem letra que executa com frequência marcado na célula vazia",
+            "Nota: RACI é declaração de processo, não medição"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_rasci-com-papel-sem-ocupante",
+          "titulo": "RASCI com papel sem ocupante",
+          "caso_de_uso": "Pré-vendas: variante RASCI da redistribuição de fila, com um papel sem ocupante desde 2026-08-01.",
+          "o_que_demonstra": [
+            "Letra S de suporte na legenda e no glifo, sem mudar a regra do A único",
+            "Coluna do papel vago hachurada, com as letras declaradas mantidas",
+            "Nota: papel sem ocupante desde 2026-08-01",
+            "Alerta na etapa cujo único A está no papel vago"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

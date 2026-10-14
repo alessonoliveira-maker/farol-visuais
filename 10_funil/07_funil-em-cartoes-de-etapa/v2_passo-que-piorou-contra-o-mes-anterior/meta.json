@@ -1,0 +1,12 @@
+{
+  "title": "Passo que piorou contra o mês anterior",
+  "useCase": "Achar em qual passagem do funil de mídia a conversão caiu mais que o normal contra o mês anterior.",
+  "demonstrates": [
+    "Chip em vermelho só no passo que piorou além do limiar em pontos percentuais",
+    "Variação com a base nomeada, contra a taxa do mês anterior por extenso",
+    "Demais chips em tom neutro, para o destaque não competir por atenção",
+    "Comparação sempre com o volume dos dois meses escrito, nunca só a seta"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

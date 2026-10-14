@@ -1,0 +1,12 @@
+{
+  "title": "Entradas da semana por status de SLA",
+  "useCase": "Mostrar em quais dias úteis as entradas ficaram fora do SLA ou pendentes, com o feriado sem expediente.",
+  "demonstrates": [
+    "Um RadialBar por status no mesmo stackId, no máximo três segmentos por dia",
+    "Separação entre segmentos por stroke em surface-raised, cornerRadius só na ponta final",
+    "Dia sem expediente com trilho vazio e rótulo, nunca arco zerado em silêncio",
+    "Total de entradas escrito no início de cada arco, junto do nome do dia"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

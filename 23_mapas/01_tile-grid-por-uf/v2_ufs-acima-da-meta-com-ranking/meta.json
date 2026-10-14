@@ -1,0 +1,14 @@
+{
+  "title": "UFs acima da meta de qualificação",
+  "useCase": "Quais UFs passaram da meta de 18% de qualificação e onde ficam no ranking?",
+  "demonstrates": [
+    "Anel em --chart-1 só nos tiles acima da meta, os demais em cinza",
+    "Visto junto da sigla, para o destaque não depender só da cor",
+    "Ranking das 10 maiores taxas com a mesma UF acesa pela prop highlightId",
+    "Linha da meta nas barras e a contagem escrita, 7 de 27 UFs",
+    "Container query que empilha o mapa e o ranking abaixo de 560 px"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Acima da meta é estritamente maior: MS está em exatamente 18,0% e fica cinza, sem anel. O ranking desempata pela maior quantidade de leads, então BA e SP, ambas em 17,0%, resolvem para SP dentro do corte de 10 e BA fora, sem depender da ordem do dado. O valor do ranking fica em coluna à direita, e não na ponta da barra, porque a linha da meta cruzaria o rótulo das barras perto de 18%. Os tiles em cinza usam --line-strong com --text-primary (8,13:1 no pior tema) em vez de uma rampa, porque a pergunta é binária. A grade de 8 por 6 é a do modelo, desenhada à mão e declarada no data.ts."
+}

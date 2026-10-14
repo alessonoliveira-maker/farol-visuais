@@ -1,0 +1,13 @@
+{
+  "title": "Entradas por hora do dia",
+  "useCase": "Mostrar em que horas do dia chegam as entradas da fila, para escalar a equipe de pré-vendas.",
+  "demonstrates": [
+    "SVG puro com arcPath de setor de anel, sem retângulo girado",
+    "Círculo interno com mais da metade do raio para conter a distorção",
+    "Anéis de grade com valores escritos num único ângulo, escala contra o viés do raio",
+    "Rótulos de hora horizontais a cada 3 horas, ancorados pelo quadrante"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Vies do raio documentado no README do modelo: o valor sai sempre pela escala escrita, nunca por comparar duas colunas a olho."
+}

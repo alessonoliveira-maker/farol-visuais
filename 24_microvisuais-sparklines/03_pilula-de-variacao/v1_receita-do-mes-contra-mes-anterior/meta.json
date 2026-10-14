@@ -1,0 +1,14 @@
+{
+  "title": "Receita do mês com pílula de variação",
+  "useCase": "A receita reconhecida do mês subiu ou caiu contra o mês anterior, e sobre qual base?",
+  "demonstrates": [
+    "Sinal + ou − (U+2212) à mão sobre formatPercent do valor absoluto",
+    "Glifo TrendingUp, TrendingDown ou Minus com aria-hidden, junto do sinal e da cor",
+    "Texto em --positive direto sobre o cartão, sem fundo tingido (COR-7)",
+    "Base nomeada na mesma linha: contra R$ 1,2 mi em jul/26",
+    "Faixa neutra de 1% em que o tom vira --text-secondary e o glifo vira Minus"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Canvas kpi-alto (360 x 280) em vez do kpi sugerido: o preset kpi deixa 328 x 81,5 px de corpo na moldura stage e a v1 mostra duas pílulas (mês anterior e mesmo mês do ano anterior) para exibir a alta e a faixa neutra no mesmo desenho."
+}

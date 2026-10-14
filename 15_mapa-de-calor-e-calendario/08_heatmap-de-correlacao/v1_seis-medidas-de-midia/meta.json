@@ -1,0 +1,14 @@
+{
+  "title": "Correlação entre seis medidas de mídia",
+  "useCase": "O que anda junto com investimento em mídia: volume ou lead qualificado?",
+  "demonstrates": [
+    "Escala divergente centrada em zero, porque correlação tem sinal",
+    "Triângulo inferior sem diagonal: a matriz é simétrica e a diagonal vale sempre 1",
+    "Número de observações escrito na legenda, porque coeficiente sem n é opinião",
+    "Linha e coluna nomeadas: matriz triangular não deixa medida sem nome",
+    "Peso 600 só no par forte, acima de 0,60 em módulo"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "A cor é composta com color-mix entre --negative, --surface-overlay e --positive porque o Farol ainda não tem tokens divergentes; quando existirem --div-*, a função cellFill troca de corpo e mais nada. O texto vira --surface-sunken acima de 0,50 em módulo, que é onde a ponta satura o bastante para derrubar o contraste do texto do cartão. A legenda diz que correlação não é causa: com público executivo essa linha não é decoração. As colunas levam o nome da medida e não o número dela: o triângulo inferior descarta a primeira linha e a última coluna, então a numeração deixava a medida 1 sem nome em lugar nenhum do cartão. O nome que não cabe numa linha do cabeçalho desce para a segunda, porque nome de marca não se corta."
+}

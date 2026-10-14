@@ -1,0 +1,14 @@
+{
+  "title": "Investimento com detalhamento e ramo sem dado",
+  "useCase": "Marketing: navegar do investimento de ago/26 por plataforma até o criativo, sem quebrar em campanha sem criativo.",
+  "demonstrates": [
+    "Detalhamento plataforma, campanha e criativo com trilha de navegação sempre visível",
+    "Cabeçalho do nível com o peso do ramo no todo, calculado do dado",
+    "Estado vazio para campanha sem criativo, com voltar, no lugar de retângulo único",
+    "Caminho inicial declarado no data.ts para o preview mostrar o ramo vazio",
+    "key com a assinatura do filtro, para o caminho não sobreviver ao recorte que apaga o ramo"
+  ],
+  "canvas": { "width": 720, "height": 320 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), e a conta: o corpo mede 654 x 201,5 px nesta moldura, e a peça gasta 17 px na trilha, 23 px no cabeçalho do nível e 21 px na lista de ramos, o que deixa cerca de 140 px para o gráfico ou para o estado vazio, que substitui o gráfico inteiro pela EST-1 e por isso ocupa o mesmo lugar dele; o preset card de 640x360 daria 574 px de largura e a linha do cabeçalho do nível mais fundo, de 57 caracteres, ainda caberia, mas a lista de três ramos em colunas de 180 px não. O preview abre no ramo vazio de propósito, porque é o que o catálogo pede desta versão, e a consequência é que o treemap dos níveis 1 e 2 não aparece no preview: quem revisa precisa abrir o componente com initialPath vazio para ver as células. Duas consequências do contrato que valem registro. A primeira é sobre a GEO-3, a armadilha de área que não fecha com o valor: aqui ela é resolvida por construção, porque o valor de um nó com filhos é sempre a soma dos filhos e nunca um total declarado à parte, então não existe o caso de o pai divergir da soma; onde não há filhos, o valor declarado do ramo permanece e a peça escreve que ele não se divide, que é exatamente o texto do estado vazio. A segunda é sobre o contraste: no ramo vazio a peça não tem SVG de gráfico, então o serializador grava tudo como ilha de HTML e as guardas CONTRASTE-TEXTO e COLISAO-TEXTO saem como texto_em_html, sem medir. Contraste medido à mão, contra o cartão: text-primary 14,53:1 e 17,96:1, text-secondary 8,16:1 e 8,13:1, text-muted 5,21:1 e 5,37:1, chart-1 na trilha e no voltar 9,50:1 e 6,00:1, e accent-cyan-contrast sobre chart-1 dentro da célula 10,06:1 e 6,00:1, todos acima do piso de 4,5:1 da ACE-3. A peça não desenha dica (DIC-1): o nome e o valor de todo ramo do nível estão escritos na lista, que também é o caminho para descer."
+}

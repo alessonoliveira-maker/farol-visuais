@@ -1,0 +1,72 @@
+{
+  "slug": "02_eixo-duplo-com-dominios-calculados",
+  "nome": "Eixo duplo com domínios calculados",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas medidas de unidades diferentes no mesmo quadro, cada uma no seu eixo y, com os domínios decididos por função pura em TypeScript e nunca pelo automático do Recharts: zeros alinhados, o mesmo número de marcas nos dois eixos, eixo e série na mesma cor. A forma legítima é coluna de quantidade com linha de taxa; linha e linha só com regra de escala declarada; colunas nos dois eixos entram apenas como antipadrão catalogado, com a correção ao lado.",
+  "quando_usar": [
+    "Quantidade e taxa sobre o mesmo tempo, para público habituado ao cartão: leads e percentual qualificado, agendas e taxa de comparecimento.",
+    "Forma de duas séries de unidades diferentes ao longo do tempo, com a regra de escala por índice escrita no rodapé do corpo.",
+    "Até 26 períodos, uma série por eixo e no máximo uma linha no eixo secundário."
+  ],
+  "quando_evitar": [
+    "Público geral sem mediação: use 03_paineis-alinhados ou índice base 100 em 04_linhas/02_multiplas-series.",
+    "Duas grandezas absolutas em colunas: é o antipadrão; troque por painéis ou por 03_colunas-verticais/08_colunas-em-small-multiples.",
+    "Mesma unidade nas duas séries: use 01_coluna-com-linha com eixo único.",
+    "Leitura de nível ou de cruzamento entre as séries: a escala é arbitrária e o cruzamento não significa nada.",
+    "Mais de duas séries, ou taxa de crescimento num eixo e valor bruto no outro.",
+    "Enquanto a EIX-8 do CONTRATO (sem eixo duplo) valer sem exceção registrada, a entrega padrão é o modo painéis."
+  ],
+  "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-e-percentual-qualificado",
+      "titulo": "Leads por mês e percentual qualificado",
+      "caso_de_uso": "O volume de leads cresceu em 2026 sem derrubar a proporção de leads qualificados?",
+      "o_que_demonstra": [
+        "Dois YAxis com yAxisId, a taxa em orientation right",
+        "Domínios fixos por função pura com allowDataOverflow e niceTicks none",
+        "Tique e título de eixo na cor da série correspondente",
+        "Grade só do eixo principal e o mesmo número de marcas nos dois eixos",
+        "Dica com as duas unidades e o denominador da taxa"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cpl-e-leads-em-duas-linhas",
+      "titulo": "CPL e volume de leads em duas linhas",
+      "caso_de_uso": "O custo por lead e o volume de leads mudam de forma juntos, ou um sobe quando o outro cai?",
+      "o_que_demonstra": [
+        "Linha e linha em eixo duplo com escala por índice na mesma data base",
+        "Regra de escala declarada numa nota curta no rodapé do corpo",
+        "Aviso quando uma série varia muito mais e a regra achata a outra",
+        "Nenhuma anotação no cruzamento das duas linhas"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_agendas-e-comparecimento-26-semanas",
+      "titulo": "Agendas e comparecimento em 26 semanas",
+      "caso_de_uso": "A taxa de comparecimento cai nas semanas de muitas agendas, e em quais semanas a taxa nem existe?",
+      "o_que_demonstra": [
+        "Semana com zero agendas vira taxa nula e ponto ausente, nunca 0%",
+        "Taxa acima de 100% por erro de dado marcada como anomalia, com palavra",
+        "formatRateWithVolume na dica, com numerador e denominador",
+        "Ticks como frações iguais do domínio para as marcas coincidirem",
+        "26 semanas em canvas largo sem girar tiques"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_antipadrao-colunas-em-dois-eixos",
+      "titulo": "Colunas em dois eixos e a versão corrigida",
+      "caso_de_uso": "Por que investimento em R$ e leads por plataforma, em colunas de dois eixos, enganam, e como fica a leitura correta?",
+      "o_que_demonstra": [
+        "Pares de colunas cujas alturas não se comparam entre si",
+        "Correção em painéis alinhados ao lado, com as mesmas cores e ordem",
+        "Guarda que recusa duas Bar em yAxisId distintos e escreve o motivo",
+        "Plataformas fictícias com nome genérico, sem marca real"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

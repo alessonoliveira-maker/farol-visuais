@@ -1,0 +1,12 @@
+{
+  "title": "Receita do mês em texto corrido com dataword",
+  "useCase": "Comercial: quanto foi reconhecido em set/26, contra ago/26, e para onde vão os últimos 12 meses?",
+  "demonstrates": [
+    "KPI em texto corrido: número em kpi-number font-semibold, resto em text-text-secondary",
+    "Sparkline inline em SVG de 1em de altura com geometria calculada em TypeScript",
+    "Último ponto da sparkline na cor do número, como o dataword de Tufte",
+    "Variação com sinal tipográfico e base nomeada na mesma frase"
+  ],
+  "canvas": "faixa",
+  "notes": "O catálogo escreve R$ 1,24 mi e 8%; formatCurrencyCompact devolve uma casa (R$ 1,2 mi) e a NUM-1 pede uma casa de percentual abaixo de 10%, então a frase sai com R$ 1,2 mi e +8,4%. Conta do corpo no preset faixa com moldura card: 894 x 141,5 px (125 em duas linhas), frase em duas linhas de 40 px mais a nota de 11 px."
+}

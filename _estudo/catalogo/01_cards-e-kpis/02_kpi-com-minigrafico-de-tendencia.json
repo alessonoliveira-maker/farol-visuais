@@ -1,0 +1,78 @@
+{
+  "slug": "02_kpi-com-minigrafico-de-tendencia",
+  "nome": "KPI com minigráfico de tendência",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Número em destaque com um minigráfico subordinado, sem eixo nem grade, que responde uma pergunta só: qual é a forma recente da série. Absorve sparkline, sparkbar, sparkline comparativa com o mesmo período do ano anterior e fita de estado por dia; linha e coluna saem do Recharts em contêiner de altura fixa, a fita sai em HTML. A bandline do estudo fica como extensão da sparkline, sem versão própria.",
+  "quando_usar": [
+    "A forma da série recente muda a conclusão: subida firme, queda ou serra.",
+    "Série com cadência fixa e pelo menos 5 pontos, legível em cerca de 32 px de altura.",
+    "Contagem discreta por dia útil, semana ou campanha, em que a altura de cada coluna importa.",
+    "Série sazonal comparada com o mesmo período do ano anterior, com peso menor na referência.",
+    "Cumprimento diário de SLA ou de coleta, em que importa saber se as falhas vieram em bloco."
+  ],
+  "quando_evitar": [
+    "Menos de 5 pontos ou série sem cadência: KPI simples com variação (modelo 01).",
+    "A sparkline é o visual inteiro, como coluna de tabela: microvisuais e sparklines (24/01).",
+    "O leitor precisa julgar nível com escala livre: fixar o domínio no zero ou escrever a faixa.",
+    "Mais de duas séries no minigráfico: linhas (família 04).",
+    "Fita com mais de cerca de 90 células: mapa de calor e calendário (família 15).",
+    "Muitos cartões comparáveis entre si: grade de scorecards com escala comum (modelo 07)."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-qualificado-com-sparkline-de-12-meses",
+      "titulo": "CPL qualificado com tendência de 12 meses",
+      "caso_de_uso": "O CPL qualificado de ago/26 é um ponto fora da curva ou parte de uma queda firme desde set/25?",
+      "o_que_demonstra": [
+        "LineChart sem eixo, grade nem dica, em contêiner de altura fixa h-8",
+        "Sem área preenchida porque a escala não parte do zero (EIX-2)",
+        "Ponto final cheio em --chart-1 ligado ao número e âncora de 12 meses",
+        "Polaridade menor melhor na variação acima da linha",
+        "Mês sem coleta como null: a linha quebra, sem connectNulls",
+        "Sparkline com aria-hidden porque a frase acessível já traz a tendência"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_entradas-no-handoff-contra-o-teto-diario",
+      "titulo": "Entradas no handoff por dia útil contra o teto",
+      "caso_de_uso": "Em quantos dos últimos 20 dias úteis as entradas na fila de handoff passaram do teto diário de 14?",
+      "o_que_demonstra": [
+        "BarChart mínimo com domínio a partir do zero, mesmo em miniatura (EIX-1)",
+        "ReferenceLine tracejada no teto com ifOverflow extendDomain",
+        "Colunas acima do teto em --negative com a contagem escrita: 3 de 20 dias",
+        "Vão de 2 px entre colunas e largura mínima de 3 px por coluna",
+        "Só dias úteis na série, escrito no rodapé para não ler queda no fim de semana"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_leads-diarios-contra-o-mesmo-periodo-de-2025",
+      "titulo": "Leads por dia contra os mesmos dias de 2025",
+      "caso_de_uso": "Os leads dos últimos 30 dias descolaram de 2025 na curva inteira ou só num dia atípico de campanha?",
+      "o_que_demonstra": [
+        "Série anterior declarada antes no JSX: neutra, 1 px e tracejada, atrás da atual",
+        "Série atual em 2 px com ponto final aceso e rótulo direto 2026 e 2025",
+        "Domínio do YAxis oculto calculado sobre as duas séries juntas",
+        "Alinhamento por dia da semana em função pura, escrito no rodapé",
+        "Pico de campanha na série anterior anotado em vez de cortar a escala"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v4_sla-de-primeiro-contato-em-fita-com-lacunas",
+      "titulo": "SLA de primeiro contato em fita com lacunas",
+      "caso_de_uso": "Quantos dias úteis dos últimos 60 cumpriram o SLA de primeiro contato, com duas semanas sem coleta no meio?",
+      "o_que_demonstra": [
+        "Fita de células em flex gap-px, em HTML, sem BarChart de barras iguais",
+        "Sem coleta em traço neutro, distinto de fora do SLA em --negative",
+        "Fins de semana marcados como não aplicáveis e fora do denominador",
+        "Número sobre dias válidos com o par: 90,9% (30 de 33 dias válidos)",
+        "Extremos da fita rotulados com formatDate, do mais antigo ao mais recente",
+        "Cada célula com title de data e estado, e resumo das falhas em texto"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    }
+  ]
+}

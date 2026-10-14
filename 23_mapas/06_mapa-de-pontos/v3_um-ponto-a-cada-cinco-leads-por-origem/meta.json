@@ -1,0 +1,14 @@
+{
+  "title": "Leads de 2026 por origem, 1 ponto a cada 5",
+  "useCase": "Como os 9.800 leads de 2026 se espalham pelo território conforme a origem?",
+  "demonstrates": [
+    "Posição sorteada dentro da UF por gerador de semente fixa, sem Math.random",
+    "Teste de ponto dentro do polígono por ray casting sobre o anel da UF",
+    "Pequenos múltiplos: um mapa por origem, mesma escala, um path cada",
+    "Nome, contagem e percentual sobre cada mapa, sem cor como canal único",
+    "Aviso escrito de que a posição dentro da UF é ilustrativa"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "As cinco origens usam os slots 1, 3, 6, 5 e 2 (COR-8) e não --chart-1 a --chart-5 como diz o catálogo: --chart-2 e --chart-4 repetem o hex de --warning e --positive e entram por último. Preenchimento a 0,80 (ACE-5; a maior opacidade mínima entre as cores usadas é 0,71). O viewBox tem escala 1 (3,7 px por grau), e não graus, para o texto de 11 px chegar com 11 px (GEO-18). Não há malha do IBGE: o anel de cada UF é a caixa dela em graus, aproximada, com os cantos cortados, e o ponto precisa cair também dentro do contorno do país, desenhado à mão. Por isso a posição dentro da UF é ilustrativa, e a tela diz. Um mapa por origem evita que a última origem pintada tome o mapa e que o par de cores vizinhas (slots 2 e 6) dependa só da cor; sem contorno no ponto, para o traço não apagar o preenchimento. Distância mínima entre pontos da mesma origem enquanto a UF tem lugar; no Distrito Federal a sobreposição é inevitável e a tela diz. Contagem que não é múltiplo de 5 arredonda para o ponto mais próximo, e a UF com 2 leads ou menos numa origem fica sem ponto; ponto sem lugar achado em 400 tentativas é descartado e nunca vai ao centroide."
+}

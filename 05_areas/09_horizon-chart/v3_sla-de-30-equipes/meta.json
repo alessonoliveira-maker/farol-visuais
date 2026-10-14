@@ -1,0 +1,13 @@
+{
+  "title": "SLA diário de 30 equipes contra a meta",
+  "useCase": "Achar em 180 dias quais das 30 equipes fictícias de pré-vendas passaram mais tempo abaixo da meta de SLA.",
+  "demonstrates": [
+    "SVG puro com um path por faixa e clipPath, sem 30 instâncias do Recharts",
+    "Linhas micro de 16 px ordenadas pelo pior trimestre, não pelo nome",
+    "Separação sutil entre linhas para as vizinhas não parecerem escorrer",
+    "Nome da equipe à esquerda e escala comum obrigatória (EIX-9)"
+  ],
+  "canvas": { "width": 640, "height": 730 },
+  "frame": "card",
+  "notes": "Canvas maior que os presets pela conta da ESP-6: 30 linhas de 16 px mais 29 vãos de 2 px pedem 538 px de corpo, mais a legenda de 3 linhas que ensina as faixas; nenhum preset comporta 30 séries."
+}

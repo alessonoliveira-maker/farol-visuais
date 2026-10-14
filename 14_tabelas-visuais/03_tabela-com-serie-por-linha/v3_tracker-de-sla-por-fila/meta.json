@@ -1,0 +1,12 @@
+{
+  "title": "SLA diário por fila nos últimos 30 dias",
+  "useCase": "Pré-vendas: em quais dias cada uma das 8 filas estourou o SLA e quantos dias ficou dentro dele.",
+  "demonstrates": [
+    "Faixa de blocos em flex com largura igual e vão de 2 px, um bloco por dia",
+    "Status dentro, atenção e estouro em positive, warning e negative com legenda",
+    "Resumo em texto à direita, como 26 de 30 dias no SLA, que não depende da cor",
+    "Marca de hoje no último bloco e contagem de estouros em ordem decrescente"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

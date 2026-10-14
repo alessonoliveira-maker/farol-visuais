@@ -1,0 +1,69 @@
+{
+  "slug": "03_cohort-em-triangulo",
+  "nome": "Cohort de conversão em triângulo",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Tabela em que cada linha é um grupo de entrada (o mês em que o lead ou a oportunidade nasceu), cada coluna é o tempo decorrido desde a entrada (M0, M1, M2) e a célula mostra a taxa acumulada em cor e número. O triângulo aparece sozinho porque cohorts recentes têm menos períodos. Lê em três sentidos: na horizontal um cohort amadurece, na vertical cohorts se comparam na mesma idade, na diagonal aparece um mês de calendário.",
+  "quando_usar": [
+    "Saber se grupos novos convertem melhor que os antigos na mesma idade: lead em agenda, oportunidade em ganho.",
+    "Avaliar o efeito de uma mudança de processo a partir do cohort em que ela entrou.",
+    "De 6 a 18 cohorts por até 12 períodos decorridos, com pelo menos algumas dezenas de entradas por cohort.",
+    "Público que lê tabela e precisa do número exato ao lado da cor."
+  ],
+  "quando_evitar": [
+    "Cohorts de poucos elementos: taxas instáveis; agregar em trimestres ou mostrar só contagem.",
+    "Comparar a forma das curvas de amadurecimento: uma linha por cohort (04).",
+    "Só o total convertido por mês de calendário, sem idade: colunas (03) ou linha (04).",
+    "Estados que avançam e voltam entre etapas: matriz de transição (modelo 07)."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_agenda-por-cohort-mensal-de-entrada",
+      "titulo": "Conversão de lead em agenda por mês de entrada",
+      "caso_de_uso": "Os leads que entraram de jan/26 a set/26 chegam à agenda mais rápido, comparando cada cohort na mesma idade?",
+      "o_que_demonstra": [
+        "Grid do Tailwind com coluna de cohort, coluna de n e miolo de M0 a M6",
+        "Taxa acumulada com cor sequencial por style e número por formatPercent",
+        "Triângulo natural: células futuras não existem, sem cinza nem zero",
+        "Linha de média ponderada pelo tamanho do cohort no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_mudanca-de-cadencia-entre-cohorts",
+      "titulo": "Cohorts antes e depois da nova cadência",
+      "caso_de_uso": "A nova cadência de pré-vendas, iniciada em mai/26, melhorou a conversão em agenda já no primeiro mês de vida?",
+      "o_que_demonstra": [
+        "Divisória horizontal entre abr/26 e mai/26 com rótulo nova cadência",
+        "Coluna M1 em destaque com anotação: 18% antes, 27% depois",
+        "Médias ponderadas separadas para os dois blocos de cohorts",
+        "Destaque com segundo canal: peso de fonte na coluna, além da cor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_ganho-acumulado-por-mes-de-criacao",
+      "titulo": "Taxa de ganho acumulada por mês de criação",
+      "caso_de_uso": "Quais dos 18 cohorts de oportunidades criadas de abr/25 a set/26 fecham mais negócios aos 3, 6 e 12 meses?",
+      "o_que_demonstra": [
+        "18 cohorts por 12 meses decorridos em linhas de 20 px, sem rolagem",
+        "Coluna de n com barra horizontal proporcional ao tamanho do cohort",
+        "Marcos de leitura em M3, M6 e M12 com borda de coluna discreta",
+        "Média ponderada no rodapé e frase acessível com o melhor cohort em M6"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_periodo-parcial-e-cohort-pequeno",
+      "titulo": "Cohorts com período parcial e amostra pequena",
+      "caso_de_uso": "Como ler o cohort sem confundir o mês em curso com queda nem uma taxa de 12 oportunidades com tendência?",
+      "o_que_demonstra": [
+        "Diagonal de set/26 com borda tracejada e nota período em curso",
+        "Cohort de fev/26 com n = 12 esmaecido na marca e o n escrito ao lado",
+        "Alternador entre taxa e contagem absoluta com aria-pressed",
+        "Cohort sem entradas escrito como indisponível, nunca 0%"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

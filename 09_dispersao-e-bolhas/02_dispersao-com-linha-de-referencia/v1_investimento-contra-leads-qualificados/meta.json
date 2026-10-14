@@ -1,0 +1,12 @@
+{
+  "title": "Investimento contra leads qualificados",
+  "useCase": "Quanto rende cada mil reais a mais de investimento? Campanhas por semana, com a reta de tendência e o retorno marginal escrito.",
+  "demonstrates": [
+    "ComposedChart com Scatter e Line num array único de pontos e extremos da reta",
+    "Mínimos quadrados calculado em TypeScript, reta só entre o menor e o maior X observado",
+    "Rótulo na ponta da reta com a inclinação traduzida, o R² e o n",
+    "Line sem ponto, sem ponto ativo e fora da legenda"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

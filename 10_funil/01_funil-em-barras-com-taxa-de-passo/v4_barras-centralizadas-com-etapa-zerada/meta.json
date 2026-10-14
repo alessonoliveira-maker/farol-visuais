@@ -1,0 +1,13 @@
+{
+  "title": "Barras centralizadas com etapa final zerada",
+  "useCase": "Uma semana sem nenhuma venda: mostrar o funil comercial sem esconder a etapa zerada nem sugerir dado ausente.",
+  "demonstrates": [
+    "SVG puro com barras centralizadas e conector de perda até o topo da etapa seguinte",
+    "Valor e as duas taxas, do passo e da entrada, escritas em toda etapa",
+    "Zero medido desenha traço de 1 px e escreve 0 ganhos, nunca esconde a etapa (EST-3)",
+    "Conector vira triângulo quando a etapa seguinte é zero",
+    "Geometria das barras e dos conectores em funções puras do arquivo"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

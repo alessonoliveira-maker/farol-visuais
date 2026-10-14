@@ -1,0 +1,108 @@
+{
+  "familia": "05_areas",
+  "modelo": "06_leque-de-projecao",
+  "versoes": {
+    "v1_receita-com-leque-ate-dezembro": {
+      "veredito": "aprovado",
+      "nota": "Leque correto: faixas aninhadas colapsadas na juncao, dominio do zero, real solido e mediana tracejada; check 0 erros nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:24.843Z",
+      "impressao": "ecffffc1231e750dc567923ac1445bffa8973b65",
+      "arquivos": {
+        "Chart.tsx": "33164fd52d533be6d4851a327178e10ec11460c7",
+        "data.ts": "b6ab50f7ea97f382bcbf7e9eae8211e488eaf72e",
+        "meta.json": "c64c18186cbd97137a55b7a08499f6fdef3759d9"
+      }
+    },
+    "v2_chance-de-bater-a-meta": {
+      "veredito": "aprovado",
+      "nota": "Probabilidade conferida (47% por CDF por partes), legenda escreve o valor de cada faixa sem depender de cor, meta com extendDomain.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:30.631Z",
+      "impressao": "743acda08376b0c0ed608d5b9da7707c021ea55d",
+      "arquivos": {
+        "Chart.tsx": "cd50d4c69eddf4caa80ec492e86ec9b9ce8fe685",
+        "data.ts": "db326f0adcea5209f0a09df4b81769366ac9fa61",
+        "meta.json": "5091d7522951141d816a829158deb78b0710a3f8"
+      }
+    },
+    "v3_agendas-projetadas-contra-teto": {
+      "veredito": "aprovado",
+      "nota": "Cruzamento do p75 achado no proprio dado e anotado com a data; duas anotacoes ao todo; teto rotulado direto. Teto constante nao mostra o degrau.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:35.309Z",
+      "impressao": "2d75a0bc550f231719dd012a13a72e3a32e4cf77",
+      "arquivos": {
+        "Chart.tsx": "895f66cc21a600b42740cfc6ccf2d230517ad8e1",
+        "data.ts": "5e748a376a771c65b561b28dedab660fdc0da409",
+        "meta.json": "07504d52f13e90587ad8ad6c6c52af63ff9305a7"
+      }
+    },
+    "v4_historico-curto": {
+      "veredito": "aprovado",
+      "nota": "Caso limite honesto: borda inferior presa em zero, horizonte truncado, frase acessivel declara a amplitude da faixa no ultimo mes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:39.705Z",
+      "impressao": "a267d2f811b24a1f24466bc2203a215c29dae4dc",
+      "arquivos": {
+        "Chart.tsx": "2b4051e5c91dbd364594659f28fa60fe49efa1c2",
+        "data.ts": "b0dcf86e00ea74958fe2b5ee9293ca13636d015c",
+        "meta.json": "d02dc40d2c3a9edbb6dcd3418cf4196466fd08d2"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-com-leque-ate-dezembro",
+      "veredito": "aprovado",
+      "nota": "Leque correto: faixas aninhadas colapsadas na juncao, dominio do zero, real solido e mediana tracejada; check 0 erros nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:24.843Z",
+      "impressao": "ecffffc1231e750dc567923ac1445bffa8973b65",
+      "arquivos": {
+        "Chart.tsx": "33164fd52d533be6d4851a327178e10ec11460c7",
+        "data.ts": "b6ab50f7ea97f382bcbf7e9eae8211e488eaf72e",
+        "meta.json": "c64c18186cbd97137a55b7a08499f6fdef3759d9"
+      }
+    },
+    {
+      "versao": "v2_chance-de-bater-a-meta",
+      "veredito": "aprovado",
+      "nota": "Probabilidade conferida (47% por CDF por partes), legenda escreve o valor de cada faixa sem depender de cor, meta com extendDomain.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:30.631Z",
+      "impressao": "743acda08376b0c0ed608d5b9da7707c021ea55d",
+      "arquivos": {
+        "Chart.tsx": "cd50d4c69eddf4caa80ec492e86ec9b9ce8fe685",
+        "data.ts": "db326f0adcea5209f0a09df4b81769366ac9fa61",
+        "meta.json": "5091d7522951141d816a829158deb78b0710a3f8"
+      }
+    },
+    {
+      "versao": "v3_agendas-projetadas-contra-teto",
+      "veredito": "aprovado",
+      "nota": "Cruzamento do p75 achado no proprio dado e anotado com a data; duas anotacoes ao todo; teto rotulado direto. Teto constante nao mostra o degrau.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:35.309Z",
+      "impressao": "2d75a0bc550f231719dd012a13a72e3a32e4cf77",
+      "arquivos": {
+        "Chart.tsx": "895f66cc21a600b42740cfc6ccf2d230517ad8e1",
+        "data.ts": "5e748a376a771c65b561b28dedab660fdc0da409",
+        "meta.json": "07504d52f13e90587ad8ad6c6c52af63ff9305a7"
+      }
+    },
+    {
+      "versao": "v4_historico-curto",
+      "veredito": "aprovado",
+      "nota": "Caso limite honesto: borda inferior presa em zero, horizonte truncado, frase acessivel declara a amplitude da faixa no ultimo mes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:40:39.705Z",
+      "impressao": "a267d2f811b24a1f24466bc2203a215c29dae4dc",
+      "arquivos": {
+        "Chart.tsx": "2b4051e5c91dbd364594659f28fa60fe49efa1c2",
+        "data.ts": "b0dcf86e00ea74958fe2b5ee9293ca13636d015c",
+        "meta.json": "d02dc40d2c3a9edbb6dcd3418cf4196466fd08d2"
+      }
+    }
+  ]
+}

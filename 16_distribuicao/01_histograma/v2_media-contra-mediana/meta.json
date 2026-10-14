@@ -1,0 +1,15 @@
+{
+  "title": "Média contra mediana no ciclo",
+  "useCase": "A média de 74 dias representa o negócio típico, ou é puxada por poucos negócios longos?",
+  "demonstrates": [
+    "Mediana sólida e média tracejada, cada uma com o valor no rótulo e na cor do seu papel",
+    "Faixa de p25 a p75 atrás das barras, com o nome escrito dentro do desenho",
+    "Rótulos colapsados num bloco só quando as duas linhas ficam a menos de 48 px",
+    "ifOverflow extendDomain nas duas faixas de referência, para a estatística nunca sumir",
+    "Estatística null na amostra vazia: sem amostra o gráfico sai e nenhuma linha nasce no zero",
+    "Linha de leitura calculada do dado, com a taxa acompanhada do volume"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Duas recusas de especificação, as duas por medição. (1) O estudo manda a ReferenceArea de p25 a p75 em --surface-raised, que é o token do fundo do cartão: no tema claro ele é o mesmo branco e a faixa mediria 1,00:1 (armadilha 39). Das duas saídas que a armadilha oferece a faixa ficou em --line-subtle e não em --surface-sunken, porque no tema escuro o poço rebaixado é quase preto contra o cartão e a faixa passa a ler como um buraco recortado, o oposto do que ela afirma. (2) A marca da faixa vazia sai em --text-muted, e não no --line-strong que a v1 deste modelo usa: --line-strong mede 1,79:1 no escuro e 1,83:1 no claro contra o cartão, abaixo do piso de 3:1 da marca (armadilha 43). Medições próprias desta versão: o nome da faixa em --text-muted entregava 4,17:1 nos dois temas, abaixo do piso de 4,5:1 da ACE-3, e passou para --text-secondary, que entrega 6,52:1 no escuro e 6,30:1 no claro; a troca de cor é preferível ao halo da ROT-7 porque o halo pintaria um borrão da cor do cartão dentro da própria faixa. Decisões de estado: as estatísticas nascem null na amostra vazia e a guarda testa data, a lista que alimenta a conta, porque mediana zero em lista vazia é medição inventada; o array de bins nunca é vazio, então testá-lo não dispararia guarda nenhuma. Decisões de montagem: fillOpacity não entra, já que o padrão do Recharts para ReferenceArea é 0,5 e opacidade em marca é perda medida (ACE-5); o zIndex é explícito nas duas faixas, 100 para a interquartil ficar atrás das barras e 500 para a anotação ficar na frente, porque o Bar do Recharts 3.10 desenha em 300. Com a amostra padrão a distância entre mediana e média é de cerca de 58 px, logo acima do limite de colapso, e os dois rótulos saem separados; o bloco único aparece em cartão mais estreito ou em recorte que aproxime as duas estatísticas. Aviso ESPESSURA-MARCA esperado: a marca mais fina medida é o traço de 2 px da faixa vazia, que é anotação de vão e não barra de comparação."
+}

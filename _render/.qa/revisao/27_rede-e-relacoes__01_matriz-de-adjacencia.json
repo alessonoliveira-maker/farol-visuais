@@ -1,0 +1,121 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "01_matriz-de-adjacencia",
+  "versoes": {
+    "v1_coocorrencia-de-origens-na-jornada": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 57 pares positivos, os 9 zeros e os tetos de quartil (9, 22, 57 e 412) conferidos com o data.ts; ordem por grupo e grau refeita à mão; as 12 origens nomeadas. Observações no README: TIP-1 em texto corrido, realce do cursor em surface-overlay some no claro, ordem dentro do grupo não declarada, legenda abaixo da grade.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:13.706Z",
+      "impressao": "cd24286388349f2f832d253827e65a65181a454f",
+      "arquivos": {
+        "Chart.tsx": "0b47e401facd1659e5fa312c0312e2a384e0957d",
+        "data.ts": "b4f88cd213eddc56eeed2c5693e12d8dd9d9da9b",
+        "meta.json": "1f1aa2a822f63cf06427fccb9e55a493b8f31111"
+      }
+    },
+    "v2_handoff-sdr-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 32 perguntas sem não, dois temas. Os dois bloqueantes da primeira passada estão resolvidos: a frase acessível de 224 caracteres diz a base mínima de 10 agendas, e o pontilhado usa a cor do texto da faixa e mede de 5,45 a 10,72 para 1 contra a célula. Percentuais das 6 linhas refeitos pelo maior resto e somam 100; totais marginais somam 213; texto mínimo 4,65 para 1; anel do destaque 9,50 e 6,00 para 1 contra o cartão; fidelidade 0,012 e 0,011 por cento. Observações no README: anel a 0,5 px da célula, zero a 1,15 para 1 com o valor escrito, peso não declarado em Space Grotesk, LEFT_W fixo, frase curta no ramo sem destaque, ordem das colunas.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:06:51.076Z",
+      "impressao": "b15790109db7f7c4a6872140f68488aab7de160f",
+      "arquivos": {
+        "Chart.tsx": "bb478760c95bbbbc1585411b1300a430c078e4b9",
+        "data.ts": "72793a2b5db5e7ade158add2444b267060d81e47",
+        "meta.json": "c9e0e9b46cded5ee646b6dab5f40871be2b4dee9"
+      }
+    },
+    "v3_motivos-de-perda-que-andam-juntos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. A ordem por baricentro mostra os três blocos junto da diagonal; bloco das posições 13 a 15 conferido (68, 58 e 41 somam 167); desvio da TIP-5 declarado no meta. Observações no README: 167 é soma de três pares e sai como perdas, anotação de 74 caracteres, bloco fora do modo padrão e posição fixa da legenda, legenda sem a diagonal, TIP-1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:14.850Z",
+      "impressao": "f82f5dcd6f90dcfc02b3e888892d479238d41d1c",
+      "arquivos": {
+        "Chart.tsx": "4b009208cc0cc0c69a63bf19aedff2711bd142be",
+        "data.ts": "76a4cedfb73584c8ac6475f519549be2235fd843",
+        "meta.json": "047384f36a99faa5c1c7238032f3785e68d198b6"
+      }
+    },
+    "v4_matriz-esparsa-e-par-sem-medicao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 52 pares positivos, 9 sem medição e 719 zeros medidos de 780 conferidos com o data.ts; as 9 hachuras caem nos pares nulos; zero medido e par sem medição não se confundem em nenhum tema. Observações no README: mês só na frase acessível (DAD-9), ordem por grau não declarada (GEO-12), legenda sem a diagonal, rodapé repete o subtítulo, TIP-1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:15.428Z",
+      "impressao": "1c5595472fce6fb1169b2938bfd4f0889089dcf6",
+      "arquivos": {
+        "Chart.tsx": "431d64e7b047b08469a3c469b14336862ec19dbc",
+        "data.ts": "701e056d6a2c9ed48e394c77d5c75f1b6cfe659e",
+        "meta.json": "076d37d0ef009012883f1ab7809c96700fcc7b2a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_coocorrencia-de-origens-na-jornada",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Os 57 pares positivos, os 9 zeros e os tetos de quartil (9, 22, 57 e 412) conferidos com o data.ts; ordem por grupo e grau refeita à mão; as 12 origens nomeadas. Observações no README: TIP-1 em texto corrido, realce do cursor em surface-overlay some no claro, ordem dentro do grupo não declarada, legenda abaixo da grade.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:13.706Z",
+      "impressao": "cd24286388349f2f832d253827e65a65181a454f",
+      "arquivos": {
+        "Chart.tsx": "0b47e401facd1659e5fa312c0312e2a384e0957d",
+        "data.ts": "b4f88cd213eddc56eeed2c5693e12d8dd9d9da9b",
+        "meta.json": "1f1aa2a822f63cf06427fccb9e55a493b8f31111"
+      }
+    },
+    {
+      "versao": "v2_handoff-sdr-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-1: a frase acessível afirma que o par mais concentrado é SDR 3 com C, 42 por cento, e a matriz tem SDR 6 com C em 71 por cento; dizer na frase a base mínima de 10 agendas. Pergunta 20, ACE-3 e ACE-8: o pontilhado de base pequena é traço text-muted dentro da célula e mede 1,94 e 1,34 para 1 no escuro e 1,54 e 1,01 para 1 no claro contra o preenchimento; usar a cor do texto da faixa (CLASS_TEXT) no traço. Parecer em validation/revisao_27_rede-e-relacoes__01_matriz-de-adjacencia_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:14.279Z",
+      "impressao": "ddadc1c3bc7492386a9d22b88cad110fcaabb04e",
+      "arquivos": {
+        "Chart.tsx": "07c5c07dc00f8635f6c502b6a8062d2239adcc73",
+        "data.ts": "72793a2b5db5e7ade158add2444b267060d81e47",
+        "meta.json": "c9e0e9b46cded5ee646b6dab5f40871be2b4dee9"
+      }
+    },
+    {
+      "versao": "v3_motivos-de-perda-que-andam-juntos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. A ordem por baricentro mostra os três blocos junto da diagonal; bloco das posições 13 a 15 conferido (68, 58 e 41 somam 167); desvio da TIP-5 declarado no meta. Observações no README: 167 é soma de três pares e sai como perdas, anotação de 74 caracteres, bloco fora do modo padrão e posição fixa da legenda, legenda sem a diagonal, TIP-1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:14.850Z",
+      "impressao": "f82f5dcd6f90dcfc02b3e888892d479238d41d1c",
+      "arquivos": {
+        "Chart.tsx": "4b009208cc0cc0c69a63bf19aedff2711bd142be",
+        "data.ts": "76a4cedfb73584c8ac6475f519549be2235fd843",
+        "meta.json": "047384f36a99faa5c1c7238032f3785e68d198b6"
+      }
+    },
+    {
+      "versao": "v4_matriz-esparsa-e-par-sem-medicao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 52 pares positivos, 9 sem medição e 719 zeros medidos de 780 conferidos com o data.ts; as 9 hachuras caem nos pares nulos; zero medido e par sem medição não se confundem em nenhum tema. Observações no README: mês só na frase acessível (DAD-9), ordem por grau não declarada (GEO-12), legenda sem a diagonal, rodapé repete o subtítulo, TIP-1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:22:15.428Z",
+      "impressao": "1c5595472fce6fb1169b2938bfd4f0889089dcf6",
+      "arquivos": {
+        "Chart.tsx": "431d64e7b047b08469a3c469b14336862ec19dbc",
+        "data.ts": "701e056d6a2c9ed48e394c77d5c75f1b6cfe659e",
+        "meta.json": "076d37d0ef009012883f1ab7809c96700fcc7b2a"
+      }
+    },
+    {
+      "versao": "v2_handoff-sdr-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje: 32 perguntas sem não, dois temas. Os dois bloqueantes da primeira passada estão resolvidos: a frase acessível de 224 caracteres diz a base mínima de 10 agendas, e o pontilhado usa a cor do texto da faixa e mede de 5,45 a 10,72 para 1 contra a célula. Percentuais das 6 linhas refeitos pelo maior resto e somam 100; totais marginais somam 213; texto mínimo 4,65 para 1; anel do destaque 9,50 e 6,00 para 1 contra o cartão; fidelidade 0,012 e 0,011 por cento. Observações no README: anel a 0,5 px da célula, zero a 1,15 para 1 com o valor escrito, peso não declarado em Space Grotesk, LEFT_W fixo, frase curta no ramo sem destaque, ordem das colunas.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T19:06:51.076Z",
+      "impressao": "b15790109db7f7c4a6872140f68488aab7de160f",
+      "arquivos": {
+        "Chart.tsx": "bb478760c95bbbbc1585411b1300a430c078e4b9",
+        "data.ts": "72793a2b5db5e7ade158add2444b267060d81e47",
+        "meta.json": "c9e0e9b46cded5ee646b6dab5f40871be2b4dee9"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Leads por dia contra os mesmos dias de 2025",
+  "useCase": "Os leads dos últimos 30 dias descolaram de 2025 na curva inteira ou só num dia atípico de campanha?",
+  "demonstrates": [
+    "Série anterior declarada antes no JSX: neutra, 1 px e tracejada, atrás da atual",
+    "Série atual em 2 px com ponto final aceso e rótulo direto do ano em cada linha",
+    "Domínio do eixo oculto calculado sobre as duas séries juntas",
+    "Alinhamento por dia da semana declarado no rodapé, não por data corrida",
+    "Pico de campanha na série anterior anotado em vez de cortar a escala"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

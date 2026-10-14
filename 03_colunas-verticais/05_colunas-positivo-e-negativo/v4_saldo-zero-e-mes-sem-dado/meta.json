@@ -1,0 +1,12 @@
+{
+  "title": "Saldo com zero medido e mês sem dado",
+  "useCase": "Como separar o mês em que o saldo foi exatamente zero do mês que não teve apuração?",
+  "demonstrates": [
+    "Saldo zero desenhado como traço de 2 px sobre a linha de zero e escrito 0",
+    "Mês sem dado vazio, com formatUnavailable no lugar do valor",
+    "Domínio que termina na linha de grade acima do maior valor absoluto, dos dois lados",
+    "Frase acessível que conta meses positivos, negativos, zerados e sem dado"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

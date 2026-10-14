@@ -1,0 +1,12 @@
+{
+  "title": "Mix de investimento em cartão pequeno",
+  "useCase": "Mostrar no cartão de mídia se a busca paga ganhou peso no investimento dos últimos 12 meses.",
+  "demonstrates": [
+    "Área empilhada micro com XAxis e YAxis escondidos, e não removidos",
+    "Plataforma em foco em chart-1 e as outras em line-strong com separador entre camadas",
+    "Teto de 4 componentes, com Outros já agregado na origem do dado",
+    "Frase acessível e linha de leitura dizem o total investido e a participação do foco"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card"
+}

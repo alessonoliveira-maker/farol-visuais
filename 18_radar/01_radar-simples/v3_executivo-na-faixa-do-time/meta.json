@@ -1,0 +1,13 @@
+{
+  "title": "Executivo 07 dentro da faixa do time",
+  "useCase": "Comercial, 2026-T3: em quais das oito dimensões do processo o Executivo 07 sai da faixa dos 11 executivos do time?",
+  "demonstrates": [
+    "Coroa entre mínimo e máximo como um path com fill-rule evenodd no shape do Radar",
+    "Grade visível dentro da coroa, sem pintar o mínimo com a cor do cartão",
+    "Executivo em linha --chart-1 por cima; vértices fora da faixa vazados e com valor",
+    "Nomes longos quebrados em duas linhas por tspan num tick customizado",
+    "Legenda da faixa do time, mínimo a máximo de 11 executivos, com amostra de área"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

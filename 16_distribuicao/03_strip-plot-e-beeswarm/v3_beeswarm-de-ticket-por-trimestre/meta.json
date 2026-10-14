@@ -1,0 +1,15 @@
+{
+  "title": "Ticket dos negócios ganhos por trimestre",
+  "useCase": "Os 312 negócios ganhos do ano mudaram de ticket entre os trimestres, e onde estão os maiores?",
+  "demonstrates": [
+    "Dodge guloso em TypeScript, ordem de entrada fixa por valor e respiro de 1 px",
+    "Janela deslizante na busca de vizinhos, no lugar da comparação com todos",
+    "Raio de 3 px que cai ao piso de 2 px quando a nuvem não cabe na faixa",
+    "Área de plotagem e escalas lidas por hook, sem ouvinte de redimensionamento",
+    "Cor com um papel só, mais a forma como segundo canal do par de verticais",
+    "Mediana em traços laterais fora da nuvem, com o valor escrito"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas contado, não escolhido (GEO-1): o cartão escreve a faixa do eixo X de 24 px, a faixa do eixo Y de 64 px e três linhas de rodapé de 11 px com legenda de duas formas. No preset largo de 960x400 a moldura devolve 894 por 281,5 px, e sobram cerca de 185 px de plano para o ticket e 192 px de faixa por trimestre. Medido antes de renderizar, com o dado publicado: a nuvem mais larga pede 66,8 px de meia faixa com raio de 3 px, contra 96,3 px disponíveis, então o piso de 2 px não é acionado neste recorte e o aviso de raio no piso não aparece. Divergência declarada contra a especificação do catálogo, e ela é da seção 5 do contrato: o catálogo pede layout recalculado depois de medir a largura, com debounce no redimensionamento, e aqui a medida vem dos hooks usePlotArea, useXAxisScale e useYAxisScale do Recharts. Eles recalculam sozinhos a cada mudança de tamanho, então não existe ouvinte a atrasar; ler window.innerWidth é proibido pela mesma seção. Sobre a cor: a paleta categórica é de luminância pareada de propósito, e medido nesta sessão chart-1 contra chart-3 dá 1,47:1 no tema escuro e 1,03:1 no claro, o que não reprova nada pela WCAG, que pede 3:1 contra fundo. O que isso prova é que o segundo canal é obrigatório (TOK-9), e aqui ele é a forma: ponto cheio para a vertical A, anel de miolo na cor do cartão para a B, com contagem e taxa escritas no rodapé. Contra o cartão, opacos, chart-1 mede 9,50:1 no escuro e 6,00:1 no claro, e chart-3 mede 6,47:1 e 6,18:1. Nenhuma opacidade entra na marca, porque a sobreposição aqui é resolvida pelo deslocamento e não pela transparência (ACE-5). A ordem das faixas é a do ano e está escrita no próprio tique, então a GEO-12 não pede frase de ordem: o critério aparece no cartão."
+}

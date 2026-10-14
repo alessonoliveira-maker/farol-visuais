@@ -1,0 +1,13 @@
+{
+  "title": "Campos entregues por origem de lead",
+  "useCase": "Marketing: quais das 8 origens entregam telefone, cargo, empresa, UTM, cidade e consentimento.",
+  "demonstrates": [
+    "Ponto cheio para presente e anel vazio para ausente, na grade de origens por campos",
+    "Percentual de preenchimento no rodapé de cada coluna",
+    "Linhas ordenadas pelo total de campos presentes, declarado no subtítulo",
+    "Célula de pelo menos 44 px com aria-label de origem, campo e estado"
+  ],
+  "canvas": { "width": 760, "height": 600 },
+  "frame": "card",
+  "notes": "Canvas de 760 por 600 em vez do alto sugerido: 8 linhas de 44 px (352), cabeçalho, legenda e rodapé somam cerca de 440 px, e o rótulo Consentimento pede cerca de 80 px por coluna. Corpo de 694 por 481 px com a coluna de origem em 150 px, a de contagem em 56 e seis colunas de cerca de 81. O rodapé escreve o percentual com o volume, formatRateWithVolume."
+}

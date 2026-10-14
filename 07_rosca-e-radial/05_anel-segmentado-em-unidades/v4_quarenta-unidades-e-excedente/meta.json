@@ -1,0 +1,13 @@
+{
+  "title": "Reuniões do trimestre acima da meta",
+  "useCase": "Mostrar que o executivo passou da meta trimestral de 40 reuniões sem inventar um 41º segmento.",
+  "demonstrates": [
+    "40 segmentos no teto de legibilidade do formato, com vão de 3 graus pela fórmula",
+    "Excedente fora do anel em selo +3 acima da meta, sem segmento extra",
+    "Centro 43 de 40 e frase acessível com o excedente",
+    "Nota que declara em número o limite de 1 segmento por reunião até o teto",
+    "Limite documentado: acima de 40 unidades, trocar por waffle (22)"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

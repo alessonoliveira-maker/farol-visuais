@@ -1,0 +1,12 @@
+{
+  "title": "Perímetro com nível sem estimativa",
+  "useCase": "Diretoria: o alcançável ainda não tem estimativa; a participação não pode ser calculada sobre um número inventado.",
+  "demonstrates": [
+    "Nível ausente desenhado em contorno tracejado, sem área e com o selo lacuna",
+    "Participação mostrada só em reais, com percentual marcado como indisponível",
+    "Níveis medidos mantidos em escala, sem redistribuir espaço para esconder o vazio"
+  ],
+  "canvas": { "width": 680, "height": 420 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1) em vez do preset card sugerido pelo catálogo, e a conta diz por quê: o caso de uso tem 114 caracteres e quebra em duas linhas, então o preset card de 640 por 360 px deixaria 574 por 225 px de corpo, contra os 267 px de altura que o conteúdo pede. O conteúdo mede 564 por 267 px: em largura, 200 do quadro, 24 de vão e 340 da lista de identificação; em altura, 17 da linha de leitura, 8 de vão, 200 do quadro, 8 de vão e 34 das duas linhas de nota. Os 680 por 420 px deixam 614 por 285 px de corpo, com folga de 50 por 18 px. O nível sem estimativa não recebe lado, porque lado é valor: ele aparece como contorno tracejado no único limite que se conhece, o nível acima, recuado 4 px para dentro para os dois contornos não se anularem na tela. O recuo é acabamento e está declarado aqui; o que o contorno afirma é o limite, nunca o tamanho, e o texto ao lado diz sem estimativa. O tracejado é text-muted, o par que a ACE-8 aprova como contorno de ausência (5,21:1 e 5,37:1), nunca vermelho, que a EST-2 proíbe; quem diz lacuna é o selo em prov-lacuna. A participação continua no lado que o valor dela manda, 5,66 px, sem redistribuir espaço para o vazio parecer menor. Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-primary 14,53:1 e 17,96:1, text-secondary 8,16:1 e 8,13:1, text-muted 5,21:1 e 5,37:1, prov-medido 7,36:1 e 5,34:1, prov-derivado 6,52:1 e 6,11:1, prov-lacuna 5,50:1 e 6,36:1, chart-1 9,50:1 e 6,00:1, todos contra surface-raised e acima do piso de 4,5:1 da ACE-3."
+}

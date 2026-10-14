@@ -1,0 +1,13 @@
+{
+  "title": "Amostra pequena e termo longo",
+  "useCase": "Pré-vendas: o que a peça mostra quando há só 22 respostas e um termo longo como planejamento sucessório lidera.",
+  "demonstrates": [
+    "Abaixo de 30 respostas ou 15 termos, lista ordenada com aviso de amostra pequena",
+    "Teto de tamanho para termo longo, com o valor exato escrito na dica",
+    "A mesma função de layout decide entre nuvem e lista pela contagem",
+    "Recorte sem texto no período troca a peça por estado vazio com role status"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O dado publicado tem 22 respostas e 9 termos, então o preview fotografa o caminho da lista: aviso de duas linhas (44 px) e cinco linhas de lista em duas colunas (cerca de 130 px) no corpo de 574 x 225 px do card, com o caso de uso em duas linhas (111 caracteres). O caminho da nuvem, com o teto de largura em 50% do plano de 574 x 160 px, vive no mesmo componente e responde a qualquer recorte com 30 respostas e 15 termos ou mais; nele o termo com teto sai em --text-primary e a dica, que é o title nativo do SVG, diz o tamanho que o valor pediria. Posição com empate: 3º e 3º, depois 5º."
+}

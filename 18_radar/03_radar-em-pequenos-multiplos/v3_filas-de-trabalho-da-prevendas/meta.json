@@ -1,0 +1,14 @@
+{
+  "title": "Perfil das seis filas de trabalho da pré-vendas",
+  "useCase": "Pré-vendas, 2026-08: em que dimensões cada fila se afasta das demais?",
+  "demonstrates": [
+    "Seis miniaturas em grade de 3 por 2 com a mesma ordem de cinco eixos",
+    "Primeira resposta invertida no índice, com a regra escrita na legenda de eixos",
+    "Fila de evento sem comparecimento medido: eixo tracejado, traço aberto e sem dado",
+    "Dentro do SLA como eixo vizinho da primeira resposta, dimensões correlatas juntas",
+    "Volume de entradas ao lado do título para ler o perfil com a base"
+  ],
+  "canvas": { "width": 960, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas por número, não o largo sugerido (960x400): o corpo do largo mede 894 x 281,5 e, descontados a linha de leitura, a legenda e o vão entre as fileiras, cada miniatura ficaria com cerca de 90 px de altura. Com 960x560 o corpo mede 894 x 441,5 (560 menos 118,5) e as duas fileiras ficam com cerca de 170 px. Sem preenchimento no radar com eixo ausente: o Recharts dá raio zero ao valor null (Radar.js, computeRadarPoints), então o shape próprio desenha o traço em trechos que param nos vizinhos do eixo sem dado, e só o polígono fechado leva área."
+}

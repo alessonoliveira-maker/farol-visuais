@@ -1,0 +1,14 @@
+{
+  "title": "Oportunidades abertas em doze meses",
+  "useCase": "A carteira de oportunidades abertas cresce por mês, de 138 para 211, e em quais meses não cresce?",
+  "demonstrates": [
+    "ComposedChart com Bar de faixa e Line do acumulado sem pontos",
+    "Movimento líquido por mês, com o detalhe na dica",
+    "Mês sem movimento mantido no eixo com traço e rótulo 0",
+    "Doze meses acima do teto de 8 tiques: rótulo curto a cada dois meses",
+    "Linha de leitura: o estoque cresce enquanto o fluxo não muda"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o zero do eixo é a carteira de 2025-08 (138 abertas), escrita na margem esquerda, e o fim do acumulado (211 abertas) na margem direita. Com o zero absoluto, passos de 0 a 9 diante de uma carteira de 138 a 211 ficariam com 3 a 4% da altura, cerca de 6 px (quando evitar do modelo: nunca quebrar o eixo); com a base em 138 o maior passo ocupa 12% e a Line sobe até 73. Sem eixo de valor: todo valor vem escrito. Linha de leitura trocada: o catálogo diz que o estoque cresce enquanto o fluxo não muda, e o dado tem fluxo líquido de 0 a +9 por mês, então a frase afirma só o que se mede, os meses com saldo positivo e a média. Canvas largo pela largura de doze meses; rótulo a cada dois meses porque doze passam do teto de 8 tiques (EIX-7)."
+}

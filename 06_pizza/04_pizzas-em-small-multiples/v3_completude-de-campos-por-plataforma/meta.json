@@ -1,0 +1,14 @@
+{
+  "title": "Completude de campos por plataforma de mídia",
+  "useCase": "Quais dos quatro campos do lead chegam incompletos em cada plataforma de mídia?",
+  "demonstrates": [
+    "Matriz de 3 por 4 roscas binárias com rótulos de linha e coluna em HTML",
+    "Número central por rosca, que é o que se compara entre as células",
+    "Número abaixo do piso em atenção e com ícone, sem depender só da cor",
+    "Anel em SVG puro no lugar de um PieChart por rosca acima de oito células",
+    "Mesma cor, mesmo diâmetro e mesma métrica central em toda a matriz"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto, como o catálogo sugeria. O caso de uso tem 79 caracteres e cabe em uma linha do cabeçalho de 574 px (o limite garantido ali é 92), então o corpo mede 574 por 441,5 px: a linha de leitura, a linha com o nome das colunas e as três linhas de 88 px de rosca mais a contagem de cada célula somam cerca de 403 px (GEO-1). Os doze anéis não usam PieChart, porque seriam doze instâncias do Recharts para desenhar doze arcos; o arco é um path de duas linhas de geometria, com viewBox igual ao tamanho desenhado para a escala do texto sair 1. O arco vazio usa o neutro de ausência em composição, que mede 1,79:1 contra o cartão: fica abaixo do piso de 3:1 e vale pela isenção da ACE-3, porque o valor está escrito no centro do anel."
+}

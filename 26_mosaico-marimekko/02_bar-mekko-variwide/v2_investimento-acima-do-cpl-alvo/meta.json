@@ -1,0 +1,14 @@
+{
+  "title": "Investimento pago acima do CPL alvo",
+  "useCase": "Marketing, 2026-08: em cada plataforma, quanto do investimento do mês foi pago acima do CPL alvo de R$ 180?",
+  "demonstrates": [
+    "Linha de referência horizontal no CPL alvo com rótulo à direita, fora das colunas",
+    "Parte de cada coluna acima do alvo em --chart-1 e parte abaixo em --line-strong",
+    "Anotação com o excedente por formatCurrencyCompact na coluna de maior área acima",
+    "Soma do excedente de todas as plataformas escrita na linha de leitura",
+    "Plataforma abaixo do alvo sem parte destacada e com o CPL escrito"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card como no catálogo. A conta da GEO-1 fecha: corpo de 574 por 225 px com o caso de uso em duas linhas, 24 da linha de leitura e 201 do SVG, de viewBox 574 por 201 em escala 1 (GEO-18); 56 px de largura ficam reservados à direita para o rótulo do alvo (ANO-3). Três desvios do catálogo. Primeiro: a soma do excedente vai na linha de leitura e não no subtítulo do cartão, que é do VisualCard (ANO-5). Segundo: a linha do alvo é --text-muted e não --line-strong, que mede 1,8:1 contra o cartão e não carrega a relação (ACE-6). Terceiro: a linha só passa por fora das colunas (TOK-10), porque nenhum token contrasta com o cartão e com a coluna ao mesmo tempo; dentro das colunas altas a fronteira entre as duas cores já é o alvo. Quarto: o neutro --line-strong como preenchimento mede 1,8:1 contra o cartão, e a guarda de contraste de marca avisa; o catálogo pede esse token, e o valor está escrito junto de cada coluna (ACE-3). Os vãos de 2 px saem antes da partilha de largura (GEO-16), então a área de cada parte acima do alvo é exatamente proporcional ao excedente."
+}

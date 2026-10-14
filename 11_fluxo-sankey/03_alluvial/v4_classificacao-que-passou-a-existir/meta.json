@@ -1,0 +1,15 @@
+{
+  "title": "Classificação nova sem histórico anterior",
+  "useCase": "Ler a série de temperatura quando uma das classificações só passou a existir no meio do período.",
+  "demonstrates": [
+    "Bloco de ausência vazado, com contorno neutro, e por último na pilha",
+    "Categoria que nasce na segunda coluna sem bloco zerado na primeira",
+    "Presença declarada no dado, para zero medido não virar ausência",
+    "Anotação única na coluna do nascimento, calculada do próprio dado",
+    "Faixas que saem da ausência em neutro até chegarem à categoria",
+    "Vão gasto só onde existe bloco, para a pilha da primeira coluna não abrir buraco"
+  ],
+  "canvas": { "width": 960, "height": 440 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1). O preset largo de 960 x 400 fica 40 px curto depois que a coluna do nascimento ganha uma anotação acima dos blocos: a conta das linhas reais é 20 px de linha de leitura mais 8 px de respiro, 16,5 px de legenda em uma fileira, e 270 px de diagrama, dos quais 34 px são a margem de cima que guarda o cabeçalho de mês e a anotação em duas alturas; com a moldura vertical de 126 px, dá 440 px. A largura fica na do preset largo, 960 px. O viewBox de 894 x 270 é o tamanho aproximado da área do SVG, para o preserveAspectRatio none escalar perto de 1 px por unidade nos dois eixos e o vão de 2 px da COR-5 sair com 2 px no PNG. MEDIDO no preview: o SVG aninhado saiu com 894 por 269,5 px para um viewBox de 894 por 270, ou seja 1,000 px por unidade na horizontal e 0,998 na vertical, e o vão de 2 unidades chega ao desenho com 2,0 px, acima do piso de 1,5 px da COR-5. DECISÃO DE TOKEN, MEDIDA. O neutro da ausência e das faixas que saem dela é --text-muted, e não o --line-strong que a seção 17.2 nomeia para marca não destacada, porque 388 dos 1.240 leads saem por essas faixas: --line-strong mede 1,79:1 no escuro e 1,83:1 no claro contra --surface-raised, abaixo do piso de 3:1 da ACE-3, e uma marca de 31 por cento da população abaixo do piso daria a impressão de dado faltando. --text-muted mede 5,21:1 e 5,37:1, e é o par que a tabela da ACE-8 aprova para contorno de ausência. MEDIÇÕES QUE AS GUARDAS NÃO FAZEM AQUI. As guardas de texto saem não medidas por texto_em_html, então os pares foram conferidos na tabela da ACE-8: todo texto fica sobre o cartão, em --text-primary (14,53 e 17,96:1), --text-secondary (8,16 e 8,13:1) e --text-muted (5,21 e 5,37:1). As quatro cores de categoria medem de 5,39 a 9,50:1 no escuro e de 5,34 a 6,25:1 no claro contra o cartão. O bloco de ausência não tem preenchimento, então quem carrega a marca é o contorno de 1,5 px."
+}

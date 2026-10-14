@@ -1,0 +1,173 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "06_real-contra-referencia-com-painel-de-variacao",
+  "versoes": {
+    "v1_custo-realizado-contra-orcado": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, sem bloqueante nas 32 perguntas. Check sem erro. Eixo de 84 px com a tensão da EIX-6 declarada: 12 tiques em uma linha, 7 de 7 no principal com o R$ 0 da base e 5 de 5 na variação, nos dois temas. Rótulo de janeiro a 24 px do tique e a 10 px da coluna vizinha. Domínio do zero, variação simétrica, cor pela polaridade e todo desvio escrito. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:35:21.236Z",
+      "impressao": "304b188b4922058bc31fc27099b644e11c3e3538",
+      "arquivos": {
+        "Chart.tsx": "2c8a17908543fadac74c8b543bb20195235ffb22",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "2f5bd81ea79a82594f02170dae3a68a0560176be"
+      }
+    },
+    "v2_receita-contra-ano-anterior": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Tiques em uma linha e nenhum texto cortado nos dois temas (eixo de 84 px, 5 de 5 tiques em cada painel, R$ 0 presente). Domínio do zero, variação simétrica com zero em line-strong, cor pela polaridade, dois desvios anotados com a base na mesma linha e percentual só acima do piso. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:23:05.218Z",
+      "impressao": "e6824997f23d2bcb66330a9ba733ba716751ed9b",
+      "arquivos": {
+        "Chart.tsx": "d8172a308506be549594b6cf665a51a94f6bd2a9",
+        "data.ts": "ffe918befbc79f3736b575538e04f850240390ec",
+        "meta.json": "53dd3b17a81fa962e2424dafff3d9ce6fe682968"
+      }
+    },
+    "v3_vertical-contra-orcamento-e-ano-anterior": {
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, sem bloqueante nas 32 perguntas. Check sem erro. Rótulo de Serviços além da ponta da própria coluna, 19 px abaixo da coluna de Energia, igual nos dois temas (escuro conferido). Linha de leitura nomeia a base, +38% sobre 2025 (NUM-4). Tiques em uma linha, 5 de 5 nos três painéis, colunas alinhadas. Linha de leitura em duas linhas e conta de altura do meta.json desatualizada ficam como observação no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:35:21.736Z",
+      "impressao": "d5fded902ce492103fe98a833cb76f26f861a642",
+      "arquivos": {
+        "Chart.tsx": "ec922b68b681d5fdcb1310d526a172d8f56cc153",
+        "data.ts": "07bfb82ce407fe80ebd42ac3d47dc1c153c7d877",
+        "meta.json": "70c3167b61c9544d8cc5aaff6c67aa88538d8ae7"
+      }
+    },
+    "v4_orcado-zero-e-troca-de-versao": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Tiques em uma linha e nenhum texto cortado nos dois temas (eixo de 84 px, 4 de 4 e 5 de 5 tiques). Orçado zero com R$ 0 escrito e sem percentual, orçado ausente sem marca e com a frase sem base, troca de versão em faixa com texto, piso de marca declarado e todo desvio escrito. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:23:06.159Z",
+      "impressao": "2522e1de30a3067d124967eb72baa6b110920859",
+      "arquivos": {
+        "Chart.tsx": "de30fe09286ef00433d6c099e52753830bea50ab",
+        "data.ts": "6fbaa7a386549bbaee20ab53a85cd99bbd4778b5",
+        "meta.json": "31e27ed74f63dcc32d0dd1d4dcb395a300d091c9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_custo-realizado-contra-orcado",
+      "veredito": "reprovado",
+      "nota": "Painel principal com duas series (realizado solido, orcado vazado) sem legenda nem rotulo direto: a identidade das series so existe na dica (ROT-4, item d). Espessura efetiva da barra mede 5 px contra o piso de 12 px da ESP-2.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:52:13.024Z",
+      "impressao": "d8f225ad485f7cf2c7e2c9d89b40115d802e3f61",
+      "arquivos": {
+        "Chart.tsx": "3fb6b1e83fb88eb6f24a5905babca0659e9dd989",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "00f0cf63ef97575e8ab32a9a3d7b493d5c9348f9"
+      }
+    },
+    {
+      "versao": "v1_custo-realizado-contra-orcado",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Coluna fantasma resolveu a ESP-2 (realizado central acima do piso) e a legenda acima do painel nomeia as duas marcas (ROT-4). Painel principal do zero, variacao simetrica com zero em line-strong, cor pela polaridade, todo valor escrito. Observacoes nao bloqueantes no README.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T17:10:27.213Z",
+      "impressao": "5119fb91f70d523e6acd3338a923830faf6fb078",
+      "arquivos": {
+        "Chart.tsx": "1675eed24f0f7411571a65bc59c19f737c73e822",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "a4bb64d27d71f2fe5acd061e8b485ce97880e84b"
+      }
+    },
+    {
+      "versao": "v1_custo-realizado-contra-orcado",
+      "veredito": "aprovado",
+      "nota": "Conserto aceito nos dois temas: o painel de variacao declara o sentido e a referencia deixou de competir com a serie real.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:34.742Z",
+      "impressao": "b852b5c2128ed06bfc5ac32271ec8076a6c868cb",
+      "arquivos": {
+        "Chart.tsx": "186944991ce249eaf2ad620ed299fa5200050dc0",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "a4bb64d27d71f2fe5acd061e8b485ce97880e84b"
+      }
+    },
+    {
+      "versao": "v1_custo-realizado-contra-orcado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, EIX-6 com REC-2 e REC-29 (14.1, tique perdido): com o eixo de 58 px os 8 tiques de moeda em milhar quebram em duas linhas nos dois temas, o painel principal perde o tique R$ 0 da base (6 de 7 desenhados) e o de variação perde os dois de 50 mil (3 de 5). Mudar: largura do eixo que mantenha o tique em uma linha (84 px como v2 a v4, com a tensão da EIX-6 declarada no meta.json), interval={0} nos dois YAxis e margem inferior no painel principal para o R$ 0 caber; conferir no preview. Parecer em validation/.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:22:54.693Z",
+      "impressao": "b852b5c2128ed06bfc5ac32271ec8076a6c868cb",
+      "arquivos": {
+        "Chart.tsx": "186944991ce249eaf2ad620ed299fa5200050dc0",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "a4bb64d27d71f2fe5acd061e8b485ce97880e84b"
+      }
+    },
+    {
+      "versao": "v2_receita-contra-ano-anterior",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Tiques em uma linha e nenhum texto cortado nos dois temas (eixo de 84 px, 5 de 5 tiques em cada painel, R$ 0 presente). Domínio do zero, variação simétrica com zero em line-strong, cor pela polaridade, dois desvios anotados com a base na mesma linha e percentual só acima do piso. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:23:05.218Z",
+      "impressao": "e6824997f23d2bcb66330a9ba733ba716751ed9b",
+      "arquivos": {
+        "Chart.tsx": "d8172a308506be549594b6cf665a51a94f6bd2a9",
+        "data.ts": "ffe918befbc79f3736b575538e04f850240390ec",
+        "meta.json": "53dd3b17a81fa962e2424dafff3d9ce6fe682968"
+      }
+    },
+    {
+      "versao": "v3_vertical-contra-orcamento-e-ano-anterior",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15 e 31, ROT-7 com GEO-4 e ROT-9: o rótulo anotado de Serviços no painel do meio corre por baixo da coluna de Energia, com 1 a 1,5 px entre a tinta e a marca e o halo na borda dela, e lê como legenda de Energia; levar o rótulo para além da ponta da própria coluna ou garantir 4 px de qualquer marca vizinha. Pergunta 14, NUM-4: a linha de leitura escreve +38% sem nomear a base numa peça que tem duas; nomear 2025 como a frase acessível já faz. Tiques em uma linha e sem corte nos dois temas. Parecer em validation/.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:23:05.701Z",
+      "impressao": "7fbb73234b81996c3ef0e137229898e9eb2a1639",
+      "arquivos": {
+        "Chart.tsx": "58eaab4a966c933e48c1e6b2529a5ab032ef2640",
+        "data.ts": "07bfb82ce407fe80ebd42ac3d47dc1c153c7d877",
+        "meta.json": "70c3167b61c9544d8cc5aaff6c67aa88538d8ae7"
+      }
+    },
+    {
+      "versao": "v4_orcado-zero-e-troca-de-versao",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Tiques em uma linha e nenhum texto cortado nos dois temas (eixo de 84 px, 4 de 4 e 5 de 5 tiques). Orçado zero com R$ 0 escrito e sem percentual, orçado ausente sem marca e com a frase sem base, troca de versão em faixa com texto, piso de marca declarado e todo desvio escrito. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:23:06.159Z",
+      "impressao": "2522e1de30a3067d124967eb72baa6b110920859",
+      "arquivos": {
+        "Chart.tsx": "de30fe09286ef00433d6c099e52753830bea50ab",
+        "data.ts": "6fbaa7a386549bbaee20ab53a85cd99bbd4778b5",
+        "meta.json": "31e27ed74f63dcc32d0dd1d4dcb395a300d091c9"
+      }
+    },
+    {
+      "versao": "v1_custo-realizado-contra-orcado",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, sem bloqueante nas 32 perguntas. Check sem erro. Eixo de 84 px com a tensão da EIX-6 declarada: 12 tiques em uma linha, 7 de 7 no principal com o R$ 0 da base e 5 de 5 na variação, nos dois temas. Rótulo de janeiro a 24 px do tique e a 10 px da coluna vizinha. Domínio do zero, variação simétrica, cor pela polaridade e todo desvio escrito. Observações não bloqueantes no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:35:21.236Z",
+      "impressao": "304b188b4922058bc31fc27099b644e11c3e3538",
+      "arquivos": {
+        "Chart.tsx": "2c8a17908543fadac74c8b543bb20195235ffb22",
+        "data.ts": "980c4bb9bf8912134bd1c17a4bfbea8f7109c1e5",
+        "meta.json": "2f5bd81ea79a82594f02170dae3a68a0560176be"
+      }
+    },
+    {
+      "versao": "v3_vertical-contra-orcamento-e-ano-anterior",
+      "veredito": "aprovado",
+      "nota": "Segunda revisão, sem bloqueante nas 32 perguntas. Check sem erro. Rótulo de Serviços além da ponta da própria coluna, 19 px abaixo da coluna de Energia, igual nos dois temas (escuro conferido). Linha de leitura nomeia a base, +38% sobre 2025 (NUM-4). Tiques em uma linha, 5 de 5 nos três painéis, colunas alinhadas. Linha de leitura em duas linhas e conta de altura do meta.json desatualizada ficam como observação no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:35:21.736Z",
+      "impressao": "d5fded902ce492103fe98a833cb76f26f861a642",
+      "arquivos": {
+        "Chart.tsx": "ec922b68b681d5fdcb1310d526a172d8f56cc153",
+        "data.ts": "07bfb82ce407fe80ebd42ac3d47dc1c153c7d877",
+        "meta.json": "70c3167b61c9544d8cc5aaff6c67aa88538d8ae7"
+      }
+    }
+  ]
+}

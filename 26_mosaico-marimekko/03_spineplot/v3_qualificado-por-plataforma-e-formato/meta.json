@@ -1,0 +1,15 @@
+{
+  "title": "Lead qualificado por plataforma e formato",
+  "useCase": "Marketing, 2026-T3: que combinação de plataforma e formato do criativo entrega a maior proporção de lead qualificado?",
+  "demonstrates": [
+    "Double decker: plataforma e formato aninhados na largura, qualificado na altura",
+    "Layout recursivo com vão de 4 px entre plataformas e 1 px entre formatos",
+    "Rótulo do eixo X em duas linhas: formato em cima, plataforma embaixo",
+    "Colunas acima da taxa global em --chart-1 cheio; as demais em --line-strong",
+    "Combinação sem veiculação como linha fina marcada com a frase sem anúncio",
+    "Nove colunas finais; as abaixo de 4 px agregadas em outros formatos"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do corpo no preset largo com o caso de uso em duas linhas: 894 x 265 px. São 24 da linha de leitura, 24 da legenda e 217 do SVG de 894 x 217, em escala 1 (GEO-18): 30 de etiqueta de taxa, 42 de eixo em três linhas (nome do formato em até duas e a plataforma), 36 de dois rótulos escalonados com respiro, 6 de vão, 2 de folga e o resto de ladrilhos. O vão entre plataformas é de 4 px e o vão entre formatos é de 1 px, e saem antes da partilha de largura (GEO-16); a linha fina da combinação sem veiculação tem 2 px fixos e fica fora da partilha, porque área proporcional a zero é nada, e leva a frase sem anúncio num rótulo escalonado com fio conector. A agregação de colunas abaixo de 4 px é feita antes do layout, por plataforma, sobre a largura pré agregação. A parte qualificada fica em --chart-1 quando a taxa passa da global e em --line-strong quando não passa; a parte não qualificada é --surface-sunken, sem competir. Como o catálogo pede, --line-strong carrega marca de dado (1,8:1 contra o cartão) com o valor escrito, e por isso o aviso de CONTRASTE-MARCA é conhecido."
+}

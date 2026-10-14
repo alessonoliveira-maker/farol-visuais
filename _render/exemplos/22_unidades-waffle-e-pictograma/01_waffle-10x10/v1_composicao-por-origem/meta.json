@@ -1,0 +1,13 @@
+{
+  "title": "Oportunidades por canal de origem",
+  "useCase": "Mostrar a composição do trimestre em partes de 100, quando a proporção importa mais que o volume.",
+  "demonstrates": [
+    "SVG puro em React com geometria calculada em TypeScript",
+    "Cor presa à categoria por slot fixo, sem os slots que repetem cor semântica",
+    "Ausência de origem em quadrado vazado: forma, não só cor",
+    "Percentual da legenda igual à contagem de quadrados, pelo maior resto",
+    "Layout por container query: lado a lado no cartão, empilhado no estreito"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

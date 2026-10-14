@@ -1,0 +1,316 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "02_barras-agrupadas",
+  "versoes": {
+    "v1_agendas-marcadas-e-realizadas": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Barras do zero, ordem pela serie principal, legenda na ordem das barras e rotulo direto legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:20.528Z",
+      "impressao": "3bc0a6cdaac65cfec044272f5d2e9cac089b7dfb",
+      "arquivos": {
+        "Chart.tsx": "86ca4588092c9b7fd8d3ecedbf1484e91a94e8aa",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "6076ba9b770e76328abeca9b7ee0788166e1d8d4"
+      }
+    },
+    "v2_executivo-contra-media-por-dimensao": {
+      "veredito": "aprovado",
+      "nota": "Check com aviso, sem erro. Escala comum de 0 a 100 do zero, ordem pela lacuna, sinal de menos tipografico com icone e par de valores legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:28.885Z",
+      "impressao": "d0e38d80ff8db9d2639e28fa752fd4cc5cf285f1",
+      "arquivos": {
+        "Chart.tsx": "7f1959b77c8407b0a451d8347b74f3cecb7528f8",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "7cc03660ddeede23dad8b2f7e8aa9bc2ac993435"
+      }
+    },
+    "v3_leads-por-origem-em-tres-meses": {
+      "veredito": "aprovado",
+      "nota": "Check com aviso de espessura, sem erro. Ausencia escreve indisponivel e nao vira barra zerada, ordem pelo mes mais recente e rotulos sem sobreposicao nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:35.586Z",
+      "impressao": "1ae4203d0b055a1e7aa9ed48fbb41fb188446986",
+      "arquivos": {
+        "Chart.tsx": "89ac455331ae3d5acf4959e7f24974584d568bc1",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    "v4_pequenos-multiplos-por-metrica": {
+      "veredito": "aprovado",
+      "nota": "Check com aviso de espessura, sem erro. Cada painel parte do zero na sua unidade declarada, ordem igual em todos, indisponivel com icone e nenhuma marca real.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:36.376Z",
+      "impressao": "0e8cf3c65bbf2c034e6acef4409fdf4c5e1d8050",
+      "arquivos": {
+        "Chart.tsx": "b70b7d67be5b5c976d19010a6283a6bd5d1824e5",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, ordem pela serie principal e rotulo em cada barra. Sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T09:44:37.066Z",
+      "impressao": "f18dc36eff5c8f8a13e4afa28849de058aba64e4",
+      "arquivos": {
+        "Chart.tsx": "5b7cc76f91d0e0c2ea05d2a4f8405e52434a0430",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "5cc0f64c4eadeb1f872ebc19ee091e7db283d578"
+      }
+    },
+    {
+      "versao": "v2_executivo-contra-media-por-dimensao",
+      "veredito": "reprovado",
+      "nota": "Rotulos de valor do par se sobrepoem (64/71, 70/73, 76/76) e nomes longos de dimensao invadem as barras. Ilegibilidade nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T09:44:42.913Z",
+      "impressao": "dac40f9ac0f551bc7d4f1690fb6e514388584f1d",
+      "arquivos": {
+        "Chart.tsx": "3f11d44c23fae073c9e95c0abc8a77ed8738603a",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "0f63855e814db2934fc276db004606b798e21b1e"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-tres-meses",
+      "veredito": "reprovado",
+      "nota": "Indisponivel cai na origem errada: as barras medidas de Evento presencial (6 e 19 leads) sao rotuladas indisponivel e Parceria contabil fica sem marcacao.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T09:44:47.766Z",
+      "impressao": "507b1b70ecb0509eaf31569a2a7727a8fae6e5e1",
+      "arquivos": {
+        "Chart.tsx": "9346af739bb32b34b5889a2aa55b432eb41ff9b7",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    {
+      "versao": "v4_pequenos-multiplos-por-metrica",
+      "veredito": "reprovado",
+      "nota": "A maior barra de cada painel perde o rotulo (sai fora do painel), R$ 36,2 mil e cortado na borda e o indisponivel cai na plataforma errada.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T09:44:52.001Z",
+      "impressao": "e488048b20b4b27eb72030ac75b49e7dea22f1b0",
+      "arquivos": {
+        "Chart.tsx": "882ceaab844e8d9451914be491b9a34a47a775a0",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Caso base correto: duas series do zero, cor fixa por serie, valor na ponta e legenda na ordem das barras.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:36:59.952Z",
+      "impressao": "f18dc36eff5c8f8a13e4afa28849de058aba64e4",
+      "arquivos": {
+        "Chart.tsx": "5b7cc76f91d0e0c2ea05d2a4f8405e52434a0430",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "5cc0f64c4eadeb1f872ebc19ee091e7db283d578"
+      }
+    },
+    {
+      "versao": "v2_executivo-contra-media-por-dimensao",
+      "veredito": "aprovado",
+      "nota": "Escala comum de 0 a 100 do zero, destaque e neutro com valor escrito, lacuna com sinal e icone; barras muito finas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:37:04.170Z",
+      "impressao": "c19d1c951e80a992add06597e3022cf7c5915102",
+      "arquivos": {
+        "Chart.tsx": "b9cb10bc840abddb699e05389dcf2d32a641d947",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "0f63855e814db2934fc276db004606b798e21b1e"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-tres-meses",
+      "veredito": "reprovado",
+      "nota": "Os dois rotulos de indisponivel da Parceria contabil se sobrepoem e encostam na barra de ago/26 nos dois temas.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:37:08.388Z",
+      "impressao": "849d5dead9194d913631896897869b1c282d339e",
+      "arquivos": {
+        "Chart.tsx": "e77d806be57c4d6580f75b0780a0cb16e3613e8f",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    {
+      "versao": "v4_pequenos-multiplos-por-metrica",
+      "veredito": "aprovado",
+      "nota": "Cinco paineis com dominio e unidade proprios, mesma ordem de plataforma, destaque unico e indisponivel com icone.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T11:37:12.240Z",
+      "impressao": "a93616148e527ab5e7bc59736fab692eeaaa8854",
+      "arquivos": {
+        "Chart.tsx": "7abff0e5783d033ae6905ecaa26b7f30d7e5078a",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Dois Bar sem stackId, zero na origem, ordem pela serie principal, legenda na ordem das barras e valor escrito em toda barra. Observacao: rotulos de 9 e 8 muito proximos e sem substantivo na unidade.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:42:37.357Z",
+      "impressao": "f18dc36eff5c8f8a13e4afa28849de058aba64e4",
+      "arquivos": {
+        "Chart.tsx": "5b7cc76f91d0e0c2ea05d2a4f8405e52434a0430",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "5cc0f64c4eadeb1f872ebc19ee091e7db283d578"
+      }
+    },
+    {
+      "versao": "v2_executivo-contra-media-por-dimensao",
+      "veredito": "aprovado",
+      "nota": "Escala comum de 0 a 100 a partir do zero, destaque com segundo canal no peso e na coluna de lacuna, sinal de menos tipografico. Observacoes: barra fina, amostra neutra da legenda sem valor ao lado e frase acessivel com 275 caracteres.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:42:42.048Z",
+      "impressao": "c19d1c951e80a992add06597e3022cf7c5915102",
+      "arquivos": {
+        "Chart.tsx": "b9cb10bc840abddb699e05389dcf2d32a641d947",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "0f63855e814db2934fc276db004606b798e21b1e"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-tres-meses",
+      "veredito": "aprovado",
+      "nota": "Tres series por origem na rampa sequencial, ausencia escrita como indisponivel e nenhuma barra de zero. Observacoes: meta.json anuncia linha de leitura que a versao nao desenha, vao entre grupos em 28 por cento e frase acessivel com 282 caracteres.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:42:46.857Z",
+      "impressao": "4138e3a457b03beb64af90a5771b89cd2316465f",
+      "arquivos": {
+        "Chart.tsx": "682cf6b5a31e681edd0952a03b3bfe5f19154293",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    {
+      "versao": "v4_pequenos-multiplos-por-metrica",
+      "veredito": "aprovado",
+      "nota": "Um painel por metrica com dominio e formato proprios, mesma ordem de plataforma em todos, menor e melhor no titulo sem inverter eixo e indisponivel com icone. Observacoes: peso 700 em cinco rotulos, vao de 26 por cento sem constante nomeada e nome de plataforma com truncate.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:42:51.737Z",
+      "impressao": "a93616148e527ab5e7bc59736fab692eeaaa8854",
+      "arquivos": {
+        "Chart.tsx": "7abff0e5783d033ae6905ecaa26b7f30d7e5078a",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Check 0 erros. Encoding do zero, rotulo em toda barra, legenda na ordem das barras, dois temas legiveis.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:21.535Z",
+      "impressao": "f18dc36eff5c8f8a13e4afa28849de058aba64e4",
+      "arquivos": {
+        "Chart.tsx": "5b7cc76f91d0e0c2ea05d2a4f8405e52434a0430",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "5cc0f64c4eadeb1f872ebc19ee091e7db283d578"
+      }
+    },
+    {
+      "versao": "v2_executivo-contra-media-por-dimensao",
+      "veredito": "aprovado",
+      "nota": "Check 0 erros. Escala comum 0 a 100 do zero, um rotulo por par sem colisao, lacuna com sinal e icone. Marca de 2 px e aviso da ESP-2, nao erro.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:26.660Z",
+      "impressao": "993c041341dc463129496e85a3950d4ea10e7d15",
+      "arquivos": {
+        "Chart.tsx": "434579d5645b667cd6249176876ec2290979934d",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "0f63855e814db2934fc276db004606b798e21b1e"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-tres-meses",
+      "veredito": "aprovado",
+      "nota": "Check 0 erros. Ausencia escreve indisponivel e nunca barra zerada, rampa sequencial na ordem do tempo, valor escrito em toda barra.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:31.084Z",
+      "impressao": "1ae4203d0b055a1e7aa9ed48fbb41fb188446986",
+      "arquivos": {
+        "Chart.tsx": "89ac455331ae3d5acf4959e7f24974584d568bc1",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    {
+      "versao": "v4_pequenos-multiplos-por-metrica",
+      "veredito": "aprovado",
+      "nota": "Check 0 erros. Dominio proprio por painel do zero, mesma ordem de plataforma em todos, indisponivel com icone, menor e melhor no titulo sem inverter eixo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:51:36.003Z",
+      "impressao": "0e8cf3c65bbf2c034e6acef4409fdf4c5e1d8050",
+      "arquivos": {
+        "Chart.tsx": "b70b7d67be5b5c976d19010a6283a6bd5d1824e5",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    },
+    {
+      "versao": "v1_agendas-marcadas-e-realizadas",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Barras do zero, ordem pela serie principal, legenda na ordem das barras e rotulo direto legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:20.528Z",
+      "impressao": "3bc0a6cdaac65cfec044272f5d2e9cac089b7dfb",
+      "arquivos": {
+        "Chart.tsx": "86ca4588092c9b7fd8d3ecedbf1484e91a94e8aa",
+        "data.ts": "ff0262c739759fae81709441a884bef02c9653d3",
+        "meta.json": "6076ba9b770e76328abeca9b7ee0788166e1d8d4"
+      }
+    },
+    {
+      "versao": "v2_executivo-contra-media-por-dimensao",
+      "veredito": "aprovado",
+      "nota": "Check com aviso, sem erro. Escala comum de 0 a 100 do zero, ordem pela lacuna, sinal de menos tipografico com icone e par de valores legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:28.885Z",
+      "impressao": "d0e38d80ff8db9d2639e28fa752fd4cc5cf285f1",
+      "arquivos": {
+        "Chart.tsx": "7f1959b77c8407b0a451d8347b74f3cecb7528f8",
+        "data.ts": "b1f0843da17be41fc5fce22ac7c29ea9ec483b22",
+        "meta.json": "7cc03660ddeede23dad8b2f7e8aa9bc2ac993435"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-em-tres-meses",
+      "veredito": "aprovado",
+      "nota": "Check com aviso de espessura, sem erro. Ausencia escreve indisponivel e nao vira barra zerada, ordem pelo mes mais recente e rotulos sem sobreposicao nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:35.586Z",
+      "impressao": "1ae4203d0b055a1e7aa9ed48fbb41fb188446986",
+      "arquivos": {
+        "Chart.tsx": "89ac455331ae3d5acf4959e7f24974584d568bc1",
+        "data.ts": "2a19c4fd8906c2cfa8ce62578f61479df6a2b997",
+        "meta.json": "05ac0cb5acb906ca3b31b8d539ab1cc403ff4f6c"
+      }
+    },
+    {
+      "versao": "v4_pequenos-multiplos-por-metrica",
+      "veredito": "aprovado",
+      "nota": "Check com aviso de espessura, sem erro. Cada painel parte do zero na sua unidade declarada, ordem igual em todos, indisponivel com icone e nenhuma marca real.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T15:10:36.376Z",
+      "impressao": "0e8cf3c65bbf2c034e6acef4409fdf4c5e1d8050",
+      "arquivos": {
+        "Chart.tsx": "b70b7d67be5b5c976d19010a6283a6bd5d1824e5",
+        "data.ts": "c59ec448d0075df7f370e3062ab59f9fba877b60",
+        "meta.json": "e86401f11a7d7b9a6a99ae1da7bcfbb8e1a088a0"
+      }
+    }
+  ]
+}

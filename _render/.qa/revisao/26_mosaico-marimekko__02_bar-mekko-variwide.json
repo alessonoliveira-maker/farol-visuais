@@ -1,0 +1,108 @@
+{
+  "familia": "26_mosaico-marimekko",
+  "modelo": "02_bar-mekko-variwide",
+  "versoes": {
+    "v1_cpl-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: cinco colunas com área igual ao investimento (0,0000 p.p.), escala a partir do zero com tiques de 100 em 100, CPL e investimento escritos em cada coluna somando o total do rodapé, destaque nomeado na linha de leitura, textos de 5,21:1 para cima nos dois temas. Aviso de CONTRASTE-MARCA é line-strong como neutro com o valor escrito. Observações no README: fidelidade de 0,51 e 0,56 por cento pelo kerning da ferramenta depois de CPL, valor acumulado do eixo X não escrito, último tique fora do viewBox, rótulo interno sem guarda de largura, linha sem lead descartada em silêncio.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:01.689Z",
+      "impressao": "8b098c17e589381815065ef722a918bc0139edff",
+      "arquivos": {
+        "Chart.tsx": "e53c12765140cc169cbf902c05a02562feec0b2a",
+        "data.ts": "ad2fa095aeb6abaea4259aeb10ed3fa3005e74e6",
+        "meta.json": "c5694133151015cfd7c0e86f5e0b59eb7dfeeb8d"
+      }
+    },
+    "v2_investimento-acima-do-cpl-alvo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: área acima do alvo igual ao excedente nas três colunas (0,0000 p.p.), alvo dentro do domínio, linha do alvo só por fora das colunas com nome e valor na margem reservada, excedente total e participação na linha de leitura, texto sobre chart-1 no par medido. Observações no README: excedente de Busca patrocinada e de Mídia social só pela área e pela dica, como o catálogo pede; linha do alvo sólida de 1,5 px contra o tracejado 3 3 da 17.2; rótulo de Rede de display acima da linha do alvo; notes anuncia três desvios e lista quatro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:02.213Z",
+      "impressao": "e5849a76fe23a834254a6221bf0e15836a375e3e",
+      "arquivos": {
+        "Chart.tsx": "45a5d21862f0890e92f54c356853beaa80821adb",
+        "data.ts": "b0339cc56484117e70afcdfd0fa3f89ea3fd174f",
+        "meta.json": "81257936633654f21e118c9ddcc236612128e8fd"
+      }
+    },
+    "v3_ticket-medio-e-receita-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: sete colunas com área igual à receita e largura igual às vitórias (0,0000 p.p.), três rótulos puxados com linha guia sem sobreposição nem halo cortando guia, linha do ticket médio tracejada só por fora das colunas, anotação de ticket alto na coluna em destaque, etiqueta de procedência fora do Chart pela ANO-6 com desvio declarado. Observações no README: número da anotação sem algarismo tabular (TIP-1), rótulos de Orgânico e Redes sociais acima da linha do ticket médio, período só na frase acessível, rótulo da linha sem a palavra geral.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:02.865Z",
+      "impressao": "3edbb41e109852d846c512a081c520155f451086",
+      "arquivos": {
+        "Chart.tsx": "ad3e0350616e2362147f6d0c56d0e27719e71cef",
+        "data.ts": "693178a4af772de3792cb3908a4d54f1fc3499d2",
+        "meta.json": "a3509a4415130775af3787a821aa5e8b0acd9bca"
+      }
+    },
+    "v4_investimento-sem-lead": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: plataforma sem lead fora do layout e do domínio, como marcador com nome, valor e palavra numa zona separada da escala; custo não coletado em vaga tracejada e oca com formatUnavailable; zero medido em faixa sólida com o zero escrito; total de leads sem somar investimento parcial; canvas por número com a conta no notes. Observações no README: destaque chart-1 em Vídeo curto não é o assunto do cartão e não tem segundo canal além da posição (COR-2), vaga sem o ícone Unplug (EST-2), faixa do zero em text-secondary, divisor da zona contra a ESP-5, notes com conta inexata.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:03.434Z",
+      "impressao": "3c089f10b6cb6d517df321f8f67d652b57e09a4d",
+      "arquivos": {
+        "Chart.tsx": "4f0dd779438025228f0666e72c213f1705d80e2e",
+        "data.ts": "e599ba8163a768ad15dbb989489f84cd1ae829fe",
+        "meta.json": "f149886b38bac7cdc1b25d07b0f39789b0480656"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: cinco colunas com área igual ao investimento (0,0000 p.p.), escala a partir do zero com tiques de 100 em 100, CPL e investimento escritos em cada coluna somando o total do rodapé, destaque nomeado na linha de leitura, textos de 5,21:1 para cima nos dois temas. Aviso de CONTRASTE-MARCA é line-strong como neutro com o valor escrito. Observações no README: fidelidade de 0,51 e 0,56 por cento pelo kerning da ferramenta depois de CPL, valor acumulado do eixo X não escrito, último tique fora do viewBox, rótulo interno sem guarda de largura, linha sem lead descartada em silêncio.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:01.689Z",
+      "impressao": "8b098c17e589381815065ef722a918bc0139edff",
+      "arquivos": {
+        "Chart.tsx": "e53c12765140cc169cbf902c05a02562feec0b2a",
+        "data.ts": "ad2fa095aeb6abaea4259aeb10ed3fa3005e74e6",
+        "meta.json": "c5694133151015cfd7c0e86f5e0b59eb7dfeeb8d"
+      }
+    },
+    {
+      "versao": "v2_investimento-acima-do-cpl-alvo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: área acima do alvo igual ao excedente nas três colunas (0,0000 p.p.), alvo dentro do domínio, linha do alvo só por fora das colunas com nome e valor na margem reservada, excedente total e participação na linha de leitura, texto sobre chart-1 no par medido. Observações no README: excedente de Busca patrocinada e de Mídia social só pela área e pela dica, como o catálogo pede; linha do alvo sólida de 1,5 px contra o tracejado 3 3 da 17.2; rótulo de Rede de display acima da linha do alvo; notes anuncia três desvios e lista quatro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:02.213Z",
+      "impressao": "e5849a76fe23a834254a6221bf0e15836a375e3e",
+      "arquivos": {
+        "Chart.tsx": "45a5d21862f0890e92f54c356853beaa80821adb",
+        "data.ts": "b0339cc56484117e70afcdfd0fa3f89ea3fd174f",
+        "meta.json": "81257936633654f21e118c9ddcc236612128e8fd"
+      }
+    },
+    {
+      "versao": "v3_ticket-medio-e-receita-por-origem",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: sete colunas com área igual à receita e largura igual às vitórias (0,0000 p.p.), três rótulos puxados com linha guia sem sobreposição nem halo cortando guia, linha do ticket médio tracejada só por fora das colunas, anotação de ticket alto na coluna em destaque, etiqueta de procedência fora do Chart pela ANO-6 com desvio declarado. Observações no README: número da anotação sem algarismo tabular (TIP-1), rótulos de Orgânico e Redes sociais acima da linha do ticket médio, período só na frase acessível, rótulo da linha sem a palavra geral.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:02.865Z",
+      "impressao": "3edbb41e109852d846c512a081c520155f451086",
+      "arquivos": {
+        "Chart.tsx": "ad3e0350616e2362147f6d0c56d0e27719e71cef",
+        "data.ts": "693178a4af772de3792cb3908a4d54f1fc3499d2",
+        "meta.json": "a3509a4415130775af3787a821aa5e8b0acd9bca"
+      }
+    },
+    {
+      "versao": "v4_investimento-sem-lead",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: plataforma sem lead fora do layout e do domínio, como marcador com nome, valor e palavra numa zona separada da escala; custo não coletado em vaga tracejada e oca com formatUnavailable; zero medido em faixa sólida com o zero escrito; total de leads sem somar investimento parcial; canvas por número com a conta no notes. Observações no README: destaque chart-1 em Vídeo curto não é o assunto do cartão e não tem segundo canal além da posição (COR-2), vaga sem o ícone Unplug (EST-2), faixa do zero em text-secondary, divisor da zona contra a ESP-5, notes com conta inexata.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T16:40:03.434Z",
+      "impressao": "3c089f10b6cb6d517df321f8f67d652b57e09a4d",
+      "arquivos": {
+        "Chart.tsx": "4f0dd779438025228f0666e72c213f1705d80e2e",
+        "data.ts": "e599ba8163a768ad15dbb989489f84cd1ae829fe",
+        "meta.json": "f149886b38bac7cdc1b25d07b0f39789b0480656"
+      }
+    }
+  ]
+}

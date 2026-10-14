@@ -1,0 +1,14 @@
+{
+  "title": "Concentração da receita por cliente",
+  "useCase": "Quanto da receita reconhecida do ano vem dos 10% maiores entre os 640 clientes da carteira?",
+  "demonstrates": [
+    "Função lorenz com ordenação crescente e Gini pela soma dos trapézios",
+    "Plano quadrado de 0 a 100% nos dois eixos e diagonal tracejada",
+    "Area em par sombreando a distância entre a curva e a igualdade",
+    "Rótulo traduzido para leitura de cima: 10% dos clientes, 52% da receita",
+    "Gini e n de clientes na legenda"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Os maiores clientes são lidos de cima: a barra vertical sobe do ponto da curva em 90% até 100% e mede a parte que cabe aos 10% maiores. O quadrado do plano vem da conta de margens (44 do eixo Y mais 8 à direita contra 12 em cima, 26 do eixo X e 14 embaixo, 52 dos dois lados), e não de ajuste de olho."
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "05_area-quadrada-proporcional",
+  "nome": "Área quadrada proporcional",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Quadrados de grade com a mesma célula e totais diferentes: o lado cresce com a raiz quadrada do total, e magnitudes distantes cabem lado a lado em pouco espaço. A célula é a unidade declarada (1 célula = 5 leads, 1 célula = R$ 10 mil), então o leitor ainda pode contar, e a comparação de área, que é aproximada, fica ancorada no número escrito sob cada quadrado. Feito em HTML com Tailwind, com gridTemplateColumns calculado do lado e os quadrados alinhados pela base, deixando a última linha incompleta no topo. Com razão de 100 vezes ou mais entre os totais, o formato deixa de servir e a peça troca de forma.",
+  "quando_usar": [
+    "De 2 a 4 totais na mesma unidade com magnitudes diferentes, até cerca de 100 vezes",
+    "Etapas de funil ou custo contra receita para diretoria, com o número sempre escrito",
+    "Parte de um total acesa dentro do próprio quadrado, como leads que viraram oportunidade"
+  ],
+  "quando_evitar": [
+    "Razão de 100 vezes ou mais: o menor vira uma célula; número com barra (01 ou 13/01)",
+    "Taxa de passo entre etapas como pergunta principal: funil em barras (10/01)",
+    "Comparação precisa entre totais parecidos: barras horizontais ordenadas (02/01)",
+    "Valor negativo ou saldo: área não tem sinal; cascata (19)",
+    "Totais de unidades diferentes no mesmo quadro: separar as peças ou normalizar antes"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_funil-do-semestre-em-celulas",
+      "titulo": "Funil do semestre em células de cinco",
+      "caso_de_uso": "Comercial: o tamanho de leads, oportunidades e vitórias do semestre lado a lado, em células de 5.",
+      "o_que_demonstra": [
+        "Lado por Math.ceil(Math.sqrt(células)) e gridTemplateColumns calculado",
+        "1.284 leads em 257 células, 212 oportunidades em 42 e 38 vitórias em 8",
+        "Quadrados alinhados pela base, com a última linha incompleta no topo",
+        "Número exato sob cada quadrado e arredondamento de células declarado",
+        "Legenda de unidade 1 célula = 5 sempre visível"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_leads-que-viraram-oportunidade",
+      "titulo": "Leads que viraram oportunidade",
+      "caso_de_uso": "Marketing: dentro do total de leads do semestre, quantos viraram oportunidade e quanto do quadrado ficou apagado.",
+      "o_que_demonstra": [
+        "Subconjunto aceso dentro do quadrado maior, preenchido a partir do canto inferior",
+        "Aceso em --chart-1 e restante em --surface-overlay",
+        "Taxa por formatRateWithVolume: 16,5% (212 de 1.284)",
+        "Anotação ligada ao bloco aceso, sem legenda separada"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_custo-e-receita-do-trimestre",
+      "titulo": "Custo e receita do trimestre em blocos de R$ 10 mil",
+      "caso_de_uso": "Diretoria: quanto custou o trimestre na camada declarada e quanto de receita reconhecida entrou, na mesma unidade.",
+      "o_que_demonstra": [
+        "R$ 10 mil por célula: custo em 193 células contra receita em 248",
+        "Valores por formatCurrencyCompact sob cada quadrado",
+        "Camada do custo escrita no rótulo, porque o retorno muda de camada para camada",
+        "Diferença de 55 células acesa no quadrado da receita como folga do trimestre",
+        "Procedência do número em etiqueta --prov, fora da cor dos quadrados"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_quando-a-area-deixa-de-servir",
+      "titulo": "Quando a área deixa de servir",
+      "caso_de_uso": "Diretoria: comparar um total 200 vezes menor e um saldo negativo sem deixar a área mentir.",
+      "o_que_demonstra": [
+        "Razão entre totais checada no componente, com o motivo da troca escrito",
+        "Total 200 vezes menor vira uma célula e a peça troca para número com barra",
+        "Saldo negativo fica fora do desenho e aparece com sinal de menos tipográfico",
+        "Total indisponível escreve formatUnavailable no lugar do quadrado"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

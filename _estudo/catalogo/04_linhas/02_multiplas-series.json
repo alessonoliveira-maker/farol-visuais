@@ -1,0 +1,71 @@
+{
+  "slug": "02_multiplas-series",
+  "nome": "Múltiplas séries",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "De duas a cinco linhas na mesma unidade dividindo os eixos para comparar trajetórias. Absorve o destaque de uma série contra o resto neutro, que resolve o espaguete quando só uma importa, e o índice base 100, que compara o ritmo de grandezas diferentes num eixo único sem recorrer a eixo duplo.",
+  "quando_usar": [
+    "Até 4 séries na mesma unidade com rótulo no fim de cada linha; até 5 com legenda próxima.",
+    "Uma série protagonista contra o contexto de 6 a 24 outras, todas desenhadas em neutro.",
+    "Ritmo de crescimento de grandezas diferentes (investimento, leads, agendas) com a base declarada em 100.",
+    "Categorias fixas com cor por slot: plataformas de mídia, verticais de negócio, squads."
+  ],
+  "quando_evitar": [
+    "Mais de 5 séries em que todas importam igualmente: use 09_pequenos-multiplos-de-linha.",
+    "Unidades diferentes em que o nível importa: use painéis alinhados em 08_combinados-e-eixo-duplo; nunca eixo duplo.",
+    "Índice com base nula, próxima de zero ou negativa: mostre o valor absoluto em painéis.",
+    "Partes que somam um total: use área empilhada em 05_areas.",
+    "Só dois momentos por série: use o slope de 17_comparacao-de-pontos."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-bruto-contra-qualificado",
+      "titulo": "CPL bruto contra CPL qualificado",
+      "caso_de_uso": "O CPL qualificado acompanhou o CPL bruto mês a mês em 2026 ou os dois descolaram?",
+      "o_que_demonstra": [
+        "Duas Line na mesma unidade e no mesmo eixo, sem eixo duplo",
+        "Rótulo no fim de cada linha com marcador na cor da série, sem legenda",
+        "Cor por slot fixo da categoria, não pela posição no array",
+        "ChartTooltip com itemSorter pelo valor e formatCurrencyCompact"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_plataforma-em-destaque-com-resto-neutro",
+      "titulo": "Investimento por plataforma com uma em destaque",
+      "caso_de_uso": "Qual das quatro plataformas de mídia paga mais cresceu em investimento mensal desde 2026-01?",
+      "o_que_demonstra": [
+        "Protagonista em --chart-1 de 2,5 px desenhada por último; demais em --line-strong",
+        "Halo na cor da superfície para separar cruzamentos com as neutras",
+        "Rótulo final em peso 700 só no destaque e valor escrito nas neutras",
+        "Troca de protagonista reordena as séries, não só a cor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_indice-base-100-do-funil",
+      "titulo": "Investimento, leads e agendas em índice base 100",
+      "caso_de_uso": "Leads e agendas cresceram no mesmo ritmo que o investimento em mídia, com 2026-01 igual a 100?",
+      "o_que_demonstra": [
+        "Índice calculado em TypeScript como valor sobre a base vezes 100",
+        "ReferenceLine em 100 com a data base escrita no rótulo",
+        "Dica com índice e valor absoluto lado a lado",
+        "Base nula troca para o primeiro ponto válido com aviso escrito"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_doze-executivos-contra-mediana",
+      "titulo": "Doze executivos com um destaque e a mediana do grupo",
+      "caso_de_uso": "Como a receita reconhecida mensal de um executivo se compara à dos outros 11, sem virar espaguete?",
+      "o_que_demonstra": [
+        "Acima de 5 séries: 11 linhas neutras de 1 px e uma em --chart-1",
+        "Mediana do grupo tracejada como segunda referência",
+        "Dica própria com destaque, mediana e extremos, não as 12 séries",
+        "activeDot desligado nas neutras",
+        "Nota com a regra de corte e a saída para pequenos múltiplos"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

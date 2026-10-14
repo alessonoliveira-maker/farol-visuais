@@ -1,0 +1,71 @@
+{
+  "slug": "05_swimlane-de-eventos",
+  "nome": "Swimlane de eventos e agenda",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Uma raia por responsável, canal ou função; dentro de cada raia, vários períodos (barras) e eventos pontuais (marcas) ao longo de um eixo de tempo real, com rótulo fixo à esquerda, fundo alternado e linha de agora. É SVG puro porque o número de períodos por raia varia: escala de tempo linear e escala de banda calculadas em TypeScript, retângulos e marcas desenhados direto. Períodos sobrepostos na mesma raia ganham sub-faixas pelo mesmo empacotamento guloso do Gantt empacotado, e a raia cresce em vez de sobrepor retângulos. Absorve a agenda em grade (timetable), que gira o eixo: horas na vertical e pessoas ou dias em colunas.",
+  "quando_usar": [
+    "Vários períodos e eventos por pessoa, canal ou função, de 3 a cerca de 10 raias",
+    "Agenda de reuniões de SDRs na semana, com buracos e sobreposição visíveis",
+    "Passagem de uma oportunidade entre funções, mostrando a espera entre raias",
+    "Grade de horário de um dia por pessoa, com capacidade livre e conflito"
+  ],
+  "quando_evitar": [
+    "Um único período por linha: use o Gantt (20/01)",
+    "Estado discreto por dia sem horário: use a faixa de status (24/04)",
+    "Períodos de semanas ou meses em grade de horas: use o Gantt ou o calendário (15/05)",
+    "Carga por pessoa por dia como intensidade: use o mapa de calor (família 15)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_semana-de-agendas-por-sdr",
+      "titulo": "Semana de agendas por SDR",
+      "caso_de_uso": "Pré-vendas: como ficaram as reuniões de 30 e 60 minutos de SDR 1 a SDR 5 entre 2026-11-09 e 2026-11-13.",
+      "o_que_demonstra": [
+        "Funções escalaTempo e escalaBanda em TypeScript, sem biblioteca de escala",
+        "Separadores de dia com rótulo de data e só o expediente de 9h a 18h desenhado",
+        "Raias com fundo alternado em var(--surface-sunken) e rótulo fixo à esquerda",
+        "viewBox fixo e vectorEffect non-scaling-stroke nos separadores",
+        "aria-label calculado com total de reuniões e a SDR com mais horas agendadas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_ausencias-e-remarcacoes",
+      "titulo": "Reuniões com ausência e remarcação",
+      "caso_de_uso": "Pré-vendas: quais reuniões da semana tiveram ausência do lead e para quando cada remarcação foi empurrada.",
+      "o_que_demonstra": [
+        "Reunião com ausência como marca vazada em var(--negative) com legenda textual",
+        "Arco fino em path Q ligando a reunião original à nova data na mesma raia",
+        "Remarcação para outra SDR com arco entre raias e rótulo do destino",
+        "Contagem de ausências por raia escrita à direita"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_handoff-em-raias-de-funcao",
+      "titulo": "Passagem entre funções por oportunidade",
+      "caso_de_uso": "Comercial: quanto cada uma de 6 oportunidades esperou entre Marketing, Pré-vendas, Executivo e Operações em 2026-10.",
+      "o_que_demonstra": [
+        "Raias de função em ordem de processo, com cada oportunidade em cor fixa var(--chart-N)",
+        "Período de posse como barra e passagem como marca de losango na fronteira",
+        "Espera entre passagens desenhada como traço tracejado com dias escritos",
+        "Foco numa oportunidade vindo por prop, com as demais rebaixadas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_agenda-em-grade-com-conflito-e-ausencia",
+      "titulo": "Agenda do dia com conflito e SDR ausente",
+      "caso_de_uso": "Pré-vendas: em 2026-11-10, onde há reuniões sobrepostas, qual SDR está ausente e qual reunião cai fora do expediente.",
+      "o_que_demonstra": [
+        "Grade girada: horas na vertical e uma coluna por SDR, top e altura por minuto",
+        "Três reuniões sobrepostas em colunas internas pelo empacotamento guloso",
+        "SDR ausente com coluna hachurada e a palavra ausente, distinta de agenda vazia",
+        "Reunião às 20h estende a grade só nesse dia com aviso escrito",
+        "Bloco de 15 minutos com altura mínima visual e horário completo na dica"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

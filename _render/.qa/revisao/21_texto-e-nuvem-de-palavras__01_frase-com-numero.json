@@ -1,0 +1,108 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "01_frase-com-numero",
+  "versoes": {
+    "v1_leads-qualificados-contra-totais": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: a frase calculada confere com o dado (438 contra 392 dá 12%, 1.468 contra 1.440 dá 1,9%), eixo do zero a 1.500 com 4 linhas de grade, 12 tiques com 9 px de vão, palavras nas cores das séries de 6,00:1 para cima nos dois temas, fidelidade de 0,00%. Observações no README (vínculo entre nome e linha só por cor, interval 0 acima do teto da EIX-7, ramos de um mês).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:37.675Z",
+      "impressao": "75d6695b9b7226897c6bd7adcd58bfe45ff668d7",
+      "arquivos": {
+        "Chart.tsx": "60e12e7ece00fe9a68eb2eb5cee7b4ff09efaf8e",
+        "data.ts": "363b75b249cf5374a2f80aae45c7b17845de79f4",
+        "meta.json": "bd6b9b616149ed68c26c2dde3b58f6889fd8d309"
+      }
+    },
+    "v2_receita-do-mes-em-texto-corrido": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: +8,4% confere com o dado exato, base nomeada na frase, sparkline sem área e com quebra em nulo, textos de 5,21:1 para cima nos dois temas. Pergunta 21 pesada e não reprovada: o preview diverge 0,80% e 0,78% da página, com os dois números principais 4 px abaixo da linha de base só no arquivo; origem no serializador, faixa de aviso da seção 12. Observações no README, com a frase acessível e os ramos fora do dado padrão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:38.322Z",
+      "impressao": "fe475b61247b5a17cc92c0e99135b7dbde20a4fd",
+      "arquivos": {
+        "Chart.tsx": "7a465a33bc2ea991b650848c47d331193b205970",
+        "data.ts": "6ca29a4c2aea6c75e3f1b764552c82f4c0c0ae08",
+        "meta.json": "a5f899f252bd7ed87e141c14ecd4e41b79acd7fd"
+      }
+    },
+    "v3_sumario-executivo-da-diretoria": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 93,6% e 3,1x conferem com o dado, dois números por frase, cenário em faixa inteira, peso 700 só no multiplicador com ícone, vermelho de 5,50:1 e 6,36:1, frase acessível de 232 caracteres igual ao corpo, fidelidade de 0,02% e 0,03%. Observações no README (motivo trocado no ramo sem previsão, concordância do indisponível, metade do corpo vazia).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:39.000Z",
+      "impressao": "a4b8bf7dd61ed5cd60bec0186a88f66de002e61f",
+      "arquivos": {
+        "Chart.tsx": "a3ce331a6ff356a967e04ce30a25f5093bdb206b",
+        "data.ts": "aa910be60b57d12f47fe0ac928fc853db1bd4a0f",
+        "meta.json": "93882b1556405590d47e4ad5b6ac87995542f7ad"
+      }
+    },
+    "v4_zero-um-estavel-e-ausente": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os sete casos saem certos do dado (nenhuma, 1, 2, estável 0,4%, sem base, indisponível com motivo, empate nomeando as duas), sem zero falso nem infinito, textos de 5,21:1 para cima, fidelidade de 0,02% e 0,03%. Pergunta 19 com ressalva: a frase acessível lista só os nomes dos casos e a lista é aria-hidden; redação sugerida no README, com as demais observações.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:39.597Z",
+      "impressao": "2ed559045b54264093cfd55a88bc5edfda002150",
+      "arquivos": {
+        "Chart.tsx": "abba54af061014c2a4ac168ec7529969d894b0e2",
+        "data.ts": "875a2ba0cc2303bbc0624f9a3a71953d7872f803",
+        "meta.json": "0b46c5f7e01535809c43fddd3ee42e521d52d0ef"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-qualificados-contra-totais",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: a frase calculada confere com o dado (438 contra 392 dá 12%, 1.468 contra 1.440 dá 1,9%), eixo do zero a 1.500 com 4 linhas de grade, 12 tiques com 9 px de vão, palavras nas cores das séries de 6,00:1 para cima nos dois temas, fidelidade de 0,00%. Observações no README (vínculo entre nome e linha só por cor, interval 0 acima do teto da EIX-7, ramos de um mês).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:37.675Z",
+      "impressao": "75d6695b9b7226897c6bd7adcd58bfe45ff668d7",
+      "arquivos": {
+        "Chart.tsx": "60e12e7ece00fe9a68eb2eb5cee7b4ff09efaf8e",
+        "data.ts": "363b75b249cf5374a2f80aae45c7b17845de79f4",
+        "meta.json": "bd6b9b616149ed68c26c2dde3b58f6889fd8d309"
+      }
+    },
+    {
+      "versao": "v2_receita-do-mes-em-texto-corrido",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: +8,4% confere com o dado exato, base nomeada na frase, sparkline sem área e com quebra em nulo, textos de 5,21:1 para cima nos dois temas. Pergunta 21 pesada e não reprovada: o preview diverge 0,80% e 0,78% da página, com os dois números principais 4 px abaixo da linha de base só no arquivo; origem no serializador, faixa de aviso da seção 12. Observações no README, com a frase acessível e os ramos fora do dado padrão.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:38.322Z",
+      "impressao": "fe475b61247b5a17cc92c0e99135b7dbde20a4fd",
+      "arquivos": {
+        "Chart.tsx": "7a465a33bc2ea991b650848c47d331193b205970",
+        "data.ts": "6ca29a4c2aea6c75e3f1b764552c82f4c0c0ae08",
+        "meta.json": "a5f899f252bd7ed87e141c14ecd4e41b79acd7fd"
+      }
+    },
+    {
+      "versao": "v3_sumario-executivo-da-diretoria",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 93,6% e 3,1x conferem com o dado, dois números por frase, cenário em faixa inteira, peso 700 só no multiplicador com ícone, vermelho de 5,50:1 e 6,36:1, frase acessível de 232 caracteres igual ao corpo, fidelidade de 0,02% e 0,03%. Observações no README (motivo trocado no ramo sem previsão, concordância do indisponível, metade do corpo vazia).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:39.000Z",
+      "impressao": "a4b8bf7dd61ed5cd60bec0186a88f66de002e61f",
+      "arquivos": {
+        "Chart.tsx": "a3ce331a6ff356a967e04ce30a25f5093bdb206b",
+        "data.ts": "aa910be60b57d12f47fe0ac928fc853db1bd4a0f",
+        "meta.json": "93882b1556405590d47e4ad5b6ac87995542f7ad"
+      }
+    },
+    {
+      "versao": "v4_zero-um-estavel-e-ausente",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os sete casos saem certos do dado (nenhuma, 1, 2, estável 0,4%, sem base, indisponível com motivo, empate nomeando as duas), sem zero falso nem infinito, textos de 5,21:1 para cima, fidelidade de 0,02% e 0,03%. Pergunta 19 com ressalva: a frase acessível lista só os nomes dos casos e a lista é aria-hidden; redação sugerida no README, com as demais observações.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:39.597Z",
+      "impressao": "2ed559045b54264093cfd55a88bc5edfda002150",
+      "arquivos": {
+        "Chart.tsx": "abba54af061014c2a4ac168ec7529969d894b0e2",
+        "data.ts": "875a2ba0cc2303bbc0624f9a3a71953d7872f803",
+        "meta.json": "0b46c5f7e01535809c43fddd3ee42e521d52d0ef"
+      }
+    }
+  ]
+}

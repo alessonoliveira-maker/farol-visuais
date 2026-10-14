@@ -1,0 +1,13 @@
+{
+  "title": "Leads por dia de 2025",
+  "useCase": "Mostrar em que meses de 2025 a entrada diária de leads subiu, para ler a sazonalidade da mídia paga.",
+  "demonstrates": [
+    "365 colunas finas agrupadas por mês, com vão angular entre os grupos",
+    "Rótulo de mês por formatMonthShort no perímetro, sem rótulo diário",
+    "Anel de referência da média diária em traço tracejado, com o valor escrito",
+    "Geometria das 365 colunas calculada uma vez com useMemo"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Com 365 colunas não cabe valor em cada uma; a leitura exata vem da média escrita e da escala, nunca de comparar duas colunas pelo raio."
+}

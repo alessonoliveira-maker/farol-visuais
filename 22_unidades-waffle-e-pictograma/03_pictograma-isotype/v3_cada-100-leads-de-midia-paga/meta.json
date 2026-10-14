@@ -1,0 +1,14 @@
+{
+  "title": "O caminho de cada 100 leads de mídia paga",
+  "useCase": "De cada 100 leads de mídia paga, quantos têm telefone, quantos qualificam e quantos chegam à agenda?",
+  "demonstrates": [
+    "Três níveis aninhados na mesma matriz: 58 com telefone, 21 qualificados, 4 com agenda",
+    "Subgrupos contidos um no outro, preenchidos a partir do mesmo canto",
+    "Nível mais avançado em --chart-1 e os anteriores em degraus opacos da rampa",
+    "Venda de 0,6 em 100 só em texto, sem ícone fatiado",
+    "Base real no rodapé: 100 equivale a 1.240 leads do trimestre"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o texto pede os níveis anteriores em opacidades menores da mesma cor. A ACE-5 (opacidade em marca) pede 0,66 como piso para --chart-1 no tema claro, e três níveis a 1,00, 0,66 e abaixo não se distinguem do vazio, então o contrato vence: o nível final fica em --chart-1 e os anteriores em degraus opacos da rampa, --seq-7 e --seq-5 (3,72:1 ou mais nos dois temas; o degrau --seq-6 ficava parecido demais com o --seq-5), com a figura do nível final cheia e as demais em contorno como segundo canal. Matriz de 100 figuras de 16 px: 10 por 16 mais 9 vãos de 2 px dão 178 px, e a conta fecha no corpo de 225 px com o rodapé."
+}

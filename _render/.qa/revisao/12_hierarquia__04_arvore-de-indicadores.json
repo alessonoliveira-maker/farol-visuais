@@ -1,0 +1,46 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "04_arvore-de-indicadores",
+  "versoes": {
+    "v1_receita-nova-do-ano-seguinte": {
+      "veredito": "aprovado",
+      "nota": "Arvore de tres niveis com selo de procedencia por no; check 0 erros, dois temas legiveis, operador fecha exato com os filhos. Observacoes nao bloqueantes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T05:31:19.707Z",
+      "impressao": "2ed7e17cb260d26636f52ffbeab0022ccee81762",
+      "arquivos": {
+        "Chart.tsx": "19e40e20380c7965882ec0f20a0bf78101930328",
+        "data.ts": "9041d1883d936eb88806b2fa4a8d2d32056554eb",
+        "meta.json": "e7156282f250a2fb858b751652ecb340c8bc7d97"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-nova-do-ano-seguinte",
+      "veredito": "reprovado",
+      "nota": "Trilho da microbarra em bg-surface-overlay mede 1,00:1 no tema claro (mesmo branco do cartao) e 1,10:1 no escuro: no claro o trilho some e o ponto do valor central fica sem escala. Trocar para var(--line-strong).",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T05:19:09.050Z",
+      "impressao": "370d24d6832d2334dcb175ac5427cfc2b8844497",
+      "arquivos": {
+        "Chart.tsx": "0187bdceb5684f9275bdbc61a3021b1a16f1f638",
+        "data.ts": "805d2d81cf69b5fc86c2f45322d04baf60ea0395",
+        "meta.json": "e7156282f250a2fb858b751652ecb340c8bc7d97"
+      }
+    },
+    {
+      "versao": "v1_receita-nova-do-ano-seguinte",
+      "veredito": "aprovado",
+      "nota": "Arvore de tres niveis com selo de procedencia por no; check 0 erros, dois temas legiveis, operador fecha exato com os filhos. Observacoes nao bloqueantes no README.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T05:31:19.707Z",
+      "impressao": "2ed7e17cb260d26636f52ffbeab0022ccee81762",
+      "arquivos": {
+        "Chart.tsx": "19e40e20380c7965882ec0f20a0bf78101930328",
+        "data.ts": "9041d1883d936eb88806b2fa4a8d2d32056554eb",
+        "meta.json": "e7156282f250a2fb858b751652ecb340c8bc7d97"
+      }
+    }
+  ]
+}

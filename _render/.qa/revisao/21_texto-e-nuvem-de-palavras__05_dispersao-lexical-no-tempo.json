@@ -1,0 +1,134 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "05_dispersao-lexical-no-tempo",
+  "versoes": {
+    "v1_termos-de-perda-em-2026": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 233 traços, um por dia com menção, contados no PNG e conferidos contra o data.ts refeito (311 menções em 149 dias); pico de cada traço a 3,42:1 ou mais no claro e 5,55:1 ou mais no escuro, com opacidade de 0,72 (ACE-5 medida à mão, a guarda não lê opacidade calculada); grade só vertical, tiques mensais por formatMonthShort, chave do traço mais forte escrita no rodapé; frase de 184 caracteres. Estado vazio conferido só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:53.606Z",
+      "impressao": "da728b70ed2e74dc49e920e98bd92d43dadd13a1",
+      "arquivos": {
+        "Chart.tsx": "895f26d238d0f82d69a03568a913bfa0ab1c159d",
+        "data.ts": "fcb507226196da2168fcd257d421c8a87690352b",
+        "meta.json": "fdf87e81c7710f8c324cf19a9a14243279ed8305"
+      }
+    },
+    "v2_preco-depois-do-reajuste": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13, depois da correção. Sem bloqueante: contagens refeitas do gerador batem (15 e 48, 23 e 33, 27 e 25, 28 e 17, 16 e 8), a unidade vem no rodapé com a chave do traço mais forte, e a menção de 2026-07-01 sai como traço próprio, com uma coluna de fundo limpo entre ela e a linha do reajuste nos dois temas; 174 traços medidos no PNG, mínimo de 3,22:1 no claro e 3,51:1 no escuro; janelas de 91 dias; frase de 190 caracteres. Estado vazio e ramos fora do dado padrão só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:23:13.193Z",
+      "impressao": "83061d31694aebf567af6766df1e3dce9681bc99",
+      "arquivos": {
+        "Chart.tsx": "63bc887622403760c42b07e15735d41564b53b26",
+        "data.ts": "84dda7b7ea805f3d90842ac3b8c808e74fa48b49",
+        "meta.json": "bdfb46fea92fb366ea97fd8c5be514ca9e806469"
+      }
+    },
+    "v3_objecoes-da-pre-vendas-por-dia": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 12 faixas na ordem da primeira aparição, conferida contra o data.ts refeito, com a regra escrita acima do gráfico; totais 74, 42, 17, 35, 21, 19, 11, 7, 8, 6, 5 e 3 batem e somam 248; 179 traços contados no PNG, pico a 3,57:1 ou mais no claro e 5,89:1 ou mais no escuro; o dia de 12 menções sai opaco em warning com 2 px, ícone e frase no rodapé; frase de 228 caracteres. Estado vazio conferido só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:54.784Z",
+      "impressao": "db14d56351cefd92ecc7c72bd82024e77408e49c",
+      "arquivos": {
+        "Chart.tsx": "9fddf7684d429a709dbe073ed50f3c5514285c4b",
+        "data.ts": "f3b25e8b745e623916e1cbf329dfde4ba112c07d",
+        "meta.json": "797259973ed31ea76ef73580713fea21ffa0eb1a"
+      }
+    },
+    "v4_termo-sem-mencoes-e-mes-parcial": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13, depois da correção. Sem bloqueante: totais refeitos do gerador batem (45, 24, 14, 9 e zero, 92 no todo); a nota parcial até depende só de asOf anterior ao fim do período, cada lacuna de data.gaps ganha quadro e palavra, e o rodapé do quadro só existe com lacuna; os traços de 2026-09-13 e 2026-09-21 ficam separados das bordas do quadro por uma coluna de fundo limpo nos dois temas; 72 traços medidos no PNG, mínimo de 3,25:1 no claro, sobre o poço do mês corrente, e 5,89:1 no escuro; frase de 221 caracteres. Estado vazio, mês fechado e recorte sem lacuna só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:23:20.139Z",
+      "impressao": "453ff5dbbdaa7deb423c0c9da38420174d517ffc",
+      "arquivos": {
+        "Chart.tsx": "6a88462eacdb8c6d67e067878617d93707814816",
+        "data.ts": "51637a7700998b526eb1f0cafdecf36c3348a1cb",
+        "meta.json": "9b3147bc204c4882b00c8e377cfdfe58c38adf52"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_termos-de-perda-em-2026",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 233 traços, um por dia com menção, contados no PNG e conferidos contra o data.ts refeito (311 menções em 149 dias); pico de cada traço a 3,42:1 ou mais no claro e 5,55:1 ou mais no escuro, com opacidade de 0,72 (ACE-5 medida à mão, a guarda não lê opacidade calculada); grade só vertical, tiques mensais por formatMonthShort, chave do traço mais forte escrita no rodapé; frase de 184 caracteres. Estado vazio conferido só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:53.606Z",
+      "impressao": "da728b70ed2e74dc49e920e98bd92d43dadd13a1",
+      "arquivos": {
+        "Chart.tsx": "895f26d238d0f82d69a03568a913bfa0ab1c159d",
+        "data.ts": "fcb507226196da2168fcd257d421c8a87690352b",
+        "meta.json": "fdf87e81c7710f8c324cf19a9a14243279ed8305"
+      }
+    },
+    {
+      "versao": "v2_preco-depois-do-reajuste",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6: a contagem 15 antes, 48 depois vem sem substantivo e conta menções, enquanto a faixa mostra 11 e 35 traços, que são dias; nomear a unidade e escrever a chave do traço mais forte. Perguntas 15 e 11, seção 17.2: a menção de 2026-07-01 de financiamento some sob a linha de referência, mesmo token e mesma coluna, 1,39:1 no escuro e 1,52:1 no claro entre os dois; desenhar o traço no meio do dia e levar o domínio até end + 1. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__05_dispersao-lexical-no-tempo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:54.162Z",
+      "impressao": "fbabe8fdfe8e44b046eb1ee3e0e9869a43d4c0f1",
+      "arquivos": {
+        "Chart.tsx": "890dcf8fb4cf82757caedbb1fc7a88269a00d65d",
+        "data.ts": "84dda7b7ea805f3d90842ac3b8c808e74fa48b49",
+        "meta.json": "bdfb46fea92fb366ea97fd8c5be514ca9e806469"
+      }
+    },
+    {
+      "versao": "v3_objecoes-da-pre-vendas-por-dia",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 12 faixas na ordem da primeira aparição, conferida contra o data.ts refeito, com a regra escrita acima do gráfico; totais 74, 42, 17, 35, 21, 19, 11, 7, 8, 6, 5 e 3 batem e somam 248; 179 traços contados no PNG, pico a 3,57:1 ou mais no claro e 5,89:1 ou mais no escuro; o dia de 12 menções sai opaco em warning com 2 px, ícone e frase no rodapé; frase de 228 caracteres. Estado vazio conferido só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:54.784Z",
+      "impressao": "db14d56351cefd92ecc7c72bd82024e77408e49c",
+      "arquivos": {
+        "Chart.tsx": "9fddf7684d429a709dbe073ed50f3c5514285c4b",
+        "data.ts": "f3b25e8b745e623916e1cbf329dfde4ba112c07d",
+        "meta.json": "797259973ed31ea76ef73580713fea21ffa0eb1a"
+      }
+    },
+    {
+      "versao": "v4_termo-sem-mencoes-e-mes-parcial",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, ANO-4, EIX-10 e EST-2: a nota parcial até só é desenhada quando existe lacuna de coleta, só a primeira lacuna de data.gaps vira quadro e o rodapé do quadro é incondicional; separar a nota do mês parcial das lacunas, desenhar todas e condicionar o rodapé. Pergunta 15: a menção de 2026-09-21 de orçamento cai em cima da borda direita do quadro indisponível; desenhar o traço no meio do dia e levar o domínio até end + 1. Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__05_dispersao-lexical-no-tempo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T13:44:55.377Z",
+      "impressao": "26e28651ebe64a33872d97ce6ad20bc4639ef118",
+      "arquivos": {
+        "Chart.tsx": "1c82e82bdfa1885693373213528e5588b8dc72e3",
+        "data.ts": "51637a7700998b526eb1f0cafdecf36c3348a1cb",
+        "meta.json": "9b3147bc204c4882b00c8e377cfdfe58c38adf52"
+      }
+    },
+    {
+      "versao": "v2_preco-depois-do-reajuste",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13, depois da correção. Sem bloqueante: contagens refeitas do gerador batem (15 e 48, 23 e 33, 27 e 25, 28 e 17, 16 e 8), a unidade vem no rodapé com a chave do traço mais forte, e a menção de 2026-07-01 sai como traço próprio, com uma coluna de fundo limpo entre ela e a linha do reajuste nos dois temas; 174 traços medidos no PNG, mínimo de 3,22:1 no claro e 3,51:1 no escuro; janelas de 91 dias; frase de 190 caracteres. Estado vazio e ramos fora do dado padrão só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:23:13.193Z",
+      "impressao": "83061d31694aebf567af6766df1e3dce9681bc99",
+      "arquivos": {
+        "Chart.tsx": "63bc887622403760c42b07e15735d41564b53b26",
+        "data.ts": "84dda7b7ea805f3d90842ac3b8c808e74fa48b49",
+        "meta.json": "bdfb46fea92fb366ea97fd8c5be514ca9e806469"
+      }
+    },
+    {
+      "versao": "v4_termo-sem-mencoes-e-mes-parcial",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13, depois da correção. Sem bloqueante: totais refeitos do gerador batem (45, 24, 14, 9 e zero, 92 no todo); a nota parcial até depende só de asOf anterior ao fim do período, cada lacuna de data.gaps ganha quadro e palavra, e o rodapé do quadro só existe com lacuna; os traços de 2026-09-13 e 2026-09-21 ficam separados das bordas do quadro por uma coluna de fundo limpo nos dois temas; 72 traços medidos no PNG, mínimo de 3,25:1 no claro, sobre o poço do mês corrente, e 5,89:1 no escuro; frase de 221 caracteres. Estado vazio, mês fechado e recorte sem lacuna só por leitura do código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:23:20.139Z",
+      "impressao": "453ff5dbbdaa7deb423c0c9da38420174d517ffc",
+      "arquivos": {
+        "Chart.tsx": "6a88462eacdb8c6d67e067878617d93707814816",
+        "data.ts": "51637a7700998b526eb1f0cafdecf36c3348a1cb",
+        "meta.json": "9b3147bc204c4882b00c8e377cfdfe58c38adf52"
+      }
+    }
+  ]
+}

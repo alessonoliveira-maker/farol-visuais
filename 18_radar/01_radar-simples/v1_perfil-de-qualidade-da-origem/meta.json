@@ -1,0 +1,14 @@
+{
+  "title": "Perfil de qualidade da origem formulário do site",
+  "useCase": "Marketing, 2026-08: em que dimensões de qualidade o formulário do site é forte e onde perde o lead?",
+  "demonstrates": [
+    "Composição mínima: PolarGrid, PolarAngleAxis, PolarRadiusAxis e um Radar",
+    "Domínio fixo de 0 a 100 no PolarRadiusAxis, centro no zero e sem innerRadius",
+    "Seis eixos na ordem do registry, com nome e valor escritos em cada um",
+    "Série em --chart-1 com preenchimento a 0,66 e grade em --line-subtle",
+    "outerRadius de 72% para os rótulos laterais não baterem na borda do cartão"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O preenchimento sai com 0,66 de opacidade, não 0,28 como o catálogo sugere: a ACE-5 pede que a área composta de --chart-1 fique acima de 3:1 no tema claro e o mínimo calculado é 0,66 (com 0,28 mede 1,53:1). A grade sobe acima da área por zIndex para continuar visível sob o preenchimento. O contrato vence."
+}

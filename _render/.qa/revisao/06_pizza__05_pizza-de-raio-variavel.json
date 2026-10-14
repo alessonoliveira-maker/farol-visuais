@@ -1,0 +1,134 @@
+{
+  "familia": "06_pizza",
+  "modelo": "05_pizza-de-raio-variavel",
+  "versoes": {
+    "v1_investimento-e-cpl-qualificado-por-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; raio em raiz quadrada com piso e aneis coerentes com as fatias, legenda soma 100, dois temas legiveis.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:05:42.053Z",
+      "impressao": "3d26e67accac032a56e16036b1e09c37beb73a57",
+      "arquivos": {
+        "Chart.tsx": "86d29c03a7fcaf2836f0b14762f30597458308b8",
+        "data.ts": "4da110e2f270291baaa0b2f35f097cc729a6ff31",
+        "meta.json": "7a6db685421b1193633f0c67eacda63618695c05"
+      }
+    },
+    "v3_entradas-e-taxa-de-agenda-por-fila": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; raio por área com domínio declarado de 0 a 100%, raios do preview batem com a fórmula; legenda tabular soma 100 e nomeia as cinco filas; rótulos dos anéis livres das fatias nos dois temas. Observações no README: Part. abreviado, rótulo de 50% latente sobre a primeira fila, período só na frase acessível.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:20:25.082Z",
+      "impressao": "968e8295b8db68886749f0decedeacebbb07ee08",
+      "arquivos": {
+        "Chart.tsx": "f6237356c904fed04a1f3bfe9b7e2764cb0bedc5",
+        "data.ts": "52771586c349e27a46540115a660d1ac57c51005",
+        "meta.json": "13e9fc1db1f5f6745d437f8675ab326d9c204d62"
+      }
+    },
+    "v2_anel-do-cpl-qualificado-alvo": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da rodada anterior resolvido: rótulos afastados pelo canto da tinta (labelAnchor), R$ 2,6 mil a 13,3 px e R$ 1,9 mil a 7,6 px do arco, sem entalhe de halo nos dois temas; raios e anel do alvo batem com a fórmula de área; legenda soma 100 e diz acima do alvo em palavra. Observações no README (constantes soltas em labelAnchor, colisão latente com a anotação do alvo, fidelidade de 0,53% no claro).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:53.798Z",
+      "impressao": "e603ec4746e1955853610ba64544b73bbfc45e9e",
+      "arquivos": {
+        "Chart.tsx": "6f095fd65efe2be68a2f6781a97eb025e24ac51c",
+        "data.ts": "d2ce02e5ca40fa57573484c7062e31dc7f37a3bf",
+        "meta.json": "0632273fb1d9d6c97d550ecf3581cb81652dfa90"
+      }
+    },
+    "v4_plataforma-sem-lead-qualificado": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da rodada anterior resolvido: HALO nas duas linhas da chamada, o anel de escala para sob o 0 de 0 leads qualificados nos dois temas, e o halo fica a 4 px da linha de chamada; raios batem com a fórmula de área; ausência vazada e tracejada com formatUnavailable e Unplug, ângulo pelo investimento, legenda soma 100. Observações no README (amostra rosa na dica do setor ausente, comentário vencê lo).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:56.452Z",
+      "impressao": "40673fc86b04b8734bee4dc56e27fc5b9124776c",
+      "arquivos": {
+        "Chart.tsx": "83dd9d911ae7f2a9e3ef01ac32c74959091146db",
+        "data.ts": "987acab4f7d19d224848944edd0ed5843b822798",
+        "meta.json": "d95f0190a48b1d9a051f60d31420bee7da94476a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_investimento-e-cpl-qualificado-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; raio em raiz quadrada com piso e aneis coerentes com as fatias, legenda soma 100, dois temas legiveis.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T15:05:42.053Z",
+      "impressao": "3d26e67accac032a56e16036b1e09c37beb73a57",
+      "arquivos": {
+        "Chart.tsx": "86d29c03a7fcaf2836f0b14762f30597458308b8",
+        "data.ts": "4da110e2f270291baaa0b2f35f097cc729a6ff31",
+        "meta.json": "7a6db685421b1193633f0c67eacda63618695c05"
+      }
+    },
+    {
+      "versao": "v3_entradas-e-taxa-de-agenda-por-fila",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; raio por área com domínio declarado de 0 a 100%, raios do preview batem com a fórmula; legenda tabular soma 100 e nomeia as cinco filas; rótulos dos anéis livres das fatias nos dois temas. Observações no README: Part. abreviado, rótulo de 50% latente sobre a primeira fila, período só na frase acessível.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:20:25.082Z",
+      "impressao": "968e8295b8db68886749f0decedeacebbb07ee08",
+      "arquivos": {
+        "Chart.tsx": "f6237356c904fed04a1f3bfe9b7e2764cb0bedc5",
+        "data.ts": "52771586c349e27a46540115a660d1ac57c51005",
+        "meta.json": "13e9fc1db1f5f6745d437f8675ab326d9c204d62"
+      }
+    },
+    {
+      "versao": "v2_anel-do-cpl-qualificado-alvo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, ROT-7 com GEO-19 e GEO-4: o rótulo R$ 2,6 mil é afastado do arco pela âncora (R_MAX + LABEL_GAP) e não pelos cantos da tinta; o canto inferior direito fica 7,5 px dentro do arco do setor Rede profissional de contatos e o halo abre um entalhe de cerca de 13 x 11 px justamente no arco que codifica esse CPL, nos dois temas. Afastar pelo canto mais próximo da caixa de tinta, com folga de 4 px, e reconferir o R$ 1,9 mil, a menos de 1 px do arco. Parecer em validation/revisao_06_pizza__05_pizza-de-raio-variavel_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:20:32.037Z",
+      "impressao": "fc1dff411bdefb2a795fe7585b93d83832dc0c0b",
+      "arquivos": {
+        "Chart.tsx": "a2dda29310528e783d7d08fff967599f603bdc17",
+        "data.ts": "d2ce02e5ca40fa57573484c7062e31dc7f37a3bf",
+        "meta.json": "0632273fb1d9d6c97d550ecf3581cb81652dfa90"
+      }
+    },
+    {
+      "versao": "v4_plataforma-sem-lead-qualificado",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, ROT-7: o anel tracejado do topo da escala (raio 76) atravessa o 0 de '0 leads qualificados', o número da chamada, sem halo, nos dois temas: passa de y 23,6 a 26,5 entre x 196 e 203, dentro da tinta da linha (20,9 a 30,0). Dar o halo da ROT-7 às duas linhas da chamada ou tirar o bloco de texto de dentro do anel conferindo os quatro cantos (GEO-19). Parecer em validation/revisao_06_pizza__05_pizza-de-raio-variavel_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:20:32.548Z",
+      "impressao": "d11f410dc5ad272695f1c57acc913ccfbba08c80",
+      "arquivos": {
+        "Chart.tsx": "c16e82bf726a0bf82442b017a167ac3d0391c574",
+        "data.ts": "987acab4f7d19d224848944edd0ed5843b822798",
+        "meta.json": "d95f0190a48b1d9a051f60d31420bee7da94476a"
+      }
+    },
+    {
+      "versao": "v2_anel-do-cpl-qualificado-alvo",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da rodada anterior resolvido: rótulos afastados pelo canto da tinta (labelAnchor), R$ 2,6 mil a 13,3 px e R$ 1,9 mil a 7,6 px do arco, sem entalhe de halo nos dois temas; raios e anel do alvo batem com a fórmula de área; legenda soma 100 e diz acima do alvo em palavra. Observações no README (constantes soltas em labelAnchor, colisão latente com a anotação do alvo, fidelidade de 0,53% no claro).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:53.798Z",
+      "impressao": "e603ec4746e1955853610ba64544b73bbfc45e9e",
+      "arquivos": {
+        "Chart.tsx": "6f095fd65efe2be68a2f6781a97eb025e24ac51c",
+        "data.ts": "d2ce02e5ca40fa57573484c7062e31dc7f37a3bf",
+        "meta.json": "0632273fb1d9d6c97d550ecf3581cb81652dfa90"
+      }
+    },
+    {
+      "versao": "v4_plataforma-sem-lead-qualificado",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da rodada anterior resolvido: HALO nas duas linhas da chamada, o anel de escala para sob o 0 de 0 leads qualificados nos dois temas, e o halo fica a 4 px da linha de chamada; raios batem com a fórmula de área; ausência vazada e tracejada com formatUnavailable e Unplug, ângulo pelo investimento, legenda soma 100. Observações no README (amostra rosa na dica do setor ausente, comentário vencê lo).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:31:56.452Z",
+      "impressao": "40673fc86b04b8734bee4dc56e27fc5b9124776c",
+      "arquivos": {
+        "Chart.tsx": "83dd9d911ae7f2a9e3ef01ac32c74959091146db",
+        "data.ts": "987acab4f7d19d224848944edd0ed5843b822798",
+        "meta.json": "d95f0190a48b1d9a051f60d31420bee7da94476a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Filas da pré-vendas na mesma escala",
+  "useCase": "Pré-vendas: três filas de trabalho no dia, com o mesmo arco e domínio, incluindo uma em zero medido e uma sem coleta.",
+  "demonstrates": [
+    "Três gauges com domínio comum calculado sobre o conjunto",
+    "Par de contagens abaixo de cada arco por formatRateWithVolume",
+    "Zero medido com o arco de fundo sozinho e o número 0",
+    "Sem coleta com arco tracejado e formatUnavailable, nunca 0%",
+    "Teto comum às três filas dito por extenso, não só desenhado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "As três filas nunca se comparam entre si por ângulo (regra da família: nunca radiais para comparar); a escala comum existe só para a mesma quantidade de espaço vazio significar a mesma coisa em qualquer arco do painel. A fila sem coleta desenha o trilho de fundo com contorno tracejado em vez do preenchimento sólido, porque o preenchimento normal implicaria alguma medição."
+}

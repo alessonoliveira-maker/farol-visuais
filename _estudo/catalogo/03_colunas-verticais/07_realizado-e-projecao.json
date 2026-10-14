@@ -1,0 +1,72 @@
+{
+  "slug": "07_realizado-e-projecao",
+  "nome": "Realizado e projeção hachurada",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "A mesma série em dois regimes: períodos fechados em preenchimento sólido e períodos futuros, ou o restante do período em curso, em hachura com contorno na cor da série. A textura carrega o recado de que aquilo ainda não aconteceu e o método da projeção fica escrito na peça. O pattern mora em defs com id de useId e é aplicado por shape. Absorve o destaque do período atual e o trio realizado, previsto e meta.",
+  "quando_usar": [
+    "Ano com meses fechados e meses projetados, com método de projeção declarado.",
+    "Período corrente ainda em curso ao lado de períodos fechados, para a última coluna não parecer queda.",
+    "Período em curso com realizado, previsto restante e meta, para saber se a soma fecha a meta.",
+    "Série de até 12 períodos em que o regime de cada coluna vem no dado, não do relógio."
+  ],
+  "quando_evitar": [
+    "Projeção sem método declarado: não publicar a parte hachurada.",
+    "Cenários com saída em faixa, piso e teto por período: colunas de faixa (17/04).",
+    "Evolução acumulada do ano contra a meta: acumulado contra meta em linhas (04/06).",
+    "Todos os períodos fechados e nenhum foco no atual: colunas simples (modelo 01).",
+    "Previsão contínua com banda de incerteza: linha com banda de intervalo (04/04)."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-ano-com-projecao",
+      "titulo": "Receita do ano: realizado e projeção",
+      "caso_de_uso": "Quanto do ano já foi realizado nos 8 meses fechados e quanto dos 4 restantes é projeção?",
+      "o_que_demonstra": [
+        "pattern SVG em defs com id de useId, aplicado por shape conforme o regime da linha",
+        "Hachura de traço fino e espaçado com contorno na cor da série, legível no tema escuro",
+        "Divisória vertical tênue com o rótulo projeção a partir de set/26",
+        "Legenda com amostra sólida e amostra hachurada, mais a nota de método abaixo",
+        "Total do ano separado em realizado e projetado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_mes-corrente-parcial",
+      "titulo": "Leads por mês com o mês corrente parcial",
+      "caso_de_uso": "O mês em curso está mesmo abaixo dos anteriores, ou só faltam dias para fechar?",
+      "o_que_demonstra": [
+        "Período corrente recebido por prop, nunca pelo índice nem pelo relógio do navegador",
+        "Mês corrente em chart-1 com a palavra parcial e a fração de dias decorridos",
+        "Restante projetado hachurado no topo da coluna corrente, com o ritmo nomeado",
+        "Meses fechados em neutro com valor só no maior e no último fechado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_realizado-previsto-e-meta",
+      "titulo": "Receita reconhecida: realizado, previsto e meta",
+      "caso_de_uso": "No mês em curso, quanto já foi reconhecido, quanto depende de previsão e a soma fecha a meta mensal?",
+      "o_que_demonstra": [
+        "previstoRestante como forecast menos realizado com piso em zero, sem contar duas vezes",
+        "Meses fechados com previsto null, para a dica não escrever previsto zero",
+        "Meta como traço curto por coluna desenhado por shape, com a distância rotulada",
+        "Totais do ano escritos como realizado e previsto, nunca somados sem aviso",
+        "12 meses de 2026 com o mês corrente apurado até 2026-09-14"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_realizado-acima-do-forecast",
+      "titulo": "Realizado acima do forecast e mês sem meta",
+      "caso_de_uso": "Como tratar o mês em que o realizado já passou do forecast e o mês sem meta cadastrada, sem desenho enganoso?",
+      "o_que_demonstra": [
+        "Restante zero quando o realizado passa do forecast, com aviso de previsão desatualizada",
+        "Mês sem meta cadastrada sem marcador e com nota curta, nunca meta zero",
+        "Primeiro dia do período trocado por traço na base com a frase sem leitura ainda",
+        "Frase acessível que diz quantos meses têm meta, forecast e só realizado"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

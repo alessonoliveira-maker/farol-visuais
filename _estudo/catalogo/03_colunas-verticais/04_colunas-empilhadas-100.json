@@ -1,0 +1,70 @@
+{
+  "slug": "04_colunas-empilhadas-100",
+  "nome": "Colunas empilhadas 100%",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada coluna é normalizada para a mesma altura, então o que se lê é o mix de cada período e não o tamanho. Ganha uma segunda base de comparação no topo, mas esconde o volume: um mês com 12 leads e outro com 900 ficam idênticos, e por isso o n de cada período aparece sempre. A normalização é feita no dado em TypeScript, com valor absoluto e percentual no mesmo objeto.",
+  "quando_usar": [
+    "O mix por período é a pergunta, em até 6 componentes coloridos e até 12 períodos.",
+    "Os componentes das pontas, encostados na base e no topo, são os que o leitor precisa acompanhar.",
+    "Um componente cruza um limiar de participação e o momento da virada é a mensagem.",
+    "Volumes por período diferentes, desde que o n de cada período esteja escrito."
+  ],
+  "quando_evitar": [
+    "O tamanho absoluto importa para a decisão: colunas empilhadas com total (modelo 03).",
+    "Um único período sem série de tempo: barra 100% (02) ou waffle (22).",
+    "Componentes do meio cuja evolução é a pergunta: small multiples (modelo 08).",
+    "Série dominada por períodos com amostra muito pequena: agregar o período ou mostrar taxa com volume.",
+    "Sem o n disponível: o gráfico vira decorativo; não publicar."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_mix-de-origem-com-n",
+      "titulo": "Mix de origem dos leads por mês",
+      "caso_de_uso": "Como a composição de origem dos leads mudou nos últimos 6 meses e quantos leads cada mês teve?",
+      "o_que_demonstra": [
+        "Normalização no dado, com valor absoluto e percentual no mesmo objeto para a dica",
+        "n de cada mês escrito acima da coluna com o substantivo",
+        "Percentuais inteiros que somam 100 pelo maior resto",
+        "Percentual fora da pilha, na legenda do último mês, porque texto sobre categórica reprova"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_origem-paga-passa-de-70",
+      "titulo": "Participação da origem paga no mix",
+      "caso_de_uso": "Em que mês a origem paga passou de 70% do mix de leads e o que isso significou em volume?",
+      "o_que_demonstra": [
+        "Origem paga na base em chart-1 e demais origens em neutro com contorno de separação",
+        "ReferenceLine em 70% com rótulo na margem, lida contra a base comum",
+        "Anotação curta ancorada no mês em que o segmento cruza o limiar",
+        "Percentual dentro do segmento em accent-cyan-contrast sobre chart-1"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_perdas-por-motivo-por-trimestre",
+      "titulo": "Perdas por motivo em 8 trimestres",
+      "caso_de_uso": "Quais motivos de perda ganharam peso trimestre a trimestre, e quantas perdas há por trás de cada coluna?",
+      "o_que_demonstra": [
+        "Motivos ordenados pelo peso no trimestre mais recente, em ordem fixa em todas as colunas",
+        "Três motivos menores em Outros (n=3) e Sem motivo registrado vazado, por último",
+        "n de perdas por trimestre numa linha abaixo do eixo, com algarismo tabular",
+        "Legenda lateral com percentual do último trimestre em coluna à direita"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_amostra-pequena-e-sem-registro",
+      "titulo": "Mix de perdas com amostra pequena",
+      "caso_de_uso": "Como impedir que um trimestre com 4 perdas pese igual a um de 90 e que um trimestre sem registro vire coluna cheia?",
+      "o_que_demonstra": [
+        "Trimestre abaixo do piso com marca em opacidade reduzida e a palavra amostra pequena",
+        "Trimestre sem perda registrada vazio, com a frase sem registro, nunca coluna de Outros",
+        "Piso de amostra em constante nomeada, aplicado no dado e dito na frase acessível",
+        "Taxa com volume na dica por formatRateWithVolume"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

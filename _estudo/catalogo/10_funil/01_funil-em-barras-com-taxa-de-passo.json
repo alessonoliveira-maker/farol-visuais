@@ -1,0 +1,73 @@
+{
+  "slug": "01_funil-em-barras-com-taxa-de-passo",
+  "nome": "Funil em barras com taxa de passo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Barras de volume por etapa numa escala comum, com um trilho de fundo que vale 100% da entrada e a taxa de passo escrita entre uma etapa e a seguinte. É o padrão analítico da família: mostra quantos chegaram e em qual passagem a conversão cai, sem a distorção da silhueta afunilada. Absorve as colunas com cunha de perda, as barras centralizadas com conectores e o funil micro de célula de tabela.",
+  "quando_usar": [
+    "Achar o passo que precisa de conserto num processo ordenado de 3 a 7 etapas, com a mesma população do topo ao fundo.",
+    "Pré-vendas e Comercial acompanhando a semana ou o trimestre, quando a decisão depende da taxa de passo e não só do volume.",
+    "Célula de tabela ou cartão estreito que precisa da forma do funil por linha, na versão micro com 3 a 6 colunas.",
+    "Largura de celular: barras horizontais empilham e mantêm os rótulos legíveis."
+  ],
+  "quando_evitar": [
+    "Etapas com ordens de grandeza muito diferentes, como impressões e ganhos no mesmo painel: dividir em dois painéis ou mostrar só as taxas; nunca escala logarítmica nem quebra de eixo.",
+    "Etapas que não são subconjunto uma da outra, como reunião sem passar por qualificado: usar o 11_fluxo-sankey/02_sankey-multietapa.",
+    "Retrato do pipeline num dia, em que a diferença entre etapas inclui quem está em andamento: usar o 03_funil-com-perdas-por-etapa.",
+    "Pergunta de comparação entre períodos ou segmentos: usar o 04_funil-comparativo."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_barras-com-trilho-e-taxa-de-passo",
+      "titulo": "Funil da pré-vendas na semana",
+      "caso_de_uso": "Pré-vendas, semana 2026-W37: Entradas 1.180, Tentativa 1.020, Conexão 612, Agenda marcada 248, Agenda realizada 187 e Handoff aceito 142. Em qual passagem a semana perdeu mais conversão?",
+      "o_que_demonstra": [
+        "BarChart vertical com domínio fixo em [0, entrada], para o trilho valer 100%",
+        "Trilho de fundo por background em --surface-sunken",
+        "Taxa de passo entre barras por LabelList content, sem rodar no último índice",
+        "Taxa acumulada da entrada no fim do trilho: 12,0% chegaram ao handoff",
+        "Valor absoluto em toda etapa, com o substantivo da contagem"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_colunas-com-cunha-na-pior-passagem",
+      "titulo": "Colunas com cunha de perda na pior passagem",
+      "caso_de_uso": "Marketing, 2026-08: Leads 1.240, Leads qualificados 318, Agendas 96 e Agendas realizadas 74. Impressões e cliques ficam fora porque esmagariam as colunas finais; a cunha da pior taxa de passo (Leads para qualificados, 25,6%) chama a atenção.",
+      "o_que_demonstra": [
+        "Bar com shape próprio: coluna em 55% da banda e cunha de perda nos 45% restantes",
+        "barCategoryGap zero, exceção declarada à ESP-2, para a cunha encostar",
+        "Pior cunha em --negative e as demais em --text-muted a 20%",
+        "Última coluna sem cunha e divisão por zero tratada antes do desenho",
+        "Subtítulo declara as etapas excluídas por ordem de grandeza"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_funil-micro-por-origem-em-tabela",
+      "titulo": "Funil micro por origem de lead",
+      "caso_de_uso": "Pré-vendas, 2026-08: tabela com 12 origens de lead, cada linha com Entradas, Contatadas, Qualificadas e Agendadas em colunas decrescentes, escala por linha e volume do topo na primeira coluna. A origem Reativação de base tem Qualificadas acima de Contatadas por reengajamento.",
+      "o_que_demonstra": [
+        "Colunas em degrau ancoradas no zero, sem silhueta afunilada",
+        "Escala por linha em HTML flex items-end, com o volume do topo na tabela",
+        "Taxa da etapa anterior na célula e taxa do topo só na dica",
+        "Coluna minúscula ganha o número escrito, nunca altura mínima falsa",
+        "Etapa maior que a anterior no tamanho real e explicada no aria-label"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_barras-centralizadas-com-etapa-zerada",
+      "titulo": "Barras centralizadas com etapa final zerada",
+      "caso_de_uso": "Comercial, semana 2026-W37 da unidade Sul: Aberta 38, Diagnóstico 22, Proposta 9, Negociação 4 e Ganha 0. A semana sem ganho precisa aparecer sem esconder a etapa e sem sugerir dado ausente.",
+      "o_que_demonstra": [
+        "SVG puro com barras centralizadas e conector de perda até o topo seguinte",
+        "Valor e taxa escritos em toda etapa, compensando a falta de linha de base",
+        "Zero medido desenha traço de 1 px e escreve 0 ganhos (EST-3)",
+        "Conector vira triângulo quando a etapa seguinte é zero",
+        "Geometria das barras e dos conectores em funções puras do arquivo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "slug": "10_funil",
+  "nome": "Funil",
+  "modelos": [
+    {
+      "slug": "01_funil-em-barras-com-taxa-de-passo",
+      "nome": "Funil em barras com taxa de passo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Barras de volume por etapa numa escala comum, com um trilho de fundo que vale 100% da entrada e a taxa de passo escrita entre uma etapa e a seguinte. É o padrão analítico da família: mostra quantos chegaram e em qual passagem a conversão cai, sem a distorção da silhueta afunilada. Absorve as colunas com cunha de perda, as barras centralizadas com conectores e o funil micro de célula de tabela.",
+      "quando_usar": [
+        "Achar o passo que precisa de conserto num processo ordenado de 3 a 7 etapas, com a mesma população do topo ao fundo.",
+        "Pré-vendas e Comercial acompanhando a semana ou o trimestre, quando a decisão depende da taxa de passo e não só do volume.",
+        "Célula de tabela ou cartão estreito que precisa da forma do funil por linha, na versão micro com 3 a 6 colunas.",
+        "Largura de celular: barras horizontais empilham e mantêm os rótulos legíveis."
+      ],
+      "quando_evitar": [
+        "Etapas com ordens de grandeza muito diferentes, como impressões e ganhos no mesmo painel: dividir em dois painéis ou mostrar só as taxas; nunca escala logarítmica nem quebra de eixo.",
+        "Etapas que não são subconjunto uma da outra, como reunião sem passar por qualificado: usar o 11_fluxo-sankey/02_sankey-multietapa.",
+        "Retrato do pipeline num dia, em que a diferença entre etapas inclui quem está em andamento: usar o 03_funil-com-perdas-por-etapa.",
+        "Pergunta de comparação entre períodos ou segmentos: usar o 04_funil-comparativo."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_barras-com-trilho-e-taxa-de-passo",
+          "titulo": "Funil da pré-vendas na semana",
+          "caso_de_uso": "Pré-vendas, semana 2026-W37: Entradas 1.180, Tentativa 1.020, Conexão 612, Agenda marcada 248, Agenda realizada 187 e Handoff aceito 142. Em qual passagem a semana perdeu mais conversão?",
+          "o_que_demonstra": [
+            "BarChart vertical com domínio fixo em [0, entrada], para o trilho valer 100%",
+            "Trilho de fundo por background em --surface-sunken",
+            "Taxa de passo entre barras por LabelList content, sem rodar no último índice",
+            "Taxa acumulada da entrada no fim do trilho: 12,0% chegaram ao handoff",
+            "Valor absoluto em toda etapa, com o substantivo da contagem"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_colunas-com-cunha-na-pior-passagem",
+          "titulo": "Colunas com cunha de perda na pior passagem",
+          "caso_de_uso": "Marketing, 2026-08: Leads 1.240, Leads qualificados 318, Agendas 96 e Agendas realizadas 74. Impressões e cliques ficam fora porque esmagariam as colunas finais; a cunha da pior taxa de passo (Leads para qualificados, 25,6%) chama a atenção.",
+          "o_que_demonstra": [
+            "Bar com shape próprio: coluna em 55% da banda e cunha de perda nos 45% restantes",
+            "barCategoryGap zero, exceção declarada à ESP-2, para a cunha encostar",
+            "Pior cunha em --negative e as demais em --text-muted a 20%",
+            "Última coluna sem cunha e divisão por zero tratada antes do desenho",
+            "Subtítulo declara as etapas excluídas por ordem de grandeza"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_funil-micro-por-origem-em-tabela",
+          "titulo": "Funil micro por origem de lead",
+          "caso_de_uso": "Pré-vendas, 2026-08: tabela com 12 origens de lead, cada linha com Entradas, Contatadas, Qualificadas e Agendadas em colunas decrescentes, escala por linha e volume do topo na primeira coluna. A origem Reativação de base tem Qualificadas acima de Contatadas por reengajamento.",
+          "o_que_demonstra": [
+            "Colunas em degrau ancoradas no zero, sem silhueta afunilada",
+            "Escala por linha em HTML flex items-end, com o volume do topo na tabela",
+            "Taxa da etapa anterior na célula e taxa do topo só na dica",
+            "Coluna minúscula ganha o número escrito, nunca altura mínima falsa",
+            "Etapa maior que a anterior no tamanho real e explicada no aria-label"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_barras-centralizadas-com-etapa-zerada",
+          "titulo": "Barras centralizadas com etapa final zerada",
+          "caso_de_uso": "Comercial, semana 2026-W37 da unidade Sul: Aberta 38, Diagnóstico 22, Proposta 9, Negociação 4 e Ganha 0. A semana sem ganho precisa aparecer sem esconder a etapa e sem sugerir dado ausente.",
+          "o_que_demonstra": [
+            "SVG puro com barras centralizadas e conector de perda até o topo seguinte",
+            "Valor e taxa escritos em toda etapa, compensando a falta de linha de base",
+            "Zero medido desenha traço de 1 px e escreve 0 ganhos (EST-3)",
+            "Conector vira triângulo quando a etapa seguinte é zero",
+            "Geometria das barras e dos conectores em funções puras do arquivo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_funil-classico-trapezoidal",
+      "nome": "Funil clássico trapezoidal",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Faixas empilhadas de cima para baixo e centralizadas, cada trapézio partindo da largura da etapa e terminando na largura da seguinte, de modo que a inclinação sugere a perda. É a metáfora mais reconhecível e serve para leitura rápida de poucas etapas monotônicas; perde para as barras quando a decisão depende de comparar etapas. Absorve o funil cônico contínuo.",
+      "quando_usar": [
+        "Capa de tela ou de apresentação para a Diretoria, com 4 a 6 etapas e leitura de conjunto.",
+        "Processo em que cada etapa é subconjunto da anterior e a série é monotônica no recorte.",
+        "Visão do afunilamento como área contínua, quando o formato pesa mais que os valores intermediários (versão cônica)."
+      ],
+      "quando_evitar": [
+        "Comparar etapas vizinhas ou recortes: a centralização remove a linha de base; usar o 01_funil-em-barras-com-taxa-de-passo ou o 04_funil-comparativo.",
+        "Etapa com valor maior que a anterior, comum quando as janelas de data diferem: o trapézio abre para baixo; validar e cair para barras.",
+        "Gargalo de largura fixa ou última etapa em triângulo: distorcem os valores finais; usar lastShapeType rectangle e largura proporcional.",
+        "Cartão de 400 px de largura: os rótulos laterais não cabem; usar o 07_funil-em-cartoes-de-etapa."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_trapezios-do-trimestre",
+          "titulo": "Funil comercial do trimestre",
+          "caso_de_uso": "Comercial, 2026-T3: Aberta 420, Diagnóstico 268, Proposta 131, Negociação 64 e Ganha 29. Leitura de capa do trimestre com valor e percentual da entrada em cada etapa.",
+          "o_que_demonstra": [
+            "FunnelChart nativo com Funnel dataKey e nameKey e Cell por etapa",
+            "lastShapeType rectangle para a última etapa manter a largura do valor",
+            "LabelList à direita com nome, valor e percentual da entrada pronto no dado",
+            "Largura proporcional ao valor, sem gargalo fixo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_pior-passagem-em-destaque",
+          "titulo": "Pior passagem do trimestre em destaque",
+          "caso_de_uso": "Mesma base de 2026-T3: a passagem de Negociação para Ganha tem a pior taxa de passo (45,3%), enquanto a maior perda absoluta está na primeira passagem, com 152 oportunidades.",
+          "o_que_demonstra": [
+            "Cell em --accent-amber na etapa de destino e --chart-1 a 45% nas demais",
+            "Taxa de passo pronta no dado e lida no formatter do LabelList",
+            "Uma anotação curta: pior passagem do trimestre, 45,3%",
+            "Distingue pior taxa de passo (45,3%) de maior perda absoluta (152)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cone-continuo-com-meta-semanal",
+          "titulo": "Cone contínuo com meta semanal",
+          "caso_de_uso": "Pré-vendas, semana 2026-W37: as seis etapas de Entradas (1.180) a Handoff aceito (142) num cone horizontal, com a meta semanal de cada etapa (de 1.100 a 190) como contorno tracejado sobre o realizado.",
+          "o_que_demonstra": [
+            "AreaChart com Area de base transparente e Area da faixa no mesmo stackId",
+            "type linear e pontos marcados, porque etapa é discreta",
+            "Série de base fora da legenda e da dica",
+            "Meta como contorno tracejado na mesma escala do realizado"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_etapa-maior-que-a-anterior",
+          "titulo": "Etapa maior que a anterior",
+          "caso_de_uso": "Pré-vendas, 2026-08: Agenda realizada soma 260 contra 248 agendas marcadas, porque inclui agendas marcadas em julho. O trapézio abriria para baixo sem aviso.",
+          "o_que_demonstra": [
+            "Validação de monotonicidade no componente, antes do desenho",
+            "Aviso escrito: etapa maior que a anterior, janelas de data diferentes",
+            "Troca para barras horizontais com o mesmo dado quando a validação falha",
+            "Taxa acima de 100% escrita como tal, nunca truncada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_funil-com-perdas-por-etapa",
+      "nome": "Funil com perdas por etapa",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada etapa vira uma barra horizontal dividida em avançou, perdido e em andamento, com o perdido opcionalmente quebrado por motivo. Responde onde e por que se perde, e é o modelo da família que não confunde diferença entre etapas com perda quando o dado é retrato do pipeline.",
+      "quando_usar": [
+        "Perguntar onde e por qual motivo as oportunidades saem, com até 5 motivos nomeados mais Outros motivos.",
+        "Dado de retrato do pipeline, em que parte de cada etapa ainda está em andamento.",
+        "Revisão de perdas do Comercial e de descarte da Pré-vendas, etapa por etapa, com 3 a 6 etapas."
+      ],
+      "quando_evitar": [
+        "Dado sem o segmento em andamento ou que não fecha com o volume da etapa: não publicar, porque inventa perda.",
+        "Mais de 5 motivos sem agrupar a cauda: agrupar em Outros motivos, ou usar o 19_cascata-waterfall/02_cascata-de-decomposicao para uma etapa só.",
+        "Quando só o volume por etapa importa: usar o 01_funil-em-barras-com-taxa-de-passo.",
+        "Largura de celular com muitos segmentos rotulados: mostrar só avançou, perdido e em andamento."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_avancou-perdido-em-andamento",
+          "titulo": "Avançou, perdido e em andamento por etapa",
+          "caso_de_uso": "Comercial, 2026-T3 em 2026-09-14: Aberta 420 (avançou 268, perdido 118, em andamento 34), Diagnóstico 268 (131, 101, 36), Proposta 131 (64, 45, 22) e Negociação 64 (29, 21, 14).",
+          "o_que_demonstra": [
+            "Uma Bar por segmento com o mesmo stackId, na mesma ordem em todas as etapas",
+            "Fechamento verificado: avançou, perdido e em andamento somam a etapa",
+            "Total da etapa no LabelList do último segmento",
+            "Taxa de perda da etapa escrita ao lado do total"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_perdas-por-motivo",
+          "titulo": "Perdas por motivo em cada etapa",
+          "caso_de_uso": "Comercial, 2026-T3: o perdido de cada etapa quebrado em Sem perfil, Sem contato, Timing, Concorrência e Preço; em Proposta, Concorrência lidera com 16 das 45 perdas.",
+          "o_que_demonstra": [
+            "Cinco motivos em --chart-1 a --chart-5, na ordem fixa da legenda",
+            "Rótulo interno só no maior motivo da etapa e só com largura de 48 px ou mais",
+            "LabelList content condicionado à largura do segmento",
+            "Legenda acima do gráfico na ordem da pilha (ROT-4)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_descarte-da-pre-vendas-clientes-novos",
+          "titulo": "Descarte da pré-vendas por etapa",
+          "caso_de_uso": "Pré-vendas, 2026-08: Entradas, Conexão e Agenda marcada com motivo de descarte por etapa (Fora do perfil, Sem retorno, Contato inválido, Sem interesse, Duplicado) e o alternador apenas clientes novos recalculando as barras.",
+          "o_que_demonstra": [
+            "Prop apenasClientesNovos com default, recalculando o recorte no componente",
+            "Título escreve o recorte ativo: todos ou apenas clientes novos",
+            "Domínio fixo pelo recorte completo, para a troca não esticar as barras",
+            "Motivos além de cinco agrupados em Outros motivos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_perdas-sem-motivo-registrado",
+          "titulo": "Perdas sem motivo registrado",
+          "caso_de_uso": "Comercial, 2026-T3 numa unidade com cadastro incompleto: 38% das perdas não têm motivo. O segmento sem motivo precisa ficar separado dos motivos reais e o visual precisa avisar a cobertura.",
+          "o_que_demonstra": [
+            "Sem motivo registrado em neutro hachurado, separado de Outros motivos",
+            "Rótulo sem motivo: 38% e aviso de cobertura na linha de leitura",
+            "Padrão de hachura declarado em defs dentro do Recharts",
+            "Lacuna de dado tratada como lacuna, nunca como motivo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_funil-comparativo",
+      "nome": "Funil comparativo entre períodos ou segmentos",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "O mesmo funil para dois ou mais recortes: barras agrupadas por etapa, painéis pequenos com escala comum ou borboleta com eixo central. Responde se a conversão mudou entre períodos ou difere entre segmentos e executivos, alternando entre volume e percentual da entrada quando os recortes têm tamanhos diferentes. Absorve o funil espelhado (borboleta).",
+      "quando_usar": [
+        "Trimestre contra trimestre ou mês contra mês, com as mesmas etapas nos dois períodos.",
+        "Executivo contra executivo ou segmento contra segmento, em até 8 painéis numa grade.",
+        "Duas populações lado a lado na mesma escala, com leitura etapa a etapa na borboleta."
+      ],
+      "quando_evitar": [
+        "Recortes de tamanho muito diferente comparados em volume: normalizar em percentual da entrada e escrever o modo no título.",
+        "Mais de dois recortes na borboleta: usar painéis pequenos.",
+        "Evolução da taxa ao longo de muitos períodos: usar a família 04_linhas.",
+        "Recorte com menos de 10 oportunidades mostrado como taxa firme: esmaecer, esconder as taxas e avisar."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_trimestre-contra-trimestre",
+          "titulo": "Funil do trimestre contra o anterior",
+          "caso_de_uso": "Comercial, 2026-T3 contra 2026-T2: Aberta 420 contra 395, Diagnóstico 268 contra 241, Proposta 131 contra 138, Negociação 64 contra 70 e Ganha 29 contra 34, em barras agrupadas por etapa.",
+          "o_que_demonstra": [
+            "Duas Bar sem stackId em BarChart vertical, uma por período",
+            "Período atual em --chart-1 sólido e anterior em --chart-1 a 45%",
+            "Taxa de passo de cada período escrita ao lado da barra",
+            "Períodos nomeados por extenso na legenda, sem sigla"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_delta-de-taxa-acima-do-limiar",
+          "titulo": "Variação da taxa de passo entre trimestres",
+          "caso_de_uso": "Mesma base: a taxa de Diagnóstico para Proposta caiu de 57,3% para 48,9%, única variação acima de 5 pontos percentuais; as outras três passagens ficam sem seta.",
+          "o_que_demonstra": [
+            "LabelList content com seta e variação em pontos percentuais",
+            "--positive quando subiu e --negative quando caiu, só acima do limiar",
+            "Limiar de 5 pontos como prop com default",
+            "Variação nomeia a base na mesma linha (NUM-4)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_executivos-em-paineis-pequenos",
+          "titulo": "Funil por executivo em painéis pequenos",
+          "caso_de_uso": "Comercial, 2026-T3: oito executivos (Executivo A a H) em grade 4 por 2, cada painel em percentual da entrada e ordenado pela taxa final, com a mediana do time como referência; o Executivo H tem 7 oportunidades e aparece esmaecido.",
+          "o_que_demonstra": [
+            "Grade HTML com um BarChart por célula e domínio comum de 0 a 100%",
+            "Ordenação dos painéis pela taxa final, calculada no componente",
+            "Mediana do time como ReferenceLine em cada painel",
+            "Painel com menos de 10 oportunidades esmaecido, sem taxas e com aviso"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_borboleta-familia-contra-empresa",
+          "titulo": "Borboleta família contra empresa",
+          "caso_de_uso": "Comercial, 2026-S1: Família à esquerda (Aberta 236, Diagnóstico 151, Proposta 82, Negociação 37, Ganha 19) e Empresa à direita (Aberta 184, Proposta 97, Negociação 41, Ganha 14); Empresa não passa por Diagnóstico.",
+          "o_que_demonstra": [
+            "stackOffset sign com a série da esquerda negativa e ReferenceLine em x zero",
+            "Domínio simétrico pelo maior valor dos dois lados",
+            "Valor absoluto no tique, no rótulo, na dica e na tabela acessível",
+            "Etapa inexistente escrita como não se aplica, nunca como zero",
+            "Realce na etapa em que a razão entre os lados inverte (Proposta)"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_funil-com-meta-sobreposta",
+      "nome": "Funil com meta sobreposta",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Realizado e meta por etapa no mesmo desenho: o realizado como barra cheia, a meta como traço vertical na mesma escala e o percentual de atingimento escrito ao lado. Responde se o funil realizado cabe na meta e quanto falta em cada etapa, e obriga a declarar se a meta vem de medição histórica ou é premissa.",
+      "quando_usar": [
+        "Diretoria e Comercial acompanhando realizado contra meta por etapa dentro do período, com 3 a 7 etapas.",
+        "Meta de ganhos desdobrada para trás pelas taxas históricas, para dizer quantas oportunidades faltam em cada etapa.",
+        "Pré-vendas com meta semanal por etapa e faixas de atingimento."
+      ],
+      "quando_evitar": [
+        "Meta sem origem declarada: rotular premissa ou não desenhar o marcador.",
+        "Uma meta única do período, sem etapas: usar a família 13_progresso-meta-e-gauge.",
+        "Meta e realizado em escalas diferentes: o domínio é um só e fixo.",
+        "Período em curso comparado com a meta cheia sem dizer quanto do período já passou."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_realizado-contra-meta-do-trimestre",
+          "titulo": "Realizado contra meta por etapa",
+          "caso_de_uso": "Diretoria, 2026-T3 com realizado até 2026-09-14 (83% do trimestre decorrido): Aberta 420 de 460, Diagnóstico 268 de 290, Proposta 131 de 150, Negociação 64 de 75 e Ganha 29 de 36.",
+          "o_que_demonstra": [
+            "Bar com shape próprio e traço de meta posicionado pelo retângulo de background",
+            "Domínio fixo, para a meta aparecer mesmo com realizado zero",
+            "Percentual de atingimento escrito ao lado de cada barra",
+            "Anotação da fração do trimestre já decorrida"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cor-por-faixa-de-atingimento",
+          "titulo": "Atingimento da meta semanal por faixa",
+          "caso_de_uso": "Pré-vendas, semana 2026-W37: Entradas 1.180 de 1.100, Conexão 612 de 650, Agenda marcada 248 de 290, Agenda realizada 187 de 240 e Handoff aceito 142 de 190.",
+          "o_que_demonstra": [
+            "Cor por faixa: --positive a partir de 100%, --accent-amber de 80 a 99%",
+            "Abaixo de 80% em --negative, com a faixa escrita e não só pintada",
+            "Limites das faixas como prop com default, sem número mágico no shape",
+            "Legenda das três faixas acima do gráfico"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_meta-desdobrada-pelas-taxas-historicas",
+          "titulo": "Meta de ganhos desdobrada por etapa",
+          "caso_de_uso": "Diretoria, 2026-T4: meta de 36 ganhos dividida pelas taxas de passo dos últimos quatro trimestres (62%, 52%, 44% e 52%) pede 497 abertas, 308 diagnósticos, 160 propostas e 70 negociações, comparadas com o que já está no funil em 2026-09-14.",
+          "o_que_demonstra": [
+            "Meta calculada de trás para frente no componente, arredondada para cima",
+            "Taxas históricas escritas no rodapé como origem da meta",
+            "Barra do que já existe no funil contra o marcador do necessário",
+            "Falta por etapa escrita como número e com o substantivo (NUM-6)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_etapa-nova-sem-historico",
+          "titulo": "Meta de etapa nova sem histórico",
+          "caso_de_uso": "Comercial, 2026-T3: a etapa Comitê de investimento foi criada no trimestre e não tem taxa histórica; a meta dela é premissa digitada, não medição, e o atingimento não tem base para ser calculado.",
+          "o_que_demonstra": [
+            "Marcador vazado para meta sem medição por trás",
+            "Rótulo premissa, sem medição ao lado do marcador",
+            "Atingimento indisponível por formatUnavailable, sem taxa inventada",
+            "Meta medida e meta digitada distinguidas por forma, não só por cor"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_funil-empilhado-por-composicao",
+      "nome": "Funil empilhado por composição",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada etapa é uma barra horizontal dividida pelas categorias de um atributo (origem, plataforma, campanha), em volume ou em 100%. Responde como o mix muda ao longo do funil: o volume mostra onde cada origem se perde e o 100% mostra quem sobrevive até o ganho. A categoria de lacuna fica sempre separada e no fim da pilha.",
+      "quando_usar": [
+        "Marketing perguntando quais origens de lead sobrevivem até agenda e ganho.",
+        "Até 6 categorias nomeadas mais a categoria de lacuna, em 3 a 6 etapas.",
+        "Alternar volume e 100%, com o modo escrito no título."
+      ],
+      "quando_evitar": [
+        "Mais de 6 categorias sem agrupar a cauda: agrupar em Outras ou usar a família 14_tabelas-visuais.",
+        "Caminhos que se ramificam entre etapas: usar o 11_fluxo-sankey/02_sankey-multietapa.",
+        "Comparar o mix do fundo com o do topo quando a cobertura de origem muda entre etapas, sem avisar o viés de preenchimento.",
+        "Uma etapa só: usar barra 100% ou o waffle da família 22_unidades-waffle-e-pictograma."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_origem-do-lead-ao-ganho-em-volume",
+          "titulo": "Origem dos leads do lead ao ganho",
+          "caso_de_uso": "Marketing, leads de 2026-08 por origem (Mídia social, Busca paga, Rede profissional, Orgânico, Indicação, Evento e Sem origem) em cinco etapas: Lead 1.240, Qualificado 318, Agenda 96, Proposta 41 e Ganho 17.",
+          "o_que_demonstra": [
+            "Uma Bar com stackId mix por categoria em BarChart vertical",
+            "Sem origem em neutro e sempre no fim da pilha",
+            "Ordem das categorias fixa em todas as etapas",
+            "Total da etapa escrito na ponta da pilha"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_mix-em-100-com-indicacao-em-destaque",
+          "titulo": "Mix de origem em 100% por etapa",
+          "caso_de_uso": "Mesma base em 100%: Indicação vai de 6% dos leads para 41% dos ganhos (7 de 17), enquanto Mídia social cai de 38% para 12%; a anotação marca a subida de Indicação.",
+          "o_que_demonstra": [
+            "stackOffset expand com eixo em percentual inteiro",
+            "Percentuais de cada etapa somam 100 pelo maior resto (NUM-2)",
+            "Indicação em cor cheia e as demais origens atenuadas",
+            "Uma anotação com a subida de 6% para 41%"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_cauda-longa-de-campanhas-agrupada",
+          "titulo": "Campanhas agrupadas ao longo do funil",
+          "caso_de_uso": "Marketing, 2026-08: 14 campanhas ativas; as 5 maiores em leads ficam nomeadas (Campanha A a E), as outras 9 viram Outras campanhas e Sem campanha fica separada no fim da pilha.",
+          "o_que_demonstra": [
+            "Agrupamento da cauda calculado no componente pelo volume da entrada",
+            "Outras campanhas e Sem campanha nunca somadas",
+            "No máximo 6 cores categóricas mais o neutro da lacuna",
+            "Dica lista as campanhas que compõem Outras campanhas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_sem-origem-cai-ao-longo-do-funil",
+          "titulo": "Sem origem cai do topo ao fundo",
+          "caso_de_uso": "Marketing, 2026-08: 28% dos leads estão sem origem e só 6% dos ganhos (1 de 17). Quem avança tende a ter cadastro mais completo, então o mix do fundo não se compara ao do topo.",
+          "o_que_demonstra": [
+            "Faixa Sem origem hachurada, com percentual escrito em cada etapa",
+            "Aviso de viés de preenchimento na linha de leitura",
+            "Cobertura de origem por etapa como número ao lado de cada barra",
+            "Nenhuma redistribuição da lacuna entre as origens conhecidas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_funil-em-cartoes-de-etapa",
+      "nome": "Funil em cartões de etapa",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Sequência de cartões KPI, um por etapa, ligados por chips de conversão e setas, com uma microbarra de magnitude em cada cartão. Os números fazem o trabalho e o funil cabe numa faixa de topo de página. Absorve o funil com tempo e SLA entre etapas, em que o conector carrega a mediana e o p90 da passagem.",
+      "quando_usar": [
+        "Faixa de KPIs no topo das telas de Marketing e Pré-vendas, com 3 a 6 etapas.",
+        "Leitura numérica com custo junto do volume, como CPL e CPL qualificado.",
+        "Prazo entre etapas com SLA, quando há carimbo de data confiável em cada passagem.",
+        "Largura de celular: os cartões empilham e a seta vira para baixo."
+      ],
+      "quando_evitar": [
+        "Quando a proporção visual é a mensagem principal: usar o 01_funil-em-barras-com-taxa-de-passo.",
+        "Mais de 6 etapas numa faixa: os cartões ficam estreitos demais; usar barras.",
+        "Mediana de tempo calculada só com quem já passou, sem mostrar quantos ainda estão na etapa.",
+        "Um único indicador com meta: usar a família 01_cards-e-kpis."
+      ],
+      "arquivo_estudo": "_estudo/familias/10_funil.md",
+      "versoes": [
+        {
+          "slug": "v1_faixa-de-marketing-com-cpl",
+          "titulo": "Funil de mídia em cartões com CPL",
+          "caso_de_uso": "Marketing, 2026-08: Impressões 2,4 mi, Cliques 38,6 mil, Leads 1.240 e Leads qualificados 318, com investimento de R$ 119 mil, CPL de R$ 96 e CPL qualificado de R$ 374.",
+          "o_que_demonstra": [
+            "Cartão em --surface-raised com borda --border, na moldura stage",
+            "Microbarra com largura em percentual da primeira etapa",
+            "Chip de taxa de passo com ChevronRight que vira ChevronDown ao empilhar",
+            "Container query no lugar de largura da janela",
+            "Números com tabular-nums e moeda por formatCurrencyCompact"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_passo-que-piorou-contra-o-mes-anterior",
+          "titulo": "Passo que piorou contra o mês anterior",
+          "caso_de_uso": "Marketing, 2026-08 contra 2026-07: a taxa de Leads para qualificados caiu de 31,2% (345 de 1.105) para 25,6% (318 de 1.240); só esse chip fica em vermelho de alerta.",
+          "o_que_demonstra": [
+            "Chip em --negative só no passo que piorou além do limiar",
+            "Variação com a base nomeada: 25,6% contra 31,2% no mês anterior",
+            "Dica do chip com os volumes dos dois meses",
+            "Demais chips em --text-muted para o destaque não competir"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_tempo-e-sla-entre-etapas",
+          "titulo": "Tempo e SLA entre etapas da pré-vendas",
+          "caso_de_uso": "Pré-vendas, semana 2026-W37: Entrada para primeira tentativa com mediana de 38 min e p90 de 5 h contra SLA de 1 h útil; Conexão para agenda marcada com mediana de 2,1 dias; cada conector mostra quantos passaram e quantos seguem na etapa.",
+          "o_que_demonstra": [
+            "Conector com mediana e p90, colorido pela faixa de SLA",
+            "p90 fora do SLA em --negative mesmo com a mediana dentro",
+            "Contagem de quem passou e de quem ainda está na etapa, contra a censura",
+            "Unidade no rótulo: horas úteis ou dias corridos",
+            "SVG inline mínimo para os conectores dentro do HTML"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_etapa-sem-medicao",
+          "titulo": "Cartões com etapa sem medição",
+          "caso_de_uso": "Marketing, 2026-08, plataforma de rede profissional sem evento de conversão configurado: Impressões e Cliques medidos, Leads sem medição e as taxas vizinhas sem base para cálculo.",
+          "o_que_demonstra": [
+            "Cartão indisponível com formatUnavailable e ícone Unplug, nunca zero",
+            "Taxas vizinhas indisponíveis, sem cálculo sobre a etapa anterior",
+            "Microbarra omitida no cartão sem medição",
+            "Frase acessível diz qual etapa não tem medição"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    }
+  ]
+}

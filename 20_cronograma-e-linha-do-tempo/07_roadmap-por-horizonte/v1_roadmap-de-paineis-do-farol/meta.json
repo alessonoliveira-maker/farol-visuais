@@ -1,0 +1,13 @@
+{
+  "title": "Roadmap dos painéis do Farol",
+  "useCase": "Diretoria: quais dos 12 painéis fictícios do Farol entram agora, no próximo ciclo e depois, sem data.",
+  "demonstrates": [
+    "Grade grid-cols-3 com cabeçalho de horizonte e contagem de cartões por coluna",
+    "Subtítulo declarando que não há escala de tempo entre as colunas",
+    "Cartão com título, público em texto e ícone lucide por público",
+    "Ordem dentro da coluna pela prioridade declarada no dado, nunca alfabética"
+  ],
+  "canvas": "largo",
+  "frame": "stage",
+  "notes": "Moldura stage porque o roadmap é a própria grade de cartões, sem cartão em volta: o corpo mede 920 x 310 px (960 x 400 menos 40 de largura e 90 de altura). Conta da altura: subtítulo 16 + vão 12 + cabeçalho de coluna 24 + vão 8 + 4 cartões de 46 com 3 vãos de 6 = 262 px, com folga de 48. Título de painel até 34 caracteres para caber em uma linha na coluna de cerca de 290 px; nome de marca desenhada não se corta (TIP-7)."
+}

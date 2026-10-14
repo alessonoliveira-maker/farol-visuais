@@ -1,0 +1,70 @@
+{
+  "slug": "04_barras-empilhadas-100",
+  "nome": "Barras empilhadas 100%",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada barra vai de 0 a 100% e mostra a proporção de cada componente dentro da categoria. Ganha duas linhas de base, a do zero e a do 100%, então o primeiro e o último segmento se comparam bem entre categorias. BarChart layout vertical com stackOffset expand e stackId comum; como o valor que chega ao LabelList e à dica continua absoluto, o percentual é calculado no dado. O n de cada barra vai escrito à direita, porque uma barra de 3 casos parece tão sólida quanto uma de 300. Absorve a barra única de composição: uma faixa só, dividida em segmentos, em cabeçalho ou card de KPI.",
+  "quando_usar": [
+    "Proporção dentro de cada categoria quando o tamanho absoluto não é a pergunta: mix de origem por segmento de conta.",
+    "De 2 a 5 componentes e de 2 a cerca de 15 categorias.",
+    "Comparar o primeiro ou o último componente entre categorias, apoiado nas duas linhas de base.",
+    "Composição de um total único numa faixa estreita de cabeçalho, com o restante agregado em outras."
+  ],
+  "quando_evitar": [
+    "O total importa tanto quanto a proporção: barras empilhadas (03_barras-empilhadas).",
+    "Categorias com n muito diferente e sem espaço para escrever o n: tabela com composição inline (14_tabelas-visuais).",
+    "Escala ordinal com polos em que o equilíbrio entre lados é a leitura: divergente empilhada Likert (08_divergente-empilhada-likert).",
+    "A espessura da barra também deveria codificar volume: marimekko (26_mosaico-marimekko).",
+    "Parte de um todo com poucas fatias e público que espera fatia: rosca (07_rosca-e-radial) ou waffle (22_unidades-waffle-e-pictograma)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_mix-de-origem-por-segmento",
+      "titulo": "Mix de origem dos leads por segmento de conta",
+      "caso_de_uso": "De onde vêm os leads de pequenas, médias e grandes contas, em proporção, com o volume de cada segmento à vista.",
+      "o_que_demonstra": [
+        "stackOffset expand com tickFormatter de percentual pelo formatador do Farol",
+        "Percentual calculado no dado, porque o expand entrega valor absoluto",
+        "n absoluto escrito à direita de cada barra",
+        "Ordem natural dos segmentos preservada, sem ordenar por valor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_motivos-de-perda-por-executivo",
+      "titulo": "Motivos de perda por executivo",
+      "caso_de_uso": "Qual executivo perde mais por falta de fit, em proporção das próprias perdas, entre os 12 do time.",
+      "o_que_demonstra": [
+        "Doze barras ordenadas pela fatia de sem fit, que fica na base",
+        "Rótulo de percentual centrado no segmento, em texto claro sobre cor escura",
+        "Rótulo suprimido quando o segmento não comporta o texto",
+        "n de cada executivo escrito à direita da barra, como n = 214"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_barra-unica-investimento-do-mes",
+      "titulo": "Investimento do mês por plataforma",
+      "caso_de_uso": "Como o investimento de mídia do mês se divide entre plataformas, numa faixa de cabeçalho da tela de Marketing.",
+      "o_que_demonstra": [
+        "Barra única de composição com largura em percentual e vão de 2 px entre segmentos",
+        "Percentual dentro dos três maiores segmentos e o restante agregado em outras",
+        "Soma fechada em 100% com o resto do arredondamento no último segmento",
+        "Legenda em linha abaixo e total em moeda compacta à direita"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v4_n-baixo-e-sem-casos",
+      "titulo": "Composição com n baixo e categoria sem casos",
+      "caso_de_uso": "Ler a composição de perdas sem confiar demais em quem tem 3 casos nem desenhar barra para quem não perdeu nada.",
+      "o_que_demonstra": [
+        "Barra com n abaixo de 10 em opacidade reduzida e selo n baixo",
+        "Categoria com total zero escreve sem casos, sem divisão por zero",
+        "Categoria sem coleta escreve indisponível, separada de sem casos",
+        "Selo e opacidade calculados no seletor, não no shape"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

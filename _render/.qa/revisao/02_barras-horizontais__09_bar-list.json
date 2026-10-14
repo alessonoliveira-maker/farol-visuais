@@ -1,0 +1,238 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "09_bar-list",
+  "versoes": {
+    "v1_top-origens-do-mes": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, quatro demonstracoes do catalogo presentes; dado sem caso dificil e nome com nowrap ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:21.403Z",
+      "impressao": "c04a0a1b32b9fa89fc58338f1b85073ee00a5bae",
+      "arquivos": {
+        "Chart.tsx": "2fdd3bbc5c09dcb0b1b4e67d33d71b5dc014fe7b",
+        "data.ts": "43200e29b237307aa2d27dc2dd3f5301afc1dda6",
+        "meta.json": "df0fa2f13a90e881cfb2fd7d040bcddd955cd430"
+      }
+    },
+    "v2_campanhas-com-link-e-destaque": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, destaque com cor e peso, sem truncagem; quebra do nome longo nao aparece no canvas largo e papeis de linha incompletos ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:27.651Z",
+      "impressao": "c35682836d3ed1c22fd3ea11ea4fe57b2e58a4df",
+      "arquivos": {
+        "Chart.tsx": "4dbac6b28ad5e271d204be4e4cb86da0c1b2ca00",
+        "data.ts": "c1ebb8467c737004285209b6c0a6c51e434fcf1f",
+        "meta.json": "5c700d4ae5845d3c44b1b359c56f5feda82de92a"
+      }
+    },
+    "v3_criativos-com-leads-e-cpl": {
+      "veredito": "aprovado",
+      "nota": "Bloqueantes da primeira passada resolvidos: contagem e percentual em text-secondary (5,53 e 6,25 sobre a barra do líder) e as dez barras principais com 22 px nos dois temas. Check 0 erros, preview contra página 0,33% e 0,36%. Observações no README: TIP-4 no percentual em Space Grotesk 400, coluna da contagem desalinhada, trilho de CPL com largura dependente do texto.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:09:59.615Z",
+      "impressao": "65c7fae8188501c2186eeade8649dfd95e92cb46",
+      "arquivos": {
+        "Chart.tsx": "e2e61d197f6cea4c5e17d9395889b0988d3af842",
+        "data.ts": "826d76d5db0d72b7155aae66334d5d793e6188b3",
+        "meta.json": "7c8c7c0a299bcdf8e9f0d4702e047eea6965fb38"
+      }
+    },
+    "v4_termos-com-cauda-agregada": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, cauda fora da escala e sem barra, termo longo quebra em duas linhas sem reticencia; contorno tracejado no lugar da hachura fica como observacao de catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:38.560Z",
+      "impressao": "4c59268f2fc685a714f25ade73631766c303011e",
+      "arquivos": {
+        "Chart.tsx": "0bdef71780e11c7724d0b68cce279a1e3215cbd5",
+        "data.ts": "dec941fb2d0bd328f05c7d2f763cc2b7d738d29e",
+        "meta.json": "388e05953ba8542cc69cd354ae516ee344e79ae9"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_top-origens-do-mes",
+      "veredito": "aprovado",
+      "nota": "Lista legivel nos dois temas, barra normalizada pelo maior valor com nota de rodape. Dado simples demais para exercitar nome longo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:30:15.087Z",
+      "impressao": "c04a0a1b32b9fa89fc58338f1b85073ee00a5bae",
+      "arquivos": {
+        "Chart.tsx": "2fdd3bbc5c09dcb0b1b4e67d33d71b5dc014fe7b",
+        "data.ts": "43200e29b237307aa2d27dc2dd3f5301afc1dda6",
+        "meta.json": "df0fa2f13a90e881cfb2fd7d040bcddd955cd430"
+      }
+    },
+    {
+      "versao": "v2_campanhas-com-link-e-destaque",
+      "veredito": "reprovado",
+      "nota": "Nenhum nome quebra em duas linhas no canvas declarado: o limiar de 34 caracteres so muda a altura da linha, entao a demonstracao do catalogo nao aparece e sobram duas linhas com vao morto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:30:21.632Z",
+      "impressao": "c35682836d3ed1c22fd3ea11ea4fe57b2e58a4df",
+      "arquivos": {
+        "Chart.tsx": "4dbac6b28ad5e271d204be4e4cb86da0c1b2ca00",
+        "data.ts": "c1ebb8467c737004285209b6c0a6c51e434fcf1f",
+        "meta.json": "5c700d4ae5845d3c44b1b359c56f5feda82de92a"
+      }
+    },
+    {
+      "versao": "v3_criativos-com-leads-e-cpl",
+      "veredito": "aprovado",
+      "nota": "Dois numeros por linha legiveis, percentual soma 100, pausado com etiqueta alem da cor. Falta dizer contra o que a barra fina de CPL mede.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:30:27.974Z",
+      "impressao": "696d044cd4045a42d0b58aed3b24e23f45c4cb40",
+      "arquivos": {
+        "Chart.tsx": "f0ffb4453f9eeafbfe715e84780a3400dfd976ca",
+        "data.ts": "59951d13e0142d78f4252f8f4bbe98f598c8035a",
+        "meta.json": "449bc7cedc1674c20820bc5a3ca5165d353f899c"
+      }
+    },
+    {
+      "versao": "v4_termos-com-cauda-agregada",
+      "veredito": "aprovado",
+      "nota": "Termo longo quebra em duas linhas, cauda somada e termo sem classificacao em contorno tracejado com rotulo. Cauda entra no dominio das barras, ao contrario do catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:30:28.467Z",
+      "impressao": "c8c852a40d236bf05e5a506732467997bf4158b6",
+      "arquivos": {
+        "Chart.tsx": "b81f7cd52999ec25e4fa72aadd904c5b18eb0427",
+        "data.ts": "dec941fb2d0bd328f05c7d2f763cc2b7d738d29e",
+        "meta.json": "388e05953ba8542cc69cd354ae516ee344e79ae9"
+      }
+    },
+    {
+      "versao": "v1_top-origens-do-mes",
+      "veredito": "aprovado",
+      "nota": "Check limpo, barra do zero contra o maior valor, nota de rodape explicita, contraste acima de AA nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:44:55.811Z",
+      "impressao": "c04a0a1b32b9fa89fc58338f1b85073ee00a5bae",
+      "arquivos": {
+        "Chart.tsx": "2fdd3bbc5c09dcb0b1b4e67d33d71b5dc014fe7b",
+        "data.ts": "43200e29b237307aa2d27dc2dd3f5301afc1dda6",
+        "meta.json": "df0fa2f13a90e881cfb2fd7d040bcddd955cd430"
+      }
+    },
+    {
+      "versao": "v2_campanhas-com-link-e-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque por cor e peso, link com foco visivel, contraste folgado nos dois temas; altura de linha por contagem de caracteres fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:45:00.505Z",
+      "impressao": "c35682836d3ed1c22fd3ea11ea4fe57b2e58a4df",
+      "arquivos": {
+        "Chart.tsx": "4dbac6b28ad5e271d204be4e4cb86da0c1b2ca00",
+        "data.ts": "c1ebb8467c737004285209b6c0a6c51e434fcf1f",
+        "meta.json": "5c700d4ae5845d3c44b1b359c56f5feda82de92a"
+      }
+    },
+    {
+      "versao": "v3_criativos-com-leads-e-cpl",
+      "veredito": "reprovado",
+      "nota": "Nome do criativo pausado em text-muted sobre a propria barra bg-text-muted/15 mede 4,23 no escuro e 4,42 no claro, abaixo do piso 4,5 da ACE-3.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:45:05.271Z",
+      "impressao": "696d044cd4045a42d0b58aed3b24e23f45c4cb40",
+      "arquivos": {
+        "Chart.tsx": "f0ffb4453f9eeafbfe715e84780a3400dfd976ca",
+        "data.ts": "59951d13e0142d78f4252f8f4bbe98f598c8035a",
+        "meta.json": "449bc7cedc1674c20820bc5a3ca5165d353f899c"
+      }
+    },
+    {
+      "versao": "v4_termos-com-cauda-agregada",
+      "veredito": "reprovado",
+      "nota": "A linha da cauda ganha barra e entra no max da normalizacao; o catalogo pede o agregado fora do dominio das barras, e assim a escala pode ser dada por ele.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:45:10.440Z",
+      "impressao": "c8c852a40d236bf05e5a506732467997bf4158b6",
+      "arquivos": {
+        "Chart.tsx": "b81f7cd52999ec25e4fa72aadd904c5b18eb0427",
+        "data.ts": "dec941fb2d0bd328f05c7d2f763cc2b7d738d29e",
+        "meta.json": "388e05953ba8542cc69cd354ae516ee344e79ae9"
+      }
+    },
+    {
+      "versao": "v1_top-origens-do-mes",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, quatro demonstracoes do catalogo presentes; dado sem caso dificil e nome com nowrap ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:21.403Z",
+      "impressao": "c04a0a1b32b9fa89fc58338f1b85073ee00a5bae",
+      "arquivos": {
+        "Chart.tsx": "2fdd3bbc5c09dcb0b1b4e67d33d71b5dc014fe7b",
+        "data.ts": "43200e29b237307aa2d27dc2dd3f5301afc1dda6",
+        "meta.json": "df0fa2f13a90e881cfb2fd7d040bcddd955cd430"
+      }
+    },
+    {
+      "versao": "v2_campanhas-com-link-e-destaque",
+      "veredito": "aprovado",
+      "nota": "Check limpo, destaque com cor e peso, sem truncagem; quebra do nome longo nao aparece no canvas largo e papeis de linha incompletos ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:27.651Z",
+      "impressao": "c35682836d3ed1c22fd3ea11ea4fe57b2e58a4df",
+      "arquivos": {
+        "Chart.tsx": "4dbac6b28ad5e271d204be4e4cb86da0c1b2ca00",
+        "data.ts": "c1ebb8467c737004285209b6c0a6c51e434fcf1f",
+        "meta.json": "5c700d4ae5845d3c44b1b359c56f5feda82de92a"
+      }
+    },
+    {
+      "versao": "v3_criativos-com-leads-e-cpl",
+      "veredito": "aprovado",
+      "nota": "Check limpo, contraste do pausado corrigido, percentual soma 100 e nota de rodape declara as duas escalas; sentido invertido da barra de CPL fica como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:32.940Z",
+      "impressao": "4f1ba1b0c6c661971a26979deec1052962bb7958",
+      "arquivos": {
+        "Chart.tsx": "42c4a3b7718eb3ec9d7eb71addbbfd6cc6feb0f1",
+        "data.ts": "826d76d5db0d72b7155aae66334d5d793e6188b3",
+        "meta.json": "14b90d7636f04a3c81e72f3336e7dddd55cc9e7c"
+      }
+    },
+    {
+      "versao": "v4_termos-com-cauda-agregada",
+      "veredito": "aprovado",
+      "nota": "Check limpo, cauda fora da escala e sem barra, termo longo quebra em duas linhas sem reticencia; contorno tracejado no lugar da hachura fica como observacao de catalogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:45:38.560Z",
+      "impressao": "4c59268f2fc685a714f25ade73631766c303011e",
+      "arquivos": {
+        "Chart.tsx": "0bdef71780e11c7724d0b68cce279a1e3215cbd5",
+        "data.ts": "dec941fb2d0bd328f05c7d2f763cc2b7d738d29e",
+        "meta.json": "388e05953ba8542cc69cd354ae516ee344e79ae9"
+      }
+    },
+    {
+      "versao": "v3_criativos-com-leads-e-cpl",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 e ACE-8: o percentual do lider em text-muted sobre a propria barra bg-chart-1/18 mede 3,53:1 no escuro e 4,13:1 no claro; passe percentual e valor do pausado a text-secondary, com hierarquia pelo peso. Pergunta 3, ESP-2 e Anatomia 1 e 4: a barra do cr8 sai com 40 px e o nome numa linha so, com mais tinta que as do 5o ao 7o; a altura deve sair da quebra real, com minimo de 22 px, e o canvas deve ser refeito. Parecer em validation/revisao_02_barras-horizontais__09_bar-list_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:59:10.341Z",
+      "impressao": "8199e0d617bb0ad637140afeac7b23a277cf5317",
+      "arquivos": {
+        "Chart.tsx": "91efcb008e4eaba1237ab97ff47be99a0d319ddf",
+        "data.ts": "826d76d5db0d72b7155aae66334d5d793e6188b3",
+        "meta.json": "14b90d7636f04a3c81e72f3336e7dddd55cc9e7c"
+      }
+    },
+    {
+      "versao": "v3_criativos-com-leads-e-cpl",
+      "veredito": "aprovado",
+      "nota": "Bloqueantes da primeira passada resolvidos: contagem e percentual em text-secondary (5,53 e 6,25 sobre a barra do líder) e as dez barras principais com 22 px nos dois temas. Check 0 erros, preview contra página 0,33% e 0,36%. Observações no README: TIP-4 no percentual em Space Grotesk 400, coluna da contagem desalinhada, trilho de CPL com largura dependente do texto.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:09:59.615Z",
+      "impressao": "65c7fae8188501c2186eeade8649dfd95e92cb46",
+      "arquivos": {
+        "Chart.tsx": "e2e61d197f6cea4c5e17d9395889b0988d3af842",
+        "data.ts": "826d76d5db0d72b7155aae66334d5d793e6188b3",
+        "meta.json": "7c8c7c0a299bcdf8e9f0d4702e047eea6965fb38"
+      }
+    }
+  ]
+}

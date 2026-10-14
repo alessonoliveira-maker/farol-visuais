@@ -1,0 +1,14 @@
+{
+  "title": "Riscos do plano comercial em 5x5",
+  "useCase": "Diretoria: onde os 23 riscos do plano comercial de 2027 se concentram por probabilidade e impacto.",
+  "demonstrates": [
+    "Nível lido de tabela de consulta acordada, não do produto de índices",
+    "Laço de probabilidade invertido para a faixa mais provável ficar no topo",
+    "Descritor de faixa com critério numérico nos cabeçalhos",
+    "Célula com nível escrito e contagem, em três tons de baixa saturação",
+    "Zero em dígito sobre a superfície base, distinto de sem dado"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Os três tons são os degraus 1, 3 e 6 da rampa sequencial, ordenados por luminância para sobreviver a daltonismo; o nível também vem escrito. Limite inferior da faixa incluso, superior excluso. Os 2 riscos sem impacto avaliado ficam fora da grade (21 de 23 posicionados) e são contados em nota, nunca como impacto zero. Conta de altura: corpo 422 x 355 (card menor que 560, caso de uso em 2 linhas); grade de 80 + 5 x 66 + 4 x 2 = 418 px de largura e cerca de 330 px de altura somando linha de leitura, títulos, cinco linhas de 44 px e nota."
+}

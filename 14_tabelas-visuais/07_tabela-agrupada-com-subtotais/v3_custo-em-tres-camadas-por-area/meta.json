@@ -1,0 +1,13 @@
+{
+  "title": "Custo em três camadas por área",
+  "useCase": "Diretoria: quanto cada área custa nas camadas 1, 2 e 3 de 2026, com subtotal por área e total geral fixo no rodapé.",
+  "demonstrates": [
+    "Cabeçalho duplo com o bloco de cada camada sobre as colunas de valor",
+    "Subtotal por área e total geral fixo no rodapé com estilo próprio",
+    "Moeda por formatCurrencyCompact e a camada declarada em cada bloco",
+    "Colunas de camada sem cor semântica, porque custo não tem bom nem ruim aqui"
+  ],
+  "canvas": { "width": 960, "height": 490 },
+  "frame": "card",
+  "notes": "Canvas maior que o preset largo (960x400): 3 áreas, 7 centros de custo, cabeçalho duplo, 3 subtotais e o total geral do rodapé somam 15 linhas, que não cabem nos 282 px de corpo do preset (ESP-6). Subtotal por área e total geral por SOMA: o total geral soma exatamente os três subtotais de área, em cada camada e na coluna de total, calculado em tempo de execução a partir dos centros de custo."
+}

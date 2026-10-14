@@ -1,0 +1,14 @@
+{
+  "title": "Filas contra o teto de capacidade",
+  "useCase": "Pré-vendas: qual fila cabe no teto do mês, qual estourou e em qual o teto ainda é premissa ou falta coleta.",
+  "demonstrates": [
+    "Polaridade invertida: barra neutra até o teto e excedente em negative com ícone",
+    "Escala comum até 1,3 vez o teto ou a maior demanda, para o estouro caber",
+    "Folga ou estouro escrito: faltam 18 na fila de agendas, 34 acima do teto em entradas novas",
+    "Teto de premissa em traço mais apagado e dito no rótulo, sem cor de procedência",
+    "Fila sem coleta com trilho tracejado e formatUnavailable, nunca barra zerada"
+  ],
+  "canvas": { "width": 640, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas por número, maior que o preset card: com 4 filas, cada linha ocupa cerca de 52 px (rótulo, trilho e texto de apoio) e a soma passa dos 234 px do corpo padrão. A conta é linhas vezes altura de linha mais a legenda do topo (ESP-2/ESP-6). Teto e período aparecem em texto por linha, com a procedência (medido ou premissa) escrita no próprio rótulo, nunca pintada com token de procedência (regra ANO-6 e família, ponto 9). A peça é uma foto do mês, sem tendência entre meses: a nota final da frase acessível avisa isso, por decisão do dono para a família."
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Forecast de fechamentos a partir da data de corte",
+  "useCase": "Quantos fechamentos por semana o forecast espera até 2026-12-31, a partir do corte de 2026-09-14?",
+  "demonstrates": [
+    "Data de corte anotada com formatDate",
+    "Método da projeção em nota; a etiqueta PREMISSA fica no VisualCard",
+    "Contagem inteira com allowDecimals desligado no eixo"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

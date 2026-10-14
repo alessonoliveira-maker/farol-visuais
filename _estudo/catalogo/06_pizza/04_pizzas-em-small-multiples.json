@@ -1,0 +1,69 @@
+{
+  "slug": "04_pizzas-em-small-multiples",
+  "nome": "Pizzas e roscas em small multiples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Grade de pizzas ou roscas do mesmo diâmetro, uma por todo (semana, pessoa, plataforma), com as mesmas categorias na mesma ordem e nas mesmas cores e uma legenda única. Absorve as roscas em small multiples do estudo 07: rosca pequena com número central quando a métrica do centro é o que se compara entre os grupos.",
+  "quando_usar": [
+    "A mesma composição de 2 a 4 todos com leitura aproximada: em qual todo a parte X passa da metade.",
+    "Matriz de completude ou cobertura com roscas binárias e número central, até uns 12 grupos.",
+    "Totais parecidos entre os todos, o que justifica o mesmo diâmetro para todas as pizzas."
+  ],
+  "quando_evitar": [
+    "Cinco todos ou mais, ou comparar a mesma parte com precisão entre eles: barra 100% empilhada (03).",
+    "Participação ao longo de muitos períodos: linha (04).",
+    "Totais muito diferentes entre os todos: pizzas proporcionais ao total (modelo 06).",
+    "Muitas roscas binárias dentro de uma tabela: barra em célula (14)."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-em-quatro-semanas",
+      "titulo": "Resultado das agendas em quatro semanas",
+      "caso_de_uso": "Como se divide o resultado das agendas (realizada, remarcada, não compareceu) em cada uma das últimas quatro semanas?",
+      "o_que_demonstra": [
+        "Um PieChart por célula em grid do Tailwind, como no exemplo Pie Chart in Grid",
+        "Ordem fixa de categorias entre as pizzas, sem ordenar cada uma por valor",
+        "Legenda única no topo, na ordem angular, com amostra quadrada",
+        "Mesmo diâmetro e total de agendas escrito sob cada pizza"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v2_nao-comparecimento-acima-de-15",
+      "titulo": "Semana com não comparecimento acima de 15%",
+      "caso_de_uso": "Em qual das quatro semanas o não comparecimento passou de 15% das agendas?",
+      "o_que_demonstra": [
+        "Só a categoria não compareceu em --chart-1 em todas as pizzas",
+        "Percentual escrito só na fatia destacada, em peso 700 na semana acima do limite",
+        "Anotação curta com o limite de 15% na única pizza que o ultrapassa",
+        "Frase acessível que nomeia a semana acima do limite"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_completude-de-campos-por-plataforma",
+      "titulo": "Completude de campos por plataforma de mídia",
+      "caso_de_uso": "Quais campos dos leads (origem, porte, telefone, cargo) chegam incompletos em cada uma das três plataformas de mídia?",
+      "o_que_demonstra": [
+        "Matriz de 3 por 4 roscas binárias com rótulos de linha e coluna em HTML",
+        "Número central em kpi-number por rosca, que é o que se compara",
+        "Número abaixo de 50% em --warning com ícone, sem depender só da cor",
+        "Acima de oito células, anel em SVG puro no lugar de um PieChart por rosca",
+        "Absorve 07#12: mesma cor, mesma métrica central e mesmo diâmetro"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_origem-por-sdr-com-amostra-pequena",
+      "titulo": "Origem dos leads por SDR com amostra pequena",
+      "caso_de_uso": "Como a origem dos leads do mês se divide entre SDR 01 e SDR 04 quando uma delas recebeu só 6 leads?",
+      "o_que_demonstra": [
+        "Pizza com n abaixo do mínimo em neutro, com selo amostra pequena e n=6",
+        "Percentual omitido abaixo do mínimo, com contagens absolutas escritas",
+        "Sem informação vazada e por último em todas as pizzas",
+        "Constante MIN_SAMPLE no topo do arquivo decide o estado de cada célula"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

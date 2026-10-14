@@ -1,0 +1,15 @@
+{
+  "title": "Indicadores sem procedência declarada",
+  "useCase": "Diretoria: quais indicadores fictícios não têm fonte de dado declarada e por isso ficam sem arco, fora da leitura de risco.",
+  "demonstrates": [
+    "Indicador sem fonte no fim do eixo, com contorno var(--text-muted) e sem preenchimento",
+    "Texto sem fonte declarada junto do nó, distinto de fonte com zero dependências",
+    "Contagem no rodapé, como 3 indicadores sem procedência, e a mensagem no topo",
+    "Fonte declarada que nenhum indicador usa mantida no eixo, com 0 escrito",
+    "Frase acessível que separa as duas ausências",
+    "Zero como ponto cheio mínimo e ausência como anel vazado: duas formas, não dois tons"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio principal do catálogo, com o contrato vencendo: o catálogo sugere o canvas largo com eixo horizontal, e 19 nós com nome de indicador não cabem na horizontal sem girar o texto, que a TIP-5 proíbe. O eixo é vertical, como na v2, com os nomes horizontais à esquerda; por isso o texto sem fonte declarada fica à direita do nó, no lugar onde o arco sairia, e não sob ele. Conta do canvas (GEO-1): alto 640x560 com moldura card e caso de uso em duas linhas dá corpo de 574 x 425. Onze indicadores com fonte a 14 px, três vãos de 10 px entre dashboards, 40 px até a primeira fonte, cinco fontes a 20 px, 30 px até o grupo sem procedência e três linhas de 14 px dão viewBox de 574 x 368; com a linha de leitura (28 px) e o rodapé (24 px) o corpo pede 420 px, sobra 5 px, e a escala sai 1 (GEO-18). O maior raio, de 135 px, cabe na largura livre, então o fator de achatamento sai 1 e os arcos são semicírculos. A contagem vai no rodapé, como o catálogo pede, e a mesma mensagem abre o corpo na linha de leitura, porque rodapé é a última linha que o olho encontra. As duas ausências diferem na forma, não no tom: zero medido é ponto cheio de 2,5 px de raio com o 0 escrito na coluna de contagem; fonte não declarada é anel vazado de 4,5 px, sem preenchimento. Os arcos vão em var(--text-muted), 5,21:1 e 5,37:1, e não em var(--line-strong), 1,79:1 e 1,83:1 (ACE-6). Nenhum peso 700 no desenho."
+}

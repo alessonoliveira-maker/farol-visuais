@@ -1,0 +1,108 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "05_anel-segmentado-em-unidades",
+  "versoes": {
+    "v1_agendas-da-meta-semanal": {
+      "veredito": "aprovado",
+      "nota": "Anel de 20 unidades honesto, legenda com contagem e nota do valor do segmento; check limpo nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:26.996Z",
+      "impressao": "f2abb666d288a6e549c12e333a26e2f5e1abcf76",
+      "arquivos": {
+        "Chart.tsx": "910be7413327c697859de696169876e906dc207c",
+        "data.ts": "ead2cfd86712e533fb9eea3d04bfa002a4e34265",
+        "meta.json": "5d21541e9ffbaf9e8db7e4970ba00569ed57ac39"
+      }
+    },
+    "v2_agendas-em-tres-status": {
+      "veredito": "aprovado",
+      "nota": "Tres status na ordem fixa das 12 horas, faltante so com contorno e contagens que somam a meta; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:31.212Z",
+      "impressao": "1df6ebfdbf0210844e66f4b97bd4099ef921ff40",
+      "arquivos": {
+        "Chart.tsx": "1ac2fc21de6e8a385d4dac5e0652c19e57b32548",
+        "data.ts": "652f5ea1cdfe6ff0f73b2bd7b29c7d73f55b7554",
+        "meta.json": "40ee9076231e6340c94902f84e6ab8f60dc42ec4"
+      }
+    },
+    "v3_sla-diario-do-mes-por-fila": {
+      "veredito": "aprovado",
+      "nota": "Tres aneis de mesmo diametro e mesma ordem, feriado fora da contagem central, estado com palavra na legenda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:35.823Z",
+      "impressao": "ffe57aa3b110ef78b50e0a1b37fa59e1a55c2145",
+      "arquivos": {
+        "Chart.tsx": "cbc1d1998b72f37a8b4f9e4899877b7806a0f4c5",
+        "data.ts": "a452338234f59db8e5e761e080c11491c721cc84",
+        "meta.json": "829be43b6108547e3a05086ee85c43feacb6f289"
+      }
+    },
+    "v4_quarenta-unidades-e-excedente": {
+      "veredito": "aprovado",
+      "nota": "Teto de 40 segmentos com excedente em selo fora do anel, sem 41o gomo; selo em surface-overlay passa AA nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:40.386Z",
+      "impressao": "14773a34ae4d07766ed92dd6889cf173688320b9",
+      "arquivos": {
+        "Chart.tsx": "eb3b563a9c489858fbb7ffdca827500a86bad846",
+        "data.ts": "89938258a7509a06e09367c961d85323f38c2e28",
+        "meta.json": "2c0c84e50b1889481df986b0b61bd3d2c7d5f7d7"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-da-meta-semanal",
+      "veredito": "aprovado",
+      "nota": "Anel de 20 unidades honesto, legenda com contagem e nota do valor do segmento; check limpo nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:26.996Z",
+      "impressao": "f2abb666d288a6e549c12e333a26e2f5e1abcf76",
+      "arquivos": {
+        "Chart.tsx": "910be7413327c697859de696169876e906dc207c",
+        "data.ts": "ead2cfd86712e533fb9eea3d04bfa002a4e34265",
+        "meta.json": "5d21541e9ffbaf9e8db7e4970ba00569ed57ac39"
+      }
+    },
+    {
+      "versao": "v2_agendas-em-tres-status",
+      "veredito": "aprovado",
+      "nota": "Tres status na ordem fixa das 12 horas, faltante so com contorno e contagens que somam a meta; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:31.212Z",
+      "impressao": "1df6ebfdbf0210844e66f4b97bd4099ef921ff40",
+      "arquivos": {
+        "Chart.tsx": "1ac2fc21de6e8a385d4dac5e0652c19e57b32548",
+        "data.ts": "652f5ea1cdfe6ff0f73b2bd7b29c7d73f55b7554",
+        "meta.json": "40ee9076231e6340c94902f84e6ab8f60dc42ec4"
+      }
+    },
+    {
+      "versao": "v3_sla-diario-do-mes-por-fila",
+      "veredito": "aprovado",
+      "nota": "Tres aneis de mesmo diametro e mesma ordem, feriado fora da contagem central, estado com palavra na legenda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:35.823Z",
+      "impressao": "ffe57aa3b110ef78b50e0a1b37fa59e1a55c2145",
+      "arquivos": {
+        "Chart.tsx": "cbc1d1998b72f37a8b4f9e4899877b7806a0f4c5",
+        "data.ts": "a452338234f59db8e5e761e080c11491c721cc84",
+        "meta.json": "829be43b6108547e3a05086ee85c43feacb6f289"
+      }
+    },
+    {
+      "versao": "v4_quarenta-unidades-e-excedente",
+      "veredito": "aprovado",
+      "nota": "Teto de 40 segmentos com excedente em selo fora do anel, sem 41o gomo; selo em surface-overlay passa AA nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:48:40.386Z",
+      "impressao": "14773a34ae4d07766ed92dd6889cf173688320b9",
+      "arquivos": {
+        "Chart.tsx": "eb3b563a9c489858fbb7ffdca827500a86bad846",
+        "data.ts": "89938258a7509a06e09367c961d85323f38c2e28",
+        "meta.json": "2c0c84e50b1889481df986b0b61bd3d2c7d5f7d7"
+      }
+    }
+  ]
+}

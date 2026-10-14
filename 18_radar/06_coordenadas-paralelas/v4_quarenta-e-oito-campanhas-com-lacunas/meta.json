@@ -1,0 +1,15 @@
+{
+  "title": "Quarenta e oito campanhas com filtro e métrica ausente",
+  "useCase": "Marketing, 2026-T3: entre 48 campanhas, quais combinam CPL baixo com taxa de agenda alta, sabendo que 9 ainda não têm ciclo medido?",
+  "demonstrates": [
+    "Seleção por faixa num eixo, em estado React, que acende as campanhas dentro dela",
+    "Fora da seleção em --text-muted e contagem 7 de 48 selecionadas",
+    "Métrica ausente quebra o path, com marcador vazado na faixa sem dado abaixo do eixo",
+    "Linha de leitura: 9 de 48 campanhas sem ciclo medido",
+    "Estado vazio com role status quando a seleção não encontra campanha",
+    "Limites da faixa como role slider, com arrasto, setas, Home e End"
+  ],
+  "canvas": { "width": 960, "height": 454 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta das linhas escritas. O caso de uso tem 131 caracteres e cabe em uma linha a 894 px (limite seguro de 153), então o corpo desta moldura mede 894 x 335,5 px, e o viewBox do SVG repete esse número para a escala sair 1 (GEO-18). Linhas escritas: 1 de leitura (base em 13), 1 de título de eixo e de título da lista (40), 1 de polaridade (54), 1 de máximo (70), 1 de mínimo (14 px abaixo do pé) e a faixa de ausência (22 px). Sobram 219,5 px de eixo (de 76 a 295,5) para 48 linhas; o preset largo (960 x 400) deixaria 165,5 px. Na largura, a lista das selecionadas toma 236 px (14 de marcador, até 105 de nome, até 103 de taxa com volume) e os 4 eixos ficam a 171 px um do outro. DESVIO DECLARADO 1, esmaecimento. A especificação pede as campanhas fora da seleção esmaecidas; a ACE-5 proíbe opacidade que derrube a marca abaixo de 3:1 e --line-strong não chega lá nem opaco (1,79:1 e 1,83:1) e sem valor escrito na linha a 17.2 não o admite (TOK-5). O contrato vence: fora da seleção vai em --text-muted OPACO, 1 px, medido no pixel em 5,21:1 e 5,37:1 contra o cartão. MEDIDO MARCA CONTRA MARCA (TOK-9): --chart-1 contra --text-muted dá 1,82:1 e 1,12:1, então a seleção se separa por 2 px e pelo revestimento em --surface-raised por baixo de cada linha (traço de 5 px), que mede 9,50:1 e 6,00:1 contra --chart-1 (TOK-4). DESVIO DECLARADO 2, eixos. O caso de uso cita CPL, taxa de agenda e ciclo; o quarto eixo é comparecimento, e não win rate, porque campanha sem negócio ganho teria win rate de 0,0% por construção e a ausência do ciclo deixaria de ser independente. AUSÊNCIA: 9 campanhas têm cycleDays nulo; o anel vazado delas fica em --text-muted mesmo fora da seleção, porque marca de exceção em --line-strong não se vê, e em --chart-1 com 2 px nas 2 selecionadas. ZERO E AUSÊNCIA na mesma linha: Portal setorial 07 marcou 0 de 12 agendas, toca o pé do eixo de taxa de agenda, e não tem comparecimento nem ciclo. INTERAÇÃO que o preview não mostra: os dois limites são role slider com arrasto e teclado; seleção vazia troca a lista por um bloco role status; acima de 14 selecionadas a lista escreve quantas ficaram de fora. Os limites só são escritos ao lado do eixo quando ele é o primeiro, onde a margem está livre. GUARDAS QUE SE CALAM: ESPESSURA-MARCA sai sem marca de barra; a conferência do traço é do olho, nos dois temas."
+}

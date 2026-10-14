@@ -1,0 +1,75 @@
+{
+  "slug": "08_hierarchical-edge-bundling",
+  "nome": "Hierarchical edge bundling",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Folhas de uma hierarquia dispostas num círculo e agrupadas pelo pai, com as ligações entre folhas curvadas ao longo do caminho da hierarquia; ligações com rota parecida viram feixes que se abrem nas pontas. As folhas saem do layout radial de dendrograma da família 12. Para cada ligação, os pontos de controle são as posições dos ancestrais no caminho da origem até o ancestral comum e de volta ao destino; a tensão β desloca cada ponto em direção à reta entre origem e destino, P' = β·P + (1 - β)·(P0 + t·(Pn - P0)), e a curva é uma B-spline cúbica uniforme convertida em segmentos de Bézier cúbica, repetindo o primeiro e o último ponto para a curva tocar a folha. Exige hierarquia real; tensão perto de 1 junta tudo num feixe só e perto de 0 volta a ser reta, então começa em 0,85. O hover é obrigatório, com uma cor para entrada e outra para saída.",
+  "quando_usar": [
+    "Ligações entre folhas de uma hierarquia real: fontes agrupadas por sistema e indicadores por dashboard",
+    "Procedência com dezenas de ligações em que o arc diagram cruzaria arcos demais",
+    "Entre cerca de 30 e 120 folhas num círculo, com rótulo girado em cada folha",
+    "Leitura de risco: quais folhas de um grupo dependem de uma folha de outro grupo",
+    "Painel exploratório em que o hover separa dependência de entrada e de saída"
+  ],
+  "quando_evitar": [
+    "Dado sem hierarquia: o feixe não tem rota; use o grafo por forças (27/04) ou a matriz (27/01)",
+    "Poucas ligações com rótulo que precisa ser lido na horizontal: use o arc diagram (27/05)",
+    "Leitura de peso exato por par: use a matriz de adjacência (27/01)",
+    "A hierarquia em si é a mensagem, sem ligação entre folhas: use a árvore e dendrograma (12/07_arvore-e-dendrograma)",
+    "Visual estático sem hover e sem lista de apoio: o feixe sozinho não diz quem liga a quem"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_procedencia-fontes-e-indicadores",
+      "titulo": "De que fontes cada indicador depende",
+      "caso_de_uso": "Diretoria: como 18 fontes de dado fictícias, por sistema, alimentam 40 indicadores agrupados por dashboard.",
+      "o_que_demonstra": [
+        "Layout radial de dendrograma com folhas agrupadas pelo pai e vão entre grupos",
+        "Caminho pelo ancestral comum convertido em B-spline e depois em Bézier cúbica",
+        "Tensão fixa em 0,85 declarada no rodapé",
+        "Feixes em var(--line-strong) com opacidade baixa e grupos rotulados fora do círculo",
+        "Rótulos girados pelo ângulo e virados 180 graus na metade esquerda"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_indicadores-que-caem-sem-o-formulario",
+      "titulo": "O que cai se o formulário do site parar",
+      "caso_de_uso": "Diretoria: quais dos 40 indicadores fictícios dependem da fonte formulário do site e param se ela falhar.",
+      "o_que_demonstra": [
+        "Fonte selecionada por highlightId com os 11 dependentes em var(--negative)",
+        "Demais feixes com opacidade 0,2, sem sumir da forma",
+        "Ícone lucide Unplug junto do nome da fonte, para o alerta não depender só da cor",
+        "Lista lateral dos 11 indicadores agrupados por dashboard",
+        "Contagem escrita, como 11 de 40 indicadores dependem desta fonte"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_dependencia-dentro-do-mesmo-dashboard",
+      "titulo": "Dependências dentro do mesmo dashboard",
+      "caso_de_uso": "Diretoria: indicadores fictícios que usam outro indicador do mesmo dashboard, cuja curva curta some no meio dos feixes.",
+      "o_que_demonstra": [
+        "Caminho que sobe só até o pai comum e gera curva curta perto do perímetro",
+        "Ligação interna em var(--chart-3), distinta dos feixes entre grupos",
+        "Entrada e saída do nó selecionado em duas cores, com legenda dos dois sentidos",
+        "Curva interna desenhada por último para não ficar sob os feixes",
+        "Contagem de dependências internas escrita por dashboard"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_tensao-baixa-e-alta-lado-a-lado",
+      "titulo": "Efeito da tensão no feixe",
+      "caso_de_uso": "Diretoria: por que a tensão do feixe é uma escolha declarada, com a mesma procedência fictícia em tensão 0,3 e 0,95.",
+      "o_que_demonstra": [
+        "Dois pequenos múltiplos com as mesmas folhas e só a tensão diferente",
+        "Tensão perto de 0 que volta às retas e perto de 1 que junta tudo num feixe",
+        "Valor de β escrito no título de cada painel",
+        "Cálculo da curva reaproveitado por uma função pura com β como parâmetro",
+        "Nota escrita de que o padrão do Farol é 0,85 com controle exposto"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

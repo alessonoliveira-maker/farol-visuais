@@ -1,0 +1,13 @@
+{
+  "title": "Perdas por motivo com fatia ativa",
+  "useCase": "Comercial: qual motivo explica a maior parte das 212 perdas do trimestre, com nome, contagem e percentual no centro.",
+  "demonstrates": [
+    "Estado ativo por shape que lê isActive, sem o activeIndex removido no Recharts 3",
+    "Maior motivo aberto ativo por padrão; o centro alterna do total ao item",
+    "Setor ativo com raio 8 px maior e nome na legenda em peso 700",
+    "Atraso de saída de 100 ms para o centro não piscar ao cruzar o separador",
+    "Legenda e teclado também ativam a fatia, não só o ponteiro"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

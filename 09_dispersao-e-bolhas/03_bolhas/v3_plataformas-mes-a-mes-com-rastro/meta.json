@@ -1,0 +1,14 @@
+{
+  "title": "Plataformas de mídia mês a mês",
+  "useCase": "Como CPL, qualificação e investimento das três plataformas andaram em 12 meses de 2025?",
+  "demonstrates": [
+    "Estado de mês trocando os dados com a bolha casada pelo id da plataforma",
+    "Rastro dos meses anteriores da selecionada em pontos de raio fixo",
+    "Cor categórica por slot fixo do dado, na ordem 1, 3, 6 da COR-8",
+    "Régua de tamanho comum aos 12 meses, com domínio do ZAxis no máximo do ano",
+    "Mês exibido escrito no canto vazio do plano, sem depender de animação"
+  ],
+  "canvas": { "width": 960, "height": 530 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: além do plano o cartão escreve três faixas, a leitura de 12 px acima, a fileira dos 12 meses e a régua de tamanho com círculo de 34 px, cerca de 100 px. A conta é 126 px de moldura mais 100 px de texto e controle mais 304 px de plano. O domínio do ZAxis é o máximo do ANO e não o do mês, senão a mesma bolha mudaria de tamanho só porque a vizinha encolheu, e a régua comum aos 12 meses perderia sentido; o último degrau dela é esse máximo observado, pela ROT-5b. Nenhuma opacidade em marca: medido contra o cartão, chart-1 dá 9,50:1 no escuro e 6,00:1 no claro, chart-3 dá 6,47:1 e 6,18:1, chart-6 dá 7,39:1 e 5,39:1, todos acima do piso de 3:1 da ACE-5, e o contorno de 1 px na cor do cartão é o que separa vizinhas quando duas bolhas se cruzam, pela COR-5 e pela TOK-4. Três marcas dispensam legenda categórica, então o nome de cada plataforma vai em rótulo direto com halo, e o peso fica em 600 porque nenhuma delas é destaque, o que deixa o teto de dois elementos da TIP-3 sem uso. A linha de eixo herdada de AXIS_PROPS sai desligada, pela exceção da EIX-3 para a família 09. A plataforma do rastro é prop e não estado, porque a seleção de entidade no Farol vem da página; o estado interno é só o mês, que é o que esta versão existe para demonstrar."
+}

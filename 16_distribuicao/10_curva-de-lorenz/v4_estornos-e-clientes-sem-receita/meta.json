@@ -1,0 +1,13 @@
+{
+  "title": "Concentração com estornos e clientes sem receita",
+  "useCase": "Como desenhar a concentração quando há 23 estornos e 30% dos clientes não geraram receita no período?",
+  "demonstrates": [
+    "Lançamentos negativos fora da conta e contados em nota de rodapé",
+    "Clientes com receita zero mantidos, com a curva rente ao eixo X até 30%",
+    "Nota de que tirar os zeros esconderia a desigualdade",
+    "Com menos de 20 entidades, pontos no lugar da curva e Gini não publicado"
+  ],
+  "canvas": { "width": 480, "height": 540 },
+  "frame": "card",
+  "notes": "Canvas por número porque o quadrado de 480 por 480 não fecha: legenda de uma linha mais três notas de rodapé deixariam o plano abaixo de 230 px (GEO-1, GEO-14), e 540 de altura devolve cerca de 290 px de plano. O ramo de menos de 20 clientes, com pontos no lugar da linha e Gini não publicado, existe no código e é acionado por data com menos de 20 receitas não negativas; o dado padrão tem 377 clientes e não o desenha. O Gini sem os zeros é calculado do mesmo dado, para a nota dizer o que se perderia ao tirá-los."
+}

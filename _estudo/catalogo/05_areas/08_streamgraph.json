@@ -1,0 +1,70 @@
+{
+  "slug": "08_streamgraph",
+  "nome": "Streamgraph",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Área empilhada deslocada em torno de um eixo central (stackOffset wiggle ou silhouette), de forma orgânica e sem eixo y numérico. Serve para a impressão geral de sazonalidade e de peso relativo entre muitas categorias; o valor exato vai nos rótulos das maiores camadas e na dica. A ordem das camadas é decisão de dado tomada em TypeScript, porque o Recharts empilha na ordem dos filhos. Absorve o streamgraph ordenado, que reordena as camadas por tamanho a cada período e por isso sai do Recharts para SVG puro.",
+  "quando_usar": [
+    "De 6 a cerca de 30 categorias com padrão temporal (sazonalidade, picos) em 30 ou mais períodos.",
+    "Visão exploratória de onde o volume se concentrou ao longo do ano.",
+    "Mudança na ordem de tamanho entre categorias como a própria história, na variação ordenada."
+  ],
+  "quando_evitar": [
+    "Leitura de valor exato ou comparação fina entre camadas: área empilhada (02_area-empilhada) ou pequenos múltiplos.",
+    "Dado sem padrão temporal: vira uma faixa monótona sem leitura.",
+    "Valores negativos: a forma só aceita positivos.",
+    "Tela estática sem rótulo nas camadas maiores: a forma perde o sentido sem o nome.",
+    "Poucos períodos na variação ordenada: bump chart (04_linhas/08_bump-chart)."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-por-campanha-no-ano",
+      "titulo": "Leads por campanha ao longo do ano",
+      "caso_de_uso": "Ver em que semanas do ano as campanhas fictícias concentraram a geração de leads e qual delas pesou mais.",
+      "o_que_demonstra": [
+        "AreaChart com stackOffset silhouette, mesmo stackId e YAxis escondido",
+        "Seis campanhas coloridas e Outras (n=6) em neutro (COR-4)",
+        "Ordem das camadas decidida em TypeScript: maiores ao centro, alternando lados",
+        "Rótulo dentro das camadas maiores com o total de leads do ano"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_picos-sazonais-com-destaque",
+      "titulo": "Picos sazonais com campanha em destaque",
+      "caso_de_uso": "Explicar os dois picos do ano e mostrar que uma única campanha carregou quase todo o segundo.",
+      "o_que_demonstra": [
+        "Campanha em destaque em chart-1 e as demais em line-strong com separador",
+        "Destaque por prop highlightId, visível no preview sem depender de hover",
+        "Dois picos anotados com texto curto e valor (ANO-1, ANO-2)",
+        "Rótulo da campanha em destaque em peso 700 como segundo canal (COR-2)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_origens-ordenadas-por-tamanho",
+      "titulo": "Origens de lead ordenadas por tamanho",
+      "caso_de_uso": "Mostrar como a ordem de tamanho de 10 origens de lead mudou em 24 meses, com a maior sempre ao centro.",
+      "o_que_demonstra": [
+        "SVG puro: ordem e bordas de cada camada calculadas por período em TypeScript",
+        "Camadas ligadas por curvas cúbicas horizontais entre períodos",
+        "Ordem de pintura pela ordem de destino para não abrir buracos nas trocas",
+        "Cor fixa por origem em todos os períodos (COR-3)",
+        "Empate desempatado pela ordem do período anterior, regra declarada"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_criativos-de-vida-curta",
+      "titulo": "Criativos que entram e saem no período",
+      "caso_de_uso": "Evitar que dezenas de criativos de vida curta virem camadas finas e ilegíveis na forma do ano.",
+      "o_que_demonstra": [
+        "Agrupamento em Outros abaixo de 3% de participação, com a regra no rodapé",
+        "Contagem de criativos agrupados escrita no rótulo de Outros",
+        "Criativo fora do ar como zero verdadeiro, não como lacuna",
+        "Pontos agregados por semana e animação desligada para 30 camadas"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Maior sequência fora do SLA",
+  "useCase": "Qual foi a maior sequência de semanas seguidas fora do SLA, e quando ela terminou?",
+  "demonstrates": [
+    "Maior sequência de derrotas calculada em função pura sobre o array",
+    "Colchete de 1 px sob a sequência em text muted e rótulo de 11 px com a contagem",
+    "Rótulo ancorado no início da sequência, ou no fim quando ela começa à direita",
+    "Início e fim da sequência por formatDate na frase acessível",
+    "Empate como traço central de 2 px que quebra a sequência"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvios do catálogo. 1) O empate é um traço de 2 px em text muted, e não em line strong: line strong mede 1,79:1 contra o cartão e um traço de 2 px nessa cor some no tamanho do cartão; text muted mede 5,2:1 e a ACE-3 pede 3:1 para marca de dado. 2) O rótulo da sequência fica sob o colchete, abaixo de todos os blocos, e não cruza a linha central, então a ROT-7 não pede halo. A 18ª semana é empate e quebra a série: 3 derrotas, empate, 3 derrotas, e a maior sequência é a de 6 semanas seguidas, de 18/05/2026 a 22/06/2026. O SVG leva viewBox de 560 x 36 e preserveAspectRatio none: só as marcas esticam, e colchete e rótulo ficam em HTML, posicionados em fração exata do viewBox."
+}

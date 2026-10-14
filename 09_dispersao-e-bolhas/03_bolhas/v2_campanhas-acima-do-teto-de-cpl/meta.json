@@ -1,0 +1,14 @@
+{
+  "title": "Campanhas acima do teto de CPL",
+  "useCase": "Quais campanhas passam do teto de CPL e quanto investimento elas carregam? 24 campanhas do trimestre.",
+  "demonstrates": [
+    "Destaque em cor cheia e o resto em neutro, desenhado por último para ficar por cima",
+    "ReferenceLine de teto e de meta com extendDomain e rótulo em margem reservada",
+    "Régua de tamanho com dois degraus redondos mais o máximo observado",
+    "Anotação com o investimento somado das campanhas acima do teto",
+    "Anticolisão de rótulo com deslocamento derivado do raio de cada bolha"
+  ],
+  "canvas": { "width": 960, "height": 500 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: além do plano o cartão escreve três linhas, a leitura de 12 px acima, a régua de tamanho com círculo de 34 px e a anotação de 11 px abaixo, cerca de 89 px; e a largura de 640 não deixa os três rótulos diretos saírem de cima das bolhas. A conta é 126 px de moldura mais 89 px de texto mais 285 px de plano. Três colisões com a especificação do catálogo, e nas três o CONTRATO vence. Primeira, a opacidade: bolha translúcida existe para mostrar a pilha, e medido aqui o token chart-1 a 0,55 compõe para 3,76:1 no tema escuro e 2,43:1 no claro, abaixo do piso de 3:1 da ACE-5; a cor sai cheia, medida em 9,50:1 no escuro e 6,00:1 no claro, com contorno de 1 px na cor do cartão separando vizinhas. Segunda, o peso 700 que a especificação pede para os rótulos das três campanhas acima do teto: a TIP-3 dá dois elementos por visual, então só a de maior CPL leva 700 e as outras duas ficam em 600. Terceira, a régua de tamanho pedida em 5 mil, 20 mil e 50 mil: pela ROT-5b o último degrau é o máximo observado, e ficou 5 mil, 20 mil e o máximo do recorte. O neutro é text-muted e não o line-strong da 17.2, porque a isenção de contraste daquele token vale só com o valor escrito junto da marca e aqui 21 bolhas não têm valor escrito; medido em 5,21:1 no escuro e 5,37:1 no claro, contra 1,79:1 e 1,83:1 do line-strong. A linha de eixo herdada de AXIS_PROPS sai desligada, pela exceção da EIX-3 para a família 09, que pede grade nos dois sentidos sem tique e sem linha de eixo."
+}

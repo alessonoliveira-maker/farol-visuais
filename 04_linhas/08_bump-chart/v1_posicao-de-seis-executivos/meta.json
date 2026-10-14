@@ -1,0 +1,12 @@
+{
+  "title": "Posição de seis executivos por receita trimestral",
+  "useCase": "Quem subiu e quem caiu no ranking de receita reconhecida nos 8 trimestres encerrados em 2026-06?",
+  "demonstrates": [
+    "YAxis reversa com domínio de 1 a 6 e tiques ordinais",
+    "Ranking calculado por trimestre em TypeScript com desempate estável",
+    "Dot próprio com o número da posição dentro do círculo",
+    "Nome do executivo nas duas pontas, sem legenda; valor absoluto só na dica"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

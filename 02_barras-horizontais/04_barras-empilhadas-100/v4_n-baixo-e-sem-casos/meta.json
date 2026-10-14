@@ -1,0 +1,13 @@
+{
+  "title": "Composição com n baixo e categoria sem casos",
+  "useCase": "Ler a composição de perdas sem confiar demais em quem tem 3 casos nem desenhar barra para quem não perdeu nada.",
+  "demonstrates": [
+    "Barra com n abaixo de 10 em opacidade reduzida e selo n baixo",
+    "Categoria com total zero escreve sem casos, sem divisão por zero",
+    "Categoria sem coleta escreve indisponível, separada de sem casos",
+    "Selo e opacidade calculados no seletor, não no shape"
+  ],
+  "canvas": { "width": 640, "height": 560 },
+  "frame": "card",
+  "notes": "Altura sai da conta da ESP-6: ROW_STEP de 64 px para os 5 squads, engrossando a marca para 20,48 px e passando o piso de 18 px do rótulo interno de 12 px."
+}

@@ -1,0 +1,108 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "03_colunas-empilhadas",
+  "versoes": {
+    "v1_leads-por-origem-com-total": {
+      "veredito": "aprovado",
+      "nota": "Pilha honesta, base fixa, legenda na ordem visual e total acima. Ressalvas nao bloqueantes: maxBarSize 40 acima do teto de 24 e o segmento de 9 leads em ago/26 fica coberto pelo contorno.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:50.385Z",
+      "impressao": "bd38e61e8bda8160445653a978883495f3c37157",
+      "arquivos": {
+        "Chart.tsx": "8a0d80c66d29ac96a5f3a6590dd977b4a5197798",
+        "data.ts": "2fb785c24c252cc2dd826d264c449e6d93e042aa",
+        "meta.json": "3aaa8b5e7336195ed438ee589670dc1e23c7c5d1"
+      }
+    },
+    "v2_custo-em-tres-camadas": {
+      "veredito": "aprovado",
+      "nota": "Doze meses legiveis, camada direta na base e linha de leitura calculada do dado. Ressalvas: perimetro migrou da dica para a legenda, declarado em notes; a grade cruza os rotulos de 188 e 189 sem halo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:54.917Z",
+      "impressao": "f34c6cab3debfe0520bd7b14b65374c638a177d1",
+      "arquivos": {
+        "Chart.tsx": "cb819d45fa2247838d9fdad77b1afede624df2c7",
+        "data.ts": "291bf1c6e13b3dce2afdeaaf6aca5bb39787f7ae",
+        "meta.json": "55c83dce5d1537a0430c06fed1ead602036d0235"
+      }
+    },
+    "v3_origens-com-cauda-longa": {
+      "veredito": "aprovado",
+      "nota": "Cauda em Outros n=9, ausencia vazada por ultimo e slots 1,3,6,5,2,4 vindos do dado. Ressalvas: o modelo e com total e esta versao nao escreve total; maxBarSize 44 acima do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:59.995Z",
+      "impressao": "c2d80b2bd742d48cd9562aa0e610331a31947f1a",
+      "arquivos": {
+        "Chart.tsx": "2705f608e5c49c428638568fcd3b72ac0d3530a0",
+        "data.ts": "9be7cbc7a94d87a67270cdd409c6cc2011ab87bd",
+        "meta.json": "d08e15826eb3dcfc45a8d94510771652abb35517"
+      }
+    },
+    "v4_orcado-e-realizado-por-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Par orcado em contorno e realizado solido, trimestre sem orcamento declarado em texto e nao como zero. Ressalvas: anotacao presa ao literal T3/2026; barCategoryGap 20% abaixo do minimo de 30%.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:22:05.019Z",
+      "impressao": "6e5c3d8e5ab94151f0af834894dee41fe2452aa9",
+      "arquivos": {
+        "Chart.tsx": "eef06fe82aaffd3fef16f4a252dc58c21260194e",
+        "data.ts": "a2db88e675a38dd45148926aee781aaed3c5529d",
+        "meta.json": "67a1940d577642e3ce1f379b457240d48522c300"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-por-origem-com-total",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta, base fixa, legenda na ordem visual e total acima. Ressalvas nao bloqueantes: maxBarSize 40 acima do teto de 24 e o segmento de 9 leads em ago/26 fica coberto pelo contorno.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:50.385Z",
+      "impressao": "bd38e61e8bda8160445653a978883495f3c37157",
+      "arquivos": {
+        "Chart.tsx": "8a0d80c66d29ac96a5f3a6590dd977b4a5197798",
+        "data.ts": "2fb785c24c252cc2dd826d264c449e6d93e042aa",
+        "meta.json": "3aaa8b5e7336195ed438ee589670dc1e23c7c5d1"
+      }
+    },
+    {
+      "versao": "v2_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Doze meses legiveis, camada direta na base e linha de leitura calculada do dado. Ressalvas: perimetro migrou da dica para a legenda, declarado em notes; a grade cruza os rotulos de 188 e 189 sem halo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:54.917Z",
+      "impressao": "f34c6cab3debfe0520bd7b14b65374c638a177d1",
+      "arquivos": {
+        "Chart.tsx": "cb819d45fa2247838d9fdad77b1afede624df2c7",
+        "data.ts": "291bf1c6e13b3dce2afdeaaf6aca5bb39787f7ae",
+        "meta.json": "55c83dce5d1537a0430c06fed1ead602036d0235"
+      }
+    },
+    {
+      "versao": "v3_origens-com-cauda-longa",
+      "veredito": "aprovado",
+      "nota": "Cauda em Outros n=9, ausencia vazada por ultimo e slots 1,3,6,5,2,4 vindos do dado. Ressalvas: o modelo e com total e esta versao nao escreve total; maxBarSize 44 acima do teto.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:21:59.995Z",
+      "impressao": "c2d80b2bd742d48cd9562aa0e610331a31947f1a",
+      "arquivos": {
+        "Chart.tsx": "2705f608e5c49c428638568fcd3b72ac0d3530a0",
+        "data.ts": "9be7cbc7a94d87a67270cdd409c6cc2011ab87bd",
+        "meta.json": "d08e15826eb3dcfc45a8d94510771652abb35517"
+      }
+    },
+    {
+      "versao": "v4_orcado-e-realizado-por-trimestre",
+      "veredito": "aprovado",
+      "nota": "Par orcado em contorno e realizado solido, trimestre sem orcamento declarado em texto e nao como zero. Ressalvas: anotacao presa ao literal T3/2026; barCategoryGap 20% abaixo do minimo de 30%.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:22:05.019Z",
+      "impressao": "6e5c3d8e5ab94151f0af834894dee41fe2452aa9",
+      "arquivos": {
+        "Chart.tsx": "eef06fe82aaffd3fef16f4a252dc58c21260194e",
+        "data.ts": "a2db88e675a38dd45148926aee781aaed3c5529d",
+        "meta.json": "67a1940d577642e3ce1f379b457240d48522c300"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Variação de volume e qualificação por origem",
+  "useCase": "De agosto para setembro, quais das 22 origens de lead cresceram em volume e perderam qualificação?",
+  "demonstrates": [
+    "Domínio simétrico em torno do zero calculado em TypeScript, com teto para extremos",
+    "Ticks com sinal explícito e unidades separadas: % no volume, p.p. na taxa",
+    "Origem com +480% presa na borda, com marca de fora da escala e o valor real",
+    "Base mínima de 30 leads: origens abaixo dela e origens novas vão para o rodapé",
+    "Rótulo de ação nos quatro quadrantes, sem verde e vermelho saturados"
+  ],
+  "canvas": { "width": 800, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset card (GEO-1): com 640x360 o corpo é 574 x 225 a 241 px e, descontados a linha de leitura, o rodapé, o topo de 36 px e os 44 px do eixo X com o título, o plano ficaria com cerca de 97 px para oito rótulos diretos; com 580 de altura passa de 280 px. O corte é o zero dos dois eixos (sem variação contra agosto), por isso não leva etiqueta de procedência: não é mediana nem premissa, é a aritmética da variação. Domínio simétrico: o X sai do maior módulo entre as origens dentro do teto de 100%, arredondado para cima por degraus fixos, e o Y igual em p.p.; a origem acima do teto é desenhada na borda como triângulo, com o valor real escrito. Variação do volume em % e da taxa em p.p., com o sinal escrito à mão sobre o valor absoluto (NUM-3), e a taxa em p.p. por formatDecimal, nunca por formatPercent (DAD-4). Região de ação (volume sobe, taxa cai) em chart-1 a 7% e as outras em text-muted a 4%, sem verde nem vermelho. A tinta da região não passa 3:1 contra o cartão (1,1:1), e o escape OPACIDADE-MARCA vale porque a região também é nomeada em texto e os cortes são linhas opacas."
+}

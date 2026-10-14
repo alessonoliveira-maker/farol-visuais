@@ -1,0 +1,73 @@
+{
+  "slug": "04_kpi-com-faixa",
+  "nome": "KPI com faixa de incerteza ou distribuição",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Número de cenário, projeção ou tempo de cauda longa exibido como intervalo e não como ponto: a faixa escrita é o número principal e uma régua em SVG puro mostra a largura relativa contra um domínio declarado, o ponto central discreto e a referência. Absorve a faixa de incerteza de cenários da Diretoria e a distribuição resumida em quartis, mediana e p90 para tempos e valores assimétricos.",
+  "quando_usar": [
+    "Forecast, cenário ou projeção da Diretoria, em que publicar o ponto médio vira compromisso.",
+    "Três cenários, conservador, base e otimista, com a indicação de qual deles virou meta.",
+    "Tempos e valores assimétricos, como tempo até o primeiro contato, ciclo de venda e ticket.",
+    "A mesma estatística comparada entre etapas, com réguas de teto declarado e SLA marcado."
+  ],
+  "quando_evitar": [
+    "Dado já realizado e fechado: KPI simples com variação (modelo 01).",
+    "Faixa que acompanha uma série no tempo: área com banda (família 05).",
+    "Distribuição completa com caixa, atípicos e forma: distribuição (família 16).",
+    "Menos de 30 observações para percentil alto: mediana com o par e p90 suprimido.",
+    "Faixa sem a premissa que a gerou: parece rigor sem ser; escrever a premissa ou não publicar."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-projetada-de-2027-em-faixa",
+      "titulo": "Receita projetada de 2027 em faixa",
+      "caso_de_uso": "Qual é a faixa provável da receita de 2027 com a capacidade atual da pré-vendas, em vez de um ponto único?",
+      "o_que_demonstra": [
+        "Faixa escrita como número principal: R$ 6,8 mi a R$ 8,3 mi",
+        "Escala com domínio declarado, de zero ao teto do plano, e não a própria faixa",
+        "Ponto central em traço fino, com peso visual menor que a faixa",
+        "Premissa escrita em uma linha e etiqueta PREMISSA no cartão",
+        "Geometria da régua em função pura, com viewBox fixo"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_tres-cenarios-e-o-que-virou-meta",
+      "titulo": "Três cenários com o que virou meta",
+      "caso_de_uso": "Entre os cenários conservador, base e otimista de 2027, qual virou meta e a que distância ficou dos outros?",
+      "o_que_demonstra": [
+        "Três marcas distinguíveis por forma e rótulo direto, não só por cor",
+        "Cenário escolhido como meta em --chart-1 e rótulo em peso 700",
+        "Rótulo com halo na cor da superfície quando cruza a faixa (ROT-7)",
+        "Texto calculado: a meta ficou no cenário base, 9% acima do conservador"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_tempos-da-esteira-em-mediana-e-p90",
+      "titulo": "Tempos da esteira em mediana e p90",
+      "caso_de_uso": "Quanto tempo leva cada etapa da esteira, do primeiro contato ao aceite do handoff, olhando a mediana e a cauda?",
+      "o_que_demonstra": [
+        "Três réguas comparáveis com teto declarado no p99, e não do mínimo ao máximo",
+        "Faixa interquartil preenchida, traço na mediana e marcador no p90",
+        "Mediana no número e estatística no rótulo, nunca tempo médio",
+        "SLA de cada etapa como traço vertical tracejado na régua",
+        "Tamanho da amostra escrito em cada cartão: n = 412 leads",
+        "Quantis em função pura com método de interpolação declarado"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v4_retorno-que-cruza-zero-e-amostra-pequena",
+      "titulo": "Retorno que cruza zero e amostra pequena",
+      "caso_de_uso": "Como mostrar um retorno projetado entre −0,3x e 1,4x e um ciclo de venda medido em só 14 oportunidades?",
+      "o_que_demonstra": [
+        "Faixa assimétrica cruzando zero, com a marca do zero em --line-strong",
+        "Sinal tipográfico no limite inferior e a frase: o cenário admite resultado negativo",
+        "p90 suprimido abaixo de n = 30, com o aviso amostra pequena",
+        "Oportunidades ainda abertas declaradas fora da conta: 9 sem desfecho"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

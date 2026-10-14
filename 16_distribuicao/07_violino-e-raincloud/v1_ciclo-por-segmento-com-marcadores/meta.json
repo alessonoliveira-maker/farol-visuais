@@ -1,0 +1,18 @@
+{
+  "title": "Ciclo por segmento com mediana e quartis",
+  "useCase": "Os três segmentos de clientes fecham em prazos de forma parecida, ou algum tem dois grupos de negócio?",
+  "demonstrates": [
+    "Caminho do violino em SVG puro, com uma banda de Silverman única para os três grupos",
+    "Largura por área: densidade máxima global, formas comparáveis entre grupos",
+    "Barra interna do intervalo interquartil e ponto de mediana com anel da cor da superfície",
+    "Largura do marcador limitada a 0,6 vez a largura do violino na mediana",
+    "Recorte no mínimo e no máximo observados e banda escrita no rodapé",
+    "Picos contados na curva e anotados só no grupo que tem mais de um"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 466
+  },
+  "frame": "card",
+  "notes": "O canvas sai do preset card por altura. A conta: três faixas de 64 px mais 8 de topo e 22 de eixo dão 222 px de desenho; a linha de leitura pede 16, o rodapé de quatro linhas pede 76 e os dois vãos pedem 16, somando 330 px de corpo, contra os 225 que o card entrega com o caso de uso em duas linhas; a altura de 466 dá 331. O svg é desenhado com viewBox de 574 px de largura, a largura do corpo, para a escala sair 1 e o texto de 11 px chegar com 11 px (GEO-18). A banda única é a mediana das bandas de Silverman dos três grupos: a menor alisaria pouco o grupo espalhado e a maior apagaria o segundo pico, e a escolha vai escrita no rodapé com o valor. O marcador é barra e ponto em text-primary com anel em surface-raised, porque nenhum token contrasta ao mesmo tempo com o preenchimento do violino e com o cartão (TOK-10); o catálogo pede o anel só no ponto, e a barra ganhou o mesmo pelo mesmo motivo. O dado tem um segmento com dois picos de propósito, perto de 42 e de 101 dias, e a contagem de picos sai da curva com piso de 40 por cento da maior densidade do grupo."
+}

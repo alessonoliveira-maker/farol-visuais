@@ -1,0 +1,15 @@
+{
+  "title": "Ciclo de fechamento em faixas de 7 dias",
+  "useCase": "Qual a forma do ciclo das oportunidades ganhas no ano, e não só a média?",
+  "demonstrates": [
+    "Bin de 7 dias vindo da métrica, escrito no rodapé e imune ao filtro",
+    "Faixa vazia mantida no array com contagem zero e marcada na base",
+    "Barras encostadas com barCategoryGap zero, que é o que separa histograma de barra",
+    "Eixo Y nomeado como oportunidades, para altura não ser lida como dinheiro",
+    "Domínio fixo de 0 a 210 dias, com a faixa vazia da direita assumida",
+    "Tooltip no formato 42 a 49 dias, 22 oportunidades, no lugar de center 45,5"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O data.ts entrega uma observação por oportunidade, não os bins contados, e quem bina é o componente: assim trocar a largura do bin não exige voltar à origem do dado. A barra se apoia no centro do bin, e não na borda esquerda, porque com XAxis numérico o Recharts centra a barra no valor e a borda deslocaria o desenho meio bin para a esquerda. A segunda série de Bar existe só para desenhar o traço de base das faixas vazias internas: barra de altura zero não pinta nada, e sem a marca o vão fica indistinguível de recorte do eixo. Média e mediana não entram aqui de propósito; são a v2 deste modelo."
+}

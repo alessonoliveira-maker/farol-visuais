@@ -1,0 +1,574 @@
+{
+  "slug": "03_colunas-verticais",
+  "nome": "Colunas verticais",
+  "modelos": [
+    {
+      "slug": "01_colunas-simples",
+      "nome": "Colunas simples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma coluna por período ou por categoria curta, todas nascendo do zero, lado a lado na ordem do tempo. É a forma padrão para responder quanto entrou em cada período e a base dos outros modelos da família. Absorve duas variações do estudo: o eixo de tempo em dois níveis (semana sob o mês) e a anotação de evento (campanha no ar, regra nova).",
+      "quando_usar": [
+        "Uma medida por período discreto (semana, mês, trimestre), com até cerca de 30 períodos visíveis.",
+        "Poucas categorias curtas e não temporais em que a magnitude importa mais que a tendência.",
+        "Série em que um evento explica um degrau e precisa ficar marcado no próprio gráfico, com até três eventos na janela.",
+        "Série longa em que o eixo precisa mostrar a hierarquia do tempo: semanas sob o mês, meses sob o ano."
+      ],
+      "quando_evitar": [
+        "Rótulo de categoria longo, como motivo de perda ou nome de campanha: barras horizontais (02).",
+        "Tendência contínua em muitos períodos, sem interesse no volume de cada um: linhas (04).",
+        "Diferença que só aparece com o eixo começando acima de zero: ponto ou linha (17, 04).",
+        "Mais de três eventos na mesma janela: numerar e listar no rodapé, ou separar em outro visual.",
+        "Distribuição de uma variável contínua, com colunas que se tocam: histograma (16/01).",
+        "Coluna minúscula dentro de célula ou card, sem eixo: sparkbar (24/02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-por-mes",
+          "titulo": "Leads por mês nos últimos 12 meses",
+          "caso_de_uso": "Quanto entrou em cada mês e qual foi o maior mês, sem obrigar a ler as 12 colunas uma a uma?",
+          "o_que_demonstra": [
+            "BarChart nativo com domínio em zero, grade só horizontal e maxBarSize travado",
+            "Valor escrito só no maior mês e no último, não em todas as colunas",
+            "Série preenchida em TypeScript para o eixo ordinal não esconder mês faltante",
+            "Linha de leitura calculada do dado apontando o mês de pico"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_campanha-no-ar",
+          "titulo": "Leads por semana com a campanha marcada",
+          "caso_de_uso": "O degrau de volume nas últimas 16 semanas coincide com as semanas em que a campanha esteve no ar?",
+          "o_que_demonstra": [
+            "ReferenceArea em surface-sunken cobrindo as 6 semanas da campanha, com texto",
+            "ReferenceLine vertical na semana de estreia, com etiqueta acima da área de plotagem",
+            "Data do evento mapeada para a semana no dado, com a data exata guardada para a dica",
+            "Total do período da campanha escrito na faixa, no teto de duas anotações"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-semanais-em-dois-niveis",
+          "titulo": "Entradas semanais da pré-vendas em 26 semanas",
+          "caso_de_uso": "Qual a cadência semanal de entradas na pré-vendas em seis meses, sem perder em que mês cada semana caiu?",
+          "o_que_demonstra": [
+            "Dois XAxis com xAxisId: número da semana embaixo e mês em cima, uma vez por grupo",
+            "Rótulo do mês centralizado pela contagem real de semanas, com mês de 5 semanas",
+            "Separador entre meses por ReferenceLine vertical em line-subtle",
+            "maxBarSize 18 e tique do nível de baixo reduzido, sem rotação de texto",
+            "Semana corrente com rótulo em peso 700 e a palavra parcial"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_semana-sem-coleta",
+          "titulo": "Entradas semanais com semana sem coleta",
+          "caso_de_uso": "Como separar a semana que não teve coleta da semana que mediu zero, sem a série mentir sobre a cadência?",
+          "o_que_demonstra": [
+            "Período ausente preenchido com null antes do render, em vez de sumir do eixo",
+            "Marca vazada em text-muted com formatUnavailable no lugar da semana sem coleta",
+            "Zero medido desenhado como zero e escrito 0, diferente da ausência",
+            "Frase acessível que conta semanas medidas, zeradas e sem coleta"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_colunas-agrupadas",
+      "nome": "Colunas agrupadas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas ou três colunas lado a lado dentro de cada período, uma por série, sobre um eixo numérico único. Compara estados ou momentos da mesma medida: marcado contra realizado, ano corrente contra anterior, plataforma contra plataforma. A leitura degrada rápido acima de três séries por período.",
+      "quando_usar": [
+        "Duas ou três séries da mesma grandeza por período, em até 12 períodos.",
+        "A comparação entre as partes de cada período importa mais que o total do período.",
+        "Ano corrente contra ano anterior, com o ano antigo em neutro e o atual em destaque.",
+        "Séries que começam ou param no meio da janela, desde que a ausência fique dita em palavras."
+      ],
+      "quando_evitar": [
+        "Mais de três séries por período: small multiples (modelo 08) ou linhas (04).",
+        "Séries de ordem de grandeza diferente, como leads e vendas: painéis alinhados (08/03), nunca eixo duplo.",
+        "O total do período é a pergunta principal: colunas empilhadas com total (modelo 03).",
+        "Uma série é a referência da outra, como meta e realizado: colunas contra meta (modelo 06), que deixa o papel explícito.",
+        "Diferença entre as séries é a mensagem: painel de variação (08/06)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-marcadas-e-realizadas",
+          "titulo": "Agendas marcadas e realizadas por mês",
+          "caso_de_uso": "Em cada um dos últimos 6 meses, quantas agendas marcadas viraram reunião realizada?",
+          "o_que_demonstra": [
+            "Dois Bar irmãos sem stackId, com barGap curto e barCategoryGap entre 30% e 40%",
+            "Cor por slot fixo da série, nos slots 1 e 3, com legenda na ordem das colunas",
+            "Taxa de realização com volume na dica, por formatRateWithVolume",
+            "Tique de contagem com allowDecimals desligado e de 3 a 5 linhas de grade"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_ano-corrente-contra-anterior",
+          "titulo": "Receita reconhecida: 2026 contra 2025",
+          "caso_de_uso": "Em que meses o ano corrente se afastou do anterior, sem ler as 24 colunas uma a uma?",
+          "o_que_demonstra": [
+            "Ano anterior em neutro e ano corrente em chart-1: dois momentos, não duas coisas",
+            "Diferença anotada só no mês de maior distância, com a base nomeada na mesma linha",
+            "Meses de 2026 ainda não fechados sem coluna, em vez de coluna zerada",
+            "Tique de moeda por formatCurrencyAxis com largura do eixo em constante"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_leads-por-plataforma-de-midia",
+          "titulo": "Leads por plataforma de mídia paga",
+          "caso_de_uso": "Como se compara o volume mensal de leads das três plataformas de mídia paga e quanto cada uma somou no semestre?",
+          "o_que_demonstra": [
+            "Três Bar por mês nos slots 1, 3 e 6, com vão de 1,5 px entre colunas vizinhas",
+            "Rodapé em HTML com o total por plataforma, número à direita e algarismo tabular",
+            "maxBarSize ajustado para 18 colunas não virarem traço",
+            "Dica que lista as plataformas na ordem visual, não na alfabética"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_plataforma-que-estreou-em-maio",
+          "titulo": "Leads por plataforma com estreia em maio",
+          "caso_de_uso": "Como mostrar uma plataforma que só começou a rodar em maio sem sugerir que antes ela investiu e não trouxe nada?",
+          "o_que_demonstra": [
+            "Valor null antes da estreia: a coluna não existe, e zero medido continua desenhado",
+            "Nota curta junto da legenda com o mês de entrada da plataforma",
+            "Grupo com duas colunas mantém a largura das colunas, sem engordar as que sobraram",
+            "Frase acessível que separa meses sem operação de meses com zero leads"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_colunas-empilhadas",
+      "nome": "Colunas empilhadas com total",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma coluna por período dividida em segmentos empilhados, um por componente, com o total escrito acima. A altura responde quanto foi o período e os segmentos respondem de que isso é feito; só a base e o total têm referência comum. Absorve a variante agrupada e empilhada, com duas pilhas por período, como orçado e realizado.",
+      "quando_usar": [
+        "Total por período e sua composição, em até 6 componentes coloridos e até 12 períodos.",
+        "O componente que o leitor mais precisa acompanhar pode ficar encostado na base da pilha.",
+        "Cauda longa de componentes que aceita agrupamento em Outros com a contagem no rótulo.",
+        "Duas pilhas por período com os mesmos componentes, como orçado e realizado por trimestre."
+      ],
+      "quando_evitar": [
+        "A pergunta é a evolução de um componente do meio da pilha: small multiples (modelo 08) ou linhas (04).",
+        "Só o mix interessa e o tamanho não: colunas empilhadas 100% (modelo 04).",
+        "Decomposição de uma variação em contribuições passo a passo: cascata (19).",
+        "Componentes com sinais opostos, como entradas e saídas: colunas positivo e negativo (modelo 05).",
+        "Mais de duas pilhas por período: small multiples (modelo 08).",
+        "Total contra meta por período como mensagem principal: colunas contra meta (modelo 06)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-por-origem-com-total",
+          "titulo": "Leads por mês em três origens",
+          "caso_de_uso": "Quanto entrou em cada um dos últimos 6 meses e de quais origens veio esse volume?",
+          "o_que_demonstra": [
+            "Bar com o mesmo stackId e radius só no segmento do topo da pilha",
+            "Total somado no dado em TypeScript e escrito acima da coluna por LabelList",
+            "Legenda na ordem visual da pilha, lida de cima para baixo",
+            "Contorno surface-raised de 1,5 px separando segmentos vizinhos"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_custo-em-tres-camadas",
+          "titulo": "Custo mensal em três camadas",
+          "caso_de_uso": "Quanto custou cada mês e quanto desse custo é direto, rateio de time e estrutura, antes de discutir retorno?",
+          "o_que_demonstra": [
+            "Camada direta na base, a única comparável entre meses além do total",
+            "Dica que nomeia o perímetro de cada camada e o total acumulado até ela",
+            "Total em formatCurrencyCompact acima de 12 colunas e tique em formatCurrencyAxis",
+            "Linha de leitura com a participação da camada de estrutura no ano"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_origens-com-cauda-longa",
+          "titulo": "Leads por origem com cauda longa",
+          "caso_de_uso": "Como manter legível a composição mensal quando 14 origens disputam a pilha e parte dos leads chega sem origem?",
+          "o_que_demonstra": [
+            "Cinco maiores origens com cor e as nove menores em Outros (n=9), listadas na dica",
+            "Sem origem declarada em contorno vazado text-muted, visível, por último e fora de Outros",
+            "Componente zero no mês não desenha segmento nem entra na dica daquele mês",
+            "Mapa fixo de origem para slot vindo do dado, nunca da posição no ranking"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_orcado-e-realizado-por-trimestre",
+          "titulo": "Orçado e realizado por trimestre",
+          "caso_de_uso": "Em cada trimestre, o executado bateu com o plano e em qual linha de produto o desvio aconteceu?",
+          "o_que_demonstra": [
+            "Dois stackId por trimestre: orçado em contorno e realizado sólido, como plano e efetivo",
+            "Rótulo da pilha num segundo XAxis com xAxisId, abaixo do trimestre",
+            "Legenda em HTML: componente por cor e pilha por posição, sem entrada duplicada",
+            "Trimestre sem orçamento aprovado sem pilha de orçado e com a frase no lugar",
+            "Diferença total anotada acima do par, com a base nomeada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_colunas-empilhadas-100",
+      "nome": "Colunas empilhadas 100%",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada coluna é normalizada para a mesma altura, então o que se lê é o mix de cada período e não o tamanho. Ganha uma segunda base de comparação no topo, mas esconde o volume: um mês com 12 leads e outro com 900 ficam idênticos, e por isso o n de cada período aparece sempre. A normalização é feita no dado em TypeScript, com valor absoluto e percentual no mesmo objeto.",
+      "quando_usar": [
+        "O mix por período é a pergunta, em até 6 componentes coloridos e até 12 períodos.",
+        "Os componentes das pontas, encostados na base e no topo, são os que o leitor precisa acompanhar.",
+        "Um componente cruza um limiar de participação e o momento da virada é a mensagem.",
+        "Volumes por período diferentes, desde que o n de cada período esteja escrito."
+      ],
+      "quando_evitar": [
+        "O tamanho absoluto importa para a decisão: colunas empilhadas com total (modelo 03).",
+        "Um único período sem série de tempo: barra 100% (02) ou waffle (22).",
+        "Componentes do meio cuja evolução é a pergunta: small multiples (modelo 08).",
+        "Série dominada por períodos com amostra muito pequena: agregar o período ou mostrar taxa com volume.",
+        "Sem o n disponível: o gráfico vira decorativo; não publicar."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_mix-de-origem-com-n",
+          "titulo": "Mix de origem dos leads por mês",
+          "caso_de_uso": "Como a composição de origem dos leads mudou nos últimos 6 meses e quantos leads cada mês teve?",
+          "o_que_demonstra": [
+            "Normalização no dado, com valor absoluto e percentual no mesmo objeto para a dica",
+            "n de cada mês escrito acima da coluna com o substantivo",
+            "Percentuais inteiros que somam 100 pelo maior resto",
+            "Percentual fora da pilha, na legenda do último mês, porque texto sobre categórica reprova"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_origem-paga-passa-de-70",
+          "titulo": "Participação da origem paga no mix",
+          "caso_de_uso": "Em que mês a origem paga passou de 70% do mix de leads e o que isso significou em volume?",
+          "o_que_demonstra": [
+            "Origem paga na base em chart-1 e demais origens em neutro com contorno de separação",
+            "ReferenceLine em 70% com rótulo na margem, lida contra a base comum",
+            "Anotação curta ancorada no mês em que o segmento cruza o limiar",
+            "Percentual dentro do segmento em accent-cyan-contrast sobre chart-1"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_perdas-por-motivo-por-trimestre",
+          "titulo": "Perdas por motivo em 8 trimestres",
+          "caso_de_uso": "Quais motivos de perda ganharam peso trimestre a trimestre, e quantas perdas há por trás de cada coluna?",
+          "o_que_demonstra": [
+            "Motivos ordenados pelo peso no trimestre mais recente, em ordem fixa em todas as colunas",
+            "Três motivos menores em Outros (n=3) e Sem motivo registrado vazado, por último",
+            "n de perdas por trimestre numa linha abaixo do eixo, com algarismo tabular",
+            "Legenda lateral com percentual do último trimestre em coluna à direita"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_amostra-pequena-e-sem-registro",
+          "titulo": "Mix de perdas com amostra pequena",
+          "caso_de_uso": "Como impedir que um trimestre com 4 perdas pese igual a um de 90 e que um trimestre sem registro vire coluna cheia?",
+          "o_que_demonstra": [
+            "Trimestre abaixo do piso com marca em opacidade reduzida e a palavra amostra pequena",
+            "Trimestre sem perda registrada vazio, com a frase sem registro, nunca coluna de Outros",
+            "Piso de amostra em constante nomeada, aplicado no dado e dito na frase acessível",
+            "Taxa com volume na dica por formatRateWithVolume"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_colunas-positivo-e-negativo",
+      "nome": "Colunas positivo e negativo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Colunas que sobem quando o valor é positivo e descem quando é negativo, ancoradas numa linha de zero desenhada. É a forma do saldo, da variação e do desvio; a cor sai de uma função pura que lê a polaridade da métrica, não o sinal cru, via shape do Bar. Absorve a pilha por sinal: entradas empilhadas para cima, saídas para baixo e o líquido marcado com mais peso que os segmentos.",
+      "quando_usar": [
+        "Saldo ou variação com sinal por período, em até 26 períodos.",
+        "Desvio contra uma referência fixa, como a média do semestre, expresso como diferença.",
+        "Entradas e saídas por período com seus componentes, quando o líquido também precisa ser lido.",
+        "Métrica com polaridade definida, para a cor dizer bom ou ruim acompanhada de sinal."
+      ],
+      "quando_evitar": [
+        "Todos os valores positivos: colunas simples (modelo 01).",
+        "Métrica sem polaridade definida: sem verde nem vermelho, só text-secondary e sinal.",
+        "Variação percentual sobre base pequena ou zero: diferença absoluta ou painel de variação (08/06).",
+        "Só o saldo interessa: sem pilha por sinal, que obriga a subtrair comprimentos de cabeça.",
+        "Decomposição passo a passo de um total entre dois momentos: cascata (19)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_saldo-mensal-de-clientes",
+          "titulo": "Saldo mensal de clientes",
+          "caso_de_uso": "Em quais dos últimos 12 meses entraram mais clientes do que saíram?",
+          "o_que_demonstra": [
+            "Bar com shape escolhendo a cor por uma função pura de polaridade, não pelo sinal cru",
+            "ReferenceLine em zero com line-strong sólido, mais forte que a grade",
+            "Valor acima da coluna positiva e abaixo da negativa, com sinal + e −",
+            "Tique de mês fora da área das colunas que descem"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cpl-qualificado-contra-media",
+          "titulo": "CPL qualificado contra a média do semestre",
+          "caso_de_uso": "Em que meses o custo por lead qualificado ficou acima da média do semestre, onde subir é ruim?",
+          "o_que_demonstra": [
+            "Polaridade invertida: coluna que desce é boa e ganha positive, com a regra escrita",
+            "Domínio simétrico calculado para um mês extremo não espremer os demais",
+            "ReferenceArea em surface-sunken nos três meses seguidos acima da média, com texto",
+            "Média nomeada na linha de leitura, em formatCurrencyCompact"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_movimento-do-funil-por-sinal",
+          "titulo": "Movimento semanal do funil de pré-vendas",
+          "caso_de_uso": "O que entrou, o que saiu e o que sobrou no funil de pré-vendas em cada uma das últimas 13 semanas?",
+          "o_que_demonstra": [
+            "Pilha por sinal nativa: o mesmo stackId empilha entradas para cima e saídas para baixo",
+            "Líquido marcado por Line num ComposedChart, com mais peso visual que os segmentos",
+            "Componentes principais encostados no zero dos dois lados, em ordem espelhada",
+            "Dica em três blocos: entradas, saídas e líquido",
+            "Semana só de saídas com a nota sem entradas na semana"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_saldo-zero-e-mes-sem-dado",
+          "titulo": "Saldo com zero medido e mês sem dado",
+          "caso_de_uso": "Como separar o mês em que o saldo foi exatamente zero do mês que não teve apuração?",
+          "o_que_demonstra": [
+            "Saldo zero desenhado como traço de 2 px sobre a linha de zero e escrito 0",
+            "Mês sem dado vazio, com formatUnavailable no lugar do valor",
+            "Domínio que termina na linha de grade acima do maior valor absoluto, dos dois lados",
+            "Frase acessível que conta meses positivos, negativos, zerados e sem dado"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_colunas-contra-meta-ou-limiar",
+      "nome": "Colunas contra meta ou limiar",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Colunas de período lidas contra uma referência: meta, média, teto de capacidade ou forecast. A referência entra de três jeitos: linha fixa ou em degraus sobre as colunas; corte que separa o excedente acima do limiar num segmento próprio; ou coluna fantasma, mais larga e em contorno, atrás do realizado. Absorve a linha de meta ou média, o excedente, as colunas sobrepostas e a coluna fantasma.",
+      "quando_usar": [
+        "Uma medida por período com referência única ou em degraus, em até 12 períodos.",
+        "Carga contra teto de capacidade, quando importa quanto passou e não só se passou.",
+        "Realizado contra meta ou forecast por período, com a referência atrás do realizado.",
+        "Referência que muda no meio da série, como teto que sobe com contratação ou meta revisada."
+      ],
+      "quando_evitar": [
+        "Uma medida só contra a meta, sem série de períodos: progresso e meta (13).",
+        "Duas medidas sem relação de referência entre si: colunas agrupadas (modelo 02).",
+        "A diferença para a referência é a mensagem principal: painel de variação (08/06) ou colunas positivo e negativo (modelo 05).",
+        "Média que incluiria o período corrente parcial: calcular só sobre períodos fechados ou não publicar a linha.",
+        "Linha de meta e linha de média no mesmo gráfico sem traços distintos: escolher uma."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-contra-meta-mensal",
+          "titulo": "Receita reconhecida contra a meta mensal",
+          "caso_de_uso": "Em quantos meses a receita reconhecida bateu a meta mensal e em quais ficou abaixo?",
+          "o_que_demonstra": [
+            "ReferenceLine da meta com ifOverflow extendDomain e rótulo numa margem reservada",
+            "Meses acima da meta em chart-1 e abaixo em neutro, com valor escrito em toda coluna",
+            "Contador de meses acima da meta calculado do dado na linha de leitura",
+            "Traço de referência de 1 px tracejado 3 3 em text-muted"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_entradas-contra-teto-com-excedente",
+          "titulo": "Entradas mensais contra o teto de capacidade",
+          "caso_de_uso": "Quanto a entrada de oportunidades passou do teto de capacidade da pré-vendas em cada mês?",
+          "o_que_demonstra": [
+            "Dado dividido em TypeScript em dentro do teto e excedente, no mesmo stackId",
+            "Só o excedente em negative, com rótulo +N onde ele é maior que zero",
+            "Dica com o valor original e o excedente, não com as duas séries técnicas",
+            "Resumo de quantos meses estouraram calculado do dado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_fechamentos-contra-forecast",
+          "titulo": "Fechamentos contra o forecast do mês",
+          "caso_de_uso": "Quanto foi fechado contra o forecast declarado no início de cada mês e qual o viés da previsão?",
+          "o_que_demonstra": [
+            "Coluna fantasma: forecast largo em contorno atrás do fechado estreito e sólido",
+            "Sobreposição por dois XAxis com xAxisId e barSize distintos, sem a da frente mais larga",
+            "Atingimento escrito só nos meses abaixo de 90% ou acima de 110%",
+            "Fechado que passa do forecast lido como informação, com o trecho acima sem moldura",
+            "Rodapé com o viés médio do forecast no período"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_demanda-contra-capacidade-em-degraus",
+          "titulo": "Demanda projetada contra capacidade em 2027",
+          "caso_de_uso": "Em que meses de 2027 a demanda projetada passa da capacidade, que sobe em degraus com as contratações?",
+          "o_que_demonstra": [
+            "Capacidade como Line stepAfter sobre as colunas, com o corte recalculado linha a linha",
+            "Mês com capacidade zero todo em excedente, com a frase sem capacidade instalada",
+            "Excedente menor que 2 px com minPointSize e aviso de altura ampliada na dica",
+            "Legenda que nomeia capacidade medida e demanda projetada, sem selo de procedência no Chart"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "07_realizado-e-projecao",
+      "nome": "Realizado e projeção hachurada",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "A mesma série em dois regimes: períodos fechados em preenchimento sólido e períodos futuros, ou o restante do período em curso, em hachura com contorno na cor da série. A textura carrega o recado de que aquilo ainda não aconteceu e o método da projeção fica escrito na peça. O pattern mora em defs com id de useId e é aplicado por shape. Absorve o destaque do período atual e o trio realizado, previsto e meta.",
+      "quando_usar": [
+        "Ano com meses fechados e meses projetados, com método de projeção declarado.",
+        "Período corrente ainda em curso ao lado de períodos fechados, para a última coluna não parecer queda.",
+        "Período em curso com realizado, previsto restante e meta, para saber se a soma fecha a meta.",
+        "Série de até 12 períodos em que o regime de cada coluna vem no dado, não do relógio."
+      ],
+      "quando_evitar": [
+        "Projeção sem método declarado: não publicar a parte hachurada.",
+        "Cenários com saída em faixa, piso e teto por período: colunas de faixa (17/04).",
+        "Evolução acumulada do ano contra a meta: acumulado contra meta em linhas (04/06).",
+        "Todos os períodos fechados e nenhum foco no atual: colunas simples (modelo 01).",
+        "Previsão contínua com banda de incerteza: linha com banda de intervalo (04/04)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-ano-com-projecao",
+          "titulo": "Receita do ano: realizado e projeção",
+          "caso_de_uso": "Quanto do ano já foi realizado nos 8 meses fechados e quanto dos 4 restantes é projeção?",
+          "o_que_demonstra": [
+            "pattern SVG em defs com id de useId, aplicado por shape conforme o regime da linha",
+            "Hachura de traço fino e espaçado com contorno na cor da série, legível no tema escuro",
+            "Divisória vertical tênue com o rótulo projeção a partir de set/26",
+            "Legenda com amostra sólida e amostra hachurada, mais a nota de método abaixo",
+            "Total do ano separado em realizado e projetado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_mes-corrente-parcial",
+          "titulo": "Leads por mês com o mês corrente parcial",
+          "caso_de_uso": "O mês em curso está mesmo abaixo dos anteriores, ou só faltam dias para fechar?",
+          "o_que_demonstra": [
+            "Período corrente recebido por prop, nunca pelo índice nem pelo relógio do navegador",
+            "Mês corrente em chart-1 com a palavra parcial e a fração de dias decorridos",
+            "Restante projetado hachurado no topo da coluna corrente, com o ritmo nomeado",
+            "Meses fechados em neutro com valor só no maior e no último fechado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_realizado-previsto-e-meta",
+          "titulo": "Receita reconhecida: realizado, previsto e meta",
+          "caso_de_uso": "No mês em curso, quanto já foi reconhecido, quanto depende de previsão e a soma fecha a meta mensal?",
+          "o_que_demonstra": [
+            "previstoRestante como forecast menos realizado com piso em zero, sem contar duas vezes",
+            "Meses fechados com previsto null, para a dica não escrever previsto zero",
+            "Meta como traço curto por coluna desenhado por shape, com a distância rotulada",
+            "Totais do ano escritos como realizado e previsto, nunca somados sem aviso",
+            "12 meses de 2026 com o mês corrente apurado até 2026-09-14"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_realizado-acima-do-forecast",
+          "titulo": "Realizado acima do forecast e mês sem meta",
+          "caso_de_uso": "Como tratar o mês em que o realizado já passou do forecast e o mês sem meta cadastrada, sem desenho enganoso?",
+          "o_que_demonstra": [
+            "Restante zero quando o realizado passa do forecast, com aviso de previsão desatualizada",
+            "Mês sem meta cadastrada sem marcador e com nota curta, nunca meta zero",
+            "Primeiro dia do período trocado por traço na base com a frase sem leitura ainda",
+            "Frase acessível que diz quantos meses têm meta, forecast e só realizado"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_colunas-em-small-multiples",
+      "nome": "Colunas em small multiples",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "O mesmo gráfico de colunas repetido em painéis pequenos, um por série, numa grade HTML com Tailwind e um BarChart mínimo por célula. A escala é comum por padrão, calculada uma vez sobre o conjunto; o eixo de períodos aparece só na linha de baixo e os painéis são ordenados por uma medida. Cada painel guarda a forma da própria série, o que o agrupado com muitas séries destrói.",
+      "quando_usar": [
+        "De 4 a 12 séries da mesma medida por período, que não cabem num gráfico só.",
+        "Comparar a forma de cada série (pico, queda, sazonalidade) mais que o valor exato de um período.",
+        "Uma série por pessoa, origem ou plataforma, com escala compartilhada para a comparação ser honesta.",
+        "Séries de histórico desigual, desde que o vazio de cada painel fique marcado."
+      ],
+      "quando_evitar": [
+        "Duas ou três séries: colunas agrupadas (modelo 02).",
+        "Escala livre por painel sem aviso: a comparação entre painéis vira mentira; manter escala comum ou avisar em cada painel.",
+        "Mais de 12 painéis num cartão: filtrar, paginar ou usar mapa de calor (15).",
+        "O valor exato de cada período é a pergunta: tabela visual (14).",
+        "Tendência de muitas séries em muitos períodos: pequenos múltiplos de linha (04/09)."
+      ],
+      "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-por-origem-em-seis-paineis",
+          "titulo": "Leads por mês em seis origens",
+          "caso_de_uso": "Qual a forma mensal de cada origem de leads, sem amontoar seis séries no mesmo gráfico?",
+          "o_que_demonstra": [
+            "Grade HTML com container query e um BarChart mínimo por célula",
+            "Domínio comum calculado uma vez sobre o conjunto e passado a todos os painéis",
+            "Eixo de meses só na linha de baixo e painéis ordenados pelo total",
+            "Altura fixa por painel e animação desligada para a grade não pesar"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_origem-em-foco",
+          "titulo": "Seis origens com uma em foco",
+          "caso_de_uso": "Como destacar a origem em discussão mantendo as outras cinco como contexto na mesma escala?",
+          "o_que_demonstra": [
+            "Painel em foco em chart-1 com o nome em peso 700; demais painéis em neutro",
+            "Total de cada painel ao lado do título, em Space Grotesk com algarismo tabular",
+            "syncId comum para o cursor andar junto em todos os painéis",
+            "Foco recebido pela prop highlightId, com default no data.ts"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_fechamentos-por-executivo",
+          "titulo": "Fechamentos por mês de 12 executivos",
+          "caso_de_uso": "Como se compara o ritmo de fechamento de 12 executivos na mesma escala, e quem está fora da faixa de win rate?",
+          "o_que_demonstra": [
+            "12 painéis em grade de 3 colunas ordenados por win rate, não por nome",
+            "Win rate com volume ao lado do nome por formatRateWithVolume",
+            "Executivo fora da faixa marcado com ícone e palavra em negative, sem borda interna",
+            "Escala comum a todos os painéis, com o teto dito uma vez no topo da grade"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_historico-curto-e-sem-volume",
+          "titulo": "Painéis com histórico curto e sem volume",
+          "caso_de_uso": "Como mostrar quem tem só dois meses de histórico e quem não teve volume, sem esticar dado nem esconder o vazio?",
+          "o_que_demonstra": [
+            "Meses antes da entrada marcados como sem histórico, no mesmo eixo dos outros painéis",
+            "Painel com todos os meses em zero desenhado plano, com a nota sem volume no período",
+            "Zero medido separado de mês indisponível dentro do mesmo painel",
+            "Frase acessível que lista os painéis com histórico curto e sem volume"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "04_range-plot",
+  "versoes": {
+    "v1_amplitude-de-ticket-por-segmento": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Observações no README: eixo e grade redundantes com os dois valores escritos (ROT-2), frase acessível em 235 caracteres (ACE-1), rótulo do menor valor invade a coluna dos nomes quando o mínimo fica perto do zero.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:24.699Z",
+      "impressao": "92fae51c6beb46f6980de5f221764300bf0cab3e",
+      "arquivos": {
+        "Chart.tsx": "c5d16dcd24edc3312f768586bd9650079f4e1444",
+        "data.ts": "a550f8e56a4d653e00653d634aa2a0ae618fa522",
+        "meta.json": "d2528a134ffd998eda85d493d18a0ae36939e89e"
+      }
+    },
+    "v2_distancia-entre-cpl-bruto-e-qualificado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Observações no README: fidelidade SVG contra página em 0,52% por deslocamento do texto do cabeçalho (pergunta 21), nota 100% qualificado sem o volume e escrita à mão (NUM-1, DAD-1), eixo redundante com os valores (ROT-2), nota 1 px abaixo da linha do valor.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:25.212Z",
+      "impressao": "611d310fb69a759fcd700a5418b2584403d4141b",
+      "arquivos": {
+        "Chart.tsx": "ae6c07d8119487371a674c1ccf64dc531d8fc497",
+        "data.ts": "cc4713493acc2ea582b6010b203cb2b23eccdb2c",
+        "meta.json": "ccf1994385ffdd73ba7a6dcfe173b302cc640330"
+      }
+    },
+    "v3_carga-das-filas-com-semana-atual-e-teto": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada sobre o arquivo atual: 32 perguntas sem bloqueante nos dois temas. O fim do eixo sai de domainEnd e o mesmo número vai para o XAxis, os tiques e a regra de três do traço e do rótulo do teto, fechando o bloqueante de EIX-9, ANO-3 e REC-1. Observações no README: nota 3 do meta.json ainda descreve o domínio fixo em 150, faixa de largura zero sem marca, seta só no fim do eixo, mais as quatro da primeira passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:54:12.021Z",
+      "impressao": "2f5b975423e51e2b02d96ce134deb23420b62e3d",
+      "arquivos": {
+        "Chart.tsx": "2503a8bd61c03ce743afb9c9dc632c40990df676",
+        "data.ts": "17cdc96710cca68ede2021343d10acac7fd2a671",
+        "meta.json": "0034aec4876d7a2f70c106f4955b64db3903ec2a"
+      }
+    },
+    "v4_colunas-de-faixa-de-entradas-por-semana": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas; semana sem coleta nunca vira zero e a faixa nula se distingue. Observações no README: rótulo da capacidade dentro da área e não em margem reservada (ANO-3, REC-4), linha de capacidade some dentro das colunas (TOK-10), sem coleta com posição fixa junto da base.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:26.386Z",
+      "impressao": "09defc492cd4a7fda07f77f8cc1af061dcb8c3de",
+      "arquivos": {
+        "Chart.tsx": "8184822188c1a1c16d980b9ac01034579b5de1b9",
+        "data.ts": "d281fc0e2ceb2c1ce72c2cfbdad4f70f5f9af67e",
+        "meta.json": "beee4755de174d429fa4976df76933b9f719b539"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_amplitude-de-ticket-por-segmento",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Observações no README: eixo e grade redundantes com os dois valores escritos (ROT-2), frase acessível em 235 caracteres (ACE-1), rótulo do menor valor invade a coluna dos nomes quando o mínimo fica perto do zero.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:24.699Z",
+      "impressao": "92fae51c6beb46f6980de5f221764300bf0cab3e",
+      "arquivos": {
+        "Chart.tsx": "c5d16dcd24edc3312f768586bd9650079f4e1444",
+        "data.ts": "a550f8e56a4d653e00653d634aa2a0ae618fa522",
+        "meta.json": "d2528a134ffd998eda85d493d18a0ae36939e89e"
+      }
+    },
+    {
+      "versao": "v2_distancia-entre-cpl-bruto-e-qualificado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas. Observações no README: fidelidade SVG contra página em 0,52% por deslocamento do texto do cabeçalho (pergunta 21), nota 100% qualificado sem o volume e escrita à mão (NUM-1, DAD-1), eixo redundante com os valores (ROT-2), nota 1 px abaixo da linha do valor.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:25.212Z",
+      "impressao": "611d310fb69a759fcd700a5418b2584403d4141b",
+      "arquivos": {
+        "Chart.tsx": "ae6c07d8119487371a674c1ccf64dc531d8fc497",
+        "data.ts": "cc4713493acc2ea582b6010b203cb2b23eccdb2c",
+        "meta.json": "ccf1994385ffdd73ba7a6dcfe173b302cc640330"
+      }
+    },
+    {
+      "versao": "v3_carga-das-filas-com-semana-atual-e-teto",
+      "veredito": "reprovado",
+      "nota": "Pergunta 4 e 13, EIX-9 com ANO-3 e REC-1: o traço da semana atual e o rótulo do teto são posicionados dividindo por X_DOMAIN_MAX fixo em 150, mas o XAxis sem allowDataOverflow estende o domínio quando o maior da faixa passa de 150 (medido no Recharts 3.10.1: [0,150] com dado 172 vira [0,172]); nesse recorte o traço de 98% cai onde o eixo marca 112% e o rótulo do teto sai de cima da linha. Posicionar pela mesma escala do eixo (domínio calculado do dado e usado nos dois lugares, ou allowDataOverflow com a faixa recortada e sinalizada). Parecer em validation/.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:25.805Z",
+      "impressao": "ff68cb91972aecb5c21e97891115944c77207569",
+      "arquivos": {
+        "Chart.tsx": "3c36eb5620aa14b1a32e5d5282d5c2a24ca22913",
+        "data.ts": "17cdc96710cca68ede2021343d10acac7fd2a671",
+        "meta.json": "0034aec4876d7a2f70c106f4955b64db3903ec2a"
+      }
+    },
+    {
+      "versao": "v4_colunas-de-faixa-de-entradas-por-semana",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem bloqueante nos dois temas; semana sem coleta nunca vira zero e a faixa nula se distingue. Observações no README: rótulo da capacidade dentro da área e não em margem reservada (ANO-3, REC-4), linha de capacidade some dentro das colunas (TOK-10), sem coleta com posição fixa junto da base.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:26.386Z",
+      "impressao": "09defc492cd4a7fda07f77f8cc1af061dcb8c3de",
+      "arquivos": {
+        "Chart.tsx": "8184822188c1a1c16d980b9ac01034579b5de1b9",
+        "data.ts": "d281fc0e2ceb2c1ce72c2cfbdad4f70f5f9af67e",
+        "meta.json": "beee4755de174d429fa4976df76933b9f719b539"
+      }
+    },
+    {
+      "versao": "v3_carga-das-filas-com-semana-atual-e-teto",
+      "veredito": "aprovado",
+      "nota": "Segunda passada sobre o arquivo atual: 32 perguntas sem bloqueante nos dois temas. O fim do eixo sai de domainEnd e o mesmo número vai para o XAxis, os tiques e a regra de três do traço e do rótulo do teto, fechando o bloqueante de EIX-9, ANO-3 e REC-1. Observações no README: nota 3 do meta.json ainda descreve o domínio fixo em 150, faixa de largura zero sem marca, seta só no fim do eixo, mais as quatro da primeira passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:54:12.021Z",
+      "impressao": "2f5b975423e51e2b02d96ce134deb23420b62e3d",
+      "arquivos": {
+        "Chart.tsx": "2503a8bd61c03ce743afb9c9dc632c40990df676",
+        "data.ts": "17cdc96710cca68ede2021343d10acac7fd2a671",
+        "meta.json": "0034aec4876d7a2f70c106f4955b64db3903ec2a"
+      }
+    }
+  ]
+}

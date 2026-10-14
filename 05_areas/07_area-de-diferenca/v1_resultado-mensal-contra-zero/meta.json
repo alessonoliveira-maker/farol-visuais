@@ -1,0 +1,13 @@
+{
+  "title": "Resultado mensal contra o zero",
+  "useCase": "Ver em que meses o resultado operacional ficou positivo ou negativo e quanto isso somou no ano.",
+  "demonstrates": [
+    "Area sobre o valor com baseValue 0 e corte de cor com parada dura no zero",
+    "Altura do corte por useYAxisScale com gradientUnits userSpaceOnUse",
+    "Parada dura que codifica sinal, sem degradê decorativo (COR-9)",
+    "ReferenceLine y 0 em line-strong sólido (EIX-5)",
+    "Saldo do período com sinal tipográfico na linha de leitura",
+    "Legenda nomeando positivo, negativo e a referência de zero, a cor nunca é a única pista"
+  ],
+  "canvas": "card"
+}

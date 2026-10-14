@@ -1,0 +1,14 @@
+{
+  "title": "CPL por campanha de julho para agosto",
+  "useCase": "Marketing: quais das 22 campanhas mudaram o CPL mais de 15% de julho para agosto, e para onde.",
+  "demonstrates": [
+    "Arrow plot com cabeça de seta em path calculado, sem marker-end",
+    "Seta sempre do mês antigo para o novo, com a ordem imposta no código",
+    "Cor só nas mudanças acima de 15%; as demais em tom neutro",
+    "Haste abaixo de 12 px vira marcador neutro, com os valores na dica",
+    "Anotação: 9 de 22 mudaram mais de 15%"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo, o contrato vence. (1) O neutro das setas até 15% é --text-muted e não --line-strong: a seta carrega a relação entre os dois meses, é dado, e --line-strong mede 1,79:1 e 1,83:1 contra o cartão (ACE-6). (2) O delta sai com uma casa em todas as linhas, inclusive acima de 10% (NUM-1 pediria inteiro): o limiar é 15% e 14,8% contra 15,0% precisa ser lido, e o arredondamento inteiro escreveria 15% em quem ficou fora. A conta do limiar é feita em inteiros (|ago − jul| × 100 > 15 × jul), porque a razão 46 sobre 40 em ponto flutuante cai num lado ou no outro de 15% e a comparação estrita do limite não pode depender disso. Conta da altura: 22 linhas x 16 px = 352 px, mais 24 de eixo, 4 de margem e duas linhas de cabeçalho de 16 px com respiro, dentro dos 441,5 px do corpo do canvas alto."
+}

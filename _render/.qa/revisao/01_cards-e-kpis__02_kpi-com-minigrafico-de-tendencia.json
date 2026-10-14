@@ -1,0 +1,212 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "02_kpi-com-minigrafico-de-tendencia",
+  "versoes": {
+    "v1_cpl-qualificado-com-sparkline-de-12-meses": {
+      "veredito": "aprovado",
+      "nota": "Sparkline sem area, quebra no mes sem coleta, variacao com base nomeada. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:57.218Z",
+      "impressao": "3c04446eeb745fe506566925e1867beed5ad2f88",
+      "arquivos": {
+        "Chart.tsx": "927086ca0013b4edea708e590aeb77b5065bf41f",
+        "data.ts": "f56c5415a0b0d94b64e0737cf9948adf837c215a",
+        "meta.json": "a34229bff0b1badb2c1b9d3ee27e34ffe3397972"
+      }
+    },
+    "v2_entradas-no-handoff-contra-o-teto-diario": {
+      "veredito": "aprovado",
+      "nota": "Sparkbar com dominio no zero e teto por ReferenceLine. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:01.415Z",
+      "impressao": "1a3bac87a1e3f45551c5c72e7e47b45ffda252d9",
+      "arquivos": {
+        "Chart.tsx": "60c3e5710b444cfbdf41254a0c7d9c238f74bfad",
+        "data.ts": "f835b9b0b5c9d86000118fe4bebc5af54e8ecacc",
+        "meta.json": "9c2212cb255db09e83be953b73d3b1759bae3c53"
+      }
+    },
+    "v3_leads-diarios-contra-o-mesmo-periodo-de-2025": {
+      "veredito": "aprovado",
+      "nota": "Duas series com dominio comum, rotulo direto por ano, pico anotado. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:05.483Z",
+      "impressao": "63e91dc51e5db50fe1f1644ad46ef757da76bc86",
+      "arquivos": {
+        "Chart.tsx": "ddeaf23fa063745835636ff524c490b28601e5b7",
+        "data.ts": "d997f6fbde9b5b7da96bae5dcd082cdf0570fd71",
+        "meta.json": "f5c39b22c3e51e325dbfacf972f64036f51bba2a"
+      }
+    },
+    "v4_sla-de-primeiro-contato-em-fita-com-lacunas": {
+      "veredito": "aprovado",
+      "nota": "Fita com quatro estados, lacuna distinta de falha, denominador escrito. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:09.671Z",
+      "impressao": "4f68a572a988729001676efbb79735b8134278aa",
+      "arquivos": {
+        "Chart.tsx": "fd82e81934314a56dc79e11b1428b502a92f4bd8",
+        "data.ts": "157bd311064118874a17ce158a3e736e8edae513",
+        "meta.json": "1178024c7a28d8700b37899f2c0dd2d6b93ce448"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-qualificado-com-sparkline-de-12-meses",
+      "veredito": "aprovado",
+      "nota": "Sparkline honesta: sem area, quebra no mes sem coleta e polaridade menor melhor correta. Observacao: a frase acessivel afirma sempre um mes sem coleta.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:13:32.499Z",
+      "impressao": "eb7f3ae0a7161a5dfbe8f9c5654268f44da5e66a",
+      "arquivos": {
+        "Chart.tsx": "7079e216a91609efc0a0993579d629690a9f8163",
+        "data.ts": "f56c5415a0b0d94b64e0737cf9948adf837c215a",
+        "meta.json": "a34229bff0b1badb2c1b9d3ee27e34ffe3397972"
+      }
+    },
+    {
+      "versao": "v2_entradas-no-handoff-contra-o-teto-diario",
+      "veredito": "aprovado",
+      "nota": "Dominio a partir do zero, teto tracejado e colunas fora do teto em negativo com a contagem escrita. Observacao: a linha de referencia nao leva rotulo com nome e valor.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:13:37.134Z",
+      "impressao": "1a3bac87a1e3f45551c5c72e7e47b45ffda252d9",
+      "arquivos": {
+        "Chart.tsx": "60c3e5710b444cfbdf41254a0c7d9c238f74bfad",
+        "data.ts": "f835b9b0b5c9d86000118fe4bebc5af54e8ecacc",
+        "meta.json": "9c2212cb255db09e83be953b73d3b1759bae3c53"
+      }
+    },
+    {
+      "versao": "v3_leads-diarios-contra-o-mesmo-periodo-de-2025",
+      "veredito": "reprovado",
+      "nota": "O numero grande, 5.276, e a soma dos 30 dias, mas o rotulo do cartao diz Leads por dia, cuja media e 176: trocar o rotulo para o total do periodo ou imprimir a media diaria.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:13:41.834Z",
+      "impressao": "1cc131a7ee1efcb115e4eddc0f59e25a5465bb38",
+      "arquivos": {
+        "Chart.tsx": "e5703d65393e147b4450cf3bae907e22108e0c6d",
+        "data.ts": "b33385d39fa550dbac4683f7e0c93222ccfec37b",
+        "meta.json": "f5c39b22c3e51e325dbfacf972f64036f51bba2a"
+      }
+    },
+    {
+      "versao": "v4_sla-de-primeiro-contato-em-fita-com-lacunas",
+      "veredito": "aprovado",
+      "nota": "Fita com quatro estados, sem coleta distinto de fora do SLA e fora do denominador. Observacao: a celula de fim de semana quase some no tema escuro.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:13:46.149Z",
+      "impressao": "4f68a572a988729001676efbb79735b8134278aa",
+      "arquivos": {
+        "Chart.tsx": "fd82e81934314a56dc79e11b1428b502a92f4bd8",
+        "data.ts": "157bd311064118874a17ce158a3e736e8edae513",
+        "meta.json": "1178024c7a28d8700b37899f2c0dd2d6b93ce448"
+      }
+    },
+    {
+      "versao": "v1_cpl-qualificado-com-sparkline-de-12-meses",
+      "veredito": "aprovado",
+      "nota": "Sparkline sem eixo, nulo quebra a linha, sem area; nenhum bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:31:30.762Z",
+      "impressao": "eb7f3ae0a7161a5dfbe8f9c5654268f44da5e66a",
+      "arquivos": {
+        "Chart.tsx": "7079e216a91609efc0a0993579d629690a9f8163",
+        "data.ts": "f56c5415a0b0d94b64e0737cf9948adf837c215a",
+        "meta.json": "a34229bff0b1badb2c1b9d3ee27e34ffe3397972"
+      }
+    },
+    {
+      "versao": "v2_entradas-no-handoff-contra-o-teto-diario",
+      "veredito": "aprovado",
+      "nota": "Colunas do zero, teto com extendDomain, contagem escrita; sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:31:37.431Z",
+      "impressao": "1a3bac87a1e3f45551c5c72e7e47b45ffda252d9",
+      "arquivos": {
+        "Chart.tsx": "60c3e5710b444cfbdf41254a0c7d9c238f74bfad",
+        "data.ts": "f835b9b0b5c9d86000118fe4bebc5af54e8ecacc",
+        "meta.json": "9c2212cb255db09e83be953b73d3b1759bae3c53"
+      }
+    },
+    {
+      "versao": "v3_leads-diarios-contra-o-mesmo-periodo-de-2025",
+      "veredito": "aprovado",
+      "nota": "Escala comum as duas series, sem eixo duplo, pico anotado; sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:31:37.956Z",
+      "impressao": "5bac1726fcd8a50edd41a732ee6ed8ff6633a091",
+      "arquivos": {
+        "Chart.tsx": "e5703d65393e147b4450cf3bae907e22108e0c6d",
+        "data.ts": "d997f6fbde9b5b7da96bae5dcd082cdf0570fd71",
+        "meta.json": "f5c39b22c3e51e325dbfacf972f64036f51bba2a"
+      }
+    },
+    {
+      "versao": "v4_sla-de-primeiro-contato-em-fita-com-lacunas",
+      "veredito": "aprovado",
+      "nota": "Fita com 4 estados, sem coleta fora do denominador; sem bloqueante.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T18:31:42.502Z",
+      "impressao": "4f68a572a988729001676efbb79735b8134278aa",
+      "arquivos": {
+        "Chart.tsx": "fd82e81934314a56dc79e11b1428b502a92f4bd8",
+        "data.ts": "157bd311064118874a17ce158a3e736e8edae513",
+        "meta.json": "1178024c7a28d8700b37899f2c0dd2d6b93ce448"
+      }
+    },
+    {
+      "versao": "v1_cpl-qualificado-com-sparkline-de-12-meses",
+      "veredito": "aprovado",
+      "nota": "Sparkline sem area, quebra no mes sem coleta, variacao com base nomeada. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:57.218Z",
+      "impressao": "3c04446eeb745fe506566925e1867beed5ad2f88",
+      "arquivos": {
+        "Chart.tsx": "927086ca0013b4edea708e590aeb77b5065bf41f",
+        "data.ts": "f56c5415a0b0d94b64e0737cf9948adf837c215a",
+        "meta.json": "a34229bff0b1badb2c1b9d3ee27e34ffe3397972"
+      }
+    },
+    {
+      "versao": "v2_entradas-no-handoff-contra-o-teto-diario",
+      "veredito": "aprovado",
+      "nota": "Sparkbar com dominio no zero e teto por ReferenceLine. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:01.415Z",
+      "impressao": "1a3bac87a1e3f45551c5c72e7e47b45ffda252d9",
+      "arquivos": {
+        "Chart.tsx": "60c3e5710b444cfbdf41254a0c7d9c238f74bfad",
+        "data.ts": "f835b9b0b5c9d86000118fe4bebc5af54e8ecacc",
+        "meta.json": "9c2212cb255db09e83be953b73d3b1759bae3c53"
+      }
+    },
+    {
+      "versao": "v3_leads-diarios-contra-o-mesmo-periodo-de-2025",
+      "veredito": "aprovado",
+      "nota": "Duas series com dominio comum, rotulo direto por ano, pico anotado. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:05.483Z",
+      "impressao": "63e91dc51e5db50fe1f1644ad46ef757da76bc86",
+      "arquivos": {
+        "Chart.tsx": "ddeaf23fa063745835636ff524c490b28601e5b7",
+        "data.ts": "d997f6fbde9b5b7da96bae5dcd082cdf0570fd71",
+        "meta.json": "f5c39b22c3e51e325dbfacf972f64036f51bba2a"
+      }
+    },
+    {
+      "versao": "v4_sla-de-primeiro-contato-em-fita-com-lacunas",
+      "veredito": "aprovado",
+      "nota": "Fita com quatro estados, lacuna distinta de falha, denominador escrito. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:09.671Z",
+      "impressao": "4f68a572a988729001676efbb79735b8134278aa",
+      "arquivos": {
+        "Chart.tsx": "fd82e81934314a56dc79e11b1428b502a92f4bd8",
+        "data.ts": "157bd311064118874a17ce158a3e736e8edae513",
+        "meta.json": "1178024c7a28d8700b37899f2c0dd2d6b93ce448"
+      }
+    }
+  ]
+}

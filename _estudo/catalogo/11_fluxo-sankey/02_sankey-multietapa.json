@@ -1,0 +1,73 @@
+{
+  "slug": "02_sankey-multietapa",
+  "nome": "Sankey multietapa com perdas",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Fluxo por várias colunas de etapa em que a saída de cada etapa se divide entre avançar e nós terminais de perda por motivo, posicionados logo depois da etapa onde a perda acontece. Absorve três variações que usam a mesma mecânica de nó e ligação customizados: o demonstrativo de custo ou receita, a jornada desenrolada por passo e o fluxo com retorno.",
+  "quando_usar": [
+    "Funil com ramificação: da oportunidade aberta ao ganho, com perdas por motivo em cada etapa, em até 6 colunas.",
+    "Demonstrativo em reais: fontes que convergem e saem por destinos, numa unidade só e com a camada de custo declarada.",
+    "Jornada multitoque com até 3 ou 4 passos, desenrolada por passo para não formar laço.",
+    "Reabertura ou retorno que o negócio precisa ver, desenhado como arco à parte do layout acíclico."
+  ],
+  "quando_evitar": [
+    "Retrato de pipeline sem nó \"Em andamento\": a diferença entre entrada e saída some sem aviso.",
+    "Funil sem ramificação: usar a família 10_funil, em especial o 03_funil-com-perdas-por-etapa.",
+    "Resultado negativo tratado como fluxo: largura não codifica negativo; usar 19_cascata-waterfall ou o nó \"Déficit coberto\".",
+    "Jornadas com dezenas de passos: agrupar em \"4 ou mais toques\" ou trocar por tabela de caminhos.",
+    "Tela de 400 px com mais de 3 colunas: usar a versão vertical do 01_sankey-simples ou as barras da família 10."
+  ],
+  "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-com-perdas-por-motivo",
+      "titulo": "Oportunidades do trimestre com perdas por motivo",
+      "caso_de_uso": "Comercial, 2026-T3: onde saem as perdas entre a oportunidade aberta e o ganho? Aberta 420, Diagnóstico 268, Proposta 131, Negociação 64 e Ganha 29, com perdas por motivo (sem perfil, timing, concorrência) e \"Em andamento\" saindo de cada etapa.",
+      "o_que_demonstra": [
+        "align=\"left\" para a perda ficar logo depois da etapa, não na última coluna",
+        "sort={false} com o array de nós na ordem: avançou antes das perdas",
+        "Nó \"Em andamento\" fechando a conservação de cada etapa",
+        "Caminho até Ganha em --chart-1 e perdas em --line-strong com valor escrito",
+        "Rótulo à direita do nó e à esquerda na última profundidade, por payload.depth"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_custo-do-trimestre-por-camada-e-canal",
+      "titulo": "Custo do trimestre por camada e canal",
+      "caso_de_uso": "Diretoria, 2026-T3: como o custo de R$ 1,86 mi se reparte por canal e quanto dele tem ganho atribuído? Mídia R$ 420 mil, pessoas da esteira R$ 610 mil e estrutura R$ 830 mil, por Mídia social, Busca paga, Rede profissional, Evento e Indicação.",
+      "o_que_demonstra": [
+        "Rótulo do nó em formatCurrencyCompact com percentual inteiro do total",
+        "Camada escrita em cada nó de origem, para não somar retornos diferentes sem aviso",
+        "Ligação na cor da camada até o canal, mostrando a composição de cada canal",
+        "Canal com custo e nenhum ganho termina no nó neutro \"Sem retorno atribuído\"",
+        "Uma unidade só no diagrama, dita no rótulo: reais do trimestre"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_jornada-dos-leads-em-ate-tres-toques",
+      "titulo": "Jornada dos leads qualificados em até três toques",
+      "caso_de_uso": "Marketing, 2026-08: por quais pontos de contato passaram os 318 leads qualificados? Passos 1, 2 e 3 com Mídia social, Busca paga, Rede profissional, Orgânico e Evento, até o desfecho Qualificado.",
+      "o_que_demonstra": [
+        "Nó desenrolado por passo com name único e campo rotulo para exibição",
+        "Caminho mais comum (Busca paga, Evento, Qualificado) aceso em --chart-1",
+        "99 leads de toque único (31%) com ligação que pula passos, avisada na legenda",
+        "Canal repetido em passos seguidos sem laço, porque cada passo é outro nó"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_reabertura-com-arco-de-retorno",
+      "titulo": "Reabertura de oportunidades com arco de retorno",
+      "caso_de_uso": "Comercial, 2026-T3: quantas oportunidades perdidas em Proposta voltaram para Diagnóstico? 12 reabertas desenhadas como arco sob as colunas e 9 propostas refeitas na própria etapa como contador no nó.",
+      "o_que_demonstra": [
+        "Busca em profundidade no preparo que separa as ligações que fecham ciclo",
+        "Layout acíclico primeiro; arco de retorno em SVG com a mesma escala de largura",
+        "Laço na própria etapa vira contador no nó com ícone RotateCcw, sem arco",
+        "Legenda que declara se o total conta oportunidades ou passagens",
+        "Caso limite: as bibliotecas de referência quebram ou apagam a ligação cíclica"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

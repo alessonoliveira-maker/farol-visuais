@@ -1,0 +1,12 @@
+{
+  "title": "Orçado e realizado de mídia por plataforma",
+  "useCase": "Quanto cada plataforma gastou contra o orçado, por prospecção e remarketing, com uma plataforma nova sem orçado.",
+  "demonstrates": [
+    "Dois stackId por categoria e a mesma cor por componente nas duas pilhas",
+    "Pilha de orçado em contorno tracejado, realizado sólido",
+    "Legend content que colapsa os pares e lista só componentes",
+    "Plataforma sem orçado mostra só a pilha existente e escreve sem orçado"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

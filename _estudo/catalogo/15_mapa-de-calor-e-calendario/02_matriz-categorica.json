@@ -1,0 +1,74 @@
+{
+  "slug": "02_matriz-categorica",
+  "nome": "Matriz categórica em cor",
+  "abordagem_stack": "svg-puro",
+  "resumo": "O heatmap clássico em tabela: uma dimensão categórica nas linhas, outra nas colunas e a mesma medida em todas as células, com cor por escala sequencial ou divergente e número na célula quando cabe. É o primitivo HeatGrid da família e absorve quatro variações do estudo: totais marginais, eixo agrupado em dois níveis, células de tamanho variável para taxa com volume e ordenação por semelhança.",
+  "quando_usar": [
+    "Achar extremos e padrões entre duas dimensões de categoria: executivo por segmento, motivo por etapa, plataforma por mês.",
+    "Até uns 15 por 12 células com número escrito; acima disso, cor sem número e valor exato na dica.",
+    "Padrão da grade e peso de cada linha ao mesmo tempo, com barras de total nas margens.",
+    "Hierarquia curta num eixo (canal e origem, ano e trimestre), com vão maior entre grupos.",
+    "Taxa que só faz sentido junto do volume, com o tamanho da célula carregando o volume."
+  ],
+  "quando_evitar": [
+    "Colunas com unidades diferentes ou texto: tabela com heatmap nas células (14, modelo 02).",
+    "Leitura de valor fino entre células vizinhas: barras agrupadas (03) ou barras horizontais (02).",
+    "Eixo de tempo contínuo com muitas entidades: lasagna (modelo 06).",
+    "Mesma lista de estados nos dois eixos: matriz de transição (modelo 07).",
+    "Hierarquia com mais de dois níveis: treemap ou árvore (12).",
+    "Público sem hábito de dupla codificação cor e tamanho: dois heatmaps lado a lado."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_win-rate-por-executivo-e-segmento",
+      "titulo": "Win rate por executivo e segmento de cliente",
+      "caso_de_uso": "Em quais segmentos de cliente cada um dos 10 executivos converte melhor, e onde a taxa despenca?",
+      "o_que_demonstra": [
+        "HeatGrid SVG de 10 por 5 células com taxa escrita por formatPercent",
+        "Executivos ordenados pelo win rate geral, nunca em ordem alfabética",
+        "Alternador de ordem por semelhança de perfil, que congela a ordem ao filtrar",
+        "Texto da célula com token claro ou escuro escolhido pela faixa",
+        "Contorno e peso 700 só na maior taxa de cada segmento"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_perdas-por-motivo-e-etapa-com-totais",
+      "titulo": "Perdas por motivo e etapa com totais nas margens",
+      "caso_de_uso": "Qual etapa do funil concentra as perdas do trimestre e qual motivo domina dentro dela?",
+      "o_que_demonstra": [
+        "Barras de total por linha à direita e por coluna embaixo no mesmo SVG",
+        "Duas escalas separadas: cor do miolo e comprimento das margens, cada uma nomeada",
+        "Total fora da escala de cor do miolo, com valor escrito ao lado da barra",
+        "Anotação na etapa proposta: preço responde por 46% das 212 perdas dela"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_leads-por-origem-agrupada-em-canal",
+      "titulo": "Leads por origem agrupada em canal, mês a mês",
+      "caso_de_uso": "Como evoluíram os leads de 14 origens, agrupadas em pago, orgânico e indicação, de out/25 a set/26?",
+      "o_que_demonstra": [
+        "Eixo de linhas em dois níveis com rótulo de canal centrado sobre suas origens",
+        "Vão de 8 px entre grupos e de 1 px entre itens, calculado na posição y",
+        "Grupos desiguais: indicação com 1 origem e pago com 7",
+        "Origem Sem origem declarada em neutro, por último e fora dos grupos",
+        "Mês corrente parcial com borda tracejada e nota parcial até 2026-09-14"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_taxa-e-volume-em-celula-de-tamanho-variavel",
+      "titulo": "Taxa de agenda e volume por origem e mês",
+      "caso_de_uso": "Qual origem tem taxa de agenda alta com volume que importa, sem que 2 leads com 100% dominem a leitura?",
+      "o_que_demonstra": [
+        "Quadrado com área proporcional ao volume (lado pela raiz) e cor pela taxa",
+        "Zero leads sem forma e ponto neutro para a grade não parecer quebrada",
+        "Volume 30 vezes maior limitado ao lado máximo e anotado",
+        "Duas legendas: tamanho com três referências e faixas de cor da taxa"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

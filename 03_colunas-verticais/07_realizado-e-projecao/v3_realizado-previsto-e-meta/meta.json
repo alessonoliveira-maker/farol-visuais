@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida: realizado, previsto e meta",
+  "useCase": "No mês em curso, quanto já foi reconhecido, quanto depende de previsão e a soma fecha a meta mensal?",
+  "demonstrates": [
+    "Previsto restante como forecast menos realizado com piso em zero, sem contar duas vezes",
+    "Meses fechados com forecast nulo, para a dica não escrever previsto zero",
+    "Meta como traço curto por coluna via shape, com a distância rotulada no mês corrente",
+    "Totais do ano escritos como realizado e previsto, nunca somados sem aviso"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

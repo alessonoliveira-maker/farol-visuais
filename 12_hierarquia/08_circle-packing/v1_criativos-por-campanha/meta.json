@@ -1,0 +1,13 @@
+{
+  "title": "Criativos agrupados por campanha",
+  "useCase": "Marketing: quais campanhas concentram os criativos que mais geraram leads em 2026-08.",
+  "demonstrates": [
+    "Raio proporcional à raiz quadrada do valor, nunca ao valor",
+    "Empacotamento em espiral por raio decrescente com teste de colisão",
+    "Raio do pai pelo maior distância mais raio dos filhos, com margem",
+    "Layout em useMemo com a assinatura do dado para ficar determinístico"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto em vez de quadrado (catálogo sugere quadrado): a lista de identificação de 14 criativos sem rótulo direto (ROT-10) precisa de mais altura do que o preset quadrado comporta sem espremer o círculo a quase nada; a régua da ESP-2 manda subir a altura do canvas, não afinar o desenho."
+}

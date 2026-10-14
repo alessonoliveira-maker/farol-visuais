@@ -1,0 +1,14 @@
+{
+  "title": "Origens que aparecem juntas na jornada",
+  "useCase": "Marketing: quais das 12 origens aparecem na mesma jornada de lead em ago/26, e se formam blocos por tipo.",
+  "demonstrates": [
+    "Triângulo inferior só, com os 12 nomes na ponta da própria linha e a diagonal neutra",
+    "Ordem por grupo (pago, orgânico, relacionamento) com vão entre os blocos",
+    "Cor por quartil dos pares: um par gigante não apaga o resto",
+    "Contagem escrita em cada célula, porque as faixas baixas contrastam pouco",
+    "Linha e coluna sob o cursor realçadas, com o par e a parte do mês na leitura do topo"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): quadrado 480x480 com moldura card abaixo de 560 px dá corpo de 422 x 372 (caso de uso em 1 linha) ou 422 x 355,5 (2 linhas). O SVG é desenhado em 422 x 355 com viewBox igual ao tamanho, para a escala sair 1 (GEO-18): leitura do topo 20, 12 linhas de 20 com vão de 2 (262) e três faixas de grupo de 13 que abrigam o nome do grupo (39), legenda em duas linhas de 14. Desvios do catálogo: (1) o catálogo pede seq-2 a seq-7; seq-4 e seq-5 não têm texto legível nos dois temas (TOK-2), então são quatro quartis em seq-2, seq-3, seq-6 e seq-7 (TOK-8). (2) A diagonal usa --line-subtle em vez de --surface-overlay, que no tema claro é o mesmo branco do cartão e sumiria; o overlay fica só no realce de linha e coluna, atrás de texto. (3) O desenho é SVG com a geometria da grade em TypeScript, como nos guias aprovados, e não grid CSS: o piso de 11 px e as guardas de texto só medem SVG. O nome de cada origem fica na ponta da linha, dentro do triângulo vazio, para não girar texto (TIP-5) nem deixar a primeira origem sem nome (GEO-13)."
+}

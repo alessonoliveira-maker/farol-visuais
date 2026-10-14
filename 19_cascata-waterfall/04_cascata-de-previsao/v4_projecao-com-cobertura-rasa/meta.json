@@ -1,0 +1,14 @@
+{
+  "title": "Projeção sobre campo pouco preenchido",
+  "useCase": "Quanto da projeção de setembro repousa em oportunidades com data de fechamento, e quanto é estimativa?",
+  "demonstrates": [
+    "Dois graus de hachura: projetado com data e estimado sem data",
+    "Hachura mais larga e contorno tracejado para a parte de menor confiança",
+    "Linha de leitura com a cobertura: projeção sobre 44,0% das oportunidades",
+    "Total empilhado nos três graus, sólido, hachura fina e hachura larga",
+    "Procedência PREMISSA deixada ao VisualCard, fora do Chart"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o rótulo da coluna final não leva a palavra projeção (a v1 a leva); aqui o regime vem da legenda e da segunda linha sob cada coluna, porque a pergunta é de confiança e não de data de corte. A procedência PREMISSA é do VisualCard (ANO-6) e não aparece no Chart. Conta do corpo (ESP-6): 574 − 16 = 558 px, 4 colunas, passo 139,5 px, barra = min(24, 139,5 × 0,36) = 24 px. Passo do hachurado fino: 6 px; do largo: 12 px, com o mesmo traço de 1,5 px."
+}

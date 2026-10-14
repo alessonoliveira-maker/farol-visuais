@@ -1,0 +1,13 @@
+{
+  "title": "Investimento por plataforma em dois trimestres",
+  "useCase": "Marketing: como os R$ 548 mil do 2º trimestre de 2026 se dividiram entre as plataformas, contra os R$ 512 mil do 1º trimestre.",
+  "demonstrates": [
+    "Total de cada trimestre na legenda, com a variação do total nomeando a base",
+    "Legenda tabular com a participação nos dois trimestres e a diferença em p.p. em toda linha",
+    "Quatro plataformas em slots 1, 3, 6 e 5, com a mesma cor nos dois anéis",
+    "Frase acessível com a plataforma que mais ganhou e a que mais perdeu participação"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Vídeo e Display trocam de ordem entre os trimestres: a ordem dos dois anéis segue sempre o trimestre atual, nunca o anterior. Sem dica interativa pelo mesmo motivo da v2: o preview é estático e a tabela já traz todo valor essencial."
+}

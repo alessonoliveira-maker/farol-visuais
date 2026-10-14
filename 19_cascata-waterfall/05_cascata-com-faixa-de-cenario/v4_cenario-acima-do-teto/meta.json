@@ -1,0 +1,13 @@
+{
+  "title": "Cenário otimista acima do teto",
+  "useCase": "Quanto da receita projetada de 2027-T1 passa do teto de atendimento de R$ 2,10 mi?",
+  "demonstrates": [
+    "Trecho da faixa acima do teto hachurado e rotulado",
+    "Teto como referência tracejada com ifOverflow extendDomain",
+    "Esperado marcado mesmo quando cai perto do teto",
+    "No máximo duas anotações: teto e trecho não entregável"
+  ],
+  "canvas": { "width": 640, "height": 500 },
+  "frame": "card",
+  "notes": "Canvas 640x500 em vez do card sugerido (GEO-1): com o eixo a partir do zero (EIX-1), o trecho acima do teto (R$ 0,30 mi sobre uma escala de R$ 2,4 mi) só mede uns 28 px com cerca de 220 px de plotagem; no card de 640x360 mediria 12 px e o esperado, a R$ 0,05 mi do teto, ficaria a 5 px dele. Conta: 500 − 135 = 365 px de corpo; menos leitura (44), nota (24), margem de 40 e eixo de 28, restam cerca de 229 px. A hachura do trecho não entregável usa --negative; abaixo do teto a faixa é --chart-1 translúcida. A moeda do milhão sai com duas casas por formatDecimal (formatCurrencyCompact arredonda para uma e esconderia o esperado a R$ 0,05 mi do teto)."
+}

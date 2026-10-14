@@ -1,0 +1,160 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "05_cascata-com-faixa-de-cenario",
+  "versoes": {
+    "v1_receita-do-proximo-trimestre-em-faixa": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida: trecho do intervalo dentro do corpo em surface-raised mede 7,36 e 5,34:1 sobre positive, 5,50 e 6,36:1 sobre negative. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:24.866Z",
+      "impressao": "9a71e391bce4927ce6190c4dbe5a722accdf501d",
+      "arquivos": {
+        "Chart.tsx": "046484a83ce0afbcea18e191d4fe2133893ed1d0",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "37c06ced40b0f6266494327e09f95b14c3b0e0a5"
+      }
+    },
+    "v2_onde-a-faixa-nasce": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida: trecho interno do intervalo mede 9,50 e 6,00:1 sobre chart-1, 8,16 e 8,13:1 sobre o neutro. Faixa a 0,7 medida à mão: 4,65 e 3,77:1. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:25.535Z",
+      "impressao": "5a7699ce94273db4fcc3b202e5993fd45550b00d",
+      "arquivos": {
+        "Chart.tsx": "21906537445951980786175578e985d5109297c8",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "63fe020ff20a32dc3b1b8ce62231d1f5ce7a7cba"
+      }
+    },
+    "v3_capacidade-contra-demanda-em-2027": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida (7,36 e 5,34:1; 5,50 e 6,36:1). Colisão resolvida: 2,5 px livres entre o p de entradas por mês e a tampa de Contratações, nos dois temas. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:26.202Z",
+      "impressao": "077b35d20fd2e72aff64c94ecdae0c52321d4e9c",
+      "arquivos": {
+        "Chart.tsx": "3c55db0231e1dd6e3d684e12cf99789a0ca6fede",
+        "data.ts": "b0b60c2d1634333a7f3fef197b0e4cf743874293",
+        "meta.json": "ed0d822d4b6dcdfbc38f4144f3407280a658b265"
+      }
+    },
+    "v4_cenario-acima-do-teto": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida (7,36 e 5,34:1; 5,50 e 6,36:1). Linha do teto passa por baixo das marcas e a tampa de Cancelamentos sai inteira nos dois temas. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:27.060Z",
+      "impressao": "c1e95e18d3a06380c5c89cc2820ac0e8da109013",
+      "arquivos": {
+        "Chart.tsx": "30203e6dd1ac2e62a3485dd75b4a40168e92defb",
+        "data.ts": "668cf61f57e95b59d0a8f1bfd223331281c399f0",
+        "meta.json": "c4023b074712ba52723103b8195331be6fb9416d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-do-proximo-trimestre-em-faixa",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 (TOK-10): o intervalo em text-primary mede de 1,97:1 a 2,82:1 contra o corpo em 3 de 4 pares; dar fundo próprio ao trecho que cruza o corpo e medir nos dois temas. Parecer em validation/revisao_19_cascata-waterfall__05_cascata-com-faixa-de-cenario_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:11:21.960Z",
+      "impressao": "9262cacab94aac30eb9b3622e4612dd24328cb87",
+      "arquivos": {
+        "Chart.tsx": "d44159377becd70a47d35861f462c5beed380182",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "37c06ced40b0f6266494327e09f95b14c3b0e0a5"
+      }
+    },
+    {
+      "versao": "v2_onde-a-faixa-nasce",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 (TOK-10): o intervalo em text-primary mede de 1,53:1 a 2,99:1 contra o corpo nos 4 pares; dar fundo próprio ao trecho que cruza o corpo e medir nos dois temas. Parecer em validation/revisao_19_cascata-waterfall__05_cascata-com-faixa-de-cenario_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:11:22.493Z",
+      "impressao": "1fc1db4b5c9505c01968cdd1b60301160c7d40c4",
+      "arquivos": {
+        "Chart.tsx": "12f85c23ca060835bcb7223c59ee689140d8c983",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "63fe020ff20a32dc3b1b8ce62231d1f5ce7a7cba"
+      }
+    },
+    {
+      "versao": "v3_capacidade-contra-demanda-em-2027",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 15. ACE-3 (TOK-10): intervalo abaixo de 3:1 contra o corpo em 3 de 4 pares; dar fundo próprio ao trecho interno. Seção 14.1: o p de entradas por mês entra 0,5 px na tampa de Contratações; afastar a linha da unidade da marca. Parecer em validation/revisao_19_cascata-waterfall__05_cascata-com-faixa-de-cenario_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:11:23.082Z",
+      "impressao": "397eca55ee9e7bf1efb1ce68071db7c848327df0",
+      "arquivos": {
+        "Chart.tsx": "1568667a5a60d732364dc55049b9e0571867871b",
+        "data.ts": "b0b60c2d1634333a7f3fef197b0e4cf743874293",
+        "meta.json": "ed0d822d4b6dcdfbc38f4144f3407280a658b265"
+      }
+    },
+    {
+      "versao": "v4_cenario-acima-do-teto",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20, 13 e 15. ACE-3 (TOK-10): intervalo abaixo de 3:1 contra o corpo em 3 de 4 pares; dar fundo próprio ao trecho interno. REC-13 e seção 14.1: a linha do teto cobre 12 dos 28 px da tampa de Cancelamentos; passar a linha por baixo das marcas. Parecer em validation/revisao_19_cascata-waterfall__05_cascata-com-faixa-de-cenario_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:11:23.687Z",
+      "impressao": "75d79d64f41f6ee21109a2774904667d9c6bd82d",
+      "arquivos": {
+        "Chart.tsx": "71ce9e399fdd7b5643a4ae00d7fed71e7a98b408",
+        "data.ts": "668cf61f57e95b59d0a8f1bfd223331281c399f0",
+        "meta.json": "c4023b074712ba52723103b8195331be6fb9416d"
+      }
+    },
+    {
+      "versao": "v1_receita-do-proximo-trimestre-em-faixa",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida: trecho do intervalo dentro do corpo em surface-raised mede 7,36 e 5,34:1 sobre positive, 5,50 e 6,36:1 sobre negative. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:24.866Z",
+      "impressao": "9a71e391bce4927ce6190c4dbe5a722accdf501d",
+      "arquivos": {
+        "Chart.tsx": "046484a83ce0afbcea18e191d4fe2133893ed1d0",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "37c06ced40b0f6266494327e09f95b14c3b0e0a5"
+      }
+    },
+    {
+      "versao": "v2_onde-a-faixa-nasce",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida: trecho interno do intervalo mede 9,50 e 6,00:1 sobre chart-1, 8,16 e 8,13:1 sobre o neutro. Faixa a 0,7 medida à mão: 4,65 e 3,77:1. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:25.535Z",
+      "impressao": "5a7699ce94273db4fcc3b202e5993fd45550b00d",
+      "arquivos": {
+        "Chart.tsx": "21906537445951980786175578e985d5109297c8",
+        "data.ts": "ded0226038733775c6870f438da096cf31e98f2a",
+        "meta.json": "63fe020ff20a32dc3b1b8ce62231d1f5ce7a7cba"
+      }
+    },
+    {
+      "versao": "v3_capacidade-contra-demanda-em-2027",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida (7,36 e 5,34:1; 5,50 e 6,36:1). Colisão resolvida: 2,5 px livres entre o p de entradas por mês e a tampa de Contratações, nos dois temas. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:26.202Z",
+      "impressao": "077b35d20fd2e72aff64c94ecdae0c52321d4e9c",
+      "arquivos": {
+        "Chart.tsx": "3c55db0231e1dd6e3d684e12cf99789a0ca6fede",
+        "data.ts": "b0b60c2d1634333a7f3fef197b0e4cf743874293",
+        "meta.json": "ed0d822d4b6dcdfbc38f4144f3407280a658b265"
+      }
+    },
+    {
+      "versao": "v4_cenario-acima-do-teto",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo de hoje. ACE-3 resolvida (7,36 e 5,34:1; 5,50 e 6,36:1). Linha do teto passa por baixo das marcas e a tampa de Cancelamentos sai inteira nos dois temas. 32 perguntas sem não; observações no README.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:27:27.060Z",
+      "impressao": "c1e95e18d3a06380c5c89cc2820ac0e8da109013",
+      "arquivos": {
+        "Chart.tsx": "30203e6dd1ac2e62a3485dd75b4a40168e92defb",
+        "data.ts": "668cf61f57e95b59d0a8f1bfd223331281c399f0",
+        "meta.json": "c4023b074712ba52723103b8195331be6fb9416d"
+      }
+    }
+  ]
+}

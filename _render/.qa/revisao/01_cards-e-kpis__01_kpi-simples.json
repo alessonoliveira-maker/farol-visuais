@@ -1,0 +1,355 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "01_kpi-simples",
+  "versoes": {
+    "v1_receita-com-variacao-contra-mes-anterior": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro, dois temas legiveis, variacao calculada dos valores exatos com base nomeada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:43.066Z",
+      "impressao": "7b9ba39c6a8946c33b2c8bd503af91f436081146",
+      "arquivos": {
+        "Chart.tsx": "2aed2f08377c929995ef80acb47e6e4696714e0d",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    "v2_receita-do-trimestre-contra-anterior-e-meta": {
+      "veredito": "aprovado",
+      "nota": "Conserto do sinal aceito nos dois temas: a variacao declara o sentido no texto e nao depende so da cor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.795Z",
+      "impressao": "64d28a714872e2ec908e40cfb4ca2ec752284e28",
+      "arquivos": {
+        "Chart.tsx": "731c152957539e931a73aeff2cd08d40a09fd2b0",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    },
+    "v3_cpl-qualificado-com-par-frescor-e-procedencia": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; razão com as duas parcelas, polaridade menor melhor e ponto de ação coerentes; etiqueta de procedência é pedida pelo catálogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:55.264Z",
+      "impressao": "abd6a6c67fd8f451c05499da6bf32c8bededc373",
+      "arquivos": {
+        "Chart.tsx": "0dc7378340a9e9151ebb90d6fa0e88c75814b3b2",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    "v4_zero-indisponivel-e-sem-base": {
+      "veredito": "aprovado",
+      "nota": "Check com 1 aviso e 0 erro; zero, indisponível, sem base e mês parcial ditos em texto, sem ausência virando zero.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:00.748Z",
+      "impressao": "29a8636553824a59173a0b200df3f4235ada8ed3",
+      "arquivos": {
+        "Chart.tsx": "7ba89c2ceda6eb4c987c0ff7461fb8cce9ef715c",
+        "data.ts": "066f4b2db6394c80854dbf70ffd4385e7f8b6dd4",
+        "meta.json": "b2177a4734e67f7edbd7e9a9620afc0a0143cce0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-com-variacao-contra-mes-anterior",
+      "veredito": "reprovado",
+      "nota": "Item 19 ACE-1: describe() escreve subir é bom para todo tom good, inclusive com polaridade lower-is-better; derivar a frase da polaridade. Anatomia pede indisponível em text-xl, v1 usa text-sm.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T20:54:30.289Z",
+      "impressao": "43b19b2a8ffd263fef5f5b76697383609b794fb8",
+      "arquivos": {
+        "Chart.tsx": "50f389fa8a7c31247040793bb6f72080ba1078b9",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "reprovado",
+      "nota": "Item 10 TIP-1: veredito com R$ 143,0 mil e régua 95% e 85% sem tabular-nums. Item 11 COR-6: variação sem polaridade nem limiar de estável, crescimento zero sai +0,0% verde. Item 8 EST-4: valor nulo imprime sem base de comparação.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T20:54:42.059Z",
+      "impressao": "7ab940d071947172b964de55d283651329fa0dd1",
+      "arquivos": {
+        "Chart.tsx": "bd2c9e52a1cfd49e16f353f43a0904a15e4587e0",
+        "data.ts": "8510de76e3ac32f1d566a53bfa3b11db56d88a72",
+        "meta.json": "c3a43d78a5828db429afddcdeab501763b40ecc2"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "reprovado",
+      "nota": "Item 25 e EST-2: zero lead medido vira indisponível, sem Unplug e com o par ainda impresso; escrever sem lead qualificado no mês. Item 25 ANO-6: procedência digitada no dado e com estilo próprio; colar instruindo resolveProvenance do registry.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T20:54:42.543Z",
+      "impressao": "0ba6c6e5d0f38514f7a39cf8551042faf112c775",
+      "arquivos": {
+        "Chart.tsx": "4decb1c02f0801229098a0d977489d18821caf0b",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "reprovado",
+      "nota": "Item 10 TIP-1: frase principal sem tabular-nums (51 agendas, 14 dias, 02/09/2026). Item 24: fallback nenhuma noun.one erra gênero (nenhuma lead). Tira mistura ago/26 e set/26 e diverge do catálogo (jul/26).",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T20:54:43.029Z",
+      "impressao": "01d750f91993e2ef07fa25d39ac072958c93fabf",
+      "arquivos": {
+        "Chart.tsx": "c1b4b7d9f700aaed85a16973584a83aba4093ae0",
+        "data.ts": "7b986dc9f69e407f1e331c9423bae53187529a78",
+        "meta.json": "b3da5eb3c779a0f52f07506ec1b8380d244ff12e"
+      }
+    },
+    {
+      "versao": "v1_receita-com-variacao-contra-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Checklist sem não; itens 3 a 7, 9, 12, 13 e 18 não se aplicam. Correções da revisão anterior conferidas: frase acessível pela polaridade e indisponível em text-xl.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T22:49:10.124Z",
+      "impressao": "7b9ba39c6a8946c33b2c8bd503af91f436081146",
+      "arquivos": {
+        "Chart.tsx": "2aed2f08377c929995ef80acb47e6e4696714e0d",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "aprovado",
+      "nota": "Checklist sem não; TIP-1, COR-6 e EST-4 da revisão anterior corrigidos. Observação que não reprova: a régua cita 95% nas duas faixas e omite fora do alvo abaixo de 85%.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T22:49:10.574Z",
+      "impressao": "dc9a9c9ed96e3324c4c085553a076b35da05c8cf",
+      "arquivos": {
+        "Chart.tsx": "5430ff7ed6d9b4d57f9fb9286f417427599f5071",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "reprovado",
+      "nota": "Item 15 ESP-3: carimbo quebra em 3 linhas e estoura o cartão, texto a 3 px da borda. Item 14: hora e fuso fatiados do ISO, UTC-03:00 com hífen. Item 10 TIP-1: em jul/26 sem tabular-nums. Item 8: 0 lead vira indisponível.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T22:49:11.045Z",
+      "impressao": "56c71ac487e30c41bc62336ae389d2ca9e1b16c6",
+      "arquivos": {
+        "Chart.tsx": "387cb08da69b30fe381b9826fb463249113fb861",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "reprovado",
+      "nota": "Item 8 e 23: datas incoerentes, ago/26 parcial com 14 de 31 dias ao lado de ago/26 fechado e falha em 02/09/2026. Item 8: estados zero e sem base com coverage escondem o mês parcial na tela.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T22:49:11.494Z",
+      "impressao": "d6e8c0018b7638ef3f75a6a5efaa30cb34e41ebc",
+      "arquivos": {
+        "Chart.tsx": "9bbf013cdeba0e0134901a2b91ad876b23a868d9",
+        "data.ts": "6c808fd4b9dd406a7d64d2906ddb9fda4e5f973c",
+        "meta.json": "24a87f979c1dbf6190fa19a9945d17b7a7891b48"
+      }
+    },
+    {
+      "versao": "v1_receita-com-variacao-contra-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Releitura independente sem não; itens 3 a 7, 9, 12, 13, 16 e 18 não se aplicam. Frase acessível com 175 caracteres; check 0 com erro; render sem mapa de diferença nos dois temas.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T23:42:26.399Z",
+      "impressao": "7b9ba39c6a8946c33b2c8bd503af91f436081146",
+      "arquivos": {
+        "Chart.tsx": "2aed2f08377c929995ef80acb47e6e4696714e0d",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "aprovado",
+      "nota": "Releitura independente sem não; frase com 195 caracteres. Observação que não reprova: R$ 2,3 mi contra R$ 2,4 mi sugere 95,8% e o cartão diz 94,0%; régua ambígua em 95% e sem fora do alvo abaixo de 85%.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T23:42:26.863Z",
+      "impressao": "dc9a9c9ed96e3324c4c085553a076b35da05c8cf",
+      "arquivos": {
+        "Chart.tsx": "5430ff7ed6d9b4d57f9fb9286f417427599f5071",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "reprovado",
+      "nota": "Item 14, seção 6: hora 05:00 fatiada do ISO fora de @/lib/format e sem fuso; deixar só formatDate até existir formatTime. Item 22: texto acima do limiar é fixo, mas com polaridade maior melhor o ponto acende abaixo.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T23:42:27.354Z",
+      "impressao": "64efc4590c15ead24fd189a6bf971dbcd7de46a1",
+      "arquivos": {
+        "Chart.tsx": "4cd0044355c285758c04d7f1017b92bcd21fd1f9",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "reprovado",
+      "nota": "Item 19 ACE-1: frase da raiz diz que só agendas está em mês parcial, mas são três. Item 10: comparação e mês parcial trocam de linha e tamanho entre cartões. Item 22, seção 5: com 1 ou 2 colunas a grade h-full estoura o pai.",
+      "data": "2026-09-14",
+      "registradoEm": "2026-09-14T23:42:27.861Z",
+      "impressao": "b437db5ae55c327dac79a36701f2c192818a9853",
+      "arquivos": {
+        "Chart.tsx": "fb1969b96a5c0c0bc3a5f7fd4aa02228dd5d1424",
+        "data.ts": "066f4b2db6394c80854dbf70ffd4385e7f8b6dd4",
+        "meta.json": "b2177a4734e67f7edbd7e9a9620afc0a0143cce0"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "aprovado",
+      "nota": "Correções conferidas: stamp() só formatDate sem fatiar hora do ISO (item 14); selo e frase usam thresholdWord pela polaridade, acima para lower-is-better e abaixo para higher-is-better (item 22). Checklist sem não.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:34:05.986Z",
+      "impressao": "abd6a6c67fd8f451c05499da6bf32c8bededc373",
+      "arquivos": {
+        "Chart.tsx": "0dc7378340a9e9151ebb90d6fa0e88c75814b3b2",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "aprovado",
+      "nota": "Correções conferidas: cardPhrase acrescenta em mês parcial na frase da tira para todo cartão com coverage, não só o de estado partial (item 19). Comparação sempre na mesma linha e tamanho (12px secundário) e mês parcial sempre na mesma linha (11px muted) entre os quatro estados (item 10). Grade com minimo de 2 colunas, sem h-full forcado, sem estourar o pai (item 22). Checklist sem não.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:34:06.461Z",
+      "impressao": "f40de5fcbe51c65e82c9d3bbb288a44a48dd86f7",
+      "arquivos": {
+        "Chart.tsx": "da3e5baaabd798b27afe4d5aafd2497bde1ac76d",
+        "data.ts": "066f4b2db6394c80854dbf70ffd4385e7f8b6dd4",
+        "meta.json": "b2177a4734e67f7edbd7e9a9620afc0a0143cce0"
+      }
+    },
+    {
+      "versao": "v1_receita-com-variacao-contra-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas legiveis, variacao calculada do valor exato com base nomeada; observacao de arredondamento do compacto.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:38:14.816Z",
+      "impressao": "7b9ba39c6a8946c33b2c8bd503af91f436081146",
+      "arquivos": {
+        "Chart.tsx": "2aed2f08377c929995ef80acb47e6e4696714e0d",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "aprovado",
+      "nota": "Check limpo, selo sem fundo tingido com forma icone e palavra, regua escrita e veredito calculado; observacao sobre statusOf ignorar polaridade.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:38:18.755Z",
+      "impressao": "dc9a9c9ed96e3324c4c085553a076b35da05c8cf",
+      "arquivos": {
+        "Chart.tsx": "5430ff7ed6d9b4d57f9fb9286f417427599f5071",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "aprovado",
+      "nota": "Check limpo, par da razao escrito, polaridade menor melhor correta e ponto de acao aceso; prov-derivado mede 6,47 e 6,18, acima de AA nos dois temas.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:38:23.476Z",
+      "impressao": "abd6a6c67fd8f451c05499da6bf32c8bededc373",
+      "arquivos": {
+        "Chart.tsx": "0dc7378340a9e9151ebb90d6fa0e88c75814b3b2",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "aprovado",
+      "nota": "Check limpo, zero medido separado de indisponivel e de sem base, mes parcial declarado, quatro cartoes na mesma linha de base; sem transbordo nos dois temas.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T08:38:27.407Z",
+      "impressao": "f40de5fcbe51c65e82c9d3bbb288a44a48dd86f7",
+      "arquivos": {
+        "Chart.tsx": "da3e5baaabd798b27afe4d5aafd2497bde1ac76d",
+        "data.ts": "066f4b2db6394c80854dbf70ffd4385e7f8b6dd4",
+        "meta.json": "b2177a4734e67f7edbd7e9a9620afc0a0143cce0"
+      }
+    },
+    {
+      "versao": "v1_receita-com-variacao-contra-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Check sem erro, dois temas legiveis, variacao calculada dos valores exatos com base nomeada.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:43.066Z",
+      "impressao": "7b9ba39c6a8946c33b2c8bd503af91f436081146",
+      "arquivos": {
+        "Chart.tsx": "2aed2f08377c929995ef80acb47e6e4696714e0d",
+        "data.ts": "ed7a20430b6afc3ba9f019926f017aa07bcf55de",
+        "meta.json": "f448e2eeea39a21124e40552d6e13ee1a3bf7fda"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; selo com forma, ícone e palavra; régua do status escrita e veredito em reais conferem com o dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:49.838Z",
+      "impressao": "dc9a9c9ed96e3324c4c085553a076b35da05c8cf",
+      "arquivos": {
+        "Chart.tsx": "5430ff7ed6d9b4d57f9fb9286f417427599f5071",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; razão com as duas parcelas, polaridade menor melhor e ponto de ação coerentes; etiqueta de procedência é pedida pelo catálogo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:40:55.264Z",
+      "impressao": "abd6a6c67fd8f451c05499da6bf32c8bededc373",
+      "arquivos": {
+        "Chart.tsx": "0dc7378340a9e9151ebb90d6fa0e88c75814b3b2",
+        "data.ts": "86656241093aadbd61223ee4aa64dff16a8acc6e",
+        "meta.json": "1148b0c14f27a63d98093e1646fbd13164e6c2be"
+      }
+    },
+    {
+      "versao": "v4_zero-indisponivel-e-sem-base",
+      "veredito": "aprovado",
+      "nota": "Check com 1 aviso e 0 erro; zero, indisponível, sem base e mês parcial ditos em texto, sem ausência virando zero.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T11:41:00.748Z",
+      "impressao": "29a8636553824a59173a0b200df3f4235ada8ed3",
+      "arquivos": {
+        "Chart.tsx": "7ba89c2ceda6eb4c987c0ff7461fb8cce9ef715c",
+        "data.ts": "066f4b2db6394c80854dbf70ffd4385e7f8b6dd4",
+        "meta.json": "b2177a4734e67f7edbd7e9a9620afc0a0143cce0"
+      }
+    },
+    {
+      "versao": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "veredito": "aprovado",
+      "nota": "Conserto do sinal aceito nos dois temas: a variacao declara o sentido no texto e nao depende so da cor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:33.795Z",
+      "impressao": "64d28a714872e2ec908e40cfb4ca2ec752284e28",
+      "arquivos": {
+        "Chart.tsx": "731c152957539e931a73aeff2cd08d40a09fd2b0",
+        "data.ts": "8500ff429019fee4433e2356be8c204501ca0fcf",
+        "meta.json": "508797069d43de4033e7bb50f7c460c4dd1b5c88"
+      }
+    }
+  ]
+}

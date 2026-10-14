@@ -1,0 +1,13 @@
+{
+  "title": "Desfecho das oportunidades encerradas",
+  "useCase": "De cada 100 oportunidades encerradas no trimestre, quantas foram ganhas, perdidas ou desqualificadas?",
+  "demonstrates": [
+    "Waffle empilhado em blocos contíguos, com contagens pelo maior resto fechando 100",
+    "Só as ganhas em --chart-1; perdidas e desqualificadas em dois neutros",
+    "Sem motivo registrado por último, hachurado, fora da ordem de tamanho",
+    "Transferida com 0,3% na legenda como menos de uma célula, sem célula forçada",
+    "Legenda com contagem absoluta e percentual iguais à contagem de células"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

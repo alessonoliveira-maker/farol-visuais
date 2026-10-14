@@ -1,0 +1,74 @@
+{
+  "slug": "02_area-empilhada",
+  "nome": "Área empilhada",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Camadas em que cada série começa onde a anterior termina; o topo da pilha é o total. Responde total e composição ao mesmo tempo, com a camada mais importante na base, a única com referência comum. Absorve a área divergente, com stackOffset sign pondo entradas acima e saídas abaixo do zero, e a área empilhada micro, o mix de 2 a 4 componentes sem eixo dentro de um cartão.",
+  "quando_usar": [
+    "Total e partes importam juntos, com 2 a 6 camadas e 10 ou mais datas.",
+    "A camada da base é a pergunta principal e as de cima dão contexto.",
+    "Fluxo com entradas e saídas por camada, com stackOffset sign e saldo líquido em linha.",
+    "Mix de 2 a 4 componentes num cartão pequeno, com ordem canônica igual em todas as instâncias."
+  ],
+  "quando_evitar": [
+    "Pergunta sobre qual camada do meio cresceu: pequenos múltiplos (01_area-simples, versão v3).",
+    "Participação importa mais que o total: área 100% (03_area-100).",
+    "Menos de cerca de 10 datas: colunas empilhadas (03_colunas-verticais).",
+    "Mais de 6 categorias coloridas sem agrupar em Outros com a contagem (COR-4).",
+    "Negativos empilhados sem stackOffset sign, ou categoria que alterna sinal numa chave só.",
+    "Muitas categorias com padrão sazonal e sem necessidade de valor exato: streamgraph (08_streamgraph)."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_custo-em-tres-camadas",
+      "titulo": "Custo mensal em três camadas",
+      "caso_de_uso": "Quanto o custo total de 2026 cresceu e quanto disso veio do custo direto, do alocado e da estrutura.",
+      "o_que_demonstra": [
+        "Area com stackId comum e a camada principal como primeiro filho, na base",
+        "Legenda na ordem visual da pilha, de cima para baixo (ROT-4)",
+        "Slots categóricos na ordem 1, 3, 6 com separador surface-raised (COR-5, COR-8)",
+        "Total do último mês escrito no topo da pilha"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_mix-de-investimento-em-cartao",
+      "titulo": "Mix de investimento em cartão pequeno",
+      "caso_de_uso": "Mostrar no cartão de mídia se a plataforma em foco ganhou peso no investimento dos últimos 12 meses.",
+      "o_que_demonstra": [
+        "Área empilhada micro com XAxis e YAxis escondidos, e não removidos",
+        "Plataforma em foco em chart-1 e as outras em line-strong com separador",
+        "Teto de 4 componentes, com Outros agregado antes de chegar ao componente",
+        "Ordem de empilhamento canônica, fixa entre instâncias e meses",
+        "Participação final de cada componente escrita na frase acessível"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_estoque-da-fila-contra-teto",
+      "titulo": "Estoque da fila de pré-vendas contra o teto",
+      "caso_de_uso": "Saber em que dias o estoque da fila, por etapa, passou do teto de capacidade e qual etapa inchou.",
+      "o_que_demonstra": [
+        "Quatro etapas empilhadas na ordem do processo, não pelo tamanho",
+        "Teto em ReferenceLine tracejada com ifOverflow extendDomain (ANO-3)",
+        "Dias acima do teto contados e escritos na linha de leitura",
+        "120 pontos diários com animação desligada e ticks mensais",
+        "Nulo decidido antes do render: zero verdadeiro ou lacuna em todas as camadas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_entradas-e-saidas-de-oportunidades",
+      "titulo": "Entradas e saídas de oportunidades por semana",
+      "caso_de_uso": "Ver se o funil está enchendo ou esvaziando: oportunidades que entram contra as que saem por ganho ou perda.",
+      "o_que_demonstra": [
+        "stackOffset sign com entradas positivas e saídas negativas na mesma pilha",
+        "Linha do zero em line-strong e saldo líquido em Line dentro do ComposedChart",
+        "Tique e rótulo com sinal de menos tipográfico (U+2212) nas saídas",
+        "Semanas de saldo negativo sinalizadas com símbolo e texto, não só cor",
+        "Camada que alterna sinal separada em duas chaves com a mesma cor"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

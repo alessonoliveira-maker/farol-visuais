@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida por trimestre e tipo de cliente",
+  "useCase": "Como a receita reconhecida variou do 3º trimestre de 2025 ao 2º de 2026 e como se dividiu por tipo de cliente?",
+  "demonstrates": [
+    "Um PieChart por trimestre em contêineres de mesmo tamanho, alinhados pela base",
+    "outerRadius pela raiz quadrada do total sobre o maior total, em TypeScript",
+    "Total escrito sob cada pizza em formatCurrencyCompact",
+    "Cor por tipo de cliente fixa entre as pizzas, nos slots 1, 3 e 6"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

@@ -1,0 +1,277 @@
+{
+  "familia": "05_areas",
+  "modelo": "02_area-empilhada",
+  "versoes": {
+    "v1_custo-em-tres-camadas": {
+      "veredito": "aprovado",
+      "nota": "Pilha do zero, slots 1/3/6, total nomeado no topo; legenda inline em ordem da base para o topo fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:44.261Z",
+      "impressao": "f78d4ea37d1ba661c4daf922a137c29d44862eb5",
+      "arquivos": {
+        "Chart.tsx": "8380dfef14775b99f0586a95852c893865ac0a34",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    "v2_mix-de-investimento-em-cartao": {
+      "veredito": "aprovado",
+      "nota": "Micro area com eixos escondidos, foco em chart-1 e neutro nas demais; divergencia com o catalogo sobre a frase acessivel fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:49.082Z",
+      "impressao": "e382bd2124c3cbd1dd496b54ba65dc621def6ef9",
+      "arquivos": {
+        "Chart.tsx": "dcea897c8be5fc0aee2f32aa6824f0d8e6fe8e37",
+        "data.ts": "2b8c65682f2e31ad2fe40150a01a91196d9bb5e6",
+        "meta.json": "19844db5889c59597a7d189fc5db4b504108fc30"
+      }
+    },
+    "v3_estoque-da-fila-contra-teto": {
+      "veredito": "aprovado",
+      "nota": "Quatro etapas na ordem do processo, teto tracejado com extendDomain e lacuna que interrompe as camadas; topo do eixo em 71 e frase de 241 caracteres ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:54.782Z",
+      "impressao": "57323364cecb3aee647941bd2a9ec5bd1cf6b663",
+      "arquivos": {
+        "Chart.tsx": "15839d1d65be30fd30379d781ff6033de8345440",
+        "data.ts": "f093cd1a66fbb702094cbf49e0bf6a02f711e3da",
+        "meta.json": "c33bf8b3be4422ac5ce24beae0c138728de49b5d"
+      }
+    },
+    "v4_entradas-e-saidas-de-oportunidades": {
+      "veredito": "aprovado",
+      "nota": "Duas pilhas por sinal a partir do zero, saldo em Line nomeado na legenda e semana negativa com losango mais texto; cor do losango proxima da reclassificacao fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:00.337Z",
+      "impressao": "f89f4c81e722e2c970d197345711a7f78d547e31",
+      "arquivos": {
+        "Chart.tsx": "a7cb1a361209bc341411afdf1e6c9a951811ee67",
+        "data.ts": "10c9afc952d1c51a6747d02d024547005e7233d4",
+        "meta.json": "73c25e36b316ab8a2ef08e1582e9e9f9e5c06e94"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Pilha do zero, total nomeado e leitura limpa nos dois temas; legenda inline fora da ordem da pilha fica como observação.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:39:42.994Z",
+      "impressao": "f8dd58e29a8c6c0b93eba649904a98993e227b30",
+      "arquivos": {
+        "Chart.tsx": "c6ea7d5836c6c45eeb17e4e9e10a31b2ee7f3358",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    {
+      "versao": "v2_mix-de-investimento-em-cartao",
+      "veredito": "aprovado",
+      "nota": "Micro empilhada correta: foco em chart-1, demais em neutro com separador, eixos escondidos e leitura do todo e da parte no cartão.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:39:51.563Z",
+      "impressao": "e382bd2124c3cbd1dd496b54ba65dc621def6ef9",
+      "arquivos": {
+        "Chart.tsx": "dcea897c8be5fc0aee2f32aa6824f0d8e6fe8e37",
+        "data.ts": "2b8c65682f2e31ad2fe40150a01a91196d9bb5e6",
+        "meta.json": "19844db5889c59597a7d189fc5db4b504108fc30"
+      }
+    },
+    {
+      "versao": "v3_estoque-da-fila-contra-teto",
+      "veredito": "reprovado",
+      "nota": "Quatro etapas coloridas sem legenda nem rótulo direto: não dá para saber qual faixa é Em cadência, que é a resposta do caso de uso. Acrescentar legenda na ordem da pilha (ROT-4).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:39:56.460Z",
+      "impressao": "a0e7da4694aeeb32871cfd59d386e6b20e6571cc",
+      "arquivos": {
+        "Chart.tsx": "6263878bf092491ae9cc431a84aedad5a2b58b36",
+        "data.ts": "f093cd1a66fbb702094cbf49e0bf6a02f711e3da",
+        "meta.json": "434af9d0bc6bd0026883cb7aa0b7b8bb48566eb8"
+      }
+    },
+    {
+      "versao": "v4_entradas-e-saidas-de-oportunidades",
+      "veredito": "reprovado",
+      "nota": "Com stackOffset sign o zero da chave de saída cai na pilha positiva e a camada de reclassificação varre o quadro de +45 a −28, desenhando área que o dado não tem; e as cinco camadas ficam sem legenda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:40:01.773Z",
+      "impressao": "e1d27ed7112f4301219ec9e52d3e0eaa37e73773",
+      "arquivos": {
+        "Chart.tsx": "9619aa45d6683e551a91517e3473ff25dab47c23",
+        "data.ts": "10c9afc952d1c51a6747d02d024547005e7233d4",
+        "meta.json": "75b4fce5f07b60698bcdcf282b8b6f987b351491"
+      }
+    },
+    {
+      "versao": "v1_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta a partir do zero, total nomeado no topo e participacao na linha de leitura; legenda inline vai da base para o topo, observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:55:20.158Z",
+      "impressao": "f8dd58e29a8c6c0b93eba649904a98993e227b30",
+      "arquivos": {
+        "Chart.tsx": "c6ea7d5836c6c45eeb17e4e9e10a31b2ee7f3358",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    {
+      "versao": "v2_mix-de-investimento-em-cartao",
+      "veredito": "aprovado",
+      "nota": "Cartão micro com eixos escondidos, foco em chart-1 sobre neutro e participação escrita; frase acessível agrega as demais em vez de detalhar cada uma.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:55:27.011Z",
+      "impressao": "e382bd2124c3cbd1dd496b54ba65dc621def6ef9",
+      "arquivos": {
+        "Chart.tsx": "dcea897c8be5fc0aee2f32aa6824f0d8e6fe8e37",
+        "data.ts": "2b8c65682f2e31ad2fe40150a01a91196d9bb5e6",
+        "meta.json": "19844db5889c59597a7d189fc5db4b504108fc30"
+      }
+    },
+    {
+      "versao": "v1_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta a partir do zero, total nomeado no topo da pilha e participação de cada camada na linha de leitura; a legenda inline vai da base para o topo, observação.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:55:36.079Z",
+      "impressao": "f8dd58e29a8c6c0b93eba649904a98993e227b30",
+      "arquivos": {
+        "Chart.tsx": "c6ea7d5836c6c45eeb17e4e9e10a31b2ee7f3358",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    {
+      "versao": "v3_estoque-da-fila-contra-teto",
+      "veredito": "aprovado",
+      "nota": "Legenda na ordem da pilha resolve a pergunta de qual etapa inchou; lacuna quebra as quatro camadas, teto tracejado com extendDomain e leitura limpa nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:55:41.032Z",
+      "impressao": "295f959f4ce0d7f286f3cf80d5dc11e36db64899",
+      "arquivos": {
+        "Chart.tsx": "fa5ae16d3fd723463a94ccfbe0bae09e8197938b",
+        "data.ts": "f093cd1a66fbb702094cbf49e0bf6a02f711e3da",
+        "meta.json": "c33bf8b3be4422ac5ce24beae0c138728de49b5d"
+      }
+    },
+    {
+      "versao": "v4_entradas-e-saidas-de-oportunidades",
+      "veredito": "reprovado",
+      "nota": "A Line do saldo líquido, a marca mais forte do quadro, não é nomeada em lugar nenhum do desenho: a legenda lista só as quatro camadas. Dar rótulo de fim ou item de legenda com amostra de linha (ROT-3, ROT-4).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:55:46.166Z",
+      "impressao": "a397ba693cf67384d8a6f0f50e5d85dbdead9c32",
+      "arquivos": {
+        "Chart.tsx": "fdecf600666df9f799992828ba88f536d37baa69",
+        "data.ts": "10c9afc952d1c51a6747d02d024547005e7233d4",
+        "meta.json": "73c25e36b316ab8a2ef08e1582e9e9f9e5c06e94"
+      }
+    },
+    {
+      "versao": "v1_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Pilha honesta a partir do zero, slots 1-3-6, total nomeado e linha de leitura com o todo e as partes; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:38:05.578Z",
+      "impressao": "f8dd58e29a8c6c0b93eba649904a98993e227b30",
+      "arquivos": {
+        "Chart.tsx": "c6ea7d5836c6c45eeb17e4e9e10a31b2ee7f3358",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    {
+      "versao": "v2_mix-de-investimento-em-cartao",
+      "veredito": "aprovado",
+      "nota": "Micro area com eixos escondidos responde a pergunta do cartao; ressalva nao bloqueante sobre as tres camadas neutras sem nome.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:38:10.984Z",
+      "impressao": "e382bd2124c3cbd1dd496b54ba65dc621def6ef9",
+      "arquivos": {
+        "Chart.tsx": "dcea897c8be5fc0aee2f32aa6824f0d8e6fe8e37",
+        "data.ts": "2b8c65682f2e31ad2fe40150a01a91196d9bb5e6",
+        "meta.json": "19844db5889c59597a7d189fc5db4b504108fc30"
+      }
+    },
+    {
+      "versao": "v3_estoque-da-fila-contra-teto",
+      "veredito": "aprovado",
+      "nota": "Legenda na ordem da pilha, lacuna preservada e teto com extendDomain; topo do eixo em 71 fica como observacao da EIX-4.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:38:16.638Z",
+      "impressao": "295f959f4ce0d7f286f3cf80d5dc11e36db64899",
+      "arquivos": {
+        "Chart.tsx": "fa5ae16d3fd723463a94ccfbe0bae09e8197938b",
+        "data.ts": "f093cd1a66fbb702094cbf49e0bf6a02f711e3da",
+        "meta.json": "c33bf8b3be4422ac5ce24beae0c138728de49b5d"
+      }
+    },
+    {
+      "versao": "v4_entradas-e-saidas-de-oportunidades",
+      "veredito": "aprovado",
+      "nota": "Divergente com zero em line-strong, saldo nomeado na legenda e conta escrita que fecha em 174; desvio do stackOffset sign e declarado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:38:20.884Z",
+      "impressao": "9c61ab8b99660d6e4e067fa2faf07b4a9a022256",
+      "arquivos": {
+        "Chart.tsx": "75085c471e266dccd56ea4210332eb53e1021df5",
+        "data.ts": "10c9afc952d1c51a6747d02d024547005e7233d4",
+        "meta.json": "73c25e36b316ab8a2ef08e1582e9e9f9e5c06e94"
+      }
+    },
+    {
+      "versao": "v1_custo-em-tres-camadas",
+      "veredito": "aprovado",
+      "nota": "Pilha do zero, slots 1/3/6, total nomeado no topo; legenda inline em ordem da base para o topo fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:44.261Z",
+      "impressao": "f78d4ea37d1ba661c4daf922a137c29d44862eb5",
+      "arquivos": {
+        "Chart.tsx": "8380dfef14775b99f0586a95852c893865ac0a34",
+        "data.ts": "58dc136b4d79e25a1f6725ff6e06beffd125ef5f",
+        "meta.json": "72354231037992261e39a030987b5ad66b021c8a"
+      }
+    },
+    {
+      "versao": "v2_mix-de-investimento-em-cartao",
+      "veredito": "aprovado",
+      "nota": "Micro area com eixos escondidos, foco em chart-1 e neutro nas demais; divergencia com o catalogo sobre a frase acessivel fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:49.082Z",
+      "impressao": "e382bd2124c3cbd1dd496b54ba65dc621def6ef9",
+      "arquivos": {
+        "Chart.tsx": "dcea897c8be5fc0aee2f32aa6824f0d8e6fe8e37",
+        "data.ts": "2b8c65682f2e31ad2fe40150a01a91196d9bb5e6",
+        "meta.json": "19844db5889c59597a7d189fc5db4b504108fc30"
+      }
+    },
+    {
+      "versao": "v3_estoque-da-fila-contra-teto",
+      "veredito": "aprovado",
+      "nota": "Quatro etapas na ordem do processo, teto tracejado com extendDomain e lacuna que interrompe as camadas; topo do eixo em 71 e frase de 241 caracteres ficam como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:23:54.782Z",
+      "impressao": "57323364cecb3aee647941bd2a9ec5bd1cf6b663",
+      "arquivos": {
+        "Chart.tsx": "15839d1d65be30fd30379d781ff6033de8345440",
+        "data.ts": "f093cd1a66fbb702094cbf49e0bf6a02f711e3da",
+        "meta.json": "c33bf8b3be4422ac5ce24beae0c138728de49b5d"
+      }
+    },
+    {
+      "versao": "v4_entradas-e-saidas-de-oportunidades",
+      "veredito": "aprovado",
+      "nota": "Duas pilhas por sinal a partir do zero, saldo em Line nomeado na legenda e semana negativa com losango mais texto; cor do losango proxima da reclassificacao fica como observacao.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:00.337Z",
+      "impressao": "f89f4c81e722e2c970d197345711a7f78d547e31",
+      "arquivos": {
+        "Chart.tsx": "a7cb1a361209bc341411afdf1e6c9a951811ee67",
+        "data.ts": "10c9afc952d1c51a6747d02d024547005e7233d4",
+        "meta.json": "73c25e36b316ab8a2ef08e1582e9e9f9e5c06e94"
+      }
+    }
+  ]
+}

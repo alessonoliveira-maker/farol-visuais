@@ -1,0 +1,14 @@
+{
+  "title": "Vitórias por mês e origem em 2026",
+  "useCase": "Comercial: quantas oportunidades foram ganhas em cada mês de 2026 e de qual origem veio cada uma.",
+  "demonstrates": [
+    "Células empilhadas por origem dentro da coluna, na ordem fixa da legenda",
+    "Cor por origem com seriesColor, a mesma do restante do painel",
+    "Célula como botão com rótulo que abre a oportunidade, na ordem de preenchimento",
+    "Mês em curso marcado como parcial no rótulo do eixo",
+    "Meses por formatMonthShort e total do mês escrito no topo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "A cor vem do slot que o dado declara para cada origem (1, 3, 6 e 5), passado a seriesColor, e nunca da posição na lista (COR-3). A ausência de origem fica em --text-muted e por último. O vão entre colunas é de 20% da banda de cada lado, fora dos 30% a 40% da ESP-2: a coluna precisa de largura para três células por linha, e a célula tem cerca de 16 px, acima do piso de 12. A raiz é role group e não img, porque as células são botões e um img apagaria os filhos para o leitor de tela. A dica traz a contagem por origem do mês, que o desenho não escreve."
+}

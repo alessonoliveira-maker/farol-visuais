@@ -1,0 +1,173 @@
+{
+  "familia": "06_pizza",
+  "modelo": "01_pizza-simples",
+  "versoes": {
+    "v1_origem-da-receita-reconhecida": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A redação foi invertida para a conclusão vir primeiro, \"Cliente novo lidera com 44% dos R$ 2,5 mi do trimestre\", e o truncate saiu. A fatia de 4% continua sem rótulo direto, o que a ROT-10 permite porque a lista de identificação abaixo do gráfico nomeia as quatro partes com o valor de cada uma. Registro a discordância do agente, que está certa: a frase não estava sendo cortada hoje. Ele mediu 419 px de tinta contra 424 px úteis e 0,00% de diferença entre o SVG e a página nos dois temas, ou seja o defeito era latente com 5 px de folga, não visível. Minha leitura visual estava errada. O conserto continua certo pelo princípio, porque a cauda carrega o número e o piso de 11 px impedia resolver por fonte menor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:35.907Z",
+      "impressao": "5a1f93ed59f7a7533adbc0c2bca3c3ab17fb86a0",
+      "arquivos": {
+        "Chart.tsx": "4b93d18f1802a28d735a85160beaf50634b55c1f",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "f985dac2810fa70a722c5108ec4c15c102f4f959"
+      }
+    },
+    "v2_nao-comparecimento-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Fatia acesa deslocada 8 px com Sector no shape, destaque em três canais (deslocamento, 700 no rótulo e no nome, anotação), rótulo vazado em surface-raised sem halo acima de 4,5:1 sobre aceso e neutro, lista com contagem e percentual somando 100. Observações no README: cabeçalho agendas transborda a coluna w-8 e desalinha uns 10 px; anotação não nomeia a medida.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:59:56.084Z",
+      "impressao": "af907eb57195abce0150888dd73eb884a4b0d44c",
+      "arquivos": {
+        "Chart.tsx": "84e35f0a624cf491dde7af36a08e14c6cee2315b",
+        "data.ts": "3acf3b98d37c280a001e192fe21226df7c941fd9",
+        "meta.json": "48c52529e742c72af6ce39b74294f2902be49693"
+      }
+    },
+    "v4_origem-dos-leads-com-dado-ausente": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Fatia de ausência vazada com contorno text-muted por último e nomeada, guias de dois segmentos sem cruzamento com o par de 3% e 2% empurrado na ordem angular, guia a 5,21 e 5,37:1, percentuais 44, 37, 3, 2 e 14 somando 100, margem lateral derivada do dado. Observações no README: rótulos em 11 px contra 12 px da 17.1, cobertura 85,9% ao lado de 14% inteiro, ramo sem origem declarada nenhuma.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:59:59.214Z",
+      "impressao": "15d75091381ff650bc3ba94a6b34994e138c3706",
+      "arquivos": {
+        "Chart.tsx": "c313c7991302c7c517cadb007f98d67591d4ab96",
+        "data.ts": "6d31367d7c990a89bdb5df1a043bce409dcdeac0",
+        "meta.json": "b82d7a768d5255f3a065680a58a196c05abf0580"
+      }
+    },
+    "v3_perdas-por-motivo-com-legenda-tabular": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Bloqueante anterior fechado: activeId = hoverId ?? selectedId, conferido no navegador (ponteiro em linha e em fatia acende os dois lados, Tab acende, Enter seleciona com aria-pressed e desmarca, sair devolve Preço). Percentuais 32, 26, 18, 15 e 9 somando 100, total 212 e R$ 4,3 mi, opacidade 0,75 composta de 3,22 a 5,88:1. Observações no README: ganho de raio infla a área da fatia em foco (Preço pinta 37,2% da tinta para 32%), parada de Tab morta no Pie, selectedId padrão e zero descartado latentes.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:08:52.613Z",
+      "impressao": "689244afc51d45c48e38b2574b6d5f40391baa97",
+      "arquivos": {
+        "Chart.tsx": "1f4e3d2d031cbeeead12ed294b919055901af618",
+        "data.ts": "7db9b1ce8a56424f0b3864a1a78fabc1bb1a21ef",
+        "meta.json": "ab3a64af2a9941f2afaa2d510f581afeb993d9e0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origem-da-receita-reconhecida",
+      "veredito": "reprovado",
+      "nota": "Nenhuma fatia e nomeada no desenho: sem rotulo direto nem legenda, so cliente novo sai identificado pela linha de leitura e as outras tres categorias vivem so na cor e na dica (ROT-4, ACE-2, checklist 12 e 19).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T13:25:45.219Z",
+      "impressao": "bbeca3c35ef04704c148b54aaf5c1defc7ae030a",
+      "arquivos": {
+        "Chart.tsx": "858491a2af712df19d307470a6d40028ce57f477",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "0646d09d6659eac48a7b277b02fb66f89c07d3eb"
+      }
+    },
+    {
+      "versao": "v1_origem-da-receita-reconhecida",
+      "veredito": "aprovado",
+      "nota": "Check limpo; pizza de 4 fatias soma 100, toda fatia identificada pela lista abaixo e rotulo legivel nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T13:36:30.625Z",
+      "impressao": "996b777f275f6563fc0f439ea315cd2357f45e21",
+      "arquivos": {
+        "Chart.tsx": "e9cb67be23bfd4f67e4cb4237da87f823542167d",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "f985dac2810fa70a722c5108ec4c15c102f4f959"
+      }
+    },
+    {
+      "versao": "v1_origem-da-receita-reconhecida",
+      "veredito": "reprovado",
+      "nota": "Conserto de escala aceito, mas a linha de leitura usa truncate e corta a frase sem reticencia visivel no tema claro. Deixar a frase quebrar em duas linhas ou encurtar a redacao na origem.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T11:40:53.393Z",
+      "impressao": "f97ac676b1ab7653442457497a5a217c2ef668d4",
+      "arquivos": {
+        "Chart.tsx": "7ce172a9c59a70fa7de5281373e5edd47fa0dcfc",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "f985dac2810fa70a722c5108ec4c15c102f4f959"
+      }
+    },
+    {
+      "versao": "v1_origem-da-receita-reconhecida",
+      "veredito": "reprovado",
+      "nota": "Conserto de escala aceito, mas a linha de leitura usa truncate e corta a frase sem reticência visível no tema claro, e a cauda dela carrega o número. Deixar a frase quebrar em duas linhas ou encurtar a redação na origem. Não resolver com fonte menor: o piso de 11 px vale.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:19:47.624Z",
+      "impressao": "5a1f93ed59f7a7533adbc0c2bca3c3ab17fb86a0",
+      "arquivos": {
+        "Chart.tsx": "4b93d18f1802a28d735a85160beaf50634b55c1f",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "f985dac2810fa70a722c5108ec4c15c102f4f959"
+      }
+    },
+    {
+      "versao": "v1_origem-da-receita-reconhecida",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. A redação foi invertida para a conclusão vir primeiro, \"Cliente novo lidera com 44% dos R$ 2,5 mi do trimestre\", e o truncate saiu. A fatia de 4% continua sem rótulo direto, o que a ROT-10 permite porque a lista de identificação abaixo do gráfico nomeia as quatro partes com o valor de cada uma. Registro a discordância do agente, que está certa: a frase não estava sendo cortada hoje. Ele mediu 419 px de tinta contra 424 px úteis e 0,00% de diferença entre o SVG e a página nos dois temas, ou seja o defeito era latente com 5 px de folga, não visível. Minha leitura visual estava errada. O conserto continua certo pelo princípio, porque a cauda carrega o número e o piso de 11 px impedia resolver por fonte menor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:35.907Z",
+      "impressao": "5a1f93ed59f7a7533adbc0c2bca3c3ab17fb86a0",
+      "arquivos": {
+        "Chart.tsx": "4b93d18f1802a28d735a85160beaf50634b55c1f",
+        "data.ts": "41817ab257e26b5e74adc8c71179f6767bfee63a",
+        "meta.json": "f985dac2810fa70a722c5108ec4c15c102f4f959"
+      }
+    },
+    {
+      "versao": "v2_nao-comparecimento-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Fatia acesa deslocada 8 px com Sector no shape, destaque em três canais (deslocamento, 700 no rótulo e no nome, anotação), rótulo vazado em surface-raised sem halo acima de 4,5:1 sobre aceso e neutro, lista com contagem e percentual somando 100. Observações no README: cabeçalho agendas transborda a coluna w-8 e desalinha uns 10 px; anotação não nomeia a medida.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:59:56.084Z",
+      "impressao": "af907eb57195abce0150888dd73eb884a4b0d44c",
+      "arquivos": {
+        "Chart.tsx": "84e35f0a624cf491dde7af36a08e14c6cee2315b",
+        "data.ts": "3acf3b98d37c280a001e192fe21226df7c941fd9",
+        "meta.json": "48c52529e742c72af6ce39b74294f2902be49693"
+      }
+    },
+    {
+      "versao": "v4_origem-dos-leads-com-dado-ausente",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Fatia de ausência vazada com contorno text-muted por último e nomeada, guias de dois segmentos sem cruzamento com o par de 3% e 2% empurrado na ordem angular, guia a 5,21 e 5,37:1, percentuais 44, 37, 3, 2 e 14 somando 100, margem lateral derivada do dado. Observações no README: rótulos em 11 px contra 12 px da 17.1, cobertura 85,9% ao lado de 14% inteiro, ramo sem origem declarada nenhuma.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T11:59:59.214Z",
+      "impressao": "15d75091381ff650bc3ba94a6b34994e138c3706",
+      "arquivos": {
+        "Chart.tsx": "c313c7991302c7c517cadb007f98d67591d4ab96",
+        "data.ts": "6d31367d7c990a89bdb5df1a043bce409dcdeac0",
+        "meta.json": "b82d7a768d5255f3a065680a58a196c05abf0580"
+      }
+    },
+    {
+      "versao": "v3_perdas-por-motivo-com-legenda-tabular",
+      "veredito": "reprovado",
+      "nota": "Seção 14.1, versão que não demonstra o que o catálogo diz (DAD-10): Chart.tsx:129 faz activeId = selectedId ?? hoverId e a seleção nasce em preco (data.ts:38, default do parâmetro em :105), então ponteiro e foco não acendem nada no estado em que a peça abre, contra o hover e foco nos dois sentidos do catálogo e o comentário da :128. Trocar para hoverId ?? selectedId. Parecer em validation/revisao_06_pizza__01_pizza-simples_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:00:02.411Z",
+      "impressao": "0c150ac7cfa5afc2c5bad8a8f3b76dcfdcf6414e",
+      "arquivos": {
+        "Chart.tsx": "ea20cb4aaecb02610b26fb8122791c770b2ec6da",
+        "data.ts": "7db9b1ce8a56424f0b3864a1a78fabc1bb1a21ef",
+        "meta.json": "ab3a64af2a9941f2afaa2d510f581afeb993d9e0"
+      }
+    },
+    {
+      "versao": "v3_perdas-por-motivo-com-legenda-tabular",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, nos dois temas. Bloqueante anterior fechado: activeId = hoverId ?? selectedId, conferido no navegador (ponteiro em linha e em fatia acende os dois lados, Tab acende, Enter seleciona com aria-pressed e desmarca, sair devolve Preço). Percentuais 32, 26, 18, 15 e 9 somando 100, total 212 e R$ 4,3 mi, opacidade 0,75 composta de 3,22 a 5,88:1. Observações no README: ganho de raio infla a área da fatia em foco (Preço pinta 37,2% da tinta para 32%), parada de Tab morta no Pie, selectedId padrão e zero descartado latentes.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:08:52.613Z",
+      "impressao": "689244afc51d45c48e38b2574b6d5f40391baa97",
+      "arquivos": {
+        "Chart.tsx": "1f4e3d2d031cbeeead12ed294b919055901af618",
+        "data.ts": "7db9b1ce8a56424f0b3864a1a78fabc1bb1a21ef",
+        "meta.json": "ab3a64af2a9941f2afaa2d510f581afeb993d9e0"
+      }
+    }
+  ]
+}

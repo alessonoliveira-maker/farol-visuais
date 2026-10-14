@@ -1,0 +1,160 @@
+{
+  "familia": "10_funil",
+  "modelo": "03_funil-com-perdas-por-etapa",
+  "versoes": {
+    "v1_avancou-perdido-em-andamento": {
+      "veredito": "aprovado",
+      "nota": "Fechamento auditado, rotulo na ponta livre, dois temas limpos; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:42.250Z",
+      "impressao": "69ccc7267ea01b106d5b0a777da8c40794809be9",
+      "arquivos": {
+        "Chart.tsx": "9dd043aef53101bff6ec7413b3a61f640d69bd4f",
+        "data.ts": "016925743ec79789e53e61168e8d820d4820f8f3",
+        "meta.json": "a70018156690b3eb41382a90d7949a9f0d192aa0"
+      }
+    },
+    "v2_perdas-por-motivo": {
+      "veredito": "aprovado",
+      "nota": "Cinco motivos em slots COR-8, valor escrito ao lado do neutro; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:47.820Z",
+      "impressao": "32363cf5bdc1568c0e0207985533693ce57de53c",
+      "arquivos": {
+        "Chart.tsx": "fc6add44515f5361931f6f60238350d3d7fa08e3",
+        "data.ts": "7386965cd3e31530a7731c3aadf318b136b0d95a",
+        "meta.json": "1cf05338ad6ddbd281b91a7d27e7b5bcdac83f55"
+      }
+    },
+    "v3_descarte-da-pre-vendas-clientes-novos": {
+      "veredito": "aprovado",
+      "nota": "Dominio fixo pelo recorte completo, recorte ativo escrito na leitura; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:53.060Z",
+      "impressao": "c45d6336e9d7b740264c1935f7c1ec0062473124",
+      "arquivos": {
+        "Chart.tsx": "98e7b53a0f16528db0495da4cc7e8fcf525f1eed",
+        "data.ts": "481273c6db83797ba7599f00f6e5edeb55ff9097",
+        "meta.json": "1c32de60d22c1e60c776285a89630c29658772b5"
+      }
+    },
+    "v4_perdas-sem-motivo-registrado": {
+      "veredito": "aprovado",
+      "nota": "Lacuna hachurada separada dos motivos, canvas fora do preset declarado em notes; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:57.685Z",
+      "impressao": "891b72e050392b6654f74276fbbb79dc8670b03e",
+      "arquivos": {
+        "Chart.tsx": "c6ebb5b6dc8204d9b2d962ebc534088ad1cf5940",
+        "data.ts": "a6e54e50b65020382d3b48470d10b9f0d84d9dc3",
+        "meta.json": "230a1e3b9c7306c26ec14d34533ad4cec0eede15"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_avancou-perdido-em-andamento",
+      "veredito": "aprovado",
+      "nota": "Fechamento audita; valor do neutro escrito ao lado; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:57:08.362Z",
+      "impressao": "69ccc7267ea01b106d5b0a777da8c40794809be9",
+      "arquivos": {
+        "Chart.tsx": "9dd043aef53101bff6ec7413b3a61f640d69bd4f",
+        "data.ts": "016925743ec79789e53e61168e8d820d4820f8f3",
+        "meta.json": "a70018156690b3eb41382a90d7949a9f0d192aa0"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo",
+      "veredito": "reprovado",
+      "nota": "Segmento Em andamento em line strong sem o valor escrito ao lado: marca de 1,79:1 e 1,83:1 sem a isencao da ACE-3. Escrever N em andamento no rotulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:57:13.437Z",
+      "impressao": "747f4870b47f48d1161ec0c16dfc41134b651437",
+      "arquivos": {
+        "Chart.tsx": "1d60781ac6d84a2e2d0f6b7b1cada6796564b218",
+        "data.ts": "7386965cd3e31530a7731c3aadf318b136b0d95a",
+        "meta.json": "1cf05338ad6ddbd281b91a7d27e7b5bcdac83f55"
+      }
+    },
+    {
+      "versao": "v3_descarte-da-pre-vendas-clientes-novos",
+      "veredito": "reprovado",
+      "nota": "Segmento Em andamento em line strong sem o valor escrito ao lado: marca abaixo de 3:1 sem a isencao da ACE-3. Escrever N em andamento no rotulo de fechamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:57:18.296Z",
+      "impressao": "ca7ee6d372b5f5e9f0155a07508b8dfa4462a078",
+      "arquivos": {
+        "Chart.tsx": "3fef6a719500bc249940ce5a1a6f22c52c6ebf52",
+        "data.ts": "481273c6db83797ba7599f00f6e5edeb55ff9097",
+        "meta.json": "1c32de60d22c1e60c776285a89630c29658772b5"
+      }
+    },
+    {
+      "versao": "v4_perdas-sem-motivo-registrado",
+      "veredito": "reprovado",
+      "nota": "Segmento Em andamento em line strong sem o valor escrito ao lado: marca abaixo de 3:1 sem a isencao da ACE-3, contra o item 6 da Anatomia do README. Escrever N em andamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:57:22.989Z",
+      "impressao": "fd4a27d0d5151d0897b9b6a958b9e39b484a967a",
+      "arquivos": {
+        "Chart.tsx": "4065d8a8b1a162eb649418852b1b396ae81a37d4",
+        "data.ts": "a6e54e50b65020382d3b48470d10b9f0d84d9dc3",
+        "meta.json": "afc3bc4854ebfc97a335d8d8c752d30ba599ce03"
+      }
+    },
+    {
+      "versao": "v1_avancou-perdido-em-andamento",
+      "veredito": "aprovado",
+      "nota": "Fechamento auditado, rotulo na ponta livre, dois temas limpos; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:42.250Z",
+      "impressao": "69ccc7267ea01b106d5b0a777da8c40794809be9",
+      "arquivos": {
+        "Chart.tsx": "9dd043aef53101bff6ec7413b3a61f640d69bd4f",
+        "data.ts": "016925743ec79789e53e61168e8d820d4820f8f3",
+        "meta.json": "a70018156690b3eb41382a90d7949a9f0d192aa0"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo",
+      "veredito": "aprovado",
+      "nota": "Cinco motivos em slots COR-8, valor escrito ao lado do neutro; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:47.820Z",
+      "impressao": "32363cf5bdc1568c0e0207985533693ce57de53c",
+      "arquivos": {
+        "Chart.tsx": "fc6add44515f5361931f6f60238350d3d7fa08e3",
+        "data.ts": "7386965cd3e31530a7731c3aadf318b136b0d95a",
+        "meta.json": "1cf05338ad6ddbd281b91a7d27e7b5bcdac83f55"
+      }
+    },
+    {
+      "versao": "v3_descarte-da-pre-vendas-clientes-novos",
+      "veredito": "aprovado",
+      "nota": "Dominio fixo pelo recorte completo, recorte ativo escrito na leitura; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:53.060Z",
+      "impressao": "c45d6336e9d7b740264c1935f7c1ec0062473124",
+      "arquivos": {
+        "Chart.tsx": "98e7b53a0f16528db0495da4cc7e8fcf525f1eed",
+        "data.ts": "481273c6db83797ba7599f00f6e5edeb55ff9097",
+        "meta.json": "1c32de60d22c1e60c776285a89630c29658772b5"
+      }
+    },
+    {
+      "versao": "v4_perdas-sem-motivo-registrado",
+      "veredito": "aprovado",
+      "nota": "Lacuna hachurada separada dos motivos, canvas fora do preset declarado em notes; sem bloqueante",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:12:57.685Z",
+      "impressao": "891b72e050392b6654f74276fbbb79dc8670b03e",
+      "arquivos": {
+        "Chart.tsx": "c6ebb5b6dc8204d9b2d962ebc534088ad1cf5940",
+        "data.ts": "a6e54e50b65020382d3b48470d10b9f0d84d9dc3",
+        "meta.json": "230a1e3b9c7306c26ec14d34533ad4cec0eede15"
+      }
+    }
+  ]
+}

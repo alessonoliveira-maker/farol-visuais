@@ -1,0 +1,12 @@
+{
+  "title": "Leads por mês em três origens",
+  "useCase": "Quanto entrou em cada um dos últimos 6 meses e de quais origens veio esse volume?",
+  "demonstrates": [
+    "Bar com o mesmo stackId e radius só no segmento do topo da pilha",
+    "Total somado no dado em TypeScript e escrito acima da coluna por LabelList",
+    "Legenda na ordem visual da pilha, lida de cima para baixo",
+    "Contorno surface-raised de 1,5 px separando segmentos vizinhos"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

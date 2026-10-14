@@ -1,0 +1,12 @@
+{
+  "title": "Origem de lead que mais subiu no ranking",
+  "useCase": "Qual origem de lead mais subiu no ranking de volume nos últimos 6 meses, contra as outras sete?",
+  "demonstrates": [
+    "Maior subida em destaque e demais origens em neutro, sem legenda",
+    "Rótulo em peso 700 só na origem destacada, na ponta final",
+    "Anotação com as posições de início e fim da maior subida",
+    "Dica com o volume absoluto de leads, porque a posição apaga a magnitude"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

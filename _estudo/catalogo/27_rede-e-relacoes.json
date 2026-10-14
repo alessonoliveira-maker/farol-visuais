@@ -1,0 +1,607 @@
+{
+  "slug": "27_rede-e-relacoes",
+  "nome": "Rede e relações",
+  "modelos": [
+    {
+      "slug": "01_matriz-de-adjacencia",
+      "nome": "Matriz de adjacência",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Os mesmos nós nas linhas e nas colunas, e cada célula pintada pela intensidade da ligação entre o par. Não existe cruzamento de aresta, então a rede densa continua legível, e por isso a matriz é também a alternativa acessível de toda a família. A ordem é a informação: em ordem alfabética a matriz parece ruído, ordenada por grupo e grau (ou por baricentro iterativo) os blocos e as pontes aparecem. Em relação simétrica desenha só o triângulo inferior; em relação dirigida desenha a matriz inteira e escreve no canto que a linha é a origem e a coluna é o destino. No Farol é um grid CSS com grid-template-columns auto repeat(n, minmax(0, 1fr)) e células aspect-square até cerca de 30 nós; acima disso a mesma geometria vai para SVG. Absorve a matriz de pares da família 25 (25#23): handoff por par, motivos de perda que andam juntos e matriz esparsa.",
+      "quando_usar": [
+        "Rede densa com 10 a 30 nós em que o grafo livre viraria emaranhado (coocorrência de origens, motivos de perda)",
+        "Confronto direto entre pares do mesmo tipo ou de dois tipos (SDR por executivo) com contagem ou taxa na célula",
+        "Leitura de valor exato do par, que chord e grafo só entregam na dica",
+        "Alternativa acessível ou visão móvel de qualquer outro modelo da família, com as mesmas ligações",
+        "Busca de grupos e pontes quando existe um critério de ordenação declarado (grupo, grau, baricentro)"
+      ],
+      "quando_evitar": [
+        "Poucos nós e ligações esparsas, em que a forma da rede é a mensagem: use o grafo por forças (27/04) ou o arc diagram (27/05)",
+        "Mais de 30 nós num cartão estreito sem rolagem: filtre por peso ou colapse os nós sem par antes",
+        "Movimento de uma etapa para outra com diagonal de permanência: use a matriz de transição (15/07_matriz-de-transicao)",
+        "Duas categorias quaisquer sem leitura de rede, só intensidade: use a matriz categórica (15/02_matriz-categorica)",
+        "Volume com sentido entre poucas entidades, em que a proporção do todo importa: use o chord direcional (11/05)"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_coocorrencia-de-origens-na-jornada",
+          "titulo": "Origens que aparecem juntas na jornada",
+          "caso_de_uso": "Marketing: quais das 12 origens fictícias aparecem na mesma jornada de lead em 2026-08, e se formam blocos por tipo.",
+          "o_que_demonstra": [
+            "Triângulo inferior só, com a diagonal neutra em var(--surface-overlay)",
+            "Ordem por grupo (pago, orgânico, relacionamento) com separador de grupo entre blocos",
+            "Cor por quantil em var(--seq-2) a var(--seq-7) para um par gigante não apagar o resto",
+            "Contagem escrita em cada célula, porque var(--seq-2) e var(--seq-3) contrastam pouco",
+            "Linha e coluna sob o cursor realçadas em var(--surface-overlay) com o par na dica"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_handoff-sdr-por-executivo",
+          "titulo": "Handoffs de SDR para executivo",
+          "caso_de_uso": "Pré-vendas: para quais executivos cada SDR fictício repassou agendas em 2026-T3 e onde o repasse se concentra num par.",
+          "o_que_demonstra": [
+            "Matriz dirigida de 6 SDRs por 9 executivos, com origem e destino escritos no canto",
+            "Percentual da linha escrito na célula com formatPercent, e a contagem na dica",
+            "Par mais concentrado com contorno var(--chart-1) e rótulo em peso 700",
+            "Anotação curta junto do par: SDR 3 repassou 70% para dois executivos",
+            "Totais marginais por SDR e por executivo fora da grade, em var(--text-secondary)"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_motivos-de-perda-que-andam-juntos",
+          "titulo": "Motivos de perda que andam juntos",
+          "caso_de_uso": "Comercial: quais dos 18 motivos fictícios de perda são registrados juntos nas 1.460 perdas de 2026 e que blocos eles formam.",
+          "o_que_demonstra": [
+            "Ordenação por baricentro iterativo calculada em TypeScript dentro de useMemo",
+            "Seletor de ordem visível (nome, frequência, agrupamento) com a ordem padrão declarada",
+            "Bloco de três motivos colados realçado por contorno var(--chart-1) e anotado",
+            "Cabeçalho de coluna girado 90 graus com margem calculada pelo maior rótulo",
+            "Contêiner com rolagem horizontal e cabeçalho de linha fixo abaixo de 480 px"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_matriz-esparsa-e-par-sem-medicao",
+          "titulo": "Origens sem par e pares sem medição",
+          "caso_de_uso": "Marketing: 40 origens com 92% de pares vazios; o que sobra quando se colapsa quem não tem par e onde a fonte não registra a origem.",
+          "o_que_demonstra": [
+            "22 origens sem nenhum par colapsadas no rodapé como 22 origens sem relação",
+            "Matriz reduzida a 18 por 18, ainda em grid CSS, com a contagem do que saiu",
+            "Célula sem medição hachurada por repeating-linear-gradient em var(--text-muted)",
+            "Zero medido desenhado e escrito como 0, distinto da célula sem dado",
+            "Legenda com item próprio para sem dado, depois das classes da rampa"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_grafo-bipartido",
+      "nome": "Grafo bipartido",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Dois tipos de entidade em duas colunas, com ligações só de uma coluna para a outra. Resolve quem se relaciona com quem, e com que frequência, sem o caos do layout livre: a posição vertical é a ordem na coluna e a ligação é uma Bézier horizontal M xA,yA C xm,yA xm,yB xB,yB com espessura por peso. A ordem das colunas decide a leitura, então é calculada em TypeScript pela heurística de baricentro (ordena a coluna B pela média das posições dos vizinhos em A, depois A pela média em B, e repete). A espessura vai em três faixas (fraca, média, forte), mais legível que a contínua quando há muitas ligações, e as pontas se distribuem ao longo da altura do nó para não empilhar num ponto. Quando a pergunta é quanto volume foi de A para B, o modelo certo é o sankey da família 11.",
+      "quando_usar": [
+        "Relação entre dois tipos de entidade: SDR e executivo, cliente e produto, campanha e público",
+        "Até cerca de 12 nós por coluna e 60 ligações num cartão; acima disso, filtro de peso mínimo",
+        "Concentração de repasses em poucos pares, lida pela espessura e pelo percentual do nó",
+        "Visão em que o leitor precisa achar um nó pelo nome e seguir as ligações dele",
+        "Comparação de frequência discreta (quantas vezes), não de volume contínuo"
+      ],
+      "quando_evitar": [
+        "A pergunta é quanto volume fluiu de A para B, com proporção do todo: use o sankey simples (11/01_sankey-simples)",
+        "Um tipo só de entidade: use a matriz de adjacência (27/01) ou o chord simétrico (27/07)",
+        "Mais de 20 nós por coluna ou ligações quase completas: use a matriz retangular (27/01)",
+        "As entidades já têm duas categorias e a etapa importa: use o grafo em grade (27/03)",
+        "Mais de duas camadas encadeadas com perdas: use o sankey multietapa (11/02_sankey-multietapa)"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_handoffs-sdr-para-executivo",
+          "titulo": "Repasses de agenda por SDR e executivo",
+          "caso_de_uso": "Pré-vendas: como as agendas de 2026-T3 se distribuem entre SDR 1 a SDR 5 e os executivos A a H.",
+          "o_que_demonstra": [
+            "Ligação em Bézier horizontal calculada em TypeScript, sem biblioteca de grafo",
+            "Ordem das duas colunas por baricentro para reduzir cruzamentos",
+            "Espessura em três faixas (fraca, média, forte) com a legenda das faixas",
+            "Total escrito ao lado de cada nó nas duas colunas com formatNumber",
+            "Ligações em var(--line-strong) desenhadas antes dos nós"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_concentracao-do-sdr-selecionado",
+          "titulo": "Para onde vão os repasses do SDR 3",
+          "caso_de_uso": "Pré-vendas: quanto dos repasses do SDR 3 em 2026-T3 foi para os dois executivos que mais recebem dele.",
+          "o_que_demonstra": [
+            "Prop highlightId que acende as ligações do nó em var(--chart-1) e baixa as demais",
+            "Rótulo do nó selecionado em peso 700 e anotação 70% em dois executivos",
+            "Percentual de cada ligação sobre o total do SDR escrito junto da ponta de destino",
+            "Adjacência pré-calculada em Map para o hover não varrer as ligações",
+            "Frase acessível na raiz com o par mais forte e o percentual"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_clientes-e-produtos-na-carteira",
+          "titulo": "Produtos em cada carteira de cliente",
+          "caso_de_uso": "Comercial: quais produtos cada uma das 24 contas fictícias de maior receita tem em carteira, e quais produtos andam juntos.",
+          "o_que_demonstra": [
+            "24 contas (C01 a C24) contra 7 produtos, com altura do nó pelo total de ligações",
+            "Pontas distribuídas ao longo da altura do nó para não empilhar no mesmo ponto",
+            "Cor da ligação pelo produto em slots fixos de var(--chart-1) a var(--chart-6)",
+            "Rótulo só nos produtos e nas contas com três ou mais produtos; o resto na dica",
+            "Nota escrita de contas omitidas pelo corte de receita, como mais 36 contas"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_executivo-sem-repasse",
+          "titulo": "Executivo sem repasse no trimestre",
+          "caso_de_uso": "Pré-vendas: o executivo que não recebeu nenhuma agenda em 2026-T3 continua na coluna, para a ausência ser lida.",
+          "o_que_demonstra": [
+            "Nó sem ligação com contorno var(--text-muted) e sem preenchimento, por último na coluna",
+            "Texto 0 repasses escrito, porque zero medido não some",
+            "Baricentro que ignora nós de grau zero e os manda para o fim da ordem",
+            "SDR em férias parcial marcado como sem dado, distinto de zero repasses",
+            "Rodapé com a contagem de nós sem ligação nas duas colunas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_grafo-em-grade",
+      "nome": "Grafo em grade",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Nós posicionados nas células de uma grade definida por duas categorias (colunas por função, linhas por etapa) e ligados por arestas com seta. Mantém a leitura de matriz e mostra dependências dirigidas sem layout livre: a posição do nó já diz de quem é e em que etapa está, e a seta diz quem passa para quem. Grade, cabeçalhos e arestas saem no mesmo viewBox, com o centro de cada célula calculado em TypeScript, então a camada de arestas nunca descola da grade. A aresta é ortogonal com cantos arredondados para não atravessar nós; várias arestas da mesma célula têm as pontas deslocadas alguns pixels, e a célula com mais de um nó vira pilha interna com contagem. A célula vazia é informação: etapa sem dono aparece tracejada e escrita.",
+      "quando_usar": [
+        "Handoff entre funções ao longo das etapas do funil, com seta de quem passa para quem",
+        "Nós que já têm duas categorias (função e etapa, fila e prioridade) e cabem em até 6 por 6 células",
+        "Mostrar etapa sem responsável ou função sem papel numa etapa, que o grafo livre esconde",
+        "Marcar arestas em estado de atenção (SLA estourado) sem perder a estrutura do processo",
+        "Documentar o desenho do processo junto com a contagem medida em cada passagem"
+      ],
+      "quando_evitar": [
+        "Os nós não têm atributo categórico: use o grafo por forças (27/04) ou o bipartido (27/02)",
+        "A pergunta é quanto volume passou em cada etapa: use o sankey multietapa (11/02_sankey-multietapa)",
+        "Só importa quem é responsável, consultado ou informado em cada etapa, sem seta: use a matriz RACI (25/07_matriz-raci)",
+        "Movimento entre etapas contado por par de-para: use a matriz de transição (15/07_matriz-de-transicao)",
+        "Mais de 8 categorias num eixo: a grade vira tabela; agrupe categorias antes"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_handoff-por-funcao-e-etapa",
+          "titulo": "Quem passa para quem em cada etapa",
+          "caso_de_uso": "Comercial: como a oportunidade fictícia passa entre marketing, pré-vendas, executivo e relacionamento da entrada ao pós-venda.",
+          "o_que_demonstra": [
+            "Grade de 4 funções por 4 etapas e arestas no mesmo viewBox, sem medir o DOM",
+            "Centro de célula calculado por constante de geometria em TypeScript",
+            "Aresta ortogonal com cantos arredondados e ponta de seta em marker SVG",
+            "Contagem de passagens do trimestre escrita no meio de cada seta",
+            "Grade em var(--line-subtle) e nós em var(--line-strong) com rótulo em var(--text-primary)"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_handoffs-com-sla-estourado",
+          "titulo": "Passagens com SLA estourado",
+          "caso_de_uso": "Pré-vendas: em quais passagens do processo fictício de 2026-08 o prazo acordado estourou e em quantos casos.",
+          "o_que_demonstra": [
+            "Arestas com SLA estourado em var(--negative) e as demais em var(--line-strong)",
+            "Ícone lucide Clock junto da contagem, para o alerta não depender só da cor",
+            "Percentual estourado sobre o total da passagem escrito na seta",
+            "Aresta em atenção desenhada por último para ficar por cima das demais",
+            "Frase acessível com a passagem de maior estouro e a contagem"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_filas-de-pre-vendas-com-pilha",
+          "titulo": "Redistribuição entre filas de pré-vendas",
+          "caso_de_uso": "Pré-vendas: como os leads fictícios são redistribuídos entre 4 filas de trabalho ao longo de 5 etapas de qualificação.",
+          "o_que_demonstra": [
+            "Célula com mais de um nó vira pilha interna com contagem, como 3 filas",
+            "Pontas de várias arestas da mesma célula deslocadas alguns pixels por aresta",
+            "Espessura da aresta em três faixas pelo número de leads redistribuídos",
+            "Caminho selecionado por highlightId aceso em var(--chart-1), resto esmaecido",
+            "Retorno para etapa anterior desenhado por fora da grade para não cruzar nós"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_etapa-sem-responsavel",
+          "titulo": "Etapas do processo sem responsável",
+          "caso_de_uso": "Comercial: em qual etapa do handoff fictício nenhuma função está definida como responsável, que é justamente o achado.",
+          "o_que_demonstra": [
+            "Célula sem nó com contorno tracejado 3 3 em var(--text-muted)",
+            "Texto sem responsável definido escrito dentro da célula vazia",
+            "Seta interrompida que chega à célula vazia e não sai dela",
+            "Contagem de etapas sem dono escrita no rodapé, como 1 de 16 células",
+            "Diferença visual entre célula que não se aplica e célula sem dono"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_grafo-de-rede-por-forcas",
+      "nome": "Grafo de rede dirigido por forças",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Nós posicionados por uma simulação física em que as ligações puxam e os nós se repelem, o que revela grupos, pontes e periferia. O tamanho do nó sai do grau ou do valor (raiz quadrada no raio), a cor sai do grupo e a espessura da aresta sai do peso, com seta quando a rede é dirigida. Sem biblioteca: Fruchterman e Reingold em TypeScript dentro de useMemo, com k = sqrt(área / n), repulsão k² / d entre todos os pares, atração d² / k nas arestas, temperatura decrescente e cerca de 300 iterações; as posições iniciais saem de um PRNG com semente fixa derivada do dado, então a mesma entrada dá sempre o mesmo desenho e nada anima na tela. O inimigo é o emaranhado: filtro de peso mínimo e limite de nós antes de desenhar, com o total omitido escrito, e rótulo só nos nós relevantes.",
+      "quando_usar": [
+        "Descobrir grupos, pontes e periferia numa rede de até cerca de 150 nós",
+        "Rede de indicação entre clientes, em que a forma (hubs, cadeias, ilhas) é a mensagem",
+        "Coocorrência de produto em contas quando se quer ver comunidades, com filtro de peso",
+        "Exploração com hover que acende a vizinhança e clique que fixa a seleção",
+        "Até 300 nós calculados no navegador; acima disso, posições pré-calculadas fora da tela"
+      ],
+      "quando_evitar": [
+        "Mais de 300 nós ou ligações densas, que viram emaranhado: use a matriz de adjacência (27/01)",
+        "Leitura de valor exato do par ou ranking de ligações: use a matriz (27/01) ou a lista ordenada de pares",
+        "Dois tipos de entidade com ligações só entre eles: use o grafo bipartido (27/02)",
+        "Rede centrada numa entidade só: use a versão egocêntrica do grafo radial (27/06)",
+        "Pertencimento de pai para filho, sem aresta cruzada: use a árvore e dendrograma (12/07_arvore-e-dendrograma)"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_rede-de-indicacoes-entre-clientes",
+          "titulo": "Rede de indicações entre clientes",
+          "caso_de_uso": "Comercial: como as 72 indicações registradas desde 2025 ligam os 60 clientes fictícios e se formam grupos.",
+          "o_que_demonstra": [
+            "Fruchterman e Reingold em TypeScript com semente fixa por mulberry32",
+            "Raio do nó pela raiz da receita e cor pelo produto principal em slots fixos",
+            "Arestas em var(--text-muted) com opacidade 0,25, desenhadas antes dos nós",
+            "Posições presas à área útil, com margem para o maior rótulo",
+            "Legenda de grupos e contagem de nós e arestas escrita no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_clientes-que-mais-indicam",
+          "titulo": "Os três clientes que mais indicam",
+          "caso_de_uso": "Comercial: quem são os três clientes fictícios com mais indicações e quem cada um trouxe para a carteira.",
+          "o_que_demonstra": [
+            "Três nós em var(--chart-1) com rótulo em peso 700 e os demais em var(--line-strong)",
+            "Setas dirigidas por marker SVG com recuo pelo raio do nó de destino",
+            "Vizinhança acesa por highlightId com adjacência em Map de Set",
+            "Rótulo só nos nós de grau acima do corte; o resto vai para a dica",
+            "Anotação com o número de indicados de cada um dos três"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_coocorrencia-de-produto-em-180-contas",
+          "titulo": "Produtos que convivem em 180 contas",
+          "caso_de_uso": "Comercial: que comunidades de contas aparecem quando se liga quem tem pelo menos dois produtos em comum, com o que ficou oculto.",
+          "o_que_demonstra": [
+            "Filtro de peso mínimo 2 antes da simulação, com 236 ligações fracas ocultas escritas",
+            "Cor do nó pelo produto dominante até 6 slots e Outros com a contagem",
+            "Custo quadrático medido: 180 nós calculados uma vez em useMemo",
+            "Rótulo só nas pontes, os nós que ligam dois grupos",
+            "Painel lateral com legenda e totais para o grafo ocupar o espaço útil"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_clientes-sem-nenhuma-indicacao",
+          "titulo": "Clientes fora da rede de indicações",
+          "caso_de_uso": "Comercial: onde ficam os 22 clientes fictícios sem nenhuma indicação feita ou recebida, sem espalhá-los pela borda.",
+          "o_que_demonstra": [
+            "Nós isolados retirados da simulação e alinhados numa faixa sem ligação abaixo",
+            "Faixa com título e contagem, como 22 clientes sem ligação",
+            "Nó isolado com contorno var(--text-muted) e sem preenchimento",
+            "Componentes pequenos separados do componente principal por espaço, não por moldura",
+            "Lista acessível de ligações (origem, destino) como alternativa ao desenho"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "05_arc-diagram",
+      "nome": "Arc diagram",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Nós alinhados num eixo único e ligações desenhadas como arcos. Troca a visão da estrutura global por rótulos legíveis e por padrões claros quando a ordem é boa: com ordem aleatória os grupos somem, ordenados por grupo e, dentro dele, por grau ou frequência, os blocos e as pontes aparecem. A posição é x = índice vezes passo e o arco do nó i ao j é um semicírculo M xi,y A r,r 0 0,1 xj,y com r = (xj - xi) / 2; o sentido de i para j vai acima e o de j para i abaixo. A espessura segue a raiz quadrada do peso, o tamanho do nó segue o grau e a cor segue o grupo. Arcos longos são achatados em elipse para caber na altura, e os rótulos sob o eixo pedem margem inferior calculada pelo maior rótulo.",
+      "quando_usar": [
+        "Coocorrência ou dependência entre até 40 nós em que o nome de cada nó precisa ser legível",
+        "Procedência: de quais fontes de dado cada indicador depende, com os nós ordenados por dashboard",
+        "Relação dirigida em que o sentido cabe em dois lados do eixo (usa acima, é usado por abaixo)",
+        "Faixa larga e baixa de dashboard, onde grafo livre e chord não cabem",
+        "Mostrar grupos e pontes quando existe uma ordem natural (dashboard, etapa, volume)"
+      ],
+      "quando_evitar": [
+        "Mais de 40 nós ou muitas ligações longas: use a matriz de adjacência (27/01)",
+        "A estrutura global (hubs, comunidades) é a mensagem: use o grafo por forças (27/04)",
+        "As folhas pertencem a uma hierarquia com dois níveis ou mais: use o hierarchical edge bundling (27/08)",
+        "Leitura de peso exato de cada par: use a matriz (27/01) ou a lista ordenada de pares",
+        "Fluxo de volume entre etapas: use o sankey (11/01_sankey-simples)"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_coocorrencia-de-origens-em-2026-08",
+          "titulo": "Origens que se cruzam na jornada",
+          "caso_de_uso": "Marketing: quais das 7 origens fictícias aparecem juntas na jornada dos leads de 2026-08, ordenadas por volume.",
+          "o_que_demonstra": [
+            "Semicírculo por comando A do path com raio pela metade da distância no eixo",
+            "Espessura pela raiz quadrada do peso e raio do nó pela raiz do grau",
+            "Ordem por volume declarada no subtítulo, não alfabética",
+            "Arcos em var(--line-strong) e o par mais forte em var(--chart-1) com o valor escrito",
+            "Rótulos sob o eixo sem giro, porque 7 nós cabem na horizontal"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_procedencia-indicadores-e-fontes",
+          "titulo": "Indicadores que dependem de cada fonte",
+          "caso_de_uso": "Diretoria: quais dos 24 indicadores fictícios caem se uma das 6 fontes de dado parar, com os indicadores agrupados por dashboard.",
+          "o_que_demonstra": [
+            "Nós ordenados por dashboard (Comercial, Pré-vendas, Marketing, Diretoria) e fontes no fim",
+            "Separador de grupo no eixo com o nome do dashboard acima",
+            "Fonte selecionada por highlightId acende todos os arcos dela em var(--chart-1)",
+            "Contagem escrita de indicadores que caem, como 9 de 24 indicadores",
+            "Arcos longos achatados em elipse com A r, r vezes 0,6 para caber na altura",
+            "Rótulos girados 45 graus com margem inferior calculada pelo maior rótulo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_dependencia-dirigida-entre-indicadores",
+          "titulo": "Indicadores derivados de outros indicadores",
+          "caso_de_uso": "Diretoria: quais indicadores fictícios usam outros indicadores no cálculo e quais são usados, com o sentido legível.",
+          "o_que_demonstra": [
+            "Arco acima para usa e arco abaixo para é usado por, a partir do mesmo eixo",
+            "Legenda explícita dos dois sentidos junto do eixo, não só na dica",
+            "Rótulos curtos no eixo e nomes completos na lista acessível de ligações",
+            "Indicador com dependência circular marcado em var(--warning) com ícone lucide RefreshCw",
+            "Altura acima e abaixo do eixo calculada pelo arco mais longo de cada lado"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_indicador-sem-fonte-declarada",
+          "titulo": "Indicadores sem procedência declarada",
+          "caso_de_uso": "Diretoria: quais indicadores fictícios não têm fonte de dado declarada e por isso ficam sem arco, fora da leitura de risco.",
+          "o_que_demonstra": [
+            "Indicador sem fonte no fim do eixo com contorno var(--text-muted) e sem preenchimento",
+            "Texto sem fonte declarada sob o nó, distinto de fonte com zero dependências",
+            "Contagem no rodapé, como 3 indicadores sem procedência",
+            "Fonte declarada que nenhum indicador usa mantida no eixo com 0 escrito",
+            "Frase acessível que separa as duas ausências"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "06_grafo-radial-e-circular",
+      "nome": "Grafo radial e circular",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Duas variações de posição fixa, sem simulação. A egocêntrica põe uma entidade no centro e as relações em anéis de distância: vizinhos de primeiro grau em ângulos iguais no raio r1 e de segundo grau no raio r2, próximos do vizinho que os liga. A circular põe todos os nós no perímetro, ordenados por categoria e, dentro dela, por grau, e desenha as ligações por dentro como curva quadrática com o ponto de controle no centro (M xi,yi Q cx,cy xj,yj), o que evita o emaranhado das retas. Absorve o chord sem fita (27#7): a mesma circular com linhas finas de espessura única, para ler existência de ligação e não quanto. Rótulos da metade esquerda giram 180 graus e alinham à direita; o segundo grau que transborda o anel vira mais N escrito.",
+      "quando_usar": [
+        "Rede centrada numa entidade: parceiro de indicação, cliente âncora, executivo e sua carteira",
+        "Todos os nós num círculo agrupados por categoria, com até cerca de 24 nós rotulados",
+        "Relação binária (existe ou não) em que o peso não importa, na forma de chord sem fita",
+        "Cartão quadrado em que o grafo livre mudaria de forma e o arc diagram não cabe",
+        "Mostrar alcance de primeiro e segundo grau de uma entidade"
+      ],
+      "quando_evitar": [
+        "Muitas ligações longas cruzando o centro: use a matriz de adjacência (27/01)",
+        "O peso da relação é a mensagem: use o chord simétrico (27/07)",
+        "As folhas pertencem a uma hierarquia e as ligações podem ser agrupadas: use o edge bundling (27/08)",
+        "Pertencimento de pai para filho em anéis: use a árvore radial (12/07_arvore-e-dendrograma)",
+        "Tela de 400 px com mais de 12 nós: ofereça a lista ordenada de pares"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_egocentrica-parceiro-de-indicacao",
+          "titulo": "Alcance do parceiro de indicação P07",
+          "caso_de_uso": "Comercial: quantas contas o parceiro fictício P07 indicou e quantas essas contas indicaram depois, em dois anéis.",
+          "o_que_demonstra": [
+            "Nó central em var(--chart-1) com rótulo em peso 700, distinto do resto",
+            "9 contas no primeiro anel em ângulos iguais e 14 no segundo junto de quem as ligou",
+            "Anéis de referência em var(--line-subtle) com o grau escrito no anel",
+            "Contagem por anel escrita fora do círculo, como 9 diretas e 14 indiretas",
+            "Rótulos girados pelo ângulo e virados 180 graus na metade esquerda"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_circular-coocorrencia-de-origens",
+          "titulo": "Origens na mesma jornada, em círculo",
+          "caso_de_uso": "Marketing: com quais origens a origem selecionada aparece na mesma jornada, entre 12 origens fictícias agrupadas por tipo.",
+          "o_que_demonstra": [
+            "12 origens em três arcos de grupo (pago, orgânico, relacionamento) com vão entre grupos",
+            "Ligação em curva quadrática com controle no centro, sem reta pelo meio",
+            "Origem selecionada por highlightId acende as ligações em var(--chart-1)",
+            "Ligações fora de foco em var(--line-strong) com opacidade baixa",
+            "Nome do grupo escrito fora do círculo, no meio do arco do grupo"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_equipes-que-compartilham-oportunidades",
+          "titulo": "Equipes que já dividiram oportunidades",
+          "caso_de_uso": "Comercial: quais das 16 equipes internas fictícias já compartilharam oportunidades em 2026 e quais nunca dividiram nenhuma.",
+          "o_que_demonstra": [
+            "Chord sem fita: linhas curvas finas de espessura única, leitura de existência",
+            "Número de parceiras de cada equipe escrito junto do rótulo",
+            "Equipe isolada no círculo em contorno var(--text-muted) com 0 relações escrito",
+            "Nota escrita de que a espessura não codifica quantidade",
+            "Ordem por categoria e grau para os grupos não se espalharem pelo círculo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_parceiro-sem-indicacao-no-periodo",
+          "titulo": "Parceiro sem indicação no trimestre",
+          "caso_de_uso": "Comercial: o que mostrar quando o parceiro fictício P12 não indicou ninguém em 2026-T3, sem parecer erro de carga.",
+          "o_que_demonstra": [
+            "Estado vazio com ícone lucide Filter e frase sem indicações em 2026-T3",
+            "Histórico dos trimestres anteriores em var(--line-strong), rotulado como anterior",
+            "Nó central mantido, sem anel atual, para a ausência ter lugar",
+            "Diferença escrita entre sem indicação medida e parceiro sem dado carregado",
+            "Frase acessível com a última indicação registrada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_chord-simetrico",
+      "nome": "Chord simétrico de relação",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Grupos no perímetro de um círculo e fitas entre eles com largura proporcional à força da relação, sem sentido: as duas pontas da fita têm a mesma largura porque a matriz é simétrica. O arco externo de cada grupo mede o total de relações, e o ângulo sai da soma da linha menos o espaçamento entre grupos. Usa a mesma geometria do chord direcional da família 11, aplicada a uma matriz simétrica, com os subarcos ordenados pelo peso para reduzir cruzamentos e a flag de arco grande quando o ângulo passa de π. Chord não é autoexplicativo: a nota de como ler fica junto do visual, fitas abaixo de um limiar vão para Outros, e a matriz de adjacência resolve a mesma pergunta com precisão, então a alternância entre as duas visões é parte do modelo.",
+      "quando_usar": [
+        "Coocorrência com peso entre até 6 grupos coloridos (mais Outros), como produtos na mesma carteira",
+        "Mostrar de uma vez o total de cada grupo e com quem ele se relaciona",
+        "Relação sem sentido, em que A com B é o mesmo que B com A",
+        "Cartão quadrado com espaço para a nota de como ler e a alternância para matriz",
+        "Destacar o parceiro mais associado de um grupo selecionado"
+      ],
+      "quando_evitar": [
+        "Relação dirigida com volume de A para B: use o chord direcional de fluxo (11/05_chord-direcional-de-fluxo)",
+        "Mais de 10 grupos ou muitas fitas finas: use a matriz de adjacência (27/01)",
+        "Relação binária sem peso: use a circular do grafo radial, na forma de chord sem fita (27/06)",
+        "Leitura de valor exato de cada par: use a matriz (27/01) com o valor na célula",
+        "Sobreposição de públicos em que a pergunta é parte do todo: use a família 22 ou 26, não uma rede"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_produtos-na-mesma-carteira",
+          "titulo": "Produtos que convivem na carteira",
+          "caso_de_uso": "Comercial: quantos clientes fictícios têm cada par entre os 7 produtos da oferta, com o total de cada produto no arco.",
+          "o_que_demonstra": [
+            "Arco externo e fita em path SVG com geometria calculada em TypeScript",
+            "Fita simétrica com as duas pontas da mesma largura",
+            "Cor por produto em slots fixos na ordem 1, 3, 6, 5, 2, 4 e Outros neutro",
+            "Nota de como ler junto do visual: fita mais larga, mais clientes com os dois",
+            "Subarcos ordenados pelo peso e vão entre grupos em radianos fixos"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_produto-mais-associado-ao-credito-estruturado",
+          "titulo": "Com o que o crédito estruturado anda",
+          "caso_de_uso": "Comercial: com quais produtos o crédito estruturado fictício aparece na mesma carteira e qual é o mais associado.",
+          "o_que_demonstra": [
+            "Grupo selecionado por highlightId com fitas em var(--chart-1) e as demais esmaecidas",
+            "Painel lateral com os pares do grupo ordenados e o valor escrito",
+            "Produto mais associado anotado junto da fita, com rótulo em peso 700",
+            "Percentual do par sobre o total do grupo com formatPercent",
+            "Frase acessível com o par mais forte"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_clientes-com-um-produto-so",
+          "titulo": "Clientes com um produto só",
+          "caso_de_uso": "Comercial: quanto de cada produto fictício está em clientes que não têm nenhum outro, sem desenhar fita para si mesmo.",
+          "o_que_demonstra": [
+            "Diagonal da matriz como faixa interna neutra no arco, e não como fita de retorno",
+            "Faixa só este produto em var(--line-strong) com o valor escrito",
+            "Arco do grupo que soma pares e faixa própria, com a divisão legível",
+            "Legenda com item próprio para só este produto",
+            "Produto sem nenhum par mantido no círculo com a faixa ocupando o arco inteiro"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_origens-demais-agrupadas-em-outros",
+          "titulo": "Coocorrência entre muitas origens",
+          "caso_de_uso": "Marketing: como ler a coocorrência de 11 origens fictícias sem que as fitas finas sumam, e quando trocar para a matriz.",
+          "o_que_demonstra": [
+            "Seis origens coloridas e Outros com a contagem no rótulo, como Outros (n=5)",
+            "Limiar mínimo de fita com a quantidade de pares ocultos escrita no rodapé",
+            "Alternância chord e matriz no mesmo cartão, com a matriz como visão acessível",
+            "Origem sem dado de jornada fora do círculo, contada à parte",
+            "Lista ordenada de pares como visão móvel abaixo de 400 px"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_hierarchical-edge-bundling",
+      "nome": "Hierarchical edge bundling",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Folhas de uma hierarquia dispostas num círculo e agrupadas pelo pai, com as ligações entre folhas curvadas ao longo do caminho da hierarquia; ligações com rota parecida viram feixes que se abrem nas pontas. As folhas saem do layout radial de dendrograma da família 12. Para cada ligação, os pontos de controle são as posições dos ancestrais no caminho da origem até o ancestral comum e de volta ao destino; a tensão β desloca cada ponto em direção à reta entre origem e destino, P' = β·P + (1 - β)·(P0 + t·(Pn - P0)), e a curva é uma B-spline cúbica uniforme convertida em segmentos de Bézier cúbica, repetindo o primeiro e o último ponto para a curva tocar a folha. Exige hierarquia real; tensão perto de 1 junta tudo num feixe só e perto de 0 volta a ser reta, então começa em 0,85. O hover é obrigatório, com uma cor para entrada e outra para saída.",
+      "quando_usar": [
+        "Ligações entre folhas de uma hierarquia real: fontes agrupadas por sistema e indicadores por dashboard",
+        "Procedência com dezenas de ligações em que o arc diagram cruzaria arcos demais",
+        "Entre cerca de 30 e 120 folhas num círculo, com rótulo girado em cada folha",
+        "Leitura de risco: quais folhas de um grupo dependem de uma folha de outro grupo",
+        "Painel exploratório em que o hover separa dependência de entrada e de saída"
+      ],
+      "quando_evitar": [
+        "Dado sem hierarquia: o feixe não tem rota; use o grafo por forças (27/04) ou a matriz (27/01)",
+        "Poucas ligações com rótulo que precisa ser lido na horizontal: use o arc diagram (27/05)",
+        "Leitura de peso exato por par: use a matriz de adjacência (27/01)",
+        "A hierarquia em si é a mensagem, sem ligação entre folhas: use a árvore e dendrograma (12/07_arvore-e-dendrograma)",
+        "Visual estático sem hover e sem lista de apoio: o feixe sozinho não diz quem liga a quem"
+      ],
+      "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+      "versoes": [
+        {
+          "slug": "v1_procedencia-fontes-e-indicadores",
+          "titulo": "De que fontes cada indicador depende",
+          "caso_de_uso": "Diretoria: como 18 fontes de dado fictícias, por sistema, alimentam 40 indicadores agrupados por dashboard.",
+          "o_que_demonstra": [
+            "Layout radial de dendrograma com folhas agrupadas pelo pai e vão entre grupos",
+            "Caminho pelo ancestral comum convertido em B-spline e depois em Bézier cúbica",
+            "Tensão fixa em 0,85 declarada no rodapé",
+            "Feixes em var(--line-strong) com opacidade baixa e grupos rotulados fora do círculo",
+            "Rótulos girados pelo ângulo e virados 180 graus na metade esquerda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_indicadores-que-caem-sem-o-formulario",
+          "titulo": "O que cai se o formulário do site parar",
+          "caso_de_uso": "Diretoria: quais dos 40 indicadores fictícios dependem da fonte formulário do site e param se ela falhar.",
+          "o_que_demonstra": [
+            "Fonte selecionada por highlightId com os 11 dependentes em var(--negative)",
+            "Demais feixes com opacidade 0,2, sem sumir da forma",
+            "Ícone lucide Unplug junto do nome da fonte, para o alerta não depender só da cor",
+            "Lista lateral dos 11 indicadores agrupados por dashboard",
+            "Contagem escrita, como 11 de 40 indicadores dependem desta fonte"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_dependencia-dentro-do-mesmo-dashboard",
+          "titulo": "Dependências dentro do mesmo dashboard",
+          "caso_de_uso": "Diretoria: indicadores fictícios que usam outro indicador do mesmo dashboard, cuja curva curta some no meio dos feixes.",
+          "o_que_demonstra": [
+            "Caminho que sobe só até o pai comum e gera curva curta perto do perímetro",
+            "Ligação interna em var(--chart-3), distinta dos feixes entre grupos",
+            "Entrada e saída do nó selecionado em duas cores, com legenda dos dois sentidos",
+            "Curva interna desenhada por último para não ficar sob os feixes",
+            "Contagem de dependências internas escrita por dashboard"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v4_tensao-baixa-e-alta-lado-a-lado",
+          "titulo": "Efeito da tensão no feixe",
+          "caso_de_uso": "Diretoria: por que a tensão do feixe é uma escolha declarada, com a mesma procedência fictícia em tensão 0,3 e 0,95.",
+          "o_que_demonstra": [
+            "Dois pequenos múltiplos com as mesmas folhas e só a tensão diferente",
+            "Tensão perto de 0 que volta às retas e perto de 1 que junta tudo num feixe",
+            "Valor de β escrito no título de cada painel",
+            "Cálculo da curva reaproveitado por uma função pura com β como parâmetro",
+            "Nota escrita de que o padrão do Farol é 0,85 com controle exposto"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

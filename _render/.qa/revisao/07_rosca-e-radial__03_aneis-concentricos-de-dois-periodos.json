@@ -1,0 +1,160 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "03_aneis-concentricos-de-dois-periodos",
+  "versoes": {
+    "v4_plataforma-nova-sem-mes-anterior": {
+      "veredito": "aprovado",
+      "nota": "Ausencia tratada por null: anel interno fecha 100% sem a nova, sem dado e sem base no lugar de 0%; numero central cruza o anel interno, legivel (6,2:1 escuro), fica como acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:13.725Z",
+      "impressao": "6dc9ffd57d24edcbb2e8b3edf3fc2b74ae195707",
+      "arquivos": {
+        "Chart.tsx": "98045b4b23783754a050d2e6d70e657dc2dadbfa",
+        "data.ts": "c5c7e6f518f1b21a4909dd9cc3c01441198f90ea",
+        "meta.json": "099d3a9b75602f4f60a3a0618ed0ed4ce9ed828e"
+      }
+    },
+    "v1_origem-dos-leads-em-dois-meses": {
+      "veredito": "aprovado",
+      "nota": "Dois aneis com angulos identicos, ordem pelo mes atual e percentual dos dois meses escrito na legenda; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:01:58.436Z",
+      "impressao": "b32b56ef193fac4702e3b727d3d07289f56748f7",
+      "arquivos": {
+        "Chart.tsx": "329c0e2401dbc0c109057b231cb91cc472c9ea4b",
+        "data.ts": "42f7636658cab850dfb90746fae9a0feeae6d5ea",
+        "meta.json": "c79855ff349e7dc624912cb2d214418cc4066fac"
+      }
+    },
+    "v2_origem-que-mais-ganhou-peso": {
+      "veredito": "aprovado",
+      "nota": "Destaque da maior variacao em p.p. calculado sobre a fracao real; sem dica, dispensada com justificativa no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:02.997Z",
+      "impressao": "9945374b22dbf9bbee1c263041baf5da3a2b1ca0",
+      "arquivos": {
+        "Chart.tsx": "f2d41ee7b5e40ddf5da10465a27e7e891411c263",
+        "data.ts": "efcd5f7cf47c9d8ec73885d0a16064e38df27f6f",
+        "meta.json": "418141c00335636c9541cc50355406b875121e30"
+      }
+    },
+    "v3_investimento-por-plataforma-em-dois-trimestres": {
+      "veredito": "aprovado",
+      "nota": "Legenda tabular com os dois totais, participacao dos dois trimestres e p.p. em toda linha; troca de posicao entre Video e Display prova a ordem pelo periodo atual.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:08.115Z",
+      "impressao": "75ea8f7aba09bdc04a4564041374dba048ec5890",
+      "arquivos": {
+        "Chart.tsx": "68df952048959a39a5ffeb4d6e9266ca3e7d8833",
+        "data.ts": "7720858e6bb0ae65873a6ef8cae23208011e10e6",
+        "meta.json": "3daaf53918b68ab86f12943bd533b97270bd35ba"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v4_plataforma-nova-sem-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Ausencia tratada sem zero; o numero central transborda o miolo, mas segue legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:49:18.999Z",
+      "impressao": "6dc9ffd57d24edcbb2e8b3edf3fc2b74ae195707",
+      "arquivos": {
+        "Chart.tsx": "98045b4b23783754a050d2e6d70e657dc2dadbfa",
+        "data.ts": "c5c7e6f518f1b21a4909dd9cc3c01441198f90ea",
+        "meta.json": "099d3a9b75602f4f60a3a0618ed0ed4ce9ed828e"
+      }
+    },
+    {
+      "versao": "v1_origem-dos-leads-em-dois-meses",
+      "veredito": "reprovado",
+      "nota": "Legenda central sai do miolo: o sufixo ago/26 cai sobre o anel interno com contraste 1,8:1 no escuro (ACE-3). Encurtar o texto ou abrir o miolo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:49:25.868Z",
+      "impressao": "096d90e464c092dc3b1ea12d4c3b965cfebeb9a5",
+      "arquivos": {
+        "Chart.tsx": "606cec5a96b1f2e22123eed3a37ed3646df28bec",
+        "data.ts": "42f7636658cab850dfb90746fae9a0feeae6d5ea",
+        "meta.json": "c79855ff349e7dc624912cb2d214418cc4066fac"
+      }
+    },
+    {
+      "versao": "v2_origem-que-mais-ganhou-peso",
+      "veredito": "reprovado",
+      "nota": "Legenda central transborda o miolo nos dois lados e cai sobre o anel interno, com contraste de 1,8:1 a 2,8:1 (ACE-3). Encurtar o texto ou abrir o miolo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:49:36.068Z",
+      "impressao": "d5c9edc1b2ad7157c6e27be31436ff7197864c26",
+      "arquivos": {
+        "Chart.tsx": "b8b8bf927a42f11e8656e3fe955afe4067bfd039",
+        "data.ts": "efcd5f7cf47c9d8ec73885d0a16064e38df27f6f",
+        "meta.json": "418141c00335636c9541cc50355406b875121e30"
+      }
+    },
+    {
+      "versao": "v3_investimento-por-plataforma-em-dois-trimestres",
+      "veredito": "reprovado",
+      "nota": "O rotulo no 2o trimestre de 2026 atravessa o anel interno inteiro, com 2,1:1 no escuro e 2,8:1 no claro (ACE-3). Encurtar o rotulo central.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:49:36.633Z",
+      "impressao": "641629b73af7c0151e5b896d4ff99df8eee2a5fa",
+      "arquivos": {
+        "Chart.tsx": "97b414a727307c29092a92ca8871ec4f0b1193d5",
+        "data.ts": "7720858e6bb0ae65873a6ef8cae23208011e10e6",
+        "meta.json": "3daaf53918b68ab86f12943bd533b97270bd35ba"
+      }
+    },
+    {
+      "versao": "v1_origem-dos-leads-em-dois-meses",
+      "veredito": "aprovado",
+      "nota": "Dois aneis com angulos identicos, ordem pelo mes atual e percentual dos dois meses escrito na legenda; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:01:58.436Z",
+      "impressao": "b32b56ef193fac4702e3b727d3d07289f56748f7",
+      "arquivos": {
+        "Chart.tsx": "329c0e2401dbc0c109057b231cb91cc472c9ea4b",
+        "data.ts": "42f7636658cab850dfb90746fae9a0feeae6d5ea",
+        "meta.json": "c79855ff349e7dc624912cb2d214418cc4066fac"
+      }
+    },
+    {
+      "versao": "v2_origem-que-mais-ganhou-peso",
+      "veredito": "aprovado",
+      "nota": "Destaque da maior variacao em p.p. calculado sobre a fracao real; sem dica, dispensada com justificativa no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:02.997Z",
+      "impressao": "9945374b22dbf9bbee1c263041baf5da3a2b1ca0",
+      "arquivos": {
+        "Chart.tsx": "f2d41ee7b5e40ddf5da10465a27e7e891411c263",
+        "data.ts": "efcd5f7cf47c9d8ec73885d0a16064e38df27f6f",
+        "meta.json": "418141c00335636c9541cc50355406b875121e30"
+      }
+    },
+    {
+      "versao": "v3_investimento-por-plataforma-em-dois-trimestres",
+      "veredito": "aprovado",
+      "nota": "Legenda tabular com os dois totais, participacao dos dois trimestres e p.p. em toda linha; troca de posicao entre Video e Display prova a ordem pelo periodo atual.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:08.115Z",
+      "impressao": "75ea8f7aba09bdc04a4564041374dba048ec5890",
+      "arquivos": {
+        "Chart.tsx": "68df952048959a39a5ffeb4d6e9266ca3e7d8833",
+        "data.ts": "7720858e6bb0ae65873a6ef8cae23208011e10e6",
+        "meta.json": "3daaf53918b68ab86f12943bd533b97270bd35ba"
+      }
+    },
+    {
+      "versao": "v4_plataforma-nova-sem-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Ausencia tratada por null: anel interno fecha 100% sem a nova, sem dado e sem base no lugar de 0%; numero central cruza o anel interno, legivel (6,2:1 escuro), fica como acabamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:02:13.725Z",
+      "impressao": "6dc9ffd57d24edcbb2e8b3edf3fc2b74ae195707",
+      "arquivos": {
+        "Chart.tsx": "98045b4b23783754a050d2e6d70e657dc2dadbfa",
+        "data.ts": "c5c7e6f518f1b21a4909dd9cc3c01441198f90ea",
+        "meta.json": "099d3a9b75602f4f60a3a0618ed0ed4ce9ed828e"
+      }
+    }
+  ]
+}

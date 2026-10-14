@@ -1,0 +1,14 @@
+{
+  "title": "Doze objeções da pré-vendas por dia",
+  "useCase": "Pré-vendas: como as 12 objeções mais anotadas nas ligações se distribuíram dia a dia entre 2026-06-01 e 2026-08-31?",
+  "demonstrates": [
+    "Doze faixas com altura calculada pela área útil, sem rótulo cortado",
+    "Total de menções por objeção à direita, em font-display e alinhado à direita",
+    "Objeções ordenadas pela primeira aparição, com a regra escrita acima do gráfico",
+    "Dica com a data por formatDate, a objeção e as menções daquele dia",
+    "Aviso quando uma objeção passa de 10 menções num dia, apontando a família 15"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Opacidade de 0,75 por menção, acima do piso de 0,66 de --chart-1 (ACE-5). O dia com mais de 10 menções vai opaco em --warning com 2 px, e o rodapé nomeia o dia e a contagem. A altura da banda sai de usePlotArea dentro do shape: com 12 faixas em cerca de 200 px de área útil cada banda mede 17 px e o traço ocupa 70% dela. O primeiro termo das linhas do Scatter vai para a base e o domain do YAxis de categoria não reordena, observado no render; por isso as linhas entram do mais recente ao mais antigo."
+}

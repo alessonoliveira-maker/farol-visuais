@@ -1,0 +1,14 @@
+{
+  "title": "Valor fora da faixa histórica",
+  "useCase": "Marketing: como marcar a origem cujo CPL passou do máximo de 12 meses e a origem ainda sem histórico?",
+  "demonstrates": [
+    "Marcador preso na borda direita com ChevronRight para fora e o valor escrito",
+    "Rótulo acima do máximo de 12 meses com a distância por formatPercent",
+    "Origem com menos de 6 meses sem trilho e o texto faixa sem histórico suficiente",
+    "Valor indisponível com formatUnavailable e ícone Unplug, sem marcador no zero",
+    "Mínimo e máximo calculados sem o valor atual, dito na frase acessível"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Além do caso do catálogo (acima do máximo), a versão desenha o simétrico, abaixo do mínimo, com ChevronLeft e a distância em módulo, porque a faixa sem o valor atual pode ser rompida nos dois lados. O trilho é --line-strong e não --surface-overlay, que no tema claro é o branco do cartão."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Cenários da Diretoria com bolas de Harvey",
+  "useCase": "Diretoria: como 4 cenários de 2027 se comparam em 6 critérios, com o glifo e o valor real lado a lado.",
+  "demonstrates": [
+    "Arco de Harvey em SVG calculado em função pura para 0, 1/4, 1/2, 3/4 e 1",
+    "Direção por critério escrita na linha e fração invertida quando menor é melhor",
+    "Número junto do glifo e contorno no líder de cada critério, com empate marcando os dois",
+    "Faixa de normalização declarada por critério, não o mínimo e o máximo da tela"
+  ],
+  "canvas": { "width": 960, "height": 424 },
+  "frame": "card",
+  "notes": "Canvas largo, um pouco mais alto que o preset (424 em vez de 400): 6 critérios com unidades diferentes e faixa no cabeçalho não cabem em 640 px, e a nota de rodapé sobre o contorno de líder passava do corpo nos 400 px do preset. Investimento necessário empata Conservador e Estresse em 0,75: os dois ganham o contorno de líder, provando que empate não escolhe um."
+}

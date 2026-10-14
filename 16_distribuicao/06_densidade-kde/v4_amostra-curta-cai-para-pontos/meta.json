@@ -1,0 +1,13 @@
+{
+  "title": "Densidade que recusa amostra curta",
+  "useCase": "O que a peça mostra quando o filtro deixa só 22 negócios, ou um segmento com 9 negócios?",
+  "demonstrates": [
+    "Regra de piso: abaixo de 30 observações a curva vira strip de pontos",
+    "Nota n 22: pontos individuais, sem curva, no lugar do rodapé de banda",
+    "Grupo minúsculo em strip na mesma régua das curvas dos grupos grandes",
+    "Abaixo de 5 observações, só o valor em texto"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o caso de uso falava em uma plataforma com 9 campanhas; aqui o grupo de 9 é um segmento de clientes, para as cinco linhas falarem da mesma métrica (ticket em reais) e dividirem uma régua só. O rodapé de banda aparece só para os grupos que têm curva, e cada grupo sem curva leva a própria nota de n. Os três degraus da regra de piso são 30 para a curva, 5 para os pontos e abaixo disso o texto. As curvas têm área 1 cada e a altura delas é comum, então a de 146 negócios e a de 88 se comparam pela forma. O SVG usa viewBox 574 por altura calculada, na largura do corpo do preset card, para o texto de 11 px sair em tamanho real."
+}

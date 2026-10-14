@@ -1,0 +1,13 @@
+{
+  "title": "Busca que destaca um termo na dispersão",
+  "useCase": "Comercial: onde fica o termo prazo entre ganhas e perdidas, e quais frases fictícias sustentam essa posição.",
+  "demonstrates": [
+    "Prop de termo buscado que acende o ponto em --chart-1 com anel e rótulo em peso 700",
+    "Demais pontos em --text-muted opaco, sem competir com o destaque",
+    "Três frases do termo abaixo do gráfico, em concordância curta",
+    "Termo buscado inexistente escreve termo não encontrado no recorte"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo: os demais pontos saem em --text-muted opaco, e não em --line-strong com opacidade, porque --line-strong mede 1,79:1 contra o cartão no escuro e 1,83:1 no claro e nenhuma opacidade o leva a 3:1 (TOK-5, ACE-5). O peso 700 fica só no nome do termo buscado dentro do gráfico; o termo dentro das frases usa 600 (TIP-3). A busca ignora maiúscula e acento. Posição de frequência em cada grupo, 1 para o mais citado, com posição média nos empates. Os cantos vão nomeados em linhas fora do plano, porque o plano inteiro é marca."
+}

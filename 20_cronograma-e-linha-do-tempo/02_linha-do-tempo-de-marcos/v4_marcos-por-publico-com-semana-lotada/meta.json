@@ -1,0 +1,13 @@
+{
+  "title": "Marcos do ano por público",
+  "useCase": "Onde se concentram os 25 marcos de 2027 em quatro públicos, e quais ainda estão sem data?",
+  "demonstrates": [
+    "Quatro faixas no eixo Y com a mesma escala de tempo e hoje cruzando todas",
+    "Rótulos em escada de três alturas com linha guia fina até o ponto",
+    "Marcos que caem no mesmo pixel viram um losango com contador e lista na dica",
+    "Marco sem data sai do eixo para uma coluna a definir à direita, nunca no fim do ano"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O eixo das faixas é numérico (0 a 3) com tique escrito pelo nome do público, e não de categoria: Scatter sobre eixo de categoria abre uma banda por ponto (REC-14). Marcos da mesma faixa a até 5 dias um do outro (cerca de 9 px a 1,85 px por dia) dividem o mesmo pixel e viram um losango com contador. Nenhum losango de marco único fica sem nome: quando nenhuma das três alturas está livre, a escada realoca o vizinho que bloqueia (busca com retrocesso) até todos terem rótulo e linha guia."
+}

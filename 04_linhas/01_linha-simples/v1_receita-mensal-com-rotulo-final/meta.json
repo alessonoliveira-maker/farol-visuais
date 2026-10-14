@@ -1,0 +1,12 @@
+{
+  "title": "Receita reconhecida mensal com rótulo no último mês",
+  "useCase": "A receita reconhecida de 2026-01 a 2026-08 subiu ou caiu, e quanto fechou em 2026-08?",
+  "demonstrates": [
+    "Calendário mensal completo gerado em TypeScript antes do render",
+    "Line linear de 2 px, sem legenda, com grade só horizontal",
+    "Ponto e rótulo só no último valor válido, com formatCurrencyCompact",
+    "Tique em formatCurrencyAxis com 3 a 5 linhas de grade redondas"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

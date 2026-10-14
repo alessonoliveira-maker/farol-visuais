@@ -1,0 +1,14 @@
+{
+  "title": "Entradas de lead por dia e hora",
+  "useCase": "Em que dia da semana e em que hora chegam mais leads de mídia paga, na média das últimas 12 semanas?",
+  "demonstrates": [
+    "Grade SVG de 7 por 13 células, hora no eixo X e dia da semana no eixo Y",
+    "Média por ocorrência do dia no recorte, não soma bruta",
+    "Escala sequencial em 5 faixas, e toda célula escreve o valor: cor nunca é o único canal",
+    "Vão de 1,5 px na cor do cartão entre células e rótulo de hora a cada 2 horas",
+    "Frase acessível com o pico, o dia de menor volume e a média geral"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo em vez do card sugerido pelo catálogo: 7 linhas mais o rótulo de hora não cabem com folga em 234 px de corpo sem apertar a célula abaixo do piso legível. Escala em 5 faixas, não 6: medido nos dois temas, nem --text-primary nem --accent-cyan-contrast alcançam 4,5:1 de contraste de texto contra --seq-4 e --seq-5 ao mesmo tempo no escuro e no claro, então essas duas faixas do meio ficaram fora em vez de entrar com número ilegível."
+}

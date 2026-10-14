@@ -1,0 +1,71 @@
+{
+  "slug": "06_slope-chart",
+  "nome": "Slope chart",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Duas colunas verticais, uma por momento ou por grupo, e uma reta por categoria ligando os dois valores numa escala única. A inclinação carrega a magnitude da mudança e o cruzamento carrega a inversão de posição, que nenhum outro modelo da família mostra tão bem. É SVG puro com geometria calculada em TypeScript porque o problema real é a colisão de rótulo, que nenhuma API de gráfico resolve: os rótulos se afastam com afastarRotulos e as retas ficam no valor real. Acima de cerca de 10 retas o emaranhado pede destaque de duas ou três ou pequenos múltiplos com a mesma escala, e o painel desses múltiplos é o próprio micro slope que cabe num cartão de KPI.",
+  "quando_usar": [
+    "Dois momentos ou dois grupos nas mesmas categorias, com 3 a 10 retas num plano",
+    "História de antes e depois em que a troca de posição é a notícia",
+    "Muitas categorias em pequenos múltiplos, uma reta por painel e escala comum",
+    "Peça ao lado de uma tabela com os dois valores e o delta, como colega da tabela"
+  ],
+  "quando_evitar": [
+    "Três ou mais momentos: bump chart (04/08) para posição, linha da família 04 para valor",
+    "Mais de cerca de 10 retas cruzadas num só plano: painéis ou dumbbell (17/03)",
+    "Colunas com escalas diferentes: o gráfico mente, a escala é sempre única",
+    "O valor de cada ponto é a pergunta e não a mudança: dot plot (17/01)",
+    "Várias medidas por entidade em eixos paralelos: coordenadas paralelas (18/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_participacao-por-canal-entre-anos",
+      "titulo": "Participação por canal entre anos",
+      "caso_de_uso": "Marketing: como a participação de 6 canais nos leads qualificados mudou de 2025 para 2026.",
+      "o_que_demonstra": [
+        "SVG com viewBox fixo e escala linear calculada em TypeScript",
+        "Escala única nas duas colunas, com o momento rotulado no topo",
+        "Rótulo e valor nas duas pontas, alinhados para fora",
+        "afastarRotulos move só os rótulos; as retas ficam no valor real"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_plataformas-que-trocaram-de-posicao",
+      "titulo": "Plataformas que trocaram de posição",
+      "caso_de_uso": "Marketing: quais plataformas inverteram a posição no CPL qualificado entre o primeiro e o segundo trimestre.",
+      "o_que_demonstra": [
+        "Duas retas cruzadas em chart-1 e chart-2, demais em line-strong a 0,4",
+        "Anotação curta apontando o cruzamento",
+        "Polaridade declarada: CPL que cai é bom, a cor não segue a subida",
+        "Delta com sinal no rótulo da ponta direita"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_win-rate-por-executivo-em-paineis",
+      "titulo": "Win rate por executivo em painéis",
+      "caso_de_uso": "Comercial: o win rate de 14 executivos no primeiro e no segundo semestre, com valores que vão de 10% a 70%.",
+      "o_que_demonstra": [
+        "Grade em Tailwind com um micro slope em SVG por painel",
+        "Mesma escala vertical nos 14 painéis, calculada uma vez",
+        "Reta cinza da média da empresa repetida em todos os painéis",
+        "Painéis ordenados pela variação em pontos percentuais, declarada",
+        "Componente de micro slope reaproveitável em cartão de KPI"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_empate-e-entrada-no-meio-do-ano",
+      "titulo": "Win rate com empate e entrada em julho",
+      "caso_de_uso": "Comercial: slope de 9 executivos em que dois empatam nos dois semestres e um entrou em julho, sem valor no primeiro.",
+      "o_que_demonstra": [
+        "Retas sobrepostas com rótulos afastados e traço guia acima de 8 px",
+        "Ponto só na coluna direita para quem entrou em julho, com nota",
+        "Nenhuma reta inventada até o zero para o semestre ausente",
+        "Rodapé contando empates e ausências"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

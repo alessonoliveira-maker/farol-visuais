@@ -1,0 +1,14 @@
+{
+  "title": "Relógio de entradas por hora em anéis por dia",
+  "useCase": "Em peça de destaque, como mostrar a natureza cíclica das entradas ao longo das 24 horas?",
+  "demonstrates": [
+    "Setor anular em path de dois arcos, com 0h no topo e sentido horário",
+    "Sete anéis com segunda no centro e rótulo só em 0h, 6h, 12h e 18h",
+    "Geometria por coordenada calculada, sem transform, para as guardas medirem",
+    "Lista de picos ao lado, que é o número escrito que a GEO-5 exige do radial",
+    "Nota de leitura: o anel de fora parece mais intenso com o mesmo valor"
+  ],
+  "canvas": { "width": 760, "height": 520 },
+  "frame": "card",
+  "notes": "Canvas declarado por número porque nenhum preset serve, e a conta que a GEO-1 pede é esta: corpo de 694 x 401,5 px (760 menos 66 de recuo; 520 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). O relógio precisa de 316 px de diâmetro mais 12 px de folga para o rótulo de hora, e as linhas escritas consomem 65,5 px: linha de leitura 17 e duas notas de rodapé 42,5, mais 6 de respiro. Com 500 px de canvas a segunda nota saía 1,5 px fora do corpo e o rótulo de 18h saía 20 px fora pela esquerda, os dois medidos no render, então a altura subiu 20 px e o centro do relógio andou 23 px para a direita. No preset quadrado de 480x480 o corpo mede 422 x 372 e não sobra largura para a lista de picos ao lado, que a GEO-5 exige. O caso de uso tem 87 caracteres e cabe em uma linha na largura de 694 px. Uma colisão com o catálogo, resolvida a favor do CONTRATO: o catálogo pede a mesma escala sequencial de 5 faixas da v1, para comparar as duas peças lado a lado, e esta versão usa 3 faixas. Com 168 setores não há onde escrever o valor de cada um, então a cor fica sendo o único canal de grandeza, e pela TOK-8 só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas; uma quarta faixa cairia em --seq-4, que mede 2,60:1 no claro e sumiria. A consequência da troca está declarada: a comparação com a v1 passa a ser de padrão, não de degrau, e o que carrega grandeza aqui é a faixa nomeada com o intervalo escrito mais a lista de picos por dia."
+}

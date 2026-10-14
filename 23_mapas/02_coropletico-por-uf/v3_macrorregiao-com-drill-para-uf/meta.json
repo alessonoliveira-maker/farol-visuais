@@ -1,0 +1,15 @@
+{
+  "title": "Receita média por cliente por região e UF",
+  "useCase": "Que região tem a maior receita média por cliente e como ela varia entre as UFs da região?",
+  "demonstrates": [
+    "Cinco macrorregiões como blocos de hexágonos separados por espaço, sem contorno real",
+    "Prop selectedRegion que troca o bloco pelas UFs da região e afunda as demais",
+    "Tabela sincronizada com valor, posição no ranking e cobertura do dado por UF",
+    "Escala de 5 classes recalculada para a camada visível e dita na legenda",
+    "Frase acessível que muda com a região aberta",
+    "UF sem receita apurada vazada na malha e escrita como ausência na tabela"
+  ],
+  "canvas": { "width": 960, "height": 420 },
+  "frame": "card",
+  "notes": "Desvios do catálogo. Primeiro, por decisão do dono: sem contorno real, então não existe regiaoPaths.ts (lista de imports fechada na seção 6 e cinco arquivos por versão na seção 1); a macrorregião é o bloco formado pelos hexágonos das suas UFs, sem emenda interna, e as regiões se separam por espaço (REGION_SHIFT, canal de 5 a 10,2 px). Segundo: o catálogo pede o módulo de paths por import dinâmico, que a seção 2 proíbe no Chart.tsx; sem módulo de paths não há o que carregar sob demanda, e a orientação de colagem ficou no README. Terceiro: a prop se chama selectedRegion, e não regiaoSelecionada, porque a seção 9 pede identificador em inglês. Quarto: a visão padrão do componente é a de macrorregiões (selectedRegion nulo), como o catálogo pede, mas o data.ts do catálogo abre o Nordeste, a região líder; o preview é um retrato parado (seção 13) e sem isso o drill, a tabela por UF e a frase da região aberta não apareceriam. Ao colar no Farol, comece com null. A visão de macrorregiões usa o mesmo desenho de bloco das regiões fechadas, com a cor da classe no lugar do tom neutro; foi renderizada e conferida nos dois temas durante a produção, com selectedRegion nulo, e não fica no preview. A escala é recalculada para a camada visível (UFs da região aberta, ou as cinco regiões): o drill existe para mostrar a variação dentro da região, e a posição nacional na tabela guarda o contexto. Quebras de intervalo igual em múltiplos de R$ 10; para o Nordeste, de R$ 600 a R$ 950 em passos de R$ 70. Rampa em --seq-1, --seq-2, --seq-3, --seq-6 e --seq-7 (TOK-2), com contorno em --line-strong nas duas classes baixas; região fechada em --surface-sunken com borda de 1 px e nome e valor em --text-secondary (7,04:1 ou mais), ancorados na linha mais larga do bloco para o texto não encostar na borda. O hexágono de 46 px comporta valor de até R$ 999; acima disso, aumente HEX_W. Canvas de 960 por 420 em vez do largo: corpo de 894 por 301,5 px; mapa de 313 por 269 px; tabela com cabeçalho de 2 linhas (32 px), linha da região (22 px) e 9 UFs de 18 px, mais vão de 12 e legenda de 50 px, 278 px no total, que no largo (281,5 px) fechava sem folga."
+}

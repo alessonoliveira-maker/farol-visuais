@@ -1,0 +1,13 @@
+{
+  "title": "Carteira em ABC e XYZ",
+  "useCase": "Comercial: como 180 contas se dividem por receita reconhecida e previsibilidade mensal, e quanta receita há em cada célula.",
+  "demonstrates": [
+    "Grade 3x3 com o critério de cada faixa no cabeçalho e o tipo de corte no subtítulo",
+    "Zonas diagonais pela soma dos índices, em três tons baixos",
+    "Contagem, soma de receita e participação no total em cada célula",
+    "Célula A e Z destacada: receita alta que entra no forecast como faixa",
+    "Navegação por setas entre células e aria-label com os números"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

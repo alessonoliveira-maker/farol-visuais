@@ -1,0 +1,14 @@
+{
+  "title": "Carteira do mês por executivo",
+  "useCase": "Quem contribuiu com as entradas, os ganhos e as perdas da carteira de agosto?",
+  "demonstrates": [
+    "Geometria de N retângulos por passo calculada em função pura",
+    "Slots categóricos na ordem 1, 3, 6, 5, fixos por executivo",
+    "Rótulo do passo com o líquido e sinal; segmento só na dica",
+    "Vão proporcional de 1,5 px só entre vizinhos, conforme COR-5",
+    "Totais como nível escrito, sobre eixo que parte da carteira inicial"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "SVG puro com viewBox de 894 x 233 px, igual ao espaço do SVG no canvas largo (corpo 894 x 281,5 menos 2 x 24 px de linha de leitura e legenda), então a escala é 1 e o texto escreve nos tamanhos declarados. Desvio declarado do item de totais sem segmentação do catálogo: o eixo parte de 180 (a carteira inicial, escrita na linha de leitura) e os totais são níveis de 3 px com o valor escrito, não colunas do zero; assim os passos pequenos ganham tinta (2,77 px por oportunidade, Bruna T. em ganhos com cerca de 2 px). Totais em text-secondary porque chart-1 é o slot de Bruna T. Cor dos rótulos pela polaridade declarada no dado (entradas e ganhos em positive, perdas em negative), e não pelo sinal; a seta continua mostrando a direção. Sinais não se misturam: entradas somam, ganhos e perdas são passos separados."
+}

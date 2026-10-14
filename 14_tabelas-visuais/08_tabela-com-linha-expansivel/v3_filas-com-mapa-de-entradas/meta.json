@@ -1,0 +1,13 @@
+{
+  "title": "Filas de pré-vendas com mapa de entradas",
+  "useCase": "Pré-vendas: por fila, volume, SLA e capacidade, e ao abrir, em que dias e horas as entradas se concentram.",
+  "demonstrates": [
+    "Linha resumo com bullet de capacidade contra o teto e SLA em texto",
+    "Painel com grade de dia por hora em degraus de seq e número nas células fortes",
+    "Escala de cor do painel comum a todas as filas, para abrir duas e comparar",
+    "Legenda da escala dentro do painel, não no cabeçalho da tabela"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas maior que o preset alto: quatro filas resumo mais o painel de mapa de entradas (5 dias x 5 faixas) e a legenda de escala não cabem no corpo de 425 px do preset; a conta da ESP-6 pede altura extra em vez de afinar a grade."
+}

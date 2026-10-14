@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por canal com marca de metade",
+  "useCase": "O outbound já responde por mais da metade das agendas da semana ou a fila ainda depende do inbound?",
+  "demonstrates": [
+    "Tique tracejado no topo do arco marcando o ponto fixo de 50% do total",
+    "Linha de leitura calculada do dado com a parte do outbound escrita em número",
+    "Dois canais em slots categóricos 1 e 3, com nome, contagem e percentual nas pontas",
+    "Halo na cor do cartão no rótulo que cruza o tique de 50%"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Entradas de 2026 sobre a faixa de 2023 a 2025",
+  "useCase": "As entradas semanais de 2026 ficam dentro da faixa de mínimo e máximo de 2023 a 2025?",
+  "demonstrates": [
+    "Area de faixa com mínimo e máximo dos anos anteriores atrás da linha",
+    "Semanas de 2026 fora da faixa marcadas com ponto e valor",
+    "Nota escrita dizendo quais anos formam a faixa",
+    "Faixa histórica completa e linha atual que para na semana medida"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

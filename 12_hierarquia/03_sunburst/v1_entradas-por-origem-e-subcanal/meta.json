@@ -1,0 +1,15 @@
+{
+  "title": "Entradas por origem e subcanal",
+  "useCase": "Mostrar como as entradas de pré-vendas da semana se dividem entre origem e subcanal num só anel.",
+  "demonstrates": [
+    "SunburstChart do Recharts com innerRadius, ringPadding, stroke e textOptions sobrescritos",
+    "Padrão de cor do componente, fill cinza e stroke branco, trocado por tokens do tema",
+    "Cor por ramo de origem gravada no fill de cada nó da árvore, do pai e dos filhos",
+    "Total no centro numa div absoluta sobre o gráfico",
+    "Subcanais ordenados por valor dentro de cada origem, somando exatamente o pai",
+    "Halo em cor de estrutura sob o número do setor, para ler contra qualquer cor de ramo"
+  ],
+  "canvas": { "width": 480, "height": 760 },
+  "frame": "card",
+  "notes": "Canvas mais alto que o quadrado sugerido pelo catálogo: o rótulo nativo do Sunburst só imprime o número, sem nome, então a identificação de origem e subcanal precisa da lista abaixo do anel, e ela pede mais altura do que a proporção 1 por 1 comporta sem espremer o anel (ESP-6)."
+}

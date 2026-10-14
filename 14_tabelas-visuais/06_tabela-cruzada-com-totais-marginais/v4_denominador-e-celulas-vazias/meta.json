@@ -1,0 +1,16 @@
+{
+  "title": "Denominador explícito e origem nova",
+  "useCase": "Marketing: não ler % da coluna como % do total e não confundir meses antes da criação de uma origem com zero.",
+  "demonstrates": [
+    "Alternador de percentual do total, da linha e da coluna, com o denominador nomeado",
+    "Origem criada em 2026-06, com indisponível antes disso, nunca lido como zero",
+    "Piloto de janela fixa: fora dela a célula não se aplica, nunca o ícone do vazio",
+    "Zero medido em percentual e pintado no degrau mais baixo da escala, nunca confundido"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 460
+  },
+  "frame": "card",
+  "notes": "8 linhas por 12 colunas mais a barra do alternador não cabe em 400 px no piso de 11 px (ESP-2): a conta pede por volta de 460 px. As três respostas de uma célula sem número medido nunca compartilham cor nem glifo: vazio segue o desenho oficial de indisponível da EST-2 (ícone Unplug e formatUnavailable(), em text-muted, sem fundo), não se aplica é o ícone Ban também em text-muted sem fundo, e zero medido é percentual com o fundo do degrau mais baixo da escala sequencial."
+}

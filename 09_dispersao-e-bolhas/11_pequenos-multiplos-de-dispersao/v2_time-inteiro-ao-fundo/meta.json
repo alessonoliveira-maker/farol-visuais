@@ -1,0 +1,17 @@
+{
+  "title": "Cada executivo contra a nuvem do time",
+  "useCase": "Onde as oportunidades de cada executivo ficam dentro da nuvem do time inteiro?",
+  "demonstrates": [
+    "Nuvem do time em neutro desenhada antes em todos os painéis",
+    "Pontos do executivo do painel em cor de destaque por cima",
+    "Título do painel com nome e número de oportunidades",
+    "Destaque por preenchimento, tamanho e revestimento, não só por cor",
+    "Domínio dos dois eixos derivado do conjunto inteiro, não de constante"
+  ],
+  "canvas": {
+    "width": 1120,
+    "height": 528
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número (GEO-1), com a conta das linhas: acima da grade vão 2 linhas escritas, a legenda das duas marcas e a linha de leitura com a escala comum e a conclusão, que somam cerca de 40 px; cada painel gasta 2 linhas de cabeçalho (nome em 12 px e contagem em 11 px, cerca de 31 px) mais 26 px de faixa de eixo x; com 2 fileiras de painéis e vão de 12 px isso pede cerca de 385 px de corpo, e o desconto de altura da moldura card é de 135 px com o caso de uso em duas linhas, o que fecha em 528 px, os 520 da conta mais 8 px de folga que o render pediu: com 520 os rótulos do eixo x passavam do corpo, porque a faixa de eixo era de 18 px e o rótulo precisa de 23. A largura de 1120 px é o que dá cerca de 168 px de plano por painel depois dos 56 px do eixo y e dos 30 px de margem direita; com os 960 px do preset largo o plano cairia para 128 px e as 84 marcas da nuvem de fundo viravam um traço. MEDIDO À MÃO NOS DOIS TEMAS, porque nenhuma guarda mede marca contra marca (TOK-9): o destaque --chart-1 contra o neutro --text-muted mede 1,82:1 no escuro e 1,12:1 no claro, então no tema claro a cor sozinha não separa o aceso do neutro. Por isso o destaque soma preenchimento (ponto cheio contra anel vazado), tamanho (raio 3,8 px contra 2,6 px) e revestimento de --surface-raised por baixo do contorno, que mede 9,50:1 contra --chart-1 no escuro e 6,00:1 no claro. Contra o cartão, as duas marcas passam folgado: --chart-1 mede 9,50:1 e 6,00:1, --text-muted mede 5,21:1 e 5,37:1, os dois acima do piso de 3:1. DIVERGÊNCIA DECLARADA: a tabela de papéis de cor da 17.2 dá o papel de Neutro de dado a --line-strong, que mede 1,79:1 e 1,83:1 contra o cartão e só se sustenta com o valor escrito na marca; numa nuvem de 84 pontos não há valor a escrever em cada um, então a nuvem usa --text-muted, que a tabela de tokens da seção 7 nomeia como categoria neutra. Pela 14.1 contraste é regra que decide o que o desenho afirma, então vale a medição. E o check não mediu contraste de marca aqui: CONTRASTE-MARCA e ESPESSURA-MARCA saem preview_com_transform nas quatro versões do modelo, porque o leitor não compõe a matriz do Recharts. Estar fora do escopo da guarda não é estar aprovado por ela, então os números acima são medidos à mão pela fórmula da WCAG, nos dois temas."
+}

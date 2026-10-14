@@ -1,0 +1,70 @@
+{
+  "slug": "07_matriz-raci",
+  "nome": "Matriz de responsabilidade (RACI)",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Etapas de um processo nas linhas, papéis nas colunas e uma letra por célula: R executa, A responde em última instância, C é consultado em via dupla e I é informado em via única. A regra de governança é uma só, exatamente um A por etapa, e a validação roda em TypeScript e vira coluna de alerta à direita. No Farol serve ao handoff de pré-vendas para vendas e ganha interesse quando cruza o declarado (PREMISSA) com quem de fato registrou a etapa no CRM (MEDIDO). Construído como tabela semântica em HTML com Tailwind, com th scope, porque a matriz é documento e precisa de leitor de tela; a forma do glifo carrega a diferença entre letras (A cheio, R contornado, C e I só texto) e a cor só reforça. Célula com duas letras é legítima e não pode quebrar o layout; variantes com letra extra, como RASCI, mantêm a regra do A único.",
+  "quando_usar": [
+    "Declarar quem executa, responde, é consultado e é informado em cada etapa do handoff",
+    "Auditar governança: etapa sem A, com dois A ou sem ninguém que execute",
+    "Ver a carga de cada papel em quantidade de R e de A",
+    "Comparar o processo declarado com o executado no CRM, com etiquetas separadas"
+  ],
+  "quando_evitar": [
+    "O processo ainda não tem dono definido; a matriz congela um desenho que não existe",
+    "Quem passa oportunidade para quem e em que volume: matriz de adjacência (27/01)",
+    "Estado de execução de cada etapa ao longo do tempo: faixa de status (24/04)",
+    "Ordem e duração das etapas no calendário: cronograma e linha do tempo (família 20)"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_handoff-declarado",
+      "titulo": "Handoff de pré-vendas para vendas declarado",
+      "caso_de_uso": "Comercial: quem executa, responde, é consultado e é informado nas 8 etapas do handoff de pré-vendas para vendas.",
+      "o_que_demonstra": [
+        "Tabela semântica com th scope nas etapas e nos papéis",
+        "Glifo por forma: A cheio, R contornado, C e I só texto",
+        "Etapas na ordem do processo, declarada no subtítulo",
+        "Legenda das quatro letras sempre visível",
+        "Célula com duas letras sem quebrar a largura da coluna"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_alertas-de-governanca-do-handoff",
+      "titulo": "Alertas de governança do handoff",
+      "caso_de_uso": "Comercial: quais etapas do handoff estão sem responsável final ou com dois, e qual papel concentra a execução.",
+      "o_que_demonstra": [
+        "Validação em TypeScript: exatamente um A e pelo menos um R por etapa",
+        "Coluna de alerta com ícone da lucide e o texto do problema",
+        "Etapa registrar perda sem A em tom de alerta, com segundo canal além da cor",
+        "Rodapé com a carga de R e A por papel: executivo com 6 R e nenhum apoio"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_declarado-contra-executado-no-crm",
+      "titulo": "RACI declarado contra executado no CRM",
+      "caso_de_uso": "Comercial: em cada etapa, quantas vezes o papel declarado de fato registrou a etapa no CRM no trimestre.",
+      "o_que_demonstra": [
+        "Letra declarada com etiqueta PREMISSA e percentual executado com etiqueta MEDIDO",
+        "Divergência acima de 30 pontos percentuais em destaque na célula",
+        "Papel sem letra que executa com frequência marcado na célula vazia",
+        "Nota: RACI é declaração de processo, não medição"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_rasci-com-papel-sem-ocupante",
+      "titulo": "RASCI com papel sem ocupante",
+      "caso_de_uso": "Pré-vendas: variante RASCI da redistribuição de fila, com um papel sem ocupante desde 2026-08-01.",
+      "o_que_demonstra": [
+        "Letra S de suporte na legenda e no glifo, sem mudar a regra do A único",
+        "Coluna do papel vago hachurada, com as letras declaradas mantidas",
+        "Nota: papel sem ocupante desde 2026-08-01",
+        "Alerta na etapa cujo único A está no papel vago"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

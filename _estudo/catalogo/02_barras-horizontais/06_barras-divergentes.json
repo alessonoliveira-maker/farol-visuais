@@ -1,0 +1,72 @@
+{
+  "slug": "06_barras-divergentes",
+  "nome": "Barras divergentes de sinal",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Barras que saem de um zero central para a direita quando o valor é positivo e para a esquerda quando é negativo; o olho lê sinal antes de magnitude. XAxis com domínio simétrico calculado pelo maior valor absoluto, ReferenceLine no zero mais forte que a grade e Bar shape que escolhe a cor pela polaridade da métrica, não pelo sinal, e arredonda só a ponta livre. Rótulo sempre do lado de fora, com sinal explícito e menos tipográfico. Absorve as empilhadas por sinal, com componentes que somam de um lado e subtraem do outro e o saldo marcado, e o word shift, termos ordenados pela contribuição para a mudança entre dois grupos.",
+  "quando_usar": [
+    "Variação contra período anterior ou contra referência, com valores dos dois sinais: CPL por plataforma, pipeline por executivo.",
+    "Entradas e saídas de cada categoria, quando o leitor precisa ver de onde vem o saldo.",
+    "Termos ou motivos que mais mudaram entre dois períodos ou dois grupos, ordenados pela contribuição.",
+    "De 4 a cerca de 30 linhas, ordenadas do maior ganho à maior perda."
+  ],
+  "quando_evitar": [
+    "Todos os valores com o mesmo sinal: barras simples ordenadas (01_barras-simples-ordenadas).",
+    "Como o saldo se formou passo a passo: cascata (19_cascata-waterfall).",
+    "Duas magnitudes lado a lado, e não a diferença: butterfly (07_butterfly-piramide).",
+    "Escala ordinal com polos, como avaliação de 5 pontos: divergente empilhada Likert (08_divergente-empilhada-likert).",
+    "Variação dentro de uma célula de tabela densa: barra de desvio em célula (14_tabelas-visuais)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_variacao-de-cpl-por-plataforma",
+      "titulo": "Variação do CPL por plataforma no mês",
+      "caso_de_uso": "Em que plataforma o CPL subiu ou caiu contra jul/26, sabendo que CPL que sobe é ruim.",
+      "o_que_demonstra": [
+        "Domínio simétrico de menos o máximo absoluto a mais o máximo absoluto",
+        "Cor pela polaridade de custo: queda em cor boa, alta em cor de alerta",
+        "Raio só na ponta livre, trocando de lado conforme o sinal",
+        "Rótulo fora da barra com sinal explícito e menos tipográfico",
+        "ReferenceLine no zero mais forte que a grade"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_movimentacao-do-pipeline-com-saldo",
+      "titulo": "Movimentação do pipeline por executivo",
+      "caso_de_uso": "De onde vem o saldo do pipeline de cada executivo na semana: entradas e avanços contra perdas e desqualificações.",
+      "o_que_demonstra": [
+        "Valores assinados no dado com stackId comum, empilhando por sinal sem configuração extra",
+        "Tons de uma família para componentes positivos e de outra para negativos",
+        "Marcador de saldo líquido por Scatter na mesma escala do eixo",
+        "Saldo escrito em moeda compacta com cor pela polaridade"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_termos-de-perda-que-mais-mudaram",
+      "titulo": "Termos de perda que mais mudaram no trimestre",
+      "caso_de_uso": "Quais termos dos motivos de perda ganharam ou perderam peso do 2º para o 3º trimestre de 2026.",
+      "o_que_demonstra": [
+        "Word shift: 20 termos ordenados pela contribuição em pontos percentuais",
+        "Contribuição como diferença de proporção entre os dois trimestres",
+        "Mínimo de 5 ocorrências declarado no subtítulo",
+        "Termo que só existe no trimestre recente com selo novo",
+        "Contagem de cada grupo na dica, não no rótulo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_todos-os-valores-negativos",
+      "titulo": "Variação de agendas quando todas as filas caíram",
+      "caso_de_uso": "Ler a queda de agendas por fila numa semana em que nenhuma fila cresceu, sem metade do card vazia.",
+      "o_que_demonstra": [
+        "Detecção de sinal único que recolhe o lado vazio do domínio",
+        "Zero mantido à direita como linha de base da barra espelhada",
+        "Fila sem variação escreve 0 sem barra e sem sinal",
+        "Título que declara todas as filas em queda"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

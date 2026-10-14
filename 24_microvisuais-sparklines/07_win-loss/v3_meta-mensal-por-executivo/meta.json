@@ -1,0 +1,14 @@
+{
+  "title": "Meta mensal por executivo em 12 meses",
+  "useCase": "Quais dos 12 executivos batem a meta mensal com regularidade e quais decaíram no semestre?",
+  "demonstrates": [
+    "Tabela de 12 linhas com um SVG de 12 blocos por linha, de largura e altura fixas",
+    "Ordem por meses batidos, com a contagem em coluna à direita e tabular-nums",
+    "Nome fictício com inicial de sobrenome e nome longo que quebra linha sem cortar",
+    "Meses por formatMonthShort só no cabeçalho, alinhados à grade de blocos",
+    "Frase acessível com o executivo mais regular e a maior sequência recente de falhas"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas por número, 640 x 640, porque as 12 linhas fixas de 24 px com 8 px de vão (376 px) mais cabeçalho, resumo e legenda passam do corpo de 425 px do preset alto; o corpo de 640 x 640 com cabeçalho de duas linhas é de 574 x 505 px. O peso 700 fica em dois elementos, o nome e a contagem da linha destacada (TIP-3). Cada SVG tem 190 x 24 px reais, sem escala, com blocos de 14 x 10 px, e o vão entre linhas (8 px) é maior que o de dentro da linha (4 px) para os grupos se separarem e vão de 2 px; os rótulos do cabeçalho caem no início de cada trimestre, de 48 em 48 px, alinhados à grade. A ordem é por meses batidos e, no empate, a do dado. Vão de 2 px entre blocos e 2 px de cada lado da linha central, no lugar do 1 px do catálogo (COR-5)."
+}

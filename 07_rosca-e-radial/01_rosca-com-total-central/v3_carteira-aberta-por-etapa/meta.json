@@ -1,0 +1,12 @@
+{
+  "title": "Carteira aberta por etapa do funil",
+  "useCase": "Comercial: quanto dos R$ 7,4 mi em 58 oportunidades abertas está em qualificação, proposta, negociação e fechamento.",
+  "demonstrates": [
+    "Centro em duas linhas: valor compacto e contagem com o substantivo oportunidades",
+    "Etapas na ordem do funil, não por valor, em tons seq-4 a seq-7",
+    "Legenda tabular com valor, oportunidades e percentual em colunas à direita",
+    "Frase acessível calculada com o total e a etapa de maior valor"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

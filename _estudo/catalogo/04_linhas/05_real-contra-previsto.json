@@ -1,0 +1,68 @@
+{
+  "slug": "05_real-contra-previsto",
+  "nome": "Real contra previsto tracejado",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Série contínua que muda de sólido para tracejado no ponto em que deixa de ser medida e passa a ser projeção, com o ponto de junção repetido nas duas chaves para não abrir buraco. É recharts-custom porque o dado precisa ser moldado antes do render e o cruzamento com meta ou teto é calculado em TypeScript.",
+  "quando_usar": [
+    "Realizado até hoje continuando em projeção até o fim do mês, do trimestre ou do ano.",
+    "Forecast de fechamentos ou de receita com data de corte explícita e método declarado.",
+    "Cenários conservador, base e otimista partindo do mesmo último ponto medido.",
+    "Pergunta de quando a trajetória cruza uma meta ou um teto de capacidade."
+  ],
+  "quando_evitar": [
+    "Projeção sem método declarado: mostre só o realizado.",
+    "Incerteza em bandas aninhadas por probabilidade: use o leque de 05_areas.",
+    "Acumulado contra meta anual: use 06_acumulado-contra-meta, que já traz a projeção tracejada.",
+    "Período corrente só incompleto, sem projeção: basta o trecho parcial tracejado de 01_linha-simples."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-real-e-projetada",
+      "titulo": "Receita reconhecida real e projetada até dezembro",
+      "caso_de_uso": "Se o ritmo de 2026-01 a 2026-08 se mantiver, onde a receita reconhecida mensal termina em 2026-12?",
+      "o_que_demonstra": [
+        "Duas Line: real sólida e projetada com strokeDasharray 4 4",
+        "Ponto de junção presente nas duas chaves para não abrir buraco",
+        "ReferenceLine vertical de hoje com rótulo curto",
+        "Dica que rotula projetado e não duplica o ponto de junção"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_forecast-de-fechamentos-com-data-de-corte",
+      "titulo": "Forecast de fechamentos a partir da data de corte",
+      "caso_de_uso": "Quantos fechamentos por semana o forecast espera até 2026-12-31, a partir do corte de 2026-09-14?",
+      "o_que_demonstra": [
+        "Data de corte anotada com formatDate",
+        "Método da projeção em nota; a etiqueta PREMISSA fica no VisualCard",
+        "Contagem inteira com allowDecimals desligado no eixo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_tres-cenarios-de-receita",
+      "titulo": "Três cenários de receita a partir do último mês medido",
+      "caso_de_uso": "Como a receita reconhecida de 2026 fecha nos cenários conservador, base e otimista, a partir do mesmo mês medido?",
+      "o_que_demonstra": [
+        "Três tracejados com pesos diferentes saindo do mesmo ponto de junção",
+        "Rótulo final de cada cenário com formatCurrencyCompact",
+        "Frase acessível com a saída em faixa entre conservador e otimista",
+        "Cenário base em --chart-1 e extremos em neutro, sem leque de área"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_fila-projetada-cruzando-o-teto",
+      "titulo": "Fila projetada que cruza o teto de capacidade",
+      "caso_de_uso": "Se a demanda seguir o ritmo atual, em que semana a fila de primeiro contato passa do teto de capacidade?",
+      "o_que_demonstra": [
+        "Cruzamento calculado por interpolação linear em TypeScript",
+        "Semana estimada do cruzamento anotada com formatDate",
+        "Teto em ReferenceLine com ifOverflow extendDomain",
+        "Aviso escrito quando a projeção não cruza dentro do horizonte"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

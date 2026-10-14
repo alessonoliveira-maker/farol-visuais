@@ -1,0 +1,69 @@
+{
+  "slug": "08_cascata-aninhada",
+  "nome": "Cascata aninhada",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Um passo da ponte se abre numa ponte própria, cuja entrada e saída são o valor do passo pai. É o detalhamento sem trocar de tipo de gráfico: o dado é uma árvore, um seletor de caminho devolve os passos do nível corrente em formato de faixa, a migalha em Tailwind sobe de nível e o shape recebe o clique para descer. O filho precisa somar o pai, garantido no dado.",
+  "quando_usar": [
+    "Ponte com 2 ou 3 níveis reais de hierarquia, em que um passo pede explicação própria.",
+    "Custo, perdas ou receita em que a pergunta seguinte a de onde veio é de que é feito este passo.",
+    "Pai visível acima do filho quando o contexto do total não pode se perder.",
+    "Passo pai com parte sem classificação, que precisa aparecer no filho."
+  ],
+  "quando_evitar": [
+    "Hierarquia sem nível intermediário real: ponte simples com subtotais, versão v2 do modelo 01.",
+    "A hierarquia importa mais que o caminho: treemap ou árvore, família 12.",
+    "Decomposição em alavancas por soma ou produto: árvore de indicadores, família 12, modelo 04.",
+    "Detalhamento sobre uma tabela de números: tabela visual, família 14."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_custo-total-abrindo-em-marketing",
+      "titulo": "Custo total abrindo em marketing",
+      "caso_de_uso": "Diretoria, 2026-08: custo de R$ 390 mil em pessoas R$ 160 mil, marketing R$ 150 mil, comissão R$ 22 mil e rateio R$ 58 mil; marketing abre em mídia R$ 118 mil, ferramentas R$ 14 mil, agência R$ 12 mil e eventos R$ 6 mil.",
+      "o_que_demonstra": [
+        "Pai em cima e filho embaixo, com o passo aberto emoldurado",
+        "Entrada e saída do filho iguais ao valor do passo pai",
+        "Mesma convenção de cor nos dois níveis",
+        "Indicador de proporção: marketing é 38% do custo total"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_passo-que-mais-cresceu-abre",
+      "titulo": "O passo que mais cresceu se abre",
+      "caso_de_uso": "Diretoria, 2026-08 contra 2026-07: marketing subiu R$ 23 mil, de R$ 127 mil para R$ 150 mil, e ganha moldura com o rótulo abre; o filho vem ordenado por variação, com mídia +R$ 19 mil.",
+      "o_que_demonstra": [
+        "Moldura e ícone lucide no passo com maior variação",
+        "Filho ordenado por variação e não por valor",
+        "Variação com a base na mesma linha, conforme NUM-4",
+        "onClick no shape para descer e foco de teclado equivalente"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_perdas-do-funil-em-tres-niveis",
+      "titulo": "Perdas do trimestre em três níveis",
+      "caso_de_uso": "Comercial e Pré-vendas, 2026-T3: 1.180 perdas em pré-venda 1.030, proposta 110 e negociação 40; pré-venda abre em sem contato 460, não fit 390, sem orçamento 120 e duplicado 60; sem contato abre por canal tentado.",
+      "o_que_demonstra": [
+        "Estado de caminho em React sobre dado em árvore",
+        "Migalha em Tailwind com o caminho e o percentual do total",
+        "Escala recalculada por nível sem perder a proporção no rótulo",
+        "Seletor de caminho puro, testável fora do React"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_filho-que-nao-fecha-o-pai",
+      "titulo": "Perdas na proposta sem motivo registrado",
+      "caso_de_uso": "Comercial, 2026-T3: das 110 perdas na proposta, preço 38, concorrência 29, prazo 21 e sem decisão 9; 13 perdas (12%) não têm motivo e ficam num passo próprio, sem redistribuir.",
+      "o_que_demonstra": [
+        "Passo Sem motivo registrado vazado, por último e visível",
+        "Soma dos filhos verificada contra o pai no dado",
+        "Ausência nunca redistribuída proporcionalmente entre motivos",
+        "Frase acessível com a parte sem classificação"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Dias até a primeira reunião em pontos",
+  "useCase": "Quantas das 46 oportunidades do mês chegaram à primeira reunião em cada faixa de 2 dias?",
+  "demonstrates": [
+    "Função de empilhar com grade fixa de 2 dias e nível por intervalo",
+    "Diâmetro do ponto igual à largura do intervalo em px, calculado depois de medir a largura",
+    "Eixo Y omitido e n no subtítulo, porque a pilha já é a contagem",
+    "Nota de que a grade é fixa, diferente do agrupamento original de Wilkinson"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 580
+  },
+  "frame": "card",
+  "notes": "Canvas de 640 por 580 em vez do card sugerido, e nenhum preset fecha a conta: com 14 faixas de 2 dias o intervalo mede cerca de 37 px, e a pilha de 9 oportunidades pede 9 pontos de 37 px, ou 336 px de altura útil. O corpo do preset alto (441,5 px) desconta o resumo, a legenda de duas linhas e o eixo e fica uns 3 px abaixo disso, e o ponto teria de encolher abaixo da largura do intervalo, quebrando a regra da versão. A régua fecha em 28 dias, fixa entre filtros; o que passa dela sai contado na legenda em vez de esticar o eixo."
+}

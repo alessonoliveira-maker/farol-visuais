@@ -1,0 +1,14 @@
+{
+  "title": "Origem dos leads por SDR com amostra pequena",
+  "useCase": "Como a origem dos leads do mês se divide entre SDR 01 e SDR 04 quando uma delas recebeu só 6 leads?",
+  "demonstrates": [
+    "Pizza com n abaixo do mínimo em neutro, com selo de amostra pequena",
+    "Percentual omitido abaixo do mínimo, com a contagem absoluta escrita",
+    "Sem origem declarada vazada e por último em todas as pizzas",
+    "Constante MIN_SAMPLE no topo do arquivo decide o estado de cada célula",
+    "Legenda com valor por coluna, uma linha por origem"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo, como o catálogo sugeria. O caso de uso tem 99 caracteres e cabe em uma linha do cabeçalho de 894 px (o limite garantido ali é 153), então o corpo mede 894 por 281,5 px. A conta das linhas escritas (GEO-1): leitura 16, nome e n da pessoa 32, pizza 92 com o selo de 16, quatro linhas de origem de 16 e cinco vãos de 8 somam 268 px. O selo de amostra pequena não leva fundo tingido porque o token de tarja neutra mede 1,00:1 contra o cartão no tema claro e a tarja não existiria na tela; o segundo canal é o ícone mais a palavra. O zero medido de SDR 03 em sem origem declarada aparece escrito como contagem e sem cunha, porque cunha de área nula não se desenha."
+}

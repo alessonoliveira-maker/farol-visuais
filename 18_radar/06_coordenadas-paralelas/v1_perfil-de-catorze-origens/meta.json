@@ -1,0 +1,14 @@
+{
+  "title": "Perfil de catorze origens de lead em seis métricas",
+  "useCase": "Marketing, 2026-08: quais das catorze origens de lead compartilham perfil e quais formam um grupo à parte?",
+  "demonstrates": [
+    "Seis eixos verticais com escala comum de 0 a 100 e níveis 0, 50 e 100",
+    "Um path por origem com posição calculada em função pura de escala",
+    "Ordem dos eixos que reduz cruzamentos, com as métricas correlatas vizinhas",
+    "Linha em tom neutro acima de 3:1, com 1,5 px, e nome de cada origem na coluna lateral",
+    "Dica com os seis valores da origem sob o ponteiro, cada taxa com o volume"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "CONTA DO CANVAS (GEO-1), com preset por nome porque fecha. O caso de uso tem 104 caracteres e cabe em uma linha a 894 px, então o corpo do largo mede 894 x 281,5 px, e o viewBox do SVG repete esse número para a escala sair 1 (GEO-18). Linhas escritas: 1 de leitura (12 px, base em 13), 1 de título de eixo (11 px, base em 40) e a coluna de 14 nomes com passo de 14 px, que pede 182 px e tem 217,5 px de coluna (de 56 a 273,5), ao lado de um eixo de 219,5 px (de 54 a 273,5). DESVIO DECLARADO, cor da linha. A especificação pede as linhas em --line-strong; a ACE-6 diz que traço que carrega a relação é dado e mede 3:1, e --line-strong mede 1,79:1 no escuro e 1,83:1 no claro. O contrato vence: as 14 linhas vão em --text-muted, que mede 5,21:1 e 5,37:1, continuam cinza (COR-1) e mantêm 1,5 px. ACRÉSCIMO SOBRE A ESPECIFICAÇÃO: a coluna de nomes à esquerda, com linha de chamada, porque sem ela nenhuma das 14 linhas tem nome no desenho parado e a pergunta do cartão é quais. Os nomes ficam do lado do primeiro eixo, taxa de contato, porque é onde as origens mais se espalham (de 32,0% a 91,9%); o texto sai do lugar por regressão isotônica com passo de 14 px e a marca fina não leva halo (GEO-4). ORDEM DOS EIXOS: 30 cruzamentos entre vizinhos, contra 28 da melhor das 720 ordens, 37 da ordem ingênua e 52 da pior; a conta está no data.ts. GRUPO À PARTE: maior salto na média das seis taxas por origem, que neste dado separa 3 origens (média de 68,7%) das outras 11 (38,8%) por 15,9 pontos. TAXA SEM DENOMINADOR não acontece neste dado, mas o ramo existe: o trecho da linha se encerra e a origem ganha anel vazado numa faixa abaixo dos eixos, que só ocupa altura quando há ausência. GUARDAS QUE SE CALAM: ESPESSURA-MARCA sai sem marca de barra, porque a peça é de traço; a conferência do traço de 1,5 px é do olho, nos dois temas."
+}

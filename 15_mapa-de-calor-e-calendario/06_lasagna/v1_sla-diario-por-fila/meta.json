@@ -1,0 +1,14 @@
+{
+  "title": "SLA diário de primeiro contato por fila",
+  "useCase": "Quais filas respondem dentro do combinado, e em que dias o primeiro contato estourou?",
+  "demonstrates": [
+    "Doze entidades por noventa dias em SVG, uma coluna de 8 px por dia",
+    "Cor como régua de serviço em faixas nomeadas, fora da rampa sequencial",
+    "Dia sem entrada na fila hachurado, nunca pintado de dentro do SLA",
+    "Filas ordenadas pela mediana, com a mediana escrita à direita da linha",
+    "Eixo de tempo esparso: rótulo e linha só na virada de mês"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "A mediana ordena e resume, não a média: um plantão de 70 h numa sexta puxa a média de uma fila que passa o trimestre em 2 h, e a fila sem nenhum dia medido fica com a mediana indisponível, no fim da ordem, em vez de virar a mais rápida com zero. As cinco faixas saem das cores de papel, --positive, --chart-1, --chart-3, --warning e --negative, e nenhuma da rampa --seq-*: medidos contra o cartão, os cinco ficam entre 5,3:1 e 9,5:1 nos dois temas, enquanto --seq-3, que pintava a faixa mais frequente, media 2,29:1 e 1,92:1. A régua de SLA é categórica: o salto de cor entre 24 h e 48 h é o combinado, não uma interpolação. Célula de 8 px por dia não comporta número, então o valor exato do dia fica para a dica no Farol e a linha carrega a mediana escrita."
+}

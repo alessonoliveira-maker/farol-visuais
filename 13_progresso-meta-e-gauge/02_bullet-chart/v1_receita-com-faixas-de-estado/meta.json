@@ -1,0 +1,13 @@
+{
+  "title": "Receita reconhecida do trimestre contra a meta",
+  "useCase": "Mostrar em que faixa de estado a receita do trimestre está e a que distância da meta, sem gauge.",
+  "demonstrates": [
+    "BarChart em layout vertical com faixas em ReferenceArea e meta em ReferenceLine",
+    "Ordem de pintura no JSX: faixas, depois a barra e só então a meta",
+    "ifOverflow em extendDomain para a meta não sumir quando passa do maior valor",
+    "Nome próprio de cada faixa acima da régua, fora do fundo colorido",
+    "Meta em traço sólido perpendicular à barra, distinguível da faixa por forma, não por cor"
+  ],
+  "canvas": "faixa",
+  "frame": "card"
+}

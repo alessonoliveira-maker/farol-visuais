@@ -1,0 +1,11 @@
+{
+  "title": "Citação do motivo de ganho mais citado",
+  "useCase": "Comercial: qual frase de cliente resume o motivo de ganho mais citado no 3º trimestre, e quantas respostas ela representa?",
+  "demonstrates": [
+    "blockquote com border-s-4 em --chart-1 e corpo em 14 px, sem aspas decorativas",
+    "Atribuição por perfil fictício: cliente patrimonial, faixa B, set/26",
+    "Contador de representatividade: 1 de 38 respostas parecidas, 23% das respostas",
+    "Frase acessível na raiz com o motivo, a parcela e o período"
+  ],
+  "canvas": "card"
+}

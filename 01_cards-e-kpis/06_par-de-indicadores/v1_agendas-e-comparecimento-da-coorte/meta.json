@@ -1,0 +1,14 @@
+{
+  "title": "Agendas marcadas e comparecimento da coorte",
+  "useCase": "A pré-vendas marcou mais agendas na semana sem perder comparecimento nessa mesma coorte de agendas?",
+  "demonstrates": [
+    "Indicador de efeito em 30 px e contraindicador um degrau abaixo, em 14 px",
+    "Conector escrito com entre os dois números, nomeando a relação",
+    "Variação de cada indicador com a própria polaridade e a base nomeada",
+    "Comparecimento com o par: 71,2% (84 de 118 agendas)",
+    "Coorte no tipo do dado: o denominador da taxa é o próprio número de agendas"
+  ],
+  "canvas": { "width": 400, "height": 280 },
+  "frame": "stage",
+  "notes": "Canvas 400 x 280: a linha do contraindicador com o par não cabe nos 360 px do preset kpi-alto. O conector vira mas com quando as agendas melhoram e o comparecimento piora além do corte."
+}

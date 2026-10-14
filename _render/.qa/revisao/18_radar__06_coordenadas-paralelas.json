@@ -1,0 +1,134 @@
+{
+  "familia": "18_radar",
+  "modelo": "06_coordenadas-paralelas",
+  "versoes": {
+    "v1_perfil-de-catorze-origens": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 14 paths conferem com o dado na escala comum de 0 a 100, linha em text-muted a 5,21:1 e 5,37:1 medida no pixel, 14 nomes no desenho parado, grupo à parte de 3 origens (68,7 contra 38,8) e 30 cruzamentos refeitos do dado, frase de 229 caracteres, ponteiro e dica sondados em página viva nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:20.385Z",
+      "impressao": "2ad04b78d91eb21cf69311adb555b2feee4bbcdf",
+      "arquivos": {
+        "Chart.tsx": "eb4904d27fc9baa40eef9e6b34671b221a619f47",
+        "data.ts": "7872db9184661fca60a2f23f24069ff2bdda78f8",
+        "meta.json": "45cc1068e028eb997586cb1beaa026ee363f9494"
+      }
+    },
+    "v2_indicacao-de-cliente-em-foco": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 das 09:15. Sem bloqueante: as 14 linhas conferem com o dado, as 13 de contexto em text-muted opaco medem 5,21:1 e 5,37:1, foco e mediana com revestimento visível nos dois temas, medianas e maior distância refeitas nos 14 focos (71,0% contra 28,0% no padrão), clique no nome e na linha, Tab, Enter e Espaço sondados em página viva, indicador de foco dentro da linha do nome sem cobrir vizinho, frase de 216 a 231 caracteres, peso 700 em dois elementos. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:05.486Z",
+      "impressao": "817b63a1ea1130d2f94bdc72415ba22a57d83327",
+      "arquivos": {
+        "Chart.tsx": "2de5277f1850c455faa16c0a0fd00e3546ee1f39",
+        "data.ts": "a4aa2e5ec7529d8bafe94dc6de48780940c80d87",
+        "meta.json": "c54d3d368973bf0641f627550d0d1cc5c5962c39"
+      }
+    },
+    "v3_escala-propria-por-eixo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 14 paths conferem com o dado nos cinco domínios refeitos (0 a 200 reais, 0 a 80 e 0 a 50 por cento, 20 a 160 mil reais, 30 a 110 dias), mínimo e máximo escritos com unidade em cada eixo, polaridade escrita sem inverter o eixo, zero medido de Lista de terceiros no pé do eixo e ausência em anel vazado com a linha partida, linha em text-muted a 5,21:1 e 5,37:1, frase de 213 caracteres. Observações no README; a mais pesada: a leitura e a frase acessível não dizem como as origens se comparam.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:28.913Z",
+      "impressao": "61d6b98474928d4abf00c5ae1c92d45a0d1494aa",
+      "arquivos": {
+        "Chart.tsx": "58c9326f0995719e23a8286aa9da682c486e1b50",
+        "data.ts": "1eb7847feb77c4baa25cb9ddd957aa8adfd2a6a2",
+        "meta.json": "e8092dde1eefe21f42bb79f83a834ee22b3487b2"
+      }
+    },
+    "v4_quarenta-e-oito-campanhas-com-lacunas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 das 09:15. Sem bloqueante: as 48 linhas e os quatro domínios conferem com o dado, 9 quebradas por ausência com 10 anéis na faixa, zero medido tocando o pé do eixo, as 41 de contexto em text-muted opaco medem 5,21:1 e 5,37:1, seleção de 7 de 48 com 2 sem ciclo, e 12 estados de faixa sondados em página viva nos dois temas (setas, Home, End, arrasto, faixa vazia com role status, lista com 14 linhas e resto contado). Observações no README; a mais pesada: rótulo dos limites juntos cortado em 11,8 px acima de 100 reais, e rótulo do eixo riscado pelo foco de teclado com o limite na ponta.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:06.027Z",
+      "impressao": "d751e93a4812c22d73fd69777479cd778ffbc159",
+      "arquivos": {
+        "Chart.tsx": "4fa0e3a33cc56f2a1d1dc6d6a48f6affae077363",
+        "data.ts": "481134c586bd718e772831619feab2b764333bf0",
+        "meta.json": "7bc76d6d7711f3a4b5a07055d48e5b8626ed749a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_perfil-de-catorze-origens",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 14 paths conferem com o dado na escala comum de 0 a 100, linha em text-muted a 5,21:1 e 5,37:1 medida no pixel, 14 nomes no desenho parado, grupo à parte de 3 origens (68,7 contra 38,8) e 30 cruzamentos refeitos do dado, frase de 229 caracteres, ponteiro e dica sondados em página viva nos dois temas. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:20.385Z",
+      "impressao": "2ad04b78d91eb21cf69311adb555b2feee4bbcdf",
+      "arquivos": {
+        "Chart.tsx": "eb4904d27fc9baa40eef9e6b34671b221a619f47",
+        "data.ts": "7872db9184661fca60a2f23f24069ff2bdda78f8",
+        "meta.json": "45cc1068e028eb997586cb1beaa026ee363f9494"
+      }
+    },
+    {
+      "versao": "v2_indicacao-de-cliente-em-foco",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20, tabela 17.2, ACE-3, ACE-8 e TOK-5: as 13 linhas de contexto em line-strong medem 1,79:1 no escuro e 1,83:1 no claro, sem valor escrito; trocar por text-muted, com revestimento em surface-raised sob o foco e sob a mediana, e escrever o par medido na nota. Perguntas 13 e 15, ROT-7, ESP-3 e seção 14.1: o anel de foco dos nomes, no clique e no Tab, contorna a caixa do grupo com a linha de chamada e cobre ou abraça os nomes vizinhos; tirar a chamada do grupo e desenhar indicador próprio dentro da linha do nome. Parecer em validation/revisao_18_radar__06_coordenadas-paralelas_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:20.929Z",
+      "impressao": "407db0b19f30aa7a8133229a12fceca2a5c4711d",
+      "arquivos": {
+        "Chart.tsx": "3e352afc42cd64a3ce249225fcefdc5ce02a76a7",
+        "data.ts": "a4aa2e5ec7529d8bafe94dc6de48780940c80d87",
+        "meta.json": "3b627d7607004686b2a9b9e64bbb49fc7b8f7e0f"
+      }
+    },
+    {
+      "versao": "v3_escala-propria-por-eixo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: os 14 paths conferem com o dado nos cinco domínios refeitos (0 a 200 reais, 0 a 80 e 0 a 50 por cento, 20 a 160 mil reais, 30 a 110 dias), mínimo e máximo escritos com unidade em cada eixo, polaridade escrita sem inverter o eixo, zero medido de Lista de terceiros no pé do eixo e ausência em anel vazado com a linha partida, linha em text-muted a 5,21:1 e 5,37:1, frase de 213 caracteres. Observações no README; a mais pesada: a leitura e a frase acessível não dizem como as origens se comparam.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:28.913Z",
+      "impressao": "61d6b98474928d4abf00c5ae1c92d45a0d1494aa",
+      "arquivos": {
+        "Chart.tsx": "58c9326f0995719e23a8286aa9da682c486e1b50",
+        "data.ts": "1eb7847feb77c4baa25cb9ddd957aa8adfd2a6a2",
+        "meta.json": "e8092dde1eefe21f42bb79f83a834ee22b3487b2"
+      }
+    },
+    {
+      "versao": "v4_quarenta-e-oito-campanhas-com-lacunas",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20, tabela 17.2, ACE-3, ACE-8 e TOK-5: as 41 linhas fora da faixa em line-strong de 1 px medem 1,79:1 no escuro e 1,83:1 no claro, sem valor escrito; trocar por text-muted, com revestimento em surface-raised sob as selecionadas, e escrever o par medido na nota. Seleção, teclado, arrasto, faixa vazia e lacunas conferidos em página viva e contra o dado, sem outro bloqueante; observações no README e no parecer, a mais pesada o rótulo dos limites juntos cortado acima de 100 reais. Parecer em validation/revisao_18_radar__06_coordenadas-paralelas_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:13:29.479Z",
+      "impressao": "98dbaae84a45c1946020824f64832e7fb2881208",
+      "arquivos": {
+        "Chart.tsx": "10bb76f7cd30f99747c37b364bfe999243cef149",
+        "data.ts": "481134c586bd718e772831619feab2b764333bf0",
+        "meta.json": "41a60651ccd15e15b07479c358984a09ac8da0b2"
+      }
+    },
+    {
+      "versao": "v2_indicacao-de-cliente-em-foco",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 das 09:15. Sem bloqueante: as 14 linhas conferem com o dado, as 13 de contexto em text-muted opaco medem 5,21:1 e 5,37:1, foco e mediana com revestimento visível nos dois temas, medianas e maior distância refeitas nos 14 focos (71,0% contra 28,0% no padrão), clique no nome e na linha, Tab, Enter e Espaço sondados em página viva, indicador de foco dentro da linha do nome sem cobrir vizinho, frase de 216 a 231 caracteres, peso 700 em dois elementos. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:05.486Z",
+      "impressao": "817b63a1ea1130d2f94bdc72415ba22a57d83327",
+      "arquivos": {
+        "Chart.tsx": "2de5277f1850c455faa16c0a0fd00e3546ee1f39",
+        "data.ts": "a4aa2e5ec7529d8bafe94dc6de48780940c80d87",
+        "meta.json": "c54d3d368973bf0641f627550d0d1cc5c5962c39"
+      }
+    },
+    {
+      "versao": "v4_quarenta-e-oito-campanhas-com-lacunas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 das 09:15. Sem bloqueante: as 48 linhas e os quatro domínios conferem com o dado, 9 quebradas por ausência com 10 anéis na faixa, zero medido tocando o pé do eixo, as 41 de contexto em text-muted opaco medem 5,21:1 e 5,37:1, seleção de 7 de 48 com 2 sem ciclo, e 12 estados de faixa sondados em página viva nos dois temas (setas, Home, End, arrasto, faixa vazia com role status, lista com 14 linhas e resto contado). Observações no README; a mais pesada: rótulo dos limites juntos cortado em 11,8 px acima de 100 reais, e rótulo do eixo riscado pelo foco de teclado com o limite na ponta.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:33:06.027Z",
+      "impressao": "d751e93a4812c22d73fd69777479cd778ffbc159",
+      "arquivos": {
+        "Chart.tsx": "4fa0e3a33cc56f2a1d1dc6d6a48f6affae077363",
+        "data.ts": "481134c586bd718e772831619feab2b764333bf0",
+        "meta.json": "7bc76d6d7711f3a4b5a07055d48e5b8626ed749a"
+      }
+    }
+  ]
+}

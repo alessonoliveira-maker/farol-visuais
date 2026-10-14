@@ -1,0 +1,77 @@
+{
+  "slug": "02_sparkbar",
+  "nome": "Sparkbar",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Colunas verticais do tamanho de uma palavra, uma por período, com base sempre no zero e nenhum eixo. É o microvisual certo para eventos discretos e contáveis (leads do dia, agendas da semana, fechamentos do mês), que não faz sentido interpolar. No Farol é um BarChart do Recharts com eixos escondidos e domínio declarado, Cell por ponto para acender a coluna atual ou as que ficaram abaixo de um piso, e animação desligada. O modelo absorve o sparkbar divergente, com o zero no centro, domínio simétrico e cor pela polaridade da métrica (bom e ruim, não mais e menos), e as barras pareadas mini, que comparam o período atual com uma referência em duas barras finas de mesma origem e mesma escala. O piso de desenho é 3 px por coluna mais 1 px de vão, o que dá cerca de 25 colunas em 100 px.",
+  "quando_usar": [
+    "Contagens discretas por período ao lado de um KPI: agendas por semana, entradas por dia, fechamentos por mês, até cerca de 25 colunas em 100 px",
+    "Variação com sinal em torno do zero, como variação mês a mês da receita ou do CPL, na versão divergente",
+    "Coluna de tabela com a mesma série para 10 a 15 filas ou executivos, em escala comum declarada no cabeçalho",
+    "Atual contra uma referência única (mês anterior, mesmo trimestre do ano anterior, meta), em barras pareadas",
+    "Destacar as colunas que ficaram abaixo de um piso operacional declarado"
+  ],
+  "quando_evitar": [
+    "Série longa que vira franja, como 52 semanas em 100 px: agregue o período ou use o sparkline de linha (24/01_sparkline-de-linha)",
+    "Leitura de valor com eixo e rótulo: use a família 03_colunas-verticais",
+    "Resultado binário, sem magnitude: use o win/loss (24/07_win-loss)",
+    "Série que quase nunca cruza o zero: fique com a coluna simples, sem a versão divergente",
+    "Mais de dois períodos por linha nas barras pareadas: use as barras agrupadas (02/02_barras-agrupadas)",
+    "Variação decomposta em contribuições: use a cascata de ponte (19/01_cascata-de-ponte)",
+    "Frequência de uma distribuição: use o histograma (16/01_histograma)"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-semana-com-semana-atual",
+      "titulo": "Agendas marcadas por semana",
+      "caso_de_uso": "Pré-vendas: as agendas das últimas 16 semanas estão subindo, e como a semana atual se compara?",
+      "o_que_demonstra": [
+        "BarChart com XAxis e YAxis escondidos, domínio de 0 ao máximo e animação desligada",
+        "Cell por coluna: semana atual em var(--chart-1), demais em var(--line-strong)",
+        "barCategoryGap de 30% e piso de 3 px por coluna conferido contra a largura",
+        "Número da semana atual em kpi-number ao lado, com formatInt e o substantivo agendas",
+        "Frase acessível com total, média e posição da semana atual"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_variacao-mensal-do-cpl-divergente",
+      "titulo": "Variação mensal do CPL qualificado",
+      "caso_de_uso": "Marketing: em quais dos últimos 12 meses o CPL qualificado subiu, lembrando que alta é pior?",
+      "o_que_demonstra": [
+        "Domínio simétrico de −m a +m, com m igual ao maior valor absoluto da série",
+        "ReferenceLine no zero em var(--line-strong) sólido atravessando a caixa",
+        "Cor pela polaridade via prop goodDirection: alta em --negative, queda em --positive",
+        "Sequência de 3 altas seguidas anotada com colchete e rótulo de 11 px",
+        "Último valor com sinal tipográfico e formatPercent sobre o valor absoluto"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_filas-da-prevendas-em-escala-comum",
+      "titulo": "Entradas por fila em 13 semanas",
+      "caso_de_uso": "Diretoria: quais das 12 filas da pré-vendas carregam volume, lendo a altura absoluta entre linhas?",
+      "o_que_demonstra": [
+        "Tabela de 12 linhas com um BarChart de 13 colunas por célula, de largura e altura fixas",
+        "Escala comum a todas as filas, com o cabeçalho dizendo mesma escala e o máximo da tabela",
+        "Valor da última semana em coluna à direita com tabular-nums e alinhamento à direita",
+        "Semana de recesso com zero medido desenhada como traço de 1 px na base",
+        "Frase acessível com a fila de maior volume e a de menor"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_barras-pareadas-com-origem-sem-mes-anterior",
+      "titulo": "Leads do mês contra o mês anterior",
+      "caso_de_uso": "Marketing: quais origens cresceram contra o mês anterior, incluindo a origem lançada neste mês e sem base?",
+      "o_que_demonstra": [
+        "Dois Bar horizontais por linha: atual em var(--chart-1), anterior em --line-strong",
+        "Máximo calculado sobre as duas séries de todas as linhas, na mesma escala",
+        "Ordem fixa: atual em cima e referência embaixo, com o valor atual em peso maior",
+        "Origem nova sem barra de referência e o texto sem mês anterior medido para comparar",
+        "Ausência como null fora do desenho, nunca barra zerada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

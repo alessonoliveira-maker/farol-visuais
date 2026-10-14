@@ -1,0 +1,14 @@
+{
+  "title": "Fechamentos do mês acima da meta",
+  "useCase": "Comercial: 23 oportunidades ganhas contra a meta de 20 em 2026-08; quanto o time passou e onde a meta fica no arco?",
+  "demonstrates": [
+    "Domínio até 1,2 vez a meta para o excedente caber no arco",
+    "Traço de meta sobre o arco com rótulo curto, separado do máximo",
+    "Excedente em positive com ícone e o texto 15% acima da meta",
+    "Frase acessível com realizado, meta e excedente",
+    "Multiplicador do domínio e origem da meta escritos por extenso, não só desenhados"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "O arco alarga além da meta só para o excedente caber; a meta em si não muda, e por isso o fim físico do arco não é rotulado como se fosse um teto real. A régua geral da família (domínio até o maior entre valor e meta vezes 1,05) cede aqui ao valor específico do catálogo (1,2 vez a meta), porque o gauge de arco único não tem onde escrever a folga em texto como a barra linear tem; o multiplicador maior evita que o traço de meta e a ponta do valor colidam."
+}

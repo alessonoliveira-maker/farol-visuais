@@ -1,0 +1,186 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "01_colunas-simples",
+  "versoes": {
+    "v1_leads-por-mes": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: o mês ausente aparece só como marca vazada, sem a palavra na tela; o eixo termina no maior valor e o intervalo não fica redondo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:01.017Z",
+      "impressao": "5fc104243d6d4fc5252e5b86848705d1b0240828",
+      "arquivos": {
+        "Chart.tsx": "6c58a139a40dd15a1b4e06542e10ace8c87e2096",
+        "data.ts": "5f3abc3edf8d05eb8fbf8dc0973c156bcf56b420",
+        "meta.json": "5f30fe55ac35cba3419c2aa072d1c9fddf045cd4"
+      }
+    },
+    "v2_campanha-no-ar": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: a linha tracejada de estreia cruza a coluna da S07; o eixo termina no maior valor; ifOverflow difere entre a faixa e a linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:18.167Z",
+      "impressao": "34d9393145a7487bea9a1642ae26fabbb09e5b99",
+      "arquivos": {
+        "Chart.tsx": "8dd8224898e80ed3fa330412cbdf52767d9f9539",
+        "data.ts": "53090c97ab213ec87523f0505b50d170c0ebddf7",
+        "meta.json": "a42ada94db2f55d3c59462e5b1eafaf7c0291d86"
+      }
+    },
+    "v3_entradas-semanais-em-dois-niveis": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: a coluna da semana parcial é desenhada cheia como as completas, o aviso vive só no tique, na linha de leitura e na dica; o catálogo ainda descreve dois XAxis e a versão usa um eixo mais overlay.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:23.591Z",
+      "impressao": "482d10669d0232f2cef41d5f4536eaaecc079adb",
+      "arquivos": {
+        "Chart.tsx": "be29bd5627c0b57ccf6bde6673ac7e924833c9e0",
+        "data.ts": "0b567dd956b1bc90daf81840550fbc2f823b9f7f",
+        "meta.json": "aca12fd45fb3c1ffb91f6b8b8995044afd8d1413"
+      }
+    },
+    "v4_semana-sem-coleta": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: o texto indisponível quase encosta na coluna da S07; a frase acessível soma 13 medidas mais 1 zerada mais 1 sem coleta em 14 semanas e dá a impressão de 15.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:31.335Z",
+      "impressao": "8b13610380d2629e82f28c85f3e4560198f2e8a4",
+      "arquivos": {
+        "Chart.tsx": "85ffe837369ecb3cda1687518491f06a2ae37847",
+        "data.ts": "aae8af0c8ec3f92658dbde65b5765100c5db04f2",
+        "meta.json": "8a84d703c8b04d2d67343e810e3a3c6b6cc027a8"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-por-mes",
+      "veredito": "reprovado",
+      "nota": "Tique de eixo fica no padrao #666 do Recharts, 2,97:1 no escuro, abaixo do piso ACE-3; falta AXIS_PROPS. fillMonths tambem transforma mes ausente em coluna zero e descarta o ultimo mes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:28.216Z",
+      "impressao": "6a63ddf051ff29e60fc02d855548903746fb5dca",
+      "arquivos": {
+        "Chart.tsx": "ad948940dd89dd6d4ecf89b2c72fb1600d37cb23",
+        "data.ts": "92c4626a41ae64906270ba21ecf29f53c5506eed",
+        "meta.json": "5f30fe55ac35cba3419c2aa072d1c9fddf045cd4"
+      }
+    },
+    {
+      "versao": "v2_campanha-no-ar",
+      "veredito": "reprovado",
+      "nota": "Tique dos dois eixos fica no #666 padrao do Recharts, 2,97:1 sobre o cartao escuro, abaixo do piso de 4,5:1 da ACE-3; aplicar AXIS_PROPS ou tick com AXIS_COLOR.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:33.034Z",
+      "impressao": "dd80d07e579c2ec83836f998b46d3c46a8123576",
+      "arquivos": {
+        "Chart.tsx": "09329561a9c8752bb2c7c84d62f0839bd027b418",
+        "data.ts": "53090c97ab213ec87523f0505b50d170c0ebddf7",
+        "meta.json": "a42ada94db2f55d3c59462e5b1eafaf7c0291d86"
+      }
+    },
+    {
+      "versao": "v3_entradas-semanais-em-dois-niveis",
+      "veredito": "reprovado",
+      "nota": "Separador de mes desenhado no eixo numerico anda 68 px por semana contra banda de 65,4 px, sai da fronteira e corta as colunas 11 e 16; ancorar na banda. Tique do YAxis no #666, 2,97:1 no escuro.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:39.417Z",
+      "impressao": "d750c299df0a67f1eab462ce71f72fde6137d3a5",
+      "arquivos": {
+        "Chart.tsx": "80146a1d2206aaa4624fb721790ed4d84a6f1f87",
+        "data.ts": "0b567dd956b1bc90daf81840550fbc2f823b9f7f",
+        "meta.json": "aca12fd45fb3c1ffb91f6b8b8995044afd8d1413"
+      }
+    },
+    {
+      "versao": "v4_semana-sem-coleta",
+      "veredito": "reprovado",
+      "nota": "Tique dos dois eixos fica no #666 padrao do Recharts, 2,97:1 sobre o cartao escuro, abaixo do piso de 4,5:1 da ACE-3; aplicar AXIS_PROPS ou tick com AXIS_COLOR.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T13:46:44.416Z",
+      "impressao": "b6b7976b1466584f8b5beec596261bedb2104afe",
+      "arquivos": {
+        "Chart.tsx": "19549a9609726812df9229cabf5e5a8f590a4ed2",
+        "data.ts": "aae8af0c8ec3f92658dbde65b5765100c5db04f2",
+        "meta.json": "8a84d703c8b04d2d67343e810e3a3c6b6cc027a8"
+      }
+    },
+    {
+      "versao": "v1_leads-por-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observacao: o mes ausente aparece so como marca vazada, sem a palavra na tela, e o intervalo do eixo nao e redondo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:57:42.548Z",
+      "impressao": "5fc104243d6d4fc5252e5b86848705d1b0240828",
+      "arquivos": {
+        "Chart.tsx": "6c58a139a40dd15a1b4e06542e10ace8c87e2096",
+        "data.ts": "5f3abc3edf8d05eb8fbf8dc0973c156bcf56b420",
+        "meta.json": "5f30fe55ac35cba3419c2aa072d1c9fddf045cd4"
+      }
+    },
+    {
+      "versao": "v1_leads-por-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: o mês ausente aparece só como marca vazada, sem a palavra na tela; o eixo termina no maior valor e o intervalo não fica redondo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:57:49.690Z",
+      "impressao": "5fc104243d6d4fc5252e5b86848705d1b0240828",
+      "arquivos": {
+        "Chart.tsx": "6c58a139a40dd15a1b4e06542e10ace8c87e2096",
+        "data.ts": "5f3abc3edf8d05eb8fbf8dc0973c156bcf56b420",
+        "meta.json": "5f30fe55ac35cba3419c2aa072d1c9fddf045cd4"
+      }
+    },
+    {
+      "versao": "v1_leads-por-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: o mês ausente aparece só como marca vazada, sem a palavra na tela; o eixo termina no maior valor e o intervalo não fica redondo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:01.017Z",
+      "impressao": "5fc104243d6d4fc5252e5b86848705d1b0240828",
+      "arquivos": {
+        "Chart.tsx": "6c58a139a40dd15a1b4e06542e10ace8c87e2096",
+        "data.ts": "5f3abc3edf8d05eb8fbf8dc0973c156bcf56b420",
+        "meta.json": "5f30fe55ac35cba3419c2aa072d1c9fddf045cd4"
+      }
+    },
+    {
+      "versao": "v2_campanha-no-ar",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: a linha tracejada de estreia cruza a coluna da S07; o eixo termina no maior valor; ifOverflow difere entre a faixa e a linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:18.167Z",
+      "impressao": "34d9393145a7487bea9a1642ae26fabbb09e5b99",
+      "arquivos": {
+        "Chart.tsx": "8dd8224898e80ed3fa330412cbdf52767d9f9539",
+        "data.ts": "53090c97ab213ec87523f0505b50d170c0ebddf7",
+        "meta.json": "a42ada94db2f55d3c59462e5b1eafaf7c0291d86"
+      }
+    },
+    {
+      "versao": "v3_entradas-semanais-em-dois-niveis",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: a coluna da semana parcial é desenhada cheia como as completas, o aviso vive só no tique, na linha de leitura e na dica; o catálogo ainda descreve dois XAxis e a versão usa um eixo mais overlay.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:23.591Z",
+      "impressao": "482d10669d0232f2cef41d5f4536eaaecc079adb",
+      "arquivos": {
+        "Chart.tsx": "be29bd5627c0b57ccf6bde6673ac7e924833c9e0",
+        "data.ts": "0b567dd956b1bc90daf81840550fbc2f823b9f7f",
+        "meta.json": "aca12fd45fb3c1ffb91f6b8b8995044afd8d1413"
+      }
+    },
+    {
+      "versao": "v4_semana-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Observações: o texto indisponível quase encosta na coluna da S07; a frase acessível soma 13 medidas mais 1 zerada mais 1 sem coleta em 14 semanas e dá a impressão de 15.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T14:58:31.335Z",
+      "impressao": "8b13610380d2629e82f28c85f3e4560198f2e8a4",
+      "arquivos": {
+        "Chart.tsx": "85ffe837369ecb3cda1687518491f06a2ae37847",
+        "data.ts": "aae8af0c8ec3f92658dbde65b5765100c5db04f2",
+        "meta.json": "8a84d703c8b04d2d67343e810e3a3c6b6cc027a8"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Tentativas até a agenda com fila de revisão",
+  "useCase": "Quantos dos 140 leads trabalhados precisaram de mais de 6 tentativas, e quantos desses ainda não agendaram?",
+  "demonstrates": [
+    "Uma pilha por número de tentativas, de 1 a 12, sem faixa artificial",
+    "Ponto cheio para lead com agenda e vazado para lead sem agenda: forma além da cor",
+    "Pilhas acima de 6 tentativas com fundo de destaque e rótulo de fila de revisão",
+    "Dica por ponto com o código fictício do lead"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo em vez do card sugerido: a pilha de 26 leads, empilhada em uma coluna só, deixaria o ponto abaixo de 8 px no card. Cada coluna quebra a pilha em linhas de pontos, e o diâmetro é o maior que ainda deixa a maior pilha caber na altura medida do corpo. O ponto vazado tem contorno de 1,5 px na cor de texto neutro, e o cheio também tem contorno na cor do cartão. A dica é o título nativo do SVG, com o código do lead, que não está escrito em nenhum outro lugar do desenho."
+}

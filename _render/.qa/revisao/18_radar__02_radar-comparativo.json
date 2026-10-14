@@ -1,0 +1,134 @@
+{
+  "familia": "18_radar",
+  "modelo": "02_radar-comparativo",
+  "versoes": {
+    "v1_executivo-contra-media-do-time": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: polígonos conferem com o dado em escala linear de 0 a 100, área a 0,66 mede 4,85:1 e 3,01:1, escala com 75 e 100 em linhas diferentes a 4 px do anel, dica sondada nos dois temas com a diferença em pontos e sinal, frase de 180 caracteres. Observações no README; a mais pesada é a TOK-10: tracejado da média a 1,07:1 contra a área no escuro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:04.239Z",
+      "impressao": "6c922e9a62ded1c7897712f3066aed76bba2bd0e",
+      "arquivos": {
+        "Chart.tsx": "f995d59b287a8c703bf25b933e0a7360e52eb9a5",
+        "data.ts": "440997c9eedd0a7837dc3f5ff05a7af9fcd9ccbb",
+        "meta.json": "11395a2f4d323f47de1fe8e691e7343f47abbeb2"
+      }
+    },
+    "v2_plataforma-a-contra-plataforma-b": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx cc65a0f). Sem bloqueante: polígonos conferem com o dado em escala linear de 0 a 100 (raio de 73,78 px), só o 100 escrito na escala, a 3,8 px do anel e sem vizinho na linha, regra do índice e inversão do CPL e do CPL qualificado escritas na tela a partir do dado, área a 0,66 mede 3,56:1 e 3,05:1, dica sondada nos dois temas com índice e valor original em reais e em taxa com volume, frase de 190 caracteres. Observações no README: anéis de 25, 50 e 75 sem número; tracejado da A a 1,97:1 contra a área da B no claro, com valor escrito.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:31:58.727Z",
+      "impressao": "d6d5943b0cc51d7628473c91e249f8bf49bd7a80",
+      "arquivos": {
+        "Chart.tsx": "cc65a0f47a39b32ebdb29ad5af072da83159f845",
+        "data.ts": "1a449b4d109511a717bc640e989fa5cf9a40723f",
+        "meta.json": "ae4242c7d30f1657a0afe09c155310fb4d662a01"
+      }
+    },
+    "v3_cenario-escolhido-e-alternativas-em-contorno": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx 03f4c04). Sem bloqueante: os três polígonos conferem com o dado, a tela agora diz índice de 0 a 100 contra a meta, maior é melhor e a inversão do ciclo de venda vinda do dado, 75 e 100 da escala cada um junto do anel dele, dica sondada nos dois temas com os três cenários, frase de 239 caracteres. Observações no README: 100 da escala a 14,6 px do rótulo de ticket médio; halo tracejado nos pontos das alternativas; área de chart-1 a 0,66 no claro em 3,007:1 na conta e 2,99:1 no pixel, com valor escrito e contorno de 6,00:1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:31:59.301Z",
+      "impressao": "7c2baaf7b17294854637c5ec380eaecf68dec153",
+      "arquivos": {
+        "Chart.tsx": "03f4c0452375b47c539aa376fbc0a5a18d04438e",
+        "data.ts": "13df32c6027554e2639cfc83f79776ad5d2c0129",
+        "meta.json": "abd87808822eedb1ce789d6ced7361b4b35d88af"
+      }
+    },
+    "v4_tres-trimestres-quase-identicos": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: três contornos conferem com o dado, diferença máxima de 4 pontos e coincidência em 2 de 6 conferem, foco pela legenda e vista em barras sondados em navegador nos dois temas (barras de 15 px a partir do zero, aria-pressed de false para true, frase que troca com a vista). Observações no README (frase do meta.json sobre quatro eixos, trimestre em formato de dado, radar sem valor escrito).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:05.948Z",
+      "impressao": "0a3fa4823bc6c78ca5f7bf47dfe54b3134d2970c",
+      "arquivos": {
+        "Chart.tsx": "fdfe1744c09fbd6d1ade37bba172d7546f65a4a0",
+        "data.ts": "2457204a0d4ea0fcff596cf5d4bbb4f1187e7e31",
+        "meta.json": "38e4a4a0fd37a60ea65f37eb6a97738606e60964"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_executivo-contra-media-do-time",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: polígonos conferem com o dado em escala linear de 0 a 100, área a 0,66 mede 4,85:1 e 3,01:1, escala com 75 e 100 em linhas diferentes a 4 px do anel, dica sondada nos dois temas com a diferença em pontos e sinal, frase de 180 caracteres. Observações no README; a mais pesada é a TOK-10: tracejado da média a 1,07:1 contra a área no escuro.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:04.239Z",
+      "impressao": "6c922e9a62ded1c7897712f3066aed76bba2bd0e",
+      "arquivos": {
+        "Chart.tsx": "f995d59b287a8c703bf25b933e0a7360e52eb9a5",
+        "data.ts": "440997c9eedd0a7837dc3f5ff05a7af9fcd9ccbb",
+        "meta.json": "11395a2f4d323f47de1fe8e691e7343f47abbeb2"
+      }
+    },
+    {
+      "versao": "v2_plataforma-a-contra-plataforma-b",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, seção 14.1 (domínio de eixo), EIX-4, ROT-9 e GEO-15: os dois números da escala saem na mesma linha, 100 e 75 a 4,6 px um do outro, o 75 a 0,8 px do anel de 100 e a 3,8 px do anel dele, e o halo apaga o anel de 100 entre os dois, que leem como par. Pôr cada número a 4 px do anel dele e longe dos outros: só o 100 na bissetriz horizontal, outra bissetriz ou mais raio. Parecer em validation/revisao_18_radar__02_radar-comparativo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:04.817Z",
+      "impressao": "53af98b53154da315fe73277fabe8e0b9ab9fb6c",
+      "arquivos": {
+        "Chart.tsx": "4375f301214d4e365c414f42290c61f5ed69c867",
+        "data.ts": "1a449b4d109511a717bc640e989fa5cf9a40723f",
+        "meta.json": "ae4242c7d30f1657a0afe09c155310fb4d662a01"
+      }
+    },
+    {
+      "versao": "v3_cenario-escolhido-e-alternativas-em-contorno",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, seção 14.1 (unidade e sentido de eixo), NUM-6 e DAD-9: a tela escreve números soltos de 0 a 100 em eixos de receita, ticket, ciclo, win rate e retenção, sem dizer que são índice contra a meta nem que o ciclo de venda está invertido; índice só existe no aria-label e a inversão só no data.ts. Escrever na tela índice de 0 a 100, maior é melhor e a inversão do ciclo, com a lista vinda do dado. Parecer em validation/revisao_18_radar__02_radar-comparativo_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:05.422Z",
+      "impressao": "2140d8dc404b01a393cc9bad636a68148d687cbd",
+      "arquivos": {
+        "Chart.tsx": "bec6bd52a3f0a51bc3cdb3b50b91c2ff14c9bc65",
+        "data.ts": "10e4613a882c4945ee4b4a29c91468829b29d214",
+        "meta.json": "abd87808822eedb1ce789d6ced7361b4b35d88af"
+      }
+    },
+    {
+      "versao": "v4_tres-trimestres-quase-identicos",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: três contornos conferem com o dado, diferença máxima de 4 pontos e coincidência em 2 de 6 conferem, foco pela legenda e vista em barras sondados em navegador nos dois temas (barras de 15 px a partir do zero, aria-pressed de false para true, frase que troca com a vista). Observações no README (frase do meta.json sobre quatro eixos, trimestre em formato de dado, radar sem valor escrito).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:05.948Z",
+      "impressao": "0a3fa4823bc6c78ca5f7bf47dfe54b3134d2970c",
+      "arquivos": {
+        "Chart.tsx": "fdfe1744c09fbd6d1ade37bba172d7546f65a4a0",
+        "data.ts": "2457204a0d4ea0fcff596cf5d4bbb4f1187e7e31",
+        "meta.json": "38e4a4a0fd37a60ea65f37eb6a97738606e60964"
+      }
+    },
+    {
+      "versao": "v2_plataforma-a-contra-plataforma-b",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx cc65a0f). Sem bloqueante: polígonos conferem com o dado em escala linear de 0 a 100 (raio de 73,78 px), só o 100 escrito na escala, a 3,8 px do anel e sem vizinho na linha, regra do índice e inversão do CPL e do CPL qualificado escritas na tela a partir do dado, área a 0,66 mede 3,56:1 e 3,05:1, dica sondada nos dois temas com índice e valor original em reais e em taxa com volume, frase de 190 caracteres. Observações no README: anéis de 25, 50 e 75 sem número; tracejado da A a 1,97:1 contra a área da B no claro, com valor escrito.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:31:58.727Z",
+      "impressao": "d6d5943b0cc51d7628473c91e249f8bf49bd7a80",
+      "arquivos": {
+        "Chart.tsx": "cc65a0f47a39b32ebdb29ad5af072da83159f845",
+        "data.ts": "1a449b4d109511a717bc640e989fa5cf9a40723f",
+        "meta.json": "ae4242c7d30f1657a0afe09c155310fb4d662a01"
+      }
+    },
+    {
+      "versao": "v3_cenario-escolhido-e-alternativas-em-contorno",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13 (Chart.tsx 03f4c04). Sem bloqueante: os três polígonos conferem com o dado, a tela agora diz índice de 0 a 100 contra a meta, maior é melhor e a inversão do ciclo de venda vinda do dado, 75 e 100 da escala cada um junto do anel dele, dica sondada nos dois temas com os três cenários, frase de 239 caracteres. Observações no README: 100 da escala a 14,6 px do rótulo de ticket médio; halo tracejado nos pontos das alternativas; área de chart-1 a 0,66 no claro em 3,007:1 na conta e 2,99:1 no pixel, com valor escrito e contorno de 6,00:1.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:31:59.301Z",
+      "impressao": "7c2baaf7b17294854637c5ec380eaecf68dec153",
+      "arquivos": {
+        "Chart.tsx": "03f4c0452375b47c539aa376fbc0a5a18d04438e",
+        "data.ts": "13df32c6027554e2639cfc83f79776ad5d2c0129",
+        "meta.json": "abd87808822eedb1ce789d6ced7361b4b35d88af"
+      }
+    }
+  ]
+}

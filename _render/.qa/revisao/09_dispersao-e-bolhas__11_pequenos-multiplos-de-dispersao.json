@@ -1,0 +1,85 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "11_pequenos-multiplos-de-dispersao",
+  "versoes": {
+    "v1_ticket-contra-ciclo-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Os dois defeitos resolvidos de verdade. O nome saiu do truncate e ocupa linha própria, e o dado foi reescrito com força de relação diferente por painel, de +0,98 a -0,87 mais dois sem relação, com os oito Pearson recalculados e conferidos. Agora a peça mostra o achado que ela existia para mostrar. Ressalva: o mesmo cartão escreve R$ 900,0 mil e R$ 900 mil. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.782Z",
+      "impressao": "1d5b15c079eabf55416823061a9be410ebaf3588",
+      "arquivos": {
+        "Chart.tsx": "80da0fe89fa3fdd9414850dd0ef1a9703159f698",
+        "data.ts": "80f5e0dcff5bfd536ad073de69fe9761d6de7ad9",
+        "meta.json": "6e732a6a623860523c96ba5434f8f3c4377bb57e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-contra-ciclo-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Grade difere entre paineis, contagem sem substantivo (NUM-6), mediana em --line-strong (17.2), eixo Y de 44 px quebra o tique em duas linhas e derruba 3 tiques, rotulo de R$ 900 mil fora da sua linha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T22:38:26.741Z",
+      "impressao": "de5ed11a5afd62813bc411ce5e5ff1e6f7d8d6aa",
+      "arquivos": {
+        "Chart.tsx": "7a3820e77e8cb757d378266a45a8416f72361e61",
+        "data.ts": "513b3df28e3353b0a9bfd55266b00024d00abe9e",
+        "meta.json": "a11d7aceed60ed7d09a4de1761d3d6f46c0610c1"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-por-executivo",
+      "veredito": "reprovado",
+      "nota": "EIX-5: os dois eixos usam tickMargin 6, e o contrato escreve 8; subir X_AXIS_HEIGHT de 18 para 20 ou 22 acomoda o rotulo. Resto limpo: grade identica nos 8 paineis, dominio compartilhado, mediana em text-muted, NUM-6 com unidade.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T23:01:54.704Z",
+      "impressao": "f63de7e63cf61b49caab48c7a41b05e896cf9534",
+      "arquivos": {
+        "Chart.tsx": "87b2272d35a2cab2033f4ad1ca17a3fa53d464c3",
+        "data.ts": "513b3df28e3353b0a9bfd55266b00024d00abe9e",
+        "meta.json": "a11d7aceed60ed7d09a4de1761d3d6f46c0610c1"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Grade de 8 painéis com domínio, grade e geometria idênticos; check sem erro; observações de acabamento sem consequência no desenho.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T23:07:29.997Z",
+      "impressao": "f63de7e63cf61b49caab48c7a41b05e896cf9534",
+      "arquivos": {
+        "Chart.tsx": "87b2272d35a2cab2033f4ad1ca17a3fa53d464c3",
+        "data.ts": "513b3df28e3353b0a9bfd55266b00024d00abe9e",
+        "meta.json": "a11d7aceed60ed7d09a4de1761d3d6f46c0610c1"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Conserto da mediana aceito. Dois defeitos que a revisão anterior não pegou. (1) TIP-7: o cabeçalho do quarto painel escreve \"Diego Fernandes d...\" com o nome cortado, e nome de categoria não se corta. Encurtar o nome no dado fictício, ou dar duas linhas ao cabeçalho. (2) Os onze pontos de cada um dos oito painéis caem quase numa reta perfeita, ou seja a dispersão não dispersa. Uma peça que existe para mostrar a relação entre duas medidas está ensinando correlação perfeita em todos os recortes, e o contrato pede dado que exercite o visual e não só o caminho feliz. Espalhar os pontos, e deixar ao menos um painel com relação fraca ou sem relação, que é o achado que a peça deveria saber mostrar.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:53.083Z",
+      "impressao": "f35798fa7844c3529c1d49b6d2552f2d6459fe0f",
+      "arquivos": {
+        "Chart.tsx": "0a7d86a8fe0a1fa9002ae4b87f96da163387e06c",
+        "data.ts": "513b3df28e3353b0a9bfd55266b00024d00abe9e",
+        "meta.json": "a11d7aceed60ed7d09a4de1761d3d6f46c0610c1"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Os dois defeitos resolvidos de verdade. O nome saiu do truncate e ocupa linha própria, e o dado foi reescrito com força de relação diferente por painel, de +0,98 a -0,87 mais dois sem relação, com os oito Pearson recalculados e conferidos. Agora a peça mostra o achado que ela existia para mostrar. Ressalva: o mesmo cartão escreve R$ 900,0 mil e R$ 900 mil. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.782Z",
+      "impressao": "1d5b15c079eabf55416823061a9be410ebaf3588",
+      "arquivos": {
+        "Chart.tsx": "80da0fe89fa3fdd9414850dd0ef1a9703159f698",
+        "data.ts": "80f5e0dcff5bfd536ad073de69fe9761d6de7ad9",
+        "meta.json": "6e732a6a623860523c96ba5434f8f3c4377bb57e"
+      }
+    }
+  ]
+}

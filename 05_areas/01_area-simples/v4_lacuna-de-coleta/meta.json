@@ -1,0 +1,12 @@
+{
+  "title": "Entradas semanais com lacuna de coleta",
+  "useCase": "Separar semana sem coleta de semana com zero entrada, sem a área despencar até a base onde falta dado.",
+  "demonstrates": [
+    "null com connectNulls desligado quebrando a área (EIX-10)",
+    "Zero medido desenhado como zero, distinto da lacuna (EST-3)",
+    "ReferenceArea em surface-sunken com texto nomeando o intervalo sem coleta",
+    "Frase acessível que conta as semanas ausentes"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

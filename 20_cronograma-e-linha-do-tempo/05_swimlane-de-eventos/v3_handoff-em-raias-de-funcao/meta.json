@@ -1,0 +1,14 @@
+{
+  "title": "Passagem entre funções por oportunidade",
+  "useCase": "Comercial: quanto cada uma de 6 oportunidades esperou entre Marketing, Pré-vendas, Executivo e Operações em out/26.",
+  "demonstrates": [
+    "Raias de função em ordem de processo, cada oportunidade em cor fixa chart-N",
+    "Período de posse como barra e passagem como losango na fronteira",
+    "Espera entre passagens como traço tracejado com os dias escritos",
+    "Foco numa oportunidade vindo por prop, com as demais em barra fina",
+    "Posses simultâneas na mesma função em sub-faixas, a raia crescendo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O catálogo diz que as demais ficam rebaixadas; aqui rebaixar é barra de 6 px em vez de 12 px, na própria cor e sem os dias escritos, e não opacidade: fillOpacity derruba a marca abaixo de 3:1 no tema claro (ACE-5, TOK-6). A cor vem do slot de cada oportunidade no dado (1, 3, 6, 5, 2, 4 pela COR-8), não da posição. O painel à direita escreve a espera total de todas, então os dias das oportunidades fora do foco continuam no desenho. O viewBox tem 894 px de largura, o corpo medido do canvas largo, e a altura calculada cabe nos 265 px do pior cabeçalho: escala 1 e texto em 11 px (GEO-18)."
+}

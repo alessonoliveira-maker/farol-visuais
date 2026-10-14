@@ -1,0 +1,13 @@
+{
+  "title": "Entradas por semana contra o teto",
+  "useCase": "Pré-vendas: em quais das últimas 16 semanas as entradas passaram do teto medido de capacidade da equipe.",
+  "demonstrates": [
+    "Lollipop vertical em BarChart com haste vertical e disco no topo",
+    "ReferenceLine no teto e disco em negativo nas semanas acima dele",
+    "Rótulo com o excedente só nas semanas que estouraram",
+    "Semana corrente parcial com disco vazado e haste tracejada",
+    "Folga de um raio mais 4 px no topo do domínio"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

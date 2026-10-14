@@ -1,0 +1,13 @@
+{
+  "title": "Leads do mês com telefone válido",
+  "useCase": "De cada 100 leads de ago/26, quantos chegaram com telefone válido para a pré-vendas ligar?",
+  "demonstrates": [
+    "Grade de 100 div com grid-rows-10 explícito para a célula não esticar",
+    "Preenchimento por colunas, de baixo para cima, calculado da posição",
+    "62 quadrados inteiros e a taxa exata de 62,2% escrita, sem fatiar célula",
+    "Legenda de unidade 1 quadrado = 1% e n = 312 no rodapé",
+    "Frase acessível na raiz e células com aria-hidden"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Cobertura de dado dos leads por origem",
+  "useCase": "A falta de telefone e de cargo pesa no desfecho dos 1.240 leads de marketing de 2026-08?",
+  "demonstrates": [
+    "Quatro eixos, no teto do modelo, com a ausência como categoria visível",
+    "Segmento de ausência vazado, com contorno --text-muted, e sempre por último",
+    "Ordem dos eixos que põe telefone vizinho do desfecho, a comparação que importa",
+    "Frase acessível com a taxa de qualificação com e sem telefone",
+    "Cor vinda do eixo de telefone, não da primeira dimensão"
+  ],
+  "canvas": { "width": 960, "height": 560 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta das linhas escritas. O corpo desta moldura mede 894 x 441,5 px, e o viewBox do SVG repete esse número para a escala sair 1: 11 px declarados são 11 px na tela. Linhas escritas: 1 de leitura (12 px), 1 de legenda de três entradas (11 px), 1 de nome de eixo (11 px) e 2 por categoria (nome e contagem, 11 px), em 9 categorias de 4 eixos. O eixo mais alto tem 3 categorias, então 3 raias de 32 px, 96 px, saem do plano de 367,5 px e sobram 271,5 px de tinta para 1.240 leads, 0,219 px por lead; a menor combinação tem 14 leads e sai com 3,07 px. Os 4 eixos pedem 4 blocos de 96 px, e sobram 168,7 px de vão entre eles, largura suficiente para a fita virar região e não traço. LARGURA DE RÓTULO, conferida por soma de glifo: o rótulo mais largo é Cargo declarado, 86,4 px, contra 96 px de bloco, então todo rótulo cabe na faixa horizontal do próprio bloco, onde nenhuma fita passa. CONFERÊNCIA À MÃO das guardas que se calam. ESPESSURA-MARCA sai marca_fora_do_bar, porque não há Bar: o piso geral de 12 px é o outro lado do maxBarSize e não alcança marca desenhada à mão, e o piso do rótulo interno não se aplica porque nenhum rótulo é desenhado dentro de marca. EIXO-CALMO sai sem_grade, e de fato não há grade nem eixo cartesiano. OPACIDADE-MARCA sai sem_opacidade_em_marca, e é verdade: nenhuma marca pede opacidade, a distinção é por token e por forma vazada. CUSTO ACEITO, contraste da fita neutra. CONTRASTE-MARCA avisa que --line-strong preenchido mede 1,79:1 no escuro e 1,83:1 no claro. É a tensão que a própria guarda descreve: a 17.2 nomeia --line-strong como o neutro da marca não destacada e a DAD-2 pede neutro fora da rampa. Aqui a fita neutra carrega a contagem escrita no segmento de origem e no de destino, que é a isenção que a ACE-3 admite, e o segundo canal da ausência é a forma vazada mais a palavra, nunca a cor."
+}

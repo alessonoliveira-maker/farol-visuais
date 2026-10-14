@@ -1,0 +1,15 @@
+{
+  "title": "Custo mensal realizado contra orçado",
+  "useCase": "Em quais meses de 2026 o custo realizado estourou o orçado, e por quanto em R$?",
+  "demonstrates": [
+    "Dois ComposedChart com syncId, YAxis width e margens idênticas",
+    "Painel principal em coluna fantasma: orçado vazado atrás, realizado sólido central",
+    "Legenda acima do painel principal, na ordem visual das duas marcas",
+    "Polaridade menor é melhor passada como prop e aplicada na cor",
+    "Variação com sinal tipográfico e ReferenceLine no zero",
+    "Escala própria do painel de variação declarada no título do painel"
+  ],
+  "canvas": { "width": 740, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas por número, mais largo que o preset alto de 640. A coluna fantasma (ESP-6) tem uma série só por banda; com 640 de largura o passo para 12 meses dava 42 px e o realizado central ficava abaixo do piso de 12 px em cartão da ESP-2. Categoria corre no eixo x aqui (coluna), então quem cede é a largura, não a altura: 740 dá passo de aproximadamente 50,3 px, fantasma de aproximadamente 20,1 px e realizado central de aproximadamente 13,1 px, os dois acima do piso. TENSÃO DECLARADA da EIX-6: o eixo declara 84 px e não os 48 a 64 do teto, porque o tique mais largo (−R$ 100 mil, com o sinal U+2212 antes do símbolo) só fica em uma linha a partir de 81 px (EIX-6, emenda de 2026-10-02); com 58 px os tiques quebravam em duas linhas. Os dois YAxis levam interval={0} e o painel principal tem 8 px de margem inferior para o R$ 0 caber. O plano perde 26 px de largura; o passo de 12 meses cai de cerca de 50,3 para cerca de 48,2 px e o realizado central de cerca de 13,1 para cerca de 12,6 px, acima do piso de 12 px."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Clientes novos por indicação em cada 100",
+  "useCase": "Quantos de cada 100 clientes novos do ano chegaram por indicação, dito em linguagem de conselho?",
+  "demonstrates": [
+    "Matriz de 100 figuras User em grid de 10 colunas com o mapa de preenchimento do waffle",
+    "Categoria colorida em bloco contíguo, nunca espalhada, para contar sem esforço",
+    "Foco ou passagem do mouse na legenda acende a categoria e apaga as outras",
+    "Frase cerca de 3 em cada 10 em font-display ao lado da matriz",
+    "Transição do destaque desligada com prefers-reduced-motion"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Destaque sem opacidade: as figuras fora do foco trocam para --line-strong em vez de perder alfa, o que evita a perda de contraste da ACE-5. A cor de cada categoria vem do slot do dado (COR-3), e a ausência fica em --text-muted."
+}

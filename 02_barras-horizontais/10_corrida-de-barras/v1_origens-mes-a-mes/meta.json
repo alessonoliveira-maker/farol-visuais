@@ -1,0 +1,14 @@
+{
+  "title": "Top 10 origens de lead mês a mês",
+  "useCase": "Como o ranking das origens de lead mudou nos últimos 24 meses, para abrir a reunião de Marketing.",
+  "demonstrates": [
+    "Posição por índice no ranking com transform animado por transição CSS",
+    "Chave do React pela categoria para a barra não trocar de identidade",
+    "Período corrente em Space Grotesk grande no canto",
+    "Botão de pausa, prefers-reduced-motion e quadro final estático",
+    "Máximo do eixo acompanhando o maior valor do período"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Sem eixo de valor nem grade: o valor vai escrito na ponta livre de cada marca (ROT-2). Por padrão o componente monta parado em ago/26, o último mês do dado; o botão reproduz a corrida inteira desde set/24."
+}

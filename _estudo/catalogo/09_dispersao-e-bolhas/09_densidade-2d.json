@@ -1,0 +1,67 @@
+{
+  "slug": "09_densidade-2d",
+  "nome": "Densidade 2D (binada, hexbin, contorno)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Quando os pontos são tantos que a nuvem vira mancha, o plano é dividido em células (grade regular ou hexágonos) e cada uma mostra a contagem por cor sequencial ou por área; o contorno troca as células por curvas de nível. A identidade do ponto se perde e sobra a massa por região. Geometria e contagem são calculadas em TypeScript; célula vazia não é desenhada. Absorve o quadrante denso.",
+  "quando_usar": [
+    "Milhares de pontos, acima de cerca de 3.000, com a pergunta de onde se concentram.",
+    "Leads por fit e engajamento, sessões do site por tempo e páginas vistas, interações de marketing.",
+    "Quadrante com centenas ou milhares de itens, com contagem por região e divisória na borda de bin.",
+    "Contorno só quando a leitura de picos é essencial e a amostra passa de 500 pontos."
+  ],
+  "quando_evitar": [
+    "Poucas centenas de pontos: use a dispersão simples com opacidade (modelo 01).",
+    "Leitor precisa achar um ponto específico: a célula esconde a identidade; use lista ao lado ou busca.",
+    "Grade com eixos categóricos: use mapa de calor (família 15).",
+    "Grade ou largura de banda que mudam entre filtros: a comparação deixa de valer; guarde as bordas no registry."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-binados-por-fit-e-engajamento",
+      "titulo": "Leads por fit e engajamento em grade",
+      "caso_de_uso": "Onde se concentram os 4.200 leads do semestre quando fit e engajamento viram 10 faixas cada?",
+      "o_que_demonstra": [
+        "Binagem em grade regular calculada em TypeScript com bordas fixas",
+        "Círculo por célula com área proporcional à contagem e piso visual declarado",
+        "Célula vazia sem círculo e legenda de tamanho em contagem"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_hexbin-com-sdr-em-destaque",
+      "titulo": "Hexbin do time com um SDR por cima",
+      "caso_de_uso": "Os leads de um SDR caem onde está a massa do time? Hexágonos do time em escala sequencial e pontos do SDR por cima.",
+      "o_que_demonstra": [
+        "Binagem hexagonal em pixels com vértices calculados por ângulo",
+        "Escala sequencial com legenda em contagem e contorno fino nos hexágonos",
+        "Pontos do SDR selecionado em cor de destaque sobre a camada de densidade",
+        "Hexágono vazio não desenhado, distinto de contagem baixa"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_quadrante-denso-de-sessoes",
+      "titulo": "Sessões do site por tempo e páginas vistas",
+      "caso_de_uso": "Quanto das 9.100 sessões do mês cai em cada região de engajamento? Bins de 24 por 16 com contagem por região.",
+      "o_que_demonstra": [
+        "Divisórias alinhadas à borda de bin para o corte não partir células",
+        "Rampa sequencial discreta de 5 degraus com legenda do que cada tom representa",
+        "Contagem e participação escritas em cada região",
+        "Frase acessível com a região de maior massa"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_concentracao-extrema-por-quantis",
+      "titulo": "Interações com um hexágono dominante",
+      "caso_de_uso": "Como ler a densidade quando um hexágono concentra metade das 40 mil interações? Escala por quantis e rótulo no dominante.",
+      "o_que_demonstra": [
+        "Escala de cor por quantis para o maior bin não saturar o resto",
+        "Contagem escrita no hexágono dominante",
+        "Legenda que declara que os degraus são quantis e não faixas iguais"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

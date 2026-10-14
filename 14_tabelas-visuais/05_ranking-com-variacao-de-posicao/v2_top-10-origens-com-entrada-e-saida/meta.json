@@ -1,0 +1,12 @@
+{
+  "title": "Top 10 origens por leads qualificados",
+  "useCase": "Mostrar quais origens entraram e quais saíram do top 10 de leads qualificados do mês contra o mês anterior.",
+  "demonstrates": [
+    "Selo \"novo no top 10\" em vez de seta para quem não tinha posição anterior",
+    "Linha de saída à parte, fora da contagem, com a última posição e o último valor conhecidos",
+    "Comparação sem base declarada em texto quando não há valor anterior medido",
+    "Variação de valor com sinal e o mês anterior nomeado na mesma linha"
+  ],
+  "canvas": { "width": 960, "height": 760 },
+  "notes": "Canvas por número: 12 linhas (10 do top 10 mais 2 saídas) não cabem no preset alto; a largura de 960 evita quebra de nome em duas linhas e a altura de 760 acomoda as 12 linhas mais cabeçalho. Fora do top 10 as origens não são acompanhadas linha a linha, por isso a saída não tem posição nem valor no mês atual, só o último conhecido."
+}

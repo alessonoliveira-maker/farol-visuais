@@ -1,0 +1,13 @@
+{
+  "title": "Receita acumulada de 2027 contra a meta anual",
+  "useCase": "Diretoria: em qual trimestre de 2027 a faixa acumulada de receita passa a conter a meta anual de R$ 10 mi?",
+  "demonstrates": [
+    "Quatro linhas com a faixa acumulada por trimestre no mesmo eixo de valor",
+    "Meta anual como uma única ReferenceLine cruzando as quatro linhas",
+    "Primeiro trimestre cuja faixa contém a meta, marcado por peso e anotação",
+    "Domínio comum calculado sobre o conjunto das quatro faixas, a partir do zero"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Meta do ANO cheio de 2027, não de cada trimestre isolado; por isso uma linha só, repetida nas quatro linhas. asOf é o último trimestre fechado de 2026 que alimenta as premissas: nada de 2027 é medição."
+}

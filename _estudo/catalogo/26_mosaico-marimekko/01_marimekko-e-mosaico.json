@@ -1,0 +1,81 @@
+{
+  "slug": "01_marimekko-e-mosaico",
+  "nome": "Marimekko 100% e mosaico",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Colunas encostadas cuja largura é a participação do grupo no total e cuja altura se divide pela participação de cada parte dentro do grupo; a área de cada ladrilho é proporcional ao valor da célula. Lê primeiro quanto pesa cada grupo e depois do que ele é feito. O modelo absorve o marimekko divergente (partes favoráveis acima e desfavoráveis abaixo de uma linha central), o mosaico de duas variáveis (tabela de contingência como área, com vão maior entre grupos que entre partes) e o mosaico com resíduos (cor pelo resíduo de Pearson contra a independência). SVG puro em React: o Recharts não tem barra de largura variável, e a geometria sai de uma função pura marimekko() em TypeScript que devolve um ladrilho por célula.",
+  "quando_usar": [
+    "Peso de cada grupo e composição dele no mesmo quadro, de 3 a 6 grupos por até 5 partes, como leads por origem e cobertura de dado",
+    "Participação de mercado por segmento com perímetro declarado: largura pelo tamanho do segmento, altura pela fatia de cada competidor",
+    "Lado favorável e desfavorável por grupo com peso, como oportunidades aceitas e devolvidas por fila no handoff (variação divergente)",
+    "Tabela de contingência de duas variáveis categóricas vista como área, com contagens de dezenas a milhares",
+    "Onde uma combinação acontece mais ou menos que o esperado pela independência, com contagem esperada de pelo menos 5 por célula"
+  ],
+  "quando_evitar": [
+    "Comparar com precisão partes do meio da pilha entre colunas, que não têm linha de base comum: barras agrupadas (02/02)",
+    "Grupos de peso parecido ou largura sem significado: barras empilhadas 100% (02/04) ou colunas empilhadas 100% (03/04)",
+    "Mais de 6 grupos ou mais de 5 partes: tabela cruzada com totais marginais (14/06)",
+    "Hierarquia de três níveis ou mais: treemap (12/01)",
+    "Passagem de casos entre etapas ou estados: parallel sets (11/04)",
+    "Taxa de um desfecho binário ao longo de x: spineplot (modelo 03); área como produto de duas métricas: bar mekko (modelo 02)",
+    "Resíduos em que a área não acrescenta: matriz categórica em cor (15/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+  "versoes": [
+    {
+      "slug": "v1_cobertura-de-dado-por-origem",
+      "titulo": "Leads por origem e cobertura de dado",
+      "caso_de_uso": "Marketing, 2026-08: quanto cada origem pesa no volume de leads e quanto dele chega com dado completo, parcial ou ausente?",
+      "o_que_demonstra": [
+        "Função pura marimekko() em TypeScript devolvendo x, w, y e h de cada ladrilho",
+        "Colunas por largura decrescente e ordem das partes fixa, com completo na base",
+        "Vão de 2 px em --surface-raised entre colunas e entre partes",
+        "Nome, total e participação de cada coluna no eixo, fora do ladrilho",
+        "Rótulo interno só em ladrilho acima de 28 por 16 px; o resto vai para a dica",
+        "Ausente como parte hachurada em --line-strong no topo, nunca buraco"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_handoff-aceitas-e-devolvidas",
+      "titulo": "Handoff: aceitas e devolvidas por fila",
+      "caso_de_uso": "Comercial, handoff 2026-T3: de cada fila que passa oportunidades para vendas, quanto foi aceito e por que motivo o resto voltou?",
+      "o_que_demonstra": [
+        "Variação divergente: aceitas acima e devolvidas abaixo de uma linha zero",
+        "Dois acumuladores por coluna e domínio vertical simétrico pelo maior lado",
+        "Motivo fora de perfil em --chart-1 cheio; demais motivos em --line-strong com rótulo",
+        "Anotação na coluna mais larga com a taxa de devolução por formatPercent",
+        "Fila com n = 3 em coluna fina com marcador externo e selo n = 3",
+        "Eixo vertical lido como proporção por lado, com 100% escrito nas duas pontas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_participacao-de-mercado-com-perimetro",
+      "titulo": "Participação de mercado por segmento",
+      "caso_de_uso": "Diretoria, 2026: qual a nossa fatia em cada segmento e quanto cada segmento pesa no perímetro de mercado declarado?",
+      "o_que_demonstra": [
+        "Subtítulo obrigatório com o perímetro: 4 segmentos, base pública fictícia, 2026",
+        "Etiqueta de procedência em --prov-premissa junto ao total do perímetro",
+        "Nós na base em --chart-1; concorrente A, concorrente B e demais em neutros",
+        "Segmento de 0,5% com 3 px de largura ganha marcador externo com rótulo",
+        "Seletor que troca as colunas de segmento para região, com a ordem das partes fixa",
+        "Tabela cruzada equivalente em details, com o SVG em aria-hidden"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_desfecho-por-origem-com-residuos",
+      "titulo": "Desfecho por origem com resíduos",
+      "caso_de_uso": "Comercial, 2026: que combinações de origem e desfecho acontecem mais ou menos do que o esperado se fossem independentes?",
+      "o_que_demonstra": [
+        "Mosaico de duas variáveis com vão de 6 px entre grupos e 2 px entre partes",
+        "Subtítulo diz que a origem dividiu primeiro; botão inverte as variáveis",
+        "Resíduo de Pearson em TypeScript e cor em dois matizes de acento, sem --positive",
+        "Legenda com limiares em ±2 e ±4 e faixa neutra perto de zero",
+        "Esperado abaixo de 5 sem cor e com hachura: amostra insuficiente",
+        "Contagem zero observada como linha de 1 px marcada, nunca ausência silenciosa"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

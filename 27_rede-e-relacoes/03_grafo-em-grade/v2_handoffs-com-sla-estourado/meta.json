@@ -1,0 +1,14 @@
+{
+  "title": "Passagens com SLA estourado",
+  "useCase": "Pré-vendas: em quais passagens de 2026-08 o prazo acordado estourou e em quantos casos.",
+  "demonstrates": [
+    "Arestas com SLA estourado em var(--negative) e as demais em var(--text-muted)",
+    "Ícone lucide Clock junto da contagem, para o alerta não depender só da cor",
+    "Percentual estourado sobre o total da passagem escrito na seta",
+    "Aresta em atenção desenhada por último para ficar por cima das demais",
+    "Frase acessível com a passagem de maior estouro e a contagem"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo, com o contrato vencendo: a seta sai de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), que mede 5,21:1 e 5,37:1, porque a seta carrega a relação (ACE-6). A cor da seta é reforçada por relógio e percentual escrito (ACE-2). Canvas largo: a linha de leitura e a margem ocupam 28 px, o viewBox de 894 x 234 completa os 262 que o corpo de 265 px entrega. O vão de 26,5 px entre os nós leva o número acima da pista. A aresta aqui só liga etapas diferentes, porque o rótulo longo não cabe no vão de uma seta lateral."
+}

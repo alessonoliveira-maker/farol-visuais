@@ -1,0 +1,76 @@
+{
+  "slug": "03_kpi-com-regua-de-meta",
+  "nome": "KPI com régua de meta, ritmo ou teto",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Número acompanhado de uma régua horizontal que julga antes do número: barra até a meta, marcador de ritmo esperado pelo tempo decorrido, trilho de capacidade em que chegar a 100% é ruim, ou bullet com faixas qualitativas. Absorve barra de progresso, bullet embutido, trilho de capacidade, ritmo até a meta e anel; trilho e barra em HTML com Tailwind, bullet e marcadores em SVG puro com geometria em TypeScript. O anel fica sem versão própria, porque ângulo compara mal e o progresso protagonista mora na família 13.",
+  "quando_usar": [
+    "Meta acumulada dentro de um período fechado, como a receita do trimestre.",
+    "Meta com prazo e acumulação perto de linear, em que importa saber se o ritmo atual chega.",
+    "Uso contra teto operacional, como fila da pré-vendas ou carteira de vendas, em que chegar a 100% é ruim.",
+    "Realizado contra referência e faixas qualitativas declaradas, para público que já lê bullet.",
+    "Várias réguas empilhadas na mesma escala relativa, como percentual do próprio teto."
+  ],
+  "quando_evitar": [
+    "Métrica sem meta nem teto declarados: KPI simples com variação (modelo 01).",
+    "Meta sazonal ou com degraus: curva de meta acumulada (famílias 13 ou 05).",
+    "O arco ou a barra é o protagonista da peça: progresso, meta e gauge (família 13).",
+    "Vários anéis comparados entre si: barras com base comum, porque ângulo compara mal.",
+    "Diretoria sem legenda diante de bullet: atual contra anterior e meta escritos (modelo 01).",
+    "Teto de planilha exibido sem procedência: declarar PREMISSA antes de desenhar o estouro."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-trimestre-ate-a-meta",
+      "titulo": "Receita do trimestre até a meta",
+      "caso_de_uso": "Quanto da meta de receita do 3º trimestre já foi reconhecido até o último dia fechado?",
+      "o_que_demonstra": [
+        "Trilho de 8 px em --surface-overlay com preenchimento em --chart-1",
+        "role progressbar com aria-valuenow, aria-valuemin e aria-valuemax",
+        "Rodapé com o par: R$ 412 mil de R$ 600 mil e o percentual inteiro",
+        "Preenchimento clampado em 100% e excedente escrito em texto"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_receita-com-ritmo-esperado-e-veredito",
+      "titulo": "Receita do trimestre com ritmo esperado",
+      "caso_de_uso": "No ritmo atual a receita chega à meta do trimestre, ou já está atrás do esperado no dia útil 44 de 63?",
+      "o_que_demonstra": [
+        "Dois marcadores distintos sem cor: meta em traço cheio, ritmo em tracejado curto",
+        "Ritmo por dias úteis decorridos, escrito: 44 de 63 dias úteis",
+        "Veredito calculado: R$ 345 mil de R$ 600 mil, atrás do ritmo por R$ 74 mil",
+        "Projeção linear declarada como piso, com etiqueta DERIVADO",
+        "Trilho em SVG com geometria de regra de três em função pura",
+        "Primeiro dia do período com sem ritmo medido, em vez de divisão por zero"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_filas-da-pre-vendas-contra-o-teto",
+      "titulo": "Filas da pré-vendas contra o teto de capacidade",
+      "caso_de_uso": "Qual das quatro filas da pré-vendas e da carteira de vendas passou do teto mensal, e o teto é medido ou premissa?",
+      "o_que_demonstra": [
+        "Cinco bullets em SVG na mesma escala relativa: percentual do próprio teto",
+        "Faixas de conforto, atenção e estouro em --seq-1 a --seq-3, sem matizes",
+        "Excesso além do teto visível com hachura em pattern, nunca clampado",
+        "Teto como marca em --line-strong e rodapé 186 de 160, estouro de 26",
+        "Origem de cada teto escrita na linha, medido ou premissa, sem selo por linha",
+        "Corte de atenção a partir de 85% do teto declarado no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_metas-com-estouro-zero-e-sem-meta",
+      "titulo": "Metas com estouro, zero no dia 1 e sem meta",
+      "caso_de_uso": "Como a régua se comporta com 118% da meta, com zero no primeiro dia e com executivo novo ainda sem meta?",
+      "o_que_demonstra": [
+        "118% clampado no trilho, com zona de excesso e o texto 18% acima da meta",
+        "Zero no primeiro dia sem cor de alerta, porque ainda não há ritmo medido",
+        "Sem meta com trilho neutro e a frase escrita, sem dividir por zero",
+        "Três réguas com a mesma altura e o mesmo alinhamento do número"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

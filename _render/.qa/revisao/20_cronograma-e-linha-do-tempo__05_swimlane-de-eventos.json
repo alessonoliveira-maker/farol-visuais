@@ -1,0 +1,134 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "05_swimlane-de-eventos",
+  "versoes": {
+    "v1_semana-de-agendas-por-sdr": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; horas por raia conferem com o dado. Observações no README: legenda abaixo do desenho contra a ROT-4, rótulo e legenda em 11 px, nome de raia sem tabular-nums, data curta por slice de formatDate, corte de cor em 45 min com legenda escrita à mão.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:17.307Z",
+      "impressao": "62751f3ad6ea8f3a9cbf63819f98e20ec9bcf68a",
+      "arquivos": {
+        "Chart.tsx": "a7f6a6effd7ad3f7a1d9cda55f487ba772883490",
+        "data.ts": "f7025c883ef0ac94380066caa039c215a37d3443",
+        "meta.json": "ac7e42730c73c27e1b7bf500bffec97e5821c265"
+      }
+    },
+    "v2_ausencias-e-remarcacoes": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, sem bloqueante: o title dos 21 blocos confere com a posição nos dois temas, e os 4 remarcados dizem a própria data e a origem (remarcada de SDR 2, ter 10/11, 10:00 às 11:00). Contagens conferem com o dado. Observação nova no README: o title da ausência com nova data não diz o destino.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:15:02.247Z",
+      "impressao": "1867c0651e418dc88b3cbc1ae42f8b7bd5579875",
+      "arquivos": {
+        "Chart.tsx": "9cad861a8637b2fe5fc247f1e3a6f7f8682a4a10",
+        "data.ts": "557f09436ad8c91119b32be23387e2958e47c686",
+        "meta.json": "04e719f41d15ef942226bcb53dd863e89651945a"
+      }
+    },
+    "v3_handoff-em-raias-de-funcao": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 marca fina e GEO-4, seção 14.1 identificação das marcas: o rótulo 6 dias do foco está escrito sobre o tracejado de Atacado Central (espera de 2 dias), a 3 px do losango dela e a 6 px do próprio tracejado; pôr tracejado alheio e losango no teste de colisão com 4 px de respiro, sem voltar ao halo. Halo, 5 dias e losangos da primeira passada estão resolvidos. Parecer na seção Segunda passada de validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:15:02.707Z",
+      "impressao": "b6b99163f3d4a71464cb60f6dcf3f9b78326dbb6",
+      "arquivos": {
+        "Chart.tsx": "13bedbe41f5ee00c2017d55593a988f0c40cdaf4",
+        "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
+        "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
+      }
+    },
+    "v4_agenda-em-grade-com-conflito-e-ausencia": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; sobreposição, ausência, agenda livre e fora do expediente conferem com o dado. Observações no README: legenda diz 10 px em vez de minutos, nota do rodapé a 5,5 px da borda direita, notas sem tabular-nums, agenda livre no corpo contra agenda vazia na frase, legenda abaixo do desenho.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:18.786Z",
+      "impressao": "dc07ad895143f9a3eeb60493590c009635afc7ef",
+      "arquivos": {
+        "Chart.tsx": "08ec73340334fce624162fc89e266ba97f959023",
+        "data.ts": "05daa7f258e0d9bb2bb6da86c104635a6b0d0026",
+        "meta.json": "3d2f19d20351622c961fd192a363160b577f056f"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_semana-de-agendas-por-sdr",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; horas por raia conferem com o dado. Observações no README: legenda abaixo do desenho contra a ROT-4, rótulo e legenda em 11 px, nome de raia sem tabular-nums, data curta por slice de formatDate, corte de cor em 45 min com legenda escrita à mão.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:17.307Z",
+      "impressao": "62751f3ad6ea8f3a9cbf63819f98e20ec9bcf68a",
+      "arquivos": {
+        "Chart.tsx": "a7f6a6effd7ad3f7a1d9cda55f487ba772883490",
+        "data.ts": "f7025c883ef0ac94380066caa039c215a37d3443",
+        "meta.json": "ac7e42730c73c27e1b7bf500bffec97e5821c265"
+      }
+    },
+    {
+      "versao": "v2_ausencias-e-remarcacoes",
+      "veredito": "reprovado",
+      "nota": "Pergunta 18, DIC-1 e seção 14.1, identificação das marcas: o title dos 4 blocos remarcados traz o dia e a hora da reunião de origem; o bloco de qua 11/11 15:00 da SDR 3 diz ter 10/11, 10:00 às 11:00. Guardar no Slot o dia, o início e o fim do próprio bloco, montar o title com eles e dizer de onde veio a remarcação. Geometria e contagens estão certas. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:17.774Z",
+      "impressao": "7ec93ca32b76044f98cf1cd28e8714bdbf385190",
+      "arquivos": {
+        "Chart.tsx": "19670a9013f9dbf82634db468466ff67b70e6c30",
+        "data.ts": "557f09436ad8c91119b32be23387e2958e47c686",
+        "meta.json": "04e719f41d15ef942226bcb53dd863e89651945a"
+      }
+    },
+    {
+      "versao": "v3_handoff-em-raias-de-funcao",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 31, ROT-7 marca fina e GEO-4: o rótulo 5 dias cai sobre a barra de Clínica Horizonte e o halo a parte em 35 px, e o halo de 6 dias apaga mais da metade do tracejado de Atacado Central; tirar o halo e pôr anticolisão no rótulo de dias. Pergunta 12, ROT-4 e DAD-10: os 15 losangos de passagem são pintados antes das barras, 12 saem 50 por cento cobertos e 3 somem; pintar por cima das barras, inteiros como na legenda. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:18.293Z",
+      "impressao": "eba367d412a16f22f095c92ba37c41a629112990",
+      "arquivos": {
+        "Chart.tsx": "2bd7232f24579fb47b6c76917d4e3dd192b09696",
+        "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
+        "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
+      }
+    },
+    {
+      "versao": "v4_agenda-em-grade-com-conflito-e-ausencia",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; sobreposição, ausência, agenda livre e fora do expediente conferem com o dado. Observações no README: legenda diz 10 px em vez de minutos, nota do rodapé a 5,5 px da borda direita, notas sem tabular-nums, agenda livre no corpo contra agenda vazia na frase, legenda abaixo do desenho.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:00:18.786Z",
+      "impressao": "dc07ad895143f9a3eeb60493590c009635afc7ef",
+      "arquivos": {
+        "Chart.tsx": "08ec73340334fce624162fc89e266ba97f959023",
+        "data.ts": "05daa7f258e0d9bb2bb6da86c104635a6b0d0026",
+        "meta.json": "3d2f19d20351622c961fd192a363160b577f056f"
+      }
+    },
+    {
+      "versao": "v2_ausencias-e-remarcacoes",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, sem bloqueante: o title dos 21 blocos confere com a posição nos dois temas, e os 4 remarcados dizem a própria data e a origem (remarcada de SDR 2, ter 10/11, 10:00 às 11:00). Contagens conferem com o dado. Observação nova no README: o title da ausência com nova data não diz o destino.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:15:02.247Z",
+      "impressao": "1867c0651e418dc88b3cbc1ae42f8b7bd5579875",
+      "arquivos": {
+        "Chart.tsx": "9cad861a8637b2fe5fc247f1e3a6f7f8682a4a10",
+        "data.ts": "557f09436ad8c91119b32be23387e2958e47c686",
+        "meta.json": "04e719f41d15ef942226bcb53dd863e89651945a"
+      }
+    },
+    {
+      "versao": "v3_handoff-em-raias-de-funcao",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 marca fina e GEO-4, seção 14.1 identificação das marcas: o rótulo 6 dias do foco está escrito sobre o tracejado de Atacado Central (espera de 2 dias), a 3 px do losango dela e a 6 px do próprio tracejado; pôr tracejado alheio e losango no teste de colisão com 4 px de respiro, sem voltar ao halo. Halo, 5 dias e losangos da primeira passada estão resolvidos. Parecer na seção Segunda passada de validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:15:02.707Z",
+      "impressao": "b6b99163f3d4a71464cb60f6dcf3f9b78326dbb6",
+      "arquivos": {
+        "Chart.tsx": "13bedbe41f5ee00c2017d55593a988f0c40cdaf4",
+        "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
+        "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
+      }
+    }
+  ]
+}

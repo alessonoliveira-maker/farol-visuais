@@ -1,0 +1,14 @@
+{
+  "title": "CPL bruto contra CPL qualificado",
+  "useCase": "O CPL qualificado acompanhou o CPL bruto mês a mês em 2026 ou os dois descolaram?",
+  "demonstrates": [
+    "Duas linhas na mesma unidade e no mesmo eixo, sem eixo duplo",
+    "Rótulo no fim de cada linha com marcador na cor da série, sem legenda",
+    "Cor por slot fixo da categoria, não pela posição no array",
+    "Anticolisão do rótulo final quando as duas séries terminam próximas",
+    "ChartTooltip com itemSorter pelo valor e formatCurrencyCompact"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Os dois indicadores convergem no fim da série de propósito, para exercitar a anticolisão de rótulo final. A separação usa o pixel real capturado no dot do Recharts (não uma fração do domínio), porque a primeira versão, com fração de 7% do domínio, media só 1,7 px de tinta a tinta no COLISAO-TEXTO do check."
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "05_mapa-de-perimetro-e-localizador",
+  "nome": "Mapa de perímetro e localizador",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Realça as UFs de um recorte (perímetro de atuação, região de participação de mercado) e esmaece o resto, para dizer a que geografia o número ao lado se refere. É mapa de contexto, não gráfico analítico principal. Em SVG puro sobre a malha do IBGE, em duas camadas: fora do perímetro em tom neutro e dentro com preenchimento. O contorno externo sai sem dissolver polígonos: primeiro os paths do perímetro com contorno grosso, depois os mesmos paths com preenchimento e contorno fino por cima, o que esconde as bordas internas. Na Diretoria do Farol, participação de mercado só tem sentido com perímetro declarado e data de vigência.",
+  "quando_usar": [
+    "Ao lado de um KPI que só vale para um recorte geográfico, como participação de mercado ou TAM do perímetro",
+    "Mostrar o perímetro atual e uma expansão proposta, com a estimativa em faixa",
+    "Colorir por uma taxa só as UFs do perímetro e deixar o resto sem cor",
+    "Registrar que o perímetro mudou e desde quando os números valem"
+  ],
+  "quando_evitar": [
+    "A pergunta é a distribuição de um valor em todas as UFs: use o coroplético (23/02)",
+    "Perímetro que não é geográfico, como segmento ou carteira: use o perímetro aninhado (12/05_perimetro-aninhado)",
+    "Cenário numérico sem geografia: use a faixa de cenário contra meta (13/07_faixa-de-cenario-contra-meta)",
+    "Miniatura menor que cerca de 100 px com UFs pequenas no perímetro: use a versão em tiles do modelo 01"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_miniatura-ao-lado-do-card-de-participacao",
+      "titulo": "Participação de mercado no perímetro",
+      "caso_de_uso": "Diretoria: a participação fictícia de 7,4% vale para quais UFs, lida num relance ao lado do número.",
+      "o_que_demonstra": [
+        "Miniatura de 120 px com a malha em var(--surface-overlay) e o perímetro em var(--chart-1)",
+        "Contorno externo por duas passadas dos mesmos paths, sem dissolver polígonos",
+        "KPI em kpi-number com a legenda escrita no perímetro Sul e Sudeste",
+        "Miniatura com aria-hidden e a frase acessível no card, que já nomeia as UFs",
+        "Etiqueta de procedência do número em var(--prov-derivado)"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_participacao-so-dentro-do-perimetro",
+      "titulo": "Participação de mercado por UF do perímetro",
+      "caso_de_uso": "Diretoria: dentro das 7 UFs do perímetro fictício, onde a participação é maior e onde ainda é pequena.",
+      "o_que_demonstra": [
+        "Rampa var(--seq-N) aplicada só às UFs do perímetro",
+        "UFs de fora em tom neutro, sem classe de cor e sem dica",
+        "Rótulo com sigla e participação em cada UF do perímetro, com chamada externa nas pequenas",
+        "Legenda em degraus com item à parte para fora do perímetro",
+        "Nota escrita de que o número nacional não é a soma do mapa"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_perimetro-atual-e-expansao-proposta",
+      "titulo": "Perímetro atual e expansão proposta",
+      "caso_de_uso": "Diretoria: que UFs a expansão fictícia de 2027 acrescenta e qual participação ela pode render, em faixa.",
+      "o_que_demonstra": [
+        "Contorno cheio para o perímetro atual e tracejado para as UFs da expansão",
+        "Painel lateral com a participação atual medida e a estimada em faixa, de 5,1% a 6,8%",
+        "Etiquetas de procedência var(--prov-medido) e var(--prov-premissa) em cada número",
+        "Legenda que diferencia perímetro vigente, expansão e fora do perímetro",
+        "Frase acessível com as UFs de cada grupo e a faixa estimada"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_perimetro-que-mudou-de-vigencia",
+      "titulo": "Perímetro vigente e perímetro anterior",
+      "caso_de_uso": "Diretoria: o perímetro mudou em 2026-03-01; que UFs entraram ou saíram e que números deixam de ser comparáveis.",
+      "o_que_demonstra": [
+        "Selo perímetro vigente desde 2026-03-01 com formatDate",
+        "Prop perimetroExibido que alterna entre vigente e anterior sem mudar a escala",
+        "UFs que entraram e saíram marcadas com ícone lucide Plus ou Minus e a palavra",
+        "Aviso escrito de que a participação antes e depois da data não se compara",
+        "Estado indisponível para a UF sem medição no perímetro anterior"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

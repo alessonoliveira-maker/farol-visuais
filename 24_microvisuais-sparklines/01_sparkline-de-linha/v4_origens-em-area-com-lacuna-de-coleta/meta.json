@@ -1,0 +1,15 @@
+{
+  "title": "Leads por origem com lacuna de coleta",
+  "useCase": "Qual das 10 origens carrega volume em 18 meses e onde a coleta falhou, sem confundir falha com zero?",
+  "demonstrates": [
+    "Tabela de 10 linhas com AreaChart por célula em escala comum, declarada no cabeçalho",
+    "Área só porque volume de leads parte do zero: domínio de 0 ao máximo da tabela",
+    "Meses sem coleta como null com connectNulls desligado: traço e área interrompem",
+    "Origem com menos de 8 meses sem traço, com formatUnavailable e a nota série curta",
+    "Preenchimento sólido em --chart-1 na opacidade mínima do contrato, sem degradê",
+    "Frase acessível contando os meses sem coleta de cada origem"
+  ],
+  "canvas": "alto",
+  "frame": "stage",
+  "notes": "Desvio do catálogo pela ACE-5: o catálogo pede preenchimento de baixa opacidade em --chart-1, mas fillOpacity abaixo de 0,66 derruba a marca de --chart-1 abaixo de 3:1 no tema claro, e o degrau --seq-2 opaco mede 1,49:1 (CONTRASTE-MARCA). O preenchimento sai em --chart-1 a 0,66, o piso da ACE-5, com traço opaco por cima. Corpo do canvas alto com moldura stage: 600 x 470 px; 10 linhas de 36 px."
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "05_dispersao-lexical-no-tempo",
+  "nome": "Dispersão lexical ao longo do tempo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Uma faixa por termo e um traço vertical fino a cada ocorrência, na posição do tempo em que ela aconteceu: o dispersion plot do NLTK trazido para datas. Lê-se quando um termo começou a aparecer, quando adensou e quando sumiu, termo a termo, no mesmo eixo de tempo. No Recharts é um ScatterChart com XAxis numérico de datas e YAxis de categorias, e um shape customizado que desenha a linha com a altura da banda. Traço translúcido revela adensamento; acima de umas 10 ocorrências por dia por termo a forma vira borrão e a pergunta migra para o mapa de calor. Termo sem ocorrência mantém a faixa vazia com 0, porque remover a faixa esconde a ausência.",
+  "quando_usar": [
+    "Saber quando um termo começou ou parou de aparecer, de 3 a 12 termos, num trimestre ou num ano",
+    "Mostrar adensamento de uma objeção depois de um evento datado, como reajuste de taxa ou novo roteiro",
+    "Comparar o ritmo de aparição de termos que a bar list de termos (02/09) colocou lado a lado",
+    "Contagens baixas por dia, até cerca de 10 ocorrências por termo"
+  ],
+  "quando_evitar": [
+    "Contagens altas por dia: vira borrão; agregue por semana num mapa de calor (família 15)",
+    "Pergunta sobre volume total por período: use colunas (família 03) ou linha simples (04/01)",
+    "Remover a faixa do termo sem ocorrência: esconde a ausência; mantenha a faixa vazia com 0",
+    "Mais de 12 termos: as faixas ficam finas demais para ler o traço; filtre ou pagine",
+    "Evento de referência ancorado em pixel: mente no primeiro filtro; ancore a anotação na data do dado"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_termos-de-perda-em-2026",
+      "titulo": "Seis termos de perda ao longo de 2026",
+      "caso_de_uso": "Comercial: em que meses de 2026 cada um dos seis principais termos de motivo de perda apareceu nas anotações.",
+      "o_que_demonstra": [
+        "ScatterChart com XAxis numérico de datas e YAxis type category por termo",
+        "Shape customizado que desenha line vertical com a altura da banda",
+        "Traço de 1 px em --chart-1 com opacidade, para o adensamento aparecer",
+        "Tiques mensais por formatMonthShort e grade vertical mensal em --line-subtle"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_preco-depois-do-reajuste",
+      "titulo": "Preço adensando depois do reajuste de taxa",
+      "caso_de_uso": "Comercial: o termo preço passou a aparecer mais nas perdas depois do reajuste fictício de taxa em 2026-07-01?",
+      "o_que_demonstra": [
+        "ReferenceLine na data do reajuste com rótulo curto na margem superior reservada",
+        "Contagem antes e depois escrita junto da faixa do termo destacado",
+        "Destaque em --chart-1 só na faixa de preço; demais faixas em --line-strong",
+        "Janelas antes e depois de mesma duração, com a regra escrita na nota"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_objecoes-da-pre-vendas-por-dia",
+      "titulo": "Doze objeções da pré-vendas por dia",
+      "caso_de_uso": "Pré-vendas: como as 12 objeções mais anotadas nas ligações se distribuíram dia a dia entre 2026-06-01 e 2026-08-31.",
+      "o_que_demonstra": [
+        "Doze faixas com altura calculada pela área útil, sem rótulo cortado",
+        "Total de menções por termo à direita, em font-display e alinhado à direita",
+        "Termos ordenados pela primeira aparição, com a regra escrita no subtítulo",
+        "Dica com a data por formatDate, o termo e as menções daquele dia",
+        "Aviso quando um termo passa de 10 menções num dia, apontando a família 15"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_termo-sem-mencoes-e-mes-parcial",
+      "titulo": "Termo sem menções e mês corrente parcial",
+      "caso_de_uso": "Marketing: como as faixas de termos de formulário se comportam quando um termo não aparece e o mês ainda não fechou.",
+      "o_que_demonstra": [
+        "Faixa vazia mantida com 0 e rótulo sem menções, nunca removida",
+        "Mês corrente em ReferenceArea com --surface-sunken e nota parcial até a data",
+        "Semana sem coleta de formulário escrita com formatUnavailable, separada de zero",
+        "Recorte sem nenhuma ocorrência troca o gráfico por estado vazio com role status"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

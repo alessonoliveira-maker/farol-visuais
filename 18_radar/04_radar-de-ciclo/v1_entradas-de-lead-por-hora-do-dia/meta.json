@@ -1,0 +1,14 @@
+{
+  "title": "Entradas de lead por hora do dia",
+  "useCase": "Pré-vendas, 2026-08: em que horas do dia os leads chegam e quanto da demanda cai fora do horário comercial?",
+  "demonstrates": [
+    "24 eixos com startAngle 90 e endAngle -270: 0h no topo e sentido horário",
+    "Grade circular e tick próprio que só escreve 0h, 6h, 12h e 18h",
+    "Área em --chart-1 com a média de entradas por hora no mês e a unidade na dica",
+    "Domínio de 0 ao primeiro nível redondo acima do pico, calculado no componente",
+    "Linha de leitura com o pico e a parcela fora do expediente"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O preenchimento sai com 0,66 de opacidade, não leve como o catálogo sugere: a ACE-5 pede que a área composta de --chart-1 fique acima de 3:1 no tema claro. O pico fica em 14h com 285 entradas em 31 dias, 9,2 por hora, como o catálogo pede. A grade circular não traz raios (radialLines desligado): cada hora ganha um tique na borda do anel, e o dado é a média por hora, total do mês dividido por 31. O contrato vence."
+}

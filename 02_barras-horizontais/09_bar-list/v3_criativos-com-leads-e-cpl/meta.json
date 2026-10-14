@@ -1,0 +1,13 @@
+{
+  "title": "Top 10 criativos por leads qualificados",
+  "useCase": "Quais criativos geram mais lead qualificado e a que custo, com o criativo pausado reconhecível na lista.",
+  "demonstrates": [
+    "Dois números por linha: leads qualificados e custo por lead qualificado",
+    "Segunda barra fina abaixo da principal com o CPL relativo entre os criativos",
+    "Criativo pausado com barra em neutro e etiqueta pausado, não só cor",
+    "Percentual do total ao lado da contagem, somando 100 pelo maior resto"
+  ],
+  "canvas": { "width": 640, "height": 590 },
+  "notes": "Canvas 640x590: dez linhas de duas barras (22 px mais 2 px mais 11 px cada) somam 350 px, mais 72 px de espaço entre linhas e 45 px da nota de rodapé de duas linhas, passando dos 442 px de corpo do preset alto (640x560); quem cede é a altura do canvas (ESP-2). A altura da barra principal sai do conteúdo, mínimo de 22 px e crescimento pela quebra real do nome (o cr8 só ganha segunda linha em cartão estreito).",
+  "frame": "card"
+}

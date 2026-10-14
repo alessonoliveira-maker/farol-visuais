@@ -1,0 +1,14 @@
+{
+  "title": "Primeira resposta fora do SLA com o expediente marcado",
+  "useCase": "Pré-vendas, 2026-08: as respostas fora do SLA se concentram fora do expediente ou também acontecem dentro dele?",
+  "demonstrates": [
+    "Setor do expediente, das 8h às 18h, em --surface-sunken sob a grade",
+    "Legenda dizendo o que o setor marca, sem ReferenceArea, que não existe no polar",
+    "Percentual fora do SLA por hora com formatRateWithVolume na dica",
+    "Grade e série por cima do setor, na ordem correta de camadas",
+    "Linha de leitura: 71% dos estouros entre 18h e 8h"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O catálogo pede o setor por Customized, e o Recharts 3.10.1 marca o Customized como obsoleto: o setor é um path dentro de ZIndexLayer com zIndex -200, desenhado pelo tique do primeiro eixo, que é quem recebe o centro e o raio. A grade padrão fica em -100 e a do Radar sobe a 150, acima da área (100). O preenchimento sai com 0,72 de opacidade: com 0,66 media 2,76:1 sobre o setor do expediente no claro, e com 0,72 a conta sobre os pixels dá cerca de 3,07:1 contra --surface-sunken (ACE-5). A hora 3 não teve resposta (total 0): o polígono padrão do Radar poria o vértice no centro, igual a um zero medido, então a série tem forma própria que parte preenchimento e contorno nessa hora, com raio pontilhado em --text-muted e a palavra \"Sem resposta na hora\" na legenda. A hora 4 tem 0 de 7 respostas fora do SLA: zero medido, com ponto vazado no centro e \"Zero medido\" na legenda. O 71% é calculado do dado: 276 dos 391 estouros caem fora de 8h às 18h. O contrato vence."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Stellar com zero medido, sem dado e vizinhos altos",
+  "useCase": "Comercial, 2026-T3: como distinguir a precisão de forecast medida em zero de um eixo que ainda não foi medido?",
+  "demonstrates": [
+    "Zero medido desenha ponto na origem do eixo, sobre o anel do zero, e escreve 0",
+    "Eixo sem medição com raio tracejado em --text-muted e a palavra de ausência, sem ponto",
+    "Vizinhos com 95 e 97 e rótulos no raio externo fixo, sem colisão nas pontas",
+    "Anticolisão de rótulos calculada em TypeScript com distância mínima em graus",
+    "Frase acessível que separa eixo zerado de eixo sem medição",
+    "Área do espeto linear no valor: largura fixa, só o comprimento muda (GEO-3)"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Desvios do catálogo. Primeiro, EST-2: o catálogo pede a palavra sem dado no eixo sem medição; o contrato manda formatUnavailable(), então o rótulo escreve indisponível e a legenda diz ainda não medido. Segundo: o catálogo põe o ponto do zero no centro; aqui ele fica na origem do próprio eixo, sobre o anel do zero de 20 px, porque no centro geométrico o ponto pertenceria aos oito eixos ao mesmo tempo. Nota do dono, GEO-3: a marca é um trapézio de largura fixa, 6 px na base e 2 px na ponta, então a área vale 4 px vezes o comprimento e cresce em linha com o índice; 97 pontos desenham 357 px² e 54 pontos desenham 199 px², razão de 1,80 nos dois. A guarda RAIO-CONTRA-AREA não mede trapézio (sem_marca_de_area), então a conferência foi à mão, pela área do polígono de cada path do preview contra o data.ts: desvio de participação abaixo de 0,001 ponto percentual. O ponto do zero e o raio tracejado são marcas de estado, de tamanho fixo, e não entram nessa conta. Anticolisão em graus: o rótulo do topo, em uma linha, mede 134 px e pede 37,8 graus até a âncora do vizinho; o passo de oito eixos é 45, então ele fica em uma linha e nenhum rótulo se desloca no dado padrão. Com doze eixos o passo cai para 30 e o mesmo rótulo quebra em duas linhas; se nem assim couber, a âncora do vizinho se afasta do polo. Canvas: corpo de 422 por 355,5; a legenda e o rodapé tiram 22 px cada e sobram 311,5 para o viewBox de 422 por 308, em escala 1 (GEO-18)."
+}

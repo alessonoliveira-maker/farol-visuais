@@ -1,0 +1,14 @@
+{
+  "title": "Mix de origem dos leads por segmento de conta",
+  "useCase": "De onde vêm os leads de pequenas, médias e grandes contas, em proporção, com o volume de cada segmento à vista.",
+  "demonstrates": [
+    "stackOffset expand com tique de percentual pelo formatador do Farol",
+    "Percentual calculado no dado pelo maior resto, porque o expand entrega valor absoluto",
+    "n absoluto escrito à direita de cada barra, numa segunda coluna de eixo",
+    "Ordem natural dos segmentos preservada, sem ordenar por valor",
+    "Ausência de origem em segmento vazado, por último na pilha e na legenda"
+  ],
+  "canvas": { "width": 640, "height": 420 },
+  "frame": "card",
+  "notes": "Altura sai da conta da ESP-6: ROW_STEP de 64 px para os 3 segmentos de conta, engrossando a marca para 20,48 px e passando o piso de 18 px do rótulo interno de 12 px."
+}

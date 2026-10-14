@@ -1,0 +1,14 @@
+{
+  "title": "Leads por mês em células de dez",
+  "useCase": "Marketing: volume de leads por mês quando um mês passa de 300 e outro mês não tem coleta.",
+  "demonstrates": [
+    "Unidade sobe para 1 célula = 10 leads quando alguma barra passa de 300",
+    "Última célula com largura parcial de 70% e aviso na legenda",
+    "Valor exato 347 escrito no topo, independente do arredondamento das células",
+    "Mês sem coleta com contorno tracejado e formatUnavailable, nunca coluna zerada",
+    "Mês com zero medido desenha só a base e escreve 0"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O vão entre colunas é de 20% da banda de cada lado, fora dos 30% a 40% da ESP-2: a coluna precisa de largura para quatro células por linha, e a célula tem cerca de 12 px, no piso. A unidade é calculada do dado: passa de 1 para 10 leads quando o maior mês passa de 300. O mês sem coleta usa a coluna de células como contorno tracejado de duas linhas com o ícone Unplug, e o zero medido é só a régua da base com o 0 escrito. O dado da barra é a contagem de células e o rótulo lê os leads exatos; a dica traz as duas contagens."
+}

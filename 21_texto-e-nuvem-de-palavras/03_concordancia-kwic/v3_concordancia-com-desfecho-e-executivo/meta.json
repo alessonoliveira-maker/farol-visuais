@@ -1,0 +1,13 @@
+{
+  "title": "Concordância com desfecho, data e executivo",
+  "useCase": "Comercial: ao clicar em preço na lista de termos, ler as ocorrências filtradas por desfecho, com data e executivo fictício.",
+  "demonstrates": [
+    "Metadados por linha: data por formatDate, desfecho e Executivo 03 em 11 px",
+    "Filtro por desfecho ganha, perdida ou aberta com a contagem em cada opção",
+    "Primeiras 40 de 2.000 linhas no preview, com o total escrito no rodapé",
+    "Desfecho com ícone e palavra junto da cor, nunca só a cor"
+  ],
+  "canvas": { "width": 960, "height": 1040 },
+  "frame": "card",
+  "notes": "Desvio do preset largo: 40 linhas de 20 px são 800 px, mais filtro de 32, cabeçalho de colunas de 20 e rodapé de 24, ou 876 px, e o corpo do largo entrega 281,5 px. O serializador do preview não reproduz rolagem interna (todas as linhas saem do corpo), então o canvas cresce para 960 x 1040, corpo de 905 a 921,5 px. Virtualização das 2.000 linhas fica para a colagem no Farol, porque o import não é permitido no catálogo."
+}

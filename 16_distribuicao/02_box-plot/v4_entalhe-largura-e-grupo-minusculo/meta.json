@@ -1,0 +1,15 @@
+{
+  "title": "CPL qualificado com entalhe e largura por amostra",
+  "useCase": "As medianas de CPL qualificado dos tipos de mídia diferem de fato, sabendo que um deles tem só 9 campanhas?",
+  "demonstrates": [
+    "Caixa entalhada em polígono de dez vértices, com a cintura na mediana",
+    "Largura pela raiz da amostra contra o maior n observado antes do filtro",
+    "Entalhe maior que a caixa cortado nos quartis e desenhado tracejado",
+    "Grupo com quatro campanhas sem caixa: só os pontos e o n escrito",
+    "Régua de largura com o n dos extremos calculado do dado, nunca constante",
+    "Estado vazio com role status no lugar do gráfico, sem eixo nem grade"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Um desvio da especificação do catálogo, resolvido a favor do CONTRATO e medido. O catálogo pede a largura pela raiz de n contra o nMax, e a raiz pura levaria o grupo de nove campanhas a 24 vezes a raiz de 9 sobre 48, isto é 10,39 px, abaixo do piso de 12 px da ESP-2, que se mede no desenho e não admite exceção por falta de amostra. A raiz vale até o piso e para ali, o que afeta um grupo dos seis; os outros ficam em 24,0 px para n 48, 22,2 px para n 41, 17,7 px para n 26 e 14,7 px para n 18. O nMax sai de todos os grupos que chegam, antes do filtro de piso: calculado só sobre os que ganham caixa, a régua de largura mudaria de significado a cada recorte e a caixa mais larga da tela passaria a valer outro número sem nada avisando. A régua da legenda escreve o n dos dois extremos observados, calculado do dado, nunca uma constante, e o degrau que ela desenha usa a mesma função de largura das caixas. O entalhe é 1,58 vez o interquartil sobre a raiz de n: em Nativa, com nove campanhas e interquartil de 80 reais simétrico em torno da mediana, ele mede 42,13 reais contra os 40 que a caixa tem de cada lado, então não cabe e é cortado nos quartis, passa a tracejado e o n do grupo recebe um marcador. Sem o corte os dez vértices desenhariam um losango invertido saindo pelos lados da caixa. O eixo de categoria é tipo de mídia e não plataforma, porque recorte por fornecedor não sobrevive à troca de fornecedor e marca real não entra no catálogo. O preset alto vale porque as seis bandas de cerca de 83 px de largura precisam de altura de eixo para o entalhe de cerca de 23 px se distinguir da caixa."
+}

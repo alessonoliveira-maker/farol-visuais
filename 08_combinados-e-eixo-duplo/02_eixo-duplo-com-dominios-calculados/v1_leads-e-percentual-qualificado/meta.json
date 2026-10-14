@@ -1,0 +1,13 @@
+{
+  "title": "Leads por mês e percentual qualificado",
+  "useCase": "O volume de leads cresceu em 2026 sem derrubar a proporção de leads qualificados?",
+  "demonstrates": [
+    "Dois YAxis com yAxisId, a taxa em orientation right",
+    "Domínios fixos por função pura, com allowDataOverflow e niceTicks none",
+    "Tique e título de eixo na cor da série correspondente, sem legenda",
+    "Grade só do eixo principal, com o mesmo número de marcas nos dois eixos",
+    "Dica com as duas unidades e o denominador da taxa"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

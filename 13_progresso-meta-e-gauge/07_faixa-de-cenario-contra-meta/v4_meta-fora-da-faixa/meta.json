@@ -1,0 +1,13 @@
+{
+  "title": "Meta fora do alcance do cenário otimista",
+  "useCase": "Diretoria: nem o cenário otimista de 2027 alcança a meta anual; qual a lacuna em valor e em percentual até ela?",
+  "demonstrates": [
+    "Faixa inteira à esquerda do traço da meta, sem esticar o eixo para disfarçar a distância",
+    "Lacuna entre o teto da faixa e a meta escrita em valor e em percentual",
+    "Meta dita em texto, porque visualmente é só um traço distante da faixa",
+    "Frase acessível que declara a meta fora do alcance da faixa inteira"
+  ],
+  "canvas": { "width": 960, "height": 320 },
+  "frame": "card",
+  "notes": "Meta do ANO cheio de 2027. asOf é o último trimestre fechado de 2026 que alimenta as três premissas; nenhum mês de 2027 é medição. Canvas 960x320 (ESP-6): a nota de método de uma linha embaixo do gráfico não cabia na altura do preset faixa (260) sem espremer a marca abaixo do piso da ESP-2."
+}

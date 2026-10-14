@@ -1,0 +1,14 @@
+{
+  "title": "Receita reconhecida contra meta mensal",
+  "useCase": "Mostrar os meses acima e abaixo da meta mensal variável e o saldo acumulado do ano contra ela.",
+  "demonstrates": [
+    "Duas Area de faixa: acima [meta, max] e abaixo [min, meta]",
+    "Pontos de cruzamento inseridos por interpolação linear em TypeScript",
+    "Eixo x numérico e type linear para a curva passar exatamente no cruzamento",
+    "Meta tracejada em text-muted; receita real e meta nomeadas na legenda do topo",
+    "Sem chart-2 nem chart-4 num visual que pinta variação semântica (COR-8)",
+    "Legenda nomeia a área acima e abaixo da meta; saldo acumulado escrito na tela"
+  ],
+  "canvas": "card",
+  "notes": "Domínio do eixo de valor começa em zero (EIX-1): receita e meta ficam na metade superior do corpo. O desvio entre as duas (35 a 80 mil) foi dimensionado para a faixa ocupar uma fatia visível do corpo, não uma fita de poucos pixels."
+}

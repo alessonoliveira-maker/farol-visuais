@@ -1,0 +1,14 @@
+{
+  "title": "O que mudou no forecast da semana",
+  "useCase": "Por que o forecast da carteira caiu de R$ 2,31 mi para R$ 2,17 mi entre duas leituras?",
+  "demonstrates": [
+    "Ponte entre duas leituras de forecast com quatro passos nomeados",
+    "Coluna de total dividida em ganho fechado sólido e ponderado hachurado",
+    "Maior passo da semana destacado por peso 700 e legenda própria",
+    "Legenda de papéis e de preenchimento acima do gráfico",
+    "Frase acessível citando a maior queda"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Os passos do catálogo somam R$ 2.165.000, não R$ 2,17 mi redondo: 2,31 mi + 340 + 185 − 260 − 410 mil. O dado mantém os passos exatos e o total exato, e o rótulo escreve duas casas no milhão. As duas leituras (anterior e atual) dividem o total em fechado e ponderado; no catálogo só a final se divide, mas uma coluna anterior toda sólida diria que o forecast antigo era todo fechado. Polaridade da receita: aumento pinta --positive, queda --negative. Conta do corpo (ESP-6): canvas largo, 894 − 16 = 878 px, 6 colunas, passo 146 px, barra = min(24, 146 × 0,36) = 24 px."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Grupo de uma linha e grupo vazio no recorte",
+  "useCase": "Comercial: ler um time com um único executivo e um time que o filtro esvaziou sem sumir da tabela.",
+  "demonstrates": [
+    "Grupo unitário sem subtotal redundante",
+    "Grupo vazio recolhido com a frase nenhuma linha neste recorte em text-muted",
+    "Total geral recalculado só com as linhas visíveis e dito no rótulo",
+    "Frase acessível que conta grupos, linhas e grupos vazios"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Subtotal de time e total geral por MEDIANA dos dias até o fechamento, não soma nem média: um único negócio muito lento (51 dias, contra 12 a 22 dos demais) distorceria a média e não distorce a mediana. Com isto, o modelo usa os três tipos de agregação nas suas quatro versões: soma em v1 e v3, média ponderada em v2, mediana aqui."
+}

@@ -1,0 +1,108 @@
+{
+  "familia": "04_linhas",
+  "modelo": "04_linha-com-banda-de-intervalo",
+  "versoes": {
+    "v1_tempo-ate-primeiro-contato-com-quartis": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Banda de quartis com metodo nomeado na tela, linha por cima, dica reescrita entre X e Y.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:20.394Z",
+      "impressao": "b2c5f159f911d992d6391f0873a063f0bf20b380",
+      "arquivos": {
+        "Chart.tsx": "ca04f00936a4047e508f51c815eeef0be6b4f53b",
+        "data.ts": "7b2eb8373eb6aacd52d41157747b7e701831e049",
+        "meta.json": "592f9892277001fadfaf64d9426cdd0fea080f4e"
+      }
+    },
+    "v2_cpl-diario-fora-da-faixa-historica": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Faixa movel neutra, dias fora marcados por simbolo, cor semantica e valor escrito com halo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:25.055Z",
+      "impressao": "e24afa9f706f1904d33a260a67b396f0587cae39",
+      "arquivos": {
+        "Chart.tsx": "fc874b00242d0ac109716cd8a9c00d7e44b13ecd",
+        "data.ts": "78e8dab636d41a7b59783bf610e47b4950658028",
+        "meta.json": "dc6ff6a06316fc64c2c58af3721b26d3d1d2906a"
+      }
+    },
+    "v3_participacao-de-mercado-entre-perimetros": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Saida em faixa com os dois perimetros nomeados no fim da linha e revisao anotada; recorte de escala e o que o catalogo pede.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:29.171Z",
+      "impressao": "3a4eac166a1c5391c6aa273ad5671f59ab29a3fd",
+      "arquivos": {
+        "Chart.tsx": "ccb94d554c1178aead81ad91b357fd70a2200daf",
+        "data.ts": "7034fe3a32c59bceea0968c821bb43ae1054497d",
+        "meta.json": "c1f89046419e6a92f01b70ead5ad2d1161cffdd5"
+      }
+    },
+    "v4_ciclo-de-venda-com-amostra-pequena": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Banda em null por regra de amostra, mediana isolada com anel e contagem por ponto; ajustes de acabamento no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:33.254Z",
+      "impressao": "87bc6879c787de6ce0df1ec184bf464aa82a24f9",
+      "arquivos": {
+        "Chart.tsx": "541fb24f69c66aca4584258ef878bc7715b99066",
+        "data.ts": "d809f4022c979de8636ac0f6cf992c81598b1956",
+        "meta.json": "a59f426cb2a411aa9244e6d467934e8e0d5f202a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_tempo-ate-primeiro-contato-com-quartis",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Banda de quartis com metodo nomeado na tela, linha por cima, dica reescrita entre X e Y.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:20.394Z",
+      "impressao": "b2c5f159f911d992d6391f0873a063f0bf20b380",
+      "arquivos": {
+        "Chart.tsx": "ca04f00936a4047e508f51c815eeef0be6b4f53b",
+        "data.ts": "7b2eb8373eb6aacd52d41157747b7e701831e049",
+        "meta.json": "592f9892277001fadfaf64d9426cdd0fea080f4e"
+      }
+    },
+    {
+      "versao": "v2_cpl-diario-fora-da-faixa-historica",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Faixa movel neutra, dias fora marcados por simbolo, cor semantica e valor escrito com halo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:25.055Z",
+      "impressao": "e24afa9f706f1904d33a260a67b396f0587cae39",
+      "arquivos": {
+        "Chart.tsx": "fc874b00242d0ac109716cd8a9c00d7e44b13ecd",
+        "data.ts": "78e8dab636d41a7b59783bf610e47b4950658028",
+        "meta.json": "dc6ff6a06316fc64c2c58af3721b26d3d1d2906a"
+      }
+    },
+    {
+      "versao": "v3_participacao-de-mercado-entre-perimetros",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Saida em faixa com os dois perimetros nomeados no fim da linha e revisao anotada; recorte de escala e o que o catalogo pede.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:29.171Z",
+      "impressao": "3a4eac166a1c5391c6aa273ad5671f59ab29a3fd",
+      "arquivos": {
+        "Chart.tsx": "ccb94d554c1178aead81ad91b357fd70a2200daf",
+        "data.ts": "7034fe3a32c59bceea0968c821bb43ae1054497d",
+        "meta.json": "c1f89046419e6a92f01b70ead5ad2d1161cffdd5"
+      }
+    },
+    {
+      "versao": "v4_ciclo-de-venda-com-amostra-pequena",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Banda em null por regra de amostra, mediana isolada com anel e contagem por ponto; ajustes de acabamento no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:55:33.254Z",
+      "impressao": "87bc6879c787de6ce0df1ec184bf464aa82a24f9",
+      "arquivos": {
+        "Chart.tsx": "541fb24f69c66aca4584258ef878bc7715b99066",
+        "data.ts": "d809f4022c979de8636ac0f6cf992c81598b1956",
+        "meta.json": "a59f426cb2a411aa9244e6d467934e8e0d5f202a"
+      }
+    }
+  ]
+}

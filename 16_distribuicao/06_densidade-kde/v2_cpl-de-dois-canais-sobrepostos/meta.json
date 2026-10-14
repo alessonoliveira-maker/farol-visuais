@@ -1,0 +1,13 @@
+{
+  "title": "CPL de busca contra social em densidades",
+  "useCase": "Em que faixa de CPL os canais de busca e social custam igual, e qual tem a cauda mais cara?",
+  "demonstrates": [
+    "Duas Area sem stackId com fillOpacity de 0,25 e contorno forte",
+    "Densidades calculadas sobre a mesma grade de x e com a mesma banda",
+    "Região de cruzamento hachurada com a faixa de CPL escrita",
+    "Legenda com o n de cada canal e a normalização declarada"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A região de cruzamento é calculada do dado: onde a curva menor chega a 60% da maior, com piso de 15% do menor pico para a cauda vazia não entrar, arredondada para fora em R$ 10. O catálogo escrevia R$ 180 a R$ 240 como exemplo; a faixa que o dado fictício produz é a que está no rótulo. A banda é a de Silverman sobre a amostra reunida dos dois canais, a mesma para as duas curvas. O preenchimento de 0,25 pedido pelo catálogo não alcança 3:1 sobre o cartão, e quem carrega cada marca é o contorno opaco de 2 px, que mede 9,50:1 em chart-1 e 6,47:1 em chart-3 no escuro; a guarda OPACIDADE-MARCA não enxerga a opacidade quando ela vem de constante. A hachura é desenhada com os hooks useXAxisScale e usePlotArea, antes das Area, para ficar atrás das curvas."
+}

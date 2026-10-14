@@ -1,0 +1,13 @@
+{
+  "title": "Receita com estornos e meses sem coleta",
+  "useCase": "Quais estornos de 2026 houve, e quais dois meses ficaram sem coleta e não podem virar zero?",
+  "demonstrates": [
+    "Estorno com a área do valor absoluto, contorno sem preenchimento e legenda estorno",
+    "Nunca área ou raio negativo: o sinal vai para a forma e para o texto com sinal −",
+    "Mês sem coleta com ReferenceArea neutra e o texto de formatUnavailable",
+    "Zero medido com marca mínima distinta da ausência de dado"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Opacidade 0,72 no círculo de receita, acima dos 0,66 que a ACE-5 pede para --chart-1. O eixo das faixas é numérico com tique escrito pelo nome (REC-14). Área sem piso, de 0 a 1500 px²: o menor círculo medido (R$ 12 mil) tem 33 px² e raio de 3,2 px, e o zero medido não usa o ZAxis, é um ponto fixo de 3 px de raio com o texto R$ 0. A faixa de ausência usa --surface-sunken (ANO-4) e o --surface-overlay seria o branco do cartão no tema claro. O estorno é escrito sob a maior marca do mês, e o rótulo passa por fora do círculo cheio quando ele é maior que o contorno."
+}

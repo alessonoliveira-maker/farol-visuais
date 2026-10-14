@@ -1,0 +1,108 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "02_citacao-e-verbatim",
+  "versoes": {
+    "v1_citacao-de-motivo-de-ganho": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: a barra da parcela parte do zero e mede 23,1% do trilho para 38 de 164 (23,2%), com o valor escrito junto; fio em chart-1 a 9,50:1 no escuro e 6,00:1 no claro; período escrito no corpo; frase de 207 caracteres; diferença entre página e SVG abaixo de 0,05% nos dois temas. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:24.523Z",
+      "impressao": "99a62ed09e24e4ffb63bb4f696a3f21fa18cd81c",
+      "arquivos": {
+        "Chart.tsx": "a5dd27da3abf7de0d0ccc6d767c2519d3582df42",
+        "data.ts": "7a487b924230ae7d90001695115029a60234f07c",
+        "meta.json": "37db3377b89cbcbf6ad25caa5ba4c81e0da48a27"
+      }
+    },
+    "v2_objecoes-realcadas-por-categoria": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 8 termos conferidos contra o data.ts (3, 3 e 2), a busca sem acento acha PRECO e próximo trimestre, texto sobre o fundo translúcido de 9,44:1 a 13,67:1, sublinhado opaco de 4,10:1 a 6,17:1 contra o próprio fundo, três estilos de sublinhado distinguíveis em tamanho real nos dois temas, legenda na ordem dos slots 1, 3 e 6, frase de 183 caracteres. O fundo a 20% mede de 1,31:1 a 1,54:1 contra o cartão e vale pela isenção do texto escrito na marca. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:25.119Z",
+      "impressao": "f248e3bb37c4a06cd01a4fee96469e788660dc95",
+      "arquivos": {
+        "Chart.tsx": "ea88c56da6d70b2415c4595a3b78ae77b24fda99",
+        "data.ts": "3f9fe2586462882e45195130ce097497442e3b0f",
+        "meta.json": "e66697d88859326ed5dc53fa8d3060277000e0c4"
+      }
+    },
+    "v3_cinco-verbatins-por-motivo-de-perda": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: parcelas de 23, 18, 15, 9 e 6% conferidas contra 22, 17, 14, 9 e 6 de 96, em ordem decrescente, e 96 de 312 dá 31%; contagem da aba ativa a 5,98:1 no escuro e 4,65:1 no claro sobre surface-sunken; aba ativa marcada por peso e fundo, não só por cor; corpo de 336 px no canvas de 640x500, sem corte; frase de 159 caracteres. As outras quatro abas e os dois vazios foram conferidos só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:32.734Z",
+      "impressao": "68dd8702a29869d26fc5bbb5a37421d5574be495",
+      "arquivos": {
+        "Chart.tsx": "cb19dc9907e274aafb3a9376a938747380f71b8f",
+        "data.ts": "5ab4f8cdf79f2b6b3138f70dc88a94ba8ed61639",
+        "meta.json": "a11451d57037f784cba8bfe37ade8dce401d82ce"
+      }
+    },
+    "v4_verbatim-longo-e-dado-sensivel": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 838 caracteres no original, 800 depois da máscara, 154 no recorte e 646 omitidos, conferidos por execução fora da árvore; 12 palavras de cada lado do termo; 1 e-mail, 1 telefone e 4 nomes mascarados antes do recorte e do realce; termo a 9,44:1 e 13,37:1, máscara a 9,36:1 e 7,04:1; motivo sem anotação em role status; frase de 199 caracteres. Pendência de régua, não de produção: a seção 3 do contrato proíbe e-mail e telefone até inventados no data.ts e o catálogo pede que a versão prove o mascaramento deles; os valores são reservados e o desvio está declarado. A expressão de telefone só pega número com hífen. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:33.401Z",
+      "impressao": "65aeeb022d3012fa9c4f4d6d31abc2917ab8cd4d",
+      "arquivos": {
+        "Chart.tsx": "244f599789e763801cfb35a3beee49d3bb2dcee1",
+        "data.ts": "2b21ce016ce979134f96d072449667a51dc80f8a",
+        "meta.json": "cb0a79be52ae8102ada5be2c79e7eb68c0d379b5"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_citacao-de-motivo-de-ganho",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: a barra da parcela parte do zero e mede 23,1% do trilho para 38 de 164 (23,2%), com o valor escrito junto; fio em chart-1 a 9,50:1 no escuro e 6,00:1 no claro; período escrito no corpo; frase de 207 caracteres; diferença entre página e SVG abaixo de 0,05% nos dois temas. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:24.523Z",
+      "impressao": "99a62ed09e24e4ffb63bb4f696a3f21fa18cd81c",
+      "arquivos": {
+        "Chart.tsx": "a5dd27da3abf7de0d0ccc6d767c2519d3582df42",
+        "data.ts": "7a487b924230ae7d90001695115029a60234f07c",
+        "meta.json": "37db3377b89cbcbf6ad25caa5ba4c81e0da48a27"
+      }
+    },
+    {
+      "versao": "v2_objecoes-realcadas-por-categoria",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 8 termos conferidos contra o data.ts (3, 3 e 2), a busca sem acento acha PRECO e próximo trimestre, texto sobre o fundo translúcido de 9,44:1 a 13,67:1, sublinhado opaco de 4,10:1 a 6,17:1 contra o próprio fundo, três estilos de sublinhado distinguíveis em tamanho real nos dois temas, legenda na ordem dos slots 1, 3 e 6, frase de 183 caracteres. O fundo a 20% mede de 1,31:1 a 1,54:1 contra o cartão e vale pela isenção do texto escrito na marca. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:25.119Z",
+      "impressao": "f248e3bb37c4a06cd01a4fee96469e788660dc95",
+      "arquivos": {
+        "Chart.tsx": "ea88c56da6d70b2415c4595a3b78ae77b24fda99",
+        "data.ts": "3f9fe2586462882e45195130ce097497442e3b0f",
+        "meta.json": "e66697d88859326ed5dc53fa8d3060277000e0c4"
+      }
+    },
+    {
+      "versao": "v3_cinco-verbatins-por-motivo-de-perda",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: parcelas de 23, 18, 15, 9 e 6% conferidas contra 22, 17, 14, 9 e 6 de 96, em ordem decrescente, e 96 de 312 dá 31%; contagem da aba ativa a 5,98:1 no escuro e 4,65:1 no claro sobre surface-sunken; aba ativa marcada por peso e fundo, não só por cor; corpo de 336 px no canvas de 640x500, sem corte; frase de 159 caracteres. As outras quatro abas e os dois vazios foram conferidos só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:32.734Z",
+      "impressao": "68dd8702a29869d26fc5bbb5a37421d5574be495",
+      "arquivos": {
+        "Chart.tsx": "cb19dc9907e274aafb3a9376a938747380f71b8f",
+        "data.ts": "5ab4f8cdf79f2b6b3138f70dc88a94ba8ed61639",
+        "meta.json": "a11451d57037f784cba8bfe37ade8dce401d82ce"
+      }
+    },
+    {
+      "versao": "v4_verbatim-longo-e-dado-sensivel",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 838 caracteres no original, 800 depois da máscara, 154 no recorte e 646 omitidos, conferidos por execução fora da árvore; 12 palavras de cada lado do termo; 1 e-mail, 1 telefone e 4 nomes mascarados antes do recorte e do realce; termo a 9,44:1 e 13,37:1, máscara a 9,36:1 e 7,04:1; motivo sem anotação em role status; frase de 199 caracteres. Pendência de régua, não de produção: a seção 3 do contrato proíbe e-mail e telefone até inventados no data.ts e o catálogo pede que a versão prove o mascaramento deles; os valores são reservados e o desvio está declarado. A expressão de telefone só pega número com hífen. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T12:10:33.401Z",
+      "impressao": "65aeeb022d3012fa9c4f4d6d31abc2917ab8cd4d",
+      "arquivos": {
+        "Chart.tsx": "244f599789e763801cfb35a3beee49d3bb2dcee1",
+        "data.ts": "2b21ce016ce979134f96d072449667a51dc80f8a",
+        "meta.json": "cb0a79be52ae8102ada5be2c79e7eb68c0d379b5"
+      }
+    }
+  ]
+}

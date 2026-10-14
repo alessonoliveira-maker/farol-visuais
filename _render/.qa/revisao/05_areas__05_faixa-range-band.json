@@ -1,0 +1,160 @@
+{
+  "familia": "05_areas",
+  "modelo": "05_faixa-range-band",
+  "versoes": {
+    "v1_participacao-de-mercado-por-perimetro": {
+      "veredito": "aprovado",
+      "nota": "Faixa a partir do zero, bordas nomeadas com valor e leitura limpa nos dois temas; observacoes de acabamento no README do modelo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:04:57.454Z",
+      "impressao": "54dff13ad7a6397e96fbe3f77567414236a1b4ae",
+      "arquivos": {
+        "Chart.tsx": "856cef9294eab2c3181cce8a99c63c90c78a993e",
+        "data.ts": "e7532bb2690fc9fa31412c9fb77ea0fb74c9ab4d",
+        "meta.json": "cfa907ca35333a47dc284f1b783fd75362ea6952"
+      }
+    },
+    "v2_envelope-historico-com-ano-atual": {
+      "veredito": "aprovado",
+      "nota": "Envelope neutro com a linha do ano corrente como destaque unico, semanas fora marcadas por forma e semana parcial vazada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:02.318Z",
+      "impressao": "b2bf7628c8b309b900497492d126c37c35d42cc8",
+      "arquivos": {
+        "Chart.tsx": "870eea15fc7af01bb9e8d1fa58d19ab75b0d2047",
+        "data.ts": "0c15cecb486e2db2251be3e6f9635c95317229f9",
+        "meta.json": "58b69653fd22fd70fe2e7480ec1bff7d73c9e579"
+      }
+    },
+    "v3_cenarios-de-receita-2027": {
+      "veredito": "aprovado",
+      "nota": "Cenarios discretos nomeados nas bordas, sem linguagem de probabilidade, meta com extendDomain; tique de moeda quebra em duas linhas, observacao no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:06.833Z",
+      "impressao": "e1aa10ffe3622f58c50967393f77fbf885c6cd54",
+      "arquivos": {
+        "Chart.tsx": "379619244227faede0c1acce13f2b923fe299d8c",
+        "data.ts": "6937b867f825fe71def145a49663ccaceddc1c6d",
+        "meta.json": "3e144a7c135e08d7b9e5fdee8a613e5dbd0bf2bb"
+      }
+    },
+    "v4_perimetro-amplo-sem-dado": {
+      "veredito": "aprovado",
+      "nota": "Ausencia vira ausencia de faixa, nunca zero nem interpolacao; restrito segue visivel dentro do sombreado nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:12.160Z",
+      "impressao": "002b20a313455e788f8fd3ca5276255347612cbc",
+      "arquivos": {
+        "Chart.tsx": "22af5f573104a9a78917f4cc768e2b8103815232",
+        "data.ts": "77b0640ed445b1e69b6eb8eabfebf8c7ddd4c85c",
+        "meta.json": "2c33878fa27c23fb5f3ee55041773fca9d2a78d8"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_participacao-de-mercado-por-perimetro",
+      "veredito": "aprovado",
+      "nota": "Faixa a partir do zero, bordas nomeadas com valor, legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:53:12.087Z",
+      "impressao": "54dff13ad7a6397e96fbe3f77567414236a1b4ae",
+      "arquivos": {
+        "Chart.tsx": "856cef9294eab2c3181cce8a99c63c90c78a993e",
+        "data.ts": "e7532bb2690fc9fa31412c9fb77ea0fb74c9ab4d",
+        "meta.json": "cfa907ca35333a47dc284f1b783fd75362ea6952"
+      }
+    },
+    {
+      "versao": "v2_envelope-historico-com-ano-atual",
+      "veredito": "reprovado",
+      "nota": "EIX-10: semana parcial sem nota parcial ate na tela; leitor conta 4 marcas fora do envelope e o texto diz 3.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:53:23.073Z",
+      "impressao": "7641f6cb6e258a9dd0cba4c856e0458253d3e01d",
+      "arquivos": {
+        "Chart.tsx": "191c863150d3da20ec471be6656e4658b99dab79",
+        "data.ts": "0c15cecb486e2db2251be3e6f9635c95317229f9",
+        "meta.json": "58b69653fd22fd70fe2e7480ec1bff7d73c9e579"
+      }
+    },
+    {
+      "versao": "v3_cenarios-de-receita-2027",
+      "veredito": "aprovado",
+      "nota": "Cenarios nomeados nas bordas, meta com extendDomain, dominio do zero; acabamento do eixo Y a polir.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:53:29.081Z",
+      "impressao": "e1aa10ffe3622f58c50967393f77fbf885c6cd54",
+      "arquivos": {
+        "Chart.tsx": "379619244227faede0c1acce13f2b923fe299d8c",
+        "data.ts": "6937b867f825fe71def145a49663ccaceddc1c6d",
+        "meta.json": "3e144a7c135e08d7b9e5fdee8a613e5dbd0bf2bb"
+      }
+    },
+    {
+      "versao": "v4_perimetro-amplo-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Faixa omitida no vao com ReferenceArea nomeada e formatUnavailable; sem interpolacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:53:29.626Z",
+      "impressao": "002b20a313455e788f8fd3ca5276255347612cbc",
+      "arquivos": {
+        "Chart.tsx": "22af5f573104a9a78917f4cc768e2b8103815232",
+        "data.ts": "77b0640ed445b1e69b6eb8eabfebf8c7ddd4c85c",
+        "meta.json": "2c33878fa27c23fb5f3ee55041773fca9d2a78d8"
+      }
+    },
+    {
+      "versao": "v1_participacao-de-mercado-por-perimetro",
+      "veredito": "aprovado",
+      "nota": "Faixa a partir do zero, bordas nomeadas com valor e leitura limpa nos dois temas; observacoes de acabamento no README do modelo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:04:57.454Z",
+      "impressao": "54dff13ad7a6397e96fbe3f77567414236a1b4ae",
+      "arquivos": {
+        "Chart.tsx": "856cef9294eab2c3181cce8a99c63c90c78a993e",
+        "data.ts": "e7532bb2690fc9fa31412c9fb77ea0fb74c9ab4d",
+        "meta.json": "cfa907ca35333a47dc284f1b783fd75362ea6952"
+      }
+    },
+    {
+      "versao": "v2_envelope-historico-com-ano-atual",
+      "veredito": "aprovado",
+      "nota": "Envelope neutro com a linha do ano corrente como destaque unico, semanas fora marcadas por forma e semana parcial vazada; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:02.318Z",
+      "impressao": "b2bf7628c8b309b900497492d126c37c35d42cc8",
+      "arquivos": {
+        "Chart.tsx": "870eea15fc7af01bb9e8d1fa58d19ab75b0d2047",
+        "data.ts": "0c15cecb486e2db2251be3e6f9635c95317229f9",
+        "meta.json": "58b69653fd22fd70fe2e7480ec1bff7d73c9e579"
+      }
+    },
+    {
+      "versao": "v3_cenarios-de-receita-2027",
+      "veredito": "aprovado",
+      "nota": "Cenarios discretos nomeados nas bordas, sem linguagem de probabilidade, meta com extendDomain; tique de moeda quebra em duas linhas, observacao no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:06.833Z",
+      "impressao": "e1aa10ffe3622f58c50967393f77fbf885c6cd54",
+      "arquivos": {
+        "Chart.tsx": "379619244227faede0c1acce13f2b923fe299d8c",
+        "data.ts": "6937b867f825fe71def145a49663ccaceddc1c6d",
+        "meta.json": "3e144a7c135e08d7b9e5fdee8a613e5dbd0bf2bb"
+      }
+    },
+    {
+      "versao": "v4_perimetro-amplo-sem-dado",
+      "veredito": "aprovado",
+      "nota": "Ausencia vira ausencia de faixa, nunca zero nem interpolacao; restrito segue visivel dentro do sombreado nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:05:12.160Z",
+      "impressao": "002b20a313455e788f8fd3ca5276255347612cbc",
+      "arquivos": {
+        "Chart.tsx": "22af5f573104a9a78917f4cc768e2b8103815232",
+        "data.ts": "77b0640ed445b1e69b6eb8eabfebf8c7ddd4c85c",
+        "meta.json": "2c33878fa27c23fb5f3ee55041773fca9d2a78d8"
+      }
+    }
+  ]
+}

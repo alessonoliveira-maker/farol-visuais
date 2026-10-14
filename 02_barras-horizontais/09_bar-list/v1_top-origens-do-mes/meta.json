@@ -1,0 +1,13 @@
+{
+  "title": "Top 5 origens de lead do mês",
+  "useCase": "De onde vieram mais leads no mês, num card estreito ao lado dos KPIs de marketing.",
+  "demonstrates": [
+    "Barra de fundo em div absoluta com largura em percentual do maior valor da lista",
+    "Linha de altura fixa com nome à esquerda e contagem tabular à direita",
+    "Barra de fundo distinguível do cartão no tema escuro sem competir com o texto",
+    "Nota de rodapé dizendo que a barra mede contra o maior valor da lista"
+  ],
+  "canvas": { "width": 360, "height": 320 },
+  "frame": "card",
+  "notes": "Canvas por número, 40 px acima do preset kpi-alto: a conta da ESP-6 para 5 linhas de 24 px com 6 px de vão mais a nota de rodapé não cabe nos 280 px do preset (ESP-2)."
+}

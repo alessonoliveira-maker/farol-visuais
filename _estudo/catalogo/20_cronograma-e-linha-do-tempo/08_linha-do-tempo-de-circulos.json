@@ -1,0 +1,73 @@
+{
+  "slug": "08_linha-do-tempo-de-circulos",
+  "nome": "Linha do tempo de círculos",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Eventos discretos sobre um eixo de tempo, uma faixa por categoria, com círculo de área proporcional à magnitude: mostra quando as coisas aconteceram e de que tamanho foram. No Recharts é um ScatterChart com XAxis numérico de datas, YAxis de categoria e ZAxis dataKey do valor com range em área e domain [0, max] explícito, sem o qual o menor valor vira o menor círculo e a proporção se perde. Círculos translúcidos desenhados do maior para o menor evitam que um esconda o vizinho. Absorve a linha do tempo de eventos micro da família 24: régua sem eixo sob um sparkline, com o mesmo domínio de tempo, forma por tipo de evento e agrupamento do que cai no mesmo pixel.",
+  "quando_usar": [
+    "Eventos com magnitude em 2 a 6 categorias, de 10 a cerca de 150 pontos no período",
+    "Fechamentos por executivo ao longo do trimestre, em que valor e data contam juntos",
+    "Receita ou volume por produto mês a mês, lido como ritmo e concentração",
+    "Régua de eventos sob um sparkline, para situar o degrau da série no tempo"
+  ],
+  "quando_evitar": [
+    "A leitura precisa de valor exato: use colunas (família 03) ou barras (família 02)",
+    "Série contínua amostrada no tempo: use linhas (família 04)",
+    "Eventos sem magnitude: use a linha do tempo de marcos (20/02)",
+    "Muitos eventos no mesmo dia se sobrepondo: agregue por semana ou use o mapa de calor (família 15)",
+    "Eventos explicando uma métrica com eixo e rótulos: marque sobre a série (04/01)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_fechamentos-por-executivo",
+      "titulo": "Fechamentos por semana por executivo",
+      "caso_de_uso": "Comercial: quando fecharam e de que tamanho foram os fechamentos fictícios de Executivo 01 a Executivo 05 em 2026-T3.",
+      "o_que_demonstra": [
+        "ScatterChart com XAxis numérico em milissegundos UTC e YAxis de categoria",
+        "ZAxis dataKey valor com range em área e domain [0, max] declarado",
+        "Opacidade 0,6 e dado ordenado do maior para o menor antes do render",
+        "Legenda de tamanho com três círculos de referência por formatCurrencyCompact",
+        "Ticks mensais gerados em TypeScript por Date.UTC e formatMonthShort"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_receita-por-produto-com-maior-mes",
+      "titulo": "Receita reconhecida por produto em 24 meses",
+      "caso_de_uso": "Diretoria: como a receita fictícia de 4 produtos se distribuiu entre 2024-10 e 2026-09 e qual mês concentrou o maior valor.",
+      "o_que_demonstra": [
+        "Quatro faixas por 24 meses com o mesmo domain de ZAxis em todas as faixas",
+        "Cor fixa por produto em var(--chart-N) com rótulo de faixa no YAxis",
+        "Maior círculo anotado R$ 1,2 mi por LabelList com content customizado",
+        "Total do período por faixa escrito à direita por formatCurrencyCompact",
+        "Dica com mês por formatMonthShort, produto e valor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_regua-micro-de-eventos-sob-sparkline",
+      "titulo": "Eventos de mídia sob o CPL qualificado",
+      "caso_de_uso": "Marketing: que eventos de 2026 coincidem com o degrau do CPL qualificado mostrado no sparkline logo acima.",
+      "o_que_demonstra": [
+        "ScatterChart sem eixos visíveis, com XAxis hide e o mesmo domain do sparkline",
+        "Forma por tipo de evento, no máximo três: circle, triangle e diamond",
+        "ZAxis de range fixo quando o evento não tem magnitude",
+        "Eventos no mesmo pixel agrupados numa marca com contador e lista na dica",
+        "Dica que descreve o evento sem afirmar efeito sobre o CPL"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v4_estornos-e-meses-sem-coleta",
+      "titulo": "Receita com estornos e meses sem coleta",
+      "caso_de_uso": "Comercial: estornos fictícios de 2026 desenhados como círculos vazados e dois meses sem coleta que não podem virar zero.",
+      "o_que_demonstra": [
+        "Estorno com a área do valor absoluto, contorno sem preenchimento e legenda estorno",
+        "Nunca área ou raio negativo: o sinal vai para a forma e para o texto com sinal −",
+        "Mês sem coleta com ReferenceArea neutra e o texto de formatUnavailable",
+        "Zero medido com marca mínima distinta da ausência de dado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

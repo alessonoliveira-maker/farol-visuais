@@ -1,0 +1,108 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "11_curva-de-sobrevivencia",
+  "versoes": {
+    "v1_tempo-ate-a-decisao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Degrau com censura em traço, mediana de 58 dias no cruzamento de 50%, tabela de em risco alinhada aos tiques nos dois temas. Observações no README: tique X sem unidade (NUM-6), linha de leitura sem tabular-nums (TIP-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:42.734Z",
+      "impressao": "5630d70094445da18282118014df8f9f670512ab",
+      "arquivos": {
+        "Chart.tsx": "f512ea5584b825242653a6a3707139f52885b536",
+        "data.ts": "03e4b6ebe3fa4e17de159950df420b4ac88ac458",
+        "meta.json": "3804653a2ea8d867c9a9aa6ed0b79124ba494614"
+      }
+    },
+    "v2_indicacao-contra-midia-paga": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Duas curvas por slot do dado (1 e 3), medianas 37 e 75 dias rotuladas com o nome da origem, tabela de em risco por origem alinhada. Observações no README: ordem da legenda, linhas da tabela sem nome, NUM-6, TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:43.239Z",
+      "impressao": "2ba90ac2695454bf10f1b6f707ac65a7b9ea7402",
+      "arquivos": {
+        "Chart.tsx": "11e801b3f8940385eb47835f610369718c273fc3",
+        "data.ts": "41375a87f984e2472774b856645247d17dc3bc38",
+        "meta.json": "7930406977358e0fc5236a882bea28c074820534"
+      }
+    },
+    "v3_primeiro-contato-humano": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Censura dos leads sem contato, SLA de 30 minutos em guia, cruzamentos 25% e 81% com rótulo direto sem colisão nos dois temas. Observações no README: guia do SLA sem rótulo próprio, sem tabela de em risco (declarado), modo inverted sem render.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:43.724Z",
+      "impressao": "cc621bb0e2bea19131306db4ac32cce0f9dfae71",
+      "arquivos": {
+        "Chart.tsx": "5b5755dd13bc7566c8c403789835b432eabd8234",
+        "data.ts": "66fe8b687e0e869289dbbea0c43e67d368d8b020",
+        "meta.json": "cb328a5e164789050f5eaf4bca4d7da8ccf5fe75"
+      }
+    },
+    "v4_cauda-rala": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cauda tracejada a partir do dia com menos de 15 em risco, números 11, 5 e 0 em destaque na tabela, eixo com piso de 240 dias. Observações no README: rótulo da guia do lado sólido, rodapé do eixo fixo vindo da constante, NUM-6, TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:44.249Z",
+      "impressao": "4ef8a30d3e0311a3575e7c56a7a8bfa0bd7d4495",
+      "arquivos": {
+        "Chart.tsx": "7052db32dbd2024b72e173041f2951138947da96",
+        "data.ts": "a1d01d652995ce35c9a12171e630f35191563800",
+        "meta.json": "64703cac3fb5dcb2d50b58fa1230aefd4f208feb"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_tempo-ate-a-decisao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Degrau com censura em traço, mediana de 58 dias no cruzamento de 50%, tabela de em risco alinhada aos tiques nos dois temas. Observações no README: tique X sem unidade (NUM-6), linha de leitura sem tabular-nums (TIP-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:42.734Z",
+      "impressao": "5630d70094445da18282118014df8f9f670512ab",
+      "arquivos": {
+        "Chart.tsx": "f512ea5584b825242653a6a3707139f52885b536",
+        "data.ts": "03e4b6ebe3fa4e17de159950df420b4ac88ac458",
+        "meta.json": "3804653a2ea8d867c9a9aa6ed0b79124ba494614"
+      }
+    },
+    {
+      "versao": "v2_indicacao-contra-midia-paga",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Duas curvas por slot do dado (1 e 3), medianas 37 e 75 dias rotuladas com o nome da origem, tabela de em risco por origem alinhada. Observações no README: ordem da legenda, linhas da tabela sem nome, NUM-6, TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:43.239Z",
+      "impressao": "2ba90ac2695454bf10f1b6f707ac65a7b9ea7402",
+      "arquivos": {
+        "Chart.tsx": "11e801b3f8940385eb47835f610369718c273fc3",
+        "data.ts": "41375a87f984e2472774b856645247d17dc3bc38",
+        "meta.json": "7930406977358e0fc5236a882bea28c074820534"
+      }
+    },
+    {
+      "versao": "v3_primeiro-contato-humano",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Censura dos leads sem contato, SLA de 30 minutos em guia, cruzamentos 25% e 81% com rótulo direto sem colisão nos dois temas. Observações no README: guia do SLA sem rótulo próprio, sem tabela de em risco (declarado), modo inverted sem render.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:43.724Z",
+      "impressao": "cc621bb0e2bea19131306db4ac32cce0f9dfae71",
+      "arquivos": {
+        "Chart.tsx": "5b5755dd13bc7566c8c403789835b432eabd8234",
+        "data.ts": "66fe8b687e0e869289dbbea0c43e67d368d8b020",
+        "meta.json": "cb328a5e164789050f5eaf4bca4d7da8ccf5fe75"
+      }
+    },
+    {
+      "versao": "v4_cauda-rala",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Cauda tracejada a partir do dia com menos de 15 em risco, números 11, 5 e 0 em destaque na tabela, eixo com piso de 240 dias. Observações no README: rótulo da guia do lado sólido, rodapé do eixo fixo vindo da constante, NUM-6, TIP-1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:44.249Z",
+      "impressao": "4ef8a30d3e0311a3575e7c56a7a8bfa0bd7d4495",
+      "arquivos": {
+        "Chart.tsx": "7052db32dbd2024b72e173041f2951138947da96",
+        "data.ts": "a1d01d652995ce35c9a12171e630f35191563800",
+        "meta.json": "64703cac3fb5dcb2d50b58fa1230aefd4f208feb"
+      }
+    }
+  ]
+}

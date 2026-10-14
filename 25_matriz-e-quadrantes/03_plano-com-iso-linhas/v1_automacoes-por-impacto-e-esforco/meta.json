@@ -1,0 +1,14 @@
+{
+  "title": "Automações de pré-vendas por impacto e esforço",
+  "useCase": "Pré-vendas: quais das 14 automações do backlog rendem mais impacto por unidade de esforço estimada pelo time?",
+  "demonstrates": [
+    "Iso-linhas de 3x, 2x, 1x e 0,5x com ReferenceLine segment cortada na borda",
+    "Rótulo de razão na ponta de cada iso-linha, em traço de fundo",
+    "Divisórias de região em traço médio, acima das iso-linhas na hierarquia",
+    "Eixos de escore 1 a 5 com contorno tracejado: avaliação do time, não medição",
+    "Deslocamento determinístico para itens na mesma coordenada, avisado no rodapé"
+  ],
+  "canvas": { "width": 640, "height": 520 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset card (GEO-1): 640x360 dá corpo de 574 x 225 a 241 px e, descontadas a linha de leitura (20), a linha que declara a avaliação do time (24), o rodapé (24), o topo de 36 px com os títulos de região e a razão na ponta das retas, e os 44 px do eixo X com a fila de baixo, sobrariam cerca de 77 px de plano para cinco notas; com 520 de altura o plano passa de 230 px, perto de 47 px por nota. A leitura oficial é a razão, dita na linha de leitura: os 4 itens com 2x ou mais saem em chart-1 com nome e razão escritos, e os demais em text-muted. As retas saem de clipRatioLine, em TypeScript, com os dois extremos dentro do domínio de 0,5 a 5,5, e vão em line-strong de 1 px, que é pano de fundo pela ACE-6; as divisórias da matriz clássica vão em text-muted de 1,5 px, um degrau acima, e ficam em 3,5 para nenhuma nota inteira cair em cima delas. Os nomes das quatro regiões ficam FORA do plano, acima e abaixo da região de cada um: as quatro retas se abrem a partir do canto de baixo e a de razão 1 sai pelo canto de cima, então nenhum canto interno fica livre de reta. O contorno tracejado é um retângulo desenhado na camada própria, não o axisLine do eixo, que segue desligado (EIX-5). Itens de mesmas notas são afastados em pixel ao longo da reta que liga a origem ao ponto, 12 px entre centros, para os dois continuarem na mesma razão; o ponto é passado ao Scatter como elemento, porque só componente dentro do gráfico lê a escala. Eixo Y com 28 px, abaixo da faixa de 48 a 64 da EIX-6, porque o tique é um algarismo. As guardas de contraste e de espessura de marca não medem dispersão (preview com transform): chart-1 mede 9,50:1 no escuro e 6,00:1 no claro contra o cartão, e text-muted 5,21:1 e 5,37:1."
+}

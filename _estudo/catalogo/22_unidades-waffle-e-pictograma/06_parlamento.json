@@ -1,0 +1,71 @@
+{
+  "slug": "06_parlamento",
+  "nome": "Parlamento (hemiciclo)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Assentos em fileiras concêntricas de um semicírculo, coloridos por grupo em ordem angular, da esquerda para a direita. Serve quando o conjunto tem um número fixo de lugares (contas de uma carteira com teto, vagas, vitórias do ano) e a pergunta é quem ocupa quanto, com a linha de maioria ou de teto como referência. SVG puro em React: assentos por fileira proporcionais ao raio, grupos atribuídos pela ordem angular global de todos os assentos, e raio do ponto limitado pelo menor espaçamento entre vizinhos. Legível de cerca de 10 a 400 assentos; fora disso, uma fileira só com pontos grandes ou troca de unidade.",
+  "quando_usar": [
+    "Composição de um conjunto com teto natural de lugares, de 10 a cerca de 400 assentos",
+    "Pergunta de maioria: quais grupos juntos passam da metade",
+    "Ocupação de capacidade com lugares vazios visíveis, como carteira contra teto",
+    "Peça de apresentação para diretoria, com o total no centro da base"
+  ],
+  "quando_evitar": [
+    "Contagem sem teto natural: waffle em barras (22/02)",
+    "Mais de cerca de 400 assentos: os pontos somem; waffle (22/01) ou 1 assento = 10",
+    "Composição comparada entre vários grupos: waffles comparativos (22/01) ou barra 100% (02)",
+    "Diferenças finas entre grupos: barras horizontais ordenadas (02/01)",
+    "Dois ou três grupos sem maioria em jogo: semi rosca (07/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/22_unidades-waffle-e-pictograma.md",
+  "versoes": [
+    {
+      "slug": "v1_contas-da-carteira-por-segmento",
+      "titulo": "Contas da carteira por segmento",
+      "caso_de_uso": "Comercial: como as 120 contas da carteira de um executivo se dividem entre os segmentos atendidos.",
+      "o_que_demonstra": [
+        "Função hemicycle em TypeScript com assentos por fileira proporcionais ao raio",
+        "Grupos atribuídos pela ordem angular global, nunca fileira por fileira",
+        "Raio do ponto pelo menor espaçamento entre vizinhos da fileira interna",
+        "Total no centro da base em font-display e legenda com contagem"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_ocupacao-do-teto-de-contas",
+      "titulo": "Ocupação do teto de contas",
+      "caso_de_uso": "Comercial: quantos dos 120 lugares da carteira estão ocupados, por conta ativa e em risco, e quantos sobram.",
+      "o_que_demonstra": [
+        "Lugares vazios em --surface-overlay contando como parte do teto",
+        "Ativas em --chart-1 e em risco em --warning com contorno, não só cor",
+        "Texto 104 de 120 no centro e folga de 16 escrita ao lado",
+        "Dica por grupo com contagem e taxa por formatRateWithVolume"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_vitorias-do-ano-e-linha-de-maioria",
+      "titulo": "Vitórias do ano por origem e maioria",
+      "caso_de_uso": "Diretoria: quais origens juntas respondem por mais da metade das 74 vitórias do ano.",
+      "o_que_demonstra": [
+        "Linha de maioria radial no assento 38, com o rótulo metade das vitórias",
+        "Indicação e cliente ativo à esquerda, para a soma cruzar a linha de maioria",
+        "Anotação indicação e cliente ativo somam 41 ligada ao arco",
+        "Cor por origem com seriesColor(i), igual ao restante do painel",
+        "Grupo sem origem declarada por último, em --line-strong"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_hemiciclo-com-7-e-com-900-lugares",
+      "titulo": "Hemiciclo com 7 e com 900 lugares",
+      "caso_de_uso": "Diretoria: o que o componente faz quando o conjunto tem só 7 lugares ou passa de 400.",
+      "o_que_demonstra": [
+        "Total 7 em uma fileira só, com pontos grandes",
+        "Número de fileiras calculado do total, e não fixo no dado",
+        "Total 900 troca para 1 assento = 10, com aviso escrito sobre a unidade",
+        "Total indisponível escreve formatUnavailable no lugar do arco"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

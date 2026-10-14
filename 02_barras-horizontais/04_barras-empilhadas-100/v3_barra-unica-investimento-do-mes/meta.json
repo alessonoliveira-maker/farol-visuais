@@ -1,0 +1,12 @@
+{
+  "title": "Investimento do mês por plataforma",
+  "useCase": "Como o investimento de mídia do mês se divide entre plataformas, numa faixa de cabeçalho da tela de Marketing.",
+  "demonstrates": [
+    "Barra única de composição com largura em percentual e vão de 2 px entre segmentos",
+    "Percentual dentro dos três maiores segmentos e o restante agregado em outras",
+    "Soma fechada em 100% com o resto do arredondamento no último segmento",
+    "Legenda em linha abaixo e total em moeda compacta à direita"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

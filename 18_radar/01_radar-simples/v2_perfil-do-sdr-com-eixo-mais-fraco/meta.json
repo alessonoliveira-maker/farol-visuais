@@ -1,0 +1,14 @@
+{
+  "title": "Perfil do SDR 04 com o eixo mais fraco",
+  "useCase": "Pré-vendas, 2026-T3: qual dimensão puxa o SDR 04 para baixo e merece a conversa desta semana?",
+  "demonstrates": [
+    "Grade circular com linhas radiais leves e três níveis rotulados num único ângulo",
+    "Valor escrito em cada vértice por label do Radar, em font-display tabular",
+    "Eixo mais fraco com ponto maior e nome e valor em peso 700",
+    "Anotação curta calculada do dado, não digitada",
+    "Frase acessível que nomeia a dimensão mais forte e a mais fraca"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O preenchimento sai com 0,66 de opacidade, não 0,28 como o catálogo sugere: a ACE-5 pede que a área composta de --chart-1 fique acima de 3:1 no tema claro e o mínimo calculado é 0,66 (com 0,28 mede 1,53:1). O contrato vence. A grade sobe acima da área por zIndex para continuar visível sob o preenchimento."
+}

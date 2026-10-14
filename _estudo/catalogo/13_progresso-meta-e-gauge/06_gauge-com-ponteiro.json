@@ -1,0 +1,70 @@
+{
+  "slug": "06_gauge-com-ponteiro",
+  "nome": "Gauge semicircular com ponteiro e faixas",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "O velocímetro: arco de 180 graus dividido em faixas por intensidade, ponteiro apontando o valor e número grande. É o formato mais pedido e o mais criticado da família; o acabamento do Farol o registra como armadilha e nomeia o bullet como alternativa. Existe para o pedido de diretoria de uma peça única de destaque, com três exigências: mínimo e máximo escritos, valor em texto grande e um gauge por tela. Em Recharts, PieChart semicircular com uma Cell por faixa; o ângulo do ponteiro sai do valor por valueToAngle, nunca do midAngle do setor. Absorve a variante com nota, em que o estado vira palavra no centro e o número fica de apoio.",
+  "quando_usar": [
+    "Pedido explícito de diretoria por uma métrica só, como peça única de destaque",
+    "Avaliação qualitativa com 3 a 5 estados nomeados e limiares com dono e data",
+    "Capacidade contra teto medido em apresentação, com a zona de estouro no arco"
+  ],
+  "quando_evitar": [
+    "Qualquer caso em que a barra caiba: o mesmo dado em bullet lê melhor (13/02)",
+    "Mais de um gauge na mesma tela, ou comparação entre itens",
+    "Medida contínua sem estados definidos: arco preenchido (13/05) ou barra (13/01)",
+    "Limiares inventados na hora, sem origem declarada na legenda",
+    "Valor que passa do máximo com frequência: a barra com excedente (13/01) mostra melhor"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_atingimento-trimestral-com-ponteiro",
+      "titulo": "Atingimento da meta trimestral com ponteiro",
+      "caso_de_uso": "Diretoria: em que faixa está o atingimento da meta de receita de 2026-T3 e qual o valor exato por trás do ponteiro?",
+      "o_que_demonstra": [
+        "PieChart com startAngle 180 e endAngle 0 e uma Cell por faixa",
+        "Ângulo do ponteiro por valueToAngle, contínuo e não preso ao meio do setor",
+        "Ponteiro como polígono preenchido com contorno em surface-raised",
+        "Mínimo e máximo nas pontas e o valor em texto grande abaixo do arco",
+        "Faixas por intensidade de um tom, sem semáforo de matiz"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cobertura-de-dado-com-nota",
+      "titulo": "Cobertura de dado do funil com nota de estado",
+      "caso_de_uso": "Comercial: a cobertura de campos mínimos das oportunidades está em atenção, e a quantos pontos da faixa saudável?",
+      "o_que_demonstra": [
+        "Estado como palavra no centro e o valor numérico de apoio logo abaixo",
+        "Quatro setores nomeados com limiares declarados e a origem na legenda",
+        "Distância até a fronteira mais próxima escrita em pontos percentuais",
+        "Texto central em div absoluto por Tailwind, fora do viewBox do Recharts"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_capacidade-contra-teto-medido",
+      "titulo": "Capacidade da pré-vendas contra o teto",
+      "caso_de_uso": "Pré-vendas: as 258 entradas de 2026-08 cabem no teto medido de 274 ou já estão na faixa de atenção?",
+      "o_que_demonstra": [
+        "Escala de 0 a 320 com faixa confortável, atenção e estouro acima do teto",
+        "Traço do teto com rótulo próprio, para não ser lido como fronteira comum",
+        "Folga escrita em texto: faltam 16 entradas para o teto",
+        "Polaridade de capacidade: zona de estouro com ícone, nunca verde no cheio"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_valor-acima-do-maximo",
+      "titulo": "Ponteiro travado com valor acima do máximo",
+      "caso_de_uso": "Diretoria: 338 entradas na pré-vendas em 2026-09 contra um arco que vai até 320; como mostrar o estouro sem esticar a escala?",
+      "o_que_demonstra": [
+        "Ponteiro travado no fim do arco pela trava de valueToAngle",
+        "Marca de transbordo na ponta e o valor real escrito em texto grande",
+        "Domínio fixo declarado, sem esticar em silêncio nem dar segunda volta",
+        "Frase acessível que diz o valor real e quanto passou do máximo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

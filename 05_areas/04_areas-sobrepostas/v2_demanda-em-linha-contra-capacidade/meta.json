@@ -1,0 +1,13 @@
+{
+  "title": "Demanda de entradas contra capacidade",
+  "useCase": "Mostrar em que semanas a demanda de entradas passou da capacidade de triagem e em quanto.",
+  "demonstrates": [
+    "ComposedChart com Area de capacidade em stepAfter antes da Line de demanda",
+    "Área clara e linha saturada: a linha é a protagonista, a área é o envelope",
+    "Semanas acima da capacidade com ponto em negative e rótulo do excedente",
+    "Excedente com sinal e palavra, não só cor (ACE-2)",
+    "Legenda nomeando as duas marcas, área e linha, para nenhuma ficar sem nome"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

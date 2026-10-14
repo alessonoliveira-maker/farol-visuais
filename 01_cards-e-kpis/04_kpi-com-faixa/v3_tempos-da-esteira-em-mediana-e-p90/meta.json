@@ -1,0 +1,15 @@
+{
+  "title": "Tempos da esteira em mediana e p90",
+  "useCase": "Quanto tempo leva cada etapa da esteira, do primeiro contato ao aceite do handoff, olhando a mediana e a cauda?",
+  "demonstrates": [
+    "Três réguas comparáveis com teto declarado no p99, e não do mínimo ao máximo",
+    "Faixa interquartil preenchida, traço na mediana e marcador no p90",
+    "Mediana no número e estatística no rótulo, nunca tempo médio",
+    "SLA de cada etapa como traço vertical tracejado na régua",
+    "Tamanho da amostra escrito em cada cartão: n = 412 leads",
+    "Quantis em função pura com método de interpolação declarado"
+  ],
+  "canvas": { "width": 960, "height": 330 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset faixa (960x260): a nota de método e teto comum no rodapé e o cartão próprio por etapa não cabiam nos 170 px de corpo do preset."
+}

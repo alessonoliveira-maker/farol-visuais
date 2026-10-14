@@ -1,0 +1,13 @@
+{
+  "title": "Meses acima da média de investimento",
+  "useCase": "Ver quais meses do ano ficaram acima da média mensal de investimento em mídia e qual foi o maior deles.",
+  "demonstrates": [
+    "Anel tracejado da média mensal, pela mesma conta de raio dos setores",
+    "Meses acima da média na cor de destaque e abaixo em neutro com o valor escrito",
+    "Maior mês com nome e valor em peso 700, sem depender só da cor",
+    "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+    "Frase acessível calculada com a média, o maior mês e quantos meses ficaram acima"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

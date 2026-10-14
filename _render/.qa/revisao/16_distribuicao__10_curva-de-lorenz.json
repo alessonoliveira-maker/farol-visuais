@@ -1,0 +1,121 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "10_curva-de-lorenz",
+  "versoes": {
+    "v1_concentracao-da-receita-por-cliente": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 10% maiores com 52% e Gini 0,57 conferidos, plano quadrado de 238 px, cinco tiques por eixo nos dois temas; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:10.677Z",
+      "impressao": "469c9fa1eaced481f15803b626f752aea7f03da4",
+      "arquivos": {
+        "Chart.tsx": "1b3cc50aeb771c6e53e7a2bc132a8d551fce4ce7",
+        "data.ts": "32dc350a65805204c98daf73872f24026a7eca30",
+        "meta.json": "97ab0c03f00fb53f4781a0de156e8517524d79b6"
+      }
+    },
+    "v2_ano-anterior-contra-atual": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 45% para 55% (+10 p.p.) com base nomeada, Gini 0,49 e 0,59, legenda na ordem visual, sombra só em 2025; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:11.162Z",
+      "impressao": "6e2f40fe78466d7f44eb9a5f6576a6514d9e8deb",
+      "arquivos": {
+        "Chart.tsx": "1d9ff8561f707c5b7b49f552e8613ce24028efcd",
+        "data.ts": "73b628c2abd9424672202391d7633f92e0859c27",
+        "meta.json": "085f75c74c2aa9bcd0663b36092229a83dbcb859"
+      }
+    },
+    "v3_investimento-de-midia-por-campanha": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3: o tique 100% do eixo X sai cortado na borda direita do quadrado nos dois temas (centrado em x=234 num svg de 242 px com overflow hidden, cerca de 6 px fora); subir MARGIN.right para 16 e refazer a conta do quadrado para 60 dos dois lados. O tique de 75% voltou. Parecer em validation/revisao_16_distribuicao__10_curva-de-lorenz_2026-10-05.md, segunda passada",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:05.830Z",
+      "impressao": "c0e5bf423d3922d9574be3533e5189c805d5a763",
+      "arquivos": {
+        "Chart.tsx": "ac942f733ba54ec62b6e9e0c0bc39cd13e31316f",
+        "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
+        "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
+      }
+    },
+    "v4_estornos-e-clientes-sem-receita": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 23 estornos fora, 113 zeros mantidos (30% de 377), Gini 0,70 contra 0,58 sem zeros; ramo de menos de 20 só lido no código; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:12.201Z",
+      "impressao": "382e563dc359c2d3c8c9daad3de6d63ff4069fc5",
+      "arquivos": {
+        "Chart.tsx": "69f5a6b997abcf650af833700bb000e169870718",
+        "data.ts": "b327818257af98d87ac77ef759430b135d3de3b7",
+        "meta.json": "a82202f2b1b14e7d7d8921d52fabf7110c49f556"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_concentracao-da-receita-por-cliente",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 10% maiores com 52% e Gini 0,57 conferidos, plano quadrado de 238 px, cinco tiques por eixo nos dois temas; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:10.677Z",
+      "impressao": "469c9fa1eaced481f15803b626f752aea7f03da4",
+      "arquivos": {
+        "Chart.tsx": "1b3cc50aeb771c6e53e7a2bc132a8d551fce4ce7",
+        "data.ts": "32dc350a65805204c98daf73872f24026a7eca30",
+        "meta.json": "97ab0c03f00fb53f4781a0de156e8517524d79b6"
+      }
+    },
+    {
+      "versao": "v2_ano-anterior-contra-atual",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 45% para 55% (+10 p.p.) com base nomeada, Gini 0,49 e 0,59, legenda na ordem visual, sombra só em 2025; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:11.162Z",
+      "impressao": "6e2f40fe78466d7f44eb9a5f6576a6514d9e8deb",
+      "arquivos": {
+        "Chart.tsx": "1d9ff8561f707c5b7b49f552e8613ce24028efcd",
+        "data.ts": "73b628c2abd9424672202391d7633f92e0859c27",
+        "meta.json": "085f75c74c2aa9bcd0663b36092229a83dbcb859"
+      }
+    },
+    {
+      "versao": "v3_investimento-de-midia-por-campanha",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, EIX-4 e EIX-3b, REC-29: o eixo X perde o tique de 75% e a linha de grade dele (4 de 5, falta x=186,5), no trecho onde começa a faixa; pôr interval={0} no XAxis e conferir 75% contra 100%. Parecer em validation/revisao_16_distribuicao__10_curva-de-lorenz_2026-10-05.md",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:11.651Z",
+      "impressao": "78cc50a59d1c2e6bac2c77f7bb7a79a88942426d",
+      "arquivos": {
+        "Chart.tsx": "b24c65f4cae5e42c43326052c52c53690c364063",
+        "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
+        "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
+      }
+    },
+    {
+      "versao": "v4_estornos-e-clientes-sem-receita",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não; 23 estornos fora, 113 zeros mantidos (30% de 377), Gini 0,70 contra 0,58 sem zeros; ramo de menos de 20 só lido no código; observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:41:12.201Z",
+      "impressao": "382e563dc359c2d3c8c9daad3de6d63ff4069fc5",
+      "arquivos": {
+        "Chart.tsx": "69f5a6b997abcf650af833700bb000e169870718",
+        "data.ts": "b327818257af98d87ac77ef759430b135d3de3b7",
+        "meta.json": "a82202f2b1b14e7d7d8921d52fabf7110c49f556"
+      }
+    },
+    {
+      "versao": "v3_investimento-de-midia-por-campanha",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3: o tique 100% do eixo X sai cortado na borda direita do quadrado nos dois temas (centrado em x=234 num svg de 242 px com overflow hidden, cerca de 6 px fora); subir MARGIN.right para 16 e refazer a conta do quadrado para 60 dos dois lados. O tique de 75% voltou. Parecer em validation/revisao_16_distribuicao__10_curva-de-lorenz_2026-10-05.md, segunda passada",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:45:05.830Z",
+      "impressao": "c0e5bf423d3922d9574be3533e5189c805d5a763",
+      "arquivos": {
+        "Chart.tsx": "ac942f733ba54ec62b6e9e0c0bc39cd13e31316f",
+        "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
+        "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
+      }
+    }
+  ]
+}

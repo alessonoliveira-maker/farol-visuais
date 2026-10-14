@@ -1,0 +1,14 @@
+{
+  "title": "Produto que mais cresceu no trimestre",
+  "useCase": "Comercial: qual produto mais cresceu contra o 2026-T2 e quanto ele pesa na receita do 2026-T3.",
+  "demonstrates": [
+    "Destaque escolhido no data.ts, nunca inferido no render",
+    "Uma célula acesa em chart-1 e as demais no neutro de dado text-muted",
+    "Texto vazado na cor do cartão sobre o neutro, o par medido em 5,21:1 e 5,37:1",
+    "Anotação calculada do dado: crescimento, pontos de participação e a base de cada um",
+    "Nome em duas linhas por palavra inteira, e célula muda quando nem isso cabe"
+  ],
+  "canvas": { "width": 880, "height": 420 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), e a conta: o corpo mede 814 x 301,5 px nesta moldura, e a peça gasta 23 px na linha de leitura, 59 px na lista de identificação em três colunas e 17 px na linha do produto fora do desenho, o que deixa 202,5 px de altura para o treemap; no preset card de 640x360 a mesma pilha deixaria 143 px e a lista de dez itens não caberia em três colunas de 191 px. Duas colisões entre a especificação do catálogo e o CONTRATO, as duas resolvidas a favor do contrato. A primeira: o catálogo pede as células não destacadas em chart-1 com opacidade 0,6, e a medição reprova, porque chart-1 composto a 0,6 contra o cartão mede 4,22:1 no escuro e 2,69:1 no claro, abaixo do piso de 3:1 da WCAG 1.4.11 que a ACE-5 cobra da marca com opacidade; o neutro saiu para text-muted, que a 17.2 nomeia como neutro de dado sem valor escrito em toda marca e que mede 5,21:1 e 5,37:1 por si. Não serve line-strong, o neutro do molde de ranking, porque a isenção dele exige o número escrito em cada marca e no treemap a célula pequena fica muda por geometria. A segunda: o catálogo pede o contorno do destaque em accent-amber, que não tem utilitário, é acento de interface e repete o hex de warning e de prov-premissa, e pela COR-8 um visual que pinta variação semântica no corpo não usa esses hexes; o destaque saiu em chart-1, que a 17.2 nomeia como a cor de quando só uma coisa acende, com o segundo canal da COR-2 no peso 700 do nome e do valor da célula acesa e na linha de leitura que a nomeia. A régua de tamanho da área não é constante (ROT-5b): o que ancora a leitura é o total do recorte e a participação do destaque, os dois calculados do dado. A lista de identificação existe porque a dica não conta para a ROT-10, e por isso a peça não desenha dica nenhuma (DIC-1): tudo o que ela diria está escrito."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Perdas por motivo e etapa, com totais nas margens",
+  "useCase": "Qual etapa do funil concentra as perdas do trimestre e qual motivo domina dentro dela?",
+  "demonstrates": [
+    "Barras de total por motivo à direita e por etapa embaixo, no mesmo SVG",
+    "Duas escalas nomeadas: cor do miolo para o par, comprimento para o total",
+    "Régua de comprimento comum às duas margens, com teto no maior total",
+    "Total fora da rampa, em neutro, com o número escrito ao lado da barra",
+    "Três estados de célula: perda medida, zero medido e motivo sem registro"
+  ],
+  "canvas": { "width": 960, "height": 530 },
+  "frame": "card",
+  "notes": "Canvas declarado por número porque nenhum preset fecha o cartão, e a conta que a GEO-1 pede é esta: corpo de 894 x 411,5 px (960 menos 66 de recuo por lado; 530 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). O caso de uso tem 85 caracteres e cabe em uma linha na largura de 894 px, cujo limite medido é 153, então o cabeçalho é o de 40,5 px. As linhas escritas consomem 189,5 px do corpo: linha de leitura 12, anotação 18, rótulos de etapa 24, faixa das barras de coluna 54 com o valor 14 abaixo, e duas linhas de rodapé com 18 de passo, sobrando 9,5 px de folga. Restam 222 px para a grade, o que dá 7 linhas de 30 px, acima dos 18 px que o rótulo interno de 12 px exige pela ESP-2. As margens compartilham a régua de comprimento, com teto de 54 px no maior total observado entre linhas e colunas, para que barras de igual comprimento contem igual nos dois sentidos; por isso a barra de linha também termina em 54 px e não ocupa a largura vaga à direita. A cor do miolo desenha cinco degraus, seq-1 a seq-3 e seq-6 a seq-7, e isso vale porque o número está escrito em toda célula, que é a condição da isenção registrada na TOK-8; seq-4 e seq-5 ficam fora porque não aceitam texto nenhum. Medido degrau contra degrau, só o salto de seq-3 para seq-6 separa de fato, 3,03:1 no escuro e 2,84:1 no claro, contra 1,23:1 a 1,52:1 dos outros vizinhos: a cor afirma dois níveis e a ordem fina mora no número, o que está escrito no README. O texto da célula é vazado sem halo, pela ROT-7b, porque tem a marca inteira por baixo. Sobre a cobertura do check, medida e não suposta: ao contrário do que se espera de uma peça svg-puro, a ESPESSURA-MARCA MEDIU esta versão, porque o piso do rótulo interno vale para qualquer marca desenhada à mão, e a célula de 30 px passa contra os 18 px que o texto de 12 px exige; o que não se aplica aqui é o piso geral de 12 px, que só existe onde há Bar do Recharts. As barras das margens ficam fora desse piso pelo mesmo motivo, e medem 12 px de espessura na margem direita e 14 px na de baixo, com o número escrito ao lado das duas."
+}

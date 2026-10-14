@@ -1,0 +1,18 @@
+{
+  "title": "Fechamentos semanais com média móvel",
+  "useCase": "A semana corrente está acima ou abaixo do ritmo das últimas quatro semanas de fechamentos?",
+  "demonstrates": [
+    "Calendário completo gerado em TypeScript no eixo categórico",
+    "Semana ausente como lacuna escrita no desenho, com média nula na janela",
+    "Média móvel de 4 semanas sobre a janela recebida em data, nula e nunca zero em lista curta",
+    "Semana corrente vazada, fora da média, com nota de parcial até a data",
+    "Um tique por mês presente, ancorado na primeira semana daquele mês",
+    "Linha da média por trás das colunas, sem revestimento"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Canvas por número pela GEO-1, e não o preset card de 640x360: o cartão escreve três linhas fora do plano, a legenda de 3 itens (20 px mais 12 px de vão), a linha de leitura (20 px mais 8 px de vão) e a faixa do eixo X (24 px pela EIX-6b), mais a faixa de 30 px reservada no topo para a nota de parcial. Com 360 de altura o plano cairia para 127,5 px e as 5 linhas de grade ficariam a 32 px; com 400 o plano fica em 167,5 px. Desvio declarado da ROT-3: a linha da média é identificada pela legenda acima, e não por rótulo no fim da linha, porque o rótulo no fim cruzaria a coluna do meio do recorte e o halo que a ROT-7 exige abriria uma faixa apagada de cerca de 15 px dentro dela; a legenda ainda resolve a identificação da série de colunas, que no v1 dependia do título do cartão. Desvio declarado da DIC-4: o itemSorter não entra porque o conteúdo próprio da dica já monta as duas entradas na ordem visual, e prop morta engana quem copia. Calendário: o data.ts traz 11 linhas e deixa de fora a semana de 2026-07-27; o componente gera as 12 segundas-feiras com Date.UTC e a semana ausente vira lacuna (closings nulo, nunca zero), escrita no desenho como sem dado sobre a base e como indisponível na dica. A média móvel fatia o calendário, não as linhas, então as janelas de 2026-07-27 a 2026-08-17 ficam nulas por conterem a lacuna, e a linha da média começa em 2026-08-24. Medição à mão que nenhuma guarda faz, pela TOK-9 e pela TOK-10, calculada de tokens.css pela fórmula da WCAG: --chart-3 contra --chart-1 mede 1,47:1 no escuro e 1,03:1 no claro, então a cor sozinha não separa a linha da coluna. Segunda saída da TOK-10: a linha passa por trás das colunas, sem revestimento, e o topo de coluna nenhuma fica coberto; o revestimento de 6 px anterior tinha esse defeito latente."
+}

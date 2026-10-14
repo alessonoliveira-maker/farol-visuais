@@ -1,0 +1,449 @@
+{
+  "slug": "17_comparacao-de-pontos",
+  "nome": "Comparação de pontos",
+  "modelos": [
+    {
+      "slug": "01_dot-plot-de-cleveland",
+      "nome": "Dot plot de Cleveland",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Um ponto por categoria sobre um eixo quantitativo comum, com as categorias empilhadas em linhas e ordenadas por um critério declarado. Troca área por posição: cabe muito mais categoria na mesma altura de cartão e a escala pode começar onde o dado começa, porque o leitor julga posição e não comprimento a partir de uma base. Nenhuma reta atravessa o ponto; a partir de cerca de 8 linhas entra zebra ou separador entre bandas, e a grade quantitativa fica perpendicular. O mesmo desenho absorve o dot plot agrupado (até três marcadores de forma distinta por linha), o de desvio contra uma referência, os pequenos múltiplos com domínio único e a marca direcional para o público que não reconhece o formato.",
+      "quando_usar": [
+        "Um valor por categoria em listas de 12 a 25 linhas, como ticket médio por executivo ou CPL por campanha",
+        "Escala em que o zero não significa nada e cortar a base de uma barra enganaria",
+        "Duas ou três medidas por linha no mesmo eixo, sem conector, com forma e cor por série",
+        "Distância de cada categoria até uma referência comum (meta, média, mês anterior), com o zero no meio",
+        "A mesma comparação em até 8 recortes, em pequenos múltiplos com o mesmo domínio em todos os painéis"
+      ],
+      "quando_evitar": [
+        "Poucas categorias e pergunta de razão (quantas vezes maior): barra da família 02 ou 03",
+        "Mais de três marcadores por linha: o desenho já é linha, família 04",
+        "Dois momentos do mesmo objeto em que a mudança é a notícia: dumbbell ou arrow plot (17/03)",
+        "A forma da distribuição importa mais que o resumo: família 16",
+        "Público que nunca viu o formato numa decisão que a barra comum resolve: a plateia escolhe a barra",
+        "Pequenos múltiplos com domínio calculado por painel: os painéis ficam iguais e os números não"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-medio-por-executivo",
+          "titulo": "Ticket médio por executivo",
+          "caso_de_uso": "Comercial: onde cada um dos 14 executivos fica no ticket médio do trimestre, numa escala que começa em R$ 120 mil.",
+          "o_que_demonstra": [
+            "ScatterChart com YAxis de categoria e XAxis numérico com domínio do registry",
+            "Ordem decrescente declarada no subtítulo e nota de escala sem zero",
+            "Sem grade de categoria: zebra em surface-raised e grade vertical visível",
+            "ReferenceLine tracejada na mediana do time, com rótulo",
+            "Alvo de clique na banda inteira, com 24 px de altura mínima"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_desvio-contra-a-meta-com-marca-direcional",
+          "titulo": "Realizado contra a meta com marca direcional",
+          "caso_de_uso": "Comercial: quanto cada executivo ficou acima ou abaixo da meta do trimestre, legível para quem não conhece o dot plot.",
+          "o_que_demonstra": [
+            "Bar com shape que usa só a ponta: barra esmaecida e traço opaco de 2 px no valor",
+            "Gradiente com id de useId sem dois pontos e stopColor por style",
+            "Domínio simétrico fixo no registry e zero rotulado como meta do trimestre",
+            "Negativos esmaecem em direção ao zero; cor pela polaridade da métrica",
+            "Anotação com a contagem: 5 de 12 abaixo da meta",
+            "Tooltip com realizado, meta e desvio, nunca só o desvio"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_cpl-bruto-qualificado-e-meta-por-origem",
+          "titulo": "CPL bruto, qualificado e meta por origem",
+          "caso_de_uso": "Marketing: em 12 origens de lead, a distância entre o CPL bruto, o CPL qualificado e a meta de CPL de agosto.",
+          "o_que_demonstra": [
+            "Três Scatter no mesmo eixo, com forma distinta por série além da cor",
+            "Ordenação pela distância entre bruto e qualificado, declarada no subtítulo",
+            "Contorno de 1,5 px em surface-base para empate não esconder marcador",
+            "Legenda com a forma exata de cada marcador",
+            "Polaridade menor é melhor aplicada à cor e ao tooltip"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_sla-por-sdr-em-paineis-com-semana-vazia",
+          "titulo": "SLA por SDR em seis semanas",
+          "caso_de_uso": "Pré-vendas: minutos até o primeiro contato de 8 SDRs em seis semanas, incluindo a semana de recesso sem lead.",
+          "o_que_demonstra": [
+            "Pequenos múltiplos com domínio calculado uma vez para os seis painéis",
+            "ReferenceLine do teto de SLA na mesma posição em todos os painéis",
+            "Ponto vazado em line-strong para SDR sem lead, nunca zero",
+            "Painel sem lead mantido na grade com a nota sem lead na semana",
+            "Rótulos de categoria só na primeira coluna e eixo só na borda inferior"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "02_dot-plot-com-intervalo",
+      "nome": "Dot plot com intervalo e distribuição ao fundo",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Ponto do valor central por categoria mais uma faixa horizontal de incerteza, sobre um eixo comum: a estimativa e o quanto ela pode variar, lado a lado, como um forest plot levado ao dashboard. A versão com distribuição ao fundo desenha também os casos individuais, pequenos e translúcidos, atrás do marcador de resumo, para mostrar quantos casos sustentam o ponto sem abrir um box plot. O que a faixa representa (quartis, percentis, intervalo) e o n de cada linha ficam escritos, e o ErrorBar do Recharts recebe distâncias relativas ao ponto, nunca limites absolutos: o dado chega convertido em central menos inferior e superior menos central.",
+      "quando_usar": [
+        "Mediana ou média por categoria em que a dispersão muda a decisão, como ciclo de venda por segmento",
+        "Resumo que precisa mostrar o n e os casos que o sustentam, até cerca de 400 pontos por linha",
+        "Faixa com método declarado (quartis, percentis, intervalo de confiança) contra uma meta ou um SLA",
+        "Até 12 categorias num cartão, todas no mesmo eixo"
+      ],
+      "quando_evitar": [
+        "Incerteza desconhecida ou inventada por regra de bolso: mostre só o ponto (17/01)",
+        "A forma da distribuição é a pergunta, com dois picos ou cauda longa: box plot, strip ou violino da família 16",
+        "Faixa de cenário pessimista a otimista: range plot com marcador (17/04) ou faixa de cenário contra meta (13/07)",
+        "Mais de 400 casos por linha: a nuvem vira barra sólida, use beeswarm ou violino da família 16",
+        "Erro nas duas medidas quantitativas: dispersão com barras de erro (09/07)"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-mediano-por-segmento-com-quartis",
+          "titulo": "Ciclo de venda mediano por segmento",
+          "caso_de_uso": "Comercial: quantos dias leva o ciclo de venda em cada um dos 5 segmentos, com a faixa do primeiro ao terceiro quartil.",
+          "o_que_demonstra": [
+            "Scatter com ErrorBar direction x e serifas de 6 px",
+            "Quartis absolutos convertidos em erro relativo antes do render",
+            "Subtítulo obrigatório: ponto na mediana, faixa entre quartis",
+            "n de negócios escrito ao lado do nome de cada segmento"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_handoff-com-faixa-que-cruza-o-sla",
+          "titulo": "Tempo de aceite do handoff contra o SLA",
+          "caso_de_uso": "Comercial: por executivo, o tempo mediano de aceite do handoff e se a faixa entre quartis atravessa o SLA de 2 dias.",
+          "o_que_demonstra": [
+            "ReferenceLine no SLA de 2 dias, com rótulo",
+            "Faixa que cruza o SLA em cor de atenção e ícone, não só cor",
+            "Anotação: faixa cruza o SLA, resultado não conclusivo",
+            "Ordem pela mediana, declarada no subtítulo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_primeiro-contato-com-leads-ao-fundo",
+          "titulo": "Primeiro contato com os leads ao fundo",
+          "caso_de_uso": "Pré-vendas: minutos até o primeiro contato por SDR, com a mediana na frente e os cerca de 900 leads de agosto atrás.",
+          "o_que_demonstra": [
+            "Dois Scatter: individuais primeiro na árvore, resumo por cima",
+            "Deslocamento vertical por hash do id do lead, nunca Math.random",
+            "Casos de 3 px com opacidade 0,25 e mediana opaca de 6 px",
+            "ReferenceLine no teto de SLA e n ao lado de cada SDR",
+            "Teto de escala declarado, com marca de estouro para os casos acima"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_ticket-por-origem-com-amostra-pequena",
+          "titulo": "Ticket por origem com amostra pequena",
+          "caso_de_uso": "Comercial: ticket mediano das vendas ganhas por origem, quando três origens fecharam menos de 5 negócios no semestre.",
+          "o_que_demonstra": [
+            "Regra n menor que 5: sem faixa, só os casos individuais",
+            "Regra n menor que 10: sem marcador de mediana, com nota no rodapé",
+            "Origem sem nenhum negócio mantida na lista com sem venda no período",
+            "Tooltip que distingue ausência de dado de valor zero"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_dumbbell",
+      "nome": "Dumbbell e arrow plot",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Dois pontos por categoria ligados por um conector sobre eixo comum: o conector transforma dois valores numa distância e a leitura passa de quanto para quanto mudou. No arrow plot a ponta final vira cabeça de seta e aponta sempre do momento mais antigo para o mais recente; no connected dot plot entram até três marcadores por linha, o teto antes de o desenho virar linha. Construído como Bar de faixa com shape própria, que desenha conector e cabeças de uma vez: a faixa chega sempre como menor e maior, então quem é o antes vem do payload, a cor segue a polaridade da métrica e o rótulo direto é o delta com sinal. Em tamanho micro, o mesmo haltere cabe numa linha de cartão de KPI.",
+      "quando_usar": [
+        "Mudança entre dois momentos ou duas condições do mesmo objeto, em 6 a 25 categorias",
+        "Ênfase na direção da mudança: arrow plot com a seta do período antigo para o novo",
+        "Trajetória curta com marco intermediário, como meta, forecast e realizado, no máximo três pontos",
+        "Ranking de melhora ou piora, ordenado por delta absoluto ou em pontos percentuais",
+        "Antes e depois de uma métrica por linha dentro de um cartão de KPI, em micro haltere"
+      ],
+      "quando_evitar": [
+        "Mais de três momentos: linha da família 04 ou bump chart de ranking (04/08)",
+        "Os dois pontos não são o mesmo objeto, como duas populações: dot plot agrupado sem conector (17/01)",
+        "Mudanças minúsculas numa escala larga, com cabeça maior que a haste: tabela com ícone direcional (família 14)",
+        "A distância entre dois extremos importa mais que a mudança: range plot (17/04)",
+        "Poucas categorias em que a troca de posição é a notícia: slope chart (17/06)",
+        "Duas medidas quantitativas ligadas num plano: dispersão de antes e depois com setas (09/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_sla-por-sdr-semana-anterior-e-atual",
+          "titulo": "SLA de primeiro contato por SDR",
+          "caso_de_uso": "Pré-vendas: quanto o SLA de primeiro contato de cada um dos 8 SDRs mudou da semana passada para esta.",
+          "o_que_demonstra": [
+            "Bar de faixa com shape que desenha conector e duas cabeças",
+            "Sentido lido do payload, porque a faixa chega sempre como menor e maior",
+            "Cabeça inicial vazada em chart-3 e final cheia em chart-1, com legenda de ponta",
+            "Conector pela polaridade: minutos que caem são bons",
+            "Rótulo direto do delta com sinal e isAnimationActive desligado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cpl-por-campanha-em-setas-com-limiar",
+          "titulo": "CPL por campanha de julho para agosto",
+          "caso_de_uso": "Marketing: quais das 22 campanhas mudaram o CPL mais de 15% de julho para agosto, e em que direção.",
+          "o_que_demonstra": [
+            "Arrow plot com cabeça de seta em path calculado, sem marker-end",
+            "Seta sempre do mês antigo para o novo, com a ordem imposta no código",
+            "Cor só nas mudanças acima de 15%; as demais em line-strong",
+            "Haste abaixo de 12 px vira marcador neutro, com o valor no tooltip",
+            "Anotação: 9 de 22 mudaram mais de 15%"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_meta-forecast-e-realizado-por-executivo",
+          "titulo": "Meta, forecast e realizado por executivo",
+          "caso_de_uso": "Comercial: em 14 executivos, onde o forecast e o realizado do trimestre ficam em relação à meta individual.",
+          "o_que_demonstra": [
+            "Três marcadores por linha convertidos em pixel dentro da faixa por regra de três",
+            "Forma e tamanho crescentes da meta ao realizado, não só cor",
+            "Ordem pela distância entre realizado e meta, declarada no subtítulo",
+            "Três valores iguais viram marcador único, com os três no tooltip",
+            "Tabela irmã com os três valores e o delta"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_micro-halteres-de-cpl-com-mes-ausente",
+          "titulo": "Micro halteres de CPL com mês ausente",
+          "caso_de_uso": "Marketing: cartão com o CPL de quatro plataformas em julho e agosto, e uma plataforma sem veiculação em agosto.",
+          "o_que_demonstra": [
+            "Micro haltere em SVG de viewBox fixo por linha do cartão",
+            "Ponta ausente vira ponto solto, sem conector descendo a zero",
+            "Cabeças a menos de dois raios mais 2 px viram marcador bipartido",
+            "Escala comum às quatro linhas, declarada no rodapé do cartão",
+            "Texto sem veiculação em agosto no lugar do delta"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        }
+      ]
+    },
+    {
+      "slug": "04_range-plot",
+      "nome": "Range plot",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Dois valores por categoria ligados por uma barra grossa de pontas arredondadas, com a ênfase na distância entre eles e não em qual veio antes: não há cabeça de início nem de fim, só extremos. É o modelo que o Recharts entrega quase pronto, com Bar cujo dataKey devolve o par menor e maior em layout vertical. Com marcador interno, a faixa ganha um traço forte do valor central ou atual e responde ao mesmo tempo qual a aposta e qual a margem; girado, vira colunas de faixa quando a categoria tem ordem natural, como semanas. O subtítulo declara o que a faixa é, porque o leitor treinado lê barra com dois extremos como intervalo de confiança.",
+      "quando_usar": [
+        "A distância entre dois valores é a notícia, como CPL bruto contra CPL qualificado por origem",
+        "Mínimo e máximo observados por categoria, com o método escrito no subtítulo",
+        "Faixa com um valor atual ou central dentro, contra um teto ou uma meta comum a todas as linhas",
+        "Colunas de faixa quando a categoria tem ordem natural, até cerca de 26 períodos",
+        "Até 25 linhas no cartão largo, ordenadas pela amplitude"
+      ],
+      "quando_evitar": [
+        "Os valores das pontas importam mais que a distância: dot plot (17/01)",
+        "Existe um antes e um depois: dumbbell ou arrow plot (17/03)",
+        "Incerteza estatística em torno de um ponto central: dot plot com intervalo (17/02)",
+        "Valor contra meta com faixas qualitativas de fundo: bullet chart (13/02); cenário contra meta: faixa de cenário (13/07)",
+        "Tarefa com início e fim no calendário: família 20 de cronograma",
+        "Faixa de extremos numa amostra com outlier: um caso sozinho alarga tudo, prefira quartis (17/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_amplitude-de-ticket-por-segmento",
+          "titulo": "Amplitude de ticket por segmento",
+          "caso_de_uso": "Comercial: entre que valores variam os tickets das vendas ganhas em cada um dos 5 segmentos no semestre.",
+          "o_que_demonstra": [
+            "Bar com dataKey que devolve o par menor e maior em layout vertical",
+            "radius limitado à metade da largura para a cápsula não deformar",
+            "Subtítulo: faixa igual a mínimo e máximo observados",
+            "Rótulos das duas pontas por LabelList, sem cabeças distintas",
+            "Ordem pela amplitude, declarada no subtítulo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_distancia-entre-cpl-bruto-e-qualificado",
+          "titulo": "Distância entre CPL bruto e qualificado",
+          "caso_de_uso": "Marketing: em 14 origens de lead, quanto o CPL qualificado se afasta do bruto em agosto, a pergunta real do orçamento.",
+          "o_que_demonstra": [
+            "Ordenação pela largura da faixa, com a mais larga no topo",
+            "Destaque em chart-2 só na origem de maior distância, demais em neutro",
+            "Anotação com o fator: qualificado custa 4,1 vezes o bruto",
+            "Faixa de largura zero desenhada como ponto com anel e nota de 100% qualificado"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_carga-das-filas-com-semana-atual-e-teto",
+          "titulo": "Carga das filas contra o teto",
+          "caso_de_uso": "Pré-vendas: em 9 filas, a faixa de carga semanal das últimas 8 semanas em % do teto, com a semana atual marcada.",
+          "o_que_demonstra": [
+            "Shape que desenha a faixa e o traço interno posicionado por regra de três",
+            "Traço de 2 px em text-strong com halo de 1 px em surface-base",
+            "ReferenceLine em 100% do teto atravessando todas as linhas",
+            "Semana atual acima do máximo desenhada fora da faixa, com seta de transbordo",
+            "Carga normalizada em % do teto de cada fila, declarada no subtítulo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_colunas-de-faixa-de-entradas-por-semana",
+          "titulo": "Faixa diária de entradas por semana",
+          "caso_de_uso": "Pré-vendas: mínimo e máximo de entradas por dia em 26 semanas, com uma semana sem coleta e o teto diário de capacidade.",
+          "o_que_demonstra": [
+            "Colunas de faixa em BarChart vertical com o mesmo par menor e maior",
+            "Rótulo de semana a cada quatro colunas e data exata no tooltip, sem girar texto",
+            "Semana sem coleta sem coluna, com a marca sem coleta e nunca zero",
+            "Semana de faixa nula desenhada como traço com anel",
+            "ReferenceLine no teto diário, com rótulo"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_lollipop",
+      "nome": "Lollipop",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Barra reduzida a uma haste fina com um disco na ponta: a haste mantém a âncora no zero ou numa referência e o disco chama a atenção para o valor. Fica entre a barra, que ancora no zero, e o dot plot, que abandona a âncora; por isso o eixo começa obrigatoriamente no zero. Construído como um Bar só, com shape que desenha retângulo fino e círculo, o que garante haste e disco alinhados e trata largura negativa. Serve na horizontal para rótulos longos, na vertical para ordem natural, divergente a partir de uma referência e agrupado com duas séries. O centro do disco é o valor e o olho lê a borda, então valores próximos parecem empatados: ordenar sempre e manter o raio entre 5 e 6 px.",
+      "quando_usar": [
+        "Ranking de uma contagem ou valor a partir do zero, de 8 a 25 categorias, com mais ar que a barra",
+        "Valores todos altos e parecidos, perto de 80% a 90% da escala, em que barras cheias viram bloco",
+        "Categorias com ordem natural (mês, semana, etapa) e rótulo curto: versão vertical",
+        "Desvio com sinal contra uma referência, com a coluna de rótulos fixa: versão divergente",
+        "Duas séries por categoria mantendo a âncora no zero: versão agrupada"
+      ],
+      "quando_evitar": [
+        "A decisão depende de distinguir valores próximos: barra da família 02 ou 03",
+        "Escala que não começa no zero: haste cortada é mentira estrutural, use dot plot (17/01)",
+        "Pergunta de razão entre duas séries (A é o dobro de B): barras agrupadas (02/02)",
+        "Mais de duas séries ou barra de erro pendurada no disco: dot plot com intervalo (17/02)",
+        "Rótulo de categoria que precisaria girar 45 graus na vertical: use a versão horizontal"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-sdr-no-mes",
+          "titulo": "Agendas por SDR no mês",
+          "caso_de_uso": "Pré-vendas: quantas agendas cada um dos 8 SDRs marcou em agosto, do maior para o menor.",
+          "o_que_demonstra": [
+            "Bar horizontal com shape de haste de 2 px e disco de 5,5 px",
+            "Eixo ancorado no zero, obrigatório porque a haste promete a base",
+            "Valor à direita do disco com formatação de contagem",
+            "Ordem decrescente declarada no subtítulo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_entradas-por-semana-contra-o-teto",
+          "titulo": "Entradas por semana contra o teto",
+          "caso_de_uso": "Pré-vendas: em quais das últimas 16 semanas as entradas passaram do teto medido de capacidade da equipe.",
+          "o_que_demonstra": [
+            "Lollipop vertical em BarChart com haste vertical e disco no topo",
+            "ReferenceLine no teto e disco em negativo nas semanas acima dele",
+            "Rótulo com o excedente só nas semanas que estouraram",
+            "Semana corrente parcial com disco vazado e haste tracejada",
+            "Folga de um raio mais 4 px no topo do domínio"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_desvio-de-custo-contra-o-orcado-por-area",
+          "titulo": "Desvio de custo contra o orçado por área",
+          "caso_de_uso": "Diretoria: quanto o custo por unidade entregue de cada uma das 18 áreas ficou acima ou abaixo do orçado no trimestre.",
+          "o_que_demonstra": [
+            "Bar com dataKey do par zero e desvio; shape com Math.min e Math.abs",
+            "ReferenceLine forte no zero, rotulada como orçado",
+            "Rótulos de categoria fixos à esquerda, fora da área de dados",
+            "Domínio simétrico do registry e cor pela polaridade: acima do orçado é ruim",
+            "Ordem pelo desvio e sinal no rótulo, sem depender da cor"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_leads-por-plataforma-com-zero-e-ausente",
+          "titulo": "Leads por plataforma com zero e ausente",
+          "caso_de_uso": "Marketing: leads de julho e agosto por plataforma, com uma sem veiculação em agosto e outra com zero lead medido.",
+          "o_que_demonstra": [
+            "Lollipop agrupado com dois Bar irmãos e barGap menor que a folga entre categorias",
+            "Zero medido mostra só o disco sobre o zero",
+            "Sem veiculação não desenha haste nem disco, só a marca em texto",
+            "Nota no rodapé contando os dois casos, com legenda de série"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_slope-chart",
+      "nome": "Slope chart",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Duas colunas verticais, uma por momento ou por grupo, e uma reta por categoria ligando os dois valores numa escala única. A inclinação carrega a magnitude da mudança e o cruzamento carrega a inversão de posição, que nenhum outro modelo da família mostra tão bem. É SVG puro com geometria calculada em TypeScript porque o problema real é a colisão de rótulo, que nenhuma API de gráfico resolve: os rótulos se afastam com afastarRotulos e as retas ficam no valor real. Acima de cerca de 10 retas o emaranhado pede destaque de duas ou três ou pequenos múltiplos com a mesma escala, e o painel desses múltiplos é o próprio micro slope que cabe num cartão de KPI.",
+      "quando_usar": [
+        "Dois momentos ou dois grupos nas mesmas categorias, com 3 a 10 retas num plano",
+        "História de antes e depois em que a troca de posição é a notícia",
+        "Muitas categorias em pequenos múltiplos, uma reta por painel e escala comum",
+        "Peça ao lado de uma tabela com os dois valores e o delta, como colega da tabela"
+      ],
+      "quando_evitar": [
+        "Três ou mais momentos: bump chart (04/08) para posição, linha da família 04 para valor",
+        "Mais de cerca de 10 retas cruzadas num só plano: painéis ou dumbbell (17/03)",
+        "Colunas com escalas diferentes: o gráfico mente, a escala é sempre única",
+        "O valor de cada ponto é a pergunta e não a mudança: dot plot (17/01)",
+        "Várias medidas por entidade em eixos paralelos: coordenadas paralelas (18/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+      "versoes": [
+        {
+          "slug": "v1_participacao-por-canal-entre-anos",
+          "titulo": "Participação por canal entre anos",
+          "caso_de_uso": "Marketing: como a participação de 6 canais nos leads qualificados mudou de 2025 para 2026.",
+          "o_que_demonstra": [
+            "SVG com viewBox fixo e escala linear calculada em TypeScript",
+            "Escala única nas duas colunas, com o momento rotulado no topo",
+            "Rótulo e valor nas duas pontas, alinhados para fora",
+            "afastarRotulos move só os rótulos; as retas ficam no valor real"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_plataformas-que-trocaram-de-posicao",
+          "titulo": "Plataformas que trocaram de posição",
+          "caso_de_uso": "Marketing: quais plataformas inverteram a posição no CPL qualificado entre o primeiro e o segundo trimestre.",
+          "o_que_demonstra": [
+            "Duas retas cruzadas em chart-1 e chart-2, demais em line-strong a 0,4",
+            "Anotação curta apontando o cruzamento",
+            "Polaridade declarada: CPL que cai é bom, a cor não segue a subida",
+            "Delta com sinal no rótulo da ponta direita"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_win-rate-por-executivo-em-paineis",
+          "titulo": "Win rate por executivo em painéis",
+          "caso_de_uso": "Comercial: o win rate de 14 executivos no primeiro e no segundo semestre, com valores que vão de 10% a 70%.",
+          "o_que_demonstra": [
+            "Grade em Tailwind com um micro slope em SVG por painel",
+            "Mesma escala vertical nos 14 painéis, calculada uma vez",
+            "Reta cinza da média da empresa repetida em todos os painéis",
+            "Painéis ordenados pela variação em pontos percentuais, declarada",
+            "Componente de micro slope reaproveitável em cartão de KPI"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_empate-e-entrada-no-meio-do-ano",
+          "titulo": "Win rate com empate e entrada em julho",
+          "caso_de_uso": "Comercial: slope de 9 executivos em que dois empatam nos dois semestres e um entrou em julho, sem valor no primeiro.",
+          "o_que_demonstra": [
+            "Retas sobrepostas com rótulos afastados e traço guia acima de 8 px",
+            "Ponto só na coluna direita para quem entrou em julho, com nota",
+            "Nenhuma reta inventada até o zero para o semestre ausente",
+            "Rodapé contando empates e ausências"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    }
+  ]
+}

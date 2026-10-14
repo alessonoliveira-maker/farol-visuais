@@ -1,0 +1,13 @@
+{
+  "title": "Receita reconhecida acumulada contra a meta anual",
+  "useCase": "A receita reconhecida acumulada de 2026 está acima ou abaixo da trajetória da meta anual de R$ 10 mi?",
+  "demonstrates": [
+    "Acumulado calculado em TypeScript a partir do mensal",
+    "Meses futuros em null, nunca repetindo o último valor",
+    "Meta acumulada linear tracejada e meta anual em ReferenceLine extendDomain",
+    "Eixo a partir do zero com formatCurrencyAxis"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O acumulado real cobre janeiro a junho de 2026; julho e agosto aparecem como meses futuros sem fechamento. A meta é sempre a anual (R$ 10,0 milhões), nunca a do mês isolado."
+}

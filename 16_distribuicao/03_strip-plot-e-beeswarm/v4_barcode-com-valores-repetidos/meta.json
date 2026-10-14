@@ -1,0 +1,18 @@
+{
+  "title": "Barcode de CPL com valores arredondados",
+  "useCase": "Como mostrar 1.100 campanhas numa faixa de poucos pixels quando o CPL foi lançado em múltiplos de R$ 10?",
+  "demonstrates": [
+    "Um traço por valor, em meio pixel, com shapeRendering crispEdges",
+    "Troca da altura uniforme para altura por contagem acima de 8 coincidências",
+    "Aviso escrito no rodapé dizendo que o limite do barcode foi passado",
+    "Passo de lançamento medido do dado, nunca declarado à mão",
+    "Campanhas sem lead fora do eixo e contadas no rodapé",
+    "Seleção no tapete em traço mais longo, com guia tracejada na contagem"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 320
+  },
+  "frame": "card",
+  "notes": "Canvas contado, não escolhido (GEO-1): o cartão escreve o nome do eixo Y em 11 px, a faixa do eixo X de 24 px, a faixa do eixo Y de 32 px e até três linhas de rodapé de 11 px, sendo uma delas o aviso de saturação. O preset faixa de 960x260 devolveria 141,5 px de altura de corpo e sobrariam cerca de 55 px de plano para uma contagem que vai a 113, o que é pouco para distinguir 30 de 60; 960x320 devolve 201,5 px e sobram cerca de 97 px de plano. Divergência declarada contra a especificação do catálogo, e ela é da ACE-5: o catálogo pede opacidade de 0,35 que acumula nas coincidências, e aqui o traço é opaco. Dois motivos, e o primeiro é medição: `--chart-1` com 0,35 mede 2,28:1 no tema escuro e 1,71:1 no claro contra o cartão, abaixo do piso de 3:1, e um valor com uma campanha só ficaria invisível. O segundo é geométrico: como o dado traz um traço por valor, e não um por campanha, não existe tinta a acumular no mesmo pixel; a coincidência é justamente o que a opacidade não mostraria. A troca acima de 8 coincidências é aditiva na altura e não substitutiva no desenho: o traço continua sendo um traço por valor em meio pixel, e o que muda é a regra de altura, uniforme abaixo do limite e por contagem acima dele. O dado publicado chega a 113 campanhas no mesmo valor, então o cartão renderiza o lado saturado, que é a pergunta da versão; o ramo de altura uniforme é o que desenha em recorte abaixo do limite. Sobre a cor da seleção: `--chart-2` contra `--chart-1` mede 1,14:1 no escuro e 1,05:1 no claro, e por isso a campanha selecionada também é mais alta que todas e leva o nome escrito ao lado (TOK-9). Contra o cartão os dois passam folgado, 8,36:1 e 5,74:1 para `--chart-2`, 9,50:1 e 6,00:1 para `--chart-1`. A grade vai nos dois sentidos pela EIX-3b, porque os dois eixos são quantitativos e o traço se lê por posição em X e pela ponta em Y; são 5 linhas horizontais e 6 verticais, e o teto de 3 a 5 da EIX-4 se aplicou ao plano de 97 px de altura, não à largura de 844 px, em que 5 linhas deixariam o valor ilegível."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Tira da pré-vendas com cartão primário e janela",
+  "useCase": "Como a pré-vendas foi nos últimos 30 dias, lendo primeiro as agendas realizadas e trocando a janela da tira toda?",
+  "demonstrates": [
+    "Cartão primário em duas colunas com sparkline, e os demais compactos",
+    "Um seletor de 7, 30 e 90 dias no cabeçalho da tira, em role radiogroup",
+    "Âncora do delta reescrita pela janela: 30 dias contra os 30 anteriores",
+    "Granularidade escrita quando a janela de 90 dias passa a semanal",
+    "Data de referência vinda do dado e dia corrente fora da conta"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

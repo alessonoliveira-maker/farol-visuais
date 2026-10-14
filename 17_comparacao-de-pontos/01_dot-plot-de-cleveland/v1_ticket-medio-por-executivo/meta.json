@@ -1,0 +1,14 @@
+{
+  "title": "Ticket médio por executivo no trimestre",
+  "useCase": "Onde cada um dos 14 executivos fica no ticket médio, numa escala que começa em R$ 120 mil.",
+  "demonstrates": [
+    "ScatterChart com eixo de linhas numérico e eixo X com domínio fixo",
+    "Ordem decrescente declarada no rodapé e nota de escala sem zero",
+    "Zebra em surface-sunken sob a grade vertical, sem reta pelo ponto",
+    "ReferenceLine tracejada na mediana do time, com rótulo na margem",
+    "Alvo de clique na banda inteira, com 24 px de altura"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo. (1) O eixo de linhas é numérico (domínio de −0,5 a n−0,5, com reversed) e não de categoria: a banda de cada linha passa a ter posição conhecida, o que dá zebra exata por ReferenceArea e alvo de clique de 24 px; o eixo de categoria do Scatter usa escala de pontos e deixa a primeira linha na borda. (2) A zebra é surface-sunken e não surface-raised, porque o cartão já é surface-raised e a faixa sumiria (ANO-4). Conta da altura: 14 linhas x 24 px = 336 px, mais 20 de margem superior, 26 de eixo X, linha de leitura e nota, dentro dos 441,5 px do corpo do canvas alto com caso de uso em uma linha."
+}

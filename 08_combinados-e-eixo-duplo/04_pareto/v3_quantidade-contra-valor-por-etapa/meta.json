@@ -1,0 +1,13 @@
+{
+  "title": "Perdas em quantidade e em valor por etapa",
+  "useCase": "Os motivos que mais derrubam oportunidades são também os que mais custam em reais?",
+  "demonstrates": [
+    "Alternância entre quantidade e valor perdido, que ordenam diferente",
+    "Um painel por etapa, com o mesmo domínio de percentual acumulado",
+    "Barras horizontais para o nome do motivo caber inteiro, sem reticência",
+    "Corte de 80% recalculado por etapa e por grandeza, com a contagem escrita"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas por número porque nenhum preset fecha o cartão (GEO-1, ESP-2 invertida pela ESP-6). No preset largo, de 960x400, o corpo mediria 894 x 281,5 px: descontando 34 px da linha do total com a alternância e 20 px do título de cada painel, o plano de cada um ficaria com 159,5 px, a banda com 31,9 px e a barra com 10,2 px, abaixo do piso de 12 px. Com 480 px de altura o corpo mede 894 x 361,5 px, o caso de uso tem 82 caracteres e cabe em uma linha do cabeçalho, o plano de cada painel fica com 259,5 px (307,5 de gráfico menos 18 de MARGIN.top e 30 do eixo de percentual), a banda sai com 51,9 px para 5 categorias e a barra com 16,6 px, acima do piso e abaixo do maxBarSize de 24. Na largura, cada painel mede (894 menos 8 do vão) dividido por 2, 443 px, e o plano fica com 251 px depois dos 112 px do eixo de nomes e dos 80 px reservados ao rótulo de valor na ponta livre. Desvios declarados: são duas anotações, uma por painel, que é o rótulo do corte repetido em cada pequeno múltiplo, e não duas anotações concorrentes no mesmo plano (ANO-1); o domínio comum entre os painéis é o do percentual acumulado, de 0 a 100, enquanto o eixo das barras vai de zero ao total da própria etapa, que é o que faz o pareto ser derivado em cada painel (EIX-9); e o halo do rótulo de valor interrompe a linha do acumulado onde os dois se cruzam na primeira barra, a mesma tensão que a v1 já registrou entre a ROT-7 e a leitura da curva. O neutro da barra Outros é --line-strong, que mede 1,79:1 e 1,83:1 contra o cartão e sai como aviso da guarda CONTRASTE-MARCA; ele é permitido pela isenção da ACE-3, porque o valor está escrito na ponta de cada barra."
+}

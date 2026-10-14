@@ -1,0 +1,12 @@
+{
+  "title": "Meses com 18 e 22 dias úteis normalizados",
+  "useCase": "Como comparar agendas acumuladas de um mês com 18 dias úteis e outro com 22 sem que o curto pareça queda?",
+  "demonstrates": [
+    "Eixo em fração do mês útil, de 0 a 100%, em vez de dia civil",
+    "Normalização declarada em nota curta no visual",
+    "Mês curto sem pontos inventados para igualar o longo",
+    "Dica com o dia útil real e a fração correspondente"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

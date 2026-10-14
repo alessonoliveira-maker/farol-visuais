@@ -1,0 +1,14 @@
+{
+  "title": "Plataforma A contra Plataforma B em seis indicadores",
+  "useCase": "Marketing, 2026-08: em quais indicadores de mídia a Plataforma B entrega um perfil melhor que a Plataforma A?",
+  "demonstrates": [
+    "Índice de 0 a 100 com CPL e CPL qualificado invertidos e a regra na linha de leitura",
+    "Duas categorias por slot fixo --chart-1 e --chart-3, cor vinda do dado",
+    "Anotação na maior lacuna, com as plataformas na ordem da legenda",
+    "Eixo de cobertura de dado vizinho do CPL qualificado, ordem do registry",
+    "Dica com os dois índices e o valor original em R$ e em taxa com volume"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O preenchimento da Plataforma B sai com 0,66 de opacidade: a ACE-5 pede o mínimo de 0,66 para --chart-3 no tema claro. A Plataforma A, em contorno tracejado, sobe por zIndex acima da área para o tracejado não sumir sob o preenchimento. No card de 574 x 225 o gráfico divide o corpo com uma coluna de 168 px de leitura e legenda, e o outerRadius de 68% reserva duas linhas de rótulo no topo e na base. O contrato vence."
+}

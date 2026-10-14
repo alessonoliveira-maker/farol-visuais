@@ -1,0 +1,12 @@
+{
+  "title": "Criativos que entram e saem no período",
+  "useCase": "Evitar que criativos de vida curta virem camadas finas e ilegíveis na forma do ano.",
+  "demonstrates": [
+    "Agrupamento em Outros abaixo de 3% de participação, com a regra no rodapé",
+    "Contagem de criativos agrupados escrita no rótulo de Outros",
+    "Criativo fora do ar como zero verdadeiro, não como lacuna",
+    "Pontos semanais com animação desligada, prática que sustenta muitas camadas"
+  ],
+  "canvas": "largo",
+  "notes": "Quatro criativos nomeados mais Outras (n=5), demonstração reduzida das dezenas de criativos do caso real; a regra de agrupamento e o zero verdadeiro valem no mesmo desenho para qualquer contagem. Streamgraph não tem linha de base fixa: a forma mostra entrada e saída de criativos, não o valor exato de uma semana."
+}

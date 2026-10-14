@@ -1,0 +1,14 @@
+{
+  "title": "Funil micro por origem de lead",
+  "useCase": "Qual origem de lead sustenta a conversão até agenda, célula a célula, sem 12 gráficos separados.",
+  "demonstrates": [
+    "Colunas em degrau ancoradas no zero por linha, sem silhueta afunilada",
+    "Escala por linha em HTML flex items-end, com o volume do topo na primeira coluna",
+    "Taxa da etapa anterior escrita na célula; taxa contra o topo só no title, a dica da tabela",
+    "Coluna minúscula ganha o número escrito, nunca altura mínima falsa",
+    "Etapa maior que a anterior desenhada no tamanho real e explicada no aria-label"
+  ],
+  "canvas": { "width": 660, "height": 935 },
+  "frame": "card",
+  "notes": "Altura sai da conta de 12 linhas de origem (ESP-2, exceção declarada): cada linha soma barra e duas linhas de texto por coluna; comporta as 12 origens sem cortar rótulo nem depender de rolagem."
+}

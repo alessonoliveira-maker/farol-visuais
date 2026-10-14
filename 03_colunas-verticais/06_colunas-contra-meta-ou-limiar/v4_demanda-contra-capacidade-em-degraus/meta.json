@@ -1,0 +1,12 @@
+{
+  "title": "Demanda projetada contra capacidade em 2027",
+  "useCase": "Em que meses de 2027 a demanda projetada passa da capacidade, que sobe em degraus com as contratações?",
+  "demonstrates": [
+    "Capacidade como Line stepAfter sobre as colunas, com o corte recalculado mês a mês",
+    "Mês com capacidade zero todo em excedente, com a frase sem capacidade instalada",
+    "Excedente menor que 2 px com minPointSize e aviso de altura ampliada na dica",
+    "Legenda que nomeia capacidade medida e demanda projetada, sem selo de procedência no Chart"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

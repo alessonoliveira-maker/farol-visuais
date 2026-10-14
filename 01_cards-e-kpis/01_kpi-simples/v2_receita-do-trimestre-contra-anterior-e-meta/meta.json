@@ -1,0 +1,14 @@
+{
+  "title": "Receita do trimestre contra anterior e meta",
+  "useCase": "A receita do 3º trimestre está na meta, e quanto falta em reais para chegar lá?",
+  "demonstrates": [
+    "Hierarquia de três pesos: principal em 30 px, apoios em 14 px, rótulos em 11 px",
+    "Anterior e meta em colunas separadas por espaço, sem divisória (ESP-5)",
+    "Selo de status com forma, ícone e palavra, sem fundo tingido (COR-7)",
+    "Régua do status escrita no cartão: no alvo a partir de 95% da meta",
+    "Veredito calculado do dado: abaixo da meta por R$ 143,0 mil"
+  ],
+  "canvas": { "width": 360, "height": 332 },
+  "frame": "stage",
+  "notes": "O preset kpi-alto (280 px) corta as colunas e a régua com o caso de uso em duas linhas; 332 px fecha o cartão com o padding inteiro."
+}

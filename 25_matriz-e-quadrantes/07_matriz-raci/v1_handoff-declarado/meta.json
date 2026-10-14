@@ -1,0 +1,14 @@
+{
+  "title": "Handoff de pré-vendas para vendas declarado",
+  "useCase": "Comercial: quem executa, responde, é consultado e é informado nas 8 etapas do handoff de pré-vendas para vendas.",
+  "demonstrates": [
+    "Tabela semântica com th scope nas etapas e nos papéis",
+    "Glifo por forma: A cheio, R contornado, C e I só texto",
+    "Etapas na ordem do processo, declarada na linha de leitura",
+    "Legenda das quatro letras sempre visível",
+    "Célula com duas letras sem quebrar a largura da coluna"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Conta de altura (GEO-1), corpo de 574 x 425 px com o caso de uso em duas linhas: linha de leitura 34 + legenda 20 + 2 vãos de 8 = 70; cabeçalho de colunas 34; 8 etapas a 38 px = 304; total 408, cabe no preset alto. A etapa de nome longo quebra em duas linhas sem estourar a linha de 38 px."
+}

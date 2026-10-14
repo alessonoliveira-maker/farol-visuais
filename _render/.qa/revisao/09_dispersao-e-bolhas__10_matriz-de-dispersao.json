@@ -1,0 +1,72 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "10_matriz-de-dispersao",
+  "versoes": {
+    "v1_quatro-medidas-de-campanha": {
+      "veredito": "aprovado",
+      "nota": "Grade 4x4 com dominio redondo compartilhado por coluna e por linha, conferido no preview: as linhas de grade batem em todas as celulas da mesma coluna e da mesma linha, histograma da diagonal alinhado ao dominio da coluna e nada transborda. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T22:21:34.671Z",
+      "impressao": "e9a40f3e3328ec4bdd674912c15b9eca728a76d7",
+      "arquivos": {
+        "Chart.tsx": "13aad44e762b46a704de32dfa8817b626dbe46be",
+        "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
+        "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_quatro-medidas-de-campanha",
+      "veredito": "reprovado",
+      "nota": "EIX-4: grade em valor nao redondo e sem ticks no componente. Mesma medida ganha regua diferente em X e em Y (Investimento a 40.000 em X e 20.000 em Y; CPL a 45 e 90); coluna CTR fica sem linha interna e Taxa de qualificacao com duas. Na diagonal a grade horizontal vem do eixo de contagem (dataMax, sem allowDecimals false) e cai em altura diferente da linha (46 px contra 61,7 px na linha 1), entao a regua da linha mente. Corrigir com dominio redondo fixo e ticks explicitos por medida, como em 09/01, 09/05 e 09/08.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T21:50:07.808Z",
+      "impressao": "6560a20e444513fccc500a75dfbef5e77142af26",
+      "arquivos": {
+        "Chart.tsx": "159effbd91cf5bc03ca263cfa7a95bfc90a6265b",
+        "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
+        "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    },
+    {
+      "versao": "v1_quatro-medidas-de-campanha",
+      "veredito": "reprovado",
+      "nota": "Anatomia 4 do README descreve domainOf com folga de 8% calculada sobre o conjunto; o codigo usa dominio redondo fixo por medida em MEASURES. Secao obrigatoria (secao 14) descreve peca que o visual nao tem. Visual, check e contraste sem reparo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T22:02:50.930Z",
+      "impressao": "c780c4e16a7874c44bccfe7469114831998570b5",
+      "arquivos": {
+        "Chart.tsx": "b2f391559bd32c145e0e9b979218a46fc47cd5ec",
+        "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
+        "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    },
+    {
+      "versao": "v1_quatro-medidas-de-campanha",
+      "veredito": "reprovado",
+      "nota": "EIX-4: os ticks declarados em MEASURES nao chegam a grade. Com eixo hide e interval padrao o Recharts filtra tique por colisao de rotulo: Investimento desenha so 0, 20 mil e 60 mil (vao final dobrado) e CPL sai com 4 linhas como coluna e 3 como linha, entao a mesma medida ganha regua diferente em X e em Y. Sem rotulo de eixo a grade e a unica regua e ela esta desigual. Corrigir com interval 0 nos eixos ocultos de X e Y. Resto do visual, check, contraste e README sem reparo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T22:10:04.199Z",
+      "impressao": "c780c4e16a7874c44bccfe7469114831998570b5",
+      "arquivos": {
+        "Chart.tsx": "b2f391559bd32c145e0e9b979218a46fc47cd5ec",
+        "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
+        "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    },
+    {
+      "versao": "v1_quatro-medidas-de-campanha",
+      "veredito": "aprovado",
+      "nota": "Grade 4x4 com dominio redondo compartilhado por coluna e por linha, conferido no preview: as linhas de grade batem em todas as celulas da mesma coluna e da mesma linha, histograma da diagonal alinhado ao dominio da coluna e nada transborda. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T22:21:34.671Z",
+      "impressao": "e9a40f3e3328ec4bdd674912c15b9eca728a76d7",
+      "arquivos": {
+        "Chart.tsx": "13aad44e762b46a704de32dfa8817b626dbe46be",
+        "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
+        "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    }
+  ]
+}

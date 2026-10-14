@@ -1,0 +1,212 @@
+{
+  "familia": "05_areas",
+  "modelo": "04_areas-sobrepostas",
+  "versoes": {
+    "v1_capacidade-e-agendas-realizadas": {
+      "veredito": "aprovado",
+      "nota": "Duas areas sem stackId, zero no eixo, rotulo direto nas duas camadas e ocupacao media na linha de leitura; observacoes de cadencia de tique e monotone no degrau.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:35.609Z",
+      "impressao": "c93d0ee4776e79110d9c77b24e2df7ba5532a8bb",
+      "arquivos": {
+        "Chart.tsx": "16e76bbb60057931594fcd8df5179b538675e512",
+        "data.ts": "4a2de71c738cbe2b2581550a81cda10d804792da",
+        "meta.json": "669cf19d6d08506928559441f5e3388baefe79dd"
+      }
+    },
+    "v2_demanda-em-linha-contra-capacidade": {
+      "veredito": "aprovado",
+      "nota": "Area em degrau atras da linha saturada, excedente com sinal e palavra, legenda nomeia as duas marcas; observacao no topo de dominio em 100 com maximo 82.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:40.698Z",
+      "impressao": "0768c2622cb75f3ff895fe6e0adfacfeb7ff12bd",
+      "arquivos": {
+        "Chart.tsx": "c4c7f64a88ea59b5d7c5087f33b28ee5da1142d3",
+        "data.ts": "91020f99671a5af64e587ef5f44a4d7a594cd684",
+        "meta.json": "55db7ab4ee40d756d93a877ea552e88d98726939"
+      }
+    },
+    "v3_capacidade-anual-com-projecao": {
+      "veredito": "aprovado",
+      "nota": "Real solido ate o corte e projecao tracejada depois, ReferenceLine hoje com halo, sem selo de premissa no Chart; observacao no tique que pula jul/26.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:47.320Z",
+      "impressao": "c97eb8190bad81f9e6098122a4936d7d98e42523",
+      "arquivos": {
+        "Chart.tsx": "bcc8a397f6e1f490381d41e95648cd73a102fe44",
+        "data.ts": "14e6191136c0abb56f4f6032978cfcbc9378b600",
+        "meta.json": "5692735b8a0826b549771ce9848363633b8b4c3e"
+      }
+    },
+    "v4_recesso-e-semana-sem-coleta": {
+      "veredito": "aprovado",
+      "nota": "Zero medido desce ao chao e escreve 0, sem coleta quebra a area com null; observacao nas duas ReferenceArea de largura zero, que so entregam o rotulo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:47.787Z",
+      "impressao": "7a6e5d6821eb7692cb9ffbee5a62db13a5782403",
+      "arquivos": {
+        "Chart.tsx": "f2e5b037f4fd4b126907b5e986ca8949c09eba4c",
+        "data.ts": "052e4a34f12b59f9c4ab15eb23629054335b7320",
+        "meta.json": "b410842bb409c914e2c110b46d13820b76d4626b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_capacidade-e-agendas-realizadas",
+      "veredito": "aprovado",
+      "nota": "Check limpo; duas Area sem stackId, rotulo direto com halo e ocupacao media na linha de leitura; capacidade em monotone suaviza os degraus de contratacao (observacao).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:56:54.194Z",
+      "impressao": "d52006cfa9c7dcad1d5efb16dd8025eaa05b2dc8",
+      "arquivos": {
+        "Chart.tsx": "82794194dc9448ac5424e4814cfd71f8e6a81a79",
+        "data.ts": "4a2de71c738cbe2b2581550a81cda10d804792da",
+        "meta.json": "669cf19d6d08506928559441f5e3388baefe79dd"
+      }
+    },
+    {
+      "versao": "v2_demanda-em-linha-contra-capacidade",
+      "veredito": "aprovado",
+      "nota": "Check limpo; capacidade em stepAfter, linha saturada por cima, excedente com sinal e palavra; so o pico de cada trecho leva numero (ANO-1).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:56:58.677Z",
+      "impressao": "322cde1df774e340aef1d8959939626949ddd304",
+      "arquivos": {
+        "Chart.tsx": "9b4695ddbcfa48570ccdb54b1209786af3cc25ae",
+        "data.ts": "91020f99671a5af64e587ef5f44a4d7a594cd684",
+        "meta.json": "55db7ab4ee40d756d93a877ea552e88d98726939"
+      }
+    },
+    {
+      "versao": "v3_capacidade-anual-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Check limpo; area de degrau ate dezembro, real solido e projecao tracejada com corte de hoje; tique de 5 em 5 semanas pula jul/26 (observacao).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:57:04.772Z",
+      "impressao": "83d72867b39a996dcff0b98db36de180d29c0a30",
+      "arquivos": {
+        "Chart.tsx": "0a839ae26feba69a7bceafd64396f186d39666fb",
+        "data.ts": "14e6191136c0abb56f4f6032978cfcbc9378b600",
+        "meta.json": "5692735b8a0826b549771ce9848363633b8b4c3e"
+      }
+    },
+    {
+      "versao": "v4_recesso-e-semana-sem-coleta",
+      "veredito": "reprovado",
+      "nota": "As duas Area usam type=monotone; o degrau ate zero que o catalogo e o meta.json anunciam nao existe, e a curva espalha o recesso de uma semana por tres.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T19:57:09.349Z",
+      "impressao": "40619f8d91c8c31d1b84d5da12b452690ea4ba1a",
+      "arquivos": {
+        "Chart.tsx": "c16e408ed7fd23d055754bcbfc8ffc85314e52f7",
+        "data.ts": "052e4a34f12b59f9c4ab15eb23629054335b7320",
+        "meta.json": "b410842bb409c914e2c110b46d13820b76d4626b"
+      }
+    },
+    {
+      "versao": "v1_capacidade-e-agendas-realizadas",
+      "veredito": "aprovado",
+      "nota": "Duas areas sem stackId, envelope em line-strong com valor escrito e parte em chart-1; zero na base, legivel nos dois temas. Observacao: capacidade em monotone suaviza os degraus de contratacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:06:44.383Z",
+      "impressao": "d52006cfa9c7dcad1d5efb16dd8025eaa05b2dc8",
+      "arquivos": {
+        "Chart.tsx": "82794194dc9448ac5424e4814cfd71f8e6a81a79",
+        "data.ts": "4a2de71c738cbe2b2581550a81cda10d804792da",
+        "meta.json": "669cf19d6d08506928559441f5e3388baefe79dd"
+      }
+    },
+    {
+      "versao": "v2_demanda-em-linha-contra-capacidade",
+      "veredito": "aprovado",
+      "nota": "Area de capacidade em degrau atras da linha de demanda; excedente com sinal e palavra, nao so cor. Observacao: amostra da legenda em opacity 0.35 quase some no escuro e o topo do dominio vai a 100 com maximo de 82.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:06:49.722Z",
+      "impressao": "322cde1df774e340aef1d8959939626949ddd304",
+      "arquivos": {
+        "Chart.tsx": "9b4695ddbcfa48570ccdb54b1209786af3cc25ae",
+        "data.ts": "91020f99671a5af64e587ef5f44a4d7a594cd684",
+        "meta.json": "55db7ab4ee40d756d93a877ea552e88d98726939"
+      }
+    },
+    {
+      "versao": "v3_capacidade-anual-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Trecho medido solido ate hoje e projecao tracejada depois, com corte vertical rotulado; ausencia nunca vira zero. Observacao: o tique de cinco em cinco semanas pula jul/26 e o demonstrates fala em tique mensal.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:06:55.654Z",
+      "impressao": "83d72867b39a996dcff0b98db36de180d29c0a30",
+      "arquivos": {
+        "Chart.tsx": "0a839ae26feba69a7bceafd64396f186d39666fb",
+        "data.ts": "14e6191136c0abb56f4f6032978cfcbc9378b600",
+        "meta.json": "5692735b8a0826b549771ce9848363633b8b4c3e"
+      }
+    },
+    {
+      "versao": "v4_recesso-e-semana-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "Zero medido desenha a marca e escreve 0; sem coleta quebra a area e nao vira zero, com desenho e texto distintos. Observacao: as ReferenceArea saem com largura zero e nao pintam faixa, so os dois rotulos flutuam no topo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:07:00.976Z",
+      "impressao": "a180831cc21f89ceb4a55963eca0ae84f030ca5d",
+      "arquivos": {
+        "Chart.tsx": "1100538979af120431fa51e5e005a61045d5e21a",
+        "data.ts": "052e4a34f12b59f9c4ab15eb23629054335b7320",
+        "meta.json": "b410842bb409c914e2c110b46d13820b76d4626b"
+      }
+    },
+    {
+      "versao": "v1_capacidade-e-agendas-realizadas",
+      "veredito": "aprovado",
+      "nota": "Duas areas sem stackId, zero no eixo, rotulo direto nas duas camadas e ocupacao media na linha de leitura; observacoes de cadencia de tique e monotone no degrau.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:35.609Z",
+      "impressao": "c93d0ee4776e79110d9c77b24e2df7ba5532a8bb",
+      "arquivos": {
+        "Chart.tsx": "16e76bbb60057931594fcd8df5179b538675e512",
+        "data.ts": "4a2de71c738cbe2b2581550a81cda10d804792da",
+        "meta.json": "669cf19d6d08506928559441f5e3388baefe79dd"
+      }
+    },
+    {
+      "versao": "v2_demanda-em-linha-contra-capacidade",
+      "veredito": "aprovado",
+      "nota": "Area em degrau atras da linha saturada, excedente com sinal e palavra, legenda nomeia as duas marcas; observacao no topo de dominio em 100 com maximo 82.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:40.698Z",
+      "impressao": "0768c2622cb75f3ff895fe6e0adfacfeb7ff12bd",
+      "arquivos": {
+        "Chart.tsx": "c4c7f64a88ea59b5d7c5087f33b28ee5da1142d3",
+        "data.ts": "91020f99671a5af64e587ef5f44a4d7a594cd684",
+        "meta.json": "55db7ab4ee40d756d93a877ea552e88d98726939"
+      }
+    },
+    {
+      "versao": "v3_capacidade-anual-com-projecao",
+      "veredito": "aprovado",
+      "nota": "Real solido ate o corte e projecao tracejada depois, ReferenceLine hoje com halo, sem selo de premissa no Chart; observacao no tique que pula jul/26.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:47.320Z",
+      "impressao": "c97eb8190bad81f9e6098122a4936d7d98e42523",
+      "arquivos": {
+        "Chart.tsx": "bcc8a397f6e1f490381d41e95648cd73a102fe44",
+        "data.ts": "14e6191136c0abb56f4f6032978cfcbc9378b600",
+        "meta.json": "5692735b8a0826b549771ce9848363633b8b4c3e"
+      }
+    },
+    {
+      "versao": "v4_recesso-e-semana-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "Zero medido desce ao chao e escreve 0, sem coleta quebra a area com null; observacao nas duas ReferenceArea de largura zero, que so entregam o rotulo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:24:47.787Z",
+      "impressao": "7a6e5d6821eb7692cb9ffbee5a62db13a5782403",
+      "arquivos": {
+        "Chart.tsx": "f2e5b037f4fd4b126907b5e986ca8949c09eba4c",
+        "data.ts": "052e4a34f12b59f9c4ab15eb23629054335b7320",
+        "meta.json": "b410842bb409c914e2c110b46d13820b76d4626b"
+      }
+    }
+  ]
+}

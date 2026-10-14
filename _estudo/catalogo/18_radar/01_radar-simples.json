@@ -1,0 +1,75 @@
+{
+  "slug": "01_radar-simples",
+  "nome": "Radar simples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Um polígono translúcido para uma entidade sobre 5 a 8 eixos que saem do centro, todos na mesma escala declarada (índice de 0 a 100 ou nota de 1 a 5), com centro no zero e ordem de eixos vinda do registry. Lê perfil, não ranking nem magnitude. Absorve a faixa de referência do estudo (18#4): a coroa entre o mínimo e o máximo do grupo desenhada por shape do Radar, com a entidade em linha por cima.",
+  "quando_usar": [
+    "Perfil de uma entidade em 5 a 8 dimensões na mesma escala: executivo, SDR, origem de lead, área.",
+    "A pergunta é onde a entidade é forte e onde é fraca, e o valor exato cabe na dica e no vértice.",
+    "Posição da entidade dentro da faixa do grupo (mínimo a máximo de ao menos 8 membros), com a coroa como contexto.",
+    "Público que já lê o formato e um botão ver como barras ao lado, com os mesmos dados."
+  ],
+  "quando_evitar": [
+    "Ranking ou comparação de magnitude entre dimensões: barras agrupadas (02/02).",
+    "Menos de 5 ou mais de 8 eixos: barras com rótulo direto (02/01) ou stellar chart (modelo 05) com muitos eixos.",
+    "Métricas de unidades diferentes sem normalização declarada: pequenos múltiplos de barras (02/02) ou coordenadas paralelas com escala por eixo (modelo 06).",
+    "Entidade contra outra entidade ou contra a média: radar comparativo (modelo 02).",
+    "Faixa do grupo com menos de 8 membros, em que mínimo e máximo são as próprias pessoas: dot plot por dimensão (17/01).",
+    "Quem precisa do valor exato de cada dimensão para decidir: tabela com heatmap nas células (14/02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_perfil-de-qualidade-da-origem",
+      "titulo": "Perfil de qualidade da origem formulário do site",
+      "caso_de_uso": "Marketing, 2026-08: em que dimensões de qualidade a origem formulário do site é forte e onde ela perde o lead?",
+      "o_que_demonstra": [
+        "Composição mínima: PolarGrid, PolarAngleAxis, PolarRadiusAxis e um Radar",
+        "domain fixo de 0 a 100 no PolarRadiusAxis, centro no zero e sem innerRadius",
+        "Seis eixos: telefone 58, e-mail corporativo 41, cargo 36, fit 62, resposta 47 e agenda 22",
+        "Série em --chart-1 com fillOpacity 0,28 e grade em --line-subtle",
+        "outerRadius de 72% para os rótulos laterais não baterem na borda do cartão"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_perfil-do-sdr-com-eixo-mais-fraco",
+      "titulo": "Perfil do SDR 04 no trimestre com o eixo mais fraco",
+      "caso_de_uso": "Pré-vendas, 2026-T3: qual dimensão puxa o SDR 04 para baixo e merece a conversa de acompanhamento desta semana?",
+      "o_que_demonstra": [
+        "gridType circle e radialLines leves, com três níveis rotulados num único ângulo",
+        "Valor escrito em cada vértice por label do Radar, em font-display tabular",
+        "Eixo mais fraco (comparecimento 31) com ponto maior e rótulo em peso 700",
+        "Anotação curta de até 50 caracteres calculada do dado, não digitada",
+        "Frase acessível que nomeia a dimensão mais forte e a mais fraca"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_executivo-na-faixa-do-time",
+      "titulo": "Executivo 07 dentro da faixa do time em oito dimensões",
+      "caso_de_uso": "Comercial, 2026-T3: em quais das oito dimensões do processo o Executivo 07 sai da faixa dos 11 executivos do time?",
+      "o_que_demonstra": [
+        "Coroa entre mínimo e máximo como um path com fill-rule evenodd no shape do Radar",
+        "Grade visível dentro da coroa, sem o truque de pintar o mínimo com a cor do cartão",
+        "Executivo em linha --chart-1 por cima; vértices fora da faixa vazados e com valor",
+        "Nomes longos quebrados em duas linhas por tspan num tick customizado",
+        "Legenda faixa do time, mínimo a máximo de 11 executivos, com amostra de área"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_eixo-sem-dado-e-indice-normalizado",
+      "titulo": "Perfil com eixo sem medição e índice normalizado",
+      "caso_de_uso": "Comercial, 2026-T3: como ler o perfil do Executivo 03 quando a precisão de forecast ainda não foi medida no trimestre?",
+      "o_que_demonstra": [
+        "Eixo sem valor como null e polígono interrompido, sem ponta falsa até o centro",
+        "connectNulls desligado e rótulo do eixo com a palavra sem dado em --text-muted",
+        "Linha de leitura com o método: índice de 0 a 100 pelo percentil no time",
+        "Dica que escreve sem dado no eixo ausente, sem imprimir zero",
+        "Estado vazio com role status quando todos os eixos chegam sem valor"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "03_sunburst",
+  "nome": "Sunburst",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Anéis concêntricos em que o centro é a raiz, cada anel é um nível e o ângulo de cada setor é proporcional ao valor. Com dois níveis equivale à rosca aninhada hierárquica; com clique, o setor vira a nova raiz e o centro vira botão de voltar.",
+  "quando_usar": [
+    "Hierarquia de 2 ou 3 níveis em que a pergunta é de que é feito cada pai",
+    "Ênfase no total e no primeiro nível, com o total escrito no centro",
+    "Explorar um ramo mantendo a forma radial, com trilha acima do gráfico"
+  ],
+  "quando_evitar": [
+    "Comparação precisa entre fatias ou pergunta de quanto a mais: ângulo é grosseiro; use barras ou treemap",
+    "Comparar a mesma subcategoria entre pais diferentes: a leitura é impossível no anel externo",
+    "Muitos subníveis finos com rótulo: o componente não esconde rótulo por ângulo; agrupe antes ou use icicle (12/06)",
+    "Dois anéis que não são hierarquia, como dois períodos: família 07, modelo 03",
+    "Mais de 3 níveis com rótulos longos: use icicle lateral (12/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_entradas-por-origem-e-subcanal",
+      "titulo": "Entradas por origem e subcanal",
+      "caso_de_uso": "Pré-vendas: como as 1.180 entradas de 2026-W37 se dividem entre origem, no anel interno, e subcanal, no externo.",
+      "o_que_demonstra": [
+        "SunburstChart com innerRadius, ringPadding, stroke e textOptions sobrescritos",
+        "Padrões de cor do componente (fill #333, stroke #FFF) trocados por tokens do tema escuro",
+        "Cor por ramo de primeiro nível gravada no fill de cada nó do dado",
+        "Total no centro numa div absoluta sobre o gráfico",
+        "Filhos ordenados por valor dentro de cada origem, somando exatamente o pai"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_ramo-indicacao-em-destaque",
+      "titulo": "Peso das indicações nas entradas",
+      "caso_de_uso": "Pré-vendas: quanto das entradas da semana veio de indicação e por quais subcanais, contra o resto em neutro.",
+      "o_que_demonstra": [
+        "Ramo Indicação em accent-cyan e todos os outros ramos em neutro",
+        "Percentual do ramo destacado no centro, no lugar do total",
+        "Anéis externos mais finos para compensar a distorção de área do perímetro maior"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_motivos-de-perda-com-detalhamento",
+      "titulo": "Motivos de perda com detalhamento",
+      "caso_de_uso": "Comercial: quais categorias de perda pesam em 2026-T3 e, ao entrar em Sem perfil, qual submotivo domina.",
+      "o_que_demonstra": [
+        "Caminho em useState e data igual à subárvore do caminho atual",
+        "Clique no setor re-enraíza; clique em folha não faz nada",
+        "Centro vira botão de voltar e trilha em Tailwind fica acima do gráfico",
+        "Só o submotivo dominante do ramo recebe rótulo; o resto fica no tooltip",
+        "Caminho inicial no data.ts para o preview abrir dentro de Sem perfil",
+        "Volta à raiz quando o filtro global remove o ramo aberto"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_subcanais-finos-agrupados",
+      "titulo": "Subcanais finos agrupados por origem",
+      "caso_de_uso": "Pré-vendas: 22 subcanais, vários abaixo de 1%, sem texto sobreposto e sem esconder que a soma não fecha.",
+      "o_que_demonstra": [
+        "Preparo em TypeScript que agrupa subcanais abaixo de 1% em Outros subcanais por origem",
+        "Filho não classificado criado com a diferença quando os subcanais não somam a origem",
+        "Não classificado em neutro hachurado, com aviso de reconciliação no rodapé",
+        "Lista fora do gráfico com os subcanais agrupados e seus valores"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

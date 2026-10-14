@@ -1,0 +1,16 @@
+{
+  "title": "Alertas de governança do handoff",
+  "useCase": "Comercial: quais etapas do handoff estão sem responsável final ou com dois, e qual papel concentra a execução.",
+  "demonstrates": [
+    "Validação em TypeScript: exatamente um A e pelo menos um R por etapa",
+    "Coluna de alerta com ícone da lucide e o texto do problema",
+    "Etapa registrar perda sem A em tom de alerta, com segundo canal além da cor",
+    "Rodapé com a carga de R e A por papel: executivo com 6 R e nenhum apoio"
+  ],
+  "canvas": {
+    "width": 720,
+    "height": 580
+  },
+  "frame": "card",
+  "notes": "Conta (GEO-1), corpo de 654 x 461,5 px com o caso de uso em uma linha (720 menos 66 de largura; 580 menos 118,5 de altura). Largura: nome 150, 5 papéis a 68 e alerta 164 somam 654. Altura medida no render: linha de leitura e legenda 53, tabela 391 (cabeçalho 40, 8 etapas a 40, rodapé de carga 38 e bordas), total 444 mais folga. Nenhum preset serve: o alto (640 x 560) tem só 574 px de largura, que não comportam o nome do papel em duas linhas mais a coluna de alerta, então o canvas vai por número. A coluna de alerta escreve 'Em regra' nas etapas válidas, para a ausência de alerta ser dita e não só vazia."
+}

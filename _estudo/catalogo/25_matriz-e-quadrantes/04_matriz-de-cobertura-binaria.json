@@ -1,0 +1,72 @@
+{
+  "slug": "04_matriz-de-cobertura-binaria",
+  "nome": "Matriz de cobertura binária",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Entidades nas linhas, atributos nas colunas e um estado por célula: presente, vazio ou não coletado. Responde quem tem e quem não tem cada atributo, como quais origens de lead entregam telefone, cargo, empresa, UTM e consentimento; na forma agregada, no estilo UpSet, conta as combinações de campos presentes, com matriz de pontos ligados e barras de tamanho por combinação e por atributo. Construído em HTML com CSS Grid do Tailwind, com a barra como div de largura percentual na mesma linha da grade, o que garante alinhamento sem sincronizar dois gráficos; SVG puro só acima de cerca de 40 linhas. O ponto delicado é o terceiro estado: campo que a coleta não traz não é campo vazio na base, e pintar os dois igual transforma defeito de coleta em defeito de base. Preenchimento baixo num campo que a origem trata como obrigatório é sintoma de coleta.",
+  "quando_usar": [
+    "Saber quais entidades têm cada atributo, em até cerca de 12 linhas por 10 colunas",
+    "Auditar cobertura de dado por origem antes de julgar CPL qualificado ou atribuição",
+    "Contar combinações de 4 a 30 atributos presentes, onde o diagrama de Venn já não lê",
+    "Separar campo vazio na base de campo fora da coleta"
+  ],
+  "quando_evitar": [
+    "O valor é quantitativo e não binário: tabela com heatmap nas células (14/02)",
+    "Poucas opções comparadas em vários critérios com glifo: matriz de comparação com status (14/09)",
+    "Um único percentual de cobertura por linha de tabela: medidor de cobertura de dado (24/05)",
+    "Relação entre entidades do mesmo tipo: matriz de adjacência (27/01)",
+    "Dezenas de combinações sem corte: mostrar as 12 maiores e agrupar o resto"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_campos-entregues-por-origem",
+      "titulo": "Campos entregues por origem de lead",
+      "caso_de_uso": "Marketing: quais das 8 origens de lead entregam telefone, cargo, empresa, UTM, cidade e consentimento.",
+      "o_que_demonstra": [
+        "Ponto cheio para presente e anel vazio para ausente, na grade de origens por campos",
+        "Percentual de preenchimento no rodapé de cada coluna",
+        "Linhas ordenadas pelo total de campos presentes, declarado no subtítulo",
+        "Célula de pelo menos 44 px com aria-label de origem, campo e estado"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_combinacoes-de-campos-no-estilo-upset",
+      "titulo": "Combinações de campos preenchidos",
+      "caso_de_uso": "Marketing: quais combinações de campos preenchidos são mais comuns entre 8.400 leads e quantos leads cada uma reúne.",
+      "o_que_demonstra": [
+        "Matriz de pontos com traço ligando os campos presentes em cada combinação",
+        "Barra por combinação à direita e por campo no topo, em divs alinhadas à grade",
+        "Chave de combinação montada em TypeScript e ordenada por tamanho",
+        "As 9 maiores combinações e o resto em demais combinações, com contagem",
+        "Anotação: a maior combinação é só e-mail e nome"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_cobertura-por-origem-com-limiar-de-80",
+      "titulo": "Cobertura por origem com limiar de julgamento",
+      "caso_de_uso": "Marketing: em quais origens a cobertura de cada campo passa de 80%, o piso declarado para julgar a origem.",
+      "o_que_demonstra": [
+        "Célula com o percentual preenchido e ponto cheio só acima do limiar de 80%",
+        "Limiar escrito no subtítulo com etiqueta de procedência PREMISSA",
+        "Origem abaixo do piso em campo crítico com aviso herdado pelo cartão de CPL",
+        "Telefone em destaque: preenchimento baixo em campo obrigatório é sintoma de coleta"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_campo-fora-da-coleta",
+      "titulo": "Cobertura com campo fora da coleta",
+      "caso_de_uso": "Marketing: 4 fontes de lead, uma delas sem telefone na coleta, o que não quer dizer telefone ausente na base.",
+      "o_que_demonstra": [
+        "Três estados distintos: ponto cheio, anel vazio e hachura diagonal",
+        "Coluna inteira hachurada quando o campo está fora da coleta da fonte",
+        "Nota: preenchimento desconhecido, campo fora da coleta e não ausente na base",
+        "Percentual do rodapé calculado só sobre as fontes que coletam o campo",
+        "Legenda dos três estados sempre visível"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

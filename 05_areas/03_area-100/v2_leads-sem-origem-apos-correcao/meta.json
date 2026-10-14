@@ -1,0 +1,13 @@
+{
+  "title": "Leads sem origem depois da correção de coleta",
+  "useCase": "Mostrar que a fatia de leads sem origem declarada caiu depois da correção de coleta de 2026-06-02.",
+  "demonstrates": [
+    "Camada de ausência no topo, vazada com contorno text-muted e sem preenchimento",
+    "ReferenceLine vertical na data da correção com rótulo curto",
+    "Participação da ausência antes e depois escrita na linha de leitura",
+    "Ausência fora do teto de 6 cores e nunca somada a Outros"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A área 100% esconde o volume; o total de leads do último mês vai na linha de leitura junto da participação, para a queda da ausência não ser lida como queda de leads."
+}

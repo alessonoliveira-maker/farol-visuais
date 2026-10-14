@@ -1,0 +1,701 @@
+{
+  "slug": "02_barras-horizontais",
+  "nome": "Barras horizontais",
+  "modelos": [
+    {
+      "slug": "01_barras-simples-ordenadas",
+      "nome": "Barras simples ordenadas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma barra por categoria, todas partindo do zero, ordenadas pela grandeza em TypeScript antes do render: o comprimento é o dado e a leitura é de ranking. É o modelo padrão da família e a base de quase todos os outros. Nome completo à esquerda num eixo de categoria, valor escrito na ponta, eixo de valor omitido quando toda barra está rotulada. Absorve a variação com destaque: uma ou poucas categorias acesas na cor de destaque por regra de dado, o resto em neutro, com a cor aplicada pela prop shape e nunca por Cell, que está deprecado no Recharts 3.",
+      "quando_usar": [
+        "Ranking de uma medida entre categorias sem ordem natural: receita por executivo, perdas por motivo, leads por campanha.",
+        "Nomes longos que girados num eixo de colunas ficariam ilegíveis.",
+        "De 3 a cerca de 15 barras em card; até 25 em card alto, e acima disso top N mais uma barra de cauda.",
+        "Quando uma categoria carrega a mensagem (a pessoa logada, a fila que estoura SLA) e precisa de destaque sem perder a escala do grupo."
+      ],
+      "quando_evitar": [
+        "Série temporal: a ordenação pela grandeza apaga o tempo; use colunas (03_colunas-verticais) ou linhas (04_linhas).",
+        "Valores com os dois sinais: barras divergentes de sinal (06_barras-divergentes).",
+        "Duas ou três séries por categoria: barras agrupadas (02_barras-agrupadas).",
+        "Muitas categorias com valores quase iguais: lollipop (17_comparacao-de-pontos) reduz o efeito de parede.",
+        "Ocupação contra um teto real por categoria: barras com trilho (13_progresso-meta-e-gauge).",
+        "Top N compacto em card estreito, sem necessidade de eixo: bar list (09_bar-list)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-por-executivo",
+          "titulo": "Receita reconhecida por executivo no trimestre",
+          "caso_de_uso": "Quem está na frente em receita reconhecida no trimestre e por quanto, entre os oito executivos do time.",
+          "o_que_demonstra": [
+            "BarChart layout vertical com YAxis de categoria e XAxis numérico oculto",
+            "Ordenação decrescente com desempate estável por nome, feita no componente",
+            "Valor na ponta por LabelList com formatCurrencyCompact",
+            "Altura derivada do número de categorias com passo fixo por barra",
+            "Linha de leitura calculada do dado: líder e distância para o 2º"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_destaque-contra-sla",
+          "titulo": "Tempo até o primeiro contato por SDR",
+          "caso_de_uso": "Quais SDRs passam do SLA de 4 horas até o primeiro contato e quanto passam, entre as 12 do time.",
+          "o_que_demonstra": [
+            "Cor por item via shape com Rectangle, sem Cell, a partir de um campo calculado",
+            "Acima do SLA em cor de alerta, demais em neutro com valor escrito em toda barra",
+            "ReferenceLine x=4 tracejada e rotulada como SLA 4 h",
+            "Ordenação crescente porque a mensagem é quem está pior",
+            "Destaque vindo de regra de dado, estável quando a ordem muda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_campanhas-com-cauda-agregada",
+          "titulo": "Leads por campanha com cauda agregada",
+          "caso_de_uso": "Quais das 40 campanhas do mês trouxeram mais leads, sem espremer 40 barras num card só.",
+          "o_que_demonstra": [
+            "Top 15 ordenado e uma barra final Outras 25 campanhas em neutro, fora da ordenação",
+            "Nome longo dentro da barra por LabelList insideLeft e contagem na ponta",
+            "Nome que não cabe na barra curta sai para depois da ponta, sem reticência",
+            "Cauda somada entrando no domínio sem roubar a primeira posição"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_zero-indisponivel-e-empate",
+          "titulo": "Agendas por fila com zero, lacuna e empate",
+          "caso_de_uso": "Ler agendas da semana por fila quando uma fila marcou zero, outra não tem coleta e duas empatam no topo.",
+          "o_que_demonstra": [
+            "Zero medido escreve 0 sem minPointSize para fabricar barra visível",
+            "Fila sem coleta escreve indisponível em texto apagado, nunca barra zerada",
+            "Empate no topo com as duas categorias em destaque e título dizendo empate",
+            "Estado vazio no lugar do gráfico quando o recorte não tem linhas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_barras-agrupadas",
+      "nome": "Barras agrupadas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas ou três barras lado a lado por categoria, uma por série, todas partindo do zero, com cor fixa por série e legenda na ordem das barras. Vários Bar sem stackId; barGap controla o respiro dentro do grupo e barCategoryGap o respiro entre grupos. A leitura piora a cada série acrescentada, então o modelo para em três. Absorve as barras paralelas por dimensão, que são a saída cartesiana do radar comparativo (entidade contra referência em cada dimensão), e os pequenos múltiplos de barras por métrica, que resolvem o caso em que as métricas têm unidades diferentes e não cabem num eixo comum.",
+      "quando_usar": [
+        "Comparar 2 ou 3 séries dentro de cada categoria: marcadas e realizadas, trimestre atual e anterior.",
+        "De 3 a cerca de 8 categorias; acima disso o grupo afina demais e a leitura vira ruído.",
+        "Perfil de uma entidade contra a média em várias dimensões na mesma escala de 0 a 100, no lugar de um radar.",
+        "Várias métricas de unidades diferentes para as mesmas entidades, em pequenos múltiplos com eixo próprio por painel."
+      ],
+      "quando_evitar": [
+        "Mais de 3 séries por categoria: pequenos múltiplos (v4 deste modelo) ou linhas (04_linhas).",
+        "A pergunta é a mudança entre dois momentos: dumbbell ou slope (17_comparacao-de-pontos).",
+        "A soma das séries é o assunto: barras empilhadas (03_barras-empilhadas).",
+        "Realizado contra uma referência na mesma banda: barras contra meta (05_barras-contra-meta).",
+        "Poucos números que o leitor precisa ler exatos: tabela (14_tabelas-visuais)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-marcadas-e-realizadas",
+          "titulo": "Agendas marcadas e realizadas por canal",
+          "caso_de_uso": "Em que canal de entrada a pré-vendas marca agenda que não acontece, comparando marcadas e realizadas.",
+          "o_que_demonstra": [
+            "Dois Bar sem stackId com barGap e barCategoryGap explícitos",
+            "Canais ordenados pela série principal, não pela soma",
+            "Legenda no topo na ordem das barras e cor fixa por série",
+            "Valor na ponta de cada barra com formatador único"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_executivo-contra-media-por-dimensao",
+          "titulo": "Executivo 07 contra a média do time",
+          "caso_de_uso": "Em quais das seis dimensões de desempenho o Executivo 07 fica abaixo da média do time, sem recorrer a radar.",
+          "o_que_demonstra": [
+            "Barras paralelas por dimensão numa escala comum de 0 a 100",
+            "Entidade em cor de destaque e média em neutro na mesma banda",
+            "Dimensões ordenadas pela lacuna, da maior diferença negativa à maior positiva",
+            "Lacuna escrita ao lado de cada par com sinal de menos tipográfico"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_leads-por-origem-em-tres-meses",
+          "titulo": "Leads por origem nos últimos três meses",
+          "caso_de_uso": "Como cada uma das sete origens de lead evoluiu de jun/26 a ago/26, com uma origem nova sem histórico.",
+          "o_que_demonstra": [
+            "Três séries por origem com o mês mais recente em cor forte e anteriores em tons de neutro",
+            "Origens ordenadas pelo mês mais recente",
+            "Origem sem histórico escreve indisponível no espaço dos meses sem coleta",
+            "Valor nulo não desenha barra de zero"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_pequenos-multiplos-por-metrica",
+          "titulo": "Cinco métricas de mídia por plataforma",
+          "caso_de_uso": "Comparar plataformas em CPL, CTR, taxa de agenda, cobertura de telefone e custo, que não cabem num eixo só.",
+          "o_que_demonstra": [
+            "Um BarChart por métrica com domínio e unidade próprios por painel",
+            "Mesmas plataformas na mesma ordem em todos os painéis",
+            "Plataforma selecionada em destaque em todos os painéis, demais em neutro",
+            "Painel de CPL com menor é melhor no título, sem inverter o eixo"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_barras-empilhadas",
+      "nome": "Barras empilhadas",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada barra é o total da categoria dividido em segmentos por componente. Só o segmento da base e o total têm linha de base comum, então o componente prioritário encosta no zero e o total vai escrito na ponta. Bar com o mesmo stackId, e a partir do Recharts 3.6 o BarStack aplica o raio ao contorno da pilha inteira. Rótulo de segmento só quando a largura em pixels comporta o texto. Absorve as empilhadas em grupos: duas pilhas por categoria na mesma banda (orçado e realizado, dois cenários), com a mesma cor por componente nas duas e a pilha de referência distinguida por contorno tracejado.",
+      "quando_usar": [
+        "Total por categoria e a composição desse total na mesma leitura.",
+        "De 2 a 5 componentes com ordem fixa entre categorias e igual à legenda.",
+        "Um componente que importa mais que os outros e pode morar na base, onde se compara bem.",
+        "Plano contra realizado por categoria com a composição de cada um: duas pilhas agrupadas."
+      ],
+      "quando_evitar": [
+        "Comparar segmentos do meio entre categorias: barras agrupadas (02_barras-agrupadas) ou pequenos múltiplos.",
+        "Só a proporção importa, não o total: barras empilhadas 100% (04_barras-empilhadas-100).",
+        "Componentes que somam e subtraem: barras divergentes de sinal com pilha por lado (06_barras-divergentes).",
+        "Como o total se formou passo a passo: cascata (19_cascata-waterfall).",
+        "Mais de 5 componentes: agregar em outros ou trocar por tabela com composição inline (14_tabelas-visuais)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_pipeline-por-estagio",
+          "titulo": "Oportunidades abertas por executivo e estágio",
+          "caso_de_uso": "Quanto pipeline aberto cada executivo carrega e em que estágio ele está, de Descoberta a Assinatura.",
+          "o_que_demonstra": [
+            "Bar com stackId comum dentro de BarStack e raio só no contorno da pilha",
+            "Total na ponta por LabelList content no último segmento",
+            "Ordem de segmentos fixa e igual à legenda",
+            "Executivos ordenados pelo total da pilha"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_paradas-na-base",
+          "titulo": "Oportunidades paradas há mais de 30 dias",
+          "caso_de_uso": "Quanto do pipeline de cada executivo está parado há mais de 30 dias e precisa de ação nesta semana.",
+          "o_que_demonstra": [
+            "Segmento prioritário na base, encostado no zero, em cor de alerta",
+            "Demais estágios em neutros graduados para recuar",
+            "Percentual parado escrito ao lado do total",
+            "Ordenação pelo segmento da base, não pelo total"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_leads-por-cobertura-de-dado",
+          "titulo": "Leads do mês por origem e cobertura de dado",
+          "caso_de_uso": "Quais origens trazem lead sem telefone nem e-mail, e quanto da base de cada origem chega completa.",
+          "o_que_demonstra": [
+            "Quatro componentes de cobertura com telefone e e-mail na base",
+            "Rótulo de segmento suprimido abaixo de 24 px por content que mede width",
+            "Total e percentual de cobertura completa escritos na ponta",
+            "Sem contato em tom apagado, separado de indisponível"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_orcado-e-realizado-em-grupos",
+          "titulo": "Orçado e realizado de mídia por plataforma",
+          "caso_de_uso": "Quanto cada plataforma gastou contra o orçado, por prospecção e remarketing, com uma plataforma nova sem orçado.",
+          "o_que_demonstra": [
+            "Dois stackId por categoria e a mesma cor por componente nas duas pilhas",
+            "Pilha de orçado em contorno tracejado, realizado sólido",
+            "Legend content que colapsa os pares e lista só componentes",
+            "Plataforma sem orçado mostra só a pilha existente e escreve sem orçado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "04_barras-empilhadas-100",
+      "nome": "Barras empilhadas 100%",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada barra vai de 0 a 100% e mostra a proporção de cada componente dentro da categoria. Ganha duas linhas de base, a do zero e a do 100%, então o primeiro e o último segmento se comparam bem entre categorias. BarChart layout vertical com stackOffset expand e stackId comum; como o valor que chega ao LabelList e à dica continua absoluto, o percentual é calculado no dado. O n de cada barra vai escrito à direita, porque uma barra de 3 casos parece tão sólida quanto uma de 300. Absorve a barra única de composição: uma faixa só, dividida em segmentos, em cabeçalho ou card de KPI.",
+      "quando_usar": [
+        "Proporção dentro de cada categoria quando o tamanho absoluto não é a pergunta: mix de origem por segmento de conta.",
+        "De 2 a 5 componentes e de 2 a cerca de 15 categorias.",
+        "Comparar o primeiro ou o último componente entre categorias, apoiado nas duas linhas de base.",
+        "Composição de um total único numa faixa estreita de cabeçalho, com o restante agregado em outras."
+      ],
+      "quando_evitar": [
+        "O total importa tanto quanto a proporção: barras empilhadas (03_barras-empilhadas).",
+        "Categorias com n muito diferente e sem espaço para escrever o n: tabela com composição inline (14_tabelas-visuais).",
+        "Escala ordinal com polos em que o equilíbrio entre lados é a leitura: divergente empilhada Likert (08_divergente-empilhada-likert).",
+        "A espessura da barra também deveria codificar volume: marimekko (26_mosaico-marimekko).",
+        "Parte de um todo com poucas fatias e público que espera fatia: rosca (07_rosca-e-radial) ou waffle (22_unidades-waffle-e-pictograma)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_mix-de-origem-por-segmento",
+          "titulo": "Mix de origem dos leads por segmento de conta",
+          "caso_de_uso": "De onde vêm os leads de pequenas, médias e grandes contas, em proporção, com o volume de cada segmento à vista.",
+          "o_que_demonstra": [
+            "stackOffset expand com tickFormatter de percentual pelo formatador do Farol",
+            "Percentual calculado no dado, porque o expand entrega valor absoluto",
+            "n absoluto escrito à direita de cada barra",
+            "Ordem natural dos segmentos preservada, sem ordenar por valor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_motivos-de-perda-por-executivo",
+          "titulo": "Motivos de perda por executivo",
+          "caso_de_uso": "Qual executivo perde mais por falta de fit, em proporção das próprias perdas, entre os 12 do time.",
+          "o_que_demonstra": [
+            "Doze barras ordenadas pela fatia de sem fit, que fica na base",
+            "Rótulo de percentual centrado no segmento, em texto claro sobre cor escura",
+            "Rótulo suprimido quando o segmento não comporta o texto",
+            "n de cada executivo escrito à direita da barra, como n = 214"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_barra-unica-investimento-do-mes",
+          "titulo": "Investimento do mês por plataforma",
+          "caso_de_uso": "Como o investimento de mídia do mês se divide entre plataformas, numa faixa de cabeçalho da tela de Marketing.",
+          "o_que_demonstra": [
+            "Barra única de composição com largura em percentual e vão de 2 px entre segmentos",
+            "Percentual dentro dos três maiores segmentos e o restante agregado em outras",
+            "Soma fechada em 100% com o resto do arredondamento no último segmento",
+            "Legenda em linha abaixo e total em moeda compacta à direita"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v4_n-baixo-e-sem-casos",
+          "titulo": "Composição com n baixo e categoria sem casos",
+          "caso_de_uso": "Ler a composição de perdas sem confiar demais em quem tem 3 casos nem desenhar barra para quem não perdeu nada.",
+          "o_que_demonstra": [
+            "Barra com n abaixo de 10 em opacidade reduzida e selo n baixo",
+            "Categoria com total zero escreve sem casos, sem divisão por zero",
+            "Categoria sem coleta escreve indisponível, separada de sem casos",
+            "Selo e opacidade calculados no seletor, não no shape"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_barras-contra-meta",
+      "nome": "Barras contra meta",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Realizado por categoria lido contra uma referência própria de cada linha: meta, forecast comprometido ou teto. Junta três variações do estudo. Barras sobrepostas: a referência larga e clara atrás, o realizado fino e sólido na frente, na mesma banda, com dois YAxis de categoria sobre a mesma lista. Marcador de meta: um traço perpendicular curto na posição da meta, mais leve que a barra, desenhado por Scatter com shape ou por Bar shape que lê a escala. Faixas qualitativas opcionais em tons de um só matiz, pela prop background, que viram o bullet graph em lista. O domínio sempre inclui a maior meta.",
+      "quando_usar": [
+        "Cada categoria tem a sua meta ou o seu teto: receita por executivo contra meta individual, entradas por fila contra capacidade.",
+        "Posição contra meta em lista, com todas as linhas na mesma escala ou normalizadas em percentual da meta.",
+        "De 3 a cerca de 20 linhas; com mais, ordenar pelo percentual de atingimento.",
+        "Público que precisa ver quem passou da meta e por quanto sem ler uma segunda série de barras."
+      ],
+      "quando_evitar": [
+        "Uma medida só, assunto do card: régua de meta em KPI (01_cards-e-kpis) ou progresso (13_progresso-meta-e-gauge).",
+        "Ocupação de 0 a 100% contra teto sem meta intermediária: barras com trilho (13_progresso-meta-e-gauge).",
+        "Duas medidas sem relação de referência: barras agrupadas (02_barras-agrupadas).",
+        "Meta contra realizado ao longo do tempo: coluna fantasma ou realizado, previsto e meta (08_combinados-e-eixo-duplo).",
+        "Faixas em verde, amarelo e vermelho: vira semáforo e destrói a leitura; use tons de um só matiz."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_realizado-sobre-meta-sobreposta",
+          "titulo": "Receita realizada sobre a meta por executivo",
+          "caso_de_uso": "Quanto cada executivo já realizou da meta do trimestre, com a meta e o realizado na mesma banda.",
+          "o_que_demonstra": [
+            "Dois YAxis de categoria com o mesmo dataKey, um oculto, e yAxisId por Bar",
+            "Meta larga e clara atrás, realizado com barSize menor na frente",
+            "Ordem dos filhos no JSX define quem fica na frente",
+            "Percentual atingido escrito à direita da banda"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_marcador-de-meta-e-trimestre-anterior",
+          "titulo": "Receita contra meta com trimestre anterior",
+          "caso_de_uso": "Quem bateu a meta do trimestre e quem melhorou contra o trimestre anterior, em barra com marcador.",
+          "o_que_demonstra": [
+            "Traço de meta perpendicular por Scatter com shape, mais leve que a barra",
+            "Barras que atingem a meta em cor de destaque, demais em neutro",
+            "Ponto do trimestre anterior como segunda medida comparativa",
+            "Domínio calculado para incluir a maior meta",
+            "Legenda curta que explica o traço para quem nunca viu bullet graph"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_metas-2027-em-percentual",
+          "titulo": "Metas 2027 da Diretoria em percentual",
+          "caso_de_uso": "Onde cada um dos seis indicadores de meta 2027 está contra a meta, em unidades diferentes lidas numa escala só.",
+          "o_que_demonstra": [
+            "Indicadores normalizados em percentual da própria meta, com o valor original na dica",
+            "Faixas qualitativas em três tons de um só matiz pela prop background",
+            "Faixas invertidas no custo por reunião, em que muito é ruim",
+            "Perímetro de cada indicador escrito ao lado do rótulo",
+            "Marcador de meta fixo em 100% como ReferenceLine"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_sem-meta-e-acima-da-meta",
+          "titulo": "Executivo sem meta e realizado acima dela",
+          "caso_de_uso": "Ler realizado contra meta quando alguém não tem meta cadastrada e outro chega a 250% da própria meta.",
+          "o_que_demonstra": [
+            "Categoria sem meta desenha só o realizado e escreve sem meta definida",
+            "Realizado acima da meta com rótulo de excedente, como +18% acima",
+            "Escala cortada em 150% com marca de quebra explícita na ponta da barra",
+            "Estorno que deixa o realizado negativo escreve o valor e não desenha barra"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_barras-divergentes",
+      "nome": "Barras divergentes de sinal",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Barras que saem de um zero central para a direita quando o valor é positivo e para a esquerda quando é negativo; o olho lê sinal antes de magnitude. XAxis com domínio simétrico calculado pelo maior valor absoluto, ReferenceLine no zero mais forte que a grade e Bar shape que escolhe a cor pela polaridade da métrica, não pelo sinal, e arredonda só a ponta livre. Rótulo sempre do lado de fora, com sinal explícito e menos tipográfico. Absorve as empilhadas por sinal, com componentes que somam de um lado e subtraem do outro e o saldo marcado, e o word shift, termos ordenados pela contribuição para a mudança entre dois grupos.",
+      "quando_usar": [
+        "Variação contra período anterior ou contra referência, com valores dos dois sinais: CPL por plataforma, pipeline por executivo.",
+        "Entradas e saídas de cada categoria, quando o leitor precisa ver de onde vem o saldo.",
+        "Termos ou motivos que mais mudaram entre dois períodos ou dois grupos, ordenados pela contribuição.",
+        "De 4 a cerca de 30 linhas, ordenadas do maior ganho à maior perda."
+      ],
+      "quando_evitar": [
+        "Todos os valores com o mesmo sinal: barras simples ordenadas (01_barras-simples-ordenadas).",
+        "Como o saldo se formou passo a passo: cascata (19_cascata-waterfall).",
+        "Duas magnitudes lado a lado, e não a diferença: butterfly (07_butterfly-piramide).",
+        "Escala ordinal com polos, como avaliação de 5 pontos: divergente empilhada Likert (08_divergente-empilhada-likert).",
+        "Variação dentro de uma célula de tabela densa: barra de desvio em célula (14_tabelas-visuais)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_variacao-de-cpl-por-plataforma",
+          "titulo": "Variação do CPL por plataforma no mês",
+          "caso_de_uso": "Em que plataforma o CPL subiu ou caiu contra jul/26, sabendo que CPL que sobe é ruim.",
+          "o_que_demonstra": [
+            "Domínio simétrico de menos o máximo absoluto a mais o máximo absoluto",
+            "Cor pela polaridade de custo: queda em cor boa, alta em cor de alerta",
+            "Raio só na ponta livre, trocando de lado conforme o sinal",
+            "Rótulo fora da barra com sinal explícito e menos tipográfico",
+            "ReferenceLine no zero mais forte que a grade"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_movimentacao-do-pipeline-com-saldo",
+          "titulo": "Movimentação do pipeline por executivo",
+          "caso_de_uso": "De onde vem o saldo do pipeline de cada executivo na semana: entradas e avanços contra perdas e desqualificações.",
+          "o_que_demonstra": [
+            "Valores assinados no dado com stackId comum, empilhando por sinal sem configuração extra",
+            "Tons de uma família para componentes positivos e de outra para negativos",
+            "Marcador de saldo líquido por Scatter na mesma escala do eixo",
+            "Saldo escrito em moeda compacta com cor pela polaridade"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_termos-de-perda-que-mais-mudaram",
+          "titulo": "Termos de perda que mais mudaram no trimestre",
+          "caso_de_uso": "Quais termos dos motivos de perda ganharam ou perderam peso do 2º para o 3º trimestre de 2026.",
+          "o_que_demonstra": [
+            "Word shift: 20 termos ordenados pela contribuição em pontos percentuais",
+            "Contribuição como diferença de proporção entre os dois trimestres",
+            "Mínimo de 5 ocorrências declarado no subtítulo",
+            "Termo que só existe no trimestre recente com selo novo",
+            "Contagem de cada grupo na dica, não no rótulo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_todos-os-valores-negativos",
+          "titulo": "Variação de agendas quando todas as filas caíram",
+          "caso_de_uso": "Ler a queda de agendas por fila numa semana em que nenhuma fila cresceu, sem metade do card vazia.",
+          "o_que_demonstra": [
+            "Detecção de sinal único que recolhe o lado vazio do domínio",
+            "Zero mantido à direita como linha de base da barra espelhada",
+            "Fila sem variação escreve 0 sem barra e sem sinal",
+            "Título que declara todas as filas em queda"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_butterfly-piramide",
+      "nome": "Butterfly ou pirâmide",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Dois gráficos de barras espelhados sobre o mesmo eixo de categorias, um crescendo para a esquerda e outro para a direita, com as faixas na ordem natural. No Recharts, o lado esquerdo recebe valores negados no seletor e o eixo usa domínio simétrico com Math.abs no tickFormatter, no LabelList e na dica, para que o sinal negativo nunca vaze para o texto. A alternativa mais controlável são dois BarChart irmãos numa grade de três colunas, com o XAxis da esquerda em reversed. Os dois lados dividem a mesma escala, senão a comparação é falsa. Absorve a pirâmide de termos entre dois grupos, com cada lado normalizado pelo tamanho do próprio grupo.",
+      "quando_usar": [
+        "Duas populações sobre as mesmas faixas: leads e oportunidades por porte, entradas e agendas por tempo até o contato.",
+        "Faixas com ordem natural, de 4 a cerca de 12, lidas de baixo para cima.",
+        "Mostrar as duas magnitudes e não só a diferença entre elas.",
+        "Termos citados por dois grupos, como ganhas e perdidas, em percentual das respostas de cada grupo."
+      ],
+      "quando_evitar": [
+        "Só a diferença entre os dois lados importa: barras divergentes de sinal (06_barras-divergentes).",
+        "Lados com ordens de grandeza muito diferentes na mesma escala absoluta: percentual do próprio total ou dois cards.",
+        "Mais de dois grupos: barras agrupadas (02_barras-agrupadas) ou pequenos múltiplos.",
+        "Passagem sequencial entre etapas com taxa de conversão: funil (10_funil).",
+        "Dois pontos por categoria em que a distância é o dado: dumbbell (17_comparacao-de-pontos)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-e-oportunidades-por-porte",
+          "titulo": "Leads e oportunidades por faixa de porte",
+          "caso_de_uso": "Em que faixa de porte da conta entra lead e em que faixa sai oportunidade, lado a lado nas cinco faixas.",
+          "o_que_demonstra": [
+            "Lado esquerdo negado no seletor com domínio simétrico calculado nos dois conjuntos",
+            "Math.abs no tickFormatter, no LabelList e na dica",
+            "Faixas na ordem natural, da menor para a maior",
+            "Título de cada lado acima do respectivo bloco"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_tempo-ate-o-primeiro-contato",
+          "titulo": "Entradas e agendas por tempo até o contato",
+          "caso_de_uso": "Quanto a velocidade do primeiro contato muda a chance de agenda, das entradas às agendas realizadas por faixa.",
+          "o_que_demonstra": [
+            "Taxa de conversão escrita no centro, ao lado do rótulo da faixa",
+            "Faixa de menos de 5 minutos em destaque, demais em neutro",
+            "Dois BarChart irmãos em grade de três colunas com eixo de categorias no meio",
+            "Bandas alinhadas por mesma lista, mesma margem e mesmo barCategoryGap"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_termos-em-ganhas-e-perdidas",
+          "titulo": "Termos em oportunidades ganhas e perdidas",
+          "caso_de_uso": "Quais termos das anotações aparecem mais nas oportunidades ganhas do que nas perdidas, em percentual de cada grupo.",
+          "o_que_demonstra": [
+            "Pirâmide de termos normalizada pelo tamanho de cada grupo",
+            "Termos ordenados pela diferença, com o critério escrito no subtítulo",
+            "Diferença acima de 10 p.p. em cor cheia, demais translúcidos",
+            "Termo ausente num lado com traço e 0%, nunca removido"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_escalas-de-grandeza-diferentes",
+          "titulo": "Leads e oportunidades em escalas independentes",
+          "caso_de_uso": "Espelhar 10 mil leads contra 80 oportunidades sem que a escala comum apague o lado pequeno.",
+          "o_que_demonstra": [
+            "Detecção de razão acima de 20 entre os totais dos dois lados",
+            "Troca para percentual do próprio total com aviso escalas independentes no título",
+            "Valor absoluto preservado na dica de cada barra",
+            "Faixa sem observação num lado escreve indisponível no lugar da barra"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_divergente-empilhada-likert",
+      "nome": "Divergente empilhada Likert",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Pilha de categorias ordinais centrada entre os polos: discordâncias ou notas ruins à esquerda do zero, concordâncias ou notas boas à direita. O deslocamento de cada item é calculado em TypeScript e os retângulos saem em SVG com escala linear escrita à mão, porque no Recharts o neutro dividido exige campos duplicados e a dica precisa reconstruir o valor original. A decisão do neutro é editorial: o Farol adota o neutro numa coluna própria, fora da pilha, porque dividir ao meio sugere que metade de quem não opinou é a favor; a escolha vai escrita na legenda. O centro fica no mesmo lugar em todas as linhas e o n de cada item fica à vista. Absorve a versão mini, uma barra por linha para cards e tabelas densas.",
+      "quando_usar": [
+        "Escala ordinal com polos: avaliação de 5 pontos, concordância, satisfação.",
+        "Leitura do equilíbrio entre os polos por item, quando a forma geral importa mais que a comparação exata.",
+        "De 3 a cerca de 15 itens com o mesmo conjunto de respostas.",
+        "Avaliação de qualidade de lead por origem ou por critério no handoff entre pré-vendas e vendas."
+      ],
+      "quando_evitar": [
+        "Categorias nominais sem polo: barras empilhadas 100% (04_barras-empilhadas-100).",
+        "A pergunta é qual item tem mais positivo: 100% alinhada à esquerda (04_barras-empilhadas-100) compara melhor.",
+        "Uma nota média por item basta: barras simples ordenadas (01_barras-simples-ordenadas) ou ponto (17_comparacao-de-pontos).",
+        "Itens com n muito baixo sem espaço para o selo: tabela (14_tabelas-visuais).",
+        "Valores numéricos com sinal, não escala ordinal: barras divergentes de sinal (06_barras-divergentes)."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_qualidade-do-lead-no-handoff",
+          "titulo": "Qualidade do lead no handoff por critério",
+          "caso_de_uso": "Como os executivos avaliam os leads recebidos da pré-vendas nos seis critérios da escala de 5 pontos.",
+          "o_que_demonstra": [
+            "SVG puro com escala linear e deslocamento por item calculados em TypeScript",
+            "Negativos à esquerda e positivos à direita em rampas de dois matizes",
+            "Neutro numa coluna própria, fora da pilha, com a escolha escrita na legenda",
+            "Centro alinhado entre linhas pelo maior lado do conjunto",
+            "n de cada critério escrito à direita"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_saldo-liquido-por-polo",
+          "titulo": "Saldo líquido de avaliação por critério",
+          "caso_de_uso": "Quais critérios de handoff têm mais avaliação positiva que negativa, ordenados pelo saldo entre os polos.",
+          "o_que_demonstra": [
+            "Percentual somado de cada polo escrito nas pontas da pilha",
+            "Saldo positivo menos negativo em pontos percentuais ao lado da barra",
+            "Itens ordenados pelo saldo, com o critério escrito no subtítulo",
+            "Percentual dentro do segmento só quando cabe"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_avaliacao-por-origem-mini",
+          "titulo": "Avaliação de qualidade por origem do lead",
+          "caso_de_uso": "Qual das 12 origens de lead o time de vendas avalia mal, numa barra mini por linha dentro de card alto.",
+          "o_que_demonstra": [
+            "Barra divergente mini por linha com o centro alinhado em todas as linhas",
+            "Origem com saldo negativo como a única barra que pende para a esquerda",
+            "Neutro dominante lido pela coluna separada, não pela barra curta",
+            "Mesma geometria em TypeScript reaproveitada em densidade de tabela"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_escala-par-e-n-baixo",
+          "titulo": "Escala de 4 pontos com itens de n baixo",
+          "caso_de_uso": "Ler uma pesquisa interna de escala par, sem ponto neutro, em que alguns itens tiveram menos de 10 respostas.",
+          "o_que_demonstra": [
+            "Escala par sem neutro, com o zero na fronteira entre os polos",
+            "Item com n abaixo de 10 em opacidade reduzida e selo n baixo",
+            "Item sem respostas escreve indisponível no lugar da pilha",
+            "Legenda ordenada do polo negativo ao positivo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "09_bar-list",
+      "nome": "Bar list",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Lista compacta em que cada linha é ao mesmo tempo rótulo, barra de fundo proporcional e número à direita. Não tem eixo: é uma tabela com a barra desenhada atrás do texto. Um div por linha com a barra absoluta em opacidade baixa e largura em percentual do maior valor da lista, o nome por cima e o valor numa coluna tabular. Nenhum SVG e nenhum Recharts. A normalização pelo maior valor fica explícita, porque sem eixo o leitor não sabe contra o que a barra mede, e o número escrito é a única leitura precisa. Absorve a lista de barras com rótulo das tabelas visuais e a lista de termos com barras, com contagem por documento e cauda agregada fora do domínio.",
+      "quando_usar": [
+        "Top N compacto dentro de card: origens de lead, campanhas, criativos, termos citados.",
+        "De 3 a cerca de 15 linhas, com clique ou link levando ao detalhe.",
+        "Densidade importa mais que precisão de eixo, e o número exato vai escrito em toda linha.",
+        "Card estreito, de 320 px em diante, em que um BarChart com eixo de categoria truncaria os nomes."
+      ],
+      "quando_evitar": [
+        "Comparação precisa entre valores próximos: barras simples ordenadas com escala (01_barras-simples-ordenadas).",
+        "Valores negativos: barras divergentes de sinal (06_barras-divergentes).",
+        "Várias colunas numéricas por linha com ordenação: tabela com barras inline (14_tabelas-visuais).",
+        "Ocupação contra teto real: barras com trilho (13_progresso-meta-e-gauge).",
+        "Mais de 15 linhas sem cauda agregada: a lista vira rolagem e perde o ranking."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_top-origens-do-mes",
+          "titulo": "Top 5 origens de lead do mês",
+          "caso_de_uso": "De onde vieram mais leads em ago/26, num card estreito ao lado dos KPIs de Marketing.",
+          "o_que_demonstra": [
+            "Barra de fundo em div absoluta com largura em percentual do maior valor",
+            "Linha de altura fixa com nome à esquerda e valor tabular à direita",
+            "Barra de fundo distinguível do card no tema escuro sem competir com o texto",
+            "Nota de rodapé dizendo que a barra mede contra o maior valor da lista"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_campanhas-com-link-e-destaque",
+          "titulo": "Top 8 campanhas com a campanha em foco",
+          "caso_de_uso": "Quais campanhas trouxeram mais leads e qual está em foco no painel, com o nome levando ao detalhe.",
+          "o_que_demonstra": [
+            "Nome da campanha como link com foco visível por teclado",
+            "Campanha em foco com barra na cor de destaque, demais em neutro",
+            "Estado de foco vindo das props do pai, não guardado na linha",
+            "Nome longo em duas linhas, sem reticência, com a altura da linha ajustada"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_criativos-com-leads-e-cpl",
+          "titulo": "Top 10 criativos por leads qualificados",
+          "caso_de_uso": "Quais criativos geram mais lead qualificado e a que custo, com o criativo pausado reconhecível na lista.",
+          "o_que_demonstra": [
+            "Dois números por linha: leads qualificados e CPL qualificado",
+            "Segunda barra fina abaixo da principal com o CPL relativo",
+            "Criativo pausado com barra em cinza e etiqueta pausado",
+            "Percentual do total ao lado da contagem"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_termos-com-cauda-agregada",
+          "titulo": "Termos citados nos motivos de perda",
+          "caso_de_uso": "Quais termos mais aparecem nos motivos de perda, contando documentos e somando a cauda longa numa linha só.",
+          "o_que_demonstra": [
+            "Contagem por documento que cita o termo, não por ocorrência",
+            "Linha final outros 23 termos somada e fora do domínio das barras",
+            "Termo de 60 caracteres em duas linhas, sem reticência",
+            "Termo sem classificação com barra hachurada e rótulo sem classificação"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "10_corrida-de-barras",
+      "nome": "Corrida de barras",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Barras horizontais ordenadas que trocam de posição ao longo do tempo, animadas, com o período corrente escrito grande no canto. É peça de narrativa para abrir apresentação, não de análise. O Recharts não tem esse modo: a posição vertical de cada categoria sai do índice no ranking do período, e transform e largura animam por transição CSS em torno de 300 ms, com a chave do React sendo a categoria e nunca o índice. O comportamento do bar racing do ECharts serve de especificação. Respeita prefers-reduced-motion, oferece pausa e termina num quadro estático, que é também o que o preview do catálogo retrata, porque o render é determinístico.",
+      "quando_usar": [
+        "Abertura de reunião ou apresentação em que o ranking ao longo do tempo é a história.",
+        "Top 10 entre muitas entidades, de 12 a cerca de 36 períodos.",
+        "Quando o quadro final estático sustenta o resto da apresentação."
+      ],
+      "quando_evitar": [
+        "Análise ou decisão: o leitor não retém a trajetória; use bump ou slope (04_linhas).",
+        "Leitura de valor exato: barras simples ordenadas do período (01_barras-simples-ordenadas).",
+        "Poucas entidades que quase não trocam de posição: pequenos múltiplos de linha (04_linhas).",
+        "Painel de uso diário: movimento contínuo compete com os outros cards."
+      ],
+      "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+      "versoes": [
+        {
+          "slug": "v1_origens-mes-a-mes",
+          "titulo": "Top 10 origens de lead mês a mês",
+          "caso_de_uso": "Como o ranking das origens de lead mudou nos últimos 24 meses, para abrir a reunião de Marketing.",
+          "o_que_demonstra": [
+            "Posição por índice no ranking com transform animado por transição CSS",
+            "Chave do React pela categoria para a barra não trocar de identidade",
+            "Período corrente em Space Grotesk grande no canto",
+            "Botão de pausa, prefers-reduced-motion e quadro final estático",
+            "Máximo do eixo acompanhando o maior valor do período"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_receita-acumulada-com-marcos",
+          "titulo": "Receita acumulada por linha de negócio",
+          "caso_de_uso": "Contar à Diretoria como as linhas de negócio chegaram à receita acumulada dos últimos 8 trimestres.",
+          "o_que_demonstra": [
+            "Marcos fixos no tempo que congelam a animação e mostram um texto curto",
+            "Aviso de que a interpolação entre trimestres cria valores intermediários",
+            "Quadro final estático igual ao preview do catálogo",
+            "Valor na ponta em moeda compacta atualizado a cada passo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_entrada-e-saida-do-top-10",
+          "titulo": "Campanhas que entram e saem do top 10",
+          "caso_de_uso": "Acompanhar campanhas que entram e saem do top 10 várias vezes, incluindo meses em que uma delas não teve coleta.",
+          "o_que_demonstra": [
+            "Entrada e saída do top 10 com transição de opacidade, sem barra piscando",
+            "Período sem coleta congela o último valor conhecido com marca visual",
+            "Ausência nunca interpolada como zero",
+            "Desempate estável por nome para a ordem não oscilar entre quadros"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Ponteiro travado com valor acima do máximo",
+  "useCase": "Diretoria: 338 entradas na pré-vendas em 2026-09 contra um arco que vai até 320; como mostrar o estouro sem esticar a escala?",
+  "demonstrates": [
+    "Ponteiro travado no fim do arco pela trava de valueToAngle",
+    "Marca de transbordo na ponta e o valor real escrito em texto grande",
+    "Domínio fixo declarado, sem esticar em silêncio nem dar segunda volta",
+    "Frase acessível que diz o valor real e quanto passou do máximo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O domínio do arco fica fixo em 0 a 320 mesmo com o valor real em 338: esticar a escala em silêncio esconderia o estouro. Ponteiro é a forma menos precisa deste catálogo, por isso o valor real e a diferença saem sempre escritos. Ver README, seção Quando evitar, para a alternativa nomeada (barra com excedente, 13/01)."
+}

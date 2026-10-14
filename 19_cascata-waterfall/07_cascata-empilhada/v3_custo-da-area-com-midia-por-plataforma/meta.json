@@ -1,0 +1,13 @@
+{
+  "title": "Custo da área com mídia por plataforma",
+  "useCase": "De que é feito o custo de agosto, e como a mídia se divide entre as plataformas?",
+  "demonstrates": [
+    "Passos segmentados e passos inteiros na mesma ponte",
+    "Legenda de componentes presa ao passo, não ao gráfico inteiro",
+    "Dica com o bruto do segmento e o líquido do passo",
+    "Nomes de plataforma genéricos, sem marca real"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "SVG puro com viewBox de 894 x 257 px, igual ao espaço do SVG no canvas largo (corpo 894 x 281,5 menos 24 px da linha de leitura), então a escala é 1. Plataformas nos slots 1, 3, 6, 5 e os dois contratos de ferramenta em 2 e 4: seis cores no total, o teto da COR-4, e a mesma cor nunca serve a duas categorias. Cada legenda fica à direita do próprio passo, abaixo do conector, e lista de cima para baixo na ordem da pilha. Passos inteiros em text-muted e total em text-secondary. Sem seta nem cor de polaridade: todo passo é custo que soma, e o catálogo não declara polaridade para os componentes."
+}

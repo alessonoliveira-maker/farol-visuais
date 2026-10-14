@@ -1,0 +1,13 @@
+{
+  "title": "Pipeline e fechamentos por time comercial",
+  "useCase": "Comercial: quanto de pipeline aberto e de fechamentos de 2026 T3 cada um dos 3 times soma e quem pesa em cada time.",
+  "demonstrates": [
+    "Linha de grupo com rótulo e subtotal em kpi-number, filhas recuadas",
+    "Subtotal fora do domínio das barras inline das linhas filhas",
+    "Ordenação por valor dentro de cada grupo, com os grupos preservados",
+    "Separação entre grupos por espaço, sem borda interna"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Subtotal por SOMA: pipeline somado e fechamentos somados por time. Sem linha de total geral nesta versão; ela aparece em v3."
+}

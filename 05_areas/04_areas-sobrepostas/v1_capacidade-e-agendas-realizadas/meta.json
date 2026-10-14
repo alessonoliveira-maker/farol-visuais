@@ -1,0 +1,12 @@
+{
+  "title": "Capacidade de agendas e agendas realizadas",
+  "useCase": "Ver quanto da capacidade semanal de agendas da pré-vendas foi de fato usada de janeiro a setembro de 2026.",
+  "demonstrates": [
+    "Duas Area sem stackId: fundo em line-strong (capacidade), frente em chart-1 (realizado)",
+    "Contorno forte e preenchimento leve para a interseção não virar cor nova",
+    "Rótulo direto dentro de cada área, sem legenda, no ponto de maior separação",
+    "Linha de leitura com formatPercent nomeando qual camada está à frente"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

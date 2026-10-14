@@ -1,0 +1,14 @@
+{
+  "title": "SLA de primeiro contato por SDR em seis semanas",
+  "useCase": "Minutos até o primeiro contato de 8 SDRs em seis semanas, com a semana de recesso sem lead.",
+  "demonstrates": [
+    "Pequenos múltiplos com domínio calculado uma vez para os seis painéis",
+    "ReferenceLine do teto de SLA na mesma posição em todos os painéis",
+    "Anel vazado em text-muted (papel Ausência) para SDR sem lead, fora da escala e nunca zero",
+    "Painel da semana de recesso mantido na grade com a nota sem lead na semana",
+    "Nomes só na primeira coluna e eixo só na borda inferior"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvios do catálogo. (0) Anel de ausência e teto em text-muted, não line-strong: a seção 17.2 do contrato vence o catálogo. (1) O eixo de linhas de cada painel é numérico e escondido (domínio de −0,5 a n−0,5, com reversed): todos os painéis herdam a mesma geometria e a zebra em surface-sunken (e não surface-raised, que é o fundo do cartão) cai na posição exata. Os nomes dos SDRs são uma coluna HTML alinhada pela margem superior de 8 px e pelo passo de 21 px, porque o Recharts reserva largura de eixo só no painel que tem rótulo (REC-16). (2) Os seis painéis cabem numa só linha, então o eixo só na borda inferior vale para todos. (3) O anel de SDR sem lead fica 8 px à esquerda do zero da escala, fora do domínio, para nunca poder ser lido como zero minuto. Conta da altura: 8 linhas x 21 px = 168 px, mais 8 de margem, 24 de eixo, título do painel, linha de leitura e legenda, dentro dos 281,5 px do corpo do canvas largo com caso de uso em uma linha."
+}

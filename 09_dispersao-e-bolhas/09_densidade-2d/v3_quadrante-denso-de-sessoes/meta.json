@@ -1,0 +1,14 @@
+{
+  "title": "Sessões do site por tempo e páginas vistas",
+  "useCase": "Quanto das 9.100 sessões do mês cai em cada região de engajamento?",
+  "demonstrates": [
+    "Divisórias declaradas em índice de bin, para o corte não partir células",
+    "Contagem e participação das quatro regiões em lista com pictograma de quadrante",
+    "Participações inteiras que somam 100 pelo maior resto",
+    "Três degraus de cor, o teto medido da paleta, com a contagem de cada um escrita",
+    "Limites em potências da contagem, porque terços iguais esvaziam a escala"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo declarado por número (GEO-1): o corpo de 894 x 281,5 px recebe 1 linha de leitura, 1 rótulo de eixo vertical, a grade de 176 px, 1 fileira de tiques, 1 rótulo de eixo horizontal, e à direita duas colunas, a lista de regiões com 1 título, 4 linhas e 2 linhas de nota, e a legenda de faixa com 1 título, 3 fileiras, 3 linhas de nota, o total e a legenda dele; soma 243 px de desenho no viewBox de 265. Divergência assumida contra o catálogo, a favor do CONTRATO: a especificação pede rampa sequencial discreta de 5 degraus, e a TOK-8 mede que só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas, então esta versão tem 3 faixas. Escrever a contagem dentro da célula, que é o que ativaria a isenção da ACE-3, também não resolveria: a célula mede 17 por 11 px. Medido à mão nesta sessão, porque nenhuma guarda mede marca contra marca (TOK-9): 1,42:1 entre --seq-5 e --seq-6, 1,45:1 entre --seq-6 e --seq-7 e 2,07:1 entre --seq-5 e --seq-7, isto é, cada faixa se separa do cartão e nenhuma se separa da vizinha; por isso o tamanho da célula repete a faixa e a legenda escreve a contagem de cada uma. Os limites são potências da contagem porque a distribuição de uma densidade 2D é assimétrica: medido neste recorte, limites em terços iguais do máximo põem 184 das 190 células na faixa de baixo, limites na raiz põem 171, e em potências a divisão sai 51, 120 e 19. A divisória usa --text-muted, não --line-strong: pela ACE-6 ela carrega a relação (tapada ela, as quatro contagens perdem a referência) e --line-strong mede 1,79:1 e 1,83:1, contra 5,21:1 e 5,37:1 do --text-muted. Segunda divergência, esta contra a letra do catálogo e a favor da GEO-4 e da GEO-2: o catálogo pede contagem e participação escritas EM CADA REGIÃO, e a primeira versão fazia isso com halo, mas a célula desta grade mede 17 por 11 px e a GEO-4 mede que halo em marca fina apaga a marca inteira, o rombo caindo justamente no trecho de maior massa. Os números foram para uma lista de identificação ao lado (ROT-10), com um pictograma de quadrante por linha dizendo de que região é cada número, e no plano ficaram só as duas divisórias."
+}

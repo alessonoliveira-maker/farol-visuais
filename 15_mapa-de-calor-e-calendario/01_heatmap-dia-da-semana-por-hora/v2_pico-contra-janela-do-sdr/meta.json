@@ -1,0 +1,14 @@
+{
+  "title": "Pico de entradas contra a janela do SDR",
+  "useCase": "A pré-vendas está disponível na janela em que mais chegam leads, ou o pico cai no horário de almoço?",
+  "demonstrates": [
+    "Contorno da janela de pico por soma de 3 horas seguidas, calculada do dado",
+    "O contorno corre num canal de 6 px fora das células, nunca por cima delas",
+    "Faixa de almoço em --surface-sunken com o próprio texto dentro dela",
+    "Três estados de célula: valor medido, zero medido e hora sem veiculação",
+    "viewBox no tamanho exato do corpo, para as guardas de texto medirem a peça"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo de 960x400, e a conta que a GEO-1 pede é esta: corpo de 894 x 281,5 px (960 menos 66 de recuo; 400 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). As linhas escritas consomem 115,5 px do corpo: linha de leitura 17, rótulo de hora 17, faixa de almoço 24, legenda de escala 30 e rodapé de estados 27,5. Sobram 166 px para 7 dias, o que dá célula de 22,4 px de altura, acima do piso de 18 que o rótulo interno de 12 px pede pela ESP-2. O caso de uso tem 100 caracteres e cabe em uma linha na largura de 894 px, cujo limite medido é 153. Duas colisões com o catálogo, resolvidas a favor do CONTRATO. Primeira: o catálogo pede contorno da janela de pico, e contorno por cima das células não tem cor possível, porque --chart-1 mede 1,36:1 e 1,10:1 contra --seq-6 e 1,07:1 e 1,38:1 contra --seq-7, que são as cores do pico (TOK-10); o contorno passou a correr num canal aberto fora da grade, onde o fundo é o do cartão e ele mede 9,50:1 e 6,00:1. Segunda: a escala de 5 faixas não ordena pela cor, porque vizinho contra vizinho ela mede de 1,23:1 a 1,52:1 (TOK-8); a ordem vai pelo número escrito em toda célula e pelo teto de cada faixa escrito na amostra da legenda, e a cor é apoio. A anotação de 58% que o catálogo sugeria virou 43,0% (122 de 284), calculado do dado com volume junto, porque taxa sem volume é a armadilha DAD-1."
+}

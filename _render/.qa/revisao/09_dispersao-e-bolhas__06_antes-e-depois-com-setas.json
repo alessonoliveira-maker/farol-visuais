@@ -1,0 +1,186 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "06_antes-e-depois-com-setas",
+  "versoes": {
+    "v1_canais-entre-trimestres": {
+      "veredito": "reprovado",
+      "nota": "P31 e P12, ROT-4 e ROT-7 marca fina: o nome de Mídia programática fica 18 px acima do ponto de destino de Outbound direto, que cai dentro da largura dele, e o nome de Outbound está 44 px abaixo do próprio ponto, sem linha de chamada e a 21 px do anel de origem de Redes sociais. O defeito do par Eventos e Mídia mudou de par. Recusar caixa que fique mais perto de ponto alheio que do próprio, ou usar a fileira com linha de chamada. Taxa com volume conferida (NUM-1 passa).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:18.277Z",
+      "impressao": "c4ffe21e030eea9721edccee58d87253513cfd48",
+      "arquivos": {
+        "Chart.tsx": "a2999a421b236b568933373272c4e4e6f30b58d6",
+        "data.ts": "82966ddd64fbe8fa935950b4fae4471490306933",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
+      }
+    },
+    "v2_piorou-nas-duas-medidas": {
+      "veredito": "aprovado",
+      "nota": "ACE-6 medida: seta de contexto em text-muted 5,21:1 e 5,37:1, seta que piorou em negative 5,50:1 e 6,36:1. Os três canais da pergunta têm nome e a palavra piorou; taxa com volume; polaridade vinda do dado. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:23:35.251Z",
+      "impressao": "1ee93270f651afa6b28cf555cd72873a959599d0",
+      "arquivos": {
+        "Chart.tsx": "d1829bf3852d8849632d4a441b33524d1ef54a7f",
+        "data.ts": "1f03bce3cec3d3161ef99173a92b7a324baad284",
+        "meta.json": "fc941af02fdf74ec75e77c56d26d10349c8b4684"
+      }
+    },
+    "v3_origens-cruzando-a-meta": {
+      "veredito": "reprovado",
+      "nota": "P31, P12 e P1, ROT-4: o nome Eventos corporativos termina 17 px abaixo do ponto de destino de E-mail próprio, da mesma cor, e o nome de E-mail está 44 px abaixo, atrás dele e sem linha de chamada; o cartão troca o nome de quem cruzou. Dar a E-mail e a Eventos posição em que o nome próprio seja o mais próximo do ponto, ou linha de chamada como a de Webinar. Divisória em text-muted e seis nomes conferidos (passam).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:18.753Z",
+      "impressao": "cd9c05a1dd992a3c3e3c7daa9345c786a6dd08d0",
+      "arquivos": {
+        "Chart.tsx": "64775f35e867b5f6d90996efa43cb1316df2412f",
+        "data.ts": "6e871b4d6f7f4747c96a217f49119de376de9911",
+        "meta.json": "82c193064b312f93c03cb411e77e10e92732af99"
+      }
+    },
+    "v4_entidade-nova-ou-encerrada": {
+      "veredito": "aprovado",
+      "nota": "Legenda corrigida: encerrada no fim do T3/2026, coerente com o x na posição medida. Oito campanhas nomeadas, três formas sem seta na legenda, série única em chart-1 (9,50:1 e 6,00:1), chamada em text-muted. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:19.222Z",
+      "impressao": "a63947a132b43a80975a3355df970677de699292",
+      "arquivos": {
+        "Chart.tsx": "d32f264fb32e600e67fe4e87b399dfd8a14054d7",
+        "data.ts": "e41be4ad70d6bc24a7c54da3e9500e8fc58608ef",
+        "meta.json": "b3bb2cabc0fcd8d65e70a3b4ae18002aa76911b3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "reprovado",
+      "nota": "Halo dos rotulos apaga marca e seta: ponto depois de Redes sociais vira meia lua e as setas de Parcerias, Outbound e Indicacao saem partidas (ROT-7). Faltam tabular-nums na linha de leitura (TIP-1), aria-hidden na linha de leitura (ANO-5) e legenda em 12 px (17.1).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T19:13:51.240Z",
+      "impressao": "7cf0b98d7e39f3973594c6002dfe0243696ec5b7",
+      "arquivos": {
+        "Chart.tsx": "1898afaf18f5fac5ec39c266703a8e930a17de79",
+        "data.ts": "d91c9b2339c8be82a8ef387d8f6998afc6afc91f",
+        "meta.json": "145f906413515b19dfa7a481ad55c55f31e657f9"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "reprovado",
+      "nota": "Seta de Redes sociais sai partida nos dois temas: o halo de Outbound direto apaga 41 px do traco e o halo de Midia corta a ponta e morde o proprio ponto de destino (ROT-7); o rotulo Midia programatica institucional comeca colado no ponto de Redes sociais e rouba o nome da marca (ROT-4).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T19:42:35.750Z",
+      "impressao": "9c49beb84b2fd0e5bc2486c962af0bf81c4f95ac",
+      "arquivos": {
+        "Chart.tsx": "c2d0de737c5c0d86681bebd2136e9b356f9dd22f",
+        "data.ts": "d91c9b2339c8be82a8ef387d8f6998afc6afc91f",
+        "meta.json": "145f906413515b19dfa7a481ad55c55f31e657f9"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "aprovado",
+      "nota": "Setas inteiras nos dois temas: a anticolisao de rotulo resolveu o halo que partia o traco (ROT-7, excecao da marca fina) e nenhum nome encosta em ponto alheio. Eixos, grade, unidades, contraste e frase acessivel conferidos; observacoes registradas no README.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T20:01:38.806Z",
+      "impressao": "0cdc23b4bc8b8e15c87282a0f0bc9a48d7464bde",
+      "arquivos": {
+        "Chart.tsx": "aea2d58588bbf8439b41c59fdef3a60f509148a7",
+        "data.ts": "d91c9b2339c8be82a8ef387d8f6998afc6afc91f",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "reprovado",
+      "nota": "P31 e P12, ROT-4: o nome de Eventos corporativos fica centrado a 18 px acima do ponto de Mídia programática, cujo nome está 44 px acima e atrás dele; reposicionar para o nome de Mídia ser o mais próximo do próprio ponto. P14 e P25, NUM-1 e DAD-1: taxa escrita sem volume; declarar contagens no data.ts e usar formatRateWithVolume. ACE-6 passa: setas em chart-1, 9,50:1 e 6,00:1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:23:34.761Z",
+      "impressao": "0cdc23b4bc8b8e15c87282a0f0bc9a48d7464bde",
+      "arquivos": {
+        "Chart.tsx": "aea2d58588bbf8439b41c59fdef3a60f509148a7",
+        "data.ts": "d91c9b2339c8be82a8ef387d8f6998afc6afc91f",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
+      }
+    },
+    {
+      "versao": "v2_piorou-nas-duas-medidas",
+      "veredito": "aprovado",
+      "nota": "ACE-6 medida: seta de contexto em text-muted 5,21:1 e 5,37:1, seta que piorou em negative 5,50:1 e 6,36:1. Os três canais da pergunta têm nome e a palavra piorou; taxa com volume; polaridade vinda do dado. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:23:35.251Z",
+      "impressao": "1ee93270f651afa6b28cf555cd72873a959599d0",
+      "arquivos": {
+        "Chart.tsx": "d1829bf3852d8849632d4a441b33524d1ef54a7f",
+        "data.ts": "1f03bce3cec3d3161ef99173a92b7a324baad284",
+        "meta.json": "fc941af02fdf74ec75e77c56d26d10349c8b4684"
+      }
+    },
+    {
+      "versao": "v3_origens-cruzando-a-meta",
+      "veredito": "reprovado",
+      "nota": "P11 e P13, 17.2 papel Referência e TOK-5: a divisória da meta está em line-strong (1,79:1 e 1,83:1); meta usa text-muted. P1 e P12, ROT-4: a pergunta é quem cruzou e só 3 das 6 setas que cruzaram têm nome; identificar as 6 sem interação. ACE-6 das setas passa (5,21:1 a 7,36:1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:23:35.732Z",
+      "impressao": "e5050dda16518e3e45a0ba54d1cf7c5fcab9365e",
+      "arquivos": {
+        "Chart.tsx": "e71c4da071750fe527240fd611525175d4892bda",
+        "data.ts": "6e871b4d6f7f4747c96a217f49119de376de9911",
+        "meta.json": "d807e887865986f0bfecac8e0cd1efb0c969c29c"
+      }
+    },
+    {
+      "versao": "v4_entidade-nova-ou-encerrada",
+      "veredito": "reprovado",
+      "nota": "P12, ROT-4 e identificação das marcas: a legenda diz campanha encerrada, sem T3/2026, mas o x é desenhado na posição medida do T3 (after do data.ts); a legenda afirma ausência de um dado que a marca plota. Reescrever para encerrada no fim do T3/2026. ACE-6 passa: chart-1, 9,50:1 e 6,00:1.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:23:36.242Z",
+      "impressao": "451681e079971312797f95ff11e815e67b0b62a2",
+      "arquivos": {
+        "Chart.tsx": "ba5684bd5a87223326c42698713afae255b42ac9",
+        "data.ts": "e41be4ad70d6bc24a7c54da3e9500e8fc58608ef",
+        "meta.json": "b3bb2cabc0fcd8d65e70a3b4ae18002aa76911b3"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "reprovado",
+      "nota": "P31 e P12, ROT-4 e ROT-7 marca fina: o nome de Mídia programática fica 18 px acima do ponto de destino de Outbound direto, que cai dentro da largura dele, e o nome de Outbound está 44 px abaixo do próprio ponto, sem linha de chamada e a 21 px do anel de origem de Redes sociais. O defeito do par Eventos e Mídia mudou de par. Recusar caixa que fique mais perto de ponto alheio que do próprio, ou usar a fileira com linha de chamada. Taxa com volume conferida (NUM-1 passa).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:18.277Z",
+      "impressao": "c4ffe21e030eea9721edccee58d87253513cfd48",
+      "arquivos": {
+        "Chart.tsx": "a2999a421b236b568933373272c4e4e6f30b58d6",
+        "data.ts": "82966ddd64fbe8fa935950b4fae4471490306933",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
+      }
+    },
+    {
+      "versao": "v3_origens-cruzando-a-meta",
+      "veredito": "reprovado",
+      "nota": "P31, P12 e P1, ROT-4: o nome Eventos corporativos termina 17 px abaixo do ponto de destino de E-mail próprio, da mesma cor, e o nome de E-mail está 44 px abaixo, atrás dele e sem linha de chamada; o cartão troca o nome de quem cruzou. Dar a E-mail e a Eventos posição em que o nome próprio seja o mais próximo do ponto, ou linha de chamada como a de Webinar. Divisória em text-muted e seis nomes conferidos (passam).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:18.753Z",
+      "impressao": "cd9c05a1dd992a3c3e3c7daa9345c786a6dd08d0",
+      "arquivos": {
+        "Chart.tsx": "64775f35e867b5f6d90996efa43cb1316df2412f",
+        "data.ts": "6e871b4d6f7f4747c96a217f49119de376de9911",
+        "meta.json": "82c193064b312f93c03cb411e77e10e92732af99"
+      }
+    },
+    {
+      "versao": "v4_entidade-nova-ou-encerrada",
+      "veredito": "aprovado",
+      "nota": "Legenda corrigida: encerrada no fim do T3/2026, coerente com o x na posição medida. Oito campanhas nomeadas, três formas sem seta na legenda, série única em chart-1 (9,50:1 e 6,00:1), chamada em text-muted. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:32:19.222Z",
+      "impressao": "a63947a132b43a80975a3355df970677de699292",
+      "arquivos": {
+        "Chart.tsx": "d32f264fb32e600e67fe4e87b399dfd8a14054d7",
+        "data.ts": "e41be4ad70d6bc24a7c54da3e9500e8fc58608ef",
+        "meta.json": "b3bb2cabc0fcd8d65e70a3b4ae18002aa76911b3"
+      }
+    }
+  ]
+}

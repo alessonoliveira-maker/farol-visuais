@@ -1,0 +1,108 @@
+{
+  "familia": "05_areas",
+  "modelo": "09_horizon-chart",
+  "versoes": {
+    "v1_desvio-do-cpl-por-campanha": {
+      "veredito": "aprovado",
+      "nota": "Horizonte correto: clamp por faixa, dominio fixo, matiz pela polaridade e legenda com os cortes. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:48.691Z",
+      "impressao": "35128a269e171640803e2d390a2eaff52410bb7e",
+      "arquivos": {
+        "Chart.tsx": "68d5d4f37813345f4fbe81fa6ed34e26fac51473",
+        "data.ts": "17816564a1930a64a5f1dfd081303836cf886dee",
+        "meta.json": "8f48887c3f24bb37b64e547a6125ee10bb756e89"
+      }
+    },
+    "v2_campanha-expandida-em-area": {
+      "veredito": "aprovado",
+      "nota": "Linha aberta em area comum com zero e nome em 700, demais dobradas; a diferenca de leitura esta declarada na legenda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:54.549Z",
+      "impressao": "ff79d8ab6536255df95653b54e686125ae76cb59",
+      "arquivos": {
+        "Chart.tsx": "26f6a662f61d6ab832c03dc9b19d61e923de0e5a",
+        "data.ts": "e2f8921d3d0a68d7c07fe09952f8d1c4797a3cff",
+        "meta.json": "274563f0173a9a7347b40f0a75ed9cc1aabe51c4"
+      }
+    },
+    "v3_sla-de-30-equipes": {
+      "veredito": "aprovado",
+      "nota": "SVG puro com path por faixa e clipPath aguenta 30 linhas; ordem pelo pior trimestre declarada e canvas fora do preset justificado nas notes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:54:00.116Z",
+      "impressao": "92d592f5a5857e5858fc6c2f73b74e4b8551be34",
+      "arquivos": {
+        "Chart.tsx": "b524d46e3dda1b31abd1b87d71dcf88a241e3f3f",
+        "data.ts": "bf4786cadb39e83513c016c789e142557bf56346",
+        "meta.json": "20b831c906543d11629523c69387de3eefc8e08a"
+      }
+    },
+    "v4_valor-fora-de-escala": {
+      "veredito": "aprovado",
+      "nota": "Recorte no teto sinalizado: marcador no dia e anotacao com o valor real de 20,0 min, passo comum preservado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:54:04.986Z",
+      "impressao": "1dda86f269430d8c55df2de1205b65d149d6f0df",
+      "arquivos": {
+        "Chart.tsx": "87b7f60220ac5bd15f3620c8ad4c971806616ef7",
+        "data.ts": "dc9dd0410187a80aac4dcbd5cd8359e02c0d4e11",
+        "meta.json": "33c8dff8b72664fd744cac9a015aa8c97e11dca3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_desvio-do-cpl-por-campanha",
+      "veredito": "aprovado",
+      "nota": "Horizonte correto: clamp por faixa, dominio fixo, matiz pela polaridade e legenda com os cortes. Sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:48.691Z",
+      "impressao": "35128a269e171640803e2d390a2eaff52410bb7e",
+      "arquivos": {
+        "Chart.tsx": "68d5d4f37813345f4fbe81fa6ed34e26fac51473",
+        "data.ts": "17816564a1930a64a5f1dfd081303836cf886dee",
+        "meta.json": "8f48887c3f24bb37b64e547a6125ee10bb756e89"
+      }
+    },
+    {
+      "versao": "v2_campanha-expandida-em-area",
+      "veredito": "aprovado",
+      "nota": "Linha aberta em area comum com zero e nome em 700, demais dobradas; a diferenca de leitura esta declarada na legenda.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:54.549Z",
+      "impressao": "ff79d8ab6536255df95653b54e686125ae76cb59",
+      "arquivos": {
+        "Chart.tsx": "26f6a662f61d6ab832c03dc9b19d61e923de0e5a",
+        "data.ts": "e2f8921d3d0a68d7c07fe09952f8d1c4797a3cff",
+        "meta.json": "274563f0173a9a7347b40f0a75ed9cc1aabe51c4"
+      }
+    },
+    {
+      "versao": "v3_sla-de-30-equipes",
+      "veredito": "aprovado",
+      "nota": "SVG puro com path por faixa e clipPath aguenta 30 linhas; ordem pelo pior trimestre declarada e canvas fora do preset justificado nas notes.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:54:00.116Z",
+      "impressao": "92d592f5a5857e5858fc6c2f73b74e4b8551be34",
+      "arquivos": {
+        "Chart.tsx": "b524d46e3dda1b31abd1b87d71dcf88a241e3f3f",
+        "data.ts": "bf4786cadb39e83513c016c789e142557bf56346",
+        "meta.json": "20b831c906543d11629523c69387de3eefc8e08a"
+      }
+    },
+    {
+      "versao": "v4_valor-fora-de-escala",
+      "veredito": "aprovado",
+      "nota": "Recorte no teto sinalizado: marcador no dia e anotacao com o valor real de 20,0 min, passo comum preservado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:54:04.986Z",
+      "impressao": "1dda86f269430d8c55df2de1205b65d149d6f0df",
+      "arquivos": {
+        "Chart.tsx": "87b7f60220ac5bd15f3620c8ad4c971806616ef7",
+        "data.ts": "dc9dd0410187a80aac4dcbd5cd8359e02c0d4e11",
+        "meta.json": "33c8dff8b72664fd744cac9a015aa8c97e11dca3"
+      }
+    }
+  ]
+}

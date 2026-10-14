@@ -1,0 +1,12 @@
+{
+  "title": "Três metas da pré-vendas na semana",
+  "useCase": "Pré-vendas: na semana de 2026-09-07, a equipe fechou as metas de entradas tratadas, agendas marcadas e SLA cumprido?",
+  "demonstrates": [
+    "Um RadialBar por meta com background como trilho e cornerRadius moderado",
+    "Valores normalizados em TypeScript e PolarAngleAxis de 0 a 100",
+    "Legenda lateral tabular com valor bruto, meta e percentual por anel",
+    "Anel que não fechou com ícone e o que falta escrito na legenda",
+    "Ordem dos anéis por importância, declarada no dado"
+  ],
+  "canvas": "card"
+}

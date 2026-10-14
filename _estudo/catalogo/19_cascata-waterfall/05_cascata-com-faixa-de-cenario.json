@@ -1,0 +1,70 @@
+{
+  "slug": "05_cascata-com-faixa-de-cenario",
+  "nome": "Cascata com faixa de cenário",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Ponte em que os passos incertos carregam intervalo declarado (mínimo, esperado, máximo) e o total sai como faixa com o esperado marcado. Responde aos cenários com saída em faixa da Diretoria mostrando onde nasce a incerteza, e não só quanto ela mede no fim. O intervalo é desenhado dentro do shape, porque o ErrorBar trabalha sobre valor único e a série aqui é uma faixa.",
+  "quando_usar": [
+    "Projeção de receita, custo ou capacidade em que 2 a 5 passos têm incerteza declarada e o resto é certo.",
+    "Quando a decisão depende de saber qual passo, se medido, estreita a faixa do total.",
+    "Capacidade contra demanda de um período futuro, com a demanda como linha de referência.",
+    "Cenário que pode ultrapassar um teto medido, com a parte inalcançável marcada."
+  ],
+  "quando_evitar": [
+    "Existe número único auditável: ponte simples, modelo 01.",
+    "A pergunta é a distribuição do resultado e não o caminho: distribuição, família 16.",
+    "Cenário como trajetória no tempo: área com faixa, família 05.",
+    "Faixa do total obtida somando mínimos e máximos dos passos sem declarar a regra: infla o intervalo."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-proximo-trimestre-em-faixa",
+      "titulo": "Receita de 2026-T4 em faixa",
+      "caso_de_uso": "Diretoria: base contratada de R$ 1,52 mi certa; novos de R$ 80 mil a R$ 240 mil, expansão de R$ 20 mil a R$ 90 mil e cancelamento de −R$ 110 mil a −R$ 20 mil; saída de R$ 1,56 mi a R$ 1,78 mi.",
+      "o_que_demonstra": [
+        "Passo certo sólido e passo incerto com intervalo desenhado no shape",
+        "Coluna final como faixa translúcida com linha no valor esperado",
+        "Faixa do total vinda da origem, não da soma dos extremos",
+        "Regra da faixa escrita na linha de leitura"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_onde-a-faixa-nasce",
+      "titulo": "Onde nasce a incerteza do trimestre",
+      "caso_de_uso": "Diretoria, mesma projeção de 2026-T4: novos contratos respondem por R$ 160 mil de amplitude, tanto quanto expansão e cancelamento somados; medir esse passo estreita a faixa do total.",
+      "o_que_demonstra": [
+        "Destaque em --chart-1 no passo de maior amplitude, demais neutros",
+        "Amplitude de cada passo escrita ao lado do intervalo",
+        "Anotação curta ancorada no passo que concentra a incerteza",
+        "Peso 700 no rótulo destacado como segundo canal"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_capacidade-contra-demanda-em-2027",
+      "titulo": "Capacidade de pré-vendas contra demanda",
+      "caso_de_uso": "Diretoria, 2027: capacidade instalada de 220 entradas por mês, contratações de +60 a +110, rampa de −40 a −10 e atrito de −35 a −5; saída de 230 a 300 contra demanda projetada de 290.",
+      "o_que_demonstra": [
+        "Unidade de capacidade em todo rótulo: entradas por mês",
+        "ReferenceLine da demanda projetada cruzando a faixa final",
+        "Parte da faixa abaixo da demanda marcada com palavra e sinal",
+        "Passo medido e passos de premissa com o mesmo desenho de intervalo",
+        "Frase acessível dizendo em que parte da faixa a demanda cai"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_cenario-acima-do-teto",
+      "titulo": "Cenário otimista acima do teto",
+      "caso_de_uso": "Diretoria, 2027-T1: receita em faixa de R$ 1,8 mi a R$ 2,4 mi contra teto de atendimento medido de R$ 2,1 mi; a parte acima do teto não é entregável com o time atual.",
+      "o_que_demonstra": [
+        "Trecho da faixa acima do teto hachurado e rotulado",
+        "Teto como referência tracejada com ifOverflow extendDomain",
+        "Esperado marcado mesmo quando cai perto do teto",
+        "No máximo duas anotações: teto e trecho não entregável"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

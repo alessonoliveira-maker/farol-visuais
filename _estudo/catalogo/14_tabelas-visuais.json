@@ -1,0 +1,631 @@
+{
+  "slug": "14_tabelas-visuais",
+  "nome": "Tabelas visuais",
+  "modelos": [
+    {
+      "slug": "01_tabela-com-barras-inline",
+      "nome": "Tabela com barras e marcas inline",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "A tabela continua sendo tabela, mas cada coluna numérica ganha uma marca dentro da célula: barra no trilho, bullet com traço de meta, barra divergente a partir do zero, barra de composição 100% ou ponto com intervalo. A marca mostra o padrão da coluna inteira de uma vez; o número ao lado, fora da marca e com algarismo tabular, responde o valor exato. O domínio é calculado uma vez por coluna sobre o recorte inteiro, nunca por linha nem pela página visível.",
+      "quando_usar": [
+        "Comparar magnitude entre 8 e 40 linhas sem perder o número exato de cada uma",
+        "Várias métricas com unidades diferentes por entidade, cada coluna com a própria escala declarada no cabeçalho",
+        "Valor contra meta ou teto por linha, com a meta normalizada em % quando cada linha tem a sua",
+        "Variação com sinal ou desvio contra referência, com a cor vinda da polaridade da métrica",
+        "Mix de até 5 categorias por linha na mesma ordem em todas as linhas, com o n escrito"
+      ],
+      "quando_evitar": [
+        "Uma métrica e 3 a 6 linhas: barra horizontal simples lê mais rápido (família 02)",
+        "Coluna só com positivos desenhada como divergente: o zero encosta à esquerda e vira barra simples",
+        "Mais de 5 categorias na composição ou linhas com n pequeno sem aviso: agrupe em outros ou mostre a fração",
+        "Pergunta sobre a trajetória de cada linha: use a série por linha (14/03)",
+        "Barra, eixo e rótulo fora de tabela: é microvisual (família 24) ou barra da família 02"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-por-executivo",
+          "titulo": "Receita reconhecida por executivo",
+          "caso_de_uso": "Comercial: quem concentra a receita reconhecida de 2026-T3 entre 12 executivos, sem perder o valor exato de cada um.",
+          "o_que_demonstra": [
+            "Barra em div com largura percentual sobre trilho em surface-overlay",
+            "Domínio da coluna calculado uma vez em useMemo sobre todas as linhas, a partir do zero",
+            "Número à direita em tabular-nums, fora da barra, por formatCurrencyCompact",
+            "Traço vertical da média do time no trilho de todas as linhas, com rótulo no cabeçalho"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_agendas-contra-meta-em-bullet",
+          "titulo": "Agendas da semana contra a meta por SDR",
+          "caso_de_uso": "Pré-vendas: quais SDRs ficaram abaixo da meta semanal de 18 agendas e a que distância dela.",
+          "o_que_demonstra": [
+            "Bullet inline em SVG de viewBox fixo com vectorEffect non-scaling-stroke no traço da meta",
+            "Faixas qualitativas comuns à coluna, de 0 a 70%, 70 a 100% e acima de 100% da meta",
+            "Abaixo da meta com ícone e peso no nome, sem depender só da cor",
+            "Marca de estouro na ponta quando o valor passa do teto da escala, com o número real"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_resultado-por-origem-com-desvio-e-mix",
+          "titulo": "Resultado por origem com desvio e mix de status",
+          "caso_de_uso": "Marketing: por origem, o volume, o saldo de receita atribuída menos custo e o mix de status dos leads em 2026-08.",
+          "o_que_demonstra": [
+            "Três marcas na mesma tabela, cada coluna com domínio próprio declarado no cabeçalho",
+            "Barra divergente com zero calculado por coluna e domínio simétrico",
+            "Composição 100% com flex, ordem fixa das categorias e legenda única no cabeçalho",
+            "Rótulo percentual só em segmento acima de 12% e vão de 1,5 px entre segmentos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_ausente-zero-outlier-e-faixa",
+          "titulo": "Origens com ausência, zero, outlier e faixa",
+          "caso_de_uso": "Marketing: ler origens com CPL indisponível, zero medido, volume 11 vezes maior e margem em faixa que cruza o zero.",
+          "o_que_demonstra": [
+            "Indisponível sem barra, com ícone Unplug e formatUnavailable, diferente de zero medido",
+            "Outlier truncado num teto declarado com marca de corte e o valor real escrito",
+            "Ponto e intervalo inline cruzando o zero, com linha do zero em line-strong",
+            "Linha com n igual a 1 mostra só o ponto e o rótulo n=1, sem intervalo"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "02_tabela-com-heatmap-nas-celulas",
+      "nome": "Tabela com heatmap nas células",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "O fundo de cada célula recebe um tom da rampa sequencial (ou divergente) proporcional ao valor, com o número sempre escrito por cima. Serve para achar extremos e padrões em colunas de mesma natureza (meses, etapas) sem deixar de ser tabela: colunas de texto e colunas sem cor convivem. A cor sai de uma função TypeScript que quantiza o valor em degraus de --seq-1 a --seq-7, com faixa manual ou percentis para um outlier não sequestrar a escala, e o texto troca de token por degrau para manter contraste.",
+      "quando_usar": [
+        "Colunas de mesma natureza e mesma unidade (12 meses, 6 etapas) em que o extremo importa mais que o valor",
+        "Até cerca de 15 linhas por 12 colunas com o número visível em cada célula",
+        "Perfil de entidades por várias métricas, com a cor calculada por coluna e o melhor e o pior realçados",
+        "Desvio contra meta com sinal, em escala divergente centrada no zero e legenda com os limites"
+      ],
+      "quando_evitar": [
+        "Colunas de unidades diferentes numa escala única: calcule a cor por coluna ou use barras inline (14/01)",
+        "Todas as colunas da mesma medida e nenhum texto além do rótulo: é o heatmap matricial (família 15)",
+        "Gradiente automático de mínimo a máximo com um outlier: use faixa manual ou percentis",
+        "Mais de 10 entidades por 8 dimensões com realce de melhor e pior: o realce se perde, use só o gradiente",
+        "Pergunta de quanto a mais entre duas linhas: cor compara mal, prefira barra"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_conversao-por-etapa-e-mes",
+          "titulo": "Conversão por etapa do funil e mês",
+          "caso_de_uso": "Comercial: em quais meses de 2026 cada etapa do funil converteu melhor ou pior, com a taxa exata em cada célula.",
+          "o_que_demonstra": [
+            "Quantização em 7 degraus de --seq-1 a --seq-7 por função pura, escala comum às 12 colunas",
+            "Texto em text-primary nos degraus baixos e accent-cyan-contrast nos altos",
+            "Legenda de escala com limites e unidade, e vão de 1 px entre células",
+            "Meses curtos por formatMonthShort e taxa por formatPercent com uma casa"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_cpl-qualificado-com-teto",
+          "titulo": "CPL qualificado por plataforma com teto",
+          "caso_de_uso": "Marketing: quais plataformas e meses passaram do teto de R$ 180 de CPL qualificado em 2026.",
+          "o_que_demonstra": [
+            "Faixa manual de R$ 60 a R$ 240 em 5 degraus, com valor fora da faixa encostado no extremo",
+            "Célula acima do teto com contorno em warning e ícone, além da cor",
+            "Legenda que diz a faixa manual e a regra do teto numa linha",
+            "Polaridade invertida escrita: tom mais forte é CPL mais caro"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_perfil-das-areas-por-coluna",
+          "titulo": "Perfil das áreas nas metas do ano",
+          "caso_de_uso": "Diretoria: como 9 áreas se saem em 8 métricas de unidades diferentes, e quem é o melhor e o pior em cada uma.",
+          "o_que_demonstra": [
+            "Cor calculada por coluna como posição percentual dentro da própria coluna",
+            "Direção por coluna vinda do dado: em métrica de menor é melhor a rampa inverte",
+            "Melhor da coluna em peso 700 e pior com ícone, com legenda dizendo a regra",
+            "Número formatado pela unidade de cada coluna por formatValue"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_desvio-divergente-e-sem-meta",
+          "titulo": "Desvio contra a meta com células sem meta",
+          "caso_de_uso": "Diretoria: quais áreas e trimestres ficaram acima ou abaixo da meta, e onde nem existe meta cadastrada.",
+          "o_que_demonstra": [
+            "Escala divergente simétrica centrada em 0% com degraus de negative e positive",
+            "Sinal + ou − tipográfico escrito na célula, nunca só a cor",
+            "Célula sem meta com hachura, texto sem meta e chip próprio na legenda",
+            "Contraste do texto conferido degrau a degrau nos dois temas"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_tabela-com-serie-por-linha",
+      "nome": "Tabela com sparkline ou tracker por linha",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Uma coluna de largura fixa com um micrográfico por linha: sparkline de linha, área ou colunas com a trajetória recente, ou uma faixa de blocos com o status de cada dia ou semana (tracker). O último ponto é marcado e ligado ao número da coluna vizinha. O caminho do path é calculado em TypeScript, sem uma instância de Recharts por linha, e o cabeçalho declara qual escala foi usada, porque é ela que decide o que se pode comparar entre as linhas.",
+      "quando_usar": [
+        "Mostrar a trajetória de 8 a 50 entidades ao lado do valor atual, em 8 a 26 períodos",
+        "Série com faixa aceitável comum a todas as linhas (SLA, taxa mínima) e pontos fora dela",
+        "Status diário ou semanal recente por entidade, com resumo em texto como 26 de 30 dias no SLA",
+        "Tabela de acompanhamento em que a forma da série e o número atual precisam ficar lado a lado"
+      ],
+      "quando_evitar": [
+        "Pergunta sobre o valor de um ponto específico da série: use tabela de meses ou heatmap (14/02)",
+        "Escala própria por linha quando a pergunta é magnitude entre linhas: use escala comum a partir do zero",
+        "Série com menos de 3 pontos: vira número com comparação (família 01)",
+        "Blocos de tracker abaixo de 4 px: agregue por semana",
+        "Micrográfico isolado em cartão ou texto corrido: é a família 24"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-semanais-por-sdr",
+          "titulo": "Agendas semanais por SDR nas últimas 12 semanas",
+          "caso_de_uso": "Pré-vendas: como a produção semanal de agendas de cada SDR evoluiu e quanto ela vale na semana atual.",
+          "o_que_demonstra": [
+            "Path de sparkline calculado em função pura, sem Recharts por linha",
+            "Escala própria por linha declarada no cabeçalho como leitura de forma",
+            "Último ponto em chart-1 ligado ao número da semana na coluna vizinha",
+            "SVG da célula com aria-hidden e o valor legível no texto da linha"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_sla-de-primeiro-contato-com-faixa",
+          "titulo": "Tempo de primeiro contato com faixa aceitável",
+          "caso_de_uso": "Pré-vendas: quais filas saíram da faixa de 0 a 15 minutos de primeiro contato nas últimas 8 semanas.",
+          "o_que_demonstra": [
+            "Escala fixa comum a todas as linhas, com a faixa normal sombreada em surface-sunken",
+            "Pontos fora da faixa em warning, com a contagem de semanas fora escrita ao lado",
+            "Cabeçalho que diz a escala e o que a faixa marca",
+            "Minutos por formatDecimal com a unidade na coluna do valor atual"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_tracker-de-sla-por-fila",
+          "titulo": "SLA diário por fila nos últimos 30 dias",
+          "caso_de_uso": "Pré-vendas: em quais dias cada uma das 8 filas estourou o SLA e quantos dias ficou dentro dele.",
+          "o_que_demonstra": [
+            "Faixa de blocos em flex com largura igual e vão de 2 px, um bloco por dia útil",
+            "Status dentro, atenção e estouro em positive, warning e negative com legenda",
+            "Resumo em texto à direita, como 26 de 30 dias no SLA, que não depende da cor",
+            "Marca de hoje no último bloco e contagem de estouros em ordem decrescente"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_serie-curta-buraco-e-calendario-irregular",
+          "titulo": "Séries curtas, buracos e calendário irregular",
+          "caso_de_uso": "Pré-vendas: ler SDRs recém admitidos, semanas sem carga de dado e feriados sem confundir nada disso com falha.",
+          "o_que_demonstra": [
+            "Série curta desenhada só nas posições finais, sem esticar para a largura toda",
+            "Semana sem carga quebra o path, sem connectNulls, com nota de lacuna",
+            "Feriado e fim de semana em neutro, dia sem dado com hachura, nenhum pintado como falha",
+            "Dias antes da admissão sem bloco e resumo com denominador ajustado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "04_scorecard-tabular",
+      "nome": "Scorecard tabular com procedência",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Uma linha por indicador com valor atual, meta, atingimento, variação contra o período anterior com a base nomeada e o ícone de tendência. A seta diz a direção do número e a cor diz se é bom, pela polaridade da métrica: CPL subindo tem seta para cima em negative. Na postura do Farol cada linha também diz de onde o número vem (MEDIDO, DERIVADO, PREMISSA, LACUNA) e quanto do dado existe, trocando o percentual pela fração quando o denominador é pequeno e declarando a lacuna uma vez em vez de repetir a palavra em cada célula.",
+      "quando_usar": [
+        "Resumo de 6 a 20 KPIs com unidades diferentes que não cabem em cartões na mesma tela",
+        "Leitura de valor, meta e variação lado a lado, com a polaridade decidindo a cor",
+        "Tela executiva em que cada número precisa carregar a procedência na própria linha",
+        "Cobertura de campos por origem ou por métrica, para não ler taxa de 20% da base como a base inteira"
+      ],
+      "quando_evitar": [
+        "Até 5 KPIs com espaço: cartões da família 01 leem melhor",
+        "Quando o leitor precisa da série de cada indicador: use a série por linha (14/03)",
+        "Métrica nova sem período anterior exibida com percentual de variação: escreva sem base",
+        "Procedência que é a mesma para o cartão inteiro: é a etiqueta única do VisualCard, não uma coluna"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_resumo-mensal-do-marketing",
+          "titulo": "Resumo mensal do Marketing",
+          "caso_de_uso": "Marketing: como leads, MQL, CPL, CPL qualificado, agendas e investimento de 2026-08 ficaram contra meta e contra 2026-07.",
+          "o_que_demonstra": [
+            "Colunas de valor, meta, atingimento e variação, com número à direita em tabular-nums",
+            "Variação com sinal tipográfico e base nomeada na mesma linha",
+            "Ícones TrendingUp, TrendingDown e Minus com aria-hidden e texto ao lado",
+            "Formato por unidade de cada linha via formatValue"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_polaridade-e-banda-de-estabilidade",
+          "titulo": "Seta pela direção, cor pela polaridade",
+          "caso_de_uso": "Marketing: não confundir CPL +12% (ruim) com taxa de agenda +12% (bom) nem alarmar oscilação de +0,8%.",
+          "o_que_demonstra": [
+            "Mesma seta para cima em negative no CPL e em positive na taxa de agenda",
+            "Banda de estabilidade de 2% que troca a seta por Minus e o texto estável",
+            "Métrica sem polaridade em text-secondary, nunca verde nem vermelha",
+            "Nota de rodapé de uma linha explicando a regra"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_scorecard-da-diretoria-com-procedencia",
+          "titulo": "Scorecard da Diretoria com procedência",
+          "caso_de_uso": "Diretoria: 15 métricas agrupadas por área, cada uma dizendo se o número é medido, derivado, premissa ou lacuna.",
+          "o_que_demonstra": [
+            "Selo de procedência por linha em texto com tokens prov, desenhado no próprio Chart",
+            "Linhas agrupadas por área com rótulo de grupo, sem borda interna",
+            "Linha LACUNA sem valor, com formatUnavailable e o motivo curto",
+            "Legenda dos quatro selos no topo, uma vez só"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_cobertura-denominador-pequeno-e-lacuna",
+          "titulo": "Cobertura de campos com denominador pequeno",
+          "caso_de_uso": "Marketing: quanto de telefone, cargo e cidade existe por origem, e onde a taxa de agenda não merece percentual cheio.",
+          "o_que_demonstra": [
+            "Barras de cobertura de 0 a 100% com o percentual escrito ao lado",
+            "Abaixo do n mínimo a taxa vira fração, como 3 de 4, por formatRateWithVolume",
+            "Taxa com cobertura abaixo de 50% em text-muted com ícone, sem opacidade",
+            "Coluna inteira LACUNA declarada uma vez no cabeçalho; métrica nova escreve sem base"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_ranking-com-variacao-de-posicao",
+      "nome": "Ranking com variação de posição",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Tabela ordenada por uma métrica que mostra, além da posição e do valor, quanto cada item andou desde o período anterior: ícone ArrowUp, ArrowDown ou Minus com o número de posições, selo novo para quem entrou e linha fantasma para quem saiu do topo. Responde quem subiu e quem caiu, o que a barra ordenada sozinha não mostra. A posição anterior é calculada no seletor de dados; a célula recebe posição, posição anterior, valor e valor anterior, e a regra de empate e a direção da métrica ficam declaradas.",
+      "quando_usar": [
+        "Top 10 a 25 de uma métrica em que a mudança de posição contra o período anterior é a notícia",
+        "Entradas e saídas do topo que precisam aparecer sem abrir outra tela",
+        "Ranking com valor, variação absoluta e percentual e barra do valor atual na mesma linha",
+        "Métrica em que menor é melhor (ciclo em dias, CPL), com a ordem invertida escrita na legenda"
+      ],
+      "quando_evitar": [
+        "Poucos itens com valores quase iguais: a posição oscila por ruído, mostre o valor com barra (14/01)",
+        "Trajetória de posições em muitos períodos: bump chart ou slope (família 17)",
+        "Top N de uma métrica em espaço estreito sem variação: lista de barras (família 02)",
+        "Item sem período anterior tratado como subiu 999: ele é novo"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-do-trimestre",
+          "titulo": "Ranking de receita reconhecida do trimestre",
+          "caso_de_uso": "Comercial: quem subiu e quem caiu no ranking de receita reconhecida de 2026-T3 contra 2026-T2.",
+          "o_que_demonstra": [
+            "Posição anterior menos posição atual maior que zero lida como subiu",
+            "Ícone lucide com aria-hidden e o número de posições escrito ao lado",
+            "Ordinal com º na coluna de posição e valor por formatCurrencyCompact",
+            "Frase acessível com o líder e o maior salto do período"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_top-10-origens-com-entrada-e-saida",
+          "titulo": "Top 10 origens por leads qualificados",
+          "caso_de_uso": "Marketing: quais origens entraram e quais saíram do top 10 de leads qualificados de 2026-09 contra 2026-08.",
+          "o_que_demonstra": [
+            "Selo novo em texto para item sem posição anterior, no lugar da seta",
+            "Linha fantasma no fim em text-muted com o rótulo saiu do top 10",
+            "Linha fantasma fora do domínio das barras e fora da contagem de posições",
+            "Variação do valor com base nomeada para quem já estava no ranking"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_executivos-com-tres-variacoes",
+          "titulo": "Executivos com posição, valor e trajetória",
+          "caso_de_uso": "Comercial: por executivo, o salto de posição, a variação em R$ e em % e as posições dos últimos 6 meses até 2026-08.",
+          "o_que_demonstra": [
+            "Delta de posição, delta em R$ e delta em % em colunas separadas e alinhadas à direita",
+            "Barra inline do valor atual com domínio comum da coluna",
+            "Micrográfico de posições em SVG com eixo invertido, primeira posição no topo",
+            "Destaque do executivo selecionado em peso 700 e chart-1, demais em line-strong"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_empate-e-menor-e-melhor",
+          "titulo": "Empate na posição e ranking de ciclo",
+          "caso_de_uso": "Comercial: dois executivos com a mesma receita e ranking de ciclo de venda em que subir é cair de 48 para 39 dias.",
+          "o_que_demonstra": [
+            "Competição padrão 1, 2, 2, 4 com rótulo 4= e critério secundário declarado",
+            "Ordenação crescente para métrica de menor é melhor, escrita na legenda",
+            "Cor da variação pela polaridade: redução de dias em positive com sinal −",
+            "Dias por formatDays e base nomeada na variação"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "06_tabela-cruzada-com-totais-marginais",
+      "nome": "Tabela cruzada com totais marginais",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Contagem ou soma por duas dimensões (executivo por etapa, origem por mês) com total de linha, total de coluna e total geral no canto. O miolo pode receber cor pela mesma função do heatmap e as margens podem receber barras, cada uma com escala própria: o total nunca entra na escala de cor do miolo. O percentual diz o denominador no próprio cabeçalho (do total, da linha, da coluna), e vazio (combinação sem registro) se distingue de zero (registro sem ocorrência).",
+      "quando_usar": [
+        "Duas dimensões categóricas com até cerca de 12 por 12 células e totais que importam",
+        "Ler ao mesmo tempo o peso de cada linha e de cada coluna e o cruzamento entre elas",
+        "Perguntas de percentual por linha ou por coluna com o denominador explícito",
+        "Contagem de oportunidades, leads ou perdas por pessoa e etapa, origem e mês"
+      ],
+      "quando_evitar": [
+        "Mais de 15 por 15 células sem número legível: heatmap matricial (família 15)",
+        "Uma dimensão só: tabela com barras inline (14/01) ou barra da família 02",
+        "Hierarquia de grupo e subgrupo com subtotal: tabela agrupada (14/07)",
+        "Percentual sem dizer o denominador ou total pintado com a mesma escala do miolo"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-por-executivo-e-etapa",
+          "titulo": "Oportunidades abertas por executivo e etapa",
+          "caso_de_uso": "Comercial: onde estão as oportunidades abertas em 2026-09, por executivo e por etapa, com os totais das margens.",
+          "o_que_demonstra": [
+            "CSS grid com coluna de total, linha de total e total geral no canto",
+            "Totais em kpi-number com fundo surface-sunken, separados do miolo por espaço",
+            "Zero escrito como 0 e combinação sem registro como traço neutro",
+            "Contagem por formatInt com o substantivo no cabeçalho"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_heatmap-no-miolo-e-barras-nas-margens",
+          "titulo": "Miolo em heatmap e barras nos totais",
+          "caso_de_uso": "Comercial: qual etapa concentra mais oportunidades e quais executivos carregam essa concentração.",
+          "o_que_demonstra": [
+            "Cor do miolo por degraus de seq calculados só sobre as células internas",
+            "Barras horizontais no total de linha e verticais no total de coluna, escalas próprias",
+            "Coluna da etapa proposta destacada no cabeçalho em peso 700 com anotação curta",
+            "Legenda que diz que os totais ficam fora da escala de cor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_leads-por-origem-e-mes-em-percentual-da-linha",
+          "titulo": "Leads por origem e mês em % da linha",
+          "caso_de_uso": "Marketing: como os leads de 10 origens se distribuíram pelos 12 meses de 2026, lidos como % do total de cada origem.",
+          "o_que_demonstra": [
+            "Prop de modo de percentual com default % da linha e o denominador no cabeçalho",
+            "Célula com percentual inteiro e contagem absoluta na margem",
+            "Soma da linha fechando 100 pelo maior resto",
+            "Meses curtos por formatMonthShort nas 12 colunas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_denominador-e-celulas-vazias",
+          "titulo": "Denominador explícito e origem nova",
+          "caso_de_uso": "Marketing: não ler % da coluna como % do total e não confundir meses antes da criação de uma origem com zero.",
+          "o_que_demonstra": [
+            "Rótulo do denominador repetido no cabeçalho e na célula de canto",
+            "Origem criada em 2026-06 com células vazias antes, em traço e sem cor",
+            "Zero medido escrito como 0 e pintado com o degrau mais baixo",
+            "Nota curta dizendo a diferença entre vazio e zero"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "07_tabela-agrupada-com-subtotais",
+      "nome": "Tabela agrupada com subtotais e linha fixa",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Linhas agrupadas por uma dimensão curta (time, área, canal) com rótulo de grupo e subtotal, linhas filhas recuadas e uma linha fixa de referência (média da casa, total geral) com fundo próprio. Quando as colunas também têm grupo, o cabeçalho é duplo. Ordenar por coluna ordena dentro de cada grupo e preserva os grupos; subtotal e total ficam fora do domínio das barras. No Farol o agrupamento vem do TanStack Table e a linha fixa usa position sticky no contêiner de rolagem.",
+      "quando_usar": [
+        "Hierarquia curta de dois níveis com 2 a 6 grupos e 3 a 12 linhas por grupo",
+        "Comparar cada linha contra uma referência que não pode sair da tela ao rolar",
+        "Colunas agrupadas em blocos (camadas de custo, trimestres) com cabeçalho duplo",
+        "Subtotal por grupo que o leitor usa tanto quanto as linhas"
+      ],
+      "quando_evitar": [
+        "Grupos de uma linha só na maioria: tabela plana com coluna de grupo",
+        "Hierarquia com mais de dois níveis: treemap ou árvore (família 12)",
+        "Detalhe por linha que o leitor abre sob demanda: linha expansível (14/08)",
+        "Ordenação que precisa quebrar os grupos: ofereça um modo próprio com controle explícito"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_pipeline-por-time-comercial",
+          "titulo": "Pipeline e fechamentos por time comercial",
+          "caso_de_uso": "Comercial: quanto de pipeline aberto e de fechamentos de 2026-T3 cada um dos 3 times soma e quem pesa em cada time.",
+          "o_que_demonstra": [
+            "Linha de grupo com rótulo e subtotal em kpi-number, filhas recuadas",
+            "Subtotal fora do domínio das barras inline das linhas filhas",
+            "Ordenação por valor dentro de cada grupo, com os grupos preservados",
+            "Separação entre grupos por espaço, sem borda interna"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_media-da-casa-fixa-no-topo",
+          "titulo": "Executivos contra a média da casa",
+          "caso_de_uso": "Comercial: quem está acima ou abaixo da média da casa em taxa de ganho, com a média sempre à vista.",
+          "o_que_demonstra": [
+            "Linha fixa da média com fundo surface-sunken, marcada como referência",
+            "Coluna de desvio contra a média em barra divergente com sinal escrito",
+            "Posição sticky no contêiner de rolagem, sem overflow hidden em ancestral",
+            "Taxa com volume por formatRateWithVolume em cada linha"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_custo-em-tres-camadas-por-area",
+          "titulo": "Custo em três camadas por área",
+          "caso_de_uso": "Diretoria: quanto cada área custa nas camadas 1, 2 e 3 de 2026, com subtotal por área e total geral fixo no rodapé.",
+          "o_que_demonstra": [
+            "Cabeçalho duplo com o bloco de cada camada sobre as colunas de valor",
+            "Subtotal por área e total geral fixo no rodapé com estilo próprio",
+            "Moeda por formatCurrencyCompact e a camada declarada em cada bloco",
+            "Colunas de camada sem cor semântica, porque custo não tem bom nem ruim aqui"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_grupo-unitario-e-grupo-vazio",
+          "titulo": "Grupo de uma linha e grupo vazio no recorte",
+          "caso_de_uso": "Comercial: ler um time com um único executivo e um time que o filtro esvaziou sem sumir da tabela.",
+          "o_que_demonstra": [
+            "Grupo unitário sem subtotal redundante",
+            "Grupo vazio recolhido com a frase nenhuma linha neste recorte em text-muted",
+            "Total geral recalculado só com as linhas visíveis e dito no rótulo",
+            "Frase acessível que conta grupos, linhas e grupos vazios"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "08_tabela-com-linha-expansivel",
+      "nome": "Tabela com linha expansível",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Cada linha resume uma entidade e, ao expandir, abre um painel com o detalhe gráfico (etapas percorridas, série, motivos, mapa de entradas) na largura da tabela, sem trocar de tela. É o foco com contexto do TableLens: uma região ganha detalhe e as demais linhas continuam à vista. A estrutura é HTML com Tailwind e o painel pode usar Recharts; o gráfico do detalhe só monta quando a linha abre, o botão leva aria-expanded e o preview mostra as linhas abertas por uma prop de ids expandidos.",
+      "quando_usar": [
+        "Lista de 10 a 50 entidades em que o detalhe interessa a uma ou duas por vez",
+        "Resumo por linha com histórico, série ou composição que não cabe numa célula",
+        "Tela de trabalho em que trocar de página quebraria o contexto da lista",
+        "Detalhe caro de montar que não deve ser renderizado na carga para todas as linhas"
+      ],
+      "quando_evitar": [
+        "Detalhe que o leitor precisa comparar entre linhas: traga a métrica para uma coluna (14/01 ou 14/03)",
+        "Detalhe grande o bastante para uma tela própria: use a gaveta de detalhe do Farol",
+        "Tabela com poucas linhas em que todo detalhe cabe aberto: pequenos múltiplos",
+        "Painel que monta todos os gráficos na carga, mesmo fechado"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-perdidas-com-historico",
+          "titulo": "Oportunidades perdidas com o histórico",
+          "caso_de_uso": "Comercial: por que cada oportunidade perdida em 2026-08 caiu, abrindo as etapas percorridas com as datas.",
+          "o_que_demonstra": [
+            "Botão com ChevronRight girando pela classe e aria-expanded no estado",
+            "Painel de detalhe na largura da tabela, montado só quando a linha abre",
+            "Etapas percorridas em lista horizontal com formatDate e dias em cada etapa",
+            "Prop de ids expandidos com default no data.ts para o preview mostrar uma aberta"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_executivo-com-serie-e-motivos",
+          "titulo": "Executivo com série de receita e motivos",
+          "caso_de_uso": "Comercial: ao abrir um executivo, ver a receita dos 12 meses até 2026-08 e o motivo de perda que mais pesa.",
+          "o_que_demonstra": [
+            "LineChart do Recharts dentro do painel com ResponsiveContainer e altura fixa",
+            "Barras de motivos em HTML com o motivo dominante em chart-1 e peso 700",
+            "Demais motivos em line-strong com o valor escrito",
+            "Anotação curta com o motivo dominante e sua participação"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_filas-com-mapa-de-entradas",
+          "titulo": "Filas de pré-vendas com mapa de entradas",
+          "caso_de_uso": "Pré-vendas: por fila, volume, SLA e capacidade, e ao abrir, em que dias e horas as entradas se concentram.",
+          "o_que_demonstra": [
+            "Linha resumo com bullet de capacidade contra teto e SLA em texto",
+            "Painel com grade de dia por hora em degraus de seq e número nas células fortes",
+            "Escala de cor do painel comum a todas as filas, para abrir duas e comparar",
+            "Legenda da escala dentro do painel, não no cabeçalho da tabela"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_detalhe-sem-dado-e-varias-abertas",
+          "titulo": "Detalhe sem histórico e várias linhas abertas",
+          "caso_de_uso": "Comercial: abrir três linhas ao mesmo tempo e ler a que não tem histórico no recorte sem achar que quebrou.",
+          "o_que_demonstra": [
+            "Painel vazio com role status, ícone Filter e a frase sem histórico neste recorte",
+            "Três linhas abertas com contagem de abertas no cabeçalho",
+            "Ordem de foco do botão para o painel e de volta, com aria-controls",
+            "Painel indisponível com formatUnavailable distinto do vazio"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "09_matriz-de-comparacao-com-status",
+      "nome": "Matriz de comparação com status",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Entidades ou opções de um lado, critérios do outro e um símbolo em cada cruzamento: cumpriu, parcial, não cumpriu, não se aplica e sem dado, cada um com forma própria e rótulo acessível, nunca só cor. A variante com bolas de Harvey desenha o preenchimento em quartos como arco SVG calculado em TypeScript, não como caractere Unicode, e leva o número ao lado, porque o glifo quantiza e esconde diferença. Contagem por linha e por coluna fecha a leitura de padrão: qual opção é cheia e qual critério ninguém atende.",
+      "quando_usar": [
+        "Cumprimento de 4 a 10 critérios qualitativos por 5 a 25 entidades",
+        "Comparação de 3 a 8 opções contra critérios com direção escrita, com o número junto do glifo",
+        "Checklist de etapas ou requisitos em que a pendência por linha e por coluna é a pergunta",
+        "Quadro de metas por área em que o sim, parcial ou não é a decisão, não o valor"
+      ],
+      "quando_evitar": [
+        "Quando existe o número por trás do status e ele importa: mostre o número (14/01 ou 14/02)",
+        "Matriz sem texto e com valor contínuo: heatmap (família 15)",
+        "Status só por cor ou não se aplica igual a sem dado: dê forma e palavra a cada estado",
+        "Mais de 25 linhas por 10 critérios: agrupe ou filtre pelas pendências"
+      ],
+      "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+      "versoes": [
+        {
+          "slug": "v1_metas-do-ano-por-area",
+          "titulo": "Metas de 2026 por área",
+          "caso_de_uso": "Diretoria: quais das 6 metas de 2026 cada uma das 9 áreas cumpriu, cumpriu em parte ou não cumpriu.",
+          "o_que_demonstra": [
+            "Ícones Check, CircleDashed e X com rótulo acessível em cada célula",
+            "Contagem por linha como 5 de 6 e por coluna no rodapé",
+            "Legenda dos símbolos no topo, uma vez só",
+            "Status semântico com ícone e forma diferentes, não só a cor"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_cenarios-com-bolas-de-harvey",
+          "titulo": "Cenários da Diretoria com bolas de Harvey",
+          "caso_de_uso": "Diretoria: como 4 cenários de 2027 se comparam em 6 critérios, com o glifo e o valor real lado a lado.",
+          "o_que_demonstra": [
+            "Arco de Harvey em SVG calculado em função pura para 0, 1/4, 1/2, 3/4 e 1",
+            "Direção por critério escrita na linha e fração invertida quando menor é melhor",
+            "Número junto do glifo e contorno no líder de cada critério",
+            "Faixa de normalização declarada no rodapé, não mínimo e máximo da tela"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_checklist-de-handoff-por-oportunidade",
+          "titulo": "Checklist de handoff por oportunidade",
+          "caso_de_uso": "Pré-vendas: quais de 18 oportunidades passadas ao Comercial em 2026-09 ainda têm pendências nos 7 critérios do handoff.",
+          "o_que_demonstra": [
+            "Ordenação pelas pendências, com a linha mais pendente no topo",
+            "Contagem por linha e por coluna, com o critério mais descumprido destacado",
+            "Cabeçalho de critério curto sem sigla inventada e com o nome inteiro na frase acessível",
+            "Linhas compactas de 20 px com ícones de 14 px e texto horizontal"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_nao-se-aplica-sem-dado-e-empate",
+          "titulo": "Não se aplica, sem dado e empate",
+          "caso_de_uso": "Marketing: comparar 5 plataformas fictícias sem confundir critério que não se aplica com campo não preenchido.",
+          "o_que_demonstra": [
+            "Cinco estados com formas distintas: check, parcial, X, traço e círculo tracejado",
+            "Sem dado com a palavra na legenda e na frase acessível, fora da contagem",
+            "Empate no líder marca as duas colunas e não escolhe uma",
+            "Contagem por linha com denominador que exclui não se aplica"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

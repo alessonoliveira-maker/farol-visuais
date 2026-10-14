@@ -1,0 +1,108 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "05_arc-diagram",
+  "versoes": {
+    "v1_coocorrencia-de-origens-em-2026-08": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Ordem por volume, 12 pares, graus 2 a 5 e par mais forte (318 leads) conferidos com o data.ts; raio do nó 3,5 vezes raiz do grau e espessura 6 vezes raiz do peso relativo com piso de 1,5 px conferidos no preview; semicírculo de fator 1; arco neutro medido no PNG a 3,60 e 3,30 para 1. Observações no README: régua de espessura sem dizer que é raiz, linha de leitura com 14 px de folga, amostra da legenda mais forte que o arco, TIP-1 no período.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:03.926Z",
+      "impressao": "1f9616d7f82a42b930c19cc241078bd623025d62",
+      "arquivos": {
+        "Chart.tsx": "60445fa6d6cd64dec9cbd3c1316035287861928e",
+        "data.ts": "13d67bf2eb3024bc8c6bd3357aa6e7de2fd613dc",
+        "meta.json": "966191ac3977a3419b7931fb23b279b678ab84aa"
+      }
+    },
+    "v2_procedencia-indicadores-e-fontes": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 31 dependências, 9 de 24 no CRM (5, 2, 0 e 2 por dashboard) e contagens 5, 5, 5, 2, 5, 9 conferidas com o data.ts; raio 3 vezes raiz do grau e fator único 0,70 conferidos no preview; arco neutro medido no PNG a 3,60 e 3,30 para 1; peso 700 só no nome e na contagem da fonte acesa. Eixo vertical no lugar do rótulo girado do catálogo aceito, porque a TIP-5 proíbe o giro. Observações no README: nó do indicador sem régua, contagem de grupo sem substantivo, folga da linha de leitura.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:14.452Z",
+      "impressao": "2dbc42f2fac9f8ff94d0183cee80d1257b8be355",
+      "arquivos": {
+        "Chart.tsx": "3acb7d82c21d0998d67d1d9d7dfb063631eaba9c",
+        "data.ts": "6b160888e02991a0c248a98899138a5f6fa80856",
+        "meta.json": "89728bc84dbf4776462016e9a09be314cdd47480"
+      }
+    },
+    "v3_dependencia-dirigida-entre-indicadores": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. As 11 dependências conferidas uma a uma com o data.ts: 4 acima e 7 abaixo, sentido igual ao da legenda e ao da frase acessível; ciclo previsão e meta achado, 9 fora dele; fator 0,75 e eixo a 98 px conferidos no preview; ciclo com ícone, peso 600 e traço de 2,5 px além da cor; arco neutro medido no PNG a 3,60 e 3,30 para 1. Observações no README: nó sem régua de tamanho, ciclo de três estoura a linha de leitura e a frase acessível, par de nós não medido no notes.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:14.995Z",
+      "impressao": "b57820cc470db3243e91dec1e230f76d4d109b64",
+      "arquivos": {
+        "Chart.tsx": "4d6e66421557c9c9d60a94fe3d3726d2da36355f",
+        "data.ts": "0e096873ad92fec4b7375e4a76afff6f8579c7c1",
+        "meta.json": "718d8a3b2ad2c5a7633b3f3f70f3b9b4270e4911"
+      }
+    },
+    "v4_indicador-sem-fonte-declarada": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 15 dependências, 3 de 14 sem fonte, contagens 2, 4, 3, 6 e 0 e grupos 4 de 5, 3 de 3, 2 de 2 e 2 de 4 conferidos com o data.ts; ausência em anel vazado com o motivo escrito e zero medido em ponto cheio com 0 escrito, duas formas; régua do nó de 1 a 6 calculada do dado; arco em text-muted cheio a 5,21 e 5,37 para 1; semicírculo de fator 1. Observações no README: 3 de 14 sem substantivo na coluna de grupo, dashboard do indicador sem fonte só na dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:15.551Z",
+      "impressao": "f3be692dc228e5a8afe9c24db816ff409e81b9b1",
+      "arquivos": {
+        "Chart.tsx": "052de42fd181d73006faa4810ebb2e59e5466b7e",
+        "data.ts": "8e6a043f5dabd5c3ef79b54297940577b8272898",
+        "meta.json": "3ab162355dd3a3ad7ca56e738ba6f09b0df5d422"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_coocorrencia-de-origens-em-2026-08",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Ordem por volume, 12 pares, graus 2 a 5 e par mais forte (318 leads) conferidos com o data.ts; raio do nó 3,5 vezes raiz do grau e espessura 6 vezes raiz do peso relativo com piso de 1,5 px conferidos no preview; semicírculo de fator 1; arco neutro medido no PNG a 3,60 e 3,30 para 1. Observações no README: régua de espessura sem dizer que é raiz, linha de leitura com 14 px de folga, amostra da legenda mais forte que o arco, TIP-1 no período.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:03.926Z",
+      "impressao": "1f9616d7f82a42b930c19cc241078bd623025d62",
+      "arquivos": {
+        "Chart.tsx": "60445fa6d6cd64dec9cbd3c1316035287861928e",
+        "data.ts": "13d67bf2eb3024bc8c6bd3357aa6e7de2fd613dc",
+        "meta.json": "966191ac3977a3419b7931fb23b279b678ab84aa"
+      }
+    },
+    {
+      "versao": "v2_procedencia-indicadores-e-fontes",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 31 dependências, 9 de 24 no CRM (5, 2, 0 e 2 por dashboard) e contagens 5, 5, 5, 2, 5, 9 conferidas com o data.ts; raio 3 vezes raiz do grau e fator único 0,70 conferidos no preview; arco neutro medido no PNG a 3,60 e 3,30 para 1; peso 700 só no nome e na contagem da fonte acesa. Eixo vertical no lugar do rótulo girado do catálogo aceito, porque a TIP-5 proíbe o giro. Observações no README: nó do indicador sem régua, contagem de grupo sem substantivo, folga da linha de leitura.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:14.452Z",
+      "impressao": "2dbc42f2fac9f8ff94d0183cee80d1257b8be355",
+      "arquivos": {
+        "Chart.tsx": "3acb7d82c21d0998d67d1d9d7dfb063631eaba9c",
+        "data.ts": "6b160888e02991a0c248a98899138a5f6fa80856",
+        "meta.json": "89728bc84dbf4776462016e9a09be314cdd47480"
+      }
+    },
+    {
+      "versao": "v3_dependencia-dirigida-entre-indicadores",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. As 11 dependências conferidas uma a uma com o data.ts: 4 acima e 7 abaixo, sentido igual ao da legenda e ao da frase acessível; ciclo previsão e meta achado, 9 fora dele; fator 0,75 e eixo a 98 px conferidos no preview; ciclo com ícone, peso 600 e traço de 2,5 px além da cor; arco neutro medido no PNG a 3,60 e 3,30 para 1. Observações no README: nó sem régua de tamanho, ciclo de três estoura a linha de leitura e a frase acessível, par de nós não medido no notes.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:14.995Z",
+      "impressao": "b57820cc470db3243e91dec1e230f76d4d109b64",
+      "arquivos": {
+        "Chart.tsx": "4d6e66421557c9c9d60a94fe3d3726d2da36355f",
+        "data.ts": "0e096873ad92fec4b7375e4a76afff6f8579c7c1",
+        "meta.json": "718d8a3b2ad2c5a7633b3f3f70f3b9b4270e4911"
+      }
+    },
+    {
+      "versao": "v4_indicador-sem-fonte-declarada",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 15 dependências, 3 de 14 sem fonte, contagens 2, 4, 3, 6 e 0 e grupos 4 de 5, 3 de 3, 2 de 2 e 2 de 4 conferidos com o data.ts; ausência em anel vazado com o motivo escrito e zero medido em ponto cheio com 0 escrito, duas formas; régua do nó de 1 a 6 calculada do dado; arco em text-muted cheio a 5,21 e 5,37 para 1; semicírculo de fator 1. Observações no README: 3 de 14 sem substantivo na coluna de grupo, dashboard do indicador sem fonte só na dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T18:55:15.551Z",
+      "impressao": "f3be692dc228e5a8afe9c24db816ff409e81b9b1",
+      "arquivos": {
+        "Chart.tsx": "052de42fd181d73006faa4810ebb2e59e5466b7e",
+        "data.ts": "8e6a043f5dabd5c3ef79b54297940577b8272898",
+        "meta.json": "3ab162355dd3a3ad7ca56e738ba6f09b0df5d422"
+      }
+    }
+  ]
+}

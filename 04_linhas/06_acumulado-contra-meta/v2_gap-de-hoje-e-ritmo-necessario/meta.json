@@ -1,0 +1,13 @@
+{
+  "title": "Gap de hoje e ritmo necessário até o fim do trimestre",
+  "useCase": "Quantos fechamentos faltam contra a trajetória hoje e que ritmo por quinzena fecha a meta do trimestre?",
+  "demonstrates": [
+    "Gap desenhado como conector vertical entre real e meta na quinzena de corte",
+    "Linha do ritmo necessário da quinzena de corte ao fim do trimestre",
+    "Rótulo do gap com unidade e a meta do trimestre nomeada como base",
+    "Duas anotações no máximo: o gap e o ritmo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A meta aqui é a do trimestre (jul a set de 2026), não a anual: por isso o rótulo do gap nomeia 'meta do trimestre' e não 'meta anual'."
+}

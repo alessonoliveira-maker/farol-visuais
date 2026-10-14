@@ -1,0 +1,57 @@
+{
+  "slug": "04_aneis-concentricos",
+  "nome": "Anéis concêntricos de metas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Três anéis encaixados, um por meta independente do mesmo dono e do mesmo período. A leitura é binária por anel: fechou ou não fechou. O defeito não tem conserto dentro do formato: com o mesmo percentual, o anel de fora desenha um arco fisicamente mais longo, então o número de cada meta vai escrito numa lista ao lado e o formato nunca serve para comparar as metas entre si. Em Recharts, RadialBarChart com os valores já normalizados em percentual da meta e PolarAngleAxis numérico de 0 a 100, que mantém a escala honesta em todos os anéis; valor bruto e meta vivem na legenda e na dica.",
+  "quando_usar": [
+    "De 2 a 3 metas independentes da mesma pessoa ou equipe no mesmo período",
+    "Leitura de quem fechou todas as metas, numa grade de até 6 pessoas na mesma escala",
+    "Cartão de abertura da pré-vendas com entradas, agendas e SLA da semana"
+  ],
+  "quando_evitar": [
+    "Comparar uma meta com a outra: o anel de fora parece maior; use o painel de bullets (13/02)",
+    "Mais de 3 anéis, ou 4 sem raio externo grande: os internos ficam minúsculos",
+    "Várias entidades em dimensões comparáveis: radar (família 18) ou tabela visual (14/01)",
+    "Meta revisada no meio do período: o anel fechado apaga o histórico; use o burn-up (04/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_tres-metas-da-semana",
+      "titulo": "Três metas da pré-vendas na semana",
+      "caso_de_uso": "Pré-vendas: na semana de 2026-09-07, a equipe fechou as metas de entradas tratadas, agendas marcadas e SLA cumprido?",
+      "o_que_demonstra": [
+        "Um RadialBar por meta com background como trilho e cornerRadius moderado",
+        "Valores normalizados em TypeScript e PolarAngleAxis de 0 a 100",
+        "Legenda lateral tabular com valor bruto, meta e percentual por anel",
+        "Anel que não fechou com ícone e o que falta escrito na legenda",
+        "Ordem dos anéis por importância, declarada no dado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_quem-fechou-as-tres-metas",
+      "titulo": "Quem fechou as três metas da semana",
+      "caso_de_uso": "Pré-vendas: entre 6 pessoas, quem fechou entradas, agendas e SLA na semana e quem ficou devendo alguma delas?",
+      "o_que_demonstra": [
+        "Pequenos múltiplos com a mesma escala e o mesmo raio em todas as pessoas",
+        "Três números embaixo de cada trio, com algarismo tabular",
+        "Selo de três metas fechadas com ícone e texto, não só cor",
+        "Slots de cor fixos por meta, iguais em todos os trios"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_meta-proporcional-e-sem-meta",
+      "titulo": "Anéis com meta proporcional, sem meta e estouro",
+      "caso_de_uso": "Pré-vendas: pessoa que entrou na quarta tem meta proporcional em duas metas, nenhuma na terceira e passou de 100% numa.",
+      "o_que_demonstra": [
+        "Anel sem meta só com o trilho tracejado e o texto sem meta na legenda",
+        "Selo de meta proporcional com os dias úteis considerados",
+        "Anel acima de 100% travado na volta cheia, com o percentual real escrito",
+        "Frase acessível que nomeia a ausência em vez de somar zero"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

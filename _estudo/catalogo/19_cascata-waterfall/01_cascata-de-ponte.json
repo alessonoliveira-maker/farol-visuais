@@ -1,0 +1,75 @@
+{
+  "slug": "01_cascata-de-ponte",
+  "nome": "Cascata de ponte",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "A forma canônica da família: coluna de início ancorada no eixo, passos flutuantes de aumento e queda, cada um começando onde o anterior terminou, e coluna de fim ancorada. Responde como um valor virou outro. Absorve a ponte com subtotais, a deitada para rótulos longos, a de variação por componente e a cascata micro de célula de tabela, todas saídas do mesmo Bar de faixa [baixo, alto] com shape customizado.",
+  "quando_usar": [
+    "Explicar a passagem entre dois valores do mesmo indicador com 3 a 12 passos de sinais opostos, como receita de um trimestre para o seguinte.",
+    "Blocos lógicos com parciais que alguém usa, como o custo em três camadas, com subtotal acumulado declarado no rótulo.",
+    "Diferença entre dois períodos decomposta em efeitos calculados (volume, custo, mix), com resíduo explícito quando o modelo não fecha.",
+    "Nomes de passo longos (motivos, linhas de custo): deitar a ponte, com a leitura descendo de cima para baixo.",
+    "A mesma ponte repetida por linha de tabela, com até 8 passos e escala comum, na versão micro."
+  ],
+  "quando_evitar": [
+    "Mais de 12 passos sem agrupar a cauda: agrupar em Demais (n) ou usar a tabela visual da família 14.",
+    "Partes todas positivas em que o total não interessa: barras simples das famílias 02 ou 03.",
+    "Queda etapa a etapa de um mesmo conjunto que só perde: funil com taxa de passo, família 10.",
+    "Variações minúsculas diante de totais grandes com eixo truncado: tirar as colunas de total e mostrar só os efeitos, nunca quebrar o eixo.",
+    "Ordem cronológica em ponte deitada: manter a vertical, com o tempo correndo da esquerda para a direita."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_ponte-da-receita-do-trimestre",
+      "titulo": "Ponte da receita reconhecida do trimestre",
+      "caso_de_uso": "Comercial: receita de R$ 1,72 mi em 2026-T2 para R$ 1,89 mi em 2026-T3, com novos contratos +R$ 214 mil, expansão +R$ 96 mil, reajuste R$ 0 e cancelamentos −R$ 138 mil.",
+      "o_que_demonstra": [
+        "Bar de faixa com dataKey devolvendo [baixo, alto], como no exemplo oficial",
+        "Cor por papel no shape: aumento, queda e total, com sinal no rótulo",
+        "Conector horizontal desenhado pelo próprio shape até a barra seguinte",
+        "Passo de valor zero vira traço de 2 px com o rótulo R$ 0",
+        "Fechamento verificado no dado: soma dos passos igual a fim menos início"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_custo-em-tres-camadas-deitado-com-subtotais",
+      "titulo": "Custo da área em três camadas",
+      "caso_de_uso": "Diretoria, 2026-08: camada 1 marginal R$ 160 mil, camada 2 com a estrutura da área R$ 332 mil acumulados e camada 3 com rateio R$ 390 mil; um retorno de R$ 420 mil vale 2,6x, 1,3x ou 1,1x.",
+      "o_que_demonstra": [
+        "Ponte deitada com layout vertical e largura do eixo de nomes medida",
+        "Subtotal acumulado ancorado no zero, com o nome da camada no rótulo",
+        "Vão entre blocos por linha espaçadora com faixa nula",
+        "Conector vertical centrado na banda da escala categórica",
+        "Anotação única dizendo que a camada precisa vir declarada"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_cpl-por-efeito-com-residual-nao-explicado",
+      "titulo": "Variação do CPL por efeito",
+      "caso_de_uso": "Marketing: CPL de R$ 184 em 2026-07 para R$ 212 em 2026-08, com efeito volume −R$ 9, custo +R$ 26, mix de plataforma +R$ 6 e R$ 5 (18% da diferença) sem explicação.",
+      "o_que_demonstra": [
+        "Passos como efeitos calculados por função pura que devolve o resíduo",
+        "Passo Não explicado hachurado e visível, nunca absorvido em Outros",
+        "Polaridade invertida: CPL que sobe pinta a queda de qualidade",
+        "Unidade da métrica no rótulo e no tique: reais por lead, não reais",
+        "Resíduo acima de 10% da diferença escrito na linha de leitura"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_cascata-micro-da-carteira-por-executivo",
+      "titulo": "Cascata micro da carteira por executivo",
+      "caso_de_uso": "Comercial: tabela de 10 executivos com a carteira de 2026-T2 para 2026-T3 em quatro passos fixos (novas contas, expansão, reajuste, cancelamento); um sem expansão e um sem dado medido.",
+      "o_que_demonstra": [
+        "SVG puro por célula com a mesma função de faixa da ponte grande",
+        "Escala comum a todas as linhas, com domínio sobre o acumulado",
+        "Tipo de cada item vem do dado: total ancorado, passo flutuante",
+        "Passo zero em traço fino e linha sem dado com formatUnavailable",
+        "Sem rótulos internos: passos e valores na dica e na coluna ao lado"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

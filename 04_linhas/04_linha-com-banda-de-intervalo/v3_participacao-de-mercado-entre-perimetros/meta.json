@@ -1,0 +1,12 @@
+{
+  "title": "Participação de mercado entre dois perímetros",
+  "useCase": "A participação de mercado estimada mudou de patamar em 2026, considerando o perímetro restrito e o amplo?",
+  "demonstrates": [
+    "Banda entre perímetro restrito e amplo com a estimativa central por cima",
+    "Revisão de perímetro como uma anotação vertical datada",
+    "Frase acessível com a saída em faixa, nunca um número único",
+    "Eixo percentual com recorte de escala, permitido por ser linha"
+  ],
+  "canvas": "card",
+  "notes": "O domínio do eixo é [0,02; 0,10], recortado, porque EIX-1 e EIX-2 miram barra, coluna e área que representam uma quantidade a partir de zero; aqui a área é uma banda de incerteza sobre uma linha, e o próprio catálogo autoriza o recorte de escala para este modelo. Os rótulos finais nomeiam os dois lados por nome (restrito, amplo), não só \"faixa\", para cumprir a exigência do dono da marca de a banda dizer o que ela é."
+}

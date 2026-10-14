@@ -1,0 +1,108 @@
+{
+  "familia": "21_texto-e-nuvem-de-palavras",
+  "modelo": "04_nuvem-de-palavras",
+  "versoes": {
+    "v1_motivos-de-perda-em-espiral": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 32 termos no plano de 574 x 176 px em escala 1; fonte conferida contra a raiz quadrada nos 32 termos (48 px para 96 respostas, piso de 12 px); COLISAO-TEXTO sem aviso e menor vão visto no recorte de cerca de 5 px; os 12 descartados conferidos contra o data.ts, o maior com 13 respostas, como a nota diz; termos a 8,16:1 no escuro e 8,13:1 no claro, nota a 5,21:1 e 5,37:1; frase de 219 caracteres. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:55.785Z",
+      "impressao": "5ce80e98f694e3d0a9a0123b15951840dd68d32b",
+      "arquivos": {
+        "Chart.tsx": "a919126c819517032225b496d82e071c27139b95",
+        "data.ts": "7f77c5dfe57de59238122d10056ec00a946f2b91",
+        "meta.json": "d56136086e5bfc0f7c14b4a06fd48a6151cc1d5a"
+      }
+    },
+    "v2_termos-que-cresceram": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 32 termos no plano de 574 x 198 px em escala 1, nenhum descartado; os 6 em destaque conferidos contra o data.ts (prazo, diretoria, aprovação, demora, carência e comitê), burocracia no corte exato fica neutra, sócio e multa saem como novo e sem variação; destaque em chart-1 a 9,50:1 e 6,00:1 com peso 600 contra 400, neutro em text-muted a 5,21:1 e 5,37:1; variação com sinal, base e período na mesma linha; desvio do peso 700 do catálogo declarado no meta; frase de 218 caracteres. Estado vazio só por leitura de código. Observações no README, a primeira sobre a redação de Lidera prazo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:56.355Z",
+      "impressao": "3fd13b115d86f943f7005370a66ad24d975e8530",
+      "arquivos": {
+        "Chart.tsx": "690057559e285337ab41c4402383d3d0761cafee",
+        "data.ts": "c6c16d3a6aa70316f40c1cf7e9bc2b59d184b32f",
+        "meta.json": "d533cf6a2d1d89bf9304f99ae6c9fdbeb0e4c78e"
+      }
+    },
+    "v3_termos-de-busca-em-nuvem-alinhada": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 24 termos em 6 linhas, sem corte nem transbordo nos dois temas; os cinco degraus (12, 14, 17, 20 e 24 px, com 5, 5, 5, 5 e 4 termos) e os 8 termos de maioria qualificada conferidos contra o data.ts, com metade exata fora do destaque; contraste medido à mão porque o texto é HTML: chart-1 a 9,50:1 e 6,00:1 no cartão e a 10,90:1 e 5,20:1 no botão selecionado, text-secondary a 8,16:1 e 8,13:1, text-muted a 5,21:1 e 5,37:1; total de 631 leads e custo de 224 reais por lead qualificado conferidos; frase de 217 caracteres. Ordem por leads, troca de seleção e estado vazio só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:05.663Z",
+      "impressao": "69fe3b5b77db6394c392f1304c23165e37310b5b",
+      "arquivos": {
+        "Chart.tsx": "b44fca4fde19073929f9331d6b3a4e198f1a0db3",
+        "data.ts": "18ef0f2cd5eff48c59f1e0fd9dbfd1acab63b648",
+        "meta.json": "f1f507a6f3f78a6eedf8358624216ab08a500e59"
+      }
+    },
+    "v4_amostra-pequena-e-termo-longo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante no caminho da lista, que é o que o dado de 22 respostas e 9 termos exercita: aviso de amostra pequena com ícone e palavra em warning a 8,36:1 e 5,74:1; 9 linhas em duas colunas, com empate dividindo a posição (3º e 3º, 6º e 6º); termo longo inteiro em uma linha; contagem com substantivo; texto medido à mão por ser HTML, tudo a 5,21:1 ou mais; frase de 225 caracteres. Caminho da nuvem com o teto de largura e estado vazio conferidos só por leitura de código, sem render. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:06.258Z",
+      "impressao": "7e6dff1dc86c4605fb731d9716cfc731feb7e544",
+      "arquivos": {
+        "Chart.tsx": "bef9dfba759c9d1fcef19e21295618fdd557e7d4",
+        "data.ts": "cc07d11eaaf2caa7ce291d9c18b1b6ee7a116a0e",
+        "meta.json": "ec45a006cc46c18d20aa54159e2e9574294769bb"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_motivos-de-perda-em-espiral",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 32 termos no plano de 574 x 176 px em escala 1; fonte conferida contra a raiz quadrada nos 32 termos (48 px para 96 respostas, piso de 12 px); COLISAO-TEXTO sem aviso e menor vão visto no recorte de cerca de 5 px; os 12 descartados conferidos contra o data.ts, o maior com 13 respostas, como a nota diz; termos a 8,16:1 no escuro e 8,13:1 no claro, nota a 5,21:1 e 5,37:1; frase de 219 caracteres. Estado vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:55.785Z",
+      "impressao": "5ce80e98f694e3d0a9a0123b15951840dd68d32b",
+      "arquivos": {
+        "Chart.tsx": "a919126c819517032225b496d82e071c27139b95",
+        "data.ts": "7f77c5dfe57de59238122d10056ec00a946f2b91",
+        "meta.json": "d56136086e5bfc0f7c14b4a06fd48a6151cc1d5a"
+      }
+    },
+    {
+      "versao": "v2_termos-que-cresceram",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 32 termos no plano de 574 x 198 px em escala 1, nenhum descartado; os 6 em destaque conferidos contra o data.ts (prazo, diretoria, aprovação, demora, carência e comitê), burocracia no corte exato fica neutra, sócio e multa saem como novo e sem variação; destaque em chart-1 a 9,50:1 e 6,00:1 com peso 600 contra 400, neutro em text-muted a 5,21:1 e 5,37:1; variação com sinal, base e período na mesma linha; desvio do peso 700 do catálogo declarado no meta; frase de 218 caracteres. Estado vazio só por leitura de código. Observações no README, a primeira sobre a redação de Lidera prazo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:03:56.355Z",
+      "impressao": "3fd13b115d86f943f7005370a66ad24d975e8530",
+      "arquivos": {
+        "Chart.tsx": "690057559e285337ab41c4402383d3d0761cafee",
+        "data.ts": "c6c16d3a6aa70316f40c1cf7e9bc2b59d184b32f",
+        "meta.json": "d533cf6a2d1d89bf9304f99ae6c9fdbeb0e4c78e"
+      }
+    },
+    {
+      "versao": "v3_termos-de-busca-em-nuvem-alinhada",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 24 termos em 6 linhas, sem corte nem transbordo nos dois temas; os cinco degraus (12, 14, 17, 20 e 24 px, com 5, 5, 5, 5 e 4 termos) e os 8 termos de maioria qualificada conferidos contra o data.ts, com metade exata fora do destaque; contraste medido à mão porque o texto é HTML: chart-1 a 9,50:1 e 6,00:1 no cartão e a 10,90:1 e 5,20:1 no botão selecionado, text-secondary a 8,16:1 e 8,13:1, text-muted a 5,21:1 e 5,37:1; total de 631 leads e custo de 224 reais por lead qualificado conferidos; frase de 217 caracteres. Ordem por leads, troca de seleção e estado vazio só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:05.663Z",
+      "impressao": "69fe3b5b77db6394c392f1304c23165e37310b5b",
+      "arquivos": {
+        "Chart.tsx": "b44fca4fde19073929f9331d6b3a4e198f1a0db3",
+        "data.ts": "18ef0f2cd5eff48c59f1e0fd9dbfd1acab63b648",
+        "meta.json": "f1f507a6f3f78a6eedf8358624216ab08a500e59"
+      }
+    },
+    {
+      "versao": "v4_amostra-pequena-e-termo-longo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante no caminho da lista, que é o que o dado de 22 respostas e 9 termos exercita: aviso de amostra pequena com ícone e palavra em warning a 8,36:1 e 5,74:1; 9 linhas em duas colunas, com empate dividindo a posição (3º e 3º, 6º e 6º); termo longo inteiro em uma linha; contagem com substantivo; texto medido à mão por ser HTML, tudo a 5,21:1 ou mais; frase de 225 caracteres. Caminho da nuvem com o teto de largura e estado vazio conferidos só por leitura de código, sem render. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T14:04:06.258Z",
+      "impressao": "7e6dff1dc86c4605fb731d9716cfc731feb7e544",
+      "arquivos": {
+        "Chart.tsx": "bef9dfba759c9d1fcef19e21295618fdd557e7d4",
+        "data.ts": "cc07d11eaaf2caa7ce291d9c18b1b6ee7a116a0e",
+        "meta.json": "ec45a006cc46c18d20aa54159e2e9574294769bb"
+      }
+    }
+  ]
+}

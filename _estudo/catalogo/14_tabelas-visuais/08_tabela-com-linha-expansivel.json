@@ -1,0 +1,69 @@
+{
+  "slug": "08_tabela-com-linha-expansivel",
+  "nome": "Tabela com linha expansível",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Cada linha resume uma entidade e, ao expandir, abre um painel com o detalhe gráfico (etapas percorridas, série, motivos, mapa de entradas) na largura da tabela, sem trocar de tela. É o foco com contexto do TableLens: uma região ganha detalhe e as demais linhas continuam à vista. A estrutura é HTML com Tailwind e o painel pode usar Recharts; o gráfico do detalhe só monta quando a linha abre, o botão leva aria-expanded e o preview mostra as linhas abertas por uma prop de ids expandidos.",
+  "quando_usar": [
+    "Lista de 10 a 50 entidades em que o detalhe interessa a uma ou duas por vez",
+    "Resumo por linha com histórico, série ou composição que não cabe numa célula",
+    "Tela de trabalho em que trocar de página quebraria o contexto da lista",
+    "Detalhe caro de montar que não deve ser renderizado na carga para todas as linhas"
+  ],
+  "quando_evitar": [
+    "Detalhe que o leitor precisa comparar entre linhas: traga a métrica para uma coluna (14/01 ou 14/03)",
+    "Detalhe grande o bastante para uma tela própria: use a gaveta de detalhe do Farol",
+    "Tabela com poucas linhas em que todo detalhe cabe aberto: pequenos múltiplos",
+    "Painel que monta todos os gráficos na carga, mesmo fechado"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-perdidas-com-historico",
+      "titulo": "Oportunidades perdidas com o histórico",
+      "caso_de_uso": "Comercial: por que cada oportunidade perdida em 2026-08 caiu, abrindo as etapas percorridas com as datas.",
+      "o_que_demonstra": [
+        "Botão com ChevronRight girando pela classe e aria-expanded no estado",
+        "Painel de detalhe na largura da tabela, montado só quando a linha abre",
+        "Etapas percorridas em lista horizontal com formatDate e dias em cada etapa",
+        "Prop de ids expandidos com default no data.ts para o preview mostrar uma aberta"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_executivo-com-serie-e-motivos",
+      "titulo": "Executivo com série de receita e motivos",
+      "caso_de_uso": "Comercial: ao abrir um executivo, ver a receita dos 12 meses até 2026-08 e o motivo de perda que mais pesa.",
+      "o_que_demonstra": [
+        "LineChart do Recharts dentro do painel com ResponsiveContainer e altura fixa",
+        "Barras de motivos em HTML com o motivo dominante em chart-1 e peso 700",
+        "Demais motivos em line-strong com o valor escrito",
+        "Anotação curta com o motivo dominante e sua participação"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_filas-com-mapa-de-entradas",
+      "titulo": "Filas de pré-vendas com mapa de entradas",
+      "caso_de_uso": "Pré-vendas: por fila, volume, SLA e capacidade, e ao abrir, em que dias e horas as entradas se concentram.",
+      "o_que_demonstra": [
+        "Linha resumo com bullet de capacidade contra teto e SLA em texto",
+        "Painel com grade de dia por hora em degraus de seq e número nas células fortes",
+        "Escala de cor do painel comum a todas as filas, para abrir duas e comparar",
+        "Legenda da escala dentro do painel, não no cabeçalho da tabela"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_detalhe-sem-dado-e-varias-abertas",
+      "titulo": "Detalhe sem histórico e várias linhas abertas",
+      "caso_de_uso": "Comercial: abrir três linhas ao mesmo tempo e ler a que não tem histórico no recorte sem achar que quebrou.",
+      "o_que_demonstra": [
+        "Painel vazio com role status, ícone Filter e a frase sem histórico neste recorte",
+        "Três linhas abertas com contagem de abertas no cabeçalho",
+        "Ordem de foco do botão para o painel e de volta, com aria-controls",
+        "Painel indisponível com formatUnavailable distinto do vazio"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

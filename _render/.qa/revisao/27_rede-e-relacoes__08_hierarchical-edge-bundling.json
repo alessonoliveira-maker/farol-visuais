@@ -1,0 +1,160 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "08_hierarchical-edge-bundling",
+  "versoes": {
+    "v1_procedencia-fontes-e-indicadores": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 79 dependências e a fonte líder conferidas no dado; feixe a 3,57:1 e 3,27:1. Observações no README: o arco não acompanha o tamanho do grupo (70,9 contra 40,8 px com 4 folhas), fronteira de ramo sem marca, constantes fora do topo. Cursor não renderizado.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:46.590Z",
+      "impressao": "66dbae62918686f6eb87c74df887b4280f718667",
+      "arquivos": {
+        "Chart.tsx": "db986f19c11b5ade98e778d9cef7c357c0533d67",
+        "data.ts": "8cfbe78eaf2161f17f76751317e96754dc235fea",
+        "meta.json": "388a5535a005dd5a3d51e48a937ca347ff7a61a6"
+      }
+    },
+    "v2_indicadores-que-caem-sem-o-formulario": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 11 de 40 e a lista 5, 4, 1, 1 e 0 conferidos no dado. Observações no README: 16 das 68 baixadas com mais da metade do caminho sob a acesa (rota comum do feixe, nenhuma perde as duas pontas), legenda com a contagem na frente, maiúscula no meio da linha de leitura.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:47.088Z",
+      "impressao": "1b45e05302afe440a6ecebcd2301e48822a042ea",
+      "arquivos": {
+        "Chart.tsx": "e0625d2e6fc0c7308b21fe8ff6fd494f59660fa5",
+        "data.ts": "0a225ec6ac940f8948fe403de4a6a0ddb81912a2",
+        "meta.json": "c10e98e688afd6f072f06907f97467e18358c891"
+      }
+    },
+    "v3_dependencia-dentro-do-mesmo-dashboard": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 10 internas (4, 3, 2, 1 e 0), 2 entradas e 3 saídas conferidas no dado. Observação com peso no README: a interna cobre os últimos 26,8 e 15,6 px de duas saídas, e o par se lê pela folha em chart-6. Outras: o par interno não se lê do desenho, ramos de cursor não renderizados.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:47.579Z",
+      "impressao": "d210de3502de2b67c78929d849de95dd1d475bff",
+      "arquivos": {
+        "Chart.tsx": "c9302d3afe65358c7c72d3258446a6cad025de9a",
+        "data.ts": "3d45895abc576cc804c069540ebed284996cee42",
+        "meta.json": "f3f5984e4f42781d4d23ccef6b2520b09108e311"
+      }
+    },
+    "v4_tensao-baixa-e-alta-lado-a-lado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; os mesmos 79 caminhos, o mesmo raio e o mesmo layout nos dois painéis, só β muda. Observações no README: quase retas em 0,30 é limiar discutível (flecha mediana de 11% da corda), β sem ser apresentado como tensão, folhas sem dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:48.077Z",
+      "impressao": "1eee7c8468bf7b4c7f46128a9e08ce1422d3a1de",
+      "arquivos": {
+        "Chart.tsx": "25d616f1cd28af7b8985d57e7c814175c9514ebf",
+        "data.ts": "6fc43905e00392c8939e3bc4045e1e34ac8afe6c",
+        "meta.json": "79db40be399872e8039805163a989f4f95f0a210"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_procedencia-fontes-e-indicadores",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 79 dependencias e lider conferidos no dado; feixe a 3,57:1 e 3,27:1. Observacoes no README: arco nao acompanha o tamanho do grupo (70,9 contra 40,8 px com 4 folhas), fronteira de ramo sem marca, constantes fora do topo. Cursor nao renderizado.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:25.181Z",
+      "impressao": "66dbae62918686f6eb87c74df887b4280f718667",
+      "arquivos": {
+        "Chart.tsx": "db986f19c11b5ade98e778d9cef7c357c0533d67",
+        "data.ts": "8cfbe78eaf2161f17f76751317e96754dc235fea",
+        "meta.json": "388a5535a005dd5a3d51e48a937ca347ff7a61a6"
+      }
+    },
+    {
+      "versao": "v2_indicadores-que-caem-sem-o-formulario",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 11 de 40 e a lista 5, 4, 1, 1 e 0 conferidos no dado. Observacoes no README: 16 das 68 baixadas com mais da metade do caminho sob a acesa (rota comum do feixe, nenhuma perde as duas pontas), legenda com contagem na frente, maiuscula no meio da linha de leitura.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:25.688Z",
+      "impressao": "1b45e05302afe440a6ecebcd2301e48822a042ea",
+      "arquivos": {
+        "Chart.tsx": "e0625d2e6fc0c7308b21fe8ff6fd494f59660fa5",
+        "data.ts": "0a225ec6ac940f8948fe403de4a6a0ddb81912a2",
+        "meta.json": "c10e98e688afd6f072f06907f97467e18358c891"
+      }
+    },
+    {
+      "versao": "v3_dependencia-dentro-do-mesmo-dashboard",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 10 internas (4, 3, 2, 1 e 0), 2 entradas e 3 saidas conferidas no dado. Observacao com peso no README: a interna cobre os ultimos 26,8 e 15,6 px de duas saidas; o par se le pela folha em chart-6. Outras: par interno nao se le do desenho, ramos de cursor nao renderizados.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:26.215Z",
+      "impressao": "d210de3502de2b67c78929d849de95dd1d475bff",
+      "arquivos": {
+        "Chart.tsx": "c9302d3afe65358c7c72d3258446a6cad025de9a",
+        "data.ts": "3d45895abc576cc804c069540ebed284996cee42",
+        "meta.json": "f3f5984e4f42781d4d23ccef6b2520b09108e311"
+      }
+    },
+    {
+      "versao": "v4_tensao-baixa-e-alta-lado-a-lado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; mesmos 79 caminhos, mesmo raio e mesmo layout nos dois paineis, so beta muda. Observacoes no README: quase retas em 0,30 e limiar discutivel (flecha mediana de 11% da corda), beta sem ser apresentado como tensao, folhas sem dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:26.754Z",
+      "impressao": "1eee7c8468bf7b4c7f46128a9e08ce1422d3a1de",
+      "arquivos": {
+        "Chart.tsx": "25d616f1cd28af7b8985d57e7c814175c9514ebf",
+        "data.ts": "6fc43905e00392c8939e3bc4045e1e34ac8afe6c",
+        "meta.json": "79db40be399872e8039805163a989f4f95f0a210"
+      }
+    },
+    {
+      "versao": "v1_procedencia-fontes-e-indicadores",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 79 dependências e a fonte líder conferidas no dado; feixe a 3,57:1 e 3,27:1. Observações no README: o arco não acompanha o tamanho do grupo (70,9 contra 40,8 px com 4 folhas), fronteira de ramo sem marca, constantes fora do topo. Cursor não renderizado.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:46.590Z",
+      "impressao": "66dbae62918686f6eb87c74df887b4280f718667",
+      "arquivos": {
+        "Chart.tsx": "db986f19c11b5ade98e778d9cef7c357c0533d67",
+        "data.ts": "8cfbe78eaf2161f17f76751317e96754dc235fea",
+        "meta.json": "388a5535a005dd5a3d51e48a937ca347ff7a61a6"
+      }
+    },
+    {
+      "versao": "v2_indicadores-que-caem-sem-o-formulario",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 11 de 40 e a lista 5, 4, 1, 1 e 0 conferidos no dado. Observações no README: 16 das 68 baixadas com mais da metade do caminho sob a acesa (rota comum do feixe, nenhuma perde as duas pontas), legenda com a contagem na frente, maiúscula no meio da linha de leitura.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:47.088Z",
+      "impressao": "1b45e05302afe440a6ecebcd2301e48822a042ea",
+      "arquivos": {
+        "Chart.tsx": "e0625d2e6fc0c7308b21fe8ff6fd494f59660fa5",
+        "data.ts": "0a225ec6ac940f8948fe403de4a6a0ddb81912a2",
+        "meta.json": "c10e98e688afd6f072f06907f97467e18358c891"
+      }
+    },
+    {
+      "versao": "v3_dependencia-dentro-do-mesmo-dashboard",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; 10 internas (4, 3, 2, 1 e 0), 2 entradas e 3 saídas conferidas no dado. Observação com peso no README: a interna cobre os últimos 26,8 e 15,6 px de duas saídas, e o par se lê pela folha em chart-6. Outras: o par interno não se lê do desenho, ramos de cursor não renderizados.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:47.579Z",
+      "impressao": "d210de3502de2b67c78929d849de95dd1d475bff",
+      "arquivos": {
+        "Chart.tsx": "c9302d3afe65358c7c72d3258446a6cad025de9a",
+        "data.ts": "3d45895abc576cc804c069540ebed284996cee42",
+        "meta.json": "f3f5984e4f42781d4d23ccef6b2520b09108e311"
+      }
+    },
+    {
+      "versao": "v4_tensao-baixa-e-alta-lado-a-lado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas; os mesmos 79 caminhos, o mesmo raio e o mesmo layout nos dois painéis, só β muda. Observações no README: quase retas em 0,30 é limiar discutível (flecha mediana de 11% da corda), β sem ser apresentado como tensão, folhas sem dica.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T22:52:48.077Z",
+      "impressao": "1eee7c8468bf7b4c7f46128a9e08ce1422d3a1de",
+      "arquivos": {
+        "Chart.tsx": "25d616f1cd28af7b8985d57e7c814175c9514ebf",
+        "data.ts": "6fc43905e00392c8939e3bc4045e1e34ac8afe6c",
+        "meta.json": "79db40be399872e8039805163a989f4f95f0a210"
+      }
+    }
+  ]
+}

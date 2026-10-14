@@ -1,0 +1,13 @@
+{
+  "title": "Curva de decisão com cauda rala",
+  "useCase": "O que a curva ainda diz depois de 180 dias, quando restam só 11 oportunidades em risco?",
+  "demonstrates": [
+    "Curva tracejada a partir do ponto em que restam menos de 15 casos em risco",
+    "Nota: abaixo de 15 casos em risco a queda não é confiável",
+    "Tabela de em risco que deixa visível o número pequeno no fim do eixo",
+    "Domínio do eixo X fixo, sem esticar a cauda para ocupar o gráfico"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto no lugar do card sugerido pelo catálogo: no card o corpo mede 574 x 225 px, e com a linha de leitura, o subtítulo do eixo, a tabela de em risco e as duas linhas de rodapé, 5 linhas de 16 px e 4 vãos de 8, sobram cerca de 93 px de plano, que descontados os 26 do eixo X e os 10 de margem deixam uma curva de uns 60 px, pequena demais para ver o tracejado. A curva sólida e a tracejada são duas séries que dividem um ponto, no dia em que o grupo em risco cai abaixo de 15, com o degrau horizontal até esse dia ainda sólido e só a queda dali em diante tracejada. O domínio X é constante de 240 dias e só cresce se o dado passar dele."
+}

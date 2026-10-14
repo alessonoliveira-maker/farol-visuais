@@ -1,0 +1,13 @@
+{
+  "title": "Envelope histórico com o ano atual",
+  "useCase": "Ver se as entradas semanais de 2026 estão dentro do mínimo e do máximo de 2023 a 2025.",
+  "demonstrates": [
+    "Faixa neutra de mínimo e máximo por semana do ano",
+    "Linha de 2026 em chart-1 por cima, destaque único do visual",
+    "Semanas fora do envelope marcadas com ponto vazio e contagem na linha de leitura",
+    "Semana corrente parcial com ponto vazado (EIX-10)"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Método declarado: mínimo e máximo são o menor e o maior valor medidos na mesma semana do calendário em 2023, 2024 e 2025 (3 observações por semana), não percentil nem intervalo de confiança."
+}

@@ -1,0 +1,121 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "07_matriz-raci",
+  "versoes": {
+    "v1_handoff-declarado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Letras e contagens conferidas com o data.ts (um A por etapa; Gerente 4 A, Executivo 5 R). Observações no README: nota do meta diz 2 linhas e 38 px e o render dá 3 linhas e 55 px; TIP-1 na linha de leitura; linha de base do cabeçalho.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:38.258Z",
+      "impressao": "ec2a351265a926c33f4237821640b09b13ef41d1",
+      "arquivos": {
+        "Chart.tsx": "92280c70fb4acf37512def9482850b439f3dda86",
+        "data.ts": "6fa13a783d770f5b056ea6fbf59077832b048421",
+        "meta.json": "a40da41a12689340cfd4c876c594ade73c6a10f0"
+      }
+    },
+    "v2_alertas-de-governanca-do-handoff": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Dois alertas (dois A e sem A) e carga por papel conferidos com o data.ts; segundo canal por ícone, texto e peso. Observações no README: redação da linha de leitura (em 6. 2 etapas), TIP-1, ramo sem R fora do dado padrão.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:38.864Z",
+      "impressao": "1d756c80bc063b0c6fed2dc238794cdc926e7910",
+      "arquivos": {
+        "Chart.tsx": "d07eae29586e5260c028e393df4de8fbf641da4f",
+        "data.ts": "741d78a652fb23ddcbf37d2f57bf67cdaffffe62",
+        "meta.json": "6179ec2bb3ea77c38a14c8ff8996955504dfa0c1"
+      }
+    },
+    "v3_declarado-contra-executado-no-crm": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 5 células divergentes em 3 de 7 etapas conferidas; cada linha soma 100; etapa sem registro não vira zero. Observações no README: NUM-1 (uma casa em composição), ANO-6 com desvio declarado e âmbar repetido entre PREMISSA e divergência, EST-2 sem ícone, TIP-4, TIP-1.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:39.556Z",
+      "impressao": "33c31f4482758015bb409aa210b1e41073819543",
+      "arquivos": {
+        "Chart.tsx": "dd6acafbf1ca640477e712e9465a79523d1e6d3f",
+        "data.ts": "62506a48a3f5e569c7f94593a05a2b57da1bae0d",
+        "meta.json": "9d7d3887ee8bed9392205f4906f010712d27edbb"
+      }
+    },
+    "v4_rasci-com-papel-sem-ocupante": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo corrigido: 32 perguntas sem bloqueante, dois temas. Hachura da coluna vaga e amostra da legenda em text-muted, medidas nos PNGs em 5,21:1 no escuro e 5,37:1 no claro (pixel suavizado 3,78:1 e 3,48:1). Letras, alerta único e contagens conferidos com o data.ts. Observações no README: moldura da amostra some no preview.svg, diferença de 0,59% e 0,64% entre página e arquivo (aviso da seção 12), degrau de 2 px da hachura por linha, conta do notes.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:37:25.993Z",
+      "impressao": "2632d59699524550765b9fabdad91a5f58cf802c",
+      "arquivos": {
+        "Chart.tsx": "e7b5e1cd005504fda466a9f95cc83d8edf24a08d",
+        "data.ts": "f40d86abf6e19313c18bb20334a64c73b535f7ad",
+        "meta.json": "c08b6a6433f1927788e618c71630d571c8d2ea22"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_handoff-declarado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Letras e contagens conferidas com o data.ts (um A por etapa; Gerente 4 A, Executivo 5 R). Observações no README: nota do meta diz 2 linhas e 38 px e o render dá 3 linhas e 55 px; TIP-1 na linha de leitura; linha de base do cabeçalho.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:38.258Z",
+      "impressao": "ec2a351265a926c33f4237821640b09b13ef41d1",
+      "arquivos": {
+        "Chart.tsx": "92280c70fb4acf37512def9482850b439f3dda86",
+        "data.ts": "6fa13a783d770f5b056ea6fbf59077832b048421",
+        "meta.json": "a40da41a12689340cfd4c876c594ade73c6a10f0"
+      }
+    },
+    {
+      "versao": "v2_alertas-de-governanca-do-handoff",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. Dois alertas (dois A e sem A) e carga por papel conferidos com o data.ts; segundo canal por ícone, texto e peso. Observações no README: redação da linha de leitura (em 6. 2 etapas), TIP-1, ramo sem R fora do dado padrão.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:38.864Z",
+      "impressao": "1d756c80bc063b0c6fed2dc238794cdc926e7910",
+      "arquivos": {
+        "Chart.tsx": "d07eae29586e5260c028e393df4de8fbf641da4f",
+        "data.ts": "741d78a652fb23ddcbf37d2f57bf67cdaffffe62",
+        "meta.json": "6179ec2bb3ea77c38a14c8ff8996955504dfa0c1"
+      }
+    },
+    {
+      "versao": "v3_declarado-contra-executado-no-crm",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, dois temas. 5 células divergentes em 3 de 7 etapas conferidas; cada linha soma 100; etapa sem registro não vira zero. Observações no README: NUM-1 (uma casa em composição), ANO-6 com desvio declarado e âmbar repetido entre PREMISSA e divergência, EST-2 sem ícone, TIP-4, TIP-1.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:39.556Z",
+      "impressao": "33c31f4482758015bb409aa210b1e41073819543",
+      "arquivos": {
+        "Chart.tsx": "dd6acafbf1ca640477e712e9465a79523d1e6d3f",
+        "data.ts": "62506a48a3f5e569c7f94593a05a2b57da1bae0d",
+        "meta.json": "9d7d3887ee8bed9392205f4906f010712d27edbb"
+      }
+    },
+    {
+      "versao": "v4_rasci-com-papel-sem-ocupante",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20; seção 17.2 (papel Ausência), ACE-3 e TOK-5. A hachura da coluna vaga e a amostra dela na legenda estão em --line-strong e medem 1,79:1 no escuro e 1,83:1 no claro, abaixo do piso de 3:1; a amostra não tem valor escrito que ative a isenção. Trocar por --text-muted (5,21:1 e 5,37:1) nas linhas da coluna, na amostra e na borda da amostra, atualizar o item 7 da Anatomia e conferir os dois PNGs. Parecer em validation/revisao_25_matriz-e-quadrantes__07_matriz-raci_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:24:40.240Z",
+      "impressao": "8a9c14b95bfa6b44fea13b4bcb4649f799546d22",
+      "arquivos": {
+        "Chart.tsx": "a92e808c2497a3691bed5983f3b9b0df1d44085f",
+        "data.ts": "f40d86abf6e19313c18bb20334a64c73b535f7ad",
+        "meta.json": "c08b6a6433f1927788e618c71630d571c8d2ea22"
+      }
+    },
+    {
+      "versao": "v4_rasci-com-papel-sem-ocupante",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, arquivo corrigido: 32 perguntas sem bloqueante, dois temas. Hachura da coluna vaga e amostra da legenda em text-muted, medidas nos PNGs em 5,21:1 no escuro e 5,37:1 no claro (pixel suavizado 3,78:1 e 3,48:1). Letras, alerta único e contagens conferidos com o data.ts. Observações no README: moldura da amostra some no preview.svg, diferença de 0,59% e 0,64% entre página e arquivo (aviso da seção 12), degrau de 2 px da hachura por linha, conta do notes.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:37:25.993Z",
+      "impressao": "2632d59699524550765b9fabdad91a5f58cf802c",
+      "arquivos": {
+        "Chart.tsx": "e7b5e1cd005504fda466a9f95cc83d8edf24a08d",
+        "data.ts": "f40d86abf6e19313c18bb20334a64c73b535f7ad",
+        "meta.json": "c08b6a6433f1927788e618c71630d571c8d2ea22"
+      }
+    }
+  ]
+}

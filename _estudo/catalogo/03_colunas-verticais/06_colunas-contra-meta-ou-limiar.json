@@ -1,0 +1,71 @@
+{
+  "slug": "06_colunas-contra-meta-ou-limiar",
+  "nome": "Colunas contra meta ou limiar",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Colunas de período lidas contra uma referência: meta, média, teto de capacidade ou forecast. A referência entra de três jeitos: linha fixa ou em degraus sobre as colunas; corte que separa o excedente acima do limiar num segmento próprio; ou coluna fantasma, mais larga e em contorno, atrás do realizado. Absorve a linha de meta ou média, o excedente, as colunas sobrepostas e a coluna fantasma.",
+  "quando_usar": [
+    "Uma medida por período com referência única ou em degraus, em até 12 períodos.",
+    "Carga contra teto de capacidade, quando importa quanto passou e não só se passou.",
+    "Realizado contra meta ou forecast por período, com a referência atrás do realizado.",
+    "Referência que muda no meio da série, como teto que sobe com contratação ou meta revisada."
+  ],
+  "quando_evitar": [
+    "Uma medida só contra a meta, sem série de períodos: progresso e meta (13).",
+    "Duas medidas sem relação de referência entre si: colunas agrupadas (modelo 02).",
+    "A diferença para a referência é a mensagem principal: painel de variação (08/06) ou colunas positivo e negativo (modelo 05).",
+    "Média que incluiria o período corrente parcial: calcular só sobre períodos fechados ou não publicar a linha.",
+    "Linha de meta e linha de média no mesmo gráfico sem traços distintos: escolher uma."
+  ],
+  "arquivo_estudo": "_estudo/familias/03_colunas-verticais.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-contra-meta-mensal",
+      "titulo": "Receita reconhecida contra a meta mensal",
+      "caso_de_uso": "Em quantos meses a receita reconhecida bateu a meta mensal e em quais ficou abaixo?",
+      "o_que_demonstra": [
+        "ReferenceLine da meta com ifOverflow extendDomain e rótulo numa margem reservada",
+        "Meses acima da meta em chart-1 e abaixo em neutro, com valor escrito em toda coluna",
+        "Contador de meses acima da meta calculado do dado na linha de leitura",
+        "Traço de referência de 1 px tracejado 3 3 em text-muted"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_entradas-contra-teto-com-excedente",
+      "titulo": "Entradas mensais contra o teto de capacidade",
+      "caso_de_uso": "Quanto a entrada de oportunidades passou do teto de capacidade da pré-vendas em cada mês?",
+      "o_que_demonstra": [
+        "Dado dividido em TypeScript em dentro do teto e excedente, no mesmo stackId",
+        "Só o excedente em negative, com rótulo +N onde ele é maior que zero",
+        "Dica com o valor original e o excedente, não com as duas séries técnicas",
+        "Resumo de quantos meses estouraram calculado do dado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_fechamentos-contra-forecast",
+      "titulo": "Fechamentos contra o forecast do mês",
+      "caso_de_uso": "Quanto foi fechado contra o forecast declarado no início de cada mês e qual o viés da previsão?",
+      "o_que_demonstra": [
+        "Coluna fantasma: forecast largo em contorno atrás do fechado estreito e sólido",
+        "Sobreposição por dois XAxis com xAxisId e barSize distintos, sem a da frente mais larga",
+        "Atingimento escrito só nos meses abaixo de 90% ou acima de 110%",
+        "Fechado que passa do forecast lido como informação, com o trecho acima sem moldura",
+        "Rodapé com o viés médio do forecast no período"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_demanda-contra-capacidade-em-degraus",
+      "titulo": "Demanda projetada contra capacidade em 2027",
+      "caso_de_uso": "Em que meses de 2027 a demanda projetada passa da capacidade, que sobe em degraus com as contratações?",
+      "o_que_demonstra": [
+        "Capacidade como Line stepAfter sobre as colunas, com o corte recalculado linha a linha",
+        "Mês com capacidade zero todo em excedente, com a frase sem capacidade instalada",
+        "Excedente menor que 2 px com minPointSize e aviso de altura ampliada na dica",
+        "Legenda que nomeia capacidade medida e demanda projetada, sem selo de procedência no Chart"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

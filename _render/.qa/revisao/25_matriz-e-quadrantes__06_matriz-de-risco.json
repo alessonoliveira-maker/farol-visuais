@@ -1,0 +1,108 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "06_matriz-de-risco",
+  "versoes": {
+    "v1_riscos-do-plano-comercial-5x5": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 21 riscos na grade (14 no alto, 6 no médio, 1 no baixo) e 2 sem impacto avaliado em nota, níveis conferidos contra LEVEL_TABLE, laço invertido com Quase certa no topo, pares de texto medidos à mão nos dois temas (o menor dá 5,21 no escuro e 5,37 no claro). Sem bloqueante; observações no README (última faixa escrita como maior que com limite incluso, unidade do critério na linha de título, contagem sem substantivo, número de frase sem tabular-nums, font-display sem peso, degrau seq-6 vivo no escuro).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:17.898Z",
+      "impressao": "9d64c2908f77471344471f754ee9d74737b341cf",
+      "arquivos": {
+        "Chart.tsx": "469995498a584b301f038e2619ec9a5b64f6d344",
+        "data.ts": "a0291f22e99762a0ecae5aa3df281e91f83ef857",
+        "meta.json": "35a1b64cbc8c00a9033f33e1ff9cf2127584c321"
+      }
+    },
+    "v2_movimento-desde-o-ultimo-comite": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 4 movimentos refeitos do data.ts (três de +1 e um de +2), origem tracejada e destino em contorno cheio do risco em foco nas células certas, marca com seta, sinal e número, linha de leitura igual à do catálogo. Sem bloqueante; observações no README (número da marca sem dizer que conta níveis, só o risco em foco tem nome sem clique, botões dentro de aria-hidden, 2 sem impacto avaliado fora da tela, uma marca por célula, contorno cheio a 2,09 contra seq-6 no escuro).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:18.374Z",
+      "impressao": "36c7389a488ddb9e35121588fa5b94a5a7bfd199",
+      "arquivos": {
+        "Chart.tsx": "644a7875f9a974f2c4d7c041cd4f0aa351e29731",
+        "data.ts": "de3bfcada95fa7b546ec77af1174f823fa190405",
+        "meta.json": "b81efc94e68f97edd2e020d93835f6984470dfc5"
+      }
+    },
+    "v3_mapa-de-risco-dos-cenarios-com-lista": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 14 riscos na grade, 7 no nível alto, célula provável e maior aberta com os três riscos do catálogo, contagem repetida no título da lista, role grid com setas lido no código, lista de 232 px no corpo de 265. Sem bloqueante; observações no README (columnheader fora de row, aria-label com 1 riscos, tipo sem impact nulo contra o README, total e nível alto só na frase acessível, célula inicial por constante).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:18.917Z",
+      "impressao": "9066e36cd9df0183cc5cf6cd0e8fd21e6f0e99cd",
+      "arquivos": {
+        "Chart.tsx": "6890c31ee0539662ec9194267acf205e2f4b9a6c",
+        "data.ts": "e5a6a19c5d6f7285ca02819efc8c5762c4b9f579",
+        "meta.json": "7b065042d6ca175bc2679bfee55cc873a8c8d97a"
+      }
+    },
+    "v4_compressao-3x3-contra-5x5": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: as duas grades somam 21 e a faixa hachurada traz os 2 sem impacto avaliado, 11 riscos na célula de cima do 3 por 3 vindos de 4 células do 5 por 5, níveis conferidos contra as duas tabelas, hachura em text-muted a 5,21 e 5,37. Sem bloqueante; observações no README (alta e alta contra os cabeçalhos Alta e Alto, nada liga as 4 células à célula que as junta, par de nome e critério apertado na grade 5 por 5, duas fontes para o corte de faixa).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:19.418Z",
+      "impressao": "74fdab40906a2b2398e12e52e2987d758eb543f5",
+      "arquivos": {
+        "Chart.tsx": "55cb352e18fabaa576071fc0d9f64f0e529ada56",
+        "data.ts": "11643bb94a97db88bf10305613117a48f24e3827",
+        "meta.json": "7e93840b75b352089b8a5caaf331d98e661c4a31"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_riscos-do-plano-comercial-5x5",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 21 riscos na grade (14 no alto, 6 no médio, 1 no baixo) e 2 sem impacto avaliado em nota, níveis conferidos contra LEVEL_TABLE, laço invertido com Quase certa no topo, pares de texto medidos à mão nos dois temas (o menor dá 5,21 no escuro e 5,37 no claro). Sem bloqueante; observações no README (última faixa escrita como maior que com limite incluso, unidade do critério na linha de título, contagem sem substantivo, número de frase sem tabular-nums, font-display sem peso, degrau seq-6 vivo no escuro).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:17.898Z",
+      "impressao": "9d64c2908f77471344471f754ee9d74737b341cf",
+      "arquivos": {
+        "Chart.tsx": "469995498a584b301f038e2619ec9a5b64f6d344",
+        "data.ts": "a0291f22e99762a0ecae5aa3df281e91f83ef857",
+        "meta.json": "35a1b64cbc8c00a9033f33e1ff9cf2127584c321"
+      }
+    },
+    {
+      "versao": "v2_movimento-desde-o-ultimo-comite",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 4 movimentos refeitos do data.ts (três de +1 e um de +2), origem tracejada e destino em contorno cheio do risco em foco nas células certas, marca com seta, sinal e número, linha de leitura igual à do catálogo. Sem bloqueante; observações no README (número da marca sem dizer que conta níveis, só o risco em foco tem nome sem clique, botões dentro de aria-hidden, 2 sem impacto avaliado fora da tela, uma marca por célula, contorno cheio a 2,09 contra seq-6 no escuro).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:18.374Z",
+      "impressao": "36c7389a488ddb9e35121588fa5b94a5a7bfd199",
+      "arquivos": {
+        "Chart.tsx": "644a7875f9a974f2c4d7c041cd4f0aa351e29731",
+        "data.ts": "de3bfcada95fa7b546ec77af1174f823fa190405",
+        "meta.json": "b81efc94e68f97edd2e020d93835f6984470dfc5"
+      }
+    },
+    {
+      "versao": "v3_mapa-de-risco-dos-cenarios-com-lista",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 14 riscos na grade, 7 no nível alto, célula provável e maior aberta com os três riscos do catálogo, contagem repetida no título da lista, role grid com setas lido no código, lista de 232 px no corpo de 265. Sem bloqueante; observações no README (columnheader fora de row, aria-label com 1 riscos, tipo sem impact nulo contra o README, total e nível alto só na frase acessível, célula inicial por constante).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:18.917Z",
+      "impressao": "9066e36cd9df0183cc5cf6cd0e8fd21e6f0e99cd",
+      "arquivos": {
+        "Chart.tsx": "6890c31ee0539662ec9194267acf205e2f4b9a6c",
+        "data.ts": "e5a6a19c5d6f7285ca02819efc8c5762c4b9f579",
+        "meta.json": "7b065042d6ca175bc2679bfee55cc873a8c8d97a"
+      }
+    },
+    {
+      "versao": "v4_compressao-3x3-contra-5x5",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: as duas grades somam 21 e a faixa hachurada traz os 2 sem impacto avaliado, 11 riscos na célula de cima do 3 por 3 vindos de 4 células do 5 por 5, níveis conferidos contra as duas tabelas, hachura em text-muted a 5,21 e 5,37. Sem bloqueante; observações no README (alta e alta contra os cabeçalhos Alta e Alto, nada liga as 4 células à célula que as junta, par de nome e critério apertado na grade 5 por 5, duas fontes para o corte de faixa).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:19.418Z",
+      "impressao": "74fdab40906a2b2398e12e52e2987d758eb543f5",
+      "arquivos": {
+        "Chart.tsx": "55cb352e18fabaa576071fc0d9f64f0e529ada56",
+        "data.ts": "11643bb94a97db88bf10305613117a48f24e3827",
+        "meta.json": "7e93840b75b352089b8a5caaf331d98e661c4a31"
+      }
+    }
+  ]
+}

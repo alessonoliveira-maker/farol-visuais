@@ -1,0 +1,12 @@
+{
+  "title": "Verbatim longo recortado e com dado mascarado",
+  "useCase": "Pré-vendas: como exibir uma anotação de 800 caracteres ao redor do termo sem expor telefone, e-mail ou nome escritos nela?",
+  "demonstrates": [
+    "Recorte por palavras ao redor do termo, com reticências nas duas pontas",
+    "Mascaramento antes do realce: [telefone], [e-mail] e [nome] no lugar do dado",
+    "Contagem de caracteres omitidos escrita junto do recorte",
+    "Motivo sem verbatim mostra estado vazio com role status, sem citação inventada"
+  ],
+  "canvas": "card",
+  "notes": "Desvio declarado contra a TIP-7: as reticências desta versão não são truncamento de nome de marca desenhada. São a marca semântica do recorte do verbatim, pedida pelo catálogo, feita em TypeScript sobre palavras inteiras e com a contagem dos caracteres omitidos escrita logo abaixo, então nada é cortado em silêncio. O dado sensível do data.ts é sintético e reservado (e-mail no domínio .invalid, telefone todo de zeros, nomes fictícios) e existe só para provar o mascaramento."
+}

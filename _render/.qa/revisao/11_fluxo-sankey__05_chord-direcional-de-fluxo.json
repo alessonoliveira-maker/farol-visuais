@@ -1,0 +1,33 @@
+{
+  "familia": "11_fluxo-sankey",
+  "modelo": "05_chord-direcional-de-fluxo",
+  "versoes": {
+    "v1_repasses-entre-funcoes": {
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas; geometria do chord consistente (sub-arcos somam o arco), slots 1, 3, 6, 5, rotulos diretos com unidade, contraste e tamanhos dentro da regua. Observacoes registradas no README: rotulo do arco sem o qualificador enviado, topFlow global na frase do lider, roda ocupando 42% do quadrado e fitas opacas coladas ao arco da mesma cor.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T02:23:22.572Z",
+      "impressao": "12492d9b27cd0e020f717780ae77245d4b5a6c81",
+      "arquivos": {
+        "Chart.tsx": "7f2ab85d8e79855b34b436db122f73e5213deecf",
+        "data.ts": "10ade2918d086988f73441f2a1973aff32d74e7c",
+        "meta.json": "d87fccb032616968ae84704e901adc795df15b17"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_repasses-entre-funcoes",
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas; geometria do chord consistente (sub-arcos somam o arco), slots 1, 3, 6, 5, rotulos diretos com unidade, contraste e tamanhos dentro da regua. Observacoes registradas no README: rotulo do arco sem o qualificador enviado, topFlow global na frase do lider, roda ocupando 42% do quadrado e fitas opacas coladas ao arco da mesma cor.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T02:23:22.572Z",
+      "impressao": "12492d9b27cd0e020f717780ae77245d4b5a6c81",
+      "arquivos": {
+        "Chart.tsx": "7f2ab85d8e79855b34b436db122f73e5213deecf",
+        "data.ts": "10ade2918d086988f73441f2a1973aff32d74e7c",
+        "meta.json": "d87fccb032616968ae84704e901adc795df15b17"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Leads por semana com a campanha marcada",
+  "useCase": "O degrau de volume nas últimas 16 semanas coincide com as semanas em que a campanha esteve no ar?",
+  "demonstrates": [
+    "ReferenceArea em surface-sunken cobrindo as 6 semanas da campanha, total na faixa",
+    "ReferenceLine vertical na semana de estreia, com etiqueta acima da área de plotagem",
+    "Data de início da campanha guardada no dado e mostrada na dica, além da semana",
+    "maxBarSize derivado do passo da ESP-6 para 16 categorias no canvas de cartão"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

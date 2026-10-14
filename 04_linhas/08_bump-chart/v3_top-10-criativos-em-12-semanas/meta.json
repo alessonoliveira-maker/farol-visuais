@@ -1,0 +1,13 @@
+{
+  "title": "Top 10 criativos por CPL qualificado em 12 semanas",
+  "useCase": "Quais criativos entram, saem ou perdem posição aos poucos no top 10 de CPL qualificado em 12 semanas?",
+  "demonstrates": [
+    "Universo fixo do top 10, com quem fica abaixo da 10ª posição em lacuna",
+    "Linha cortada com ponto anelado e nome de quem entra e sai do top 10",
+    "Anticolisão dos rótulos das pontas quando duas posições empatam, sem mover o ponto",
+    "Descida lenta e constante de um criativo lida como fadiga"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "O tique ordinal do eixo y fica sem texto porque o número da posição já mora dentro de cada ponto; com 10 linhas e nomes nas duas pontas, o texto do tique colidiria com os rótulos."
+}

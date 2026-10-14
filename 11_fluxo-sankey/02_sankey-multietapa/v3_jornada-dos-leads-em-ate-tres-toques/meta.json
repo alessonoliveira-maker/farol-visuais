@@ -1,0 +1,14 @@
+{
+  "title": "Jornada dos leads qualificados em até três toques",
+  "useCase": "Marketing, agosto de 2026: por quais pontos de contato passaram os 318 leads qualificados do mês?",
+  "demonstrates": [
+    "Nó é o par canal e passo: name único no dado, label para a tela",
+    "Canal repetido em passos seguidos sem laço, porque cada passo é outro nó",
+    "Ligação que pula colunas levada a um corredor reservado abaixo do plano",
+    "Trecho mais pesado da jornada aceso em --chart-1, o resto em neutro",
+    "Rótulo da coluna escrito uma vez no topo, e não repetido em cada nó"
+  ],
+  "canvas": { "width": 1100, "height": 800 },
+  "frame": "card",
+  "notes": "Canvas declarado por número, com a conta escrita (GEO-1). LARGURA: o corpo recebe 1100 menos 66 de moldura, ou seja 1034 px, e o desenho pede 1008,8 px, que é a soma de 16 de margem esquerda, quatro colunas de 12 px de nó, três faixas de rótulo de 146,4 px (a linha mais longa é \"Rede profissional\", 17 caracteres em Manrope 12 px) mais a do desfecho com 129,6 px (\"318 leads · 100%\", 16 caracteres em Space Grotesk 11 px), três vãos de curva de 120 px e 16 de margem direita; sobram 25 px. O vão de curva é de 120 px e não dos 84 px da v1 porque a ligação que pula colunas precisa DESCER do plano até o corredor dentro desse vão: se ela ainda estivesse descendo ao chegar na coluna seguinte, passaria por cima dos nós dela, e como o corredor é desenhado depois dos nós ela cobriria o que deveria contornar. ALTURA: o corpo recebe 800 menos 118,5 de moldura, ou seja 681,5 px, dos quais 24 px vão para a linha de leitura e 24 px para a legenda, sobrando 633,5 px para o Sankey; tirando 68 px de margem superior (o rótulo da coluna em cima do rótulo de duas linhas do primeiro nó) e 136 px de margem inferior (16 de respiro mais 120 de corredor), o plano fica com 429,5 px. A coluna do passo 1 é a que governa a escala, porque soma os 318 leads em cinco nós: gasta 176 px nos quatro vãos de 44 px e 253,5 px nos nós, o que dá 0,797 px por lead. Nessa escala a ligação mais fina, 18 leads, mede 14,3 px, acima do piso de 12 px da ESP-2, e o corredor gasta 106,9 px dos 120 reservados (as três faixas de toque único, 78,9 px, mais dois vãos de 8 px e o respiro de 12 px). O caso de uso tem 97 caracteres e cabe em uma linha do cabeçalho de 1034 px. CONSERVAÇÃO: 318 entram no passo 1 e 318 chegam ao desfecho, com as somas conferidas linha a linha no comentário do data.ts, porque o Sankey do Recharts toma o valor do nó como o maior dos dois lados e um nó desequilibrado reescala o diagrama inteiro em silêncio (REC-33). PERCENTUAL: o percentual do rótulo é sempre a fatia do total de 318, e não a composição da coluna, então só o passo 1 e o desfecho somam 100; nas colunas do meio a soma dos inteiros pode ficar 1 ponto acima da fatia da coluna por arredondamento (37 contra 36 no passo 3), e é por isso que nenhuma coluna do meio é apresentada como composição."
+}

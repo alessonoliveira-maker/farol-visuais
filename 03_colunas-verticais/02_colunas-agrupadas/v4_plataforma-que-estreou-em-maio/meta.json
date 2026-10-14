@@ -1,0 +1,13 @@
+{
+  "title": "Leads por plataforma com estreia em maio",
+  "useCase": "Como mostrar uma plataforma que só começou a rodar em maio sem sugerir que antes ela investiu e não trouxe nada?",
+  "demonstrates": [
+    "Valor null antes da estreia: a coluna não existe, e zero medido continua desenhado",
+    "Nota curta junto da legenda com o mês de entrada da plataforma",
+    "Grupo com duas colunas mantém a largura das colunas, sem engordar as que sobraram",
+    "Frase acessível que separa meses sem operação de meses com zero leads"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Passo pela ESP-6: corpo do cartão aproximadamente 574 x 234 px, disponível aproximadamente 574 menos 36 do eixo de contagem menos 8 de margem = 530 px para 6 meses, passo aproximadamente 88,3 px. Com barGap de 2 px (declarado, duas séries na banda) e barCategoryGap no piso de 30 por cento: espessura = (88,3 x 0,40 menos 2) dividido por 2, aproximadamente 16,7 px, acima do piso de 12 px da ESP-2. A largura da coluna da plataforma estabelecida não muda nos meses em que a recém-chegada ainda não existe, porque maxBarSize é o mesmo nos dois Bar."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Clientes dentro do raio dos escritórios",
+  "useCase": "Quantos clientes ficam a até 100 km de um dos 3 escritórios e quantos ficam fora?",
+  "demonstrates": [
+    "Raio de 100 km como elipse em graus, com rx corrigido pelo cosseno da latitude",
+    "Haversine na coordenada da cidade classifica dentro e fora",
+    "Cliente dentro em ponto cheio e fora em anel vazado, com contagem escrita",
+    "Escritório como ícone lucide Building2 posicionado na coordenada",
+    "Legenda que declara o raio como aproximado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Cliente fora do raio vai em anel vazado em --text-muted e não em --line-strong como diz o catálogo: --line-strong mede 1,79:1 contra o cartão e não vira marca (TOK-5, ACE-6), e o anel vazado ainda separa os dois grupos sem depender da cor. Preenchimento a 0,85 (ACE-5). O mapa recorta o Sudeste e o Centro-Oeste a 21 px por grau, porque 100 km são 0,9 grau e no país inteiro o raio mediria 4 px; o recorte é dito na tela. O viewBox tem escala 1 e não está em graus, para o texto de 11 px chegar com 11 px (GEO-18). Não há malha do IBGE: contorno e coordenadas ficam no data.ts, escritos à mão e aproximados. A classe dentro ou fora do raio vem da coordenada da cidade no dado (haversine), e não do ponto desenhado. O espalhamento por gerador de semente fixa é só desenho: cada ponto só é aceito do lado certo da elipse, com folga da borda, longe do selo e a distância mínima dos outros, e o nome do escritório é posto no lado em que nenhum ponto cai na caixa do texto. Contagens reduzidas no dado para caberem na elipse."
+}

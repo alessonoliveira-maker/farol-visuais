@@ -1,0 +1,15 @@
+{
+  "title": "Equipes que já dividiram oportunidades",
+  "useCase": "Comercial: quais das 16 equipes internas fictícias já compartilharam oportunidades em 2026 e quais nunca dividiram nenhuma.",
+  "demonstrates": [
+    "Chord sem fita: linhas curvas finas de espessura única, leitura de existência",
+    "Número de parceiras de cada equipe escrito junto do rótulo",
+    "Equipe isolada no círculo em contorno var(--text-muted) com 0 relações escrito",
+    "Nota escrita de que a espessura não codifica quantidade",
+    "Ordem por categoria e grau para os grupos não se espalharem pelo círculo",
+    "Rótulo sempre horizontal, com nome e contagem na mesma linha"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): alto 640x560 com moldura card dá corpo de 574 x 425 px, porque o caso de uso tem 123 caracteres e ocupa duas linhas em 574 px de cabeçalho. O viewBox é 574 x 425, do tamanho do corpo, para a escala do svg sair 1 (GEO-18). Quem limita o círculo é a largura: o rótulo é horizontal e leva nome e contagem na mesma linha, perto de 132 px no mais largo, que cai junto do equador à esquerda; com 142 px de raio de nó e âncora em 154 px ele começa a cerca de 14 px da borda esquerda, e o mais largo da direita termina a 16 px da outra, e por isso o centro fica 7 px à direita do meio. Na altura, a linha de leitura fica em 8, o círculo tem centro em 203 e os rótulos vão de 40 a 366, e as duas linhas da nota ficam em 398 e 413. Passo: 16 equipes em 3 categorias dão 13 passos de nó e 3 vãos de 1,75 passo, 19,73 graus por passo e 34,5 graus entre categorias; a volta começa à esquerda, no meio do primeiro vão. DESVIO DECLARADO DO CATÁLOGO, com o contrato vencendo: o modelo pede o rótulo da metade esquerda girado 180 graus, e a TIP-5 proíbe rotate em texto; o rótulo fica horizontal, começando no nó à direita do centro e terminando nele à esquerda. A linha sai em var(--text-muted) opaco, 5,21:1 no escuro e 5,37:1 no claro, porque carrega a relação (ACE-6). Não há opacidade em marca nenhuma. A ordem é por categoria e por número de parceiras, e o número que ordena vai escrito em cada rótulo, então não há frase de ordem (GEO-12). O nó tem um tamanho só: o grau se lê no número, não na área. O catálogo pede 0 relações escrito na equipe isolada e número de parceiras nas demais, e a peça segue as duas palavras como estão."
+}

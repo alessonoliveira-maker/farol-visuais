@@ -1,0 +1,76 @@
+{
+  "slug": "01_barra-de-progresso-linear",
+  "nome": "Barra de progresso e capacidade contra teto",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Um trilho, uma barra que cresce dentro dele e um traço de referência. Quando a referência é meta, a pergunta é quanto falta; quando é teto de capacidade, a polaridade inverte e a pergunta vira quanto sobra ou quanto estourou. O domínio vai até o maior entre valor e referência com folga, para que passar de 100% caiba com marca própria em vez de travar a barra. Com prazo, entra a segunda régua da família: o ritmo esperado na data de corte, que chega pronta no dado. Feito em HTML com Tailwind, sem Recharts, para caber em cartão, lista e linha de tabela.",
+  "quando_usar": [
+    "Uma medida contra uma meta ou um teto declarado, em cartão com pouco espaço",
+    "Meta com prazo lida no meio do período, com o ritmo esperado para a data de corte",
+    "Lista de 4 a 15 pessoas ou filas com metas diferentes, normalizada em percentual da meta",
+    "Demanda contra teto de capacidade medido, com a folga ou o estouro escrito ao lado",
+    "Acumulado que só sobe, como meta de campanha, no lugar de um termômetro decorado"
+  ],
+  "quando_evitar": [
+    "Existe régua qualitativa acordada (ruim, aceitável, bom): use o bullet chart (13/02)",
+    "Meta ou teto sem dono nem medição: a folga vira ficção; mostre só o número em cartão de KPI (01/03)",
+    "Muitas categorias ordenadas sem nenhuma referência: é barra horizontal comum (família 02)",
+    "Acompanhamento dia a dia do acumulado contra a meta: use o burn-up (04/06)",
+    "Mais de 15 linhas com várias colunas numéricas: é bullet em célula de tabela (14/01)"
+  ],
+  "arquivo_estudo": "_estudo/familias/13_progresso-meta-e-gauge.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-trimestre-contra-meta",
+      "titulo": "Receita reconhecida do trimestre contra a meta",
+      "caso_de_uso": "Comercial: quanto da meta de R$ 5,0 mi de 2026-T3 já foi reconhecido e quanto falta para fechar o trimestre.",
+      "o_que_demonstra": [
+        "Trilho e barra em div com largura percentual, sem Recharts",
+        "Domínio em Math.max de valor e meta vezes 1,05, com folga para o traço",
+        "Par de números por formatCurrencyCompact e o que falta escrito em texto",
+        "Ponta arredondada trocada por rounded-sm abaixo de 4% do trilho",
+        "Frase acessível com valor, meta, percentual e o que falta"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_agendas-no-ritmo-do-mes",
+      "titulo": "Agendas do mês contra o ritmo esperado",
+      "caso_de_uso": "Pré-vendas: no dia 18 de 30, as 41 agendas marcadas estão no ritmo para bater a meta de 90 do mês?",
+      "o_que_demonstra": [
+        "Ritmo esperado como traço pontilhado com rótulo, a partir de elapsedRatio do dado",
+        "Lacuna até o ritmo destacada e escrita: 13 agendas atrás do ritmo",
+        "Projeção tracejada na mesma cor do realizado, dita como premissa em texto",
+        "Modo de ritmo declarado no rótulo, linear ou pela curva histórica",
+        "Nenhum new Date no componente: a data de corte vem no dado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cota-por-executivo",
+      "titulo": "Atingimento da cota por executivo",
+      "caso_de_uso": "Comercial: quem está acima, na linha ou abaixo da cota de 2026-T3 entre 8 executivos com metas de valores diferentes.",
+      "o_que_demonstra": [
+        "Lista em HTML com barra em percentual da meta e valor absoluto ao lado",
+        "Ordenação por atingimento, nunca por nome nem por variação",
+        "Mediana da equipe como traço vertical comum a todas as linhas",
+        "Excedente acima de 100% em tom próprio, com o percentual escrito",
+        "Escala comum sobre o conjunto para o comprimento se comparar entre linhas",
+        "Pessoa sem meta definida no fim com o texto sem meta, fora da mediana"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_filas-contra-teto-com-estouro",
+      "titulo": "Demanda das filas contra o teto de capacidade",
+      "caso_de_uso": "Pré-vendas: qual fila cabe no teto do mês, qual estourou e em qual o teto ainda é premissa ou falta coleta.",
+      "o_que_demonstra": [
+        "Polaridade invertida: barra neutra até o teto e excedente em negative com ícone",
+        "Escala comum até 1,3 vez o teto ou a maior demanda, para o estouro caber",
+        "Folga ou estouro escrito: faltam 43 entradas, 38 acima do teto",
+        "Teto de premissa em traço mais apagado e dito no rótulo, sem cor de procedência",
+        "Fila sem coleta com trilho tracejado e formatUnavailable, nunca barra zerada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

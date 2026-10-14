@@ -1,0 +1,14 @@
+{
+  "title": "Taxonomia radial de criativos",
+  "useCase": "Marketing: como os 96 criativos se distribuem por plataforma e campanha.",
+  "demonstrates": [
+    "Dendrograma radial: ângulo pela ordem da folha e raio pela profundidade",
+    "Abertura angular de 10 graus entre a última e a primeira folha",
+    "Rótulo do perímetro sempre horizontal, alinhado à direita na metade esquerda",
+    "Nome curto no perímetro e nome inteiro no tooltip nativo do nó",
+    "Caminho até a raiz aceso por espessura, anel e peso, nunca por troca de cor"
+  ],
+  "canvas": { "width": 640, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1). Corpo medido: 640 menos 2 x 33 de recuo dá 574 px de largura; o caso de uso tem 72 caracteres e a tabela de fronteira do cabeçalho de 574 px garante uma linha até 92, então o desconto de altura é 118,5 e o corpo mede 574 x 361,5 px. O viewBox é 574 x 361, do tamanho do corpo, para a escala do svg sair 1: a v1 deste modelo desenha num viewBox mais alto que a caixa, a escala dela é 0,9398 e os 11 px declarados chegam a 10,34 px. A conta do anel: 96 folhas com abertura de 10 graus dão passo de 3,684 graus, e em raio de 128 px isso é 8,2 px de arco entre folhas vizinhas. Os nomes curtos ficam em raio de 140 px, no centro angular de cada campanha; a menor separação entre dois nomes vizinhos é de 33,2 graus, que em 140 px dá 81 px de arco contra 72 px do nome mais largo, Concorrência. Altura usada: legenda em 8, linha de leitura em 34 e o anel de 50 a 339, dentro dos 361 px. Desvio declarado da especificação: o catálogo pedia a metade esquerda girada 180 graus, e a TIP-5 proíbe rotate em texto sem abrir exceção para radial, então sobrou o alinhamento à direita, que resolve o mesmo problema. O criativo aceso não ganha rótulo no perímetro de propósito: ele nasceria a 63 px do nome da própria campanha e os dois se encontrariam no topo do anel; quem o nomeia é a linha de leitura e a frase acessível. O que o check não mediu, conferido à mão: ESPESSURA-MARCA sai marca_fora_do_bar, porque o piso geral de 12 px da ESP-2 é o outro lado do maxBarSize do Recharts e não alcança ponto desenhado em SVG; o ponto de folha tem 2,2 px de raio por desenho, com 8,2 px de arco entre vizinhos, e nenhum texto por dentro. EIXO-CALMO sai sem_grade e OPACIDADE-MARCA sai sem_opacidade_em_marca porque a peça não tem eixo cartesiano nem opacidade em marca nenhuma: toda cor é opaca, o que é a saída que a ACE-5 prefere. As guardas que a v1 perde por escala foram medidas aqui, e é esse o ganho de desenhar no viewBox do corpo."
+}

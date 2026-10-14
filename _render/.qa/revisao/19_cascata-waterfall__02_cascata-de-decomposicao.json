@@ -1,0 +1,108 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "02_cascata-de-decomposicao",
+  "versoes": {
+    "v1_custo-marginal-liquido-do-mes": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha no dado e no desenho: 118 + 22 + 14 + 6 menos 8 = 152 mil, 0,8625 px por mil nas seis marcas, primeira parte e total no zero, participações inteiras somam 100 com o desconto negativo. Desconto em --positive com sinal. Conector de 1,79:1 e 1,83:1 lido como referência pela ACE-6. Fidelidade 0,00% nos dois temas. Observações no README: formatCurrencyAxis em rótulo direto (NUM-1), vazio sem ícone Filter, linha de leitura sem tabular-nums, 0% com total zero, artigo fixo na frase.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:00.966Z",
+      "impressao": "ebb2638f04df0749f02091511f58b727d73d1004",
+      "arquivos": {
+        "Chart.tsx": "035ba205ba2dbb5c6c46eb574a76bf9a43036cc5",
+        "data.ts": "6b186a86a24802d00a8307af2a17bffe611fe7ae",
+        "meta.json": "514601a0f35bbd8de8f6cd6f3607fad17c85fad2"
+      }
+    },
+    "v2_ponte-ate-a-meta-anual": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Ponte fecha: 6,4 menos 4,1, 0,9 e 0,8 deixa 0,6 mi, 21,5625 px por milhão nas cinco marcas, meta e gap no zero, participações 64, 14, 13 e 9 somam 100. Gap em --warning com sinal e a palavra falta, linha da meta com extendDomain e rótulo com nome e valor, data de corte por formatDate. Fidelidade 0,00%. Observações no README: rótulo da meta em insideTopRight colide com gap acima de 65% da meta (REC-4), linha da meta em --line-strong 4 4 (17.2), ponto médio no rótulo, formatCurrencyAxis (NUM-1), vazio sem Filter.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:01.428Z",
+      "impressao": "b4bb66b2fa02bf51269053134418349c6b002b39",
+      "arquivos": {
+        "Chart.tsx": "22e3224009979b52a46c964035a3607c0314273f",
+        "data.ts": "693de1cc2486077f6565d63a0c953f962a855c69",
+        "meta.json": "998a2c72a165853f73c8dbc48d3c3ba84277314f"
+      }
+    },
+    "v3_entradas-do-mes-ate-os-ganhos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha: 612 menos 41, 58, 187, 214, 68 e 33 = 11, 0,3497 px por entrada nas oito marcas, totais no zero, em andamento vazado com contorno de 5,21:1 e 5,37:1 e palavra, cauda de 3,85 px com rótulo externo e halo que não corta conector (conferido com zoom nos dois temas). Taxa com volume na linha de leitura. Fidelidade 0,00%. Observações no README: período fora do dado e do corpo (DAD-9), grupos descarte e perda só na cor, com 214 sem substantivo (NUM-6), vazio sem Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:10.357Z",
+      "impressao": "7aa46c5b84f0860d3c9b628a2b2268a6db385abb",
+      "arquivos": {
+        "Chart.tsx": "cafe5f0e8bb4a1792910a95b7bab7cc3da7a6823",
+        "data.ts": "4efa0a5a39faab68b38dd4ef64bf7c048e5d8d4d",
+        "meta.json": "bbb0db23d746038ed1cf318d1b57b650af6f402c"
+      }
+    },
+    "v4_custo-total-com-parte-sem-detalhamento": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha: 142 + 96 + 41 + 24 + 11 = 314 e 390 menos 314 = 76 mil, 0,3538 px por mil nas sete marcas, total no zero, participações 36, 25, 11, 6, 3 e 19 somam 100. Lacuna hachurada com contorno --text-muted de 5,21:1 e 5,37:1 (medido à mão, a CONTRASTE-MARCA não resolve padrão), por último, contada no total e escrita como 19% do total. Fidelidade 0,00%. Observações no README: total detalhado de 314 mil só na dica (DIC-1), formatCurrencyAxis (NUM-1), vazio sem Filter, linha de leitura sem tabular-nums, 0% com total zero.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:10.806Z",
+      "impressao": "67f7c634aab57ecb57313a0ae80e3047c5619fa9",
+      "arquivos": {
+        "Chart.tsx": "4d860f555478c37551ec946b036dee4b931b39f9",
+        "data.ts": "ccb64586c9c3c6a0978affe01ed4ba95e6fcd1c8",
+        "meta.json": "e302755630266b7e02c9e9dcaa1786447df4e680"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_custo-marginal-liquido-do-mes",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha no dado e no desenho: 118 + 22 + 14 + 6 menos 8 = 152 mil, 0,8625 px por mil nas seis marcas, primeira parte e total no zero, participações inteiras somam 100 com o desconto negativo. Desconto em --positive com sinal. Conector de 1,79:1 e 1,83:1 lido como referência pela ACE-6. Fidelidade 0,00% nos dois temas. Observações no README: formatCurrencyAxis em rótulo direto (NUM-1), vazio sem ícone Filter, linha de leitura sem tabular-nums, 0% com total zero, artigo fixo na frase.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:00.966Z",
+      "impressao": "ebb2638f04df0749f02091511f58b727d73d1004",
+      "arquivos": {
+        "Chart.tsx": "035ba205ba2dbb5c6c46eb574a76bf9a43036cc5",
+        "data.ts": "6b186a86a24802d00a8307af2a17bffe611fe7ae",
+        "meta.json": "514601a0f35bbd8de8f6cd6f3607fad17c85fad2"
+      }
+    },
+    {
+      "versao": "v2_ponte-ate-a-meta-anual",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Ponte fecha: 6,4 menos 4,1, 0,9 e 0,8 deixa 0,6 mi, 21,5625 px por milhão nas cinco marcas, meta e gap no zero, participações 64, 14, 13 e 9 somam 100. Gap em --warning com sinal e a palavra falta, linha da meta com extendDomain e rótulo com nome e valor, data de corte por formatDate. Fidelidade 0,00%. Observações no README: rótulo da meta em insideTopRight colide com gap acima de 65% da meta (REC-4), linha da meta em --line-strong 4 4 (17.2), ponto médio no rótulo, formatCurrencyAxis (NUM-1), vazio sem Filter.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:01.428Z",
+      "impressao": "b4bb66b2fa02bf51269053134418349c6b002b39",
+      "arquivos": {
+        "Chart.tsx": "22e3224009979b52a46c964035a3607c0314273f",
+        "data.ts": "693de1cc2486077f6565d63a0c953f962a855c69",
+        "meta.json": "998a2c72a165853f73c8dbc48d3c3ba84277314f"
+      }
+    },
+    {
+      "versao": "v3_entradas-do-mes-ate-os-ganhos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha: 612 menos 41, 58, 187, 214, 68 e 33 = 11, 0,3497 px por entrada nas oito marcas, totais no zero, em andamento vazado com contorno de 5,21:1 e 5,37:1 e palavra, cauda de 3,85 px com rótulo externo e halo que não corta conector (conferido com zoom nos dois temas). Taxa com volume na linha de leitura. Fidelidade 0,00%. Observações no README: período fora do dado e do corpo (DAD-9), grupos descarte e perda só na cor, com 214 sem substantivo (NUM-6), vazio sem Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:10.357Z",
+      "impressao": "7aa46c5b84f0860d3c9b628a2b2268a6db385abb",
+      "arquivos": {
+        "Chart.tsx": "cafe5f0e8bb4a1792910a95b7bab7cc3da7a6823",
+        "data.ts": "4efa0a5a39faab68b38dd4ef64bf7c048e5d8d4d",
+        "meta.json": "bbb0db23d746038ed1cf318d1b57b650af6f402c"
+      }
+    },
+    {
+      "versao": "v4_custo-total-com-parte-sem-detalhamento",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Fecha: 142 + 96 + 41 + 24 + 11 = 314 e 390 menos 314 = 76 mil, 0,3538 px por mil nas sete marcas, total no zero, participações 36, 25, 11, 6, 3 e 19 somam 100. Lacuna hachurada com contorno --text-muted de 5,21:1 e 5,37:1 (medido à mão, a CONTRASTE-MARCA não resolve padrão), por último, contada no total e escrita como 19% do total. Fidelidade 0,00%. Observações no README: total detalhado de 314 mil só na dica (DIC-1), formatCurrencyAxis (NUM-1), vazio sem Filter, linha de leitura sem tabular-nums, 0% com total zero.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T17:07:10.806Z",
+      "impressao": "67f7c634aab57ecb57313a0ae80e3047c5619fa9",
+      "arquivos": {
+        "Chart.tsx": "4d860f555478c37551ec946b036dee4b931b39f9",
+        "data.ts": "ccb64586c9c3c6a0978affe01ed4ba95e6fcd1c8",
+        "meta.json": "e302755630266b7e02c9e9dcaa1786447df4e680"
+      }
+    }
+  ]
+}

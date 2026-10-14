@@ -1,0 +1,108 @@
+{
+  "familia": "18_radar",
+  "modelo": "05_stellar-chart",
+  "versoes": {
+    "v1_competencias-do-executivo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: comprimento de 1,00 px por ponto e área de 4,00 px quadrados por ponto conferidos no preview.svg contra o data.ts, anéis em 37, 62, 87 e 112 px, rótulo na ponta com halo onde cruza anel, frase de 213 caracteres, diferença entre página e SVG abaixo de 0,06 por cento nos dois temas. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:34.791Z",
+      "impressao": "d825c8019014eba7f125b482acfbf107d880269e",
+      "arquivos": {
+        "Chart.tsx": "6238c79c3dfb1c924d1d560dd87e3f5b4866174a",
+        "data.ts": "0df2644d37bd7101089157d78db58cb601e76fbe",
+        "meta.json": "75a8356011a355438ff74ce80101f3a66be46083"
+      }
+    },
+    "v2_meta-em-circulo-e-espetos-abaixo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: círculo da meta em 82 px conferido no preview.svg, três eixos abaixo de 70 em chart-1 com peso 600 e o de 70 exato neutro, rótulo meta 70 legível na ampliação de 5 vezes nos dois temas, neutro em line-strong a 1,79:1 e 1,83:1 com o valor escrito na ponta, pela isenção da ACE-3, com o aviso CONTRASTE-MARCA mantido, frase de 217 caracteres. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:46.496Z",
+      "impressao": "ceadfb0ede7287f5f10ea4a6a59f6efaf9f8c638",
+      "arquivos": {
+        "Chart.tsx": "63a0c4eec5209b6167ac1cf490feec6bdbd7f2a0",
+        "data.ts": "e46cae7e87615003f3354a3245ac6f9ebfa5b926",
+        "meta.json": "26db57f06cdffef2995462701ae2e0dc8436cc51"
+      }
+    },
+    "v3_maturidade-em-doze-criterios": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: doze espetos a 0,84 px por ponto conferidos contra o data.ts, rótulos no raio de 110 px sem texto girado e sem corte, com 3 px da borda esquerda do svg no pior caso, média de 62,1 refeita à mão com 745 em 12, lista dos três mais baixos igual ao dado, só pesos de 400 a 600, frase de 217 caracteres. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:47.150Z",
+      "impressao": "e4efae66224b84f6ed74140b54bd1b023ccd592a",
+      "arquivos": {
+        "Chart.tsx": "b51ae62d5e2fadd339f58c99fd2b45359127bfb7",
+        "data.ts": "604f609f75c0dd064880cb2d8b5b819a1348446b",
+        "meta.json": "bb04f86edbc4e81e2740b55407a6d1e3830d3fe6"
+      }
+    },
+    "v4_zero-sem-dado-e-vizinhos-altos": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: zero medido em ponto sobre o anel do zero com o 0 escrito, eixo sem medição em raio tracejado de text-muted com formatUnavailable e sem ponto, legenda com a forma das duas marcas, vizinhos de 95 e 97 sem colisão, frase de 226 caracteres que separa zero de ausência. Anticolisão em graus conferida por leitura, porque o dado padrão não a aciona. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:47.858Z",
+      "impressao": "ab8aa87d8d88b88f65b0843866eda4b0d098dfbf",
+      "arquivos": {
+        "Chart.tsx": "54a858de924df65258772e03dfb0d89ebff656ce",
+        "data.ts": "295daff5d0df1db7ee6ad1bc7f732f20ae2a5a09",
+        "meta.json": "f9ea0fad783077814a85110ac7a1feb83deb3fb0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_competencias-do-executivo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: comprimento de 1,00 px por ponto e área de 4,00 px quadrados por ponto conferidos no preview.svg contra o data.ts, anéis em 37, 62, 87 e 112 px, rótulo na ponta com halo onde cruza anel, frase de 213 caracteres, diferença entre página e SVG abaixo de 0,06 por cento nos dois temas. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:34.791Z",
+      "impressao": "d825c8019014eba7f125b482acfbf107d880269e",
+      "arquivos": {
+        "Chart.tsx": "6238c79c3dfb1c924d1d560dd87e3f5b4866174a",
+        "data.ts": "0df2644d37bd7101089157d78db58cb601e76fbe",
+        "meta.json": "75a8356011a355438ff74ce80101f3a66be46083"
+      }
+    },
+    {
+      "versao": "v2_meta-em-circulo-e-espetos-abaixo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: círculo da meta em 82 px conferido no preview.svg, três eixos abaixo de 70 em chart-1 com peso 600 e o de 70 exato neutro, rótulo meta 70 legível na ampliação de 5 vezes nos dois temas, neutro em line-strong a 1,79:1 e 1,83:1 com o valor escrito na ponta, pela isenção da ACE-3, com o aviso CONTRASTE-MARCA mantido, frase de 217 caracteres. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:46.496Z",
+      "impressao": "ceadfb0ede7287f5f10ea4a6a59f6efaf9f8c638",
+      "arquivos": {
+        "Chart.tsx": "63a0c4eec5209b6167ac1cf490feec6bdbd7f2a0",
+        "data.ts": "e46cae7e87615003f3354a3245ac6f9ebfa5b926",
+        "meta.json": "26db57f06cdffef2995462701ae2e0dc8436cc51"
+      }
+    },
+    {
+      "versao": "v3_maturidade-em-doze-criterios",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: doze espetos a 0,84 px por ponto conferidos contra o data.ts, rótulos no raio de 110 px sem texto girado e sem corte, com 3 px da borda esquerda do svg no pior caso, média de 62,1 refeita à mão com 745 em 12, lista dos três mais baixos igual ao dado, só pesos de 400 a 600, frase de 217 caracteres. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:47.150Z",
+      "impressao": "e4efae66224b84f6ed74140b54bd1b023ccd592a",
+      "arquivos": {
+        "Chart.tsx": "b51ae62d5e2fadd339f58c99fd2b45359127bfb7",
+        "data.ts": "604f609f75c0dd064880cb2d8b5b819a1348446b",
+        "meta.json": "bb04f86edbc4e81e2740b55407a6d1e3830d3fe6"
+      }
+    },
+    {
+      "versao": "v4_zero-sem-dado-e-vizinhos-altos",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: zero medido em ponto sobre o anel do zero com o 0 escrito, eixo sem medição em raio tracejado de text-muted com formatUnavailable e sem ponto, legenda com a forma das duas marcas, vizinhos de 95 e 97 sem colisão, frase de 226 caracteres que separa zero de ausência. Anticolisão em graus conferida por leitura, porque o dado padrão não a aciona. Vazio conferido só por leitura de código. Observações no README.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T11:58:47.858Z",
+      "impressao": "ab8aa87d8d88b88f65b0843866eda4b0d098dfbf",
+      "arquivos": {
+        "Chart.tsx": "54a858de924df65258772e03dfb0d89ebff656ce",
+        "data.ts": "295daff5d0df1db7ee6ad1bc7f732f20ae2a5a09",
+        "meta.json": "f9ea0fad783077814a85110ac7a1feb83deb3fb0"
+      }
+    }
+  ]
+}

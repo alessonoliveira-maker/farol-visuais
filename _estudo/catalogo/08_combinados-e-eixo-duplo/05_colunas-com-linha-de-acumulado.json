@@ -1,0 +1,70 @@
+{
+  "slug": "05_colunas-com-linha-de-acumulado",
+  "nome": "Colunas com linha de acumulado",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Colunas com o valor de cada mês no eixo esquerdo e linha com o acumulado do ano no eixo direito, com a meta anual como referência no eixo do acumulado. Responde no mesmo cartão quanto entrou em cada mês e em que ponto do caminho até a meta anual o ano está. As duas escalas não têm relação natural: os domínios saem de uma regra objetiva e declarada, e a alternância para painéis fica pronta no componente.",
+  "quando_usar": [
+    "Valor mensal e caminho até a meta anual no mesmo cartão: receita reconhecida, fechamentos, captação.",
+    "Ano corrente com 12 meses, com os meses futuros como null nas duas séries.",
+    "Cartão lido por público habituado, com a alternância para painéis disponível para os demais."
+  ],
+  "quando_evitar": [
+    "Só o caminho até a meta interessa: burn-up puro em 04_linhas/06_acumulado-contra-meta.",
+    "Público geral sem mediação: 03_paineis-alinhados, com o burn-up em cima e as colunas embaixo.",
+    "Anotar o cruzamento entre a linha e o topo das colunas: não significa nada, as escalas são independentes.",
+    "Métrica sem acumulação natural, como taxa ou CPL: use 01_coluna-com-linha.",
+    "Enquanto a EIX-8 do CONTRATO valer sem exceção registrada, o modo painéis (v2) é a entrega padrão."
+  ],
+  "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-mensal-e-acumulado-do-ano",
+      "titulo": "Receita mensal e acumulado contra meta anual",
+      "caso_de_uso": "Quanto entrou de receita reconhecida em cada mês de 2026 e quanto falta para a meta anual de R$ 10 mi?",
+      "o_que_demonstra": [
+        "Bar no eixo do mês e Line no eixo do acumulado, cada eixo na cor da série",
+        "Eixo direito de 0 ao maior valor entre meta anual e acumulado",
+        "ReferenceLine da meta anual com o yAxisId do acumulado e rótulo",
+        "Meses futuros como null nas duas séries, sem coluna zerada",
+        "Ponto e rótulo só no último mês fechado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_ritmo-linear-com-alternancia-para-paineis",
+      "titulo": "Ritmo linear com alternância para painéis",
+      "caso_de_uso": "Cada mês ficou acima ou abaixo do ritmo linear da meta anual, lido em eixo duplo ou em painéis?",
+      "o_que_demonstra": [
+        "Eixo esquerdo escolhido para a meta mensal linear cair em altura declarada",
+        "Marca do ritmo linear que vira leitura de mês acima ou abaixo",
+        "Alternância em HTML entre eixo duplo e painéis, com cores e domínios iguais",
+        "Modo guardado no estado da tela, sem mudar a ordem das séries"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_fechamentos-por-vertical-com-acumulado",
+      "titulo": "Fechamentos por vertical e acumulado total",
+      "caso_de_uso": "Quais verticais sustentam os fechamentos de cada mês, e o acumulado total chega à meta anual de fechamentos?",
+      "o_que_demonstra": [
+        "Colunas empilhadas por vertical fictícia com slot de cor fixo",
+        "Uma única linha sobre a pilha: o acumulado total, não o total do mês",
+        "Meta anual no eixo do acumulado e ritmo linear no eixo do mês",
+        "Legenda que distingue coluna de linha por legendType"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_estorno-e-meta-revisada",
+      "titulo": "Estorno no mês e meta anual revisada",
+      "caso_de_uso": "Como ler o acumulado quando um estorno em mai/2026 derruba a linha e a meta anual é revisada em jun/2026?",
+      "o_que_demonstra": [
+        "Coluna negativa e acumulado que desce, com zeros alinhados por função pura",
+        "Meta revisada desenhada como degrau no eixo do acumulado",
+        "Nota curta que nomeia a versão da meta vigente em cada trecho",
+        "Uma linha de zero em line-strong servindo aos dois eixos alinhados"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

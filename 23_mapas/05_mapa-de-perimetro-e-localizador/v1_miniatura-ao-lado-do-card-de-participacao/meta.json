@@ -1,0 +1,15 @@
+{
+  "title": "Participação de mercado no perímetro",
+  "useCase": "Diretoria: a participação fictícia de 7,4% vale para quais UFs, lida num relance ao lado do número.",
+  "demonstrates": [
+    "Miniatura de 120 px com a malha em tom neutro e o perímetro em var(--chart-1)",
+    "Contorno externo por duas passadas dos mesmos polígonos, sem dissolver nenhum",
+    "KPI em kpi-number com a legenda escrita no perímetro Sul e Sudeste",
+    "Miniatura com aria-hidden e a frase acessível no card, que já nomeia as UFs",
+    "Etiqueta de procedência do número em var(--prov-derivado)",
+    "Par de receita e mercado sob o número, com a data de vigência do perímetro"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Dois desvios do catálogo. Primeiro, a malha: neste catálogo não há a malha do IBGE (lista de imports fechada e cinco arquivos por versão), então o localizador usa a mesma malha de hexágonos do coroplético da família, declarada no data.ts; os hexágonos se tocam sem vão, que é o que a técnica das duas passadas pede. Segundo, a cor da malha: o catálogo pede var(--surface-overlay), que mede 1,00:1 contra o cartão no tema claro (TOK-1) e é erro na guarda CONTRASTE-MARCA; fora do perímetro o preenchimento é var(--surface-sunken) com traço de 1 px em var(--line-strong), e é o traço que segura a silhueta. Contorno externo em var(--text-primary), 1,5 px visíveis: a primeira passada desenha 4 px e a segunda cobre a metade interna. Marca contra marca, medido à mão (TOK-9): perímetro contra a malha de fora 10,9:1 no escuro e 5,2:1 no claro; contorno contra o preenchimento 1,5:1 no escuro e 3,0:1 no claro, contorno contra a malha de fora 16,7:1 e 15,6:1. A moldura é stage porque o cartão é a própria peça, e por isso a etiqueta de procedência é dele (ANO-6 reserva a etiqueta ao VisualCard só na moldura card). Conta do kpi-alto: corpo de 328 por 181,5 px; com o respiro de 16 px sobram 296 por 149,5; a linha da etiqueta leva 11 px e o vão 8, e nos 130,5 px restantes ficam a coluna de texto de 164 px, com 117 px de linhas escritas, e a miniatura de 120 por 103 px."
+}

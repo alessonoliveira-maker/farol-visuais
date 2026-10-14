@@ -1,0 +1,12 @@
+{
+  "title": "Ciclo de venda com banda omitida em amostra pequena",
+  "useCase": "Qual o ciclo mediano de venda por mês, sem desenhar faixa nos meses com menos de 10 fechamentos?",
+  "demonstrates": [
+    "Bordas da banda em null quando a amostra do mês é menor que 10",
+    "Aviso amostra insuficiente escrito no visual, não só na dica",
+    "Tamanho da amostra junto da mediana em cada mês",
+    "Mediana mantida como ponto isolado quando a faixa some"
+  ],
+  "canvas": "largo",
+  "notes": "Canvas largo, desviando do card sugerido pelo catálogo: com 8 meses e um rótulo de contagem por ponto, o passo do card (cerca de 70 px) colidia com o texto vizinho (COLISAO-TEXTO); a largura de 960 px dá o respiro que ROT-9 exige. O aviso de amostra insuficiente fica na nota fixa acima do gráfico, e cada mês traz a própria contagem (N vendas) junto do ponto, incluindo os dois meses sem faixa, cujo ponto também ganha o anel de destaque."
+}

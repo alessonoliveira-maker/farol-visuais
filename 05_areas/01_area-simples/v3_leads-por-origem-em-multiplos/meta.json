@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem em pequenos múltiplos",
+  "useCase": "Ver a forma semanal de cada uma das 8 origens de lead sem a pilha esconder as camadas do meio.",
+  "demonstrates": [
+    "Grade HTML com Tailwind e um AreaChart pequeno por origem",
+    "Domínio y calculado sobre o conjunto: escala comum declarada (EIX-9)",
+    "Painéis ordenados pelo total de 52 semanas, não pelo alfabeto",
+    "Eixos só nas bordas da grade e animação desligada",
+    "Total de cada origem escrito no título curto do painel"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

@@ -1,0 +1,73 @@
+{
+  "slug": "01_histograma",
+  "nome": "Histograma",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Eixo contínuo cortado em faixas de largura igual, com a altura da barra contando quantas observações caíram em cada faixa. É o modelo de entrada da família e a régua contra a qual os outros são julgados. Montado em BarChart com XAxis numérico, barras encostadas e bins agregados antes em TypeScript, com bin declarado no registry da métrica e fixo entre filtros. Absorve a estatística anotada, os pequenos múltiplos e o caso de massa no zero como versões; polígono de frequência, densidade sobreposta, stem and leaf e histograma micro ficam como extensões do mesmo agregador.",
+  "quando_usar": [
+    "Ver a forma de uma medida contínua: ciclo em dias, ticket em reais, minutos até o primeiro contato, CPL por campanha.",
+    "Mostrar que a média citada no card não é o caso típico, com média e mediana desenhadas por cima das barras.",
+    "Amostra a partir de umas 50 observações, com a largura do bin escrita no rótulo do eixo.",
+    "De 4 a 20 grupos da mesma métrica, em pequenos múltiplos com bin e escala comuns."
+  ],
+  "quando_evitar": [
+    "Contagem por categoria nominal: barras da família 02 ou colunas da 03; histograma exige eixo contínuo binado.",
+    "Menos de umas 30 observações: strip ou beeswarm (03) ou dot plot empilhado (09), que mostram cada caso.",
+    "Pergunta de quantos ficam abaixo de um limiar: ECDF e histograma acumulado (04), sem somar barras de cabeça.",
+    "Comparar a forma de 2 ou 3 grupos na mesma régua: histograma comparativo (05) ou densidades sobrepostas (06).",
+    "Barra ordenada por entidade com linha acumulada: Pareto na família 08 (modelo 04)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-de-fechamento",
+      "titulo": "Ciclo de fechamento em faixas de 7 dias",
+      "caso_de_uso": "Qual a forma do ciclo das 312 oportunidades ganhas nos últimos 12 meses, e não só a média?",
+      "o_que_demonstra": [
+        "Bins calculados em TypeScript com largura de 7 dias e domínio fixo de 0 a 210",
+        "Bin vazio mantido no array com contagem zero, para o buraco aparecer",
+        "BarChart com XAxis numérico e barCategoryGap zero, barras encostadas",
+        "Tooltip no formato 42 a 49 dias · 18 oportunidades, no lugar de binInicio",
+        "n no subtítulo e unidade do bin no rótulo do eixo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_media-contra-mediana",
+      "titulo": "Média contra mediana no ciclo de fechamento",
+      "caso_de_uso": "A média de 74 dias representa o negócio típico, ou é puxada por poucos negócios longos?",
+      "o_que_demonstra": [
+        "ReferenceLine sólida na mediana e tracejada na média, cada uma com o valor no rótulo",
+        "ReferenceArea de p25 a p75 atrás das barras, rotulada metade dos casos",
+        "Rótulos colapsados num bloco só quando as duas linhas ficam a menos de 48 px",
+        "ifOverflow extendDomain para a estatística fora do domínio não sumir",
+        "Frase de leitura: metade fecha em até 51 dias; 19 negócios longos puxam a média"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_ciclo-por-executivo-em-pequenos-multiplos",
+      "titulo": "Ciclo por executivo em pequenos múltiplos",
+      "caso_de_uso": "Os 8 executivos têm ciclos de forma parecida, ou algum vive de negócios que arrastam meses?",
+      "o_que_demonstra": [
+        "Grade Tailwind de 4 por 2 com um BarChart por célula e animação desligada",
+        "Domínio de X e de Y calculado no pai e passado igual a todos os painéis",
+        "Distribuição da área inteira em --line-subtle atrás de cada painel, como régua",
+        "Eixo X só na última linha, eixo Y só na primeira coluna, n no título do painel",
+        "Painel com n 3 troca as barras por três traços e o texto n 3"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_receita-com-massa-no-zero",
+      "titulo": "Receita por oportunidade com massa no zero",
+      "caso_de_uso": "Como mostrar a receita reconhecida por oportunidade quando 41% valem zero e a cauda passa de R$ 600 mil?",
+      "o_que_demonstra": [
+        "Bin do zero com hachura SVG e nota 41% sem receita lançada, fora da leitura de forma",
+        "Último bin aberto rotulado 600 mil+ e contado no rodapé, sem esticar o eixo",
+        "Registros sem valor fora da amostra e contados no rodapé, nunca como bin zero",
+        "Eixo Y nomeado como oportunidades, para a altura não ser lida como dinheiro"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

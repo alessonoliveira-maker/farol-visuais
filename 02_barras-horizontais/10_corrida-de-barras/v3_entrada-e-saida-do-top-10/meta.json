@@ -1,0 +1,13 @@
+{
+  "title": "Campanhas que entram e saem do top 10",
+  "useCase": "Acompanhar campanhas que entram e saem do top 10 várias vezes, incluindo um mês em que uma delas não teve coleta.",
+  "demonstrates": [
+    "Entrada e saída do top 10 com transição de opacidade, sem barra piscando",
+    "Mês sem coleta congela o valor conhecido com marca visual, nunca interpola como zero",
+    "Ausência de coleta separada de campanha realmente parada",
+    "Desempate estável por nome para a ordem não oscilar entre quadros"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Por padrão o componente monta parado em jul/26, o último mês, com duas campanhas fora do topo por transição de opacidade; o botão reproduz a corrida desde nov/25 e passa pelos dois meses sem coleta de Concessionárias do Sul."
+}

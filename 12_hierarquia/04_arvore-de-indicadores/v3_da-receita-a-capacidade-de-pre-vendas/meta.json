@@ -1,0 +1,14 @@
+{
+  "title": "Da receita à capacidade de Pré-vendas",
+  "useCase": "Diretoria: quantas entradas por mês o cenário de receita exige e se isso cabe no teto da Pré-vendas.",
+  "demonstrates": [
+    "Cinco níveis: receita, ganhos, oportunidades, agendas e entradas",
+    "Taxas encadeadas que fecham em cada operador, com o par volume junto",
+    "Nó de capacidade em negative quando a demanda do cenário passa do teto",
+    "Selo de procedência diferente por nível, com medido e premissa lado a lado",
+    "Ramo lateral recolhido, sem microbarra, que é o que paga a altura de cinco níveis"
+  ],
+  "canvas": { "width": 1260, "height": 780 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), e aqui nenhum preset serve, porque cinco colunas de 208 px com passo de 240 medem 1.168 px de largura, contra os 960 px do preset largo. A conta da altura: cinco folhas empilhadas com vão de 16 px, a mais alta com 151 px por causa das duas linhas de leitura de capacidade, chegam a 609 px, e com o vão de 12 px mais a linha de rodapé de 15 px o conteúdo mede 1.168 por 636 px, contra os cerca de 1.194 por 654 px que a moldura card deixa neste canvas. O ramo lateral recolhido existe por essa conta: com microbarra em todos os nove cartões a pilha passaria de 700 px, e a faixa da alavanca de apoio cabe numa linha de texto sem perder nada, porque ali os dois extremos é que interessam, não a posição do centro. Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-secondary 8,16:1 e 8,13:1, text-primary 14,53:1 e 17,96:1, text-muted 5,21:1 e 5,37:1, negative 5,50:1 e 6,36:1, prov-medido 7,36:1 e 5,34:1, prov-premissa 8,36:1 e 5,74:1, prov-derivado 6,52:1 e 6,11:1, todos contra surface-raised e todos acima do piso de 4,5:1 da ACE-3. O conector saiu de line-strong, que a v1 usa e que mede 1,79:1 e 1,83:1, para text-muted, porque pela ACE-6 a aresta de uma árvore carrega a relação e precisa de 3:1. O estouro do teto não depende de cor: leva ícone e a frase com a base escrita na mesma linha."
+}

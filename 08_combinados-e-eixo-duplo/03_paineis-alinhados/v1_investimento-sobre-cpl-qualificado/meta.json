@@ -1,0 +1,12 @@
+{
+  "title": "Investimento e CPL qualificado em painéis",
+  "useCase": "O aumento do investimento mensal em mídia paga veio acompanhado de CPL qualificado mais caro?",
+  "demonstrates": [
+    "Dois ComposedChart com o mesmo syncId e o mesmo array de meses",
+    "YAxis width fixo numa constante e margens laterais idênticas",
+    "XAxis só no painel de baixo, com hide no de cima",
+    "Título de painel com a unidade no lugar da legenda"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

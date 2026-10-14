@@ -1,0 +1,12 @@
+{
+  "title": "Perdas por motivo em 8 trimestres",
+  "useCase": "Quais motivos de perda ganharam peso trimestre a trimestre, e quantas perdas há por trás de cada coluna?",
+  "demonstrates": [
+    "Motivos ordenados pelo peso no trimestre mais recente, em ordem fixa em todas as colunas",
+    "Três motivos menores em Outros (3 motivos) e Sem motivo registrado vazado, por último",
+    "O n de perdas por trimestre numa linha abaixo do eixo, com substantivo e algarismo tabular",
+    "Legenda lateral larga o bastante para nenhum nome de motivo cortar, com itemSorter na dica"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

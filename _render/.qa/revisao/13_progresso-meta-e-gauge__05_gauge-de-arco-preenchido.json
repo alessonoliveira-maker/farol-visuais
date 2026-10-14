@@ -1,0 +1,83 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "05_gauge-de-arco-preenchido",
+  "versoes": {
+    "v1_meta-de-agendas-em-arco": {
+      "veredito": "aprovado",
+      "nota": "Arco do zero com domain explicito, minimo e maximo escritos, numero centrado e origem da meta por extenso. Observacoes: o 57 para a menos de 1 px do arco, rodape truncado e trilho invisivel no tema claro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:38.254Z",
+      "impressao": "72f42b99e4a78b81f70aebd6727c8e21e175bb88",
+      "arquivos": {
+        "Chart.tsx": "1f93984478a2313909daa62a03c533a8fe3c2e40",
+        "data.ts": "bb9fdb4f8821493ad9f7b2858a3e9d09fa64343d",
+        "meta.json": "f48d809bb5aecced07841d5c053b8c7df1e4c5a4"
+      }
+    },
+    "v2_fechamentos-acima-da-meta": {
+      "veredito": "aprovado",
+      "nota": "Dominio alargado so para o excedente caber, meta no angulo real e fim do arco sem numero: nao finge teto. Observacoes: o traco da meta fica por baixo do arco, o verde le como pilula solta e o rodape corta a frase da folga.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:43.774Z",
+      "impressao": "1a7aceaf6eb7c6c39ed2fd78d1eff64dfaecd633",
+      "arquivos": {
+        "Chart.tsx": "9a8f95e5e85090ebe3c97c82bb45a25ad3df7662",
+        "data.ts": "ce7e74822a16edc4a02ae68ddba0292f29ea2fd8",
+        "meta.json": "002fa896d30b216286de59a5e77c8c6d9617a197"
+      }
+    },
+    "v3_filas-na-mesma-escala": {
+      "veredito": "aprovado",
+      "nota": "Dominio comum sobre o conjunto, zero medido com numero 0, sem coleta com contorno tracejado e indisponivel, vazio tratado. Observacao: no tema claro o trilho some e a fila em zero fica sem arco nenhum.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:48.795Z",
+      "impressao": "20ec9d5261a7f114f3c6c50081616e4a8435ad04",
+      "arquivos": {
+        "Chart.tsx": "6cb0fd87dcfab2b0c2dc3756be6235b3b7604ccf",
+        "data.ts": "368613fc9b69ab8d79c3cde64e7ca6308f1c6737",
+        "meta.json": "365bb85cb6c04b6124f1866350a57278e5932b4a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_meta-de-agendas-em-arco",
+      "veredito": "aprovado",
+      "nota": "Arco do zero com domain explicito, minimo e maximo escritos, numero centrado e origem da meta por extenso. Observacoes: o 57 para a menos de 1 px do arco, rodape truncado e trilho invisivel no tema claro.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:38.254Z",
+      "impressao": "72f42b99e4a78b81f70aebd6727c8e21e175bb88",
+      "arquivos": {
+        "Chart.tsx": "1f93984478a2313909daa62a03c533a8fe3c2e40",
+        "data.ts": "bb9fdb4f8821493ad9f7b2858a3e9d09fa64343d",
+        "meta.json": "f48d809bb5aecced07841d5c053b8c7df1e4c5a4"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-acima-da-meta",
+      "veredito": "aprovado",
+      "nota": "Dominio alargado so para o excedente caber, meta no angulo real e fim do arco sem numero: nao finge teto. Observacoes: o traco da meta fica por baixo do arco, o verde le como pilula solta e o rodape corta a frase da folga.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:43.774Z",
+      "impressao": "1a7aceaf6eb7c6c39ed2fd78d1eff64dfaecd633",
+      "arquivos": {
+        "Chart.tsx": "9a8f95e5e85090ebe3c97c82bb45a25ad3df7662",
+        "data.ts": "ce7e74822a16edc4a02ae68ddba0292f29ea2fd8",
+        "meta.json": "002fa896d30b216286de59a5e77c8c6d9617a197"
+      }
+    },
+    {
+      "versao": "v3_filas-na-mesma-escala",
+      "veredito": "aprovado",
+      "nota": "Dominio comum sobre o conjunto, zero medido com numero 0, sem coleta com contorno tracejado e indisponivel, vazio tratado. Observacao: no tema claro o trilho some e a fila em zero fica sem arco nenhum.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:58:48.795Z",
+      "impressao": "20ec9d5261a7f114f3c6c50081616e4a8435ad04",
+      "arquivos": {
+        "Chart.tsx": "6cb0fd87dcfab2b0c2dc3756be6235b3b7604ccf",
+        "data.ts": "368613fc9b69ab8d79c3cde64e7ca6308f1c6737",
+        "meta.json": "365bb85cb6c04b6124f1866350a57278e5932b4a"
+      }
+    }
+  ]
+}

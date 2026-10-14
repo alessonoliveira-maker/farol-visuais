@@ -1,0 +1,13 @@
+{
+  "title": "Win rate com empate e entrada em julho",
+  "useCase": "Como ficam os 9 executivos quando dois empatam nos dois semestres e um entrou em julho?",
+  "demonstrates": [
+    "Retas sobrepostas com rótulos afastados e traço guia acima de 8 px",
+    "Ponto só na coluna direita para quem entrou em julho, com nota",
+    "Nenhuma reta inventada até o zero para o semestre ausente",
+    "Rodapé contando empates e ausências"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Canvas quadrado conforme o catálogo. Conta: corpo de 422 x 355,5 px (card, caso de uso em duas linhas) e viewBox de 422 x 355, escala 1, com a escala do degrau abaixo do menor valor ao degrau acima do maior: leitura 13 + cabeçalho + 9 rótulos de 17 px + dois rodapés de 11 px. O traço guia aparece quando o rótulo sai mais de 8 px do ponto; dois rótulos de mesmo valor se afastam 8,5 px cada, então o empate sempre ganha guia. A ausência do 1º semestre é escrita com formatUnavailable() na coluna esquerda, sem ponto e sem reta. Retas neutras em text-muted opaco a 1,5 px (line-strong mede 1,8:1, TOK-5); o par empatado usa chart-1 e o ponto de quem entrou é um anel em chart-3, para o destaque não morar só na cor (TOK-9)."
+}

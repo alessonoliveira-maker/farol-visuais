@@ -1,0 +1,15 @@
+{
+  "title": "Receita contra meta com trimestre anterior",
+  "useCase": "Quem bateu a meta do trimestre e quem melhorou contra o trimestre anterior, em barra com marcador.",
+  "demonstrates": [
+    "Traço de meta perpendicular por Scatter com shape, mais leve que a barra",
+    "Barras que atingem a meta em cor de destaque, demais em neutro",
+    "Ponto vazado do trimestre anterior como segunda medida comparativa",
+    "Domínio calculado para incluir a maior meta e o maior trimestre anterior",
+    "Legenda curta que explica o traço para quem nunca viu bullet graph",
+    "Nome e números acima da barra, que ganha a largura inteira do cartão"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Variação com base escrita na linha (NUM-4); quem não tem trimestre anterior declara a falta (EST-4)."
+}

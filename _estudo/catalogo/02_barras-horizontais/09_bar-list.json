@@ -1,0 +1,70 @@
+{
+  "slug": "09_bar-list",
+  "nome": "Bar list",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Lista compacta em que cada linha é ao mesmo tempo rótulo, barra de fundo proporcional e número à direita. Não tem eixo: é uma tabela com a barra desenhada atrás do texto. Um div por linha com a barra absoluta em opacidade baixa e largura em percentual do maior valor da lista, o nome por cima e o valor numa coluna tabular. Nenhum SVG e nenhum Recharts. A normalização pelo maior valor fica explícita, porque sem eixo o leitor não sabe contra o que a barra mede, e o número escrito é a única leitura precisa. Absorve a lista de barras com rótulo das tabelas visuais e a lista de termos com barras, com contagem por documento e cauda agregada fora do domínio.",
+  "quando_usar": [
+    "Top N compacto dentro de card: origens de lead, campanhas, criativos, termos citados.",
+    "De 3 a cerca de 15 linhas, com clique ou link levando ao detalhe.",
+    "Densidade importa mais que precisão de eixo, e o número exato vai escrito em toda linha.",
+    "Card estreito, de 320 px em diante, em que um BarChart com eixo de categoria truncaria os nomes."
+  ],
+  "quando_evitar": [
+    "Comparação precisa entre valores próximos: barras simples ordenadas com escala (01_barras-simples-ordenadas).",
+    "Valores negativos: barras divergentes de sinal (06_barras-divergentes).",
+    "Várias colunas numéricas por linha com ordenação: tabela com barras inline (14_tabelas-visuais).",
+    "Ocupação contra teto real: barras com trilho (13_progresso-meta-e-gauge).",
+    "Mais de 15 linhas sem cauda agregada: a lista vira rolagem e perde o ranking."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_top-origens-do-mes",
+      "titulo": "Top 5 origens de lead do mês",
+      "caso_de_uso": "De onde vieram mais leads em ago/26, num card estreito ao lado dos KPIs de Marketing.",
+      "o_que_demonstra": [
+        "Barra de fundo em div absoluta com largura em percentual do maior valor",
+        "Linha de altura fixa com nome à esquerda e valor tabular à direita",
+        "Barra de fundo distinguível do card no tema escuro sem competir com o texto",
+        "Nota de rodapé dizendo que a barra mede contra o maior valor da lista"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_campanhas-com-link-e-destaque",
+      "titulo": "Top 8 campanhas com a campanha em foco",
+      "caso_de_uso": "Quais campanhas trouxeram mais leads e qual está em foco no painel, com o nome levando ao detalhe.",
+      "o_que_demonstra": [
+        "Nome da campanha como link com foco visível por teclado",
+        "Campanha em foco com barra na cor de destaque, demais em neutro",
+        "Estado de foco vindo das props do pai, não guardado na linha",
+        "Nome longo em duas linhas, sem reticência, com a altura da linha ajustada"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_criativos-com-leads-e-cpl",
+      "titulo": "Top 10 criativos por leads qualificados",
+      "caso_de_uso": "Quais criativos geram mais lead qualificado e a que custo, com o criativo pausado reconhecível na lista.",
+      "o_que_demonstra": [
+        "Dois números por linha: leads qualificados e CPL qualificado",
+        "Segunda barra fina abaixo da principal com o CPL relativo",
+        "Criativo pausado com barra em cinza e etiqueta pausado",
+        "Percentual do total ao lado da contagem"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_termos-com-cauda-agregada",
+      "titulo": "Termos citados nos motivos de perda",
+      "caso_de_uso": "Quais termos mais aparecem nos motivos de perda, contando documentos e somando a cauda longa numa linha só.",
+      "o_que_demonstra": [
+        "Contagem por documento que cita o termo, não por ocorrência",
+        "Linha final outros 23 termos somada e fora do domínio das barras",
+        "Termo de 60 caracteres em duas linhas, sem reticência",
+        "Termo sem classificação com barra hachurada e rótulo sem classificação"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "04_parallel-sets",
+  "nome": "Parallel sets",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Cada eixo é uma dimensão categórica da mesma população, dividida em segmentos; faixas sem seta ligam eixos vizinhos e mostram como os atributos se combinam. Não é sequência no tempo nem fluxo: a ordem dos eixos é escolha de leitura e só eixos vizinhos se comparam diretamente.",
+  "quando_usar": [
+    "Cruzar 3 ou 4 atributos categóricos da mesma população, com até 5 categorias por eixo.",
+    "Achar as combinações que concentram volume, como origem, porte e desfecho das agendas.",
+    "Mostrar a cobertura de dado cruzada com o desfecho, quando a ausência é uma categoria do eixo."
+  ],
+  "quando_evitar": [
+    "Mais de 4 eixos ou mais de 5 categorias por eixo: vira emaranhado; para dois atributos, usar a matriz categórica (15_mapa-de-calor-e-calendario, 02_matriz-categorica).",
+    "Ler correlação entre eixos que não são vizinhos: reordenar os eixos ou fazer outro diagrama.",
+    "Combinações com poucos casos, que sugerem padrão falso: agrupar em \"outras combinações\".",
+    "Mesmas unidades em momentos diferentes: usar o 03_alluvial.",
+    "Parte de um todo em duas dimensões lida por área: usar a família 26_mosaico-marimekko."
+  ],
+  "arquivo_estudo": "_estudo/familias/11_fluxo-sankey.md",
+  "versoes": [
+    {
+      "slug": "v1_origem-porte-e-desfecho-das-agendas",
+      "titulo": "Origem, porte e desfecho das agendas",
+      "caso_de_uso": "Pré-vendas, 2026-08: como origem, porte da empresa e desfecho se combinam nas 248 agendas marcadas? Cinco origens, três portes (Pequena, Média, Grande) e quatro desfechos.",
+      "o_que_demonstra": [
+        "Três eixos como barras finas segmentadas, com nome da categoria e contagem",
+        "Faixas coloridas pela primeira dimensão, em slots fixos",
+        "Geometria compartilhada com o alluvial, sem seta e sem ordem temporal",
+        "Vão entre segmentos do eixo e faixas ordenadas pelo segmento de destino"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_combinacao-em-destaque",
+      "titulo": "Indicação de empresa grande até a agenda realizada",
+      "caso_de_uso": "Pré-vendas, 2026-08: quanto pesa a combinação Indicação, Grande e Realizada nas 248 agendas? Só as faixas dessa combinação acesas, com 21 agendas anotadas.",
+      "o_que_demonstra": [
+        "Prop highlight com uma categoria por eixo e as demais faixas a 15%",
+        "Anotação com contagem e percentual do total da combinação",
+        "Nome das três categorias em foco em peso 700",
+        "Ordem inicial fixa na prop axisOrder; reordenar por clique fica para o Farol"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_cobertura-de-dado-dos-leads-por-origem",
+      "titulo": "Cobertura de dado dos leads por origem",
+      "caso_de_uso": "Marketing, 2026-08: a falta de telefone e de cargo pesa no desfecho dos 1.240 leads? Eixos de origem, telefone (com, sem), cargo (declarado, ausente) e desfecho.",
+      "o_que_demonstra": [
+        "Quatro eixos, no teto do modelo, com a ausência como categoria visível",
+        "Segmento de ausência com contorno --text-muted, sem preenchimento e por último",
+        "Ordem dos eixos que põe telefone vizinho do desfecho, a comparação que importa",
+        "Frase acessível que cita a taxa de qualificação com e sem telefone"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_combinacoes-raras-agregadas",
+      "titulo": "Combinações raras agregadas",
+      "caso_de_uso": "Pré-vendas, 2026-08: as 248 agendas geram 60 combinações possíveis e muitas têm uma ou duas agendas. Combinações com menos de 5 agendas viram \"outras combinações\", com a contagem escrita.",
+      "o_que_demonstra": [
+        "Limiar mínimo de 5 agendas por combinação, em constante no topo do arquivo",
+        "Faixa \"outras combinações\" em --line-strong com a contagem escrita",
+        "Lista das combinações agregadas na alternativa tabular",
+        "Nota de amostra pequena para não sugerir padrão falso"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

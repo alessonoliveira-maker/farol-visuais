@@ -1,0 +1,13 @@
+{
+  "title": "Atividades da pré-vendas na semana",
+  "useCase": "Pré-vendas: o que as filas registraram entre 2026-11-09 e 2026-11-13, em 64 atividades agrupadas por dia.",
+  "demonstrates": [
+    "Cabeçalho de dia sticky com contagem por tipo em chips",
+    "Três atividades por dia visíveis e o restante resumido em mais N",
+    "Filtro por tipo em botões com contagem, sem esconder a existência dos filtrados",
+    "Nota de virtualização com @tanstack/react-virtual e estimateSize por tipo de item"
+  ],
+  "canvas": { "width": 640, "height": 890 },
+  "frame": "card",
+  "notes": "Canvas por número: 5 dias de cerca de 140 px (cabeçalho de 28, três linhas de 28 com vão de 4, linha de resumo de 16 e 8 de respiro) somam 700 px, mais 24 de linha de leitura e 36 de filtros: cerca de 760 px de corpo, contra 425 px do preset alto. Desvio do catálogo: a virtualização com @tanstack/react-virtual é só nota (no comentário do topo e no README), porque a biblioteca não está na lista de imports da seção 6 do contrato; com 64 itens e 15 por dia visíveis a lista inteira cabe sem janela."
+}

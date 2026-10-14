@@ -1,0 +1,134 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "02_dot-plot-com-intervalo",
+  "versoes": {
+    "v1_ciclo-mediano-por-segmento-com-quartis": {
+      "veredito": "aprovado",
+      "nota": "Mediana e faixa entre quartis em eixo fixo de 0 a 100 dias, n sob o nome, erro relativo conferido contra o dado, dois temas limpos. Duas observações no README: halo sobre a zebra e serifa colada ao ponto em Saúde e bem-estar",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:52.936Z",
+      "impressao": "a435895109e0c4235b3ec8b43810111c68925597",
+      "arquivos": {
+        "Chart.tsx": "59eab438acb9f664bef6bf91489c960a885df6b4",
+        "data.ts": "c8036bd7286f1fd7c064eba41d6c44029b8fc070",
+        "meta.json": "8f3a31e9b290394576ac2a9891ea55099191c687"
+      }
+    },
+    "v2_handoff-com-faixa-que-cruza-o-sla": {
+      "veredito": "aprovado",
+      "nota": "SLA por ReferenceLine com rótulo na margem, faixa que cruza em warning com ícone, contagem 4 de 7 conferida, ordem declarada. Observações no README: n só na dica, redação de não conclusivo com faixa entre quartis, rótulos junto à linha do SLA, seis linhas de grade",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:53.513Z",
+      "impressao": "0cdcf1b3eb112d2d4ec95c5c54e53c4fee46df61",
+      "arquivos": {
+        "Chart.tsx": "4a39ecfe16e9968b0b332539cdc3d3b213a326c3",
+        "data.ts": "10e17f357a972cb92c1ffddb96b5d7cd72b2ff8f",
+        "meta.json": "08ee30b27802b581ac94b949bd39cf49a67fe28b"
+      }
+    },
+    "v3_primeiro-contato-com-leads-ao-fundo": {
+      "veredito": "aprovado",
+      "nota": "Rejulgada sobre o arquivo atual: casos a 0,80 medem 3,21:1 no claro sobre a zebra e 3,82:1 no escuro; hash com finalizador espalha os 856 pontos pela faixa inteira de 21 px nas seis linhas; 856 pontos mais 44 marcas de estouro somam os 900 leads; medianas e contagens conferidas no preview. Observações no README: marcas de estouro empilhadas, comentário do data.ts que promete valor exato na dica, 6 px no meta contra 7 px desenhados, números sem tabular-nums",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:57:30.867Z",
+      "impressao": "4bb427faf2f8f01d0d2b6c2cc6ec639e82e20417",
+      "arquivos": {
+        "Chart.tsx": "d4cb063f76e5a5bbdc94a36a346ad454703875ac",
+        "data.ts": "6cebb2efdb819719b0a32461691d1b83dc1e2cde",
+        "meta.json": "53e6599778e4f9e5e5891cb2995d1e16e4ef1af3"
+      }
+    },
+    "v4_ticket-por-origem-com-amostra-pequena": {
+      "veredito": "aprovado",
+      "nota": "Rejulgada sobre o arquivo atual: eixo fechado em R$ 150 mil com tique na borda e maior caso em R$ 131,5 mil dentro dele; casos a 0,80 medem 3,21:1 no claro sobre a zebra; quartis de Parcerias conferidos no preview (42,5 e 55,25 mil); ausência com anel vazado e texto, sem zero. Observações no README: rótulos de valor sobre casos da própria linha, halo sobre a zebra, domínio fixo em constante, seis linhas de grade, frase acessível sem valor de ticket",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:57:31.386Z",
+      "impressao": "9eda0f9630921d19ae63c63313ea5e41a862d9f3",
+      "arquivos": {
+        "Chart.tsx": "852f0a75e5334185316987bb07785e2880918ca5",
+        "data.ts": "5b9c63be61c5f86ba6e2eef18560a8aa8c357932",
+        "meta.json": "c07dc0e50ff081246660f4b1a350e2564e3d4ba3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-mediano-por-segmento-com-quartis",
+      "veredito": "aprovado",
+      "nota": "Mediana e faixa entre quartis em eixo fixo de 0 a 100 dias, n sob o nome, erro relativo conferido contra o dado, dois temas limpos. Duas observações no README: halo sobre a zebra e serifa colada ao ponto em Saúde e bem-estar",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:52.936Z",
+      "impressao": "a435895109e0c4235b3ec8b43810111c68925597",
+      "arquivos": {
+        "Chart.tsx": "59eab438acb9f664bef6bf91489c960a885df6b4",
+        "data.ts": "c8036bd7286f1fd7c064eba41d6c44029b8fc070",
+        "meta.json": "8f3a31e9b290394576ac2a9891ea55099191c687"
+      }
+    },
+    {
+      "versao": "v2_handoff-com-faixa-que-cruza-o-sla",
+      "veredito": "aprovado",
+      "nota": "SLA por ReferenceLine com rótulo na margem, faixa que cruza em warning com ícone, contagem 4 de 7 conferida, ordem declarada. Observações no README: n só na dica, redação de não conclusivo com faixa entre quartis, rótulos junto à linha do SLA, seis linhas de grade",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:53.513Z",
+      "impressao": "0cdcf1b3eb112d2d4ec95c5c54e53c4fee46df61",
+      "arquivos": {
+        "Chart.tsx": "4a39ecfe16e9968b0b332539cdc3d3b213a326c3",
+        "data.ts": "10e17f357a972cb92c1ffddb96b5d7cd72b2ff8f",
+        "meta.json": "08ee30b27802b581ac94b949bd39cf49a67fe28b"
+      }
+    },
+    {
+      "versao": "v3_primeiro-contato-com-leads-ao-fundo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 30, ACE-3 e ACE-5: casos a 0,72 medem 2,79:1 no claro sobre a zebra em surface-sunken, subir para 0,80 ou tirar a zebra. Pergunta 3: hash01 sem avalanche põe a nuvem em duas fileiras por SDR (97 de 218 pontos separáveis em Talita V.), aplicar finalizador ao hash. Parecer em validation",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:54.052Z",
+      "impressao": "c76790cdd2e458ac270e6df86b707fb6a79f48e9",
+      "arquivos": {
+        "Chart.tsx": "949e4b83772ee44702fdbbb38dc7fcb992d06f91",
+        "data.ts": "6cebb2efdb819719b0a32461691d1b83dc1e2cde",
+        "meta.json": "576e0c72f22f55eb5c61e00709963816145d2ad4"
+      }
+    },
+    {
+      "versao": "v4_ticket-por-origem-com-amostra-pequena",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 30, ACE-3 e ACE-5: casos a 0,72 medem 2,79:1 no claro sobre a zebra, subir para 0,80 ou tirar a zebra. Pergunta 15, EIX-4 e ESP-3: domínio declarado até 120 mil vai de fato a 131,5 mil, com linha de grade sem tique na borda e o maior caso em cima dela; fechar em valor redondo com tique. Parecer em validation",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:49:54.581Z",
+      "impressao": "6e7e6239b6e95a37e1b31d6179d7ffd78175b35b",
+      "arquivos": {
+        "Chart.tsx": "b06d47e7ada6a6c43ec4bd839aee057f74574c1c",
+        "data.ts": "5b9c63be61c5f86ba6e2eef18560a8aa8c357932",
+        "meta.json": "8474abf6d8cbf64b6384e25f97b76cec30851cb0"
+      }
+    },
+    {
+      "versao": "v3_primeiro-contato-com-leads-ao-fundo",
+      "veredito": "aprovado",
+      "nota": "Rejulgada sobre o arquivo atual: casos a 0,80 medem 3,21:1 no claro sobre a zebra e 3,82:1 no escuro; hash com finalizador espalha os 856 pontos pela faixa inteira de 21 px nas seis linhas; 856 pontos mais 44 marcas de estouro somam os 900 leads; medianas e contagens conferidas no preview. Observações no README: marcas de estouro empilhadas, comentário do data.ts que promete valor exato na dica, 6 px no meta contra 7 px desenhados, números sem tabular-nums",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:57:30.867Z",
+      "impressao": "4bb427faf2f8f01d0d2b6c2cc6ec639e82e20417",
+      "arquivos": {
+        "Chart.tsx": "d4cb063f76e5a5bbdc94a36a346ad454703875ac",
+        "data.ts": "6cebb2efdb819719b0a32461691d1b83dc1e2cde",
+        "meta.json": "53e6599778e4f9e5e5891cb2995d1e16e4ef1af3"
+      }
+    },
+    {
+      "versao": "v4_ticket-por-origem-com-amostra-pequena",
+      "veredito": "aprovado",
+      "nota": "Rejulgada sobre o arquivo atual: eixo fechado em R$ 150 mil com tique na borda e maior caso em R$ 131,5 mil dentro dele; casos a 0,80 medem 3,21:1 no claro sobre a zebra; quartis de Parcerias conferidos no preview (42,5 e 55,25 mil); ausência com anel vazado e texto, sem zero. Observações no README: rótulos de valor sobre casos da própria linha, halo sobre a zebra, domínio fixo em constante, seis linhas de grade, frase acessível sem valor de ticket",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:57:31.386Z",
+      "impressao": "9eda0f9630921d19ae63c63313ea5e41a862d9f3",
+      "arquivos": {
+        "Chart.tsx": "852f0a75e5334185316987bb07785e2880918ca5",
+        "data.ts": "5b9c63be61c5f86ba6e2eef18560a8aa8c357932",
+        "meta.json": "c07dc0e50ff081246660f4b1a350e2564e3d4ba3"
+      }
+    }
+  ]
+}

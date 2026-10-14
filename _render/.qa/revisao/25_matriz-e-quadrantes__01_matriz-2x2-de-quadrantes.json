@@ -1,0 +1,121 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "01_matriz-2x2-de-quadrantes",
+  "versoes": {
+    "v1_ticket-e-conversao-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: medianas conferidas à mão (50,1 mil reais e 22,8 por cento), 4, 2, 2 e 4 por região, 12 rótulos diretos sem colisão nos dois temas, ausência fora do plano e contada no rodapé. Sem bloqueante; observações no README (corte em line-strong, rótulo de Helena B. deslocado uma linha, dado de Vera K. incoerente, mediana sobre os 12 do plano).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:37.250Z",
+      "impressao": "5787513c4b09afe8c68115e10d65ccb56567f7a8",
+      "arquivos": {
+        "Chart.tsx": "113674adf6e3e75c96c976dcc588d7452de9c4e2",
+        "data.ts": "f7af1f49cd384af8e53740fd5afb1a1d01e49c52",
+        "meta.json": "79cf58086b5f3eb1ce920434ce1a6dc0b0568a3a"
+      }
+    },
+    "v2_campanhas-contra-break-even-com-bolhas": {
+      "veredito": "reprovado",
+      "nota": "Segunda passada, arquivo das 10:52 de 2026-10-06. Pergunta 32, ACE-6: os 7 fios que ligam nome a bolha estão em line-strong e medem 1,77:1 no escuro e 1,80:1 no claro sobre a região de ação, abaixo do piso de 3:1; passar para token de dado (text-muted mede 4,56:1 e 4,86:1 ali). Perguntas 15 e 31, seção 14.1 (identificação das marcas; ROT-7 marca fina e ROT-11 por analogia): os fios são pintados atrás das bolhas e passam por dentro de bolha alheia, o de Guia de compra some em 47 de 209 px atrás de Marketplace categoria B e de Redes sociais lookalike, o de Busca institucional em 16 de 101 px atrás de Indicação premiada, e o de Newsletter patrocinada tangencia duas bolhas e corre colado à grade de 20 por cento; nenhum fio pode cruzar nem tangenciar bolha que não é a dele: mudar a âncora desses rótulos ou trocar os fios por chave numerada. Os três bloqueantes da primeira passada estão resolvidos. Parecer em validation/revisao_25_matriz-e-quadrantes__01_matriz-2x2-de-quadrantes_2026-10-06.md, seção Segunda passada.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:05:50.979Z",
+      "impressao": "0167547aa7d173f01ce0f9de0db53c5e1490d681",
+      "arquivos": {
+        "Chart.tsx": "2fcfa0c58b605d91673176c8c17a43547fb00493",
+        "data.ts": "6196942872bd65800ef8f06b9e19bd42d0286ddf",
+        "meta.json": "7cfee3cd12baed5553eed278d17fe1780ee5bacf"
+      }
+    },
+    "v3_forecast-parado-com-lista-sincronizada": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 15 críticas somando 3,59 milhões de reais em 12,51 milhões, 13, 22, 22 e 7 nas demais conferidos à mão, faixa de indiferença e pontos ocos legíveis nos dois temas, anel e linha da lista ligados, sem data fora do plano. Sem bloqueante; observações no README (contagem sem substantivo nos cantos e botões, dois pontos coincidentes, faixa horizontal fraca no claro, eixo Y de 76 px).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:38.324Z",
+      "impressao": "7241190106338b642b9ab0d84e36a35c8e8dfe72",
+      "arquivos": {
+        "Chart.tsx": "744c09da3f4f95041d7468eac15691b46e1342cd",
+        "data.ts": "d7028e9b3b7bfbd794b42b8c511ae4d8eeb20580",
+        "meta.json": "7490f6a300f4202d81f2be5de8bcb22988911145"
+      }
+    },
+    "v4_variacao-de-origens-centrada-no-zero": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: variações conferidas à mão (8, 4, 3 e 5 por região), domínio simétrico de 100 por cento e 6 p.p., triângulo na borda com o valor real escrito, sinal tipográfico e p.p. nos tiques, 8 rótulos da região de ação sem colisão nos dois temas. Sem bloqueante; observações no README (cor do triângulo fixa, plural fixo no rodapé, rótulo omitido sem aviso, frase acessível a 14 do teto).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:38.824Z",
+      "impressao": "3bbd97bbe2e4e027db0575316eb90d9b4b7496b7",
+      "arquivos": {
+        "Chart.tsx": "0fea02773f992001d58bd18b6e831b0329741a01",
+        "data.ts": "e892d591fc8fa9842c756283590dea8d3f8bae76",
+        "meta.json": "cfee351d2165b7e91f55aa955d4ce8c880f00a94"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-e-conversao-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: medianas conferidas à mão (50,1 mil reais e 22,8 por cento), 4, 2, 2 e 4 por região, 12 rótulos diretos sem colisão nos dois temas, ausência fora do plano e contada no rodapé. Sem bloqueante; observações no README (corte em line-strong, rótulo de Helena B. deslocado uma linha, dado de Vera K. incoerente, mediana sobre os 12 do plano).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:37.250Z",
+      "impressao": "5787513c4b09afe8c68115e10d65ccb56567f7a8",
+      "arquivos": {
+        "Chart.tsx": "113674adf6e3e75c96c976dcc588d7452de9c4e2",
+        "data.ts": "f7af1f49cd384af8e53740fd5afb1a1d01e49c52",
+        "meta.json": "79cf58086b5f3eb1ce920434ce1a6dc0b0568a3a"
+      }
+    },
+    {
+      "versao": "v2_campanhas-contra-break-even-com-bolhas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 18, DIC-1 e 14.1 (identificação): nenhuma das 29 bolhas tem nome no desenho parado e o caso de uso pergunta quais; nomear ao menos as 8 de Escalar por rótulo direto ou lista. Pergunta 6, NUM-2: as participações impressas somam 99 e não 100 (23, 17, 34 e 25); fechar pelo maior resto. Perguntas 13 e 15, ROT-7: a grade é pintada por cima do texto dos blocos de resumo em 5 linhas; pôr os blocos acima do SVG com halo na cor do cartão. Parecer em validation/revisao_25_matriz-e-quadrantes__01_matriz-2x2-de-quadrantes_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:37.805Z",
+      "impressao": "49c985d9036a8591fcccb90ca1d42fa831fb2300",
+      "arquivos": {
+        "Chart.tsx": "512452e41eb0b66b0e034a96a252f7c39d3ac7f8",
+        "data.ts": "6196942872bd65800ef8f06b9e19bd42d0286ddf",
+        "meta.json": "7cfee3cd12baed5553eed278d17fe1780ee5bacf"
+      }
+    },
+    {
+      "versao": "v3_forecast-parado-com-lista-sincronizada",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 15 críticas somando 3,59 milhões de reais em 12,51 milhões, 13, 22, 22 e 7 nas demais conferidos à mão, faixa de indiferença e pontos ocos legíveis nos dois temas, anel e linha da lista ligados, sem data fora do plano. Sem bloqueante; observações no README (contagem sem substantivo nos cantos e botões, dois pontos coincidentes, faixa horizontal fraca no claro, eixo Y de 76 px).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:38.324Z",
+      "impressao": "7241190106338b642b9ab0d84e36a35c8e8dfe72",
+      "arquivos": {
+        "Chart.tsx": "744c09da3f4f95041d7468eac15691b46e1342cd",
+        "data.ts": "d7028e9b3b7bfbd794b42b8c511ae4d8eeb20580",
+        "meta.json": "7490f6a300f4202d81f2be5de8bcb22988911145"
+      }
+    },
+    {
+      "versao": "v4_variacao-de-origens-centrada-no-zero",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: variações conferidas à mão (8, 4, 3 e 5 por região), domínio simétrico de 100 por cento e 6 p.p., triângulo na borda com o valor real escrito, sinal tipográfico e p.p. nos tiques, 8 rótulos da região de ação sem colisão nos dois temas. Sem bloqueante; observações no README (cor do triângulo fixa, plural fixo no rodapé, rótulo omitido sem aviso, frase acessível a 14 do teto).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:45:38.824Z",
+      "impressao": "3bbd97bbe2e4e027db0575316eb90d9b4b7496b7",
+      "arquivos": {
+        "Chart.tsx": "0fea02773f992001d58bd18b6e831b0329741a01",
+        "data.ts": "e892d591fc8fa9842c756283590dea8d3f8bae76",
+        "meta.json": "cfee351d2165b7e91f55aa955d4ce8c880f00a94"
+      }
+    },
+    {
+      "versao": "v2_campanhas-contra-break-even-com-bolhas",
+      "veredito": "reprovado",
+      "nota": "Segunda passada, arquivo das 10:52 de 2026-10-06. Pergunta 32, ACE-6: os 7 fios que ligam nome a bolha estão em line-strong e medem 1,77:1 no escuro e 1,80:1 no claro sobre a região de ação, abaixo do piso de 3:1; passar para token de dado (text-muted mede 4,56:1 e 4,86:1 ali). Perguntas 15 e 31, seção 14.1 (identificação das marcas; ROT-7 marca fina e ROT-11 por analogia): os fios são pintados atrás das bolhas e passam por dentro de bolha alheia, o de Guia de compra some em 47 de 209 px atrás de Marketplace categoria B e de Redes sociais lookalike, o de Busca institucional em 16 de 101 px atrás de Indicação premiada, e o de Newsletter patrocinada tangencia duas bolhas e corre colado à grade de 20 por cento; nenhum fio pode cruzar nem tangenciar bolha que não é a dele: mudar a âncora desses rótulos ou trocar os fios por chave numerada. Os três bloqueantes da primeira passada estão resolvidos. Parecer em validation/revisao_25_matriz-e-quadrantes__01_matriz-2x2-de-quadrantes_2026-10-06.md, seção Segunda passada.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:05:50.979Z",
+      "impressao": "0167547aa7d173f01ce0f9de0db53c5e1490d681",
+      "arquivos": {
+        "Chart.tsx": "2fcfa0c58b605d91673176c8c17a43547fb00493",
+        "data.ts": "6196942872bd65800ef8f06b9e19bd42d0286ddf",
+        "meta.json": "7cfee3cd12baed5553eed278d17fe1780ee5bacf"
+      }
+    }
+  ]
+}

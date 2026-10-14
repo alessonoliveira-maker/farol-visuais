@@ -1,0 +1,12 @@
+{
+  "title": "CPL qualificado contra a média do semestre",
+  "useCase": "Em que meses o custo por lead qualificado ficou acima da média do semestre, onde subir é ruim?",
+  "demonstrates": [
+    "Polaridade invertida: coluna que desce é boa e ganha positive, com a regra escrita",
+    "Domínio simétrico calculado para o mês mais extremo não espremer os demais",
+    "ReferenceArea em surface-sunken nos três meses seguidos acima da média, com texto",
+    "Média nomeada na própria linha de zero, em formatCurrencyCompact"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

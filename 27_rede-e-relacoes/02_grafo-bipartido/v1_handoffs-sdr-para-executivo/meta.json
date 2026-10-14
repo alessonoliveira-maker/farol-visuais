@@ -1,0 +1,15 @@
+{
+  "title": "Repasses de agenda por SDR e executivo",
+  "useCase": "Pré-vendas: como as agendas de 2026-T3 se distribuem entre SDR 1 a SDR 5 e os executivos A a H.",
+  "demonstrates": [
+    "Ligação em Bézier horizontal calculada em TypeScript, sem biblioteca de grafo",
+    "Ordem das duas colunas por baricentro com várias largadas, para reduzir cruzamentos",
+    "Espessura em três faixas (fraca, média, forte) com a legenda das faixas",
+    "Total escrito ao lado de cada nó nas duas colunas com formatInt",
+    "Ligações em var(--text-muted), com 3:1 medido, desenhadas antes dos nós",
+    "Pontas distribuídas ao longo da altura do nó, um passo por ligação"
+  ],
+  "canvas": { "width": 640, "height": 444 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): oito executivos com rótulo de duas linhas pedem 7 caixas de 24 px, uma de 30 px (o executivo de 5 ligações, a 6 px por ponta) e 7 vãos de 10 px, 268 px; com 4 px de margem, a linha de leitura (28 px) e a legenda das faixas (24 px) o corpo pede 324 px, e o card entrega 241,5 px com o caso de uso em uma linha. Em 640 x 444 o corpo mede 325,5 px e o SVG fica com 273,5 px para um viewBox de 574 x 272, escala 1 (GEO-18). O vão de 10 px entre caixas é o dobro do vão entre as duas linhas do rótulo: com 4 px a coluna da direita lia como dezesseis linhas soltas. Desvios do catálogo, com o contrato vencendo: as ligações saem de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), 5,21:1 e 5,37:1, porque a aresta carrega a relação (ACE-6); e o total do nó usa formatInt, porque formatNumber não existe na lista da seção 6. A legenda reparte o intervalo de 1 ao maior peso observado em três faixas (ROT-5b). O baricentro larga uma vez de cada nó da esquerda e guarda a ordem de menos cruzamentos: com uma largada só, o mesmo dado sem um SDR encalhava em 30 cruzamentos contra 11."
+}

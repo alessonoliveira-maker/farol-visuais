@@ -1,0 +1,160 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "05_matriz-de-decisao-ponderada",
+  "versoes": {
+    "v1_desenhos-de-remuneracao-variavel": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Encoding e contas conferidos (totais 3,70, 3,60 e 3,45; líderes e empate certos), contraste medido à mão nos dois temas. Observações no README: TIP-1 na posição e no rodapé, TIP-4, classe morta, NUM-2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:38.334Z",
+      "impressao": "1678e91c673fb8dac9599341604de68eabdcff29",
+      "arquivos": {
+        "Chart.tsx": "a93de5806054808c04e7dd7e03c217b1d0b7912e",
+        "data.ts": "c787541db761982b4afcfb26013848726fb0b6a8",
+        "meta.json": "c55c5da303c296324f36a8a0f612fdc89a9ef946"
+      }
+    },
+    "v2_decomposicao-do-total-por-criterio": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Barra parte do zero, segmentos somam o total escrito nas quatro linhas, vão de 2 px, slots na ordem da COR-8. Observações no README: redação da anotação, TIP-1 na diferença, COR-8 com os slots 6 e 2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:46.758Z",
+      "impressao": "d9d3b628947a9d394dacdf5b94b74615bfeb4c8b",
+      "arquivos": {
+        "Chart.tsx": "b714fc8c73ec7f19326a3ffce9b820eb48f46338",
+        "data.ts": "f646ee76fd3af95a43b62d1a09428783dc86f0f6",
+        "meta.json": "b189790ae6251215a25a1229c0f44f115ba3ac00"
+      }
+    },
+    "v3_cenarios-de-orcamento-2027-com-eliminatorio": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, 17 e 25 com ressalva. Notas e totais refeitos à mão e conferem; eliminado riscado com o motivo. Observações no README: taxa sem volume (NUM-1), normalização com o eliminado decide o vencedor, procedência por critério contra a ANO-6, ramo sem medida.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:47.311Z",
+      "impressao": "d8d072d475e34860fd203018d44165400e45be56",
+      "arquivos": {
+        "Chart.tsx": "d879fcadba95b275ff1f1c5f09c8272998d082b6",
+        "data.ts": "99ac4fbf4522bc16d13e28a2850ac81ec09d9c9a",
+        "meta.json": "cfd068e17a4e1dcee6c565f4f882d2ee8e53a329"
+      }
+    },
+    "v4_decisao-sensivel-ao-peso": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Sensibilidade refeita à mão: só custo +20% troca para Enxuto; ausência fora da soma e da base, total marcado incompleto. Observações no README: peso desalinhado no cabeçalho, incompleto na eleição, redação da frase acessível.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:47.894Z",
+      "impressao": "c3e02de3940d471a963758438fc95212ed989cb0",
+      "arquivos": {
+        "Chart.tsx": "b00cd5ee07dbc823e12e4aa4ca89ca31f8a74a4f",
+        "data.ts": "bf3b745f6ace7b0499e185574bf31d7fb99d6306",
+        "meta.json": "5c71139319e90bbc16fccf61d1a5e7c827305918"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_desenhos-de-remuneracao-variavel",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Encoding e contas conferidos (totais 3,70, 3,60 e 3,45; lideres e empate certos), contraste medido a mao nos dois temas. Observacoes no README: TIP-1 na posicao e no rodape, TIP-4, classe morta, NUM-2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:28.705Z",
+      "impressao": "1678e91c673fb8dac9599341604de68eabdcff29",
+      "arquivos": {
+        "Chart.tsx": "a93de5806054808c04e7dd7e03c217b1d0b7912e",
+        "data.ts": "c787541db761982b4afcfb26013848726fb0b6a8",
+        "meta.json": "c55c5da303c296324f36a8a0f612fdc89a9ef946"
+      }
+    },
+    {
+      "versao": "v2_decomposicao-do-total-por-criterio",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Barra parte do zero, segmentos somam o total escrito nas quatro linhas, vao de 2 px, slots na ordem da COR-8. Observacoes no README: redacao da anotacao, TIP-1 na diferenca, COR-8 com slots 6 e 2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:29.326Z",
+      "impressao": "d9d3b628947a9d394dacdf5b94b74615bfeb4c8b",
+      "arquivos": {
+        "Chart.tsx": "b714fc8c73ec7f19326a3ffce9b820eb48f46338",
+        "data.ts": "f646ee76fd3af95a43b62d1a09428783dc86f0f6",
+        "meta.json": "b189790ae6251215a25a1229c0f44f115ba3ac00"
+      }
+    },
+    {
+      "versao": "v3_cenarios-de-orcamento-2027-com-eliminatorio",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, 17 e 25 com ressalva. Notas e totais refeitos a mao e conferem; eliminado riscado com motivo. Observacoes no README: taxa sem volume (NUM-1), normalizacao com o eliminado decide o vencedor, procedencia por criterio contra ANO-6, ramo sem medida.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:29.924Z",
+      "impressao": "d8d072d475e34860fd203018d44165400e45be56",
+      "arquivos": {
+        "Chart.tsx": "d879fcadba95b275ff1f1c5f09c8272998d082b6",
+        "data.ts": "99ac4fbf4522bc16d13e28a2850ac81ec09d9c9a",
+        "meta.json": "cfd068e17a4e1dcee6c565f4f882d2ee8e53a329"
+      }
+    },
+    {
+      "versao": "v4_decisao-sensivel-ao-peso",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Sensibilidade refeita a mao: so custo +20% troca para Enxuto; ausencia fora da soma e da base, total marcado incompleto. Observacoes no README: peso desalinhado no cabecalho, incompleto na eleicao, redacao da frase acessivel.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:30.511Z",
+      "impressao": "c3e02de3940d471a963758438fc95212ed989cb0",
+      "arquivos": {
+        "Chart.tsx": "b00cd5ee07dbc823e12e4aa4ca89ca31f8a74a4f",
+        "data.ts": "bf3b745f6ace7b0499e185574bf31d7fb99d6306",
+        "meta.json": "5c71139319e90bbc16fccf61d1a5e7c827305918"
+      }
+    },
+    {
+      "versao": "v1_desenhos-de-remuneracao-variavel",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Encoding e contas conferidos (totais 3,70, 3,60 e 3,45; líderes e empate certos), contraste medido à mão nos dois temas. Observações no README: TIP-1 na posição e no rodapé, TIP-4, classe morta, NUM-2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:38.334Z",
+      "impressao": "1678e91c673fb8dac9599341604de68eabdcff29",
+      "arquivos": {
+        "Chart.tsx": "a93de5806054808c04e7dd7e03c217b1d0b7912e",
+        "data.ts": "c787541db761982b4afcfb26013848726fb0b6a8",
+        "meta.json": "c55c5da303c296324f36a8a0f612fdc89a9ef946"
+      }
+    },
+    {
+      "versao": "v2_decomposicao-do-total-por-criterio",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Barra parte do zero, segmentos somam o total escrito nas quatro linhas, vão de 2 px, slots na ordem da COR-8. Observações no README: redação da anotação, TIP-1 na diferença, COR-8 com os slots 6 e 2.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:46.758Z",
+      "impressao": "d9d3b628947a9d394dacdf5b94b74615bfeb4c8b",
+      "arquivos": {
+        "Chart.tsx": "b714fc8c73ec7f19326a3ffce9b820eb48f46338",
+        "data.ts": "f646ee76fd3af95a43b62d1a09428783dc86f0f6",
+        "meta.json": "b189790ae6251215a25a1229c0f44f115ba3ac00"
+      }
+    },
+    {
+      "versao": "v3_cenarios-de-orcamento-2027-com-eliminatorio",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, 17 e 25 com ressalva. Notas e totais refeitos à mão e conferem; eliminado riscado com o motivo. Observações no README: taxa sem volume (NUM-1), normalização com o eliminado decide o vencedor, procedência por critério contra a ANO-6, ramo sem medida.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:47.311Z",
+      "impressao": "d8d072d475e34860fd203018d44165400e45be56",
+      "arquivos": {
+        "Chart.tsx": "d879fcadba95b275ff1f1c5f09c8272998d082b6",
+        "data.ts": "99ac4fbf4522bc16d13e28a2850ac81ec09d9c9a",
+        "meta.json": "cfd068e17a4e1dcee6c565f4f882d2ee8e53a329"
+      }
+    },
+    {
+      "versao": "v4_decisao-sensivel-ao-peso",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Sensibilidade refeita à mão: só custo +20% troca para Enxuto; ausência fora da soma e da base, total marcado incompleto. Observações no README: peso desalinhado no cabeçalho, incompleto na eleição, redação da frase acessível.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:00:47.894Z",
+      "impressao": "c3e02de3940d471a963758438fc95212ed989cb0",
+      "arquivos": {
+        "Chart.tsx": "b00cd5ee07dbc823e12e4aa4ca89ca31f8a74a4f",
+        "data.ts": "bf3b745f6ace7b0499e185574bf31d7fb99d6306",
+        "meta.json": "5c71139319e90bbc16fccf61d1a5e7c827305918"
+      }
+    }
+  ]
+}

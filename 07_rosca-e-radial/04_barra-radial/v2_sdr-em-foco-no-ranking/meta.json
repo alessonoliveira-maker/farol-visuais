@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por SDR com uma pessoa em foco",
+  "useCase": "Mostrar onde a SDR selecionada está no ranking de agendas da semana, sem perder a escala do time.",
+  "demonstrates": [
+    "Arco em foco na cor de destaque e os demais em neutro, todos com o valor escrito",
+    "Legenda clicável que troca o foco; um segundo clique no mesmo nome desmarca",
+    "Nome e valor do destaque em peso 700, além da cor",
+    "Linha de leitura calculada com a posição em ordinal, como 2º de 6"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

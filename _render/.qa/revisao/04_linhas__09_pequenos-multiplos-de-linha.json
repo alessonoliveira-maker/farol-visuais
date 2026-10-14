@@ -1,0 +1,173 @@
+{
+  "familia": "04_linhas",
+  "modelo": "09_pequenos-multiplos-de-linha",
+  "versoes": {
+    "v1_cpl-por-plataforma-em-quatro-paineis": {
+      "veredito": "aprovado",
+      "nota": "Escala comum declarada e eixo x na borda inferior; frase acessivel a 12 caracteres do teto e grade com duas linhas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:13.542Z",
+      "impressao": "497fb0a899cb965ae435b52f3ed8e94bc7a032e6",
+      "arquivos": {
+        "Chart.tsx": "f7f0150727f12b82799b9dacb48d1826487225a1",
+        "data.ts": "aa9d81b7b5a68f82b2f9b8b96e573e3ddbc4436c",
+        "meta.json": "27833ca1ad7bcde6b056c14b736febed4baca2ea"
+      }
+    },
+    "v2_origens-contra-a-mediana-do-grupo": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas, e é o precedente da GEO-12 para o resto do catálogo: a linha de leitura declara \"Painéis ordenados do maior para o menor volume em 16/03/2026, escala comum de 0 a 80\", que é exatamente a frase que falta nas peças que ordenam por métrica e calam. O conserto ainda corrigiu a indexação da mediana, que era por posição e casava a semana de uma origem com a mediana de outra.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.135Z",
+      "impressao": "04c20e995ff46a611e0fc0b1c67c44010b2d2e97",
+      "arquivos": {
+        "Chart.tsx": "58a9b0bbbacc559fe185934ea393e7ffd6fd10b3",
+        "data.ts": "1e61e71962dce951e03ba25cbb320f759043280e",
+        "meta.json": "5da74b41945f3f04a6976563fbf2626c31bd2c9b"
+      }
+    },
+    "v3_sla-de-doze-squads-em-grade": {
+      "veredito": "aprovado",
+      "nota": "Doze paineis na mesma escala com meta tracejada, icone e palavra alem da cor; tique de 50 por cento nao imprime.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:22.036Z",
+      "impressao": "ce4bb6c94f027a870bff06b2b50484988d0fd241",
+      "arquivos": {
+        "Chart.tsx": "9230c404ec29692c8fe52ab7c23b1de24b9fba3c",
+        "data.ts": "6c26c384a42c424d631e9fce1c017bc798866419",
+        "meta.json": "347980eda7b2d49f35ecb106edb8c1e0ef096260"
+      }
+    },
+    "v4_painel-sem-dado-e-escala-independente": {
+      "veredito": "aprovado",
+      "nota": "Escala propria declarada em cada painel e origem sem coleta como estado no proprio painel; cursor fora do CURSOR_COLOR.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:22.679Z",
+      "impressao": "01b156adcecad7039eb3393ab1a4a9b0887533d7",
+      "arquivos": {
+        "Chart.tsx": "3404ed9b9ccea620a87b5fa072847f5e169c42f6",
+        "data.ts": "c10f2a65d25a60c9753bfa1ea20d8b84f1e80000",
+        "meta.json": "ebe48e8472c7b42e3fb986094a077880c0fb8627"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-por-plataforma-em-quatro-paineis",
+      "veredito": "reprovado",
+      "nota": "EIX-9: o XAxis com hide tira a altura do eixo so da linha de cima, entao o mesmo dominio de 0 a 400 desenha em 89 px em cima e 51 px embaixo; a nota promete escala comum e os quatro paineis nao sao comparaveis. Trocar hide por tick false em todos.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:39:56.647Z",
+      "impressao": "ae9cacd36323174ff201bcfddcb125470ca81b83",
+      "arquivos": {
+        "Chart.tsx": "d9ddadf0afbd893bcedfb7b51ccf05084f442510",
+        "data.ts": "aa9d81b7b5a68f82b2f9b8b96e573e3ddbc4436c",
+        "meta.json": "27833ca1ad7bcde6b056c14b736febed4baca2ea"
+      }
+    },
+    {
+      "versao": "v2_origens-contra-a-mediana-do-grupo",
+      "veredito": "reprovado",
+      "nota": "EIX-9: XAxis com hide encolhe o corpo da linha de baixo; 0 a 80 mede 89 px em cima e 51 px embaixo, entao a origem de picos irregulares que a versao diz demonstrar aparece 1,75 vez mais achatada que as estaveis. Trocar hide por tick false.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:40:02.442Z",
+      "impressao": "064bbc023313cb99a6ef965c2b4f13fbb6ed04db",
+      "arquivos": {
+        "Chart.tsx": "a132bb2f83abf312c7591dc82514ad4febb046d4",
+        "data.ts": "1e61e71962dce951e03ba25cbb320f759043280e",
+        "meta.json": "5da74b41945f3f04a6976563fbf2626c31bd2c9b"
+      }
+    },
+    {
+      "versao": "v3_sla-de-doze-squads-em-grade",
+      "veredito": "reprovado",
+      "nota": "EIX-9: XAxis com hide deixa 0 a 100 por cento em 84 px nas duas primeiras linhas e 48 px na terceira, logo a mesma queda de SLA encolhe quase pela metade na linha de baixo. Trocar hide por tick false; a linha de 50 por cento tambem so aparece na coluna 1.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:40:07.924Z",
+      "impressao": "4cc0fc11bd5739c9ab7e8ee6f01e6d74dcaf6758",
+      "arquivos": {
+        "Chart.tsx": "647a00da73b759285065cb630a41182447a7504a",
+        "data.ts": "6c26c384a42c424d631e9fce1c017bc798866419",
+        "meta.json": "347980eda7b2d49f35ecb106edb8c1e0ef096260"
+      }
+    },
+    {
+      "versao": "v4_painel-sem-dado-e-escala-independente",
+      "veredito": "reprovado",
+      "nota": "O catalogo pede o mesmo array de datas com null para o syncId casar pelo indice, mas nenhum LineChart declara syncId, entao o cursor nao sincroniza entre os oito paineis e a versao nao demonstra o que promete. Declarar syncId igual em todos os paineis.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:40:23.491Z",
+      "impressao": "e0b60e6c484474707567753ca37b27ffa7a20367",
+      "arquivos": {
+        "Chart.tsx": "b2e28eaeb698125ca4ea988bfd7f92da58e9b58f",
+        "data.ts": "c10f2a65d25a60c9753bfa1ea20d8b84f1e80000",
+        "meta.json": "ebe48e8472c7b42e3fb986094a077880c0fb8627"
+      }
+    },
+    {
+      "versao": "v1_cpl-por-plataforma-em-quatro-paineis",
+      "veredito": "aprovado",
+      "nota": "Escala comum declarada e eixo x na borda inferior; frase acessivel a 12 caracteres do teto e grade com duas linhas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:13.542Z",
+      "impressao": "497fb0a899cb965ae435b52f3ed8e94bc7a032e6",
+      "arquivos": {
+        "Chart.tsx": "f7f0150727f12b82799b9dacb48d1826487225a1",
+        "data.ts": "aa9d81b7b5a68f82b2f9b8b96e573e3ddbc4436c",
+        "meta.json": "27833ca1ad7bcde6b056c14b736febed4baca2ea"
+      }
+    },
+    {
+      "versao": "v2_origens-contra-a-mediana-do-grupo",
+      "veredito": "aprovado",
+      "nota": "Mediana do grupo legivel nos dois temas e ordem escrita em nota; eixo x da borda inferior imprime so a data final.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:21.412Z",
+      "impressao": "d09503e9d9078d147b489efc75278e00f33258e4",
+      "arquivos": {
+        "Chart.tsx": "4d300e96056c01af346958ab32eb0bee6dcf4cd6",
+        "data.ts": "1e61e71962dce951e03ba25cbb320f759043280e",
+        "meta.json": "5da74b41945f3f04a6976563fbf2626c31bd2c9b"
+      }
+    },
+    {
+      "versao": "v3_sla-de-doze-squads-em-grade",
+      "veredito": "aprovado",
+      "nota": "Doze paineis na mesma escala com meta tracejada, icone e palavra alem da cor; tique de 50 por cento nao imprime.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:22.036Z",
+      "impressao": "ce4bb6c94f027a870bff06b2b50484988d0fd241",
+      "arquivos": {
+        "Chart.tsx": "9230c404ec29692c8fe52ab7c23b1de24b9fba3c",
+        "data.ts": "6c26c384a42c424d631e9fce1c017bc798866419",
+        "meta.json": "347980eda7b2d49f35ecb106edb8c1e0ef096260"
+      }
+    },
+    {
+      "versao": "v4_painel-sem-dado-e-escala-independente",
+      "veredito": "aprovado",
+      "nota": "Escala propria declarada em cada painel e origem sem coleta como estado no proprio painel; cursor fora do CURSOR_COLOR.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T18:51:22.679Z",
+      "impressao": "01b156adcecad7039eb3393ab1a4a9b0887533d7",
+      "arquivos": {
+        "Chart.tsx": "3404ed9b9ccea620a87b5fa072847f5e169c42f6",
+        "data.ts": "c10f2a65d25a60c9753bfa1ea20d8b84f1e80000",
+        "meta.json": "ebe48e8472c7b42e3fb986094a077880c0fb8627"
+      }
+    },
+    {
+      "versao": "v2_origens-contra-a-mediana-do-grupo",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas, e é o precedente da GEO-12 para o resto do catálogo: a linha de leitura declara \"Painéis ordenados do maior para o menor volume em 16/03/2026, escala comum de 0 a 80\", que é exatamente a frase que falta nas peças que ordenam por métrica e calam. O conserto ainda corrigiu a indexação da mediana, que era por posição e casava a semana de uma origem com a mediana de outra.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.135Z",
+      "impressao": "04c20e995ff46a611e0fc0b1c67c44010b2d2e97",
+      "arquivos": {
+        "Chart.tsx": "58a9b0bbbacc559fe185934ea393e7ffd6fd10b3",
+        "data.ts": "1e61e71962dce951e03ba25cbb320f759043280e",
+        "meta.json": "5da74b41945f3f04a6976563fbf2626c31bd2c9b"
+      }
+    }
+  ]
+}

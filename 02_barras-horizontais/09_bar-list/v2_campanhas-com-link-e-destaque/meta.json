@@ -1,0 +1,12 @@
+{
+  "title": "Top 8 campanhas com a campanha em foco",
+  "useCase": "Quais campanhas trouxeram mais leads e qual está em foco no painel, com o nome levando ao detalhe.",
+  "demonstrates": [
+    "Nome da campanha como link com foco visível por teclado",
+    "Campanha em foco com barra na cor de destaque, demais em neutro",
+    "Estado de foco vindo das props do pai, não guardado na linha",
+    "Nome longo em duas linhas, sem reticência, com a altura da linha ajustada"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

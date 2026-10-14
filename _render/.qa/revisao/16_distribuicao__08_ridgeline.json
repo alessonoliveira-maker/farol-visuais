@@ -1,0 +1,121 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "08_ridgeline",
+  "versoes": {
+    "v1_ciclo-mes-a-mes": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Doze densidades na mesma régua de dias e na mesma banda, área a partir da linha de base de cada faixa, altura pelo pico global, curva recortada no observado, corte da mediana visível nos dois temas, n escrito por faixa. Observações no README: linha de leitura e rótulo de mês sem algarismo tabular, cauda de uma observação quase some sob o contorno, ramo de amostra pequena sem exercício no dado, ordem de desenho diverge do texto do catálogo com desvio declarado, sobra de altura no preset alto.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:44.428Z",
+      "impressao": "803603508b4af9431713916ec8afa7b676173fa4",
+      "arquivos": {
+        "Chart.tsx": "1ea4501d2e3d67c5dc20afbe1c63cf76fbe9855b",
+        "data.ts": "b97faa90f116b17cee690985ed6cc753f154a2ab",
+        "meta.json": "bba303bbc782e6895d988cacf243825b05c3f03e"
+      }
+    },
+    "v2_executivo-em-foco": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ordem por mediana declarada na linha de leitura, foco em chart-1 com peso 700 no nome e na mediana, escala e ordem independentes do foco. Faixas neutras em line-strong medem 1,79 no escuro e 1,83 no claro, abaixo de 3:1, aceitas pela isenção do neutro com valor escrito (mediana e n em toda faixa) e porque a forma se lê nos dois PNGs; fica como observação no README junto do corte de mediana fraco sobre o neutro no claro e da falta de algarismo tabular na linha de leitura.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:44.955Z",
+      "impressao": "ea5d43d3442798dfc8e7170b0bb75512e32f2464",
+      "arquivos": {
+        "Chart.tsx": "84436504c38ca0efb75dcd61fb6e212d17f1ce49",
+        "data.ts": "9a713b017d4dde6467abc3db91d2f69191c5393d",
+        "meta.json": "d5ec57d2f048ebb6eb93e9a99bd310c54129b994"
+      }
+    },
+    "v3_cpl-por-campanha-em-18-meses": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Dezoito faixas legíveis nos dois temas, régua única em reais com unidade em todo tique, mediana em corte fino, banda comum no rodapé, dica com mês, n e mediana no formato da linha de leitura. Observações no README: n não aparece em lugar nenhum do desenho parado, a última faixa (mês mais recente) fica sem rótulo, centavo na linha de leitura, dica fixa à direita pode cobrir cauda, linha de leitura sem algarismo tabular.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:45.481Z",
+      "impressao": "7dded74b08b1c6757dffd3af6c0785636b818b8c",
+      "arquivos": {
+        "Chart.tsx": "01a1fa04f77976e3c6b659ee63c54f6c45c48262",
+        "data.ts": "38e065d632e0be14cbeeead85089414322dadda3",
+        "meta.json": "b6aa921d29caeb760d784b84f7c40ae24b028e37"
+      }
+    },
+    "v4_mes-sem-campanha": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. O bloqueante anterior (perguntas 15 e 1) está resolvido: os 11 traços de abr/26 saem inteiros, 12 px, numa passada à frente de todas as curvas, com apoio de 3,5 px na cor do cartão, nos dois temas; pontilhada e textos de lacuna também à frente. Mês vazio sem linha de base, sem n e fora da banda e do pico; régua única em reais desde o zero. Observações no README: halo de sem campanha apaga 1 ponto da pontilhada (pergunta 31, ROT-7 marca fina, sem mudar a leitura), halo de amostra pequena encosta na linha de base, entalhes do apoio na curva vizinha, traços muito próximos podem se fundir, notas do meta sem a passada da frente.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:47:31.664Z",
+      "impressao": "8237d2a558d663a707f49a5880442837f7793798",
+      "arquivos": {
+        "Chart.tsx": "5978ea64d910ecea0005ba68f3545d78ece634dd",
+        "data.ts": "165cf5826b6d3861f8472dba63cbc084c2e863f5",
+        "meta.json": "77b071a3545777d3c0c5ea1ac54920a4006525c1"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-mes-a-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Doze densidades na mesma régua de dias e na mesma banda, área a partir da linha de base de cada faixa, altura pelo pico global, curva recortada no observado, corte da mediana visível nos dois temas, n escrito por faixa. Observações no README: linha de leitura e rótulo de mês sem algarismo tabular, cauda de uma observação quase some sob o contorno, ramo de amostra pequena sem exercício no dado, ordem de desenho diverge do texto do catálogo com desvio declarado, sobra de altura no preset alto.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:44.428Z",
+      "impressao": "803603508b4af9431713916ec8afa7b676173fa4",
+      "arquivos": {
+        "Chart.tsx": "1ea4501d2e3d67c5dc20afbe1c63cf76fbe9855b",
+        "data.ts": "b97faa90f116b17cee690985ed6cc753f154a2ab",
+        "meta.json": "bba303bbc782e6895d988cacf243825b05c3f03e"
+      }
+    },
+    {
+      "versao": "v2_executivo-em-foco",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ordem por mediana declarada na linha de leitura, foco em chart-1 com peso 700 no nome e na mediana, escala e ordem independentes do foco. Faixas neutras em line-strong medem 1,79 no escuro e 1,83 no claro, abaixo de 3:1, aceitas pela isenção do neutro com valor escrito (mediana e n em toda faixa) e porque a forma se lê nos dois PNGs; fica como observação no README junto do corte de mediana fraco sobre o neutro no claro e da falta de algarismo tabular na linha de leitura.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:44.955Z",
+      "impressao": "ea5d43d3442798dfc8e7170b0bb75512e32f2464",
+      "arquivos": {
+        "Chart.tsx": "84436504c38ca0efb75dcd61fb6e212d17f1ce49",
+        "data.ts": "9a713b017d4dde6467abc3db91d2f69191c5393d",
+        "meta.json": "d5ec57d2f048ebb6eb93e9a99bd310c54129b994"
+      }
+    },
+    {
+      "versao": "v3_cpl-por-campanha-em-18-meses",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Dezoito faixas legíveis nos dois temas, régua única em reais com unidade em todo tique, mediana em corte fino, banda comum no rodapé, dica com mês, n e mediana no formato da linha de leitura. Observações no README: n não aparece em lugar nenhum do desenho parado, a última faixa (mês mais recente) fica sem rótulo, centavo na linha de leitura, dica fixa à direita pode cobrir cauda, linha de leitura sem algarismo tabular.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:45.481Z",
+      "impressao": "7dded74b08b1c6757dffd3af6c0785636b818b8c",
+      "arquivos": {
+        "Chart.tsx": "01a1fa04f77976e3c6b659ee63c54f6c45c48262",
+        "data.ts": "38e065d632e0be14cbeeead85089414322dadda3",
+        "meta.json": "b6aa921d29caeb760d784b84f7c40ae24b028e37"
+      }
+    },
+    {
+      "versao": "v4_mes-sem-campanha",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15 (ESP-3, sobreposição) e pergunta 1 (não demonstra um traço por campanha): 4 dos 11 traços de abr/26 ficam cobertos pela curva de mai/26, desenhada depois; o de R$ 36,60 mostra 5,06 px dos 12 e, com a vizinha no pico global, sobram 0,05 px e o traço some com n 11 escrito. Mudar: traços, linha pontilhada e texto sem campanha precisam ficar inteiros para qualquer dado, à frente da faixa seguinte e separados dela pela cor do cartão. Parecer em validation/revisao_16_distribuicao__08_ridgeline_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:42:46.106Z",
+      "impressao": "4a9654d40033a5c8a58c9b12f9da375fd8163467",
+      "arquivos": {
+        "Chart.tsx": "465bb467f6fd40a98b9dd30f2a8cc5889d0b082b",
+        "data.ts": "165cf5826b6d3861f8472dba63cbc084c2e863f5",
+        "meta.json": "77b071a3545777d3c0c5ea1ac54920a4006525c1"
+      }
+    },
+    {
+      "versao": "v4_mes-sem-campanha",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo atual. O bloqueante anterior (perguntas 15 e 1) está resolvido: os 11 traços de abr/26 saem inteiros, 12 px, numa passada à frente de todas as curvas, com apoio de 3,5 px na cor do cartão, nos dois temas; pontilhada e textos de lacuna também à frente. Mês vazio sem linha de base, sem n e fora da banda e do pico; régua única em reais desde o zero. Observações no README: halo de sem campanha apaga 1 ponto da pontilhada (pergunta 31, ROT-7 marca fina, sem mudar a leitura), halo de amostra pequena encosta na linha de base, entalhes do apoio na curva vizinha, traços muito próximos podem se fundir, notas do meta sem a passada da frente.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:47:31.664Z",
+      "impressao": "8237d2a558d663a707f49a5880442837f7793798",
+      "arquivos": {
+        "Chart.tsx": "5978ea64d910ecea0005ba68f3545d78ece634dd",
+        "data.ts": "165cf5826b6d3861f8472dba63cbc084c2e863f5",
+        "meta.json": "77b071a3545777d3c0c5ea1ac54920a4006525c1"
+      }
+    }
+  ]
+}

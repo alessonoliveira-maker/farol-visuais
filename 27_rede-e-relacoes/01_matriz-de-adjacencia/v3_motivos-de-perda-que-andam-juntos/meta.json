@@ -1,0 +1,14 @@
+{
+  "title": "Motivos de perda que andam juntos",
+  "useCase": "Comercial: quais dos 18 motivos de perda são registrados juntos nas 1.460 perdas de 2026 e que blocos formam.",
+  "demonstrates": [
+    "Ordenação por baricentro iterativo calculada em TypeScript dentro de useMemo",
+    "Seletor de ordem visível (agrupamento, frequência, nome) com a padrão declarada",
+    "Bloco de três motivos colados realçado por contorno em chart-1 e anotado",
+    "Cabeçalho de coluna por número e nome na linha, com margem calculada pelo maior rótulo",
+    "Contêiner com rolagem horizontal e cabeçalho de linha fixo abaixo de 480 px"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): alto 640x560 com moldura card dá corpo de 574 x 425 (caso de uso em 2 linhas). Seletor 24 mais vão de 8, cabeçalho de colunas 16 e 18 linhas de 18 com vão de 2 (358), total 406; sobra 19 px. O SVG de células tem viewBox igual ao tamanho (GEO-18). Desvio do catálogo: o catálogo pede cabeçalho de coluna girado a 90 graus, e a TIP-5 proíbe texto girado; o contrato vence. Cada coluna leva o número da posição no topo, e a linha de mesmo número carrega o nome, com a coluna de rótulos à esquerda (todos os 18 motivos nomeados, GEO-13). A margem esquerda sai do maior rótulo (22 caracteres, 6,2 px por caractere em 11 px). A legenda e a anotação do bloco moram no triângulo superior vazio, à direita das linhas de cima. Quatro quartis em seq-2, seq-3, seq-6 e seq-7, porque seq-4 e seq-5 não têm texto legível (TOK-8). A rolagem horizontal só aparece abaixo de 480 px e não é visível no preview, que tem corpo de 574 px."
+}

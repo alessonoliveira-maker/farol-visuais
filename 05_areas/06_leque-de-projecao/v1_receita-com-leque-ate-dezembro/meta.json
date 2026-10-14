@@ -1,0 +1,13 @@
+{
+  "title": "Receita mensal com leque até dezembro",
+  "useCase": "Mostrar a receita reconhecida até hoje e a faixa plausível dos meses que faltam de 2026.",
+  "demonstrates": [
+    "Faixas p05 a p95 e p25 a p75 desenhadas da mais larga para a mais estreita",
+    "Faixas colapsadas no último real para o leque não nascer solto",
+    "Mediana tracejada e real sólido em Line por cima das faixas",
+    "ReferenceLine vertical de hoje com rótulo curto"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Método declarado: bootstrap da variação mensal dos últimos 12 meses (2.000 reamostragens) sobre o último valor real; a partir de ago/2026 o desenho é estimativa, não medição. Percentis p05, p25, mediana, p75, p95."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Três desenhos de remuneração variável",
+  "useCase": "Comercial: qual dos três desenhos fictícios de remuneração variável pontua melhor nos cinco critérios acordados.",
+  "demonstrates": [
+    "Barra fina de peso acima de cada coluna, com o peso escrito",
+    "Célula com a nota e a contribuição ponderada logo abaixo",
+    "Total normalizado pela soma dos pesos, em coluna fixa à direita",
+    "Líder de cada critério com contorno, sem cor saturada"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Os pesos são pontos e o total divide pela soma deles, então a contribuição de uma célula é nota vezes peso sobre a soma dos pesos e as contribuições de uma linha somam o total. A barra de peso usa a escala do maior peso (30), começando no zero. Empate no critério contorna todos os empatados; critério em que todos empatam não tem líder."
+}

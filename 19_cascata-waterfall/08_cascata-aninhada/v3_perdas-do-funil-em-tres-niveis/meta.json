@@ -1,0 +1,14 @@
+{
+  "title": "Perdas do trimestre em três níveis",
+  "useCase": "Comercial e Pré-vendas, 2026-T3: de que são feitas as 1.180 perdas, da etapa ao motivo e ao canal tentado?",
+  "demonstrates": [
+    "Estado de caminho em React sobre dado em árvore",
+    "Migalha em Tailwind com o caminho e o percentual do total",
+    "Escala recalculada por nível sem perder a proporção no rótulo",
+    "Seletor de caminho puro, testável fora do React",
+    "Parte sem classificação como passo vazado, sem redistribuir"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O seletor de caminho (selectPath) mora no data.ts para ser testado sem React e trocado junto com o dado. O preview abre no nível das etapas de pré-venda; a raiz é role group porque os passos com filhos são botões. Cada nível tem escala própria (domínio de 0 ao valor do nível), por isso o rótulo repete a parte do total da raiz. Em proposta, 13 perdas sem motivo ficam num passo vazado antes do total."
+}

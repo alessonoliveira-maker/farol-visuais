@@ -1,0 +1,14 @@
+{
+  "title": "Motivos de perda livres do trimestre",
+  "useCase": "Comercial: quais palavras mais aparecem nos 412 motivos de perda escritos livremente em 2026-T3.",
+  "demonstrates": [
+    "Espiral arquimediana determinística do maior para o menor, com folga de 2 px",
+    "Fonte por raiz quadrada entre 12 e 48 px, largura medida com measureText",
+    "Peso contado por resposta que cita o termo, não por ocorrência",
+    "Termos descartados contados na nota: 12 termos fora da nuvem",
+    "Lista ordenada equivalente em sr-only para leitor de tela"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do canvas card: corpo de 574 x 225 px com o caso de uso em duas linhas (96 caracteres, na faixa de fronteira; se couber em uma, sobram 16,5 px e a escala não muda). Linha de leitura 24 px, nota 24,5 px, plano da nuvem 574 x 176 px, igual ao viewBox, para a escala sair 1 (GEO-18). A folga de 2 px é por lado de cada termo, o que dá 4 px de tinta a tinta, o respiro da 17.7. Cabem 32 dos 44 termos: os 12 de fora são descarte medido pelo layout, não constante. A raiz quadrada parte do zero (48 px vezes a raiz de respostas sobre o maior), com piso de 12 px. A dica é o title nativo do SVG."
+}

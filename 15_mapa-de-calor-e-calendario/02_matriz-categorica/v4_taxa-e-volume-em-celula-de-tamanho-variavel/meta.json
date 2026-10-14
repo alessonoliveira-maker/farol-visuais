@@ -1,0 +1,14 @@
+{
+  "title": "Taxa de agenda e volume por origem e mês",
+  "useCase": "Qual origem tem taxa de agenda alta com volume que importa, sem que 3 agendas em 5 leads dominem a leitura?",
+  "demonstrates": [
+    "Lado do quadrado pela raiz do volume, para a área ser proporcional",
+    "Cor pela taxa em três faixas, com o intervalo de cada uma escrito",
+    "Zero lead medido sem forma, com ponto neutro para a grade não quebrar",
+    "Amostra rala só com contorno, porque o volume mede e a taxa não conclui",
+    "Duas legendas: tamanho com três referências do dado e faixas de cor"
+  ],
+  "canvas": { "width": 960, "height": 624 },
+  "frame": "card",
+  "notes": "Canvas declarado por número porque nenhum preset fecha o cartão, e a conta que a GEO-1 pede é esta: corpo de 894 x 505,5 px (960 menos 66 de recuo por lado; 624 menos 118,5 de recuo mais cabeçalho de uma linha mais o vão de 12). O caso de uso tem 106 caracteres e cabe em uma linha na largura de 894 px, cujo limite medido é 153, então o cabeçalho é o de 40,5 px. A grade ocupa 352 px, que são 8 linhas de 44 px, e o passo de 44 px existe para o quadrado do maior volume, de 36 px de lado, respirar 4 px em cima e embaixo; as linhas escritas consomem os outros 153,5 px, em linha de leitura, anotação, régua de meses, legenda de tamanho com 36 px de altura, legenda de cor e rodapé de estados. A régua de tamanho traz três referências calculadas do dado, menor, mediana e maior volume observado, e o último degrau é o máximo observado e não uma constante, como a ROT-5b exige. O piso de lado de 6 px não entra em ação com o dado padrão, porque o menor par já desenha 6,4 px. Sobre a cor: sem número escrito na célula, e aqui não há como escrever, porque o menor quadrado preenchido tem 8,5 px de lado contra os 17 px que um texto de 11 px exigiria, a TOK-8 manda ficar em seq-5, seq-6 e seq-7. Medidos degrau contra degrau, esses três não separam: 1,42:1 entre o quinto e o sexto, 1,45:1 entre o sexto e o sétimo e 2,07:1 entre os extremos, todos abaixo de 3:1. Então a peça afirma dois níveis de cor e nada mais, e a ordem é carregada pelo intervalo escrito de cada faixa, pela ordenação das linhas pela taxa do período e pela taxa com volume escrita na margem de cada linha; a cor da célula sozinha não conclui, o que está declarado no README. Sobre a cobertura do check, conferida versão a versão: esta é a única das quatro em que a ESPESSURA-MARCA sai marca_fora_do_bar, porque não há Bar do Recharts nem rótulo desenhado por dentro da marca. A medição à mão é esta: o menor quadrado preenchido mede 8,5 px de lado e o menor quadrado só de contorno mede 6,4 px, tamanhos escolhidos pela escala de área e não por desleixo, e o ponto de zero medido tem 5 px de diâmetro. Nenhum deles carrega texto por dentro, então o piso de rótulo interno não se aplica, e o piso geral de 12 px só vale para Bar."
+}

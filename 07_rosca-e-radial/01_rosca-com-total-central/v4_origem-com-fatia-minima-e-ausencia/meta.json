@@ -1,0 +1,13 @@
+{
+  "title": "Leads por origem com fatia mínima e ausência",
+  "useCase": "Marketing: de onde vieram os 486 leads do mês quando três origens são quase nulas e 11% chegaram sem origem declarada.",
+  "demonstrates": [
+    "Teto de 5 fatias: da sexta em diante vira Outros (n=3) com a contagem no rótulo",
+    "Sem origem declarada com contorno text-muted, sem preenchimento e por último",
+    "Fatia mínima ativada pela legenda e pelo teclado, sem inflar o ângulo (minAngle 0)",
+    "Prop unavailableReason troca a rosca por formatUnavailable(), fora do preview padrão"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O preview padrão fotografa a composição (teto de 5, Outros, ausência, fatia mínima). O ramo unavailableReason existe no código e não tem versão própria; documentado no README."
+}

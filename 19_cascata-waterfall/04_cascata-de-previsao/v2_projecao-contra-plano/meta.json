@@ -1,0 +1,14 @@
+{
+  "title": "Projeção do trimestre contra o plano",
+  "useCase": "A projeção de 2026-T3 alcança o plano de R$ 1,95 mi, e quanto falta se não alcança?",
+  "demonstrates": [
+    "Traço de plano em ReferenceLine acima da coluna final projetada",
+    "Passo explícito de distância do plano, com a polaridade da receita",
+    "Variação com a base na mesma linha: contra plano de R$ 1,95 mi",
+    "Anotação única sobre a origem da projeção",
+    "Rótulo do total erguido acima do traço de plano para não ser riscado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A distância do plano é calculada (total menos plano) e entra como quarta coluna, flutuando do total até o plano; negativa pinta de --negative porque receita abaixo do plano é o ruim (COR-6). O rótulo do total e o do passo projetado sobem acima do traço de plano (useYAxisScale), senão o traço riscaria o texto: o total fica a 5,4% do plano, cerca de 7 px. Margem direita de 72 px para a legenda do plano (plano e R$ 1,95 mi, em duas linhas). Conta do corpo (ESP-6): 574 − 8 − 72 = 494 px, 4 colunas, passo 123,5 px, barra = min(24, 123,5 × 0,36) = 24 px. Nome e regime sob a base são desenhados pelo shape, em duas linhas."
+}

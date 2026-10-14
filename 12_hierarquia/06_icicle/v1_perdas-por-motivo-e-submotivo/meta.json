@@ -1,0 +1,14 @@
+{
+  "title": "Perdas por categoria, motivo e submotivo",
+  "useCase": "Comercial: de que são feitas as 164 perdas de 2026-T3, da categoria ao submotivo.",
+  "demonstrates": [
+    "Partição em TypeScript: y0 e y1 dentro do intervalo do pai pela soma cumulativa",
+    "Orientação lateral com a raiz à esquerda e uma coluna por nível",
+    "Nome do nó quebrado em até duas linhas, nunca em reticência (TIP-7)",
+    "Lista de identificação por categoria e nível, sem achatar motivo e submotivo (ROT-10)",
+    "Filhos ordenados por valor decrescente dentro de cada pai, estáveis entre filtros"
+  ],
+  "canvas": { "width": 640, "height": 1000 },
+  "notes": "Canvas por número, muito maior que o preset alto (640x560): a lista de identificação abaixo do gráfico não é um extra pequeno, é um segundo bloco de conteúdo do mesmo tamanho do desenho, e as duas coisas competem pela mesma altura fixa do corpo. A correção de 2026-09-20 trocou a truncagem por reticência (proibida pela TIP-7) por quebra de até duas linhas, e acrescentou a lista de identificação abaixo do gráfico para todo motivo e submotivo sem altura para o rótulo (ROT-10, checklist 27). Segunda correção, mesmo dia: a primeira versão da lista achatava a hierarquia (motivo e submotivo liam como irmãos que deveriam somar); buildMutedGroups agora sempre recua o submotivo sob o cabeçalho do motivo dele, e o cabeçalho só mostra valor quando o próprio motivo está mudo. Terceira correção, mesmo dia (ROT-4, TIP-2, ESP-2, NUM-6): com canvas 640x740 a lista em grade de 4 colunas media 400 px, 65% do corpo, e sobrava só 212,5 px de um viewBox de 500 para o SVG, escala 0,425, texto a 5 px. A lista virou grade de 2 colunas fixa (mais largura por rótulo, quase tudo cabe numa linha só) com leading mais apertado, o que já derruba a lista para ~263 px; e o canvas subiu a 1000 (ESP-2: quando falta espaço, quem cede é a altura do canvas, nunca o piso do texto ou da marca) para que essa lista, agora menor, ainda fique abaixo de 30% do corpo (ROT-4) e sobre altura de sobra para o SVG desenhar em escala 1:1, sem encolher. Todo número da lista ganhou o substantivo \"perdas\" (NUM-6): antes saía cru (12, 19, 17).",
+  "frame": "card"
+}

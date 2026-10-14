@@ -1,0 +1,59 @@
+{
+  "familia": "12_hierarquia",
+  "modelo": "07_arvore-e-dendrograma",
+  "versoes": {
+    "v1_estrutura-da-area-comercial": {
+      "veredito": "aprovado",
+      "nota": "Check 0 erro. Arvore lateral correta para pertencimento; arestas em cor categorica acima de 3:1 nos dois temas (ACE-6 resolvida); anticolisao de rotulo limpo; somas fecham; README com as 7 secoes e as versoes planejadas v2 a v4.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T08:29:49.423Z",
+      "impressao": "710d7e0313b147ac9f5dfb72ef81c8d770573e7a",
+      "arquivos": {
+        "Chart.tsx": "94a52e6b0c36f23080239043f70c9dfc402430cc",
+        "data.ts": "ee689b4b9f3de7bfaf31321b60a4f3506c725631",
+        "meta.json": "53d6955d6f922ced9a351f798740e92fa1301350"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_estrutura-da-area-comercial",
+      "veredito": "reprovado",
+      "nota": "As arestas atravessam os rotulos da raiz e dos tres grupos, sem halo e sem desvio anticolisao (ROT-7, checklist 13 e 31); texto cortado por linha nos dois temas.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T07:44:51.561Z",
+      "impressao": "3dd7fe22a57b06ca46bf130281993875258e14a1",
+      "arquivos": {
+        "Chart.tsx": "746e2a1f231d3095d8ddcc7ca6220caafd7d42ce",
+        "data.ts": "6961fa576720e4673bfdd2b4403a468b82a2a77f",
+        "meta.json": "3abb946d012d1e70f48068cc55f9cd3a649c2b4f"
+      }
+    },
+    {
+      "versao": "v1_estrutura-da-area-comercial",
+      "veredito": "reprovado",
+      "nota": "ROT-7: aresta da raiz para Marketing cruza o rotulo Area Comercial nos dois temas, porque findLabelOffset cai no fallback que colide. ACE-3: aresta em --line-strong mede 1,79:1 e 1,83:1, sem valor escrito nela.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T08:08:35.019Z",
+      "impressao": "b46fe0f74ba9800a80a20901af1e7811e2b53243",
+      "arquivos": {
+        "Chart.tsx": "bba5a2ed1e75c5bc12e2d4bc91d66aaafe7364e4",
+        "data.ts": "ee689b4b9f3de7bfaf31321b60a4f3506c725631",
+        "meta.json": "53d6955d6f922ced9a351f798740e92fa1301350"
+      }
+    },
+    {
+      "versao": "v1_estrutura-da-area-comercial",
+      "veredito": "aprovado",
+      "nota": "Check 0 erro. Arvore lateral correta para pertencimento; arestas em cor categorica acima de 3:1 nos dois temas (ACE-6 resolvida); anticolisao de rotulo limpo; somas fecham; README com as 7 secoes e as versoes planejadas v2 a v4.",
+      "data": "2026-09-20",
+      "registradoEm": "2026-09-20T08:29:49.423Z",
+      "impressao": "710d7e0313b147ac9f5dfb72ef81c8d770573e7a",
+      "arquivos": {
+        "Chart.tsx": "94a52e6b0c36f23080239043f70c9dfc402430cc",
+        "data.ts": "ee689b4b9f3de7bfaf31321b60a4f3506c725631",
+        "meta.json": "53d6955d6f922ced9a351f798740e92fa1301350"
+      }
+    }
+  ]
+}

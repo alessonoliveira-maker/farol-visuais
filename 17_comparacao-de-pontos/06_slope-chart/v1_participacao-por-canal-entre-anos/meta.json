@@ -1,0 +1,13 @@
+{
+  "title": "Participação por canal entre anos",
+  "useCase": "Como a participação de 6 canais nos leads qualificados mudou de 2025 para 2026?",
+  "demonstrates": [
+    "SVG com viewBox fixo e escala linear calculada em TypeScript",
+    "Escala única nas duas colunas, com o momento rotulado no topo",
+    "Rótulo e valor nas duas pontas, alinhados para fora",
+    "afastarRotulos move só os rótulos; as retas ficam no valor real"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Canvas quadrado conforme o catálogo. Conta: corpo de 422 x 355,5 px (card, caso de uso em duas linhas); a escala vai do degrau abaixo do menor valor ao degrau acima do maior, porque slope lê posição; o viewBox tem exatamente 422 x 355, escala 1, então o texto de 12 px chega a 12 px. Percentuais inteiros somam 100 pelo maior resto (NUM-2) e as retas são posicionadas pelo valor inteiro que está escrito."
+}

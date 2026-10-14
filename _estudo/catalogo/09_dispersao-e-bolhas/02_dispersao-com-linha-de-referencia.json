@@ -1,0 +1,69 @@
+{
+  "slug": "02_dispersao-com-linha-de-referencia",
+  "nome": "Dispersão com tendência ou identidade",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "A dispersão ganha uma linha que dá régua à nuvem: a reta de mínimos quadrados, com ou sem faixa de confiança, resume direção e força da relação; a diagonal de identidade separa quem entregou mais do que o previsto de quem entregou menos. A reta é calculada em TypeScript e só aparece quando passa o piso declarado de R² e de n.",
+  "quando_usar": [
+    "Dizer quanto de Y vem com cada unidade a mais de X, como leads qualificados por mil reais investidos.",
+    "Mostrar a incerteza da inclinação com a faixa de 95% da média, que alarga nas pontas.",
+    "Previsto contra realizado ou meta contra entrega, na mesma unidade, com a diagonal y = x.",
+    "Nuvem com pelo menos 10 pontos e forma visível; abaixo disso a reta não é desenhada."
+  ],
+  "quando_evitar": [
+    "Nuvem espalhada sem forma: a reta dá autoridade ao ruído; use a dispersão simples (modelo 01).",
+    "Medidas de unidades diferentes na diagonal de identidade: a linha y = x não tem sentido.",
+    "Público que lê a faixa de confiança como o lugar onde os pontos deveriam cair: prefira o intervalo de predição ou só a reta.",
+    "Pergunta de causa: a reta mostra associação, nunca efeito.",
+    "Pontos no tempo de uma entidade: use a dispersão conectada (modelo 05)."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_investimento-contra-leads-qualificados",
+      "titulo": "Investimento contra leads qualificados",
+      "caso_de_uso": "Quanto rende cada mil reais a mais de investimento? Campanhas por semana, com a reta de tendência e o retorno marginal escrito.",
+      "o_que_demonstra": [
+        "ComposedChart com Scatter e Line num array único de pontos e extremos da reta",
+        "Mínimos quadrados em TypeScript, reta só entre o menor e o maior X observado",
+        "Rótulo na ponta da reta com inclinação traduzida, R² e n",
+        "Line sem ponto, sem ponto ativo e fora da legenda"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_forecast-contra-fechamento",
+      "titulo": "Forecast contra valor fechado",
+      "caso_de_uso": "O valor no forecast de 30 dias antes bateu com o fechado? Oportunidades do trimestre com diagonal e tolerância de 15%.",
+      "o_que_demonstra": [
+        "Mesmo domínio nos dois eixos e área útil quadrada para a diagonal sair a 45 graus",
+        "ReferenceLine segment para y = x e duas retas de tolerância percentual",
+        "Contagem dentro da tolerância e pontos fora em cor de destaque",
+        "Perdidas com realizado zero fora do plano, num contador com o valor previsto"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_ciclo-contra-ticket-por-produto",
+      "titulo": "Ciclo contra ticket, Produto A e Produto B",
+      "caso_de_uso": "Os dois produtos têm a mesma relação entre ticket e ciclo? Duas retas com a faixa de 95% da média de cada uma.",
+      "o_que_demonstra": [
+        "Area de faixa com dataKey em par baixo e alto, calculada numa grade de 30 valores de X",
+        "Faixa da média declarada no subtítulo, distinta do intervalo de predição",
+        "Duas faixas com opacidade 0,15 cuja sobreposição mostra onde os produtos não se distinguem",
+        "Valor de t pela amostra quando n fica abaixo de 30"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_sem-relacao-detectavel",
+      "titulo": "Frequência contra CTR sem relação linear",
+      "caso_de_uso": "Criativo com mais frequência perde CTR? Com R² 0,07 e n 9 a reta não é desenhada e o gráfico diz por quê.",
+      "o_que_demonstra": [
+        "Piso de R² 0,3 e n de pelo menos 10 aplicado antes de desenhar a reta",
+        "Rótulo que explica a ausência da reta com o R² e o n medidos",
+        "Nuvem mantida intacta, sem resumo estatístico no lugar do gráfico"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

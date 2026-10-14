@@ -1,0 +1,14 @@
+{
+  "title": "Executivo 07 contra a média do time",
+  "useCase": "Em quais das seis dimensões de desempenho o Executivo 07 fica abaixo da média do time, sem recorrer a radar.",
+  "demonstrates": [
+    "Barras paralelas por dimensão numa escala comum de 0 a 100",
+    "Entidade em cor de destaque e média em neutro na mesma banda",
+    "Dimensões ordenadas pela lacuna, da maior diferença negativa à maior positiva",
+    "Lacuna escrita ao lado de cada par com sinal de menos tipográfico e ícone",
+    "Coluna em HTML alinhada às bandas do Recharts sem medir o DOM"
+  ],
+  "canvas": { "width": 640, "height": 700 },
+  "frame": "card",
+  "notes": "Canvas declarado por número, e mais alto que o preset card, porque a altura sai da conta do passo da ESP-6: com 2 séries, barGap de 8 px e vão de 32%, cada dimensão precisa de 90 px de passo para a marca alcançar o piso de 12 px da ESP-2, o que pede 540 px de corpo de gráfico. A altura de 700 px comporta as 6 dimensões desta amostra; cada dimensão a mais pede 90 px."
+}

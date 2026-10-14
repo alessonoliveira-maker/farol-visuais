@@ -1,0 +1,173 @@
+{
+  "familia": "18_radar",
+  "modelo": "03_radar-em-pequenos-multiplos",
+  "versoes": {
+    "v1_perfil-de-oito-sdrs": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Oito miniaturas em 4 por 2, domínio fixo de 0 a 100 nas oito, ordem pelo índice médio conferida no dado (85 a 36), zero medido de Davi O. no centro. Preenchimento a 0,66 mede 4,85:1 no escuro e 3,01:1 no claro, no limite do piso. Observações no README: a tela não diz que o índice é percentil no time; ramo scores ?? 0; TIP-1 na nota de escala; dica à mão e não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:27.129Z",
+      "impressao": "d4d2bcbb9721d5867f432ca6bf27ed4bd2892ddb",
+      "arquivos": {
+        "Chart.tsx": "f437b0b0a6a78ba5514461f5f0b89f2f09e268e3",
+        "data.ts": "17b9e39448dfe9ecb53d64da4019486b1a4cf9c2",
+        "meta.json": "c971afae87e0dc34e93629338419c5e710292c11"
+      }
+    },
+    "v2_media-do-time-em-cada-miniatura": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, julgada pelo arquivo e pelos PNGs de hoje depois da correção. Média com revestimento: tracejado a 5,21:1 no escuro e 5,37:1 no claro contra o revestimento, revestimento a 4,85:1 e 3,01:1 contra o preenchimento; seleção por borda, com o fundo do cartão conferido no pixel. Raio dos 48 vértices confere com o dado, média igual nas oito miniaturas, contagens e ordem conferidas. Observações no README: o revestimento cobre parte do contorno do SDR onde ele anda junto da média, borda da seleção a 1,79:1 e 1,83:1, preenchimento sem folga no claro, legenda de amostras, raiz img com botões. Vazio, dica e foco só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:30:27.741Z",
+      "impressao": "a6ea5670cca3d729c49fa9b812c069386b4c889b",
+      "arquivos": {
+        "Chart.tsx": "dad9b343d563af6043ed31a4718fa3feabccb51a",
+        "data.ts": "1a7128250283a8fee70cadc4f54c4bb24ce93a0b",
+        "meta.json": "4a5a5d1f02ca319ab717f23328a54a8998d31a15"
+      }
+    },
+    "v3_filas-de-trabalho-da-prevendas": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Seis miniaturas em 3 por 2; eixo sem dado tracejado, traço aberto, sem ponto e sem área na fila de evento; zero medido como ponto no centro na de reengajamento; inversão da primeira resposta escrita na legenda; volume de entradas com unidade. Preenchimento medido à mão (a guarda não vê o shape próprio): 4,85:1 no escuro e 3,01:1 no claro. Observações no README: nota de escala sem o anel externo; sem dado na tela e indisponível na dica; dica não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:18:00.236Z",
+      "impressao": "e44120ddb1f915a4dbcecae46edc0da9499284c8",
+      "arquivos": {
+        "Chart.tsx": "a28dc838eb584ef67bc78b3c3e0c29fbe17cc70e",
+        "data.ts": "c2b6559aa322224826dab9af8360033e8aae7503",
+        "meta.json": "ed3463fe6de0420a79c83f26cae4afc80637ba2a"
+      }
+    },
+    "v4_vinte-entidades-alem-do-teto": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Teto de 12 como constante; aviso em role status com as 20 origens, as 8 de fora e os 2.490 leads delas conferidos no dado, mais a recomendação da tabela com heatmap; grade com as 12 de maior volume em 6 por 2, miniatura de 139 px, sem corte de título. Leitura aviso acima da grade declarada na nota do meta.json. Observações no README: frase acessível não começa pelo tipo; escala sem dizer que é percentil; 14/02 pode ser lido como data; vazio e ramo de até 12 origens só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:18:00.748Z",
+      "impressao": "21dbf857529b2067830f7b7d82ac99c2072ead34",
+      "arquivos": {
+        "Chart.tsx": "35b0168de9994c00715d6bfbfd9a53868e8ad513",
+        "data.ts": "3433aaedfce4faffd3411139e7cce01b4f947984",
+        "meta.json": "452b5f056689082c3e996d64131d7285fd6ffc5b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_perfil-de-oito-sdrs",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Oito miniaturas em 4 por 2, dominio fixo de 0 a 100 nas oito, ordem pelo indice medio conferida no dado (85 a 36), zero medido de Davi O. no centro. Preenchimento a 0,66 mede 4,85:1 no escuro e 3,01:1 no claro, no limite do piso. Observacoes no README: a tela nao diz que o indice e percentil no time; ramo scores ?? 0; TIP-1 na nota de escala; dica a mao e nao sondada; vazio so por leitura de codigo.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:17.377Z",
+      "impressao": "d4d2bcbb9721d5867f432ca6bf27ed4bd2892ddb",
+      "arquivos": {
+        "Chart.tsx": "f437b0b0a6a78ba5514461f5f0b89f2f09e268e3",
+        "data.ts": "17b9e39448dfe9ecb53d64da4019486b1a4cf9c2",
+        "meta.json": "c971afae87e0dc34e93629338419c5e710292c11"
+      }
+    },
+    {
+      "versao": "v2_media-do-time-em-cada-miniatura",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 32, ACE-3 e ACE-6 com saida da TOK-4: o tracejado da media mede 1,07:1 no escuro e 1,79:1 no claro contra o preenchimento do SDR, por onde passa em sete das oito miniaturas; dar revestimento por baixo do tracejado ou tirar o preenchimento, medir o par nos dois temas e escrever na nota. Pergunta 30, ACE-5: na miniatura selecionada o preenchimento a 0,66 mede 2,79:1 no claro contra surface-sunken; marcar a selecao sem trocar o fundo atras do radar ou subir a opacidade para 0,71 ou mais. Parecer em validation/revisao_18_radar__03_radar-em-pequenos-multiplos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:17.902Z",
+      "impressao": "59b2c57278b452ce5a86e402b27809f877f89e72",
+      "arquivos": {
+        "Chart.tsx": "fed0e605a91e387b3fbe082a539967dd0dd1e59c",
+        "data.ts": "1a7128250283a8fee70cadc4f54c4bb24ce93a0b",
+        "meta.json": "16787833032224c501bfa865e7017eea9c4d72ac"
+      }
+    },
+    {
+      "versao": "v3_filas-de-trabalho-da-prevendas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Seis miniaturas em 3 por 2; eixo sem dado tracejado, traco aberto, sem ponto e sem area na fila de evento; zero medido como ponto no centro na de reengajamento; inversao da primeira resposta escrita na legenda; volume de entradas com unidade. Preenchimento medido a mao (a guarda nao ve o shape proprio): 4,85:1 e 3,01:1. Observacoes no README: nota de escala sem o anel externo; sem dado na tela e indisponivel na dica; dica nao sondada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:18.417Z",
+      "impressao": "e44120ddb1f915a4dbcecae46edc0da9499284c8",
+      "arquivos": {
+        "Chart.tsx": "a28dc838eb584ef67bc78b3c3e0c29fbe17cc70e",
+        "data.ts": "c2b6559aa322224826dab9af8360033e8aae7503",
+        "meta.json": "ed3463fe6de0420a79c83f26cae4afc80637ba2a"
+      }
+    },
+    {
+      "versao": "v4_vinte-entidades-alem-do-teto",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Teto de 12 como constante; aviso em role status com as 20 origens, as 8 de fora e os 2.490 leads delas conferidos no dado, mais a recomendacao da tabela com heatmap; grade com as 12 de maior volume em 6 por 2, miniatura de 139 px, sem corte de titulo. Leitura aviso acima da grade declarada na nota. Observacoes no README: frase acessivel nao comeca pelo tipo; escala sem dizer que e percentil; 14/02 pode ler como data.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:18.933Z",
+      "impressao": "21dbf857529b2067830f7b7d82ac99c2072ead34",
+      "arquivos": {
+        "Chart.tsx": "35b0168de9994c00715d6bfbfd9a53868e8ad513",
+        "data.ts": "3433aaedfce4faffd3411139e7cce01b4f947984",
+        "meta.json": "452b5f056689082c3e996d64131d7285fd6ffc5b"
+      }
+    },
+    {
+      "versao": "v1_perfil-de-oito-sdrs",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Oito miniaturas em 4 por 2, domínio fixo de 0 a 100 nas oito, ordem pelo índice médio conferida no dado (85 a 36), zero medido de Davi O. no centro. Preenchimento a 0,66 mede 4,85:1 no escuro e 3,01:1 no claro, no limite do piso. Observações no README: a tela não diz que o índice é percentil no time; ramo scores ?? 0; TIP-1 na nota de escala; dica à mão e não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:27.129Z",
+      "impressao": "d4d2bcbb9721d5867f432ca6bf27ed4bd2892ddb",
+      "arquivos": {
+        "Chart.tsx": "f437b0b0a6a78ba5514461f5f0b89f2f09e268e3",
+        "data.ts": "17b9e39448dfe9ecb53d64da4019486b1a4cf9c2",
+        "meta.json": "c971afae87e0dc34e93629338419c5e710292c11"
+      }
+    },
+    {
+      "versao": "v2_media-do-time-em-cada-miniatura",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 32, ACE-3 e ACE-6 com saída da TOK-4: o tracejado da média mede 1,07:1 no escuro e 1,79:1 no claro contra o preenchimento do SDR, por onde passa em sete das oito miniaturas; dar revestimento por baixo do tracejado ou tirar o preenchimento, medir o par nos dois temas e escrever na nota. Pergunta 30, ACE-5: na miniatura selecionada o preenchimento a 0,66 mede 2,79:1 no claro contra surface-sunken; marcar a seleção sem trocar o fundo atrás do radar ou subir a opacidade para 0,71 ou mais. Parecer em validation/revisao_18_radar__03_radar-em-pequenos-multiplos_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:17:59.715Z",
+      "impressao": "59b2c57278b452ce5a86e402b27809f877f89e72",
+      "arquivos": {
+        "Chart.tsx": "fed0e605a91e387b3fbe082a539967dd0dd1e59c",
+        "data.ts": "1a7128250283a8fee70cadc4f54c4bb24ce93a0b",
+        "meta.json": "16787833032224c501bfa865e7017eea9c4d72ac"
+      }
+    },
+    {
+      "versao": "v3_filas-de-trabalho-da-prevendas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Seis miniaturas em 3 por 2; eixo sem dado tracejado, traço aberto, sem ponto e sem área na fila de evento; zero medido como ponto no centro na de reengajamento; inversão da primeira resposta escrita na legenda; volume de entradas com unidade. Preenchimento medido à mão (a guarda não vê o shape próprio): 4,85:1 no escuro e 3,01:1 no claro. Observações no README: nota de escala sem o anel externo; sem dado na tela e indisponível na dica; dica não sondada; vazio só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:18:00.236Z",
+      "impressao": "e44120ddb1f915a4dbcecae46edc0da9499284c8",
+      "arquivos": {
+        "Chart.tsx": "a28dc838eb584ef67bc78b3c3e0c29fbe17cc70e",
+        "data.ts": "c2b6559aa322224826dab9af8360033e8aae7503",
+        "meta.json": "ed3463fe6de0420a79c83f26cae4afc80637ba2a"
+      }
+    },
+    {
+      "versao": "v4_vinte-entidades-alem-do-teto",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Teto de 12 como constante; aviso em role status com as 20 origens, as 8 de fora e os 2.490 leads delas conferidos no dado, mais a recomendação da tabela com heatmap; grade com as 12 de maior volume em 6 por 2, miniatura de 139 px, sem corte de título. Leitura aviso acima da grade declarada na nota do meta.json. Observações no README: frase acessível não começa pelo tipo; escala sem dizer que é percentil; 14/02 pode ser lido como data; vazio e ramo de até 12 origens só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:18:00.748Z",
+      "impressao": "21dbf857529b2067830f7b7d82ac99c2072ead34",
+      "arquivos": {
+        "Chart.tsx": "35b0168de9994c00715d6bfbfd9a53868e8ad513",
+        "data.ts": "3433aaedfce4faffd3411139e7cce01b4f947984",
+        "meta.json": "452b5f056689082c3e996d64131d7285fd6ffc5b"
+      }
+    },
+    {
+      "versao": "v2_media-do-time-em-cada-miniatura",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante, julgada pelo arquivo e pelos PNGs de hoje depois da correção. Média com revestimento: tracejado a 5,21:1 no escuro e 5,37:1 no claro contra o revestimento, revestimento a 4,85:1 e 3,01:1 contra o preenchimento; seleção por borda, com o fundo do cartão conferido no pixel. Raio dos 48 vértices confere com o dado, média igual nas oito miniaturas, contagens e ordem conferidas. Observações no README: o revestimento cobre parte do contorno do SDR onde ele anda junto da média, borda da seleção a 1,79:1 e 1,83:1, preenchimento sem folga no claro, legenda de amostras, raiz img com botões. Vazio, dica e foco só por leitura de código.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:30:27.741Z",
+      "impressao": "a6ea5670cca3d729c49fa9b812c069386b4c889b",
+      "arquivos": {
+        "Chart.tsx": "dad9b343d563af6043ed31a4718fa3feabccb51a",
+        "data.ts": "1a7128250283a8fee70cadc4f54c4bb24ce93a0b",
+        "meta.json": "4a5a5d1f02ca319ab717f23328a54a8998d31a15"
+      }
+    }
+  ]
+}

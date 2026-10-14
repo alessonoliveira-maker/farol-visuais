@@ -1,0 +1,17 @@
+{
+  "title": "Plataforma com investimento e zero lead",
+  "useCase": "Marketing, 2026-08: como mostrar uma plataforma que gastou R$ 8 mil sem gerar lead, com o CPL indefinido?",
+  "demonstrates": [
+    "CPL indefinido sem coluna de altura infinita nem divisão por zero no layout",
+    "Marcador na base com a frase R$ 8 mil sem lead, fora da escala de altura",
+    "Plataforma sem custo coletado com formatUnavailable, separada de zero medido",
+    "Domínio do eixo Y calculado só com os CPL definidos",
+    "Frase acessível que cita a plataforma sem lead e o investimento dela"
+  ],
+  "canvas": {
+    "width": 720,
+    "height": 360
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset card do catálogo tem 574 px de corpo, e a conta pede 654. Cinco colunas com nome embaixo precisam de pelo menos 61 px cada para a palavra inteira (a mais estreita é Afiliados), e a zona das plataformas sem lead toma 110 px (100 de zona e 10 de vão); com 574 sobrariam 420 px para as colunas, e a menor ficaria com 44. Canvas de 720 por 360 dá corpo de 654 por 241,5 com o caso de uso em uma linha, 24 da linha de leitura e 217 do SVG, de viewBox 654 por 217 em escala 1 (GEO-18): 10 de margem superior, 8 de vão, duas linhas de nome, a linha de leads e a de rodapé a 14 px cada, 4 de folga e 2 de base. O neutro --line-strong como preenchimento mede 1,8:1 contra o cartão, e a guarda de contraste de marca avisa; o CPL está escrito acima de cada coluna (ACE-3). Os vãos de 2 px saem antes da partilha de largura (GEO-16). Três estados diferentes na mesma peça: custo zero medido é faixa sólida de 3 px com R$ 0 escrito, custo não coletado é vaga tracejada e oca com a palavra de formatUnavailable, e zero lead com investimento é marcador na zona à direita, com divisor e base tracejada porque está fora da escala de altura. A hipótese da divisão por zero morre na classificação: quem tem zero lead nunca entra no layout, e o domínio do eixo Y sai só dos CPL definidos."
+}

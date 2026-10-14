@@ -1,0 +1,73 @@
+{
+  "slug": "05_lollipop",
+  "nome": "Lollipop",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Barra reduzida a uma haste fina com um disco na ponta: a haste mantém a âncora no zero ou numa referência e o disco chama a atenção para o valor. Fica entre a barra, que ancora no zero, e o dot plot, que abandona a âncora; por isso o eixo começa obrigatoriamente no zero. Construído como um Bar só, com shape que desenha retângulo fino e círculo, o que garante haste e disco alinhados e trata largura negativa. Serve na horizontal para rótulos longos, na vertical para ordem natural, divergente a partir de uma referência e agrupado com duas séries. O centro do disco é o valor e o olho lê a borda, então valores próximos parecem empatados: ordenar sempre e manter o raio entre 5 e 6 px.",
+  "quando_usar": [
+    "Ranking de uma contagem ou valor a partir do zero, de 8 a 25 categorias, com mais ar que a barra",
+    "Valores todos altos e parecidos, perto de 80% a 90% da escala, em que barras cheias viram bloco",
+    "Categorias com ordem natural (mês, semana, etapa) e rótulo curto: versão vertical",
+    "Desvio com sinal contra uma referência, com a coluna de rótulos fixa: versão divergente",
+    "Duas séries por categoria mantendo a âncora no zero: versão agrupada"
+  ],
+  "quando_evitar": [
+    "A decisão depende de distinguir valores próximos: barra da família 02 ou 03",
+    "Escala que não começa no zero: haste cortada é mentira estrutural, use dot plot (17/01)",
+    "Pergunta de razão entre duas séries (A é o dobro de B): barras agrupadas (02/02)",
+    "Mais de duas séries ou barra de erro pendurada no disco: dot plot com intervalo (17/02)",
+    "Rótulo de categoria que precisaria girar 45 graus na vertical: use a versão horizontal"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-sdr-no-mes",
+      "titulo": "Agendas por SDR no mês",
+      "caso_de_uso": "Pré-vendas: quantas agendas cada um dos 8 SDRs marcou em agosto, do maior para o menor.",
+      "o_que_demonstra": [
+        "Bar horizontal com shape de haste de 2 px e disco de 5,5 px",
+        "Eixo ancorado no zero, obrigatório porque a haste promete a base",
+        "Valor à direita do disco com formatação de contagem",
+        "Ordem decrescente declarada no subtítulo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_entradas-por-semana-contra-o-teto",
+      "titulo": "Entradas por semana contra o teto",
+      "caso_de_uso": "Pré-vendas: em quais das últimas 16 semanas as entradas passaram do teto medido de capacidade da equipe.",
+      "o_que_demonstra": [
+        "Lollipop vertical em BarChart com haste vertical e disco no topo",
+        "ReferenceLine no teto e disco em negativo nas semanas acima dele",
+        "Rótulo com o excedente só nas semanas que estouraram",
+        "Semana corrente parcial com disco vazado e haste tracejada",
+        "Folga de um raio mais 4 px no topo do domínio"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_desvio-de-custo-contra-o-orcado-por-area",
+      "titulo": "Desvio de custo contra o orçado por área",
+      "caso_de_uso": "Diretoria: quanto o custo por unidade entregue de cada uma das 18 áreas ficou acima ou abaixo do orçado no trimestre.",
+      "o_que_demonstra": [
+        "Bar com dataKey do par zero e desvio; shape com Math.min e Math.abs",
+        "ReferenceLine forte no zero, rotulada como orçado",
+        "Rótulos de categoria fixos à esquerda, fora da área de dados",
+        "Domínio simétrico do registry e cor pela polaridade: acima do orçado é ruim",
+        "Ordem pelo desvio e sinal no rótulo, sem depender da cor"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_leads-por-plataforma-com-zero-e-ausente",
+      "titulo": "Leads por plataforma com zero e ausente",
+      "caso_de_uso": "Marketing: leads de julho e agosto por plataforma, com uma sem veiculação em agosto e outra com zero lead medido.",
+      "o_que_demonstra": [
+        "Lollipop agrupado com dois Bar irmãos e barGap menor que a folga entre categorias",
+        "Zero medido mostra só o disco sobre o zero",
+        "Sem veiculação não desenha haste nem disco, só a marca em texto",
+        "Nota no rodapé contando os dois casos, com legenda de série"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

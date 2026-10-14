@@ -1,0 +1,72 @@
+{
+  "slug": "01_frase-com-numero",
+  "nome": "Frase com número e legenda embutida",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "A frase é a peça e o número é parte dela. Duas formas dividem a mesma função geradora: a frase que carrega a conclusão e pinta as palavras-chave com a cor da série do gráfico ao lado, dispensando a legenda; e o KPI em texto corrido, com o número em Space Grotesk dentro de uma frase de uma ou duas linhas, a unidade colada e a base da comparação escrita. A frase nunca é digitada: sai de uma função pura sobre o dado, que decide o verbo (subiu, caiu, ficou estável) pelo sinal, pela polaridade e por um corte de estabilidade declarado, e trata singular, plural, zero, faixa e ausência.",
+  "quando_usar": [
+    "Abrir uma tela com a conclusão do recorte em uma frase, com um ou dois números e a base da comparação",
+    "Substituir a legenda de um gráfico de duas a quatro séries pintando os nomes na frase com a cor de cada série",
+    "Sumário executivo da Diretoria lido em voz alta ou colado num e-mail, com até três frases",
+    "Título dinâmico de painel filtrável, desde que a frase seja recalculada a cada filtro",
+    "Número que precisa sair em faixa (cenário) ou com a palavra premissa, onde o card de KPI forçaria um ponto"
+  ],
+  "quando_evitar": [
+    "Mais de três números numa frase: vira enigma; use a tabela visual (família 14) ou a tira de KPIs (01/07)",
+    "O número sozinho é a peça, com variação e meta: use o KPI simples com contexto (01/01)",
+    "Frase fixa sobre dado filtrável: contradiz o gráfico no primeiro filtro; gere a frase ou tire o texto",
+    "Cor como único canal de destaque na palavra: some para quem não distingue a cor; sempre junto de peso 600 ou 700",
+    "Comparação entre muitas entidades: o texto esconde a ordem; use barras simples ordenadas (02/01)"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_leads-qualificados-contra-totais",
+      "titulo": "Leads qualificados contra leads totais",
+      "caso_de_uso": "Marketing: os leads qualificados cresceram mais que os totais em out/26, sem legenda abaixo da linha de duas séries.",
+      "o_que_demonstra": [
+        "Nomes das séries na frase com a mesma cor do stroke, vinda de um objeto único",
+        "Peso 600 junto da cor na palavra, para o destaque não depender só de cor",
+        "Verbo e ordem da comparação calculados; a frase inverte quando a relação inverte",
+        "LineChart de duas séries logo abaixo da frase, sem Legend do Recharts"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_receita-do-mes-em-texto-corrido",
+      "titulo": "Receita do mês em texto corrido com dataword",
+      "caso_de_uso": "Comercial: em set/26 foram reconhecidos R$ 1,24 mi, 8% acima de ago/26, com a tendência de 12 meses na altura do texto.",
+      "o_que_demonstra": [
+        "KPI em texto corrido: número em kpi-number font-semibold, resto em text-text-secondary",
+        "Sparkline inline em SVG de 1em de altura com geometria calculada em TypeScript",
+        "Último ponto da sparkline na cor do número, como o dataword de Tufte",
+        "Variação com sinal tipográfico e base nomeada na mesma frase"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v3_sumario-executivo-da-diretoria",
+      "titulo": "Sumário executivo da Diretoria em três frases",
+      "caso_de_uso": "Diretoria: receita contra meta, entradas previstas contra o teto de capacidade e cenário de 2027 em faixa, em três frases.",
+      "o_que_demonstra": [
+        "Três frases geradas pela mesma função, cada uma com no máximo dois números",
+        "Multiplicador 3,1x contra o teto em text-negative com peso 700 e ícone de alerta",
+        "Cenário escrito em faixa, entre R$ 8,4 mi e R$ 10,1 mi, nunca o ponto médio",
+        "A palavra premissa escrita na frase; a etiqueta colorida fica com o VisualCard"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_zero-um-estavel-e-ausente",
+      "titulo": "Frases diante de zero, um, estável e ausência",
+      "caso_de_uso": "Pré-vendas: a mesma função de frase com nenhuma agenda, 1 agenda, variação dentro do corte, base zero e dado não coletado.",
+      "o_que_demonstra": [
+        "Singular, plural e zero por extenso: nenhuma agenda, 1 agenda, 2 agendas",
+        "Corte de estabilidade declarado: ficou estável (0,4%) sem cor semântica",
+        "Base anterior zero escrita como sem base de comparação, nunca +Infinity%",
+        "Dado não coletado com formatUnavailable e o motivo, nunca um zero falso",
+        "Empate no título dinâmico nomeia as duas plataformas empatadas"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

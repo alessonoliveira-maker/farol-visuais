@@ -1,0 +1,12 @@
+{
+  "title": "Termos citados nos motivos de perda",
+  "useCase": "Quais termos mais aparecem nos motivos de perda, contando documentos e somando a cauda longa numa linha só.",
+  "demonstrates": [
+    "Contagem por documento que cita o termo, não por ocorrência",
+    "Linha final outros 23 termos somada e fora da ordenação, separada só por espaço",
+    "Termo de mais de 60 caracteres em duas linhas, sem reticência",
+    "Termo sem classificação com contorno tracejado e rótulo sem classificação"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

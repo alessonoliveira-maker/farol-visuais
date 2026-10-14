@@ -1,0 +1,18 @@
+{
+  "title": "Perdas do trimestre por motivo com legenda tabular",
+  "useCase": "Qual motivo concentra as oportunidades perdidas do trimestre, em contagem e em valor, para abrir a lista certa?",
+  "demonstrates": [
+    "Pizza de 120 px com legenda em grid do Tailwind: cor, nome, contagem, valor e %",
+    "Legenda na mesma ordem angular das fatias, com linha de total no fim",
+    "Ponteiro e teclado acesos nos dois sentidos por estado React, opacidade só na marca",
+    "Clique seleciona o motivo com aria-pressed na linha; clicar de novo desmarca",
+    "Nome longo inteiro e cauda agrupada por último, com a composição escrita",
+    "Foco por raio mais opacidade de 0,75, que é o piso das cinco cores usadas"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): 640 x 400 em vez do preset card de 640 x 360, porque as linhas escritas não caberiam nele. O caso de uso tem 110 caracteres e quebra em duas linhas, então o desconto é de 66 px na largura e 135 px na altura, e o corpo fica com 574 x 265 px. As linhas escritas somam 227,5 px medidos no preview: a linha de leitura ocupa 16 px em y=102, o bloco da legenda 179 px a partir de y=126 e a nota de rodapé 16,5 px a partir de y=313, terminando em y=329,5 dentro de um corpo que vai de 102 a 367. Sobram 37,5 px de respiro. No preset card de 640 x 360 o corpo terminaria em 327 e a nota estouraria por 2,5 px, então o canvas maior não é folga de conforto, é o que faz a peça caber. A legenda fica ao lado do disco e é mais alta que os 30% do corpo que a ROT-4 pede, o que é troca deliberada: a ROT-5 e a especificação desta versão pedem legenda com contagem, valor e percentual, e cinco linhas com cabeçalho e total não cabem em duas linhas de legenda. Colisão declarada com o CONTRATO: o catálogo pede a composição da cauda na dica, e a DIC-2 obriga a dica a ser o ChartTooltip, que não tem onde imprimir uma lista de composição; a ROT-10 ainda diz que a dica não conta como lugar de nomear parte de um todo. A composição foi para o desenho, escrita embaixo da linha da cauda, e esta versão não tem dica, porque a DIC-1 só admite dica que acrescente e a legenda já traz contagem, valor e percentual. Opacidade medida nesta produção contra tokens.css: 0,75 sobre o cartão dá 5,88:1 e 3,57:1 em var(--chart-1), 4,23:1 e 3,66:1 em var(--chart-3), 3,85:1 e 3,83:1 em var(--chart-5), 4,72:1 e 3,27:1 em var(--chart-6) e 3,51:1 e 3,22:1 em var(--text-muted), todos acima do piso de 3:1 da WCAG 1.4.11; os mínimos de cada cor são 0,66, 0,66, 0,63, 0,71 e 0,72, então 0,75 é o menor valor com folga que serve às cinco. A guarda OPACIDADE-MARCA não mede este caso, porque a cor da fatia sai de uma função em tempo de execução; o número acima foi medido à mão. A opacidade sozinha não resolveu o foco, e isso foi visto no primeiro render: entre 1,00 e 0,75 o olho não separa a fatia acesa das apagadas, e descer mais levaria a marca abaixo do piso de 3:1. Por isso a fatia em foco ganha 6 px de raio, que é o segundo canal da ACE-2 e cabe na caixa de 120 px, com 50 mais 6 contra os 60 de meio lado. O ângulo mede contagem, e a nota de rodapé diz isso no cartão."
+}

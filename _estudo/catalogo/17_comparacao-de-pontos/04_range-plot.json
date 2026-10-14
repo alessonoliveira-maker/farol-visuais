@@ -1,0 +1,75 @@
+{
+  "slug": "04_range-plot",
+  "nome": "Range plot",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Dois valores por categoria ligados por uma barra grossa de pontas arredondadas, com a ênfase na distância entre eles e não em qual veio antes: não há cabeça de início nem de fim, só extremos. É o modelo que o Recharts entrega quase pronto, com Bar cujo dataKey devolve o par menor e maior em layout vertical. Com marcador interno, a faixa ganha um traço forte do valor central ou atual e responde ao mesmo tempo qual a aposta e qual a margem; girado, vira colunas de faixa quando a categoria tem ordem natural, como semanas. O subtítulo declara o que a faixa é, porque o leitor treinado lê barra com dois extremos como intervalo de confiança.",
+  "quando_usar": [
+    "A distância entre dois valores é a notícia, como CPL bruto contra CPL qualificado por origem",
+    "Mínimo e máximo observados por categoria, com o método escrito no subtítulo",
+    "Faixa com um valor atual ou central dentro, contra um teto ou uma meta comum a todas as linhas",
+    "Colunas de faixa quando a categoria tem ordem natural, até cerca de 26 períodos",
+    "Até 25 linhas no cartão largo, ordenadas pela amplitude"
+  ],
+  "quando_evitar": [
+    "Os valores das pontas importam mais que a distância: dot plot (17/01)",
+    "Existe um antes e um depois: dumbbell ou arrow plot (17/03)",
+    "Incerteza estatística em torno de um ponto central: dot plot com intervalo (17/02)",
+    "Valor contra meta com faixas qualitativas de fundo: bullet chart (13/02); cenário contra meta: faixa de cenário (13/07)",
+    "Tarefa com início e fim no calendário: família 20 de cronograma",
+    "Faixa de extremos numa amostra com outlier: um caso sozinho alarga tudo, prefira quartis (17/02)"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_amplitude-de-ticket-por-segmento",
+      "titulo": "Amplitude de ticket por segmento",
+      "caso_de_uso": "Comercial: entre que valores variam os tickets das vendas ganhas em cada um dos 5 segmentos no semestre.",
+      "o_que_demonstra": [
+        "Bar com dataKey que devolve o par menor e maior em layout vertical",
+        "radius limitado à metade da largura para a cápsula não deformar",
+        "Subtítulo: faixa igual a mínimo e máximo observados",
+        "Rótulos das duas pontas por LabelList, sem cabeças distintas",
+        "Ordem pela amplitude, declarada no subtítulo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_distancia-entre-cpl-bruto-e-qualificado",
+      "titulo": "Distância entre CPL bruto e qualificado",
+      "caso_de_uso": "Marketing: em 14 origens de lead, quanto o CPL qualificado se afasta do bruto em agosto, a pergunta real do orçamento.",
+      "o_que_demonstra": [
+        "Ordenação pela largura da faixa, com a mais larga no topo",
+        "Destaque em chart-2 só na origem de maior distância, demais em neutro",
+        "Anotação com o fator: qualificado custa 4,1 vezes o bruto",
+        "Faixa de largura zero desenhada como ponto com anel e nota de 100% qualificado"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_carga-das-filas-com-semana-atual-e-teto",
+      "titulo": "Carga das filas contra o teto",
+      "caso_de_uso": "Pré-vendas: em 9 filas, a faixa de carga semanal das últimas 8 semanas em % do teto, com a semana atual marcada.",
+      "o_que_demonstra": [
+        "Shape que desenha a faixa e o traço interno posicionado por regra de três",
+        "Traço de 2 px em text-strong com halo de 1 px em surface-base",
+        "ReferenceLine em 100% do teto atravessando todas as linhas",
+        "Semana atual acima do máximo desenhada fora da faixa, com seta de transbordo",
+        "Carga normalizada em % do teto de cada fila, declarada no subtítulo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_colunas-de-faixa-de-entradas-por-semana",
+      "titulo": "Faixa diária de entradas por semana",
+      "caso_de_uso": "Pré-vendas: mínimo e máximo de entradas por dia em 26 semanas, com uma semana sem coleta e o teto diário de capacidade.",
+      "o_que_demonstra": [
+        "Colunas de faixa em BarChart vertical com o mesmo par menor e maior",
+        "Rótulo de semana a cada quatro colunas e data exata no tooltip, sem girar texto",
+        "Semana sem coleta sem coluna, com a marca sem coleta e nunca zero",
+        "Semana de faixa nula desenhada como traço com anel",
+        "ReferenceLine no teto diário, com rótulo"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

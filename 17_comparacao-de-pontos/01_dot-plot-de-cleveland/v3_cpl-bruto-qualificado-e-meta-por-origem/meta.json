@@ -1,0 +1,14 @@
+{
+  "title": "CPL bruto, qualificado e meta por origem",
+  "useCase": "Em 12 origens de lead, a distância entre o CPL bruto, o CPL qualificado e a meta de agosto.",
+  "demonstrates": [
+    "Três Scatter no mesmo eixo, com forma distinta por série além da cor",
+    "Ordenação pela distância entre bruto e qualificado, declarada na nota",
+    "Contorno de 1,5 px em surface-raised para o empate não esconder marcador",
+    "Legenda com a forma exata de cada marcador",
+    "Polaridade menor é melhor aplicada à cor da coluna de meta e à dica"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvios do catálogo. (1) O eixo de linhas é numérico (domínio de −0,5 a n−0,5, com reversed) e não de categoria, para a banda de cada linha ter posição conhecida: a zebra em surface-sunken (e não surface-raised, que é o fundo do cartão) e a coluna de leitura contra a meta saem dessa conta. (2) O contorno é em surface-raised porque surface-base não existe nos tokens. (3) A polaridade na cor está na coluna escrita à direita (abaixo da meta é positivo, acima é negativo, com sinal e palavra na dica), e não na cor do marcador: a cor do marcador pertence à série (COR-3). Conta da altura: 12 linhas x 28 px = 336 px, mais 20 de margem, 26 de eixo, legenda, linha de leitura e nota, dentro dos 441,5 px do corpo do canvas alto."
+}

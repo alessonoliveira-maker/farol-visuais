@@ -1,0 +1,13 @@
+{
+  "title": "Leads por mês em seis origens",
+  "useCase": "Qual a forma mensal de cada origem de leads, sem amontoar seis séries no mesmo gráfico?",
+  "demonstrates": [
+    "Grade HTML com um BarChart mínimo por célula, sem legenda",
+    "Domínio comum calculado uma vez sobre o conjunto e aplicado a todos os painéis",
+    "Eixo de meses só na última linha da grade",
+    "Painéis ordenados pelo total, não por ordem alfabética",
+    "Valor exato só na dica: o corpo do painel guarda a forma da série"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

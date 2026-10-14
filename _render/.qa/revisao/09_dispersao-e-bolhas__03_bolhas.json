@@ -1,0 +1,160 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "03_bolhas",
+  "versoes": {
+    "v1_campanhas-por-cpl-e-qualificacao": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-05: bolha em cor cheia sem fillOpacity (6,00:1 no claro, 9,50:1 no escuro), contorno na cor do cartão, área pelo ZAxis a partir de zero e régua terminando no máximo observado. Sem bloqueante; observações no README (linha de eixo herdada, dois tiques do eixo Y descartados no corpo curto, texto do meta sobre a régua).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:11.919Z",
+      "impressao": "fb6271e912acf9d053d1f868b07fedf470ed4630",
+      "arquivos": {
+        "Chart.tsx": "c7a5e8ce93b6148c63863d2436ad0ed39a20dd6a",
+        "data.ts": "86bd77d01165343b15f4830e8fb2ba24dcd2a2bd",
+        "meta.json": "24c9eccea58e76e3025f6b8f9215a027a0330988"
+      }
+    },
+    "v2_campanhas-acima-do-teto-de-cpl": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 10, TIP-5: o nome do eixo Y (Taxa de qualificação) entrou girado a 90 graus (angle -90 no label do YAxis, linha 301), único texto de pé do acervo, e o giro tirou a versão das guardas COLISAO-TEXTO, CONTRASTE-TEXTO e TEXTO-NA-MARCA. A falta de identificação da rodada anterior está resolvida. Escrever o nome na horizontal (acima do eixo, no rótulo da meta ou na linha de leitura) e devolver Y_AXIS_WIDTH à faixa da EIX-6. Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md, segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:10:59.010Z",
+      "impressao": "1bbb6828be779d4f1c34f0a02bfbe6fd9dcdf745",
+      "arquivos": {
+        "Chart.tsx": "8b9bb39ce03b75a06684d1fd6254379f9a10d484",
+        "data.ts": "450409ec506733554e28e399f3d5429e7d585cda",
+        "meta.json": "c50b5dc46777fdc9e527dfb9a148be512c55aa1f"
+      }
+    },
+    "v3_plataformas-mes-a-mes-com-rastro": {
+      "veredito": "aprovado",
+      "nota": "Cor por slot fixo 1, 3 e 6, bolha casada pelo id, área conferida à mão no PNG contra o máximo do ano (guarda não mediu), rótulo direto com halo sem colisão nos dois temas, régua comum aos 12 meses. Sem bloqueante; observações no README (botões dentro de role img, mês escrito três vezes, ramos de borda).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:12.914Z",
+      "impressao": "db5fc366c86eb85ca3c0fadfbf83c849df12bf7e",
+      "arquivos": {
+        "Chart.tsx": "dcf8e787794042c1f7357ae5c37dce9ead7a88d8",
+        "data.ts": "c4d91262c38327590ad8a0dd18c730fac1b3c955",
+        "meta.json": "50bc5fc62ec114d2b865aa1973a78f1e86e75a6f"
+      }
+    },
+    "v4_investimento-zero-e-valores-desiguais": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 10, TIP-5: o nome do eixo Y (Taxa de qualificação) entrou girado a 90 graus (angle -90 no label do YAxis, linha 179), e o giro tirou a versão das guardas COLISAO-TEXTO, CONTRASTE-TEXTO e TEXTO-NA-MARCA. O nome do eixo X, na horizontal, resolve a NUM-6 da rodada anterior e fica. Escrever o nome do Y na horizontal (acima do eixo ou na linha de leitura) e devolver Y_AXIS_WIDTH à faixa da EIX-6. Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md, segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:10:59.467Z",
+      "impressao": "faa060def384657f09ff9d312e6a59e6e22bdf96",
+      "arquivos": {
+        "Chart.tsx": "b5304246efde8ae7faa4cf93fd37022ef7f8653c",
+        "data.ts": "1351e7905695db208b05c3892c17fe94a3de81a5",
+        "meta.json": "66dff2fd53980ca47ae84917fd51e3a5c6e6ee4a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_campanhas-por-cpl-e-qualificacao",
+      "veredito": "aprovado",
+      "nota": "Bolhas com area proporcional pelo ZAxis a partir de zero, legenda de tamanho pela mesma conta de raio e leitura limpa nos dois temas; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T17:49:55.137Z",
+      "impressao": "f97d2793a3a2e8c0c1ab00b727aadffcbac61f32",
+      "arquivos": {
+        "Chart.tsx": "881f2bd5864224aff0f3bbddc140772910a5e1a5",
+        "data.ts": "86bd77d01165343b15f4830e8fb2ba24dcd2a2bd",
+        "meta.json": "24c9eccea58e76e3025f6b8f9215a027a0330988"
+      }
+    },
+    {
+      "versao": "v1_campanhas-por-cpl-e-qualificacao",
+      "veredito": "reprovado",
+      "nota": "Conserto da ROT-5b aceito e bem feito: a legenda termina em R$ 182,0 mil, o máximo observado, e o degrau de 150 mil saiu porque o raio dele ficava a 1,5 px do raio do máximo. Volta porque a bolha mede 2,44:1 no tema claro, o mesmo número que a ACE-5 já cita para a irmã 09/04. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:25.182Z",
+      "impressao": "302e6b97619d9d80f2cfcb3d5c9c3de4483c9170",
+      "arquivos": {
+        "Chart.tsx": "213834e84f737668bd32cfbd509947053507fc9a",
+        "data.ts": "86bd77d01165343b15f4830e8fb2ba24dcd2a2bd",
+        "meta.json": "24c9eccea58e76e3025f6b8f9215a027a0330988"
+      }
+    },
+    {
+      "versao": "v1_campanhas-por-cpl-e-qualificacao",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-05: bolha em cor cheia sem fillOpacity (6,00:1 no claro, 9,50:1 no escuro), contorno na cor do cartão, área pelo ZAxis a partir de zero e régua terminando no máximo observado. Sem bloqueante; observações no README (linha de eixo herdada, dois tiques do eixo Y descartados no corpo curto, texto do meta sobre a régua).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:11.919Z",
+      "impressao": "fb6271e912acf9d053d1f868b07fedf470ed4630",
+      "arquivos": {
+        "Chart.tsx": "c7a5e8ce93b6148c63863d2436ad0ed39a20dd6a",
+        "data.ts": "86bd77d01165343b15f4830e8fb2ba24dcd2a2bd",
+        "meta.json": "24c9eccea58e76e3025f6b8f9215a027a0330988"
+      }
+    },
+    {
+      "versao": "v2_campanhas-acima-do-teto-de-cpl",
+      "veredito": "reprovado",
+      "nota": "Pergunta 13, ANO-2 e 14.1 (identificação): o eixo vertical e a linha meta 30% não dizem de que medida são; a palavra qualificação não aparece em nenhum texto visível do cartão. Escrever o nome da medida no desenho (rótulo da meta ou nome do eixo). Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:12.417Z",
+      "impressao": "b55f4ad7efcd776ae2cc7675e6e2fc69bb5aa81d",
+      "arquivos": {
+        "Chart.tsx": "fe971f6da32c5cd26f6d225f1ce79eb3fcc85631",
+        "data.ts": "450409ec506733554e28e399f3d5429e7d585cda",
+        "meta.json": "c50b5dc46777fdc9e527dfb9a148be512c55aa1f"
+      }
+    },
+    {
+      "versao": "v3_plataformas-mes-a-mes-com-rastro",
+      "veredito": "aprovado",
+      "nota": "Cor por slot fixo 1, 3 e 6, bolha casada pelo id, área conferida à mão no PNG contra o máximo do ano (guarda não mediu), rótulo direto com halo sem colisão nos dois temas, régua comum aos 12 meses. Sem bloqueante; observações no README (botões dentro de role img, mês escrito três vezes, ramos de borda).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:12.914Z",
+      "impressao": "db5fc366c86eb85ca3c0fadfbf83c849df12bf7e",
+      "arquivos": {
+        "Chart.tsx": "dcf8e787794042c1f7357ae5c37dce9ead7a88d8",
+        "data.ts": "c4d91262c38327590ad8a0dd18c730fac1b3c955",
+        "meta.json": "50bc5fc62ec114d2b865aa1973a78f1e86e75a6f"
+      }
+    },
+    {
+      "versao": "v4_investimento-zero-e-valores-desiguais",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6: os tiques do eixo X são contagem solta (0 a 2.500) sem o substantivo, e nem leads nem qualificação aparecem em texto visível do cartão; os dois eixos ficam sem identificação. Escrever o substantivo da contagem e o nome das duas medidas no desenho. Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:06:13.449Z",
+      "impressao": "52abdb2fc3191f7dea2e84210351e15d6e3bb5f1",
+      "arquivos": {
+        "Chart.tsx": "927a8b614b0b9459e9cbe853b21572f5c2285deb",
+        "data.ts": "1351e7905695db208b05c3892c17fe94a3de81a5",
+        "meta.json": "66dff2fd53980ca47ae84917fd51e3a5c6e6ee4a"
+      }
+    },
+    {
+      "versao": "v2_campanhas-acima-do-teto-de-cpl",
+      "veredito": "reprovado",
+      "nota": "Pergunta 10, TIP-5: o nome do eixo Y (Taxa de qualificação) entrou girado a 90 graus (angle -90 no label do YAxis, linha 301), único texto de pé do acervo, e o giro tirou a versão das guardas COLISAO-TEXTO, CONTRASTE-TEXTO e TEXTO-NA-MARCA. A falta de identificação da rodada anterior está resolvida. Escrever o nome na horizontal (acima do eixo, no rótulo da meta ou na linha de leitura) e devolver Y_AXIS_WIDTH à faixa da EIX-6. Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md, segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:10:59.010Z",
+      "impressao": "1bbb6828be779d4f1c34f0a02bfbe6fd9dcdf745",
+      "arquivos": {
+        "Chart.tsx": "8b9bb39ce03b75a06684d1fd6254379f9a10d484",
+        "data.ts": "450409ec506733554e28e399f3d5429e7d585cda",
+        "meta.json": "c50b5dc46777fdc9e527dfb9a148be512c55aa1f"
+      }
+    },
+    {
+      "versao": "v4_investimento-zero-e-valores-desiguais",
+      "veredito": "reprovado",
+      "nota": "Pergunta 10, TIP-5: o nome do eixo Y (Taxa de qualificação) entrou girado a 90 graus (angle -90 no label do YAxis, linha 179), e o giro tirou a versão das guardas COLISAO-TEXTO, CONTRASTE-TEXTO e TEXTO-NA-MARCA. O nome do eixo X, na horizontal, resolve a NUM-6 da rodada anterior e fica. Escrever o nome do Y na horizontal (acima do eixo ou na linha de leitura) e devolver Y_AXIS_WIDTH à faixa da EIX-6. Parecer em validation/revisao_09_dispersao-e-bolhas__03_bolhas_2026-10-05.md, segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:10:59.467Z",
+      "impressao": "faa060def384657f09ff9d312e6a59e6e22bdf96",
+      "arquivos": {
+        "Chart.tsx": "b5304246efde8ae7faa4cf93fd37022ef7f8653c",
+        "data.ts": "1351e7905695db208b05c3892c17fe94a3de81a5",
+        "meta.json": "66dff2fd53980ca47ae84917fd51e3a5c6e6ee4a"
+      }
+    }
+  ]
+}

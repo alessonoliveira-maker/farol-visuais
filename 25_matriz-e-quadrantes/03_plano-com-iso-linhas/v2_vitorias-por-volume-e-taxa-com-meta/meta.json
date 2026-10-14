@@ -1,0 +1,14 @@
+{
+  "title": "Vitórias por volume e taxa de ganho",
+  "useCase": "Comercial: quais dos 14 executivos chegam às 12 vitórias do trimestre, e por qual caminho de volume ou de taxa?",
+  "demonstrates": [
+    "Hipérboles de 5, 10 e 20 vitórias num path desenhado com useXAxisScale",
+    "Passo geométrico na amostragem para a curva não quebrar perto do eixo",
+    "Curva da meta em traço médio com a região acima dela em tom baixo",
+    "Tooltip com o produto calculado e nota com a fórmula da curva",
+    "Anotação: 4 executivos chegam na meta com metade do volume da equipe"
+  ],
+  "canvas": { "width": 640, "height": 500 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset card (GEO-1): 640x360 dá corpo de 574 x 225 a 241 px e, descontados a linha de leitura (24), o rodapé com a fórmula (24), o topo de 36 px com o nome do eixo e as vitórias de cada curva, e os 44 px do eixo X com o título, sobrariam cerca de 97 px de plano para quatro curvas e oito nomes; com 500 de altura o plano passa de 230 px. As curvas são path próprio numa camada sem zIndex, pintada depois da grade e antes dos pontos, com 48 trechos em passo geométrico no X (cada X é o anterior vezes a mesma razão), recortadas ao domínio fixo de 0 a 100 oportunidades e 0% a 80%. Curvas de fundo em line-strong de 1 px, pano de fundo pela ACE-6; a da meta em text-muted de 1,5 px, sólida porque a meta é número registrado e não premissa. A região acima da meta vai em chart-1 a 10%, que mede perto de 1,2:1 contra o cartão: o escape OPACIDADE-MARCA vale porque é fundo de região, e a fronteira dela é a curva opaca com o valor escrito na margem. Quem chega à meta sai em chart-1 com o nome escrito; os demais em text-muted, com o nome na dica. A anotação conta quem chega à meta com até metade do volume médio dos executivos do plano, calculado do dado, e fica ao lado dos nomes desse grupo. O eixo Y vai a 80% para o grupo de taxa alta não encostar no topo. As guardas de contraste e de espessura de marca não medem dispersão (preview com transform): chart-1 mede 9,50:1 e 6,00:1 contra o cartão, e text-muted 5,21:1 e 5,37:1."
+}

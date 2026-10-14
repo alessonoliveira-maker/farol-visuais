@@ -1,0 +1,15 @@
+{
+  "title": "CPL qualificado com par, frescor e procedência",
+  "useCase": "Quanto custou cada lead qualificado em ago/26, de que parcelas vem o número e quando a mídia foi coletada?",
+  "demonstrates": [
+    "Razão com as duas parcelas na mesma janela: R$ 48,6 mil em 412 leads",
+    "Polaridade menor melhor: a queda do CPL pinta --positive, com sinal e ícone",
+    "Ponto de ação aceso porque o CPL segue acima do limiar de R$ 110, mesmo em queda",
+    "Carimbo do dado e não da página, com ícone Clock e prazo de 24 h da fonte",
+    "Etiqueta DERIVADO uma vez, no topo do cartão de moldura stage",
+    "Link esticado com ChevronRight e foco visível para abrir as campanhas"
+  ],
+  "canvas": { "width": 360, "height": 300 },
+  "frame": "stage",
+  "notes": "O preset kpi-alto (280 px) come o padding inferior do cartão com o carimbo em duas linhas; 300 px devolve os 16 px."
+}

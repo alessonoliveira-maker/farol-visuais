@@ -1,0 +1,13 @@
+{
+  "title": "Investimento de mídia por mês",
+  "useCase": "Ver como o investimento em mídia paga se distribuiu pelos 12 meses do ano, com a área do setor proporcional ao valor.",
+  "demonstrates": [
+    "Pie com 12 itens de peso igual para o ângulo, shape desenhando Sector com raio próprio",
+    "Raio pela raiz quadrada com o furo central dentro da raiz, para a área ser proporcional",
+    "Anéis de escala tracejados na metade e no topo, com o topo escrito no miolo do anel",
+    "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+    "Nome do mês no perímetro, sempre em texto horizontal"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

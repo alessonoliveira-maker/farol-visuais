@@ -1,0 +1,14 @@
+{
+  "title": "Canais de um trimestre para o outro",
+  "useCase": "Como CPL e taxa de qualificação de 8 canais fictícios mudaram do T2 para o T3?",
+  "demonstrates": [
+    "Geometria de seta em TypeScript com escalas lineares e domínio explícito",
+    "Origem em anel vazado e marcador de ponta referenciado por id de useId",
+    "Recuo de 5 px antes do destino para a ponta não sumir sob o ponto",
+    "Anticolisão de rótulo calculada em TypeScript, longe de setas e pontos",
+    "Legenda que diz qual ponta é o antes e qual é o depois"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas ampliado de card para largo em 2026-09-19: a primeira versão reprovou duas vezes por halo apagando o traço fino das setas (ROT-7). A correção troca o halo por anticolisão de rótulo em TypeScript, e 8 nomes livres de colisão, um deles longo, pedem mais largura do que o card oferece."
+}

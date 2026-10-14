@@ -1,0 +1,147 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "05_dispersao-conectada",
+  "versoes": {
+    "v1_trajetoria-de-uma-plataforma": {
+      "veredito": "aprovado",
+      "nota": "Rejulgada pela ACE-6 em 2026-10-05, sem bloqueante: o traço que carrega a relação sai em --chart-1 e mede 9,50:1 no escuro e 6,00:1 no claro contra --surface-raised, conta refeita sobre tokens.css. Check limpo, domínio e grade corretos, dois PNGs sem corte. Observação nova no README: taxa escrita sem o volume na frase e na dica (NUM-1, DAD-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:16.219Z",
+      "impressao": "dd1b2d2d657b1e10c6976db57ec965729b078031",
+      "arquivos": {
+        "Chart.tsx": "8c7f2fba46172ee834dfcddb5973b8f6e6370705",
+        "data.ts": "962130cd2b129f1a48cad0b678bf4056985491ce",
+        "meta.json": "b00913d689adf66abcc6ac22789bce6d6055b703"
+      }
+    },
+    "v2_virada-anotada": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: traço neutro em --text-muted mede 5,21:1 no escuro e 5,37:1 no claro, cotovelo em --chart-1 mede 9,50:1 e 6,00:1; destaque com espessura, anel e anotação além da cor (ACE-2). Duas anotações com halo, domínio fecha na grade, taxa com volume. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:16.701Z",
+      "impressao": "cbac0ba804ca1bbfdc19b5cbc166a05cc1ab5dfc",
+      "arquivos": {
+        "Chart.tsx": "398839ba320d7cb5fc2f3a91decf450996b389d9",
+        "data.ts": "f79f166b209101ecb2a059be145fcb2c804293f3",
+        "meta.json": "7ab68c322c3ce1af9b190607b3d34a2b5ae2f667"
+      }
+    },
+    "v3_tres-plataformas-uma-em-foco": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: as três trajetórias medem 3:1 ou mais nos dois temas, contexto em --text-muted com 5,21:1 e 5,37:1 e foco em --chart-1 com 9,50:1 e 6,00:1; traço fino por espessura, sem opacidade. Toda trajetória tem nome na ponta, foco pintado por último com peso 700. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:17.207Z",
+      "impressao": "fe994e401144f87cb7ef18a1b8fa137bc1863ebc",
+      "arquivos": {
+        "Chart.tsx": "1e718f27f496116abf8300b95656c4cd1951e986",
+        "data.ts": "7b9885f37d5bf04f3845cc896b6741a02a49f005",
+        "meta.json": "bda53dd504cdafb3d89b5e7aea4c73dddb7e353b"
+      }
+    },
+    "v4_mes-sem-coleta": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: pernas em --chart-1 com 9,50:1 e 6,00:1, anel do vão em --text-muted com 5,21:1 e 5,37:1. EIX-10 cumprida: nenhum segmento atravessa fev/26, mês nulo no dado, nunca zero, causa escrita no plano e na nota. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:17.693Z",
+      "impressao": "85f6e189faadd125a42c6b56d735af4c68fe984f",
+      "arquivos": {
+        "Chart.tsx": "d2aa302f37f2faab3574415ed174172b6501aced",
+        "data.ts": "926ceb00d503c2b198ad1bdb375bb138278ac250",
+        "meta.json": "5761bfa2aabce32d110c19a3485d28bf620d5c5b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_trajetoria-de-uma-plataforma",
+      "veredito": "reprovado",
+      "nota": "EIX-5 e excecao EIX-3 da familia 09: eixos sem axisLine={false}, a linha de eixo de AXIS_PROPS segue desenhada nos dois eixos.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:35:06.313Z",
+      "impressao": "91109cc1b177b461bf64cf89a2386f31fca1e0f1",
+      "arquivos": {
+        "Chart.tsx": "80dcd054c288151d46c01dc3f3588a171fb51c3c",
+        "data.ts": "962130cd2b129f1a48cad0b678bf4056985491ce",
+        "meta.json": "b00913d689adf66abcc6ac22789bce6d6055b703"
+      }
+    },
+    {
+      "versao": "v1_trajetoria-de-uma-plataforma",
+      "veredito": "reprovado",
+      "nota": "EIX-4: DOMAIN_X vai a 260 com o ultimo tique em 250 e maior CPL 232; terminar o eixo na primeira linha de grade acima do maior valor e encostar o inicio no primeiro tique abaixo do menor.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:41:32.443Z",
+      "impressao": "0c357e4cf9636c24c776fae3c0a4c52612809e48",
+      "arquivos": {
+        "Chart.tsx": "45de8e31de76afa3edc52d074bd2a7886817eeef",
+        "data.ts": "962130cd2b129f1a48cad0b678bf4056985491ce",
+        "meta.json": "b00913d689adf66abcc6ac22789bce6d6055b703"
+      }
+    },
+    {
+      "versao": "v1_trajetoria-de-uma-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, EIX-4 corrigida (dominio 100 a 250 com tique em 250 acima do maior CPL 232), eixos sem linha pela excecao EIX-3 da familia 09, grade nos dois sentidos, unidade em todo tique, contraste AA nos dois temas. Observacoes de acabamento no README.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T18:49:36.655Z",
+      "impressao": "dd1b2d2d657b1e10c6976db57ec965729b078031",
+      "arquivos": {
+        "Chart.tsx": "8c7f2fba46172ee834dfcddb5973b8f6e6370705",
+        "data.ts": "962130cd2b129f1a48cad0b678bf4056985491ce",
+        "meta.json": "b00913d689adf66abcc6ac22789bce6d6055b703"
+      }
+    },
+    {
+      "versao": "v1_trajetoria-de-uma-plataforma",
+      "veredito": "aprovado",
+      "nota": "Rejulgada pela ACE-6 em 2026-10-05, sem bloqueante: o traço que carrega a relação sai em --chart-1 e mede 9,50:1 no escuro e 6,00:1 no claro contra --surface-raised, conta refeita sobre tokens.css. Check limpo, domínio e grade corretos, dois PNGs sem corte. Observação nova no README: taxa escrita sem o volume na frase e na dica (NUM-1, DAD-1).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:16.219Z",
+      "impressao": "dd1b2d2d657b1e10c6976db57ec965729b078031",
+      "arquivos": {
+        "Chart.tsx": "8c7f2fba46172ee834dfcddb5973b8f6e6370705",
+        "data.ts": "962130cd2b129f1a48cad0b678bf4056985491ce",
+        "meta.json": "b00913d689adf66abcc6ac22789bce6d6055b703"
+      }
+    },
+    {
+      "versao": "v2_virada-anotada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: traço neutro em --text-muted mede 5,21:1 no escuro e 5,37:1 no claro, cotovelo em --chart-1 mede 9,50:1 e 6,00:1; destaque com espessura, anel e anotação além da cor (ACE-2). Duas anotações com halo, domínio fecha na grade, taxa com volume. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:16.701Z",
+      "impressao": "cbac0ba804ca1bbfdc19b5cbc166a05cc1ab5dfc",
+      "arquivos": {
+        "Chart.tsx": "398839ba320d7cb5fc2f3a91decf450996b389d9",
+        "data.ts": "f79f166b209101ecb2a059be145fcb2c804293f3",
+        "meta.json": "7ab68c322c3ce1af9b190607b3d34a2b5ae2f667"
+      }
+    },
+    {
+      "versao": "v3_tres-plataformas-uma-em-foco",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: as três trajetórias medem 3:1 ou mais nos dois temas, contexto em --text-muted com 5,21:1 e 5,37:1 e foco em --chart-1 com 9,50:1 e 6,00:1; traço fino por espessura, sem opacidade. Toda trajetória tem nome na ponta, foco pintado por último com peso 700. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:17.207Z",
+      "impressao": "fe994e401144f87cb7ef18a1b8fa137bc1863ebc",
+      "arquivos": {
+        "Chart.tsx": "1e718f27f496116abf8300b95656c4cd1951e986",
+        "data.ts": "7b9885f37d5bf04f3845cc896b6741a02a49f005",
+        "meta.json": "bda53dd504cdafb3d89b5e7aea4c73dddb7e353b"
+      }
+    },
+    {
+      "versao": "v4_mes-sem-coleta",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. ACE-6: pernas em --chart-1 com 9,50:1 e 6,00:1, anel do vão em --text-muted com 5,21:1 e 5,37:1. EIX-10 cumprida: nenhum segmento atravessa fev/26, mês nulo no dado, nunca zero, causa escrita no plano e na nota. Observações no README.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:19:17.693Z",
+      "impressao": "85f6e189faadd125a42c6b56d735af4c68fe984f",
+      "arquivos": {
+        "Chart.tsx": "d2aa302f37f2faab3574415ed174172b6501aced",
+        "data.ts": "926ceb00d503c2b198ad1bdb375bb138278ac250",
+        "meta.json": "5761bfa2aabce32d110c19a3485d28bf620d5c5b"
+      }
+    }
+  ]
+}

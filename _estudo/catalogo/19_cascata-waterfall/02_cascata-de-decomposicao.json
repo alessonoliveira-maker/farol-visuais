@@ -1,0 +1,72 @@
+{
+  "slug": "02_cascata-de-decomposicao",
+  "nome": "Cascata de decomposição",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Ponte com um único estoque: parte de um total e o consome parte a parte até zero ou até o gap da meta, ou constrói o total a partir do zero. Cada passo é uma parte rotulada com valor e participação. Só ganha da barra simples quando há parte negativa ou quando o resto até zero é a conclusão.",
+  "quando_usar": [
+    "Total quebrado em 4 a 10 partes com ordem defensável (tamanho, bloco de negócio ou sequência de decisão), com ao menos uma parte negativa.",
+    "Ponte até a meta: realizado, contratado e pipeline ponderado consumindo a meta, com o gap restante como último passo.",
+    "Da entrada bruta ao desfecho, subtraindo cada perda em degraus quando a pergunta é para onde foi cada unidade.",
+    "Total medido cujo detalhamento está incompleto, com a parte sem detalhamento declarada."
+  ],
+  "quando_evitar": [
+    "Partes todas positivas e total secundário: barras da família 02 ou rosca da família 07.",
+    "Partes sem ordem de leitura: a mesma decomposição conta histórias diferentes; ordenar ou trocar de forma.",
+    "Muitas partes abaixo de 2% do total: agrupar em Demais com desdobramento, nunca deixar fiapo sem rótulo.",
+    "Quando a pergunta é a taxa de passagem entre etapas: funil com taxa, família 10.",
+    "Quando só importa quanto falta para a meta: progresso e meta, família 13."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_custo-marginal-liquido-do-mes",
+      "titulo": "Custo marginal líquido do mês",
+      "caso_de_uso": "Diretoria, 2026-08: mídia R$ 118 mil, comissão R$ 22 mil, ferramentas R$ 14 mil, brindes R$ 6 mil e desconto de fornecedor −R$ 8 mil constroem o custo marginal de R$ 152 mil.",
+      "o_que_demonstra": [
+        "Construção a partir do zero com uma única coluna de total no fim",
+        "Partes ordenadas do maior ao menor, com o desconto por último",
+        "Rótulo com valor e participação inteira no total",
+        "Parte negativa justificando a cascata no lugar da barra simples"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_ponte-ate-a-meta-anual",
+      "titulo": "Ponte até a meta do ano",
+      "caso_de_uso": "Diretoria, em 2026-09-13: meta de R$ 6,4 mi consumida por realizado R$ 4,1 mi, contratado não reconhecido R$ 0,9 mi e pipeline ponderado R$ 0,8 mi; o gap de R$ 0,6 mi fecha a ponte.",
+      "o_que_demonstra": [
+        "Meta como coluna cheia e partes consumindo até o gap",
+        "Gap em --warning com sinal e palavra, não só com cor",
+        "ReferenceLine da meta com ifOverflow extendDomain",
+        "Anotação: faltam R$ 0,6 mi contando o pipeline ponderado",
+        "Data de corte escrita, porque a ponte muda a cada dia"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_entradas-do-mes-ate-os-ganhos",
+      "titulo": "Das entradas do mês aos ganhos",
+      "caso_de_uso": "Pré-vendas e Comercial, 2026-08: 612 entradas menos 41 duplicatas, 58 fora de perímetro, 187 sem contato, 214 declínios por fit, 68 perdas na proposta e 33 em andamento chegam a 11 ganhos.",
+      "o_que_demonstra": [
+        "Decomposição até o desfecho com contagem e substantivo em cada rótulo",
+        "Em andamento como passo próprio, para a diferença não virar perda",
+        "Cauda estreita no fim com rótulo externo e halo",
+        "Domínio de contagem com allowDecimals desligado",
+        "Frase acessível dizendo onde sai a maior parte das entradas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_custo-total-com-parte-sem-detalhamento",
+      "titulo": "Custo total com parte sem detalhamento",
+      "caso_de_uso": "Diretoria, 2026-08: custo total medido de R$ 390 mil, do qual só R$ 314 mil têm linha detalhada; três linhas que a controladoria não devolveu somam R$ 76 mil sem detalhamento.",
+      "o_que_demonstra": [
+        "Parte sem detalhamento hachurada, contada no total e marcada à parte",
+        "Ausência com contorno --text-muted e palavra, nunca zero silencioso",
+        "Parte ausente por último e fora do teto de categorias",
+        "Participação da lacuna escrita no rótulo: 19% do total"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

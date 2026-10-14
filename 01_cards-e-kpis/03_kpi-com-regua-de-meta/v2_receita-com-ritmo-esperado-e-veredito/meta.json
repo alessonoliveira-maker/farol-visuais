@@ -1,0 +1,15 @@
+{
+  "title": "Receita do trimestre com ritmo esperado",
+  "useCase": "No ritmo atual a receita chega à meta do trimestre, ou já está atrás do esperado no dia útil 44 de 63?",
+  "demonstrates": [
+    "Dois marcadores distintos sem cor: meta em traço cheio, ritmo em tracejado curto",
+    "Ritmo por dias úteis decorridos, escrito: 44 de 63 dias úteis",
+    "Veredito calculado com a base: R$ 74,0 mil atrás do ritmo de R$ 419,0 mil",
+    "Projeção linear declarada como piso, com etiqueta DERIVADO",
+    "Trilho em SVG com geometria de regra de três em função pura",
+    "Primeiro dia do período sem ritmo medido, em vez de divisão por zero"
+  ],
+  "canvas": { "width": 400, "height": 330 },
+  "frame": "stage",
+  "notes": "Canvas acima do kpi-alto sugerido: régua com rótulos, veredito e projeção não cabem em 180 px de corpo sem apertar o respiro."
+}

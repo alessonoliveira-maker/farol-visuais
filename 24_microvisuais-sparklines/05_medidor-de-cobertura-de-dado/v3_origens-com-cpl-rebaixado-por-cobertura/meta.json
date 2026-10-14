@@ -1,0 +1,15 @@
+{
+  "title": "Origens com CPL rebaixado por cobertura",
+  "useCase": "Marketing: em quais das 14 origens o CPL qualificado não deve ser lido porque a cobertura ficou abaixo de 50%?",
+  "demonstrates": [
+    "Tabela de 14 origens com volume, cobertura e CPL qualificado lado a lado",
+    "Abaixo de 50% o CPL vai para --text-muted com TriangleAlert, sem opacity no texto",
+    "Ordem padrão com as piores coberturas no topo e o critério no cabeçalho",
+    "Origem sem nenhum registro do campo com formatUnavailable no lugar do CPL",
+    "Sem origem declarada por último e visível, nunca somada a outras",
+    "Frase acessível com quantas origens ficaram abaixo do limiar"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Corpo de 574 x 425 a 441 px. Conta: resumo de 16, cabeçalho de 24, 14 linhas de 24 (336) e nota de 16, com 3 vãos de 8: cerca de 416 px, cabe nos 425 do pior caso. A cobertura de uma origem sem leads sairia indisponível, não zero."
+}

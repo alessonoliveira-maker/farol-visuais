@@ -1,0 +1,15 @@
+{
+  "title": "Alcance do parceiro de indicação P07",
+  "useCase": "Comercial: quantas contas o parceiro fictício P07 indicou e quantas essas contas indicaram depois, em dois anéis.",
+  "demonstrates": [
+    "Nó central em var(--chart-1) com rótulo em peso 700, distinto do resto",
+    "9 contas no primeiro anel em ângulos iguais e 14 no segundo junto de quem as ligou",
+    "Anéis de referência em var(--line-subtle) com o grau escrito no anel",
+    "Contagem por anel escrita fora do círculo, como 9 diretas e 14 indiretas",
+    "Rótulo sempre horizontal: dentro do nó no primeiro anel e fora do círculo no segundo",
+    "Primeiro anel em ordem de contas indicadas adiante, com a ordem declarada no corpo"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): quadrado 480x480 com moldura card abaixo de 560 px dá corpo de 422 x 355,5 px, porque o caso de uso tem 113 caracteres e ocupa duas linhas em 422 px de cabeçalho. O viewBox é 422 x 355, do tamanho do corpo, para a escala do svg sair 1 (GEO-18). Altura usada: linha de leitura em 8, linha da ordem em 27, e o círculo com centro em 196 e segundo anel de 136 px de raio; o rótulo do segundo anel chega no máximo a 155 px do centro (136 de raio, 4,5 de nó, 4 de vão e a caixa de 10 px), o que dá 41 no topo e 351 na base, dentro dos 355. Na largura sobra: o rótulo mais à direita termina em 375 dos 422 px. Ângulos: 9 contas dão setor de 40 graus; a costura fica a 0 grau, à direita, no vão entre a última e a primeira conta, e é ali que o grau de cada anel vai escrito. O leque do segundo anel abre 13 graus entre vizinhas, 30,9 px de arco em 136 px de raio, contra 20 px do código. DESVIO DECLARADO DO CATÁLOGO, com o contrato vencendo: o catálogo pede rótulos girados pelo ângulo e virados 180 graus na metade esquerda, e a TIP-5 proíbe rotate em texto sem exceção para radial. O texto fica horizontal: no primeiro anel o código vai dentro do nó de 14 px de raio, vazado em var(--surface-raised) sobre var(--text-muted), que mede 5,21:1 no escuro e 5,37:1 no claro; no segundo a caixa é empurrada para fora pela meia largura vezes o cosseno e a meia altura vezes o seno, de modo que nenhum canto reentra no anel (GEO-19). Segundo desvio: a aresta sai em var(--text-muted) e não num neutro de linha, porque carrega quem indicou quem (ACE-6). A ordem do primeiro anel é por contas indicadas adiante, e como esse número não está escrito em cada nó a segunda linha do corpo declara a ordem (GEO-12). O raio do nó separa o papel (centro, direta, indireta) e não codifica valor."
+}

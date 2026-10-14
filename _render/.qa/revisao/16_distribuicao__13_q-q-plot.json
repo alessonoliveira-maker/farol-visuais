@@ -1,0 +1,83 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "13_q-q-plot",
+  "versoes": {
+    "v1_ciclo-contra-lognormal": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; plano quadrado medido em 202 por 202 px, diagonal, cauda de 4 negócios e nota conferidos nos dois temas; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:57.990Z",
+      "impressao": "e3e03fb4f0fce3cc1ffbd799f9a771f70b31cc94",
+      "arquivos": {
+        "Chart.tsx": "9f5f733a37243133b880fb182497030e62310fdf",
+        "data.ts": "1481dbe55539a9095c56a209624b700ac7270807",
+        "meta.json": "90d66fbfecd3bb565349e44670e7191a99c4f3f4"
+      }
+    },
+    "v2_tempo-ate-agenda-em-dois-anos": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; quantis interpolados em grade comum de 50 conferidos por recálculo, cauda de 10 percentis e nota legíveis nos dois temas; 7 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:58.505Z",
+      "impressao": "076d4e795f1eb89c878ec82e32daa264c543104c",
+      "arquivos": {
+        "Chart.tsx": "bd96f1143dbef6701ea4df070a940553dabb40e3",
+        "data.ts": "ea154026f169d4b83fc12837d321ba371e226e47",
+        "meta.json": "19a4535c287f703ef7e2b1a440fd1cb0fb1cd8e1"
+      }
+    },
+    "v3_atingimento-com-teto": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; patamar de 10 casos em 150%, linha do teto com nome e valor, zero medido desenhado, miolo na diagonal; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:58.999Z",
+      "impressao": "861cd709280b9cf43f294d09c334bb7cc3234120",
+      "arquivos": {
+        "Chart.tsx": "5252f1186250af4ee6ca25c44890fd32e76f7a44",
+        "data.ts": "f7b10ce441945c1623ca8dad876ebb24f4eea467",
+        "meta.json": "7985eeb535d4e89b41f0df3a2be5741c7f06107a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ciclo-contra-lognormal",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; plano quadrado medido em 202 por 202 px, diagonal, cauda de 4 negócios e nota conferidos nos dois temas; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:57.990Z",
+      "impressao": "e3e03fb4f0fce3cc1ffbd799f9a771f70b31cc94",
+      "arquivos": {
+        "Chart.tsx": "9f5f733a37243133b880fb182497030e62310fdf",
+        "data.ts": "1481dbe55539a9095c56a209624b700ac7270807",
+        "meta.json": "90d66fbfecd3bb565349e44670e7191a99c4f3f4"
+      }
+    },
+    {
+      "versao": "v2_tempo-ate-agenda-em-dois-anos",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; quantis interpolados em grade comum de 50 conferidos por recálculo, cauda de 10 percentis e nota legíveis nos dois temas; 7 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:58.505Z",
+      "impressao": "076d4e795f1eb89c878ec82e32daa264c543104c",
+      "arquivos": {
+        "Chart.tsx": "bd96f1143dbef6701ea4df070a940553dabb40e3",
+        "data.ts": "ea154026f169d4b83fc12837d321ba371e226e47",
+        "meta.json": "19a4535c287f703ef7e2b1a440fd1cb0fb1cd8e1"
+      }
+    },
+    {
+      "versao": "v3_atingimento-com-teto",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; patamar de 10 casos em 150%, linha do teto com nome e valor, zero medido desenhado, miolo na diagonal; 5 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:23:58.999Z",
+      "impressao": "861cd709280b9cf43f294d09c334bb7cc3234120",
+      "arquivos": {
+        "Chart.tsx": "5252f1186250af4ee6ca25c44890fd32e76f7a44",
+        "data.ts": "f7b10ce441945c1623ca8dad876ebb24f4eea467",
+        "meta.json": "7985eeb535d4e89b41f0df3a2be5741c7f06107a"
+      }
+    }
+  ]
+}

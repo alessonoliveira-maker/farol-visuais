@@ -1,0 +1,70 @@
+{
+  "slug": "07_arvore-e-dendrograma",
+  "nome": "Árvore e dendrograma",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Nós ligados por arestas do pai para os filhos. Na árvore arrumada os nós ficam por profundidade; no dendrograma todas as folhas se alinham; na árvore radial a raiz vai ao centro e as folhas ao perímetro. O organograma é a mesma forma com cartões. Layout calculado em TypeScript.",
+  "quando_usar": [
+    "Estrutura de pertencimento: organograma, taxonomia de campanhas e criativos, catálogo de produtos",
+    "Quando a mensagem é quem pertence a quem, com ou sem valor em cada nó",
+    "Taxonomia grande num espaço quadrado, na versão radial, quando a forma geral importa mais que a consulta",
+    "Expandir e recolher ramos com contagem de descendentes ocultos"
+  ],
+  "quando_evitar": [
+    "Quando o valor é a mensagem: use treemap (12/01) ou icicle (12/06)",
+    "Arestas entre ramos diferentes: deixa de ser hierarquia; use rede (família 27)",
+    "Consulta nó a nó em taxonomia grande na forma radial: a leitura linear orienta melhor",
+    "Decomposição por fórmula com operadores e faixas: use árvore de indicadores (12/04)"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_estrutura-da-area-comercial",
+      "titulo": "Estrutura da área comercial",
+      "caso_de_uso": "Diretoria: como a área fictícia se organiza em Comercial, Pré-vendas e Marketing, com funções e pessoas por função.",
+      "o_que_demonstra": [
+        "Árvore lateral com raiz à esquerda: folha pela ordem, pai pela média dos filhos",
+        "Aresta curva M x0,y0 C x0,ym x1,ym x1,y1 calculada em TypeScript",
+        "Quantidade de pessoas por função como rótulo ao lado do nó",
+        "Só funções e contagens, sem nome de pessoa"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_organograma-com-capacidade-contra-teto",
+      "titulo": "Organograma com capacidade contra teto",
+      "caso_de_uso": "Diretoria: qual função está perto do teto, como Pré-vendas com 6 pessoas, teto de 240 entradas por mês e 226 em uso.",
+      "o_que_demonstra": [
+        "Cartões em Tailwind posicionados pelo layout e conectores ortogonais em SVG por baixo",
+        "Uso contra teto em microbarra dentro do cartão, com percentual escrito",
+        "Cor pela faixa de uso: neutro, accent-amber acima de 85% e negative acima de 100%",
+        "Etiqueta de procedência no teto, que é premissa, e no uso, que é medido"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_taxonomia-radial-de-criativos",
+      "titulo": "Taxonomia radial de criativos",
+      "caso_de_uso": "Marketing: como 96 criativos se distribuem por plataforma e campanha, com o caminho de um criativo até a raiz.",
+      "o_que_demonstra": [
+        "Dendrograma radial: ângulo pela ordem da folha e raio pela profundidade",
+        "Rótulos da metade esquerda girados 180 graus e alinhados à direita",
+        "Abertura angular de alguns graus entre a última e a primeira folha",
+        "Código curto no perímetro e nome completo no tooltip",
+        "Caminho até a raiz aceso para o criativo declarado no data.ts"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v4_subarvore-larga-recolhida",
+      "titulo": "Árvore desbalanceada com ramo recolhido",
+      "caso_de_uso": "Diretoria: uma coordenação com 14 funções e outra com 2 cabem no mesmo cartão sem sobrepor subárvores.",
+      "o_que_demonstra": [
+        "Subárvore larga recolhida por padrão com o selo 14 funções",
+        "Afastamento de subárvores vizinhas pelo contorno, na ideia de Reingold e Tilford",
+        "Estado expandido declarado no data.ts, com botão acessível por teclado",
+        "Profundidade máxima visível fixa e contagem de descendentes ocultos"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

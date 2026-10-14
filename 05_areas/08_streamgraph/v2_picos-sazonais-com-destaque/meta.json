@@ -1,0 +1,12 @@
+{
+  "title": "Picos sazonais com campanha em destaque",
+  "useCase": "Explicar os dois picos do ano e mostrar que uma única campanha carregou quase todo o segundo.",
+  "demonstrates": [
+    "Campanha em destaque em chart-1 e as demais em line-strong com separador entre camadas",
+    "Destaque por prop highlightId, visível no preview sem depender de hover",
+    "Dois picos anotados com ReferenceLine, texto curto e valor (ANO-1, ANO-2)",
+    "Rótulo da campanha em destaque em peso 700 como segundo canal (COR-2)"
+  ],
+  "canvas": "largo",
+  "notes": "Streamgraph não tem linha de base fixa: as anotações dizem o total de cada pico e a participação do destaque, porque a forma sozinha não deixa ler o valor de uma camada."
+}

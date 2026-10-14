@@ -1,0 +1,12 @@
+{
+  "title": "Quem fechou as três metas da semana",
+  "useCase": "Pré-vendas: entre 6 pessoas, quem fechou entradas, agendas e SLA na semana e quem ficou devendo alguma delas?",
+  "demonstrates": [
+    "Pequenos múltiplos com a mesma escala e o mesmo raio em todas as pessoas",
+    "Três números embaixo de cada trio, com algarismo tabular",
+    "Selo de três metas fechadas com ícone e texto, não só cor",
+    "Slots de cor fixos por meta, iguais em todos os trios"
+  ],
+  "canvas": { "width": 960, "height": 440 },
+  "notes": "Canvas 40 px mais alto que o preset largo: a correção da revisão de 2026-09 acrescentou a legenda de cor por meta (ROT-4) e o par valor/meta em cada número (NUM-6), e o preset largo espremia nome e números das 6 pessoas."
+}

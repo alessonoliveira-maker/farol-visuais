@@ -1,0 +1,79 @@
+{
+  "slug": "03_pilula-de-variacao",
+  "nome": "Pílula de variação e indicador de estado",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Delta, direção e estado escritos no tamanho de uma palavra, colados ao número que qualificam. A pílula traz sinal tipográfico, variação sobre o valor absoluto e glifo do lucide-react (TrendingUp, TrendingDown, Minus), com a base da comparação nomeada na mesma linha. O modelo absorve a seta de tendência no texto, glifo sem número que cabe numa frase ou num cabeçalho e que nunca escala com a magnitude, e o ponto de status, marcador com silhueta distinta por estado (círculo cheio, triângulo, losango, anel vazado) e regra de corte declarada. No Farol é HTML com Tailwind e uma função pura que decide o tom pela polaridade da métrica (goodDirection) e por uma faixa neutra; a polaridade invertida troca só a cor, nunca o glifo. O texto semântico vai direto sobre o cartão, sem fundo tingido, porque bg-positive/15 reprova contraste no tema claro. Base zero, base minúscula e regra ausente têm desenho próprio e nunca viram verde por omissão.",
+  "quando_usar": [
+    "Delta de um KPI contra uma base nomeada (mês anterior, mesmo mês do ano anterior, meta), ao lado do número em card ou célula",
+    "Métricas em que subir é ruim (CPL, CPL qualificado, tempo de resposta), com a polaridade trocando só a cor e nunca o glifo",
+    "Direção dentro de uma frase de leitura ou no cabeçalho de uma coluna, com seta e faixa de estabilidade declarada",
+    "Estado de uma linha contra regra explícita (no prazo, em atenção, atrasado, sem data), com forma, cor e rótulo",
+    "Tabelas longas em que só a minoria fora da regra deve acender e o restante fica em tom neutro"
+  ],
+  "quando_evitar": [
+    "Variação ao longo de vários períodos: use o sparkbar divergente (24/02_sparkbar)",
+    "Base pequena em que o percentual vira manchete: escreva o delta absoluto em vez da pílula percentual",
+    "Estado sem regra de corte declarada: sem regra, o ponto colorido é opinião; mostre o número",
+    "Estado por período em sequência de dezenas de dias: use a faixa de status (24/04_faixa-de-status-tracker)",
+    "Magnitude da mudança como leitura principal: a seta não serve; use a pílula com número ou a barra de desvio em célula (14/01_tabela-com-barras-inline)",
+    "Tabela em que a maioria das linhas ficaria vermelha: revise a regra antes de desenhar o semáforo",
+    "Card de KPI completo com número, contexto e procedência: o modelo mora em 01/01_kpi-simples e a pílula é ingrediente"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-do-mes-contra-mes-anterior",
+      "titulo": "Receita reconhecida contra o mês anterior",
+      "caso_de_uso": "Comercial: a receita reconhecida do mês subiu ou caiu contra o mês anterior, e sobre qual base?",
+      "o_que_demonstra": [
+        "Sinal + ou − (U+2212) à mão sobre formatPercent do valor absoluto",
+        "Glifo TrendingUp, TrendingDown ou Minus com aria-hidden, junto do sinal e da cor",
+        "Texto em --positive direto sobre o cartão, sem fundo tingido (COR-7)",
+        "Base nomeada na mesma linha: contra R$ 1,2 mi em jul/26, por formatMonthShort",
+        "Faixa neutra de 1% em que o tom vira --text-secondary e o glifo vira Minus"
+      ],
+      "canvas_sugerido": "kpi"
+    },
+    {
+      "slug": "v2_setas-de-tendencia-na-linha-de-leitura",
+      "titulo": "Setas de tendência na frase da pré-vendas",
+      "caso_de_uso": "Pré-vendas: quais indicadores da semana estão estáveis, em alta ou em queda, sem trocar de tela?",
+      "o_que_demonstra": [
+        "ArrowUpRight, ArrowDownRight e ArrowRight inline, alinhadas à linha de base do texto",
+        "Faixa de estabilidade de 5% declarada, abaixo da qual a seta fica horizontal",
+        "Glifo de tamanho fixo em 14 px, sem escalar com a magnitude da mudança",
+        "Número que sustenta cada seta escrito na mesma frase, com tabular-nums",
+        "Tempo de resposta em alta com seta para cima em --negative, pela polaridade da métrica"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_status-do-handoff-por-oportunidade",
+      "titulo": "Estado do aceite no handoff",
+      "caso_de_uso": "Comercial: quais das 16 oportunidades passadas pela pré-vendas estão pendentes fora do prazo de aceite?",
+      "o_que_demonstra": [
+        "Silhueta por estado: Circle, Triangle, Diamond e CircleDashed, sempre com rótulo",
+        "Regra escrita no cabeçalho: fora do prazo é mais de 2 dias úteis sem aceite",
+        "Só o estado crítico em --negative; aceitos e pendentes no prazo em --text-muted",
+        "Duração ao lado do ponto por formatDays, separando problema novo de crônico",
+        "Oportunidade sem data de handoff com anel vazado e a palavra sem data",
+        "Ordem por estado com o crítico no topo e a contagem por estado no resumo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_origens-com-base-zero-e-base-minuscula",
+      "titulo": "Variação de leads por origem com base frágil",
+      "caso_de_uso": "Marketing: quais origens cresceram contra o mês anterior, sem deixar base zero ou minúscula virar manchete?",
+      "o_que_demonstra": [
+        "Base zero escreve sem mês anterior medido para comparar, com glifo Minus neutro",
+        "Base abaixo de 10 leads mostra o delta absoluto (+3 leads) em vez de +150%",
+        "CPL qualificado com goodDirection invertido: alta em --negative e seta para cima",
+        "Investimento sem polaridade em --text-secondary, nunca verde nem vermelho (COR-6)",
+        "Origem sem dado no mês atual com formatUnavailable e ícone Unplug",
+        "Frase acessível contando as origens em alta, em queda e sem base"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

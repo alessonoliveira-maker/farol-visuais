@@ -1,0 +1,494 @@
+{
+  "slug": "07_rosca-e-radial",
+  "nome": "Rosca e radial",
+  "modelos": [
+    {
+      "slug": "01_rosca-com-total-central",
+      "nome": "Rosca com total central",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Pizza com o miolo recortado em que o centro carrega o total do todo; a leitura sai da área e vai para o comprimento do arco. Absorve a rosca com fatia ativa: hover, foco ou seleção troca o centro do total para o item ativo, o que dispensa rótulo em cada fatia. É a forma mais comum da família nos painéis do Farol.",
+      "quando_usar": [
+        "Parte do todo com 2 a 5 categorias em que o total é a informação principal do cartão",
+        "Composição que precisa do número do todo e da divisão no mesmo lugar, sem repetir o total no título",
+        "Exploração de partes sem poluir com rótulos: o centro mostra o item ativo e a legenda tabular traz valor e percentual",
+        "Composição com categoria de ausência declarada (sem origem, sem dado), visível e por último"
+      ],
+      "quando_evitar": [
+        "Comparação precisa entre categorias de tamanho parecido: barra horizontal ordenada (02)",
+        "Mais de 5 fatias coloridas: agrupar em Outros com a contagem ou trocar por barra (02)",
+        "Uma fração só contra meta: progresso circular (13/03)",
+        "Total que muda com filtro ou com série escondida sem aviso: o centro precisa dizer de qual total fala",
+        "Mesma composição em vários períodos: barra 100% (03) ou linha de participação (04)"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_investimento-de-midia-do-mes",
+          "titulo": "Investimento de mídia do mês",
+          "caso_de_uso": "Marketing: como os R$ 186 mil investidos em 2026-08 se dividem entre as três plataformas de mídia paga.",
+          "o_que_demonstra": [
+            "Pie com innerRadius 62% e outerRadius 80%, ordem decrescente a partir das 12 horas",
+            "Total no centro por Label com content e dois tspan, sem repetir o total no título",
+            "Separador entre fatias com stroke em surface-raised",
+            "Legenda tabular ao lado com valor compacto e percentual inteiro somando 100"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_perdas-por-motivo-com-fatia-ativa",
+          "titulo": "Perdas por motivo com fatia ativa",
+          "caso_de_uso": "Comercial: qual motivo explica a maior parte das 212 perdas do trimestre, com nome, contagem e percentual no centro.",
+          "o_que_demonstra": [
+            "Estado ativo por shape que lê isActive, sem o activeIndex removido no Recharts 3",
+            "Maior motivo aberto ativo por activeId do data.ts; o centro alterna do total ao item",
+            "Setor ativo com raio 8 px maior e nome na legenda em peso 700",
+            "Atraso de saída de 100 ms para o centro não piscar ao cruzar o separador",
+            "Legenda e teclado também ativam a fatia, não só o ponteiro"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_carteira-aberta-por-etapa",
+          "titulo": "Carteira aberta por etapa do funil",
+          "caso_de_uso": "Comercial: quanto dos R$ 7,4 mi em 58 oportunidades abertas está em qualificação, proposta, negociação e fechamento.",
+          "o_que_demonstra": [
+            "Centro em duas linhas: valor compacto e contagem com o substantivo oportunidades",
+            "Etapas na ordem do funil, não por valor, em tons seq-4 a seq-7",
+            "Legenda tabular com valor, oportunidades e percentual em colunas à direita",
+            "Frase acessível calculada com o total e a etapa de maior valor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_origem-com-fatia-minima-e-ausencia",
+          "titulo": "Leads por origem com fatia mínima e ausência",
+          "caso_de_uso": "Marketing: de onde vieram os 486 leads do mês quando três origens são quase nulas e 11% chegaram sem origem declarada.",
+          "o_que_demonstra": [
+            "Teto de 5 fatias: da sexta em diante vira Outros (n=3) com a contagem no rótulo",
+            "Sem origem declarada com contorno text-muted, sem preenchimento e por último",
+            "Fatia de 0,9% ativada pela legenda e pelo teclado, sem inflar o ângulo com minAngle",
+            "Total nulo vira trilho tracejado com formatUnavailable() e ícone Unplug no centro"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_semi-rosca",
+      "nome": "Semi rosca",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Rosca de 180 graus com o total centralizado sobre a base. Cabe em faixa baixa e larga, onde a rosca cheia desperdiça altura, e atende dois usos: composição com poucas partes ou arco empilhado de progresso contra uma meta. Absorve a pizza em semicírculo da família 06; sem agulha, escala nem faixas, não é gauge e não deve parecer um.",
+      "quando_usar": [
+        "Composição de 2 a 4 partes numa faixa de resumo baixa e larga",
+        "Progresso empilhado de 2 ou 3 séries contra uma meta, com o total no centro da base",
+        "Faixa de KPIs em que três ou quatro semicírculos de mesmo diâmetro comparam filas ou canais"
+      ],
+      "quando_evitar": [
+        "Visual que precisa de agulha, escala e faixas qualitativas: gauge (13)",
+        "Uma parte acima de 90%: o arco vira bloco e a leitura passa ao número; usar progresso circular (13/03)",
+        "Cartão com altura sobrando: a rosca cheia (07/01) lê melhor e dá mais espaço ao centro",
+        "Mais de 4 partes: barra 100% horizontal (03)"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-do-mes-por-resultado",
+          "titulo": "Agendas do mês por resultado",
+          "caso_de_uso": "Pré-vendas: das 132 agendas de 2026-08, quantas foram realizadas, remarcadas ou tiveram não comparecimento.",
+          "o_que_demonstra": [
+            "Pie com startAngle 180, endAngle 0 e cy calculado para o total caber sobre a base",
+            "innerRadius em 70% do outerRadius e rótulos nas pontas do arco",
+            "Percentual inteiro pelo maior resto, somando 100",
+            "Trilho sem faixas verde, amarela e vermelha: composição não é gauge"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_agendas-por-canal-com-marca-de-metade",
+          "titulo": "Agendas por canal com marca de metade",
+          "caso_de_uso": "Pré-vendas: o outbound já responde por mais da metade das agendas do mês ou ainda depende do inbound?",
+          "o_que_demonstra": [
+            "Tique de 50% no topo do arco em traço tracejado text-muted",
+            "Linha de leitura calculada do dado com a parte do outbound no total",
+            "Dois canais em slots categóricos 1 e 3, com nome e valor nas pontas",
+            "Halo em surface-raised no rótulo que cruza o tique"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_resultado-das-agendas-por-fila",
+          "titulo": "Resultado das agendas por fila",
+          "caso_de_uso": "Pré-vendas: em qual fila (inbound, outbound, reativação) o não comparecimento pesa mais nas agendas do mês.",
+          "o_que_demonstra": [
+            "Três semicírculos de mesmo diâmetro em grade HTML, um por fila",
+            "Mesma ordem de partes e mesma cor por resultado nas três filas",
+            "Legenda única acima da faixa e total de agendas no centro de cada arco",
+            "Fila com poucas agendas mostra taxa com volume por formatRateWithVolume"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v4_agendas-acima-da-meta-semanal",
+          "titulo": "Agendas da semana acima da meta",
+          "caso_de_uso": "Pré-vendas: quanto a semana passou da meta de 90 agendas quando inbound e outbound somam 104.",
+          "o_que_demonstra": [
+            "RadialBarChart com endAngle 180 e um RadialBar por canal no mesmo stackId",
+            "PolarAngleAxis type number com domínio de zero até a meta e tick desligado",
+            "Soma acima da meta enche o arco sem passar dos 180 graus",
+            "Centro 104 de 90 em Label do PolarRadiusAxis e selo +14 acima da meta",
+            "cornerRadius só na ponta final, nunca em cada gomo"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_aneis-concentricos-de-dois-periodos",
+      "nome": "Anéis concêntricos de dois períodos",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas roscas concêntricas com o mesmo conjunto de categorias em dois momentos: anel interno para o período anterior em tom atenuado e anel externo para o atual em cor cheia. A ordem das categorias é fixada pelo período atual e aplicada aos dois anéis. Como o anel de fora parece maior para a mesma fração, a variação vai sempre escrita em pontos percentuais.",
+      "quando_usar": [
+        "Mesma composição de 2 a 5 categorias em dois períodos fechados, como mês contra mês ou trimestre contra trimestre",
+        "Cartão que precisa mostrar mudança de participação sem abrir um segundo gráfico",
+        "Leitura de qual categoria ganhou ou perdeu peso, com a variação em pontos percentuais escrita"
+      ],
+      "quando_evitar": [
+        "Três períodos ou mais: barra 100% (03) ou linha de participação (04)",
+        "Comparar volume absoluto entre períodos: o anel mostra fração; usar colunas agrupadas (03)",
+        "Muitas categorias pequenas: a diferença some na distorção polar; usar haltere (17)",
+        "Período atual incompleto contra período fechado sem aviso de parcial"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_origem-dos-leads-em-dois-meses",
+          "titulo": "Origem dos leads em dois meses",
+          "caso_de_uso": "Marketing: a divisão dos leads por origem mudou de 2026-07, no anel interno, para 2026-08, no anel externo?",
+          "o_que_demonstra": [
+            "Dois Pie com os mesmos cx, cy, startAngle e endAngle",
+            "Ordem de categorias fixada pelo período atual e aplicada aos dois anéis",
+            "Anel interno com a cor da categoria atenuada por opacidade e externo em cor cheia",
+            "Legenda que diz qual anel é qual período, por formatMonthShort"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_origem-que-mais-ganhou-peso",
+          "titulo": "Origem que mais ganhou peso",
+          "caso_de_uso": "Marketing: qual origem mais mudou de participação entre 2026-07 e 2026-08 e quantos pontos percentuais ganhou.",
+          "o_que_demonstra": [
+            "Rótulo +7 p.p. só na categoria de maior variação absoluta, calculada no componente",
+            "Nome do destaque em peso 700; demais categorias sem rótulo de variação",
+            "Dica com as duas frações e a variação por formatPercentPoints",
+            "Nota curta sobre a distorção: o anel externo parece maior para a mesma fração"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_investimento-por-plataforma-em-dois-trimestres",
+          "titulo": "Investimento por plataforma em dois trimestres",
+          "caso_de_uso": "Marketing: como os R$ 548 mil do 2º trimestre de 2026 se dividiram entre as plataformas, contra os R$ 512 mil do 1º trimestre.",
+          "o_que_demonstra": [
+            "Total de cada período na legenda, com a variação nomeando a base",
+            "Legenda tabular com a participação nos dois trimestres e a diferença em p.p.",
+            "Quatro plataformas em slots 1, 3, 6 e 5, com a mesma cor nos dois anéis",
+            "Frase acessível com a plataforma que mais ganhou e a que mais perdeu participação"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_plataforma-nova-sem-mes-anterior",
+          "titulo": "Plataforma nova sem dado no mês anterior",
+          "caso_de_uso": "Marketing: como ler a composição quando uma plataforma entrou em 2026-08 e não existia em 2026-07.",
+          "o_que_demonstra": [
+            "Categoria nova no fim da ordem, presente só no anel externo",
+            "Anel interno fecha 100% com as categorias que existiam no período",
+            "Legenda marca a categoria nova como sem dado em jul/26 em text-muted, nunca 0%",
+            "Variação da categoria nova declarada como sem base de comparação"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_barra-radial",
+      "nome": "Barra radial",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Barras categóricas desenhadas como arcos concêntricos com origem angular comum, em que o comprimento angular é o valor. Serve como peça de capa para ranking curto, com trilho, valor escrito na ponta e arco maior limitado a 270 graus para não parecer 100%. Absorve a barra radial empilhada: cada arco dividido em até três segmentos de composição.",
+      "quando_usar": [
+        "Ranking curto de 3 a 7 categorias como peça de capa de painel, com o valor escrito em cada arco",
+        "Composição em arco com 2 ou 3 segmentos por categoria, na variante empilhada",
+        "Espaço quadrado em que uma barra horizontal deixaria muito vazio"
+      ],
+      "quando_evitar": [
+        "Comparação precisa entre valores próximos: barra horizontal ordenada (02)",
+        "Uma categoria muito maior que as demais, que viram lascas: barra horizontal (02)",
+        "Mais de 3 segmentos empilhados: barra empilhada horizontal (02 ou 03)",
+        "Metas diferentes por item: anéis de metas ou bullet (13)"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-por-sdr-na-semana",
+          "titulo": "Agendas por SDR na semana",
+          "caso_de_uso": "Pré-vendas: quantas agendas cada um dos seis SDRs marcou na semana de 2026-09-07 a 2026-09-11.",
+          "o_que_demonstra": [
+            "RadialBarChart com RadialBar e background em surface-overlay como trilho",
+            "PolarAngleAxis type number com domínio no maior valor e arco máximo de 270 graus",
+            "Maior valor no anel externo, ordem declarada e valor escrito na ponta",
+            "Uma série numa cor só, sem arco-íris por pessoa"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_sdr-em-foco-no-ranking",
+          "titulo": "Agendas por SDR com uma pessoa em foco",
+          "caso_de_uso": "Pré-vendas: onde está a SDR selecionada no ranking de agendas da semana, sem perder a escala do time.",
+          "o_que_demonstra": [
+            "highlightId do data.ts: arco destacado em chart-1 e demais em line-strong",
+            "Nome e valor do destaque em peso 700, além da cor",
+            "Clique na legenda troca o foco e um segundo clique desmarca",
+            "Linha de leitura calculada com a posição em ordinal, como 2º de 6"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-da-semana-por-status-de-sla",
+          "titulo": "Entradas da semana por status de SLA",
+          "caso_de_uso": "Pré-vendas: em quais dias úteis as entradas ficaram fora do SLA ou pendentes, com o feriado de segunda sem expediente.",
+          "o_que_demonstra": [
+            "Um RadialBar por status no mesmo stackId, com no máximo três segmentos",
+            "Separação por stroke em surface-raised, sem cornerRadius em cada gomo",
+            "Dia sem expediente com trilho vazio e rótulo, nunca arco zerado",
+            "Total de entradas escrito na ponta de cada arco"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_origem-zerada-e-origem-dominante",
+          "titulo": "Leads por origem com zero e domínio",
+          "caso_de_uso": "Marketing: como ler sete origens do mês quando uma teve 0 leads e outra é oito vezes maior que a segunda.",
+          "o_que_demonstra": [
+            "Origem com 0 leads desenha só o trilho e escreve 0",
+            "minPointSize desligado para não inventar arco em valor zero",
+            "Origem dominante reduz as demais a lascas: o limite do formato fica visível",
+            "Limite documentado no README: com essa razão, trocar por barra horizontal (02)"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_anel-segmentado-em-unidades",
+      "nome": "Anel segmentado em unidades",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Anel dividido em N segmentos iguais, cada um uma unidade contável (agenda, dia útil, reunião), colorido por status e com a contagem no centro. Junta a leitura de unidades da família 22 à forma circular: o leitor conta, não estima ângulo. Fica legível até cerca de 40 segmentos, com o vão entre eles calculado a partir de N.",
+      "quando_usar": [
+        "Contagem pequena contra um total discreto, como 12 de 20 agendas da meta semanal",
+        "Unidades com até 3 status (realizada, marcada, faltante) em que cada segmento importa",
+        "Calendário curto de dias úteis do mês com um estado por dia"
+      ],
+      "quando_evitar": [
+        "Mais de 40 unidades: os segmentos viram fios; usar waffle (22)",
+        "Valor contínuo ou fracionário, como reais ou horas: progresso circular (13/03)",
+        "Muitas pessoas lado a lado contra metas próprias: bullet em lista (13) ou tabela com barra (14)",
+        "Mais de 3 status coloridos: a contagem se perde na mistura de cores"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-da-meta-semanal",
+          "titulo": "Agendas marcadas da meta semanal",
+          "caso_de_uso": "Pré-vendas: quantas das 20 agendas da meta semanal a SDR já marcou até quarta-feira.",
+          "o_que_demonstra": [
+            "Pie com 20 itens de value 1 e fill por status vindo do dado",
+            "paddingAngle calculado por Math.min(3, 120 / N)",
+            "Centro 12 de 20 em kpi-number, sem rótulo por segmento",
+            "Sem cornerRadius, para o segmento curto não virar pílula"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v2_agendas-em-tres-status",
+          "titulo": "Agendas da semana em três status",
+          "caso_de_uso": "Pré-vendas: das 20 agendas da meta, quantas já foram realizadas, quantas estão marcadas e quantas ainda faltam.",
+          "o_que_demonstra": [
+            "Realizada em chart-1, marcada em line-strong e faltante só com contorno",
+            "Status em ordem fixa a partir das 12 horas: realizada, marcada, faltante",
+            "Legenda com amostra na forma do segmento e contagem à direita",
+            "Centro com as realizadas e a meta abaixo em text-muted"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_sla-diario-do-mes-por-fila",
+          "titulo": "SLA diário do mês por fila",
+          "caso_de_uso": "Pré-vendas: em quantos dias úteis de 2026-06 cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta.",
+          "o_que_demonstra": [
+            "Três anéis de 22 segmentos, mesmo diâmetro e mesma ordem de dias",
+            "Estado por dia com palavra na legenda: cumprido, estourado, sem expediente",
+            "Dia sem expediente em contorno text-muted e fora da contagem do centro",
+            "Centro de cada anel com dias cumpridos sobre dias com expediente"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_quarenta-unidades-e-excedente",
+          "titulo": "Reuniões do trimestre acima da meta",
+          "caso_de_uso": "Comercial: o executivo fez 43 reuniões contra a meta trimestral de 40 e o anel precisa mostrar o excedente.",
+          "o_que_demonstra": [
+            "40 segmentos no teto de legibilidade do formato, com vão de 3 graus pela fórmula",
+            "Excedente fora do anel em selo +3 acima da meta, sem segmento extra",
+            "Centro 43 de 40 e frase acessível com o excedente",
+            "Limite documentado: acima de 40 unidades, trocar por waffle (22)"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "06_coluna-radial",
+      "nome": "Coluna radial (barplot circular)",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Barras que saem de um círculo interno para fora, uma por categoria ou por passo de um ciclo, desenhadas como setores de anel com geometria calculada em TypeScript. Só se paga com muitas categorias ou com ciclo real, como hora do dia e dia do ano. Absorve o pirulito radial (haste e ponto, com menos tinta) e a linha do tempo radial (janela de período sobre o ciclo).",
+      "quando_usar": [
+        "Ciclo com sentido circular: 24 horas, 7 dias, 12 meses ou 365 dias",
+        "Muitas categorias, 40 ou mais, com padrão evidente e ordenação por valor",
+        "Janela de tempo sobreposta ao ciclo, como o horário de atendimento",
+        "Desvio contra a média com negativos, usando o zero num anel intermediário"
+      ],
+      "quando_evitar": [
+        "Série temporal sem ciclo: colunas (03) ou linha (04)",
+        "Menos de uns 40 itens sem ciclo: barra horizontal (02)",
+        "Pergunta sobre dia da semana dentro do ano: calendário (15)",
+        "Comparar durações por comprimento de arco em raios diferentes ou espiral de vários anos (20)"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_entradas-por-hora-do-dia",
+          "titulo": "Entradas por hora do dia",
+          "caso_de_uso": "Pré-vendas: em que horas do dia chegam as 1.842 entradas de 2026-08, para escalar a fila.",
+          "o_que_demonstra": [
+            "SVG puro com arcPath de setor de anel, sem retângulo girado",
+            "Círculo interno com mais da metade do raio para conter a distorção",
+            "Anéis de grade em line-subtle com valores num único ângulo",
+            "Rótulos de hora horizontais a cada 3 horas, ancorados pelo quadrante",
+            "viewBox fixo e escala pelo pai com aspect-square"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_janela-de-atendimento-e-pico",
+          "titulo": "Janela de atendimento e pico de entradas",
+          "caso_de_uso": "Pré-vendas: quanto das entradas chega fora da janela das 9h às 18h e em que hora fica o pico do dia.",
+          "o_que_demonstra": [
+            "Faixa angular da janela em surface-sunken, com texto do que ela marca",
+            "Anotação no pico das 11h com nome e valor, em até 50 caracteres",
+            "Ângulo pela posição no ciclo de 24 horas, herdado da linha do tempo radial",
+            "Parte fora da janela calculada no componente e escrita na linha de leitura"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_leads-por-dia-do-ano",
+          "titulo": "Leads por dia de 2025",
+          "caso_de_uso": "Marketing: em que meses de 2025 a entrada diária de leads subiu, para ler a sazonalidade da mídia paga.",
+          "o_que_demonstra": [
+            "365 colunas finas agrupadas por mês, com vão angular entre os grupos",
+            "Rótulo de mês por formatMonthShort no perímetro, sem rótulo diário",
+            "Anel de referência da média diária em traço tracejado text-muted",
+            "Geometria das 365 colunas calculada uma vez com useMemo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_desvio-semanal-do-cpl",
+          "titulo": "Desvio semanal do CPL contra a média",
+          "caso_de_uso": "Marketing: em quais das 52 semanas de 2025 o CPL ficou acima ou abaixo da média do ano.",
+          "o_que_demonstra": [
+            "Pirulito radial: haste e ponto, com menos tinta que 52 colunas",
+            "Zero num anel intermediário, com hastes para dentro e para fora",
+            "CPL abaixo da média em positive e acima em negative, sempre com sinal",
+            "Anel do zero em line-strong sólido e escala escrita num único ângulo"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "07_rosa-de-nightingale",
+      "nome": "Rosa de Nightingale",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Setores de ângulo igual, um por passo de um ciclo, com o raio pela raiz quadrada do valor para que a área, e não o raio, seja proporcional. Com furo central a raiz fica por fora da soma inteira, Math.sqrt(rMin ** 2 + (rMax ** 2 - rMin ** 2) * (v / topo)), porque a área de um setor de anel vale r² menos rMin² e não r²; a forma com a raiz por dentro parece corrigida e não está. Também chamada coxcomb ou área polar. Absorve as colunas radiais e rosa da família 18, com a regra de declarar se o raio é linear ou por área; no Farol, o raio é sempre por área, e a peça escreve no rodapé que a grandeza lida é a área.",
+      "quando_usar": [
+        "Magnitude em ciclo de 12 meses ou 7 dias, onde o círculo significa alguma coisa",
+        "Peça de capa que mostra sazonalidade com a média como referência",
+        "Composição empilhada de até 3 camadas por passo do ciclo, com raio acumulado em raiz quadrada"
+      ],
+      "quando_evitar": [
+        "Categorias sem ciclo: colunas (03) ou barra horizontal (02)",
+        "Várias métricas por categoria: radar (18)",
+        "Leitura exata de valores mês a mês: colunas com rótulo (03)",
+        "Raio linear no valor: a área cresce ao quadrado e exagera o pico",
+        "Raiz quadrada por dentro do piso de raio: ignora o furo central e ainda exagera o pequeno"
+      ],
+      "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+      "versoes": [
+        {
+          "slug": "v1_investimento-de-midia-por-mes",
+          "titulo": "Investimento de mídia por mês",
+          "caso_de_uso": "Marketing: como o investimento em mídia paga se distribuiu pelos 12 meses de 2025, com área proporcional ao valor.",
+          "o_que_demonstra": [
+            "Pie com 12 itens de value 1 para ângulo igual e shape desenhando Sector",
+            "Raio pela raiz quadrada com o furo central dentro da raiz, área proporcional ao valor",
+            "Anéis de escala em circle, pintados depois dos setores, com o topo escrito no miolo",
+            "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+            "Nome do mês no perímetro por formatMonthShort, em texto horizontal"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_meses-acima-da-media",
+          "titulo": "Meses acima da média de investimento",
+          "caso_de_uso": "Marketing: quais meses de 2025 ficaram acima da média mensal de investimento em mídia e qual foi o maior.",
+          "o_que_demonstra": [
+            "Anel tracejado da média mensal, pela mesma conta de raio e por cima das pétalas",
+            "Meses acima da média em chart-1 e abaixo em line-strong com valor escrito",
+            "Maior mês com nome e valor em peso 700",
+            "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+            "Frase acessível com a média, o maior mês e quantos ficaram acima"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_custo-mensal-em-tres-camadas",
+          "titulo": "Custo mensal em três camadas",
+          "caso_de_uso": "Diretoria: como o custo de cada mês de 2025 se reparte entre mídia, time e estrutura, e em que meses a mídia pesa mais.",
+          "o_que_demonstra": [
+            "Setores empilhados com raio acumulado pela mesma fórmula, sobre o total da pilha",
+            "Teto de escala fixo com o corte declarado: tarja de quebra, marca fora do anel e valor escrito",
+            "Desenho em SVG com arcPath próprio, necessário para o empilhamento",
+            "Três camadas em slots 1, 3 e 6, com separador em surface-raised",
+            "Legenda acima com amostra e total anual de cada camada"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_ano-com-meses-a-realizar",
+          "titulo": "Investimento de 2026 com meses a realizar",
+          "caso_de_uso": "Marketing: como mostrar 2026 em rosa quando setembro está parcial e outubro a dezembro ainda não têm dado.",
+          "o_que_demonstra": [
+            "Meses sem dado com contorno tracejado text-muted e rótulo a realizar, nunca raio zero",
+            "Piso de raio do mês sem dado que não coincide com valor plausível da escala",
+            "Mês corrente com contorno tracejado e nota de parcial até a data do dado",
+            "Escala calculada só sobre meses fechados, para o parcial não achatar o resto",
+            "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+            "Frase acessível dizendo quantos meses têm dado fechado"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    }
+  ]
+}

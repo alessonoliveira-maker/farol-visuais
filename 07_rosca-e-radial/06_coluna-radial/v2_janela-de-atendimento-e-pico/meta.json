@@ -1,0 +1,13 @@
+{
+  "title": "Janela de atendimento e pico de entradas",
+  "useCase": "Mostrar quanto das entradas chega fora do horário comercial e em que hora o dia atinge o pico.",
+  "demonstrates": [
+    "Faixa angular da janela de atendimento em surface-sunken, com texto do que ela marca",
+    "Anotação no pico das 11h com nome e valor, respeitando o teto de duas anotações",
+    "Ângulo pela posição no ciclo de 24 horas, herdado da coluna radial básica",
+    "Parte fora da janela calculada no componente e escrita na linha de leitura"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Mesma escala escrita da v1: a anotação de pico dá o número exato do ponto mais importante, a escala dá o resto."
+}

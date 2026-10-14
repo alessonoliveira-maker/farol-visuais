@@ -1,0 +1,76 @@
+{
+  "slug": "06_marcador-em-trilho",
+  "nome": "Marcador em trilho",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Trilho horizontal que representa uma faixa conhecida e um único marcador onde o valor atual cai. Não há barra crescendo do zero: a leitura é posição, não quantidade. O mesmo desenho responde três perguntas diferentes conforme o que o trilho representa: de 0 a 100 dá percentual, do mínimo ao máximo histórico dá posição relativa, e a faixa aceitável dá julgamento; por isso os limites do trilho são texto visível obrigatório, com a fonte. No Farol é HTML com Tailwind: contêiner relative, faixa de referência como div absoluto com left e width percentuais calculados em TypeScript, marcador posicionado por left percentual e centrado sobre o ponto, valor atual escrito fora do trilho. Valor fora da faixa não fica preso na borda em silêncio: fica na borda com chevron apontando para fora e o número escrito. É o microvisual certo para dizer se o CPL de hoje é alto ou baixo para o que já se viu, sem inventar uma meta que ninguém definiu.",
+  "quando_usar": [
+    "Onde o valor de hoje cai entre o mínimo e o máximo dos últimos 12 meses, quando não há meta definida",
+    "Julgar se o valor está dentro de uma faixa aceitável com fonte declarada, como o SLA contratado",
+    "Participação própria entre concorrentes de um perímetro declarado, uma linha por segmento",
+    "Coluna de tabela com a posição relativa de cada linha dentro da própria faixa, com a escala declarada no cabeçalho",
+    "Card estreito em que uma barra de progresso mentiria por não existir total fixo"
+  ],
+  "quando_evitar": [
+    "Existe meta a atingir: use o bullet chart (13/02_bullet-chart) ou a barra de progresso (13/01_barra-de-progresso-linear)",
+    "Vários pontos por linha com eixo: use o dot plot de Cleveland (17/01_dot-plot-de-cleveland)",
+    "A trajetória até o valor importa: use o sparkline com faixa de normalidade (24/01_sparkline-de-linha)",
+    "Dois instantes, antes e depois: use o dumbbell (17/03_dumbbell)",
+    "Faixa sem definição de fonte: o trilho vira julgamento inventado; mostre só o número",
+    "Distribuição completa das observações: use o strip plot (16/03_strip-plot-e-beeswarm)"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-do-mes-na-faixa-de-12-meses",
+      "titulo": "CPL do mês na faixa de 12 meses",
+      "caso_de_uso": "Marketing: o CPL do mês é alto ou baixo para o que foi visto nos últimos 12 meses?",
+      "o_que_demonstra": [
+        "Trilho de 6 px em --surface-overlay do menor ao maior CPL do período",
+        "Marcador de 12 px em --chart-1 com o valor por formatCurrencyCompact fora do trilho",
+        "Mínimo e máximo escritos nas pontas em 11 px, com o mês de cada extremo",
+        "Frase acessível com a posição dentro da faixa e a distância do máximo"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_tempo-de-resposta-com-faixa-aceitavel",
+      "titulo": "Tempo de resposta contra a faixa aceitável",
+      "caso_de_uso": "Pré-vendas: o tempo mediano de primeira resposta da semana está dentro da faixa aceitável do SLA contratado?",
+      "o_que_demonstra": [
+        "Trilho do mínimo ao máximo histórico com a faixa aceitável em --surface-sunken",
+        "Fonte da faixa escrita junto: SLA contratado, de 5 a 30 minutos",
+        "Marcador fora da faixa com a expressão fora do SLA, sem depender só da cor",
+        "Rótulos de limite sem colisão, omitindo o do meio quando não cabe",
+        "Julgamento pela faixa e pelo texto, sem pintar o trilho de verde ou vermelho"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_participacao-por-segmento-com-perimetro",
+      "titulo": "Participação por segmento dentro do perímetro",
+      "caso_de_uso": "Diretoria: em cada um dos 8 segmentos, onde a participação própria cai entre os concorrentes do perímetro?",
+      "o_que_demonstra": [
+        "Uma linha por segmento, trilho da menor à maior participação do perímetro",
+        "Perímetro declarado no cabeçalho, com o número de concorrentes fictícios de cada linha",
+        "Escala comum de 0% ao maior máximo da tabela, dita no cabeçalho, para comparar nível",
+        "Mediana do perímetro como traço de 1 px em --line-strong dentro do trilho",
+        "Participação por formatPercent com uma casa e posição ordinal com º, como 3º de 11",
+        "Frase acessível com os segmentos acima e abaixo da mediana"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_valor-fora-da-faixa-e-sem-historico",
+      "titulo": "Valor fora da faixa histórica",
+      "caso_de_uso": "Marketing: como marcar a origem cujo CPL passou do máximo de 12 meses e a origem ainda sem histórico?",
+      "o_que_demonstra": [
+        "Marcador preso na borda direita com ChevronRight para fora e o valor escrito",
+        "Rótulo acima do máximo de 12 meses com a distância por formatPercent",
+        "Origem com menos de 6 meses sem trilho e o texto faixa sem histórico suficiente",
+        "Valor indisponível com formatUnavailable e ícone Unplug, sem marcador no zero",
+        "Mínimo e máximo calculados sem o valor atual, dito na frase acessível"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

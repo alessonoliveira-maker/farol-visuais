@@ -1,0 +1,121 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "08_cascata-aninhada",
+  "versoes": {
+    "v1_custo-total-abrindo-em-marketing": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; filhos somam o pai (390 e 150 mil) e o total do filho repete o passo emoldurado. Observações no README: escala própria do filho não declarada, moldura com meio traço cortado na base, linha do topo sem tabular-nums, conector em line-strong lido como referência (ACE-6).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:45.183Z",
+      "impressao": "6339e7fb047d3e910b431ddfa864d9213322b524",
+      "arquivos": {
+        "Chart.tsx": "dc0d0e271c6322d3829d1c62201da04042744e9d",
+        "data.ts": "7d182855f5155bcf2cac0ff2fd33bc6b36aefa43",
+        "meta.json": "16ceda94f8a81f927e7cf458a007873add38333a"
+      }
+    },
+    "v2_passo-que-mais-cresceu-abre": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; polaridade de custo com sinal, base na mesma linha (NUM-4), conector do passo negativo sai do nível certo. Observações no README: três rótulos em 700 (TIP-3), percentual sem casa abaixo de 10% ao abrir Pessoas (NUM-1), ordem por variação igual à ordem por valor no dado fixo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:45.691Z",
+      "impressao": "f4ae442dcad1362c3e33186c288c9ebdfd3241c5",
+      "arquivos": {
+        "Chart.tsx": "c3b620b6b12f39244dc770362da38b7ee10b01f7",
+        "data.ts": "e8f21bc7057b490761c94e4b7891242ec33cb16f",
+        "meta.json": "2ea428e17656079b470b06c7edf17f764f3cdbec"
+      }
+    },
+    "v3_perdas-do-funil-em-tres-niveis": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado pelo arquivo de hoje. NUM-2 conferida nos quatro níveis navegáveis: os percentuais impressos somam 100 na raiz (87, 9 e 4), 87 em Pré-venda, 39 em Sem contato e 9 em Proposta, com o mesmo inteiro no rótulo, na migalha, no aria-label do passo e na frase acessível. Raiz, Sem contato e Proposta conferidos navegando o build do render nos dois temas, sem corte nem colisão. Observações no README: dica diverge do rótulo em Negociação (4% contra 3% e 3,4%) e em Visita (DIC-2), parte do nível na dica soma 99 e 101, linha de leitura sem conclusão (ANO-5), migalha 4 px deslocada, estados fora do preview.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:42:52.216Z",
+      "impressao": "56c44d63a56c91cc99d3178ec2b41db0421e7ac5",
+      "arquivos": {
+        "Chart.tsx": "febe6efe975673c6f547f7f79cad1315a0eec832",
+        "data.ts": "58c68ef17b8c3d8fe06a9d74ad7c3d59c10485a0",
+        "meta.json": "7345d33a03b5b74add511de51070640f835f9cfc"
+      }
+    },
+    "v4_filho-que-nao-fecha-o-pai": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; passo sem motivo vazado, por último e visível, 13 perdas (12%) sem redistribuir, percentuais impressos somam 100. Observações no README: percentuais sem maior resto fecham só por coincidência do dado fixo (NUM-2), período só na frase acessível (DAD-9).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:46.698Z",
+      "impressao": "f44d7bcbe3b67c15a11a2db1248a281e1983bce2",
+      "arquivos": {
+        "Chart.tsx": "0be75bdf247cc04c63a19792b90ece21a89f1114",
+        "data.ts": "94422e0d47e3da21a09895b3beafc3560619782c",
+        "meta.json": "14c20458dbd93b67ed68b1b27de0c1534c92e1b4"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_custo-total-abrindo-em-marketing",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; filhos somam o pai (390 e 150 mil) e o total do filho repete o passo emoldurado. Observações no README: escala própria do filho não declarada, moldura com meio traço cortado na base, linha do topo sem tabular-nums, conector em line-strong lido como referência (ACE-6).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:45.183Z",
+      "impressao": "6339e7fb047d3e910b431ddfa864d9213322b524",
+      "arquivos": {
+        "Chart.tsx": "dc0d0e271c6322d3829d1c62201da04042744e9d",
+        "data.ts": "7d182855f5155bcf2cac0ff2fd33bc6b36aefa43",
+        "meta.json": "16ceda94f8a81f927e7cf458a007873add38333a"
+      }
+    },
+    {
+      "versao": "v2_passo-que-mais-cresceu-abre",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; polaridade de custo com sinal, base na mesma linha (NUM-4), conector do passo negativo sai do nível certo. Observações no README: três rótulos em 700 (TIP-3), percentual sem casa abaixo de 10% ao abrir Pessoas (NUM-1), ordem por variação igual à ordem por valor no dado fixo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:45.691Z",
+      "impressao": "f4ae442dcad1362c3e33186c288c9ebdfd3241c5",
+      "arquivos": {
+        "Chart.tsx": "c3b620b6b12f39244dc770362da38b7ee10b01f7",
+        "data.ts": "e8f21bc7057b490761c94e4b7891242ec33cb16f",
+        "meta.json": "2ea428e17656079b470b06c7edf17f764f3cdbec"
+      }
+    },
+    {
+      "versao": "v3_perdas-do-funil-em-tres-niveis",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6, NUM-2: o percentual inteiro sai de arredondamento independente e não soma em dois dos quatro níveis navegáveis com o dado fixo (raiz imprime 87% + 9% + 3% = 99% contra 100%; sem contato imprime 18 + 12 + 7 + 3 = 40% contra 39%). Repartir pelo maior resto em cada nível, com alvo no inteiro do pai (100 na raiz), e usar o mesmo inteiro no rótulo, na migalha, no aria-label do passo e na frase acessível. Parecer em validation/revisao_19_cascata-waterfall__08_cascata-aninhada_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:46.186Z",
+      "impressao": "202428a0e7c4c8c3ec016f921fdb79c19479fb29",
+      "arquivos": {
+        "Chart.tsx": "b03fa3a92623361d5d67189a5603b7e0ce6b9774",
+        "data.ts": "58c68ef17b8c3d8fe06a9d74ad7c3d59c10485a0",
+        "meta.json": "7345d33a03b5b74add511de51070640f835f9cfc"
+      }
+    },
+    {
+      "versao": "v4_filho-que-nao-fecha-o-pai",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas; passo sem motivo vazado, por último e visível, 13 perdas (12%) sem redistribuir, percentuais impressos somam 100. Observações no README: percentuais sem maior resto fecham só por coincidência do dado fixo (NUM-2), período só na frase acessível (DAD-9).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:31:46.698Z",
+      "impressao": "f44d7bcbe3b67c15a11a2db1248a281e1983bce2",
+      "arquivos": {
+        "Chart.tsx": "0be75bdf247cc04c63a19792b90ece21a89f1114",
+        "data.ts": "94422e0d47e3da21a09895b3beafc3560619782c",
+        "meta.json": "14c20458dbd93b67ed68b1b27de0c1534c92e1b4"
+      }
+    },
+    {
+      "versao": "v3_perdas-do-funil-em-tres-niveis",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nas 32 perguntas, julgado pelo arquivo de hoje. NUM-2 conferida nos quatro níveis navegáveis: os percentuais impressos somam 100 na raiz (87, 9 e 4), 87 em Pré-venda, 39 em Sem contato e 9 em Proposta, com o mesmo inteiro no rótulo, na migalha, no aria-label do passo e na frase acessível. Raiz, Sem contato e Proposta conferidos navegando o build do render nos dois temas, sem corte nem colisão. Observações no README: dica diverge do rótulo em Negociação (4% contra 3% e 3,4%) e em Visita (DIC-2), parte do nível na dica soma 99 e 101, linha de leitura sem conclusão (ANO-5), migalha 4 px deslocada, estados fora do preview.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:42:52.216Z",
+      "impressao": "56c44d63a56c91cc99d3178ec2b41db0421e7ac5",
+      "arquivos": {
+        "Chart.tsx": "febe6efe975673c6f547f7f79cad1315a0eec832",
+        "data.ts": "58c68ef17b8c3d8fe06a9d74ad7c3d59c10485a0",
+        "meta.json": "7345d33a03b5b74add511de51070640f835f9cfc"
+      }
+    }
+  ]
+}

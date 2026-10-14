@@ -1,0 +1,15 @@
+{
+  "title": "Não comparecimento em destaque nas agendas",
+  "useCase": "Que fração das agendas da semana virou não comparecimento, e quanto isso se afastou da semana anterior?",
+  "demonstrates": [
+    "Fatia acesa deslocada 8 px no próprio eixo por Sector em shape, sem activeIndex",
+    "Margem de 10 px nos quatro lados, porque a direção do deslocamento vem do dado",
+    "Destaque em três canais: deslocamento, peso 700 do rótulo e anotação ao lado",
+    "Anotação com base nomeada e volume: semana anterior com 9% (7 de 78)",
+    "Neutro em var(--text-muted), que passa 3:1 nos dois temas, e rótulo vazado",
+    "Percentual inteiro pelo maior resto somando 100, com a contagem na lista"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): corpo de 574 x 225 px, porque o caso de uso tem 102 caracteres e quebra em duas linhas no cabeçalho da moldura (desconto de 66 px na largura e de 135 px na altura). A linha de leitura gasta 24 px; a fileira fica com 201 px, em que a pizza ocupa um quadrado de 201 px e a coluna da esquerda mede 146 px de texto, com 55 px de folga. A pizza fica à direita e a coluna à esquerda de propósito: o líder de 58% ocupa a metade direita do disco, então a fatia acesa cai sempre no flanco esquerdo, e é ali que a anotação precisa estar ao lado dela. O peso 700 aparece em dois elementos, o percentual da fatia acesa e o nome dela na lista, que é o teto da TIP-3; o texto do catálogo que pede peso 700 não colide com a regra, porque a regra permite exatamente dois. Medido nesta produção contra tokens.css: aceso var(--chart-1) 9,50:1 no escuro e 6,00:1 no claro contra o cartão; neutro var(--text-muted) 5,21:1 e 5,37:1; rótulo vazado em var(--surface-raised) 9,50:1 e 6,00:1 sobre o aceso e 5,21:1 e 5,37:1 sobre o neutro, os dois acima do piso de texto de 4,5:1. Aceso contra neutro mede 1,82:1 no escuro e 1,12:1 no claro (TOK-9), que é a razão de o destaque não morar na cor. A menor fatia tem 36 graus e 31,9 px de corda no raio do rótulo, contra 20,8 px de tinta de 12 px: cabe com 5,5 px de cada lado. O neutro é var(--text-muted) e não o var(--line-strong) da 17.2, que mede 1,79:1 e 1,83:1 e sumiria contra o cartão na borda do disco. Sem dica: tudo o que ela acrescentaria, a contagem e o percentual, já está escrito na lista, e a DIC-1 só admite dica que acrescente."
+}

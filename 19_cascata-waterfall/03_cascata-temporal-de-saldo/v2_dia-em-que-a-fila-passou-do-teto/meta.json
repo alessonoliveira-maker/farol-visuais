@@ -1,0 +1,13 @@
+{
+  "title": "O dia em que a fila passou do teto",
+  "useCase": "Qual dia da semana levou a fila de pré-vendas acima do teto de 120 leads, e o que o causou?",
+  "demonstrates": [
+    "ReferenceLine do teto de capacidade com traço tracejado e rótulo",
+    "Destaque em --chart-1 só no passo do disparo, resto neutro",
+    "Peso 700 no rótulo destacado, além da cor",
+    "Anotação curta ancorada no passo que explica o estouro"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas largo em vez de card, pela mesma conta da v1 (doze colunas, rótulo de total com substantivo; no card o passo seria de 46,5 px). O resto das marcas é neutro em --line-strong, que mede 1,79:1 no escuro e 1,83:1 no claro contra o cartão; o valor de cada passo está escrito na própria marca (ACE-3) e a direção vem do sinal e da posição, não da cor. O peso 700 fica em um só elemento, o rótulo do passo do disparo, abaixo do teto de dois da TIP-3."
+}

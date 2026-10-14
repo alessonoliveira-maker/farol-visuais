@@ -1,0 +1,13 @@
+{
+  "title": "Ponte da receita do trimestre",
+  "useCase": "Por que a receita reconhecida saiu de R$ 1,72 mi em 2026-T2 para R$ 1,89 mi em 2026-T3?",
+  "demonstrates": [
+    "Bar de faixa com dataKey devolvendo [baixo, alto], como no exemplo oficial",
+    "Cor por papel no shape: aumento, queda e total, com sinal no rótulo",
+    "Conector horizontal desenhado pelo próprio shape até a barra seguinte",
+    "Passo de valor zero vira traço de 2 px com o rótulo R$ 0",
+    "Fechamento verificado no dado: soma dos passos igual a fim menos início"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

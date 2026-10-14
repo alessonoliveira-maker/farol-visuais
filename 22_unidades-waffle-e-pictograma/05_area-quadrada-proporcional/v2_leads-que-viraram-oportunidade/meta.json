@@ -1,0 +1,13 @@
+{
+  "title": "Leads que viraram oportunidade",
+  "useCase": "Marketing: dentro do total de leads do semestre, quantos viraram oportunidade e quanto do quadrado ficou apagado.",
+  "demonstrates": [
+    "Subconjunto aceso dentro do quadrado maior, preenchido a partir do canto inferior",
+    "Aceso em --chart-1 e restante apagado em --surface-sunken com contorno",
+    "Taxa por formatRateWithVolume: 16,5% (212 de 1.284)",
+    "Anotação ligada ao bloco aceso, sem legenda separada"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o restante do quadrado vai em --surface-sunken com contorno --line-strong, e não em --surface-overlay, porque no tema claro o overlay é o mesmo branco do cartão (1,00:1) e as células apagadas sumiriam. O colchete do bloco aceso cobre 3 linhas (42 células = 2 linhas de 17 e 8 células da terceira), então passa de 9 células apagadas da terceira linha; o número escrito é o exato."
+}

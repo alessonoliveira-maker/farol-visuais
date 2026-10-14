@@ -1,0 +1,75 @@
+{
+  "slug": "04_grafo-de-rede-por-forcas",
+  "nome": "Grafo de rede dirigido por forças",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Nós posicionados por uma simulação física em que as ligações puxam e os nós se repelem, o que revela grupos, pontes e periferia. O tamanho do nó sai do grau ou do valor (raiz quadrada no raio), a cor sai do grupo e a espessura da aresta sai do peso, com seta quando a rede é dirigida. Sem biblioteca: Fruchterman e Reingold em TypeScript dentro de useMemo, com k = sqrt(área / n), repulsão k² / d entre todos os pares, atração d² / k nas arestas, temperatura decrescente e cerca de 300 iterações; as posições iniciais saem de um PRNG com semente fixa derivada do dado, então a mesma entrada dá sempre o mesmo desenho e nada anima na tela. O inimigo é o emaranhado: filtro de peso mínimo e limite de nós antes de desenhar, com o total omitido escrito, e rótulo só nos nós relevantes.",
+  "quando_usar": [
+    "Descobrir grupos, pontes e periferia numa rede de até cerca de 150 nós",
+    "Rede de indicação entre clientes, em que a forma (hubs, cadeias, ilhas) é a mensagem",
+    "Coocorrência de produto em contas quando se quer ver comunidades, com filtro de peso",
+    "Exploração com hover que acende a vizinhança e clique que fixa a seleção",
+    "Até 300 nós calculados no navegador; acima disso, posições pré-calculadas fora da tela"
+  ],
+  "quando_evitar": [
+    "Mais de 300 nós ou ligações densas, que viram emaranhado: use a matriz de adjacência (27/01)",
+    "Leitura de valor exato do par ou ranking de ligações: use a matriz (27/01) ou a lista ordenada de pares",
+    "Dois tipos de entidade com ligações só entre eles: use o grafo bipartido (27/02)",
+    "Rede centrada numa entidade só: use a versão egocêntrica do grafo radial (27/06)",
+    "Pertencimento de pai para filho, sem aresta cruzada: use a árvore e dendrograma (12/07_arvore-e-dendrograma)"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_rede-de-indicacoes-entre-clientes",
+      "titulo": "Rede de indicações entre clientes",
+      "caso_de_uso": "Comercial: como as 72 indicações registradas desde 2025 ligam os 60 clientes fictícios e se formam grupos.",
+      "o_que_demonstra": [
+        "Fruchterman e Reingold em TypeScript com semente fixa por mulberry32",
+        "Raio do nó pela raiz da receita e cor pelo produto principal em slots fixos",
+        "Arestas em var(--text-muted) com opacidade 0,25, desenhadas antes dos nós",
+        "Posições presas à área útil, com margem para o maior rótulo",
+        "Legenda de grupos e contagem de nós e arestas escrita no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_clientes-que-mais-indicam",
+      "titulo": "Os três clientes que mais indicam",
+      "caso_de_uso": "Comercial: quem são os três clientes fictícios com mais indicações e quem cada um trouxe para a carteira.",
+      "o_que_demonstra": [
+        "Três nós em var(--chart-1) com rótulo em peso 700 e os demais em var(--line-strong)",
+        "Setas dirigidas por marker SVG com recuo pelo raio do nó de destino",
+        "Vizinhança acesa por highlightId com adjacência em Map de Set",
+        "Rótulo só nos nós de grau acima do corte; o resto vai para a dica",
+        "Anotação com o número de indicados de cada um dos três"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v3_coocorrencia-de-produto-em-180-contas",
+      "titulo": "Produtos que convivem em 180 contas",
+      "caso_de_uso": "Comercial: que comunidades de contas aparecem quando se liga quem tem pelo menos dois produtos em comum, com o que ficou oculto.",
+      "o_que_demonstra": [
+        "Filtro de peso mínimo 2 antes da simulação, com 236 ligações fracas ocultas escritas",
+        "Cor do nó pelo produto dominante até 6 slots e Outros com a contagem",
+        "Custo quadrático medido: 180 nós calculados uma vez em useMemo",
+        "Rótulo só nas pontes, os nós que ligam dois grupos",
+        "Painel lateral com legenda e totais para o grafo ocupar o espaço útil"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_clientes-sem-nenhuma-indicacao",
+      "titulo": "Clientes fora da rede de indicações",
+      "caso_de_uso": "Comercial: onde ficam os 22 clientes fictícios sem nenhuma indicação feita ou recebida, sem espalhá-los pela borda.",
+      "o_que_demonstra": [
+        "Nós isolados retirados da simulação e alinhados numa faixa sem ligação abaixo",
+        "Faixa com título e contagem, como 22 clientes sem ligação",
+        "Nó isolado com contorno var(--text-muted) e sem preenchimento",
+        "Componentes pequenos separados do componente principal por espaço, não por moldura",
+        "Lista acessível de ligações (origem, destino) como alternativa ao desenho"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

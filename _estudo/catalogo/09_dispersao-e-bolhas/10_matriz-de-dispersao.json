@@ -1,0 +1,66 @@
+{
+  "slug": "10_matriz-de-dispersao",
+  "nome": "Matriz de dispersão",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Grade com uma dispersão pequena para cada par de medidas e a distribuição de cada medida na diagonal. Serve para explorar de uma vez as relações entre 3 a 5 medidas e escolher qual par merece um gráfico grande. Cada coluna usa o mesmo domínio de X em todas as linhas e cada linha o mesmo de Y; células sem animação, sem dica e com rótulo de eixo só na borda.",
+  "quando_usar": [
+    "Explorar pares entre 3 a 5 medidas de campanha, de SDR ou de oportunidade.",
+    "Escolher qual relação abrir em tamanho grande antes de montar o cartão definitivo.",
+    "Seleção fixa de um grupo destacada nas mesmas entidades em todas as células.",
+    "Até cerca de 300 entidades por célula."
+  ],
+  "quando_evitar": [
+    "Apresentação para diretoria: é visual de exploração; mostre só o par que importa (modelo 01 ou 02).",
+    "Mais de 5 medidas: são 20 ou mais gráficos; use correlograma com cor pela correlação (família 15).",
+    "Domínios diferentes por célula: a comparação entre células mente.",
+    "Cartão pequeno: cada célula precisa de pelo menos cerca de 90 px de lado."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_quatro-medidas-de-campanha",
+      "titulo": "Quatro medidas de campanha em pares",
+      "caso_de_uso": "Entre investimento, CPL, CTR e taxa de qualificação, quais pares de medidas andam juntos em 64 campanhas?",
+      "o_que_demonstra": [
+        "Grade de 4 por 4 em Tailwind com um ScatterChart pequeno por célula",
+        "Domínio compartilhado por coluna e por linha, calculado sobre o conjunto",
+        "Histograma de cada medida na diagonal",
+        "Rótulos de medida só na borda e células sem animação nem dica"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_plataforma-destacada-em-todas-as-celulas",
+      "titulo": "Campanhas da plataforma B em todos os pares",
+      "caso_de_uso": "As campanhas da plataforma B ficam no mesmo lugar em todos os pares? Seleção fixa acesa em todas as células.",
+      "o_que_demonstra": [
+        "Estado de seleção por id compartilhado entre as células",
+        "Selecionadas em cor de destaque por cima e restante em neutro",
+        "Contagem de selecionadas escrita acima da grade"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_cinco-medidas-da-pre-vendas",
+      "titulo": "Cinco medidas da pré-vendas por SDR e semana",
+      "caso_de_uso": "Fila, tentativas, tempo de contato, agendas e SLA se relacionam como? 240 registros de SDR por semana, só o triângulo inferior.",
+      "o_que_demonstra": [
+        "Triângulo inferior da matriz para cortar os pares repetidos de 20 para 10",
+        "Ponto pequeno com opacidade baixa para 240 registros por célula",
+        "Eixo de tempo em escala log aplicado igual em linha e coluna"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_medida-com-muitos-ausentes",
+      "titulo": "Pares com CTR ausente em parte das campanhas",
+      "caso_de_uso": "Como ler os pares quando 30% das campanhas não têm CTR registrado? Cada célula escreve o seu n.",
+      "o_que_demonstra": [
+        "Contagem de pontos exibidos no canto de cada célula",
+        "Registro sem a medida fora só das células que dependem dela",
+        "Nota que diz quantas campanhas não têm CTR, sem lançar zero"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

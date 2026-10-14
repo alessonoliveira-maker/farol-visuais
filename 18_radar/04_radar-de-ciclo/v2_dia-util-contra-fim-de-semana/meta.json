@@ -1,0 +1,13 @@
+{
+  "title": "Entradas em dia útil contra fim de semana",
+  "useCase": "Pré-vendas, 2026-08: a demanda de fim de semana tem outro relógio e pede plantão num horário diferente?",
+  "demonstrates": [
+    "Dia útil preenchido em --chart-1 e fim de semana em contorno --chart-3",
+    "Médias por hora nas duas séries para comparar regimes de tamanho diferente",
+    "Anotação de quem é do fim de semana: a atividade passa a do dia útil às 21h",
+    "Legenda com amostra de área e de linha e dica com as duas médias por hora"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O preenchimento do dia útil sai com 0,66 de opacidade: a ACE-5 pede que a área composta de --chart-1 fique acima de 3:1 no tema claro. A hora da anotação é calculada do dado (a primeira hora depois do pico do dia útil em que a média do fim de semana passa a do dia útil, 21h) e a anotação nomeia o regime, porque a cor sozinha não diz de quem é o número. O dado tem 21 dias úteis e 10 de fim de semana, e por isso o desenho compara médias por hora, nunca totais. Das 5h às 20h o contorno do fim de semana corre sobre o preenchimento do dia útil e, sem ajuda, mede 1,33:1 no escuro e 2,06:1 no claro contra ele (TOK-4: nenhum par categórico chega a 3:1). Por isso um revestimento de 5,5 px em --surface-raised passa por baixo do contorno: o contorno mede 6,47:1 (escuro) e 6,18:1 (claro) contra o revestimento, e o revestimento mede 4,88:1 e 3,00:1 contra o preenchimento. O contorno de 2 px do dia útil é repintado acima do revestimento para não ser partido nos cruzamentos. O contrato vence."
+}

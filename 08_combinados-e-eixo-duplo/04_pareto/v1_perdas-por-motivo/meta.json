@@ -1,0 +1,12 @@
+{
+  "title": "Perdas do trimestre por motivo",
+  "useCase": "Quais motivos explicam a maior parte das oportunidades perdidas no trimestre?",
+  "demonstrates": [
+    "Ordenação decrescente com desempate estável por nome, antes do render",
+    "Outros sempre no fim, mesmo quando maior que a última categoria",
+    "Eixo das colunas de 0 ao total: a 1ª coluna toca o 1º ponto da linha",
+    "Acumulado sobre valores brutos, arredondado só na exibição"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

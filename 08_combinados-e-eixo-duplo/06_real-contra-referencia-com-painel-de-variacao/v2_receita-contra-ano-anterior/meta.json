@@ -1,0 +1,17 @@
+{
+  "title": "Receita contra o mesmo mês do ano anterior",
+  "useCase": "A receita de cada mês de 2026 cresceu contra o mesmo mês de 2025, e onde estão os maiores desvios?",
+  "demonstrates": [
+    "Variação percentual com piso de base declarado, absoluta abaixo dele",
+    "Os dois maiores desvios anotados e o resto silencioso",
+    "Rótulo da variação dentro ou fora da coluna conforme o sinal",
+    "Base nomeada na mesma linha de cada variação anotada",
+    "Rótulo desenhado no shape do Bar, que é quem recebe a linha do dado"
+  ],
+  "canvas": {
+    "width": 760,
+    "height": 580
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1). Corpo de 694 x 461,5 px (760 menos 2 x 33 de recuo; 580 menos 66, menos 40,5 de cabeçalho de uma linha, menos 12 de vão). O caso de uso mede 578,9 px de tinta a 12 px em Manrope contra 694 px de caixa, então o cabeçalho tem uma linha com 115 px de folga. Altura: linha de leitura 24 px, vão 12 px, painel de variação fixo em 192 px (h-48) e o principal com o resto, 233,5 px. ESP-6: plano de 598 px (694 menos 84 de eixo, menos 12 de margem), passo de 49,83 px para 12 meses, fantasma de 19,93 px e sólido central de 12,95 px, os dois acima do piso de 12 px da ESP-2. TENSÃO DECLARADA da EIX-6: o eixo declara 84 px e não os 48 a 64 do teto, porque o tique mais largo, com o sinal U+2212 antes do símbolo (−R$ 300 mil, 61,79 px de tinta em Space Grotesk), só fica em uma linha a partir de 81 px (emenda da EIX-6 de 2026-10-02, medida no render), e 80 o quebrava em duas linhas; a conta anterior era a de R$ -300 mil, 59,43 px com o hífen e 18 px de sobrecarga, 77,43 px; nenhum tique de moeda com a unidade escrita cabe em 64 px, e a decisão é do dono do catálogo. Leitura de 'dentro ou fora da coluna': a coluna de variação mede 20 px de largura e o rótulo anotado mede de 192 a 226 px de tinta, então dentro do retângulo é geometricamente impossível; dentro passa a significar dentro do vão vertical da coluna, entre o zero e a ponta, e fora significa além da ponta. O rótulo de dentro encosta na borda lateral da coluna em vez de cobri-la, porque o halo da ROT-7 apagaria a marca (GEO-4). Folga de 1,35 no domínio de variação: sem ela a coluna do maior desvio encosta na borda do plano e o rótulo de fora não tem onde nascer. GUARDA NÃO MEDIDA, conferida à mão: a OPACIDADE-MARCA saiu sem_opacidade_em_marca porque nenhuma marca desta versão declara opacidade; conferido por leitura do Chart.tsx, não há opacity, fillOpacity nem classe bg-token/pct em marca de dado."
+}

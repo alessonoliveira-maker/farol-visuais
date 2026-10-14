@@ -1,0 +1,14 @@
+{
+  "title": "Receita projetada de 2027 em faixa",
+  "useCase": "Qual é a faixa provável da receita de 2027 com a capacidade atual da pré-vendas, em vez de um ponto único?",
+  "demonstrates": [
+    "Faixa escrita como número principal: R$ 6,8 mi a R$ 8,3 mi",
+    "Escala com domínio declarado, de zero ao teto do plano, e não a própria faixa",
+    "Ponto central em traço fino, com peso visual menor que a faixa",
+    "Premissa escrita em uma linha e etiqueta PREMISSA no cartão",
+    "Geometria da régua em função pura, com viewBox fixo"
+  ],
+  "canvas": { "width": 440, "height": 320 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset kpi-alto: a faixa escrita em 30 px não cabe nos 296 px de corpo do preset."
+}

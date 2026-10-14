@@ -1,0 +1,57 @@
+{
+  "slug": "10_corrida-de-barras",
+  "nome": "Corrida de barras",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Barras horizontais ordenadas que trocam de posição ao longo do tempo, animadas, com o período corrente escrito grande no canto. É peça de narrativa para abrir apresentação, não de análise. O Recharts não tem esse modo: a posição vertical de cada categoria sai do índice no ranking do período, e transform e largura animam por transição CSS em torno de 300 ms, com a chave do React sendo a categoria e nunca o índice. O comportamento do bar racing do ECharts serve de especificação. Respeita prefers-reduced-motion, oferece pausa e termina num quadro estático, que é também o que o preview do catálogo retrata, porque o render é determinístico.",
+  "quando_usar": [
+    "Abertura de reunião ou apresentação em que o ranking ao longo do tempo é a história.",
+    "Top 10 entre muitas entidades, de 12 a cerca de 36 períodos.",
+    "Quando o quadro final estático sustenta o resto da apresentação."
+  ],
+  "quando_evitar": [
+    "Análise ou decisão: o leitor não retém a trajetória; use bump ou slope (04_linhas).",
+    "Leitura de valor exato: barras simples ordenadas do período (01_barras-simples-ordenadas).",
+    "Poucas entidades que quase não trocam de posição: pequenos múltiplos de linha (04_linhas).",
+    "Painel de uso diário: movimento contínuo compete com os outros cards."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_origens-mes-a-mes",
+      "titulo": "Top 10 origens de lead mês a mês",
+      "caso_de_uso": "Como o ranking das origens de lead mudou nos últimos 24 meses, para abrir a reunião de Marketing.",
+      "o_que_demonstra": [
+        "Posição por índice no ranking com transform animado por transição CSS",
+        "Chave do React pela categoria para a barra não trocar de identidade",
+        "Período corrente em Space Grotesk grande no canto",
+        "Botão de pausa, prefers-reduced-motion e quadro final estático",
+        "Máximo do eixo acompanhando o maior valor do período"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_receita-acumulada-com-marcos",
+      "titulo": "Receita acumulada por linha de negócio",
+      "caso_de_uso": "Contar à Diretoria como as linhas de negócio chegaram à receita acumulada dos últimos 8 trimestres.",
+      "o_que_demonstra": [
+        "Marcos fixos no tempo que congelam a animação e mostram um texto curto",
+        "Aviso de que a interpolação entre trimestres cria valores intermediários",
+        "Quadro final estático igual ao preview do catálogo",
+        "Valor na ponta em moeda compacta atualizado a cada passo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_entrada-e-saida-do-top-10",
+      "titulo": "Campanhas que entram e saem do top 10",
+      "caso_de_uso": "Acompanhar campanhas que entram e saem do top 10 várias vezes, incluindo meses em que uma delas não teve coleta.",
+      "o_que_demonstra": [
+        "Entrada e saída do top 10 com transição de opacidade, sem barra piscando",
+        "Período sem coleta congela o último valor conhecido com marca visual",
+        "Ausência nunca interpolada como zero",
+        "Desempate estável por nome para a ordem não oscilar entre quadros"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

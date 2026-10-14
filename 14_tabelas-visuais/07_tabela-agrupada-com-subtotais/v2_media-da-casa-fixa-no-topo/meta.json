@@ -1,0 +1,13 @@
+{
+  "title": "Executivos contra a média da casa",
+  "useCase": "Comercial: quem está acima ou abaixo da média da casa em taxa de ganho, com a média sempre à vista.",
+  "demonstrates": [
+    "Linha fixa da média com fundo surface-sunken, marcada como referência",
+    "Coluna de desvio contra a média em barra divergente com sinal escrito",
+    "Posição sticky no contêiner de rolagem, sem overflow hidden em ancestral",
+    "Taxa com volume por formatRateWithVolume em cada linha"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Subtotal de time e média da casa por MÉDIA PONDERADA (soma de ganhos sobre soma do total), não média simples dos percentuais. O dado de exemplo cabe sem rolar; com mais linhas o mesmo contêiner rola e a linha fixa continua no topo."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "CPL do mês na faixa de 12 meses",
+  "useCase": "Marketing: o CPL do mês é alto ou baixo para o que foi visto nos últimos 12 meses?",
+  "demonstrates": [
+    "Trilho de 6 px do menor ao maior CPL do período, sem meta inventada",
+    "Marcador de 12 px em --chart-1 com o valor por formatCurrencyCompact fora do trilho",
+    "Mínimo e máximo escritos nas pontas em 11 px, com o mês de cada extremo",
+    "Mês sem coleta ignorado na faixa e máximo repetido desempatado pelo mais recente",
+    "Frase acessível com a posição dentro da faixa e a distância do máximo"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo: o trilho é --line-strong e não --surface-overlay, porque no tema claro o overlay é o branco do cartão e o trilho some (ver CONTRATO, nota de --surface-overlay). Os dois traços de 1 px nas pontas marcam onde a faixa termina. A janela de 12 meses inclui o mês atual, então o marcador nunca sai da faixa nesta versão; o caso fora da faixa é a v4."
+}

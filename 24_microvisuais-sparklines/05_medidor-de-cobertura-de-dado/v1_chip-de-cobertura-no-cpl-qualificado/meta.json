@@ -1,0 +1,14 @@
+{
+  "title": "CPL qualificado com selo de cobertura",
+  "useCase": "Marketing: o CPL qualificado do mês pode ser lido como está, ou a base que o sustenta é incompleta?",
+  "demonstrates": [
+    "kpi-number do CPL por formatCurrencyCompact e o selo de cobertura logo abaixo",
+    "Trilho de 40 px com preenchimento em --chart-1 na proporção da cobertura",
+    "Denominador por extenso com taxa e volume: 58,1% (720 de 1.240)",
+    "Limiar de 50% declarado; acima dele o número principal fica normal",
+    "Abaixo do limiar o número vai para --text-muted com aviso, sem opacity"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Desvio do catálogo: o trilho usa --surface-sunken e não --surface-overlay, porque no tema claro o overlay é o mesmo branco do selo e o trilho some (contrato, seção 7). Moldura stage porque o selo é o próprio KPI: corpo de 328 x 181,5 px no kpi-alto (360 menos 2 x 16 de recuo, 280 menos 98,5). Conteúdo: 16 + 30 + 24 + 16 + 16 mais 4 vãos de 8 = cerca de 134 px."
+}

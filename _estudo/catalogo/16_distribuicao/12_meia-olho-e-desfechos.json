@@ -1,0 +1,71 @@
+{
+  "slug": "12_meia-olho-e-desfechos",
+  "nome": "Meia-olho e desfechos hipotéticos",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Família slab e intervalo aplicada a incerteza de cenário: meia densidade dos desfechos simulados, com ponto na mediana e intervalos de 66% e 95%, ou intervalo em gradiente em que a opacidade faz o papel da altura. É a forma natural dos cenários com saída em faixa da Diretoria. Desenhada em SVG, reaproveitando o caminho do violino com um lado só e um linearGradient com id único por instância. Absorve os desfechos hipotéticos animados (HOP), com versão estática obrigatória para exportação e para quem pede movimento reduzido.",
+  "quando_usar": [
+    "Mostrar a faixa de um cenário simulado com forma, ponto e intervalos nomeados numa linha.",
+    "Comparar de 2 a 12 cenários contra uma meta ou teto, com o percentual de desfechos de cada lado.",
+    "Explicar incerteza em apresentação ao vivo, com desfechos animados e controle de pausa.",
+    "Previsões com centenas a milhares de amostras do simulador por cenário."
+  ],
+  "quando_evitar": [
+    "Casos observados, e não simulados: violino e raincloud (07) ou box plot com pontos (02).",
+    "Público que precisa contar desfechos em vez de ler opacidade: quantile dotplot (09).",
+    "Relatório impresso com HOP: o papel congela um quadro e o transforma em previsão; quantile dotplot (09).",
+    "Faixa de previsão ao longo do tempo: fan chart na família 05 (modelo 05)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-2027-por-cenario",
+      "titulo": "Receita de 2027 por cenário",
+      "caso_de_uso": "Qual a faixa provável da receita de 2027 nos cenários conservador, base e expansão?",
+      "o_que_demonstra": [
+        "Meia densidade acima da base com o caminho do violino de um lado só",
+        "Ponto de mediana com intervalo grosso de 66% e fino de 95% sobre a base",
+        "Rótulos dos intervalos só na primeira linha",
+        "Densidade recortada no domínio simulado, sem esmaecer além dele",
+        "Nota: faixa de cenários, não previsão pontual"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_chance-de-bater-a-meta",
+      "titulo": "Chance de cada cenário bater a meta",
+      "caso_de_uso": "Em que percentual dos desfechos de cada cenário a receita de 2027 passa da meta fictícia de R$ 10 mi?",
+      "o_que_demonstra": [
+        "Meta como linha vertical atravessando todas as linhas de cenário",
+        "Parte da meia densidade à direita da meta em cor de destaque",
+        "Texto por cenário: base, 38% dos desfechos acima da meta",
+        "Mesmo domínio para todos os cenários, calculado no componente pai"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_doze-cenarios-em-gradiente",
+      "titulo": "Doze cenários de orçamento em gradiente",
+      "caso_de_uso": "Como comparar doze cenários de orçamento num cartão em que doze meias densidades não caberiam?",
+      "o_que_demonstra": [
+        "linearGradient com um stop por ponto da grade e opacidade pela densidade",
+        "id do gradiente por useId, com limpeza de caracteres para o url(#id)",
+        "Linhas de 16 px com ponto e intervalos nomeados sobre o gradiente",
+        "Teto fictício de 300 entradas por mês com a massa no teto como barra própria"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_desfechos-animados-com-versao-estatica",
+      "titulo": "Desfechos animados com versão estática",
+      "caso_de_uso": "Como apresentar 50 desfechos de receita do trimestre ao vivo sem quebrar no PDF nem com movimento reduzido?",
+      "o_que_demonstra": [
+        "Hook useQuadro trocando o data a cada 500 ms, com sorteio de semente fixa",
+        "isAnimationActive desligado para não interpolar desfechos que não existem",
+        "Domínio fixo sobre todos os desfechos e contador desfecho 7 de 50",
+        "Botões de pausar e avançar com ícones do lucide-react",
+        "Com movimento reduzido ou no PDF, quantile dotplot com nota de versão estática"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

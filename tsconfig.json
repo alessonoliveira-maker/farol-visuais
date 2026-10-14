@@ -1,0 +1,14 @@
+{
+  "extends": "../app/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": [],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["../app/src/*"],
+      "*": ["_render/node_modules/@types/*", "_render/node_modules/*"]
+    }
+  },
+  "include": ["**/Chart.tsx", "**/data.ts"],
+  "exclude": ["**/node_modules", "_render/.tmp", "_render/.qa"]
+}

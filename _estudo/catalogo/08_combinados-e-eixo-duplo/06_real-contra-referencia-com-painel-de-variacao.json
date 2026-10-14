@@ -1,0 +1,70 @@
+{
+  "slug": "06_real-contra-referencia-com-painel-de-variacao",
+  "nome": "Real contra referência com painel de variação",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Painel principal com o realizado contra uma referência (orçamento, ano anterior ou meta) e um painel inferior mais baixo, alinhado no mesmo eixo x e sincronizado por syncId, com a variação em colunas que sobem e descem do zero. É a estrutura de relatório de negócio para análise de variância e absorve o real contra orçamento e as colunas com painel de variação. A cor da variação segue a polaridade da métrica, passada como prop, e nunca o sinal; o painel de variação tem escala própria e diz isso por escrito.",
+  "quando_usar": [
+    "Desvio por período ou por categoria contra orçamento, ano anterior ou meta: custo contra orçado, receita contra o mesmo mês de 2025.",
+    "Relatório mensal da Diretoria e do Comercial em que o desvio importa tanto quanto o nível.",
+    "Até 12 períodos ou 8 categorias, com um ou dois painéis de variação."
+  ],
+  "quando_evitar": [
+    "Decompor o desvio total em componentes: 19_cascata-waterfall/01_cascata-de-ponte.",
+    "Referência que muda sem registro de versão: sem a versão declarada no título, a variação não é publicável.",
+    "Só a variação interessa, sem o nível: 03_colunas-verticais/05_colunas-positivo-e-negativo.",
+    "Meta vista como volume a preencher em cada período: 03_colunas-verticais/06_colunas-contra-meta-ou-limiar.",
+    "Variação percentual sobre base pequena ou zero: abaixo do piso declarado, mostre só a absoluta."
+  ],
+  "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+  "versoes": [
+    {
+      "slug": "v1_custo-realizado-contra-orcado",
+      "titulo": "Custo mensal realizado contra orçado",
+      "caso_de_uso": "Em quais meses de 2026 o custo realizado estourou o orçado, e por quanto em R$?",
+      "o_que_demonstra": [
+        "Dois ComposedChart com syncId, YAxis width e margens idênticas",
+        "Realizado sólido e orçado vazado no painel principal",
+        "Polaridade menor é melhor passada como prop e aplicada na cor",
+        "Variação com sinal tipográfico e ReferenceLine no zero",
+        "Escala própria do painel de variação declarada no título do painel"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_receita-contra-ano-anterior",
+      "titulo": "Receita contra o mesmo mês do ano anterior",
+      "caso_de_uso": "A receita de cada mês de 2026 cresceu contra o mesmo mês de 2025, e onde estão os maiores desvios?",
+      "o_que_demonstra": [
+        "Variação percentual com piso de base declarado, absoluta abaixo dele",
+        "Os dois maiores desvios anotados e o resto silencioso",
+        "Rótulo da variação dentro ou fora da coluna conforme o sinal",
+        "Base nomeada na mesma linha de cada variação anotada"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_vertical-contra-orcamento-e-ano-anterior",
+      "titulo": "Receita por vertical contra orçamento e 2025",
+      "caso_de_uso": "Cada vertical está acima do orçamento e acima do ano anterior, ou uma referência esconde a outra?",
+      "o_que_demonstra": [
+        "Verticais fictícias no eixo x com dois painéis de variação empilhados",
+        "Um painel por referência, cada um com a sua escala escrita",
+        "Maior desvio anotado por painel, no máximo dois no visual inteiro",
+        "syncId por índice de categoria amarrando os três painéis"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_orcado-zero-e-troca-de-versao",
+      "titulo": "Orçado zero, desvio minúsculo e versão nova",
+      "caso_de_uso": "Como publicar a variação quando um mês tem orçado zero, um desvio é minúsculo e o orçamento mudou de versão em jul/2026?",
+      "o_que_demonstra": [
+        "Orçado zero sem percentual: só a variação absoluta escrita",
+        "minPointSize para desvio de R$ 800 ao lado de outro de R$ 900 mil",
+        "Troca de versão do orçamento em jul/2026 com ReferenceArea e texto",
+        "Mês sem base de comparação com a frase sem base, nunca 0%"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

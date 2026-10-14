@@ -1,0 +1,72 @@
+{
+  "slug": "05_barras-contra-meta",
+  "nome": "Barras contra meta",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Realizado por categoria lido contra uma referência própria de cada linha: meta, forecast comprometido ou teto. Junta três variações do estudo. Barras sobrepostas: a referência larga e clara atrás, o realizado fino e sólido na frente, na mesma banda, com dois YAxis de categoria sobre a mesma lista. Marcador de meta: um traço perpendicular curto na posição da meta, mais leve que a barra, desenhado por Scatter com shape ou por Bar shape que lê a escala. Faixas qualitativas opcionais em tons de um só matiz, pela prop background, que viram o bullet graph em lista. O domínio sempre inclui a maior meta.",
+  "quando_usar": [
+    "Cada categoria tem a sua meta ou o seu teto: receita por executivo contra meta individual, entradas por fila contra capacidade.",
+    "Posição contra meta em lista, com todas as linhas na mesma escala ou normalizadas em percentual da meta.",
+    "De 3 a cerca de 20 linhas; com mais, ordenar pelo percentual de atingimento.",
+    "Público que precisa ver quem passou da meta e por quanto sem ler uma segunda série de barras."
+  ],
+  "quando_evitar": [
+    "Uma medida só, assunto do card: régua de meta em KPI (01_cards-e-kpis) ou progresso (13_progresso-meta-e-gauge).",
+    "Ocupação de 0 a 100% contra teto sem meta intermediária: barras com trilho (13_progresso-meta-e-gauge).",
+    "Duas medidas sem relação de referência: barras agrupadas (02_barras-agrupadas).",
+    "Meta contra realizado ao longo do tempo: coluna fantasma ou realizado, previsto e meta (08_combinados-e-eixo-duplo).",
+    "Faixas em verde, amarelo e vermelho: vira semáforo e destrói a leitura; use tons de um só matiz."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_realizado-sobre-meta-sobreposta",
+      "titulo": "Receita realizada sobre a meta por executivo",
+      "caso_de_uso": "Quanto cada executivo já realizou da meta do trimestre, com a meta e o realizado na mesma banda.",
+      "o_que_demonstra": [
+        "Dois YAxis de categoria com o mesmo dataKey, um oculto, e yAxisId por Bar",
+        "Meta larga e clara atrás, realizado com barSize menor na frente",
+        "Ordem dos filhos no JSX define quem fica na frente",
+        "Percentual atingido escrito à direita da banda"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_marcador-de-meta-e-trimestre-anterior",
+      "titulo": "Receita contra meta com trimestre anterior",
+      "caso_de_uso": "Quem bateu a meta do trimestre e quem melhorou contra o trimestre anterior, em barra com marcador.",
+      "o_que_demonstra": [
+        "Traço de meta perpendicular por Scatter com shape, mais leve que a barra",
+        "Barras que atingem a meta em cor de destaque, demais em neutro",
+        "Ponto do trimestre anterior como segunda medida comparativa",
+        "Domínio calculado para incluir a maior meta",
+        "Legenda curta que explica o traço para quem nunca viu bullet graph"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_metas-2027-em-percentual",
+      "titulo": "Metas 2027 da Diretoria em percentual",
+      "caso_de_uso": "Onde cada um dos seis indicadores de meta 2027 está contra a meta, em unidades diferentes lidas numa escala só.",
+      "o_que_demonstra": [
+        "Indicadores normalizados em percentual da própria meta, com o valor original na dica",
+        "Faixas qualitativas em três tons de um só matiz pela prop background",
+        "Faixas invertidas no custo por reunião, em que muito é ruim",
+        "Perímetro de cada indicador escrito ao lado do rótulo",
+        "Marcador de meta fixo em 100% como ReferenceLine"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_sem-meta-e-acima-da-meta",
+      "titulo": "Executivo sem meta e realizado acima dela",
+      "caso_de_uso": "Ler realizado contra meta quando alguém não tem meta cadastrada e outro chega a 250% da própria meta.",
+      "o_que_demonstra": [
+        "Categoria sem meta desenha só o realizado e escreve sem meta definida",
+        "Realizado acima da meta com rótulo de excedente, como +18% acima",
+        "Escala cortada em 150% com marca de quebra explícita na ponta da barra",
+        "Estorno que deixa o realizado negativo escreve o valor e não desenha barra"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "06_feed-vertical-de-eventos",
+  "versoes": {
+    "v1_historico-de-uma-oportunidade": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste e colisão conferidos à mão porque as guardas de texto não leem HTML. Observações no README: linha de leitura sem tabular-nums (TIP-1), destaque do mais recente em peso 600, data absoluta sem coluna, dado sem caso de quebra de linha, lista sem rolagem própria.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:14.038Z",
+      "impressao": "a0a33142c8a26243d851ff4938fe7b95530a67d5",
+      "arquivos": {
+        "Chart.tsx": "779e81d75538d66fe35b8c764d6061f64dc7b08f",
+        "data.ts": "3b9b371b377efd7b0ab0a9c89d34238ef3c46ff0",
+        "meta.json": "37117107aa46b68604894ce5b8ee4c19d3b1df60"
+      }
+    },
+    "v2_handoff-com-tempo-de-espera": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada sobre o arquivo atual: 32 perguntas sim, sem bloqueante. O bloqueante da pergunta 11 (COR-8) saiu: disco de passagem mede #2dd4e8 no escuro e #0b6d7d no claro (--chart-1), triângulo de alerta #f5a524 e #945808 (--warning), nenhum --chart-2 no corpo, desvio do catálogo declarado na nota do meta.json. Esperas refeitas do data.ts (3, 1, 7 e 2 dias; 2 de 4 acima do limite); contraste à mão, par mais fraco 4,65:1; preview contra página viva 0,02%. Observações no README: Anatomia ainda cita --chart-2, data de referência não impressa, autor fora do cartão, data em Space Grotesk 400.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:30.807Z",
+      "impressao": "6cae09f1fecb305106eba12106150e7a3e7c3e39",
+      "arquivos": {
+        "Chart.tsx": "d94f395c551e07eef74e4050d18d372f7e1b6709",
+        "data.ts": "c8ca83eb0bb02d6d6e72a0815ed134ca6248ad7c",
+        "meta.json": "d83e76a39764bf2bdcd4d0a3a2ff33ba639e23a3"
+      }
+    },
+    "v3_log-da-pre-vendas-agrupado-por-dia": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contagens conferidas contra o dado (64 no total, 16 por tipo, mais N por dia). Observações no README: linha de leitura repete o subtítulo e não traz a conclusão, useCase com data em formato de documento, dado só alcança dois dos seis autores, chips sem substantivo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:15.115Z",
+      "impressao": "d1f22f318dac457cba4da467d8131d4ad12e703d",
+      "arquivos": {
+        "Chart.tsx": "d76eb928b33ee5cdbd66c6d967e429a52316f58a",
+        "data.ts": "7770445794d4fcbe57e5ff8971d5039dc76efb53",
+        "meta.json": "c9052e56d16b4ee4fd1b5b73c3665e2683e3b2ef"
+      }
+    },
+    "v4_evento-sem-data-e-texto-longo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; line-clamp-3 pesado contra a TIP-7 e aceito (texto de apoio, inteiro no DOM, botão abre, desvio declarado). Observações no README: estado aberto do ver mais passa do corpo pela conta e a lista não rola, trilho contínuo até o sem data, contorno de ausência em --line-strong, hora não impressa, limiar do botão por caracteres.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:15.686Z",
+      "impressao": "956cce5693e3382d1f00663dd8d757dd607aca17",
+      "arquivos": {
+        "Chart.tsx": "9aae20ef29775c72db1219b38133dd44357fe84e",
+        "data.ts": "1041978497e7da11b622e8dca338126ac3009d0d",
+        "meta.json": "503b7fe6a40f4ad39c3d46b80efd09ac6550eb5d"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_historico-de-uma-oportunidade",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contraste e colisão conferidos à mão porque as guardas de texto não leem HTML. Observações no README: linha de leitura sem tabular-nums (TIP-1), destaque do mais recente em peso 600, data absoluta sem coluna, dado sem caso de quebra de linha, lista sem rolagem própria.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:14.038Z",
+      "impressao": "a0a33142c8a26243d851ff4938fe7b95530a67d5",
+      "arquivos": {
+        "Chart.tsx": "779e81d75538d66fe35b8c764d6061f64dc7b08f",
+        "data.ts": "3b9b371b377efd7b0ab0a9c89d34238ef3c46ff0",
+        "meta.json": "37117107aa46b68604894ce5b8ee4c19d3b1df60"
+      }
+    },
+    {
+      "versao": "v2_handoff-com-tempo-de-espera",
+      "veredito": "reprovado",
+      "nota": "Pergunta 11, COR-8: o marcador de passagem usa --chart-2, que tem o mesmo hex de --warning (#f5a524 no escuro, #945808 no claro, medido no PNG), no mesmo corpo que pinta o alerta de espera acima do limite em --warning; as quatro passagens saem na cor do alerta. Mudar: marcador de passagem em --chart-1 com ícone em --accent-cyan-contrast, --warning só no alerta, desvio do catálogo declarado na nota do meta.json. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__06_feed-vertical-de-eventos_2026-10-08.md.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:14.589Z",
+      "impressao": "1412dfaadb8a04701ba4556a79bdc81a7356a72a",
+      "arquivos": {
+        "Chart.tsx": "ab624e6e7b20150c2762440303d344eb83fcb265",
+        "data.ts": "c8ca83eb0bb02d6d6e72a0815ed134ca6248ad7c",
+        "meta.json": "b7db6f58f5b12d373d39e5cc52e500c0e3ce12ff"
+      }
+    },
+    {
+      "versao": "v3_log-da-pre-vendas-agrupado-por-dia",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; contagens conferidas contra o dado (64 no total, 16 por tipo, mais N por dia). Observações no README: linha de leitura repete o subtítulo e não traz a conclusão, useCase com data em formato de documento, dado só alcança dois dos seis autores, chips sem substantivo.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:15.115Z",
+      "impressao": "d1f22f318dac457cba4da467d8131d4ad12e703d",
+      "arquivos": {
+        "Chart.tsx": "d76eb928b33ee5cdbd66c6d967e429a52316f58a",
+        "data.ts": "7770445794d4fcbe57e5ff8971d5039dc76efb53",
+        "meta.json": "c9052e56d16b4ee4fd1b5b73c3665e2683e3b2ef"
+      }
+    },
+    {
+      "versao": "v4_evento-sem-data-e-texto-longo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, sem bloqueante; line-clamp-3 pesado contra a TIP-7 e aceito (texto de apoio, inteiro no DOM, botão abre, desvio declarado). Observações no README: estado aberto do ver mais passa do corpo pela conta e a lista não rola, trilho contínuo até o sem data, contorno de ausência em --line-strong, hora não impressa, limiar do botão por caracteres.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T19:40:15.686Z",
+      "impressao": "956cce5693e3382d1f00663dd8d757dd607aca17",
+      "arquivos": {
+        "Chart.tsx": "9aae20ef29775c72db1219b38133dd44357fe84e",
+        "data.ts": "1041978497e7da11b622e8dca338126ac3009d0d",
+        "meta.json": "503b7fe6a40f4ad39c3d46b80efd09ac6550eb5d"
+      }
+    },
+    {
+      "versao": "v2_handoff-com-tempo-de-espera",
+      "veredito": "aprovado",
+      "nota": "Segunda passada sobre o arquivo atual: 32 perguntas sim, sem bloqueante. O bloqueante da pergunta 11 (COR-8) saiu: disco de passagem mede #2dd4e8 no escuro e #0b6d7d no claro (--chart-1), triângulo de alerta #f5a524 e #945808 (--warning), nenhum --chart-2 no corpo, desvio do catálogo declarado na nota do meta.json. Esperas refeitas do data.ts (3, 1, 7 e 2 dias; 2 de 4 acima do limite); contraste à mão, par mais fraco 4,65:1; preview contra página viva 0,02%. Observações no README: Anatomia ainda cita --chart-2, data de referência não impressa, autor fora do cartão, data em Space Grotesk 400.",
+      "data": "2026-10-08",
+      "registradoEm": "2026-10-08T20:03:30.807Z",
+      "impressao": "6cae09f1fecb305106eba12106150e7a3e7c3e39",
+      "arquivos": {
+        "Chart.tsx": "d94f395c551e07eef74e4050d18d372f7e1b6709",
+        "data.ts": "c8ca83eb0bb02d6d6e72a0815ed134ca6248ad7c",
+        "meta.json": "d83e76a39764bf2bdcd4d0a3a2ff33ba639e23a3"
+      }
+    }
+  ]
+}

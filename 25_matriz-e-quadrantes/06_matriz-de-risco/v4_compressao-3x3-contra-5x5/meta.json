@@ -1,0 +1,13 @@
+{
+  "title": "Compressão de faixa: 3x3 contra 5x5",
+  "useCase": "Diretoria: quantos dos mesmos 23 riscos se empilham na mesma célula quando a matriz passa de 5x5 para 3x3.",
+  "demonstrates": [
+    "Duas grades lado a lado sobre os mesmos riscos, com faixas mapeadas por tabela",
+    "Anotação: no 3x3, 11 riscos dividem a célula alta e alta",
+    "Riscos sem impacto avaliado na faixa sem avaliação, fora da grade",
+    "Hachura diagonal para sem dado, distinta da célula com zero"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "A hachura é a única textura do catálogo de matrizes de risco e existe por exigência da espec: ausência precisa de um canal diferente do zero, que é dígito sobre a superfície base. Cada grade lê o nível da própria tabela de consulta, então o 3x3 não é o 5x5 pintado de novo. O mapa de 5 para 3 faixas é a tabela GROUP_OF_BAND do data.ts. Conta de altura: corpo 894 x 281 (largo, caso de uso em 1 linha); título de 16 + 4 + cabeçalho de 34 + 5 x 32 + 4 x 2 + 2 + faixa de 24 + anotação de 16 + 8 resulta em cerca de 274 px. As duas grades têm a mesma altura aproximada (168 e 169 px) para a comparação ser de resolução, não de tamanho."
+}

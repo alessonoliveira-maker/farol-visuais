@@ -1,0 +1,15 @@
+{
+  "title": "Origens na mesma jornada, em círculo",
+  "useCase": "Marketing: com quais origens a origem selecionada aparece na mesma jornada, entre 12 origens fictícias agrupadas por tipo.",
+  "demonstrates": [
+    "12 origens em três arcos de grupo (pago, orgânico, relacionamento) com vão entre grupos",
+    "Curva quadrática com controle puxado à corda nos vizinhos",
+    "Origem selecionada por highlightId acende as ligações em var(--chart-1)",
+    "Ligações fora de foco em var(--text-muted) a 0,76 de opacidade, acima do piso de 3:1",
+    "Nome do grupo fora do círculo, numa vaga própria no meio do arco do grupo",
+    "Rótulo sempre horizontal, empurrado para longe do equador quando encosta em outro"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): quadrado 480x480 com moldura card abaixo de 560 px dá corpo de 422 x 355,5 px, porque o caso de uso tem 122 caracteres e ocupa duas linhas em 422 px de cabeçalho. O viewBox é 422 x 355, do tamanho do corpo, para a escala do svg sair 1 (GEO-18). Quem limita o círculo é a largura, não a altura: o rótulo é horizontal, e o nome mais longo do dado, de 15 caracteres, cai perto do equador, onde cresce inteiro para fora; com 108 px de raio de nó e âncora em 119,5 px, um nome de 15 caracteres em peso 700 termina a cerca de 2 px da borda de 422, e o do dado, em peso 600, a 13 px. Na altura, a linha de leitura fica em 8, o círculo tem centro em 170, o nome do grupo do topo chega a 32 e o rótulo mais baixo a 290, e o rodapé usa três linhas, em 316, 331 e 346. Vagas: 12 origens, 3 nomes de grupo e 3 vãos de 2,5 vagas dão passo de 18,46 graus. DESVIOS DECLARADOS DO CATÁLOGO, com o contrato vencendo. (0) O catálogo pede o controle da curva no centro; com ele toda ligação sai do nó rumo ao centro e a baixada corria por baixo da acesa e do revestimento dela (ACE-6, TOK-4). O controle fica em centro + k x (meio da corda menos centro), com k = 0,85 x (1 menos a distância angular sobre 180 graus): pares próximos saem em ângulos diferentes e a acesa cruza as baixadas. (1) O catálogo pede a ligação fora de foco em var(--line-strong) com opacidade baixa; a ligação é o dado (ACE-6) e var(--line-strong) mede 1,79:1 no escuro e 1,83:1 no claro, sem alcançar 3:1 nem opaco (ACE-5). Ficou var(--text-muted) a 0,76, que mede 3,58:1 e 3,28:1; o piso fica em 0,72. (2) O arco do grupo também sai em var(--text-muted), porque diz a que grupo o nó pertence. O par marca contra marca (TOK-9): var(--chart-1) contra a ligação baixada mede 2,65:1 no escuro e 1,83:1 no claro, e por isso o destaque não depende só da cor: a ligação acesa tem 2,5 px contra 1,2 px, leva revestimento na cor do cartão (TOK-4), o nó selecionado é maior e os rótulos mudam de peso (700 na selecionada, 600 nas parceiras). OPACIDADE-MARCA pode sair não medida, porque a opacidade chega ao traço pela constante DIM_OPACITY; a medida acima é feita à mão contra tokens.css. A ordem dentro do grupo é por número de ligações e vai declarada no rodapé (GEO-12). O dado é de existência, sem peso: a espessura separa foco de fora de foco e não mede quantidade."
+}

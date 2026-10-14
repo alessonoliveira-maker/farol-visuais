@@ -1,0 +1,66 @@
+{
+  "slug": "07_dispersao-com-barras-de-erro",
+  "nome": "Dispersão com barras de erro",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada ponto é uma estimativa e carrega um intervalo em Y, em X ou nos dois. Mostra que a taxa de quem trabalhou poucos leads é incerta e evita tratar diferença pequena como diferença real. O intervalo é calculado antes (Wilson para taxa, desvio entre semanas para média) e passado ao ErrorBar como distância a partir do ponto, nunca como limite absoluto.",
+  "quando_usar": [
+    "Taxas por entidade com volumes diferentes, como taxa de agenda por SDR com leads trabalhados no X.",
+    "Separar quem está de fato acima ou abaixo da referência do time de quem só parece estar.",
+    "Estimativas com incerteza conhecida nos dois eixos, como CPL médio e taxa de qualificação por canal.",
+    "De 4 a cerca de 25 pontos, para as barras não se cruzarem."
+  ],
+  "quando_evitar": [
+    "Incerteza desconhecida ou inventada: sem método declarado, use a dispersão simples.",
+    "Barras de erro sobre colunas: criam o viés de achar mais provável o que está dentro da barra; mantenha o ponto.",
+    "Muitos pontos com intervalos largos: vira cerca de traços; use pontos por categoria com intervalo (família 17).",
+    "Público que não sabe o que é intervalo de confiança: escreva o volume junto da taxa."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_taxa-de-agenda-por-sdr",
+      "titulo": "Taxa de agenda por SDR com intervalo",
+      "caso_de_uso": "A taxa de agenda de cada SDR é confiável para o volume que trabalhou? Leads no X e taxa com intervalo de 95% no Y.",
+      "o_que_demonstra": [
+        "Intervalo de Wilson calculado em TypeScript e assimétrico perto de 0% e 100%",
+        "ErrorBar direction y com dataKey em par de distâncias a partir do ponto",
+        "Serifas curtas e traço em tom de texto discreto",
+        "Subtítulo com o tipo de intervalo desenhado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_sdrs-diferentes-do-time",
+      "titulo": "SDRs que se distinguem do time",
+      "caso_de_uso": "Quais SDRs têm taxa de agenda realmente diferente da do time? Só quem tem intervalo que não cruza a linha recebe cor.",
+      "o_que_demonstra": [
+        "ReferenceLine horizontal da taxa do time com rótulo na margem",
+        "Destaque calculado pelo intervalo que não cruza a referência, não pelo ponto",
+        "Rótulo com a taxa e o volume nos destacados"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_canais-com-erro-nos-dois-eixos",
+      "titulo": "Canais com incerteza em CPL e qualificação",
+      "caso_de_uso": "Qual canal é mais barato e mais qualificado quando a incerteza entra na conta? 8 canais com erro nos dois eixos.",
+      "o_que_demonstra": [
+        "Dois ErrorBar no mesmo Scatter, direction x e direction y",
+        "CPL médio com desvio entre semanas e taxa com Wilson, cada um declarado",
+        "Nome do canal em rótulo direto em vez de legenda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_amostra-minima",
+      "titulo": "Canal com amostra insuficiente",
+      "caso_de_uso": "Como mostrar canal com 3 leads, cujo intervalo vai de quase 0 a 100%, sem dar peso a ele?",
+      "o_que_demonstra": [
+        "Piso de volume abaixo do qual o ponto vira vazado e as barras somem",
+        "Texto amostra insuficiente com o volume escrito junto do ponto",
+        "Domínio do eixo calculado sem o intervalo do ponto sem amostra"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

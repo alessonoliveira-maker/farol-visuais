@@ -1,0 +1,76 @@
+{
+  "slug": "03_dumbbell",
+  "nome": "Dumbbell e arrow plot",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Dois pontos por categoria ligados por um conector sobre eixo comum: o conector transforma dois valores numa distância e a leitura passa de quanto para quanto mudou. No arrow plot a ponta final vira cabeça de seta e aponta sempre do momento mais antigo para o mais recente; no connected dot plot entram até três marcadores por linha, o teto antes de o desenho virar linha. Construído como Bar de faixa com shape própria, que desenha conector e cabeças de uma vez: a faixa chega sempre como menor e maior, então quem é o antes vem do payload, a cor segue a polaridade da métrica e o rótulo direto é o delta com sinal. Em tamanho micro, o mesmo haltere cabe numa linha de cartão de KPI.",
+  "quando_usar": [
+    "Mudança entre dois momentos ou duas condições do mesmo objeto, em 6 a 25 categorias",
+    "Ênfase na direção da mudança: arrow plot com a seta do período antigo para o novo",
+    "Trajetória curta com marco intermediário, como meta, forecast e realizado, no máximo três pontos",
+    "Ranking de melhora ou piora, ordenado por delta absoluto ou em pontos percentuais",
+    "Antes e depois de uma métrica por linha dentro de um cartão de KPI, em micro haltere"
+  ],
+  "quando_evitar": [
+    "Mais de três momentos: linha da família 04 ou bump chart de ranking (04/08)",
+    "Os dois pontos não são o mesmo objeto, como duas populações: dot plot agrupado sem conector (17/01)",
+    "Mudanças minúsculas numa escala larga, com cabeça maior que a haste: tabela com ícone direcional (família 14)",
+    "A distância entre dois extremos importa mais que a mudança: range plot (17/04)",
+    "Poucas categorias em que a troca de posição é a notícia: slope chart (17/06)",
+    "Duas medidas quantitativas ligadas num plano: dispersão de antes e depois com setas (09/06)"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_sla-por-sdr-semana-anterior-e-atual",
+      "titulo": "SLA de primeiro contato por SDR",
+      "caso_de_uso": "Pré-vendas: quanto o SLA de primeiro contato de cada um dos 8 SDRs mudou da semana passada para esta.",
+      "o_que_demonstra": [
+        "Bar de faixa com shape que desenha conector e duas cabeças",
+        "Sentido lido do payload, porque a faixa chega sempre como menor e maior",
+        "Cabeça inicial vazada em chart-3 e final cheia em chart-1, com legenda de ponta",
+        "Conector pela polaridade: minutos que caem são bons",
+        "Rótulo direto do delta com sinal e isAnimationActive desligado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_cpl-por-campanha-em-setas-com-limiar",
+      "titulo": "CPL por campanha de julho para agosto",
+      "caso_de_uso": "Marketing: quais das 22 campanhas mudaram o CPL mais de 15% de julho para agosto, e em que direção.",
+      "o_que_demonstra": [
+        "Arrow plot com cabeça de seta em path calculado, sem marker-end",
+        "Seta sempre do mês antigo para o novo, com a ordem imposta no código",
+        "Cor só nas mudanças acima de 15%; as demais em line-strong",
+        "Haste abaixo de 12 px vira marcador neutro, com o valor no tooltip",
+        "Anotação: 9 de 22 mudaram mais de 15%"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_meta-forecast-e-realizado-por-executivo",
+      "titulo": "Meta, forecast e realizado por executivo",
+      "caso_de_uso": "Comercial: em 14 executivos, onde o forecast e o realizado do trimestre ficam em relação à meta individual.",
+      "o_que_demonstra": [
+        "Três marcadores por linha convertidos em pixel dentro da faixa por regra de três",
+        "Forma e tamanho crescentes da meta ao realizado, não só cor",
+        "Ordem pela distância entre realizado e meta, declarada no subtítulo",
+        "Três valores iguais viram marcador único, com os três no tooltip",
+        "Tabela irmã com os três valores e o delta"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_micro-halteres-de-cpl-com-mes-ausente",
+      "titulo": "Micro halteres de CPL com mês ausente",
+      "caso_de_uso": "Marketing: cartão com o CPL de quatro plataformas em julho e agosto, e uma plataforma sem veiculação em agosto.",
+      "o_que_demonstra": [
+        "Micro haltere em SVG de viewBox fixo por linha do cartão",
+        "Ponta ausente vira ponto solto, sem conector descendo a zero",
+        "Cabeças a menos de dois raios mais 2 px viram marcador bipartido",
+        "Escala comum às quatro linhas, declarada no rodapé do cartão",
+        "Texto sem veiculação em agosto no lugar do delta"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    }
+  ]
+}

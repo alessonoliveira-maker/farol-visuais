@@ -1,0 +1,108 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "01_cascata-de-ponte",
+  "versoes": {
+    "v1_ponte-da-receita-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Ponte fecha no dado e no desenho (escala conferida em 4 marcas), totais no zero, passo zero em traço de 2 px com o valor escrito, conector de 1,79:1 e 1,83:1 lido como referência pela ACE-6. Observações no README: totais arredondados a uma casa de milhão diante de passos de 96 mil, formatCurrencyAxis em rótulo direto (NUM-1), vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:56.215Z",
+      "impressao": "e2e268b2d2d30f0ac013d21610e50501db9068de",
+      "arquivos": {
+        "Chart.tsx": "0a9cdb2791b65a34cb8c9ded88fee1d4cb4e5d47",
+        "data.ts": "651268e395ee8373436c965bbdac8d14aed37377",
+        "meta.json": "76ddc322b71d12237abeb42c53a3d01aa305116b"
+      }
+    },
+    "v2_custo-em-tres-camadas-deitado-com-subtotais": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Subtotais no zero e na mesma escala dos passos (1,75 px por mil nas quatro marcas medidas), múltiplos 2,6x, 1,3x e 1,1x conferidos, conector atravessa o vão sem cruzar rótulo. Observações no README: período só na frase acessível (DAD-9), linha de leitura em duas linhas (ANO-5), passo neutro contra subtotal a 1,16:1 e 1,35:1 (TOK-9), vazio sem ícone Filter.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:56.701Z",
+      "impressao": "0b183285262ef0337bd8685fd2aaf39de57b68ac",
+      "arquivos": {
+        "Chart.tsx": "8f9bfd711462ca6893a66f4f207803312e40fb14",
+        "data.ts": "f543c132c152c43cd7e00cdc19e024afdf0463d6",
+        "meta.json": "f54ad834126e3aec46b62bb172b15665bcc08572"
+      }
+    },
+    "v3_cpl-por-efeito-com-residual-nao-explicado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 21 com ressalva de ferramenta: fidelidade de 0,58% e 0,63%, toda no subtítulo da moldura pelo kerning de CPL que o render anuncia; o corpo do Chart não difere. Efeitos na mesma escala (8,1 px por real nas cinco marcas), resíduo de 5 em 28 hachurado e escrito, polaridade invertida com sinal. Observações no README: 2026-07 cru na tela (NUM-7), linha do zero por cima da barra de Custo, 18% sem dizer de quê, catálogo ainda cita o tique.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:47:05.000Z",
+      "impressao": "c5e9919aa6e635b1c79f4f864907e5ea6c3c7a5c",
+      "arquivos": {
+        "Chart.tsx": "6d6506cf80c50aabd10d303ce382b0deea868a41",
+        "data.ts": "62bdb05d899bb0c24e60ef011c61fe0a1748b945",
+        "meta.json": "4ab5f486d491919f1bfdcf008585be3460d8b36f"
+      }
+    },
+    "v4_cascata-micro-da-carteira-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala comum conferida em duas linhas (210 mil em 20 px, 180 mil em 17 px), nove fechamentos por linha batem, linha sem dado com Unplug e formatUnavailable, passo zero em traço cinza. Texto em HTML conferido à mão: sem colisão, pares da 17.10 aprovados. Observações no README: coluna Carteira sem período, frase dos cinco espaços e COLUMNS fixos, passo de 20 mil com a espessura do traço do zero, ordem das linhas sem critério declarado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:47:05.488Z",
+      "impressao": "90f05ed792beb9d0c98d12b59d23757f5023c8bb",
+      "arquivos": {
+        "Chart.tsx": "f4d921127262dfd844eb09e7a6fa3554122701a9",
+        "data.ts": "eacc65749e86956b2089d8435d0ccec62d424d58",
+        "meta.json": "07fc518e01ab4f37f579b0114ae1e68fd3951744"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ponte-da-receita-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Ponte fecha no dado e no desenho (escala conferida em 4 marcas), totais no zero, passo zero em traço de 2 px com o valor escrito, conector de 1,79:1 e 1,83:1 lido como referência pela ACE-6. Observações no README: totais arredondados a uma casa de milhão diante de passos de 96 mil, formatCurrencyAxis em rótulo direto (NUM-1), vazio sem ícone Filter, linha de leitura sem tabular-nums.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:56.215Z",
+      "impressao": "e2e268b2d2d30f0ac013d21610e50501db9068de",
+      "arquivos": {
+        "Chart.tsx": "0a9cdb2791b65a34cb8c9ded88fee1d4cb4e5d47",
+        "data.ts": "651268e395ee8373436c965bbdac8d14aed37377",
+        "meta.json": "76ddc322b71d12237abeb42c53a3d01aa305116b"
+      }
+    },
+    {
+      "versao": "v2_custo-em-tres-camadas-deitado-com-subtotais",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Subtotais no zero e na mesma escala dos passos (1,75 px por mil nas quatro marcas medidas), múltiplos 2,6x, 1,3x e 1,1x conferidos, conector atravessa o vão sem cruzar rótulo. Observações no README: período só na frase acessível (DAD-9), linha de leitura em duas linhas (ANO-5), passo neutro contra subtotal a 1,16:1 e 1,35:1 (TOK-9), vazio sem ícone Filter.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:56.701Z",
+      "impressao": "0b183285262ef0337bd8685fd2aaf39de57b68ac",
+      "arquivos": {
+        "Chart.tsx": "8f9bfd711462ca6893a66f4f207803312e40fb14",
+        "data.ts": "f543c132c152c43cd7e00cdc19e024afdf0463d6",
+        "meta.json": "f54ad834126e3aec46b62bb172b15665bcc08572"
+      }
+    },
+    {
+      "versao": "v3_cpl-por-efeito-com-residual-nao-explicado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 21 com ressalva de ferramenta: fidelidade de 0,58% e 0,63%, toda no subtítulo da moldura pelo kerning de CPL que o render anuncia; o corpo do Chart não difere. Efeitos na mesma escala (8,1 px por real nas cinco marcas), resíduo de 5 em 28 hachurado e escrito, polaridade invertida com sinal. Observações no README: 2026-07 cru na tela (NUM-7), linha do zero por cima da barra de Custo, 18% sem dizer de quê, catálogo ainda cita o tique.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:47:05.000Z",
+      "impressao": "c5e9919aa6e635b1c79f4f864907e5ea6c3c7a5c",
+      "arquivos": {
+        "Chart.tsx": "6d6506cf80c50aabd10d303ce382b0deea868a41",
+        "data.ts": "62bdb05d899bb0c24e60ef011c61fe0a1748b945",
+        "meta.json": "4ab5f486d491919f1bfdcf008585be3460d8b36f"
+      }
+    },
+    {
+      "versao": "v4_cascata-micro-da-carteira-por-executivo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala comum conferida em duas linhas (210 mil em 20 px, 180 mil em 17 px), nove fechamentos por linha batem, linha sem dado com Unplug e formatUnavailable, passo zero em traço cinza. Texto em HTML conferido à mão: sem colisão, pares da 17.10 aprovados. Observações no README: coluna Carteira sem período, frase dos cinco espaços e COLUMNS fixos, passo de 20 mil com a espessura do traço do zero, ordem das linhas sem critério declarado.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:47:05.488Z",
+      "impressao": "90f05ed792beb9d0c98d12b59d23757f5023c8bb",
+      "arquivos": {
+        "Chart.tsx": "f4d921127262dfd844eb09e7a6fa3554122701a9",
+        "data.ts": "eacc65749e86956b2089d8435d0ccec62d424d58",
+        "meta.json": "07fc518e01ab4f37f579b0114ae1e68fd3951744"
+      }
+    }
+  ]
+}

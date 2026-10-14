@@ -1,0 +1,12 @@
+{
+  "title": "Entradas semanais com semana sem coleta",
+  "useCase": "Como separar a semana que não teve coleta da semana que mediu zero, sem a série mentir sobre a cadência?",
+  "demonstrates": [
+    "Semana sem coleta com marca vazada em tom neutro e o texto indisponível no lugar do valor",
+    "Zero medido desenhado como um traço fino sobre a base e escrito 0, diferente da ausência",
+    "maxBarSize derivado do passo da ESP-6 para 14 categorias em canvas de cartão",
+    "Frase acessível que conta semanas medidas, zeradas e sem coleta"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

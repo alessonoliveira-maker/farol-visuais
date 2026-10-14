@@ -1,0 +1,13 @@
+{
+  "title": "Percurso com etapa pulada e retorno",
+  "useCase": "Comercial: a oportunidade pulou o diagnóstico, voltou de proposta para qualificação e está bloqueada à espera de documento.",
+  "demonstrates": [
+    "Etapa pulada com marcador tracejado e a palavra pulada, nunca parecida com concluída",
+    "Seta de retorno em SVG curto por cima dos conectores, com a data da volta",
+    "Passo bloqueado com ícone Lock e o motivo em texto de apoio",
+    "Container query que empilha os passos na vertical abaixo de 480 px"
+  ],
+  "canvas": "card",
+  "frame": "stage",
+  "notes": "Moldura stage: o corpo mede 600 x 270 px (640 x 360 menos 40 e 90). O estado de cada etapa vem declarado no dado, porque pulada, retorno e bloqueio não se deduzem da posição. O preview mostra só a disposição horizontal; abaixo de 480 px de largura do corpo os passos empilham, o conector vira vertical e a seta de retorno some, ficando a volta escrita na linha de leitura."
+}

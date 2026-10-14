@@ -1,0 +1,147 @@
+{
+  "familia": "11_fluxo-sankey",
+  "modelo": "01_sankey-simples",
+  "versoes": {
+    "v1_origem-para-desfecho-dos-leads": {
+      "veredito": "aprovado",
+      "nota": "ACE-6 passa: ligações em categóricas acima de 3:1 nos dois temas; soma fecha 1.240; observações no README (nós de desfecho em --line-strong isentos pela ACE-3, traço sem contorno, item do meta sem dicionário de índice).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:36.904Z",
+      "impressao": "514eaa4e9b3a7e9d5225c49cc338287800dda789",
+      "arquivos": {
+        "Chart.tsx": "4f8b9e20f71daa5f476d322c7a697ba75ff86f01",
+        "data.ts": "a2568a7e3403bb878e4e67c0b746aa3c72f50ff0",
+        "meta.json": "9771431af35a6f842c211be8285db92d08edca5c"
+      }
+    },
+    "v2_handoff-sdr-para-executivo-com-foco": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 15 e seção 14.1, REC-13: focusedPaths acumula por push dentro de renderLink; medido em página viva, ao mudar a altura do pai as faixas acesas vão de 7 para 14 e as 7 velhas ficam soltas na cor do foco. Trocar por Map indexado pela ligação. Foco por último no retrato: resolvido. Parecer em validation/revisao_11_fluxo-sankey__01_sankey-simples_2026-10-05.md, seção Segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:21:35.375Z",
+      "impressao": "7a622439faef3e5b4185d6b849b8740110d73a5e",
+      "arquivos": {
+        "Chart.tsx": "b55c7a114773d3d7a202221f4583313cc89d6e31",
+        "data.ts": "ffbf1591b5cbfb1ef8814af1edb6871afd4c1257",
+        "meta.json": "a4a201fd7d5ef66991ff5e32b24789fdab019bf9"
+      }
+    },
+    "v3_origem-ausente-com-cobertura": {
+      "veredito": "aprovado",
+      "nota": "ACE-6 passa: faixas em categóricas e em --text-muted (5,21 e 5,37:1); soma fecha 1.210, cobertura de 86% do dado, ausência vazada por último; sem observação.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:37.940Z",
+      "impressao": "9643ad5cd98dd2b45383a0ff0231da2c94c07b40",
+      "arquivos": {
+        "Chart.tsx": "59ae49cc8d1e17ee0ee94b03808ca384fbdeed31",
+        "data.ts": "f7b00a03c76a1601d16cf3aa03768a715dd3fb60",
+        "meta.json": "01c761b25cc1d8d72828da70cce3a295380eafd8"
+      }
+    },
+    "v4_vertical-em-coluna-estreita": {
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes anteriores resolvidos: faixas das maiores para as menores e chamada de Cancelada a 11 px de compareceu. Soma fecha 248. Observações no README: chamada a 2,0 px de 29 agendas, toco de Realizada solto, frase do README sobre deslocamento que o dado não exercita.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:21:35.843Z",
+      "impressao": "54d9d9cfe694bf743b5b791801e027268578a6cb",
+      "arquivos": {
+        "Chart.tsx": "07206c8a47331be84e2f56af80bb477d778cc235",
+        "data.ts": "d981275702799f89226db4b74a4d6ebec7d58837",
+        "meta.json": "b2f73dc8965e48552938914c6cd6f90ad7515874"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_origem-para-desfecho-dos-leads",
+      "veredito": "aprovado",
+      "nota": "Check limpo nos dois temas; encoding honesto, soma fecha 1.240, rotulo com unidade em todo no; observacoes de vao entre faixas vizinhas e redacao do README.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T23:21:11.920Z",
+      "impressao": "514eaa4e9b3a7e9d5225c49cc338287800dda789",
+      "arquivos": {
+        "Chart.tsx": "4f8b9e20f71daa5f476d322c7a697ba75ff86f01",
+        "data.ts": "a2568a7e3403bb878e4e67c0b746aa3c72f50ff0",
+        "meta.json": "9771431af35a6f842c211be8285db92d08edca5c"
+      }
+    },
+    {
+      "versao": "v1_origem-para-desfecho-dos-leads",
+      "veredito": "aprovado",
+      "nota": "ACE-6 passa: ligações em categóricas acima de 3:1 nos dois temas; soma fecha 1.240; observações no README (nós de desfecho em --line-strong isentos pela ACE-3, traço sem contorno, item do meta sem dicionário de índice).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:36.904Z",
+      "impressao": "514eaa4e9b3a7e9d5225c49cc338287800dda789",
+      "arquivos": {
+        "Chart.tsx": "4f8b9e20f71daa5f476d322c7a697ba75ff86f01",
+        "data.ts": "a2568a7e3403bb878e4e67c0b746aa3c72f50ff0",
+        "meta.json": "9771431af35a6f842c211be8285db92d08edca5c"
+      }
+    },
+    {
+      "versao": "v2_handoff-sdr-para-executivo-com-foco",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15 e 11, REC-13 com TOK-9 e COR-5: 16 faixas neutras são pintadas depois das 6 acesas e as picam sem borda, par de 1,12:1 no claro e 1,82:1 no escuro; pintar o foco por último. ACE-6 passa. Parecer em validation/revisao_11_fluxo-sankey__01_sankey-simples_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:37.450Z",
+      "impressao": "a998daad459a4c1becac645cd841555755735933",
+      "arquivos": {
+        "Chart.tsx": "7b6abb0ad3646528053957103464ed2f610ef6fe",
+        "data.ts": "ffbf1591b5cbfb1ef8814af1edb6871afd4c1257",
+        "meta.json": "a4a201fd7d5ef66991ff5e32b24789fdab019bf9"
+      }
+    },
+    {
+      "versao": "v3_origem-ausente-com-cobertura",
+      "veredito": "aprovado",
+      "nota": "ACE-6 passa: faixas em categóricas e em --text-muted (5,21 e 5,37:1); soma fecha 1.210, cobertura de 86% do dado, ausência vazada por último; sem observação.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:37.940Z",
+      "impressao": "9643ad5cd98dd2b45383a0ff0231da2c94c07b40",
+      "arquivos": {
+        "Chart.tsx": "59ae49cc8d1e17ee0ee94b03808ca384fbdeed31",
+        "data.ts": "f7b00a03c76a1601d16cf3aa03768a715dd3fb60",
+        "meta.json": "01c761b25cc1d8d72828da70cce3a295380eafd8"
+      }
+    },
+    {
+      "versao": "v4_vertical-em-coluna-estreita",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13, 15 e 28, ROT-7 e ROT-11: linha de chamada de Cancelada passa a 0,3 px de 'compareceu', tratar a chamada como obstáculo com 4 px; pergunta 15, REC-13: faixas de 5,7 a 14,3 px somem sob as de 45 a 63 px, pintar maiores primeiro. ACE-6 passa. Parecer em validation/revisao_11_fluxo-sankey__01_sankey-simples_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:13:38.445Z",
+      "impressao": "3eb39c044c0bc406d0410b368d5c66ff418d16c7",
+      "arquivos": {
+        "Chart.tsx": "335cb2ce6a3bde8c84bc6e06f8897fde01625266",
+        "data.ts": "d981275702799f89226db4b74a4d6ebec7d58837",
+        "meta.json": "b2f73dc8965e48552938914c6cd6f90ad7515874"
+      }
+    },
+    {
+      "versao": "v2_handoff-sdr-para-executivo-com-foco",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15 e seção 14.1, REC-13: focusedPaths acumula por push dentro de renderLink; medido em página viva, ao mudar a altura do pai as faixas acesas vão de 7 para 14 e as 7 velhas ficam soltas na cor do foco. Trocar por Map indexado pela ligação. Foco por último no retrato: resolvido. Parecer em validation/revisao_11_fluxo-sankey__01_sankey-simples_2026-10-05.md, seção Segunda passada.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:21:35.375Z",
+      "impressao": "7a622439faef3e5b4185d6b849b8740110d73a5e",
+      "arquivos": {
+        "Chart.tsx": "b55c7a114773d3d7a202221f4583313cc89d6e31",
+        "data.ts": "ffbf1591b5cbfb1ef8814af1edb6871afd4c1257",
+        "meta.json": "a4a201fd7d5ef66991ff5e32b24789fdab019bf9"
+      }
+    },
+    {
+      "versao": "v4_vertical-em-coluna-estreita",
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes anteriores resolvidos: faixas das maiores para as menores e chamada de Cancelada a 11 px de compareceu. Soma fecha 248. Observações no README: chamada a 2,0 px de 29 agendas, toco de Realizada solto, frase do README sobre deslocamento que o dado não exercita.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T10:21:35.843Z",
+      "impressao": "54d9d9cfe694bf743b5b791801e027268578a6cb",
+      "arquivos": {
+        "Chart.tsx": "07206c8a47331be84e2f56af80bb477d778cc235",
+        "data.ts": "d981275702799f89226db4b74a4d6ebec7d58837",
+        "meta.json": "b2f73dc8965e48552938914c6cd6f90ad7515874"
+      }
+    }
+  ]
+}

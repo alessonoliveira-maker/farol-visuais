@@ -1,0 +1,18 @@
+{
+  "title": "Leads por origem e cobertura de dado",
+  "useCase": "Marketing, 2026-08: quanto cada origem pesa no volume de leads e quanto dele chega com dado completo, parcial ou ausente?",
+  "demonstrates": [
+    "Função pura marimekko() em TypeScript devolvendo x, w, y e h de cada ladrilho",
+    "Colunas por largura decrescente e ordem das partes fixa, com completo na base",
+    "Vão de 2 px em --surface-raised entre colunas e entre partes",
+    "Nome, total e participação de cada coluna no eixo, fora do ladrilho",
+    "Rótulo interno só em ladrilho de 28 por 18 px; o resto vai para a lista de identificação",
+    "Ausente como parte hachurada em neutro no topo, nunca buraco"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 480
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset card do catálogo deixa 225 px de corpo com o caso de uso em duas linhas, e a conta pede 345. São 24 da linha de leitura, 28 da legenda com valor, 24 da lista de identificação e 269 do SVG, dos quais 203 de ladrilhos e 66 de eixo (vão de 8, duas linhas de nome, total e participação a 14 px cada, 2 de folga); 345 mais 135 de moldura dá 480. O viewBox de 574 por 269 é o tamanho da caixa, escala 1 (GEO-18). Três desvios do catálogo, todos por regra do contrato. Primeiro: o ladrilho sem rótulo interno vai para a lista de identificação abaixo do gráfico e não só para a dica, porque a ROT-10 não conta a dica; a dica acrescenta a contagem. Segundo: o piso de altura do rótulo interno é 18 px e não 16, pelo piso da ESP-2 para texto de 12 px dentro da marca. Terceiro: a hachura da ausência usa --text-muted e não --line-strong, que mede 1,8:1 contra o cartão e some como marca (TOK-5). Os vãos saem antes da partilha de largura e de altura, então a área de cada ladrilho é exatamente proporcional à contagem (GEO-16). Medido no preview, ladrilho a ladrilho: a participação em área bate com a participação em valor, com desvio de 0,000 p.p."
+}

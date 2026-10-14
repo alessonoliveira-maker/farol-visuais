@@ -1,0 +1,424 @@
+{
+  "slug": "06_pizza",
+  "nome": "Pizza",
+  "modelos": [
+    {
+      "slug": "01_pizza-simples",
+      "nome": "Pizza simples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Círculo dividido em até cinco setores com ângulo proporcional à fração de um todo único, começando às 12 horas e girando no sentido horário em ordem decrescente. É a forma de referência da família e absorve três variações do estudo: rótulos externos com linha guia, fatia em destaque e legenda tabular.",
+      "quando_usar": [
+        "Fração de 2 a 5 partes exclusivas de um todo declarado, com leitura boa perto de 25%, 50% e 75%.",
+        "A mensagem é parte do todo: quanto da receita veio de cliente novo, para onde foi o investimento do mês.",
+        "Uma parte específica carrega a mensagem e pode ganhar destaque por cor, deslocamento e peso do rótulo.",
+        "Card estreito ou coluna lateral, onde a pizza ocupa pouco e uma legenda tabular carrega o número exato."
+      ],
+      "quando_evitar": [
+        "Partes de valor parecido que precisam ser ordenadas com precisão: barra horizontal simples (02).",
+        "Mais de 5 partes sem agrupamento: detalhamento de Outros (modelo 02) ou barra horizontal (02).",
+        "Composição de vários todos: small multiples (modelo 04) com poucos todos, barra 100% empilhada (03) com muitos.",
+        "Participação que muda no tempo: linha (04) ou área (05).",
+        "Valores com negativo, categorias sobrepostas ou soma diferente do total declarado: a pizza mente; usar barra (02).",
+        "Só dois valores, parte e restante: fração única (modelo 03) ou o número escrito."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_origem-da-receita-reconhecida",
+          "titulo": "Origem da receita reconhecida do trimestre",
+          "caso_de_uso": "Quanto da receita reconhecida do 3º trimestre veio de cliente novo, de expansão de cliente ativo e de renovação?",
+          "o_que_demonstra": [
+            "startAngle 90 e endAngle -270 para começar às 12 horas no sentido horário",
+            "Ordenação decrescente e teto de fatias em TypeScript antes do data",
+            "Rótulo interno de percentual por midAngle, escondido abaixo de 18 graus",
+            "Separador em var(--surface-raised) e percentual inteiro que soma 100",
+            "Total de R$ 2.480 mil na linha de leitura e valor absoluto só na dica"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_nao-comparecimento-em-destaque",
+          "titulo": "Não comparecimento em destaque nas agendas",
+          "caso_de_uso": "Que fração das agendas da semana virou não comparecimento, e quanto isso se afastou da semana anterior?",
+          "o_que_demonstra": [
+            "Fatia em --chart-1 deslocada 8 px pelo midAngle e as demais em neutro",
+            "Deslocamento reservado na margem para o setor não sair do SVG",
+            "Destaque com segundo canal: rótulo em peso 700 além da cor",
+            "Anotação ao lado com base nomeada: 15% contra 9% na semana anterior",
+            "Sector do Recharts em shape, sem a prop activeIndex removida no Recharts 3"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_perdas-por-motivo-com-legenda-tabular",
+          "titulo": "Perdas do trimestre por motivo com legenda tabular",
+          "caso_de_uso": "Qual motivo concentra as oportunidades perdidas do trimestre, em contagem e em valor, para abrir a lista certa?",
+          "o_que_demonstra": [
+            "Pizza de 120 px com legenda em grid do Tailwind: cor, nome, contagem, valor e %",
+            "Legenda na mesma ordem angular das fatias, com linha de total",
+            "Hover e foco ligados nos dois sentidos por estado React, opacidade só na marca",
+            "Clique seleciona o motivo com aria-pressed na linha; clicar de novo desmarca",
+            "Motivos de nome longo inteiros e Outros por último, com a composição na dica"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_origem-dos-leads-com-dado-ausente",
+          "titulo": "Origem dos leads do mês com dado ausente",
+          "caso_de_uso": "Como os leads do mês se dividem por origem quando parte da base chegou sem origem declarada?",
+          "o_que_demonstra": [
+            "Sem informação vazada com contorno --text-muted, fora da ordenação e por último",
+            "Rótulos externos com linha guia em dois segmentos e anticolisão em TypeScript",
+            "Fatias vizinhas de 2% e 3% empurradas sem cruzar as linhas guia",
+            "Cobertura na linha de leitura: 292 de 340 leads com origem declarada",
+            "Estado vazio com role status quando o recorte não tem leads"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_pizza-com-detalhamento-de-outros",
+      "nome": "Pizza com detalhamento de Outros",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Pizza com as maiores partes e uma fatia Outros que se abre ao lado numa barra ou numa lista (bar of pie), ligada por conectores calculados a partir dos ângulos da fatia. A variante interativa é o drilldown: clicar numa fatia troca a pizza pelo detalhe dela, com trilha de navegação e o total do nível pai à vista.",
+      "quando_usar": [
+        "Cauda longa que precisa existir sem poluir a pizza: até 4 fatias maiores e Outros, com a composição aberta ao lado.",
+        "Quem lê precisa saber o que Outros contém sem trocar de tela: origens de lead menores, submotivos de perda.",
+        "Hierarquia rasa de dois níveis em que o nível pai é a mensagem e o nível filho é consulta."
+      ],
+      "quando_evitar": [
+        "A cauda é a mensagem: barra horizontal com top N (02).",
+        "Outros maior que a maior fatia: o teto está baixo ou a categoria está mal definida; rever o agrupamento antes.",
+        "Hierarquia com três níveis ou mais: sunburst (12/03).",
+        "Celular ou card estreito, onde os conectores quebram: pizza simples com legenda tabular (modelo 01)."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_origens-de-lead-com-outros-aberto",
+          "titulo": "Origens de lead com Outros aberto ao lado",
+          "caso_de_uso": "De onde vieram os leads do mês e o que compõe a fatia Outros, sem perder a noção do todo?",
+          "o_que_demonstra": [
+            "Pie principal e BarChart com layout vertical lado a lado em flex",
+            "Conectores em path num SVG sobreposto, a partir dos ângulos da fatia Outros",
+            "Outros em neutro, sempre a última fatia, com o total repetido no detalhe",
+            "Detalhe com valor escrito em cada barra e a mesma unidade da pizza"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_parceiro-cresceu-dentro-de-outros",
+          "titulo": "Parceiro cresceu dentro de Outros",
+          "caso_de_uso": "Qual origem pequena, escondida em Outros, mudou de patamar no mês e merece sair do agrupamento?",
+          "o_que_demonstra": [
+            "Barra do parceiro em --chart-1 no detalhe e as demais em neutro",
+            "Anotação com base nomeada: 18 leads contra 6 em jul/26",
+            "Pizza principal intacta: o destaque vive só no painel de detalhe",
+            "Rótulo com halo na cor da superfície quando cruza o conector"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_motivos-de-perda-com-drilldown",
+          "titulo": "Motivos de perda com drilldown por fatia",
+          "caso_de_uso": "Dentro do motivo preço, qual submotivo pesa mais nas perdas: acima do orçamento, taxa ou ticket mínimo?",
+          "o_que_demonstra": [
+            "Estado level em React que troca o data da pizza ao clicar na fatia",
+            "Trilha Todos > Preço clicável e total do nível pai sempre visível",
+            "Cor por categoria vinda do dado, sem seriesColor sobre array ordenada",
+            "Trilha e lista equivalente focáveis por teclado",
+            "Preview com o nível filho aberto, porque o render não captura clique"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_cauda-de-23-categorias",
+          "titulo": "Cauda longa de 23 campanhas abaixo de 1%",
+          "caso_de_uso": "Como mostrar 23 campanhas pequenas, cada uma abaixo de 1% dos leads, sem transformar o detalhe numa lista ilegível?",
+          "o_que_demonstra": [
+            "Detalhe com as 10 maiores da cauda e a linha final mais 13 abaixo de 0,5%",
+            "Sem rolagem: o que não cabe vira contagem escrita, nunca overflow escondido",
+            "Checagem em TypeScript de que Outros não passa da maior fatia",
+            "Nome de campanha inteiro, sem reticência, e lista completa na frase acessível"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_pizza-de-fracao-unica",
+      "nome": "Pizza de fração única",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Pizza de dois setores: a parte, em cor de destaque a partir das 12 horas, e o restante como trilho neutro. Funciona como glifo ao lado de um número grande, porque o todo está implícito na forma; repetida em célula de tabela, de 16 a 24 px, vira um path de arco em SVG puro, mais barato que um PieChart por linha.",
+      "quando_usar": [
+        "Uma parte contra o restante de um todo existente, entre 5% e 95%, lida num relance como um quarto, metade ou três quartos.",
+        "Glifo de 24 a 48 px ao lado do número de KPI, reforçando a fração sem ocupar o card.",
+        "Coluna de glifos repetidos numa tabela, com o percentual sempre escrito ao lado."
+      ],
+      "quando_evitar": [
+        "Fração abaixo de 5% ou acima de 95%: vira lasca ou disco; número com barra de progresso (13).",
+        "Caminho até uma meta que pode ser ultrapassada: progresso e meta (13).",
+        "Mais de uma parte relevante: pizza simples (modelo 01).",
+        "Comparar a mesma fração entre muitos grupos com precisão: barra em célula (14)."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_indicacao-nas-oportunidades-ganhas",
+          "titulo": "Indicação nas oportunidades ganhas",
+          "caso_de_uso": "Que fração das oportunidades ganhas no trimestre veio de indicação?",
+          "o_que_demonstra": [
+            "Dois itens no Pie: parte em --chart-1 e restante em --line-strong",
+            "Restante fora de --surface-overlay, que some no tema claro",
+            "Número em kpi-number ao lado do glifo, nunca dentro da pizza cheia",
+            "Volume junto da fração: 38,0% (19 de 50) por formatRateWithVolume"
+          ],
+          "canvas_sugerido": "kpi"
+        },
+        {
+          "slug": "v2_tique-do-trimestre-anterior",
+          "titulo": "Fração com tique do trimestre anterior",
+          "caso_de_uso": "A fração de ganhos por indicação subiu contra o trimestre anterior, e quanto?",
+          "o_que_demonstra": [
+            "Tique radial em 25% no contorno, com o mesmo centro e raio do Pie",
+            "Ângulo do tique calculado em TypeScript na convenção de ângulo do Recharts",
+            "Variação com sinal e base nomeada: +13 pontos percentuais contra 25%",
+            "Rótulo do tique curto, em --text-muted e fora do disco"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v3_glifos-de-cobertura-na-tabela-de-origens",
+          "titulo": "Cobertura de qualificação por origem de lead",
+          "caso_de_uso": "Em cada origem, que fração dos leads do mês tem qualificação registrada para entrar no CPL qualificado?",
+          "o_que_demonstra": [
+            "Glifo de 20 px em path de arco calculado em TypeScript, sem PieChart por linha",
+            "Tabela em HTML com Tailwind e percentual à direita em tabular-nums",
+            "Mesma geometria e mesma cor em todas as linhas, percentual sempre escrito",
+            "Arco de 100% desenhado como círculo, caso que o path de arco único não cobre",
+            "Origem com menos de 10 leads mostra o par volume e fração"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_zero-indisponivel-e-extremos",
+          "titulo": "Zero, indisponível e frações extremas",
+          "caso_de_uso": "Como o glifo separa fração medida em zero, fração indisponível e frações abaixo de 5% ou acima de 95%?",
+          "o_que_demonstra": [
+            "0% medido desenha o trilho vazio e escreve 0%",
+            "Indisponível com contorno tracejado --text-muted e formatUnavailable()",
+            "Abaixo de 5% ou acima de 95% o glifo dá lugar ao número",
+            "Quatro estados lado a lado com o mesmo diâmetro e o ícone Unplug"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_pizzas-em-small-multiples",
+      "nome": "Pizzas e roscas em small multiples",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Grade de pizzas ou roscas do mesmo diâmetro, uma por todo (semana, pessoa, plataforma), com as mesmas categorias na mesma ordem e nas mesmas cores e uma legenda única. Absorve as roscas em small multiples do estudo 07: rosca pequena com número central quando a métrica do centro é o que se compara entre os grupos.",
+      "quando_usar": [
+        "A mesma composição de 2 a 4 todos com leitura aproximada: em qual todo a parte X passa da metade.",
+        "Matriz de completude ou cobertura com roscas binárias e número central, até uns 12 grupos.",
+        "Totais parecidos entre os todos, o que justifica o mesmo diâmetro para todas as pizzas."
+      ],
+      "quando_evitar": [
+        "Cinco todos ou mais, ou comparar a mesma parte com precisão entre eles: barra 100% empilhada (03).",
+        "Participação ao longo de muitos períodos: linha (04).",
+        "Totais muito diferentes entre os todos: pizzas proporcionais ao total (modelo 06).",
+        "Muitas roscas binárias dentro de uma tabela: barra em célula (14)."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_agendas-em-quatro-semanas",
+          "titulo": "Resultado das agendas em quatro semanas",
+          "caso_de_uso": "Como se divide o resultado das agendas (realizada, remarcada, não compareceu) em cada uma das últimas quatro semanas?",
+          "o_que_demonstra": [
+            "Um PieChart por célula em grid do Tailwind, como no exemplo Pie Chart in Grid",
+            "Ordem fixa de categorias entre as pizzas, sem ordenar cada uma por valor",
+            "Legenda única no topo, na ordem angular, com amostra quadrada",
+            "Mesmo diâmetro e total de agendas escrito sob cada pizza"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_nao-comparecimento-acima-de-15",
+          "titulo": "Semana com não comparecimento acima de 15%",
+          "caso_de_uso": "Em qual das quatro semanas o não comparecimento passou de 15% das agendas?",
+          "o_que_demonstra": [
+            "Só a categoria não compareceu em --chart-1 em todas as pizzas",
+            "Percentual escrito só na fatia destacada, em peso 700 na semana acima do limite",
+            "Anotação curta com o limite de 15% na única pizza que o ultrapassa",
+            "Frase acessível que nomeia a semana acima do limite"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_completude-de-campos-por-plataforma",
+          "titulo": "Completude de campos por plataforma de mídia",
+          "caso_de_uso": "Quais campos dos leads (origem, porte, telefone, cargo) chegam incompletos em cada uma das três plataformas de mídia?",
+          "o_que_demonstra": [
+            "Matriz de 3 por 4 roscas binárias com rótulos de linha e coluna em HTML",
+            "Número central em kpi-number por rosca, que é o que se compara",
+            "Número abaixo de 50% em --warning com ícone, sem depender só da cor",
+            "Acima de oito células, anel em SVG puro no lugar de um PieChart por rosca",
+            "Absorve 07#12: mesma cor, mesma métrica central e mesmo diâmetro"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_origem-por-sdr-com-amostra-pequena",
+          "titulo": "Origem dos leads por SDR com amostra pequena",
+          "caso_de_uso": "Como a origem dos leads do mês se divide entre SDR 01 e SDR 04 quando uma delas recebeu só 6 leads?",
+          "o_que_demonstra": [
+            "Pizza com n abaixo do mínimo em neutro, com selo amostra pequena e n=6",
+            "Percentual omitido abaixo do mínimo, com contagens absolutas escritas",
+            "Sem informação vazada e por último em todas as pizzas",
+            "Constante MIN_SAMPLE no topo do arquivo decide o estado de cada célula"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_pizza-de-raio-variavel",
+      "nome": "Pizza de raio variável",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Pizza em que o ângulo de cada setor codifica uma métrica (a participação no todo) e o raio codifica outra, com raio em escala de raiz quadrada, zero incluído e raio mínimo. É peça de análise exploratória: pede anéis de escala, legenda que explique as duas codificações e dica com os dois números, porque o olho soma ângulo e raio numa área só.",
+      "quando_usar": [
+        "Aba de análise com 3 a 6 categorias e duas métricas por categoria, uma delas participação num todo.",
+        "Quando o produto de ângulo e raio não induz leitura errada e a dica traz as duas métricas por extenso.",
+        "Peça de exploração que precede uma decisão, não o painel diário."
+      ],
+      "quando_evitar": [
+        "Painel operacional ou leitura rápida: barras pareadas (02) ou dispersão (09).",
+        "Mais de 6 setores ou raios muito próximos: a diferença de raio some; barras pareadas (02).",
+        "Métrica em que raio maior significa pior sem aviso escrito, porque a área grande parece melhor.",
+        "Raio linear no valor, que infla a área ao quadrado: nunca."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_investimento-e-cpl-qualificado-por-plataforma",
+          "titulo": "Investimento e CPL qualificado por plataforma",
+          "caso_de_uso": "Onde está o investimento do mês e quanto custa cada lead qualificado em cada uma das três plataformas de mídia?",
+          "o_que_demonstra": [
+            "Pie com outerRadius máximo e shape que devolve Sector com raio por item",
+            "Raio por raiz quadrada do valor sobre o maior valor, entre rMin e rMax",
+            "Anéis de escala em circle no mesmo SVG, com rótulo em R$",
+            "Legenda dupla que explica ângulo e raio, e dica com as duas métricas"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_anel-do-cpl-qualificado-alvo",
+          "titulo": "CPL qualificado contra o anel do alvo",
+          "caso_de_uso": "Qual plataforma de mídia passou do CPL qualificado alvo no mês, e com que fatia do investimento?",
+          "o_que_demonstra": [
+            "Anel de referência tracejado 3 3 em --text-muted no raio do alvo",
+            "Rótulo só no setor que passa do anel, com halo na cor da superfície",
+            "Anotação curta com nome e valor do alvo em formatCurrencyCompact",
+            "Acima do alvo dito em palavra, sem --negative como único sinal"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_entradas-e-taxa-de-agenda-por-fila",
+          "titulo": "Entradas e taxa de agenda por fila da pré-vendas",
+          "caso_de_uso": "Quais filas da pré-vendas recebem mais entradas e quais convertem melhor em agenda, na aba de análise?",
+          "o_que_demonstra": [
+            "Cinco filas com cor por slot fixo na ordem 1, 3, 6, 5, 2",
+            "Domínio do raio de 0 a 100% declarado, não do menor ao maior valor",
+            "Legenda lateral tabular com participação, taxa de agenda e volume",
+            "Taxa com volume na dica por formatRateWithVolume"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_plataforma-sem-lead-qualificado",
+          "titulo": "Plataforma sem lead qualificado no mês",
+          "caso_de_uso": "Como mostrar uma plataforma que recebeu investimento mas não gerou lead qualificado, sem CPL calculável?",
+          "o_que_demonstra": [
+            "Setor em raio mínimo, vazado, com contorno tracejado --text-muted",
+            "Rótulo CPL indisponível: 0 leads qualificados, por formatUnavailable()",
+            "Ângulo mantido pelo investimento: a ausência está no raio, não na fatia",
+            "Divisão por zero tratada em TypeScript antes do data, nunca Infinity no raio"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "06_pizzas-proporcionais-ao-total",
+      "nome": "Pizzas proporcionais ao total",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Pizzas lado a lado em que a área de cada uma é proporcional ao total do seu todo e as fatias mostram a composição. O raio sai de rMax vezes a raiz de total sobre o maior total, as pizzas se alinham pela base, o total vai escrito sob cada uma e uma legenda de tamanho ancora a leitura de área, que o olho subestima.",
+      "quando_usar": [
+        "Composição de 2 a 6 todos com totais muito diferentes, quando a diferença fina de total não importa.",
+        "Total e composição precisam aparecer juntos numa leitura aproximada, com o total escrito.",
+        "Série curta de períodos em que o crescimento do todo é parte da mensagem."
+      ],
+      "quando_evitar": [
+        "Diferença de total pequena: small multiples de mesmo diâmetro (modelo 04).",
+        "Total e composição com leitura precisa: barra empilhada (03) ou marimekko (26).",
+        "Mais de seis todos: barra empilhada (03), ou SVG puro num SVG só se a forma for mantida.",
+        "Raio proporcional ao total em vez da área: erro clássico que infla a diferença."
+      ],
+      "arquivo_estudo": "_estudo/familias/06_pizza.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-por-trimestre-e-tipo-de-cliente",
+          "titulo": "Receita reconhecida por trimestre e tipo de cliente",
+          "caso_de_uso": "Como a receita reconhecida variou do 3º trimestre de 2025 ao 2º de 2026 e como se dividiu por tipo de cliente?",
+          "o_que_demonstra": [
+            "Um PieChart por trimestre em contêineres de mesmo tamanho, alinhados pela base",
+            "outerRadius pela raiz quadrada do total sobre o maior total, em TypeScript",
+            "Total escrito sob cada pizza em formatCurrencyCompact",
+            "Cor por tipo de cliente fixa entre as pizzas, nos slots 1, 3 e 6"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_legenda-de-tamanho",
+          "titulo": "Legenda de tamanho com dois círculos de referência",
+          "caso_de_uso": "Quanto maior foi a receita de um trimestre contra outro, lida pela área e confirmada por uma escala?",
+          "o_que_demonstra": [
+            "Círculos de R$ 500 mil e R$ 2.000 mil na mesma escala de área das pizzas",
+            "Círculos vazados em --text-muted, alinhados pela base como as pizzas",
+            "Mesma função de raio nas pizzas e na legenda, sem constante duplicada",
+            "Anotação curta: a área é aproximada e o total escrito manda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_leads-por-plataforma-e-qualificacao",
+          "titulo": "Leads do semestre por plataforma e qualificação",
+          "caso_de_uso": "Quanto cada plataforma de mídia trouxe de leads no semestre e que parte deles foi qualificada?",
+          "o_que_demonstra": [
+            "Três pizzas pelo volume de leads com fatias por estado de qualificação",
+            "Ordem natural das fatias: qualificado, em análise, desqualificado",
+            "Qualificado em --chart-1 e os demais estados em neutro, sem cor semântica",
+            "Frase acessível com o total e a fração qualificada de cada plataforma"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_mes-com-campanha-pausada",
+          "titulo": "Mês com campanha pausada abaixo do mínimo",
+          "caso_de_uso": "Como mostrar um mês com total 40 vezes menor, pequeno demais para desenhar a composição?",
+          "o_que_demonstra": [
+            "Diâmetro abaixo de 24 px vira ponto com o total: 12 leads, composição omitida",
+            "Constante MIN_DIAMETER no topo do arquivo decide entre pizza e ponto",
+            "Escala comum sobre o conjunto, sem reescalar por causa do mês pequeno",
+            "Mês sem dado escreve indisponível, distinto do mês pequeno"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "De que fontes cada indicador depende",
+  "useCase": "Diretoria: como 18 fontes de dado fictícias, por sistema, alimentam 40 indicadores agrupados por dashboard.",
+  "demonstrates": [
+    "Layout radial de dendrograma com folhas agrupadas pelo pai e vão entre grupos",
+    "Caminho pelo ancestral comum convertido em B-spline e depois em Bézier cúbica",
+    "Tensão fixa em 0,85 declarada no rodapé",
+    "Feixes em var(--text-muted) a 0,76 de opacidade, acima do piso de 3:1",
+    "Grupo nomeado fora do círculo, numa linha própria acima das folhas dele",
+    "Rótulo horizontal em cada folha, na altura dela, sem giro de texto"
+  ],
+  "canvas": {
+    "width": 816,
+    "height": 616
+  },
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): nenhum preset fecha. São 58 folhas e 10 nomes de grupo em texto horizontal, uma linha cada: 68 linhas em duas colunas de 34. O texto de 11 px tem caixa de tinta de 9,02 px e o respiro de 4 px pede passo de pelo menos 13,02 px; o passo sai 13,2 px (2 x 226 x seno de 74,5 graus, dividido por 33 vãos), então o raio das folhas é 226 px e o círculo ocupa 452 px de altura. Com a linha de leitura em y 8, o centro em 248 e o rodapé em 489, o corpo pede 497 px; somados os 118,5 px da moldura com o caso de uso em uma linha (606 px de texto em 750), a altura do canvas é 616. Na largura, o raio de 226 mais a folha, a folga e o nome mais largo (132 px em Dashboard de pré-vendas, 128 px em Taxa de comparecimento) pedem cerca de 370 px de cada lado: corpo de 750 px, canvas de 816. O viewBox é 750 x 497, do tamanho do corpo, e a escala do svg sai 1 (GEO-18). DESVIOS DECLARADOS DO CATÁLOGO, com o contrato vencendo. (1) O catálogo pede o rótulo girado pelo ângulo e virado 180 graus na metade esquerda; a TIP-5 proíbe rotate em texto, sem exceção para radial. O rótulo é horizontal, e para os 58 caberem a volta é montada por linhas: cada folha fica no ponto do círculo que está na altura da linha do nome dela, de modo que o ângulo sai da linha e não de um passo angular igual, e as folhas se espaçam mais perto dos polos. Ali o canto da caixa afasta o nome da folha (GEO-19), e uma linha de chamada de 1 px liga os dois quando a distância passa de 14 px. (2) O catálogo sugere o canvas alto; a conta acima pede 816 x 616. (3) O catálogo pede os feixes em var(--line-strong) com opacidade baixa; a ligação é o dado (ACE-6) e var(--line-strong) mede 1,79:1 no escuro e 1,83:1 no claro, sem alcançar 3:1 nem opaco (ACE-5, TOK-5). Ficou var(--text-muted) a 0,76, que mede 3,58:1 e 3,28:1; o piso fica em 0,72. O arco do grupo também sai em var(--text-muted), porque diz a que grupo a folha pertence. Raio dos nós internos: grupo em 0,6 e ramo em 0,2 do raio das folhas, em vez dos terços iguais do dendrograma, porque com o ramo em um terço o feixe dos indicadores faz um gancho largo antes de voltar para o próprio lado. A ordem das folhas é a de cadastro, sem métrica, então não há ordem a declarar (GEO-12). O hover acende a entrada em var(--chart-1) contínuo e a saída em var(--chart-6) tracejado, com revestimento na cor do cartão (TOK-4), e troca a linha de leitura e o rodapé; não aparece no preview. A OPACIDADE-MARCA mede a peça pela constante DIM_OPACITY e passa; a conta à mão contra tokens.css dá os mesmos 3,58:1 e 3,28:1."
+}

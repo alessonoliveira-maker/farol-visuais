@@ -1,0 +1,12 @@
+{
+  "title": "Trajetória de CPL e qualificação da plataforma A",
+  "useCase": "Como CPL e taxa de qualificação da plataforma A andaram juntos nos últimos 12 meses?",
+  "demonstrates": [
+    "Scatter com line e lineJointType linear sobre dados ordenados por mês",
+    "Início em anel vazado e fim em ponto cheio com rótulo de mês",
+    "Rótulos de mês só no início, no fim e nas viradas",
+    "Domínio explícito nos dois eixos com unidade"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

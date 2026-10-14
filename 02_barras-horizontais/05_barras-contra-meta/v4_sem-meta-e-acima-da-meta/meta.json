@@ -1,0 +1,13 @@
+{
+  "title": "Executivo sem meta e realizado acima dela",
+  "useCase": "Ler realizado contra meta quando alguém não tem meta cadastrada e outro chega a 250% da própria meta.",
+  "demonstrates": [
+    "Executivo sem meta desenha só o realizado e escreve sem meta definida",
+    "Realizado acima da meta com rótulo de excedente, como mais 18% acima",
+    "Escala cortada em 150% da maior meta, com marca de quebra explícita na ponta da barra",
+    "Estorno que deixa o realizado negativo escreve o valor e não desenha barra"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Domínio absoluto e não percentual: normalizar por meta própria não daria onde encaixar quem não tem meta, então o corte em 150% é da maior meta do grupo, não da meta de cada linha."
+}

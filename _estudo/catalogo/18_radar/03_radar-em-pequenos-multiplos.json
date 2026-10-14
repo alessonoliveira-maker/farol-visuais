@@ -1,0 +1,72 @@
+{
+  "slug": "03_radar-em-pequenos-multiplos",
+  "nome": "Radar em pequenos múltiplos",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Um radar pequeno por entidade, lado a lado numa grade do Tailwind, todos com os mesmos eixos, a mesma ordem e o mesmo domínio fixo. Troca a sobreposição pela repetição, que é a saída que Few, Storytelling with Data e Flourish recomendam quando há mais de duas séries. Eixos numerados nas miniaturas e uma legenda comum de eixos; miniaturas ordenadas por critério declarado.",
+  "quando_usar": [
+    "Comparar os perfis de 4 a 12 entidades sem sobrepor polígonos: SDRs, filas, origens, áreas.",
+    "A pergunta é quais perfis se parecem e qual foge do padrão, e não o valor exato de cada eixo.",
+    "Referência comum (média do time) repetida em contorno em cada miniatura.",
+    "Cartão largo com espaço para miniaturas de pelo menos 140 px."
+  ],
+  "quando_evitar": [
+    "Mais de 12 entidades, em que a miniatura fica pequena demais para ler: tabela com heatmap nas células (14/02) ou matriz categórica (15/02).",
+    "Cada miniatura com domínio próprio, o que torna falsa a comparação entre elas: domínio calculado sobre o conjunto.",
+    "Uma entidade só contra a referência: radar comparativo (modelo 02).",
+    "Quem é melhor em cada dimensão: dot plot por dimensão (17/01) ou tabela realçada (14/02).",
+    "Métricas de unidades diferentes por entidade: pequenos múltiplos de barras por métrica (02/02)."
+  ],
+  "arquivo_estudo": "_estudo/familias/18_radar.md",
+  "versoes": [
+    {
+      "slug": "v1_perfil-de-oito-sdrs",
+      "titulo": "Perfil de oito SDRs lado a lado",
+      "caso_de_uso": "Pré-vendas, 2026-T3: quais dos oito SDRs têm perfil parecido e quem foge do padrão do time em seis dimensões?",
+      "o_que_demonstra": [
+        "Um RadarChart por célula de grid com data e domain de 0 a 100 compartilhados",
+        "Miniaturas ordenadas pelo índice médio, com o critério escrito na linha de leitura",
+        "Eixos numerados de 1 a 6 nas miniaturas e legenda comum com o nome de cada eixo",
+        "Título de miniatura com o nome e o índice médio em font-display tabular",
+        "Frase acessível que cita o maior e o menor índice médio"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_media-do-time-em-cada-miniatura",
+      "titulo": "SDRs com a média do time em cada miniatura",
+      "caso_de_uso": "Pré-vendas, 2026-T3: quais SDRs ficam abaixo da média do time em mais dimensões e em quais eixos isso acontece?",
+      "o_que_demonstra": [
+        "Série do SDR em --chart-1 preenchida e média em contorno tracejado 3 3 de --text-muted",
+        "Mesma média desenhada em todas as miniaturas, calculada uma vez fora do map",
+        "Contagem no título: 4 de 6 eixos abaixo da média, em peso 700 só no pior caso",
+        "Miniatura selecionada por clique com aria-pressed e contorno de foco visível"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_filas-de-trabalho-da-prevendas",
+      "titulo": "Perfil das seis filas de trabalho da pré-vendas",
+      "caso_de_uso": "Pré-vendas, 2026-08: em que dimensões cada fila (formulário, WhatsApp, lista outbound, reengajamento, indicação, evento) se afasta das demais?",
+      "o_que_demonstra": [
+        "Seis miniaturas em grade de 3 por 2 com a mesma ordem de cinco eixos",
+        "Tempo de primeira resposta invertido no índice, com a regra escrita na legenda de eixos",
+        "Fila de evento sem medição de comparecimento: eixo interrompido e sem dado na miniatura",
+        "Dentro do SLA como eixo vizinho do tempo de resposta, dimensões correlatas juntas",
+        "Volume de entradas da fila ao lado do título para ler perfil com base"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_vinte-entidades-alem-do-teto",
+      "titulo": "Vinte origens de lead além do teto de miniaturas",
+      "caso_de_uso": "Marketing, 2026-08: o que fazer quando o recorte traz 20 origens e as miniaturas deixam de ser legíveis?",
+      "o_que_demonstra": [
+        "Teto de 12 miniaturas como constante no topo do arquivo",
+        "Acima do teto, aviso com role status no lugar da grade e o número de origens do recorte",
+        "Recomendação escrita de trocar para a tabela com heatmap nas células (14/02)",
+        "Mostra as 12 primeiras pelo volume de leads e declara as 8 restantes, sem cortar calado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

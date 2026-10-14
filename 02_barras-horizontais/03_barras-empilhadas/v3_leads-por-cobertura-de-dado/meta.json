@@ -1,0 +1,13 @@
+{
+  "title": "Leads do mês por origem e cobertura de dado",
+  "useCase": "Quais origens trazem lead sem telefone nem e-mail, e quanto da base de cada origem chega completa.",
+  "demonstrates": [
+    "Quatro componentes de cobertura com telefone e e-mail na base",
+    "Rótulo de segmento suprimido abaixo de 24 px por content que mede width",
+    "Total e percentual de cobertura completa escritos na ponta",
+    "Sem contato em tom apagado, separado de indisponível"
+  ],
+  "canvas": { "width": 640, "height": 450 },
+  "frame": "card",
+  "notes": "Canvas fixado por número (640x450) em vez do preset card (640x360) porque a altura sobe pela ESP-6: BAR_MAX de 26 px e barCategoryGap de 30% dão passo de 26 dividido por 0,40, ou seja 65 px; multiplicado pelas 5 origens da tabela isso soma 325 px de corpo, contra os 234 px que o preset card reserva ao gráfico."
+}

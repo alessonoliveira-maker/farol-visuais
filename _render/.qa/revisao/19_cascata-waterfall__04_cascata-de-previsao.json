@@ -1,0 +1,108 @@
+{
+  "familia": "19_cascata-waterfall",
+  "modelo": "04_cascata-de-previsao",
+  "versoes": {
+    "v1_fechamento-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10 e a 14 com ressalva de acabamento. Escala conferida nas cinco marcas (0,078 px por mil reais), total no zero, divisor na fronteira da banda, setembro parcial dividido e datado, hachura a 3,25:1 no claro e 5,29:1 no escuro, fidelidade 0,00%. Observações no README: total hachurado inteiro com 1,42 mi já realizado, divisor fora da ReferenceLine, conector sai do topo e erraria em passo negativo, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums, traço de referência em text-secondary 4 3.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:32.070Z",
+      "impressao": "e2e8b3b51cd9a84a4e6799c0307a8ec2e67ed7c2",
+      "arquivos": {
+        "Chart.tsx": "6b4e7b5b33937da23d3e9cf06ce72fd74e869a92",
+        "data.ts": "b07a2d12a63017646a61543c7e075cab9d189c13",
+        "meta.json": "e673b0015b5b3174d8df6490e0c7d8c662955bcd"
+      }
+    },
+    "v2_projecao-contra-plano": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala conferida nas quatro marcas (0,065 px por mil reais), distância do plano de 6,9 px entre total e plano em negative com sinal e base na mesma linha, plano em ReferenceLine com extendDomain e rótulo na margem, rótulos a 3 px ou mais do traço de plano, fidelidade 0,00%. Observações no README: total hachurado inteiro, conector erraria em passo negativo, data da origem escrita à mão (NUM-7), formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums, traço de plano em text-secondary 4 3.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:32.538Z",
+      "impressao": "d5ecc19f8da1e04862a5674cdd9e61179bfe9f23",
+      "arquivos": {
+        "Chart.tsx": "5a3517d6940493384b6d408909f46684dab35654",
+        "data.ts": "5bd1c38696b26f5829424e7ba345efaaf08d3023",
+        "meta.json": "d29922f7bba611a88940c2e28da69b94f5a63ecf"
+      }
+    },
+    "v3_forecast-semanal-da-carteira": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10 com ressalva: três rótulos em 700 (dois totais e o maior passo), sem consequência porque o destaque leva anotação. Ponte fecha no dado e no desenho (0,061 px por mil reais nas seis marcas), totais divididos em fechado e ponderado na escala, conector no fim de cada passo inclusive nos negativos, polaridade com sinal, fidelidade 0,02%. Observações no README: semana só na frase acessível (DAD-9), ordem da legenda, anotação a 3 px do conector, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:33.049Z",
+      "impressao": "7f5d86bceb820fd86c8b4a0d890b166c68e6b96e",
+      "arquivos": {
+        "Chart.tsx": "a159c17cdf31a2680aa8969a45fd5922a98751d1",
+        "data.ts": "5d016b10b178c7d5babbb3e5206910a147ebbd03",
+        "meta.json": "1d84d8896496045301397c9babdf4e1362e8f8bb"
+      }
+    },
+    "v4_projecao-com-cobertura-rasa": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 19 com ressalva de redação. Escala conferida nas quatro marcas (0,185 px por mil reais), total empilhado nos três graus, hachura fina e larga com contorno tracejado distinguíveis nos dois temas (3,25:1 no claro, 5,29:1 no escuro), taxa com volume, fidelidade 0,00%. Observações no README: frase acessível e dica com a palavra repetida (realizado realizado), mês fora do corpo e da frase, conector erraria em passo negativo, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:33.584Z",
+      "impressao": "9f6563f5c6ed40c2ad19a32c00303f7e007c197c",
+      "arquivos": {
+        "Chart.tsx": "d97534fd85a3344bba943671878dc343b56f3747",
+        "data.ts": "959528f732ed20b2044c5b886c7095efd1cafef8",
+        "meta.json": "cba52bd72ef5bd1215dd4f72f1389681e404fa5b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_fechamento-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10 e a 14 com ressalva de acabamento. Escala conferida nas cinco marcas (0,078 px por mil reais), total no zero, divisor na fronteira da banda, setembro parcial dividido e datado, hachura a 3,25:1 no claro e 5,29:1 no escuro, fidelidade 0,00%. Observações no README: total hachurado inteiro com 1,42 mi já realizado, divisor fora da ReferenceLine, conector sai do topo e erraria em passo negativo, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums, traço de referência em text-secondary 4 3.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:32.070Z",
+      "impressao": "e2e8b3b51cd9a84a4e6799c0307a8ec2e67ed7c2",
+      "arquivos": {
+        "Chart.tsx": "6b4e7b5b33937da23d3e9cf06ce72fd74e869a92",
+        "data.ts": "b07a2d12a63017646a61543c7e075cab9d189c13",
+        "meta.json": "e673b0015b5b3174d8df6490e0c7d8c662955bcd"
+      }
+    },
+    {
+      "versao": "v2_projecao-contra-plano",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Escala conferida nas quatro marcas (0,065 px por mil reais), distância do plano de 6,9 px entre total e plano em negative com sinal e base na mesma linha, plano em ReferenceLine com extendDomain e rótulo na margem, rótulos a 3 px ou mais do traço de plano, fidelidade 0,00%. Observações no README: total hachurado inteiro, conector erraria em passo negativo, data da origem escrita à mão (NUM-7), formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums, traço de plano em text-secondary 4 3.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:32.538Z",
+      "impressao": "d5ecc19f8da1e04862a5674cdd9e61179bfe9f23",
+      "arquivos": {
+        "Chart.tsx": "5a3517d6940493384b6d408909f46684dab35654",
+        "data.ts": "5bd1c38696b26f5829424e7ba345efaaf08d3023",
+        "meta.json": "d29922f7bba611a88940c2e28da69b94f5a63ecf"
+      }
+    },
+    {
+      "versao": "v3_forecast-semanal-da-carteira",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 10 com ressalva: três rótulos em 700 (dois totais e o maior passo), sem consequência porque o destaque leva anotação. Ponte fecha no dado e no desenho (0,061 px por mil reais nas seis marcas), totais divididos em fechado e ponderado na escala, conector no fim de cada passo inclusive nos negativos, polaridade com sinal, fidelidade 0,02%. Observações no README: semana só na frase acessível (DAD-9), ordem da legenda, anotação a 3 px do conector, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:33.049Z",
+      "impressao": "7f5d86bceb820fd86c8b4a0d890b166c68e6b96e",
+      "arquivos": {
+        "Chart.tsx": "a159c17cdf31a2680aa8969a45fd5922a98751d1",
+        "data.ts": "5d016b10b178c7d5babbb3e5206910a147ebbd03",
+        "meta.json": "1d84d8896496045301397c9babdf4e1362e8f8bb"
+      }
+    },
+    {
+      "versao": "v4_projecao-com-cobertura-rasa",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim, a 19 com ressalva de redação. Escala conferida nas quatro marcas (0,185 px por mil reais), total empilhado nos três graus, hachura fina e larga com contorno tracejado distinguíveis nos dois temas (3,25:1 no claro, 5,29:1 no escuro), taxa com volume, fidelidade 0,00%. Observações no README: frase acessível e dica com a palavra repetida (realizado realizado), mês fora do corpo e da frase, conector erraria em passo negativo, formatCurrencyAxis em rótulo direto (NUM-1), linha de leitura sem tabular-nums.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T13:02:33.584Z",
+      "impressao": "9f6563f5c6ed40c2ad19a32c00303f7e007c197c",
+      "arquivos": {
+        "Chart.tsx": "d97534fd85a3344bba943671878dc343b56f3747",
+        "data.ts": "959528f732ed20b2044c5b886c7095efd1cafef8",
+        "meta.json": "cba52bd72ef5bd1215dd4f72f1389681e404fa5b"
+      }
+    }
+  ]
+}

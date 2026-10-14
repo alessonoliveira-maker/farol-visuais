@@ -1,0 +1,70 @@
+{
+  "slug": "07_arvore-de-palavras",
+  "nome": "Árvore de palavras",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Uma palavra raiz e as sequências que a seguem (sufixo), que a precedem (prefixo) ou as duas, com tamanho de fonte pela frequência de cada ramo; técnica de visualização de texto publicada em 2007. Lê-se da raiz para fora: os ramos maiores são os jeitos mais comuns de continuar a frase. Em SVG puro, com a trie montada em TypeScript sobre frases tokenizadas e normalizadas (chave sem acento e em minúsculas, exibindo a forma original mais frequente), poda por contagem mínima, profundidade de 3 ou 4 palavras, X pela largura acumulada das palavras medidas, Y pelas folhas com o pai centralizado nos filhos e conectores bézier. Layout determinístico e sempre com lista textual equivalente.",
+  "quando_usar": [
+    "Explorar o que vem depois ou antes de uma palavra frequente, em 50 a 500 frases",
+    "Achar as formas comuns de uma objeção começar, como não tem ou não é o momento",
+    "Ligar o ramo ao desfecho, pintando os ramos cujas frases terminaram em perda",
+    "Oficina de roteiro da pré-vendas, em que a equipe lê as frases em conjunto"
+  ],
+  "quando_evitar": [
+    "Raiz com menos de 5 ocorrências: a árvore vira fio; mostre as frases na concordância KWIC (03)",
+    "Mais de 200 frases sem poda: fica ilegível; aplique contagem mínima e profundidade máxima",
+    "Contagem de termos isolados: a bar list de termos (02/09) responde melhor",
+    "Resumo executivo: a árvore pede exploração; use a frase com número (01)",
+    "Grafias sem normalizar: preço e preco viram ramos separados; agrupe pela chave sem acento"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_raiz-nao-nas-objecoes",
+      "titulo": "O que vem depois de não nas objeções",
+      "caso_de_uso": "Pré-vendas: como as objeções anotadas nas ligações de ago/26 continuam depois da palavra não.",
+      "o_que_demonstra": [
+        "Trie de sufixo montada em TypeScript com poda por contagem mínima de 3",
+        "Profundidade de 3 palavras e fonte decrescente com a frequência do ramo",
+        "Conectores bézier com o pai centralizado nas folhas",
+        "Lista textual equivalente dos ramos para leitor de tela"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_ramos-que-levam-a-perda",
+      "titulo": "Ramos de objeção que terminaram em perda",
+      "caso_de_uso": "Pré-vendas: quais continuações de não aparecem mais em ligações cujas oportunidades foram perdidas depois.",
+      "o_que_demonstra": [
+        "Ramo com maioria perdida em --chart-1 e peso 700; os demais em text-text-secondary",
+        "Parcela escrita no fim do ramo por formatRateWithVolume, como 7 de 9",
+        "No máximo dois ramos anotados, com a regra de maioria declarada na nota",
+        "Conector do ramo destacado com traço mais grosso, sem depender só da cor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_arvore-dupla-com-raiz-preco",
+      "titulo": "Árvore dupla com raiz preço",
+      "caso_de_uso": "Comercial: o que se escreve antes e depois de preço em 500 anotações fictícias de oportunidades perdidas em 2026.",
+      "o_que_demonstra": [
+        "Prefixo à esquerda e sufixo à direita da mesma raiz, com larguras medidas",
+        "Chave sem acento e em minúsculas; exibida a forma original mais frequente",
+        "Poda por contagem mínima de 8 com contador de ramos omitidos",
+        "Clique numa palavra recomputa a trie com ela como raiz"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_raiz-rara-vira-concordancia",
+      "titulo": "Raiz rara substituída por concordância",
+      "caso_de_uso": "Marketing: o que a peça mostra quando a raiz escolhida, garantia, aparece só em 4 respostas de formulário do trimestre.",
+      "o_que_demonstra": [
+        "Com menos de 5 ocorrências, as frases em concordância no lugar da árvore",
+        "Aviso com a contagem e o limite: 4 ocorrências, a árvore pede 5",
+        "Raiz sem nenhuma ocorrência mostra estado vazio com role status",
+        "A mesma função decide entre árvore e concordância pela contagem"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

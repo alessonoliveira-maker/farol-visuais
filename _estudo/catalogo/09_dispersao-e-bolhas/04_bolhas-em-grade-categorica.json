@@ -1,0 +1,67 @@
+{
+  "slug": "04_bolhas-em-grade-categorica",
+  "nome": "Bolhas em grade categórica",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Os dois eixos são categorias ordenadas e uma bolha centrada em cada cruzamento dá o volume pela área. É o punch card de dia por hora e o dot plot em matriz categórica. Ocupa menos tinta que o mapa de calor e deixa a cor livre para uma segunda medida. A regra que sustenta o modelo é separar zero medido, sem expediente e sem ocorrência.",
+  "quando_usar": [
+    "Volume por dia útil e hora cheia, como agendas marcadas ou respostas de lead.",
+    "Contagem por duas categorias de negócio, como motivo de perda por etapa do funil.",
+    "Matriz esparsa, em que a célula cheia do mapa de calor pesaria demais.",
+    "Tamanho para volume e cor sequencial para uma taxa da mesma célula, com as duas legendas."
+  ],
+  "quando_evitar": [
+    "Pergunta só de onde concentra, com matriz densa: use mapa de calor (família 15), que lê melhor em menos espaço.",
+    "Eixos quantitativos contínuos: use bolhas (modelo 03) ou densidade 2D (modelo 09).",
+    "Mais de cerca de 20 categorias num eixo: agrupe ou quebre em pequenos múltiplos.",
+    "Comparação precisa de valores entre células: escreva o número ou use tabela visual (família 14)."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-por-dia-e-hora",
+      "titulo": "Agendas marcadas por dia e hora",
+      "caso_de_uso": "Em que dia útil e hora a pré-vendas marca mais agendas? Trimestre inteiro, das 8h às 19h.",
+      "o_que_demonstra": [
+        "ScatterChart com XAxis e YAxis do tipo category e ordem de dia e hora fixa",
+        "ZAxis com domain a partir de 0 e piso de área que mantém o valor 1 visível",
+        "Legenda de tamanho com 3 referências de contagem",
+        "Todas as categorias impressas no eixo, sem rotação de texto"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_melhor-janela-de-comparecimento",
+      "titulo": "Janela com melhor comparecimento",
+      "caso_de_uso": "Qual janela de agenda tem mais comparecimento? A faixa das 10h às 12h de terça a quinta sai marcada com a taxa.",
+      "o_que_demonstra": [
+        "ReferenceArea categórica com fill de superfície rebaixada e texto que diz o que marca",
+        "Taxa de comparecimento com o volume escrito na anotação",
+        "Bolhas fora da faixa mantidas em neutro, sem apagar o contexto"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_motivo-de-perda-por-etapa",
+      "titulo": "Motivo de perda por etapa do funil",
+      "caso_de_uso": "Em que etapa cada motivo de perda aparece? 14 motivos fictícios por 6 etapas, com totais de linha e coluna nas bordas.",
+      "o_que_demonstra": [
+        "Dot plot em matriz com motivos ordenados pelo total e etapas na ordem do funil",
+        "Totais marginais em texto nas bordas, alinhados às categorias",
+        "Área proporcional à contagem com o mesmo domínio de ZAxis em toda a matriz",
+        "Cartão alto para caber todos os rótulos de motivo sem corte"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_zero-contra-sem-expediente",
+      "titulo": "Contatos da pré-vendas com expediente marcado",
+      "caso_de_uso": "Hora sem contato é zero de verdade ou fora do expediente? Sábado e horas antes das 8h viram traço, zero vira ponto mínimo.",
+      "o_que_demonstra": [
+        "Três estados: volume, zero medido em ponto mínimo anelado e sem expediente em traço",
+        "Os três estados explicados na legenda com amostra na forma da marca",
+        "Célula sem ocorrência vazia de verdade, nunca somada ao zero"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

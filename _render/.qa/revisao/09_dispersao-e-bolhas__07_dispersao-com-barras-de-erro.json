@@ -1,0 +1,33 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "07_dispersao-com-barras-de-erro",
+  "versoes": {
+    "v1_taxa-de-agenda-por-sdr": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, Wilson correto e assimetrico, dominio comporta todos os intervalos, contraste e escala ok nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T20:15:16.793Z",
+      "impressao": "80629358249f95ec236ac624710c2a6b5a836059",
+      "arquivos": {
+        "Chart.tsx": "44018be52ed9f9791ee2ad37947d82fee313186f",
+        "data.ts": "8c5f980462f5526b604ea446a4cfd2f5b6350c1c",
+        "meta.json": "95d405ed78b364d13e2d615d08e326732195b292"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_taxa-de-agenda-por-sdr",
+      "veredito": "aprovado",
+      "nota": "Check limpo, Wilson correto e assimetrico, dominio comporta todos os intervalos, contraste e escala ok nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T20:15:16.793Z",
+      "impressao": "80629358249f95ec236ac624710c2a6b5a836059",
+      "arquivos": {
+        "Chart.tsx": "44018be52ed9f9791ee2ad37947d82fee313186f",
+        "data.ts": "8c5f980462f5526b604ea446a4cfd2f5b6350c1c",
+        "meta.json": "95d405ed78b364d13e2d615d08e326732195b292"
+      }
+    }
+  ]
+}

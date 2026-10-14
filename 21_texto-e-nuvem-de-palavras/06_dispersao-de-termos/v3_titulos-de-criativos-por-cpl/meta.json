@@ -1,0 +1,13 @@
+{
+  "title": "Palavras de títulos de criativos por CPL",
+  "useCase": "Marketing: quais palavras de títulos de criativos são típicas dos anúncios com CPL abaixo da mediana de ago/26, entre 250 termos.",
+  "demonstrates": [
+    "Eixos em escala log com frequência somada de 1, declarada no subtítulo",
+    "250 pontos com rótulo só nos 20 termos de maior distinção",
+    "Frequência mínima de 3 anúncios aplicada antes e escrita na nota",
+    "Dica com os dois grupos, a contagem de anúncios e o CPL qualificado médio"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Distinção da palavra: diferença entre as duas contagens dividida pela raiz da soma, que favorece palavra frequente em vez de palavra rara com razão alta; típica de um grupo a partir de 2. As contagens da dica são as reais; os eixos mostram a contagem mais 1. O data.ts traz 265 palavras candidatas e 15 delas ficam abaixo de 3 anúncios, então saem antes do desenho e a conta vai escrita no rodapé; as 250 restantes são as desenhadas. Pontos com opacidade de 0,8, acima do piso de 0,72 do --text-muted (ACE-5), para os empilhados nas contagens baixas se revelarem. O nome sai nas 20 palavras de maior distinção que couberem sem cobrir marca nem outro nome, então o número de nomes pode ficar abaixo de 20."
+}

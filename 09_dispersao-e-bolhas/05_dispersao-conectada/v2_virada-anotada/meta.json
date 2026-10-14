@@ -1,0 +1,17 @@
+{
+  "title": "A virada de público da plataforma A",
+  "useCase": "Em que mês o CPL caiu e a qualificação caiu junto?",
+  "demonstrates": [
+    "Anotação curta ancorada no mês da virada, com halo sobre a linha",
+    "Cotovelo da virada aceso e o resto da trajetória em neutro",
+    "Duas anotações no visual, que é o teto da ANO-1",
+    "Virada calculada da qualificação, não do CPL, que cai nos doze meses",
+    "Traço em token de dado pela ACE-6, com o contraste medido nos dois temas"
+  ],
+  "canvas": {
+    "width": 680,
+    "height": 420
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1. A conta: a moldura card com largura de 680 desconta 66 px de largura e 135 px de altura com o caso de uso em duas linhas, e o corpo de 614 x 285 recebe a linha de leitura de 12 px com respiro de 8, que são 25 px, mais 260 px de plano. Com o preset card de 640 x 360 o plano cairia para 200 px e as duas anotações não caberiam sem encostar na trajetória. COR DO TRAÇO, e ela é a alma do modelo: apagado o traço, ninguém sabe qual mês virou qual, então ele é dado e a ACE-6 cobra 3:1 contra o cartão. Medido contra --surface-raised: --text-muted 5,21:1 no escuro e 5,37:1 no claro, --chart-1 9,50:1 e 6,00:1, os dois acima do piso; --line-strong, que a tabela 17.2 indicaria como neutro, mede 1,79:1 e 1,83:1 e por isso está fora. Sem opacidade em nenhuma marca, então a conta da ACE-5 não entra. Medido a mais, e é o número que nenhuma guarda vê: a cor acesa contra o NEUTRO, marca contra marca, dá 1,82:1 no escuro e 1,12:1 no claro, muito abaixo de 3:1. No tema claro as duas têm praticamente a mesma luminância, então a cor sozinha NÃO separa o destaque, e é por isso que ele carrega mais canais: espessura de traço, anel em volta da marca e a palavra escrita, como a ACE-2 pede. A virada é procurada na taxa de qualificação e não no CPL, que cai nos doze meses e portanto não tem virada nenhuma; a especificação do catálogo diz apenas mês da virada e a v1 deste modelo procura no CPL, o que aqui devolveria menos um. O anel em volta do ponto da virada existe porque na v1 a virada e o fim da trajetória usam a mesma linguagem de ponto cheio, separados só por 2 px de raio: o anel é o segundo canal que a ACE-2 pede. Conferência das guardas, medida nesta peça e não suposta: CONTRASTE-MARCA MEDE esta versão, ao contrário do que acontece nos vizinhos de bolhas, onde ela sai preview_com_transform; ESPESSURA-MARCA sai sem medir, por sem_marca_de_barra. O que continua sem guarda nenhuma é a marca contra a MARCA, porque CONTRASTE-MARCA mede contra o cartão; esse número foi calculado à mão pela fórmula da WCAG sobre os tokens e os dois PNGs foram olhados."
+}

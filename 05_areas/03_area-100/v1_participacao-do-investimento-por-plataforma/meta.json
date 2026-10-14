@@ -1,0 +1,13 @@
+{
+  "title": "Participação do investimento por plataforma",
+  "useCase": "Ver como o investimento mensal de 2026 se redistribuiu entre quatro plataformas fictícias de mídia paga.",
+  "demonstrates": [
+    "stackOffset expand com eixo de 0% a 100% por formatPercent",
+    "Rótulo da camada dentro da área no último mês, no lugar da legenda",
+    "Percentual inteiro somando 100 pelo maior resto (NUM-2)",
+    "Cor fixa por plataforma vinda do dado, não da posição (COR-3)"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A área 100% esconde o total investido; o valor absoluto do último mês vai na linha de leitura para o leitor não confundir redistribuição de peso com queda de investimento."
+}

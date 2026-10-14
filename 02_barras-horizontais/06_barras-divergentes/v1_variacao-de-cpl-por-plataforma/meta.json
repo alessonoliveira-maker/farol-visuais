@@ -1,0 +1,14 @@
+{
+  "title": "Variação do CPL por plataforma no mês",
+  "useCase": "Em que plataforma o CPL subiu ou caiu contra jul/26, sabendo que CPL que sobe é ruim.",
+  "demonstrates": [
+    "Domínio simétrico de menos o máximo absoluto a mais o máximo absoluto",
+    "Cor pela polaridade de custo: queda em cor boa, alta em cor de alerta",
+    "Raio só na ponta livre, trocando de lado conforme o sinal",
+    "Rótulo fora da barra com sinal explícito e menos tipográfico",
+    "Zero em ReferenceLine sólida, sem grade, e base de cada linha escrita ao lado",
+    "Plataforma sem mês anterior declara a falta de base em vez de desenhar zero"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

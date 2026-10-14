@@ -1,0 +1,160 @@
+{
+  "familia": "10_funil",
+  "modelo": "05_funil-com-meta-sobreposta",
+  "versoes": {
+    "v1_realizado-contra-meta-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Barras do zero em dominio comum, traco de meta pelo background, atingimento com par absoluto e fracao decorrida no corpo; sem bloqueante nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:46.476Z",
+      "impressao": "d01e22e340864c3173f94356fd8b0deac31aa6c4",
+      "arquivos": {
+        "Chart.tsx": "7d5353637b6ee1b94b65194a37a32ca20fe19cb6",
+        "data.ts": "e2d15e4ffbba4560b5d38de1180d165a3b3c8f1f",
+        "meta.json": "745e86b4f85aabc43d7d09024c2c17bdac00e051"
+      }
+    },
+    "v2_cor-por-faixa-de-atingimento": {
+      "veredito": "aprovado",
+      "nota": "Faixa de atingimento com legenda e percentual escrito, cor nunca e a unica pista; sem bloqueante. Observacao: limiares vem de constante do data.ts, nao de prop.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:51.467Z",
+      "impressao": "b77069a22ba34496188a637dc8c99257f330d693",
+      "arquivos": {
+        "Chart.tsx": "59cd88e0314098cca734e52e08d31b149221267e",
+        "data.ts": "3c19a7b4e31c98be46075123bcae440a788c874f",
+        "meta.json": "8c6d5ea271507b18cdf6c56986b6a7e898db5525"
+      }
+    },
+    "v3_meta-desdobrada-pelas-taxas-historicas": {
+      "veredito": "aprovado",
+      "nota": "Necessario desdobrado confere com as taxas do rodape, falta escrita com o substantivo, escala unica; sem bloqueante. Observacao: aritmetica vem pronta do data.ts.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:56.525Z",
+      "impressao": "77b45d4193712c51ee1c1018c0b4f76211c25b91",
+      "arquivos": {
+        "Chart.tsx": "e5ba44ebccafb950262a41615db49c0b9bbc877d",
+        "data.ts": "379e945c33897c3f1b220cae8e97fc8c668f3a86",
+        "meta.json": "cfeff7893a8172761799ef79553e6704cde69e82"
+      }
+    },
+    "v4_etapa-nova-sem-historico": {
+      "veredito": "aprovado",
+      "nota": "Meta premissa distinguida por forma, atingimento indisponivel sem taxa inventada e par absoluto presente; losango fora da banda da barra nao colide. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:06:01.026Z",
+      "impressao": "0b1248cdd943cab57596f3fc8fa78940446574d3",
+      "arquivos": {
+        "Chart.tsx": "55507d98d7e67c5c150bc3c3d61576e497f2335d",
+        "data.ts": "88a218f1f806b81123d43a17c79dc1d4b70f56df",
+        "meta.json": "af35e70a5c08a24c4e5becf36ec03a6a749cabd3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_realizado-contra-meta-do-trimestre",
+      "veredito": "reprovado",
+      "nota": "Fracao do trimestre decorrido nao aparece na tela; so no aria-label",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:48:16.141Z",
+      "impressao": "e1dd622a4b1fe3a20d93be4dfed364cefe072593",
+      "arquivos": {
+        "Chart.tsx": "87eb1fc2628837fd13b48c9263a75edbd691a795",
+        "data.ts": "e2d15e4ffbba4560b5d38de1180d165a3b3c8f1f",
+        "meta.json": "fcdf4e2f124116fe4ac4baabb871dac6fd12a385"
+      }
+    },
+    {
+      "versao": "v2_cor-por-faixa-de-atingimento",
+      "veredito": "aprovado",
+      "nota": "Faixas legiveis nos dois temas; percentual escrito por barra",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:48:21.046Z",
+      "impressao": "b77069a22ba34496188a637dc8c99257f330d693",
+      "arquivos": {
+        "Chart.tsx": "59cd88e0314098cca734e52e08d31b149221267e",
+        "data.ts": "3c19a7b4e31c98be46075123bcae440a788c874f",
+        "meta.json": "8c6d5ea271507b18cdf6c56986b6a7e898db5525"
+      }
+    },
+    {
+      "versao": "v3_meta-desdobrada-pelas-taxas-historicas",
+      "veredito": "aprovado",
+      "nota": "Origem da meta no rodape; falta com substantivo por etapa",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:48:25.543Z",
+      "impressao": "77b45d4193712c51ee1c1018c0b4f76211c25b91",
+      "arquivos": {
+        "Chart.tsx": "e5ba44ebccafb950262a41615db49c0b9bbc877d",
+        "data.ts": "379e945c33897c3f1b220cae8e97fc8c668f3a86",
+        "meta.json": "cfeff7893a8172761799ef79553e6704cde69e82"
+      }
+    },
+    {
+      "versao": "v4_etapa-nova-sem-historico",
+      "veredito": "reprovado",
+      "nota": "Etapa nova sem numero nenhum: realizado 8 e meta 15 nao escritos",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:48:30.702Z",
+      "impressao": "94772869668e4ed0b302607ee7eba0ce4c4d2722",
+      "arquivos": {
+        "Chart.tsx": "0dcf4834fc997560dca091482f975573afd88b02",
+        "data.ts": "88a218f1f806b81123d43a17c79dc1d4b70f56df",
+        "meta.json": "af35e70a5c08a24c4e5becf36ec03a6a749cabd3"
+      }
+    },
+    {
+      "versao": "v1_realizado-contra-meta-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Barras do zero em dominio comum, traco de meta pelo background, atingimento com par absoluto e fracao decorrida no corpo; sem bloqueante nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:46.476Z",
+      "impressao": "d01e22e340864c3173f94356fd8b0deac31aa6c4",
+      "arquivos": {
+        "Chart.tsx": "7d5353637b6ee1b94b65194a37a32ca20fe19cb6",
+        "data.ts": "e2d15e4ffbba4560b5d38de1180d165a3b3c8f1f",
+        "meta.json": "745e86b4f85aabc43d7d09024c2c17bdac00e051"
+      }
+    },
+    {
+      "versao": "v2_cor-por-faixa-de-atingimento",
+      "veredito": "aprovado",
+      "nota": "Faixa de atingimento com legenda e percentual escrito, cor nunca e a unica pista; sem bloqueante. Observacao: limiares vem de constante do data.ts, nao de prop.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:51.467Z",
+      "impressao": "b77069a22ba34496188a637dc8c99257f330d693",
+      "arquivos": {
+        "Chart.tsx": "59cd88e0314098cca734e52e08d31b149221267e",
+        "data.ts": "3c19a7b4e31c98be46075123bcae440a788c874f",
+        "meta.json": "8c6d5ea271507b18cdf6c56986b6a7e898db5525"
+      }
+    },
+    {
+      "versao": "v3_meta-desdobrada-pelas-taxas-historicas",
+      "veredito": "aprovado",
+      "nota": "Necessario desdobrado confere com as taxas do rodape, falta escrita com o substantivo, escala unica; sem bloqueante. Observacao: aritmetica vem pronta do data.ts.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:05:56.525Z",
+      "impressao": "77b45d4193712c51ee1c1018c0b4f76211c25b91",
+      "arquivos": {
+        "Chart.tsx": "e5ba44ebccafb950262a41615db49c0b9bbc877d",
+        "data.ts": "379e945c33897c3f1b220cae8e97fc8c668f3a86",
+        "meta.json": "cfeff7893a8172761799ef79553e6704cde69e82"
+      }
+    },
+    {
+      "versao": "v4_etapa-nova-sem-historico",
+      "veredito": "aprovado",
+      "nota": "Meta premissa distinguida por forma, atingimento indisponivel sem taxa inventada e par absoluto presente; losango fora da banda da barra nao colide. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:06:01.026Z",
+      "impressao": "0b1248cdd943cab57596f3fc8fa78940446574d3",
+      "arquivos": {
+        "Chart.tsx": "55507d98d7e67c5c150bc3c3d61576e497f2335d",
+        "data.ts": "88a218f1f806b81123d43a17c79dc1d4b70f56df",
+        "meta.json": "af35e70a5c08a24c4e5becf36ec03a6a749cabd3"
+      }
+    }
+  ]
+}

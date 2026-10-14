@@ -1,0 +1,15 @@
+{
+  "title": "UFs em alta e em queda nos últimos 3 meses",
+  "useCase": "Marketing: quais UFs aceleraram ou perderam leads qualificados entre jun/26 e ago/26.",
+  "demonstrates": [
+    "Classificação de tendência em TypeScript pela variação dos 3 últimos meses",
+    "Linha em --positive na alta, --negative na queda e --text-muted na estável",
+    "Ícone lucide TrendingUp, TrendingDown ou Minus e variação com sinal no tile",
+    "Último ponto marcado e último valor em peso 600",
+    "Contagem na linha de leitura: 8 UFs em alta e 7 em queda",
+    "UF sem base de comparação escrita como sem base, e UF sem dado como indisponível"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas por número porque o preset alto (640x560) deixa o tile com 62 px, e sigla, linha, valor e variação não cabem; com 640x640 o tile ganha altura para as três faixas. Grade de 7 colunas, não a de 8 do catálogo. Estável usa --text-muted e não --line-strong como diz o catálogo: --line-strong mede 1,79:1 e 1,83:1 contra o cartão e não se vê como linha (TOK-5). O último valor vai em peso 600 e não em negrito 700 como pede o catálogo: 27 valores em 700 estourariam a TIP-3, que permite dois elementos em 700. A classificação compara o último mês com o de 2 posições antes (jun/26 para ago/26); abaixo de 5% em módulo é estável (SP sobe 4,5% e fica estável). Base zero ou ausente não dá variação (RR e TO escrevem sem base). A escala é própria de cada tile, com amplitude mínima de 30% do maior valor e de 4 leads (RR oscila entre 0 e 1), para que uma série estável não vire serra; por isso a linha diz direção e não volume, declarado no rodapé."
+}

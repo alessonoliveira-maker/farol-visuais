@@ -1,0 +1,13 @@
+{
+  "title": "Um executivo em foco na carteira",
+  "useCase": "Quanto Denise R. contribui com entradas, ganhos e perdas, e como converte contra o time?",
+  "demonstrates": [
+    "Segmento em foco em --chart-1 e os demais em --text-muted",
+    "Posição do segmento em foco fixa na base de cada passo",
+    "Taxa com volume por formatRateWithVolume na anotação",
+    "Prop highlightId com default vindo do data.ts"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "SVG puro com viewBox de 894 x 233 px, igual ao espaço do SVG no canvas largo (corpo 894 x 281,5 menos 2 x 24 px de linha de leitura e legenda), então a escala é 1. O executivo em foco vai para a base da pilha em todo passo; o nome com o valor dele fica à direita do passo que sobe e à esquerda do que desce, o lado em que a base não tem conector. A mediana de 18,4% é calculada do dado: taxa de cada um dos quatro executivos (ganhos sobre ganhos mais perdas) e média dos dois do meio. Desvios declarados do catálogo: o eixo parte de 180 (carteira inicial, escrita na linha de leitura) e os totais são níveis de 3 px escritos, não colunas do zero, para os passos pequenos terem tinta (2,77 px por oportunidade); os demais segmentos ficam em text-muted, e não em line-strong, porque não carregam número próprio (17.2). Vão proporcional de 1,5 px só entre vizinhos, sem contorno. Cor dos rótulos pela polaridade do dado (entradas e ganhos em positive, perdas em negative), e não pelo sinal; a seta mostra a direção."
+}

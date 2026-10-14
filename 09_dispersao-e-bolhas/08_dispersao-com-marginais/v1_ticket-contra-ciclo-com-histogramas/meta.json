@@ -1,0 +1,12 @@
+{
+  "title": "Ticket contra ciclo com as duas distribuições",
+  "useCase": "Como ticket e ciclo das oportunidades ganhas se distribuem e se relacionam, além do que a nuvem sobreposta esconde?",
+  "demonstrates": [
+    "Grade de 2 por 2 em Tailwind com ScatterChart ao centro e dois BarChart nas margens",
+    "Bins calculados em TypeScript sobre o mesmo domínio do plano central",
+    "Margens e domínio numérico compartilhados entre os três gráficos para alinhar ao pixel",
+    "Canto vazio com o número de oportunidades e a correlação calculada do dado"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

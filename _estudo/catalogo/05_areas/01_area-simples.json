@@ -1,0 +1,71 @@
+{
+  "slug": "01_area-simples",
+  "nome": "Área simples com gradiente",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Uma série temporal preenchida do zero até a linha: o preenchimento codifica volume e a leitura é de tendência e massa, não de valor pontual. No acabamento do catálogo o gradiente do estudo vira preenchimento plano em opacidade baixa, porque a COR-9 do CONTRATO proíbe gradiente decorativo; contorno de 2 px, base sempre no zero. Absorve os pequenos múltiplos de área, uma área por categoria com escala comum.",
+  "quando_usar": [
+    "Uma série em que o volume ao longo do tempo importa: entradas de lead, receita reconhecida, investimento.",
+    "De 10 a cerca de 200 pontos; com menos de 10 datas, colunas leem melhor.",
+    "Várias séries da mesma unidade cuja forma individual importa mais que a soma: pequenos múltiplos com escala comum.",
+    "Pergunta de crescimento ou perda de força, em que o valor exato fica na dica ou num rótulo de fim."
+  ],
+  "quando_evitar": [
+    "Eixo que não começa no zero ou recorte de escala: linha simples (04_linhas/01_linha-simples).",
+    "Série com valores negativos ou saldo contra referência: área de diferença (07_area-de-diferenca).",
+    "Comparar trajetórias de várias séries no mesmo quadro: múltiplas séries em linha (04_linhas/02_multiplas-series).",
+    "Menos de 3 pontos: vira número com comparação (EIX-11).",
+    "Área mínima atrás do número de um cartão de KPI: sparkline de linha e área (24_microvisuais-sparklines/01_sparkline-de-linha)."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_entradas-mensais-de-leads",
+      "titulo": "Entradas mensais de leads",
+      "caso_de_uso": "Quanto entrou de lead por mês em 2026 e se o volume está crescendo ou perdendo força.",
+      "o_que_demonstra": [
+        "AreaChart nativo com preenchimento plano em opacidade baixa e contorno de 2 px",
+        "Domínio a partir do zero com ticks redondos calculados no componente",
+        "Curva monotone, que não ultrapassa os pontos nem cruza a base",
+        "Série única sem legenda e com a unidade no tique"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_receita-com-mes-parcial",
+      "titulo": "Receita reconhecida com mês parcial",
+      "caso_de_uso": "Ler a receita mensal do ano sem confundir o mês corrente, ainda aberto, com uma queda real.",
+      "o_que_demonstra": [
+        "Último trecho tracejado e ponto vazado para o período incompleto (EIX-10)",
+        "Nota curta de parcial até 2026-09-14 impressa por formatDate",
+        "Média mensal em ReferenceLine tracejada com rótulo na margem reservada",
+        "Tique de moeda por formatCurrencyAxis e rótulo de fim por formatCurrencyCompact"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_leads-por-origem-em-multiplos",
+      "titulo": "Leads por origem em pequenos múltiplos",
+      "caso_de_uso": "Ver a forma semanal de cada uma das 8 origens de lead sem a pilha esconder as camadas do meio.",
+      "o_que_demonstra": [
+        "Grade HTML com Tailwind e um AreaChart pequeno por origem",
+        "Domínio y calculado sobre o conjunto: escala comum declarada (EIX-9)",
+        "Painéis ordenados pelo total de 52 semanas, não pelo alfabeto",
+        "Eixos só nas bordas da grade e animação desligada",
+        "Total de cada origem escrito no título curto do painel"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_lacuna-de-coleta",
+      "titulo": "Entradas semanais com lacuna de coleta",
+      "caso_de_uso": "Separar semana sem coleta de semana com zero entrada, sem a área despencar até a base onde falta dado.",
+      "o_que_demonstra": [
+        "null com connectNulls desligado quebrando a área (EIX-10)",
+        "Zero medido desenhado como zero, distinto da lacuna (EST-3)",
+        "ReferenceArea em surface-sunken com texto nomeando o intervalo sem coleta",
+        "Frase acessível que conta as semanas ausentes"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

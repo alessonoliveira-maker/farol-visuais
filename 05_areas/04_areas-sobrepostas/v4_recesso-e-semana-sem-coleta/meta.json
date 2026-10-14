@@ -1,0 +1,12 @@
+{
+  "title": "Semana de recesso e semana sem coleta",
+  "useCase": "Distinguir capacidade zero no recesso de semana em que a demanda simplesmente não foi coletada.",
+  "demonstrates": [
+    "Degrau até zero para capacidade medida em zero (EST-3)",
+    "null com connectNulls desligado para o realizado sem coleta (EIX-10)",
+    "As duas ausências com ReferenceArea e texto diferentes, no máximo duas anotações",
+    "Frase acessível que nomeia as duas semanas e o motivo de cada uma"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

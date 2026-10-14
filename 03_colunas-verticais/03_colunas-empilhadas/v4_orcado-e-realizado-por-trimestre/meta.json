@@ -1,0 +1,14 @@
+{
+  "title": "Orçado e realizado por trimestre",
+  "useCase": "Em cada trimestre, o executado bateu com o plano e em qual linha de produto o desvio aconteceu?",
+  "demonstrates": [
+    "Duas colunas por trimestre no mesmo stackId: orçado em contorno e realizado sólido",
+    "Rótulo de regime sob cada coluna, com o nome do trimestre lido acima do par",
+    "Legenda em HTML: componente por cor e pilha por posição, sem entrada duplicada",
+    "Trimestre sem orçamento aprovado sem pilha de orçado e com a frase no lugar",
+    "Diferença total anotada acima do par, com a base nomeada"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O rótulo de trimestre e o de regime saem de um único XAxis com tique customizado (dado fixo do Farol não tem prop `data` por eixo); a leitura é a mesma de dois eixos com xAxisId, sem depender de mesclar categorias duplicadas."
+}

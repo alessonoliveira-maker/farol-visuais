@@ -1,0 +1,12 @@
+{
+  "title": "Receita do mês entre clientes novos e carteira",
+  "useCase": "De onde veio a receita reconhecida de ago/26: clientes novos ou carteira, e em que proporção?",
+  "demonstrates": [
+    "Filhos em kpi-number de 14 px e rótulo de 11 px, subordinados ao pai de 30 px",
+    "Relação de soma escrita e conferida: os filhos fecham o total exato",
+    "Participação percentual inteira pelo maior resto, somando 100",
+    "Separação entre pai e filhos por espaço, sem divisória (ESP-5)"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage"
+}

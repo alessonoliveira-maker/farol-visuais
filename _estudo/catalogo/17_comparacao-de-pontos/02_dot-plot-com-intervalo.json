@@ -1,0 +1,71 @@
+{
+  "slug": "02_dot-plot-com-intervalo",
+  "nome": "Dot plot com intervalo e distribuição ao fundo",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Ponto do valor central por categoria mais uma faixa horizontal de incerteza, sobre um eixo comum: a estimativa e o quanto ela pode variar, lado a lado, como um forest plot levado ao dashboard. A versão com distribuição ao fundo desenha também os casos individuais, pequenos e translúcidos, atrás do marcador de resumo, para mostrar quantos casos sustentam o ponto sem abrir um box plot. O que a faixa representa (quartis, percentis, intervalo) e o n de cada linha ficam escritos, e o ErrorBar do Recharts recebe distâncias relativas ao ponto, nunca limites absolutos: o dado chega convertido em central menos inferior e superior menos central.",
+  "quando_usar": [
+    "Mediana ou média por categoria em que a dispersão muda a decisão, como ciclo de venda por segmento",
+    "Resumo que precisa mostrar o n e os casos que o sustentam, até cerca de 400 pontos por linha",
+    "Faixa com método declarado (quartis, percentis, intervalo de confiança) contra uma meta ou um SLA",
+    "Até 12 categorias num cartão, todas no mesmo eixo"
+  ],
+  "quando_evitar": [
+    "Incerteza desconhecida ou inventada por regra de bolso: mostre só o ponto (17/01)",
+    "A forma da distribuição é a pergunta, com dois picos ou cauda longa: box plot, strip ou violino da família 16",
+    "Faixa de cenário pessimista a otimista: range plot com marcador (17/04) ou faixa de cenário contra meta (13/07)",
+    "Mais de 400 casos por linha: a nuvem vira barra sólida, use beeswarm ou violino da família 16",
+    "Erro nas duas medidas quantitativas: dispersão com barras de erro (09/07)"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-mediano-por-segmento-com-quartis",
+      "titulo": "Ciclo de venda mediano por segmento",
+      "caso_de_uso": "Comercial: quantos dias leva o ciclo de venda em cada um dos 5 segmentos, com a faixa do primeiro ao terceiro quartil.",
+      "o_que_demonstra": [
+        "Scatter com ErrorBar direction x e serifas de 6 px",
+        "Quartis absolutos convertidos em erro relativo antes do render",
+        "Subtítulo obrigatório: ponto na mediana, faixa entre quartis",
+        "n de negócios escrito ao lado do nome de cada segmento"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_handoff-com-faixa-que-cruza-o-sla",
+      "titulo": "Tempo de aceite do handoff contra o SLA",
+      "caso_de_uso": "Comercial: por executivo, o tempo mediano de aceite do handoff e se a faixa entre quartis atravessa o SLA de 2 dias.",
+      "o_que_demonstra": [
+        "ReferenceLine no SLA de 2 dias, com rótulo",
+        "Faixa que cruza o SLA em cor de atenção e ícone, não só cor",
+        "Anotação: faixa cruza o SLA, resultado não conclusivo",
+        "Ordem pela mediana, declarada no subtítulo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_primeiro-contato-com-leads-ao-fundo",
+      "titulo": "Primeiro contato com os leads ao fundo",
+      "caso_de_uso": "Pré-vendas: minutos até o primeiro contato por SDR, com a mediana na frente e os cerca de 900 leads de agosto atrás.",
+      "o_que_demonstra": [
+        "Dois Scatter: individuais primeiro na árvore, resumo por cima",
+        "Deslocamento vertical por hash do id do lead, nunca Math.random",
+        "Casos de 3 px com opacidade 0,25 e mediana opaca de 6 px",
+        "ReferenceLine no teto de SLA e n ao lado de cada SDR",
+        "Teto de escala declarado, com marca de estouro para os casos acima"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_ticket-por-origem-com-amostra-pequena",
+      "titulo": "Ticket por origem com amostra pequena",
+      "caso_de_uso": "Comercial: ticket mediano das vendas ganhas por origem, quando três origens fecharam menos de 5 negócios no semestre.",
+      "o_que_demonstra": [
+        "Regra n menor que 5: sem faixa, só os casos individuais",
+        "Regra n menor que 10: sem marcador de mediana, com nota no rodapé",
+        "Origem sem nenhum negócio mantida na lista com sem venda no período",
+        "Tooltip que distingue ausência de dado de valor zero"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

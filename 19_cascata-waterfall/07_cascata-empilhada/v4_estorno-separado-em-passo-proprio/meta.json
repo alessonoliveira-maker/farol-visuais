@@ -1,0 +1,13 @@
+{
+  "title": "Mídia investida e mídia estornada",
+  "useCase": "Marketing, 2026-08: o estorno de R$ 6 mil virou passo próprio na mídia.",
+  "demonstrates": [
+    "Passo de sinal oposto separado em vez de empilhado",
+    "Nota registrando a decisão de separar o estorno",
+    "Mesmo slot de cor da plataforma no passo investido e no estornado",
+    "Fechamento verificado: investido menos estornado igual ao líquido"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "SVG puro com viewBox de 574 x 169 px, igual ao espaço do SVG no canvas card (corpo 574 x 241,5 com o caso de uso em uma linha, menos 3 x 24 px de leitura, legenda e nota), então a escala é 1. O caso de uso tem de caber numa linha, senão o corpo cai para 225 px e o SVG escala. Mídia é custo, então a polaridade (COR-6) é invertida: o investido sobe o custo e sai em negativo, o estorno desce o custo e sai em positivo, com seta e sinal. O estorno é a fatia da rede profissional no mesmo slot 6 do passo investido. Escala 0,91 px por mil reais: o estorno mede 5,5 px."
+}

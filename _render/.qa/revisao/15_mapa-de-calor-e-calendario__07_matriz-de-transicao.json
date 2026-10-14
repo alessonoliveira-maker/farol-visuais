@@ -1,0 +1,33 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "07_matriz-de-transicao",
+  "versoes": {
+    "v1_movimentos-entre-etapas-no-trimestre": {
+      "veredito": "aprovado",
+      "nota": "A diagonal fica fora da escala de cor e se declara no rodape, o que impede a permanencia na etapa de dominar a rampa e apagar os movimentos. O retrocesso ganha contorno proprio e o rodape declara 60 retrocessos contra 540 avancos: somei as dez celulas contornadas e da 60. Cabecalho alternado em duas alturas resolve o nome longo sem girar texto. Ressalva igual a da 05: no claro a celula de zero perde a moldura, mas o numero escrito segura a leitura.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.785Z",
+      "impressao": "c9cebecde255b6c80386ceee36b839010d27e390",
+      "arquivos": {
+        "Chart.tsx": "d499a8620233106c90dad50a945b947c636748dd",
+        "data.ts": "2719a94a76f2d242692e9ead4430a40fbffb3f48",
+        "meta.json": "7602800da010f74aaaa044a3a57a94b393f7a068"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_movimentos-entre-etapas-no-trimestre",
+      "veredito": "aprovado",
+      "nota": "A diagonal fica fora da escala de cor e se declara no rodape, o que impede a permanencia na etapa de dominar a rampa e apagar os movimentos. O retrocesso ganha contorno proprio e o rodape declara 60 retrocessos contra 540 avancos: somei as dez celulas contornadas e da 60. Cabecalho alternado em duas alturas resolve o nome longo sem girar texto. Ressalva igual a da 05: no claro a celula de zero perde a moldura, mas o numero escrito segura a leitura.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.785Z",
+      "impressao": "c9cebecde255b6c80386ceee36b839010d27e390",
+      "arquivos": {
+        "Chart.tsx": "d499a8620233106c90dad50a945b947c636748dd",
+        "data.ts": "2719a94a76f2d242692e9ead4430a40fbffb3f48",
+        "meta.json": "7602800da010f74aaaa044a3a57a94b393f7a068"
+      }
+    }
+  ]
+}

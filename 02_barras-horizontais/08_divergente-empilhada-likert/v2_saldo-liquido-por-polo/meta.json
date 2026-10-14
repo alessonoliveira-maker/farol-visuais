@@ -1,0 +1,15 @@
+{
+  "title": "Saldo líquido de avaliação por critério",
+  "useCase": "Quais critérios de handoff têm mais avaliação positiva que negativa, ordenados pelo saldo entre os polos.",
+  "demonstrates": [
+    "Percentual de cada polo e do neutro em coluna própria, para os três números somarem 100",
+    "Saldo positivo menos negativo em pontos percentuais ao lado da barra",
+    "Itens ordenados pelo saldo, com o critério de ordem escrito no subtítulo",
+    "Percentual dentro do segmento só quando cabe, com limiar por número de algarismos",
+    "Somas, saldo e rótulos saídos dos mesmos percentuais inteiros, sem discordar",
+    "Legenda de uma linha só, sem ancorar no zero, porque a pilha aqui é mais estreita"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Mesma paleta da v1 (slots 5 e 6 no polo ruim, 3 e 1 no bom). As colunas de soma de polo, neutro, saldo e respostas têm cabeçalho nomeado uma vez, no topo. O SVG de cada linha segue em overflow visível. Corrigido em 2026-09-17: o neutro entrava na soma dos 100 pontos mas não aparecia escrito em lugar nenhum; agora tem coluna própria."
+}

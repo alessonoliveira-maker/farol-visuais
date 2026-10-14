@@ -1,0 +1,14 @@
+{
+  "title": "Meses sem meta, empate e sem coleta",
+  "useCase": "Como mostrar o executivo contratado no meio do ano sem desenhar derrota onde não havia meta?",
+  "demonstrates": [
+    "Meses sem meta atribuída vazios, sem bloco nem traço central, com legenda própria",
+    "Empate medido como traço central; mês sem coleta como contorno vazado em text muted",
+    "Contagem só sobre meses com meta e com coleta: 2 de 4, nunca 2 de 12",
+    "Ausência separada em dois campos antes do componente, sem meta e sem coleta",
+    "Frase acessível dizendo sem meta atribuída até abr/26"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvios do catálogo. 1) Os números: o catálogo cita 5 de 7, mas com a janela de 12 meses terminando em set/26 e sem meta até abr/26 sobram 5 meses com meta, dos quais 1 sem coleta, então a conta é 2 de 4 (mai/26 fora, jun/26 dentro, jul/26 empate, ago/26 sem coleta, set/26 dentro); o denominador é o de meses com meta e coleta, e o empate entra nele sem contar como bateu. 2) O empate é um traço de 2 px em text muted, e não em line strong, que mede 1,79:1 contra o cartão. O mês sem coleta é um contorno de 1 px em text muted centrado na linha, sem subir nem descer. O SVG leva viewBox de 560 x 40 e preserveAspectRatio none; os textos ficam em HTML."
+}

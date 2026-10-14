@@ -1,0 +1,56 @@
+{
+  "slug": "10_area-bump",
+  "nome": "Area bump",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Bump chart em que a posição vertical codifica o ranking e a espessura da faixa codifica o valor em cada período; as faixas se ligam por curvas cúbicas horizontais. Responde ao mesmo tempo quem lidera e com quanto. O Recharts não faz a forma: por período, ordenar os itens, calcular espessura com escala comum e empilhar com espaçamento fixo em TypeScript, desenhando cada item como path fechado.",
+  "quando_usar": [
+    "De 4 a 8 itens em 4 a 12 períodos, quando ranking e volume importam juntos.",
+    "Troca de liderança entre plataformas, origens ou produtos com diferença de tamanho relevante.",
+    "Leitura de trajetória de um item em destaque contra os demais como contexto."
+  ],
+  "quando_evitar": [
+    "Mais de 8 itens: bump chart de ranking (04_linhas/08_bump-chart) ou agrupar.",
+    "Só o ranking importa: bump chart de ranking (04_linhas/08_bump-chart).",
+    "Só o volume importa: área empilhada (02_area-empilhada).",
+    "Comparação fina de valores entre itens: a espessura acaba lida como posição."
+  ],
+  "arquivo_estudo": "_estudo/familias/05_areas.md",
+  "versoes": [
+    {
+      "slug": "v1_plataformas-por-investimento-trimestral",
+      "titulo": "Plataformas por investimento trimestral",
+      "caso_de_uso": "Ver quais das 6 plataformas fictícias subiram ou caíram no ranking de investimento e com quanto em 8 trimestres.",
+      "o_que_demonstra": [
+        "Ordem por período e espessura proporcional com escala comum",
+        "Faixas ligadas por cúbicas horizontais com controle no meio do intervalo",
+        "Rótulos de início e fim com posição ordinal e valor",
+        "Nota que declara as duas codificações: posição e espessura"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_plataforma-em-destaque",
+      "titulo": "Plataforma em destaque no ranking",
+      "caso_de_uso": "Acompanhar a trajetória de uma plataforma no ranking de investimento, com as demais como contexto.",
+      "o_que_demonstra": [
+        "Item destacado em chart-1 e os demais em line-strong",
+        "Rótulo do destaque em peso 700 e posição de cada trimestre escrita",
+        "Desenho por segmento para o destaque ficar por cima nos cruzamentos",
+        "Coluna de faixas alinhada ao centro, com a regra declarada"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_item-zerado-num-periodo",
+      "titulo": "Area bump com item zerado num período",
+      "caso_de_uso": "Mostrar uma origem que não gerou nenhum lead num trimestre sem sumir do ranking nem inventar volume.",
+      "o_que_demonstra": [
+        "Espessura mínima de 1 px para zero medido, com a regra na nota (EST-3)",
+        "Caminho interrompido quando o valor é null, distinto do zero",
+        "Empates desempatados pela ordem do período anterior",
+        "Frase acessível com o líder de cada ponta e o item zerado"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

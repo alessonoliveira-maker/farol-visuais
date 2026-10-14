@@ -1,0 +1,13 @@
+{
+  "title": "Efeito de fim de mês nos fechamentos",
+  "useCase": "Os fechamentos se acumulam nos últimos dias úteis de cada mês, como a coordenação suspeita?",
+  "demonstrates": [
+    "Matriz de 12 meses por 31 dias com máscara de validade de data",
+    "Data que não existe fica sem desenho: fevereiro tem 28 células, abril tem 30",
+    "Janela dos últimos 5 dias úteis contornada, com a parte do mês escrita ao lado",
+    "Fim de semana sombreado e mês incompleto sem taxa, com a palavra da ausência"
+  ],
+  "canvas": { "width": 907, "height": 454 },
+  "frame": "card",
+  "notes": "Canvas por número, com a conta escrita (GEO-1). Largura = 46 de rótulo de mês, que é o que cabe em jan/26 a 11 px, + 31 x 22 menos o vão de 3 + 12 + 104 da coluna da direita = 841; altura = 18 de linha de leitura + 12 + 16 de rótulo de dia + 12 x 22 menos o vão de 3 + 12 + 16 de legenda = 335. Na moldura card com 907 px de largura o recuo é 33 por lado e o caso de uso tem 91 caracteres contra o teto de cerca de 144 numa linha de 841 px, então o cabeçalho é de uma linha: canvas = 841 + 66 por 335 + 118,5, isto é 907 x 453,5, arredondado para 454. O corpo sai 841 x 335,5 contra um viewBox de 841 x 335, então a escala fica em 1 e o texto de 11 px chega com 11 px. A rampa usa só os três degraus que medem acima de 3:1 contra o cartão nos dois temas, seq-5 com 4,89:1 e 3,72:1, seq-6 com 6,96:1 e 5,45:1, e seq-7 com 10,12:1 e 8,29:1. Os quatro primeiros degraus do Farol não alcançam o piso da WCAG 1.4.11 e ficaram fora de propósito, então a faixa mais baixa desta peça se vê nos dois temas sem precisar de segunda pista de forma. Zero medido sai da rampa e vira traço em text-muted, que mede 5,21:1 e 5,37:1: o dia trabalhou e não fechou, e isso é resultado, não ausência. Dia útil aqui é dia de segunda a sexta; feriado dentro da janela dos últimos cinco entra nela e aparece como zero medido. Mês incompleto não recebe taxa: setembro para no dia 14 e outubro a dezembro vêm vazios, e nos quatro a coluna da direita escreve a ausência em vez de dividir por uma base que não existe."
+}

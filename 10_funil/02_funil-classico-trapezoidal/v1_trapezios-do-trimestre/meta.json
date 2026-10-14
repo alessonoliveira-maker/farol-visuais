@@ -1,0 +1,12 @@
+{
+  "title": "Funil comercial do trimestre",
+  "useCase": "Ver como o funil comercial afunila do topo ao fundo numa leitura de capa, com o valor e a taxa da entrada escritos em cada etapa.",
+  "demonstrates": [
+    "FunnelChart nativo com Funnel, dataKey e nameKey, e Cell por etapa",
+    "lastShapeType rectangle para a última etapa manter a largura do valor",
+    "Rótulo à direita com nome, valor e taxa da entrada com denominador nomeado",
+    "Largura proporcional ao valor, sem gargalo fixo"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

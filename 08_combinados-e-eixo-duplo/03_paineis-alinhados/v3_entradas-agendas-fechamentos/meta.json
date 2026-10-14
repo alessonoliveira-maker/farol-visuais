@@ -1,0 +1,13 @@
+{
+  "title": "Entradas, agendas e fechamentos sincronizados",
+  "useCase": "O funil andou junto nas últimas 26 semanas, ou uma etapa travou enquanto as outras seguiam?",
+  "demonstrates": [
+    "Três painéis com syncId e cursor que atravessa todos",
+    "Alturas proporcionais, com tick false no eixo x dos painéis de cima",
+    "Brush único que recorta os três painéis ao mesmo tempo",
+    "Contagens com allowDecimals false e ticks redondos por painel"
+  ],
+  "canvas": { "width": 640, "height": 680 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1) porque nenhum preset fecha o cartão: o preset alto, de 560 px, deixaria 74 px para os três planos somados. A conta, na moldura card e no pior caso de caso de uso em duas linhas (91 caracteres, contra os 92 de uma linha em 574 px, então a altura foi calculada como se ele quebrasse): corpo de 574 x 545 px, menos 24 px da linha de leitura, 60 px dos três títulos de painel, 24 px da nota de escala do rodapé e 24 px dos dois vãos entre painéis, sobram 413 px de gráfico. A base do painel de baixo reserva os 28 px do Brush antes do rateio 3:2:2, o que dá planos de 129, 74 e 74 px depois de descontar 6 px de margem e 30 px de eixo x em cada um. Uma cor só nos três painéis, de propósito: as escalas são diferentes, e cor por painel convidaria à comparação de altura que a nota do rodapé proíbe. O rótulo do primeiro tique de mês nasce meio rótulo à esquerda do plano, sobre a faixa vazia do eixo y, porque a escala de ponto ancora o primeiro ponto na borda; a separação vertical contra o tique de valor é de cerca de 19 px."
+}

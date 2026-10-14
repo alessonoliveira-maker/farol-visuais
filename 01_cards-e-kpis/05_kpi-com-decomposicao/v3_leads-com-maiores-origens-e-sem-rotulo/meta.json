@@ -1,0 +1,15 @@
+{
+  "title": "Leads do mês com as cinco maiores origens",
+  "useCase": "Quais cinco origens explicam os leads de ago/26, quanto fica nas demais e quanto chegou sem origem registrada?",
+  "demonstrates": [
+    "Lista em ol com barra de fundo proporcional ao total, não ao maior item",
+    "Linha demais (9 origens) em --text-muted que fecha a soma do número",
+    "Sem origem registrada em linha própria, com 22% e etiqueta LACUNA",
+    "Função pura que monta topo, demais e sem rótulo e confere a soma",
+    "Desempate determinístico pelo nome e nome longo inteiro, sem reticência",
+    "Nome acessível por item: origem, valor e participação no total"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "stage",
+  "notes": "Canvas acima do preset card: sete linhas de lista, a linha do número e a nota da escala não cabem nos 254 px de corpo do preset."
+}

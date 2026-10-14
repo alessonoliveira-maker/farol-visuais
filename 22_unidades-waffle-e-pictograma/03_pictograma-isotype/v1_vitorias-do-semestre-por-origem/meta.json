@@ -1,0 +1,13 @@
+{
+  "title": "Vitórias do semestre por origem",
+  "useCase": "De onde vieram as vitórias do semestre, contadas uma a uma por origem do lead?",
+  "demonstrates": [
+    "Fileiras de ícones do lucide-react em flex com espaçamento fixo, um por vitória",
+    "Ícone Trophy de 16 px com strokeWidth 2,5 para ter massa no tema escuro",
+    "Número exato no fim da fileira e legenda 1 ícone = 1 vitória",
+    "Fileiras ordenadas pelo total, com a origem sem declaração por último",
+    "Contêiner role figure com frase calculada e ícones com aria-hidden"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

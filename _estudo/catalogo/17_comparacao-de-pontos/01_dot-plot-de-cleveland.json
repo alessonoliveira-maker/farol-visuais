@@ -1,0 +1,77 @@
+{
+  "slug": "01_dot-plot-de-cleveland",
+  "nome": "Dot plot de Cleveland",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Um ponto por categoria sobre um eixo quantitativo comum, com as categorias empilhadas em linhas e ordenadas por um critério declarado. Troca área por posição: cabe muito mais categoria na mesma altura de cartão e a escala pode começar onde o dado começa, porque o leitor julga posição e não comprimento a partir de uma base. Nenhuma reta atravessa o ponto; a partir de cerca de 8 linhas entra zebra ou separador entre bandas, e a grade quantitativa fica perpendicular. O mesmo desenho absorve o dot plot agrupado (até três marcadores de forma distinta por linha), o de desvio contra uma referência, os pequenos múltiplos com domínio único e a marca direcional para o público que não reconhece o formato.",
+  "quando_usar": [
+    "Um valor por categoria em listas de 12 a 25 linhas, como ticket médio por executivo ou CPL por campanha",
+    "Escala em que o zero não significa nada e cortar a base de uma barra enganaria",
+    "Duas ou três medidas por linha no mesmo eixo, sem conector, com forma e cor por série",
+    "Distância de cada categoria até uma referência comum (meta, média, mês anterior), com o zero no meio",
+    "A mesma comparação em até 8 recortes, em pequenos múltiplos com o mesmo domínio em todos os painéis"
+  ],
+  "quando_evitar": [
+    "Poucas categorias e pergunta de razão (quantas vezes maior): barra da família 02 ou 03",
+    "Mais de três marcadores por linha: o desenho já é linha, família 04",
+    "Dois momentos do mesmo objeto em que a mudança é a notícia: dumbbell ou arrow plot (17/03)",
+    "A forma da distribuição importa mais que o resumo: família 16",
+    "Público que nunca viu o formato numa decisão que a barra comum resolve: a plateia escolhe a barra",
+    "Pequenos múltiplos com domínio calculado por painel: os painéis ficam iguais e os números não"
+  ],
+  "arquivo_estudo": "_estudo/familias/17_comparacao-de-pontos.md",
+  "versoes": [
+    {
+      "slug": "v1_ticket-medio-por-executivo",
+      "titulo": "Ticket médio por executivo",
+      "caso_de_uso": "Comercial: onde cada um dos 14 executivos fica no ticket médio do trimestre, numa escala que começa em R$ 120 mil.",
+      "o_que_demonstra": [
+        "ScatterChart com YAxis de categoria e XAxis numérico com domínio do registry",
+        "Ordem decrescente declarada no subtítulo e nota de escala sem zero",
+        "Sem grade de categoria: zebra em surface-raised e grade vertical visível",
+        "ReferenceLine tracejada na mediana do time, com rótulo",
+        "Alvo de clique na banda inteira, com 24 px de altura mínima"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_desvio-contra-a-meta-com-marca-direcional",
+      "titulo": "Realizado contra a meta com marca direcional",
+      "caso_de_uso": "Comercial: quanto cada executivo ficou acima ou abaixo da meta do trimestre, legível para quem não conhece o dot plot.",
+      "o_que_demonstra": [
+        "Bar com shape que usa só a ponta: barra esmaecida e traço opaco de 2 px no valor",
+        "Gradiente com id de useId sem dois pontos e stopColor por style",
+        "Domínio simétrico fixo no registry e zero rotulado como meta do trimestre",
+        "Negativos esmaecem em direção ao zero; cor pela polaridade da métrica",
+        "Anotação com a contagem: 5 de 12 abaixo da meta",
+        "Tooltip com realizado, meta e desvio, nunca só o desvio"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_cpl-bruto-qualificado-e-meta-por-origem",
+      "titulo": "CPL bruto, qualificado e meta por origem",
+      "caso_de_uso": "Marketing: em 12 origens de lead, a distância entre o CPL bruto, o CPL qualificado e a meta de CPL de agosto.",
+      "o_que_demonstra": [
+        "Três Scatter no mesmo eixo, com forma distinta por série além da cor",
+        "Ordenação pela distância entre bruto e qualificado, declarada no subtítulo",
+        "Contorno de 1,5 px em surface-base para empate não esconder marcador",
+        "Legenda com a forma exata de cada marcador",
+        "Polaridade menor é melhor aplicada à cor e ao tooltip"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_sla-por-sdr-em-paineis-com-semana-vazia",
+      "titulo": "SLA por SDR em seis semanas",
+      "caso_de_uso": "Pré-vendas: minutos até o primeiro contato de 8 SDRs em seis semanas, incluindo a semana de recesso sem lead.",
+      "o_que_demonstra": [
+        "Pequenos múltiplos com domínio calculado uma vez para os seis painéis",
+        "ReferenceLine do teto de SLA na mesma posição em todos os painéis",
+        "Ponto vazado em line-strong para SDR sem lead, nunca zero",
+        "Painel sem lead mantido na grade com a nota sem lead na semana",
+        "Rótulos de categoria só na primeira coluna e eixo só na borda inferior"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

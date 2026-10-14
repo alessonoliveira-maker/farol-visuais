@@ -1,0 +1,78 @@
+{
+  "slug": "01_kpi-simples",
+  "nome": "KPI simples com contexto",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Rótulo, número grande em Space Grotesk e o contexto mínimo que impede a leitura errada: período, variação com base nomeada, atual contra anterior e meta, par de numerador e denominador, status com régua escrita, procedência, frescor e estado indisponível. É o átomo da família e absorve todas as variações que se resolvem com texto e ícone; nenhum gráfico, só HTML com Tailwind em moldura stage.",
+  "quando_usar": [
+    "Um número que o público já sabe ler, com rótulo, unidade e período escritos.",
+    "Métrica acompanhada em cadência fixa, em que a variação contra o período anterior decide a leitura.",
+    "Realizado que precisa das três âncoras na mesma leitura: atual, período anterior e meta.",
+    "Taxa ou custo por unidade que mostra numerador e denominador para não promover ruído a tendência.",
+    "Número de planejamento que mistura medição e premissa, ou fonte com carga agendada que precisa de carimbo.",
+    "Métrica sem coleta ou com coleta falha, que ocupa o mesmo espaço do cartão preenchido dizendo por quê."
+  ],
+  "quando_evitar": [
+    "A forma da série recente muda a conclusão: KPI com minigráfico de tendência (modelo 02).",
+    "O julgamento depende de meta, ritmo ou teto desenhados: KPI com régua de meta (modelo 03).",
+    "Projeção ou cenário publicado como ponto único: KPI com faixa (modelo 04).",
+    "O total só faz sentido com a composição: KPI com decomposição (modelo 05).",
+    "Volume que pode ser inflado à custa da qualidade: par de indicadores (modelo 06).",
+    "Uma ou duas medidas dentro de uma frase corrida: frase com número (21/01_frase-com-numero)."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-com-variacao-contra-mes-anterior",
+      "titulo": "Receita reconhecida com variação mensal",
+      "caso_de_uso": "Quanto de receita foi reconhecido em ago/26 e quanto isso se afastou de jul/26?",
+      "o_que_demonstra": [
+        "Número em kpi-number com formatCurrencyCompact e valor exato no title",
+        "Variação com sinal tipográfico, ícone do lucide-react e cor pela polaridade",
+        "Base nomeada na mesma linha: +8,4% contra R$ 1,1 mi em jul/26",
+        "Período sempre escrito e algarismo tabular em todos os números",
+        "Frase acessível com número, unidade, período e comparação"
+      ],
+      "canvas_sugerido": "kpi"
+    },
+    {
+      "slug": "v2_receita-do-trimestre-contra-anterior-e-meta",
+      "titulo": "Receita do trimestre contra anterior e meta",
+      "caso_de_uso": "A receita do 3º trimestre está na meta, e quanto falta em reais para chegar lá?",
+      "o_que_demonstra": [
+        "Hierarquia de três pesos: principal em 30 px, apoios em 14 px, rótulos em 11 px",
+        "Anterior e meta em colunas separadas por espaço, sem divisória (ESP-5)",
+        "Selo de status com forma, ícone e palavra, sem fundo tingido (COR-7)",
+        "Régua do status escrita no cartão: no alvo a partir de 95% da meta",
+        "Veredito calculado do dado: abaixo da meta por R$ 143 mil"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_cpl-qualificado-com-par-frescor-e-procedencia",
+      "titulo": "CPL qualificado com par, frescor e procedência",
+      "caso_de_uso": "Quanto custou cada lead qualificado em ago/26, de que parcelas vem o número e quando a mídia foi coletada?",
+      "o_que_demonstra": [
+        "Razão com as duas parcelas na mesma janela: R$ 48,6 mil em 412 leads",
+        "Polaridade menor melhor: a queda do CPL pinta --positive, com sinal e ícone",
+        "Ponto de ação aceso porque o CPL segue acima do limiar de R$ 110, mesmo em queda",
+        "Carimbo do dado e não da página, com ícone Clock e prazo de 24 h da fonte",
+        "Etiqueta DERIVADO uma vez, no topo do cartão de moldura stage",
+        "Link esticado com ChevronRight e foco visível para abrir as campanhas"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v4_zero-indisponivel-e-sem-base",
+      "titulo": "Zero, indisponível e sem base lado a lado",
+      "caso_de_uso": "Como quatro cartões da mesma tira dizem zero medido, falta de coleta, falta de base e período parcial sem mentir?",
+      "o_que_demonstra": [
+        "Zero medido em tipografia cheia, com a frase nenhuma venda de mídia paga",
+        "Indisponível com formatUnavailable, ícone Unplug, motivo e última medição válida",
+        "Sem mês anterior medido no lugar da variação, nunca +100% nem Infinity",
+        "Período parcial declarado: 14 de 31 dias contra os mesmos 14 dias de jul/26",
+        "Quatro cartões com a mesma altura e a mesma linha de base do número"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

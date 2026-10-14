@@ -1,0 +1,15 @@
+{
+  "title": "Indicadores derivados de outros indicadores",
+  "useCase": "Diretoria: quais indicadores fictícios usam outros indicadores no cálculo e quais são usados, com o sentido legível.",
+  "demonstrates": [
+    "Arco acima para usa e arco abaixo para é usado por, a partir do mesmo eixo",
+    "Legenda explícita dos dois sentidos junto do eixo, não só na dica",
+    "Rótulos curtos no eixo e nomes completos na lista acessível de ligações",
+    "Indicador com dependência circular em var(--warning), com o ícone lucide RefreshCw",
+    "Altura acima e abaixo do eixo calculada pelo arco mais longo de cada lado",
+    "Ciclo achado por busca no grafo e escrito na ordem em que ele se fecha"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): largo 960x400 com moldura card e caso de uso em uma linha dá corpo de 894 x 281,5. A linha de leitura leva 28 px e o SVG é desenhado em 894 x 252, escala 1 (GEO-18). Nove nós entre 166 px e 822 px dão passo de 82 px. Descontados 6 px de topo, 4 px de base e a faixa de 28 px do rótulo, sobram 214 px para os arcos; o maior arco de cima tem 3 passos (raio de 123 px) e o de baixo 4 passos (164 px), então o fator único de achatamento é 214 dividido por 287, 0,75; o lado de cima fica com 92 px, o de baixo com 122 px, e o eixo cai a 98 px do topo do desenho, e não no meio. Cada lado tem piso de 48 px, que é a altura das três linhas da legenda dele. O arco de baixo sai do pé de uma haste, abaixo do rótulo: saindo do centro do nó ele desceria na vertical por cima do nome. A lista acessível de ligações é o próprio SVG, com role list e um item por arco com os nomes completos; uma lista em HTML escondida sairia como texto solto no preview, que decompõe o HTML em volta de gráfico. Desvios do catálogo, com o contrato vencendo: os arcos neutros vão em var(--text-muted), 5,21:1 e 5,37:1, e não em var(--line-strong), 1,79:1 e 1,83:1 (ACE-6), e com ciclo presente baixam por opacidade medida de 0,76, que composta mede 3,58:1 e 3,28:1 (ACE-5). O ciclo não depende só da cor (ACE-2): nó e arcos em var(--warning), ícone ao lado do rótulo, rótulo em peso 600 e a frase da linha de leitura. Nenhum peso 700 no desenho."
+}

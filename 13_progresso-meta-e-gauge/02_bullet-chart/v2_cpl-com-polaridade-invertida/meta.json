@@ -1,0 +1,12 @@
+{
+  "title": "CPL do mês com régua invertida",
+  "useCase": "Mostrar se um custo está na faixa aceitável de uma régua em que menor é sempre melhor.",
+  "demonstrates": [
+    "Polaridade invertida declarada no dado, com a faixa boa mais perto do zero",
+    "Anotação da origem da régua, com a data da revisão que a definiu",
+    "Variação contra o mês anterior com sinal tipográfico e a base na mesma linha",
+    "Cor semântica pela polaridade: custo subindo é negative, sempre com ícone"
+  ],
+  "canvas": "faixa",
+  "frame": "card"
+}

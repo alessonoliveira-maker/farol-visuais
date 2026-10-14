@@ -1,0 +1,14 @@
+{
+  "title": "Campanhas orgânicas e investimento desigual",
+  "useCase": "Como mostrar campanha sem investimento ao lado de uma que investiu 200 vezes mais sem sumir com as pequenas?",
+  "demonstrates": [
+    "Zero medido em anel tracejado do tamanho mínimo, com o R$ 0 escrito na régua",
+    "Investimento não registrado sai do plano e é contado no rodapé",
+    "Piso de área declarado na régua com a distorção medida do próprio dado",
+    "Shape próprio no Scatter para o zero não sair igual a uma verba pequena",
+    "Régua de tamanho com dois degraus redondos mais o máximo observado"
+  ],
+  "canvas": { "width": 800, "height": 500 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset card, pela GEO-1: além do plano o cartão escreve quatro linhas, a leitura de 12 px acima, a régua de tamanho com círculo de 34 px e duas notas de 11 px abaixo, cerca de 118 px. A conta é 126 px de moldura mais 118 px de texto mais 256 px de plano. O piso de raio é 5 px e não os 2,2 px das outras versões deste modelo, por duas medidas: anel tracejado de raio 2,2 tem 14 px de circunferência e não mostra tracejo nenhum, e com a maior verba em 233 vezes a menor a área honesta da menor daria menos de meio pixel quadrado. Piso maior distorce mais, e é por isso que ele vai escrito na régua: a menor verba desenha 9% da área da maior e vale 0,4% dela, e as duas frações saem calculadas do dado, não digitadas. A DAD-2 atribui o contorno à ausência e o neutro ao zero medido, e aqui os dois papéis se invertem de propósito: o zero é o anel tracejado e a ausência não é desenhada, então nenhuma forma da tela fica em disputa, e a distinção é mais forte que a de cor, porque uma está no plano e a outra está no rodapé. Sem opacidade em marca: chart-1 cheio mede 9,50:1 no escuro e 6,00:1 no claro, contra 2,43:1 no claro se levasse os 0,55 que a especificação de bolha costuma pedir, abaixo do piso de 3:1 da ACE-5. A linha de eixo herdada de AXIS_PROPS sai desligada, pela exceção da EIX-3 para a família 09."
+}

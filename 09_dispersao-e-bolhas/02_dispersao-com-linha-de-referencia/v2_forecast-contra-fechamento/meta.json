@@ -1,0 +1,14 @@
+{
+  "title": "Forecast contra valor fechado",
+  "useCase": "O forecast de 30 dias antes bateu com o fechado? 30 oportunidades do trimestre.",
+  "demonstrates": [
+    "Mesmo domínio nos dois eixos e área útil quadrada para a diagonal sair a 45 graus",
+    "ReferenceLine segment para a identidade e para as duas retas de tolerância",
+    "Contagem dentro da tolerância com os pontos fora em cor e forma de destaque",
+    "Perdidas com fechado zero fora do plano, num contador com o valor previsto",
+    "Nome da referência na margem reservada, nunca no rótulo nativo da linha"
+  ],
+  "canvas": { "width": 640, "height": 590 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset quadrado, pela GEO-1 e pela exigência de área útil quadrada desta versão. A conta: largura 640 menos 66 px de moldura dá 574 px de corpo, e 574 menos 8 de margem esquerda, 72 do eixo Y e 121 de margem direita reservada aos nomes das referências dá 373 px de plano; a altura saiu de medição e não de estimativa, porque a moldura, as duas linhas escritas e o eixo X juntos não fecham em conta redonda: a estimativa errou por 14 px na primeira rodada, e a altura foi corrigida a cada render até o plano medir 373 por 373 px no preview escuro, com a diagonal fechando os 45 graus. O eixo Y usa 72 px, acima da faixa de 48 a 64 da EIX-6: com 64 o tique R$ 600 mil não cabe nos 56 px restantes e quebra em duas linhas, e pela 14.1 a constante de acabamento cede quando o desvio aparece no render. A grade sai nos dois sentidos, como a exceção da EIX-3 medida em 2026-09-19 torna obrigatório nas famílias 09, 16, 17 e 25, e o axisLine do AXIS_PROPS é desligado explicitamente, que é a outra metade da mesma exceção e o que a v1 deste modelo ainda não faz. Contraste medido contra o cartão, que as guardas não mediram por transform no preview: ponto neutro em text-muted 5,21:1 no escuro e 5,37:1 no claro, ponto de destaque em chart-1 9,50:1 e 6,00:1, diagonal em text-muted igual ao ponto neutro, retas de tolerância em line-strong 1,79:1 e 1,83:1, que a ACE-6 endossa por serem referência e não dado."
+}

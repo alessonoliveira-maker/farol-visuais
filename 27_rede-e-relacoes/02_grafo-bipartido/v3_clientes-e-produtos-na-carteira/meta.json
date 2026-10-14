@@ -1,0 +1,15 @@
+{
+  "title": "Produtos em cada carteira de cliente",
+  "useCase": "Comercial: quais produtos cada uma das 24 contas fictícias de maior receita tem em carteira, e quais produtos andam juntos.",
+  "demonstrates": [
+    "24 contas (C01 a C24) contra 7 nós de produto, com altura do nó pelo total de ligações",
+    "Pontas distribuídas ao longo da altura do nó para não empilhar no mesmo ponto",
+    "Cor da ligação pelo produto em slots fixos de var(--chart-1) a var(--chart-6)",
+    "Rótulo só nos produtos e nas contas com três ou mais produtos; o resto na dica",
+    "Nota escrita de contas omitidas pelo corte de receita, como mais 36 contas",
+    "Sétimo nó de produto agrupado em Outros (3 produtos), em neutro, pelo teto de seis cores"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): linha de leitura (28 px), SVG de 372 px e nota do corte (24 px) somam 424 px, e o preset alto entrega 425 px de corpo com o caso de uso em duas linhas; o viewBox de 574 x 372 sai em escala 1 (GEO-18). Dentro do SVG, 58 ligações a 4 px por ponta dão 232 px de nó em cada coluna; a coluna das contas soma 23 vãos de 2 px e a dos produtos fecha em 280 px com a caixa mínima de 24 px do rótulo de duas linhas, e a sobra dos 348 px úteis é repartida entre os vãos. Desvio do catálogo, com o contrato vencendo: o catálogo pede 7 produtos em slots de chart-1 a chart-6, e a COR-4 fecha o teto em seis categorias coloridas. A carteira fictícia tem nove produtos; os seis de maior presença têm cor fixa na ordem 1, 3, 6, 5, 2, 4 (COR-8) e os três menores viram o sétimo nó, Outros (3 produtos), em var(--text-muted) e não em var(--line-strong), porque a ligação carrega a relação (ACE-6). A dica é o title nativo do SVG e acrescenta o que o corpo não escreve: receita anual da conta e lista de produtos. O baricentro larga uma vez de cada conta e guarda a ordem de menos cruzamentos: 253 contra 269 com uma largada só."
+}

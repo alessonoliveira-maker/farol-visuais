@@ -1,0 +1,12 @@
+{
+  "title": "Desfecho dos leads por origem",
+  "useCase": "Para qual desfecho vão os 1.240 leads de cada origem, entre cinco canais e quatro resultados de qualificação?",
+  "demonstrates": [
+    "Sankey nativo com links por índice, montados de um dicionário nome para índice",
+    "Node e link customizados com var(--chart-N), sem as cores internas do build",
+    "Margem lateral de 140 px reservada para nome e valor fora do nó",
+    "Cor da ligação herdada da origem, em slot fixo por categoria"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

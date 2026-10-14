@@ -1,0 +1,13 @@
+{
+  "title": "Etapas do handoff de uma oportunidade",
+  "useCase": "Pré-vendas: em que etapa do handoff está a oportunidade OP-0412, do lead qualificado ao aceite do executivo.",
+  "demonstrates": [
+    "Lista ordenada com flex e conector flex-1 preenchido até o passo atual",
+    "Concluído com ícone Check, atual com anel e texto em peso maior, futuro vazado",
+    "Data de cada etapa alcançada por formatDate abaixo do rótulo",
+    "Raiz com role e aria-label calculado: passo 3 de 4, reunião realizada"
+  ],
+  "canvas": "faixa",
+  "frame": "stage",
+  "notes": "Moldura stage: o corpo mede 920 x 170 px (960 x 260 menos 40 de largura e 90 de altura), o suficiente para cabeçalho, marcadores de 28 px, rótulo, data e linha de leitura sem rolagem. O conector preenchido tem 2 px e o pendente 1 px em text-muted: a espessura diferente é uma segunda pista além da cor, e --line-strong foi evitado porque mede 1,79:1 contra o cartão (TOK-5)."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Seta pela direção, cor pela polaridade",
+  "useCase": "Marketing: não confundir CPL subindo 12% (ruim) com taxa de agendamento subindo 12% (bom) nem alarmar 0,8% de ruído.",
+  "demonstrates": [
+    "Mesma seta para cima em negative no CPL e em positive na taxa de agendamento",
+    "Banda de estabilidade de 2% que troca a seta por Minus e o texto estável",
+    "Métrica sem polaridade em text secondary, nunca verde nem vermelha",
+    "Nota de rodapé de uma linha escrevendo o critério de bom e ruim"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Só quatro linhas de propósito: o ponto da versão é a regra de cor, não o volume de indicadores, que já é o v1."
+}

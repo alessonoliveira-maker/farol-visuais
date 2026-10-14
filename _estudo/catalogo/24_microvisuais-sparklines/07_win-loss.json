@@ -1,0 +1,75 @@
+{
+  "slug": "07_win-loss",
+  "nome": "Win/loss",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Blocos de altura fixa, para cima quando o período foi bom e para baixo quando foi ruim, com um traço central para o empate e nada para o período sem dado. Joga fora a magnitude de propósito e mostra o que nenhum outro microvisual mostra tão bem: sequência, ou seja, as séries de acerto, as séries de falha e a virada entre elas. No Farol é SVG puro em React com a geometria calculada em TypeScript: largura dividida por N, um rect por período deslocado acima ou abaixo da linha central, viewBox fixo e vectorEffect non-scaling-stroke no traço central. A posição é o segundo canal da cor, o que resolve daltonismo e impressão sem legenda. Só se justifica com desfecho genuinamente binário e regra declarada (bateu o SLA, fechou a meta do mês). Zero medido, empate e sem dado são desenhos diferentes, separados antes de chegar ao componente, e período sem meta atribuída nunca é desenhado como derrota.",
+  "quando_usar": [
+    "Resultado binário por período com regra declarada: semana dentro ou fora do SLA, mês com meta batida ou não",
+    "De 12 a 26 períodos numa célula de 60 a 120 px por 14 a 22 px, mais baixa que o sparkbar porque a altura não carrega valor",
+    "Tabela de executivos ou de filas ordenada por períodos batidos, onde o padrão de sequência separa o irregular de quem decaiu",
+    "Anotar a maior sequência de falhas, leitura que o win/loss faz melhor que qualquer outro microvisual"
+  ],
+  "quando_evitar": [
+    "A magnitude é a história: use o sparkbar divergente (24/02_sparkbar)",
+    "Mais de dois estados medidos por período: use a faixa de status (24/04_faixa-de-status-tracker)",
+    "Valor contínuo julgado contra uma faixa: use o sparkline com faixa de normalidade (24/01_sparkline-de-linha)",
+    "Só o resultado atual contra a regra, sem histórico: use o ponto de status (24/03_pilula-de-variacao)",
+    "Mais de cerca de 40 períodos em 120 px: agregue o período ou use a faixa de status",
+    "Dado bruto com zero por falta de coleta: separe sem dado de zero antes, ou o componente inventa empates"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_sla-semanal-em-26-semanas",
+      "titulo": "SLA semanal da pré-vendas em 26 semanas",
+      "caso_de_uso": "Pré-vendas: em quantas das últimas 26 semanas a fila fechou dentro do SLA, e a sequência recente é boa?",
+      "o_que_demonstra": [
+        "Um rect de altura fixa por semana, acima da linha central se bateu e abaixo se não",
+        "Bateu em --positive e não bateu em --negative, com a posição como segundo canal",
+        "Geometria em função pura: largura por N, vão de 1 px e viewBox fixo",
+        "Resumo 19 de 26 semanas dentro do SLA escrito ao lado, com tabular-nums",
+        "SVG com aria-hidden e frase acessível na raiz com a contagem e a última semana"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_maior-sequencia-fora-do-sla-anotada",
+      "titulo": "Maior sequência fora do SLA",
+      "caso_de_uso": "Pré-vendas: qual foi a maior sequência de semanas seguidas fora do SLA, e quando ela terminou?",
+      "o_que_demonstra": [
+        "Maior sequência de derrotas calculada em função pura sobre o array",
+        "Colchete de 1 px sob a sequência em --text-muted e rótulo 6 semanas seguidas fora",
+        "Rótulo de 11 px com halo em --surface-raised onde cruza a linha central",
+        "Início e fim da sequência por formatDate na frase acessível",
+        "Empate como traço central de 2 px em --line-strong, que quebra a sequência"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_meta-mensal-por-executivo",
+      "titulo": "Meta mensal por executivo em 12 meses",
+      "caso_de_uso": "Comercial: quais dos 12 executivos batem a meta mensal com regularidade e quais decaíram no semestre?",
+      "o_que_demonstra": [
+        "Tabela de 12 linhas com um SVG de 12 blocos por linha, de largura e altura fixas",
+        "Ordem por meses batidos, com a contagem em coluna à direita e tabular-nums",
+        "Nomes fictícios com inicial de sobrenome e a linha destacada em peso 700",
+        "Meses por formatMonthShort só no cabeçalho, alinhados à grade de blocos",
+        "Frase acessível com o executivo mais regular e a maior sequência recente de falhas"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_meses-sem-meta-empate-e-sem-coleta",
+      "titulo": "Meses sem meta, empate e sem coleta",
+      "caso_de_uso": "Comercial: como mostrar o executivo contratado no meio do ano sem desenhar derrota onde não havia meta?",
+      "o_que_demonstra": [
+        "Meses sem meta atribuída vazios, sem bloco nem traço central, com legenda própria",
+        "Empate medido como traço central; mês sem coleta como contorno --text-muted vazado",
+        "Contagem só sobre meses com meta: 5 de 7, nunca 5 de 12",
+        "Tipo win, loss, tie ou null, com a ausência separada antes do componente",
+        "Frase acessível dizendo sem meta atribuída até abr/26"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Painel sem dado e escala independente declarada",
+  "useCase": "Como mostrar a forma das entradas de 8 origens de volumes muito diferentes quando uma não tem dado no recorte?",
+  "demonstrates": [
+    "Painel vazio com role status no lugar do gráfico, sem eixo quebrado",
+    "Escala y independente por painel, declarada em texto abaixo do cabeçalho",
+    "Mesmo array de meses em todos os painéis, com nulo explícito na origem sem coleta",
+    "Origens em ordem de volume decrescente para a leitura não competir com a escala"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

@@ -1,0 +1,108 @@
+{
+  "familia": "10_funil",
+  "modelo": "07_funil-em-cartoes-de-etapa",
+  "versoes": {
+    "v1_faixa-de-marketing-com-cpl": {
+      "veredito": "aprovado",
+      "nota": "Faixa de quatro cartoes legivel nos dois temas, chip sempre com o par volume e CPL junto do investimento.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:21.187Z",
+      "impressao": "f08e01a2dbc2901c3322b6b5104e6947145eae88",
+      "arquivos": {
+        "Chart.tsx": "7652d807bf3ec4738598f19a7ef2262f2c8b7db8",
+        "data.ts": "c819ed64369d68742ce7a32fd229131402644b90",
+        "meta.json": "120bf25bb9d1d77478b3ca462b1501be3502a69a"
+      }
+    },
+    "v2_passo-que-piorou-contra-o-mes-anterior": {
+      "veredito": "aprovado",
+      "nota": "Alerta em um chip so, com icone e a taxa do mes anterior nomeada; falta o par volume do mes anterior.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:26.067Z",
+      "impressao": "af7282aca535d2aca0ad1aa5cf82d2b4ddfa8a39",
+      "arquivos": {
+        "Chart.tsx": "9c0dcd4f3e57e7dbbc2ef9000e5cb82e8d164f42",
+        "data.ts": "b634d264aa85a697cf4abf77357fd6b5b948c617",
+        "meta.json": "d274a23fac2e3dfb787f0704381e7d0da665d8f9"
+      }
+    },
+    "v3_tempo-e-sla-entre-etapas": {
+      "veredito": "aprovado",
+      "nota": "Conector com mediana, p90 e censura escritos; p90 fora do SLA em vermelho com a palavra junto da cor.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:30.849Z",
+      "impressao": "47721dd7e35ddf4a4d8b14c09b738aabcea63fc4",
+      "arquivos": {
+        "Chart.tsx": "56f3939f17c8b0ac90f7ccd966a56c03c6f58430",
+        "data.ts": "6eb899a3dc98d699f5123338ea1ab033cd755673",
+        "meta.json": "267333ea7535177b1906ffe6b0c4eab75b84b012"
+      }
+    },
+    "v4_etapa-sem-medicao": {
+      "veredito": "aprovado",
+      "nota": "Etapa sem medicao escreve indisponivel com icone e as duas taxas vizinhas tambem; nenhum zero inventado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:35.879Z",
+      "impressao": "80b9e1334e2abc5cf3c8123add775a0d92cd007e",
+      "arquivos": {
+        "Chart.tsx": "47982e2add26b294775755bf0b21db2987a73fe7",
+        "data.ts": "c496ca333cb295ee463016ae308e4fa80d0efa13",
+        "meta.json": "dbd39099331f395b5f37265088b57a5202682b8b"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_faixa-de-marketing-com-cpl",
+      "veredito": "aprovado",
+      "nota": "Faixa de quatro cartoes legivel nos dois temas, chip sempre com o par volume e CPL junto do investimento.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:21.187Z",
+      "impressao": "f08e01a2dbc2901c3322b6b5104e6947145eae88",
+      "arquivos": {
+        "Chart.tsx": "7652d807bf3ec4738598f19a7ef2262f2c8b7db8",
+        "data.ts": "c819ed64369d68742ce7a32fd229131402644b90",
+        "meta.json": "120bf25bb9d1d77478b3ca462b1501be3502a69a"
+      }
+    },
+    {
+      "versao": "v2_passo-que-piorou-contra-o-mes-anterior",
+      "veredito": "aprovado",
+      "nota": "Alerta em um chip so, com icone e a taxa do mes anterior nomeada; falta o par volume do mes anterior.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:26.067Z",
+      "impressao": "af7282aca535d2aca0ad1aa5cf82d2b4ddfa8a39",
+      "arquivos": {
+        "Chart.tsx": "9c0dcd4f3e57e7dbbc2ef9000e5cb82e8d164f42",
+        "data.ts": "b634d264aa85a697cf4abf77357fd6b5b948c617",
+        "meta.json": "d274a23fac2e3dfb787f0704381e7d0da665d8f9"
+      }
+    },
+    {
+      "versao": "v3_tempo-e-sla-entre-etapas",
+      "veredito": "aprovado",
+      "nota": "Conector com mediana, p90 e censura escritos; p90 fora do SLA em vermelho com a palavra junto da cor.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:30.849Z",
+      "impressao": "47721dd7e35ddf4a4d8b14c09b738aabcea63fc4",
+      "arquivos": {
+        "Chart.tsx": "56f3939f17c8b0ac90f7ccd966a56c03c6f58430",
+        "data.ts": "6eb899a3dc98d699f5123338ea1ab033cd755673",
+        "meta.json": "267333ea7535177b1906ffe6b0c4eab75b84b012"
+      }
+    },
+    {
+      "versao": "v4_etapa-sem-medicao",
+      "veredito": "aprovado",
+      "nota": "Etapa sem medicao escreve indisponivel com icone e as duas taxas vizinhas tambem; nenhum zero inventado.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:49:35.879Z",
+      "impressao": "80b9e1334e2abc5cf3c8123add775a0d92cd007e",
+      "arquivos": {
+        "Chart.tsx": "47982e2add26b294775755bf0b21db2987a73fe7",
+        "data.ts": "c496ca333cb295ee463016ae308e4fa80d0efa13",
+        "meta.json": "dbd39099331f395b5f37265088b57a5202682b8b"
+      }
+    }
+  ]
+}

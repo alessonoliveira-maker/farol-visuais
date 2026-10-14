@@ -1,0 +1,75 @@
+{
+  "slug": "02_bar-mekko-variwide",
+  "nome": "Bar mekko (variwide)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Colunas encostadas de largura variável com altura em valor absoluto de uma métrica, sem normalizar para 100%. A largura carrega a métrica A, a altura carrega a métrica B, e a área de cada coluna é o produto das duas. O modelo só vale quando esse produto é uma grandeza real: leads vezes CPL é investimento, vitórias vezes ticket médio é receita. Algumas bibliotecas chamam a forma de variwide. SVG puro em React: x acumulado pela métrica A, altura por escala linear que começa em zero e tiques de passo bonito calculados em TypeScript.",
+  "quando_usar": [
+    "Taxa por grupo com o peso do grupo à vista, de 3 a 10 colunas, quando largura vezes altura é uma grandeza de negócio",
+    "CPL por plataforma com a largura nos leads, em que a área de cada coluna é o investimento do período",
+    "Ticket médio por origem com a largura nas vitórias, em que a área de cada coluna é a receita",
+    "Quanto do investimento foi pago acima de um CPL alvo, lido como a área de cada coluna acima de uma linha de referência"
+  ],
+  "quando_evitar": [
+    "Largura vezes altura sem significado de negócio: dispersão simples (09/01) ou bolhas (09/03)",
+    "Composição de cada grupo em partes: marimekko 100% (modelo 01)",
+    "Grupos de peso parecido, em que a largura não informa: colunas simples (03/01)",
+    "Métrica de altura que pode ser negativa: colunas positivo e negativo (03/05)",
+    "Mais de 10 grupos, com colunas abaixo de 4 px de largura: tabela com barras inline (14/01)"
+  ],
+  "arquivo_estudo": "_estudo/familias/26_mosaico-marimekko.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-por-plataforma",
+      "titulo": "CPL e investimento por plataforma",
+      "caso_de_uso": "Marketing, 2026-08: qual plataforma de mídia paga tem o CPL mais alto e quanto do investimento do mês ela concentra?",
+      "o_que_demonstra": [
+        "x acumulado pelos leads e altura pelo CPL numa escala linear a partir de zero",
+        "Tiques do eixo Y com passo bonito de 1, 2, 2,5 ou 5 vezes potência de 10",
+        "Colunas ordenadas pelo CPL decrescente, com a largura como peso",
+        "Rótulo com CPL e investimento por formatCurrencyCompact e leads no eixo X",
+        "Eixo X acumulado de leads com o total do mês escrito no fim"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_investimento-acima-do-cpl-alvo",
+      "titulo": "Investimento pago acima do CPL alvo",
+      "caso_de_uso": "Marketing, 2026-08: em cada plataforma, quanto do investimento do mês foi pago acima do CPL alvo de R$ 180?",
+      "o_que_demonstra": [
+        "Linha de referência horizontal no CPL alvo em --line-strong com rótulo à direita",
+        "Parte de cada coluna acima do alvo em --chart-1 e parte abaixo em --line-strong",
+        "Anotação com o excedente por formatCurrencyCompact na coluna de maior área acima",
+        "Soma do excedente de todas as plataformas escrita no subtítulo",
+        "Plataforma abaixo do alvo sem parte destacada e com o CPL escrito"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_ticket-medio-e-receita-por-origem",
+      "titulo": "Ticket médio e receita por origem",
+      "caso_de_uso": "Comercial, 2026 até agosto: qual origem traz ticket alto com poucas vitórias e qual sustenta a receita reconhecida no volume?",
+      "o_que_demonstra": [
+        "Sete origens com largura pelas vitórias e altura pelo ticket médio",
+        "Área lida como receita e escrita por formatCurrencyCompact em cada coluna",
+        "Coluna alta e estreita com anotação: ticket alto em poucas vitórias",
+        "Rótulos das colunas finas puxados para cima com linha guia, sem sobreposição",
+        "Linha do ticket médio geral em tracejado 3 3 de --text-muted",
+        "Etiqueta de procedência --prov-medido no total de receita"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_investimento-sem-lead",
+      "titulo": "Plataforma com investimento e zero lead",
+      "caso_de_uso": "Marketing, 2026-08: como mostrar uma plataforma que gastou R$ 8 mil sem gerar lead, com o CPL indefinido?",
+      "o_que_demonstra": [
+        "CPL indefinido sem coluna de altura infinita nem divisão por zero no layout",
+        "Marcador na base com a frase R$ 8 mil sem lead, fora da escala de altura",
+        "Plataforma sem custo coletado com formatUnavailable, separada de zero medido",
+        "Domínio do eixo Y calculado só com os CPL definidos",
+        "Frase acessível que cita a plataforma sem lead e o investimento dela"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

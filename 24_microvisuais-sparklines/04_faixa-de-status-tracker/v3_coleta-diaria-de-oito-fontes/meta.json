@@ -1,0 +1,15 @@
+{
+  "title": "Coleta diária de 8 fontes em 90 dias",
+  "useCase": "Posso confiar no painel de hoje, e qual fonte de dado falhou ou veio parcial nos últimos 90 dias?",
+  "demonstrates": [
+    "8 fileiras de 90 blocos, rótulo da fonte à esquerda e percentual completo à direita",
+    "4 estados (completa, parcial, falhou, sem agenda) com legenda na ordem visual",
+    "Falhou com altura menor que completa, segundo canal além da cor",
+    "Container query @2xl: faixa em largura cheia e 30 dias abaixo de 672 px",
+    "Dias sem agenda fora do denominador do percentual, declarado no resumo",
+    "Fontes com rótulos genéricos (CRM, mídia paga A, analytics), sem marca real"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo como o catálogo sugere: 8 fileiras de 20 px com vão de 2 px somam 174 px dos 265 do corpo, e 90 blocos de cerca de 7 px cabem entre o rótulo e o percentual. As fileiras vão da menos completa para a mais completa, dito na nota do cartão, para a fonte com problema ficar na primeira linha. A altura carrega o segundo canal: completa 20 px, parcial 14 px, falhou 10 px. Em largura estreita, abaixo de 672 px de contêiner (bloco de 3 px ou mais com os 90 dias), nome e percentual ficam numa linha, a faixa ocupa a largura do corpo e só os 30 últimos dias aparecem; a nota diz que o percentual segue sobre os 90. O contorno de sem agenda é sombra interna, para todo bloco ter a mesma largura. A altura da amostra na legenda segue a da fileira (12, 8 e 6 px)."
+}

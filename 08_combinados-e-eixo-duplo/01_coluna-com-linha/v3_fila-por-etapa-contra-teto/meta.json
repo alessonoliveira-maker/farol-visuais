@@ -1,0 +1,14 @@
+{
+  "title": "Fila de pré-vendas por etapa contra o teto",
+  "useCase": "Em quais semanas o estoque da fila de pré-vendas, somado por etapa, passou do teto de capacidade?",
+  "demonstrates": [
+    "Colunas empilhadas por etapa com stackId e slot de cor fixo por etapa",
+    "Teto como ReferenceLine com ifOverflow extendDomain e rótulo na margem",
+    "Total acima da pilha numa série âncora, imune a camada de altura zero",
+    "Teto com revestimento na cor do cartão, porque ele atravessa a pilha",
+    "26 semanas com um tique por mês, sem girar texto nem cortar rótulo"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta das linhas do cartão pela GEO-1, no preset largo de 960x400: corpo de 894 por 281,5 px, menos a legenda de 4 itens (20 px mais 12 px de vão), menos a linha de leitura (20 px mais 8 px de vão), menos a faixa do eixo X (24 px pela EIX-6b) e menos a faixa de 30 px reservada no topo para o rótulo do teto, o que deixa o plano com 167,5 px e 4 linhas de grade a 55,8 px. Medições à mão que nenhuma guarda faz, pela TOK-9 e pela TOK-10, calculadas de tokens.css pela fórmula da WCAG. Marca contra marca: o par --chart-6 contra --chart-5, vizinhos na pilha, mede 1,25:1 no escuro e 1,16:1 no claro, então a separação das camadas vem do vão de 2 px da COR-5 e do nome de cada etapa na legenda e na dica, nunca da cor. Guia contra marca: --text-muted mede 5,21:1 e 5,37:1 contra o cartão, mas 1,00:1 contra --chart-6 no tema claro, isto é o teto desapareceria por inteiro dentro daquela camada; daí o revestimento, que devolve o fundo do cartão por baixo do tracejado. Desvio declarado da especificação do catálogo: a legenda pedia legendType rect e plainline, que só valem com o componente Legend do Recharts; nenhuma das 404 peças do catálogo o usa, ele escreve em HTML dentro de foreignObject, onde as guardas de colisão e de contraste ficam cegas, e ele ordena pela declaração dos filhos, que numa pilha é de baixo para cima, o contrário da ordem que a ROT-4 pede. A legenda desta versão é desenhada à mão acima do gráfico, com amostra quadrada e na ordem visual da pilha, do topo para a base."
+}

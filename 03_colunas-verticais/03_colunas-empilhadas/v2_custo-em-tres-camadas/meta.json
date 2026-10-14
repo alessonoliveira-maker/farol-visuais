@@ -1,0 +1,13 @@
+{
+  "title": "Custo mensal em três camadas",
+  "useCase": "Quanto custou cada mês e quanto desse custo é direto, rateio de time e estrutura, antes de discutir retorno?",
+  "demonstrates": [
+    "Camada direta na base, a única comparável entre meses além do total",
+    "Nome de cada camada com o perímetro que ela cobre, sempre visível junto da legenda",
+    "Total em formatCurrencyCompact acima de 12 colunas e tique em formatCurrencyAxis",
+    "Linha de leitura com a participação da camada de estrutura no ano"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O tooltip usa o ChartTooltip fixo do Farol (soma dos valores, sem acumulado por camada); o perímetro de cada camada por isso é explicado na legenda, não recalculado a cada hover."
+}

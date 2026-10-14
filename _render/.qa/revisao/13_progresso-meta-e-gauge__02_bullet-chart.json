@@ -1,0 +1,160 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "02_bullet-chart",
+  "versoes": {
+    "v1_receita-com-faixas-de-estado": {
+      "veredito": "aprovado",
+      "nota": "Bullet horizontal correto: faixas nomeadas, meta com extendDomain e rotulo na ponta livre com halo. Observacoes: barra de 28 px acima do teto de 24 da ESP-2 e ultimo tique nao redondo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:25.595Z",
+      "impressao": "50a3b98fc7f7c147568150b26fafcce0d42d5b61",
+      "arquivos": {
+        "Chart.tsx": "7efb26bb42788f51ab2ac551f7fe097a32a8acea",
+        "data.ts": "eeb6ae461ba808ef907a1f78a6b65695882934f9",
+        "meta.json": "278bfb8e3b32ca0cc54e611739d7b322407492fb"
+      }
+    },
+    "v2_cpl-com-polaridade-invertida": {
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida legivel: faixas na ordem Boa, Aceitavel, Ruim, variacao com sinal, icone e base nomeada. Observacao: a intensidade das faixas cresce com o eixo, o inverso da v1.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:30.812Z",
+      "impressao": "2b84f5a3f2d1ae4e946e8001a198a54325580697",
+      "arquivos": {
+        "Chart.tsx": "1cafb77a2ea9e8423f1f5ab29dfa69fb655b996a",
+        "data.ts": "b64e2a4650454a4082fc949ff297d520bef87782",
+        "meta.json": "f8df140a5cab2ecfc351ad6be1b931a7c7f98b26"
+      }
+    },
+    "v3_painel-de-metas-comerciais": {
+      "veredito": "aprovado",
+      "nota": "Painel le bem: cinco linhas normalizadas, faixas nomeadas e a metrica abaixo com icone e peso. Observacao forte: a linha de 100% nao tem rotulo e o eixo oculto deixa a escala percentual sem numero.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:36.459Z",
+      "impressao": "0e7205d9a6334b6bec7653383d1a0079c87b8068",
+      "arquivos": {
+        "Chart.tsx": "3a1ed30826d653c603a8d415e7c23e34f2a6a4a5",
+        "data.ts": "9bb3db19667a36b13a8fb6d6ddd73f627bfe0214",
+        "meta.json": "5fffbac3018a3f7b346a6e44999d6126fef95e53"
+      }
+    },
+    "v4_orcamento-por-plataforma-em-coluna": {
+      "veredito": "aprovado",
+      "nota": "Bullet vertical com meta nomeada, faixa de conforto e ausencia em trilho tracejado com texto, nunca zero pintado. Observacoes: frase acessivel a 5 do teto, meta sem extendDomain e trilho na altura cheia.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:42.226Z",
+      "impressao": "49627222106b171d9acb6b2c0a82f3b10c92864e",
+      "arquivos": {
+        "Chart.tsx": "d36dccb37116dabb5d67fc34d0e92c1165cb7d66",
+        "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
+        "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-com-faixas-de-estado",
+      "veredito": "aprovado",
+      "nota": "Faixas por intensidade, meta em traco solido e valor na ponta livre com halo; a barra sai com 28 px, acima do teto de 24 da ESP-2, e o traco da meta usa --text-primary, fora da 17.2.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:09:25.786Z",
+      "impressao": "50a3b98fc7f7c147568150b26fafcce0d42d5b61",
+      "arquivos": {
+        "Chart.tsx": "7efb26bb42788f51ab2ac551f7fe097a32a8acea",
+        "data.ts": "eeb6ae461ba808ef907a1f78a6b65695882934f9",
+        "meta.json": "278bfb8e3b32ca0cc54e611739d7b322407492fb"
+      }
+    },
+    {
+      "versao": "v2_cpl-com-polaridade-invertida",
+      "veredito": "aprovado",
+      "nota": "Regua invertida no dado, variacao com sinal, icone e base na mesma linha; a intensidade das faixas cresce com o eixo e nao com a qualidade, ao contrario da anatomia do README, e o preview isolado difere da pagina acima de 0,5% na linha de leitura.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:09:33.692Z",
+      "impressao": "2b84f5a3f2d1ae4e946e8001a198a54325580697",
+      "arquivos": {
+        "Chart.tsx": "1cafb77a2ea9e8423f1f5ab29dfa69fb655b996a",
+        "data.ts": "b64e2a4650454a4082fc949ff297d520bef87782",
+        "meta.json": "f8df140a5cab2ecfc351ad6be1b931a7c7f98b26"
+      }
+    },
+    {
+      "versao": "v3_painel-de-metas-comerciais",
+      "veredito": "aprovado",
+      "nota": "Painel normalizado em percentual da meta, unidade original escrita ao fim de cada linha e metrica abaixo da faixa com icone e peso; a linha de 100% nao tem rotulo nem extendDomain e o nome mais longo encosta na faixa.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:09:38.053Z",
+      "impressao": "0e7205d9a6334b6bec7653383d1a0079c87b8068",
+      "arquivos": {
+        "Chart.tsx": "3a1ed30826d653c603a8d415e7c23e34f2a6a4a5",
+        "data.ts": "9bb3db19667a36b13a8fb6d6ddd73f627bfe0214",
+        "meta.json": "5fffbac3018a3f7b346a6e44999d6126fef95e53"
+      }
+    },
+    {
+      "versao": "v4_orcamento-por-plataforma-em-coluna",
+      "veredito": "reprovado",
+      "nota": "ROT-7: o texto indisponivel e mais largo que o trilho tracejado e as duas hastes do tracejado cruzam as letras nos dois temas, sem halo; o v de indisponivel chega a ler como y. Dar halo ao texto ou tira-lo de dentro do trilho.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:09:42.451Z",
+      "impressao": "bf733b2f5ec93e404c53a7aad009bc3bd08570ea",
+      "arquivos": {
+        "Chart.tsx": "15f22df957c4569374d0332edf7f2e1b10618de2",
+        "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
+        "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+      }
+    },
+    {
+      "versao": "v1_receita-com-faixas-de-estado",
+      "veredito": "aprovado",
+      "nota": "Bullet horizontal correto: faixas nomeadas, meta com extendDomain e rotulo na ponta livre com halo. Observacoes: barra de 28 px acima do teto de 24 da ESP-2 e ultimo tique nao redondo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:25.595Z",
+      "impressao": "50a3b98fc7f7c147568150b26fafcce0d42d5b61",
+      "arquivos": {
+        "Chart.tsx": "7efb26bb42788f51ab2ac551f7fe097a32a8acea",
+        "data.ts": "eeb6ae461ba808ef907a1f78a6b65695882934f9",
+        "meta.json": "278bfb8e3b32ca0cc54e611739d7b322407492fb"
+      }
+    },
+    {
+      "versao": "v2_cpl-com-polaridade-invertida",
+      "veredito": "aprovado",
+      "nota": "Polaridade invertida legivel: faixas na ordem Boa, Aceitavel, Ruim, variacao com sinal, icone e base nomeada. Observacao: a intensidade das faixas cresce com o eixo, o inverso da v1.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:30.812Z",
+      "impressao": "2b84f5a3f2d1ae4e946e8001a198a54325580697",
+      "arquivos": {
+        "Chart.tsx": "1cafb77a2ea9e8423f1f5ab29dfa69fb655b996a",
+        "data.ts": "b64e2a4650454a4082fc949ff297d520bef87782",
+        "meta.json": "f8df140a5cab2ecfc351ad6be1b931a7c7f98b26"
+      }
+    },
+    {
+      "versao": "v3_painel-de-metas-comerciais",
+      "veredito": "aprovado",
+      "nota": "Painel le bem: cinco linhas normalizadas, faixas nomeadas e a metrica abaixo com icone e peso. Observacao forte: a linha de 100% nao tem rotulo e o eixo oculto deixa a escala percentual sem numero.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:36.459Z",
+      "impressao": "0e7205d9a6334b6bec7653383d1a0079c87b8068",
+      "arquivos": {
+        "Chart.tsx": "3a1ed30826d653c603a8d415e7c23e34f2a6a4a5",
+        "data.ts": "9bb3db19667a36b13a8fb6d6ddd73f627bfe0214",
+        "meta.json": "5fffbac3018a3f7b346a6e44999d6126fef95e53"
+      }
+    },
+    {
+      "versao": "v4_orcamento-por-plataforma-em-coluna",
+      "veredito": "aprovado",
+      "nota": "Bullet vertical com meta nomeada, faixa de conforto e ausencia em trilho tracejado com texto, nunca zero pintado. Observacoes: frase acessivel a 5 do teto, meta sem extendDomain e trilho na altura cheia.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:28:42.226Z",
+      "impressao": "49627222106b171d9acb6b2c0a82f3b10c92864e",
+      "arquivos": {
+        "Chart.tsx": "d36dccb37116dabb5d67fc34d0e92c1165cb7d66",
+        "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
+        "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "familia": "03_colunas-verticais",
+  "modelo": "08_colunas-em-small-multiples",
+  "versoes": {
+    "v1_leads-por-origem-em-seis-paineis": {
+      "veredito": "aprovado",
+      "nota": "Escala comum, eixo so na ultima linha e ordem por total conferidos nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:05:55.929Z",
+      "impressao": "0f9ebe6641d49fdced80ecc87390e5547fd16c26",
+      "arquivos": {
+        "Chart.tsx": "8c6a80e57f37b9026b09f55da8cd2b49524f99de",
+        "data.ts": "1f3ab9ee4fe8aab4f02655339ada6f856824cfd2",
+        "meta.json": "c18baecbcb74a467dabc76500d98eae1ff623fa4"
+      }
+    },
+    "v2_origem-em-foco": {
+      "veredito": "aprovado",
+      "nota": "Foco em chart-1 com nome e total em 700, contexto neutro na mesma escala; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:05:59.991Z",
+      "impressao": "d0870c87e831371c5e4dbfc7176e0d4e56033448",
+      "arquivos": {
+        "Chart.tsx": "1400b4891f36f9da1670b386d17837225e483f89",
+        "data.ts": "64bc9a9d340fad154cc328db05ea4cf6ba8aa68b",
+        "meta.json": "f0b4d959d30370b12139bfd8db2202f19d6ba174"
+      }
+    },
+    "v3_fechamentos-por-executivo": {
+      "veredito": "aprovado",
+      "nota": "Cabecalho de 56px sem corte nos dois temas e canvas por numero declarado nas notes; observacoes sobre cor semantica na serie e proximidade do rotulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:06:04.285Z",
+      "impressao": "055f2f6e0d068222368eb8444b18d45144a8ea0c",
+      "arquivos": {
+        "Chart.tsx": "6d48e4f71b7dd1d6650bbeff6522a1acf8b40186",
+        "data.ts": "f817e6e3f96668f0f5f20bd6159a7b8832c745cd",
+        "meta.json": "f0d00e04f7215d322b97931aae3d9dac8e36022c"
+      }
+    },
+    "v4_historico-curto-e-sem-volume": {
+      "veredito": "aprovado",
+      "nota": "Mes sem historico nao desenha marca e zero medido desenha traco na base, cada caso com nota no cabecalho; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:06:08.603Z",
+      "impressao": "1fc43b3b2f0460cfa1fcbf31deeef1e91e0fecbb",
+      "arquivos": {
+        "Chart.tsx": "32593fc0a066142a0873fffbdbdf1d0662533475",
+        "data.ts": "693e859619d7ef6459dda757aae2d16e55a886ec",
+        "meta.json": "9302024d0389ddc718ea66495db811aa25615b0e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-por-origem-em-seis-paineis",
+      "veredito": "reprovado",
+      "nota": "Escala comum so no dominio: a linha de baixo perde altura para o eixo e desenha o mesmo valor 27 por cento menor (EIX-9).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:44:50.084Z",
+      "impressao": "a7a67b82cf64af60f492c12f93b4a41a527189c3",
+      "arquivos": {
+        "Chart.tsx": "6196771991c806eabbac860f4d377085ebd64a98",
+        "data.ts": "1f3ab9ee4fe8aab4f02655339ada6f856824cfd2",
+        "meta.json": "c18baecbcb74a467dabc76500d98eae1ff623fa4"
+      }
+    },
+    {
+      "versao": "v2_origem-em-foco",
+      "veredito": "reprovado",
+      "nota": "Mesmo defeito da v1: a linha de baixo da grade desenha o mesmo valor 27 por cento menor que a de cima (EIX-9).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:44:54.330Z",
+      "impressao": "71673e50df063d5dcf2e714e524f01ccfbe23b7d",
+      "arquivos": {
+        "Chart.tsx": "298a7545a9ec7e203525ccf7ff704e09d6dfee53",
+        "data.ts": "64bc9a9d340fad154cc328db05ea4cf6ba8aa68b",
+        "meta.json": "f0b4d959d30370b12139bfd8db2202f19d6ba174"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Cabecalho de 40px corta o texto dos 4 paineis marcados (a virgula de 33,3 por cento some) e a linha de baixo desenha na metade da escala.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:44:59.767Z",
+      "impressao": "88578a9abe3e130987daf7e8eba65bb9ab4c5917",
+      "arquivos": {
+        "Chart.tsx": "50f93b4e0b40f59cb4f9dcea66d40de8cbb14bf1",
+        "data.ts": "f817e6e3f96668f0f5f20bd6159a7b8832c745cd",
+        "meta.json": "0c20752d0d221967ab2b336b73617b35e7078a56"
+      }
+    },
+    {
+      "versao": "v4_historico-curto-e-sem-volume",
+      "veredito": "reprovado",
+      "nota": "Casos limite corretos, mas a linha de baixo da grade desenha o mesmo valor 32 por cento menor que a de cima (EIX-9).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T16:45:03.486Z",
+      "impressao": "0339c3b358b22e78fbc89298743ebed3a5f413bb",
+      "arquivos": {
+        "Chart.tsx": "1a26b98285359bfad6daf72faf0d9b683f53f161",
+        "data.ts": "693e859619d7ef6459dda757aae2d16e55a886ec",
+        "meta.json": "9302024d0389ddc718ea66495db811aa25615b0e"
+      }
+    },
+    {
+      "versao": "v1_leads-por-origem-em-seis-paineis",
+      "veredito": "aprovado",
+      "nota": "Escala comum, eixo so na ultima linha e ordem por total conferidos nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:05:55.929Z",
+      "impressao": "0f9ebe6641d49fdced80ecc87390e5547fd16c26",
+      "arquivos": {
+        "Chart.tsx": "8c6a80e57f37b9026b09f55da8cd2b49524f99de",
+        "data.ts": "1f3ab9ee4fe8aab4f02655339ada6f856824cfd2",
+        "meta.json": "c18baecbcb74a467dabc76500d98eae1ff623fa4"
+      }
+    },
+    {
+      "versao": "v2_origem-em-foco",
+      "veredito": "aprovado",
+      "nota": "Foco em chart-1 com nome e total em 700, contexto neutro na mesma escala; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:05:59.991Z",
+      "impressao": "d0870c87e831371c5e4dbfc7176e0d4e56033448",
+      "arquivos": {
+        "Chart.tsx": "1400b4891f36f9da1670b386d17837225e483f89",
+        "data.ts": "64bc9a9d340fad154cc328db05ea4cf6ba8aa68b",
+        "meta.json": "f0b4d959d30370b12139bfd8db2202f19d6ba174"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Cabecalho de 56px sem corte nos dois temas e canvas por numero declarado nas notes; observacoes sobre cor semantica na serie e proximidade do rotulo.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:06:04.285Z",
+      "impressao": "055f2f6e0d068222368eb8444b18d45144a8ea0c",
+      "arquivos": {
+        "Chart.tsx": "6d48e4f71b7dd1d6650bbeff6522a1acf8b40186",
+        "data.ts": "f817e6e3f96668f0f5f20bd6159a7b8832c745cd",
+        "meta.json": "f0d00e04f7215d322b97931aae3d9dac8e36022c"
+      }
+    },
+    {
+      "versao": "v4_historico-curto-e-sem-volume",
+      "veredito": "aprovado",
+      "nota": "Mes sem historico nao desenha marca e zero medido desenha traco na base, cada caso com nota no cabecalho; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:06:08.603Z",
+      "impressao": "1fc43b3b2f0460cfa1fcbf31deeef1e91e0fecbb",
+      "arquivos": {
+        "Chart.tsx": "32593fc0a066142a0873fffbdbdf1d0662533475",
+        "data.ts": "693e859619d7ef6459dda757aae2d16e55a886ec",
+        "meta.json": "9302024d0389ddc718ea66495db811aa25615b0e"
+      }
+    }
+  ]
+}

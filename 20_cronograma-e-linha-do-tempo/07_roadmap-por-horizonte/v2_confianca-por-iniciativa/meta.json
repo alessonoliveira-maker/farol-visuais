@@ -1,0 +1,13 @@
+{
+  "title": "Iniciativas de 2027 com grau de confiança",
+  "useCase": "Diretoria: quão firme é cada uma das 10 iniciativas do plano 2027 em cada horizonte, escrito no cartão.",
+  "demonstrates": [
+    "Selo alta, média ou baixa com palavra e ícone, sem depender só da cor",
+    "Cartão de confiança baixa com borda tracejada em border-line-strong",
+    "Confiança que cai com o horizonte explicada numa linha de leitura",
+    "Legenda única dos três selos no rodapé, não repetida por cartão"
+  ],
+  "canvas": "largo",
+  "frame": "stage",
+  "notes": "A borda tracejada em line-strong no cartão de confiança baixa vem da especificação do catálogo e contraria a ESP-5 (borda interna); foi mantida porque é a segunda pista de forma do selo, e os demais cartões levam borda transparente do mesmo 1 px para ninguém mudar de tamanho. A linha de leitura só afirma que a confiança cai quando a parcela de alta é estritamente decrescente nos três horizontes; se o dado mudar, ela volta a só listar as contagens. Moldura stage: corpo de 920 x 310 px. Conta: leitura 16 + vão 12 + cabeçalho 24 + vão 8 + 4 cartões de 46 com 3 vãos de 6 + vão 12 + legenda 16 = 290, dentro dos 310 disponíveis, e por isso os cartões ficam em 46 px (py-1.5, duas linhas) e o dado tem no máximo 4 por coluna."
+}

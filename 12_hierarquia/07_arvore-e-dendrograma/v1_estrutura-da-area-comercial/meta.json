@@ -1,0 +1,13 @@
+{
+  "title": "Estrutura da área comercial",
+  "useCase": "Diretoria: como a área fictícia se organiza em Comercial, Pré-vendas e Marketing, com funções e pessoas por função.",
+  "demonstrates": [
+    "Árvore lateral com raiz à esquerda: folha pela ordem, pai pela média dos filhos",
+    "Aresta curva M x0,y0 C x0,ym x1,ym x1,y1 calculada em TypeScript",
+    "Rótulo de nó com filho desviado da própria aresta por anticolisão, com linha de chamada",
+    "Quantidade de pessoas por função como rótulo ao lado do nó",
+    "Só funções e contagens, sem nome de pessoa"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

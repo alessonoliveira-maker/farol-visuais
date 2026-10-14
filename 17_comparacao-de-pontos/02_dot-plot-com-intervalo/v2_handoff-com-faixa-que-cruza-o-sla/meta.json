@@ -1,0 +1,13 @@
+{
+  "title": "Tempo de aceite do handoff contra o SLA",
+  "useCase": "A faixa do tempo de aceite de cada executivo atravessa o SLA de 2 dias?",
+  "demonstrates": [
+    "ReferenceLine no SLA de 2 dias, com rótulo na margem",
+    "Faixa que cruza o SLA em cor de atenção e ícone, não só cor",
+    "Anotação na linha de leitura: faixa cruza o SLA, resultado não conclusivo",
+    "Ordem pela mediana, declarada no subtítulo"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas 640 x 400 em vez de card. Conta: 7 linhas x 24 px = 168, mais 20 de margem superior (rótulo do SLA), 26 de eixo, 2 linhas de texto no topo e 16 de respiro = 262 px; o corpo do card tem 241,5 px, e o de 640 x 400 tem 281,5 px com caso de uso em uma linha e 265 px em duas. O eixo de linhas é numérico (−0,5 a n−0,5, com reversed) para a zebra e a área sensível terem banda exata."
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Horas até a agenda com os pontos sobre a caixa",
+  "useCase": "Quantos leads de cada fila passam do prazo de 48 horas até a agenda, e a caixa esconde algum aglomerado?",
+  "demonstrates": [
+    "Caixa vazada com todos os pontos por cima, e bigode em dois trechos sem cruzar a caixa",
+    "Jitter determinístico por hash FNV do código do lead, nunca Math.random",
+    "Amplitude do jitter derivada da banda medida por usePlotArea em tempo de desenho",
+    "Ponto fora do prazo muda de cor e de forma, e a opacidade sai por medição",
+    "axisLine desligado depois do espalhamento de AXIS_PROPS, nos dois eixos",
+    "n de cada fila na margem do topo e a ordem por mediana escrita no rodapé"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 460
+  },
+  "frame": "card",
+  "notes": "Dois desvios da especificação do catálogo, os dois resolvidos a favor do CONTRATO e medidos à mão. Primeiro: o catálogo pede opacidade 0,45 nos pontos, e a cor composta de --chart-1 sobre o cartão nessa opacidade mede 2,96:1 no tema escuro e 2,04:1 no claro, abaixo do piso de 3:1 da ACE-5 e da WCAG 1.4.11; em --negative fica pior, 2,05:1 e 2,21:1. A menor opacidade que passa nos dois temas é 0,66. Os pontos ficaram opacos (--text-muted mede 5,21:1 e 5,37:1; --negative mede 5,50:1 e 6,36:1) e a pilha se separa por contorno de 0,5 px na cor da superfície, que é a segunda saída que a própria ACE-5 oferece. Segundo: o catálogo pede --danger para o caso fora do prazo, e esse token não existe em tokens.css; quem marca o atraso é --negative, e junto com a cor muda a forma, de círculo para losango, porque a TOK-9 mediu que cor sozinha não sustenta destaque nos dois temas. O bigode sai em dois trechos, de whiskerLow a q1 e de q3 a whiskerHigh, o que dispensa a caixa opaca da v1 e mata na origem a armadilha REC-20 do ErrorBar. O n de cada fila vai na margem reservada do topo e não no tique de categoria: no tique ele somaria cerca de 40 px ao nome e as filas vizinhas passariam a encostar na banda de 76 px. O canvas sai do preset card por altura, 640 por 460: o rodapé escreve sete trechos que ocupam três linhas na largura de 574 px, e com os 234 px de corpo do card a nuvem de pontos de seis filas ficava sem altura para o eixo de 120 horas respirar. Cada fila a mais pede cerca de 76 px de largura."
+}

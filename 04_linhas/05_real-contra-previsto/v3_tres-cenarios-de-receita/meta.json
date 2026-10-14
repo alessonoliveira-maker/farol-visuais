@@ -1,0 +1,12 @@
+{
+  "title": "Três cenários de receita a partir do último mês medido",
+  "useCase": "Como a receita reconhecida de 2026 fecha nos cenários conservador, base e otimista, a partir do mesmo mês medido?",
+  "demonstrates": [
+    "Três tracejados com pesos diferentes saindo do mesmo ponto de junção",
+    "Rótulo final de cada cenário com formatCurrencyCompact",
+    "Frase acessível com a saída em faixa entre conservador e otimista",
+    "Cenário base em chart-1 e extremos em neutro, sem leque de área"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

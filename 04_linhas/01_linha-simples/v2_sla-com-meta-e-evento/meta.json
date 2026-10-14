@@ -1,0 +1,12 @@
+{
+  "title": "Atendimento no SLA contra a meta, com evento datado",
+  "useCase": "O percentual semanal de leads atendidos no SLA caiu abaixo da meta de 90% depois da troca de escala?",
+  "demonstrates": [
+    "Meta em ReferenceLine tracejada 3 3 com ifOverflow extendDomain",
+    "Evento em ReferenceLine vertical com rótulo curto; no máximo duas anotações",
+    "Semanas abaixo da meta com ponto e símbolo, não só com cor",
+    "Eixo em formatPercent com domínio que acomoda a meta"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

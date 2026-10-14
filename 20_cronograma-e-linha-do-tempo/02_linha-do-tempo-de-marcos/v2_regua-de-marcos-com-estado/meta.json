@@ -1,0 +1,16 @@
+{
+  "title": "Régua de marcos do trimestre com estado",
+  "useCase": "Quais dos 5 marcos do trimestre foram atingidos, qual está em curso e qual atrasou, e por quantos dias?",
+  "demonstrates": [
+    "Três estados pela forma: cheio atingido, núcleo em curso, vazado futuro",
+    "Trecho do eixo já percorrido em traço cheio e o resto em var(--line-strong)",
+    "Marco atrasado em var(--negative) com ! e a contagem de dias de atraso",
+    "Marco sem data confirmada tracejado, com a data prevista entre parênteses"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 320
+  },
+  "frame": "card",
+  "notes": "Canvas por número: a faixa (960x260) deixa cerca de 78 px de plotagem e os rótulos têm três linhas (nome, data, estado), cerca de 39 px por lado, com respiro até a ponta do losango. Com 960x320 a plotagem passa de 130 px. O trecho a percorrer usa var(--line-strong) no lugar do var(--line-subtle) do catálogo: o line-subtle quase some contra o cartão no tema claro e a régua perderia o futuro. O ícone do atraso é um ponto de exclamação dentro do losango, desenhado em SVG, para a marca continuar legível sem cor."
+}

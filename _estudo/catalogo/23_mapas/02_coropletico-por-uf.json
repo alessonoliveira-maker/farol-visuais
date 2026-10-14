@@ -1,0 +1,75 @@
+{
+  "slug": "02_coropletico-por-uf",
+  "nome": "Coroplético por UF",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Contornos reais das 27 UFs pintados por uma taxa em 3 a 7 classes. A geometria vem da API de malhas do IBGE em SVG de qualidade mínima (48 KB, um path por UF com id igual ao código IBGE), baixada uma vez por script de build e versionada em ufPaths.ts; o componente só desenha, no viewBox original e dentro do grupo com scale(0.0001, -0.0001), com vectorEffect non-scaling-stroke para o contorno não sumir. A classificação (quantis, intervalos iguais ou quebras manuais) é TypeScript. A malha de macrorregiões (14,7 KB) serve à visão da Diretoria. O modelo absorve o coroplético bivariado, com paleta 3x3 e legenda obrigatória.",
+  "quando_usar": [
+    "Taxa normalizada por UF (qualificação, CPL qualificado, participação) quando o contorno real ajuda o público a se localizar",
+    "Contraste entre regiões e vizinhança, como Sul contra Nordeste, mais do que a ordem exata das UFs",
+    "Visão executiva por macrorregião com abertura para as UFs da região escolhida",
+    "Relação entre duas taxas por UF em 3 classes cada, com espaço para a legenda 3x3",
+    "Painel com tabela ou lista sincronizada ao lado para as UFs pequenas"
+  ],
+  "quando_evitar": [
+    "Total absoluto por UF: a área premia UFs grandes; use os símbolos proporcionais (23/03)",
+    "Ranking preciso ou diferença pequena entre UFs: use as barras ordenadas (02/01_barras-simples-ordenadas)",
+    "Cartão estreito em que DF, SE, AL e RN viram pontos: use o tile grid por UF (23/01)",
+    "Tendência de cada UF no tempo: use o tile map com mini gráfico (23/04) ou a matriz categórica (15/02_matriz-categorica)",
+    "Público sem tempo para ler legenda de 9 cores: troque o bivariado por dois coropléticos lado a lado ou pela dispersão (09/01_dispersao-simples)"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_taxa-de-qualificacao-sequencial",
+      "titulo": "Qualificação de leads por UF",
+      "caso_de_uso": "Marketing: como a taxa de qualificação dos leads fictícios de 2026 se distribui pelo território.",
+      "o_que_demonstra": [
+        "Paths do IBGE em ufPaths.ts com casamento pelo código IBGE e tabela código para sigla",
+        "Grupo scale(0.0001, -0.0001) e non-scaling-stroke no contorno var(--surface-raised)",
+        "5 classes por quantis em TypeScript sobre var(--seq-3) a var(--seq-7)",
+        "Rótulo com sigla e valor só nas UFs grandes e chamadas externas para as pequenas",
+        "Legenda em degraus e lista das 5 maiores taxas escrita ao lado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_desvio-da-media-nacional",
+      "titulo": "Desvio da média nacional de qualificação",
+      "caso_de_uso": "Marketing: quais UFs ficam acima ou abaixo da média nacional fictícia de 16,4% e qual se afasta mais.",
+      "o_que_demonstra": [
+        "Divergente em var(--positive) e var(--negative) com três intensidades por fill-opacity",
+        "Centro da escala no tom mais próximo do fundo, como pede o tema escuro",
+        "UF de maior desvio com contorno grosso e anotação com sinal e pontos percentuais",
+        "Sinal + e − tipográfico em todo valor, para a cor não ser o único canal",
+        "Legenda simétrica com a média escrita no meio"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_macrorregiao-com-drill-para-uf",
+      "titulo": "Receita média por cliente por região e UF",
+      "caso_de_uso": "Diretoria: que região tem a maior receita média fictícia por cliente e como ela varia entre as UFs da região.",
+      "o_que_demonstra": [
+        "Malha de 5 macrorregiões em regiaoPaths.ts como visão padrão",
+        "Prop regiaoSelecionada que troca a camada pelas UFs da região e esmaece o resto",
+        "Tabela sincronizada com valor, posição no ranking e cobertura de dado por UF",
+        "Módulo de paths carregado sob demanda por import dinâmico ao colar no Farol",
+        "Frase acessível que muda com a região aberta"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_bivariado-com-variavel-ausente",
+      "titulo": "CPL qualificado e taxa de qualificação por UF",
+      "caso_de_uso": "Marketing: onde CPL alto convive com qualificação baixa, sem esconder UFs sem mídia paga e com amostra pequena.",
+      "o_que_demonstra": [
+        "Classificação independente em 3 classes por variável e paleta 3x3 fixa por token",
+        "Legenda 3x3 com os dois eixos nomeados e rótulo só nos cantos",
+        "UF sem CPL medido fora da paleta, com pattern hachurado e nota na legenda",
+        "UF com menos de 30 leads com contorno pontilhado e rótulo amostra pequena",
+        "Canto baixo e baixo perto do fundo e alto e alto como o tom mais saturado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

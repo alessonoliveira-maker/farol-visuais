@@ -1,0 +1,355 @@
+{
+  "familia": "05_areas",
+  "modelo": "08_streamgraph",
+  "versoes": {
+    "v1_leads-por-campanha-no-ano": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, forma correta para sazonalidade e peso relativo, nota de honestidade presente, legenda com total por campanha. Divergencia com o catalogo (total na legenda e nao dentro das camadas) segue declarada no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:35.930Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    "v2_picos-sazonais-com-destaque": {
+      "veredito": "aprovado",
+      "nota": "Check com aviso de frase acessivel (235 de 250), sem erro. Destaque legivel nos dois temas, dois picos conferidos contra o dado (101 e 187, webinar 73 por cento). Falta o substantivo na anotacao, nao bloqueia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:41.688Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    "v3_origens-ordenadas-por-tamanho": {
+      "veredito": "aprovado",
+      "nota": "Quinta passada resolve o que as quatro revisoes anteriores reprovaram: medido no PNG escuro, maior corrida de fundo dentro da pilha e de 5 px de dispositivo (o separador de 1,5 px na diagonal), a troca de posto lê como movimento ao longo do tempo e a espessura acompanha o valor interpolado. Travessia em duas laminas declarada no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:48.103Z",
+      "impressao": "8c8c599ee7f1edf9a5f42cffd5294c1ae12d42dc",
+      "arquivos": {
+        "Chart.tsx": "5e0f25db12ad843e9c20a6df6e4263bfd3b06f4c",
+        "data.ts": "5c2804c0ccfc126ee106441268e9b0fa4a9db337",
+        "meta.json": "24e8f6439a9b04537e90c3d6d60c79d18a4dd60f"
+      }
+    },
+    "v4_criativos-de-vida-curta": {
+      "veredito": "aprovado",
+      "nota": "Check com aviso de frase acessivel (238 de 250), sem erro. Zero verdadeiro fora da janela do criativo, corte de 3 por cento escrito no corpo, Outras com a contagem. Grafia creativo nas chaves do dado e rotulo Outras contra Outros do catalogo seguem como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:54.361Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Forma, ordem em TypeScript, teto de 6 cores e nota de honestidade corretos nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:07.170Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque com segundo canal, picos calculados do dado e anotados; legenda neutra e frase de 235 caracteres ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:11.949Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v3_origens-ordenadas-por-tamanho",
+      "veredito": "reprovado",
+      "nota": "Buracos de fundo dentro do fluxo nas trocas de ordem, camadas sobrepostas com a mesma origem em duas manchas, e rotulos de mes deformados abaixo do piso de 11 px por preserveAspectRatio none.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:17.134Z",
+      "impressao": "48d1db4206ccdeb26ac760b5c98786da90a8b299",
+      "arquivos": {
+        "Chart.tsx": "eaa324b7059009938082d944ba339ee90e5bf853",
+        "data.ts": "bbfe673de2fbaac45ef5fde4f09bd864e89ebfba",
+        "meta.json": "49769636171a49c6af3ebcf49968fb8c24d3fc5d"
+      }
+    },
+    {
+      "versao": "v4_criativos-de-vida-curta",
+      "veredito": "aprovado",
+      "nota": "Zero verdadeiro fora da janela, corte de 3 por cento escrito e animacao desligada; frase de 238 caracteres e o rotulo Outras ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:53:22.798Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    },
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Silhouette honesta, nota de forma sem eixo, cores por chave nos slots 1,3,6,5,2,4; total do ano na legenda em vez de dentro das camadas, divergencia do catalogo registrada no README.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:16:13.489Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque em chart-1 com segundo canal no peso do rotulo, picos calculados do dado e anotados com halo; neutro compartilhado pelas quatro de contexto e frase de 235 caracteres ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:17:00.701Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v3_origens-ordenadas-por-tamanho",
+      "veredito": "reprovado",
+      "nota": "Buracos e cruzamentos resolvidos, mas a troca de ordem virou corte vertical num x unico: as camadas nao se ligam entre periodos como o catalogo pede e a mudanca de ordem nao se le como movimento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:17:05.720Z",
+      "impressao": "37b6851d583225f0a1c4613c6d8d254080740eba",
+      "arquivos": {
+        "Chart.tsx": "3ac5ef28457fe3d1144f29746ce2e617bd2b78e0",
+        "data.ts": "bbfe673de2fbaac45ef5fde4f09bd864e89ebfba",
+        "meta.json": "c883c820cfd8934b30cbd94eab323612c6a0c1fa"
+      }
+    },
+    {
+      "versao": "v4_criativos-de-vida-curta",
+      "veredito": "aprovado",
+      "nota": "Zero medido fora da janela, corte de 3 por cento escrito no corpo, contagem no rotulo de Outras e animacao desligada; frase de 238 caracteres e o par Outras contra Outros ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:17:10.566Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    },
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Forma, cores e legenda corretas nos dois temas; total do ano foi para a legenda, divergencia do catalogo declarada no meta.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:05.197Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque com segundo canal de peso, duas anotações, legível nos dois temas; contexto neutro indistinto na legenda fica como observação.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:12.490Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque com segundo canal de peso, duas anotações e leitura limpa nos dois temas; contexto neutro indistinto na legenda fica como observação.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:18.070Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Forma, cor e legenda corretas nos dois temas; o total do ano saiu das camadas para a legenda e o meta.json declara a troca.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:51.337Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque com peso como segundo canal, dois picos anotados e leitura limpa nos dois temas; contexto neutro indistinto na legenda fica como observação.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:51.405Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v3_origens-ordenadas-por-tamanho",
+      "veredito": "reprovado",
+      "nota": "A pilha quebra na troca de ordem: em jan/26 e abr/26 a faixa abre buracos de fundo e as camadas viram blocos com corte reto, então a mudança de ordem não se lê como cruzamento.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:51.469Z",
+      "impressao": "0f9c7ec4dcf3f1d0c6a387801e4f8ddc8d5c24e8",
+      "arquivos": {
+        "Chart.tsx": "47a4116c0a487dad2fc4c1f1b18d640693a7ceff",
+        "data.ts": "bbfe673de2fbaac45ef5fde4f09bd864e89ebfba",
+        "meta.json": "6ecd27681e0acaa20650f79bef42b3077e1dc395"
+      }
+    },
+    {
+      "versao": "v4_criativos-de-vida-curta",
+      "veredito": "aprovado",
+      "nota": "Zero medido desenhado como zero, agrupamento em Outras com contagem e regra no rodapé, leitura limpa nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:42:51.532Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    },
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; forma e legenda legiveis nos dois temas; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:26:47.001Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque unico legivel, duas anotacoes, check com aviso de frase acessivel apenas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:26:52.486Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v4_criativos-de-vida-curta",
+      "veredito": "aprovado",
+      "nota": "Entrada e saida de criativo como zero verdadeiro, corte de 3 por cento no rodape; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:26:52.960Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    },
+    {
+      "versao": "v3_origens-ordenadas-por-tamanho",
+      "veredito": "reprovado",
+      "nota": "Fundo do cartao aparece dentro da faixa em toda troca de ordem: 12 a 15 vaos de 400 px ou mais nos dois temas, o maior de 73 por 63 px.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:26:57.579Z",
+      "impressao": "9debb4e0fc40f0d6be893038cd1ec7454f6d5f19",
+      "arquivos": {
+        "Chart.tsx": "2fa7afe786a934f55d6f209c001c20f2fdf07abb",
+        "data.ts": "bbfe673de2fbaac45ef5fde4f09bd864e89ebfba",
+        "meta.json": "f9649e38582d4e02a09ee8735f14ee8a6e860311"
+      }
+    },
+    {
+      "versao": "v1_leads-por-campanha-no-ano",
+      "veredito": "aprovado",
+      "nota": "Check limpo, forma correta para sazonalidade e peso relativo, nota de honestidade presente, legenda com total por campanha. Divergencia com o catalogo (total na legenda e nao dentro das camadas) segue declarada no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:35.930Z",
+      "impressao": "73018f2cd393ce5a83474a54071388ec9e6094e8",
+      "arquivos": {
+        "Chart.tsx": "d578ac1e37d73717f14d9d92624d29703ba9885d",
+        "data.ts": "442ada9e3d891dd03c439b91a91f0b2be6d3b029",
+        "meta.json": "fe123a82a01e475c3e2ec9897dd6d77bf91bec3a"
+      }
+    },
+    {
+      "versao": "v2_picos-sazonais-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Check com aviso de frase acessivel (235 de 250), sem erro. Destaque legivel nos dois temas, dois picos conferidos contra o dado (101 e 187, webinar 73 por cento). Falta o substantivo na anotacao, nao bloqueia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:41.688Z",
+      "impressao": "26dcf87e6e1f587d8ef72ad910218c92ba755b44",
+      "arquivos": {
+        "Chart.tsx": "7063c50f84ba645626ff180b6974106b69e7442e",
+        "data.ts": "358d498a72c286035e3e309bc435afb8ee5b736b",
+        "meta.json": "7a1e9ed4614bfd891c6dcb48f59acae9d452b4dd"
+      }
+    },
+    {
+      "versao": "v3_origens-ordenadas-por-tamanho",
+      "veredito": "aprovado",
+      "nota": "Quinta passada resolve o que as quatro revisoes anteriores reprovaram: medido no PNG escuro, maior corrida de fundo dentro da pilha e de 5 px de dispositivo (o separador de 1,5 px na diagonal), a troca de posto lê como movimento ao longo do tempo e a espessura acompanha o valor interpolado. Travessia em duas laminas declarada no meta.json.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:48.103Z",
+      "impressao": "8c8c599ee7f1edf9a5f42cffd5294c1ae12d42dc",
+      "arquivos": {
+        "Chart.tsx": "5e0f25db12ad843e9c20a6df6e4263bfd3b06f4c",
+        "data.ts": "5c2804c0ccfc126ee106441268e9b0fa4a9db337",
+        "meta.json": "24e8f6439a9b04537e90c3d6d60c79d18a4dd60f"
+      }
+    },
+    {
+      "versao": "v4_criativos-de-vida-curta",
+      "veredito": "aprovado",
+      "nota": "Check com aviso de frase acessivel (238 de 250), sem erro. Zero verdadeiro fora da janela do criativo, corte de 3 por cento escrito no corpo, Outras com a contagem. Grafia creativo nas chaves do dado e rotulo Outras contra Outros do catalogo seguem como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:38:54.361Z",
+      "impressao": "b4f6b84f2b0c52a987ce6157b27fd0da0d2c3ede",
+      "arquivos": {
+        "Chart.tsx": "18b486daa8ca2c141ea25f7388c9598e09f8b0e0",
+        "data.ts": "bf3ca44f16f488c9e4ef0d3becad47097f153514",
+        "meta.json": "aaea8ffb83ce01ce066573963da0d4b4a82e66f7"
+      }
+    }
+  ]
+}

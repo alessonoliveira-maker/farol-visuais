@@ -1,0 +1,13 @@
+{
+  "title": "Ciclo de venda mediano por segmento",
+  "useCase": "Quantos dias leva o ciclo de venda em cada segmento, com a faixa do 1º ao 3º quartil.",
+  "demonstrates": [
+    "Scatter com ErrorBar direction x e serifas de 6 px",
+    "Quartis absolutos convertidos em erro relativo antes do render",
+    "Subtítulo que declara ponto na mediana e faixa entre quartis",
+    "n de negócios escrito sob o nome de cada segmento"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O eixo de linhas é numérico (−0,5 a n−0,5, com reversed), como no dot plot de Cleveland, para a zebra e a área sensível terem banda exata. O n fica sob o nome, em duas linhas, porque uma linha só pediria 200 px de coluna e tiraria a escala. Conta da altura: 5 linhas x 34 px = 170, mais 12 de margem, 26 de eixo e 24 de subtítulo = 232 px, dentro dos 241,5 px do corpo do card com caso de uso em uma linha."
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Atingimento da meta semanal por faixa",
+  "useCase": "Quais etapas da semana da pré-vendas já batem a própria meta e quais estão perto ou abaixo dela.",
+  "demonstrates": [
+    "Cor por faixa de atingimento: positive, warning e negative, do dentro ao abaixo da meta",
+    "Limites das faixas como prop com default, sem número mágico no shape",
+    "Legenda das três faixas acima do gráfico, na ordem visual das marcas",
+    "Meta declarada como sendo da etapa, dentro da semana, não do resultado final"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "05_histograma-comparativo",
+  "nome": "Histograma comparativo entre grupos",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Duas a quatro distribuições da mesma métrica na mesma régua de bins, em três arranjos: sobrepostas com transparência, espelhadas costas com costas (pirâmide) ou empilhadas por categoria. Cada arranjo responde uma pergunta diferente: deslocamento entre grupos, confronto binário faixa a faixa e de que grupo é feito o volume de cada bin. A régua comum é o que dá sentido à peça, então bin, domínio e ordem de desenho ficam fixos entre filtros. Montado em BarChart com os bins já agregados por grupo em TypeScript.",
+  "quando_usar": [
+    "Comparar 2 ou 3 grupos na mesma régua: negócio novo contra cliente da casa, mídia paga contra indicação.",
+    "Confronto binário forte por faixa, como ganhos contra perdas por faixa de ticket, em pirâmide.",
+    "Saber de que grupo vem o volume de cada faixa quando o total manda, com até 4 grupos empilhados.",
+    "Grupos com pelo menos umas 30 observações cada, ou percentual dentro do grupo quando os tamanhos diferem."
+  ],
+  "quando_evitar": [
+    "Quatro grupos ou mais sobrepostos: pequenos múltiplos de histograma (01) ou ridgeline (08).",
+    "Comparar a forma de cada grupo no empilhado: só a camada de base tem linha comum; usar sobreposto ou facetas.",
+    "Mais de dois grupos na pirâmide: sobrepostos ou pequenos múltiplos.",
+    "Composição a 100% por faixa: deixa de ser distribuição; barras da família 02 ou mosaico da 26.",
+    "Formas suaves de grupos grandes: densidades sobrepostas (06)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-novo-contra-cliente-da-casa",
+      "titulo": "Ciclo de negócio novo contra cliente da casa",
+      "caso_de_uso": "Negócio novo demora quanto a mais para fechar do que cliente da casa, na mesma régua de 7 dias?",
+      "o_que_demonstra": [
+        "Dois Bar sem stackId e barGap negativo para sobreposição real no mesmo bin",
+        "Opacidade de 0,55 e ordem de desenho por n decrescente, fixa entre filtros",
+        "Linhas de mediana com seta e rótulo 34 dias de diferença na mediana",
+        "Legenda com cor, nome do grupo e n de cada um"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_ganhos-contra-perdas-por-faixa-de-ticket",
+      "titulo": "Ganhos contra perdas por faixa de ticket",
+      "caso_de_uso": "A partir de que faixa de ticket o comercial ganha mais oportunidades do que perde?",
+      "o_que_demonstra": [
+        "BarChart vertical com um lado negativo e outro positivo, faixas de R$ 25 mil",
+        "Math.abs em tickFormatter, LabelList e Tooltip para nunca mostrar sinal de menos",
+        "Domínio simétrico calculado sobre o máximo dos dois lados e fixado",
+        "Faixa em que as ganhas passam as perdidas com fundo --surface-raised e rótulo"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_ciclo-empilhado-por-origem-em-foco",
+      "titulo": "Ciclo empilhado por origem com indicação em foco",
+      "caso_de_uso": "Em que faixas de ciclo caem os negócios de indicação, e quanto do volume de cada faixa eles representam?",
+      "o_que_demonstra": [
+        "Bar com o mesmo stackId e o maior grupo na base, ordem fixa entre filtros",
+        "Camada de indicação em --chart-1 e as outras duas origens em neutro",
+        "Tooltip com o total da faixa e a participação de cada origem nela",
+        "Acima de 4 origens o empilhamento é recusado, com indicação de pequenos múltiplos"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_grupos-de-tamanho-desigual",
+      "titulo": "Mídia paga contra indicação em percentual do canal",
+      "caso_de_uso": "Como comparar o tempo até a agenda de 640 leads de mídia paga com o de só 38 leads de indicação?",
+      "o_que_demonstra": [
+        "Troca de contagem por percentual dentro do grupo, escrita no eixo Y",
+        "n bruto de cada canal na legenda, para não esconder o grupo minúsculo",
+        "Alternador absoluto ou percentual do grupo, com a escolha no rótulo do eixo",
+        "Grupo pequeno desenhado por cima, com ordem fixa mesmo quando o filtro muda"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

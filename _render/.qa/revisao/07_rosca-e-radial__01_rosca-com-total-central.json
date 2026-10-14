@@ -1,0 +1,147 @@
+{
+  "familia": "07_rosca-e-radial",
+  "modelo": "01_rosca-com-total-central",
+  "versoes": {
+    "v1_investimento-de-midia-do-mes": {
+      "veredito": "aprovado",
+      "nota": "Composicao de 3 canais correta: percentual inteiro por maior resto somando 100, slots 1-3-6, total no centro sem repetir no titulo, legenda na ordem visual.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:12.766Z",
+      "impressao": "03cd516a5c04d3556b2f7fb5d808ad0147568d2a",
+      "arquivos": {
+        "Chart.tsx": "ba2e10806e6a299a66963faeb4c820fff03752e8",
+        "data.ts": "503eae8adb21d645c937a52f9644d7c1efba0abf",
+        "meta.json": "d93b254a3a575fde2313f21af2679c6f4e332ab2"
+      }
+    },
+    "v2_perdas-por-motivo-com-fatia-ativa": {
+      "veredito": "aprovado",
+      "nota": "ROT-7 fechada: nome do centro quebrado por palavra, medido por tinta nos 5 estados de foco e no ponteiro, nos dois temas. Menor folga até a corda do raio interno: 5,1 px por lado em Sem resposta no (111,0 px de tinta contra 121,1 px de corda); nenhuma tinta toca o anel. Check com 0 erros. Observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:40:42.992Z",
+      "impressao": "73a1d5edbdc2aec8347f7ebdc802d116dc2003c5",
+      "arquivos": {
+        "Chart.tsx": "88df0c293f224cefe5a77ac91f07ed14bd81816a",
+        "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
+        "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
+      }
+    },
+    "v3_carteira-aberta-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Etapas na ordem do funil com rampa sequencial seq-4 a seq-7, centro em valor e contagem, legenda de tres colunas com percentual somando 100.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:22.738Z",
+      "impressao": "8a0614f91295cf846ce9134d6d627f233b4e8e3c",
+      "arquivos": {
+        "Chart.tsx": "612375c17daf8e7ee4ac02edef5249a241d43847",
+        "data.ts": "afc1916cb28ea79f0e85d14ae4fad6258c848876",
+        "meta.json": "0049824eee81d1f7d2f08686cb6f9a6dc3300338"
+      }
+    },
+    "v4_origem-com-fatia-minima-e-ausencia": {
+      "veredito": "aprovado",
+      "nota": "Desenho atual conferido nos dois temas: botões da legenda em Manrope 12 px, 325 por 16 px, nome sem reticência, colunas de número alinhadas à direita, sem corte nem colisão, e preview igual à página (0 pixel acima da tolerância). Percentuais somam 100 pelo maior resto, ausência vazada e por último, fora de Outros. Observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:25:03.841Z",
+      "impressao": "45e1938b95288a56e0fb730364f59b2adfc0b69f",
+      "arquivos": {
+        "Chart.tsx": "729355e4a2ecb217adda373769226cab6972710e",
+        "data.ts": "531cb5b4661105426febcda1000676f9d8ec3359",
+        "meta.json": "b79de1046e1a7f83b78892a0d4c747595106eb8c"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_investimento-de-midia-do-mes",
+      "veredito": "aprovado",
+      "nota": "Composicao de 3 canais correta: percentual inteiro por maior resto somando 100, slots 1-3-6, total no centro sem repetir no titulo, legenda na ordem visual.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:12.766Z",
+      "impressao": "03cd516a5c04d3556b2f7fb5d808ad0147568d2a",
+      "arquivos": {
+        "Chart.tsx": "ba2e10806e6a299a66963faeb4c820fff03752e8",
+        "data.ts": "503eae8adb21d645c937a52f9644d7c1efba0abf",
+        "meta.json": "d93b254a3a575fde2313f21af2679c6f4e332ab2"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo-com-fatia-ativa",
+      "veredito": "aprovado",
+      "nota": "Fatia ativa por shape com isActive, raio maior e peso 700 na legenda: destaque nao depende so da cor. Percentuais somam 100 e a ordem da legenda segue a do anel.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:17.877Z",
+      "impressao": "108112c64783cd927e9cbe5be542af16febf5d37",
+      "arquivos": {
+        "Chart.tsx": "fbf3850be6642967d8a80204aa83987ad13e75c2",
+        "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
+        "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
+      }
+    },
+    {
+      "versao": "v3_carteira-aberta-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Etapas na ordem do funil com rampa sequencial seq-4 a seq-7, centro em valor e contagem, legenda de tres colunas com percentual somando 100.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:22.738Z",
+      "impressao": "8a0614f91295cf846ce9134d6d627f233b4e8e3c",
+      "arquivos": {
+        "Chart.tsx": "612375c17daf8e7ee4ac02edef5249a241d43847",
+        "data.ts": "afc1916cb28ea79f0e85d14ae4fad6258c848876",
+        "meta.json": "0049824eee81d1f7d2f08686cb6f9a6dc3300338"
+      }
+    },
+    {
+      "versao": "v4_origem-com-fatia-minima-e-ausencia",
+      "veredito": "aprovado",
+      "nota": "Teto de 5 nomeadas com Outros (n=3), ausencia sem preenchimento e por ultimo, minAngle 0 preserva a fatia de 1%. Ressalva na frase acessivel, nao bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:47:27.762Z",
+      "impressao": "45e1938b95288a56e0fb730364f59b2adfc0b69f",
+      "arquivos": {
+        "Chart.tsx": "729355e4a2ecb217adda373769226cab6972710e",
+        "data.ts": "531cb5b4661105426febcda1000676f9d8ec3359",
+        "meta.json": "b79de1046e1a7f83b78892a0d4c747595106eb8c"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo-com-fatia-ativa",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 20, ROT-6, ROT-7 e ACE-3: ao ativar pela legenda 3 dos 5 motivos do data.ts, o nome no centro mede de 147 a 178 px, passa do miolo de 129,6 px e cobre o anel, em text-primary sobre a fatia a 1,53:1 no escuro e 2,99:1 no claro. Quebrar o nome em até duas linhas dentro da corda do raio interno, sem reticência, e conferir os 5 estados nos dois temas. Sem relação com a mudança do botão: os botões da legenda estão corretos no desenho atual.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:25:03.390Z",
+      "impressao": "108112c64783cd927e9cbe5be542af16febf5d37",
+      "arquivos": {
+        "Chart.tsx": "fbf3850be6642967d8a80204aa83987ad13e75c2",
+        "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
+        "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
+      }
+    },
+    {
+      "versao": "v4_origem-com-fatia-minima-e-ausencia",
+      "veredito": "aprovado",
+      "nota": "Desenho atual conferido nos dois temas: botões da legenda em Manrope 12 px, 325 por 16 px, nome sem reticência, colunas de número alinhadas à direita, sem corte nem colisão, e preview igual à página (0 pixel acima da tolerância). Percentuais somam 100 pelo maior resto, ausência vazada e por último, fora de Outros. Observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:25:03.841Z",
+      "impressao": "45e1938b95288a56e0fb730364f59b2adfc0b69f",
+      "arquivos": {
+        "Chart.tsx": "729355e4a2ecb217adda373769226cab6972710e",
+        "data.ts": "531cb5b4661105426febcda1000676f9d8ec3359",
+        "meta.json": "b79de1046e1a7f83b78892a0d4c747595106eb8c"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo-com-fatia-ativa",
+      "veredito": "aprovado",
+      "nota": "ROT-7 fechada: nome do centro quebrado por palavra, medido por tinta nos 5 estados de foco e no ponteiro, nos dois temas. Menor folga até a corda do raio interno: 5,1 px por lado em Sem resposta no (111,0 px de tinta contra 121,1 px de corda); nenhuma tinta toca o anel. Check com 0 erros. Observações no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:40:42.992Z",
+      "impressao": "73a1d5edbdc2aec8347f7ebdc802d116dc2003c5",
+      "arquivos": {
+        "Chart.tsx": "88df0c293f224cefe5a77ac91f07ed14bd81816a",
+        "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
+        "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
+      }
+    }
+  ]
+}

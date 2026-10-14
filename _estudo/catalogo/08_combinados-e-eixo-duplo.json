@@ -1,0 +1,425 @@
+{
+  "slug": "08_combinados-e-eixo-duplo",
+  "nome": "Combinados e eixo duplo",
+  "modelos": [
+    {
+      "slug": "01_coluna-com-linha",
+      "nome": "Coluna com linha (eixo único)",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Colunas com o valor de cada período e uma única linha na mesma unidade: meta, média móvel, mesmo período do ano anterior ou teto. Absorve as colunas empilhadas ou agrupadas com uma linha de referência, desde que a linha fale a unidade das colunas. Um só eixo y, então a altura da coluna e a posição da linha se comparam diretamente, sem escala arbitrária.",
+      "quando_usar": [
+        "Grandeza por período com meta, média móvel ou ano anterior na mesma unidade: receita contra meta mensal, fechamentos com média de 4 semanas.",
+        "Composição por período em 2 a 5 camadas empilhadas com um teto ou limiar na mesma unidade: fila de pré-vendas por etapa contra a capacidade.",
+        "De 6 a 26 períodos num cartão; até 52 em canvas largo, com tiques espaçados e texto sempre horizontal."
+      ],
+      "quando_evitar": [
+        "Linha em unidade diferente das colunas (taxa, CPL): use 03_paineis-alinhados ou, com público habituado, 02_eixo-duplo-com-dominios-calculados.",
+        "Linha que só repete o total da pilha: rotule o total acima da coluna e dispense a linha.",
+        "Meta igual em todos os períodos e nenhuma outra linha: basta a referência de 03_colunas-verticais/06_colunas-contra-meta-ou-limiar.",
+        "A pergunta é quanto passou do teto: o excedente destacado mora em 03_colunas-verticais/06_colunas-contra-meta-ou-limiar.",
+        "Mais de uma linha sobre a pilha ou mais de 5 camadas: agrupe camadas ou separe em painéis."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-mensal-contra-meta",
+          "titulo": "Receita reconhecida contra meta mensal",
+          "caso_de_uso": "Cada mês de 2026 bateu a meta de receita reconhecida, e por quanto ficou acima ou abaixo dela?",
+          "o_que_demonstra": [
+            "ComposedChart com Bar antes de Line no mesmo YAxis",
+            "Linha de meta com pontos e rótulo direto no último mês",
+            "Dica única com realizado, meta e diferença em moeda compacta",
+            "Domínio a partir do zero com ticks redondos calculados no componente"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_fechamentos-com-media-movel",
+          "titulo": "Fechamentos semanais com média móvel",
+          "caso_de_uso": "A semana corrente está acima ou abaixo do ritmo das últimas quatro semanas de fechamentos?",
+          "o_que_demonstra": [
+            "Média móvel de 4 semanas sobre a mesma janela filtrada das colunas",
+            "Semana corrente parcial com coluna vazada e nota de parcial até a data",
+            "Calendário completo gerado em TypeScript no eixo categórico",
+            "Destaque da semana corrente com peso 700 além da cor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_fila-por-etapa-contra-teto",
+          "titulo": "Fila de pré-vendas por etapa contra o teto",
+          "caso_de_uso": "Em quais semanas o estoque da fila de pré-vendas, somado por etapa, passou do teto de capacidade da equipe?",
+          "o_que_demonstra": [
+            "Colunas empilhadas por etapa com stackId e slot de cor fixo por etapa",
+            "Teto como ReferenceLine com ifOverflow extendDomain e rótulo na margem",
+            "Total acima da pilha ancorado em série auxiliar, imune a camada zero",
+            "Legenda na ordem visual da pilha com legendType rect e plainline",
+            "26 semanas em canvas largo com tiques espaçados, sem girar texto"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_meta-ausente-e-estorno",
+          "titulo": "Meses sem meta e mês negativo por estorno",
+          "caso_de_uso": "Como mostrar receita contra meta quando dois meses não têm meta cadastrada e um estorno deixa um mês negativo?",
+          "o_que_demonstra": [
+            "Meta ausente como null com connectNulls false: linha interrompida e nota",
+            "Coluna negativa com ReferenceLine no zero em line-strong",
+            "Domínio que inclui o negativo sem perder ticks redondos",
+            "Frase acessível que cita os meses sem meta e o estorno"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_eixo-duplo-com-dominios-calculados",
+      "nome": "Eixo duplo com domínios calculados",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Duas medidas de unidades diferentes no mesmo quadro, cada uma no seu eixo y, com os domínios decididos por função pura em TypeScript e nunca pelo automático do Recharts: zeros alinhados, o mesmo número de marcas nos dois eixos, eixo e série na mesma cor. A forma legítima é coluna de quantidade com linha de taxa; linha e linha só com regra de escala declarada; colunas nos dois eixos entram apenas como antipadrão catalogado, com a correção ao lado.",
+      "quando_usar": [
+        "Quantidade e taxa sobre o mesmo tempo, para público habituado ao cartão: leads e percentual qualificado, agendas e taxa de comparecimento.",
+        "Forma de duas séries de unidades diferentes ao longo do tempo, com a regra de escala por índice escrita no rodapé do corpo.",
+        "Até 26 períodos, uma série por eixo e no máximo uma linha no eixo secundário."
+      ],
+      "quando_evitar": [
+        "Público geral sem mediação: use 03_paineis-alinhados ou índice base 100 em 04_linhas/02_multiplas-series.",
+        "Duas grandezas absolutas em colunas: é o antipadrão; troque por painéis ou por 03_colunas-verticais/08_colunas-em-small-multiples.",
+        "Mesma unidade nas duas séries: use 01_coluna-com-linha com eixo único.",
+        "Leitura de nível ou de cruzamento entre as séries: a escala é arbitrária e o cruzamento não significa nada.",
+        "Mais de duas séries, ou taxa de crescimento num eixo e valor bruto no outro.",
+        "Enquanto a EIX-8 do CONTRATO (sem eixo duplo) valer sem exceção registrada, a entrega padrão é o modo painéis."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-e-percentual-qualificado",
+          "titulo": "Leads por mês e percentual qualificado",
+          "caso_de_uso": "O volume de leads cresceu em 2026 sem derrubar a proporção de leads qualificados?",
+          "o_que_demonstra": [
+            "Dois YAxis com yAxisId, a taxa em orientation right",
+            "Domínios fixos por função pura com allowDataOverflow e niceTicks none",
+            "Tique e título de eixo na cor da série correspondente",
+            "Grade só do eixo principal e o mesmo número de marcas nos dois eixos",
+            "Dica com as duas unidades e o denominador da taxa"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cpl-e-leads-em-duas-linhas",
+          "titulo": "CPL e volume de leads em duas linhas",
+          "caso_de_uso": "O custo por lead e o volume de leads mudam de forma juntos, ou um sobe quando o outro cai?",
+          "o_que_demonstra": [
+            "Linha e linha em eixo duplo com escala por índice na mesma data base",
+            "Regra de escala declarada numa nota curta no rodapé do corpo",
+            "Aviso quando uma série varia muito mais e a regra achata a outra",
+            "Nenhuma anotação no cruzamento das duas linhas"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_agendas-e-comparecimento-26-semanas",
+          "titulo": "Agendas e comparecimento em 26 semanas",
+          "caso_de_uso": "A taxa de comparecimento cai nas semanas de muitas agendas, e em quais semanas a taxa nem existe?",
+          "o_que_demonstra": [
+            "Semana com zero agendas vira taxa nula e ponto ausente, nunca 0%",
+            "Taxa acima de 100% por erro de dado marcada como anomalia, com palavra",
+            "formatRateWithVolume na dica, com numerador e denominador",
+            "Ticks como frações iguais do domínio para as marcas coincidirem",
+            "26 semanas em canvas largo sem girar tiques"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_antipadrao-colunas-em-dois-eixos",
+          "titulo": "Colunas em dois eixos e a versão corrigida",
+          "caso_de_uso": "Por que investimento em R$ e leads por plataforma, em colunas de dois eixos, enganam, e como fica a leitura correta?",
+          "o_que_demonstra": [
+            "Pares de colunas cujas alturas não se comparam entre si",
+            "Correção em painéis alinhados ao lado, com as mesmas cores e ordem",
+            "Guarda que recusa duas Bar em yAxisId distintos e escreve o motivo",
+            "Plataformas fictícias com nome genérico, sem marca real"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_paineis-alinhados",
+      "nome": "Painéis alinhados",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Dois ou três gráficos empilhados na vertical sobre o mesmo eixo x, cada um com o seu eixo y à esquerda e a mesma largura de eixo, amarrados por syncId para cursor e dica andarem juntos. É a saída padrão do Farol para duas ou três grandezas de unidades diferentes no mesmo calendário e a forma que a EIX-8 do padrão de acabamento pede no lugar do eixo duplo. Variação sem painel extra: rotular diretamente a segunda série e dispensar o segundo eixo.",
+      "quando_usar": [
+        "Duas ou três métricas de unidades diferentes no mesmo calendário: investimento e CPL qualificado; entradas, agendas e fechamentos.",
+        "Público geral, sem mediação, que precisa ler nível e variação de cada métrica sem escala arbitrária.",
+        "Até 52 períodos por painel, com o painel principal ocupando cerca de dois terços da altura."
+      ],
+      "quando_evitar": [
+        "Espaço vertical mínimo, como faixa ou KPI: rotule a segunda série num gráfico só (v2) ou use 24_microvisuais-sparklines.",
+        "Mais de três painéis: vira pequenos múltiplos em 04_linhas/09_pequenos-multiplos-de-linha.",
+        "Métricas na mesma unidade: um gráfico só, em 04_linhas/02_multiplas-series ou 01_coluna-com-linha.",
+        "Painéis lidos em altura uns contra os outros sem escala comum: aplique a EIX-9 ou a comparação cruzada engana."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_investimento-sobre-cpl-qualificado",
+          "titulo": "Investimento e CPL qualificado em painéis",
+          "caso_de_uso": "O aumento do investimento mensal em mídia paga veio acompanhado de CPL qualificado mais caro?",
+          "o_que_demonstra": [
+            "Dois ComposedChart com o mesmo syncId e o mesmo array de meses",
+            "YAxis width fixo numa constante e margens laterais idênticas",
+            "XAxis só no painel de baixo, com hide no de cima",
+            "Título de painel com a unidade no lugar da legenda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_cpl-com-volume-rotulado",
+          "titulo": "CPL com volume de leads rotulado",
+          "caso_de_uso": "Como mostrar o CPL mês a mês e ainda dizer o volume de leads sem abrir um segundo eixo?",
+          "o_que_demonstra": [
+            "Um eixo só, o do CPL, com o volume escrito nos pontos que mudam a leitura",
+            "No máximo duas anotações de volume, com halo sobre a linha",
+            "Rótulo direto como alternativa ao eixo duplo, sem painel extra",
+            "Frase acessível que inclui o volume dos meses anotados"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_entradas-agendas-fechamentos",
+          "titulo": "Entradas, agendas e fechamentos sincronizados",
+          "caso_de_uso": "O funil andou junto nas últimas 26 semanas, ou uma etapa travou enquanto as outras seguiam?",
+          "o_que_demonstra": [
+            "Três painéis com syncId e cursor que atravessa todos",
+            "Alturas proporcionais à importância, com o eixo x só no último",
+            "Brush único que recorta os três painéis ao mesmo tempo",
+            "Contagens com allowDecimals false e ticks redondos por painel"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_metrica-nova-com-lacuna",
+          "titulo": "Painéis com métrica medida só desde maio",
+          "caso_de_uso": "Como alinhar receita e taxa de conversão quando a taxa só passou a ser medida em mai/2026?",
+          "o_que_demonstra": [
+            "Meses sem medição como null, sem interpolação nem zero",
+            "Largura de eixo fixa mesmo com rótulos de tamanhos muito diferentes",
+            "Nota curta no painel dizendo desde quando a métrica existe",
+            "Ausência escrita no próprio painel, sem depender da dica para o nulo"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "04_pareto",
+      "nome": "Pareto",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Colunas ou barras em ordem decrescente e uma linha com o percentual acumulado do total, de 0 a 100%, para achar as poucas causas que concentram o efeito. O eixo do acumulado é derivado do eixo das colunas, por isso a combinação é legítima; fixando o eixo das colunas de 0 ao total, o percentual vira só outra rotulagem da mesma escala. Ordenação, agrupamento em Outros e acumulado são calculados em TypeScript antes do render, e o destaque das categorias até o corte sai do shape da Bar.",
+      "quando_usar": [
+        "Priorizar causas que concentram o efeito: motivos de perda, motivos de desqualificação, origens de lead sem dado.",
+        "De 4 a cerca de 12 categorias visíveis mais Outros no fim; cauda maior vai agrupada com a contagem no rótulo.",
+        "Quantidade ou valor sempre positivos, com a pergunta de concentração explícita: quantos motivos fazem 80%."
+      ],
+      "quando_evitar": [
+        "Menos de 4 categorias: barras ordenadas em 02_barras-horizontais/01_barras-simples-ordenadas.",
+        "Categorias com ordem própria, como etapas ou faixas de ticket: ordenar por valor destrói a ordem; use 03_colunas-verticais/01_colunas-simples.",
+        "Valores negativos ou estornos: a curva acumulada perde sentido; use 03_colunas-verticais/05_colunas-positivo-e-negativo ou 19_cascata-waterfall.",
+        "Concentração de uma distribuição contínua, como ticket por cliente: 16_distribuicao/10_curva-de-lorenz.",
+        "Quantidade e valor misturados no mesmo gráfico: ordenam diferente; ofereça alternância (v3)."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_perdas-por-motivo",
+          "titulo": "Perdas do trimestre por motivo",
+          "caso_de_uso": "Quais motivos explicam a maior parte das oportunidades perdidas no trimestre?",
+          "o_que_demonstra": [
+            "Ordenação decrescente com desempate estável por nome, antes do render",
+            "Outros sempre no fim, mesmo quando maior que a última categoria",
+            "Eixo das colunas de 0 ao total: a 1ª coluna toca o 1º ponto da linha",
+            "Acumulado sobre valores brutos, arredondado só na exibição"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_corte-em-80-por-cento",
+          "titulo": "Motivos que somam 80% das perdas",
+          "caso_de_uso": "Quantos motivos de perda cruzam a marca de 80% e merecem plano de ação antes dos demais?",
+          "o_que_demonstra": [
+            "Categorias até o corte em chart-1 pelo shape da Bar, demais em line-strong",
+            "ReferenceLine em 80% no eixo do acumulado, com rótulo na margem",
+            "Anotação com a contagem de motivos que cruzam o corte",
+            "Destaque com peso 700 no rótulo, não só com cor"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_quantidade-contra-valor-por-etapa",
+          "titulo": "Perdas em quantidade e em valor por etapa",
+          "caso_de_uso": "Os motivos que mais derrubam oportunidades são os que mais custam em R$, na pré-venda e na venda?",
+          "o_que_demonstra": [
+            "Alternância em HTML entre quantidade e valor perdido, sem misturar",
+            "Pequenos múltiplos por etapa com o mesmo domínio de percentual",
+            "Barras horizontais com layout vertical para caber rótulos longos",
+            "Corte de 80% recalculado por etapa e por modo, com a contagem escrita"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_cauda-longa-e-poucos-motivos",
+          "titulo": "Cauda longa de motivos e período quase vazio",
+          "caso_de_uso": "Como manter o pareto legível com 40 motivos, e o que mostrar num período com só 2 motivos de perda?",
+          "o_que_demonstra": [
+            "Top 10 mais Outros (30 motivos) com a contagem no rótulo",
+            "minPointSize para as categorias minúsculas continuarem visíveis",
+            "Troca para barras simples abaixo de 4 categorias, com aviso escrito",
+            "Estado vazio no lugar do gráfico quando o período não tem perdas"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_colunas-com-linha-de-acumulado",
+      "nome": "Colunas com linha de acumulado",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Colunas com o valor de cada mês no eixo esquerdo e linha com o acumulado do ano no eixo direito, com a meta anual como referência no eixo do acumulado. Responde no mesmo cartão quanto entrou em cada mês e em que ponto do caminho até a meta anual o ano está. As duas escalas não têm relação natural: os domínios saem de uma regra objetiva e declarada, e a alternância para painéis fica pronta no componente.",
+      "quando_usar": [
+        "Valor mensal e caminho até a meta anual no mesmo cartão: receita reconhecida, fechamentos, captação.",
+        "Ano corrente com 12 meses, com os meses futuros como null nas duas séries.",
+        "Cartão lido por público habituado, com a alternância para painéis disponível para os demais."
+      ],
+      "quando_evitar": [
+        "Só o caminho até a meta interessa: burn-up puro em 04_linhas/06_acumulado-contra-meta.",
+        "Público geral sem mediação: 03_paineis-alinhados, com o burn-up em cima e as colunas embaixo.",
+        "Anotar o cruzamento entre a linha e o topo das colunas: não significa nada, as escalas são independentes.",
+        "Métrica sem acumulação natural, como taxa ou CPL: use 01_coluna-com-linha.",
+        "Enquanto a EIX-8 do CONTRATO valer sem exceção registrada, o modo painéis (v2) é a entrega padrão."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-mensal-e-acumulado-do-ano",
+          "titulo": "Receita mensal e acumulado contra meta anual",
+          "caso_de_uso": "Quanto entrou de receita reconhecida em cada mês de 2026 e quanto falta para a meta anual de R$ 10 mi?",
+          "o_que_demonstra": [
+            "Bar no eixo do mês e Line no eixo do acumulado, cada eixo na cor da série",
+            "Eixo direito de 0 ao maior valor entre meta anual e acumulado",
+            "ReferenceLine da meta anual com o yAxisId do acumulado e rótulo",
+            "Meses futuros como null nas duas séries, sem coluna zerada",
+            "Ponto e rótulo só no último mês fechado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_ritmo-linear-com-alternancia-para-paineis",
+          "titulo": "Ritmo linear com alternância para painéis",
+          "caso_de_uso": "Cada mês ficou acima ou abaixo do ritmo linear da meta anual, lido em eixo duplo ou em painéis?",
+          "o_que_demonstra": [
+            "Eixo esquerdo escolhido para a meta mensal linear cair em altura declarada",
+            "Marca do ritmo linear que vira leitura de mês acima ou abaixo",
+            "Alternância em HTML entre eixo duplo e painéis, com cores e domínios iguais",
+            "Modo guardado no estado da tela, sem mudar a ordem das séries"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_fechamentos-por-vertical-com-acumulado",
+          "titulo": "Fechamentos por vertical e acumulado total",
+          "caso_de_uso": "Quais verticais sustentam os fechamentos de cada mês, e o acumulado total chega à meta anual de fechamentos?",
+          "o_que_demonstra": [
+            "Colunas empilhadas por vertical fictícia com slot de cor fixo",
+            "Uma única linha sobre a pilha: o acumulado total, não o total do mês",
+            "Meta anual no eixo do acumulado e ritmo linear no eixo do mês",
+            "Legenda que distingue coluna de linha por legendType"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_estorno-e-meta-revisada",
+          "titulo": "Estorno no mês e meta anual revisada",
+          "caso_de_uso": "Como ler o acumulado quando um estorno em mai/2026 derruba a linha e a meta anual é revisada em jun/2026?",
+          "o_que_demonstra": [
+            "Coluna negativa e acumulado que desce, com zeros alinhados por função pura",
+            "Meta revisada desenhada como degrau no eixo do acumulado",
+            "Nota curta que nomeia a versão da meta vigente em cada trecho",
+            "Uma linha de zero em line-strong servindo aos dois eixos alinhados"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_real-contra-referencia-com-painel-de-variacao",
+      "nome": "Real contra referência com painel de variação",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Painel principal com o realizado contra uma referência (orçamento, ano anterior ou meta) e um painel inferior mais baixo, alinhado no mesmo eixo x e sincronizado por syncId, com a variação em colunas que sobem e descem do zero. É a estrutura de relatório de negócio para análise de variância e absorve o real contra orçamento e as colunas com painel de variação. A cor da variação segue a polaridade da métrica, passada como prop, e nunca o sinal; o painel de variação tem escala própria e diz isso por escrito.",
+      "quando_usar": [
+        "Desvio por período ou por categoria contra orçamento, ano anterior ou meta: custo contra orçado, receita contra o mesmo mês de 2025.",
+        "Relatório mensal da Diretoria e do Comercial em que o desvio importa tanto quanto o nível.",
+        "Até 12 períodos ou 8 categorias, com um ou dois painéis de variação."
+      ],
+      "quando_evitar": [
+        "Decompor o desvio total em componentes: 19_cascata-waterfall/01_cascata-de-ponte.",
+        "Referência que muda sem registro de versão: sem a versão declarada no título, a variação não é publicável.",
+        "Só a variação interessa, sem o nível: 03_colunas-verticais/05_colunas-positivo-e-negativo.",
+        "Meta vista como volume a preencher em cada período: 03_colunas-verticais/06_colunas-contra-meta-ou-limiar.",
+        "Variação percentual sobre base pequena ou zero: abaixo do piso declarado, mostre só a absoluta."
+      ],
+      "arquivo_estudo": "_estudo/familias/08_combinados-e-eixo-duplo.md",
+      "versoes": [
+        {
+          "slug": "v1_custo-realizado-contra-orcado",
+          "titulo": "Custo mensal realizado contra orçado",
+          "caso_de_uso": "Em quais meses de 2026 o custo realizado estourou o orçado, e por quanto em R$?",
+          "o_que_demonstra": [
+            "Dois ComposedChart com syncId, YAxis width e margens idênticas",
+            "Realizado sólido e orçado vazado no painel principal",
+            "Polaridade menor é melhor passada como prop e aplicada na cor",
+            "Variação com sinal tipográfico e ReferenceLine no zero",
+            "Escala própria do painel de variação declarada no título do painel"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_receita-contra-ano-anterior",
+          "titulo": "Receita contra o mesmo mês do ano anterior",
+          "caso_de_uso": "A receita de cada mês de 2026 cresceu contra o mesmo mês de 2025, e onde estão os maiores desvios?",
+          "o_que_demonstra": [
+            "Variação percentual com piso de base declarado, absoluta abaixo dele",
+            "Os dois maiores desvios anotados e o resto silencioso",
+            "Rótulo da variação dentro ou fora da coluna conforme o sinal",
+            "Base nomeada na mesma linha de cada variação anotada"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_vertical-contra-orcamento-e-ano-anterior",
+          "titulo": "Receita por vertical contra orçamento e 2025",
+          "caso_de_uso": "Cada vertical está acima do orçamento e acima do ano anterior, ou uma referência esconde a outra?",
+          "o_que_demonstra": [
+            "Verticais fictícias no eixo x com dois painéis de variação empilhados",
+            "Um painel por referência, cada um com a sua escala escrita",
+            "Maior desvio anotado por painel, no máximo dois no visual inteiro",
+            "syncId por índice de categoria amarrando os três painéis"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_orcado-zero-e-troca-de-versao",
+          "titulo": "Orçado zero, desvio minúsculo e versão nova",
+          "caso_de_uso": "Como publicar a variação quando um mês tem orçado zero, um desvio é minúsculo e o orçamento mudou de versão em jul/2026?",
+          "o_que_demonstra": [
+            "Orçado zero sem percentual: só a variação absoluta escrita",
+            "minPointSize para desvio de R$ 800 ao lado de outro de R$ 900 mil",
+            "Troca de versão do orçamento em jul/2026 com ReferenceArea e texto",
+            "Mês sem base de comparação com a frase sem base, nunca 0%"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    }
+  ]
+}

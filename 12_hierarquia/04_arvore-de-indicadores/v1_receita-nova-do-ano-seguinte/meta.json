@@ -1,0 +1,13 @@
+{
+  "title": "Receita nova do ano seguinte em alavancas",
+  "useCase": "Diretoria: por que a receita nova projetada é R$ 8,4 milhões, decomposta em ganhos, ticket médio e taxa de ganho.",
+  "demonstrates": [
+    "Layout lateral com a raiz à esquerda e conectores SVG ortogonais calculados em TypeScript",
+    "Cartão rounded-lg border com valor, unidade, faixa de p10 a p90 e selo de procedência",
+    "Operador vezes desenhado no ponto onde o conector se ramifica para os filhos",
+    "Validação no preparo que compara o produto dos filhos com o valor central do pai"
+  ],
+  "canvas": { "width": 960, "height": 540 },
+  "frame": "card",
+  "notes": "Canvas fixado por número: a árvore de três níveis, cinco cartões, mede 784x384 px de conteúdo, com a folha mais baixa em 272 px e o cartão da raiz em duas linhas de rótulo; a altura sobe de 400 (preset largo) para 540 para caber com margem, mantendo a largura do preset."
+}

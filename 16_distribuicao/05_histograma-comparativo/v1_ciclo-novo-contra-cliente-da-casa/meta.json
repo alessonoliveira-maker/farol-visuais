@@ -1,0 +1,15 @@
+{
+  "title": "Ciclo de negócio novo contra cliente da casa",
+  "useCase": "Negócio novo demora quanto a mais para fechar do que cliente da casa, na mesma régua de 7 dias?",
+  "demonstrates": [
+    "Régua única de 7 dias e domínio fixo de 0 a 210 para as duas carteiras",
+    "Barra preenchida contra silhueta em degrau, no lugar de duas barras com transparência",
+    "Papel de desenho fixado pela pergunta, não pelo n, então o filtro não muda a aparência",
+    "Par de medianas nomeado no rótulo, com o número na cor do próprio grupo",
+    "Legenda com a forma da marca, o nome do grupo e o n de cada um",
+    "Ausência contada por grupo no rodapé, 11 e 7, sem virar bin zero"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A sobreposição clássica, duas séries de Bar com fillOpacity de 0,55, foi recusada por duas medições anteriores do catálogo: duas séries repartem a banda do bin e as barras deixam de encostar (armadilha do Recharts vista em 16/01 v1), e opacidade de 0,55 derruba a marca abaixo de 3:1 no tema claro (ACE-5, medida em 09/04). No lugar dela, um grupo é Bar de série única com shape próprio e o outro é Line de tipo step, que desenha o contorno do histograma sem disputar a banda. A margem superior de 32 px existe para a anotação: com ela dentro da área de plotagem, o teto do eixo subiria de 30 para 40 e um terço da altura viraria vão. As duas medianas, a seta e o texto saem de um shape só da faixa de referência, porque é ele que entrega em pixel onde cada mediana caiu. A silhueta leva um revestimento de --surface-raised por baixo do traço, e o par de tokens foi escolhido por medição: nenhuma das 7 categóricas chega perto de 3:1 contra --chart-1 (a melhor é --chart-8, com 1,30; --chart-3 fica em 1,47 no escuro e 1,03 no claro), porque elas são calibradas contra o cartão e não umas contra as outras, então trocar o token não impediria a silhueta de sumir por cima da barra no tema escuro. --chart-3 fica por medir 6,47 e 6,18 contra o cartão, que é o que o torna legível fora das barras, e quem entrega a separação é o revestimento, com 9,50 no escuro e 6,00 no claro contra --chart-1. Os dois grupos têm n parecido de propósito; contagem no eixo Y só compara grupos de tamanho semelhante, e o caso desigual é a v4 deste modelo."
+}

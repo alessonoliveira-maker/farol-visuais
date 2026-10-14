@@ -1,0 +1,13 @@
+{
+  "title": "Leads e oportunidades por faixa de porte",
+  "useCase": "Em que faixa de porte da conta entra lead e em que faixa sai oportunidade, lado a lado nas cinco faixas.",
+  "demonstrates": [
+    "Lado esquerdo negado no seletor com domínio simétrico calculado nos dois conjuntos",
+    "Math.abs no tickFormatter e no LabelList",
+    "Faixas na ordem natural, da menor para a maior",
+    "Título de cada lado acima do respectivo bloco"
+  ],
+  "canvas": { "width": 640, "height": 690 },
+  "frame": "card",
+  "notes": "O eixo de valor fica, discreto e sem grade, porque a escala comum é a afirmação central do butterfly e os tiques simétricos a provam. Desvio de preset (card 640x360 vira 640x690, 2026-09-18): com duas séries por faixa e barCategoryGap 34%, a marca ficava em 4 px; a altura subiu pela conta invertida da ESP-6 até a marca chegar a 15 px, sem afinar a barra nem cortar faixa."
+}

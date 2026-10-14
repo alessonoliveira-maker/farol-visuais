@@ -1,0 +1,13 @@
+{
+  "title": "Mix de perdas com amostra pequena",
+  "useCase": "Como impedir que um trimestre com 4 perdas pese igual a um de 90 e que um trimestre com zero perdas vire coluna cheia?",
+  "demonstrates": [
+    "Trimestre abaixo do piso com contorno tracejado e a palavra amostra pequena, sem opacidade",
+    "Trimestre sem perda vazio, com 0 perdas no eixo: zero medido, não indisponível",
+    "O n de perdas por trimestre numa linha abaixo do eixo, como no modelo v3",
+    "Piso de amostra em constante nomeada, aplicado no dado e dito na frase acessível",
+    "Taxa com volume na dica por formatRateWithVolume"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

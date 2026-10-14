@@ -1,0 +1,13 @@
+{
+  "title": "Cobertura por origem com limiar de julgamento",
+  "useCase": "Marketing: em quais origens a cobertura de cada campo passa de 80%, o piso declarado para julgar a origem.",
+  "demonstrates": [
+    "Célula com o percentual preenchido e ponto cheio só acima do limiar de 80%",
+    "Limiar escrito no subtítulo com etiqueta de procedência PREMISSA",
+    "Origem abaixo do piso em campo crítico com aviso herdado pelo cartão de CPL",
+    "Telefone em destaque: preenchimento baixo em campo obrigatório é sintoma de coleta"
+  ],
+  "canvas": { "width": 760, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas de 760 por 560 em vez do alto sugerido: o rótulo Consentimento pede cerca de 80 px por coluna e o nome longo de origem pede 190 px para caber em duas linhas. Corpo de 694 px com seis colunas de cerca de 84. Linhas de 44 px. Ponto cheio vale a partir de 80% (igual ao piso passa). A etiqueta PREMISSA no limiar vem do catálogo; o Chart a desenha porque o limiar é o centro do julgamento e o cartão de CPL só herda o aviso."
+}

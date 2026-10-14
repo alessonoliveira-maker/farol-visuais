@@ -1,0 +1,108 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "12_meia-olho-e-desfechos",
+  "versoes": {
+    "v1_receita-2027-por-cenario": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; dois temas conferidos; 2 observações no README (eixo sem tique além do maior desfecho, literais de acabamento)",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:15.657Z",
+      "impressao": "a0e2b6204f008bd2b1146aa391495222f83c9811",
+      "arquivos": {
+        "Chart.tsx": "046af834233c7146d74c2dd832a09a68469692d5",
+        "data.ts": "0873d61b926a5ddbf87c983ec2131fd8a6399a90",
+        "meta.json": "88880ca1489ba2adb7c71ce174c7cb99c3684834"
+      }
+    },
+    "v2_chance-de-bater-a-meta": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; cheio contra vazado e taxa com volume conferidos nos dois temas; 2 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:16.115Z",
+      "impressao": "2f08661bbd932b6d242ab7c7a42c29a798ac0f33",
+      "arquivos": {
+        "Chart.tsx": "c41d5f9b6d0c6c6531a77e97eb13e6e135610e03",
+        "data.ts": "2d90e693cb1596c0696414b9b8e570c5e06cf5c8",
+        "meta.json": "86025174ce86b9102de6f6b438f1e9398e199efe"
+      }
+    },
+    "v3_doze-cenarios-em-gradiente": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; piso do gradiente medido no PNG, 3,03:1 no claro e 4,83:1 no escuro (ACE-5); 2 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:16.605Z",
+      "impressao": "4a47d82708bca4b32674037b451ecbeacb765396",
+      "arquivos": {
+        "Chart.tsx": "623f29a96cf16fc9f04a23e312873b25cafa2ce0",
+        "data.ts": "9e631942d155f6ff8aa46a70c45bf3d0926ad757",
+        "meta.json": "4b9f100da14b981a3b069fc134412349f78fa00f"
+      }
+    },
+    "v4_desfechos-animados-com-versao-estatica": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; estática conferida nos PNGs e animada renderizada à parte nos dois temas, 50 quadros sem corte; 3 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:17.114Z",
+      "impressao": "13bf19356fa5a9f0b69a4bbf463e6c2523d975a8",
+      "arquivos": {
+        "Chart.tsx": "3df5a562319b8250315c536d1c51748e910ee92b",
+        "data.ts": "bf6475741f33fcc337e13af58c538f2f40d20574",
+        "meta.json": "3452fed767391fbbe6cd986c2ca6e42f92a2670e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_receita-2027-por-cenario",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; dois temas conferidos; 2 observações no README (eixo sem tique além do maior desfecho, literais de acabamento)",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:15.657Z",
+      "impressao": "a0e2b6204f008bd2b1146aa391495222f83c9811",
+      "arquivos": {
+        "Chart.tsx": "046af834233c7146d74c2dd832a09a68469692d5",
+        "data.ts": "0873d61b926a5ddbf87c983ec2131fd8a6399a90",
+        "meta.json": "88880ca1489ba2adb7c71ce174c7cb99c3684834"
+      }
+    },
+    {
+      "versao": "v2_chance-de-bater-a-meta",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; cheio contra vazado e taxa com volume conferidos nos dois temas; 2 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:16.115Z",
+      "impressao": "2f08661bbd932b6d242ab7c7a42c29a798ac0f33",
+      "arquivos": {
+        "Chart.tsx": "c41d5f9b6d0c6c6531a77e97eb13e6e135610e03",
+        "data.ts": "2d90e693cb1596c0696414b9b8e570c5e06cf5c8",
+        "meta.json": "86025174ce86b9102de6f6b438f1e9398e199efe"
+      }
+    },
+    {
+      "versao": "v3_doze-cenarios-em-gradiente",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; piso do gradiente medido no PNG, 3,03:1 no claro e 4,83:1 no escuro (ACE-5); 2 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:16.605Z",
+      "impressao": "4a47d82708bca4b32674037b451ecbeacb765396",
+      "arquivos": {
+        "Chart.tsx": "623f29a96cf16fc9f04a23e312873b25cafa2ce0",
+        "data.ts": "9e631942d155f6ff8aa46a70c45bf3d0926ad757",
+        "meta.json": "4b9f100da14b981a3b069fc134412349f78fa00f"
+      }
+    },
+    {
+      "versao": "v4_desfechos-animados-com-versao-estatica",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; estática conferida nos PNGs e animada renderizada à parte nos dois temas, 50 quadros sem corte; 3 observações no README",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T12:35:17.114Z",
+      "impressao": "13bf19356fa5a9f0b69a4bbf463e6c2523d975a8",
+      "arquivos": {
+        "Chart.tsx": "3df5a562319b8250315c536d1c51748e910ee92b",
+        "data.ts": "bf6475741f33fcc337e13af58c538f2f40d20574",
+        "meta.json": "3452fed767391fbbe6cd986c2ca6e42f92a2670e"
+      }
+    }
+  ]
+}

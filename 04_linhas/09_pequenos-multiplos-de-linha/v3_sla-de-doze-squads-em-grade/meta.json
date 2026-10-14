@@ -1,0 +1,12 @@
+{
+  "title": "SLA semanal de 12 squads em grade",
+  "useCase": "Quais dos 12 squads de pré-vendas ficaram abaixo da meta de 90% de SLA nas últimas 26 semanas?",
+  "demonstrates": [
+    "Grade de 4 por 3 com eixo y comum de 0% a 100%",
+    "Meta de 90% tracejada em cada painel, com semanas abaixo contadas no cabeçalho",
+    "Painel abaixo da meta na semana mais recente sinalizado por ícone e palavra",
+    "Animação desligada e tiques reduzidos, adequados a 12 painéis simultâneos"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

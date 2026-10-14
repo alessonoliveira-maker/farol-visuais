@@ -1,0 +1,17 @@
+{
+  "title": "O que vem depois de não nas objeções",
+  "useCase": "Pré-vendas: como as objeções anotadas nas ligações de ago/26 continuam depois da palavra não.",
+  "demonstrates": [
+    "Trie de sufixo montada em TypeScript com poda por contagem mínima de 3",
+    "Profundidade de 3 palavras e fonte decrescente com a frequência do ramo",
+    "Conectores bézier com o pai centralizado nas folhas",
+    "Lista textual equivalente dos ramos para leitor de tela",
+    "Grafias com e sem acento no mesmo nó; cadeia sem bifurcação num nó só"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 444
+  },
+  "frame": "card",
+  "notes": "Canvas por número em vez do largo sugerido, porque a árvore de profundidade 3 é mais alta que larga. Conta: 11 folhas de 22 px mais 12 px de respiro dão 254 px de desenho; com 24 px da linha de leitura e 40 px da nota em duas linhas são 318 px, e o corpo do largo entrega de 265 a 281,5 px. Em 640 x 444 o corpo mede 574 x 325,5 px com o caso de uso em uma linha (93 caracteres), e o desenho alcança cerca de 460 px de largura. O viewBox tem a largura do corpo, 574 px, para a escala sair 1 (GEO-18). TIP-2: o tamanho da palavra é a marca que codifica a frequência (36 px vezes a raiz quadrada da parcela das frases, com piso de 13 px), como na nuvem de palavras da família; o texto de apoio fica em 12 e 11 px. Peso 700 só na raiz. Só a primeira ocorrência da raiz em cada frase abre caminho, então toda contagem é de frases. A nota do rodapé declara a ordem dos ramos irmãos, porque a contagem que ordena não está escrita nos nós do meio (GEO-12)."
+}

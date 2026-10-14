@@ -1,0 +1,17 @@
+{
+  "title": "Qualificação por tempo até o primeiro contato",
+  "useCase": "Pré-vendas, 2026-08: leads contatados dentro do SLA de 1 hora qualificam mais do que os contatados depois?",
+  "demonstrates": [
+    "Spinograma com faixas até 1 h, 1 a 4 h, 4 a 24 h e acima de 24 h",
+    "Limites numéricos escritos no eixo X, vindos da regra de SLA do painel",
+    "Faixa do SLA marcada com fundo de poço e rótulo dentro do SLA",
+    "Linha da taxa global de qualificação em tracejado 3 3 de --text-muted",
+    "Anotação na faixa acima de 24 h com a queda em pontos percentuais"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 400
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset card deixa 225 px de corpo com o caso de uso em duas linhas, e a conta pede 265. São 24 da linha de leitura, 24 da legenda e 217 do SVG, dos quais 30 de etiqueta de taxa, 123 de ladrilhos e 64 de eixo (vão de 6, quatro linhas de 14 px: nome, participação e rótulo do SLA, mais 2 de folga); 265 mais 135 de moldura dá 400. O viewBox de 574 por 217 é o tamanho da caixa, escala 1 (GEO-18). Desvio do catálogo: a faixa do SLA usa --surface-sunken e não --surface-overlay, que no tema claro é o mesmo branco do cartão e a faixa sumiria (ANO-4). A queda vai em p.p. por formatDecimal com o sinal tipográfico escrito à mão (DAD-4, NUM-3), medida contra a taxa global; a linha global passa por cima dos ladrilhos com um fio de --surface-raised por baixo para o tracejado não se perder no ciano (TOK-10). A parte não qualificada usa --line-strong como o spineplot do catálogo; o valor vem escrito, e por isso o aviso de CONTRASTE-MARCA é conhecido. Os vãos saem antes da partilha de largura e de altura (GEO-16)."
+}

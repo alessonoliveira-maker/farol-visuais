@@ -1,0 +1,69 @@
+{
+  "slug": "06_feed-vertical-de-eventos",
+  "nome": "Linha do tempo vertical em cartões",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Lista cronológica vertical com um trilho à esquerda, um marcador por item com ícone do tipo de evento e um cartão com título, autor fictício, data e detalhe. É o histórico de uma entidade lido em sequência: tudo o que aconteceu com uma oportunidade, uma conta ou uma fila. Em HTML é uma lista ordenada com border-s no trilho e marcador absolute, ícones do lucide-react e cabeçalho de agrupamento por dia. Data relativa (há 3 dias) calcula contra uma data de referência vinda do dado, a mesma para a lista inteira. Não tem escala de tempo: a distância vertical não significa duração.",
+  "quando_usar": [
+    "Histórico detalhado de uma oportunidade, lead ou conta, lido de cima para baixo",
+    "Log de atividades de uma fila ou de uma pessoa agrupado por dia",
+    "Eventos com texto, autor e tipo que não cabem em rótulo de gráfico",
+    "Destacar passagens de dono e o tempo de espera entre elas"
+  ],
+  "quando_evitar": [
+    "Comparar entidades ou durações: use o Gantt (20/01) ou a jornada (20/04)",
+    "Eventos em que o intervalo entre eles é a leitura: use a linha do tempo de marcos (20/02)",
+    "Poucos eventos para contar a história de um período: use a narrativa alternada (20/02)",
+    "Contagem de eventos por dia: use o calendário ou o mapa de calor (família 15)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_historico-de-uma-oportunidade",
+      "titulo": "Histórico da oportunidade OP-0412",
+      "caso_de_uso": "Comercial: o que aconteceu com a oportunidade fictícia OP-0412 desde a criação, em 10 eventos.",
+      "o_que_demonstra": [
+        "Lista ordenada com border-s e marcador absolute, como na timeline do Flowbite",
+        "Ícone lucide por tipo: Phone, Mail, CalendarCheck, FileText",
+        "Data absoluta por formatDate e relativa contra a data de referência do dado",
+        "Evento mais recente no topo, com a ordem declarada no cabeçalho"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_handoff-com-tempo-de-espera",
+      "titulo": "Passagens de dono com tempo de espera",
+      "caso_de_uso": "Pré-vendas: quanto a oportunidade esperou em cada troca de dono entre SDR, executivo e operações.",
+      "o_que_demonstra": [
+        "Evento de troca de dono com ícone ArrowRightLeft e cor var(--chart-2) própria",
+        "Espera entre dois donos escrita no trilho entre os cartões, como 3 d sem dono",
+        "Espera acima do SLA com ícone de alerta e texto do limite, sem depender da cor",
+        "Demais eventos rebaixados para text-text-muted quando o filtro de handoff está ativo"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_log-da-pre-vendas-agrupado-por-dia",
+      "titulo": "Atividades da pré-vendas na semana",
+      "caso_de_uso": "Pré-vendas: o que as filas registraram entre 2026-11-09 e 2026-11-13, em 64 atividades agrupadas por dia.",
+      "o_que_demonstra": [
+        "Cabeçalho de dia sticky com contagem por tipo em chips",
+        "Três atividades por dia visíveis e o restante resumido em mais N",
+        "Filtro por tipo em botões com contagem, sem esconder a existência dos filtrados",
+        "Nota de virtualização com @tanstack/react-virtual e estimateSize por tipo de item"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_evento-sem-data-e-texto-longo",
+      "titulo": "Histórico com evento sem data",
+      "caso_de_uso": "Comercial: histórico importado com um evento sem data e uma anotação de 3.000 caracteres, sem quebrar a leitura.",
+      "o_que_demonstra": [
+        "Evento sem data fora da ordem cronológica, no fim, sob o rótulo data desconhecida",
+        "Anotação longa truncada com line-clamp-3 e botão ver mais",
+        "Autor ausente escrito como formatUnavailable em vez de campo vazio",
+        "Dois eventos no mesmo minuto mantidos em ordem estável pelo id"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Movimentos entre etapas do funil no trimestre",
+  "useCase": "De cada etapa do funil, para onde as oportunidades foram, e quantas voltaram?",
+  "demonstrates": [
+    "Mesma lista de etapas nos dois eixos, na ordem do funil, dando sentido à diagonal",
+    "Permanência fora da escala de cor, para não achatar todo o resto da matriz",
+    "Retrocesso abaixo da diagonal com contorno próprio, que o Sankey esconde",
+    "Colunas terminais separadas por vão e divisória: Ganha e Perdida não são etapa",
+    "Zero desenhado em neutro com o número escrito, não como faixa fraca da rampa"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "A contagem é de movimentos, não de oportunidades: a mesma oportunidade que avança duas vezes conta duas vezes, e isso está dito no comentário do data.ts porque é a confusão mais provável de quem colar o componente. O contorno de retrocesso usa --negative porque é a única cor semântica de alerta do Farol; quando existirem tokens divergentes próprios, a v2 troca a rampa inteira por divergente e o contorno sai."
+}

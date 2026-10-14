@@ -1,0 +1,173 @@
+{
+  "familia": "05_areas",
+  "modelo": "07_area-de-diferenca",
+  "versoes": {
+    "v1_resultado-mensal-contra-zero": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 30, ACE-5: preenchimento da área a 0,30 compõe 1,54:1 e 1,67:1 no claro e 1,80:1 e 1,55:1 no escuro contra o cartão, piso 3:1, sem valor escrito que isente; subir FILL_OPACITY para 0,70 ou mais, ou cor cheia, e medir à mão os dois temas porque a guarda não lê fill em url. Tique de moeda negativa conferido e certo: uma linha, sem corte nem colisão.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:17:52.371Z",
+      "impressao": "13132caa7adf925d0a5ce6f926f7df28c3b83c45",
+      "arquivos": {
+        "Chart.tsx": "b5953c403ac999d0d5f5e1e9b401c5a0f61b6372",
+        "data.ts": "69f5952fb746692151582445276b919272ee94cf",
+        "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
+      }
+    },
+    "v2_receita-contra-meta-mensal": {
+      "veredito": "aprovado",
+      "nota": "Faixas acima e abaixo com cruzamento interpolado, sem triangulo do lado errado; sem grade e dado no terco superior ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:23.435Z",
+      "impressao": "104a994c444ee6097e77c4e204e184a71acb8da7",
+      "arquivos": {
+        "Chart.tsx": "300aefb7b980962627fadb1d1a9ee16e8e0707b3",
+        "data.ts": "cb799eff10f3b997bc2e512478cccd96952d7ff3",
+        "meta.json": "f41e4ea5a9ee3a05db1ab25407d074a037336c94"
+      }
+    },
+    "v3_sla-diario-contra-limiar": {
+      "veredito": "aprovado",
+      "nota": "180 dias contra limiar com alerta so abaixo, contagem e deficit escritos; corpo vazio abaixo de 74% segue como pendencia de desenho.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:27.816Z",
+      "impressao": "ef5920eb1ebc03f53411d3fd0d8a8564989b2c04",
+      "arquivos": {
+        "Chart.tsx": "21406a036c1c8b3b607d372cb407b107f5e35743",
+        "data.ts": "f4faae5bd37c4a05c6730aaff39dbac93558ffde",
+        "meta.json": "786972b4dbd3e9361fa50064823455538399776b"
+      }
+    },
+    "v4_cruzamentos-e-meta-ausente": {
+      "veredito": "aprovado",
+      "nota": "Meta ausente quebra faixa e linha; contagem 4 acima e 6 abaixo e saldo menos 50 mil conferem com o dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:32.104Z",
+      "impressao": "703a516d7ab834ac716f73e4195abc5c91874dae",
+      "arquivos": {
+        "Chart.tsx": "8acb0e5d7ae5ef9169e47b1db2c794ce1ca72b86",
+        "data.ts": "47d2d48d2b730b06be08c66156468d60506068ca",
+        "meta.json": "8dd919646f4ad3bd9ca13ba981cf0203ca5ff764"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_resultado-mensal-contra-zero",
+      "veredito": "reprovado",
+      "nota": "Tique do eixo X sai no cinza padrão do Recharts, 14 px, 3,0 para 1 sobre o cartão escuro, abaixo de AA; aplique AXIS_PROPS ou tick com var text-muted em 11 px.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:56:16.075Z",
+      "impressao": "a97118299d411954fdcfd90cf43e2874adea9e3b",
+      "arquivos": {
+        "Chart.tsx": "486dc227974479f32b0f7949bc3736b7ac9ca336",
+        "data.ts": "69f5952fb746692151582445276b919272ee94cf",
+        "meta.json": "9670826abb22af1742e990f1a5c75166f890a9cc"
+      }
+    },
+    {
+      "versao": "v2_receita-contra-meta-mensal",
+      "veredito": "reprovado",
+      "nota": "Tique dos dois eixos no cinza padrão do Recharts, 3,0 para 1 no escuro; saldo acumulado que o caso de uso promete não aparece na tela, só na frase acessível; a faixa acima da meta vira fio de 2 a 5 px no domínio até 600 mil.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:56:25.188Z",
+      "impressao": "be1fe4ac5d8389be6d3b16266af5ef88cea82a95",
+      "arquivos": {
+        "Chart.tsx": "c0f59762d294523134cf75d4ef953ea6ded068b8",
+        "data.ts": "40521cebddcaca6c27b3a5442ab1feab20f0b8fc",
+        "meta.json": "7852168723e7c9a4247de5b4561cd44c03143023"
+      }
+    },
+    {
+      "versao": "v3_sla-diario-contra-limiar",
+      "veredito": "reprovado",
+      "nota": "Tique dos dois eixos no cinza padrão do Recharts, 14 px, 3,0 para 1 sobre o cartão escuro, abaixo de AA; aplique AXIS_PROPS ou tick com var text-muted em 11 px.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:56:30.857Z",
+      "impressao": "07ad8002403056470fc104e0ac361d11fd57c222",
+      "arquivos": {
+        "Chart.tsx": "d37bda37464643cdffb6a0d3facddfd9cd720f44",
+        "data.ts": "f4faae5bd37c4a05c6730aaff39dbac93558ffde",
+        "meta.json": "5fd8f0ee1224b35832b5ae222d8da583a56b2d31"
+      }
+    },
+    {
+      "versao": "v4_cruzamentos-e-meta-ausente",
+      "veredito": "reprovado",
+      "nota": "Tique dos dois eixos no cinza padrão do Recharts, 14 px, 3,0 para 1 sobre o cartão escuro, abaixo de AA; além da cor fora do token, o tique de valor em 14 px não cabe na largura 64 e quebra em duas linhas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T20:56:31.446Z",
+      "impressao": "0254d324ebcfee31fa63c3b85b6d72ab98ce7629",
+      "arquivos": {
+        "Chart.tsx": "213b85c27754b694c7706dec84010ace5f47dc62",
+        "data.ts": "47d2d48d2b730b06be08c66156468d60506068ca",
+        "meta.json": "ae4f7c4fd45078b8f85f3cd3c8e9a52946c5f156"
+      }
+    },
+    {
+      "versao": "v1_resultado-mensal-contra-zero",
+      "veredito": "aprovado",
+      "nota": "Corte de cor no zero correto nos dois temas; legenda nomeia positivo, negativo e a referencia.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:18.734Z",
+      "impressao": "13132caa7adf925d0a5ce6f926f7df28c3b83c45",
+      "arquivos": {
+        "Chart.tsx": "b5953c403ac999d0d5f5e1e9b401c5a0f61b6372",
+        "data.ts": "69f5952fb746692151582445276b919272ee94cf",
+        "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
+      }
+    },
+    {
+      "versao": "v2_receita-contra-meta-mensal",
+      "veredito": "aprovado",
+      "nota": "Faixas acima e abaixo com cruzamento interpolado, sem triangulo do lado errado; sem grade e dado no terco superior ficam como observacao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:23.435Z",
+      "impressao": "104a994c444ee6097e77c4e204e184a71acb8da7",
+      "arquivos": {
+        "Chart.tsx": "300aefb7b980962627fadb1d1a9ee16e8e0707b3",
+        "data.ts": "cb799eff10f3b997bc2e512478cccd96952d7ff3",
+        "meta.json": "f41e4ea5a9ee3a05db1ab25407d074a037336c94"
+      }
+    },
+    {
+      "versao": "v3_sla-diario-contra-limiar",
+      "veredito": "aprovado",
+      "nota": "180 dias contra limiar com alerta so abaixo, contagem e deficit escritos; corpo vazio abaixo de 74% segue como pendencia de desenho.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:27.816Z",
+      "impressao": "ef5920eb1ebc03f53411d3fd0d8a8564989b2c04",
+      "arquivos": {
+        "Chart.tsx": "21406a036c1c8b3b607d372cb407b107f5e35743",
+        "data.ts": "f4faae5bd37c4a05c6730aaff39dbac93558ffde",
+        "meta.json": "786972b4dbd3e9361fa50064823455538399776b"
+      }
+    },
+    {
+      "versao": "v4_cruzamentos-e-meta-ausente",
+      "veredito": "aprovado",
+      "nota": "Meta ausente quebra faixa e linha; contagem 4 acima e 6 abaixo e saldo menos 50 mil conferem com o dado.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T21:15:32.104Z",
+      "impressao": "703a516d7ab834ac716f73e4195abc5c91874dae",
+      "arquivos": {
+        "Chart.tsx": "8acb0e5d7ae5ef9169e47b1db2c794ce1ca72b86",
+        "data.ts": "47d2d48d2b730b06be08c66156468d60506068ca",
+        "meta.json": "8dd919646f4ad3bd9ca13ba981cf0203ca5ff764"
+      }
+    },
+    {
+      "versao": "v1_resultado-mensal-contra-zero",
+      "veredito": "reprovado",
+      "nota": "Pergunta 30, ACE-5: preenchimento da área a 0,30 compõe 1,54:1 e 1,67:1 no claro e 1,80:1 e 1,55:1 no escuro contra o cartão, piso 3:1, sem valor escrito que isente; subir FILL_OPACITY para 0,70 ou mais, ou cor cheia, e medir à mão os dois temas porque a guarda não lê fill em url. Tique de moeda negativa conferido e certo: uma linha, sem corte nem colisão.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:17:52.371Z",
+      "impressao": "13132caa7adf925d0a5ce6f926f7df28c3b83c45",
+      "arquivos": {
+        "Chart.tsx": "b5953c403ac999d0d5f5e1e9b401c5a0f61b6372",
+        "data.ts": "69f5952fb746692151582445276b919272ee94cf",
+        "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
+      }
+    }
+  ]
+}

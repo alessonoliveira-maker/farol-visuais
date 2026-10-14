@@ -1,0 +1,12 @@
+{
+  "title": "Leads por plataforma com zero e ausente",
+  "useCase": "Marketing: leads de julho e agosto por plataforma, com uma sem veiculação em agosto e outra com zero lead medido.",
+  "demonstrates": [
+    "Lollipop agrupado com dois Bar irmãos e barGap menor que a folga entre categorias",
+    "Zero medido mostra só o disco sobre o zero",
+    "Sem veiculação não desenha haste nem disco, só a marca em texto",
+    "Nota no rodapé contando os dois casos, com legenda de série"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

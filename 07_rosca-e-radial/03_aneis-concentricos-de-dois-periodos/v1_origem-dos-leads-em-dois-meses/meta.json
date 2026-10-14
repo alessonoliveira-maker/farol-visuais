@@ -1,0 +1,13 @@
+{
+  "title": "Origem dos leads em dois meses",
+  "useCase": "Marketing: como a divisão dos leads por origem mudou de jul/26, anel interno, para ago/26, anel externo.",
+  "demonstrates": [
+    "Dois Pie com os mesmos cx, cy, startAngle e endAngle",
+    "Ordem de categorias fixada pelo mês atual e aplicada aos dois anéis",
+    "Anel interno com a cor da categoria atenuada por opacidade e externo em cor cheia",
+    "Legenda que diz qual anel é qual mês, por formatMonthShort"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O anel externo ocupa mais área que o interno para a mesma fração; por isso o percentual de cada mês vem sempre escrito na legenda, nunca só pela área do arco."
+}

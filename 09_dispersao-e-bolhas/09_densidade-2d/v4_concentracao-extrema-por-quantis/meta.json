@@ -1,0 +1,13 @@
+{
+  "title": "Interações com um hexágono dominante",
+  "useCase": "Como ler a densidade quando um hexágono concentra metade das 40 mil interações?",
+  "demonstrates": [
+    "Cortes de faixa por quantil, para o maior hexágono não saturar o resto",
+    "Legenda que declara que os degraus são quantis e não faixas de igual largura",
+    "Contagem escrita no hexágono dominante, com halo sobre a camada de densidade",
+    "Três degraus de cor, o teto medido da paleta, com a contagem de cada um escrita"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas card declarado por número (GEO-1): o corpo de 574 x 241,5 px recebe 1 linha de leitura, 1 rótulo de eixo vertical, a rede de 150 px, 1 fileira de tiques, 1 rótulo de eixo horizontal, e no painel da direita 1 título, 1 fileira de amostras, 2 fileiras de rótulo de faixa, 3 linhas de nota de escala, o total e a legenda dele; soma 221 px de desenho no viewBox de 234. O quantil está medido neste recorte e é o que justifica a versão: com faixas de largura igual o primeiro corte cai em 6.667 e 50 dos 51 hexágonos ficam na mesma faixa, enquanto por tercil a divisão sai 18, 16 e 17 células. Divergência assumida contra o catálogo, a favor do CONTRATO: o catálogo não fixa o número de degraus, e a TOK-8 mede que só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas, então são 3 quantis, isto é tercis, e não quartis nem quintis. Medido à mão nesta sessão, porque nenhuma guarda mede marca contra marca (TOK-9): 1,42:1 entre --seq-5 e --seq-6, 1,45:1 entre --seq-6 e --seq-7 e 2,07:1 entre --seq-5 e --seq-7, isto é, cada faixa se separa do cartão e nenhuma se separa da vizinha; por isso o raio do hexágono repete a faixa e a legenda escreve a contagem de cada uma. O halo do rótulo do dominante é seguro porque o hexágono tem 24 px de altura, bem acima dos 18 px que a GEO-4 aponta como limite em que o halo passa a apagar a marca. Menor hexágono desenhado: 12,9 px de largura por 14,9 px de altura, acima do piso de 12 px da ESP-2, medido à mão porque a guarda ESPESSURA-MARCA não alcança marca desenhada fora de um <Bar>."
+}

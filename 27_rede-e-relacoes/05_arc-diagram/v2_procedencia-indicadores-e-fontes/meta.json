@@ -1,0 +1,15 @@
+{
+  "title": "Indicadores que dependem de cada fonte",
+  "useCase": "Diretoria: quais dos 24 indicadores fictícios caem se uma das 6 fontes de dado parar, com os indicadores agrupados por dashboard.",
+  "demonstrates": [
+    "Nós ordenados por dashboard e fontes no fim do eixo, em ordem que aninha os arcos",
+    "Separador de grupo no eixo, com o nome do dashboard e quantos indicadores dele caem",
+    "Fonte selecionada por highlightId acende todos os arcos dela em var(--chart-1)",
+    "Contagem escrita de indicadores que caem, como 9 de 24 indicadores",
+    "Arcos achatados em elipse por um fator único, calculado do arco mais longo",
+    "Eixo vertical com rótulos horizontais e margem calculada pelo maior rótulo"
+  ],
+  "canvas": { "width": 560, "height": 690 },
+  "frame": "card",
+  "notes": "Desvio principal do catálogo, com o contrato vencendo: o catálogo pede eixo horizontal no canvas largo com rótulos girados a 45 graus, e a TIP-5 proíbe texto girado. Trinta nós em 894 px dão passo de 30 px, e nenhum nome de indicador cabe nisso na horizontal; por isso o eixo vira vertical, os nomes ficam horizontais à esquerda dele e os arcos saem para a direita. O que o catálogo chama de margem inferior vira margem esquerda, calculada pelo maior rótulo (26 caracteres a 6,4 px no indicador; 25 caracteres mais 30 px da coluna de contagem na fonte), e o eixo cai em 310 px. Canvas por número (GEO-1): 24 indicadores a 14 px, três vãos de 10 px entre dashboards, 40 px até a primeira fonte e seis fontes a 22 px dão 526 px de altura; com a linha de leitura (28 px) o corpo pede 554 px, e nenhum preset entrega isso. Em 560 x 690 o corpo mede 494 x 555 e o viewBox de 494 x 526 sai em escala 1 (GEO-18). A largura de 560 px é a que o desenho ocupa: em 640 px sobravam 80 px vazios à direita dos arcos (GEO-10). O achatamento não é o 0,6 fixo do catálogo: é um fator único para todos os arcos, igual à largura livre (176 px) dividida pelo maior raio (251 px), que dá 0,70. Fator único porque elipses semelhantes aninhadas não se cruzam, e fator diferente por arco cria cruzamento falso junto do nó. As fontes são ordenadas pela posição média dos indicadores que dependem delas, de baixo para cima, para os arcos se aninharem; a contagem escrita ao lado de cada fonte evita que a ordem seja lida como ranking. Essa ordem põe a fonte acesa na última linha do eixo; a mensagem não mora lá: ela abre o corpo na linha de leitura, e os indicadores que caem começam na primeira linha, em peso 600. Sem legenda separada: a amostra do arco aceso abre a linha de leitura, e o tamanho do nó repete a contagem escrita. Os arcos saem de var(--line-strong), 1,79:1 e 1,83:1, para var(--text-muted), 5,21:1 e 5,37:1 (ACE-6), e fora do destaque baixam por opacidade medida de 0,76, que composta mede 3,58:1 e 3,28:1 (ACE-5). Peso 700 só no nome e na contagem da fonte acesa (TIP-3)."
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "01_pizza-simples",
+  "nome": "Pizza simples",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Círculo dividido em até cinco setores com ângulo proporcional à fração de um todo único, começando às 12 horas e girando no sentido horário em ordem decrescente. É a forma de referência da família e absorve três variações do estudo: rótulos externos com linha guia, fatia em destaque e legenda tabular.",
+  "quando_usar": [
+    "Fração de 2 a 5 partes exclusivas de um todo declarado, com leitura boa perto de 25%, 50% e 75%.",
+    "A mensagem é parte do todo: quanto da receita veio de cliente novo, para onde foi o investimento do mês.",
+    "Uma parte específica carrega a mensagem e pode ganhar destaque por cor, deslocamento e peso do rótulo.",
+    "Card estreito ou coluna lateral, onde a pizza ocupa pouco e uma legenda tabular carrega o número exato."
+  ],
+  "quando_evitar": [
+    "Partes de valor parecido que precisam ser ordenadas com precisão: barra horizontal simples (02).",
+    "Mais de 5 partes sem agrupamento: detalhamento de Outros (modelo 02) ou barra horizontal (02).",
+    "Composição de vários todos: small multiples (modelo 04) com poucos todos, barra 100% empilhada (03) com muitos.",
+    "Participação que muda no tempo: linha (04) ou área (05).",
+    "Valores com negativo, categorias sobrepostas ou soma diferente do total declarado: a pizza mente; usar barra (02).",
+    "Só dois valores, parte e restante: fração única (modelo 03) ou o número escrito."
+  ],
+  "arquivo_estudo": "_estudo/familias/06_pizza.md",
+  "versoes": [
+    {
+      "slug": "v1_origem-da-receita-reconhecida",
+      "titulo": "Origem da receita reconhecida do trimestre",
+      "caso_de_uso": "Quanto da receita reconhecida do 3º trimestre veio de cliente novo, de expansão de cliente ativo e de renovação?",
+      "o_que_demonstra": [
+        "startAngle 90 e endAngle -270 para começar às 12 horas no sentido horário",
+        "Ordenação decrescente e teto de fatias em TypeScript antes do data",
+        "Rótulo interno de percentual por midAngle, escondido abaixo de 18 graus",
+        "Separador em var(--surface-raised) e percentual inteiro que soma 100",
+        "Total de R$ 2.480 mil na linha de leitura e valor absoluto só na dica"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_nao-comparecimento-em-destaque",
+      "titulo": "Não comparecimento em destaque nas agendas",
+      "caso_de_uso": "Que fração das agendas da semana virou não comparecimento, e quanto isso se afastou da semana anterior?",
+      "o_que_demonstra": [
+        "Fatia em --chart-1 deslocada 8 px pelo midAngle e as demais em neutro",
+        "Deslocamento reservado na margem para o setor não sair do SVG",
+        "Destaque com segundo canal: rótulo em peso 700 além da cor",
+        "Anotação ao lado com base nomeada: 15% contra 9% na semana anterior",
+        "Sector do Recharts em shape, sem a prop activeIndex removida no Recharts 3"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_perdas-por-motivo-com-legenda-tabular",
+      "titulo": "Perdas do trimestre por motivo com legenda tabular",
+      "caso_de_uso": "Qual motivo concentra as oportunidades perdidas do trimestre, em contagem e em valor, para abrir a lista certa?",
+      "o_que_demonstra": [
+        "Pizza de 120 px com legenda em grid do Tailwind: cor, nome, contagem, valor e %",
+        "Legenda na mesma ordem angular das fatias, com linha de total",
+        "Hover e foco ligados nos dois sentidos por estado React, opacidade só na marca",
+        "Clique seleciona o motivo com aria-pressed na linha; clicar de novo desmarca",
+        "Motivos de nome longo inteiros e Outros por último, com a composição na dica"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_origem-dos-leads-com-dado-ausente",
+      "titulo": "Origem dos leads do mês com dado ausente",
+      "caso_de_uso": "Como os leads do mês se dividem por origem quando parte da base chegou sem origem declarada?",
+      "o_que_demonstra": [
+        "Sem informação vazada com contorno --text-muted, fora da ordenação e por último",
+        "Rótulos externos com linha guia em dois segmentos e anticolisão em TypeScript",
+        "Fatias vizinhas de 2% e 3% empurradas sem cruzar as linhas guia",
+        "Cobertura na linha de leitura: 292 de 340 leads com origem declarada",
+        "Estado vazio com role status quando o recorte não tem leads"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

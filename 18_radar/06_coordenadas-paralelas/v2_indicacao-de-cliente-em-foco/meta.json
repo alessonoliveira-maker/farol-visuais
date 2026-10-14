@@ -1,0 +1,15 @@
+{
+  "title": "Indicação de cliente em foco entre as origens",
+  "useCase": "Marketing, 2026-08: em que métricas a origem indicação de cliente se descola das outras treze?",
+  "demonstrates": [
+    "Origem em foco em --chart-1 com 2,5 px e desenhada por último",
+    "Treze origens em --text-muted, por token, com foco e mediana revestidos",
+    "Nome do foco em peso 700 na coluna lateral e valor escrito no cabeçalho de cada eixo",
+    "Troca de foco por clique na linha ou na lista lateral, com aria-pressed",
+    "Traço da mediana das outras em cada eixo e anotação na maior distância",
+    "Anotação que nomeia os dois números: 71,0% do foco contra mediana de 28,0%"
+  ],
+  "canvas": { "width": 960, "height": 430 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO (GEO-1), com a conta das linhas escritas. O caso de uso tem 93 caracteres e cabe em uma linha a 894 px, então o corpo desta moldura mede 894 x 311,5 px, e o viewBox do SVG repete esse número para a escala sair 1 (GEO-18). Linhas escritas: 1 de leitura com a legenda da mediana na mesma linha (base em 13), 1 de título de eixo (base em 40), 1 de valor do foco (base em 54), 1 de anotação (base em 69) e a coluna de 14 nomes com passo de 14 px, que pede 182 px e tem 219,5 px de coluna (de 84 a 303,5), ao lado de um eixo de 221,5 px (de 82 a 303,5). O preset largo (960 x 400) deixaria 191,5 px de eixo, o que aperta a coluna de nomes contra o cabeçalho; os 30 px a mais são exatamente as duas linhas novas. DESVIO DECLARADO 1, opacidade. A especificação pede as treze origens em --line-strong com opacidade 0,3; a ACE-5 mede que --line-strong não alcança 3:1 nem opaco (1,79:1 no escuro, 1,83:1 no claro) e sem número escrito na linha a 17.2 não o admite (TOK-5). O contrato vence: o contexto vai em --text-muted OPACO, o neutro de série de muitos elementos sem valor escrito, medido no pixel em 5,21:1 e 5,37:1 contra o cartão. MEDIDO MARCA CONTRA MARCA (TOK-9): --chart-1 contra --text-muted dá 1,82:1 no escuro e 1,12:1 no claro, então a cor não separa o foco; quem separa é o revestimento em --surface-raised sob o foco (traço de 5,5 px) e sob a mediana e a barra do vão, que mede 9,50:1 e 6,00:1 contra --chart-1 (TOK-4), mais 2,5 px, ponto em cada eixo, nome em 700 e valor no cabeçalho. DESVIO DECLARADO 2, lugar do valor. A especificação pede o valor escrito em cada eixo; junto do ponto ele cairia sobre as linhas de contexto, e halo em traço de 1,5 px apaga a marca (GEO-4). O valor foi para uma pista fora do plano, sob o título de cada eixo, com o volume da taxa (DAD-1). DESVIO DECLARADO 3, rótulo no fim da linha. O nome do foco fica no INÍCIO da linha, na coluna da esquerda, porque a coluna de nomes é também a lista lateral clicável e o primeiro eixo é onde as origens mais se espalham. PESO 700 (TIP-3) em dois elementos: o nome do foco e o valor do eixo de maior distância; os outros cinco valores em 600. GUARDAS QUE SE CALAM: ESPESSURA-MARCA sai sem marca de barra; a conferência do traço é do olho, nos dois temas."
+}

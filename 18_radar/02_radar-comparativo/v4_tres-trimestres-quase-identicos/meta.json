@@ -1,0 +1,14 @@
+{
+  "title": "Três trimestres quase idênticos no mesmo radar",
+  "useCase": "Pré-vendas, 2026-T1 a 2026-T3: o perfil da fila de inbound mudou entre os trimestres ou as linhas só se embaralham?",
+  "demonstrates": [
+    "Caso limite do emaranhado: três contornos coincidentes em quatro dos seis eixos",
+    "Hover ou foco na legenda esmaece as séries fora de foco, só na marca",
+    "Pontos de tamanhos diferentes e dica que lista as séries coincidentes no eixo",
+    "Botão ver como barras com aria-pressed, trocando para barras agrupadas na mesma ordem",
+    "Linha de leitura que declara a diferença máxima: 4 pontos entre trimestres"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "O canvas é alto, não card como o catálogo sugere: a vista em barras agrupadas tem 6 categorias e 3 barras por categoria, e no corpo do card (574 x 225) a barra sai com 9,6 px, abaixo do piso de 12 px da ESPESSURA-MARCA; no alto (574 x 425) sai com 14 px, com barCategoryGap de 10% e não os 30% da ESP-2 (a 30% cada barra cai a 5 px). Os três contornos não levam preenchimento, então não há opacidade de área a medir pela ACE-5; o esmaecimento por foco é estado transitório de interação e só mexe na opacidade da marca (strokeOpacity e fillOpacity), nunca no texto. A raiz é role group, e não img, porque carrega botões. O contrato vence."
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "09_pequenos-multiplos-de-linha",
+  "nome": "Pequenos múltiplos de linha",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Um gráfico de linha por categoria da mesma métrica, em grade Tailwind, com o mesmo eixo x, o mesmo array de datas e cursor sincronizado por syncId. Resolve o espaguete quando todas as séries importam e absorve as linhas sincronizadas. Painéis de métricas diferentes, que substituem o eixo duplo, moram em 08_combinados-e-eixo-duplo.",
+  "quando_usar": [
+    "De 4 a 12 categorias da mesma métrica em que todas importam: plataformas, squads, origens de lead.",
+    "Escala comum quando a pergunta é nível; escala independente declarada quando a pergunta é forma.",
+    "Comparar cada categoria com a referência do grupo (mediana, meta) sem sobrepor tudo."
+  ],
+  "quando_evitar": [
+    "Até 4 séries que se leem juntas num eixo só: use 02_multiplas-series.",
+    "Métricas diferentes em painéis alinhados: use 08_combinados-e-eixo-duplo.",
+    "Linha minúscula dentro de cartão ou célula: use 24_microvisuais-sparklines.",
+    "Menos de cerca de 80 px de altura por painel: use tabela com sparkline.",
+    "Mais de 12 painéis: filtre, agrupe em Outros ou pagine."
+  ],
+  "arquivo_estudo": "_estudo/familias/04_linhas.md",
+  "versoes": [
+    {
+      "slug": "v1_cpl-por-plataforma-em-quatro-paineis",
+      "titulo": "CPL por plataforma em quatro painéis",
+      "caso_de_uso": "O CPL de cada uma das quatro plataformas de mídia subiu ou caiu em 2026, em escala comum?",
+      "o_que_demonstra": [
+        "Grade Tailwind com um LineChart por plataforma e o mesmo syncId",
+        "Domínio y comum calculado sobre o conjunto dos painéis",
+        "YAxis width constante e igual em todos os painéis",
+        "Eixo x só nos painéis da borda inferior"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_origens-contra-a-mediana-do-grupo",
+      "titulo": "Leads por origem contra a mediana do grupo",
+      "caso_de_uso": "Cada uma das 6 origens de lead está acima ou abaixo da mediana semanal do grupo em 2026?",
+      "o_que_demonstra": [
+        "Série do painel em --chart-1 e mediana do grupo tracejada em neutro",
+        "Nome e último valor no cabeçalho de cada painel",
+        "Painéis ordenados pelo último valor, com a ordem escrita em nota"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_sla-de-doze-squads-em-grade",
+      "titulo": "SLA semanal de 12 squads em grade",
+      "caso_de_uso": "Quais dos 12 squads de pré-vendas ficaram abaixo da meta de 90% de SLA nas últimas 26 semanas?",
+      "o_que_demonstra": [
+        "Grade de 4 por 3 com eixo y comum de 0 a 100%",
+        "Meta tracejada em cada painel e semanas abaixo contadas no cabeçalho",
+        "Painel abaixo da meta sinalizado por ícone e palavra, não só cor",
+        "Animação desligada e tiques limitados em 12 painéis"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_painel-sem-dado-e-escala-independente",
+      "titulo": "Painel sem dado e escala independente declarada",
+      "caso_de_uso": "Como mostrar a forma das entradas de 8 origens de volumes muito diferentes quando uma não tem dado no recorte?",
+      "o_que_demonstra": [
+        "Painel vazio com role status no lugar do gráfico, sem eixo quebrado",
+        "Escala y independente declarada em texto em cada painel",
+        "Mesmo array de datas com null para o syncId casar pelo índice"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

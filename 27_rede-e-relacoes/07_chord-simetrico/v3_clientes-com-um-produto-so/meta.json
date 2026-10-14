@@ -1,0 +1,14 @@
+{
+  "title": "Clientes com um produto só",
+  "useCase": "Comercial: quanto de cada produto fictício está em clientes que não têm nenhum outro, sem desenhar fita para si mesmo.",
+  "demonstrates": [
+    "Diagonal da matriz como faixa interna neutra no arco, e não como fita de retorno",
+    "Faixa só este produto em neutro com o valor escrito",
+    "Arco do grupo que soma pares e faixa própria, com a divisão legível",
+    "Legenda com item próprio para só este produto",
+    "Produto sem nenhum par mantido no círculo com a faixa ocupando o arco inteiro"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Desvio do catálogo: a faixa só este produto vai em var(--text-muted) (5,2:1 no escuro), e não em var(--line-strong), que mede 1,8:1 e some como marca (ACE-6, TOK-5). A faixa é a cauda angular do arco do grupo, depois dos pares, e nenhuma fita sai dela. A diagonal entra em `data` como par com a igual a b."
+}

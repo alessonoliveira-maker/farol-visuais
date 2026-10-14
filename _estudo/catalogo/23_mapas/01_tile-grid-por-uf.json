@@ -1,0 +1,75 @@
+{
+  "slug": "01_tile-grid-por-uf",
+  "nome": "Tile grid map por UF",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Cada uma das 27 UFs vira um tile de mesmo tamanho numa grade que lembra o mapa do Brasil, com sigla, valor e cor por classe. Elimina o viés de área que faz a Amazônia dominar o coroplético e dá peso visual igual a cada UF, o que o FT chama de equalised cartogram. No Farol é um div com grid de 6 colunas e cada tile posicionado por gridRow e gridColumn a partir de uma constante versionada (as grades públicas br_states_grid1 de 8x6 e br_states_grid2 de 7x6 do geofacet). O modelo absorve o tile grid hexagonal, feito com o mesmo grid e clip-path de hexágono com as linhas ímpares deslocadas meia célula.",
+  "quando_usar": [
+    "Taxa ou percentual por UF (qualificação, CPL qualificado, SLA cumprido) quando todas as 27 UFs devem pesar igual na leitura",
+    "Painel em que as UFs pequenas do Nordeste e do Sudeste (DF, SE, AL, RN, PB, ES, RJ) precisam ser apontáveis e legíveis",
+    "Cartão de 480 px ou menos, onde a malha real não comporta sigla e valor em cada UF",
+    "Destaque de poucas UFs (acima da meta, dentro do perímetro) sobre um fundo geográfico reconhecível",
+    "Versão hexagonal quando a vizinhança entre regiões importa e o valor pode ir para a dica"
+  ],
+  "quando_evitar": [
+    "A pergunta é só qual UF é maior: use as barras ordenadas (02/01_barras-simples-ordenadas)",
+    "Forma e área reais fazem parte da resposta ou o público não reconhece a grade: use o coroplético por UF (23/02)",
+    "O valor é total absoluto e a magnitude importa: use os símbolos proporcionais (23/03)",
+    "UF por mês em intensidade: use a matriz categórica (15/02_matriz-categorica)",
+    "Leitura de valor exato das 27 UFs: use a tabela com barras inline (14/01_tabela-com-barras-inline)"
+  ],
+  "arquivo_estudo": "_estudo/familias/23_mapas.md",
+  "versoes": [
+    {
+      "slug": "v1_taxa-de-qualificacao-por-uf",
+      "titulo": "Taxa de qualificação de leads por UF",
+      "caso_de_uso": "Marketing: em que UFs os leads fictícios de 2026 se qualificam mais, com todas as UFs pesando igual.",
+      "o_que_demonstra": [
+        "Grade br_states_grid1 de 8x6 como constante Record<UF, Posicao> com gridRow e gridColumn",
+        "Cor por 5 classes em var(--seq-3) a var(--seq-7) com quebras calculadas em TypeScript",
+        "Sigla e valor em cada tile com formatPercent, texto claro ou escuro pela luminância",
+        "Legenda em degraus com os limites de cada classe, sem legenda contínua",
+        "Raiz com role img e frase acessível com a UF líder e a amplitude entre classes"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_ufs-acima-da-meta-com-ranking",
+      "titulo": "UFs acima da meta de qualificação",
+      "caso_de_uso": "Marketing: quais UFs passaram da meta fictícia de 18% de qualificação e onde elas ficam no ranking das 10 maiores.",
+      "o_que_demonstra": [
+        "Anel de destaque em var(--chart-1) só nos tiles acima da meta, demais em tom neutro",
+        "Ícone lucide Check junto da sigla, para o destaque não depender só da cor",
+        "Barras das 10 maiores UFs ao lado com a mesma UF acesa pela prop highlightId",
+        "Linha da meta nas barras e a contagem escrita, como 7 de 27 UFs acima da meta",
+        "Container query que empilha tiles e ranking abaixo de 560 px"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_hexagonal-cpl-qualificado-por-plataforma",
+      "titulo": "CPL qualificado por UF em cada plataforma",
+      "caso_de_uso": "Marketing: onde o CPL qualificado fica acima da média nacional fictícia na Plataforma Social, de Busca e Profissional.",
+      "o_que_demonstra": [
+        "Tile hexagonal por clip-path com linhas ímpares deslocadas meia célula no mesmo grid",
+        "Três pequenos múltiplos lado a lado com uma única escala divergente em torno da média",
+        "Divergência em var(--positive) e var(--negative) com sinal escrito, centro em tom neutro",
+        "Separação entre macrorregiões por espaço extra na grade, sem contorno sobre o hexágono",
+        "Abaixo de 32 px por hexágono só a sigla aparece e o valor vai para a dica"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_leads-sem-uf-e-ufs-sem-dado",
+      "titulo": "Cobertura de UF na base de leads",
+      "caso_de_uso": "Marketing: quais UFs não têm lead medido e quantos leads chegaram sem UF preenchida, fora da distribuição.",
+      "o_que_demonstra": [
+        "UF sem dado hachurada por repeating-linear-gradient e escrita como sem dado",
+        "Zero medido desenhado e escrito como 0, distinto da UF sem dado",
+        "Card lateral 1.240 leads sem UF (18% do total) que não é distribuído entre as UFs",
+        "Legenda com item próprio para sem dado, depois das classes",
+        "Grade br_states_grid2 de 7x6 para caber no cartão ao lado do card de cobertura"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

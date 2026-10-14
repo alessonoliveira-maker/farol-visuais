@@ -1,0 +1,12 @@
+{
+  "title": "Receita do ano: realizado e projeção",
+  "useCase": "Quanto do ano já foi realizado nos 8 meses fechados e quanto dos 4 restantes é projeção?",
+  "demonstrates": [
+    "Pattern SVG em defs com id de useId, aplicado por shape conforme o regime da coluna",
+    "Hachura de traço fino e espaçado com contorno na cor da série, legível no tema escuro",
+    "ReferenceArea tênue sobre os meses projetados com o rótulo de método na margem reservada",
+    "Legenda com amostra sólida e hachurada, mais os totais do ano sem somar num único número"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

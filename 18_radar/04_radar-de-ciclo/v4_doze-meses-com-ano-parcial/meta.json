@@ -1,0 +1,14 @@
+{
+  "title": "Agendas realizadas por mês com o ano parcial",
+  "useCase": "Pré-vendas, 2026: como ler o ciclo mensal de agendas quando setembro está em curso e outubro a dezembro não existem?",
+  "demonstrates": [
+    "Meses futuros como null: polígono aberto, sem recolher ao centro",
+    "Rótulo a medir em --text-muted e raio pontilhado nos eixos de outubro a dezembro",
+    "Setembro parcial com trecho tracejado 4 4, ponto vazado e nota parcial até a data do dado",
+    "Janeiro e dezembro vizinhos no topo, preservando a virada do ano",
+    "Frase acessível que declara 8 meses fechados, 1 parcial e 3 ausentes"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "O traço é desenhado por shape próprio, trecho a trecho entre meses vizinhos medidos: o polígono padrão do Radar põe o mês nulo no centro e ligaria a série a ele. O desenho não tem área preenchida, porque fechar um polígono aberto inventaria uma borda entre setembro e janeiro. O Tooltip entrega o eixo nulo à dica própria só com filterNull desligado. O contrato vence."
+}

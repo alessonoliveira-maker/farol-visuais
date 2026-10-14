@@ -1,0 +1,71 @@
+{
+  "slug": "02_citacao-e-verbatim",
+  "nome": "Citação em destaque e verbatim realçado",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Um trecho de texto em destaque tipográfico, com fio lateral, corpo maior e atribuição por perfil fictício, e a variante analítica: o verbatim com os termos realçados por categoria e a informação de quanto aquele texto representa. A citação ilustra um padrão já medido em outro visual; não prova frequência. Por isso toda citação carrega o contador de representatividade (1 de 38 respostas parecidas, ou 23% das respostas do motivo). O realce é montado em TypeScript: a busca normaliza acento e caixa, o realce marca a forma original, e a string vira segmentos renderizados como mark, sem dangerouslySetInnerHTML. Nome, e-mail e telefone são mascarados antes de qualquer exibição.",
+  "quando_usar": [
+    "Dar voz do cliente a um motivo de perda ou de ganho que outro visual já quantificou",
+    "Mostrar como uma objeção aparece escrita, com os termos da categoria realçados",
+    "Até cinco verbatins por motivo, cada um com a parcela das respostas que ele representa",
+    "Abrir uma tela de Comercial ou de Pré-vendas com a frase que resume o trimestre na voz de quem compra"
+  ],
+  "quando_evitar": [
+    "Como prova de frequência: uma frase escolhida a dedo não mede nada; use a bar list de termos (02/09)",
+    "Mais de cinco citações empilhadas: o leitor para de ler; leve para a concordância KWIC (03)",
+    "Trecho recortado que inverte o sentido original: recorte por oração e marque o corte com reticências",
+    "Citação sem o número que ela ilustra ao lado: vira anedota; junte ao KPI simples com contexto (01/01)",
+    "Texto livre sem mascaramento de nome, e-mail e telefone: o componente mascara antes de exibir, sempre"
+  ],
+  "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+  "versoes": [
+    {
+      "slug": "v1_citacao-de-motivo-de-ganho",
+      "titulo": "Citação de motivo de ganho no topo do painel",
+      "caso_de_uso": "Comercial: qual frase de cliente resume o motivo de ganho mais citado em 2026-T3, e quantas respostas ela representa.",
+      "o_que_demonstra": [
+        "blockquote com border-s-4 em --chart-1 e corpo em 14 px, sem aspas decorativas",
+        "Atribuição por perfil fictício: cliente patrimonial, faixa B, set/26",
+        "Contador de representatividade: 1 de 38 respostas parecidas",
+        "Frase acessível na raiz com o motivo, a parcela e o período"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_objecoes-realcadas-por-categoria",
+      "titulo": "Verbatim com objeções realçadas por categoria",
+      "caso_de_uso": "Pré-vendas: em que palavras a objeção aparece na anotação de ligação, com preço, momento e concorrente em cores próprias.",
+      "o_que_demonstra": [
+        "String dividida em segmentos pelos índices das ocorrências, renderizada como mark",
+        "Busca por chave sem acento e em minúsculas, realce na forma original escrita",
+        "Cor por categoria em slot fixo 1, 3 e 6, com fundo translúcido e texto claro",
+        "Sublinhado além da cor no termo realçado, para não depender só de cor",
+        "Legenda das categorias acima do trecho com a contagem de cada uma"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_cinco-verbatins-por-motivo-de-perda",
+      "titulo": "Cinco verbatins por motivo de perda",
+      "caso_de_uso": "Comercial: como os clientes descrevem cada um dos cinco maiores motivos de perda de 2026-T3, com a parcela de cada frase.",
+      "o_que_demonstra": [
+        "Seletor de motivo e cinco verbatins do motivo escolhido, com a contagem do motivo",
+        "Parcela por verbatim: representa 23% das respostas desse motivo, por formatPercent",
+        "Verbatins ordenados pela parcela, não pela escolha de quem montou o painel",
+        "Desfecho e mês de cada verbatim em 11 px e text-text-muted"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_verbatim-longo-e-dado-sensivel",
+      "titulo": "Verbatim longo recortado e com dado mascarado",
+      "caso_de_uso": "Pré-vendas: exibir uma anotação de 800 caracteres ao redor do termo sem expor telefone, e-mail ou nome escritos nela.",
+      "o_que_demonstra": [
+        "Recorte por palavras ao redor do termo com reticências nas duas pontas",
+        "Mascaramento antes do realce: [telefone], [e-mail] e [nome] no lugar do dado",
+        "Contagem de caracteres omitidos escrita junto do recorte",
+        "Motivo sem verbatim mostra estado vazio com role status, sem citação inventada"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

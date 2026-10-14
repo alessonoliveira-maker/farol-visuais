@@ -1,0 +1,68 @@
+{
+  "slug": "03_funil-com-perdas-por-etapa",
+  "nome": "Funil com perdas por etapa",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada etapa vira uma barra horizontal dividida em avançou, perdido e em andamento, com o perdido opcionalmente quebrado por motivo. Responde onde e por que se perde, e é o modelo da família que não confunde diferença entre etapas com perda quando o dado é retrato do pipeline.",
+  "quando_usar": [
+    "Perguntar onde e por qual motivo as oportunidades saem, com até 5 motivos nomeados mais Outros motivos.",
+    "Dado de retrato do pipeline, em que parte de cada etapa ainda está em andamento.",
+    "Revisão de perdas do Comercial e de descarte da Pré-vendas, etapa por etapa, com 3 a 6 etapas."
+  ],
+  "quando_evitar": [
+    "Dado sem o segmento em andamento ou que não fecha com o volume da etapa: não publicar, porque inventa perda.",
+    "Mais de 5 motivos sem agrupar a cauda: agrupar em Outros motivos, ou usar o 19_cascata-waterfall/02_cascata-de-decomposicao para uma etapa só.",
+    "Quando só o volume por etapa importa: usar o 01_funil-em-barras-com-taxa-de-passo.",
+    "Largura de celular com muitos segmentos rotulados: mostrar só avançou, perdido e em andamento."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_avancou-perdido-em-andamento",
+      "titulo": "Avançou, perdido e em andamento por etapa",
+      "caso_de_uso": "Comercial, 2026-T3 em 2026-09-14: Aberta 420 (avançou 268, perdido 118, em andamento 34), Diagnóstico 268 (131, 101, 36), Proposta 131 (64, 45, 22) e Negociação 64 (29, 21, 14).",
+      "o_que_demonstra": [
+        "Uma Bar por segmento com o mesmo stackId, na mesma ordem em todas as etapas",
+        "Fechamento verificado: avançou, perdido e em andamento somam a etapa",
+        "Total da etapa no LabelList do último segmento",
+        "Taxa de perda da etapa escrita ao lado do total"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_perdas-por-motivo",
+      "titulo": "Perdas por motivo em cada etapa",
+      "caso_de_uso": "Comercial, 2026-T3: o perdido de cada etapa quebrado em Sem perfil, Sem contato, Timing, Concorrência e Preço; em Proposta, Concorrência lidera com 16 das 45 perdas.",
+      "o_que_demonstra": [
+        "Cinco motivos em --chart-1 a --chart-5, na ordem fixa da legenda",
+        "Rótulo interno só no maior motivo da etapa e só com largura de 48 px ou mais",
+        "LabelList content condicionado à largura do segmento",
+        "Legenda acima do gráfico na ordem da pilha (ROT-4)"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_descarte-da-pre-vendas-clientes-novos",
+      "titulo": "Descarte da pré-vendas por etapa",
+      "caso_de_uso": "Pré-vendas, 2026-08: Entradas, Conexão e Agenda marcada com motivo de descarte por etapa (Fora do perfil, Sem retorno, Contato inválido, Sem interesse, Duplicado) e o alternador apenas clientes novos recalculando as barras.",
+      "o_que_demonstra": [
+        "Prop apenasClientesNovos com default, recalculando o recorte no componente",
+        "Título escreve o recorte ativo: todos ou apenas clientes novos",
+        "Domínio fixo pelo recorte completo, para a troca não esticar as barras",
+        "Motivos além de cinco agrupados em Outros motivos"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_perdas-sem-motivo-registrado",
+      "titulo": "Perdas sem motivo registrado",
+      "caso_de_uso": "Comercial, 2026-T3 numa unidade com cadastro incompleto: 38% das perdas não têm motivo. O segmento sem motivo precisa ficar separado dos motivos reais e o visual precisa avisar a cobertura.",
+      "o_que_demonstra": [
+        "Sem motivo registrado em neutro hachurado, separado de Outros motivos",
+        "Rótulo sem motivo: 38% e aviso de cobertura na linha de leitura",
+        "Padrão de hachura declarado em defs dentro do Recharts",
+        "Lacuna de dado tratada como lacuna, nunca como motivo"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "06_densidade-kde",
+  "versoes": {
+    "v1_ticket-de-fechamento": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Área a partir do zero, curva recortada no observado, dois picos e mediana conferidos nos dois temas; contorno opaco de 2 px carrega a marca e o preenchimento de 0,18 só apoia. Observações no README: linha de leitura e tiques sem classe de algarismo tabular, comentário do data.ts fala em R$ 68 mil e a constante é 72 mil, nota do meta sobre a guarda de opacidade não confere com o check.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:32:04.933Z",
+      "impressao": "c424a39e3a9571e5e5116b1fa44d544b7fedddf4",
+      "arquivos": {
+        "Chart.tsx": "26e1d86e411f13c9f52d352a16ae5af371bde68c",
+        "data.ts": "90ba253f1c3c1977066896d722517948fa1820ae",
+        "meta.json": "81d5ebfb13f115c74169f968f99f9248a7956d3c"
+      }
+    },
+    "v2_cpl-de-dois-canais-sobrepostos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. A faixa hachurada leva nome e valor (Custo parecido: R$ 180 a R$ 230) e o rodapé declara o critério de 60%; áreas a partir do zero, mesma grade e mesma banda, contornos a 9,50 e 6,47 no escuro e 6,00 e 6,18 no claro. Observações no README: rodapé em duas linhas, cor por índice, tiques sem algarismo tabular, diferença de preview só nas linhas com CPL.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:14.198Z",
+      "impressao": "51fd846b69619f2d015798cb94de2d2d538187c0",
+      "arquivos": {
+        "Chart.tsx": "ed28ab84b45e692478df4afc6bbb2cd848d1700a",
+        "data.ts": "e224d67c8bdc4219207a84385e83c73e88dc5ac5",
+        "meta.json": "56e2f9fb9765f6e368b9adfaf21d27f11cb364fe"
+      }
+    },
+    "v3_ciclo-por-executivo-em-faixas-de-cor": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. Três degraus, seq-5 a seq-7, medidos contra o cartão: 3,72, 5,45 e 8,29 no claro e 4,89, 6,96 e 10,12 no escuro; legenda com três amostras, ilhas de cauda visíveis nos dois temas, mediana em corte vazado, amostra pequena hachurada e rotulada. Observações no README: vizinhos da rampa a 1,42 a 1,52, ordem não declarada, linha sob a tira.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:14.652Z",
+      "impressao": "7d64930c3f13830a2910e1c0503f055482db4dc0",
+      "arquivos": {
+        "Chart.tsx": "5c4b42ea9f036f7e6650e29bd85302da00211a64",
+        "data.ts": "e7571c20ab98d9f8b33d89ba476b89dc76ff7043",
+        "meta.json": "e11d88528eda1b63f940cc061f6b2c6e4dbce7e0"
+      }
+    },
+    "v4_amostra-curta-cai-para-pontos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. Pontos empilhados em faixas: os 22 do Varejo e os 9 de Serviços têm tinta própria e se contam nos dois temas, nenhum coincide (menor distância entre centros 4,00 px, antes 0). Observações no README: 10 pares do Varejo ainda se tocam em até 2 px, ponto mais baixo passa 1 px da linha de base, frase acessível sem o tipo, régua até R$ 150 mil.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:15.127Z",
+      "impressao": "b4a47651a57796ef44e17b92b67be27452a86865",
+      "arquivos": {
+        "Chart.tsx": "3f98ab9786657c33e66aee7f115c6cd1ba60e260",
+        "data.ts": "c7258b6337320fd1afd626ce6e06966e5e303427",
+        "meta.json": "9fc24a51579310f82fc972f032e9372f466a5982"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-de-fechamento",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Área a partir do zero, curva recortada no observado, dois picos e mediana conferidos nos dois temas; contorno opaco de 2 px carrega a marca e o preenchimento de 0,18 só apoia. Observações no README: linha de leitura e tiques sem classe de algarismo tabular, comentário do data.ts fala em R$ 68 mil e a constante é 72 mil, nota do meta sobre a guarda de opacidade não confere com o check.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:32:04.933Z",
+      "impressao": "c424a39e3a9571e5e5116b1fa44d544b7fedddf4",
+      "arquivos": {
+        "Chart.tsx": "26e1d86e411f13c9f52d352a16ae5af371bde68c",
+        "data.ts": "90ba253f1c3c1977066896d722517948fa1820ae",
+        "meta.json": "81d5ebfb13f115c74169f968f99f9248a7956d3c"
+      }
+    },
+    {
+      "versao": "v2_cpl-de-dois-canais-sobrepostos",
+      "veredito": "reprovado",
+      "nota": "Perguntas 12 e 13, ANO-2 e seção 14.1 (identificação das marcas): a faixa hachurada só leva o rótulo R$ 180 a R$ 230, sem nome, e o critério (curva menor a 60% da maior) não aparece no cartão; em R$ 180 a busca mede 1,7 vez o social. Nomear a faixa no rótulo e declarar o critério no rodapé. Parecer em validation/revisao_16_distribuicao__06_densidade-kde_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:32:05.469Z",
+      "impressao": "3db59e767b1dc69161f0d44b5993aa59f33e8627",
+      "arquivos": {
+        "Chart.tsx": "138bc66a820baa2f6c2b5507b5e716bdd96d5607",
+        "data.ts": "e224d67c8bdc4219207a84385e83c73e88dc5ac5",
+        "meta.json": "56e2f9fb9765f6e368b9adfaf21d27f11cb364fe"
+      }
+    },
+    {
+      "versao": "v3_ciclo-por-executivo-em-faixas-de-cor",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 e TOK-8: o degrau mais baixo é seq-4, que mede 2,60:1 contra o cartão no tema claro (132 células, inclusive as ilhas isoladas de cauda de duas tiras), sem número na célula. Ficar em três degraus, seq-5 a seq-7, e refazer legenda, meta e README. Parecer em validation/revisao_16_distribuicao__06_densidade-kde_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:32:05.934Z",
+      "impressao": "4efc09c444dc5e77fb8a87d1e2c8e697b3aa6178",
+      "arquivos": {
+        "Chart.tsx": "f13b76fe2d6291471978a4f166fdd3f513420360",
+        "data.ts": "e7571c20ab98d9f8b33d89ba476b89dc76ff7043",
+        "meta.json": "75120611d7330bdb7595f0f0aa34d0389a7b03ba"
+      }
+    },
+    {
+      "versao": "v4_amostra-curta-cai-para-pontos",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 15, ilegibilidade por sobreposição: no strip de n 22 dois pontos coincidem no mesmo pixel e outros 5 pares ficam a menos de 1 px, com raio de 3 px; em n 9 um par fica a 0,85 px. A peça promete pontos individuais e mostra uns 15 de 22 e 8 de 9. Empilhar os pontos que colidem dentro da altura da linha. Parecer em validation/revisao_16_distribuicao__06_densidade-kde_2026-10-05.md.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:32:06.401Z",
+      "impressao": "7a98e0125bb12636deebf1cbe8104507e807b670",
+      "arquivos": {
+        "Chart.tsx": "a4bf1ef47fd7c8fc2e4dda2353fdffc37d53a11b",
+        "data.ts": "c7258b6337320fd1afd626ce6e06966e5e303427",
+        "meta.json": "9fc24a51579310f82fc972f032e9372f466a5982"
+      }
+    },
+    {
+      "versao": "v2_cpl-de-dois-canais-sobrepostos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. A faixa hachurada leva nome e valor (Custo parecido: R$ 180 a R$ 230) e o rodapé declara o critério de 60%; áreas a partir do zero, mesma grade e mesma banda, contornos a 9,50 e 6,47 no escuro e 6,00 e 6,18 no claro. Observações no README: rodapé em duas linhas, cor por índice, tiques sem algarismo tabular, diferença de preview só nas linhas com CPL.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:14.198Z",
+      "impressao": "51fd846b69619f2d015798cb94de2d2d538187c0",
+      "arquivos": {
+        "Chart.tsx": "ed28ab84b45e692478df4afc6bbb2cd848d1700a",
+        "data.ts": "e224d67c8bdc4219207a84385e83c73e88dc5ac5",
+        "meta.json": "56e2f9fb9765f6e368b9adfaf21d27f11cb364fe"
+      }
+    },
+    {
+      "versao": "v3_ciclo-por-executivo-em-faixas-de-cor",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. Três degraus, seq-5 a seq-7, medidos contra o cartão: 3,72, 5,45 e 8,29 no claro e 4,89, 6,96 e 10,12 no escuro; legenda com três amostras, ilhas de cauda visíveis nos dois temas, mediana em corte vazado, amostra pequena hachurada e rotulada. Observações no README: vizinhos da rampa a 1,42 a 1,52, ordem não declarada, linha sob a tira.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:14.652Z",
+      "impressao": "7d64930c3f13830a2910e1c0503f055482db4dc0",
+      "arquivos": {
+        "Chart.tsx": "5c4b42ea9f036f7e6650e29bd85302da00211a64",
+        "data.ts": "e7571c20ab98d9f8b33d89ba476b89dc76ff7043",
+        "meta.json": "e11d88528eda1b63f940cc061f6b2c6e4dbce7e0"
+      }
+    },
+    {
+      "versao": "v4_amostra-curta-cai-para-pontos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje. Pontos empilhados em faixas: os 22 do Varejo e os 9 de Serviços têm tinta própria e se contam nos dois temas, nenhum coincide (menor distância entre centros 4,00 px, antes 0). Observações no README: 10 pares do Varejo ainda se tocam em até 2 px, ponto mais baixo passa 1 px da linha de base, frase acessível sem o tipo, régua até R$ 150 mil.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T11:38:15.127Z",
+      "impressao": "b4a47651a57796ef44e17b92b67be27452a86865",
+      "arquivos": {
+        "Chart.tsx": "3f98ab9786657c33e66aee7f115c6cd1ba60e260",
+        "data.ts": "c7258b6337320fd1afd626ce6e06966e5e303427",
+        "meta.json": "9fc24a51579310f82fc972f032e9372f466a5982"
+      }
+    }
+  ]
+}

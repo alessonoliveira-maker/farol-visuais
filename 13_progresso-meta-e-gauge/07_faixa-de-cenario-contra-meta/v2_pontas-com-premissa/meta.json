@@ -1,0 +1,13 @@
+{
+  "title": "Faixa de cenário com premissas nas pontas",
+  "useCase": "Diretoria: o que o piso e o teto da faixa de 2026-T4 pressupõem, e a que distância o cenário base está da meta?",
+  "demonstrates": [
+    "Piso e teto rotulados com a premissa de cada ponta, não só o valor",
+    "Distância entre o cenário base e a meta escrita em valor e em percentual",
+    "Halo na cor do cartão nos rótulos que cruzam a linha tracejada da meta",
+    "Margem reservada em MARGIN para os rótulos não encostarem nas marcas nem na borda"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Meta de período (trimestral, igual à v1). asOf declara o último mês fechado que alimenta as três premissas; nada na faixa é medição, o trimestre inteiro é projeção."
+}

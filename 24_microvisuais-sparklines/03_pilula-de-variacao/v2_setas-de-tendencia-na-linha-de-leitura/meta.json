@@ -1,0 +1,14 @@
+{
+  "title": "Setas de tendência na frase da pré-vendas",
+  "useCase": "Quais indicadores da semana estão estáveis, em alta ou em queda, sem trocar de tela?",
+  "demonstrates": [
+    "ArrowUpRight, ArrowDownRight e ArrowRight inline, alinhadas à linha de base do texto",
+    "Faixa de estabilidade de 5% declarada, abaixo da qual a seta fica horizontal",
+    "Glifo de tamanho fixo em 14 px, sem escalar com a magnitude da mudança",
+    "Número que sustenta cada seta escrito na mesma frase, com tabular-nums",
+    "Tempo de resposta em alta com seta para cima em --negative, pela polaridade da métrica"
+  ],
+  "canvas": { "width": 640, "height": 320 },
+  "frame": "stage",
+  "notes": "Canvas 640 x 320 em vez do card sugerido (640 x 360): a frase ocupa cinco linhas de 28 px e a legenda duas, e os 360 px deixavam cerca de 45 px de sobra no meio do cartão."
+}

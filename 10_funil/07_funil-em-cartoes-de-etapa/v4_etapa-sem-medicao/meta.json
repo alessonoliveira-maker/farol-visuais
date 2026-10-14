@@ -1,0 +1,12 @@
+{
+  "title": "Cartões com etapa sem medição",
+  "useCase": "Mostrar o funil de uma plataforma que não tem o evento de lead configurado, sem inventar um zero.",
+  "demonstrates": [
+    "Cartão indisponível com formatUnavailable e ícone Unplug, nunca zero",
+    "As duas taxas vizinhas à etapa sem base ficam indisponíveis, não caem para zero",
+    "Microbarra omitida só no cartão sem medição, os demais mantêm a régua",
+    "Frase acessível nomeia a etapa sem medição e a plataforma"
+  ],
+  "canvas": "faixa",
+  "frame": "stage"
+}

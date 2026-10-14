@@ -1,0 +1,75 @@
+{
+  "slug": "02_grafo-bipartido",
+  "nome": "Grafo bipartido",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Dois tipos de entidade em duas colunas, com ligações só de uma coluna para a outra. Resolve quem se relaciona com quem, e com que frequência, sem o caos do layout livre: a posição vertical é a ordem na coluna e a ligação é uma Bézier horizontal M xA,yA C xm,yA xm,yB xB,yB com espessura por peso. A ordem das colunas decide a leitura, então é calculada em TypeScript pela heurística de baricentro (ordena a coluna B pela média das posições dos vizinhos em A, depois A pela média em B, e repete). A espessura vai em três faixas (fraca, média, forte), mais legível que a contínua quando há muitas ligações, e as pontas se distribuem ao longo da altura do nó para não empilhar num ponto. Quando a pergunta é quanto volume foi de A para B, o modelo certo é o sankey da família 11.",
+  "quando_usar": [
+    "Relação entre dois tipos de entidade: SDR e executivo, cliente e produto, campanha e público",
+    "Até cerca de 12 nós por coluna e 60 ligações num cartão; acima disso, filtro de peso mínimo",
+    "Concentração de repasses em poucos pares, lida pela espessura e pelo percentual do nó",
+    "Visão em que o leitor precisa achar um nó pelo nome e seguir as ligações dele",
+    "Comparação de frequência discreta (quantas vezes), não de volume contínuo"
+  ],
+  "quando_evitar": [
+    "A pergunta é quanto volume fluiu de A para B, com proporção do todo: use o sankey simples (11/01_sankey-simples)",
+    "Um tipo só de entidade: use a matriz de adjacência (27/01) ou o chord simétrico (27/07)",
+    "Mais de 20 nós por coluna ou ligações quase completas: use a matriz retangular (27/01)",
+    "As entidades já têm duas categorias e a etapa importa: use o grafo em grade (27/03)",
+    "Mais de duas camadas encadeadas com perdas: use o sankey multietapa (11/02_sankey-multietapa)"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_handoffs-sdr-para-executivo",
+      "titulo": "Repasses de agenda por SDR e executivo",
+      "caso_de_uso": "Pré-vendas: como as agendas de 2026-T3 se distribuem entre SDR 1 a SDR 5 e os executivos A a H.",
+      "o_que_demonstra": [
+        "Ligação em Bézier horizontal calculada em TypeScript, sem biblioteca de grafo",
+        "Ordem das duas colunas por baricentro para reduzir cruzamentos",
+        "Espessura em três faixas (fraca, média, forte) com a legenda das faixas",
+        "Total escrito ao lado de cada nó nas duas colunas com formatNumber",
+        "Ligações em var(--line-strong) desenhadas antes dos nós"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_concentracao-do-sdr-selecionado",
+      "titulo": "Para onde vão os repasses do SDR 3",
+      "caso_de_uso": "Pré-vendas: quanto dos repasses do SDR 3 em 2026-T3 foi para os dois executivos que mais recebem dele.",
+      "o_que_demonstra": [
+        "Prop highlightId que acende as ligações do nó em var(--chart-1) e baixa as demais",
+        "Rótulo do nó selecionado em peso 700 e anotação 70% em dois executivos",
+        "Percentual de cada ligação sobre o total do SDR escrito junto da ponta de destino",
+        "Adjacência pré-calculada em Map para o hover não varrer as ligações",
+        "Frase acessível na raiz com o par mais forte e o percentual"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_clientes-e-produtos-na-carteira",
+      "titulo": "Produtos em cada carteira de cliente",
+      "caso_de_uso": "Comercial: quais produtos cada uma das 24 contas fictícias de maior receita tem em carteira, e quais produtos andam juntos.",
+      "o_que_demonstra": [
+        "24 contas (C01 a C24) contra 7 produtos, com altura do nó pelo total de ligações",
+        "Pontas distribuídas ao longo da altura do nó para não empilhar no mesmo ponto",
+        "Cor da ligação pelo produto em slots fixos de var(--chart-1) a var(--chart-6)",
+        "Rótulo só nos produtos e nas contas com três ou mais produtos; o resto na dica",
+        "Nota escrita de contas omitidas pelo corte de receita, como mais 36 contas"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_executivo-sem-repasse",
+      "titulo": "Executivo sem repasse no trimestre",
+      "caso_de_uso": "Pré-vendas: o executivo que não recebeu nenhuma agenda em 2026-T3 continua na coluna, para a ausência ser lida.",
+      "o_que_demonstra": [
+        "Nó sem ligação com contorno var(--text-muted) e sem preenchimento, por último na coluna",
+        "Texto 0 repasses escrito, porque zero medido não some",
+        "Baricentro que ignora nós de grau zero e os manda para o fim da ordem",
+        "SDR em férias parcial marcado como sem dado, distinto de zero repasses",
+        "Rodapé com a contagem de nós sem ligação nas duas colunas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

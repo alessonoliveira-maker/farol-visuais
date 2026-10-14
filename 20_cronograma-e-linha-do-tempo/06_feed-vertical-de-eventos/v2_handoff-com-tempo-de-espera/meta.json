@@ -1,0 +1,13 @@
+{
+  "title": "Passagens de dono com tempo de espera",
+  "useCase": "Pré-vendas: quanto a oportunidade esperou em cada troca de dono entre SDR, executivo e operações.",
+  "demonstrates": [
+    "Evento de troca de dono com ícone ArrowRightLeft e cor var(--chart-1) própria",
+    "Espera entre dois donos escrita no trilho entre os cartões, como 3 dias sem dono",
+    "Espera acima do SLA com ícone de alerta e texto do limite, sem depender da cor",
+    "Demais eventos rebaixados para text-text-muted quando o filtro de handoff está ativo"
+  ],
+  "canvas": { "width": 640, "height": 770 },
+  "frame": "card",
+  "notes": "Canvas por número: 9 cartões de 2 linhas (cerca de 52 px mais 8 px de vão, 540 px) mais 4 linhas de espera de 20 px e a linha de leitura de 28 px passam de 640 px de corpo; o preset alto tem 425 px. Desvio do catálogo (COR-8): o marcador de passagem usa --chart-1 e não --chart-2, que tem o mesmo hex de --warning, reservado ao alerta de espera. Desvio do catálogo: a espera é escrita por extenso (3 dias sem dono) porque a abreviação d não é unidade do formatDays e a ROT-8 proíbe sigla inventada. A espera da última passagem, ainda sem retomada, conta até a data de referência e leva o texto até agora."
+}

@@ -1,0 +1,22 @@
+# Ferramenta de render: dependências, conferência, temporários e trava entre processos
+node_modules/
+_render/.qa/*
+# ...menos os vereditos de revisao, que sao estado e nao saida regeneravel
+!_render/.qa/revisao/
+_render/.tmp/
+_render/.lock/
+_render/.lock-vencida-*/
+
+# Temporários de gravação atômica e sobras de editor ou sistema
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Galeria gerada por `npm run galeria`; 1 MB de fontes embutidas, regeneravel
+galeria.html
+
+# Backups de sessao do catalogo e das guardas; o historico do git ja guarda a versao anterior
+*.bak
+*.bak-*
+

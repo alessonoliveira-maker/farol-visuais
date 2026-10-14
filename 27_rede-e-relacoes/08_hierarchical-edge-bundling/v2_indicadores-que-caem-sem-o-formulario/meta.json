@@ -1,0 +1,14 @@
+{
+  "title": "O que cai se o formulário do site parar",
+  "useCase": "Diretoria: quais dos 40 indicadores fictícios dependem da fonte formulário do site e param se ela falhar.",
+  "demonstrates": [
+    "Fonte selecionada por highlightId com os 11 dependentes em var(--negative)",
+    "Demais feixes em var(--text-muted) a 0,76 de opacidade, sem sumir da forma",
+    "Ícone lucide Unplug junto do nome da fonte, para o alerta não depender só da cor",
+    "Lista lateral dos 11 indicadores agrupados por dashboard, com o zero escrito",
+    "Contagem escrita na linha de leitura: 11 de 40 indicadores dependem da fonte"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): largo 960x400 com moldura card dá corpo de 894 x 281,5 px, porque o caso de uso mede 577 px e fica em uma linha. O viewBox é 894 x 281, do tamanho do corpo, e a escala do svg sai 1 (GEO-18). Na altura: linha de leitura em y 8, círculo de 100 px de raio com centro em 146, nome de grupo mais alto perto de 38 e mais baixo perto de 252, e rodapé em 273. Na largura: o círculo e os dez nomes de grupo ocupam de cerca de 14 a 483 px, e a lista lateral vai de 506 a 890 em duas colunas de 184 px; a primeira coluna enche até a metade das linhas (11 de 17) e termina perto de 220 px, e as duas linhas de legenda ficam em 246 e 261. DESVIOS DECLARADOS DO CATÁLOGO, com o contrato vencendo. (1) O catálogo pede os demais feixes com opacidade 0,2; a ligação é o dado (ACE-6) e nenhum token chega a 3:1 com 0,2. Ficou var(--text-muted) a 0,76, que mede 3,58:1 no escuro e 3,28:1 no claro; o piso fica em 0,72 (ACE-5). (2) O texto não gira (TIP-5): o nome do grupo é horizontal, fora do círculo, e quando encosta em outro procura a vaga livre mais próxima, para longe ou para perto do equador. O par marca contra marca (TOK-9): var(--negative) contra a ligação baixada mede 1,54:1 no escuro e 1,94:1 no claro, e contra o ponto neutro da folha 1,48:1 e 1,28:1. Por isso o destaque não depende só da cor: a ligação acesa tem 2 px contra 1 px e leva revestimento na cor do cartão (TOK-4), a folha atingida cresce de 2,2 para 3,4 px de raio e a selecionada para 5, o nome da fonte vai em peso 700 com o ícone Unplug, e os atingidos estão escritos na lista. A lista vai do dashboard mais atingido ao menos, com a contagem ao lado do nome e a ordem dita no título dela (GEO-12); empate sai na ordem do dado, e o dashboard sem nenhum atingido fica com o zero escrito (EST-3). As folhas não levam nome nesta versão: 58 nomes horizontais não cabem em volta de um círculo de 100 px de raio, e o nome de cada uma vai na dica nativa, com a contagem. A OPACIDADE-MARCA mede a peça pela constante DIM_OPACITY e passa; a conta à mão contra tokens.css dá os mesmos 3,58:1 e 3,28:1."
+}

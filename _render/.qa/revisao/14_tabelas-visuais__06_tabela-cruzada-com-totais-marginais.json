@@ -1,0 +1,173 @@
+{
+  "familia": "14_tabelas-visuais",
+  "modelo": "06_tabela-cruzada-com-totais-marginais",
+  "versoes": {
+    "v1_oportunidades-por-executivo-e-etapa": {
+      "veredito": "aprovado",
+      "nota": "Totais fecham nos dois sentidos, 11 px em tudo, zero medido separado de nao se aplica. Observacoes: borda em display contents nao pinta e render diverge no rodape.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:11:53.753Z",
+      "impressao": "e3ea257c2b15dc8383657cfa3a801387fbaef474",
+      "arquivos": {
+        "Chart.tsx": "e07474433e46e3da3a64720f09a1be3f88b91547",
+        "data.ts": "0e319617f64e8389e669be3903c49c8988d2fa92",
+        "meta.json": "6f3889122e4a51ce5d84699cb316b1d3f636f062"
+      }
+    },
+    "v2_heatmap-no-miolo-e-barras-nas-margens": {
+      "veredito": "aprovado",
+      "nota": "Escala de cor so do miolo, barras marginais do zero, contraste medido acima de 5,4 nos dois temas. Observacao: as duas margens usam dominios diferentes e a legenda nao diz.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:11:59.984Z",
+      "impressao": "1cdce665e0dc20609b36b9eef07e9f3ae44fc685",
+      "arquivos": {
+        "Chart.tsx": "4fda108343b7971cc5aec3e0eedbb8c6aa237147",
+        "data.ts": "f49df374f8bc1d23f913ba041dcb6f667cc6936f",
+        "meta.json": "e73fce298b331d23a3cb6cdaf250601e75295297"
+      }
+    },
+    "v3_leads-por-origem-e-mes-em-percentual-da-linha": {
+      "veredito": "aprovado",
+      "nota": "As 10 linhas fecham 100 pelo maior resto, denominador no canto e no rodape, contagem absoluta so na margem. Observacao: cabecalhos fora de role row e render diverge por arredondamento de coluna.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:12:06.063Z",
+      "impressao": "92edb6e8bf41a36861c46dea98b35fafa36bfff1",
+      "arquivos": {
+        "Chart.tsx": "8b7c84a055f8c9fa12edd2c5b86f63ac25c0abe2",
+        "data.ts": "f7a0c26f0222bef7871f9d6c797f4fff5b6c058e",
+        "meta.json": "c4d787a7f9efd546d9bdb8cfdf40e756c5ae493b"
+      }
+    },
+    "v4_denominador-e-celulas-vazias": {
+      "veredito": "aprovado",
+      "nota": "Desenho de 2026-10-01 conferido nos dois temas: alternador em Manrope 11 px, botão ativo de 64 por 20 px centrado, sem corte nem colisão, preview e página a 0,013% no pior tema. Linhas fecham 100 e totais fecham 1.397. Observações de acabamento no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:40:22.383Z",
+      "impressao": "30723daec02012df394e4e4cf9af31ee15a21b93",
+      "arquivos": {
+        "Chart.tsx": "eed9ea6192fda31ed41f3f136049275314291bda",
+        "data.ts": "bf2dd559626f19f54d69494102da002df11fa53f",
+        "meta.json": "ec0fbec9224caa74258d4b3fa5eb5f9098d77b93"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-por-executivo-e-etapa",
+      "veredito": "aprovado",
+      "nota": "Totais marginais corretos nas duas direcoes, ausencia por icone distinta do zero, contraste AA nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:54:51.494Z",
+      "impressao": "e3ea257c2b15dc8383657cfa3a801387fbaef474",
+      "arquivos": {
+        "Chart.tsx": "e07474433e46e3da3a64720f09a1be3f88b91547",
+        "data.ts": "0e319617f64e8389e669be3903c49c8988d2fa92",
+        "meta.json": "6f3889122e4a51ce5d84699cb316b1d3f636f062"
+      }
+    },
+    {
+      "versao": "v2_heatmap-no-miolo-e-barras-nas-margens",
+      "veredito": "aprovado",
+      "nota": "Escala de cor so do miolo, totais com dominio proprio e declarados fora da rampa, barras zero based.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:54:56.378Z",
+      "impressao": "1cdce665e0dc20609b36b9eef07e9f3ae44fc685",
+      "arquivos": {
+        "Chart.tsx": "4fda108343b7971cc5aec3e0eedbb8c6aa237147",
+        "data.ts": "f49df374f8bc1d23f913ba041dcb6f667cc6936f",
+        "meta.json": "e73fce298b331d23a3cb6cdaf250601e75295297"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-e-mes-em-percentual-da-linha",
+      "veredito": "reprovado",
+      "nota": "data.ts usa Anuncio Meta, marca de empresa real; o resto do catalogo nomeia o canal de forma generica.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:01.176Z",
+      "impressao": "ea005430e00092c5dbe343c8eee5e8aad8627da2",
+      "arquivos": {
+        "Chart.tsx": "4e5dc9147e8cd087e6b386a27a18a478a4cdf619",
+        "data.ts": "f2d202255c9f47d83c5a6cce7c44612a4712cf00",
+        "meta.json": "c4d787a7f9efd546d9bdb8cfdf40e756c5ae493b"
+      }
+    },
+    {
+      "versao": "v4_denominador-e-celulas-vazias",
+      "veredito": "reprovado",
+      "nota": "data.ts usa Anuncio Meta, marca de empresa real; trocar por nome generico de canal como no resto do catalogo.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T03:55:06.900Z",
+      "impressao": "f602e7eead6cc9636d81e172ba8ecddafe713dec",
+      "arquivos": {
+        "Chart.tsx": "b96282cb9598541a9495dc5bb5afefb5cf98b144",
+        "data.ts": "6d62ceee343859a67a2ec09c889e32e09b8a5648",
+        "meta.json": "ec0fbec9224caa74258d4b3fa5eb5f9098d77b93"
+      }
+    },
+    {
+      "versao": "v1_oportunidades-por-executivo-e-etapa",
+      "veredito": "aprovado",
+      "nota": "Totais fecham nos dois sentidos, 11 px em tudo, zero medido separado de nao se aplica. Observacoes: borda em display contents nao pinta e render diverge no rodape.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:11:53.753Z",
+      "impressao": "e3ea257c2b15dc8383657cfa3a801387fbaef474",
+      "arquivos": {
+        "Chart.tsx": "e07474433e46e3da3a64720f09a1be3f88b91547",
+        "data.ts": "0e319617f64e8389e669be3903c49c8988d2fa92",
+        "meta.json": "6f3889122e4a51ce5d84699cb316b1d3f636f062"
+      }
+    },
+    {
+      "versao": "v2_heatmap-no-miolo-e-barras-nas-margens",
+      "veredito": "aprovado",
+      "nota": "Escala de cor so do miolo, barras marginais do zero, contraste medido acima de 5,4 nos dois temas. Observacao: as duas margens usam dominios diferentes e a legenda nao diz.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:11:59.984Z",
+      "impressao": "1cdce665e0dc20609b36b9eef07e9f3ae44fc685",
+      "arquivos": {
+        "Chart.tsx": "4fda108343b7971cc5aec3e0eedbb8c6aa237147",
+        "data.ts": "f49df374f8bc1d23f913ba041dcb6f667cc6936f",
+        "meta.json": "e73fce298b331d23a3cb6cdaf250601e75295297"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-e-mes-em-percentual-da-linha",
+      "veredito": "aprovado",
+      "nota": "As 10 linhas fecham 100 pelo maior resto, denominador no canto e no rodape, contagem absoluta so na margem. Observacao: cabecalhos fora de role row e render diverge por arredondamento de coluna.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:12:06.063Z",
+      "impressao": "92edb6e8bf41a36861c46dea98b35fafa36bfff1",
+      "arquivos": {
+        "Chart.tsx": "8b7c84a055f8c9fa12edd2c5b86f63ac25c0abe2",
+        "data.ts": "f7a0c26f0222bef7871f9d6c797f4fff5b6c058e",
+        "meta.json": "c4d787a7f9efd546d9bdb8cfdf40e756c5ae493b"
+      }
+    },
+    {
+      "versao": "v4_denominador-e-celulas-vazias",
+      "veredito": "aprovado",
+      "nota": "Vazio, nao se aplica e zero medido com glifo e cor proprios, escala do miolo de 0 a 49 por cento, totais fecham em 1.397. Observacao: cor do miolo compara denominadores de tamanhos diferentes.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T04:12:11.898Z",
+      "impressao": "30723daec02012df394e4e4cf9af31ee15a21b93",
+      "arquivos": {
+        "Chart.tsx": "eed9ea6192fda31ed41f3f136049275314291bda",
+        "data.ts": "bf2dd559626f19f54d69494102da002df11fa53f",
+        "meta.json": "ec0fbec9224caa74258d4b3fa5eb5f9098d77b93"
+      }
+    },
+    {
+      "versao": "v4_denominador-e-celulas-vazias",
+      "veredito": "aprovado",
+      "nota": "Desenho de 2026-10-01 conferido nos dois temas: alternador em Manrope 11 px, botão ativo de 64 por 20 px centrado, sem corte nem colisão, preview e página a 0,013% no pior tema. Linhas fecham 100 e totais fecham 1.397. Observações de acabamento no README.",
+      "data": "2026-10-02",
+      "registradoEm": "2026-10-02T14:40:22.383Z",
+      "impressao": "30723daec02012df394e4e4cf9af31ee15a21b93",
+      "arquivos": {
+        "Chart.tsx": "eed9ea6192fda31ed41f3f136049275314291bda",
+        "data.ts": "bf2dd559626f19f54d69494102da002df11fa53f",
+        "meta.json": "ec0fbec9224caa74258d4b3fa5eb5f9098d77b93"
+      }
+    }
+  ]
+}

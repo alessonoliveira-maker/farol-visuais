@@ -1,0 +1,13 @@
+{
+  "title": "Distância entre CPL bruto e qualificado",
+  "useCase": "Em 14 origens de lead, quanto o CPL qualificado se afasta do bruto em agosto.",
+  "demonstrates": [
+    "Ordenação pela largura da faixa, com a mais larga no topo",
+    "Destaque em chart-2 só na origem de maior distância, demais em neutro",
+    "Anotação com o fator: qualificado custa 4,1 vezes o bruto",
+    "Faixa de largura zero desenhada como ponto com anel e nota de 100% qualificado"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Desvios do catálogo. (1) Faixa por barra empilhada sobre base invisível (dataKey raw, sem preenchimento) mais a barra de largura qualificado menos bruto, por decisão do dono (ver REC-8), e não um Bar com dataKey que devolve o par. (2) Canvas por número: 14 linhas x 32 px = 448, mais 4 de margem, 26 de eixo e o subtítulo de 24 = 502 px, que não cabe no corpo de 441,5 px do alto; 640 x 640 dá 505 px de corpo com o caso de uso em duas linhas (a ESP-6 manda subir a altura em vez de afinar a cápsula de 12,8 px). (3) A anotação do fator (4,1 vezes) mora na ponta da própria faixa destacada, e a nota 100% qualificado na do ponto com anel, que são as duas anotações do visual. O fator sai de qualificado dividido por bruto, e os dois CPL saem de gasto sobre leads e sobre qualificados, arredondados ao centavo. A margem direita de 132 px reserva o valor mais a nota."
+}

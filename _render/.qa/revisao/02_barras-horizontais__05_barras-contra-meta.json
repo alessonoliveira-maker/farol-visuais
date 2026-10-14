@@ -1,0 +1,212 @@
+{
+  "familia": "02_barras-horizontais",
+  "modelo": "05_barras-contra-meta",
+  "versoes": {
+    "v1_realizado-sobre-meta-sobreposta": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; sobreposicao honesta, meta e realizado escritos na linha, legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:29.709Z",
+      "impressao": "036208c29be17ffa01c4c0d5b3cec2f22a25714f",
+      "arquivos": {
+        "Chart.tsx": "ded8286259ac821bbf2acd0c892f3459f469118c",
+        "data.ts": "64e119930a1fdf4ad94464207501da715dfc5e55",
+        "meta.json": "e92c5ed6d91fecaefaebfbe8edfa1e5875e2a595"
+      }
+    },
+    "v2_marcador-de-meta-e-trimestre-anterior": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bullet graph com traco de meta e ponto do trimestre anterior, variacao com seta, sinal e base.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:36.224Z",
+      "impressao": "302e64b48a457f55fa4de1c545bd213b18fd521b",
+      "arquivos": {
+        "Chart.tsx": "9d2be7cc154577975c20dbee1a112133d10db616",
+        "data.ts": "a28a678a6c1a706810a510350bfdf62a50794ddd",
+        "meta.json": "d95da63e531f08ced68c25bfd7ca6a1790d61a47"
+      }
+    },
+    "v3_metas-2027-em-percentual": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; faixas em tons de um matiz, invertidas no custo, meta unica em 100 por cento e valor original na linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:36.727Z",
+      "impressao": "369565149667d58e3a5549d8aa5e82c853e3d5dc",
+      "arquivos": {
+        "Chart.tsx": "8b7ecada37d4427ceddcc03732426604ba147fcb",
+        "data.ts": "a977710a055670a5daebb11e232f3b1e3231ae75",
+        "meta.json": "f89a92c45d43f163fadfb89da06289e68f6c457a"
+      }
+    },
+    "v4_sem-meta-e-acima-da-meta": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; sem meta, excedente e estorno tratados, escala cortada com marca de quebra explicita.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:37.235Z",
+      "impressao": "da052c5f80fe6d5ec81dd471ffa04af7dba4e47e",
+      "arquivos": {
+        "Chart.tsx": "22a4f35f9424ca561416c638eec8550a807d7de2",
+        "data.ts": "3db512e93f91f72d6e438a933b642a0bdee3e55e",
+        "meta.json": "4441b47370200c465a0a3023f2d15c32d9f692c4"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_realizado-sobre-meta-sobreposta",
+      "veredito": "aprovado",
+      "nota": "Barras sobrepostas legiveis nos dois temas; meta e realizado escritos em coluna. Frase acessivel no limite dos 250 caracteres.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:19:54.921Z",
+      "impressao": "62d13273470ecd24b017edbd98dad625f251ec27",
+      "arquivos": {
+        "Chart.tsx": "000ca6825c2d08b671f860ef208ff257bf55c9c0",
+        "data.ts": "64e119930a1fdf4ad94464207501da715dfc5e55",
+        "meta.json": "e92c5ed6d91fecaefaebfbe8edfa1e5875e2a595"
+      }
+    },
+    {
+      "versao": "v2_marcador-de-meta-e-trimestre-anterior",
+      "veredito": "reprovado",
+      "nota": "MARK_OFFSET de 8 px desloca o traco de meta e o ponto do trimestre anterior para fora da barra: o traco cobre so a metade inferior e sobra 11 px abaixo, o ponto fica inteiro abaixo da barra e nas linhas de baixo o marcador flutua solto entre duas linhas. Alinhar as marcas ao centro da barra.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:20:21.751Z",
+      "impressao": "37dc322c4f4c7772fb8f71e754ed2c32df29f0a0",
+      "arquivos": {
+        "Chart.tsx": "38443a574c14b4f2f4d62dcb2d14786b4fc2dbf9",
+        "data.ts": "a28a678a6c1a706810a510350bfdf62a50794ddd",
+        "meta.json": "d95da63e531f08ced68c25bfd7ca6a1790d61a47"
+      }
+    },
+    {
+      "versao": "v3_metas-2027-em-percentual",
+      "veredito": "aprovado",
+      "nota": "Tres faixas de um matiz distinguiveis nos dois temas, valor original por linha e meta em 100 por cento. Ordem decrescente poe o custo por reuniao no topo e as faixas nao sao nomeadas na tela.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:20:27.293Z",
+      "impressao": "369565149667d58e3a5549d8aa5e82c853e3d5dc",
+      "arquivos": {
+        "Chart.tsx": "8b7ecada37d4427ceddcc03732426604ba147fcb",
+        "data.ts": "a977710a055670a5daebb11e232f3b1e3231ae75",
+        "meta.json": "f89a92c45d43f163fadfb89da06289e68f6c457a"
+      }
+    },
+    {
+      "versao": "v4_sem-meta-e-acima-da-meta",
+      "veredito": "reprovado",
+      "nota": "A barra neutra da meta nao e identificada em lugar nenhum: sem cabecalho de coluna, sem legenda e sem o valor da meta escrito, ao contrario da v1. Na linha do estorno a barra neutra sozinha ao lado de menos R 45,2 mil se le como realizado. Escrever a meta na coluna ou repetir o cabecalho com amostras da v1.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T12:20:32.413Z",
+      "impressao": "1139fe84534ac6e1de0d06c41321a4d7fcf9b3ef",
+      "arquivos": {
+        "Chart.tsx": "05713b9cca35afc5b7187e7eb3ca462b1b268430",
+        "data.ts": "3db512e93f91f72d6e438a933b642a0bdee3e55e",
+        "meta.json": "4441b47370200c465a0a3023f2d15c32d9f692c4"
+      }
+    },
+    {
+      "versao": "v1_realizado-sobre-meta-sobreposta",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas conferidos; barras do zero, escala comum, meta neutra com valor escrito na linha. Observacoes: frase acessivel um pouco acima de 250 caracteres.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:46:54.578Z",
+      "impressao": "62d13273470ecd24b017edbd98dad625f251ec27",
+      "arquivos": {
+        "Chart.tsx": "000ca6825c2d08b671f860ef208ff257bf55c9c0",
+        "data.ts": "64e119930a1fdf4ad94464207501da715dfc5e55",
+        "meta.json": "e92c5ed6d91fecaefaebfbe8edfa1e5875e2a595"
+      }
+    },
+    {
+      "versao": "v2_marcador-de-meta-e-trimestre-anterior",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas conferidos; marcador de meta legivel, variacao com sinal, seta e base escrita. Observacao: o realizado em reais nao aparece escrito em nenhuma linha.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:46:59.168Z",
+      "impressao": "302e64b48a457f55fa4de1c545bd213b18fd521b",
+      "arquivos": {
+        "Chart.tsx": "9d2be7cc154577975c20dbee1a112133d10db616",
+        "data.ts": "a28a678a6c1a706810a510350bfdf62a50794ddd",
+        "meta.json": "d95da63e531f08ced68c25bfd7ca6a1790d61a47"
+      }
+    },
+    {
+      "versao": "v3_metas-2027-em-percentual",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas conferidos; faixas de um so matiz medidas nos dois temas, inversao do custo confirmada no pixel, meta em ReferenceLine. Observacao: colunas de numero sem cabecalho.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:47:03.944Z",
+      "impressao": "369565149667d58e3a5549d8aa5e82c853e3d5dc",
+      "arquivos": {
+        "Chart.tsx": "8b7ecada37d4427ceddcc03732426604ba147fcb",
+        "data.ts": "a977710a055670a5daebb11e232f3b1e3231ae75",
+        "meta.json": "f89a92c45d43f163fadfb89da06289e68f6c457a"
+      }
+    },
+    {
+      "versao": "v4_sem-meta-e-acima-da-meta",
+      "veredito": "aprovado",
+      "nota": "Check limpo, dois temas conferidos; corte de escala declarado com marca de quebra, sem meta e estorno escritos e nunca desenhados como zero. Observacao: excedente abaixo de 10 por cento sai sem casa decimal.",
+      "data": "2026-09-17",
+      "registradoEm": "2026-09-17T14:47:08.432Z",
+      "impressao": "da052c5f80fe6d5ec81dd471ffa04af7dba4e47e",
+      "arquivos": {
+        "Chart.tsx": "22a4f35f9424ca561416c638eec8550a807d7de2",
+        "data.ts": "3db512e93f91f72d6e438a933b642a0bdee3e55e",
+        "meta.json": "4441b47370200c465a0a3023f2d15c32d9f692c4"
+      }
+    },
+    {
+      "versao": "v1_realizado-sobre-meta-sobreposta",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; sobreposicao honesta, meta e realizado escritos na linha, legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:29.709Z",
+      "impressao": "036208c29be17ffa01c4c0d5b3cec2f22a25714f",
+      "arquivos": {
+        "Chart.tsx": "ded8286259ac821bbf2acd0c892f3459f469118c",
+        "data.ts": "64e119930a1fdf4ad94464207501da715dfc5e55",
+        "meta.json": "e92c5ed6d91fecaefaebfbe8edfa1e5875e2a595"
+      }
+    },
+    {
+      "versao": "v2_marcador-de-meta-e-trimestre-anterior",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bullet graph com traco de meta e ponto do trimestre anterior, variacao com seta, sinal e base.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:36.224Z",
+      "impressao": "302e64b48a457f55fa4de1c545bd213b18fd521b",
+      "arquivos": {
+        "Chart.tsx": "9d2be7cc154577975c20dbee1a112133d10db616",
+        "data.ts": "a28a678a6c1a706810a510350bfdf62a50794ddd",
+        "meta.json": "d95da63e531f08ced68c25bfd7ca6a1790d61a47"
+      }
+    },
+    {
+      "versao": "v3_metas-2027-em-percentual",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; faixas em tons de um matiz, invertidas no custo, meta unica em 100 por cento e valor original na linha.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:36.727Z",
+      "impressao": "369565149667d58e3a5549d8aa5e82c853e3d5dc",
+      "arquivos": {
+        "Chart.tsx": "8b7ecada37d4427ceddcc03732426604ba147fcb",
+        "data.ts": "a977710a055670a5daebb11e232f3b1e3231ae75",
+        "meta.json": "f89a92c45d43f163fadfb89da06289e68f6c457a"
+      }
+    },
+    {
+      "versao": "v4_sem-meta-e-acima-da-meta",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; sem meta, excedente e estorno tratados, escala cortada com marca de quebra explicita.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T12:04:37.235Z",
+      "impressao": "da052c5f80fe6d5ec81dd471ffa04af7dba4e47e",
+      "arquivos": {
+        "Chart.tsx": "22a4f35f9424ca561416c638eec8550a807d7de2",
+        "data.ts": "3db512e93f91f72d6e438a933b642a0bdee3e55e",
+        "meta.json": "4441b47370200c465a0a3023f2d15c32d9f692c4"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Termos de busca paga em nuvem alinhada",
+  "useCase": "Marketing: quais termos de busca paga trouxeram mais leads em ago/26 e quais têm maioria qualificada, clicando para filtrar.",
+  "demonstrates": [
+    "Variante tag cloud em HTML: flex flex-wrap items-baseline e cinco degraus por quantil",
+    "Cada termo é um button com aria-pressed; o selecionado filtra e mostra a contagem",
+    "Maioria qualificada em --chart-1 com peso 600; as demais em text-text-secondary",
+    "Ordem alfabética declarada no subtítulo, com a ordem por peso no seletor",
+    "Dica com leads, percentual qualificado e CPL qualificado por formatCurrencyCompact"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do canvas largo: corpo de 894 x 281,5 px com o caso de uso em uma linha (124 caracteres). Linha de leitura com o seletor 30 px, linha de estado do filtro 24 px e legenda 20,5 px deixam 207 px para a nuvem; os 24 termos ocupam seis linhas na ordem alfabética, cerca de 190 px. Os degraus são 12, 14, 17, 20 e 24 px, um por quinto da distribuição de leads. A dica é o title nativo do botão, e a tela escreve custo por lead qualificado por extenso em vez da sigla. O preview fotografa o estado inicial: ordem alfabética e planejamento sucessório selecionado."
+}

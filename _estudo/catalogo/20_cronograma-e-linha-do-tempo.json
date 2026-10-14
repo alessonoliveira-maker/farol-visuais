@@ -1,0 +1,646 @@
+{
+  "slug": "20_cronograma-e-linha-do-tempo",
+  "nome": "Cronograma e linha do tempo",
+  "modelos": [
+    {
+      "slug": "01_gantt",
+      "nome": "Gantt",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma linha por atividade e o tempo no eixo horizontal: cada barra vai da data de início à data de fim, e a leitura revela paralelismo, lacunas e o que está no ar hoje. No Recharts é um BarChart com layout vertical e dataKey em tupla [inicioMs, fimMs], sem série transparente de deslocamento. Os ticks de calendário (primeiro dia do mês, segunda-feira) são gerados em TypeScript, as datas entram por Date.UTC e a data de hoje vem no dado, nunca do relógio. O modelo absorve o Gantt de progresso com linha de base, o Gantt hierárquico com colunas de tabela e a linha do tempo empacotada.",
+      "quando_usar": [
+        "Períodos com início e fim declarados, de 5 a cerca de 30 linhas, quando a duração e a sobreposição importam",
+        "Calendário de campanhas, flights de mídia, janelas de contratação e iniciativas com datas comprometidas",
+        "Planejado contra realizado com percentual concluído, quando existe linha de base registrada",
+        "Fases com entregas filhas e colunas curtas de dono e status ao lado da trilha",
+        "Muitos intervalos curtos e anônimos que cabem empacotados em poucas faixas"
+      ],
+      "quando_evitar": [
+        "Encadeamento entre tarefas define o prazo: use o Gantt com dependências (20/09)",
+        "Só a ordem importa e não há datas firmes: use o roadmap por horizonte (20/07) ou o stepper (20/03)",
+        "Eventos sem duração: use a linha do tempo de marcos (20/02)",
+        "Sequência de estados de cada oportunidade: use a jornada por entidade (20/04)",
+        "Centenas de linhas com identidade fixa: agregue ou vá para a lasagna da família 15"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_calendario-de-campanhas-do-trimestre",
+          "titulo": "Calendário de campanhas do trimestre",
+          "caso_de_uso": "Marketing: quais das 8 campanhas fictícias ficam no ar entre 2026-10-01 e 2026-12-31 e quais correm em paralelo.",
+          "o_que_demonstra": [
+            "BarChart layout vertical com Bar em tupla [inicioMs, fimMs] e YAxis de categoria",
+            "Ticks mensais gerados em TypeScript por Date.UTC e formatados com formatMonthShort",
+            "ReferenceLine de hoje em 2026-11-12 vinda do dado, com rótulo curto no topo",
+            "ReferenceArea com opacidade baixa na janela de congelamento de 2026-12-20 a 2026-12-31",
+            "Cor fixa por plataforma em var(--chart-N) com rótulo direto em vez de legenda"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_progresso-contra-linha-de-base",
+          "titulo": "Iniciativas de 2027 contra a linha de base",
+          "caso_de_uso": "Diretoria: quanto de cada uma das 6 iniciativas do plano 2027 está concluído e quais já passaram da data planejada.",
+          "o_que_demonstra": [
+            "Shape customizado no Bar: trilho do planejado e preenchimento até o percentual concluído",
+            "Realizado com datas próprias convertido em pixels por useXAxisScale dentro do shape",
+            "Atraso escrito como +12 d à direita e cor var(--negative) só nas atrasadas",
+            "Esperado até hoje calculado como (hoje − início) / (fim − início) contra o percentual",
+            "Linha sem plano registrado desenha só o realizado tracejado com a etiqueta sem plano"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_plano-hierarquico-por-publico",
+          "titulo": "Plano de iniciativas por público",
+          "caso_de_uso": "Diretoria: como as entregas de Comercial, Pré-vendas, Marketing e Diretoria se distribuem em 2027, com dono e status.",
+          "o_que_demonstra": [
+            "Três níveis (público, iniciativa, entrega) achatados em linhas com indentação no tick",
+            "Tick customizado do YAxis com colunas de texto para dono fictício e status",
+            "Barra de agrupamento mais fina com envoltória de min(início) e max(fim) das filhas",
+            "Status com ícone e palavra junto da cor, nunca só a cor da barra",
+            "Linha de hoje atravessando os três níveis e grade vertical por trimestre"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_criativos-empacotados-com-periodo-aberto",
+          "titulo": "Criativos no ar empacotados em faixas",
+          "caso_de_uso": "Marketing: 35 criativos entram no ar no mesmo dia de lançamento; quantos seguem ativos e quais não têm data de fim.",
+          "o_que_demonstra": [
+            "Empacotamento guloso determinístico em TypeScript, ordenado por início e depois por id",
+            "Dado pivotado por faixa, um Bar por posição com stackId comum, como no TimelineExample",
+            "Teto de 8 faixas com o excedente numa barra +N e a lista completa na dica",
+            "Criativo sem data de fim desenhado até hoje com ponta tracejada e rótulo em aberto",
+            "Criativo sem data de início fora do eixo, listado abaixo como sem data, nunca no zero"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "02_linha-do-tempo-de-marcos",
+      "nome": "Linha do tempo de marcos",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Eventos de duração zero posicionados na data exata sobre um eixo de tempo contínuo, com losango ou círculo por marco, rótulo curto com a data e linha de hoje. A escala é sempre temporal: dois marcos a três dias um do outro ficam colados e o seguinte, a quatro meses, fica longe. No Recharts é um ScatterChart com XAxis numérico de datas, YAxis de categoria para a faixa e LabelList com content customizado; o trabalho real do modelo é resolver colisão de rótulo em TypeScript antes do render (alternar acima e abaixo, escada de alturas, agrupar o que cai no mesmo pixel). Absorve a linha do tempo narrativa com rótulos alternados e a régua de marcos com estado da família 13.",
+      "quando_usar": [
+        "Eventos pontuais com data exata, de 4 a cerca de 25 no período exibido",
+        "Acompanhamento de plano: marcos atingidos, em curso e futuros contra a data de hoje",
+        "Contar a história de um período com poucos eventos descritos em título e uma frase",
+        "Comparar a cadência de marcos entre públicos em faixas sobre o mesmo eixo"
+      ],
+      "quando_evitar": [
+        "Eventos com duração relevante: use o Gantt (20/01)",
+        "Etapas sem data e só com ordem: use o stepper de etapas (20/03)",
+        "Eventos com magnitude que precisa ser comparada: use a linha do tempo de círculos (20/08)",
+        "Eventos explicando uma métrica: marque sobre a série com ReferenceLine (04/01)",
+        "Mais de 15 eventos com texto descritivo: vire feed vertical em cartões (20/06)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_marcos-do-plano-comercial-2027",
+          "titulo": "Marcos do plano comercial 2027",
+          "caso_de_uso": "Comercial: quando caem os 6 marcos do plano de 2027, do orçamento aprovado à revisão de meta.",
+          "o_que_demonstra": [
+            "ScatterChart com XAxis numérico em milissegundos UTC e Scatter com shape diamond",
+            "Espaçamento pela data real, nunca pela ordem, com ticks mensais gerados em TypeScript",
+            "LabelList com content customizado alternando rótulo acima e abaixo do eixo",
+            "Data do rótulo por formatDate e linha de hoje vinda do dado"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_regua-de-marcos-com-estado",
+          "titulo": "Régua de marcos do trimestre com estado",
+          "caso_de_uso": "Diretoria: quais dos 5 marcos do trimestre foram atingidos, qual está em curso e qual já atrasou e por quantos dias.",
+          "o_que_demonstra": [
+            "Três estados pela forma: cheio atingido, anel em curso, vazado futuro",
+            "Trecho do eixo já percorrido em traço cheio e o restante em var(--line-subtle)",
+            "Marco atrasado em var(--negative) com ícone e a contagem de dias de atraso ao lado",
+            "Marco sem data confirmada vazado e tracejado, com a data prevista entre parênteses"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_narrativa-do-ano-da-pre-vendas",
+          "titulo": "O ano da pré-vendas em 8 eventos",
+          "caso_de_uso": "Pré-vendas: que eventos de 2026 explicam a mudança na taxa de agenda, contados em ordem com uma frase cada.",
+          "o_que_demonstra": [
+            "Cartões de título e frase alternando acima e abaixo, ligados ao ponto por conector curto",
+            "Escala real declarada no subtítulo, com a data escrita em cada cartão",
+            "Cartão do evento que mudou a métrica com borda de destaque e número taxa de agenda +40%",
+            "Cartões em foreignObject posicionados pela escala do XAxis via useXAxisScale"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_marcos-por-publico-com-semana-lotada",
+          "titulo": "Marcos do ano por público",
+          "caso_de_uso": "Diretoria: 25 marcos de 2027 em quatro públicos, com 7 marcos na mesma semana e 2 ainda sem data definida.",
+          "o_que_demonstra": [
+            "Quatro faixas no YAxis de categoria com a mesma escala de tempo e hoje cruzando todas",
+            "Rótulos em escada de três alturas com linha guia fina até o ponto",
+            "Marcos que caem no mesmo pixel viram um losango com contador e lista na dica",
+            "Marco sem data sai do eixo para uma coluna a definir à direita, nunca no fim do ano"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "03_stepper-de-etapas",
+      "nome": "Stepper de etapas",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Sequência horizontal de passos com estado (concluído, atual, futuro, pulado, bloqueado) e sem escala de tempo: responde em que ponto do processo uma coisa está. Os marcadores são círculos com número ou ícone lucide, ligados por conectores preenchidos até o passo atual, com rótulo e data de conclusão abaixo. É uma lista ordenada em HTML com flex e Tailwind; no espaço estreito vira coluna vertical por container query. Os estados precisam ser distinguíveis sem cor: check no concluído, anel e peso maior no atual, vazado no futuro, tracejado no pulado.",
+      "quando_usar": [
+        "Processo linear de 3 a 7 passos em que a pergunta é onde a entidade está agora",
+        "Handoff entre pré-vendas e executivo, com o tempo gasto entre um passo e o seguinte",
+        "Coluna compacta de etapa dentro de uma tabela de oportunidades",
+        "Mostrar exceção de percurso: etapa pulada, retorno ou passo bloqueado"
+      ],
+      "quando_evitar": [
+        "Quando a duração em escala real importa: use o Gantt (20/01) ou a jornada por entidade (20/04)",
+        "Processo não linear com ramificações: use um fluxo da família 11",
+        "Comparar muitas entidades pela distribuição de etapa: use o funil (família 10)",
+        "Mais de 7 passos: agrupe em fases ou use a régua de marcos (20/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_etapas-do-handoff",
+          "titulo": "Etapas do handoff de uma oportunidade",
+          "caso_de_uso": "Pré-vendas: em que etapa do handoff está a oportunidade fictícia OP-0412, do lead qualificado ao aceite do executivo.",
+          "o_que_demonstra": [
+            "Lista ordenada com flex, conector h-px flex-1 preenchido até o passo atual",
+            "Concluído com ícone Check, atual com anel e texto em peso maior, futuro vazado",
+            "Data de conclusão por formatDate abaixo de cada passo concluído",
+            "Raiz com role e aria-label calculado: passo 3 de 4, reunião realizada"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v2_tempo-entre-passos-com-sla",
+          "titulo": "Tempo entre passos contra o SLA",
+          "caso_de_uso": "Pré-vendas: quanto tempo a oportunidade levou entre cada passo do handoff e em qual passagem o SLA de 2 dias estourou.",
+          "o_que_demonstra": [
+            "Rótulo de duração em dias sobre cada conector, como 4 d",
+            "Conector acima do SLA em var(--warning) com ícone AlertTriangle e texto do limite",
+            "Passo atual contando dias em aberto a partir da data de referência vinda do dado",
+            "Estado de atraso escrito em texto, sem depender só da cor do conector"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_stepper-compacto-em-tabela",
+          "titulo": "Etapa de cada oportunidade em aberto",
+          "caso_de_uso": "Comercial: em que etapa do processo estão as 14 oportunidades abertas do trimestre, lidas numa coluna da tabela.",
+          "o_que_demonstra": [
+            "Variante compacta só com marcadores de 8 px e sem rótulo, alinhada à linha da tabela",
+            "Nome da etapa atual em texto ao lado dos marcadores para leitura exata",
+            "Ordenação da tabela pela etapa atual e depois pelos dias parados",
+            "Cabeçalho da coluna com legenda única dos estados em vez de legenda por linha"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_etapa-pulada-retorno-e-bloqueio",
+          "titulo": "Percurso com etapa pulada e retorno",
+          "caso_de_uso": "Comercial: a oportunidade pulou o diagnóstico, voltou de proposta para qualificação e está bloqueada à espera de documento.",
+          "o_que_demonstra": [
+            "Etapa pulada com marcador tracejado e a palavra pulada, nunca parecida com concluída",
+            "Seta de retorno em SVG curto por cima do conector, com a data da volta",
+            "Passo bloqueado com ícone Lock e motivo em texto de apoio",
+            "Container query que empilha os passos na vertical abaixo de 480 px"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_jornada-por-entidade",
+      "nome": "Jornada por entidade",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Uma linha por oportunidade ou lead, com segmentos contíguos coloridos pela etapa em que a entidade esteve: mostra a sequência e a duração de cada estado e revela gargalo quando muitas linhas repetem o mesmo segmento longo. No Recharts é um BarChart com layout vertical, um Bar por etapa em tupla [entrada, saída] e stackId comum, ou BarStack como no exemplo de barras empilhadas com intervalo. A cor é ordinal (rampa var(--seq-N) de claridade crescente), não categórica, para que mais adiante no funil seja legível. Em datas de calendário ou alinhada pelo dia zero da criação. Absorve o diagrama de Marey, em que cada entidade vira uma polilinha em degrau subindo de etapa em etapa.",
+      "quando_usar": [
+        "Tempo em cada etapa do funil caso a caso, de 10 a cerca de 60 entidades",
+        "Achar gargalo: a mesma etapa longa se repetindo em muitas linhas",
+        "Comparar ciclos alinhando todas as entidades pelo dia zero da criação",
+        "Velocidade de passagem e retornos de etapa, na variante de Marey"
+      ],
+      "quando_evitar": [
+        "Só a etapa atual importa: use o stepper (20/03)",
+        "Volume agregado por etapa sem identidade de entidade: use o funil (família 10)",
+        "Transições entre etapas em massa: use o Sankey (família 11) ou a matriz de transição (15/07)",
+        "Muitas etapas curtas e ilegíveis: agrupe em fases antes de desenhar",
+        "Centenas de entidades: use a lasagna (15/06) ou o Marey em SVG puro"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_oportunidades-ganhas-por-etapa",
+          "titulo": "Jornada das oportunidades ganhas no trimestre",
+          "caso_de_uso": "Comercial: quanto tempo cada uma das 15 oportunidades ganhas em 2026-T3 ficou em qualificação, diagnóstico, proposta e negociação.",
+          "o_que_demonstra": [
+            "Um Bar por etapa com dataKey em tupla [entradaMs, saidaMs] e stackId comum",
+            "Rampa ordinal var(--seq-2) a var(--seq-6) na ordem do funil, com legenda na mesma ordem",
+            "Linhas ordenadas pela data de criação e marca final de desfecho ganho",
+            "Dica com etapa, dias e datas de entrada e saída por formatDate"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_tempo-parado-em-destaque",
+          "titulo": "Oportunidades com etapa parada",
+          "caso_de_uso": "Comercial: em quais das 12 oportunidades abertas algum segmento passou de 30 dias sem movimento, e em que etapa.",
+          "o_que_demonstra": [
+            "Segmento acima de 30 dias com hachura em pattern de SVG cujo id vem de useId",
+            "Rótulo parada 42 d escrito na ponta do segmento, não só na dica",
+            "Demais segmentos rebaixados para var(--line-strong) quando há destaque",
+            "Última etapa das abertas termina na data de hoje vinda do dado com ponta aberta"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_alinhada-pelo-dia-zero",
+          "titulo": "Ciclo de venda alinhado pela criação",
+          "caso_de_uso": "Comercial: em 40 oportunidades fictícias de 2026, qual etapa mais pesa no ciclo total quando todas partem do mesmo dia zero.",
+          "o_que_demonstra": [
+            "Valores convertidos em dias desde a criação e XAxis numérico em dias",
+            "Linhas ordenadas pelo ciclo total, da mais curta à mais longa",
+            "ReferenceLine vertical na mediana acumulada de cada etapa com rótulo curto",
+            "Barras finas com barCategoryGap pequeno e YAxis sem rótulo, lista nomeada na dica"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_marey-com-retorno-de-etapa",
+          "titulo": "Progressão por etapa com retornos",
+          "caso_de_uso": "Comercial: quais das 10 oportunidades do trimestre passaram rápido, quais pararam e quais voltaram de etapa.",
+          "o_que_demonstra": [
+            "LineChart com YAxis numérico do índice da etapa e tickFormatter com o nome da etapa",
+            "Um Line type stepAfter por oportunidade com data própria e dot desligado",
+            "Retorno de etapa como trecho descendente com marcador e data da volta",
+            "Oportunidade aberta terminando em hoje com traço tracejado e rótulo em aberto",
+            "Duas linhas em cor de destaque, a mais rápida e a mais lenta, e o resto em cinza"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "05_swimlane-de-eventos",
+      "nome": "Swimlane de eventos e agenda",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Uma raia por responsável, canal ou função; dentro de cada raia, vários períodos (barras) e eventos pontuais (marcas) ao longo de um eixo de tempo real, com rótulo fixo à esquerda, fundo alternado e linha de agora. É SVG puro porque o número de períodos por raia varia: escala de tempo linear e escala de banda calculadas em TypeScript, retângulos e marcas desenhados direto. Períodos sobrepostos na mesma raia ganham sub-faixas pelo mesmo empacotamento guloso do Gantt empacotado, e a raia cresce em vez de sobrepor retângulos. Absorve a agenda em grade (timetable), que gira o eixo: horas na vertical e pessoas ou dias em colunas.",
+      "quando_usar": [
+        "Vários períodos e eventos por pessoa, canal ou função, de 3 a cerca de 10 raias",
+        "Agenda de reuniões de SDRs na semana, com buracos e sobreposição visíveis",
+        "Passagem de uma oportunidade entre funções, mostrando a espera entre raias",
+        "Grade de horário de um dia por pessoa, com capacidade livre e conflito"
+      ],
+      "quando_evitar": [
+        "Um único período por linha: use o Gantt (20/01)",
+        "Estado discreto por dia sem horário: use a faixa de status (24/04)",
+        "Períodos de semanas ou meses em grade de horas: use o Gantt ou o calendário (15/05)",
+        "Carga por pessoa por dia como intensidade: use o mapa de calor (família 15)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_semana-de-agendas-por-sdr",
+          "titulo": "Semana de agendas por SDR",
+          "caso_de_uso": "Pré-vendas: como ficaram as reuniões de 30 e 60 minutos de SDR 1 a SDR 5 entre 2026-11-09 e 2026-11-13.",
+          "o_que_demonstra": [
+            "Funções escalaTempo e escalaBanda em TypeScript, sem biblioteca de escala",
+            "Separadores de dia com rótulo de data e só o expediente de 9h a 18h desenhado",
+            "Raias com fundo alternado em var(--surface-sunken) e rótulo fixo à esquerda",
+            "viewBox fixo e vectorEffect non-scaling-stroke nos separadores",
+            "aria-label calculado com total de reuniões e a SDR com mais horas agendadas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_ausencias-e-remarcacoes",
+          "titulo": "Reuniões com ausência e remarcação",
+          "caso_de_uso": "Pré-vendas: quais reuniões da semana tiveram ausência do lead e para quando cada remarcação foi empurrada.",
+          "o_que_demonstra": [
+            "Reunião com ausência como marca vazada em var(--negative) com legenda textual",
+            "Arco fino em path Q ligando a reunião original à nova data na mesma raia",
+            "Remarcação para outra SDR com arco entre raias e rótulo do destino",
+            "Contagem de ausências por raia escrita à direita"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_handoff-em-raias-de-funcao",
+          "titulo": "Passagem entre funções por oportunidade",
+          "caso_de_uso": "Comercial: quanto cada uma de 6 oportunidades esperou entre Marketing, Pré-vendas, Executivo e Operações em 2026-10.",
+          "o_que_demonstra": [
+            "Raias de função em ordem de processo, com cada oportunidade em cor fixa var(--chart-N)",
+            "Período de posse como barra e passagem como marca de losango na fronteira",
+            "Espera entre passagens desenhada como traço tracejado com dias escritos",
+            "Foco numa oportunidade vindo por prop, com as demais rebaixadas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_agenda-em-grade-com-conflito-e-ausencia",
+          "titulo": "Agenda do dia com conflito e SDR ausente",
+          "caso_de_uso": "Pré-vendas: em 2026-11-10, onde há reuniões sobrepostas, qual SDR está ausente e qual reunião cai fora do expediente.",
+          "o_que_demonstra": [
+            "Grade girada: horas na vertical e uma coluna por SDR, top e altura por minuto",
+            "Três reuniões sobrepostas em colunas internas pelo empacotamento guloso",
+            "SDR ausente com coluna hachurada e a palavra ausente, distinta de agenda vazia",
+            "Reunião às 20h estende a grade só nesse dia com aviso escrito",
+            "Bloco de 15 minutos com altura mínima visual e horário completo na dica"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "06_feed-vertical-de-eventos",
+      "nome": "Linha do tempo vertical em cartões",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Lista cronológica vertical com um trilho à esquerda, um marcador por item com ícone do tipo de evento e um cartão com título, autor fictício, data e detalhe. É o histórico de uma entidade lido em sequência: tudo o que aconteceu com uma oportunidade, uma conta ou uma fila. Em HTML é uma lista ordenada com border-s no trilho e marcador absolute, ícones do lucide-react e cabeçalho de agrupamento por dia. Data relativa (há 3 dias) calcula contra uma data de referência vinda do dado, a mesma para a lista inteira. Não tem escala de tempo: a distância vertical não significa duração.",
+      "quando_usar": [
+        "Histórico detalhado de uma oportunidade, lead ou conta, lido de cima para baixo",
+        "Log de atividades de uma fila ou de uma pessoa agrupado por dia",
+        "Eventos com texto, autor e tipo que não cabem em rótulo de gráfico",
+        "Destacar passagens de dono e o tempo de espera entre elas"
+      ],
+      "quando_evitar": [
+        "Comparar entidades ou durações: use o Gantt (20/01) ou a jornada (20/04)",
+        "Eventos em que o intervalo entre eles é a leitura: use a linha do tempo de marcos (20/02)",
+        "Poucos eventos para contar a história de um período: use a narrativa alternada (20/02)",
+        "Contagem de eventos por dia: use o calendário ou o mapa de calor (família 15)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_historico-de-uma-oportunidade",
+          "titulo": "Histórico da oportunidade OP-0412",
+          "caso_de_uso": "Comercial: o que aconteceu com a oportunidade fictícia OP-0412 desde a criação, em 10 eventos.",
+          "o_que_demonstra": [
+            "Lista ordenada com border-s e marcador absolute, como na timeline do Flowbite",
+            "Ícone lucide por tipo: Phone, Mail, CalendarCheck, FileText",
+            "Data absoluta por formatDate e relativa contra a data de referência do dado",
+            "Evento mais recente no topo, com a ordem declarada no cabeçalho"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_handoff-com-tempo-de-espera",
+          "titulo": "Passagens de dono com tempo de espera",
+          "caso_de_uso": "Pré-vendas: quanto a oportunidade esperou em cada troca de dono entre SDR, executivo e operações.",
+          "o_que_demonstra": [
+            "Evento de troca de dono com ícone ArrowRightLeft e cor var(--chart-2) própria",
+            "Espera entre dois donos escrita no trilho entre os cartões, como 3 d sem dono",
+            "Espera acima do SLA com ícone de alerta e texto do limite, sem depender da cor",
+            "Demais eventos rebaixados para text-text-muted quando o filtro de handoff está ativo"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_log-da-pre-vendas-agrupado-por-dia",
+          "titulo": "Atividades da pré-vendas na semana",
+          "caso_de_uso": "Pré-vendas: o que as filas registraram entre 2026-11-09 e 2026-11-13, em 64 atividades agrupadas por dia.",
+          "o_que_demonstra": [
+            "Cabeçalho de dia sticky com contagem por tipo em chips",
+            "Três atividades por dia visíveis e o restante resumido em mais N",
+            "Filtro por tipo em botões com contagem, sem esconder a existência dos filtrados",
+            "Nota de virtualização com @tanstack/react-virtual e estimateSize por tipo de item"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_evento-sem-data-e-texto-longo",
+          "titulo": "Histórico com evento sem data",
+          "caso_de_uso": "Comercial: histórico importado com um evento sem data e uma anotação de 3.000 caracteres, sem quebrar a leitura.",
+          "o_que_demonstra": [
+            "Evento sem data fora da ordem cronológica, no fim, sob o rótulo data desconhecida",
+            "Anotação longa truncada com line-clamp-3 e botão ver mais",
+            "Autor ausente escrito como formatUnavailable em vez de campo vazio",
+            "Dois eventos no mesmo minuto mantidos em ordem estável pelo id"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_roadmap-por-horizonte",
+      "nome": "Roadmap por horizonte",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Colunas de horizonte (agora, próximo, depois) sem datas firmes, com um cartão por iniciativa: comunica prioridade e sequência sem prometer calendário. É uma grade CSS com Tailwind, opcionalmente cortada em faixas por público, e cada cartão traz título, público, grau de confiança e um id estável. A distância entre colunas não significa tempo, e o título diz isso. Quando uma iniciativa ganha data comprometida, ela sai daqui e vai para o Gantt (20/01) com o mesmo id, para que as duas visões continuem ligadas.",
+      "quando_usar": [
+        "Planejamento sem datas comprometidas, em que a pergunta é o que vem antes do quê",
+        "De 6 a cerca de 30 iniciativas distribuídas em 3 ou 4 horizontes",
+        "Comunicar prioridade à Diretoria sem transformar estimativa em promessa de prazo",
+        "Separar a mesma lista por público em faixas, com a mesma régua de horizontes"
+      ],
+      "quando_evitar": [
+        "Há datas comprometidas: use o Gantt (20/01)",
+        "Eventos pontuais com data exata: use a linha do tempo de marcos (20/02)",
+        "O encadeamento entre tarefas define o prazo: use o Gantt com dependências (20/09)",
+        "A pergunta é quanto de cada iniciativa está pronto: use progresso e meta (família 13)",
+        "Priorizar por esforço contra impacto: use a matriz de quadrantes (família 25)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_roadmap-de-paineis-do-farol",
+          "titulo": "Roadmap dos painéis do Farol",
+          "caso_de_uso": "Diretoria: quais dos 12 painéis fictícios do Farol entram agora, no próximo ciclo e depois, sem compromisso de data.",
+          "o_que_demonstra": [
+            "Grade grid-cols-3 com cabeçalho de horizonte e contagem de cartões por coluna",
+            "Subtítulo declarando que não há escala de tempo entre as colunas",
+            "Cartão com título, público em texto e ícone lucide por público",
+            "Ordem dentro da coluna pela prioridade declarada no dado, nunca alfabética"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_confianca-por-iniciativa",
+          "titulo": "Iniciativas de 2027 com grau de confiança",
+          "caso_de_uso": "Diretoria: quão firme é cada uma das 10 iniciativas do plano 2027 em cada horizonte, com a confiança escrita no cartão.",
+          "o_que_demonstra": [
+            "Selo alta, média ou baixa com palavra e ícone, sem depender só da cor",
+            "Cartão de confiança baixa com borda tracejada em border-line-strong",
+            "Confiança que cai com o horizonte explicada numa linha de leitura",
+            "Legenda única dos três selos no rodapé, não repetida por cartão"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_roadmap-por-publico",
+          "titulo": "Roadmap por público em quatro faixas",
+          "caso_de_uso": "Diretoria: 24 iniciativas fictícias de Comercial, Pré-vendas, Marketing e Diretoria distribuídas em agora, próximo e depois.",
+          "o_que_demonstra": [
+            "Grade de 4 faixas por 3 horizontes com rótulo de faixa fixo à esquerda",
+            "Cor fixa por público em var(--chart-N) só na borda esquerda do cartão",
+            "Selo com data e ícone CalendarCheck na iniciativa que já foi para o Gantt",
+            "Contagem por célula e container query que empilha os horizontes no estreito"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_horizonte-vazio-e-descartadas",
+          "titulo": "Roadmap com horizonte vazio e descartadas",
+          "caso_de_uso": "Marketing: a coluna depois ainda não tem iniciativa priorizada e 3 ideias foram descartadas no ciclo de 2026-09.",
+          "o_que_demonstra": [
+            "Coluna vazia mantida com o texto sem iniciativa priorizada, sem colapsar a grade",
+            "Quarta coluna descartado rebaixada em text-text-muted com motivo curto",
+            "Iniciativa sem público declarado em tom neutro var(--line-strong), por último",
+            "Título longo com line-clamp-2 e texto completo no atributo title"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "08_linha-do-tempo-de-circulos",
+      "nome": "Linha do tempo de círculos",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Eventos discretos sobre um eixo de tempo, uma faixa por categoria, com círculo de área proporcional à magnitude: mostra quando as coisas aconteceram e de que tamanho foram. No Recharts é um ScatterChart com XAxis numérico de datas, YAxis de categoria e ZAxis dataKey do valor com range em área e domain [0, max] explícito, sem o qual o menor valor vira o menor círculo e a proporção se perde. Círculos translúcidos desenhados do maior para o menor evitam que um esconda o vizinho. Absorve a linha do tempo de eventos micro da família 24: régua sem eixo sob um sparkline, com o mesmo domínio de tempo, forma por tipo de evento e agrupamento do que cai no mesmo pixel.",
+      "quando_usar": [
+        "Eventos com magnitude em 2 a 6 categorias, de 10 a cerca de 150 pontos no período",
+        "Fechamentos por executivo ao longo do trimestre, em que valor e data contam juntos",
+        "Receita ou volume por produto mês a mês, lido como ritmo e concentração",
+        "Régua de eventos sob um sparkline, para situar o degrau da série no tempo"
+      ],
+      "quando_evitar": [
+        "A leitura precisa de valor exato: use colunas (família 03) ou barras (família 02)",
+        "Série contínua amostrada no tempo: use linhas (família 04)",
+        "Eventos sem magnitude: use a linha do tempo de marcos (20/02)",
+        "Muitos eventos no mesmo dia se sobrepondo: agregue por semana ou use o mapa de calor (família 15)",
+        "Eventos explicando uma métrica com eixo e rótulos: marque sobre a série (04/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_fechamentos-por-executivo",
+          "titulo": "Fechamentos por semana por executivo",
+          "caso_de_uso": "Comercial: quando fecharam e de que tamanho foram os fechamentos fictícios de Executivo 01 a Executivo 05 em 2026-T3.",
+          "o_que_demonstra": [
+            "ScatterChart com XAxis numérico em milissegundos UTC e YAxis de categoria",
+            "ZAxis dataKey valor com range em área e domain [0, max] declarado",
+            "Opacidade 0,6 e dado ordenado do maior para o menor antes do render",
+            "Legenda de tamanho com três círculos de referência por formatCurrencyCompact",
+            "Ticks mensais gerados em TypeScript por Date.UTC e formatMonthShort"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_receita-por-produto-com-maior-mes",
+          "titulo": "Receita reconhecida por produto em 24 meses",
+          "caso_de_uso": "Diretoria: como a receita fictícia de 4 produtos se distribuiu entre 2024-10 e 2026-09 e qual mês concentrou o maior valor.",
+          "o_que_demonstra": [
+            "Quatro faixas por 24 meses com o mesmo domain de ZAxis em todas as faixas",
+            "Cor fixa por produto em var(--chart-N) com rótulo de faixa no YAxis",
+            "Maior círculo anotado R$ 1,2 mi por LabelList com content customizado",
+            "Total do período por faixa escrito à direita por formatCurrencyCompact",
+            "Dica com mês por formatMonthShort, produto e valor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_regua-micro-de-eventos-sob-sparkline",
+          "titulo": "Eventos de mídia sob o CPL qualificado",
+          "caso_de_uso": "Marketing: que eventos de 2026 coincidem com o degrau do CPL qualificado mostrado no sparkline logo acima.",
+          "o_que_demonstra": [
+            "ScatterChart sem eixos visíveis, com XAxis hide e o mesmo domain do sparkline",
+            "Forma por tipo de evento, no máximo três: circle, triangle e diamond",
+            "ZAxis de range fixo quando o evento não tem magnitude",
+            "Eventos no mesmo pixel agrupados numa marca com contador e lista na dica",
+            "Dica que descreve o evento sem afirmar efeito sobre o CPL"
+          ],
+          "canvas_sugerido": "kpi-alto"
+        },
+        {
+          "slug": "v4_estornos-e-meses-sem-coleta",
+          "titulo": "Receita com estornos e meses sem coleta",
+          "caso_de_uso": "Comercial: estornos fictícios de 2026 desenhados como círculos vazados e dois meses sem coleta que não podem virar zero.",
+          "o_que_demonstra": [
+            "Estorno com a área do valor absoluto, contorno sem preenchimento e legenda estorno",
+            "Nunca área ou raio negativo: o sinal vai para a forma e para o texto com sinal −",
+            "Mês sem coleta com ReferenceArea neutra e o texto de formatUnavailable",
+            "Zero medido com marca mínima distinta da ausência de dado"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    },
+    {
+      "slug": "09_gantt-com-dependencias",
+      "nome": "Gantt com dependências e caminho crítico",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Gantt em que conectores em cotovelo ligam o fim de uma tarefa ao início da sucessora e o caminho crítico, a sequência sem folga que define o prazo final, ganha destaque. É SVG puro: escalaTempo e escalaBanda em TypeScript, barras como rect com altura de linha fixa e conectores como path M H V H com ponta de seta. O caminho crítico é calculado antes do render por ordenação topológica e datas cedo e tarde de cada tarefa; ciclo no grafo é erro de dado, listado fora do gráfico e nunca desenhado. Acima de uns 25 conectores a peça vira teia, então só os da tarefa em foco aparecem.",
+      "quando_usar": [
+        "De 5 a cerca de 25 tarefas cujo encadeamento define a data final",
+        "Responder o que atrasa o fim se atrasar, e quanta folga tem cada tarefa",
+        "Planos de implantação de canal, contratação ou preparação de meta com passagens entre áreas",
+        "Mostrar tarefas paralelas e tempo ocioso aproveitável entre dependências"
+      ],
+      "quando_evitar": [
+        "Tarefas independentes entre si: use o Gantt (20/01)",
+        "Centenas de tarefas: agrupe em fases no Gantt hierárquico (20/01) e mostre dependências só em foco",
+        "Não há datas firmes: use o roadmap por horizonte (20/07)",
+        "Relação entre etapas sem tempo: use fluxo (família 11) ou rede e relações (família 27)",
+        "Só os pontos de controle importam: use a linha do tempo de marcos (20/02)"
+      ],
+      "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+      "versoes": [
+        {
+          "slug": "v1_plano-de-implantacao-de-canal",
+          "titulo": "Plano de implantação de um canal",
+          "caso_de_uso": "Marketing: como 7 tarefas fictícias de implantação de um canal de mídia dependem umas das outras entre 2026-10-05 e 2026-11-27.",
+          "o_que_demonstra": [
+            "escalaTempo e escalaBanda em TypeScript com altura de linha fixa",
+            "Conector em cotovelo path M H V H saindo do fim e entrando no início",
+            "Ponta de seta por marker cujo id vem de useId",
+            "Ticks semanais na segunda-feira gerados por Date.UTC",
+            "Linha de hoje vinda do dado e viewBox fixo com vectorEffect non-scaling-stroke"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_caminho-critico-com-folga",
+          "titulo": "Caminho crítico e folga das tarefas",
+          "caso_de_uso": "Marketing: quais 4 das 7 tarefas definem a data de entrada no ar e quantos dias de folga têm as demais.",
+          "o_que_demonstra": [
+            "Ordenação topológica e datas cedo e tarde calculadas antes do render",
+            "Tarefas de folga zero em var(--chart-1) e demais em var(--line-strong)",
+            "Folga como trilho tracejado depois da barra, com os dias escritos",
+            "Conectores do caminho crítico mais grossos e legenda textual caminho crítico"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_esteira-da-meta-2027",
+          "titulo": "Esteira de preparação da meta 2027",
+          "caso_de_uso": "Diretoria: 18 tarefas fictícias de dados, pré-vendas e mídia que precisam fechar antes da janela de leitura de 2026-12-14.",
+          "o_que_demonstra": [
+            "18 linhas agrupadas por frente, com rótulo de grupo e separador",
+            "Conectores ocultos por padrão e mostrados só para a tarefa em foco vinda por prop",
+            "Predecessoras e sucessoras da tarefa em foco realçadas e o resto rebaixado",
+            "Faixa sombreada de baixa opacidade na janela de 2026-12-14 a 2027-01-13",
+            "aria-label calculado com tarefas críticas e data final prevista por formatDate"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_dependencia-inconsistente-e-ciclo",
+          "titulo": "Dependências inconsistentes e ciclo",
+          "caso_de_uso": "Pré-vendas: plano com sucessora que começa antes da predecessora terminar e um ciclo entre duas tarefas.",
+          "o_que_demonstra": [
+            "Sucessora sobreposta com cotovelo contornando pela esquerda, sem cruzar a barra",
+            "Conector inconsistente tracejado em var(--negative) com aviso escrito",
+            "Ciclo A → B → A detectado e listado fora do gráfico, sem desenhar a volta",
+            "Caminho crítico indisponível enquanto houver ciclo, com formatUnavailable"
+          ],
+          "canvas_sugerido": "largo"
+        }
+      ]
+    }
+  ]
+}

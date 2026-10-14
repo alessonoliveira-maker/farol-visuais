@@ -1,0 +1,70 @@
+{
+  "slug": "08_card-de-excecao",
+  "nome": "Card de exceção",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Cartão que existe por causa de uma régua estourada: contagem de casos fora da régua, critério literal, severidade, denominador, data da avaliação e caminho para a lista dos casos. A cor semântica mora na borda esquerda e no ícone, nunca no fundo nem no texto, e o estado calmo ocupa o mesmo lugar para a grade não pular. Exceção de dado, como fonte que não atualizou, tem cartão e grupo próprios.",
+  "quando_usar": [
+    "Régua escrita e datada, como oportunidades sem movimento há mais de 30 dias.",
+    "Tela operacional em que só as exceções merecem olhar e cada uma leva a uma lista de casos.",
+    "Faixa própria de exceções acima da grade de KPIs, que colapsa quando está vazia.",
+    "Separar exceção de negócio de exceção de dado, como régua que não pôde ser avaliada."
+  ],
+  "quando_evitar": [
+    "Painel executivo que precisa de leitura estável: KPI simples com ponto de ação (modelo 01).",
+    "Régua inexistente ou que muda toda semana: calibrar e datar a régua antes de publicar alerta.",
+    "Cartão que aparece todo dia: a régua está errada e o alerta vira ruído ignorado.",
+    "Estado de todos os cartões, bom ou ruim: KPI simples com status e régua escrita (modelo 01)."
+  ],
+  "arquivo_estudo": "_estudo/familias/01_cards-e-kpis.md",
+  "versoes": [
+    {
+      "slug": "v1_oportunidades-sem-movimento-ha-30-dias",
+      "titulo": "Oportunidades sem movimento há 30 dias",
+      "caso_de_uso": "Quantas oportunidades abertas estão paradas além da régua de 30 dias, e onde está a lista delas?",
+      "o_que_demonstra": [
+        "Borda esquerda de 2 px e ícone TriangleAlert em --warning, sem fundo tingido",
+        "Contagem com o substantivo, 7 oportunidades, e a régua literal logo abaixo",
+        "Link para a lista com afordância permanente, não só na passagem do cursor",
+        "Data da avaliação da régua escrita com formatDate"
+      ],
+      "canvas_sugerido": "kpi"
+    },
+    {
+      "slug": "v2_paradas-com-severidade-e-denominador",
+      "titulo": "Paradas com dois níveis de severidade",
+      "caso_de_uso": "Das 143 oportunidades abertas, quantas estão paradas entre 30 e 90 dias e quantas já passaram de 90?",
+      "o_que_demonstra": [
+        "Dois níveis distintos por forma de ícone e palavra, não só por cor",
+        "Denominador escrito: 7 entre 30 e 90 dias e 2 acima de 90, de 143 abertas",
+        "Nível grave em --negative e o outro em --warning, só no ícone e na borda",
+        "Texto do cartão em --text-primary sobre o fundo do cartão (COR-7)"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_faixa-de-excecoes-da-pre-vendas",
+      "titulo": "Faixa de exceções da pré-vendas",
+      "caso_de_uso": "Quais réguas da pré-vendas estouraram na última avaliação e em que ordem de severidade devem ser atacadas?",
+      "o_que_demonstra": [
+        "Quatro réguas próprias: teto da fila, SLA, agendas sem desfecho e leads sem dono",
+        "Ordenação por severidade e não por ordem de cálculo, escrita no cabeçalho",
+        "Faixa própria acima da grade, que colapsa quando está vazia",
+        "Contagem com denominador quando a base é pequena",
+        "Cada cartão com um único link esticado para a fila de trabalho"
+      ],
+      "canvas_sugerido": "faixa"
+    },
+    {
+      "slug": "v4_estado-calmo-e-regua-nao-avaliada",
+      "titulo": "Estado calmo e régua não avaliada",
+      "caso_de_uso": "Como dizer que nenhuma régua estourou sem esconder que a régua de mídia não pôde ser avaliada por falta de carga?",
+      "o_que_demonstra": [
+        "Estado calmo neutro, nenhum caso fora das réguas, com a data por formatDate",
+        "Exceção de dado separada da exceção de negócio por espaço, em grupo próprio",
+        "Régua não avaliada com ícone Unplug e a última carga, nunca lida como tudo bem",
+        "Mesma altura do cartão de exceção para a faixa não pular"
+      ],
+      "canvas_sugerido": "faixa"
+    }
+  ]
+}

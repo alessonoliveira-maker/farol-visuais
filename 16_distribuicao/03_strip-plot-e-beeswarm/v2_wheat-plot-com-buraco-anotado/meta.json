@@ -1,0 +1,15 @@
+{
+  "title": "Dias até a primeira reunião em wheat plot",
+  "useCase": "As 46 oportunidades do mês chegam à primeira reunião em que prazo, e existe faixa sem nenhum caso?",
+  "demonstrates": [
+    "Ponto no dia exato e altura pela ordem dentro do intervalo de 5 dias",
+    "Desempate por id na ordenação, para o desenho não mudar entre renders",
+    "Eixo Y oculto com domínio de zero ao maior nível de empilhamento",
+    "Vão de dias sem reunião medido do dado e marcado com ReferenceArea",
+    "Nota de leitura dizendo de onde vem a pilha, porque a altura não é grandeza",
+    "Ponto opaco com contorno da superfície, no lugar de opacidade"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Canvas contado, não escolhido (GEO-1): o cartão escreve uma nota de leitura de 12 px, a grade, a faixa do eixo X de 24 px e duas linhas de rodapé de 11 px. No preset card de 640x360 a moldura devolve 574 px de largura e 225 px de altura com o caso de uso em duas linhas, e sobram cerca de 117 px de plano para 13 níveis de pilha, o que dá cerca de 9 px por nível contra 7 px de diâmetro de ponto. Divergência declarada contra a especificação do catálogo, e ela é da ACE-5: o catálogo pede opacidade na marca e aqui o ponto é opaco com contorno na cor da superfície, porque opacidade compõe a marca com o cartão e derruba o contraste. Medido nesta sessão contra --surface-raised, --chart-1 opaco mede 9,50:1 no tema escuro e 6,00:1 no claro; com fillOpacity de 0,45 cai para 2,97:1 e 2,04:1, e com 0,35 para 2,28:1 e 1,71:1, os dois abaixo do piso de 3:1. Nesta geometria a opacidade não tem função nenhuma, porque a pilha já aparece pela altura. Segunda divergência: o catálogo escreve a lacuna como entre 13 e 15 dias, e o componente escreve o que mede, que é o vão de dias inteiros sem nenhuma reunião, de 13 a 14. O vão sai do dado e o motivo vem declarado no data.ts, porque semana de feriado não se calcula de prazo. A marca do catálogo sobre pilha inclinada não colide com a TIP-5: o que inclina é a sequência de pontos, e nenhum texto desta peça sai rotacionado. Os tiques vão de 10 em 10 dias para fechar 5 linhas de grade (EIX-4) e o eixo termina em 40 dias, a primeira linha redonda acima do caso mais lento, o que deixa o quarto direito do plano vazio; é o custo aceito da regra."
+}

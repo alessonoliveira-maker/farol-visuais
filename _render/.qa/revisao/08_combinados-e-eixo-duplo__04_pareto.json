@@ -1,0 +1,33 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "04_pareto",
+  "versoes": {
+    "v1_perdas-por-motivo": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; pareto honesto com eixo do acumulado derivado do eixo das colunas (dominio 0 ao total), as quatro demonstracoes do catalogo visiveis, rotulo direto por coluna e serie identificada nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:26:38.631Z",
+      "impressao": "93cfb98dd2bd6801e69be9f46d6aa646ce168735",
+      "arquivos": {
+        "Chart.tsx": "c7a8d89058f4cade427c6f82bd77e17f1afe9157",
+        "data.ts": "b9389c0686c1fa6f1c7ddaf95326aee0ee6cdc42",
+        "meta.json": "e4cb2f21d5735368a301054e343e4f76594c88e6"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_perdas-por-motivo",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; pareto honesto com eixo do acumulado derivado do eixo das colunas (dominio 0 ao total), as quatro demonstracoes do catalogo visiveis, rotulo direto por coluna e serie identificada nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:26:38.631Z",
+      "impressao": "93cfb98dd2bd6801e69be9f46d6aa646ce168735",
+      "arquivos": {
+        "Chart.tsx": "c7a8d89058f4cade427c6f82bd77e17f1afe9157",
+        "data.ts": "b9389c0686c1fa6f1c7ddaf95326aee0ee6cdc42",
+        "meta.json": "e4cb2f21d5735368a301054e343e4f76594c88e6"
+      }
+    }
+  ]
+}

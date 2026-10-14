@@ -1,0 +1,71 @@
+{
+  "slug": "08_heatmap-de-correlacao",
+  "nome": "Heatmap de correlação",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Matriz de métricas contra métricas com o coeficiente de correlação de cada par, em escala divergente de −1 a +1 com o neutro fixo no zero, e só o triângulo inferior, porque a matriz é simétrica. Responde quais métricas andam juntas e quais se descolam, como exploração e não como prova de causa. O coeficiente é calculado em TypeScript com exclusão por par, então cada célula carrega seu próprio número de observações. Absorve a matriz de correlação da família 25, com círculo de área proporcional ao módulo do coeficiente.",
+  "quando_usar": [
+    "Saber quais métricas de mídia e de funil andam juntas antes de montar um modelo ou escolher os cartões de um painel.",
+    "De 5 a 14 métricas com pelo menos 26 observações por par, por exemplo semanas.",
+    "Achar blocos de métricas que se movem juntas, com a ordem das métricas por agrupamento.",
+    "Público analítico; para a diretoria, só os pares fortes rotulados e o aviso de que correlação não é causa."
+  ],
+  "quando_evitar": [
+    "Menos de 12 observações por par: coeficiente enganoso; mostrar a dispersão do par (09, modelo 01).",
+    "Quando a forma da relação importa (curva, grupos, pontos fora da curva): matriz de dispersão (09, modelo 10).",
+    "Duas métricas só: dispersão com linha de referência (09, modelo 02).",
+    "Mais de uns 14 atributos: a leitura desmancha; filtrar por tema antes de calcular.",
+    "Séries com tendência comum lidas em nível: calcular sobre a variação semana a semana."
+  ],
+  "arquivo_estudo": "_estudo/familias/15_mapa-de-calor-e-calendario.md",
+  "versoes": [
+    {
+      "slug": "v1_seis-medidas-de-midia",
+      "titulo": "Correlação entre seis medidas de mídia",
+      "caso_de_uso": "Nas últimas 52 semanas, investimento, impressões, cliques, leads, qualificados e CPL qualificado andam juntos?",
+      "o_que_demonstra": [
+        "Triângulo inferior por máscara de linha maior que coluna, diagonal com o nome",
+        "Escala divergente com domínio fixo de −1 a +1 e neutro em --surface-overlay",
+        "Coeficiente com duas casas na célula e texto com contraste por faixa",
+        "Pearson declarado no subtítulo e n de semanas do par na dica"
+      ],
+      "canvas_sugerido": "quadrado"
+    },
+    {
+      "slug": "v2_pares-fortes-rotulados",
+      "titulo": "Só os pares fortes rotulados",
+      "caso_de_uso": "Para a diretoria, quais pares entre dez métricas semanais do funil têm correlação forte e qual relação esperada não aparece?",
+      "o_que_demonstra": [
+        "Número e contorno só nas células com módulo acima de 0,7; o resto só em cor",
+        "Anotação ao lado: investimento e leads andam juntos, qualificados não acompanham",
+        "Subtítulo com o aviso de que correlação não é causa, para público executivo",
+        "Frase acessível com os três pares mais fortes e o sinal de cada um"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_catorze-medidas-em-blocos",
+      "titulo": "Catorze medidas semanais em blocos",
+      "caso_de_uso": "Em 52 semanas de marketing e pré-vendas, o bloco de métricas de topo de funil se descola do bloco de qualificação?",
+      "o_que_demonstra": [
+        "14 medidas ordenadas por agrupamento hierárquico, nunca em ordem alfabética",
+        "Círculo com área proporcional ao módulo (raio pela raiz) e cor pelo sinal",
+        "Faixas de grupo nomeadas nos eixos: topo de funil, qualificação e custo",
+        "Correlação sobre a variação semana a semana, dita no subtítulo",
+        "Valor exato e n de pares na dica, sem número escrito na célula"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_pares-insuficientes-e-nao-calculavel",
+      "titulo": "Pares insuficientes e coeficiente não calculável",
+      "caso_de_uso": "Como tratar métricas com só 8 semanas de histórico e uma métrica constante no período sem desenhar correlação zero?",
+      "o_que_demonstra": [
+        "Célula com menos de 12 pares hachurada, com pares insuficientes escrito na dica",
+        "Métrica constante com variância zero: célula escrita não calculável, nunca 0",
+        "n de pares por célula, porque a exclusão por par muda a amostra entre vizinhas",
+        "Par negativo forte em nível que some na variação, com nota de tendência comum"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

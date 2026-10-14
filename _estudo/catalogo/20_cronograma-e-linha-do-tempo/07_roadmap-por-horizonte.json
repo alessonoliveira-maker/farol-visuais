@@ -1,0 +1,70 @@
+{
+  "slug": "07_roadmap-por-horizonte",
+  "nome": "Roadmap por horizonte",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Colunas de horizonte (agora, próximo, depois) sem datas firmes, com um cartão por iniciativa: comunica prioridade e sequência sem prometer calendário. É uma grade CSS com Tailwind, opcionalmente cortada em faixas por público, e cada cartão traz título, público, grau de confiança e um id estável. A distância entre colunas não significa tempo, e o título diz isso. Quando uma iniciativa ganha data comprometida, ela sai daqui e vai para o Gantt (20/01) com o mesmo id, para que as duas visões continuem ligadas.",
+  "quando_usar": [
+    "Planejamento sem datas comprometidas, em que a pergunta é o que vem antes do quê",
+    "De 6 a cerca de 30 iniciativas distribuídas em 3 ou 4 horizontes",
+    "Comunicar prioridade à Diretoria sem transformar estimativa em promessa de prazo",
+    "Separar a mesma lista por público em faixas, com a mesma régua de horizontes"
+  ],
+  "quando_evitar": [
+    "Há datas comprometidas: use o Gantt (20/01)",
+    "Eventos pontuais com data exata: use a linha do tempo de marcos (20/02)",
+    "O encadeamento entre tarefas define o prazo: use o Gantt com dependências (20/09)",
+    "A pergunta é quanto de cada iniciativa está pronto: use progresso e meta (família 13)",
+    "Priorizar por esforço contra impacto: use a matriz de quadrantes (família 25)"
+  ],
+  "arquivo_estudo": "_estudo/familias/20_cronograma-e-linha-do-tempo.md",
+  "versoes": [
+    {
+      "slug": "v1_roadmap-de-paineis-do-farol",
+      "titulo": "Roadmap dos painéis do Farol",
+      "caso_de_uso": "Diretoria: quais dos 12 painéis fictícios do Farol entram agora, no próximo ciclo e depois, sem compromisso de data.",
+      "o_que_demonstra": [
+        "Grade grid-cols-3 com cabeçalho de horizonte e contagem de cartões por coluna",
+        "Subtítulo declarando que não há escala de tempo entre as colunas",
+        "Cartão com título, público em texto e ícone lucide por público",
+        "Ordem dentro da coluna pela prioridade declarada no dado, nunca alfabética"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_confianca-por-iniciativa",
+      "titulo": "Iniciativas de 2027 com grau de confiança",
+      "caso_de_uso": "Diretoria: quão firme é cada uma das 10 iniciativas do plano 2027 em cada horizonte, com a confiança escrita no cartão.",
+      "o_que_demonstra": [
+        "Selo alta, média ou baixa com palavra e ícone, sem depender só da cor",
+        "Cartão de confiança baixa com borda tracejada em border-line-strong",
+        "Confiança que cai com o horizonte explicada numa linha de leitura",
+        "Legenda única dos três selos no rodapé, não repetida por cartão"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_roadmap-por-publico",
+      "titulo": "Roadmap por público em quatro faixas",
+      "caso_de_uso": "Diretoria: 24 iniciativas fictícias de Comercial, Pré-vendas, Marketing e Diretoria distribuídas em agora, próximo e depois.",
+      "o_que_demonstra": [
+        "Grade de 4 faixas por 3 horizontes com rótulo de faixa fixo à esquerda",
+        "Cor fixa por público em var(--chart-N) só na borda esquerda do cartão",
+        "Selo com data e ícone CalendarCheck na iniciativa que já foi para o Gantt",
+        "Contagem por célula e container query que empilha os horizontes no estreito"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_horizonte-vazio-e-descartadas",
+      "titulo": "Roadmap com horizonte vazio e descartadas",
+      "caso_de_uso": "Marketing: a coluna depois ainda não tem iniciativa priorizada e 3 ideias foram descartadas no ciclo de 2026-09.",
+      "o_que_demonstra": [
+        "Coluna vazia mantida com o texto sem iniciativa priorizada, sem colapsar a grade",
+        "Quarta coluna descartado rebaixada em text-text-muted com motivo curto",
+        "Iniciativa sem público declarado em tom neutro var(--line-strong), por último",
+        "Título longo com line-clamp-2 e texto completo no atributo title"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

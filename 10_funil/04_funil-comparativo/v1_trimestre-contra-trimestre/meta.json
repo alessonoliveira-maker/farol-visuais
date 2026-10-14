@@ -1,0 +1,13 @@
+{
+  "title": "Funil do trimestre contra o anterior",
+  "useCase": "Comparar o funil comercial do trimestre atual com o anterior, etapa por etapa, na mesma escala.",
+  "demonstrates": [
+    "Duas Bar sem stackId em BarChart vertical, uma por período",
+    "Período atual em cor sólida e anterior no mesmo tom translúcido",
+    "Valor absoluto escrito na ponta de cada barra, nos dois períodos",
+    "Períodos nomeados por extenso na legenda, sem sigla"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Canvas alto em vez de card: cinco etapas com duas barras agrupadas por etapa (ESP-6) só respiram acima do piso de 12 px (ESP-2) com mais altura de corpo."
+}

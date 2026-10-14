@@ -1,0 +1,14 @@
+{
+  "title": "Contatos da pré-vendas com expediente marcado",
+  "useCase": "Hora sem contato é zero de verdade ou fora do expediente? Sábado e horas antes das 8h viram traço, zero vira anel.",
+  "demonstrates": [
+    "Três estados: volume em bolha cheia, zero medido em anel, sem expediente em traço",
+    "Quarto estado sem desenho: hora aberta sem apuração, contada no rodapé",
+    "Uma série só com shape que despacha os estados, para o eixo manter a ordem do relógio",
+    "Legenda com amostra na própria forma da marca, porque é a forma que separa os estados",
+    "Piso de área acima do raio do anel, com a distorção medida do próprio dado"
+  ],
+  "canvas": { "width": 960, "height": 520 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1. A conta: 118,5 px de moldura card com o caso de uso em uma linha, mais 107 px de texto do cartão (linha de leitura de 12 px com respiro, 26 px; legenda com círculo de 28 px e respiro, 36 px; nota do piso de 11 px com respiro, 24,5 px; nota da ausência de 11 px com respiro curto, 20,5 px), mais cerca de 294 px de plano, que descontando margens e eixo dá 6 linhas de dia com passo de cerca de 40 px contra 28 px de diâmetro máximo de bolha. Na largura, 66 px de moldura mais 76 px de eixo de dia mais 32 px de margem deixam 786 px para 14 horas, passo de 56 px. Uma colisão de contrato contra armadilha, declarada: a saída da TOK-1 manda separar dois estados de ausência dando surface-sunken a um e line-strong ao outro, e aqui os dois ficam em text-muted, separados pela FORMA. A razão é medida: line-strong dá 1,79:1 no escuro e 1,83:1 no claro, surface-sunken dá 1,15:1 nos dois, os três abaixo do piso de 3:1 da ACE-3, enquanto text-muted dá 5,21:1 e 5,37:1. A ACE-3 é regra de contraste e bloqueia sempre, então ela vence, e o canal que separa passa a ser anel contra traço, que a ACE-2 considera mais forte que cor. Segunda decisão medida: o piso de área é de 5 px de raio e não de 2,6 px, porque ele precisa ficar acima dos 4 px do anel de zero; com piso menor a menor contagem medida desenharia menos tinta que a ausência de contagem. O piso vai declarado no rodapé com a distorção do próprio dado: 2 contatos valem 6,9% do máximo de 29 e desenham 18,8% da área. O anel tem 4 px de raio porque com 2,2 px a circunferência mede 14 px e não mostra tracejo, medição que vem de 03_bolhas/v4. A exceção da EIX-3b foi reescopada em 2026-09-28 por geometria, e pede os dois eixos quantitativos lidos por posição; aqui os dois são categoria, então vale a EIX-3, com grade só na horizontal. Sem opacidade em marca: chart-1 cheio mede 9,50:1 no escuro e 6,00:1 no claro."
+}

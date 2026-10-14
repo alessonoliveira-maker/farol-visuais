@@ -1,0 +1,916 @@
+{
+  "slug": "16_distribuicao",
+  "nome": "Distribuição",
+  "modelos": [
+    {
+      "slug": "01_histograma",
+      "nome": "Histograma",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Eixo contínuo cortado em faixas de largura igual, com a altura da barra contando quantas observações caíram em cada faixa. É o modelo de entrada da família e a régua contra a qual os outros são julgados. Montado em BarChart com XAxis numérico, barras encostadas e bins agregados antes em TypeScript, com bin declarado no registry da métrica e fixo entre filtros. Absorve a estatística anotada, os pequenos múltiplos e o caso de massa no zero como versões; polígono de frequência, densidade sobreposta, stem and leaf e histograma micro ficam como extensões do mesmo agregador.",
+      "quando_usar": [
+        "Ver a forma de uma medida contínua: ciclo em dias, ticket em reais, minutos até o primeiro contato, CPL por campanha.",
+        "Mostrar que a média citada no card não é o caso típico, com média e mediana desenhadas por cima das barras.",
+        "Amostra a partir de umas 50 observações, com a largura do bin escrita no rótulo do eixo.",
+        "De 4 a 20 grupos da mesma métrica, em pequenos múltiplos com bin e escala comuns."
+      ],
+      "quando_evitar": [
+        "Contagem por categoria nominal: barras da família 02 ou colunas da 03; histograma exige eixo contínuo binado.",
+        "Menos de umas 30 observações: strip ou beeswarm (03) ou dot plot empilhado (09), que mostram cada caso.",
+        "Pergunta de quantos ficam abaixo de um limiar: ECDF e histograma acumulado (04), sem somar barras de cabeça.",
+        "Comparar a forma de 2 ou 3 grupos na mesma régua: histograma comparativo (05) ou densidades sobrepostas (06).",
+        "Barra ordenada por entidade com linha acumulada: Pareto na família 08 (modelo 04)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-de-fechamento",
+          "titulo": "Ciclo de fechamento em faixas de 7 dias",
+          "caso_de_uso": "Qual a forma do ciclo das 312 oportunidades ganhas nos últimos 12 meses, e não só a média?",
+          "o_que_demonstra": [
+            "Bins calculados em TypeScript com largura de 7 dias e domínio fixo de 0 a 210",
+            "Bin vazio mantido no array com contagem zero, para o buraco aparecer",
+            "BarChart com XAxis numérico e barCategoryGap zero, barras encostadas",
+            "Tooltip no formato 42 a 49 dias · 18 oportunidades, no lugar de binInicio",
+            "n no subtítulo e unidade do bin no rótulo do eixo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_media-contra-mediana",
+          "titulo": "Média contra mediana no ciclo de fechamento",
+          "caso_de_uso": "A média de 74 dias representa o negócio típico, ou é puxada por poucos negócios longos?",
+          "o_que_demonstra": [
+            "ReferenceLine sólida na mediana e tracejada na média, cada uma com o valor no rótulo",
+            "ReferenceArea de p25 a p75 atrás das barras, rotulada metade dos casos",
+            "Rótulos colapsados num bloco só quando as duas linhas ficam a menos de 48 px",
+            "ifOverflow extendDomain para a estatística fora do domínio não sumir",
+            "Frase de leitura: metade fecha em até 51 dias; 19 negócios longos puxam a média"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_ciclo-por-executivo-em-pequenos-multiplos",
+          "titulo": "Ciclo por executivo em pequenos múltiplos",
+          "caso_de_uso": "Os 8 executivos têm ciclos de forma parecida, ou algum vive de negócios que arrastam meses?",
+          "o_que_demonstra": [
+            "Grade Tailwind de 4 por 2 com um BarChart por célula e animação desligada",
+            "Domínio de X e de Y calculado no pai e passado igual a todos os painéis",
+            "Distribuição da área inteira em --line-subtle atrás de cada painel, como régua",
+            "Eixo X só na última linha, eixo Y só na primeira coluna, n no título do painel",
+            "Painel com n 3 troca as barras por três traços e o texto n 3"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_receita-com-massa-no-zero",
+          "titulo": "Receita por oportunidade com massa no zero",
+          "caso_de_uso": "Como mostrar a receita reconhecida por oportunidade quando 41% valem zero e a cauda passa de R$ 600 mil?",
+          "o_que_demonstra": [
+            "Bin do zero com hachura SVG e nota 41% sem receita lançada, fora da leitura de forma",
+            "Último bin aberto rotulado 600 mil+ e contado no rodapé, sem esticar o eixo",
+            "Registros sem valor fora da amostra e contados no rodapé, nunca como bin zero",
+            "Eixo Y nomeado como oportunidades, para a altura não ser lida como dinheiro"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "02_box-plot",
+      "nome": "Box plot",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Cinco números por grupo: Q1, mediana e Q3 formam a caixa, os bigodes vão até o último valor dentro das cercas de 1,5 IQR e o que passa delas vira ponto. É o resumo mais compacto da família e também o mais mal lido, então no Farol nunca vai sozinho num cartão de decisão: vem com os pontos por cima ou com o histograma ao lado. Montado como no exemplo oficial do Recharts, com Bar de par [q1, q3], shape da mediana, ErrorBar medido a partir de Q3 e Scatter de outliers. Absorve box com jitter, entalhe e largura variável como versões; letter-value, faixa de percentis e box micro ficam como extensões.",
+      "quando_usar": [
+        "Resumir de 4 a 20 grupos da mesma métrica em pouco espaço: minutos até o contato por SDR, dias parados por etapa.",
+        "Público que já lê quartil, ou peça acompanhada da nota de leitura caixa: metade central dos casos.",
+        "Grupos com pelo menos umas 20 observações; com os pontos por cima, até algumas centenas por grupo.",
+        "Comparar medianas e tamanho de amostra juntos, com entalhe e largura proporcional à raiz de n."
+      ],
+      "quando_evitar": [
+        "Distribuição bimodal ou com buraco: a caixa apaga os picos; violino ou raincloud (07) ou strip (03).",
+        "Grupo com menos de 5 casos: só os pontos e o n em texto, sem caixa.",
+        "Milhares de casos por grupo com cauda importante: letter-value, derivado deste modelo, ou densidade (06).",
+        "Só o resumo importa e não há forma por trás: comparação de pontos na família 17 (modelo 02).",
+        "Faixa de percentis desenhada ao longo do tempo: faixa em área na família 05 (modelo 05)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_primeiro-contato-por-sdr",
+          "titulo": "Minutos até o primeiro contato por SDR",
+          "caso_de_uso": "Algum dos seis SDRs demora mais para fazer o primeiro contato, e quantos casos estouram o SLA de 30 minutos?",
+          "o_que_demonstra": [
+            "Bar com dataKey em par [q1, q3] e shape próprio desenhando a mediana",
+            "ErrorBar medido a partir de Q3, com caixa opaca para o bigode não cruzar por dentro",
+            "Outliers num Scatter à parte, com tooltip que nomeia o lead fictício",
+            "ReferenceLine no SLA de 30 minutos e n no rótulo de cada categoria",
+            "Traço mínimo de 2 px quando o IQR é zero e método de quartil declarado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_pontos-sobre-a-caixa-e-prazo",
+          "titulo": "Horas até a agenda com os pontos sobre a caixa",
+          "caso_de_uso": "Quantos leads de cada SDR passam do prazo de 48 horas até a agenda, e a caixa esconde algum aglomerado?",
+          "o_que_demonstra": [
+            "Caixa vazada com todos os pontos por cima, raio de 2,5 px e opacidade 0,45",
+            "Jitter determinístico por hash FNV do id do lead, nunca Math.random",
+            "Amplitude do jitter derivada da largura da banda, sem invadir o grupo vizinho",
+            "Cor responde ao limiar: pontos acima de 48 horas em --danger, demais em neutro",
+            "allowDuplicatedCategory desligado no XAxis e percentual acima do prazo no subtítulo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_dias-parados-por-etapa",
+          "titulo": "Dias parados por etapa do funil",
+          "caso_de_uso": "Em que etapa as 1.900 oportunidades abertas ficam paradas por mais tempo, e quais são os casos extremos?",
+          "o_que_demonstra": [
+            "Layout horizontal com oito etapas em ordem de funil e n ao lado de cada caixa",
+            "Outlier clicável com código fictício OP 10482 abrindo o drill da oportunidade",
+            "Outlier de 412 dias fora do domínio vira marcador na borda com o valor escrito",
+            "ReferenceLine em 30 dias, o limiar de oportunidade parada",
+            "Nota de leitura no rodapé: caixa é a metade central, bigode vai até a cerca"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_entalhe-largura-e-grupo-minusculo",
+          "titulo": "CPL qualificado com entalhe e largura por amostra",
+          "caso_de_uso": "As medianas de CPL qualificado das plataformas diferem de fato, sabendo que uma delas tem só 9 campanhas?",
+          "o_que_demonstra": [
+            "Caixa entalhada em path de dez vértices, entalhe de 1,58 IQR sobre raiz de n",
+            "Largura pela raiz de n contra o nMax fixado sobre todos os grupos antes do filtro",
+            "Entalhe maior que a caixa cortado, tracejado e com aviso de amostra pequena",
+            "Grupo com n 4 sem caixa: só os quatro pontos e o texto n 4",
+            "Legenda curta: largura é tamanho da amostra, entalhe compara medianas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_strip-plot-e-beeswarm",
+      "nome": "Strip plot e beeswarm",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Cada observação vira um ponto numa escala só, com uma faixa por grupo. Mostra o valor exato de cada caso e os buracos entre eles, que o histograma apaga, e perde para o histograma na leitura da forma. O strip simples sai do ScatterChart nativo com eixo de categoria; jitter determinístico, dodge de beeswarm, wheat plot e barcode pedem geometria calculada em TypeScript. Absorve beeswarm, barcode, wheat plot e dot strip como versões; o strip micro dentro de card mora na família 24 com esta mesma geometria.",
+      "quando_usar": [
+        "Poucas dezenas a poucas centenas de casos por grupo, quando cada caso importa e pode abrir drill.",
+        "Amostra pequena demais para violino ou densidade: abaixo de 30 casos a curva vira pontos.",
+        "Mostrar a posição de cada caso sem sobrepor, em beeswarm, enquanto a nuvem couber na altura do cartão.",
+        "Forma crua em altura de uma linha, como barcode sob um KPI ou rug sob uma densidade."
+      ],
+      "quando_evitar": [
+        "Milhares de pontos numa faixa estreita: faixa de densidade em cor ou KDE (06).",
+        "Métrica discreta com poucos valores, como tentativas de 1 a 12: dot plot empilhado (09).",
+        "Leitura de valor exato no beeswarm: o raio do ponto cobre uma faixa de valores; usar tooltip ou tabela.",
+        "Quartis e mediana como mensagem principal: box plot com os pontos por cima (02).",
+        "Ponto valendo várias unidades, com contagem como mensagem: família 22 de unidades e waffle."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_cpl-das-campanhas-por-plataforma",
+          "titulo": "CPL de cada campanha por plataforma",
+          "caso_de_uso": "Como se espalha o CPL das campanhas do trimestre em cada uma das quatro plataformas de mídia paga?",
+          "o_que_demonstra": [
+            "ScatterChart com XAxis numérico, YAxis de categoria e um Scatter por plataforma",
+            "Opacidade de 0,45 com contorno de 0,5 px na cor da superfície, legível no escuro",
+            "Mediana de cada faixa como traço curto e meta de CPL em ReferenceLine rotulada",
+            "n ao lado do nome da plataforma e tooltip com o nome fictício da campanha"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_wheat-plot-com-buraco-anotado",
+          "titulo": "Dias até a primeira reunião em wheat plot",
+          "caso_de_uso": "As 46 oportunidades do mês chegam à primeira reunião em que prazo, e existe alguma faixa sem nenhum caso?",
+          "o_que_demonstra": [
+            "Pontos no valor exato e altura pela ordem dentro do intervalo de 5 dias",
+            "Desempate por id na ordenação para o desenho não mudar entre renders",
+            "YAxis oculto com domínio fixo de zero ao maior nível",
+            "Anotação da lacuna entre 13 e 15 dias: nenhuma reunião, semana de feriado",
+            "Nota de leitura na primeira aparição explicando a pilha inclinada"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_beeswarm-de-ticket-por-trimestre",
+          "titulo": "Ticket dos negócios ganhos por trimestre",
+          "caso_de_uso": "Os 312 negócios ganhos do ano mudaram de ticket entre os trimestres, e onde estão os maiores?",
+          "o_que_demonstra": [
+            "Dodge guloso em TypeScript com ordem de entrada fixa por valor e padding de 1 px",
+            "Layout recalculado após medir a largura, com debounce no redimensionamento",
+            "Raio de 3 px reduzido até o piso de 2 px quando a nuvem não cabe na faixa",
+            "Cor com um papel só: vertical fictícia A ou B, com drill por ponto",
+            "Mediana por trimestre marcada e janela deslizante na busca de vizinhos"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_barcode-com-valores-repetidos",
+          "titulo": "Barcode de CPL com valores arredondados",
+          "caso_de_uso": "Como mostrar 1.100 campanhas numa faixa de 20 px quando o CPL foi lançado em múltiplos de R$ 10?",
+          "o_que_demonstra": [
+            "Um line por valor em meio pixel, com shapeRendering crispEdges",
+            "Opacidade de 0,35 que acumula nas coincidências até o limite de leitura",
+            "Troca para histograma acima de 8 coincidências no mesmo valor, com aviso",
+            "Campanhas sem CPL fora da faixa e contadas no rodapé",
+            "Campanha selecionada em traço alto --chart-2 com a posição relativa escrita"
+          ],
+          "canvas_sugerido": "faixa"
+        }
+      ]
+    },
+    {
+      "slug": "04_ecdf-e-histograma-acumulado",
+      "nome": "ECDF e histograma acumulado",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Escada que sobe 1/n a cada observação, do menor valor ao maior, com o eixo Y de 0% a 100%. Não depende de bin nem de banda e mostra todo o dado de uma vez, o que a torna a resposta mais honesta para quantos casos ficam abaixo do SLA. Custa intuição: é menos familiar que o histograma e pede par de guias rotulado no cruzamento. Sai do LineChart nativo com Line stepAfter e ReferenceLine nos dois eixos. Absorve o histograma acumulado como versão, com barras somadas em TypeScript e sentido até ou ou mais declarado no eixo.",
+      "quando_usar": [
+        "Responder que percentual dos casos fica abaixo ou acima de um limiar: SLA, prazo, teto de CPL.",
+        "Comparar 2 a 4 grupos ou períodos sem escolher bin, lendo a distância horizontal na altura de 50%.",
+        "Métrica muito assimétrica, na versão ou mais com eixo X logarítmico avisado no rótulo.",
+        "Qualquer tamanho de amostra; acima de dezenas de milhares, reamostrar em uns 200 quantis."
+      ],
+      "quando_evitar": [
+        "Procurar moda, pico ou bimodalidade óbvia: histograma (01) ou densidade (06).",
+        "Casos ainda sem desfecho, como oportunidades abertas: curva de sobrevivência (11).",
+        "Público que nunca viu curva acumulada e não terá nota de leitura: histograma com estatística anotada (01).",
+        "Concentração do total por entidade: curva de Lorenz (10) ou Pareto na família 08 (modelo 04).",
+        "Percentis desenhados ao longo do tempo: faixa em área na família 05 (modelo 05)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_sla-de-primeiro-contato",
+          "titulo": "Leads contatados em até 30 minutos",
+          "caso_de_uso": "Que percentual dos leads do mês recebe o primeiro contato dentro do SLA de 30 minutos?",
+          "o_que_demonstra": [
+            "Função ecdf com empates colapsados e ponto gravado com o percentual já acumulado",
+            "Line stepAfter, com o salto no próprio valor, e dot desligado",
+            "Par de guias no limiar e no percentual, com o rótulo 69% em até 30 min no cruzamento",
+            "Sentido até escrito no título do eixo Y e marcas em 25, 50 e 75%",
+            "Leads sem horário de contato fora da curva e contados no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_histograma-acumulado-com-tres-limiares",
+          "titulo": "Primeiro contato acumulado em três limiares",
+          "caso_de_uso": "Quanto da fila é atendido em 5 minutos, em 30 minutos e em 2 horas, sem somar barras de cabeça?",
+          "o_que_demonstra": [
+            "Histograma acumulado com bins de 5 minutos somados pela função acumular",
+            "Bins ordenados e completos para o degrau não quebrar a monotonicidade",
+            "Marcas em 5, 30 e 120 minutos com três rótulos empilhados à direita",
+            "Parâmetro de sentido 1 ou menos 1 e rótulo do eixo que diz até ou ou mais"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cpl-ou-mais-em-escala-log",
+          "titulo": "Campanhas com CPL acima de cada valor",
+          "caso_de_uso": "Quantas das 1.100 campanhas do ano custam R$ 400 ou mais por lead, lido direto no eixo?",
+          "o_que_demonstra": [
+            "ECDF descendente, na forma ou mais, com eixo X logarítmico avisado no rótulo",
+            "Reamostragem em 200 quantis antes do render, com erro máximo de meio ponto",
+            "Campanhas sem lead ou com CPL zero fora do log e contadas em nota de rodapé",
+            "Guia em R$ 400 com percentual e contagem de campanhas no cruzamento"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_massa-no-zero-e-abertas-fora",
+          "titulo": "Receita acumulada com 41% das oportunidades em zero",
+          "caso_de_uso": "Como ler a acumulada da receita por oportunidade quando 41% valem zero e 87 negócios seguem abertos?",
+          "o_que_demonstra": [
+            "Curva que nasce em 41% no zero, com rótulo próprio no salto inicial",
+            "Oportunidades abertas fora da conta, com nota apontando a curva de sobrevivência",
+            "Domínio fixo do eixo X para o salto não ser lido como defeito do gráfico",
+            "Subtítulo com o n das fechadas e o texto: a curva vale só para as encerradas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_histograma-comparativo",
+      "nome": "Histograma comparativo entre grupos",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Duas a quatro distribuições da mesma métrica na mesma régua de bins, em três arranjos: sobrepostas com transparência, espelhadas costas com costas (pirâmide) ou empilhadas por categoria. Cada arranjo responde uma pergunta diferente: deslocamento entre grupos, confronto binário faixa a faixa e de que grupo é feito o volume de cada bin. A régua comum é o que dá sentido à peça, então bin, domínio e ordem de desenho ficam fixos entre filtros. Montado em BarChart com os bins já agregados por grupo em TypeScript.",
+      "quando_usar": [
+        "Comparar 2 ou 3 grupos na mesma régua: negócio novo contra cliente da casa, mídia paga contra indicação.",
+        "Confronto binário forte por faixa, como ganhos contra perdas por faixa de ticket, em pirâmide.",
+        "Saber de que grupo vem o volume de cada faixa quando o total manda, com até 4 grupos empilhados.",
+        "Grupos com pelo menos umas 30 observações cada, ou percentual dentro do grupo quando os tamanhos diferem."
+      ],
+      "quando_evitar": [
+        "Quatro grupos ou mais sobrepostos: pequenos múltiplos de histograma (01) ou ridgeline (08).",
+        "Comparar a forma de cada grupo no empilhado: só a camada de base tem linha comum; usar sobreposto ou facetas.",
+        "Mais de dois grupos na pirâmide: sobrepostos ou pequenos múltiplos.",
+        "Composição a 100% por faixa: deixa de ser distribuição; barras da família 02 ou mosaico da 26.",
+        "Formas suaves de grupos grandes: densidades sobrepostas (06)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-novo-contra-cliente-da-casa",
+          "titulo": "Ciclo de negócio novo contra cliente da casa",
+          "caso_de_uso": "Negócio novo demora quanto a mais para fechar do que cliente da casa, na mesma régua de 7 dias?",
+          "o_que_demonstra": [
+            "Dois Bar sem stackId e barGap negativo para sobreposição real no mesmo bin",
+            "Opacidade de 0,55 e ordem de desenho por n decrescente, fixa entre filtros",
+            "Linhas de mediana com seta e rótulo 34 dias de diferença na mediana",
+            "Legenda com cor, nome do grupo e n de cada um"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_ganhos-contra-perdas-por-faixa-de-ticket",
+          "titulo": "Ganhos contra perdas por faixa de ticket",
+          "caso_de_uso": "A partir de que faixa de ticket o comercial ganha mais oportunidades do que perde?",
+          "o_que_demonstra": [
+            "BarChart vertical com um lado negativo e outro positivo, faixas de R$ 25 mil",
+            "Math.abs em tickFormatter, LabelList e Tooltip para nunca mostrar sinal de menos",
+            "Domínio simétrico calculado sobre o máximo dos dois lados e fixado",
+            "Faixa em que as ganhas passam as perdidas com fundo --surface-raised e rótulo"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_ciclo-empilhado-por-origem-em-foco",
+          "titulo": "Ciclo empilhado por origem com indicação em foco",
+          "caso_de_uso": "Em que faixas de ciclo caem os negócios de indicação, e quanto do volume de cada faixa eles representam?",
+          "o_que_demonstra": [
+            "Bar com o mesmo stackId e o maior grupo na base, ordem fixa entre filtros",
+            "Camada de indicação em --chart-1 e as outras duas origens em neutro",
+            "Tooltip com o total da faixa e a participação de cada origem nela",
+            "Acima de 4 origens o empilhamento é recusado, com indicação de pequenos múltiplos"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_grupos-de-tamanho-desigual",
+          "titulo": "Mídia paga contra indicação em percentual do canal",
+          "caso_de_uso": "Como comparar o tempo até a agenda de 640 leads de mídia paga com o de só 38 leads de indicação?",
+          "o_que_demonstra": [
+            "Troca de contagem por percentual dentro do grupo, escrita no eixo Y",
+            "n bruto de cada canal na legenda, para não esconder o grupo minúsculo",
+            "Alternador absoluto ou percentual do grupo, com a escolha no rótulo do eixo",
+            "Grupo pequeno desenhado por cima, com ordem fixa mesmo quando o filtro muda"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_densidade-kde",
+      "nome": "Densidade (KDE)",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Curva suave estimada a partir dos pontos, com kernel gaussiano calculado em TypeScript sobre uma grade de uns 120 valores e banda de Silverman comum a todos os grupos. Responde a mesma pergunta do histograma sem o degrau do bin, trocando a largura do bin pela banda, que precisa aparecer no rodapé. Sai do AreaChart nativo. Toda curva é recortada no mínimo e no máximo observados e em zero quando a métrica não pode ser negativa. Absorve densidades sobrepostas e a faixa de densidade em cor como versões.",
+      "quando_usar": [
+        "Forma suave de uma medida com amostra grande, a partir de umas 100 observações por curva.",
+        "Sobrepor 2 a 4 grupos de forma parecida sem o borrão das barras sobrepostas.",
+        "Muitas distribuições empilhadas em pouco espaço, em tiras com a densidade na cor.",
+        "Marcar uma faixa de decisão e dizer que parte da área cai dentro dela."
+      ],
+      "quando_evitar": [
+        "Menos de 30 observações: a curva inventa forma; strip ou beeswarm (03).",
+        "Métrica com massa num valor, como 41% de zeros: histograma com o bin do zero separado (01).",
+        "Grupos com n muito diferente e densidade normalizada: declarar a escala ou usar histograma comparativo (05).",
+        "Muitos grupos com ordem natural, como mês a mês: ridgeline (08).",
+        "Densidade de duas variáveis ao mesmo tempo: hexbin e contorno na família 09 (modelo 09)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ticket-de-fechamento",
+          "titulo": "Densidade do ticket de fechamento",
+          "caso_de_uso": "Onde se concentra o ticket dos 208 negócios ganhos no ano, e a curva tem mais de um pico?",
+          "o_que_demonstra": [
+            "Kernel gaussiano sobre grade de 120 pontos e banda pela regra de Silverman",
+            "Grade recortada no observado e cortada em zero, métrica declarada não negativa",
+            "Area monotone com preenchimento leve e mediana em ReferenceLine",
+            "Eixo Y omitido com nota de altura relativa e rodapé n 208 · banda R$ 8,2 mil"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_cpl-de-dois-canais-sobrepostos",
+          "titulo": "CPL de busca contra social em densidades",
+          "caso_de_uso": "Em que faixa de CPL os canais de busca e social custam igual, e qual tem a cauda mais cara?",
+          "o_que_demonstra": [
+            "Duas Area sem stackId com fillOpacity de 0,25 e contorno forte",
+            "Densidades calculadas sobre a mesma grade de x e com a mesma banda",
+            "Região de cruzamento hachurada com o rótulo R$ 180 a R$ 240",
+            "Legenda com o n de cada canal e a normalização declarada"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_ciclo-por-executivo-em-faixas-de-cor",
+          "titulo": "Ciclo por executivo em faixas de densidade",
+          "caso_de_uso": "Como comparar a forma do ciclo de 12 executivos num espaço onde caberiam só três curvas?",
+          "o_que_demonstra": [
+            "Tiras em SVG com um rect por célula da grade e cor sequencial por token",
+            "Legenda da escala e nota: cor é densidade dentro do grupo, não volume",
+            "Mediana como traço claro sobre cada tira e n ao lado do nome",
+            "Tira com n abaixo de 15 hachurada e rotulada amostra pequena"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_amostra-curta-cai-para-pontos",
+          "titulo": "Densidade que recusa amostra curta",
+          "caso_de_uso": "O que a peça mostra quando o filtro deixa só 22 negócios, ou uma plataforma com 9 campanhas?",
+          "o_que_demonstra": [
+            "Regra de piso: abaixo de 30 observações a curva vira strip de pontos",
+            "Nota n 22: pontos individuais, sem curva, no lugar do rodapé de banda",
+            "Grupo minúsculo em strip na mesma régua das curvas dos grupos grandes",
+            "Abaixo de 5 observações, só o valor em texto"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "07_violino-e-raincloud",
+      "nome": "Violino e raincloud",
+      "abordagem_stack": "svg-puro",
+      "resumo": "A densidade de cada grupo espelhada em torno de um eixo central, larga onde há muitos casos e fina onde há poucos. Ganha do box plot exatamente onde ele mente (bimodalidade, aglomerado, buraco) e perde onde a amostra é curta. Desenhado em SVG com a função caminhoViolino, banda comum a todos os grupos e escala da largura declarada na legenda (área, contagem ou largura). Absorve marcadores internos, meio violino com raincloud, sina plot e bean plot, que somam resumo ou pontos individuais à forma.",
+      "quando_usar": [
+        "Forma completa por grupo com amostra grande, a partir de umas 100 observações por grupo.",
+        "Comparar de 2 a 8 grupos em que a bimodalidade ou o aglomerado é o achado.",
+        "Forma, resumo e pontos no mesmo espaço, em raincloud, com dezenas a poucas centenas de casos por grupo.",
+        "Diagnosticar medições duplicadas, que no bean plot aparecem como traço escuro."
+      ],
+      "quando_evitar": [
+        "Menos de 30 observações por grupo: strip ou beeswarm (03), sem curva suave.",
+        "Público que não lê densidade e precisa de número: box plot com pontos (02).",
+        "Milhares de casos com pontos por cima: a chuva vira mancha; violino puro ou ridgeline (08).",
+        "Massa concentrada num valor, como zeros: a suavização espalha o pico; separar o zero em barra própria.",
+        "Incerteza de cenário simulado, e não casos observados: meia-olho (12)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-por-segmento-com-marcadores",
+          "titulo": "Ciclo por segmento com mediana e quartis",
+          "caso_de_uso": "Os três segmentos de clientes fecham em prazos de forma parecida, ou algum tem dois grupos de negócio?",
+          "o_que_demonstra": [
+            "caminhoViolino com uma banda de Silverman única para os três grupos",
+            "Largura por área: densidade máxima global, formas comparáveis entre grupos",
+            "Barra interna do IQR e ponto de mediana com anel da cor da superfície",
+            "Largura do marcador limitada a 0,6 vez a largura do violino na mediana",
+            "Recorte no mínimo e no máximo observados e banda escrita no rodapé"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_raincloud-antes-e-depois-da-cadencia",
+          "titulo": "Tempo até a agenda antes e depois da cadência",
+          "caso_de_uso": "A nova cadência encurtou o tempo até a agenda nos três squads de pré-vendas, e para todos os leads?",
+          "o_que_demonstra": [
+            "Banda dividida em nuvem, box fino e chuva, com altura mínima de 56 px",
+            "Nuvem do trimestre anterior só em contorno e a do atual preenchida",
+            "Jitter da chuva preso na própria sub-faixa, com semente pelo id do lead",
+            "Frase: a mediana caiu de 3,2 para 1,8 dia depois da nova cadência",
+            "Legenda de uma linha explicando as três camadas"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_sina-de-cpl-por-plataforma",
+          "titulo": "Sina plot do CPL por plataforma",
+          "caso_de_uso": "O criativo em vídeo mora na cauda barata ou na cara do CPL das 1.100 campanhas das quatro plataformas?",
+          "o_que_demonstra": [
+            "Fração lateral de cada ponto limitada pela densidade no valor, em useMemo",
+            "Scatter com shape que desloca cx pela meia largura da banda",
+            "Campanhas em vídeo em --chart-2 e demais em neutro, cor com um papel só",
+            "Contorno do violino em 1 px, mediana marcada e escala por contagem declarada",
+            "Legenda: a posição lateral do ponto não tem significado"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_bean-plot-com-duplicata-suspeita",
+          "titulo": "Bean plot do primeiro contato com duplicata",
+          "caso_de_uso": "Por que 37 leads aparecem com exatamente 0 minuto até o primeiro contato, e em que canal eles estão?",
+          "o_que_demonstra": [
+            "Um traço curto por observação dentro do feijão, com opacidade que acumula",
+            "Traço escuro na base com a nota: possível carimbo automático, conferir a coleta",
+            "Mediana do grupo e mediana geral pontilhada, no lugar da média do original",
+            "Grupo com n 9 sem densidade: só os traços e o texto n 9"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "08_ridgeline",
+      "nome": "Ridgeline",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Uma densidade por grupo, deslocada na vertical e parcialmente sobreposta à vizinha, todas na mesma régua horizontal. É o modelo para muitas distribuições, sobretudo com ordem natural como mês a mês, e escala até dezenas de faixas. Desenhado em SVG puro, com um path por faixa, preenchimento opaco e ordem de desenho de trás para a frente, porque no Recharts as N séries de Area com base deslocada engessam o tooltip. A altura usa normalização global com piso de 8%, e ridgeline feito de histogramas é proibido.",
+      "quando_usar": [
+        "De 6 a umas 30 distribuições da mesma métrica, em ordem cronológica ou por mediana.",
+        "Ver se a forma muda ao longo do tempo: ciclo encurtando, CPL ficando mais caro mês a mês.",
+        "Destacar um grupo contra o conjunto, com as demais faixas em neutro.",
+        "Cada faixa com amostra suficiente para densidade, a partir de umas 30 observações."
+      ],
+      "quando_evitar": [
+        "Dois ou três grupos: densidades sobrepostas (06) ou histograma comparativo (05).",
+        "Leitura de valor exato ou de volume por grupo: box plot com pontos (02) ou pequenos múltiplos (01).",
+        "Faixas feitas de histograma: as barras de faixas diferentes se alinham de forma confusa.",
+        "Percentis ao longo do tempo como mensagem principal: faixa em área na família 05 (modelo 05)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-mes-a-mes",
+          "titulo": "Ciclo de fechamento mês a mês",
+          "caso_de_uso": "O ciclo de fechamento está encurtando ao longo dos 12 meses do ano, ou só a média mudou?",
+          "o_que_demonstra": [
+            "Um path por faixa com translate vertical e sobreposição de 40% da altura",
+            "Preenchimento opaco e desenho de dezembro para janeiro, de trás para a frente",
+            "Normalização global com piso de 8% e nota no rodapé",
+            "Densidades na mesma grade e banda, com rótulo do mês e n à esquerda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_executivo-em-foco",
+          "titulo": "Ciclo por executivo com um em foco",
+          "caso_de_uso": "Onde fica a distribuição de ciclo do executivo escolhido em relação aos outros 11, ordenados por mediana?",
+          "o_que_demonstra": [
+            "Faixas ordenadas por mediana, com a ordem declarada no subtítulo",
+            "Todas as faixas em --line-strong e a do executivo em --chart-1",
+            "Mediana do executivo em foco marcada com o valor escrito",
+            "Seleção vinda do filtro sem mudar a ordem nem a escala das faixas"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_cpl-por-campanha-em-18-meses",
+          "titulo": "CPL das campanhas ao longo de 18 meses",
+          "caso_de_uso": "Como a distribuição de CPL das campanhas mudou mês a mês nos últimos 18 meses?",
+          "o_que_demonstra": [
+            "Dezoito faixas em cerca de 420 px, com rótulo de mês só a cada três",
+            "Mediana de cada faixa como traço fino sobre a curva",
+            "Eixo X único embaixo, em reais, e banda comum escrita no rodapé",
+            "Tooltip por faixa com mês, n de campanhas e mediana"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_mes-sem-campanha",
+          "titulo": "Ridgeline com mês sem dado",
+          "caso_de_uso": "Como manter o eixo temporal honesto quando um mês não teve campanha ativa e outro teve só 11?",
+          "o_que_demonstra": [
+            "Mês sem dado como linha pontilhada com o texto sem campanha, rótulo mantido",
+            "Nunca faixa reta em zero, que seria lida como distribuição vazia",
+            "Mês com n abaixo de 30 sem curva, com um traço por campanha e n escrito",
+            "Ordem cronológica preservada mesmo com lacunas"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "09_dot-plot-empilhado",
+      "nome": "Dot plot empilhado e quantile dotplot",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Histograma de unidades: cada observação é um ponto empilhado no seu intervalo, com diâmetro igual à largura do intervalo em pixels. A vantagem no Farol é contar, quando cada ponto é um negócio ou um lead. Desenhado em SVG com grade fixa, diferente do agrupamento original de Wilkinson, para a régua não mudar entre filtros. Absorve o quantile dotplot, em que os 20 pontos são desfechos simulados igualmente prováveis e a leitura é por contagem contra um limiar, com k fixo no produto inteiro.",
+      "quando_usar": [
+        "Amostra pequena, até umas 150 observações, em que contar unidade importa.",
+        "Métrica discreta com poucos valores, como número de tentativas até a agenda.",
+        "Comunicar incerteza de previsão a público não técnico, com 20 desfechos contados contra a meta ou o teto.",
+        "Codificar desfecho no próprio ponto, com forma cheia ou vazada além da cor."
+      ],
+      "quando_evitar": [
+        "Acima de 150 casos sem agregar: histograma (01), ou ponto valendo várias unidades com a unidade escrita.",
+        "Risco de cauda abaixo de 2,5% ou acima de 97,5%: 20 quantis não mostram; ECDF (04) ou meia-olho (12).",
+        "Ponto como unidade de contagem sem distribuição por trás: família 22 de unidades e waffle.",
+        "Valor contínuo em que o valor exato importa: strip ou wheat plot (03)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_dias-ate-primeira-reuniao",
+          "titulo": "Dias até a primeira reunião em pontos",
+          "caso_de_uso": "Quantas das 46 oportunidades do mês chegaram à primeira reunião em cada faixa de 2 dias?",
+          "o_que_demonstra": [
+            "Função empilhar com grade fixa de 2 dias e nível por intervalo",
+            "Diâmetro igual à largura do intervalo em px, calculado após medir a largura",
+            "Eixo Y omitido e n no subtítulo, porque a pilha já é a contagem",
+            "Nota de que a grade é fixa, diferente do agrupamento original de Wilkinson"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_tentativas-ate-a-agenda-com-fila-de-revisao",
+          "titulo": "Tentativas até a agenda com fila de revisão",
+          "caso_de_uso": "Quantos dos 140 leads trabalhados precisaram de mais de 6 tentativas, e quantos desses ainda não agendaram?",
+          "o_que_demonstra": [
+            "Uma pilha por número de tentativas, de 1 a 12, sem bin artificial",
+            "Ponto cheio para lead com agenda e vazado para sem agenda: forma além da cor",
+            "Pilhas acima de 6 tentativas com fundo de destaque e rótulo fila de revisão",
+            "Tooltip por ponto com o código fictício do lead"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_quantile-dotplot-de-cenarios-de-midia",
+          "titulo": "Cenários de orçamento de mídia em 20 desfechos",
+          "caso_de_uso": "Em quantos de 20 desfechos cada cenário de orçamento de mídia passa do teto de capacidade da pré-vendas?",
+          "o_que_demonstra": [
+            "Quantis de 1/k/2 a 1 menos 1/k/2 sobre as amostras do simulador, k fixo em 20",
+            "Quatro cenários lado a lado na mesma régua de entradas qualificadas por mês",
+            "Teto de capacidade como linha e contagem de pontos de cada lado escrita",
+            "Legenda: cada ponto é 1 em 20 desfechos simulados, não um lead"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_cada-ponto-vale-dez-leads",
+          "titulo": "Pontos que valem 10 leads cada",
+          "caso_de_uso": "Como mostrar os 600 leads do mês em pilhas quando um ponto por lead não cabe na altura do cartão?",
+          "o_que_demonstra": [
+            "Unidade escrita na legenda: cada ponto vale 10 leads",
+            "Resto de cada pilha como ponto parcial com rótulo, nunca arredondado em silêncio",
+            "Altura da maior pilha conferida contra a área útil antes de escolher a unidade",
+            "Nota de ponte com a família 22 quando a contagem passa a ser a mensagem"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "10_curva-de-lorenz",
+      "nome": "Curva de Lorenz",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Entidades ordenadas da menor para a maior, com a fração acumulada de entidades no eixo X e a fração acumulada do total no Y. A diagonal é a igualdade perfeita, e a área entre ela e a curva mede a concentração, resumida no Gini. Responde quanto do total vem de poucos: receita por cliente, investimento por campanha, carteira por executivo. Sai do ComposedChart nativo com Area em par para sombrear a desigualdade e Line linear para a curva. A curva de concentração micro da família 24 usa a mesma geometria, sem eixo.",
+      "quando_usar": [
+        "Mostrar a concentração de um total entre dezenas a milhares de entidades.",
+        "Comparar a concentração de dois períodos ou duas carteiras, com o Gini de cada um na legenda.",
+        "Transformar a curva em frase de negócio: 10% dos clientes respondem por 52% da receita.",
+        "Abrir a lista das entidades que concentram o total a partir de uma faixa da curva."
+      ],
+      "quando_evitar": [
+        "Poucas entidades, como 8 executivos: a curva vira degraus grossos e o Gini fica enviesado; barras ordenadas (02).",
+        "Nomear quem concentra, entidade por entidade: Pareto na família 08 (modelo 04).",
+        "Total com muitos lançamentos negativos, como estornos: a curva desce e perde a leitura.",
+        "Distribuição de uma medida por caso, sem pergunta de concentração: histograma (01) ou ECDF (04)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_concentracao-da-receita-por-cliente",
+          "titulo": "Concentração da receita por cliente",
+          "caso_de_uso": "Quanto da receita reconhecida do ano vem dos 10% maiores entre os 640 clientes da carteira?",
+          "o_que_demonstra": [
+            "Função lorenz com ordenação crescente e Gini pela soma dos trapézios",
+            "Área quadrada de 0 a 100% nos dois eixos e diagonal tracejada",
+            "Area em par sombreando a distância entre a curva e a igualdade",
+            "Rótulo traduzido para leitura de cima: 10% dos clientes, 52% da receita",
+            "Gini e n de clientes na legenda"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_ano-anterior-contra-atual",
+          "titulo": "Concentração da receita em dois anos",
+          "caso_de_uso": "A carteira ficou mais concentrada em poucos clientes de um ano para o outro?",
+          "o_que_demonstra": [
+            "Duas curvas no mesmo quadrado, ano anterior em neutro e atual em --chart-1",
+            "Gini de cada ano na legenda, com o n de clientes de cada período",
+            "Sombreamento só na curva do ano atual, para não somar duas áreas",
+            "Rótulo da diferença na leitura dos 10% maiores entre os dois anos"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_investimento-de-midia-por-campanha",
+          "titulo": "Investimento de mídia concentrado por campanha",
+          "caso_de_uso": "Quantas das 1.100 campanhas do ano consomem 70% do investimento em mídia paga?",
+          "o_que_demonstra": [
+            "Curva de 1.100 pontos reamostrada para o render, com Gini calculado no dado cheio",
+            "Marcação de que 12% das campanhas consomem 70% do investimento",
+            "Faixa clicável que abre a lista das campanhas que concentram o gasto",
+            "Cartão com o quadrado à esquerda e a leitura em texto à direita"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v4_estornos-e-clientes-sem-receita",
+          "titulo": "Concentração com estornos e clientes sem receita",
+          "caso_de_uso": "Como desenhar a concentração quando há 23 estornos e 30% dos clientes não geraram receita no período?",
+          "o_que_demonstra": [
+            "Lançamentos negativos fora da conta e contados em nota de rodapé",
+            "Clientes com receita zero mantidos, com a curva rente ao eixo X até 30%",
+            "Nota de que tirar os zeros esconderia a desigualdade",
+            "Com menos de 20 entidades, pontos no lugar da curva e Gini não publicado"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "11_curva-de-sobrevivencia",
+      "nome": "Curva de sobrevivência (Kaplan-Meier)",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Proporção de casos que ainda não tiveram o evento ao longo do tempo, estimada sem descartar os que seguem em andamento, marcados como censura. Corrige o viés mais comum do ciclo de vendas: medir só as oportunidades fechadas encurta o ciclo, porque as longas ainda estão abertas. Montada em ComposedChart com Line stepAfter, Scatter de traços de censura e guia em 50%, com a tabela de número em risco em Tailwind alinhada ao eixo X. O evento honesto é a decisão, ganho ou perda, e não só o ganho, porque perda tratada como censura infla a chance de ganhar.",
+      "quando_usar": [
+        "Tempo até um evento quando parte relevante dos casos ainda não terminou: decisão, primeiro contato, agenda.",
+        "Comparar 2 ou 3 origens ou períodos, com a tabela de em risco por curva.",
+        "Ler a mediana de tempo onde a curva cruza 50%, sem esperar todos os casos fecharem.",
+        "Amostra a partir de umas centenas de casos, com a cauda tracejada quando o grupo em risco fica pequeno."
+      ],
+      "quando_evitar": [
+        "Todos os casos já encerrados: ECDF (04) basta e é mais familiar.",
+        "Separar ganho de perda como desfechos concorrentes: pede incidência acumulada, fora desta família.",
+        "Painel executivo sem espaço para a tabela de em risco, que é parte da leitura.",
+        "Série de um valor ao longo do tempo, sem evento por caso: família 04 de linhas."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_tempo-ate-a-decisao",
+          "titulo": "Tempo até a decisão das oportunidades",
+          "caso_de_uso": "Em quantos dias metade das 520 oportunidades de 2026 chega a uma decisão, contando as 87 ainda abertas?",
+          "o_que_demonstra": [
+            "Função kaplanMeier com eventos e censuras agrupados por dia",
+            "Line stepAfter na curva e Scatter com shape de traço vertical nas censuras",
+            "ReferenceLine em 50% com o rótulo metade decide em até 58 dias",
+            "Tabela de em risco em Tailwind com as mesmas margens do gráfico",
+            "Nota: o evento é ganho ou perda; perda nunca vira censura"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_indicacao-contra-midia-paga",
+          "titulo": "Tempo até a decisão por origem",
+          "caso_de_uso": "Oportunidades de indicação decidem mais rápido do que as de mídia paga quando as abertas entram na conta?",
+          "o_que_demonstra": [
+            "Duas curvas com cor por origem e a mediana de cada uma rotulada",
+            "Tabela de em risco com uma linha por origem, alinhada às marcas do eixo X",
+            "Censuras de cada curva na cor da própria origem",
+            "n total e n aberto de cada origem na legenda"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_primeiro-contato-humano",
+          "titulo": "Primeiro contato humano em dia útil e fim de semana",
+          "caso_de_uso": "Leads que entram no fim de semana esperam quanto a mais pelo primeiro contato humano do que os de dia útil?",
+          "o_que_demonstra": [
+            "Leads ainda sem contato no momento da extração tratados como censura",
+            "Eixo X em minutos com o SLA de 30 minutos como guia vertical",
+            "Percentual ainda sem contato lido no cruzamento com o SLA, para cada curva",
+            "Eixo Y invertido opcional, já contatados, escrito no título do eixo"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_cauda-rala",
+          "titulo": "Curva de decisão com cauda rala",
+          "caso_de_uso": "O que a curva ainda diz depois de 180 dias, quando restam só 11 oportunidades em risco?",
+          "o_que_demonstra": [
+            "Curva tracejada a partir do ponto em que restam menos de 15 casos em risco",
+            "Nota: abaixo de 15 casos em risco a queda não é confiável",
+            "Tabela de em risco que deixa visível o número pequeno no fim do eixo",
+            "Domínio do eixo X fixo, sem esticar a cauda para ocupar o gráfico"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "12_meia-olho-e-desfechos",
+      "nome": "Meia-olho e desfechos hipotéticos",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Família slab e intervalo aplicada a incerteza de cenário: meia densidade dos desfechos simulados, com ponto na mediana e intervalos de 66% e 95%, ou intervalo em gradiente em que a opacidade faz o papel da altura. É a forma natural dos cenários com saída em faixa da Diretoria. Desenhada em SVG, reaproveitando o caminho do violino com um lado só e um linearGradient com id único por instância. Absorve os desfechos hipotéticos animados (HOP), com versão estática obrigatória para exportação e para quem pede movimento reduzido.",
+      "quando_usar": [
+        "Mostrar a faixa de um cenário simulado com forma, ponto e intervalos nomeados numa linha.",
+        "Comparar de 2 a 12 cenários contra uma meta ou teto, com o percentual de desfechos de cada lado.",
+        "Explicar incerteza em apresentação ao vivo, com desfechos animados e controle de pausa.",
+        "Previsões com centenas a milhares de amostras do simulador por cenário."
+      ],
+      "quando_evitar": [
+        "Casos observados, e não simulados: violino e raincloud (07) ou box plot com pontos (02).",
+        "Público que precisa contar desfechos em vez de ler opacidade: quantile dotplot (09).",
+        "Relatório impresso com HOP: o papel congela um quadro e o transforma em previsão; quantile dotplot (09).",
+        "Faixa de previsão ao longo do tempo: fan chart na família 05 (modelo 05)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_receita-2027-por-cenario",
+          "titulo": "Receita de 2027 por cenário",
+          "caso_de_uso": "Qual a faixa provável da receita de 2027 nos cenários conservador, base e expansão?",
+          "o_que_demonstra": [
+            "Meia densidade acima da base com o caminho do violino de um lado só",
+            "Ponto de mediana com intervalo grosso de 66% e fino de 95% sobre a base",
+            "Rótulos dos intervalos só na primeira linha",
+            "Densidade recortada no domínio simulado, sem esmaecer além dele",
+            "Nota: faixa de cenários, não previsão pontual"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_chance-de-bater-a-meta",
+          "titulo": "Chance de cada cenário bater a meta",
+          "caso_de_uso": "Em que percentual dos desfechos de cada cenário a receita de 2027 passa da meta fictícia de R$ 10 mi?",
+          "o_que_demonstra": [
+            "Meta como linha vertical atravessando todas as linhas de cenário",
+            "Parte da meia densidade à direita da meta em cor de destaque",
+            "Texto por cenário: base, 38% dos desfechos acima da meta",
+            "Mesmo domínio para todos os cenários, calculado no componente pai"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_doze-cenarios-em-gradiente",
+          "titulo": "Doze cenários de orçamento em gradiente",
+          "caso_de_uso": "Como comparar doze cenários de orçamento num cartão em que doze meias densidades não caberiam?",
+          "o_que_demonstra": [
+            "linearGradient com um stop por ponto da grade e opacidade pela densidade",
+            "id do gradiente por useId, com limpeza de caracteres para o url(#id)",
+            "Linhas de 16 px com ponto e intervalos nomeados sobre o gradiente",
+            "Teto fictício de 300 entradas por mês com a massa no teto como barra própria"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_desfechos-animados-com-versao-estatica",
+          "titulo": "Desfechos animados com versão estática",
+          "caso_de_uso": "Como apresentar 50 desfechos de receita do trimestre ao vivo sem quebrar no PDF nem com movimento reduzido?",
+          "o_que_demonstra": [
+            "Hook useQuadro trocando o data a cada 500 ms, com sorteio de semente fixa",
+            "isAnimationActive desligado para não interpolar desfechos que não existem",
+            "Domínio fixo sobre todos os desfechos e contador desfecho 7 de 50",
+            "Botões de pausar e avançar com ícones do lucide-react",
+            "Com movimento reduzido ou no PDF, quantile dotplot com nota de versão estática"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "13_q-q-plot",
+      "nome": "Q-Q plot",
+      "abordagem_stack": "recharts-nativo",
+      "resumo": "Quantis observados contra quantis de uma referência, seja uma distribuição teórica ou outra amostra. Pontos sobre a diagonal dizem mesma forma, e o afastamento sistemático diz onde a forma difere: cauda mais longa, teto, assimetria. A geometria é de dispersão, mas a pergunta é de distribuição, e por isso o modelo fica aqui. Sai do ScatterChart nativo com ReferenceLine em segmento para a diagonal, área quadrada e o inverso da normal aproximado em TypeScript. É peça de público técnico e de conferência de premissa.",
+      "quando_usar": [
+        "Conferir se a premissa de forma usada no simulador de cenários descreve o dado medido.",
+        "Comparar a forma de duas amostras, como dois anos, com quantis interpolados na mesma grade.",
+        "Diagnosticar teto, piso ou truncamento vindos do sistema de origem.",
+        "Amostras a partir de umas 50 observações, para público técnico."
+      ],
+      "quando_evitar": [
+        "Painel executivo ou público que nunca viu um Q-Q: histograma com estatística anotada (01) ou ECDF (04).",
+        "Pergunta de cauda extrema com a aproximação simples: trocar a função e conferir contra tabela antes.",
+        "Relação entre duas variáveis diferentes: dispersão na família 09.",
+        "Comparar grupos por resumo: box plot com pontos (02)."
+      ],
+      "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+      "versoes": [
+        {
+          "slug": "v1_ciclo-contra-lognormal",
+          "titulo": "Ciclo de fechamento contra a lognormal",
+          "caso_de_uso": "A premissa lognormal usada no simulador de cenários descreve o ciclo de fechamento medido em 2026?",
+          "o_que_demonstra": [
+            "Função qqNormal sobre o log do ciclo, com posições de plotagem (i + 0,5) / n",
+            "Área quadrada com aspect 1 e o mesmo domínio nos dois eixos",
+            "Diagonal em ReferenceLine com segment e traço tracejado",
+            "Anotação na região da cauda que se afasta da diagonal"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_tempo-ate-agenda-em-dois-anos",
+          "titulo": "Tempo até a agenda em 2025 contra 2026",
+          "caso_de_uso": "A distribuição do tempo até a agenda mudou de forma entre 2025 e 2026, ou só se deslocou?",
+          "o_que_demonstra": [
+            "Q-Q de duas amostras com quantis interpolados na mesma grade de probabilidades",
+            "Nunca emparelhar por índice quando os tamanhos das amostras diferem",
+            "Pontos da cauda acima da diagonal em destaque, com nota: a cauda ficou mais longa",
+            "n de cada ano no subtítulo"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v3_atingimento-com-teto",
+          "titulo": "Atingimento de meta com teto de 150%",
+          "caso_de_uso": "O desvio no topo do atingimento de meta é forma real ou efeito do teto de 150% do sistema de origem?",
+          "o_que_demonstra": [
+            "Pontos achatados no topo formando uma linha horizontal em 150%",
+            "ReferenceLine no teto com rótulo e nota que atribui o desvio ao teto",
+            "Casos no teto contados no rodapé, fora da leitura de forma",
+            "Diagonal mantida para mostrar que o miolo segue a referência"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    }
+  ]
+}

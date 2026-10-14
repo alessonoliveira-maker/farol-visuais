@@ -1,0 +1,68 @@
+{
+  "slug": "06_icicle",
+  "nome": "Icicle (partição retangular)",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Faixas empilhadas por nível em que a largura de cada retângulo é proporcional ao valor e os filhos ficam exatamente sob o pai. Na orientação lateral, com a raiz à esquerda, aceita rótulos longos e hierarquias profundas; a partição é calculada em TypeScript e desenhada em SVG.",
+  "quando_usar": [
+    "Hierarquia de 3 ou 4 níveis com rótulos longos, como categoria, motivo e submotivo",
+    "Ler ao mesmo tempo o peso de cada nó e a posição dele na estrutura",
+    "Ampliar um ramo por clique mantendo os ancestrais como faixa fina de contexto"
+  ],
+  "quando_evitar": [
+    "Parte do todo de um nível só: use barras (família 02) ou treemap (12/01)",
+    "Quando o espaço é quadrado e a ênfase é no centro: use sunburst (12/03)",
+    "Estrutura sem valor, como organograma: use árvore (12/07)",
+    "Leitura de consulta linha a linha com números: use tabela em árvore (família 14, modelo 07)"
+  ],
+  "arquivo_estudo": "_estudo/familias/12_hierarquia.md",
+  "versoes": [
+    {
+      "slug": "v1_perdas-por-motivo-e-submotivo",
+      "titulo": "Perdas por categoria, motivo e submotivo",
+      "caso_de_uso": "Comercial: de que são feitas as 164 perdas de 2026-T3, da categoria ao submotivo.",
+      "o_que_demonstra": [
+        "Partição em TypeScript: x0 e x1 dentro do intervalo do pai pela soma cumulativa",
+        "Orientação lateral com a raiz à esquerda e uma coluna por nível",
+        "Rótulo só em retângulos com 48 px ou mais na direção do texto",
+        "Filhos ordenados por valor decrescente dentro de cada pai, estáveis entre filtros"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v2_ramo-concorrencia-ampliado",
+      "titulo": "Ramo de concorrência ampliado",
+      "caso_de_uso": "Comercial: dentro das perdas para concorrência, quais motivos e submotivos pesam mais.",
+      "o_que_demonstra": [
+        "Ramo Concorrência reescalado para a altura inteira do canvas",
+        "Ancestrais mantidos como faixa fina de contexto, com o percentual do ramo no todo",
+        "Ramo ampliado declarado no data.ts para o preview abrir já ampliado",
+        "Clique no ancestral volta um nível; tecla Escape volta à raiz"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v3_investimento-da-plataforma-ao-criativo",
+      "titulo": "Investimento da plataforma ao criativo",
+      "caso_de_uso": "Marketing: como os R$ 312 mil de 2026-08 descem de plataforma para campanha e para criativo.",
+      "o_que_demonstra": [
+        "Orientação vertical com quatro faixas: total, plataforma, campanha e criativo",
+        "Cor por plataforma com luminosidade decrescente por profundidade",
+        "Filho direto no grupo criado quando a campanha tem valor próprio sem criativo",
+        "Faixa de criativos sem rótulo e com tooltip, porque as larguras ficam abaixo do mínimo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_submotivos-com-rotulos-longos",
+      "titulo": "Submotivos com rótulos longos",
+      "caso_de_uso": "Comercial: submotivos com mais de 40 caracteres precisam ser legíveis sem estourar a faixa nem sobrepor vizinhos.",
+      "o_que_demonstra": [
+        "Truncamento com reticências medido pela largura disponível da faixa",
+        "Texto completo em title no SVG e na lista de acessibilidade",
+        "Faixa abaixo do mínimo sem texto, com o nome só no tooltip",
+        "Valor zero fora da partição e listado à parte com o motivo"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

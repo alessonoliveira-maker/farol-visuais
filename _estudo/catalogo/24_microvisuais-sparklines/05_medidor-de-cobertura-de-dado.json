@@ -1,0 +1,77 @@
+{
+  "slug": "05_medidor-de-cobertura-de-dado",
+  "nome": "Medidor de cobertura de dado",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Selo colado ao indicador que diz quanto do universo tem o dado que sustenta o número ao lado. Não fala do negócio, fala do próprio indicador: um CPL qualificado calculado sobre 40% da base não é o mesmo número que um calculado sobre 95%. Tem duas formas canônicas em HTML com Tailwind: a fração, chip com o percentual e um trilho curto preenchido na proporção, e a barra de qualidade em três segmentos na ordem fixa válido, inválido e ausente. O denominador é texto obrigatório (58% dos leads do período têm telefone); o limiar que rebaixa o número principal é função pura com o corte declarado; ausente é categoria diferente de zero antes de chegar ao componente; e a série da cobertura no tempo separa o degrau de uma mudança de coleta da rampa de uma mudança de comportamento. A pesquisa sobre visualização de dado ausente sustenta a escolha: destacar a lacuna eleva a confiança no painel, escondê-la é que enfraquece.",
+  "quando_usar": [
+    "Ao lado de qualquer número calculado sobre um campo que nem todo registro tem: CPL qualificado, leads por origem, ticket",
+    "Tabela de origens ou de fontes em que a cobertura precisa ordenar a lista e rebaixar o indicador vizinho",
+    "Campo com três estados que o time de dados trata de formas diferentes: válido, malformado e ausente",
+    "Investigar se cobertura baixa é defeito de coleta ou da base, pela forma da série de cobertura no tempo",
+    "Telas de Marketing que exibem leads por origem, onde a cobertura de dado é requisito do público"
+  ],
+  "quando_evitar": [
+    "Fonte com cobertura sempre de 100% por construção: o selo vira ruído",
+    "Cobertura como painel próprio, por campo e por fonte: use a tabela com heatmap nas células (14/02_tabela-com-heatmap-nas-celulas)",
+    "Presença ou ausência de vários atributos por entidade: use a matriz de cobertura binária (25/04_matriz-de-cobertura-binaria)",
+    "Denominador não definido: sem base declarada, a cobertura é ambígua e não deve ser publicada",
+    "Progresso contra meta: use a barra de progresso (13/01_barra-de-progresso-linear)",
+    "Largura mínima aplicada a segmento pequeno: quebra a soma de 100%; agregue antes do componente"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_chip-de-cobertura-no-cpl-qualificado",
+      "titulo": "CPL qualificado com selo de cobertura",
+      "caso_de_uso": "Marketing: o CPL qualificado do mês pode ser lido como está, ou a base que o sustenta é incompleta?",
+      "o_que_demonstra": [
+        "kpi-number do CPL com formatCurrencyCompact e o selo de cobertura logo abaixo",
+        "Trilho de 40 px em --surface-overlay com preenchimento em --chart-1 na proporção",
+        "Denominador por extenso: 58% dos 1.240 leads do período têm qualificação",
+        "Limiar de 50% declarado; acima dele o número principal fica normal",
+        "Par taxa e volume por formatRateWithVolume, sem esconder a base"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_telefone-em-tres-segmentos",
+      "titulo": "Qualidade do campo telefone em três segmentos",
+      "caso_de_uso": "Marketing: da base de leads do trimestre, quanto tem telefone válido, malformado ou nenhum telefone?",
+      "o_que_demonstra": [
+        "flex de três segmentos em ordem fixa: válido, malformado e ausente",
+        "Ausente em contorno --text-muted sem preenchimento, distinto de zero medido",
+        "Vão de 2 px entre segmentos (COR-5) e percentuais inteiros que somam 100",
+        "Rótulos fora da barra com contagem e percentual em colunas à direita",
+        "Malformado em --warning com a palavra corrigível, o que o time de dados ataca"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_origens-com-cpl-rebaixado-por-cobertura",
+      "titulo": "Origens com CPL rebaixado por cobertura",
+      "caso_de_uso": "Marketing: em quais das 14 origens o CPL qualificado não deve ser lido porque a cobertura ficou abaixo de 50%?",
+      "o_que_demonstra": [
+        "Tabela de 14 origens com volume, cobertura e CPL qualificado lado a lado",
+        "Abaixo de 50% o CPL vai para --text-muted com TriangleAlert, sem opacity no texto",
+        "Ordem padrão com as piores coberturas no topo e o critério no cabeçalho",
+        "Origem sem nenhum registro do campo com formatUnavailable no lugar do CPL",
+        "Sem origem declarada por último e visível, nunca somada a outras",
+        "Frase acessível com quantas origens ficaram abaixo do limiar"
+      ],
+      "canvas_sugerido": "alto"
+    },
+    {
+      "slug": "v4_salto-de-cobertura-por-mudanca-de-coleta",
+      "titulo": "Salto de cobertura por mudança de coleta",
+      "caso_de_uso": "Marketing: a cobertura de telefone saltou em um mês porque os leads mudaram ou porque a coleta mudou?",
+      "o_que_demonstra": [
+        "12 meses de cobertura em colunas de div com base no zero e o salto de 23% a 61%",
+        "Anotação mudança de coleta em 15/06/2026, por formatDate, sobre a coluna do salto",
+        "Rodapé que lê degrau brusco como coleta e rampa lenta como comportamento",
+        "Meses anteriores sem recálculo retroativo, dito na frase acessível",
+        "Selo atual com o denominador do mês e a variação por formatPercentPoints"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

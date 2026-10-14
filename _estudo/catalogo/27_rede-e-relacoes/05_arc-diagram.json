@@ -1,0 +1,76 @@
+{
+  "slug": "05_arc-diagram",
+  "nome": "Arc diagram",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Nós alinhados num eixo único e ligações desenhadas como arcos. Troca a visão da estrutura global por rótulos legíveis e por padrões claros quando a ordem é boa: com ordem aleatória os grupos somem, ordenados por grupo e, dentro dele, por grau ou frequência, os blocos e as pontes aparecem. A posição é x = índice vezes passo e o arco do nó i ao j é um semicírculo M xi,y A r,r 0 0,1 xj,y com r = (xj - xi) / 2; o sentido de i para j vai acima e o de j para i abaixo. A espessura segue a raiz quadrada do peso, o tamanho do nó segue o grau e a cor segue o grupo. Arcos longos são achatados em elipse para caber na altura, e os rótulos sob o eixo pedem margem inferior calculada pelo maior rótulo.",
+  "quando_usar": [
+    "Coocorrência ou dependência entre até 40 nós em que o nome de cada nó precisa ser legível",
+    "Procedência: de quais fontes de dado cada indicador depende, com os nós ordenados por dashboard",
+    "Relação dirigida em que o sentido cabe em dois lados do eixo (usa acima, é usado por abaixo)",
+    "Faixa larga e baixa de dashboard, onde grafo livre e chord não cabem",
+    "Mostrar grupos e pontes quando existe uma ordem natural (dashboard, etapa, volume)"
+  ],
+  "quando_evitar": [
+    "Mais de 40 nós ou muitas ligações longas: use a matriz de adjacência (27/01)",
+    "A estrutura global (hubs, comunidades) é a mensagem: use o grafo por forças (27/04)",
+    "As folhas pertencem a uma hierarquia com dois níveis ou mais: use o hierarchical edge bundling (27/08)",
+    "Leitura de peso exato de cada par: use a matriz (27/01) ou a lista ordenada de pares",
+    "Fluxo de volume entre etapas: use o sankey (11/01_sankey-simples)"
+  ],
+  "arquivo_estudo": "_estudo/familias/27_rede-e-relacoes.md",
+  "versoes": [
+    {
+      "slug": "v1_coocorrencia-de-origens-em-2026-08",
+      "titulo": "Origens que se cruzam na jornada",
+      "caso_de_uso": "Marketing: quais das 7 origens fictícias aparecem juntas na jornada dos leads de 2026-08, ordenadas por volume.",
+      "o_que_demonstra": [
+        "Semicírculo por comando A do path com raio pela metade da distância no eixo",
+        "Espessura pela raiz quadrada do peso e raio do nó pela raiz do grau",
+        "Ordem por volume declarada no subtítulo, não alfabética",
+        "Arcos em var(--line-strong) e o par mais forte em var(--chart-1) com o valor escrito",
+        "Rótulos sob o eixo sem giro, porque 7 nós cabem na horizontal"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_procedencia-indicadores-e-fontes",
+      "titulo": "Indicadores que dependem de cada fonte",
+      "caso_de_uso": "Diretoria: quais dos 24 indicadores fictícios caem se uma das 6 fontes de dado parar, com os indicadores agrupados por dashboard.",
+      "o_que_demonstra": [
+        "Nós ordenados por dashboard (Comercial, Pré-vendas, Marketing, Diretoria) e fontes no fim",
+        "Separador de grupo no eixo com o nome do dashboard acima",
+        "Fonte selecionada por highlightId acende todos os arcos dela em var(--chart-1)",
+        "Contagem escrita de indicadores que caem, como 9 de 24 indicadores",
+        "Arcos longos achatados em elipse com A r, r vezes 0,6 para caber na altura",
+        "Rótulos girados 45 graus com margem inferior calculada pelo maior rótulo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_dependencia-dirigida-entre-indicadores",
+      "titulo": "Indicadores derivados de outros indicadores",
+      "caso_de_uso": "Diretoria: quais indicadores fictícios usam outros indicadores no cálculo e quais são usados, com o sentido legível.",
+      "o_que_demonstra": [
+        "Arco acima para usa e arco abaixo para é usado por, a partir do mesmo eixo",
+        "Legenda explícita dos dois sentidos junto do eixo, não só na dica",
+        "Rótulos curtos no eixo e nomes completos na lista acessível de ligações",
+        "Indicador com dependência circular marcado em var(--warning) com ícone lucide RefreshCw",
+        "Altura acima e abaixo do eixo calculada pelo arco mais longo de cada lado"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_indicador-sem-fonte-declarada",
+      "titulo": "Indicadores sem procedência declarada",
+      "caso_de_uso": "Diretoria: quais indicadores fictícios não têm fonte de dado declarada e por isso ficam sem arco, fora da leitura de risco.",
+      "o_que_demonstra": [
+        "Indicador sem fonte no fim do eixo com contorno var(--text-muted) e sem preenchimento",
+        "Texto sem fonte declarada sob o nó, distinto de fonte com zero dependências",
+        "Contagem no rodapé, como 3 indicadores sem procedência",
+        "Fonte declarada que nenhum indicador usa mantida no eixo com 0 escrito",
+        "Frase acessível que separa as duas ausências"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

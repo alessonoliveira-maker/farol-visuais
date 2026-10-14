@@ -1,0 +1,108 @@
+{
+  "familia": "17_comparacao-de-pontos",
+  "modelo": "05_lollipop",
+  "versoes": {
+    "v1_agendas-por-sdr-no-mes": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Observações no README: truncate na linha de leitura (TIP-7), empate no 2º lugar citado pela metade, dica com uma casa decimal.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:19.695Z",
+      "impressao": "7093459d748934f1c9c48c00518a00c98f1ed472",
+      "arquivos": {
+        "Chart.tsx": "29e07d1370448a1d108d2d2923ca5989fe2f6f7d",
+        "data.ts": "e67c469e7f8cfb11c93658798777baacde9484de",
+        "meta.json": "1447e3cb55b94c620a2c7448053a19141f2505c9"
+      }
+    },
+    "v2_entradas-por-semana-contra-o-teto": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 5 de 15 e os cinco excedentes conferidos. Observações no README: traço do teto sólido e pintado por cima do disco de 60, tiques e excedente sem substantivo (NUM-6), parcial nunca conta como estouro.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:20.346Z",
+      "impressao": "f13bdf8d3a15e91ae8983948e3d15b756acd7d67",
+      "arquivos": {
+        "Chart.tsx": "8d3a2f8e4cee4f3cca51175854a7130ad938495b",
+        "data.ts": "03b8a726a41eff62a641f9548d21c57801f60f64",
+        "meta.json": "5daf07b3453798bd2f5cf2debf7e54583054be18"
+      }
+    },
+    "v3_desvio-de-custo-contra-o-orcado-por-area": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; os 18 desvios e 7 de 18 conferidos. Observações no README: legenda fora da ordem visual (ROT-4), período ausente do cartão e do useCase, truncate na linha de leitura (TIP-7).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:23.248Z",
+      "impressao": "e379ffd3c2d0c43f9d5f8922414ddeee02fc2359",
+      "arquivos": {
+        "Chart.tsx": "cf7a4e6b72357cf08602852329b09dee3c878398",
+        "data.ts": "986cb74a37c0bf744bf4d06b4e790af0a71aebeb",
+        "meta.json": "97a88cb00bfd2a8620f20e23b0af1f6bbad6b829"
+      }
+    },
+    "v4_leads-por-plataforma-com-zero-e-ausente": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; zero medido e ausência distintos no preview. Observações no README: marca de ausência cruzaria a haste de agosto com july null, rodapé só narra agosto, rótulos de quatro algarismos colidiriam.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:23.964Z",
+      "impressao": "7a82ca7239e6dd69872924853d697eb456d01754",
+      "arquivos": {
+        "Chart.tsx": "6a2a7108f172ed4959282cf9ea5065fd6667235b",
+        "data.ts": "478a1d25efc415efb1d76065323f1b155cba3e7e",
+        "meta.json": "38b89761a0c3cc46b0f32e6ef0e3cef1a628e699"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-por-sdr-no-mes",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim. Observações no README: truncate na linha de leitura (TIP-7), empate no 2º lugar citado pela metade, dica com uma casa decimal.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:19.695Z",
+      "impressao": "7093459d748934f1c9c48c00518a00c98f1ed472",
+      "arquivos": {
+        "Chart.tsx": "29e07d1370448a1d108d2d2923ca5989fe2f6f7d",
+        "data.ts": "e67c469e7f8cfb11c93658798777baacde9484de",
+        "meta.json": "1447e3cb55b94c620a2c7448053a19141f2505c9"
+      }
+    },
+    {
+      "versao": "v2_entradas-por-semana-contra-o-teto",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; 5 de 15 e os cinco excedentes conferidos. Observações no README: traço do teto sólido e pintado por cima do disco de 60, tiques e excedente sem substantivo (NUM-6), parcial nunca conta como estouro.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:20.346Z",
+      "impressao": "f13bdf8d3a15e91ae8983948e3d15b756acd7d67",
+      "arquivos": {
+        "Chart.tsx": "8d3a2f8e4cee4f3cca51175854a7130ad938495b",
+        "data.ts": "03b8a726a41eff62a641f9548d21c57801f60f64",
+        "meta.json": "5daf07b3453798bd2f5cf2debf7e54583054be18"
+      }
+    },
+    {
+      "versao": "v3_desvio-de-custo-contra-o-orcado-por-area",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; os 18 desvios e 7 de 18 conferidos. Observações no README: legenda fora da ordem visual (ROT-4), período ausente do cartão e do useCase, truncate na linha de leitura (TIP-7).",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:23.248Z",
+      "impressao": "e379ffd3c2d0c43f9d5f8922414ddeee02fc2359",
+      "arquivos": {
+        "Chart.tsx": "cf7a4e6b72357cf08602852329b09dee3c878398",
+        "data.ts": "986cb74a37c0bf744bf4d06b4e790af0a71aebeb",
+        "meta.json": "97a88cb00bfd2a8620f20e23b0af1f6bbad6b829"
+      }
+    },
+    {
+      "versao": "v4_leads-por-plataforma-com-zero-e-ausente",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; zero medido e ausência distintos no preview. Observações no README: marca de ausência cruzaria a haste de agosto com july null, rodapé só narra agosto, rótulos de quatro algarismos colidiriam.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T15:21:23.964Z",
+      "impressao": "7a82ca7239e6dd69872924853d697eb456d01754",
+      "arquivos": {
+        "Chart.tsx": "6a2a7108f172ed4959282cf9ea5065fd6667235b",
+        "data.ts": "478a1d25efc415efb1d76065323f1b155cba3e7e",
+        "meta.json": "38b89761a0c3cc46b0f32e6ef0e3cef1a628e699"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Filas da pré-vendas contra o teto de capacidade",
+  "useCase": "Qual das quatro filas da pré-vendas e da carteira de vendas passou do teto mensal, e o teto é medido ou premissa?",
+  "demonstrates": [
+    "Cinco bullets em SVG na mesma escala relativa: percentual do próprio teto",
+    "Faixas de conforto, atenção e estouro em --seq-1 a --seq-3, sem matizes",
+    "Excesso além do teto visível com hachura em pattern, nunca clampado",
+    "Teto como marca vertical alinhada nas cinco réguas e rodapé 186 de 160, estouro de 26",
+    "Origem de cada teto escrita na linha, medido ou premissa, sem selo por linha",
+    "Corte de atenção a partir de 85% do teto declarado no rodapé"
+  ],
+  "canvas": { "width": 640, "height": 400 },
+  "frame": "card",
+  "notes": "O estudo previa o teto em --line-strong; a marca usa --text-muted, o papel de referência da seção 17.2, porque --line-strong mede 1,8:1 e some sobre as faixas."
+}

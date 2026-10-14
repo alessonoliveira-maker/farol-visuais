@@ -1,0 +1,14 @@
+{
+  "title": "Repasses entre funções no trimestre",
+  "useCase": "Comercial, 2026-T3: quantas oportunidades cada função repassa às outras, nos dois sentidos?",
+  "demonstrates": [
+    "Geometria do chord em TypeScript a partir da matriz m[i][j], sem biblioteca",
+    "Ângulo do grupo pela soma da linha, descontado o padAngle",
+    "Fita com m[i][j] na borda de i e m[j][i] na borda de j, na cor da origem",
+    "Flag de arco grande do SVG ligada quando o ângulo passa de π",
+    "Nome do grupo horizontal fora do arco, sem rotação de texto"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "A cor de cada fita vem do grupo de índice menor no par, tratado como origem canônica (convenção do Farol; o ECharts colore pela fita do destino). A alternativa em matriz de adjacência é o v4, fora desta leva."
+}

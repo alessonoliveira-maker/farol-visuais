@@ -1,0 +1,13 @@
+{
+  "title": "Dependências inconsistentes e ciclo",
+  "useCase": "Pré-vendas: plano com sucessora que começa antes da predecessora terminar e um ciclo entre duas tarefas.",
+  "demonstrates": [
+    "Sucessora sobreposta com cotovelo contornando pela esquerda, sem cruzar a barra",
+    "Conector inconsistente tracejado em var(--negative) com aviso escrito",
+    "Ciclo A → B → A detectado e listado fora do gráfico, sem desenhar a volta",
+    "Caminho crítico indisponível enquanto houver ciclo, com formatUnavailable"
+  ],
+  "canvas": { "width": 960, "height": 447 },
+  "frame": "card",
+  "notes": "CANVAS POR NÚMERO, E A CONTA (GEO-1). O catálogo sugere o preset largo, de 960 x 400, cujo corpo mede 894 x 281,5 px com caso de uso em uma linha. As linhas reais somam 328 px: 28 px de linha de leitura, 252 px de SVG (18 px de cabeçalho da coluna, 7 linhas de 30 px e 24 px de eixo) e 48 px da lista de problemas (8 de respiro e duas linhas de 20 px, uma por problema). A lista é a exigência escrita que come corpo (GEO-14), e quem cede é a altura do canvas: 328 mais 118,5 de moldura dá 446,5, e o canvas fecha em 447 com 0,5 px de sobra. A linha fica em 30 px, e não menos, porque o contorno da sucessora sobreposta passa no meio do espaço entre duas linhas, a 8 px de cada barra. O viewBox é 894 x 252, então a escala do preview é 1 (GEO-18). O canvas guarda duas linhas de problema; dado com mais problemas pede 20 px de altura por linha a mais. O QUE CADA MARCA DIZ. Sucessora que começa antes de a predecessora terminar: conector tracejado de 2 px em --negative que sai pelo fim da predecessora, volta pelo meio do espaço entre as duas linhas e entra na sucessora pela esquerda, sem cruzar barra; a linha de aviso embaixo repete a amostra tracejada e escreve a data de início e os dias úteis de sobreposição. Ciclo: as tarefas presas nele saem com barra em --negative e nome em peso 600 (cor nunca sozinha, ACE-2); o conector que segue o tempo fica em --negative contínuo e a volta, que é a dependência de trás para a frente dentro do ciclo, não é desenhada; a lista embaixo nomeia as tarefas. --negative mede 5,50:1 no escuro e 6,36:1 no claro contra o cartão; o conector comum usa --text-muted, 5,21:1 e 5,37:1, e não --line-strong (ACE-6). COMO O CICLO É ACHADO. Poda repetida de quem não espera ninguém do resto e de quem não é esperado por ninguém do resto: o que sobra está preso em ciclo. A ordem topológica de Kahn não fecha enquanto ele existir, a função do caminho crítico devolve null e a tela escreve formatUnavailable com o ícone Unplug no lugar do número (EST-1b, EST-2); sem ciclo, a mesma linha escreve quantas tarefas são críticas e o fim previsto. Na tela o ciclo é escrito em prosa, com o nome das tarefas, e não com setas."
+}

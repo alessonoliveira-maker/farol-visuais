@@ -1,0 +1,13 @@
+{
+  "title": "Oportunidades perdidas com o histórico",
+  "useCase": "Comercial: por que cada oportunidade perdida em agosto de 2026 caiu, abrindo as etapas percorridas com as datas.",
+  "demonstrates": [
+    "Botão com ChevronRight girando pela classe e aria-expanded no estado",
+    "Painel de detalhe na largura da tabela, montado só quando a linha abre",
+    "Etapas percorridas em cartões com formatDate e dias em cada etapa",
+    "Linha fechada anuncia quantas etapas existem, e o total do rodapé soma todas as linhas"
+  ],
+  "canvas": { "width": 640, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas maior que o preset alto: cinco oportunidades mais o painel de etapas de uma linha aberta e o total do rodapé não cabem no corpo de 425 px do preset sem cortar a última linha e esconder o total; a conta da ESP-6 pede altura extra em vez de deixar o total fora da área visível."
+}

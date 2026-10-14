@@ -1,0 +1,17 @@
+{
+  "title": "Doze regiões comerciais pela mediana do ciclo",
+  "useCase": "Quais das 12 regiões comerciais fecham mais rápido para o mesmo ticket?",
+  "demonstrates": [
+    "Ordem dos painéis por medida, não alfabética",
+    "Doze painéis em grade de 3 colunas com rótulo de eixo só na borda",
+    "Mediana do ciclo escrita no título de cada painel",
+    "Critério da ordem declarado na linha de leitura, não só no código",
+    "Dado em ordem alfabética no arquivo, para a ordem da tela ser conferível"
+  ],
+  "canvas": {
+    "width": 760,
+    "height": 788
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número (GEO-1), com a conta das linhas: a linha de leitura acima da grade tem 138 caracteres, que a 12 px medem cerca de 814 px contra os 694 px de corpo, então ela quebra em 2 linhas e custa cerca de 40 px; cada painel gasta 2 linhas de cabeçalho (nome em 12 px e a contagem com a mediana em 11 px, cerca de 31 px) mais 26 px de faixa de eixo x; com 4 fileiras de painéis e vão de 12 px sobram cerca de 93 px de plano por painel, e o desconto de altura da moldura card é de 135 px com o caso de uso em duas linhas, o que fecha em 788 px, os 780 da conta mais 8 px de folga que o render pediu: com 780 os rótulos do eixo x passavam do corpo, porque a faixa de eixo era de 18 px e o rótulo precisa de 23. A largura de 760 px é o que dá cerca de 137 px de plano por painel depois dos 56 px do eixo y e dos 30 px de margem direita, o bastante para os 3 tiques de ticket não se encostarem: o mais alto termina a cerca de 13 px do tique do meio. O preset alto de 640 por 560 daria cerca de 96 px de painel de altura e 66 px de plano, que não é dispersão, é risco. A ordem dos painéis se apresenta duas vezes, porque a GEO-12 aceita as duas formas e elas custam pouco: a mediana que ordena está escrita no cabeçalho de cada painel e o critério está por extenso na linha de leitura. O dado do arquivo está em ordem alfabética de propósito, para a ordem da tela ser conferível contra ele à mão. O check NÃO mediu contraste de marca nesta peça: CONTRASTE-MARCA e ESPESSURA-MARCA saem preview_com_transform nas quatro versões do modelo, porque o leitor não compõe a matriz do Recharts. MEDIDO À MÃO nos dois temas, então, pela fórmula da WCAG contra --surface-raised: o ponto em --chart-1 mede 9,50:1 no escuro e 6,00:1 no claro, e o traço de referência em --text-muted mede 5,21:1 e 5,37:1, os dois acima do piso de 3:1 da 1.4.11. A grade em --line-subtle mede 1,25:1 e 1,29:1, abaixo do piso, e isso é deliberado: grade é estrutura de apoio e quem carrega a posição é o ponto, não a linha atrás dele."
+}

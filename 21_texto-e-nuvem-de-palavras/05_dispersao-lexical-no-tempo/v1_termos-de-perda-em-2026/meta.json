@@ -1,0 +1,13 @@
+{
+  "title": "Seis termos de perda ao longo de 2026",
+  "useCase": "Comercial: em que meses de 2026 cada um dos seis principais termos de motivo de perda apareceu nas anotações?",
+  "demonstrates": [
+    "ScatterChart com XAxis numérico de datas e YAxis de categoria por termo",
+    "Shape customizado que desenha um traço vertical com a altura da banda",
+    "Traço de 1 px em --chart-1 com opacidade, que se soma quando há mais de uma menção",
+    "Tiques mensais por formatMonthShort e grade vertical mensal em --line-subtle"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Opacidade de 0,72 por menção, acima do piso de 0,66 de --chart-1 (ACE-5, 3:1 no tema claro); o catálogo pedia opacidade sem número. Dois traços no mesmo dia somam como duas camadas: 1 menos 0,28 ao quadrado, 0,92. A altura do traço é 70% da banda, lida de usePlotArea dentro do shape. O primeiro termo das linhas do Scatter vai para a base e o domain do YAxis de categoria não reordena, observado no render; as linhas entram do menos citado ao mais citado."
+}

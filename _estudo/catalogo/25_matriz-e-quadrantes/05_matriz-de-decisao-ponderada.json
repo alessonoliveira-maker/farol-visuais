@@ -1,0 +1,71 @@
+{
+  "slug": "05_matriz-de-decisao-ponderada",
+  "nome": "Matriz de decisão ponderada",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "Opções nas linhas, critérios nas colunas, peso visível por critério, nota por célula e total por opção. É a matriz de escolha entre desenhos, cenários ou alternativas quando a decisão precisa ser auditável. O desenho enfrenta as fraquezas registradas do método: os critérios eliminatórios em passa e não passa são avaliados antes de qualquer soma, e a opção que falha um deles sai do ranking riscada com o motivo, mesmo com o maior total; o peso é dado de primeira classe e fica na tela; critério com medida real usa a medida normalizada, e a nota ordinal fica só para o que não tem medida, marcada como julgamento. Construído em HTML com CSS Grid do Tailwind, com a decomposição do total em barra empilhada de divs e a sensibilidade do vencedor a variações de peso calculada em TypeScript. Nota ausente nunca vira zero na soma.",
+  "quando_usar": [
+    "Escolher entre 3 e 6 opções com pesos explícitos e acordados por critério",
+    "Existem requisitos obrigatórios que eliminam opção antes de qualquer soma",
+    "A diretoria precisa ver por que o vencedor vence, critério a critério",
+    "Testar se a escolha se sustenta quando algum peso varia"
+  ],
+  "quando_evitar": [
+    "Os pesos não foram acordados; a matriz dá cara de ciência a um palpite",
+    "Comparar opções em critérios, sem peso nem total: matriz de comparação com status (14/09)",
+    "Perfil de uma opção só em muitos critérios: radar (família 18)",
+    "Muitos critérios menores diluindo um requisito obrigatório, sem faixa eliminatória",
+    "Notas ordinais somadas quando há medida real, como custo em reais ou prazo em dias"
+  ],
+  "arquivo_estudo": "_estudo/familias/25_matriz-e-quadrantes.md",
+  "versoes": [
+    {
+      "slug": "v1_desenhos-de-remuneracao-variavel",
+      "titulo": "Três desenhos de remuneração variável",
+      "caso_de_uso": "Comercial: qual dos três desenhos fictícios de remuneração variável pontua melhor nos cinco critérios acordados.",
+      "o_que_demonstra": [
+        "Barra fina de peso acima de cada coluna, com o peso escrito",
+        "Célula com a nota e a contribuição ponderada logo abaixo",
+        "Total normalizado pela soma dos pesos, em coluna fixa à direita",
+        "Líder de cada critério com contorno, sem cor saturada"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_decomposicao-do-total-por-criterio",
+      "titulo": "De onde vem o total de cada desenho",
+      "caso_de_uso": "Comercial: em quais critérios o desenho vencedor abre vantagem e em quais ele empata ou perde.",
+      "o_que_demonstra": [
+        "Coluna de total como barra empilhada de divs, um segmento por critério",
+        "Mesma cor por critério no segmento e no cabeçalho da coluna",
+        "Anotação: o vencedor ganha quase só em simplicidade de apuração",
+        "Diferença para o segundo colocado escrita ao lado do total"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_cenarios-de-orcamento-2027-com-eliminatorio",
+      "titulo": "Cenários de orçamento 2027 com eliminatório",
+      "caso_de_uso": "Diretoria: qual dos 4 cenários de orçamento de 2027 vence nos 7 critérios e cabe na capacidade medida de pré-vendas.",
+      "o_que_demonstra": [
+        "Faixa eliminatória em passa e não passa avaliada antes de qualquer soma",
+        "Cenário de maior total riscado com o motivo, fora do ranking",
+        "Critérios com medida real normalizados e notas ordinais marcadas como julgamento",
+        "Etiqueta de procedência por critério: MEDIDO, PREMISSA ou DERIVADO",
+        "Receita em faixa na célula, com a nota calculada sobre o ponto médio e aviso"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_decisao-sensivel-ao-peso",
+      "titulo": "Decisão sensível ao peso de custo",
+      "caso_de_uso": "Diretoria: o cenário vencedor continua vencendo se o peso de algum critério variar 20% para mais ou para menos?",
+      "o_que_demonstra": [
+        "Sensibilidade calculada em TypeScript variando cada peso em 20%",
+        "Selo decisão sensível ao peso de custo no lugar da coroa de vencedor",
+        "Cenário que vence com o peso alterado, indicado na mesma tabela",
+        "Nota ausente mostrada como sem nota e total marcado incompleto, nunca zero"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

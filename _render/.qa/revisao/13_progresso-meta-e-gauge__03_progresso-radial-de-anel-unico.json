@@ -1,0 +1,199 @@
+{
+  "familia": "13_progresso-meta-e-gauge",
+  "modelo": "03_progresso-radial-de-anel-unico",
+  "versoes": {
+    "v1_agendas-do-mes-no-anel": {
+      "veredito": "aprovado",
+      "nota": "Formato unificado em 46% nos dois lados, e esse era o caso que ainda arredondava para o outro lado. Ressalva: o useCase é cortado em \"e que\" pelo preset kpi-alto. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.838Z",
+      "impressao": "12bc62254c47055999d0b3126a89a3425778f01d",
+      "arquivos": {
+        "Chart.tsx": "1f4b9d8462df52ef06e3f6142a7fcfadc5acde5e",
+        "data.ts": "63fbcda300d0b53aaf10055efb99c25f2da5e800",
+        "meta.json": "7df369ba6b94b7f7616e6ec5dd3b4ec939d241af"
+      }
+    },
+    "v2_receita-do-mes-com-tique-de-ritmo": {
+      "veredito": "aprovado",
+      "nota": "Formato unificado em 74% nos dois lados, e a diferença de ritmo segue com uma casa porque é outra medida, em pontos percentuais. Ressalva: o useCase é cortado em \"data de\" pelo preset kpi-alto. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.898Z",
+      "impressao": "e8be5b1698ac064152893f23507f152f418e64be",
+      "arquivos": {
+        "Chart.tsx": "6379452ecb9094da24067fc94dddbcb9171a1004",
+        "data.ts": "73a343ca30d8960e1a0ad6a653f72c209edf363d",
+        "meta.json": "10a67a440d78f5a6cdc45af4151ba1cc3752737e"
+      }
+    },
+    "v3_meta-de-receita-por-origem": {
+      "veredito": "reprovado",
+      "nota": "Conserto do formato aceito: 65% nos dois lados. Volta porque o trilho do anel ficou em --surface-overlay e some no tema claro; foi por esse mesmo defeito que a v4 deste modelo caiu em 2026-09-19. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:25.248Z",
+      "impressao": "90d2e4525f75a0e6c73dcd6a541b25923dc77e47",
+      "arquivos": {
+        "Chart.tsx": "308f50871fe0e76328494791965c5a06995e73ae",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
+      }
+    },
+    "v4_orcamento-com-estouro-e-ausencia": {
+      "veredito": "aprovado",
+      "nota": "Anel travado com excedente escrito fora, zero medido com trilho e 0, sem coleta com trilho tracejado e indisponível; mesma escala nos três.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:11:35.480Z",
+      "impressao": "92a87c869e899d7e93362bb64d78f132876f44e7",
+      "arquivos": {
+        "Chart.tsx": "f0812e27201a74232a6f89ee06b1ff4fbf9b2215",
+        "data.ts": "ecb0275f5841eeaf2c7785cae7301039f225e934",
+        "meta.json": "6377521e2ef83853c0e893e36ebef1f95e395575"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-do-mes-no-anel",
+      "veredito": "reprovado",
+      "nota": "A linha agendas em setembro de 2026 passa do furo do anel e fica por cima do arco em chart-1 nos dois temas: texto sobreposto sem halo, contraste abaixo de AA (ESP-4, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:53:43.690Z",
+      "impressao": "d183e19893141550d437f7a32b763864a33725ab",
+      "arquivos": {
+        "Chart.tsx": "a3957a0bab3d357dd12bc2dfd8059ae429e5385c",
+        "data.ts": "63fbcda300d0b53aaf10055efb99c25f2da5e800",
+        "meta.json": "a81c139d62cfaf8404e7efb8f6c975a8d3a7f980"
+      }
+    },
+    {
+      "versao": "v2_receita-do-mes-com-tique-de-ritmo",
+      "veredito": "reprovado",
+      "nota": "O par R 2,2 mi de R 3,0 mi e mais largo que o furo do anel e cruza o arco nos dois lados, em ambos os temas: texto sobre marca sem halo, contraste abaixo de AA (ESP-4, ROT-7).",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:53:49.030Z",
+      "impressao": "a79cd8b44e21453dadcc70e7dd58fe9547900ac9",
+      "arquivos": {
+        "Chart.tsx": "6115cf953c60b763bf6483aeaeeb88b7e380c860",
+        "data.ts": "73a343ca30d8960e1a0ad6a653f72c209edf363d",
+        "meta.json": "10a67a440d78f5a6cdc45af4151ba1cc3752737e"
+      }
+    },
+    {
+      "versao": "v3_meta-de-receita-por-origem",
+      "veredito": "aprovado",
+      "nota": "Anel empilhado correto: dominio na meta, slots 1, 3, 6 e 5, ordem vinda do dado, texto central dentro do furo e legenda com valor e percentual. Sem bloqueante nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:53:56.844Z",
+      "impressao": "ef259b8873da5c041a306646c2ede5691f1f9a01",
+      "arquivos": {
+        "Chart.tsx": "a09a092d612d69a3bd5b73f931e2cbbdc26775c7",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
+      }
+    },
+    {
+      "versao": "v4_orcamento-com-estouro-e-ausencia",
+      "veredito": "reprovado",
+      "nota": "Par de valores cruza o anel em negative e fica ilegivel nos dois temas (ESP-4, ROT-7); no tema claro o trilho em surface-overlay e branco puro, entao o anel de zero medido some e a versao deixa de demonstrar o que promete.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T01:53:57.495Z",
+      "impressao": "0317a60a5779da706375f95fda450b864182e2a8",
+      "arquivos": {
+        "Chart.tsx": "aa217d3290c2870969950fc5260213dbea8f3633",
+        "data.ts": "ecb0275f5841eeaf2c7785cae7301039f225e934",
+        "meta.json": "6377521e2ef83853c0e893e36ebef1f95e395575"
+      }
+    },
+    {
+      "versao": "v1_agendas-do-mes-no-anel",
+      "veredito": "aprovado",
+      "nota": "Anel honesto com domínio explícito, par 41 de 90 no centro e mês fora do furo; trilho visível nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:11:19.088Z",
+      "impressao": "cdb1127b275023fd4fb8ba573eb3824a2106025f",
+      "arquivos": {
+        "Chart.tsx": "f0f1c5902b2910978121c4f556cc9db10e1663b0",
+        "data.ts": "63fbcda300d0b53aaf10055efb99c25f2da5e800",
+        "meta.json": "7df369ba6b94b7f7616e6ec5dd3b4ec939d241af"
+      }
+    },
+    {
+      "versao": "v2_receita-do-mes-com-tique-de-ritmo",
+      "veredito": "aprovado",
+      "nota": "Tique de ritmo na posição real, par de valores em duas linhas sem cruzar o arco, diferença com sinal e ícone.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:11:24.375Z",
+      "impressao": "3a4577f8a5e95420a10fcc1f1a369c95067e450c",
+      "arquivos": {
+        "Chart.tsx": "0747af41294ae1e4a4553353a70aeb2c9751ebb2",
+        "data.ts": "73a343ca30d8960e1a0ad6a653f72c209edf363d",
+        "meta.json": "10a67a440d78f5a6cdc45af4151ba1cc3752737e"
+      }
+    },
+    {
+      "versao": "v3_meta-de-receita-por-origem",
+      "veredito": "aprovado",
+      "nota": "Empilhado em slots 1, 3, 6 e 5 com ordem vinda do dado; partes somam os 65% do centro e a legenda traz valor e percentual.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:11:29.292Z",
+      "impressao": "ef259b8873da5c041a306646c2ede5691f1f9a01",
+      "arquivos": {
+        "Chart.tsx": "a09a092d612d69a3bd5b73f931e2cbbdc26775c7",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
+      }
+    },
+    {
+      "versao": "v4_orcamento-com-estouro-e-ausencia",
+      "veredito": "aprovado",
+      "nota": "Anel travado com excedente escrito fora, zero medido com trilho e 0, sem coleta com trilho tracejado e indisponível; mesma escala nos três.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T02:11:35.480Z",
+      "impressao": "92a87c869e899d7e93362bb64d78f132876f44e7",
+      "arquivos": {
+        "Chart.tsx": "f0812e27201a74232a6f89ee06b1ff4fbf9b2215",
+        "data.ts": "ecb0275f5841eeaf2c7785cae7301039f225e934",
+        "meta.json": "6377521e2ef83853c0e893e36ebef1f95e395575"
+      }
+    },
+    {
+      "versao": "v3_meta-de-receita-por-origem",
+      "veredito": "reprovado",
+      "nota": "Conserto do formato aceito: 65% nos dois lados. Volta porque o trilho do anel ficou em --surface-overlay e some no tema claro; foi por esse mesmo defeito que a v4 deste modelo caiu em 2026-09-19. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:25.248Z",
+      "impressao": "90d2e4525f75a0e6c73dcd6a541b25923dc77e47",
+      "arquivos": {
+        "Chart.tsx": "308f50871fe0e76328494791965c5a06995e73ae",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
+      }
+    },
+    {
+      "versao": "v1_agendas-do-mes-no-anel",
+      "veredito": "aprovado",
+      "nota": "Formato unificado em 46% nos dois lados, e esse era o caso que ainda arredondava para o outro lado. Ressalva: o useCase é cortado em \"e que\" pelo preset kpi-alto. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.838Z",
+      "impressao": "12bc62254c47055999d0b3126a89a3425778f01d",
+      "arquivos": {
+        "Chart.tsx": "1f4b9d8462df52ef06e3f6142a7fcfadc5acde5e",
+        "data.ts": "63fbcda300d0b53aaf10055efb99c25f2da5e800",
+        "meta.json": "7df369ba6b94b7f7616e6ec5dd3b4ec939d241af"
+      }
+    },
+    {
+      "versao": "v2_receita-do-mes-com-tique-de-ritmo",
+      "veredito": "aprovado",
+      "nota": "Formato unificado em 74% nos dois lados, e a diferença de ritmo segue com uma casa porque é outra medida, em pontos percentuais. Ressalva: o useCase é cortado em \"data de\" pelo preset kpi-alto. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.898Z",
+      "impressao": "e8be5b1698ac064152893f23507f152f418e64be",
+      "arquivos": {
+        "Chart.tsx": "6379452ecb9094da24067fc94dddbcb9171a1004",
+        "data.ts": "73a343ca30d8960e1a0ad6a653f72c209edf363d",
+        "meta.json": "10a67a440d78f5a6cdc45af4151ba1cc3752737e"
+      }
+    }
+  ]
+}

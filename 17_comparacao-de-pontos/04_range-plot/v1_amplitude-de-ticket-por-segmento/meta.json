@@ -1,0 +1,14 @@
+{
+  "title": "Amplitude de ticket por segmento",
+  "useCase": "Entre que valores variam os tickets das vendas ganhas em cada um dos 5 segmentos no semestre.",
+  "demonstrates": [
+    "Barra flutuante: base invisível empilhada sob a cápsula da faixa",
+    "Raio limitado à metade da espessura para a cápsula não deformar",
+    "Subtítulo declara a faixa: mínimo e máximo observados",
+    "Rótulos das duas pontas por LabelList, sem cabeças distintas",
+    "Ordem pela amplitude, declarada no subtítulo"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Desvio do catálogo: a faixa é a barra empilhada sobre uma base invisível (dataKey min, sem preenchimento) mais a barra de largura max menos min, e não um único Bar com dataKey que devolve o par, por decisão do dono (ver REC-8). Os dois rótulos saem de dois LabelList lendo min e max do próprio dado, sem depender do índice. Conta da altura: 5 linhas x 34 px = 170, mais 4 de margem, 26 de eixo e o subtítulo de 24 = 224 px, dentro dos 225 px do corpo do card com caso de uso em duas linhas. Espessura da cápsula: 34 x (1 menos 2 x 30%) = 13,6 px, acima do piso de 12. A coluna dos nomes mede 168 px e a margem direita 76 px reserva o rótulo do maior valor."
+}

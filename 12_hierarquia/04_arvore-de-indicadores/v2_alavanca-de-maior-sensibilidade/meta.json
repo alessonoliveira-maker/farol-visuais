@@ -1,0 +1,14 @@
+{
+  "title": "Alavanca que mais move a receita",
+  "useCase": "Diretoria: qual alavanca tem maior efeito na faixa da receita nova e quanto vale cada ponto dela.",
+  "demonstrates": [
+    "Alavanca de maior espalhamento relativo acesa, calculada da faixa do próprio dado",
+    "Anotação derivada do dado: quanto um ponto da taxa vale no resultado",
+    "Microbarra de faixa de p10 a p90 com a marca do valor central em cada cartão",
+    "Regra da faixa do pai no rodapé, porque ela não é o produto dos extremos",
+    "Altura do cartão somada linha por linha, o mesmo número que ancora o conector"
+  ],
+  "canvas": { "width": 920, "height": 540 },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1), com a conta: cinco cartões em três colunas dão 784 px de largura (duas vezes o passo de 288 mais os 208 do cartão) e 355 px de altura (a folha mais baixa começa em 259 px e o cartão dela mede 96 px); somando o vão de 12 px e a linha de rodapé de 15 px o conteúdo mede 784 por 382 px, contra os cerca de 854 por 417 px que a moldura card deixa neste canvas, o que foi conferido no preview. Duas colisões entre o catálogo e o CONTRATO, resolvidas a favor do contrato: o catálogo pede a taxa de ganho em accent-amber, e accent-amber não tem utilitário, é acento de interface e repete o hex de warning e de prov-premissa, que é justamente o selo de procedência impresso nos cartões vizinhos; o destaque saiu em chart-1, que a seção 7 nomeia como a cor de quando só uma coisa acende, e mede 9,50:1 no escuro e 6,00:1 no claro contra o cartão. O catálogo também chama o rodapé de anotação, e pela ANO-2 anotação tem teto de 50 caracteres; o rodapé aqui é nota de método sobre a codificação, não afirmação sobre o dado, e a única anotação sobre o dado é a de 28 caracteres no cartão aceso, o que mantém a ANO-1. Contraste medido à mão, porque em html-tailwind o texto vive em foreignObject e a guarda CONTRASTE-TEXTO não o alcança: text-secondary 8,16:1 e 8,13:1, text-primary 14,53:1 e 17,96:1, text-muted 5,21:1 e 5,37:1, chart-1 9,50:1 e 6,00:1, prov-medido 7,36:1 e 5,34:1, prov-premissa 8,36:1 e 5,74:1, prov-derivado 6,52:1 e 6,11:1, todos contra surface-raised e todos acima do piso de 4,5:1 da ACE-3. O conector saiu de line-strong, que a v1 usa e que mede 1,79:1 e 1,83:1, para text-muted, porque pela ACE-6 a aresta de uma árvore carrega a relação e precisa de 3:1; é a mesma troca que a revisão de 12/07 fez na linha de chamada. O trilho da microbarra segue em line-strong e gera aviso de CONTRASTE-MARCA: ali o traço é referência e não relação, porque os dois extremos estão escritos ao lado, e nenhum token do Farol entrega trilho neutro acima de 3:1."
+}

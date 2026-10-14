@@ -1,0 +1,68 @@
+{
+  "slug": "06_funil-empilhado-por-composicao",
+  "nome": "Funil empilhado por composição",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada etapa é uma barra horizontal dividida pelas categorias de um atributo (origem, plataforma, campanha), em volume ou em 100%. Responde como o mix muda ao longo do funil: o volume mostra onde cada origem se perde e o 100% mostra quem sobrevive até o ganho. A categoria de lacuna fica sempre separada e no fim da pilha.",
+  "quando_usar": [
+    "Marketing perguntando quais origens de lead sobrevivem até agenda e ganho.",
+    "Até 6 categorias nomeadas mais a categoria de lacuna, em 3 a 6 etapas.",
+    "Alternar volume e 100%, com o modo escrito no título."
+  ],
+  "quando_evitar": [
+    "Mais de 6 categorias sem agrupar a cauda: agrupar em Outras ou usar a família 14_tabelas-visuais.",
+    "Caminhos que se ramificam entre etapas: usar o 11_fluxo-sankey/02_sankey-multietapa.",
+    "Comparar o mix do fundo com o do topo quando a cobertura de origem muda entre etapas, sem avisar o viés de preenchimento.",
+    "Uma etapa só: usar barra 100% ou o waffle da família 22_unidades-waffle-e-pictograma."
+  ],
+  "arquivo_estudo": "_estudo/familias/10_funil.md",
+  "versoes": [
+    {
+      "slug": "v1_origem-do-lead-ao-ganho-em-volume",
+      "titulo": "Origem dos leads do lead ao ganho",
+      "caso_de_uso": "Marketing, leads de 2026-08 por origem (Mídia social, Busca paga, Rede profissional, Orgânico, Indicação, Evento e Sem origem) em cinco etapas: Lead 1.240, Qualificado 318, Agenda 96, Proposta 41 e Ganho 17.",
+      "o_que_demonstra": [
+        "Uma Bar com stackId mix por categoria em BarChart vertical",
+        "Sem origem em neutro e sempre no fim da pilha",
+        "Ordem das categorias fixa em todas as etapas",
+        "Total da etapa escrito na ponta da pilha"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_mix-em-100-com-indicacao-em-destaque",
+      "titulo": "Mix de origem em 100% por etapa",
+      "caso_de_uso": "Mesma base em 100%: Indicação vai de 6% dos leads para 41% dos ganhos (7 de 17), enquanto Mídia social cai de 38% para 12%; a anotação marca a subida de Indicação.",
+      "o_que_demonstra": [
+        "stackOffset expand com eixo em percentual inteiro",
+        "Percentuais de cada etapa somam 100 pelo maior resto (NUM-2)",
+        "Indicação em cor cheia e as demais origens atenuadas",
+        "Uma anotação com a subida de 6% para 41%"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_cauda-longa-de-campanhas-agrupada",
+      "titulo": "Campanhas agrupadas ao longo do funil",
+      "caso_de_uso": "Marketing, 2026-08: 14 campanhas ativas; as 5 maiores em leads ficam nomeadas (Campanha A a E), as outras 9 viram Outras campanhas e Sem campanha fica separada no fim da pilha.",
+      "o_que_demonstra": [
+        "Agrupamento da cauda calculado no componente pelo volume da entrada",
+        "Outras campanhas e Sem campanha nunca somadas",
+        "No máximo 6 cores categóricas mais o neutro da lacuna",
+        "Dica lista as campanhas que compõem Outras campanhas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_sem-origem-cai-ao-longo-do-funil",
+      "titulo": "Sem origem cai do topo ao fundo",
+      "caso_de_uso": "Marketing, 2026-08: 28% dos leads estão sem origem e só 6% dos ganhos (1 de 17). Quem avança tende a ter cadastro mais completo, então o mix do fundo não se compara ao do topo.",
+      "o_que_demonstra": [
+        "Faixa Sem origem hachurada, com percentual escrito em cada etapa",
+        "Aviso de viés de preenchimento na linha de leitura",
+        "Cobertura de origem por etapa como número ao lado de cada barra",
+        "Nenhuma redistribuição da lacuna entre as origens conhecidas"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

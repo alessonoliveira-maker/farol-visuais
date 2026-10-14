@@ -1,0 +1,13 @@
+{
+  "title": "Quando a área deixa de servir",
+  "useCase": "Diretoria: comparar um total 200 vezes menor e um saldo negativo sem deixar a área mentir.",
+  "demonstrates": [
+    "Razão entre totais checada no componente, com o motivo da troca escrito",
+    "Total 200 vezes menor vira uma célula e a peça troca para número com barra",
+    "Saldo negativo fica fora do desenho e aparece com sinal de menos tipográfico",
+    "Total indisponível escreve formatUnavailable no lugar do quadrado"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Limite de razão 100 como constante do componente. A barra do total 200 vezes menor tem largura proporcional ao maior total e piso de 2 px, porque 0,5% de 144 px é 0,7 px e sumiria; o número escrito é o exato e o piso é declarado no código. Cor dos quadrados: receita em --chart-1 e custo em --chart-3, pela ordem de slots da COR-8."
+}

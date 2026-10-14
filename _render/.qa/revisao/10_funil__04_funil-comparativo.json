@@ -1,0 +1,173 @@
+{
+  "familia": "10_funil",
+  "modelo": "04_funil-comparativo",
+  "versoes": {
+    "v1_trimestre-contra-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Barras agrupadas honestas, zero-based, rotulos legiveis nos dois temas. Taxa de passo fica no v2.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:36.118Z",
+      "impressao": "6e25d9858cf785319099d05d4985c93f9ea22019",
+      "arquivos": {
+        "Chart.tsx": "b306ca5eea4b5909e13c16b78ae24248f9484d63",
+        "data.ts": "348c0011a91bbb9a63acd657a4fea4fb72dc3957",
+        "meta.json": "5ee96b74b83f64ccebb5c5b024923d4b7da708ae"
+      }
+    },
+    "v2_delta-de-taxa-acima-do-limiar": {
+      "veredito": "aprovado",
+      "nota": "Limiar e cor semantica corretos, base nomeada na mesma linha. Unidade p.p. dobrada, nao engana.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:41.044Z",
+      "impressao": "9de52aaed0a769435c5b75eac9b0f9964f9259e1",
+      "arquivos": {
+        "Chart.tsx": "feb2df38bc215913797e431a499c0997ee8b75af",
+        "data.ts": "d6af87f287e278aea81e4bb7790d92c4c8687e44",
+        "meta.json": "a2c75ed064b2b5cb482d7255f8fc8fbc9a497dea"
+      }
+    },
+    "v3_executivos-em-paineis-pequenos": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. O painel do Executivo H, com n 7, sai da escala e diz \"Menos de 10 aberturas: taxa oculta\", em vez de desenhar uma taxa que a amostra não sustenta, e o predicado de confiável passou a ser único nos dois lugares que decidiam isso em separado. A ordem dos painéis é por taxa final decrescente e não está declarada, mas cada painel escreve a própria taxa, então a ordem se explica sozinha; é o discriminador da GEO-12.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.190Z",
+      "impressao": "0f999b0369f791a2df63f825b26c51dd471a1201",
+      "arquivos": {
+        "Chart.tsx": "8e18840eba0a5b0a8ebf32083466bd8f357f7afa",
+        "data.ts": "82c7498edafecc8d04723d45766ac958e06c3896",
+        "meta.json": "b93f6fd444461ea3645549830d3dc7efadb5ba74"
+      }
+    },
+    "v4_borboleta-familia-contra-empresa": {
+      "veredito": "aprovado",
+      "nota": "Dominio simetrico, valor absoluto nos dois lados, nao se aplica no lugar de zero. Ponta livre correta.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:51.403Z",
+      "impressao": "739ce2812da2eae5b6639b89c8b1b5e3eff93dcc",
+      "arquivos": {
+        "Chart.tsx": "bd3746ffca4d4b33fe1ac2fd0e0db3223ef4f787",
+        "data.ts": "c6348f1b06cc4d5b312dec1ac353b5c379fe55ed",
+        "meta.json": "c56bbadb9d67a8416b0804c8d432d58afd1b6c0e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_trimestre-contra-trimestre",
+      "veredito": "aprovado",
+      "nota": "Barras agrupadas honestas, base zero, rotulo na ponta livre com halo, mesma escala nos dois periodos; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:00:45.821Z",
+      "impressao": "6e25d9858cf785319099d05d4985c93f9ea22019",
+      "arquivos": {
+        "Chart.tsx": "b306ca5eea4b5909e13c16b78ae24248f9484d63",
+        "data.ts": "348c0011a91bbb9a63acd657a4fea4fb72dc3957",
+        "meta.json": "5ee96b74b83f64ccebb5c5b024923d4b7da708ae"
+      }
+    },
+    {
+      "versao": "v2_delta-de-taxa-acima-do-limiar",
+      "veredito": "aprovado",
+      "nota": "Escala 0 a 100 comum, seta e cor semantica so acima do limiar, variacao com base nomeada; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:00:51.287Z",
+      "impressao": "9de52aaed0a769435c5b75eac9b0f9964f9259e1",
+      "arquivos": {
+        "Chart.tsx": "feb2df38bc215913797e431a499c0997ee8b75af",
+        "data.ts": "d6af87f287e278aea81e4bb7790d92c4c8687e44",
+        "meta.json": "a2c75ed064b2b5cb482d7255f8fc8fbc9a497dea"
+      }
+    },
+    {
+      "versao": "v3_executivos-em-paineis-pequenos",
+      "veredito": "reprovado",
+      "nota": "ROT-7: rotulo da taxa final sem halo e a mediana tracejada corta o texto nos paineis abaixo da mediana (6,3% em B e D), nos dois temas. Dar halo ao rotulo ou afastar o texto da linha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:00:56.613Z",
+      "impressao": "acde76038b50dacb474185258dd7e12f03f6f578",
+      "arquivos": {
+        "Chart.tsx": "cf51481a359655a44bfb89cc4a7b12dc4696a15c",
+        "data.ts": "82c7498edafecc8d04723d45766ac958e06c3896",
+        "meta.json": "b93f6fd444461ea3645549830d3dc7efadb5ba74"
+      }
+    },
+    {
+      "versao": "v4_borboleta-familia-contra-empresa",
+      "veredito": "aprovado",
+      "nota": "Dominio simetrico, rotulo na ponta livre dos dois lados com halo, etapa ausente escrita como nao se aplica; sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:01:01.483Z",
+      "impressao": "739ce2812da2eae5b6639b89c8b1b5e3eff93dcc",
+      "arquivos": {
+        "Chart.tsx": "bd3746ffca4d4b33fe1ac2fd0e0db3223ef4f787",
+        "data.ts": "c6348f1b06cc4d5b312dec1ac353b5c379fe55ed",
+        "meta.json": "c56bbadb9d67a8416b0804c8d432d58afd1b6c0e"
+      }
+    },
+    {
+      "versao": "v1_trimestre-contra-trimestre",
+      "veredito": "aprovado",
+      "nota": "Barras agrupadas honestas, zero-based, rotulos legiveis nos dois temas. Taxa de passo fica no v2.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:36.118Z",
+      "impressao": "6e25d9858cf785319099d05d4985c93f9ea22019",
+      "arquivos": {
+        "Chart.tsx": "b306ca5eea4b5909e13c16b78ae24248f9484d63",
+        "data.ts": "348c0011a91bbb9a63acd657a4fea4fb72dc3957",
+        "meta.json": "5ee96b74b83f64ccebb5c5b024923d4b7da708ae"
+      }
+    },
+    {
+      "versao": "v2_delta-de-taxa-acima-do-limiar",
+      "veredito": "aprovado",
+      "nota": "Limiar e cor semantica corretos, base nomeada na mesma linha. Unidade p.p. dobrada, nao engana.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:41.044Z",
+      "impressao": "9de52aaed0a769435c5b75eac9b0f9964f9259e1",
+      "arquivos": {
+        "Chart.tsx": "feb2df38bc215913797e431a499c0997ee8b75af",
+        "data.ts": "d6af87f287e278aea81e4bb7790d92c4c8687e44",
+        "meta.json": "a2c75ed064b2b5cb482d7255f8fc8fbc9a497dea"
+      }
+    },
+    {
+      "versao": "v3_executivos-em-paineis-pequenos",
+      "veredito": "aprovado",
+      "nota": "Dominio comum 0 a 100 por cento, mediana e amostra pequena tratados. Painel de n=7 escondido em vez de esmaecido.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:46.057Z",
+      "impressao": "e776037a177c389a5a6e233962396b6f2803cf3a",
+      "arquivos": {
+        "Chart.tsx": "b8c39d89a1f802c8f5285e4cd6a00bf49a839481",
+        "data.ts": "82c7498edafecc8d04723d45766ac958e06c3896",
+        "meta.json": "b93f6fd444461ea3645549830d3dc7efadb5ba74"
+      }
+    },
+    {
+      "versao": "v4_borboleta-familia-contra-empresa",
+      "veredito": "aprovado",
+      "nota": "Dominio simetrico, valor absoluto nos dois lados, nao se aplica no lugar de zero. Ponta livre correta.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T00:13:51.403Z",
+      "impressao": "739ce2812da2eae5b6639b89c8b1b5e3eff93dcc",
+      "arquivos": {
+        "Chart.tsx": "bd3746ffca4d4b33fe1ac2fd0e0db3223ef4f787",
+        "data.ts": "c6348f1b06cc4d5b312dec1ac353b5c379fe55ed",
+        "meta.json": "c56bbadb9d67a8416b0804c8d432d58afd1b6c0e"
+      }
+    },
+    {
+      "versao": "v3_executivos-em-paineis-pequenos",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. O painel do Executivo H, com n 7, sai da escala e diz \"Menos de 10 aberturas: taxa oculta\", em vez de desenhar uma taxa que a amostra não sustenta, e o predicado de confiável passou a ser único nos dois lugares que decidiam isso em separado. A ordem dos painéis é por taxa final decrescente e não está declarada, mas cada painel escreve a própria taxa, então a ordem se explica sozinha; é o discriminador da GEO-12.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.190Z",
+      "impressao": "0f999b0369f791a2df63f825b26c51dd471a1201",
+      "arquivos": {
+        "Chart.tsx": "8e18840eba0a5b0a8ebf32083466bd8f357f7afa",
+        "data.ts": "82c7498edafecc8d04723d45766ac958e06c3896",
+        "meta.json": "b93f6fd444461ea3645549830d3dc7efadb5ba74"
+      }
+    }
+  ]
+}

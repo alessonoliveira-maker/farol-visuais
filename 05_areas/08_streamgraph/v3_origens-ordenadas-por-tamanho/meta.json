@@ -1,0 +1,14 @@
+{
+  "title": "Origens de lead ordenadas por tamanho",
+  "useCase": "Mostrar como a ordem de tamanho de origens de lead mudou em 24 meses, com a maior sempre na base da faixa.",
+  "demonstrates": [
+    "SVG puro: ordem por mês e fronteiras da pilha calculadas em TypeScript",
+    "Fronteira compartilhada, calculada uma vez por trecho e consumida pelas duas vizinhas",
+    "Camadas ligadas por cúbica horizontal, com controle nos terços do intervalo",
+    "Travessia declarada: quem ultrapassa passa inteira, a ultrapassada abre em duas lâminas",
+    "Cor fixa por origem em todos os meses (COR-3)",
+    "Empate desempatado pela ordem do mês anterior, em dois meses do dado"
+  ],
+  "canvas": "largo",
+  "notes": "Seis origens coloridas (teto da COR-8) mais Outras (n=4) neutra realizam as 10 origens do caso de uso sem estourar o teto de 6 cores. Duas divergências declaradas em vez de prometidas. Primeira: o caso de uso do catálogo pede a maior ao centro, e esta versão usa a maior na base, alternativa que o estudo da família admite (seção 3.5), porque com as pontas alternadas um posto vizinho na classificação cai na ponta oposta da pilha e a troca de posto deixa de ser movimento curto. Segunda: uma pilha opaca não troca duas vizinhas de posição mantendo as duas inteiras e ladrilhando a faixa, então a troca aqui é uma travessia: quem ultrapassa atravessa inteira em direção à base e a ultrapassada se abre em duas lâminas que somam exatamente a espessura dela naquele ponto. A peça lê ordem, travessia e forma, nunca valor exato de um mês; o total de leads de cada origem no período está na legenda."
+}

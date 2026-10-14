@@ -1,0 +1,14 @@
+{
+  "title": "Capacidade de pré-vendas contra demanda",
+  "useCase": "A capacidade de pré-vendas de 2027 alcança a demanda de 290 entradas por mês, ou só no topo da faixa?",
+  "demonstrates": [
+    "Unidade de capacidade em todo rótulo: entradas por mês",
+    "ReferenceLine da demanda projetada cruzando a faixa final",
+    "Parte da faixa abaixo da demanda marcada com palavra e sinal",
+    "Passo medido e passos de premissa com o mesmo desenho de intervalo",
+    "Frase acessível dizendo em que parte da faixa a demanda cai"
+  ],
+  "canvas": { "width": 960, "height": 480 },
+  "frame": "card",
+  "notes": "Canvas 960x480 em vez de largo (960x400): com o eixo a partir do zero (EIX-1), os passos de 5 a 110 entradas por mês só têm intervalo legível com cerca de 200 px de plotagem; no largo sobrariam uns 125 px. Conta: 480 − 135 = 345 px de corpo; menos leitura (44), nota (24), margem de 44 e eixo de 28, restam cerca de 205 px para 330 entradas por mês. Cada rótulo leva a unidade em linha própria (NUM-6), por isso o passo da saída tem 150 px. Medido e premissa vêm escritos na nota de baixo e na dica, não no desenho: o intervalo é igual nos dois, de propósito. A parte da faixa abaixo da demanda usa --negative com sinal e palavra; acima, --positive."
+}

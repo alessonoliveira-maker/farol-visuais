@@ -1,0 +1,12 @@
+{
+  "title": "Executivo com série de receita e motivos",
+  "useCase": "Comercial: ao abrir um executivo, ver a receita dos 12 meses até agosto de 2026 e o motivo de perda que mais pesa.",
+  "demonstrates": [
+    "LineChart do Recharts dentro do painel, com ResponsiveContainer e altura fixa",
+    "Barras de motivos em HTML com o motivo dominante em chart-1 e peso 700",
+    "Demais motivos em line-strong com o percentual escrito ao lado",
+    "Linha fechada já anuncia o motivo dominante e a participação, antes de abrir"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

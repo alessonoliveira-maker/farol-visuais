@@ -1,0 +1,14 @@
+{
+  "title": "Metas com estouro, zero no dia 1 e sem meta",
+  "useCase": "Como a régua se comporta com 118% da meta, com zero no primeiro dia e com executivo novo ainda sem meta?",
+  "demonstrates": [
+    "118% clampado no trilho, com zona de excesso e o texto 18% acima da meta",
+    "Zero no primeiro dia sem cor de alerta, porque ainda não há ritmo medido",
+    "Sem meta com trilho neutro vazado e a frase escrita, sem dividir por zero",
+    "Três réguas com a mesma altura e o mesmo alinhamento do número",
+    "Meta sempre em 80% do trilho, para a zona de excesso ter lugar reservado"
+  ],
+  "canvas": { "width": 960, "height": 280 },
+  "frame": "stage",
+  "notes": "Canvas 20 px mais alto que a faixa sugerida: o rótulo da meta acima do trilho não cabe em 260 px com três cartões alinhados."
+}

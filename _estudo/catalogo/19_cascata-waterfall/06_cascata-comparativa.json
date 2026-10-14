@@ -1,0 +1,70 @@
+{
+  "slug": "06_cascata-comparativa",
+  "nome": "Cascata pareada e em pequenos múltiplos",
+  "abordagem_stack": "svg-puro",
+  "resumo": "A mesma ponte, com os mesmos passos na mesma ordem, repetida para comparar recortes: dois painéis pareados (lado a lado ou espelhados num eixo central) ou uma grade de painéis pequenos por segmento. A comparação é de forma, e só vale com escala comum calculada sobre todos os recortes antes de desenhar qualquer painel. Absorve a pareada e os pequenos múltiplos do estudo.",
+  "quando_usar": [
+    "Dois períodos, plano contra realizado ou duas unidades com a mesma ponte de 4 a 7 passos.",
+    "De 3 a 9 segmentos (executivos, plataformas, unidades) com a mesma ponte, quando onde cada um ganha ou perde importa mais que o total.",
+    "Plano contra realizado com a variância de cada passo numa tira entre os dois painéis.",
+    "Segmentos de volume parecido; os de amostra pequena recebem aviso no próprio painel."
+  ],
+  "quando_evitar": [
+    "Só a diferença entre os dois lados interessa: ponte de variação, versão v3 do modelo 01, com metade da tinta.",
+    "Segmentos com escalas dez vezes diferentes sem normalizar: declarar escalas independentes ou usar percentual do início.",
+    "Comparação só do resultado final: comparação de pontos, família 17, ou barras, família 02.",
+    "Mais de 9 painéis num cartão: rótulos somem; passar para tabela com cascata micro, versão v4 do modelo 01."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_trimestre-contra-anterior-lado-a-lado",
+      "titulo": "Ponte da receita em dois trimestres",
+      "caso_de_uso": "Comercial: 2026-T2 foi de R$ 1,58 mi a R$ 1,72 mi e 2026-T3 de R$ 1,72 mi a R$ 1,89 mi, com os mesmos quatro passos (novos, expansão, reajuste, cancelamentos) lado a lado.",
+      "o_que_demonstra": [
+        "Domínio comum calculado sobre os dois conjuntos antes do desenho",
+        "Escala linear valor para pixel escrita à mão em TypeScript",
+        "Eixo de valor só no painel da esquerda, com a escala declarada",
+        "Total de cada lado com rótulo em destaque"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_plano-e-realizado-espelhados-com-variancia",
+      "titulo": "Plano e realizado espelhados",
+      "caso_de_uso": "Diretoria, 2026-T3: plano de R$ 1,72 mi a R$ 2,00 mi contra realizado de R$ 1,72 mi a R$ 1,89 mi; a tira central mostra novos −R$ 46 mil, reajuste −R$ 30 mil e cancelamentos R$ 48 mil acima do plano.",
+      "o_que_demonstra": [
+        "Eixo central com os nomes dos passos e barras para os dois lados",
+        "Sinal escrito dos dois lados para a distância ao centro não enganar",
+        "Tira de variância em valor e percentual, com polaridade por passo",
+        "Cancelamento acima do plano pintado como piora"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_carteira-por-executivo-em-oito-paineis",
+      "titulo": "Carteira de oito executivos no trimestre",
+      "caso_de_uso": "Comercial, 2026-T3: oito painéis com início, entradas, ganhos, perdas, arquivadas por 30 dias paradas e fim; a taxa de ganho vai de 14% a 57% e um executivo novo tem só 3 oportunidades.",
+      "o_que_demonstra": [
+        "Grade em Tailwind com componente de ponte pequena por célula",
+        "Escala comum a todos os painéis, conforme EIX-9",
+        "Valor escrito só no início, no fim e no maior passo; resto na dica",
+        "Painel com amostra pequena trocado por aviso n=3",
+        "Ordem dos painéis pela carteira final, declarada no subtítulo"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_passo-sem-medicao-num-dos-lados",
+      "titulo": "Duas unidades com um passo sem medição",
+      "caso_de_uso": "Diretoria, 2026-T3: Unidade Sul e Unidade Norte na mesma ponte de receita; a Unidade Norte não separa expansão no financeiro, então o passo fica sem medição e o total dela sai parcial.",
+      "o_que_demonstra": [
+        "Passo sem medição vazado com contorno --text-muted e palavra",
+        "Total do lado incompleto rotulado como parcial, sem somar zero",
+        "Mesma posição do passo nos dois painéis, mesmo quando vazio",
+        "Frase acessível declarando qual passo falta e em qual lado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Meta de ganhos desdobrada por etapa",
+  "useCase": "Quantas oportunidades faltam em cada etapa hoje para a meta de ganhos do trimestre, desdobrada pelas taxas históricas.",
+  "demonstrates": [
+    "Meta calculada de trás para frente a partir do resultado final, não da etapa",
+    "Taxas históricas escritas no rodapé como origem declarada da meta",
+    "Barra do que já existe no funil contra o marcador do necessário na mesma escala",
+    "Falta por etapa escrita como número absoluto, com o substantivo da contagem"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

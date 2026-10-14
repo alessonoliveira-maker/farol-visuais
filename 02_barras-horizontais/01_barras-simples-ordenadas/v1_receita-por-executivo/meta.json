@@ -1,0 +1,13 @@
+{
+  "title": "Receita reconhecida por executivo no trimestre",
+  "useCase": "Quem está na frente em receita reconhecida no trimestre e por quanto, entre os oito executivos.",
+  "demonstrates": [
+    "Layout vertical com nome no eixo de categoria e eixo de valor oculto",
+    "Ordem decrescente com desempate estável pelo nome, feita no componente",
+    "Valor na ponta por LabelList com formatCurrencyCompact",
+    "Altura derivada do número de barras, com passo fixo por barra",
+    "Linha de leitura calculada do dado: líder e distância para o 2º"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

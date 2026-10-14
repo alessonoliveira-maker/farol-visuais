@@ -1,0 +1,121 @@
+{
+  "familia": "04_linhas",
+  "modelo": "02_multiplas-series",
+  "versoes": {
+    "v1_cpl-bruto-contra-qualificado": {
+      "veredito": "aprovado",
+      "nota": "Duas linhas na mesma unidade, sem eixo duplo; anticolisao do rotulo final em pixel real e halo; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:23.419Z",
+      "impressao": "164d5251a396558a4a0ad614970cf5d869f6f7c4",
+      "arquivos": {
+        "Chart.tsx": "be20327775da050e5d418fd972a27ee82a018a1d",
+        "data.ts": "3019e2af320c548c558b73202ec8bb8095020bf2",
+        "meta.json": "fca02c93de7bc3a456a30f479993795c047c89ff"
+      }
+    },
+    "v2_plataforma-em-destaque-com-resto-neutro": {
+      "veredito": "aprovado",
+      "nota": "Destaque em chart-1 por cima das neutras em line-strong, com valor escrito em cada linha; sem colisao de rotulo nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:27.668Z",
+      "impressao": "7547f2764b92e246f516d0c09ec0e80a8fd453f4",
+      "arquivos": {
+        "Chart.tsx": "49c406cccef0403adb293e7a3e74d835b56e68e5",
+        "data.ts": "fd51f48f64ea54d09743ac4e0e5e0ae23f2ad9df",
+        "meta.json": "b8b07d7f84c9a34bfffaa4dd6dbc6f555780cb60"
+      }
+    },
+    "v3_indice-base-100-do-funil": {
+      "veredito": "aprovado",
+      "nota": "Indice base 100 num eixo so, base nula resolvida pelo primeiro ponto valido e aviso escrito; par indice e valor absoluto vai no rotulo, nao na dica.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:33.066Z",
+      "impressao": "11d8fb0acd94ec769742adba832de037b228a361",
+      "arquivos": {
+        "Chart.tsx": "82cbac7a23fb51354be559a8434963d420bf5933",
+        "data.ts": "b339002a4b0e6db325778a8800df7d55ae7a4c57",
+        "meta.json": "e80603bf5873a227729fd382d25ab4bf45fc6820"
+      }
+    },
+    "v4_doze-executivos-contra-mediana": {
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Além da mediana, o conserto pegou Math.min e Math.max sobre lista vazia, que devolvem infinito e chegavam ao eixo como número, e a relação entre destaque e mediana passou a sair do dado em vez de ficar escrita à mão. Ressalva sem conserto: as doze séries do dado fixo são quase retas, então a peça não exercita o caso que ela existe para resolver, que é o espaguete de séries que se cruzam.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.079Z",
+      "impressao": "be1b78b565747dca8a29ba4b5c21ae265e84f906",
+      "arquivos": {
+        "Chart.tsx": "15fea4ad45f59889ccd3deac33af2aa82a6d6cb0",
+        "data.ts": "c9f51005133f0eb7d312b41bc6e6faa1c63e5592",
+        "meta.json": "d52e11e366f6b34c89bdb82a68b6c00479df316a"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-bruto-contra-qualificado",
+      "veredito": "aprovado",
+      "nota": "Duas linhas na mesma unidade, sem eixo duplo; anticolisao do rotulo final em pixel real e halo; legivel nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:23.419Z",
+      "impressao": "164d5251a396558a4a0ad614970cf5d869f6f7c4",
+      "arquivos": {
+        "Chart.tsx": "be20327775da050e5d418fd972a27ee82a018a1d",
+        "data.ts": "3019e2af320c548c558b73202ec8bb8095020bf2",
+        "meta.json": "fca02c93de7bc3a456a30f479993795c047c89ff"
+      }
+    },
+    {
+      "versao": "v2_plataforma-em-destaque-com-resto-neutro",
+      "veredito": "aprovado",
+      "nota": "Destaque em chart-1 por cima das neutras em line-strong, com valor escrito em cada linha; sem colisao de rotulo nos dois temas.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:27.668Z",
+      "impressao": "7547f2764b92e246f516d0c09ec0e80a8fd453f4",
+      "arquivos": {
+        "Chart.tsx": "49c406cccef0403adb293e7a3e74d835b56e68e5",
+        "data.ts": "fd51f48f64ea54d09743ac4e0e5e0ae23f2ad9df",
+        "meta.json": "b8b07d7f84c9a34bfffaa4dd6dbc6f555780cb60"
+      }
+    },
+    {
+      "versao": "v3_indice-base-100-do-funil",
+      "veredito": "aprovado",
+      "nota": "Indice base 100 num eixo so, base nula resolvida pelo primeiro ponto valido e aviso escrito; par indice e valor absoluto vai no rotulo, nao na dica.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:33.066Z",
+      "impressao": "11d8fb0acd94ec769742adba832de037b228a361",
+      "arquivos": {
+        "Chart.tsx": "82cbac7a23fb51354be559a8434963d420bf5933",
+        "data.ts": "b339002a4b0e6db325778a8800df7d55ae7a4c57",
+        "meta.json": "e80603bf5873a227729fd382d25ab4bf45fc6820"
+      }
+    },
+    {
+      "versao": "v4_doze-executivos-contra-mediana",
+      "veredito": "aprovado",
+      "nota": "Doze series sem espaguete: 11 neutras de 1 px, mediana tracejada e dica curada por nome; nota de corte para pequenos multiplos.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T17:07:37.304Z",
+      "impressao": "4a0e43d01bbb050017a40899846f697bd4e5570a",
+      "arquivos": {
+        "Chart.tsx": "58b7b6a542b47f7b052e956a2e4475a809ee4aa0",
+        "data.ts": "c9f51005133f0eb7d312b41bc6e6faa1c63e5592",
+        "meta.json": "d52e11e366f6b34c89bdb82a68b6c00479df316a"
+      }
+    },
+    {
+      "versao": "v4_doze-executivos-contra-mediana",
+      "veredito": "aprovado",
+      "nota": "Aceita nos dois temas. Além da mediana, o conserto pegou Math.min e Math.max sobre lista vazia, que devolvem infinito e chegavam ao eixo como número, e a relação entre destaque e mediana passou a sair do dado em vez de ficar escrita à mão. Ressalva sem conserto: as doze séries do dado fixo são quase retas, então a peça não exercita o caso que ela existe para resolver, que é o espaguete de séries que se cruzam.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:31:36.079Z",
+      "impressao": "be1b78b565747dca8a29ba4b5c21ae265e84f906",
+      "arquivos": {
+        "Chart.tsx": "15fea4ad45f59889ccd3deac33af2aa82a6d6cb0",
+        "data.ts": "c9f51005133f0eb7d312b41bc6e6faa1c63e5592",
+        "meta.json": "d52e11e366f6b34c89bdb82a68b6c00479df316a"
+      }
+    }
+  ]
+}

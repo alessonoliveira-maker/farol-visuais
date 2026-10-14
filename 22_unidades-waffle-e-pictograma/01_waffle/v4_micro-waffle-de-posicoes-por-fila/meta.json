@@ -1,0 +1,14 @@
+{
+  "title": "Posições de SDR ocupadas por fila",
+  "useCase": "Quantas das 6 posições de cada fila de pré-vendas estão ocupadas e quanto a fila converte em venda?",
+  "demonstrates": [
+    "Micro waffle de 6 unidades reais com quadrado de 6 px e o texto 4 de 6 ao lado",
+    "Vaga aberta em contorno tracejado; posição ocupada em cor cheia",
+    "Nenhuma unidade parcial no tamanho micro: taxa arredondada e escrita por extenso",
+    "Conversão de 0,6% numa grade de 100 vazia, com o chip menos de 1 em 100",
+    "Fila sem dado de ocupação escreve formatUnavailable em vez de grade vazia"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "A célula vazia da grade de 100 usa --line-subtle e não --surface-sunken, porque sobre o palco da moldura stage o sunken some; a guarda CONTRASTE-MARCA avisa 1,25:1 e a grade só carrega valor pela cor das células cheias, com o número escrito ao lado."
+}

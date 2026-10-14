@@ -1,0 +1,14 @@
+{
+  "title": "Win rate por executivo e segmento de cliente",
+  "useCase": "Em quais segmentos de cliente cada executivo converte melhor, e onde a taxa despenca?",
+  "demonstrates": [
+    "Célula de duas linhas: a taxa em cima, o volume que a sustenta embaixo",
+    "Cabeçalho de coluna com o total de fechadas do segmento",
+    "Contorno pontilhado onde a amostra é rala demais para a taxa concluir",
+    "Par sem fechada lido como ausência, nunca como desempenho zero",
+    "Ordem por taxa geral ponderada ou por semelhança de perfil, nunca alfabética"
+  ],
+  "canvas": { "width": 640, "height": 632 },
+  "frame": "card",
+  "notes": "Canvas de 640 por 632 em vez do card sugerido no catálogo: a grade de 10 linhas de célula de duas linhas pede 436 px de viewBox, mais 22 dos botões, dois vãos de 8 e 36 da legenda de duas linhas, e o svg sai em escala 1 (largura e altura fixas no tamanho do viewBox), de modo que o texto da grade fica em 11 px ou mais (TIP-2, GEO-18). O destaque de maior taxa do segmento só olha células com 8 ou mais fechadas, senão o contorno premiaria 3 de 5. O contorno usa peso 600 (font-semibold) e não 700, para não passar do teto de dois elementos em peso 700 da TIP-3, já que aqui são cinco células destacadas."
+}

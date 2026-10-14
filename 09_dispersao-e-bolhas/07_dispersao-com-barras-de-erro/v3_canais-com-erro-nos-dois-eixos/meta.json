@@ -1,0 +1,13 @@
+{
+  "title": "Canais com incerteza em CPL e qualificação",
+  "useCase": "Qual canal é mais barato e mais qualificado quando a incerteza entra na conta? 8 canais com erro nos dois eixos.",
+  "demonstrates": [
+    "Dois ErrorBar no mesmo Scatter, um em direction x e outro em direction y",
+    "Desvio padrão amostral do CPL entre as semanas, calculado e não digitado",
+    "Cada barra nomeada por glifo e por texto, porque as duas medem coisas diferentes",
+    "Nome do canal em rótulo direto, com a cruz de tinta inteira na anticolisão"
+  ],
+  "canvas": { "width": 960, "height": 470 },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1: além do plano o cartão escreve duas linhas, a leitura de 12 px acima e a chave de 11 px com dois glifos abaixo, cerca de 50 px, e oito nomes diretos só fogem da cruz de tinta em plano largo. A conta de altura é 135 px de moldura, com o caso de uso em duas linhas, mais 50 px de texto mais 285 px de plano; a de largura é 66 px de moldura mais 894 px de corpo. O QUE CADA BARRA REPRESENTA é o problema central desta versão, porque aqui as duas barras do mesmo ponto medem coisas diferentes: a horizontal é um desvio padrão amostral do CPL entre as quatro semanas, que mede oscilação de preço observada, e a vertical é o intervalo de 95% de Wilson da taxa, que mede o que a amostra não sabe. As duas vão nomeadas em três lugares: a chave do rodapé, com um glifo por sentido, a frase acessível da raiz, e a dica, que traz o desvio ao lado da média e o intervalo à parte. Sem isso o leitor leria a cruz como uma coisa só, e a GEO-12 já registra essa classe de defeito, critério que decide o desenho e não aparece no cartão. O dado prova que a distinção importa: display tem barra horizontal larga e vertical estreita, porque o preço balança e o volume é grande, e eventos tem as duas largas. O traço é DADO e não referência, então vale a ACE-6 e não o 1,79:1 de line-strong: text-muted mede 5,21:1 no escuro e 5,37:1 no claro, acima do piso de 3:1, e o ponto em chart-1 mede 9,50:1 e 6,00:1, sem opacidade, porque fillOpacity derrubaria a marca no tema claro pela ACE-5. A linha de eixo herdada de AXIS_PROPS sai desligada nos dois eixos, pela EIX-5, e a grade vai nos dois sentidos pela EIX-3b."
+}

@@ -1,0 +1,108 @@
+{
+  "familia": "24_microvisuais-sparklines",
+  "modelo": "06_marcador-em-trilho",
+  "versoes": {
+    "v1_cpl-do-mes-na-faixa-de-12-meses": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Marcador a 46% do trilho confere com o dado nos dois temas; mês nulo fora da faixa, nunca zero. Observações no README: pergunta 21 com 0,62% e 0,69% no texto depois de CPL (artefato do preview), TIP-1 em CPL de set/26, mês sem coleta não declarado no corpo, linha de leitura no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:18.860Z",
+      "impressao": "e77b55e910696fdca2fc0280a696b14573b91cfd",
+      "arquivos": {
+        "Chart.tsx": "17099d398c360c50427a8ad4c278e8df5e5a206d",
+        "data.ts": "20a44a1c53360cef08947651455a28d97140866e",
+        "meta.json": "46f4e90cec50d57a8fbfc899b0b88ad996417eb3"
+      }
+    },
+    "v2_tempo-de-resposta-com-faixa-aceitavel": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Faixa do SLA, marcador e limites conferem com o dado; julgamento por texto e ícone, sem cor semântica. Observações no README: NUM-5 (mediana não dita no corpo), endLabel erra a fonte quando a ponta é o limite do SLA (ramo), linha de leitura no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:19.340Z",
+      "impressao": "f1b32781604021078c99ef15421345b7c3a52317",
+      "arquivos": {
+        "Chart.tsx": "c171d0728f0620e81a7fa759e00f3138241ab671",
+        "data.ts": "1f3401f3611f6ec849ee764ff32d3978a067614b",
+        "meta.json": "3bdcdd9b7dc99926cdac1c4c73858852122229f5"
+      }
+    },
+    "v3_participacao-por-segmento-com-perimetro": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala comum de 0% a 31,2% declarada, trilho, mediana e marcador conferem nas 8 linhas. Observações no README: perímetro fora da frase acessível e com truncate, legenda abaixo e em 11 px, mediana sob o marcador em 3 linhas, TIP-1 no cabeçalho.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:19.826Z",
+      "impressao": "d0d59cf4cba05a53e58436f863d07fa33dfa0cb0",
+      "arquivos": {
+        "Chart.tsx": "ae6e52c1b48d014c80517e464ac0dcafa5bc4801",
+        "data.ts": "dbe00bf99f35f6b89788e9fea00b32fd7f33ed91",
+        "meta.json": "7783bfff835c8d81d3773231b005dbe49ef0618b"
+      }
+    },
+    "v4_valor-fora-da-faixa-e-sem-historico": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Marcador preso na borda com chevron e distância escrita, sem histórico e indisponível sem marcador no zero. Observações no README: pergunta 21 com 0,63% e 0,72% no texto depois de CPL (artefato do preview), respiro vertical de 4,5 px, NUM-1 e divisão por zero no ramo, janela de meses não dita.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:20.308Z",
+      "impressao": "b603d6f679a2c0266c8e6c43446b0c329ae6d1c5",
+      "arquivos": {
+        "Chart.tsx": "6539bc13316067c30686a81ba1e35b57550a8165",
+        "data.ts": "cdddd6ca2bf4df1e6b4b188817d1b9970efa5446",
+        "meta.json": "cf7d4d55062e28648e4a8dad37716da1559487ee"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_cpl-do-mes-na-faixa-de-12-meses",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Marcador a 46% do trilho confere com o dado nos dois temas; mês nulo fora da faixa, nunca zero. Observações no README: pergunta 21 com 0,62% e 0,69% no texto depois de CPL (artefato do preview), TIP-1 em CPL de set/26, mês sem coleta não declarado no corpo, linha de leitura no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:18.860Z",
+      "impressao": "e77b55e910696fdca2fc0280a696b14573b91cfd",
+      "arquivos": {
+        "Chart.tsx": "17099d398c360c50427a8ad4c278e8df5e5a206d",
+        "data.ts": "20a44a1c53360cef08947651455a28d97140866e",
+        "meta.json": "46f4e90cec50d57a8fbfc899b0b88ad996417eb3"
+      }
+    },
+    {
+      "versao": "v2_tempo-de-resposta-com-faixa-aceitavel",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Faixa do SLA, marcador e limites conferem com o dado; julgamento por texto e ícone, sem cor semântica. Observações no README: NUM-5 (mediana não dita no corpo), endLabel erra a fonte quando a ponta é o limite do SLA (ramo), linha de leitura no pé.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:19.340Z",
+      "impressao": "f1b32781604021078c99ef15421345b7c3a52317",
+      "arquivos": {
+        "Chart.tsx": "c171d0728f0620e81a7fa759e00f3138241ab671",
+        "data.ts": "1f3401f3611f6ec849ee764ff32d3978a067614b",
+        "meta.json": "3bdcdd9b7dc99926cdac1c4c73858852122229f5"
+      }
+    },
+    {
+      "versao": "v3_participacao-por-segmento-com-perimetro",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala comum de 0% a 31,2% declarada, trilho, mediana e marcador conferem nas 8 linhas. Observações no README: perímetro fora da frase acessível e com truncate, legenda abaixo e em 11 px, mediana sob o marcador em 3 linhas, TIP-1 no cabeçalho.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:19.826Z",
+      "impressao": "d0d59cf4cba05a53e58436f863d07fa33dfa0cb0",
+      "arquivos": {
+        "Chart.tsx": "ae6e52c1b48d014c80517e464ac0dcafa5bc4801",
+        "data.ts": "dbe00bf99f35f6b89788e9fea00b32fd7f33ed91",
+        "meta.json": "7783bfff835c8d81d3773231b005dbe49ef0618b"
+      }
+    },
+    {
+      "versao": "v4_valor-fora-da-faixa-e-sem-historico",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Marcador preso na borda com chevron e distância escrita, sem histórico e indisponível sem marcador no zero. Observações no README: pergunta 21 com 0,63% e 0,72% no texto depois de CPL (artefato do preview), respiro vertical de 4,5 px, NUM-1 e divisão por zero no ramo, janela de meses não dita.",
+      "data": "2026-10-05",
+      "registradoEm": "2026-10-05T16:46:20.308Z",
+      "impressao": "b603d6f679a2c0266c8e6c43446b0c329ae6d1c5",
+      "arquivos": {
+        "Chart.tsx": "6539bc13316067c30686a81ba1e35b57550a8165",
+        "data.ts": "cdddd6ca2bf4df1e6b4b188817d1b9970efa5446",
+        "meta.json": "cf7d4d55062e28648e4a8dad37716da1559487ee"
+      }
+    }
+  ]
+}

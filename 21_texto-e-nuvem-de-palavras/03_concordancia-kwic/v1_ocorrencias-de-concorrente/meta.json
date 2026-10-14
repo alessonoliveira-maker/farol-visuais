@@ -1,0 +1,13 @@
+{
+  "title": "Vinte ocorrências de concorrente nas perdas",
+  "useCase": "Comercial: em que contexto o termo concorrente aparece nas anotações das oportunidades perdidas em 2026-T3.",
+  "demonstrates": [
+    "Grid de três colunas 1fr auto 1fr com o contexto esquerdo em text-right",
+    "Contexto esquerdo cortado pelo começo, mantendo as palavras mais próximas do termo",
+    "Termo central em peso 600 e text-primary, contexto em text-secondary",
+    "Frase acessível com o termo, o total de ocorrências e as linhas exibidas"
+  ],
+  "canvas": { "width": 760, "height": 600 },
+  "frame": "card",
+  "notes": "Conta do corpo: 20 linhas de 20 px (leading-4 mais py-0.5 de 2 px por lado) mais cabeçalho de colunas de 20 px e rodapé de 24 px dão 444 px, e o preset alto entrega 441,5 px (425 com duas linhas no cabeçalho). Canvas por número, 760 x 600 (largura para o contexto de até 46 caracteres com a reticência contada): corpo de 465 a 481,5 px com sobra de 21 px."
+}

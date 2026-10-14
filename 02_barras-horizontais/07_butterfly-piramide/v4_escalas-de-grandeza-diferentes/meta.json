@@ -1,0 +1,13 @@
+{
+  "title": "Leads e oportunidades em escalas independentes",
+  "useCase": "Espelhar 10 mil leads contra 80 oportunidades sem que a escala comum apague o lado pequeno.",
+  "demonstrates": [
+    "Detecção de razão acima de 20 entre os totais dos dois lados",
+    "Troca para percentual do próprio total com aviso na linha de leitura, não no título",
+    "Valor absoluto preservado na dica de cada barra",
+    "Faixa sem observação num lado escreve indisponível no lugar da barra"
+  ],
+  "canvas": { "width": 640, "height": 710 },
+  "frame": "card",
+  "notes": "Desvio de preset (card 640x360 vira 640x710, 2026-09-18): com duas séries por faixa e barCategoryGap 34%, a marca ficava em 3 px; a altura subiu pela conta invertida da ESP-6 até a marca chegar a 15 px, sem afinar a barra nem cortar faixa."
+}

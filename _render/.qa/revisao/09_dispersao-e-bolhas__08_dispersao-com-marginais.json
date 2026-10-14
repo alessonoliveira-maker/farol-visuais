@@ -1,0 +1,59 @@
+{
+  "familia": "09_dispersao-e-bolhas",
+  "modelo": "08_dispersao-com-marginais",
+  "versoes": {
+    "v1_ticket-contra-ciclo-com-histogramas": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Marginais alinhados ao pixel com o plano nos dois eixos e o de Y revertido (EIX-12); barras neutras com a contagem escrita ao lado (17.2), eixos calmos com unidade no tique e espessura de 23 e 13,85 px. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T21:03:34.350Z",
+      "impressao": "d4201921ff7b90377425dd49ac3f0bbc0c09e6f3",
+      "arquivos": {
+        "Chart.tsx": "566b30aa3e09095850fbb09f60888159faf082c4",
+        "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
+        "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_ticket-contra-ciclo-com-histogramas",
+      "veredito": "reprovado",
+      "nota": "Marginais desalinhados do plano (60 px em X, 30 px em Y): o eixo do plano nao entra na margem dos histogramas. Barras neutras sem valor escrito, ticks irregulares e axisLine ligada.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T20:30:09.543Z",
+      "impressao": "aefe187a6a3d81046dbbebb0a5860d490ac98ce6",
+      "arquivos": {
+        "Chart.tsx": "b8694c785eadbb7d3169e297ffd9493c6541b640",
+        "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
+        "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-com-histogramas",
+      "veredito": "reprovado",
+      "nota": "Marginal de Y invertido (EIX-12): o bin de 0 a 20 dias cai na linha de 140 a 160 dias do plano; a barra maior aparece onde quase nao ha ponto. Travessao como separador no comentario do Chart.tsx.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T20:52:08.603Z",
+      "impressao": "d9378b4a39d92a570b9800ebc62229b1debfdf48",
+      "arquivos": {
+        "Chart.tsx": "cf3fc9a952023a87ce4ba0eaac18a3f95318e2f9",
+        "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
+        "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
+      }
+    },
+    {
+      "versao": "v1_ticket-contra-ciclo-com-histogramas",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Marginais alinhados ao pixel com o plano nos dois eixos e o de Y revertido (EIX-12); barras neutras com a contagem escrita ao lado (17.2), eixos calmos com unidade no tique e espessura de 23 e 13,85 px. Sem bloqueante.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T21:03:34.350Z",
+      "impressao": "d4201921ff7b90377425dd49ac3f0bbc0c09e6f3",
+      "arquivos": {
+        "Chart.tsx": "566b30aa3e09095850fbb09f60888159faf082c4",
+        "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
+        "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
+      }
+    }
+  ]
+}

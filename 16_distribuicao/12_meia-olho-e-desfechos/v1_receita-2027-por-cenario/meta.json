@@ -1,0 +1,17 @@
+{
+  "title": "Receita de 2027 por cenário",
+  "useCase": "Qual a faixa provável da receita de 2027 nos cenários conservador, base e expansão?",
+  "demonstrates": [
+    "Meia densidade acima da base com o caminho do violino de um lado só",
+    "Ponto de mediana com intervalo grosso de 66% e fino de 95% sobre a base",
+    "Rótulos dos intervalos só na primeira linha",
+    "Densidade recortada no domínio simulado, sem esmaecer além dele",
+    "Nota: faixa de cenários, não previsão pontual"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 404
+  },
+  "frame": "card",
+  "notes": "Canvas por número, 640 por 404, pela conta da GEO-1: o preset card dá 241,5 px de corpo com o caso de uso em uma linha, e a peça soma 282 px, que são 16 da linha de leitura, 8 de vão, 214 do desenho (6 de topo, três linhas de cenário de 62 e 22 de eixo), 8 de vão e 36 do rodapé em duas linhas. Cada cenário a mais pede 62 px. O desenho é SVG puro com viewBox de 574 px de largura, a do corpo, para a escala sair 1 (GEO-18). A densidade usa uma banda de Silverman só, a mediana das bandas dos cenários, e altura na mesma escala para todos; ela é cortada no menor e no maior desfecho simulados, com borda vertical, em vez de esmaecer. Os traços de intervalo ficam 8 px abaixo da base da forma, fora do preenchimento, para não cruzar marca (TOK-10). O passo do eixo aceita 2,5 além de 1, 2 e 5: o tique de moeda mede cerca de 56 px e o passo de 2 mi deixava 1 px entre vizinhos. A ordem das linhas é a do dado, do cenário mais contido ao mais ousado. Os desfechos saem de um gerador com semente fixa escrito no data.ts, sem relógio nem aleatório do navegador."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Progressão por etapa com retornos",
+  "useCase": "Quais das 10 oportunidades do trimestre passaram rápido, quais pararam e quais voltaram de etapa.",
+  "demonstrates": [
+    "LineChart com YAxis numérico do índice da etapa e tickFormatter com o nome da etapa",
+    "Uma Line stepAfter por oportunidade, com dot desligado",
+    "Retorno de etapa como trecho descendente com marcador e a data da volta",
+    "Oportunidade aberta terminando em hoje com traço tracejado e rótulo em aberto",
+    "A mais rápida e a mais lenta em cor, com rótulo direto, e o resto em cinza"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo: cada oportunidade é uma coluna do mesmo conjunto de linhas diárias, e não uma Line com dado próprio, para a dica compartilhada listar todas as oportunidades vivas no dia. O tracejado da aberta é uma segunda Line por oportunidade, da última mudança até hoje. A mais rápida e a mais lenta são as extremas entre as ganhas; oportunidade aberta não entra na comparação, porque ainda não terminou. O destaque não mora só na cor (TOK-9): espessura 3 contra 1,5 e rótulo direto no fim da linha. O cinza é --text-muted, e não --line-strong, que mede 1,79:1 contra o cartão."
+}

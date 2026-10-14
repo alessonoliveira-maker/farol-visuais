@@ -1,0 +1,12 @@
+{
+  "title": "Resultado das agendas por fila",
+  "useCase": "Em qual fila, inbound, outbound ou reativação, o não comparecimento pesa mais nas agendas da semana.",
+  "demonstrates": [
+    "Três semicírculos de mesmo diâmetro numa grade HTML, um por fila",
+    "Mesma ordem de partes e mesma cor por resultado nas três filas",
+    "Legenda única acima da faixa e total de agendas escrito no centro de cada arco",
+    "Fila com poucas agendas troca a contagem por taxa com volume, formatRateWithVolume"
+  ],
+  "canvas": "faixa",
+  "frame": "card"
+}

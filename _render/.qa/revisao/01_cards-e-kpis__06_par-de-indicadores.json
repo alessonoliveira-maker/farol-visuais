@@ -1,0 +1,160 @@
+{
+  "familia": "01_cards-e-kpis",
+  "modelo": "06_par-de-indicadores",
+  "versoes": {
+    "v1_agendas-e-comparecimento-da-coorte": {
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: zero anterior escrito como não medido, base sem período e sem substantivo, dado só no caminho feliz.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:44.118Z",
+      "impressao": "dff2f401b93fe39ae0c4d9f970adc8d3166f918e",
+      "arquivos": {
+        "Chart.tsx": "6b1ec08c19ad558a80682957ef0338de009366df",
+        "data.ts": "5e6cc11f5e5fc54cba6b45d215077de3018d6f00",
+        "meta.json": "1b7b12716836a62e57487b19cfbaf216779c02bd"
+      }
+    },
+    "v2_leads-e-percentual-qualificado-com-veredito": {
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: quadrante em line-subtle, desvio justificado de formatPercentPoints, catálogo com 9 p.p. arredondado, base da taxa sem mês.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:44.581Z",
+      "impressao": "c662d13b6f00aab176dc84ab603921c5ed0f87dc",
+      "arquivos": {
+        "Chart.tsx": "57d63de73f5cf6bfbacd77446e4437c2688dc6e5",
+        "data.ts": "b378d8eb9e049c2f43a32feefb4b4a5dd7a4936d",
+        "meta.json": "a5b206a249795e27ded22c297187c61628615757"
+      }
+    },
+    "v3_tres-pares-do-comercial": {
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: idade média de coorte depende do dia da medição, p.p.. duplicado, frase da faixa junta os dois lados do custo.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:45.070Z",
+      "impressao": "be4806343a98ec775515c5207c0dcd935ff4ae6b",
+      "arquivos": {
+        "Chart.tsx": "94ab40344b7bbf5c9e5737862411b9f29a21ca3d",
+        "data.ts": "7195e686d70652a5e7bedc17cdf288584f16d58b",
+        "meta.json": "bbf992444cbe0e5a7bac4f6699ecf29c3fee0f26"
+      }
+    },
+    "v4_coorte-aberta-volume-zero-e-par-estavel": {
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: parcial ao lado da taxa fechada, frase a 245 caracteres, p.p.. duplicado, ícone igual para sem anterior e estável.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:45.569Z",
+      "impressao": "0199efb9a9da5b2f6f7fb09f86490d586ffb4188",
+      "arquivos": {
+        "Chart.tsx": "50cfd9286a64f05bba33c7845d39445fdb4d9ee4",
+        "data.ts": "ee3011e6d0dcee68a09b810a1ca39824d445c5ae",
+        "meta.json": "a26f5e7f8c8eba74d8fa4af4a8b549fc40d755c3"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_agendas-e-comparecimento-da-coorte",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; observações no README: dado sem caso difícil, base do comparecimento sem período, número de base sem peso declarado.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:24:05.835Z",
+      "impressao": "dff2f401b93fe39ae0c4d9f970adc8d3166f918e",
+      "arquivos": {
+        "Chart.tsx": "6b1ec08c19ad558a80682957ef0338de009366df",
+        "data.ts": "5e6cc11f5e5fc54cba6b45d215077de3018d6f00",
+        "meta.json": "1b7b12716836a62e57487b19cfbaf216779c02bd"
+      }
+    },
+    {
+      "versao": "v2_leads-e-percentual-qualificado-com-veredito",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; observações no README: quadrante em line-subtle, desvio justificado de formatPercentPoints, base da taxa sem mês.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:24:06.312Z",
+      "impressao": "c662d13b6f00aab176dc84ab603921c5ed0f87dc",
+      "arquivos": {
+        "Chart.tsx": "57d63de73f5cf6bfbacd77446e4437c2688dc6e5",
+        "data.ts": "b378d8eb9e049c2f43a32feefb4b4a5dd7a4936d",
+        "meta.json": "a5b206a249795e27ded22c297187c61628615757"
+      }
+    },
+    {
+      "versao": "v3_tres-pares-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; observações no README: p.p.. duplicado na frase acessível, frase do cartão sem base, estado sem base em 20 px sem peso.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:24:06.785Z",
+      "impressao": "be4806343a98ec775515c5207c0dcd935ff4ae6b",
+      "arquivos": {
+        "Chart.tsx": "94ab40344b7bbf5c9e5737862411b9f29a21ca3d",
+        "data.ts": "7195e686d70652a5e7bedc17cdf288584f16d58b",
+        "meta.json": "bbf992444cbe0e5a7bac4f6699ecf29c3fee0f26"
+      }
+    },
+    {
+      "versao": "v4_coorte-aberta-volume-zero-e-par-estavel",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante; observações no README: p.p.. duplicado na frase acessível, frase do cartão a 245 caracteres, ícone igual para sem anterior e estável.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:24:07.300Z",
+      "impressao": "0199efb9a9da5b2f6f7fb09f86490d586ffb4188",
+      "arquivos": {
+        "Chart.tsx": "50cfd9286a64f05bba33c7845d39445fdb4d9ee4",
+        "data.ts": "ee3011e6d0dcee68a09b810a1ca39824d445c5ae",
+        "meta.json": "a26f5e7f8c8eba74d8fa4af4a8b549fc40d755c3"
+      }
+    },
+    {
+      "versao": "v1_agendas-e-comparecimento-da-coorte",
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: zero anterior escrito como não medido, base sem período e sem substantivo, dado só no caminho feliz.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:44.118Z",
+      "impressao": "dff2f401b93fe39ae0c4d9f970adc8d3166f918e",
+      "arquivos": {
+        "Chart.tsx": "6b1ec08c19ad558a80682957ef0338de009366df",
+        "data.ts": "5e6cc11f5e5fc54cba6b45d215077de3018d6f00",
+        "meta.json": "1b7b12716836a62e57487b19cfbaf216779c02bd"
+      }
+    },
+    {
+      "versao": "v2_leads-e-percentual-qualificado-com-veredito",
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: quadrante em line-subtle, desvio justificado de formatPercentPoints, catálogo com 9 p.p. arredondado, base da taxa sem mês.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:44.581Z",
+      "impressao": "c662d13b6f00aab176dc84ab603921c5ed0f87dc",
+      "arquivos": {
+        "Chart.tsx": "57d63de73f5cf6bfbacd77446e4437c2688dc6e5",
+        "data.ts": "b378d8eb9e049c2f43a32feefb4b4a5dd7a4936d",
+        "meta.json": "a5b206a249795e27ded22c297187c61628615757"
+      }
+    },
+    {
+      "versao": "v3_tres-pares-do-comercial",
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: idade média de coorte depende do dia da medição, p.p.. duplicado, frase da faixa junta os dois lados do custo.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:45.070Z",
+      "impressao": "be4806343a98ec775515c5207c0dcd935ff4ae6b",
+      "arquivos": {
+        "Chart.tsx": "94ab40344b7bbf5c9e5737862411b9f29a21ca3d",
+        "data.ts": "7195e686d70652a5e7bedc17cdf288584f16d58b",
+        "meta.json": "bbf992444cbe0e5a7bac4f6699ecf29c3fee0f26"
+      }
+    },
+    {
+      "versao": "v4_coorte-aberta-volume-zero-e-par-estavel",
+      "veredito": "aprovado",
+      "nota": "Revisão independente sem bloqueante; observações no README: parcial ao lado da taxa fechada, frase a 245 caracteres, p.p.. duplicado, ícone igual para sem anterior e estável.",
+      "data": "2026-09-15",
+      "registradoEm": "2026-09-15T13:31:45.569Z",
+      "impressao": "0199efb9a9da5b2f6f7fb09f86490d586ffb4188",
+      "arquivos": {
+        "Chart.tsx": "50cfd9286a64f05bba33c7845d39445fdb4d9ee4",
+        "data.ts": "ee3011e6d0dcee68a09b810a1ca39824d445c5ae",
+        "meta.json": "a26f5e7f8c8eba74d8fa4af4a8b549fc40d755c3"
+      }
+    }
+  ]
+}

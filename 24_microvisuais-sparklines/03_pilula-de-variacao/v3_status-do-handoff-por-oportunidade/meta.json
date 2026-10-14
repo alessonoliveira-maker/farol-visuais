@@ -1,0 +1,14 @@
+{
+  "title": "Estado do aceite no handoff",
+  "useCase": "Quais das 16 oportunidades passadas pela pré-vendas estão pendentes fora do prazo de aceite?",
+  "demonstrates": [
+    "Silhueta por estado: Circle, Triangle, Diamond e CircleDashed, sempre com rótulo",
+    "Regra escrita no cabeçalho: fora do prazo é mais de 2 dias úteis sem aceite",
+    "Só o estado crítico em --negative; aceitos e pendentes no prazo em --text-muted",
+    "Duração ao lado do ponto por formatDays, separando problema novo de crônico",
+    "Oportunidade sem data de handoff com anel vazado e a palavra sem data",
+    "Ordem por estado com o crítico no topo e a contagem por estado no resumo"
+  ],
+  "canvas": "alto",
+  "frame": "stage"
+}

@@ -1,0 +1,121 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "03_plano-com-iso-linhas",
+  "versoes": {
+    "v1_automacoes-por-impacto-e-esforco": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: quatro retas conferidas nos extremos (3x, 2x, 1x e 0,5x), 4 de 14 com razão a partir de 2x, dois pares de mesmas notas afastados sobre a própria reta e avisados no rodapé, os 4 nomes a até 4,1 px do próprio ponto nos dois temas. Sem bloqueante; observações no README (reta de 2x no mesmo traço de fundo das outras, notes do meta.json sobre a guarda de contraste).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:19.242Z",
+      "impressao": "c635665541702af495c403c70fdd60b28d212048",
+      "arquivos": {
+        "Chart.tsx": "63e9e93205fa2fb9690f878a02da6878542ac25d",
+        "data.ts": "ace019825d0dba3ee4a3a8cbb76ffec749c43c3c",
+        "meta.json": "e8685786511dbba4593dd17394f30799b43c2112"
+      }
+    },
+    "v2_vitorias-por-volume-e-taxa-com-meta": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: hipérboles de 5, 10, 12 e 20 vitórias conferidas nas pontas, 8 de 14 na meta e 4 com até metade do volume médio de 55 oportunidades, curva da meta sem corte de halo nos dois temas. Sem bloqueante; observações no README (Otávio L. a 11,4 px do próprio ponto e lido por eliminação, 5 e 10 sem unidade na fila do topo, anotação de 64 caracteres, região a 1,22:1 e 1,16:1 aceita como fundo).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:28.343Z",
+      "impressao": "3594d6a144c346b7a7ba762f4a006965a53d66f7",
+      "arquivos": {
+        "Chart.tsx": "29dda9e79928e3774ea32ff72a9acb4f752d6dd5",
+        "data.ts": "f631c479d7bbefeed31e40f52312a5c23178e540",
+        "meta.json": "3b545abf12a1b6a2b7dc3c6a57eaab648b029d66"
+      }
+    },
+    "v3_campanhas-em-curvas-de-investimento": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 12:19): os 6 nomes ficam de 1,7 a 4,5 px da borda do próprio ponto e o ponto alheio mais perto fica a 10,7 px ou mais, nos dois temas; 48 pontos na posição do dado, 9 ocos na faixa, curvas de R$ 5, 20 e 50 mil conferidas nas pontas, faixa fechada pela borda. Sem bloqueante; observações no README (E-mail, boletim mensal deitado sobre a curva de R$ 5 mil por cerca de 120 px, Mala direta cruza a curva de R$ 20 mil, critério do nome fora da legenda, ZAxis sem dataKey).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:28:47.921Z",
+      "impressao": "f248714088376ecbf87fc35337dce10b7bb199b0",
+      "arquivos": {
+        "Chart.tsx": "6438f60ea90af0b7d71bd77433aacdb837969e00",
+        "data.ts": "906e1e832dd36168cfdca0a92e131b0c2b72aa4a",
+        "meta.json": "bc0d61260f5ee889779ddc73512de3a2852f5b41"
+      }
+    },
+    "v4_escala-log-com-executivos-sem-vitoria": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: retas de 3, 6, 12 e 24 vitórias e zona de 11 a 13 conferidas nos extremos do domínio log, 4 acima da zona, 3 nela e 3 na faixa de taxa zero com o tique de zero ao lado, reta da meta sem corte de halo, faixa com 4,65:1 no ponto e 7,04:1 no nome no tema claro. Sem bloqueante; observações no README (Helena B. a 3,5 px do ponto de Renan A., nomes da faixa cruzando a grade sem halo, fórmula só na dica).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:29.435Z",
+      "impressao": "6258a26dc56c57ad1a79abb4498e7034ac0a1b64",
+      "arquivos": {
+        "Chart.tsx": "37d84fb705efa5597b9f592fa6d0024f1b1cc702",
+        "data.ts": "f6fd8601f22c17e2fb0765059ee356580b187775",
+        "meta.json": "db09e52e151e6a2042aa56412e97cf8ea2f9e2ba"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_automacoes-por-impacto-e-esforco",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: quatro retas conferidas nos extremos (3x, 2x, 1x e 0,5x), 4 de 14 com razão a partir de 2x, dois pares de mesmas notas afastados sobre a própria reta e avisados no rodapé, os 4 nomes a até 4,1 px do próprio ponto nos dois temas. Sem bloqueante; observações no README (reta de 2x no mesmo traço de fundo das outras, notes do meta.json sobre a guarda de contraste).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:19.242Z",
+      "impressao": "c635665541702af495c403c70fdd60b28d212048",
+      "arquivos": {
+        "Chart.tsx": "63e9e93205fa2fb9690f878a02da6878542ac25d",
+        "data.ts": "ace019825d0dba3ee4a3a8cbb76ffec749c43c3c",
+        "meta.json": "e8685786511dbba4593dd17394f30799b43c2112"
+      }
+    },
+    {
+      "versao": "v2_vitorias-por-volume-e-taxa-com-meta",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: hipérboles de 5, 10, 12 e 20 vitórias conferidas nas pontas, 8 de 14 na meta e 4 com até metade do volume médio de 55 oportunidades, curva da meta sem corte de halo nos dois temas. Sem bloqueante; observações no README (Otávio L. a 11,4 px do próprio ponto e lido por eliminação, 5 e 10 sem unidade na fila do topo, anotação de 64 caracteres, região a 1,22:1 e 1,16:1 aceita como fundo).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:28.343Z",
+      "impressao": "3594d6a144c346b7a7ba762f4a006965a53d66f7",
+      "arquivos": {
+        "Chart.tsx": "29dda9e79928e3774ea32ff72a9acb4f752d6dd5",
+        "data.ts": "f631c479d7bbefeed31e40f52312a5c23178e540",
+        "meta.json": "3b545abf12a1b6a2b7dc3c6a57eaab648b029d66"
+      }
+    },
+    {
+      "versao": "v3_campanhas-em-curvas-de-investimento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 12 (e 18), seção 14.1 identificação das marcas, DIC-1: dos 6 nomes, Busca paga, institucional fica a 21,7 px do próprio ponto e a 16,3 px de outro (três alheios mais perto), e E-mail, boletim mensal a 22,8 px do próprio e a 10,2 px de outro; com 42 de 48 pontos sem nome não há leitura por eliminação. Mudar: ancorar pelo fim o nome posto a oeste do ponto (textAnchor end no fim da caixa) e recusar posição em que ponto alheio fique mais perto que o próprio. Parecer em validation/revisao_25_matriz-e-quadrantes__03_plano-com-iso-linhas_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:28.875Z",
+      "impressao": "0373a5f14e61e8fe59268e67ace65f82a5b22467",
+      "arquivos": {
+        "Chart.tsx": "79110a41386f85d77226cf12d0dba3ffdd285800",
+        "data.ts": "906e1e832dd36168cfdca0a92e131b0c2b72aa4a",
+        "meta.json": "bc0d61260f5ee889779ddc73512de3a2852f5b41"
+      }
+    },
+    {
+      "versao": "v4_escala-log-com-executivos-sem-vitoria",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: retas de 3, 6, 12 e 24 vitórias e zona de 11 a 13 conferidas nos extremos do domínio log, 4 acima da zona, 3 nela e 3 na faixa de taxa zero com o tique de zero ao lado, reta da meta sem corte de halo, faixa com 4,65:1 no ponto e 7,04:1 no nome no tema claro. Sem bloqueante; observações no README (Helena B. a 3,5 px do ponto de Renan A., nomes da faixa cruzando a grade sem halo, fórmula só na dica).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:18:29.435Z",
+      "impressao": "6258a26dc56c57ad1a79abb4498e7034ac0a1b64",
+      "arquivos": {
+        "Chart.tsx": "37d84fb705efa5597b9f592fa6d0024f1b1cc702",
+        "data.ts": "f6fd8601f22c17e2fb0765059ee356580b187775",
+        "meta.json": "db09e52e151e6a2042aa56412e97cf8ea2f9e2ba"
+      }
+    },
+    {
+      "versao": "v3_campanhas-em-curvas-de-investimento",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 12:19): os 6 nomes ficam de 1,7 a 4,5 px da borda do próprio ponto e o ponto alheio mais perto fica a 10,7 px ou mais, nos dois temas; 48 pontos na posição do dado, 9 ocos na faixa, curvas de R$ 5, 20 e 50 mil conferidas nas pontas, faixa fechada pela borda. Sem bloqueante; observações no README (E-mail, boletim mensal deitado sobre a curva de R$ 5 mil por cerca de 120 px, Mala direta cruza a curva de R$ 20 mil, critério do nome fora da legenda, ZAxis sem dataKey).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:28:47.921Z",
+      "impressao": "f248714088376ecbf87fc35337dce10b7bb199b0",
+      "arquivos": {
+        "Chart.tsx": "6438f60ea90af0b7d71bd77433aacdb837969e00",
+        "data.ts": "906e1e832dd36168cfdca0a92e131b0c2b72aa4a",
+        "meta.json": "bc0d61260f5ee889779ddc73512de3a2852f5b41"
+      }
+    }
+  ]
+}

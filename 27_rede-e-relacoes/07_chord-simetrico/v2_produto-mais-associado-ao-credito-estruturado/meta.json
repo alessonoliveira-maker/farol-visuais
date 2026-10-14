@@ -1,0 +1,14 @@
+{
+  "title": "Com o que o crédito estruturado anda",
+  "useCase": "Comercial: com quais produtos o crédito estruturado fictício aparece na mesma carteira e qual é o mais associado.",
+  "demonstrates": [
+    "Grupo selecionado por highlightId com fitas em var(--chart-1) e as demais em neutro",
+    "Painel lateral com os pares do grupo ordenados e o valor escrito",
+    "Produto mais associado anotado junto da fita, com rótulo em peso 700",
+    "Percentual do par sobre o total do grupo com formatPercent",
+    "Frase acessível com o par mais forte"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Desvio do catálogo: canvas alto (640 x 560) no lugar de card, porque no card a roda de 7 grupos fica com 126 px e as fitas do foco não têm tinta (GEO-1, GEO-16). Par com ponta abaixo do piso (MIN_TIP) não leva fita e o painel marca 'sem fita, fina demais'. Percentuais pelo maior resto, somam 100 (NUM-2). Aceso em var(--chart-1) contra neutro em var(--text-muted) mede 1,82:1 no escuro e 1,12:1 no claro (TOK-9); o segundo canal é o peso 700, a anotação e o painel. as fitas e os arcos fora do foco vão em var(--text-muted) pleno, e não esmaecidos por opacidade nem em var(--line-strong), que mede 1,8:1 e some como marca (ACE-5, ACE-6, TOK-5). O peso 700 fica só no rótulo do produto em foco e no do mais associado (TIP-3); a lista usa 600. O percentual é do par sobre o total de pares do produto em foco (218 clientes), inteiro por NUM-1."
+}

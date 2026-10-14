@@ -1,0 +1,13 @@
+{
+  "title": "Cinco métricas de mídia por plataforma",
+  "useCase": "Comparar plataformas em custo por lead, cliques, agenda, cobertura de telefone e investimento, que não cabem num eixo só.",
+  "demonstrates": [
+    "Um BarChart por métrica com domínio e unidade próprios por painel",
+    "Mesmas plataformas na mesma ordem em todos os painéis",
+    "Plataforma selecionada em destaque em todos os painéis, demais em neutro",
+    "Painel de custo por lead com menor é melhor no título, sem inverter o eixo",
+    "Métrica não medida escreve indisponível com ícone, sem barra zerada"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

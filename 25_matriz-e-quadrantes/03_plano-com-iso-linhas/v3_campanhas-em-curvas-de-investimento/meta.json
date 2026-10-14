@@ -1,0 +1,14 @@
+{
+  "title": "Campanhas por leads e CPL em curvas de investimento",
+  "useCase": "Marketing: das 48 campanhas com lead no trimestre, quais custam o mesmo e entregam volumes de lead muito diferentes?",
+  "demonstrates": [
+    "Curvas de R$ 5 mil, 20 mil e 50 mil recortadas ao domínio do plano",
+    "48 pontos neutros com rótulo só nos extremos de cada curva",
+    "Faixa de 10% em torno da curva de R$ 20 mil, com os itens de dentro em cinza",
+    "Legenda que diz o que é cada ponto e a unidade de cada eixo",
+    "Campanhas sem CPL fora do plano, contadas no rodapé"
+  ],
+  "canvas": { "width": 960, "height": 520 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset largo (GEO-1): 960x400 dá corpo de 894 x 265 a 281 px e, descontadas a linha de leitura (20), a legenda (24), o rodapé (24), o topo de 24 px com o nome do eixo e os 44 px do eixo X com o título, sobrariam cerca de 140 px de plano para três hipérboles que se espremem junto dos eixos; com 520 de altura o plano passa de 260 px. O caso de uso diz 48 campanhas com lead porque o dado tem 51: as 3 sem lead não têm custo por lead, saem do plano e vão contadas no rodapé com o valor investido, nunca como ponto no zero. As curvas são path próprio numa camada sem zIndex, pintada depois da grade e antes dos pontos, com 48 trechos em passo geométrico no X e recorte no domínio fixo de 0 a 1.000 leads e R$ 0 a R$ 120. O catálogo pede pontos neutros e itens de dentro da faixa em cinza: os 48 pontos são todos text-muted, e quem cai na faixa de 10% em torno de R$ 20 mil é ponto oco com contorno, forma própria para a cor não ser o único canal (ACE-2), a mesma convenção de fronteira como zona do modelo 01 desta família. A faixa é o espaço entre as hipérboles de R$ 18 mil e de R$ 22 mil, em text-muted a 18%, que mede perto de 1,3:1 contra o cartão nos dois temas: o escape OPACIDADE-MARCA vale porque é faixa de tolerância nomeada na legenda, e a curva do meio dela é opaca, em text-muted de 1,5 px; as outras duas curvas vão em line-strong de 1 px, pano de fundo pela ACE-6. Estar perto de uma curva usa a mesma tolerância de 10% nas três, e o rótulo vai só para a campanha de menos leads e para a de mais leads de cada uma. As guardas de contraste e de espessura de marca não medem dispersão (preview com transform): text-muted mede 5,21:1 no escuro e 5,37:1 no claro contra o cartão."
+}

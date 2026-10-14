@@ -1,0 +1,108 @@
+{
+  "familia": "20_cronograma-e-linha-do-tempo",
+  "modelo": "09_gantt-com-dependencias",
+  "versoes": {
+    "v1_plano-de-implantacao-de-canal": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: 7 tarefas, 8 ligações e a contagem em 21/10/2026 (1 concluída, 2 em andamento, 4 por começar) conferem com o dado; conectores em text-muted e linha de hoje com halo se leem nos dois temas. Observações no README: valor da coluna em 11 px, rótulo de hoje em text-primary, vão de 53% entre barras, linha de leitura de altura fixa.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:01.342Z",
+      "impressao": "74bcb0840d1717fa1ef46383aa1481128902bd81",
+      "arquivos": {
+        "Chart.tsx": "8b48dd5671e8785552b5057cd2e965e429bb2dbb",
+        "data.ts": "d40a11880d0be3ad0513c7e1c214934c451c8162",
+        "meta.json": "50b7d88b9c57d59fede63c30bf85db9451ca62bc"
+      }
+    },
+    "v2_caminho-critico-com-folga": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: as 4 críticas e as folgas de 12, 2 e 7 dias úteis conferem com a conta refeita à mão; o crítico se distingue por peso do nome e espessura do conector além da cor. Observações no README: halo do crítico abre 1,75 px no conector comum e cobre a seta dele na chegada; trilho de 2 dias com 9 px visíveis; coluna escreve dias e o cabeçalho dias úteis; demonstrates difere do catálogo com desvio declarado.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:01.929Z",
+      "impressao": "732185a64009a8bee4ace8afe39f153d4557204c",
+      "arquivos": {
+        "Chart.tsx": "af1e4091503e8a8f728275db206cc835991a296a",
+        "data.ts": "a435cb8e1956845c5f712c4150724c5850d38b57",
+        "meta.json": "8be5af01b3cd2d3511279161de9fafe4337275f0"
+      }
+    },
+    "v3_esteira-da-meta-2027": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: 5 críticas, folgas de 2 a 10 e 0 dias úteis de sobra conferem; foco com 1 predecessora e 3 sucessoras, faixa opaca com nome e período, escala 1 no canvas de 960 x 661. Observações no README: as 5 barras acesas não são as 5 críticas e a legenda só nomeia o foco; último tique de 11/01/2027 sem rótulo; rótulo de frente em 11 px; seta a 0,96 px da perna.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:02.612Z",
+      "impressao": "879a8d59bc34fd1ca2ff3c70c87fb4a3202a1565",
+      "arquivos": {
+        "Chart.tsx": "299796107e5e00fa7815a144cd04234ad8744c07",
+        "data.ts": "95ac7ef30860ed74b8ca4f3a9f75cf9ba945bd3a",
+        "meta.json": "5455b0e338d029ec5b24b58d5e82314b6a53ee58"
+      }
+    },
+    "v4_dependencia-inconsistente-e-ciclo": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ciclo entre as duas tarefas achado e listado sem a volta, sobreposição de 5 dias úteis confere, caminho crítico por formatUnavailable com Unplug, conector inconsistente tracejado em negative contorna sem cruzar barra. Observações no README: frase acessível não nomeia a dependência inconsistente; linha da lista com altura fixa; frase do ciclo de uma tarefa só.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:03.183Z",
+      "impressao": "b43cc469636e8c1be6a00f629b6cb5cbc01777a1",
+      "arquivos": {
+        "Chart.tsx": "a79a0965baaebee846ca04bc04e171319651d374",
+        "data.ts": "d4b71b1d20b24e2ac90fc46df0c6524761689a0e",
+        "meta.json": "09a6793c4790521f8f0ee7f91509e6bd82067550"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_plano-de-implantacao-de-canal",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: 7 tarefas, 8 ligações e a contagem em 21/10/2026 (1 concluída, 2 em andamento, 4 por começar) conferem com o dado; conectores em text-muted e linha de hoje com halo se leem nos dois temas. Observações no README: valor da coluna em 11 px, rótulo de hoje em text-primary, vão de 53% entre barras, linha de leitura de altura fixa.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:01.342Z",
+      "impressao": "74bcb0840d1717fa1ef46383aa1481128902bd81",
+      "arquivos": {
+        "Chart.tsx": "8b48dd5671e8785552b5057cd2e965e429bb2dbb",
+        "data.ts": "d40a11880d0be3ad0513c7e1c214934c451c8162",
+        "meta.json": "50b7d88b9c57d59fede63c30bf85db9451ca62bc"
+      }
+    },
+    {
+      "versao": "v2_caminho-critico-com-folga",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: as 4 críticas e as folgas de 12, 2 e 7 dias úteis conferem com a conta refeita à mão; o crítico se distingue por peso do nome e espessura do conector além da cor. Observações no README: halo do crítico abre 1,75 px no conector comum e cobre a seta dele na chegada; trilho de 2 dias com 9 px visíveis; coluna escreve dias e o cabeçalho dias úteis; demonstrates difere do catálogo com desvio declarado.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:01.929Z",
+      "impressao": "732185a64009a8bee4ace8afe39f153d4557204c",
+      "arquivos": {
+        "Chart.tsx": "af1e4091503e8a8f728275db206cc835991a296a",
+        "data.ts": "a435cb8e1956845c5f712c4150724c5850d38b57",
+        "meta.json": "8be5af01b3cd2d3511279161de9fafe4337275f0"
+      }
+    },
+    {
+      "versao": "v3_esteira-da-meta-2027",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: 5 críticas, folgas de 2 a 10 e 0 dias úteis de sobra conferem; foco com 1 predecessora e 3 sucessoras, faixa opaca com nome e período, escala 1 no canvas de 960 x 661. Observações no README: as 5 barras acesas não são as 5 críticas e a legenda só nomeia o foco; último tique de 11/01/2027 sem rótulo; rótulo de frente em 11 px; seta a 0,96 px da perna.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:02.612Z",
+      "impressao": "879a8d59bc34fd1ca2ff3c70c87fb4a3202a1565",
+      "arquivos": {
+        "Chart.tsx": "299796107e5e00fa7815a144cd04234ad8744c07",
+        "data.ts": "95ac7ef30860ed74b8ca4f3a9f75cf9ba945bd3a",
+        "meta.json": "5455b0e338d029ec5b24b58d5e82314b6a53ee58"
+      }
+    },
+    {
+      "versao": "v4_dependencia-inconsistente-e-ciclo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: ciclo entre as duas tarefas achado e listado sem a volta, sobreposição de 5 dias úteis confere, caminho crítico por formatUnavailable com Unplug, conector inconsistente tracejado em negative contorna sem cruzar barra. Observações no README: frase acessível não nomeia a dependência inconsistente; linha da lista com altura fixa; frase do ciclo de uma tarefa só.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:46:03.183Z",
+      "impressao": "b43cc469636e8c1be6a00f629b6cb5cbc01777a1",
+      "arquivos": {
+        "Chart.tsx": "a79a0965baaebee846ca04bc04e171319651d374",
+        "data.ts": "d4b71b1d20b24e2ac90fc46df0c6524761689a0e",
+        "meta.json": "09a6793c4790521f8f0ee7f91509e6bd82067550"
+      }
+    }
+  ]
+}

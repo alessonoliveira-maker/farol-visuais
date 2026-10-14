@@ -1,0 +1,15 @@
+{
+  "title": "Perfil de competências do Executivo 07",
+  "useCase": "Comercial, 2026-T3: em quais das seis competências do processo o Executivo 07 está forte e em quais precisa de treino?",
+  "demonstrates": [
+    "Função pura spike(cx, cy, i, n, r) com primeiro eixo no topo e sentido horário",
+    "Meia base de 3 px e espeto em --chart-1, sem polígono entre eixos",
+    "Área do espeto linear no valor: largura fixa, só o comprimento muda (GEO-3)",
+    "Grade circular leve em --line-subtle com níveis 25, 50, 75 e 100",
+    "viewBox fixo e raiz que escala, com vectorEffect non-scaling-stroke na grade",
+    "role img na raiz e frase acessível com a maior e a menor competência"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "Nota do dono, GEO-3: a marca é um trapézio de largura fixa, 6 px na base e 2 px na ponta, então a área vale 4 px vezes o comprimento e cresce em linha com o índice. Conta no dado padrão: 88 pontos desenham 352 px² e 38 pontos desenham 152 px², razão de 2,32 nos dois. A guarda RAIO-CONTRA-AREA não mede trapézio (sem_marca_de_area), então a conferência foi à mão, pela área do polígono de cada path do preview contra o data.ts: desvio de participação abaixo de 0,001 ponto percentual. O que devolveria a área ao quadrado é largura crescendo com o valor ou setor de ângulo fixo, e nenhum dos dois existe aqui. O zero mora num anel de 12 px e não no centro geométrico, para as bases não se sobreporem no miolo e a área visível de cada espeto ser a área inteira dele; com isso 1 ponto vale 1 px de comprimento. A ponta tem 2 px e não zero porque ponta em agulha some nos últimos pixels e o espeto lê mais curto que o valor. Canvas: corpo de 422 por 355,5 com o caso de uso em duas linhas; a linha de leitura e o rodapé tiram 22 px cada e sobram 311,5 para o viewBox de 422 por 308, em escala 1 (GEO-18). O rótulo mora na ponta do espeto e leva halo quando um anel da grade passa por dentro da caixa dele. Os rótulos da escala ficam no vão mais próximo da horizontal, longe dos rótulos centralizados do topo e da base (GEO-15)."
+}

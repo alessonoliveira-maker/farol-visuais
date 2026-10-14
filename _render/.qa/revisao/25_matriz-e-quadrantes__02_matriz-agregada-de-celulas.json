@@ -1,0 +1,134 @@
+{
+  "familia": "25_matriz-e-quadrantes",
+  "modelo": "02_matriz-agregada-de-celulas",
+  "versoes": {
+    "v1_leads-por-origem-e-documento-em-2x2": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 710 leads, participações 58, 23, 12 e 7 somando 100 pelo maior resto, setas no sentido do Sim nos dois eixos, pior caixa com ícone e contorno, pares de texto aprovados nos dois temas (text-muted sobre surface-sunken 5,98 e 4,65). Sem bloqueante; observações no README (contagem sem o substantivo leads dentro da caixa, ramo com caixa nula escreve participação sobre total parcial sem declarar, dois contornos coloridos sem legenda, número de frase sem tabular-nums).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:56.744Z",
+      "impressao": "cc173942459d03de659d06cafcba136272d35c3c",
+      "arquivos": {
+        "Chart.tsx": "429c107ee55b1da544c404d87141e1030004b90d",
+        "data.ts": "7953b8302aaf5d333a47f4581812b480f0750c10",
+        "meta.json": "8b5e4732040a25ebbf2bc05dc478c7fd952904bb"
+      }
+    },
+    "v2_fila-da-sdr-em-eisenhower": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 64 leads em 18, 21, 12 e 7 nas caixas mais 6 sem valor na faixa, vencidos 5, 3 e 1, ordem por vencimento e regra do rodapé conferidas contra boxOf, vencido com relógio, peso e a palavra há. Sem bloqueante; observações no README (quatro verbos em peso 700 contra a TIP-3, frase acessível começa por Fila e não pelo tipo, prazo em dias arredondado para cima, Por vencimento solto no rodapé, caixa que não é botão contra o README).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:57.280Z",
+      "impressao": "1cf3dc5de46b11f376472de887bc31c19e25c364",
+      "arquivos": {
+        "Chart.tsx": "997a8fe2adc83bc329528b92debd154a9e56e945",
+        "data.ts": "0aa1b60adb93905adbb3fc3d14aaedcb6aaf83b8",
+        "meta.json": "23f62bd15605bb1273088b269de8a8af73aaaa6a"
+      }
+    },
+    "v3_carteira-em-abc-e-xyz": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 11:59), sem usar a nota antiga: as setas deram lugar à ordem escrita nos dois eixos, verdadeira contra os critérios do cabeçalho; 180 contas, R$ 14,0 mi e as nove participações somando 100 pelo maior resto refeitas do data.ts; zonas conferidas contra zoneOf; text-primary sobre seq-1 a seq-3 de 6,33 a 14,82 nos dois temas; frase acessível com 188 caracteres. Sem bloqueante. Observações no README: Space Grotesk 400 não carregado, ramo sem medição sobre seq-1, período da receita fora do cartão, legenda abaixo da grade, e as da primeira passada, que seguem valendo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:04.711Z",
+      "impressao": "7de7fa26073f0db88573dd8edf37942ade3963ad",
+      "arquivos": {
+        "Chart.tsx": "3efccec24599e75c7c312e01f3574584bdab6714",
+        "data.ts": "f99ecb456fd15009e165aeb04f75c995e929a72e",
+        "meta.json": "55b236d8ac844fc6c2dd9621aab1f38a189ac236"
+      }
+    },
+    "v4_nine-box-com-celula-vazia-e-lotada": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 12:00), sem usar a nota antiga: estável agora é traço, e o rodapé e a frase acessível nomeiam os três estados e a nota de potencial de zero a dez; 57 contas na grade (2, 3, 4, 3, 41, 2, 0, 1, 1) e 3 na faixa, com os seis chips e os ícones refeitos da fórmula do data.ts; sentido das setas de eixo conferido; text-muted sobre surface-sunken 5,98 e 4,65. Sem bloqueante; check com 1 aviso, a frase acessível com 237 caracteres. Observações no README: frase a 13 do teto, cortes das faixas fora do cartão, eixo do sobe e cai, título do meta diferente do catálogo, Space Grotesk 400, e as da primeira passada, que seguem valendo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:08.220Z",
+      "impressao": "7cd4c74bc3e49711902403f87d677870041f62fa",
+      "arquivos": {
+        "Chart.tsx": "3adf1c02b0c1e587069b81fe41fdfa462ac91434",
+        "data.ts": "43419dac3f356781fe8f60264e1162ee548c87d3",
+        "meta.json": "7ee27b7682b8c89a3fc31802b3c6f7db7b95fdfd"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-por-origem-e-documento-em-2x2",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 710 leads, participações 58, 23, 12 e 7 somando 100 pelo maior resto, setas no sentido do Sim nos dois eixos, pior caixa com ícone e contorno, pares de texto aprovados nos dois temas (text-muted sobre surface-sunken 5,98 e 4,65). Sem bloqueante; observações no README (contagem sem o substantivo leads dentro da caixa, ramo com caixa nula escreve participação sobre total parcial sem declarar, dois contornos coloridos sem legenda, número de frase sem tabular-nums).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:56.744Z",
+      "impressao": "cc173942459d03de659d06cafcba136272d35c3c",
+      "arquivos": {
+        "Chart.tsx": "429c107ee55b1da544c404d87141e1030004b90d",
+        "data.ts": "7953b8302aaf5d333a47f4581812b480f0750c10",
+        "meta.json": "8b5e4732040a25ebbf2bc05dc478c7fd952904bb"
+      }
+    },
+    {
+      "versao": "v2_fila-da-sdr-em-eisenhower",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06: 64 leads em 18, 21, 12 e 7 nas caixas mais 6 sem valor na faixa, vencidos 5, 3 e 1, ordem por vencimento e regra do rodapé conferidas contra boxOf, vencido com relógio, peso e a palavra há. Sem bloqueante; observações no README (quatro verbos em peso 700 contra a TIP-3, frase acessível começa por Fila e não pelo tipo, prazo em dias arredondado para cima, Por vencimento solto no rodapé, caixa que não é botão contra o README).",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:57.280Z",
+      "impressao": "1cf3dc5de46b11f376472de887bc31c19e25c364",
+      "arquivos": {
+        "Chart.tsx": "997a8fe2adc83bc329528b92debd154a9e56e945",
+        "data.ts": "0aa1b60adb93905adbb3fc3d14aaedcb6aaf83b8",
+        "meta.json": "23f62bd15605bb1273088b269de8a8af73aaaa6a"
+      }
+    },
+    {
+      "versao": "v3_carteira-em-abc-e-xyz",
+      "veredito": "reprovado",
+      "nota": "Um bloqueante. Pergunta 3 e seção 14.1 (sentido de eixo): as setas dos dois eixos apontam para onde a grandeza nomeada diminui. Chart.tsx 132 a 140: Previsibilidade mensal com seta para a direita, e a previsibilidade cai de X (variação até 0,5) para Z (acima de 1,0); Receita com seta para baixo, e a receita cai de A para C. Na v1 e na v4 do mesmo modelo a seta aponta para onde a grandeza cresce. Mudar: nomear o eixo pela grandeza que cresce no sentido da seta (Variação mensal para a direita), ou inverter a seta, ou tirar as duas e escrever a ordem por extenso. Parecer em validation/revisao_25_matriz-e-quadrantes__02_matriz-agregada-de-celulas_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:57.771Z",
+      "impressao": "77d98c281909f5e0e1112a0be00e96c8adc6199b",
+      "arquivos": {
+        "Chart.tsx": "086ecf16943bfff5690c404e8c69d4dc0d073f01",
+        "data.ts": "f99ecb456fd15009e165aeb04f75c995e929a72e",
+        "meta.json": "55b236d8ac844fc6c2dd9621aab1f38a189ac236"
+      }
+    },
+    {
+      "versao": "v4_nine-box-com-celula-vazia-e-lotada",
+      "veredito": "reprovado",
+      "nota": "Dois bloqueantes. (1) Pergunta 14, NUM-6 e seção 14.1 (unidade): o número do chip, como 6,8, não tem nome nem escala no cartão nem na frase acessível; é a nota de potencial de 0 a 10 (Chart.tsx 181). Escrever no rodapé o que é e a escala. (2) Pergunta 3 e seção 14.1 (identificação das marcas): posição prevista estável sai como seta para a direita (Chart.tsx 42), o mesmo glifo que no título do eixo Relacionamento quer dizer cresce para a direita; 3 dos 6 chips à vista leem como relacionamento subindo e o dado diz estável. Trocar o glifo de estável por traço e nomear os três estados no rodapé. Parecer em validation/revisao_25_matriz-e-quadrantes__02_matriz-agregada-de-celulas_2026-10-06.md.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T14:55:58.287Z",
+      "impressao": "3bf7541a7de8a83f0e8afd7c1ee62401a61985e5",
+      "arquivos": {
+        "Chart.tsx": "dab5d58a53ac95d167ed65dc7fef6451921c8e5f",
+        "data.ts": "43419dac3f356781fe8f60264e1162ee548c87d3",
+        "meta.json": "7ee27b7682b8c89a3fc31802b3c6f7db7b95fdfd"
+      }
+    },
+    {
+      "versao": "v3_carteira-em-abc-e-xyz",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 11:59), sem usar a nota antiga: as setas deram lugar à ordem escrita nos dois eixos, verdadeira contra os critérios do cabeçalho; 180 contas, R$ 14,0 mi e as nove participações somando 100 pelo maior resto refeitas do data.ts; zonas conferidas contra zoneOf; text-primary sobre seq-1 a seq-3 de 6,33 a 14,82 nos dois temas; frase acessível com 188 caracteres. Sem bloqueante. Observações no README: Space Grotesk 400 não carregado, ramo sem medição sobre seq-1, período da receita fora do cartão, legenda abaixo da grade, e as da primeira passada, que seguem valendo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:04.711Z",
+      "impressao": "7de7fa26073f0db88573dd8edf37942ade3963ad",
+      "arquivos": {
+        "Chart.tsx": "3efccec24599e75c7c312e01f3574584bdab6714",
+        "data.ts": "f99ecb456fd15009e165aeb04f75c995e929a72e",
+        "meta.json": "55b236d8ac844fc6c2dd9621aab1f38a189ac236"
+      }
+    },
+    {
+      "versao": "v4_nine-box-com-celula-vazia-e-lotada",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-06 (Chart.tsx das 12:00), sem usar a nota antiga: estável agora é traço, e o rodapé e a frase acessível nomeiam os três estados e a nota de potencial de zero a dez; 57 contas na grade (2, 3, 4, 3, 41, 2, 0, 1, 1) e 3 na faixa, com os seis chips e os ícones refeitos da fórmula do data.ts; sentido das setas de eixo conferido; text-muted sobre surface-sunken 5,98 e 4,65. Sem bloqueante; check com 1 aviso, a frase acessível com 237 caracteres. Observações no README: frase a 13 do teto, cortes das faixas fora do cartão, eixo do sobe e cai, título do meta diferente do catálogo, Space Grotesk 400, e as da primeira passada, que seguem valendo.",
+      "data": "2026-10-06",
+      "registradoEm": "2026-10-06T15:11:08.220Z",
+      "impressao": "7cd4c74bc3e49711902403f87d677870041f62fa",
+      "arquivos": {
+        "Chart.tsx": "3adf1c02b0c1e587069b81fe41fdfa462ac91434",
+        "data.ts": "43419dac3f356781fe8f60264e1162ee548c87d3",
+        "meta.json": "7ee27b7682b8c89a3fc31802b3c6f7db7b95fdfd"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Custo total abrindo em marketing",
+  "useCase": "Diretoria, ago/26: de que é feito o custo de R$ 390 mil, e como o passo de marketing se abre?",
+  "demonstrates": [
+    "Pai em cima e filho embaixo, com o passo aberto emoldurado",
+    "Entrada e saída do filho iguais ao valor do passo pai",
+    "Mesma convenção de cor nos dois níveis: passo neutro e total em destaque",
+    "Indicador de proporção: marketing é 38% do custo total",
+    "Soma dos filhos conferida contra o pai no dado"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

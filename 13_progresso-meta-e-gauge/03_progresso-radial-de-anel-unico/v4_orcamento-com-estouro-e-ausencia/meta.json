@@ -1,0 +1,13 @@
+{
+  "title": "Consumo de orçamento com estouro e ausência",
+  "useCase": "Comparar, na mesma escala, três plataformas de mídia paga do mês: uma estourou o planejado, uma ficou em zero medido e uma não tem coleta.",
+  "demonstrates": [
+    "Anel travado na volta cheia, sem segunda volta, com o excedente escrito fora do anel",
+    "Estouro de custo em negative com ícone, seguindo a polaridade da métrica de consumo",
+    "Zero medido desenha só o trilho e escreve 0, nunca em branco",
+    "Sem coleta com trilho tracejado e formatUnavailable no centro, nunca 0%",
+    "Mesmo domínio percentual nos três anéis e o valor absoluto escrito abaixo do percentual"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

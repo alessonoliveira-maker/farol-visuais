@@ -1,0 +1,68 @@
+{
+  "slug": "05_anel-segmentado-em-unidades",
+  "nome": "Anel segmentado em unidades",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Anel dividido em N segmentos iguais, cada um uma unidade contável (agenda, dia útil, reunião), colorido por status e com a contagem no centro. Junta a leitura de unidades da família 22 à forma circular: o leitor conta, não estima ângulo. Fica legível até cerca de 40 segmentos, com o vão entre eles calculado a partir de N.",
+  "quando_usar": [
+    "Contagem pequena contra um total discreto, como 12 de 20 agendas da meta semanal",
+    "Unidades com até 3 status (realizada, marcada, faltante) em que cada segmento importa",
+    "Calendário curto de dias úteis do mês com um estado por dia"
+  ],
+  "quando_evitar": [
+    "Mais de 40 unidades: os segmentos viram fios; usar waffle (22)",
+    "Valor contínuo ou fracionário, como reais ou horas: progresso circular (13/03)",
+    "Muitas pessoas lado a lado contra metas próprias: bullet em lista (13) ou tabela com barra (14)",
+    "Mais de 3 status coloridos: a contagem se perde na mistura de cores"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_agendas-da-meta-semanal",
+      "titulo": "Agendas marcadas da meta semanal",
+      "caso_de_uso": "Pré-vendas: quantas das 20 agendas da meta semanal a SDR já marcou até quarta-feira.",
+      "o_que_demonstra": [
+        "Pie com 20 itens de value 1 e fill por status vindo do dado",
+        "paddingAngle calculado por Math.min(3, 120 / N)",
+        "Centro 12 de 20 em kpi-number, sem rótulo por segmento",
+        "Sem cornerRadius, para o segmento curto não virar pílula"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_agendas-em-tres-status",
+      "titulo": "Agendas da semana em três status",
+      "caso_de_uso": "Pré-vendas: das 20 agendas da meta, quantas já foram realizadas, quantas estão marcadas e quantas ainda faltam.",
+      "o_que_demonstra": [
+        "Realizada em chart-1, marcada em line-strong e faltante só com contorno",
+        "Status em ordem fixa a partir das 12 horas: realizada, marcada, faltante",
+        "Legenda com amostra na forma do segmento e contagem à direita",
+        "Centro com as realizadas e a meta abaixo em text-muted"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_sla-diario-do-mes-por-fila",
+      "titulo": "SLA diário do mês por fila",
+      "caso_de_uso": "Pré-vendas: em quantos dias úteis de 2026-06 cada fila cumpriu o SLA de primeiro contato, com o feriado fora da conta.",
+      "o_que_demonstra": [
+        "Três anéis de 22 segmentos, mesmo diâmetro e mesma ordem de dias",
+        "Estado por dia com palavra na legenda: cumprido, estourado, sem expediente",
+        "Dia sem expediente em contorno text-muted e fora da contagem do centro",
+        "Centro de cada anel com dias cumpridos sobre dias com expediente"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_quarenta-unidades-e-excedente",
+      "titulo": "Reuniões do trimestre acima da meta",
+      "caso_de_uso": "Comercial: o executivo fez 43 reuniões contra a meta trimestral de 40 e o anel precisa mostrar o excedente.",
+      "o_que_demonstra": [
+        "40 segmentos no teto de legibilidade do formato, com vão de 3 graus pela fórmula",
+        "Excedente fora do anel em selo +3 acima da meta, sem segmento extra",
+        "Centro 43 de 40 e frase acessível com o excedente",
+        "Limite documentado: acima de 40 unidades, trocar por waffle (22)"
+      ],
+      "canvas_sugerido": "quadrado"
+    }
+  ]
+}

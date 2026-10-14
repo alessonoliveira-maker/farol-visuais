@@ -1,0 +1,59 @@
+{
+  "familia": "15_mapa-de-calor-e-calendario",
+  "modelo": "06_lasagna",
+  "versoes": {
+    "v1_sla-diario-por-fila": {
+      "veredito": "aprovado",
+      "nota": "TOK-7 resolvido e medido: as cinco faixas saíram da rampa sequencial para cores de papel, 5,34 a 9,50:1 nos dois temas, com ΔE de pelo menos 28,7 em simulação de deuteranopia. Ressalva: a escala deixou de ser ordenada por luminância e virou matiz puro, e a faixa de 24 h não escreve o combinado. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.623Z",
+      "impressao": "ef81cf44fad42a8edbfd7bd703b501adb82a657f",
+      "arquivos": {
+        "Chart.tsx": "36401ea8f894c147e51005adca90d45ece297485",
+        "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
+        "meta.json": "799877bbbc25d35498625b3f49f2917fe6715903"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_sla-diario-por-fila",
+      "veredito": "reprovado",
+      "nota": "A faixa ate 24 h usa var(--seq-3), que e degrau do meio de uma rampa sequencial, feita para receber texto por cima e nao para contrastar com o cartao. Medi contra o fundo: 2,29:1 no escuro e 1,92:1 no claro, contra 5,3 a 8,4 das outras quatro faixas nos dois temas. Como e a faixa mais frequente do desenho, cinco das doze filas quase somem no tema claro e a peca passa a sugerir que fila lenta tem pouco dado, quando tem desempenho pior. A ordem de luminancia tambem quebra: no claro a faixa do meio marca 0,497 entre vizinhas de 0,143 e 0,133, ou seja o miolo da escala e o ponto mais claro dela. Escolher cor categorica de marca fora dos degraus de rampa sequencial, ou declarar a faixa por outro canal alem da cor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:11:49.947Z",
+      "impressao": "d0baa225dc8bc5b94b2e0f0fb2d0276e7b4f9245",
+      "arquivos": {
+        "Chart.tsx": "348c58292fc3359395a5e50e3e0e961d57f66365",
+        "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
+        "meta.json": "2d604c25352310edf4934023d72f131ccf6a9310"
+      }
+    },
+    {
+      "versao": "v1_sla-diario-por-fila",
+      "veredito": "reprovado",
+      "nota": "Armadilha TOK-7. A faixa \"até 24 h\" usa --seq-3, que é degrau do meio de uma rampa sequencial, feita para receber texto por cima e não para contrastar com o cartão. Medi contra o fundo: 2,29:1 no escuro e 1,92:1 no claro, contra 5,3 a 8,4 das outras quatro faixas nos dois temas. Como é a faixa mais frequente do desenho, cinco das doze filas quase somem no tema claro e a peça passa a sugerir que fila lenta tem pouco dado, quando na verdade tem desempenho pior. A ordem de luminância também quebra: no claro a faixa do meio marca 0,497 entre vizinhas de 0,143 e 0,133, ou seja o miolo da escala é o ponto mais claro dela. Escolher cor categórica de marca fora dos degraus de rampa sequencial, ou declarar a faixa por outro canal além da cor.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:20:18.889Z",
+      "impressao": "d0baa225dc8bc5b94b2e0f0fb2d0276e7b4f9245",
+      "arquivos": {
+        "Chart.tsx": "348c58292fc3359395a5e50e3e0e961d57f66365",
+        "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
+        "meta.json": "2d604c25352310edf4934023d72f131ccf6a9310"
+      }
+    },
+    {
+      "versao": "v1_sla-diario-por-fila",
+      "veredito": "aprovado",
+      "nota": "TOK-7 resolvido e medido: as cinco faixas saíram da rampa sequencial para cores de papel, 5,34 a 9,50:1 nos dois temas, com ΔE de pelo menos 28,7 em simulação de deuteranopia. Ressalva: a escala deixou de ser ordenada por luminância e virou matiz puro, e a faixa de 24 h não escreve o combinado. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.623Z",
+      "impressao": "ef81cf44fad42a8edbfd7bd703b501adb82a657f",
+      "arquivos": {
+        "Chart.tsx": "36401ea8f894c147e51005adca90d45ece297485",
+        "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
+        "meta.json": "799877bbbc25d35498625b3f49f2917fe6715903"
+      }
+    }
+  ]
+}

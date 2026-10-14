@@ -1,0 +1,18 @@
+{
+  "title": "Desfecho por origem com resíduos",
+  "useCase": "Comercial, 2026: que combinações de origem e desfecho acontecem mais ou menos do que o esperado se fossem independentes?",
+  "demonstrates": [
+    "Mosaico de duas variáveis com vão de 6 px entre grupos e 2 px entre partes",
+    "Subtítulo diz que a origem dividiu primeiro; botão inverte as variáveis",
+    "Resíduo de Pearson em TypeScript e cor em --chart-1 contra neutro, sem --positive",
+    "Legenda com limiares em ±2 e ±4 e faixa neutra perto de zero",
+    "Esperado abaixo de 5 sem cor e com hachura: amostra insuficiente",
+    "Contagem zero observada como linha de 1 px marcada, nunca ausência silenciosa"
+  ],
+  "canvas": {
+    "width": 640,
+    "height": 600
+  },
+  "frame": "card",
+  "notes": "Canvas por número (GEO-1): o preset alto do catálogo deixa 425 px de corpo com o caso de uso em duas linhas, e a conta pede 465. São 32 do subtítulo com o botão, 24 da linha de leitura, 48 da legenda em duas linhas, 40 da lista de identificação em duas linhas e 321 do SVG: 4 de margem, 245 de ladrilhos e 72 de eixo (vão de 8, duas linhas de nome e a de n a 14 px, 4 de respiro e 16 da linha escalonada, 2 de folga); 465 mais 135 de moldura dá 600. O viewBox de 574 por 321 é o tamanho da caixa, escala 1 (GEO-18). Desvio declarado, por decisão do dono: o catálogo pedia dois matizes de acento e os tokens não têm par divergente (TOK-3), então a escala é --chart-1 contra neutro. A intensidade mora na forma e não na opacidade (ACE-5): acima do esperado, contorno de 2 px em --chart-1 entre 2 e 4 e preenchimento cheio acima de 4; abaixo, --line-strong cheio e --text-muted cheio; perto de zero, poço --surface-sunken com contorno fino. Marca contra marca, medido à mão (TOK-9): --chart-1 contra --text-muted dá 1,82:1 no escuro e 1,12:1 no claro, então o sinal do resíduo vai escrito no ladrilho que comporta, como segundo canal. A hachura e a linha do zero usam --text-muted e não --line-strong, que some como marca (TOK-5). Rótulo interno com piso de 18 px de altura (ESP-2); o ladrilho mudo, o zero e a coluna estreita entram na lista de identificação (ROT-10). A parte zero não reserva altura própria, só o vão de 2 px que toda parte reserva, então a área dos demais ladrilhos segue exata (GEO-16). O aviso de CONTRASTE-MARCA que o check deixa é o --line-strong (1,8:1) como neutro de dado da 17.2: no ladrilho ele leva o valor escrito, e na amostra da legenda o valor fica ao lado."
+}

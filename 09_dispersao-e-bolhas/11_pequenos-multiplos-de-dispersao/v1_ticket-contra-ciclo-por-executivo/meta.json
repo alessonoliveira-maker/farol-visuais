@@ -1,0 +1,15 @@
+{
+  "title": "Ticket contra ciclo por executivo",
+  "useCase": "A relação entre ticket e ciclo muda de um executivo para outro? Oito painéis fictícios com os mesmos eixos.",
+  "demonstrates": [
+    "Grade responsiva em Tailwind com um ScatterChart por painel",
+    "Domínio único calculado sobre o conjunto inteiro",
+    "Eixos numéricos só na borda externa da grade",
+    "Mediana do grupo como referência dentro de cada painel",
+    "Dado com relações de força diferente, duas delas sem relação nenhuma",
+    "Nome do painel sozinho na primeira linha, com a largura inteira e sem reticência"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "O cabeçalho do painel tem cerca de 217 px de largura e o nome vai sozinho na primeira linha, porque com a contagem ao lado sobravam cerca de 120 px e o nome mais longo saía cortado. A grade não corta nome: se um nome maior que a linha chegar da página, ele quebra em duas linhas e encolhe o corpo daquele painel, o que é visível, em vez de sumir por reticência. O dado fictício carrega relações de força diferente de propósito: dois painéis sem relação nenhuma, um de relação invertida e um quase perfeito, porque a grade existe para achar essa diferença."
+}

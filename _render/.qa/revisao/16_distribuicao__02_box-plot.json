@@ -1,0 +1,59 @@
+{
+  "familia": "16_distribuicao",
+  "modelo": "02_box-plot",
+  "versoes": {
+    "v1_primeiro-contato-por-sdr": {
+      "veredito": "aprovado",
+      "nota": "GEO-12 e DAD-10 resolvidos, com os números conferidos. A saída do DAD-10 foi melhor que as duas que eu tinha oferecido: medido que os dezenove rótulos não cabem, com dois outliers a 4 px um do outro, o comentário parou de prometer e o caso mais distante passou a ser nomeado, então a regra da família sobrevive. Ressalva: quantile devolve 0 em lista vazia, contra a EST-1b, e a peça não tem estado de vazio; fica na fila de dívida porque consertar implica reescrever o shape da caixa e dos bigodes. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.674Z",
+      "impressao": "5e07ca937c24d0382119dd10e5d682605ce22aec",
+      "arquivos": {
+        "Chart.tsx": "efb959369813125ed4be1dd0986bcb9bc1c3058e",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_primeiro-contato-por-sdr",
+      "veredito": "reprovado",
+      "nota": "Dois defeitos. (1) A ordem das filas e por mediana crescente e nada no cartao declara isso, entao os nomes leem como lista arbitraria; e o mesmo defeito que a 16/01/v3 ja corrigiu declarando a ordem no rodape, e a 16/03/v1 tambem carrega. (2) O comentario do topo promete que cada ponto alem da cerca carrega o codigo do lead, que seria o que transforma a peca de curiosidade em fila de trabalho, mas o Scatter desenha so o circulo e o campo code nunca chega a tela. Ou a peca rotula os pontos, ou o comentario para de prometer. Acabamento integro nos dois temas e o dado exercita bem o caso dificil, com uma fila de IQR quase nulo caindo no MIN_BOX_W.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:06:13.479Z",
+      "impressao": "7812d8059ad1cabef9014b851f3bde57cb5ad497",
+      "arquivos": {
+        "Chart.tsx": "f8ba0763a0d9b2dce6c5b80c72cc9d411c599c73",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "8652a5bf24a40c0055e01bf3fe0a2534f94e87f7"
+      }
+    },
+    {
+      "versao": "v1_primeiro-contato-por-sdr",
+      "veredito": "reprovado",
+      "nota": "Dois defeitos. (1) A ordem das filas é por mediana crescente e nada no cartão declara isso, então os nomes leem como lista arbitrária; é a armadilha GEO-12, que a 16/01/v3 já corrigiu declarando a ordem no rodapé e que a 16/03/v1 também carrega. (2) O comentário do topo promete que cada ponto além da cerca carrega o código do lead, que seria o que transforma a peça de curiosidade em fila de trabalho, mas o Scatter desenha só o círculo e o campo code nunca chega à tela; é a armadilha DAD-10. Ou a peça rotula os pontos, ou o comentário para de prometer. Acabamento íntegro nos dois temas, e o dado exercita bem o caso difícil, com uma fila de intervalo interquartil quase nulo caindo no MIN_BOX_W.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T12:19:47.436Z",
+      "impressao": "7812d8059ad1cabef9014b851f3bde57cb5ad497",
+      "arquivos": {
+        "Chart.tsx": "f8ba0763a0d9b2dce6c5b80c72cc9d411c599c73",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "8652a5bf24a40c0055e01bf3fe0a2534f94e87f7"
+      }
+    },
+    {
+      "versao": "v1_primeiro-contato-por-sdr",
+      "veredito": "aprovado",
+      "nota": "GEO-12 e DAD-10 resolvidos, com os números conferidos. A saída do DAD-10 foi melhor que as duas que eu tinha oferecido: medido que os dezenove rótulos não cabem, com dois outliers a 4 px um do outro, o comentário parou de prometer e o caso mais distante passou a ser nomeado, então a regra da família sobrevive. Ressalva: quantile devolve 0 em lista vazia, contra a EST-1b, e a peça não tem estado de vazio; fica na fila de dívida porque consertar implica reescrever o shape da caixa e dos bigodes. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
+      "data": "2026-09-28",
+      "registradoEm": "2026-09-28T15:12:51.674Z",
+      "impressao": "5e07ca937c24d0382119dd10e5d682605ce22aec",
+      "arquivos": {
+        "Chart.tsx": "efb959369813125ed4be1dd0986bcb9bc1c3058e",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    }
+  ]
+}

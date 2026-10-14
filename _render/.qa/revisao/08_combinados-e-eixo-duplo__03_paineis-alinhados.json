@@ -1,0 +1,121 @@
+{
+  "familia": "08_combinados-e-eixo-duplo",
+  "modelo": "03_paineis-alinhados",
+  "versoes": {
+    "v1_investimento-sobre-cpl-qualificado": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; dois painéis com eixo proprio a partir do zero, sem eixo duplo; mar/26 sai como lacuna, nunca zero; legivel e com contraste nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:13:18.542Z",
+      "impressao": "a71b37a99e6833bc5b18e97ed106c624a3bc4ea9",
+      "arquivos": {
+        "Chart.tsx": "7e1e69b743369ad93499f5cd6fb66be3ab1bb03e",
+        "data.ts": "0ae60211f4bd393e54c5ab9b8d0ca12f0fdd9d79",
+        "meta.json": "99baf9f2e40401b7b3865233f379401f757d562c"
+      }
+    },
+    "v2_cpl-com-volume-rotulado": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; linha com eixo único do CPL a partir do zero, sem eixo duplo; volume escrito em 2 meses (31 e 214 leads) por dataKey próprio, com halo e sem cruzar a linha; variação com base; contraste nos dois temas. Observações no README (mês anotado sem tique, texto fixo, tabular-nums).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:34.049Z",
+      "impressao": "d82d22670383663cab3f8a879958f79f38817219",
+      "arquivos": {
+        "Chart.tsx": "e700a32a318f99d5c7d5dbcbd028ea6f7de547d6",
+        "data.ts": "b0c328e21bbb1b8c204382d9dc1ac58b89a6a55b",
+        "meta.json": "08f8fe173d0b8f99fb681ecd6595082fc42181fb"
+      }
+    },
+    "v3_entradas-agendas-fechamentos": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; três painéis de linha em escala point com início em x=48 e largura 514 nos três (EIX-12); planos de 142, 76 e 76 px a partir do zero, escala por painel declarada no rodapé; Brush sincronizado pelo syncId no Recharts 3.10.1. Observações no README (verbos fixos, pico omitido, data crua no Brush).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:38.381Z",
+      "impressao": "2219fb5e09c258dd8ab00403b2fb96745759d669",
+      "arquivos": {
+        "Chart.tsx": "5ac2e7ccb666dad3479586b59b24923c80084e39",
+        "data.ts": "aff6b8214fff310660b31d7cf1962bc55fc482ac",
+        "meta.json": "748494eeef287a20870621bab9d89d6ef6c02e1c"
+      }
+    },
+    "v4_metrica-nova-com-lacuna": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barra de mai com centro em 250,61 e ponto da taxa em 250,75 (EIX-12 pela barra oculta); colunas do zero com 13 px; jan a abr em null com connectNulls false e faixa escrita (5,98 e 4,65:1); taxa com volume na leitura e na frase. Observações no README (dica sem volume, faixa só para nulo inicial).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:42.752Z",
+      "impressao": "6a41bf6bf614f9eadecb2333134417637d188fe0",
+      "arquivos": {
+        "Chart.tsx": "84169f65cc87cfc71000de9fff844bb8a457144b",
+        "data.ts": "d675df2c56d82a11b6fd3c6056c13ccdb227265a",
+        "meta.json": "7e8bde11539778ca7056b63c646c0096bf4209d0"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_investimento-sobre-cpl-qualificado",
+      "veredito": "reprovado",
+      "nota": "Paineis desalinhados: barra em escala band e linha em escala point, mesmo mes cai 42 px fora e o eixo x impresso so vale para a linha.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:04:47.103Z",
+      "impressao": "1ab0098e88c6815d3640f7d5e94b32829cb40920",
+      "arquivos": {
+        "Chart.tsx": "a0b43a23fe8500dfc9581130bf04e8005da5fb38",
+        "data.ts": "0ae60211f4bd393e54c5ab9b8d0ca12f0fdd9d79",
+        "meta.json": "99baf9f2e40401b7b3865233f379401f757d562c"
+      }
+    },
+    {
+      "versao": "v1_investimento-sobre-cpl-qualificado",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; dois painéis com eixo proprio a partir do zero, sem eixo duplo; mar/26 sai como lacuna, nunca zero; legivel e com contraste nos dois temas.",
+      "data": "2026-09-19",
+      "registradoEm": "2026-09-19T16:13:18.542Z",
+      "impressao": "a71b37a99e6833bc5b18e97ed106c624a3bc4ea9",
+      "arquivos": {
+        "Chart.tsx": "7e1e69b743369ad93499f5cd6fb66be3ab1bb03e",
+        "data.ts": "0ae60211f4bd393e54c5ab9b8d0ca12f0fdd9d79",
+        "meta.json": "99baf9f2e40401b7b3865233f379401f757d562c"
+      }
+    },
+    {
+      "versao": "v2_cpl-com-volume-rotulado",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; linha com eixo único do CPL a partir do zero, sem eixo duplo; volume escrito em 2 meses (31 e 214 leads) por dataKey próprio, com halo e sem cruzar a linha; variação com base; contraste nos dois temas. Observações no README (mês anotado sem tique, texto fixo, tabular-nums).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:34.049Z",
+      "impressao": "d82d22670383663cab3f8a879958f79f38817219",
+      "arquivos": {
+        "Chart.tsx": "e700a32a318f99d5c7d5dbcbd028ea6f7de547d6",
+        "data.ts": "b0c328e21bbb1b8c204382d9dc1ac58b89a6a55b",
+        "meta.json": "08f8fe173d0b8f99fb681ecd6595082fc42181fb"
+      }
+    },
+    {
+      "versao": "v3_entradas-agendas-fechamentos",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; três painéis de linha em escala point com início em x=48 e largura 514 nos três (EIX-12); planos de 142, 76 e 76 px a partir do zero, escala por painel declarada no rodapé; Brush sincronizado pelo syncId no Recharts 3.10.1. Observações no README (verbos fixos, pico omitido, data crua no Brush).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:38.381Z",
+      "impressao": "2219fb5e09c258dd8ab00403b2fb96745759d669",
+      "arquivos": {
+        "Chart.tsx": "5ac2e7ccb666dad3479586b59b24923c80084e39",
+        "data.ts": "aff6b8214fff310660b31d7cf1962bc55fc482ac",
+        "meta.json": "748494eeef287a20870621bab9d89d6ef6c02e1c"
+      }
+    },
+    {
+      "versao": "v4_metrica-nova-com-lacuna",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; barra de mai com centro em 250,61 e ponto da taxa em 250,75 (EIX-12 pela barra oculta); colunas do zero com 13 px; jan a abr em null com connectNulls false e faixa escrita (5,98 e 4,65:1); taxa com volume na leitura e na frase. Observações no README (dica sem volume, faixa só para nulo inicial).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T12:48:42.752Z",
+      "impressao": "6a41bf6bf614f9eadecb2333134417637d188fe0",
+      "arquivos": {
+        "Chart.tsx": "84169f65cc87cfc71000de9fff844bb8a457144b",
+        "data.ts": "d675df2c56d82a11b6fd3c6056c13ccdb227265a",
+        "meta.json": "7e8bde11539778ca7056b63c646c0096bf4209d0"
+      }
+    }
+  ]
+}

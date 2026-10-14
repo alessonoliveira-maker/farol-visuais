@@ -1,0 +1,14 @@
+{
+  "title": "SLA diário contra o limiar de 90%",
+  "useCase": "Contar quantos dos últimos 180 dias o SLA de primeiro contato ficou abaixo de 90% e quanto faltou.",
+  "demonstrates": [
+    "180 pontos diários contra limiar constante, desenhados como série de desvio",
+    "Corte de cor por useYAxisScale exatamente na altura do limiar, não no zero",
+    "Dias abaixo contados e o déficit somado na linha de leitura",
+    "Cor de alerta só abaixo do limiar, acompanhada de sinal (ACE-2)",
+    "Legenda nomeia dentro do limiar, abaixo do limiar e o próprio limiar",
+    "Ticks mensais e animação desligada para série longa"
+  ],
+  "canvas": "largo",
+  "notes": "Domínio do eixo começa em zero (EIX-1): o SLA nunca desce de 74%, então o corpo inteiro mostra vazio abaixo disso; a área preenchida vive perto do topo, junto do limiar."
+}

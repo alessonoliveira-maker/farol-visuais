@@ -1,0 +1,70 @@
+{
+  "slug": "03_barras-empilhadas",
+  "nome": "Barras empilhadas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Cada barra é o total da categoria dividido em segmentos por componente. Só o segmento da base e o total têm linha de base comum, então o componente prioritário encosta no zero e o total vai escrito na ponta. Bar com o mesmo stackId, e a partir do Recharts 3.6 o BarStack aplica o raio ao contorno da pilha inteira. Rótulo de segmento só quando a largura em pixels comporta o texto. Absorve as empilhadas em grupos: duas pilhas por categoria na mesma banda (orçado e realizado, dois cenários), com a mesma cor por componente nas duas e a pilha de referência distinguida por contorno tracejado.",
+  "quando_usar": [
+    "Total por categoria e a composição desse total na mesma leitura.",
+    "De 2 a 5 componentes com ordem fixa entre categorias e igual à legenda.",
+    "Um componente que importa mais que os outros e pode morar na base, onde se compara bem.",
+    "Plano contra realizado por categoria com a composição de cada um: duas pilhas agrupadas."
+  ],
+  "quando_evitar": [
+    "Comparar segmentos do meio entre categorias: barras agrupadas (02_barras-agrupadas) ou pequenos múltiplos.",
+    "Só a proporção importa, não o total: barras empilhadas 100% (04_barras-empilhadas-100).",
+    "Componentes que somam e subtraem: barras divergentes de sinal com pilha por lado (06_barras-divergentes).",
+    "Como o total se formou passo a passo: cascata (19_cascata-waterfall).",
+    "Mais de 5 componentes: agregar em outros ou trocar por tabela com composição inline (14_tabelas-visuais)."
+  ],
+  "arquivo_estudo": "_estudo/familias/02_barras-horizontais.md",
+  "versoes": [
+    {
+      "slug": "v1_pipeline-por-estagio",
+      "titulo": "Oportunidades abertas por executivo e estágio",
+      "caso_de_uso": "Quanto pipeline aberto cada executivo carrega e em que estágio ele está, de Descoberta a Assinatura.",
+      "o_que_demonstra": [
+        "Bar com stackId comum dentro de BarStack e raio só no contorno da pilha",
+        "Total na ponta por LabelList content no último segmento",
+        "Ordem de segmentos fixa e igual à legenda",
+        "Executivos ordenados pelo total da pilha"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_paradas-na-base",
+      "titulo": "Oportunidades paradas há mais de 30 dias",
+      "caso_de_uso": "Quanto do pipeline de cada executivo está parado há mais de 30 dias e precisa de ação nesta semana.",
+      "o_que_demonstra": [
+        "Segmento prioritário na base, encostado no zero, em cor de alerta",
+        "Demais estágios em neutros graduados para recuar",
+        "Percentual parado escrito ao lado do total",
+        "Ordenação pelo segmento da base, não pelo total"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_leads-por-cobertura-de-dado",
+      "titulo": "Leads do mês por origem e cobertura de dado",
+      "caso_de_uso": "Quais origens trazem lead sem telefone nem e-mail, e quanto da base de cada origem chega completa.",
+      "o_que_demonstra": [
+        "Quatro componentes de cobertura com telefone e e-mail na base",
+        "Rótulo de segmento suprimido abaixo de 24 px por content que mede width",
+        "Total e percentual de cobertura completa escritos na ponta",
+        "Sem contato em tom apagado, separado de indisponível"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_orcado-e-realizado-em-grupos",
+      "titulo": "Orçado e realizado de mídia por plataforma",
+      "caso_de_uso": "Quanto cada plataforma gastou contra o orçado, por prospecção e remarketing, com uma plataforma nova sem orçado.",
+      "o_que_demonstra": [
+        "Dois stackId por categoria e a mesma cor por componente nas duas pilhas",
+        "Pilha de orçado em contorno tracejado, realizado sólido",
+        "Legend content que colapsa os pares e lista só componentes",
+        "Plataforma sem orçado mostra só a pilha existente e escreve sem orçado"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

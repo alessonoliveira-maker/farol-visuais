@@ -1,0 +1,12 @@
+{
+  "title": "Quatro medidas de campanha em pares",
+  "useCase": "Entre investimento, CPL, CTR e taxa de qualificação, quais pares de medidas andam juntos em 64 campanhas?",
+  "demonstrates": [
+    "Grade de 4 por 4 em Tailwind com um ScatterChart pequeno por célula",
+    "Domínio compartilhado por coluna e por linha, calculado sobre o conjunto",
+    "Histograma de cada medida na diagonal",
+    "Rótulos de medida só na borda e células sem animação nem dica"
+  ],
+  "canvas": "alto",
+  "frame": "card"
+}

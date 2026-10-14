@@ -1,0 +1,68 @@
+{
+  "slug": "03_aneis-concentricos-de-dois-periodos",
+  "nome": "Anéis concêntricos de dois períodos",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Duas roscas concêntricas com o mesmo conjunto de categorias em dois momentos: anel interno para o período anterior em tom atenuado e anel externo para o atual em cor cheia. A ordem das categorias é fixada pelo período atual e aplicada aos dois anéis. Como o anel de fora parece maior para a mesma fração, a variação vai sempre escrita em pontos percentuais.",
+  "quando_usar": [
+    "Mesma composição de 2 a 5 categorias em dois períodos fechados, como mês contra mês ou trimestre contra trimestre",
+    "Cartão que precisa mostrar mudança de participação sem abrir um segundo gráfico",
+    "Leitura de qual categoria ganhou ou perdeu peso, com a variação em pontos percentuais escrita"
+  ],
+  "quando_evitar": [
+    "Três períodos ou mais: barra 100% (03) ou linha de participação (04)",
+    "Comparar volume absoluto entre períodos: o anel mostra fração; usar colunas agrupadas (03)",
+    "Muitas categorias pequenas: a diferença some na distorção polar; usar haltere (17)",
+    "Período atual incompleto contra período fechado sem aviso de parcial"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_origem-dos-leads-em-dois-meses",
+      "titulo": "Origem dos leads em dois meses",
+      "caso_de_uso": "Marketing: a divisão dos leads por origem mudou de 2026-07, no anel interno, para 2026-08, no anel externo?",
+      "o_que_demonstra": [
+        "Dois Pie com os mesmos cx, cy, startAngle e endAngle",
+        "Ordem de categorias fixada pelo período atual e aplicada aos dois anéis",
+        "Anel interno com a cor da categoria atenuada por opacidade e externo em cor cheia",
+        "Legenda que diz qual anel é qual período, por formatMonthShort"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_origem-que-mais-ganhou-peso",
+      "titulo": "Origem que mais ganhou peso",
+      "caso_de_uso": "Marketing: qual origem mais mudou de participação entre 2026-07 e 2026-08 e quantos pontos percentuais ganhou.",
+      "o_que_demonstra": [
+        "Rótulo +7 p.p. só na categoria de maior variação absoluta, calculada no componente",
+        "Nome do destaque em peso 700; demais categorias sem rótulo de variação",
+        "Dica com as duas frações e a variação por formatPercentPoints",
+        "Nota curta sobre a distorção: o anel externo parece maior para a mesma fração"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_investimento-por-plataforma-em-dois-trimestres",
+      "titulo": "Investimento por plataforma em dois trimestres",
+      "caso_de_uso": "Marketing: como os R$ 548 mil do 2º trimestre de 2026 se dividiram entre as plataformas, contra os R$ 512 mil do 1º trimestre.",
+      "o_que_demonstra": [
+        "Total de cada período na legenda, com a variação nomeando a base",
+        "Legenda tabular com a participação nos dois trimestres e a diferença em p.p.",
+        "Quatro plataformas em slots 1, 3, 6 e 5, com a mesma cor nos dois anéis",
+        "Frase acessível com a plataforma que mais ganhou e a que mais perdeu participação"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_plataforma-nova-sem-mes-anterior",
+      "titulo": "Plataforma nova sem dado no mês anterior",
+      "caso_de_uso": "Marketing: como ler a composição quando uma plataforma entrou em 2026-08 e não existia em 2026-07.",
+      "o_que_demonstra": [
+        "Categoria nova no fim da ordem, presente só no anel externo",
+        "Anel interno fecha 100% com as categorias que existiam no período",
+        "Legenda marca a categoria nova como sem dado em jul/26 em text-muted, nunca 0%",
+        "Variação da categoria nova declarada como sem base de comparação"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

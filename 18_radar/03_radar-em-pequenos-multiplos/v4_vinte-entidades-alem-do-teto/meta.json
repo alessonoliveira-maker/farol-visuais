@@ -1,0 +1,13 @@
+{
+  "title": "Vinte origens de lead além do teto de miniaturas",
+  "useCase": "Marketing, 2026-08: o que fazer quando o recorte traz 20 origens e as miniaturas deixam de ser legíveis?",
+  "demonstrates": [
+    "Teto de 12 miniaturas como constante no topo do arquivo",
+    "Acima do teto, aviso com role status e o número de origens do recorte",
+    "Recomendação escrita de trocar para a tabela com heatmap nas células (14/02)",
+    "As 12 de mais leads na grade e as 8 restantes declaradas, sem corte calado"
+  ],
+  "canvas": { "width": 960, "height": 640 },
+  "frame": "card",
+  "notes": "Canvas por número, não o largo sugerido (960x400): com 12 miniaturas em seis colunas por duas fileiras, mais aviso e legenda, o corpo do largo (894 x 281,5) deixaria cerca de 60 px por radar. Com 960x640 o corpo mede 894 x 521,5 e cada fileira fica com cerca de 190 px. O catálogo diz aviso no lugar da grade e também mostra as 12 primeiras: a versão segue a segunda leitura, com o aviso acima da grade, porque cortar calado é o que o item proíbe e uma grade vazia não ensina o limite. O aviso é role status, e a raiz é group (não img) para o leitor de tela alcançar o aviso."
+}

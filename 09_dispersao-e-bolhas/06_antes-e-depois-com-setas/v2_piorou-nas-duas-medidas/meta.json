@@ -1,0 +1,16 @@
+{
+  "title": "Canais que pioraram nas duas medidas",
+  "useCase": "Quais canais ficaram com custo por lead maior e qualificação menor ao mesmo tempo? Só eles recebem cor e nome.",
+  "demonstrates": [
+    "Direção boa ou ruim calculada pela polaridade declarada de cada métrica",
+    "Setas que pioraram nas duas em cor semântica, com a palavra piorou no rótulo",
+    "Demais setas em neutro que mede 3:1, mantidas como contexto",
+    "Taxa derivada de contagens no dado, para o percentual sair com o par de volume"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 420
+  },
+  "frame": "card",
+  "notes": "Canvas declarado por número em vez do preset largo, pela GEO-1, com a conta pela tabela medida da moldura: 960 menos 66 px de recuo dá 894 px de corpo, e 420 menos 118,5 px (2 x 33 de recuo, 40,5 de cabeçalho de uma linha e 12 de vão) dá 301,5 px. Além do plano o cartão escreve três linhas, a leitura de 12 px, a legenda de 12 px e o rodapé de 11 px que nomeia os dois eixos, o que soma 88 px fora do plano e deixa 213 px de plano. O neutro das setas de contexto é --text-muted e não --line-strong: a seta carrega a relação e a ACE-6 cobra 3:1 dela, que --line-strong não alcança (1,79:1 no escuro, 1,83:1 no claro), enquanto --text-muted mede 5,21:1 e 5,37:1. O texto de tela escreve custo por lead por extenso, e não a sigla CPL, por medição: com CPL nas linhas longas o SVG aberto sozinho derivava do desenho da página em 0,97% dos pixels, e a deriva começava exatamente depois da sigla; trocada pela forma por extenso, a diferença foi a 0,00%. A v1 deste modelo ainda usa a sigla."
+}

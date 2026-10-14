@@ -1,0 +1,15 @@
+{
+  "title": "Campanhas contra break-even, com investimento",
+  "useCase": "Quais das 30 campanhas pagam o lead abaixo do break-even de R$ 4,20 e batem a meta de 18% de qualificação?",
+  "demonstrates": [
+    "Corte de premissa tracejado com etiqueta e corte fixo sólido no mesmo plano",
+    "ZAxis com domain a partir de zero, maiores desenhadas antes e legenda de tamanho",
+    "Blocos de resumo em HTML sobre o gráfico: contagem, investimento e participação",
+    "Taxa da região recalculada sobre os totais, nunca média das médias",
+    "Anotação na região de CPL baixo e qualificação baixa: volume barato que não vira nada",
+    "Classificação pelo centro da bolha, escrita na legenda"
+  ],
+  "canvas": { "width": 960, "height": 560 },
+  "frame": "card",
+  "notes": "Canvas por número e não o preset largo (GEO-1): 960x400 dá corpo de 894 x 265 a 281 px e, descontadas as duas linhas de legenda e leitura (cerca de 50 px), o rodapé (20 px), o topo de 36 e os 44 do eixo X com o título, o plano ficaria com cerca de 130 px para bolhas de até 40 px de diâmetro e quatro blocos de resumo de 48 px nos cantos; com 560 de altura o plano passa de 270 px. As duas linhas de corte têm papéis diferentes: o break-even de R$ 4,20 é PREMISSA da conta de margem e vai tracejado com a etiqueta; a meta de 18% é um número registrado, não estimado, e vai sólida com a etiqueta META, porque o catálogo pede um corte sólido e a meta não é premissa nem medição. CPL e taxa saem de investimento e leads por campanha, e os blocos recalculam a taxa da região por qualificados sobre leads somados, nunca pela média das taxas. A área da bolha é proporcional ao investimento (ZAxis domain [0, máximo], range [0, área do raio de 20 px]), sem raio mínimo, e a régua termina no máximo calculado do dado. Bolhas opacas com contorno na cor do cartão, sem fillOpacity, para não pagar contraste (ACE-5) onde há sobreposição. Região de escalar em chart-1 a 7% e as outras em text-muted a 4%; a tinta não passa 3:1 contra o cartão (1,1:1) e o escape OPACIDADE-MARCA vale porque a região é nomeada em texto e os cortes são linhas opacas. A campanha sem lead gerado sai do plano e vai para o rodapé com o valor gasto, nunca como ponto no zero."
+}

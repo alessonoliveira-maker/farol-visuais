@@ -1,0 +1,14 @@
+{
+  "title": "Investimento de 2026 com meses a realizar",
+  "useCase": "Mostrar a rosa de um ano em andamento, com o mês corrente parcial e os meses futuros ainda sem dado.",
+  "demonstrates": [
+    "Meses sem dado com contorno tracejado e rótulo a realizar, nunca raio zero",
+    "Piso de raio do mês sem dado escolhido para não coincidir com nenhum valor da escala",
+    "Mês corrente com contorno tracejado e nota de parcial até a data de corte",
+    "Escala calculada só sobre os meses fechados, para o parcial não achatar o resto",
+    "Rodapé declarando que a grandeza lida é a área, porque o ângulo é igual nos 12 setores",
+    "Frase acessível dizendo quantos meses têm dado fechado e quantos faltam"
+  ],
+  "canvas": "quadrado",
+  "frame": "card"
+}

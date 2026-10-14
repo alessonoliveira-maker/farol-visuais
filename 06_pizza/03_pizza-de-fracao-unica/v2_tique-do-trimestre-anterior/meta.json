@@ -1,0 +1,13 @@
+{
+  "title": "Fração com tique do trimestre anterior",
+  "useCase": "A fração de ganhos por indicação subiu contra o trimestre anterior, e quanto?",
+  "demonstrates": [
+    "Tique radial em 25% no contorno, com o mesmo centro e raio do Pie",
+    "Ângulo do tique calculado em TypeScript na convenção de ângulo do Recharts",
+    "Variação com sinal e base nomeada: +13 pontos percentuais contra 25%",
+    "Rótulo do tique curto, em --text-muted e fora do disco"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "stage",
+  "notes": "Canvas conferido pela conta da GEO-1, e o preset kpi-alto fecha exatamente nela: o cartão escreve 3 blocos, o glifo de 88 px com o rótulo e o número ao lado, a linha de variação de 11 px e a linha do restante de 11 px, com 6 px de vão entre eles, o que dá 128 px; mais 32 px de respiro interno do cartão fecham 160 px. A moldura stage abaixo de 560 px de largura come 98,5 px de altura (16 px de recuo por lado, 54,5 px de cabeçalho e 12 px de vão), então 280 px devolvem 181,5 px de corpo e sobram 21,5 px. Na largura, 360 menos 32 de recuo dão 328 px, menos 32 px de respiro interno restam 296, que abrigam o glifo de 132 px, 12 px de vão e 152 px de coluna de texto. Os 56 px de margem à direita do PieChart abrem a faixa do rótulo do tique fora do disco."
+}

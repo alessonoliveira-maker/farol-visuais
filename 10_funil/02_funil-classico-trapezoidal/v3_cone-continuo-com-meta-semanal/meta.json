@@ -1,0 +1,13 @@
+{
+  "title": "Cone contínuo com meta semanal",
+  "useCase": "Ver o afunilamento da semana como forma contínua e comparar cada etapa com a meta semanal.",
+  "demonstrates": [
+    "Area de base transparente e Area da faixa no mesmo stackId, formando o cone centralizado",
+    "Contorno tracejado da meta com pontos marcados, porque a etapa é discreta",
+    "Cada etapa escreve o valor e a taxa contra a meta com o denominador nomeado",
+    "Linha de leitura calculada do dado: quantas etapas ficam abaixo da meta"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Área e forma são só impressão de conjunto: o eixo de valor é oculto de propósito e nenhuma leitura de etapa depende da altura desenhada, só do texto escrito nela (seção Quando evitar do README do modelo)."
+}

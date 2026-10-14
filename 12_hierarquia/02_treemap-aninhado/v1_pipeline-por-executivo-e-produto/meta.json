@@ -1,0 +1,14 @@
+{
+  "title": "Pipeline aberto por executivo e produto",
+  "useCase": "Comercial: como os R$ 18,2 mi de pipeline aberto se dividem entre os executivos A a H e, dentro de cada um, por produto.",
+  "demonstrates": [
+    "content do Recharts decidido pelo depth: grupo com contorno e selo, folha com área",
+    "grupoIndex gravado no dado para a cor do grupo, nunca inferido durante o render",
+    "Luminosidade da folha por color-mix a partir da cor do grupo, do produto maior ao menor",
+    "Selo do grupo com fundo surface-overlay, sem brigar com os filhos",
+    "Legenda de apoio com todo executivo e seu total, mesmo quando o selo é cortado por espaço"
+  ],
+  "canvas": { "width": 960, "height": 800 },
+  "frame": "card",
+  "notes": "Canvas por número, maior que o preset largo (960x400): a correção de 2026-09-20 trocou a legenda de executivo por uma lista de identificação de todo produto (ROT-10, checklist 27), e o preset não sobra altura para o treemap e para 8 grupos com até 5 produtos cada. Ver ESP-2/E8 sobre desvio de canvas declarado."
+}

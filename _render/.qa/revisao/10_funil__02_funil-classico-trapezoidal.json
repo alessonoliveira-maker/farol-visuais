@@ -1,0 +1,160 @@
+{
+  "familia": "10_funil",
+  "modelo": "02_funil-classico-trapezoidal",
+  "versoes": {
+    "v1_trapezios-do-trimestre": {
+      "veredito": "aprovado",
+      "nota": "Funil nativo legivel nos dois temas, valor e taxa com denominador ao lado de cada etapa; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:04.950Z",
+      "impressao": "1f42c5bb88577e231d9114ac76ff7fca5613ed04",
+      "arquivos": {
+        "Chart.tsx": "5c02e5d2abb6929af3ae28721ab0551388316fd5",
+        "data.ts": "4927c97e2c6703247f69c516b17c3648584d4158",
+        "meta.json": "3f4e1b7994aa55cd3ae288b0c81b890dc8de1674"
+      }
+    },
+    "v2_pior-passagem-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Destaque com cor mais peso, linha de leitura inteira visivel separando pior taxa de maior perda; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:09.292Z",
+      "impressao": "b185e3e4d7b8e86fd5170d4b5b3fb54e3951e6a3",
+      "arquivos": {
+        "Chart.tsx": "1dbc785d8b30c38d5d1d36504855c18c4900a099",
+        "data.ts": "9891d6038b3e58944e2d2ffdaf16fefac93634cf",
+        "meta.json": "6e8f4718ad733b7b3ac603c7fca7b7a474d5d5bd"
+      }
+    },
+    "v3_cone-continuo-com-meta-semanal": {
+      "veredito": "aprovado",
+      "nota": "Cone com meta tracejada rotulada, valor por etapa escrito no eixo e nao inferido da altura; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:13.524Z",
+      "impressao": "9075f25b5ffdff349b9ac6f82f1cbea12293d76b",
+      "arquivos": {
+        "Chart.tsx": "a2c3d2fb2c7e6ebdddb261de6b4b20ccb9c64535",
+        "data.ts": "155f25c0ba9285af30a7b1a2d6b8bdad663a66a1",
+        "meta.json": "9392c7b1e9d1c57341746851022093dca9b3e430"
+      }
+    },
+    "v4_etapa-maior-que-a-anterior": {
+      "veredito": "aprovado",
+      "nota": "Validacao de monotonicidade, aviso em warning com icone e troca para barras ancoradas no zero; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:17.926Z",
+      "impressao": "eb8b2b975f163f1363d53290ea0f94f5472f5137",
+      "arquivos": {
+        "Chart.tsx": "13647cd67ec68b432186d98691ead36f013f154c",
+        "data.ts": "25d38edc9804cbcac92957f75d095c5bfaeeac8d",
+        "meta.json": "bd0546242f4594756dc1e3174473aa02dd265487"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_trapezios-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Funil nativo correto nos dois temas: valor e taxa da entrada escritos em toda etapa, cor unica, sem corte nem sobreposicao.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:52:30.735Z",
+      "impressao": "1f42c5bb88577e231d9114ac76ff7fca5613ed04",
+      "arquivos": {
+        "Chart.tsx": "5c02e5d2abb6929af3ae28721ab0551388316fd5",
+        "data.ts": "4927c97e2c6703247f69c516b17c3648584d4158",
+        "meta.json": "3f4e1b7994aa55cd3ae288b0c81b890dc8de1674"
+      }
+    },
+    {
+      "versao": "v2_pior-passagem-em-destaque",
+      "veredito": "reprovado",
+      "nota": "Linha de leitura truncada no canvas card: a maior perda absoluta para de aparecer em Aberta para Diagn e o numero 152 nunca chega a tela, que e justamente a distincao que a versao existe para demonstrar.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:52:36.545Z",
+      "impressao": "bc677bbb7b2f7dba9980d4abb2458db343cbe1f3",
+      "arquivos": {
+        "Chart.tsx": "87b2e7ca7dde01ea0ba56709514ca7813d2ce0d3",
+        "data.ts": "9891d6038b3e58944e2d2ffdaf16fefac93634cf",
+        "meta.json": "6e8f4718ad733b7b3ac603c7fca7b7a474d5d5bd"
+      }
+    },
+    {
+      "versao": "v3_cone-continuo-com-meta-semanal",
+      "veredito": "reprovado",
+      "nota": "O contorno tracejado da meta e uma segunda serie sem nenhuma identificacao no desenho: sem legenda, sem rotulo no fim da linha e sem anotacao com nome e valor (ROT-3, ROT-4, ANO-2).",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:52:41.185Z",
+      "impressao": "fd4ee246983cb6326fc24f46fea0e752d646610d",
+      "arquivos": {
+        "Chart.tsx": "4cf744093c9cf20463ab5fc225e4dedca2d0eb27",
+        "data.ts": "155f25c0ba9285af30a7b1a2d6b8bdad663a66a1",
+        "meta.json": "9392c7b1e9d1c57341746851022093dca9b3e430"
+      }
+    },
+    {
+      "versao": "v4_etapa-maior-que-a-anterior",
+      "veredito": "reprovado",
+      "nota": "O aviso e truncado no canvas card e para em porque a jane: a causa (janela de data diferente) e a troca para barras nunca aparecem, e sao o que a versao existe para demonstrar.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T22:52:45.383Z",
+      "impressao": "b36bb6af2b2b43f4423b4bae9293edf7bb23384f",
+      "arquivos": {
+        "Chart.tsx": "d780991dbed0abf25e1c56cd41457c3403401b42",
+        "data.ts": "25d38edc9804cbcac92957f75d095c5bfaeeac8d",
+        "meta.json": "bd0546242f4594756dc1e3174473aa02dd265487"
+      }
+    },
+    {
+      "versao": "v1_trapezios-do-trimestre",
+      "veredito": "aprovado",
+      "nota": "Funil nativo legivel nos dois temas, valor e taxa com denominador ao lado de cada etapa; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:04.950Z",
+      "impressao": "1f42c5bb88577e231d9114ac76ff7fca5613ed04",
+      "arquivos": {
+        "Chart.tsx": "5c02e5d2abb6929af3ae28721ab0551388316fd5",
+        "data.ts": "4927c97e2c6703247f69c516b17c3648584d4158",
+        "meta.json": "3f4e1b7994aa55cd3ae288b0c81b890dc8de1674"
+      }
+    },
+    {
+      "versao": "v2_pior-passagem-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Destaque com cor mais peso, linha de leitura inteira visivel separando pior taxa de maior perda; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:09.292Z",
+      "impressao": "b185e3e4d7b8e86fd5170d4b5b3fb54e3951e6a3",
+      "arquivos": {
+        "Chart.tsx": "1dbc785d8b30c38d5d1d36504855c18c4900a099",
+        "data.ts": "9891d6038b3e58944e2d2ffdaf16fefac93634cf",
+        "meta.json": "6e8f4718ad733b7b3ac603c7fca7b7a474d5d5bd"
+      }
+    },
+    {
+      "versao": "v3_cone-continuo-com-meta-semanal",
+      "veredito": "aprovado",
+      "nota": "Cone com meta tracejada rotulada, valor por etapa escrito no eixo e nao inferido da altura; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:13.524Z",
+      "impressao": "9075f25b5ffdff349b9ac6f82f1cbea12293d76b",
+      "arquivos": {
+        "Chart.tsx": "a2c3d2fb2c7e6ebdddb261de6b4b20ccb9c64535",
+        "data.ts": "155f25c0ba9285af30a7b1a2d6b8bdad663a66a1",
+        "meta.json": "9392c7b1e9d1c57341746851022093dca9b3e430"
+      }
+    },
+    {
+      "versao": "v4_etapa-maior-que-a-anterior",
+      "veredito": "aprovado",
+      "nota": "Validacao de monotonicidade, aviso em warning com icone e troca para barras ancoradas no zero; sem bloqueante.",
+      "data": "2026-09-18",
+      "registradoEm": "2026-09-18T23:07:17.926Z",
+      "impressao": "eb8b2b975f163f1363d53290ea0f94f5472f5137",
+      "arquivos": {
+        "Chart.tsx": "13647cd67ec68b432186d98691ead36f013f154c",
+        "data.ts": "25d38edc9804cbcac92957f75d095c5bfaeeac8d",
+        "meta.json": "bd0546242f4594756dc1e3174473aa02dd265487"
+      }
+    }
+  ]
+}

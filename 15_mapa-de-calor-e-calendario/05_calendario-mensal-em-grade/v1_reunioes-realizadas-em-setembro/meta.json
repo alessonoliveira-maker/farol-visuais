@@ -1,0 +1,14 @@
+{
+  "title": "Reuniões realizadas por dia em setembro",
+  "useCase": "Como a carga de reuniões se distribui pelos dias do mês, e quais dias úteis ficaram vazios?",
+  "demonstrates": [
+    "Calendário de parede em CSS grid, com o dia no canto e a contagem no centro",
+    "Seis linhas reservadas sempre, para a troca de mês não empurrar a página",
+    "Três estados distintos: dia com carga, dia útil em zero e dia sem expediente",
+    "Feriado marcado por ícone e borda tracejada, nunca por cor da rampa",
+    "Média calculada só sobre dia útil com expediente, e escrita na legenda"
+  ],
+  "canvas": "quadrado",
+  "frame": "card",
+  "notes": "HTML com Tailwind em vez de SVG porque o texto da célula precisa escalar com a fonte e quebrar: o nome do feriado é o trecho que estoura primeiro. O dia sem expediente sai da conta da média de propósito, senão um mês com três feriados mostra queda de produtividade que não existe. As faixas de cor começam na primeira reunião e o zero fica em --surface-overlay, fora da rampa, pela regra da família: no tema escuro a primeira faixa sequencial fica perto do fundo e se confunde com ausência."
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Agendas marcadas por dia útil",
+  "useCase": "Pré-vendas: quantas agendas o time marcou em cada dia útil da semana, contadas uma a uma.",
+  "demonstrates": [
+    "BarChart nativo com Bar shape customizado que desenha rect de baixo para cima",
+    "Mesmo número de células por linha em todas as colunas, com o eixo de valor oculto",
+    "Valor escrito no topo por LabelList, no lugar do eixo de valor",
+    "Legenda de unidade 1 célula = 1 agenda sempre visível",
+    "Dica por ChartTooltip com o dia por extenso e a data, que o eixo não traz"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O vão entre colunas é de 20% da banda de cada lado (colunas com 60% da banda), fora dos 30% a 40% da ESP-2 e sem maxBarSize: a coluna de células precisa de largura para três células por linha, e a espessura da célula é de 20 px, acima do piso de 12. O domínio do eixo oculto vem da medida do corpo: linhas que cabem = piso(altura do gráfico / passo da célula), e o domínio é essa conta vezes as três células por linha, para a célula sair quase quadrada."
+}

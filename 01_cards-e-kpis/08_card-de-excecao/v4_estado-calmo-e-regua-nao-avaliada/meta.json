@@ -1,0 +1,17 @@
+{
+  "title": "Estado calmo e régua não avaliada",
+  "useCase": "Como dizer que nenhuma régua estourou sem esconder que a régua de mídia não pôde ser avaliada por falta de carga?",
+  "demonstrates": [
+    "Estado calmo neutro, nenhum caso fora das réguas, com a data por formatDate",
+    "Exceção de dado separada da exceção de negócio por espaço, em grupo próprio",
+    "Régua não avaliada com ícone Unplug e a última carga, nunca lida como tudo bem",
+    "Mesma altura do cartão de exceção para a faixa não pular",
+    "Zero medido escrito como 0 e indisponível escrito por formatUnavailable"
+  ],
+  "canvas": {
+    "width": 960,
+    "height": 280
+  },
+  "frame": "stage",
+  "notes": "Duas colunas lado a lado (negócio e dado, @2xl:grid-cols-2): cada uma soma um rótulo de grupo mais um cartão de 4 linhas (cabeçalho com escopo e data, número com ícone, réguas avaliadas, rodapé com próxima avaliação ou link de saúde), acima do título e do caso de uso do palco. É 20 px mais alto que a faixa (960x260) por causa do rótulo de grupo acima de cada cartão; largo (960x400) sobraria."
+}

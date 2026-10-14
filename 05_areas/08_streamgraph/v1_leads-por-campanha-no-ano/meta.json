@@ -1,0 +1,12 @@
+{
+  "title": "Leads por campanha ao longo do ano",
+  "useCase": "Ver em que semanas do ano as campanhas fictícias concentraram a geração de leads e qual delas pesou mais.",
+  "demonstrates": [
+    "AreaChart com stackOffset silhouette, mesmo stackId e YAxis escondido, não removido",
+    "Seis campanhas coloridas e Outras (n=6) em neutro, cor fixa por chave (COR-3, COR-4)",
+    "Ordem das camadas decidida em TypeScript: maiores ao centro, alternando lados",
+    "Legenda com o total do ano por campanha e nota que declara a forma sem eixo numérico"
+  ],
+  "canvas": "largo",
+  "notes": "Streamgraph não tem linha de base fixa: a peça só lê forma e peso relativo, nunca valor pontual de uma camada; o valor exato de cada campanha está na legenda e na dica."
+}

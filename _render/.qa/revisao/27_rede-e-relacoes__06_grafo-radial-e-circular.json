@@ -1,0 +1,121 @@
+{
+  "familia": "27_rede-e-relacoes",
+  "modelo": "06_grafo-radial-e-circular",
+  "versoes": {
+    "v1_egocentrica-parceiro-de-indicacao": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas. 9 diretas, 14 indiretas e a ordem do primeiro anel conferidas contra o dado; aresta em text-muted (5,21 e 5,37); rótulos sem colisão. 1 observação no README: a nota de ordem não diz de onde a volta parte.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:20.821Z",
+      "impressao": "309e8e0925c3611cf6df48527fd4a4c41eb6b3cb",
+      "arquivos": {
+        "Chart.tsx": "0a34a44609af11abc7cf0ba68749183edbde8c5c",
+        "data.ts": "ed0f21f6d96e9699fe013ce5614632c41706e6c6",
+        "meta.json": "6b943d887646a10c242799d59888bea6f6c3adb1"
+      }
+    },
+    "v2_circular-coocorrencia-de-origens": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas, julgado pelo arquivo de hoje. O bloqueante da primeira passada saiu com o controle puxado para a corda: medido nos dois PNGs, 13 das 14 baixadas têm de 91% a 100% do caminho à vista e a pior, Redes pagas com Display, 77% no escuro e 80% no claro, com 51 px seguidos. text-muted a 0,76 mede 3,58 e 3,28. 19 pares, graus, ordem e divisão 2, 2 e 1 conferidos contra o dado; desvios do catálogo declarados. 5 observações no README, a de peso: os últimos 15 px dessa ligação correm sob a acesa antes de Display.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:59:57.967Z",
+      "impressao": "e809dae90a07cac1cb8b71330cc1073ac27711ea",
+      "arquivos": {
+        "Chart.tsx": "638ac0bd253eb60a4b72e95e3c261764db43f87d",
+        "data.ts": "8b8f185cf73d06b21f0590bcd7cb006bcb53df07",
+        "meta.json": "091cc0118bfd74a3830314fae6f71c9867f9e32e"
+      }
+    },
+    "v3_equipes-que-compartilham-oportunidades": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas. 16 equipes, 18 pares e graus conferidos contra o dado; isoladas vazadas com 0 relações escrito; linha única em text-muted opaco; os 4 laços de vizinhos se leem pela volta. 1 observação no README: laços quase inteiros fundidos com as linhas vizinhas, alinhar se a v2 mudar a curva.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:21.886Z",
+      "impressao": "f58ecb71ab104341aa1531d776b3ad2cbd7e9d9a",
+      "arquivos": {
+        "Chart.tsx": "c2fb20cc243bf83cea33e1ee88c1adbeb95f9cff",
+        "data.ts": "bc7d3f9a37c6a2e1a5b5638680b03c6d44af895c",
+        "meta.json": "a7cb99213a085df916e6de4662daefe76f968c4f"
+      }
+    },
+    "v4_parceiro-sem-indicacao-no-periodo": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no estado fotografado, nos dois temas: zero medido separado de carteira não carregada, histórico vazado e tracejado em text-muted, datas e trimestres conferidos. 3 observações no README, uma com peso: o ramo de trimestre com indicação, não fotografado, sobrepõe rótulo e raio do histórico quando os ângulos dos dois anéis coincidem.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:22.454Z",
+      "impressao": "14ccf84cf393ccb230c99d393b010168ea976cbd",
+      "arquivos": {
+        "Chart.tsx": "34b24dc155c232e98b661ccaca7236a52441ecbc",
+        "data.ts": "888d7c6a08691015e985d18f8cb43c16a8c2356e",
+        "meta.json": "124ab7b35fedb8dcc5ae14f50033f10fbd62c7ae"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_egocentrica-parceiro-de-indicacao",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas. 9 diretas, 14 indiretas e a ordem do primeiro anel conferidas contra o dado; aresta em text-muted (5,21 e 5,37); rótulos sem colisão. 1 observação no README: a nota de ordem não diz de onde a volta parte.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:20.821Z",
+      "impressao": "309e8e0925c3611cf6df48527fd4a4c41eb6b3cb",
+      "arquivos": {
+        "Chart.tsx": "0a34a44609af11abc7cf0ba68749183edbde8c5c",
+        "data.ts": "ed0f21f6d96e9699fe013ce5614632c41706e6c6",
+        "meta.json": "6b943d887646a10c242799d59888bea6f6c3adb1"
+      }
+    },
+    {
+      "versao": "v2_circular-coocorrencia-de-origens",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 32, ACE-6 (com TOK-4 e a marca fina da ROT-7): a ligação acesa e o revestimento dela cobrem as baixadas que dividem nó com ela, porque toda curva sai do nó rumo ao centro. Medido nos dois PNGs: Redes pagas com Display tem 60% do caminho sob tinta acesa e nenhum trecho próprio, Busca orgânica com Acesso direto 53%, Indicação com Base de e-mail 48% e sobra um toco que termina na ligação acesa. A legenda escreve 14 outras ligações e 3 não se leem. Mudar: tirar o ponto de controle do centro para pares próximos, de modo que as ligações do mesmo nó saiam em ângulos diferentes, declarar o desvio e remedir. Parecer em validation/revisao_27_rede-e-relacoes__06_grafo-radial-e-circular_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:21.363Z",
+      "impressao": "71646d7638d3121f6da535b86442ba42eb8aca14",
+      "arquivos": {
+        "Chart.tsx": "348e8835fcacd829a53ecba62f11c9cca0fa8b5c",
+        "data.ts": "8b8f185cf73d06b21f0590bcd7cb006bcb53df07",
+        "meta.json": "e93cecf4dfd6d2b3c2c571a0dba7662002c6fe52"
+      }
+    },
+    {
+      "versao": "v3_equipes-que-compartilham-oportunidades",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas. 16 equipes, 18 pares e graus conferidos contra o dado; isoladas vazadas com 0 relações escrito; linha única em text-muted opaco; os 4 laços de vizinhos se leem pela volta. 1 observação no README: laços quase inteiros fundidos com as linhas vizinhas, alinhar se a v2 mudar a curva.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:21.886Z",
+      "impressao": "f58ecb71ab104341aa1531d776b3ad2cbd7e9d9a",
+      "arquivos": {
+        "Chart.tsx": "c2fb20cc243bf83cea33e1ee88c1adbeb95f9cff",
+        "data.ts": "bc7d3f9a37c6a2e1a5b5638680b03c6d44af895c",
+        "meta.json": "a7cb99213a085df916e6de4662daefe76f968c4f"
+      }
+    },
+    {
+      "versao": "v4_parceiro-sem-indicacao-no-periodo",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim no estado fotografado, nos dois temas: zero medido separado de carteira não carregada, histórico vazado e tracejado em text-muted, datas e trimestres conferidos. 3 observações no README, uma com peso: o ramo de trimestre com indicação, não fotografado, sobrepõe rótulo e raio do histórico quando os ângulos dos dois anéis coincidem.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:48:22.454Z",
+      "impressao": "14ccf84cf393ccb230c99d393b010168ea976cbd",
+      "arquivos": {
+        "Chart.tsx": "34b24dc155c232e98b661ccaca7236a52441ecbc",
+        "data.ts": "888d7c6a08691015e985d18f8cb43c16a8c2356e",
+        "meta.json": "124ab7b35fedb8dcc5ae14f50033f10fbd62c7ae"
+      }
+    },
+    {
+      "versao": "v2_circular-coocorrencia-de-origens",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim nos dois temas, julgado pelo arquivo de hoje. O bloqueante da primeira passada saiu com o controle puxado para a corda: medido nos dois PNGs, 13 das 14 baixadas têm de 91% a 100% do caminho à vista e a pior, Redes pagas com Display, 77% no escuro e 80% no claro, com 51 px seguidos. text-muted a 0,76 mede 3,58 e 3,28. 19 pares, graus, ordem e divisão 2, 2 e 1 conferidos contra o dado; desvios do catálogo declarados. 5 observações no README, a de peso: os últimos 15 px dessa ligação correm sob a acesa antes de Display.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T21:59:57.967Z",
+      "impressao": "e809dae90a07cac1cb8b71330cc1073ac27711ea",
+      "arquivos": {
+        "Chart.tsx": "638ac0bd253eb60a4b72e95e3c261764db43f87d",
+        "data.ts": "8b8f185cf73d06b21f0590bcd7cb006bcb53df07",
+        "meta.json": "091cc0118bfd74a3830314fae6f71c9867f9e32e"
+      }
+    }
+  ]
+}

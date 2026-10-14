@@ -1,0 +1,69 @@
+{
+  "slug": "03_bolhas",
+  "nome": "Bolhas",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Dispersão em que a área de cada círculo codifica uma terceira medida de magnitude. X e Y continuam sendo a leitura principal; a área é a pior lida das três e exige legenda de tamanho com círculos de referência. O ZAxis trabalha em área (px²), com domínio começando em zero e as bolhas maiores desenhadas antes. Absorve as bolhas que se movem período a período.",
+  "quando_usar": [
+    "Terceira medida de magnitude por entidade, como investimento de cada campanha sobre CPL contra taxa de qualificação.",
+    "Entre 5 e cerca de 60 bolhas no cartão, com contorno fino na cor do cartão separando vizinhas.",
+    "Narrar a evolução de posição e tamanho de poucas entidades mês a mês, com rastro da selecionada.",
+    "Mostrar onde está o dinheiro dentro de uma nuvem de eficiência."
+  ],
+  "quando_evitar": [
+    "Comparação precisa da terceira medida: o olho compara mal áreas; use barras ordenadas (família 02).",
+    "Mais de cerca de 60 bolhas: a sobreposição esconde as pequenas; use dispersão simples ou pequenos múltiplos.",
+    "Bolhas sem eixos, só para mostrar tamanho: use bolhas empacotadas (família 12).",
+    "Leitura analítica fina de mudança entre períodos: use antes e depois com setas (modelo 06).",
+    "Tamanho pelo raio: exagera as grandes; a área tem que ser proporcional ao valor."
+  ],
+  "arquivo_estudo": "_estudo/familias/09_dispersao-e-bolhas.md",
+  "versoes": [
+    {
+      "slug": "v1_campanhas-por-cpl-e-qualificacao",
+      "titulo": "Campanhas por CPL, qualificação e investimento",
+      "caso_de_uso": "Campanha de CPL menor traz lead menos qualificado, e onde está o investimento? 36 campanhas fictícias do trimestre.",
+      "o_que_demonstra": [
+        "ZAxis com domain a partir de 0 e range em área para proporção honesta",
+        "Dados ordenados do maior para o menor para as pequenas ficarem por cima",
+        "Legenda de tamanho com 3 círculos de valor redondo e a mesma conta de raio",
+        "Contorno na cor do cartão separando bolhas vizinhas"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_campanhas-acima-do-teto-de-cpl",
+      "titulo": "Campanhas acima do teto de CPL",
+      "caso_de_uso": "Quais campanhas passam do teto de CPL e quanto investimento elas carregam? Três em destaque contra o teto e a meta.",
+      "o_que_demonstra": [
+        "Destaque em uma cor com rótulo em peso 700 e o restante em neutro",
+        "ReferenceLine de teto e de meta com rótulo na margem reservada",
+        "Legenda de tamanho com R$ 5 mil, R$ 20 mil e R$ 50 mil",
+        "Anotação curta com o investimento somado das campanhas acima do teto"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_plataformas-mes-a-mes-com-rastro",
+      "titulo": "Plataformas de mídia mês a mês",
+      "caso_de_uso": "Como CPL, qualificação e investimento das plataformas A, B e C andaram em 12 meses? Mês atual em bolha e rastro da selecionada.",
+      "o_que_demonstra": [
+        "Estado de período trocando os dados com a bolha casada pelo id da plataforma",
+        "Rastro dos meses anteriores da plataforma selecionada em pontos pequenos",
+        "Cor categórica por plataforma em slot fixo e legenda de tamanho comum a todos os meses",
+        "Mês exibido escrito no plano em texto discreto, sem depender da animação"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_investimento-zero-e-valores-desiguais",
+      "titulo": "Campanhas orgânicas e investimento desigual",
+      "caso_de_uso": "Como mostrar campanha sem investimento ao lado de uma que investiu 200 vezes mais sem sumir com as pequenas?",
+      "o_que_demonstra": [
+        "Campanha sem investimento em anel tracejado de tamanho mínimo, com nota escrita",
+        "Piso de área declarado na legenda quando a maior passa 200 vezes a menor",
+        "Zero medido distinto de investimento ausente, que sai do plano e vai ao rodapé"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

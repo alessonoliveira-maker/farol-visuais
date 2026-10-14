@@ -1,0 +1,12 @@
+{
+  "title": "Empate na posição e ciclo em que menor é melhor",
+  "useCase": "Ler um ranking de ciclo de venda em que reduzir dias é bom e duas posições podem empatar.",
+  "demonstrates": [
+    "Competição padrão 1, 2, 2, 4 com rótulo \"4=\" quando duas linhas empatam no valor",
+    "Ordenação crescente para métrica em que menor é melhor, escrita em legenda visível",
+    "Cor da variação pela polaridade da métrica: redução de dias sai em positive",
+    "Dias formatados por formatDays e o mês anterior nomeado em toda variação"
+  ],
+  "canvas": "alto",
+  "notes": "goodDirection vem do data.ts: aqui é \"down\", então dias caindo pinta positive e dias subindo pinta negative."
+}

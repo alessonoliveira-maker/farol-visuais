@@ -1,0 +1,14 @@
+{
+  "title": "Receita do trimestre contra a meta",
+  "useCase": "Comercial: quanto da meta de R$ 5,0 milhões de 2026 T3 já foi reconhecido e quanto falta para fechar o trimestre.",
+  "demonstrates": [
+    "Trilho e barra em div com largura percentual, sem Recharts",
+    "Domínio em Math.max de valor e meta vezes 1,05, com folga para o traço",
+    "Par de números por formatCurrencyCompact e o que falta escrito em texto",
+    "Ponta arredondada trocada por rounded-sm abaixo de 4% do trilho",
+    "Frase acessível com valor, meta, percentual e o que falta"
+  ],
+  "canvas": "kpi-alto",
+  "frame": "card",
+  "notes": "Denominador (meta) e período aparecem em texto, e a peça declara que a leitura não considera ritmo esperado, por decisão da família (ver README, seção Regras). O rounded-sm de ROUNDED_FLOOR é comportamento geral do modelo; com este dado (84% do trilho) ele não é exercitado visualmente, e quem quiser ver o degrau vê em v3, onde um executivo fica abaixo de 4%."
+}

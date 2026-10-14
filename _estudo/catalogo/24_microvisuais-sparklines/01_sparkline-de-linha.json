@@ -1,0 +1,80 @@
+{
+  "slug": "01_sparkline-de-linha",
+  "nome": "Sparkline de linha e área",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Polilinha do tamanho de uma palavra, sem eixo, grade, legenda nem tooltip, colada ao número que ela explica. Lê-se forma, direção e ruptura, nunca valor exato. No Farol é um LineChart ou AreaChart do Recharts com margem mínima, dot desligado e animação desligada; acima de cerca de 120 instâncias por tela a mesma geometria vira path em SVG puro. O modelo absorve as variações que acrescentam uma única camada ao traço: âncoras de valor final e extremos, área preenchida quando o zero é base legítima, faixa de normalidade com fonte declarada, série de referência em tom neutro, cauda de projeção tracejada com faixa de cenário, interpolação em degraus para grandezas que mudam aos saltos e faixa de mínimo e máximo por período. A escala é sempre declarada: por linha compara forma, comum compara nível.",
+  "quando_usar": [
+    "Série contínua de 12 ou mais meses, ou 8 ou mais semanas, ao lado de um KPI de card, numa caixa de 96 a 140 px por 32 a 48 px",
+    "Coluna de tabela com uma série por linha, de 60 a 100 px por 20 a 28 px, quando a pergunta é quais linhas mudaram de comportamento",
+    "Julgar se o valor de hoje está dentro do esperado, com faixa de normalidade de origem declarada (SLA, meta com tolerância, intervalo interquartílico)",
+    "Mostrar realizado e previsto no mesmo traço, com a projeção tracejada e a faixa de cenário que a Diretoria exige",
+    "Comparar a série atual com uma única referência: ano anterior, trajetória necessária para a meta ou média do grupo",
+    "Grandezas que mudam aos saltos (SDRs ativos, meta vigente, teto de capacidade), com interpolação em degraus"
+  ],
+  "quando_evitar": [
+    "Menos de 8 pontos: vira ruído; mostre o número com comparação (01/01_kpi-simples) e a nota série curta",
+    "Leitura de valor exato com eixo e dica: use a linha simples (04/01_linha-simples)",
+    "Valores discretos e contáveis por período: use o sparkbar (24/02_sparkbar)",
+    "Mais de duas séries na mesma caixa: use a linha com múltiplas séries (04/02_multiplas-series)",
+    "Resultado binário por período, bateu ou não bateu: use o win/loss (24/07_win-loss)",
+    "Dezenas de séries longas empilhadas em pouca altura: use o horizon chart (05/09_horizon-chart)",
+    "Área preenchida em série que não parte do zero: fique com a linha, porque a área exagera a variação"
+  ],
+  "arquivo_estudo": "_estudo/familias/24_microvisuais-sparklines.md",
+  "versoes": [
+    {
+      "slug": "v1_receita-com-extremos-e-valor-final",
+      "titulo": "Receita reconhecida em 12 meses",
+      "caso_de_uso": "Comercial: a receita reconhecida do mês está em alta, queda ou serra, e quão longe do melhor mês do ano?",
+      "o_que_demonstra": [
+        "LineChart sem eixo, grade, legenda nem dica, com margem de 2 px e animação desligada",
+        "Domínio do mínimo ao máximo da série com folga de 8%, sem o traço encostar na borda",
+        "Ponto final em var(--chart-1) e extremos em --line-strong; o final vence se coincidir",
+        "Valor final em HTML irmão com kpi-number e formatCurrencyCompact, fora do SVG",
+        "Frase acessível com a variação em 12 meses, o último valor e a distância do melhor mês"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v2_tempo-de-resposta-com-faixa-de-sla",
+      "titulo": "Primeira resposta dentro da faixa de SLA",
+      "caso_de_uso": "Pré-vendas: em quantos dos últimos 20 dias úteis o tempo de primeira resposta saiu da faixa de SLA contratada?",
+      "o_que_demonstra": [
+        "ReferenceArea do SLA em var(--surface-sunken), declarada antes do Line para ficar atrás",
+        "Ponto só nos dias fora da faixa, em var(--negative), com a contagem escrita junto",
+        "Rodapé calculado do dado: 3 de 20 dias fora do SLA, com formatHours nos limites",
+        "Fonte da faixa escrita (SLA contratado), nunca desenhada em volta do que aconteceu",
+        "Faixa com menos contraste que o traço, conferida nos temas escuro e claro"
+      ],
+      "canvas_sugerido": "kpi-alto"
+    },
+    {
+      "slug": "v3_meta-2027-com-cauda-de-projecao",
+      "titulo": "Trajetória para a meta 2027 por linha de receita",
+      "caso_de_uso": "Diretoria: em quais das 6 linhas de receita a projeção natural fica abaixo da trajetória necessária para a meta de 2027?",
+      "o_que_demonstra": [
+        "ComposedChart com realizado cheio, previsto tracejado e faixa em Area [baixo, alto]",
+        "Ponto de junção que repete o último realizado para as duas linhas se encostarem",
+        "Trajetória necessária como referência em --text-muted, tracejada 3 3",
+        "ReferenceLine vertical no hoje e escala comum dentro de cada card, própria entre cards",
+        "Rodapé que declara faixa de cenário, não intervalo estatístico",
+        "Cenário alto recortado em realizado mais 20%, com ChevronUp na borda quando estoura"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_origens-em-area-com-lacuna-de-coleta",
+      "titulo": "Leads por origem com lacuna de coleta",
+      "caso_de_uso": "Marketing: qual das 10 origens carrega volume em 18 meses e onde a coleta falhou, sem confundir falha com zero?",
+      "o_que_demonstra": [
+        "Tabela de 10 linhas com AreaChart por célula em escala comum, declarada no cabeçalho",
+        "Área só porque volume de leads parte do zero: domínio de 0 ao máximo da tabela",
+        "Meses sem coleta como null com connectNulls desligado: traço e área interrompem",
+        "Origem com menos de 8 meses sem traço, com formatUnavailable e a nota série curta",
+        "Preenchimento sólido de baixa opacidade em var(--chart-1), sem degradê",
+        "Frase acessível contando os meses sem coleta de cada origem"
+      ],
+      "canvas_sugerido": "alto"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Agendas por SDR na semana",
+  "useCase": "Mostrar quantas agendas cada SDR marcou na semana, como peça de capa do painel de pré-vendas.",
+  "demonstrates": [
+    "RadialBarChart com uma cor só e trilho em surface-sunken atrás de cada arco",
+    "PolarAngleAxis numérico com domínio no maior valor e arco máximo de 270 graus",
+    "Maior valor no anel externo, ordem decrescente declarada no componente",
+    "Nome e valor no início do arco, sem legenda"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

@@ -1,0 +1,71 @@
+{
+  "slug": "03_cascata-temporal-de-saldo",
+  "nome": "Cascata temporal de saldo",
+  "abordagem_stack": "recharts-custom",
+  "resumo": "Cada passo é um período e o valor do passo é o movimento daquele período; o acumulado é o saldo. O tempo corre da esquerda para a direita, todo período aparece no eixo mesmo sem movimento e o saldo final fica ancorado com rótulo. Em série mais longa, uma Line do acumulado no mesmo ComposedChart substitui os conectores.",
+  "quando_usar": [
+    "Estoque que evolui por período com entradas e saídas, como a fila de pré-vendas ao longo da semana.",
+    "Até 12 períodos com entrada e saída em passos separados, ou até 24 com o movimento líquido por período.",
+    "Saldo que precisa ser lido contra um teto ou um limite, com o período que o cruzou marcado.",
+    "Saldo que pode ficar negativo, como verba de mídia gasta acima do liberado."
+  ],
+  "quando_evitar": [
+    "Mais de 24 períodos: agregar semana em mês ou usar colunas com linha de acumulado, família 08.",
+    "Quando a pergunta é a trajetória do saldo e não a contribuição de cada período: linha da família 04 ou área da família 05.",
+    "Entrada e saída do mesmo período empilhadas na mesma barra: separar em dois passos.",
+    "Períodos com janelas de data diferentes lado a lado sem aviso."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_fila-de-pre-vendas-na-semana",
+      "titulo": "Fila de pré-vendas na semana",
+      "caso_de_uso": "Pré-vendas, semana de 2026-09-07: fila de 84 entradas abertas na segunda, 140 entradas e 152 saídas ao longo de cinco dias, 72 abertas na sexta.",
+      "o_que_demonstra": [
+        "Entrada e saída de cada dia como dois passos, nunca empilhadas",
+        "Saldo inicial e final ancorados no zero com rótulo",
+        "Rótulo de dia agrupando os dois passos no eixo",
+        "Contagem com substantivo no rótulo e na dica"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_dia-em-que-a-fila-passou-do-teto",
+      "titulo": "O dia em que a fila passou do teto",
+      "caso_de_uso": "Pré-vendas, mesma semana em outra unidade: um disparo trouxe 96 entradas na quarta e levou a fila de 80 para 142, acima do teto de 120; a sexta fechou com 104.",
+      "o_que_demonstra": [
+        "ReferenceLine do teto de capacidade com traço tracejado e rótulo",
+        "Destaque em --chart-1 só no passo do disparo, resto neutro",
+        "Peso 700 no rótulo destacado, além da cor",
+        "Anotação curta ancorada no passo que explica o estouro"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_oportunidades-abertas-em-doze-meses",
+      "titulo": "Oportunidades abertas em doze meses",
+      "caso_de_uso": "Comercial, 2025-09 a 2026-08: carteira de 138 para 211 abertas; cada mês soma entradas e subtrai ganhos, perdas e as paradas há mais de 30 dias arquivadas.",
+      "o_que_demonstra": [
+        "ComposedChart com Bar de faixa e Line do acumulado sem pontos",
+        "Movimento líquido por mês, com o detalhe na dica",
+        "Mês sem movimento mantido no eixo com traço e rótulo 0",
+        "Doze meses acima do teto de 8 tiques: rótulo curto a cada dois meses",
+        "Linha de leitura: o estoque cresce enquanto o fluxo não muda"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_verba-de-midia-com-saldo-negativo",
+      "titulo": "Saldo da verba de mídia no semestre",
+      "caso_de_uso": "Marketing, 2026-03 a 2026-08: saldo mensal entre liberado e investido de +R$ 6 mil, +R$ 3 mil, R$ 0, −R$ 12 mil, −R$ 9 mil e +R$ 4 mil; o saldo cruza o zero em junho e fecha em −R$ 8 mil.",
+      "o_que_demonstra": [
+        "Barra de faixa atravessando o zero sem série transparente",
+        "Linha do zero em --line-strong sólido por cima do fundo",
+        "Domínio sobre mínimo e máximo do acumulado, não dos passos",
+        "Saldo final negativo ancorado no zero e desenhado para baixo",
+        "Rótulo fora da barra, do lado que tem espaço"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

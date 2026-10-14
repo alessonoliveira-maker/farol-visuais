@@ -1,0 +1,70 @@
+{
+  "slug": "07_cascata-empilhada",
+  "nome": "Cascata empilhada",
+  "abordagem_stack": "svg-puro",
+  "resumo": "Cada passo flutuante é dividido em segmentos por origem (executivo, plataforma, contrato), respondendo quem contribuiu com o quê em cada passo. A geometria sai inteira em TypeScript, com N retângulos por passo. Duas paletas disputam o mesmo pixel: o preenchimento fica com os componentes e a polaridade vai para o sinal, a seta e o rótulo do líquido. Não se empilha positivo com negativo no mesmo passo.",
+  "quando_usar": [
+    "Ponte de 3 a 6 passos em que cada passo se divide em até 6 componentes do mesmo sinal.",
+    "Quando a pergunta é a contribuição de cada executivo, plataforma ou contrato dentro de cada passo.",
+    "Um componente em foco comparado ao resto, com os demais segmentos em neutro.",
+    "Custo em que só alguns passos se dividem, com a legenda presa ao passo segmentado."
+  ],
+  "quando_evitar": [
+    "Componentes de sinais opostos no mesmo passo: separar em dois passos.",
+    "Mais de 6 componentes por passo: agrupar em Outros (n=X) ou usar a ponte aninhada, modelo 08.",
+    "O total por passo não importa e a comparação é entre componentes: colunas agrupadas, família 03.",
+    "O interesse é o caminho dos componentes entre estágios: Sankey, família 11."
+  ],
+  "arquivo_estudo": "_estudo/familias/19_cascata-waterfall.md",
+  "versoes": [
+    {
+      "slug": "v1_carteira-do-mes-por-executivo",
+      "titulo": "Carteira do mês por executivo",
+      "caso_de_uso": "Comercial, 2026-08: carteira de 180 abertas, entradas de 64, ganhos de 10 e perdas de 41 divididas entre Bruna T., Caio M., Denise R. e Otávio L.; a carteira fecha em 193.",
+      "o_que_demonstra": [
+        "Geometria de N retângulos por passo calculada em função pura",
+        "Slots categóricos na ordem 1, 3, 6, 5, fixos por executivo",
+        "Rótulo do passo com o líquido e sinal; segmento só na dica",
+        "Separação de 1,5 px entre segmentos vizinhos, conforme COR-5",
+        "Totais sem segmentação e com uma única convenção de cor"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_um-executivo-em-foco",
+      "titulo": "Um executivo em foco na carteira",
+      "caso_de_uso": "Comercial, 2026-08: só os segmentos de Denise R. acesos em entradas, ganhos e perdas; ela converte 33,3% (3 de 9) contra mediana de 18,4% do time.",
+      "o_que_demonstra": [
+        "Segmento em foco em --chart-1 e os demais em --line-strong",
+        "Posição do segmento em foco fixa na base de cada passo",
+        "Taxa com volume por formatRateWithVolume na anotação",
+        "Prop highlightId com default vindo do data.ts"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_custo-da-area-com-midia-por-plataforma",
+      "titulo": "Custo da área com mídia por plataforma",
+      "caso_de_uso": "Diretoria, 2026-08: mídia de R$ 118 mil dividida em rede social, busca paga, rede profissional e vídeo; ferramentas de R$ 26 mil por contrato; pessoas R$ 160 mil e comissão R$ 22 mil inteiras; total R$ 326 mil.",
+      "o_que_demonstra": [
+        "Passos segmentados e passos inteiros na mesma ponte",
+        "Legenda de componentes presa ao passo, não ao gráfico inteiro",
+        "Dica com o bruto do segmento e o líquido do passo",
+        "Nomes de plataforma genéricos, sem marca real"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_estorno-separado-em-passo-proprio",
+      "titulo": "Mídia investida e mídia estornada",
+      "caso_de_uso": "Marketing, 2026-08: R$ 124 mil investidos em quatro plataformas e R$ 6 mil de crédito devolvido pela rede profissional; o estorno vira passo próprio e a mídia líquida fica em R$ 118 mil.",
+      "o_que_demonstra": [
+        "Passo de sinal oposto separado em vez de empilhado",
+        "Nota registrando a decisão de separar o estorno",
+        "Mesmo slot de cor da plataforma no passo investido e no estornado",
+        "Fechamento verificado: investido menos estornado igual ao líquido"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

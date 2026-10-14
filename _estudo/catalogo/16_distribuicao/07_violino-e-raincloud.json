@@ -1,0 +1,73 @@
+{
+  "slug": "07_violino-e-raincloud",
+  "nome": "Violino e raincloud",
+  "abordagem_stack": "svg-puro",
+  "resumo": "A densidade de cada grupo espelhada em torno de um eixo central, larga onde há muitos casos e fina onde há poucos. Ganha do box plot exatamente onde ele mente (bimodalidade, aglomerado, buraco) e perde onde a amostra é curta. Desenhado em SVG com a função caminhoViolino, banda comum a todos os grupos e escala da largura declarada na legenda (área, contagem ou largura). Absorve marcadores internos, meio violino com raincloud, sina plot e bean plot, que somam resumo ou pontos individuais à forma.",
+  "quando_usar": [
+    "Forma completa por grupo com amostra grande, a partir de umas 100 observações por grupo.",
+    "Comparar de 2 a 8 grupos em que a bimodalidade ou o aglomerado é o achado.",
+    "Forma, resumo e pontos no mesmo espaço, em raincloud, com dezenas a poucas centenas de casos por grupo.",
+    "Diagnosticar medições duplicadas, que no bean plot aparecem como traço escuro."
+  ],
+  "quando_evitar": [
+    "Menos de 30 observações por grupo: strip ou beeswarm (03), sem curva suave.",
+    "Público que não lê densidade e precisa de número: box plot com pontos (02).",
+    "Milhares de casos com pontos por cima: a chuva vira mancha; violino puro ou ridgeline (08).",
+    "Massa concentrada num valor, como zeros: a suavização espalha o pico; separar o zero em barra própria.",
+    "Incerteza de cenário simulado, e não casos observados: meia-olho (12)."
+  ],
+  "arquivo_estudo": "_estudo/familias/16_distribuicao.md",
+  "versoes": [
+    {
+      "slug": "v1_ciclo-por-segmento-com-marcadores",
+      "titulo": "Ciclo por segmento com mediana e quartis",
+      "caso_de_uso": "Os três segmentos de clientes fecham em prazos de forma parecida, ou algum tem dois grupos de negócio?",
+      "o_que_demonstra": [
+        "caminhoViolino com uma banda de Silverman única para os três grupos",
+        "Largura por área: densidade máxima global, formas comparáveis entre grupos",
+        "Barra interna do IQR e ponto de mediana com anel da cor da superfície",
+        "Largura do marcador limitada a 0,6 vez a largura do violino na mediana",
+        "Recorte no mínimo e no máximo observados e banda escrita no rodapé"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_raincloud-antes-e-depois-da-cadencia",
+      "titulo": "Tempo até a agenda antes e depois da cadência",
+      "caso_de_uso": "A nova cadência encurtou o tempo até a agenda nos três squads de pré-vendas, e para todos os leads?",
+      "o_que_demonstra": [
+        "Banda dividida em nuvem, box fino e chuva, com altura mínima de 56 px",
+        "Nuvem do trimestre anterior só em contorno e a do atual preenchida",
+        "Jitter da chuva preso na própria sub-faixa, com semente pelo id do lead",
+        "Frase: a mediana caiu de 3,2 para 1,8 dia depois da nova cadência",
+        "Legenda de uma linha explicando as três camadas"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_sina-de-cpl-por-plataforma",
+      "titulo": "Sina plot do CPL por plataforma",
+      "caso_de_uso": "O criativo em vídeo mora na cauda barata ou na cara do CPL das 1.100 campanhas das quatro plataformas?",
+      "o_que_demonstra": [
+        "Fração lateral de cada ponto limitada pela densidade no valor, em useMemo",
+        "Scatter com shape que desloca cx pela meia largura da banda",
+        "Campanhas em vídeo em --chart-2 e demais em neutro, cor com um papel só",
+        "Contorno do violino em 1 px, mediana marcada e escala por contagem declarada",
+        "Legenda: a posição lateral do ponto não tem significado"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_bean-plot-com-duplicata-suspeita",
+      "titulo": "Bean plot do primeiro contato com duplicata",
+      "caso_de_uso": "Por que 37 leads aparecem com exatamente 0 minuto até o primeiro contato, e em que canal eles estão?",
+      "o_que_demonstra": [
+        "Um traço curto por observação dentro do feijão, com opacidade que acumula",
+        "Traço escuro na base com a nota: possível carimbo automático, conferir a coleta",
+        "Mediana do grupo e mediana geral pontilhada, no lugar da média do original",
+        "Grupo com n 9 sem densidade: só os traços e o texto n 9"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}

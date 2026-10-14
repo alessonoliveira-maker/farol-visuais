@@ -1,0 +1,14 @@
+{
+  "title": "Das entradas do mês aos ganhos",
+  "useCase": "Para onde foram as 612 entradas de ago/26 até os 11 ganhos, e quanto ainda está em andamento?",
+  "demonstrates": [
+    "Decomposição até o desfecho com contagem e substantivo em cada rótulo",
+    "Em andamento como passo próprio, para a diferença não virar perda",
+    "Cauda estreita no fim com rótulo externo e halo",
+    "Domínio de contagem com allowDecimals desligado",
+    "Frase acessível dizendo onde sai a maior parte das entradas"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Canvas largo em vez de card: oito colunas com rótulo de duas linhas e substantivo (\"declínios por fit\") pedem passo de 110 px; em 574 px o passo seria 70 px e o substantivo quebraria. ESP-6: corpo 894 x 265 px, 8 colunas em 878 px dão passo 109,75 px e barra de 24 px. Sem eixo de nomes: o substantivo está no rótulo de cada coluna. Descartes em cinza, perdas em --negative, em andamento vazado com contorno --text-muted, totais em --chart-1. A coluna de ganhos tem 11 de 612 (1,8%), cerca de 4 px de altura: o rótulo fica fora da marca, com halo."
+}

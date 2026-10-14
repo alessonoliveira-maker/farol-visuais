@@ -1,0 +1,14 @@
+{
+  "title": "Quem passa para quem em cada etapa",
+  "useCase": "Comercial: como a oportunidade passa entre marketing, pré-vendas, executivo e relacionamento.",
+  "demonstrates": [
+    "Grade de 4 funções por 4 etapas e arestas no mesmo viewBox, sem medir o DOM",
+    "Centro de célula calculado por constante de geometria em TypeScript",
+    "Aresta ortogonal com cantos arredondados e ponta de seta em marker SVG",
+    "Contagem de passagens do trimestre escrita no meio de cada seta",
+    "Grade em var(--line-subtle) e nós em var(--line-strong) com rótulo em var(--text-primary)"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Desvio do catálogo, com o contrato vencendo: a seta sai de var(--line-strong), que mede 1,79:1 no escuro e 1,83:1 no claro, para var(--text-muted), que mede 5,21:1 e 5,37:1, porque a seta carrega a relação (ACE-6). Canvas largo: o corpo mede 894 x 265 px com o caso de uso em duas linhas, e o viewBox de 894 x 262 fecha a escala em 1 (GEO-18). Quatro linhas de 55 px dão um vão de 27 px entre os nós, onde a pista da seta e o número cabem sem cobrir a ponta."
+}

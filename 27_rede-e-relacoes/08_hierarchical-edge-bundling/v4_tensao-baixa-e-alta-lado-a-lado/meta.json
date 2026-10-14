@@ -1,0 +1,14 @@
+{
+  "title": "Efeito da tensão no feixe",
+  "useCase": "Diretoria: por que a tensão do feixe é uma escolha declarada, com a mesma procedência fictícia em tensão 0,3 e 0,95.",
+  "demonstrates": [
+    "Dois pequenos múltiplos com as mesmas folhas e só a tensão diferente",
+    "Tensão perto de 0 que volta às retas e perto de 1 que junta tudo num feixe",
+    "Valor de β escrito no título de cada painel",
+    "Cálculo da curva reaproveitado por uma função pura com β como parâmetro",
+    "Nota escrita de que o padrão do Farol é 0,85 com controle exposto"
+  ],
+  "canvas": "largo",
+  "frame": "card",
+  "notes": "Conta do canvas (GEO-1): largo 960x400 com moldura card dá corpo de 894 x 281,5 px, porque o caso de uso mede 652 px e fica em uma linha. O viewBox é 894 x 281, do tamanho do corpo, e a escala do svg sai 1 (GEO-18). Cada painel tem 447 px: título em y 32, frase do regime em 48, círculo de 92 px de raio com centro em 160 (de 68 a 252, com o arco do ramo de 61 a 259) e o rodapé em 273. Os dois painéis usam o mesmo raio, o mesmo layout e a mesma função de curva, e só β muda (EIX-9). Na largura de cada painel, o raio de 92, o arco do ramo a 7 px, a folga e o nome do ramo mais largo (cerca de 95 px) fecham em 210 px de cada lado do centro, dentro dos 223. DESVIOS DECLARADOS DO CATÁLOGO, com o contrato vencendo. (1) Os feixes saem em var(--text-muted) a 0,76 de opacidade, que mede 3,58:1 no escuro e 3,28:1 no claro; o piso fica em 0,72 (ACE-5, ACE-6). Com opacidade mais baixa a densidade do feixe apareceria melhor, mas a ligação é o dado e não pode cair de 3:1. (2) O texto não gira (TIP-5): cada painel nomeia só os dois ramos, na horizontal, ao lado de um arco de fora que abraça as folhas do ramo. Os dez grupos têm arco no raio das folhas e ficam sem nome nesta versão, porque dez nomes de até 132 px não cabem em volta de cada círculo em 447 px; a comparação é de forma, e os nomes estão nas outras três versões. A frase de cada painel afirma um regime e tem limiar no código: até 0,5 as curvas voltam a ser quase retas, de 0,9 em diante tudo passa por um feixe só no centro, e entre os dois o feixe se abre só nas pontas. O padrão do Farol, 0,85, cai no regime do meio e vai escrito no rodapé. A OPACIDADE-MARCA mede a peça pela constante DIM_OPACITY e passa; a conta à mão contra tokens.css dá os mesmos 3,58:1 e 3,28:1."
+}

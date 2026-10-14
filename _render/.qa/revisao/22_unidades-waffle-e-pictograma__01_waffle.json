@@ -1,0 +1,134 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "01_waffle",
+  "versoes": {
+    "v1_leads-com-telefone-valido": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 62 quadrados conferem com 194 de 312 (62,2 por cento), as partes escritas somam 312, vazio com role status, contrastes de texto e marca conferidos à mão nos dois temas. Observações no README (algarismo sem tabular-nums em quatro textos, kpi-number sem peso, 194 e 312 escritos duas vezes).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:01.815Z",
+      "impressao": "45003ca75c5c96e9dadeb741022cc801b45a2310",
+      "arquivos": {
+        "Chart.tsx": "df97d090ae48bbb7faba72ec83ae346fd6ca520d",
+        "data.ts": "b752b66edc1fb7e1862042dfc59445010f30ce85",
+        "meta.json": "97aa3926b34ce6068ed2912e13f7a55a2d059e24"
+      }
+    },
+    "v2_desfecho-das-oportunidades-encerradas": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: maior resto fecha 100 (36, 37, 18 e 9), contagens somam 340, ausência por último e hachurada, destaque nomeado na linha de leitura. O percentual impresso soma 100,3 porque o catálogo manda listar Transferidas com 0,3 ao lado dos inteiros: tensão de régua relatada, não defeito do produtor. Observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:02.319Z",
+      "impressao": "15f16e3069b94a9a729c7fa5bf9130b90a2cc0fa",
+      "arquivos": {
+        "Chart.tsx": "552d6a0ee367c0fe581821ac1fdb561b299055fc",
+        "data.ts": "14b862abddf8ea85835a24e625deff60ec4c30a0",
+        "meta.json": "365ca5a753d6f11607ffb4d432de6d1539fd2e67"
+      }
+    },
+    "v3_cobertura-de-origem-por-plataforma-e-mes": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante: o pior grupo ganhou segundo canal (número em peso 700 e pior grupo escrito junto do n), as nove grades alinham no pixel nos dois temas, as contagens conferem com o dado (20, 20, 20, 16, 14, 20 e 21 quadrados de 4 por cento), amostra pequena e sem coleta têm forma e palavra próprias. Grade de 5 por 5 é o padrão adotado enquanto a D8 está aberta, declarado no README e no notes. Observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:02:24.247Z",
+      "impressao": "86cc371aa4ee8509ec1ef748769def60fe29604f",
+      "arquivos": {
+        "Chart.tsx": "aa5de66df8ae5bdfd23884cf2f2fe79595f28376",
+        "data.ts": "f0497a1fd4373dac1dae489ac81cab58002beaa4",
+        "meta.json": "243b33ade95bf1fca11d3deb8c237c059bd9e029"
+      }
+    },
+    "v4_micro-waffle-de-posicoes-por-fila": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante: contagens no data.ts e volume junto da taxa, chip em uma linha, conversão nula com caixa tracejada e Unplug, grades com 14, 10, 6 e 0 células conferidas no PNG nos dois temas. Três observações no README pedem ajuste de quem tocar o arquivo: o preview diverge da página em 0,55 e 0,56 por cento na linha ocupação indisponível (aviso do render, acima de 0,5 e abaixo de 2), a frase acessível diz sem ocupação onde o corpo diz indisponível, e o corpo deixou de nomear a venda.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:02:24.750Z",
+      "impressao": "5d6ae8ae240fb51396a89d0fb905f571a27001cb",
+      "arquivos": {
+        "Chart.tsx": "f7b19d88a0871de96a9211fc17af7f9de32ea20e",
+        "data.ts": "d16f1985b4f1556e728a72ad535c3f043e212fef",
+        "meta.json": "560fa04f696c4d80570a6891bcc029ad84f08c0e"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_leads-com-telefone-valido",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: 62 quadrados conferem com 194 de 312 (62,2 por cento), as partes escritas somam 312, vazio com role status, contrastes de texto e marca conferidos à mão nos dois temas. Observações no README (algarismo sem tabular-nums em quatro textos, kpi-number sem peso, 194 e 312 escritos duas vezes).",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:01.815Z",
+      "impressao": "45003ca75c5c96e9dadeb741022cc801b45a2310",
+      "arquivos": {
+        "Chart.tsx": "df97d090ae48bbb7faba72ec83ae346fd6ca520d",
+        "data.ts": "b752b66edc1fb7e1862042dfc59445010f30ce85",
+        "meta.json": "97aa3926b34ce6068ed2912e13f7a55a2d059e24"
+      }
+    },
+    {
+      "versao": "v2_desfecho-das-oportunidades-encerradas",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-12. Sem bloqueante: maior resto fecha 100 (36, 37, 18 e 9), contagens somam 340, ausência por último e hachurada, destaque nomeado na linha de leitura. O percentual impresso soma 100,3 porque o catálogo manda listar Transferidas com 0,3 ao lado dos inteiros: tensão de régua relatada, não defeito do produtor. Observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:02.319Z",
+      "impressao": "15f16e3069b94a9a729c7fa5bf9130b90a2cc0fa",
+      "arquivos": {
+        "Chart.tsx": "552d6a0ee367c0fe581821ac1fdb561b299055fc",
+        "data.ts": "14b862abddf8ea85835a24e625deff60ec4c30a0",
+        "meta.json": "365ca5a753d6f11607ffb4d432de6d1539fd2e67"
+      }
+    },
+    {
+      "versao": "v3_cobertura-de-origem-por-plataforma-e-mes",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 19, COR-2 e ACE-2 (armadilha TOK-9): o destaque do pior grupo mora só na cor. chart-1 contra text-muted mede 1,12:1 no claro e 1,82:1 no escuro, o número do grupo não muda de peso (600 como os demais) e nenhuma palavra junto da marca diz qual é. Dar segundo canal: peso 700 no número do pior grupo e a palavra pior grupo escrita junto dele, e registrar o par medido no notes. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__01_waffle_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:02.838Z",
+      "impressao": "963a10f522ee01aa6fae5bef2191083a02fcce62",
+      "arquivos": {
+        "Chart.tsx": "fe42f51b553e3fc40fd3f58485d2b41e208d785b",
+        "data.ts": "f0497a1fd4373dac1dae489ac81cab58002beaa4",
+        "meta.json": "1df2ebe9c4a3d9b11ea9477a37f66d8cc7ded01e"
+      }
+    },
+    {
+      "versao": "v4_micro-waffle-de-posicoes-por-fila",
+      "veredito": "reprovado",
+      "nota": "Três bloqueantes. Perguntas 25 e 14, NUM-1 (DAD-1): conversão escrita sem volume e data.ts declara a taxa, não as contagens. Pergunta 15 (GEO-2): o chip menos de 1 em 100 quebra em duas linhas na coluna de 104 px, nos dois temas. Pergunta 8, EST-2 (DAD-2): conversão nula desenha a mesma grade vazia do zero e escreve a ausência sem Unplug e em text-primary. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__01_waffle_2026-10-12.md.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T11:19:03.414Z",
+      "impressao": "3427fd129555c2bed8f283aea9433243917db43b",
+      "arquivos": {
+        "Chart.tsx": "828a20eec1e3f46645830b0a8953954667f412e7",
+        "data.ts": "7a24d1de2894c1a395a7059bd1d2a032f6567755",
+        "meta.json": "560fa04f696c4d80570a6891bcc029ad84f08c0e"
+      }
+    },
+    {
+      "versao": "v3_cobertura-de-origem-por-plataforma-e-mes",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante: o pior grupo ganhou segundo canal (número em peso 700 e pior grupo escrito junto do n), as nove grades alinham no pixel nos dois temas, as contagens conferem com o dado (20, 20, 20, 16, 14, 20 e 21 quadrados de 4 por cento), amostra pequena e sem coleta têm forma e palavra próprias. Grade de 5 por 5 é o padrão adotado enquanto a D8 está aberta, declarado no README e no notes. Observações no README.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:02:24.247Z",
+      "impressao": "86cc371aa4ee8509ec1ef748769def60fe29604f",
+      "arquivos": {
+        "Chart.tsx": "aa5de66df8ae5bdfd23884cf2f2fe79595f28376",
+        "data.ts": "f0497a1fd4373dac1dae489ac81cab58002beaa4",
+        "meta.json": "243b33ade95bf1fca11d3deb8c237c059bd9e029"
+      }
+    },
+    {
+      "versao": "v4_micro-waffle-de-posicoes-por-fila",
+      "veredito": "aprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-12 depois da correção. Sem bloqueante: contagens no data.ts e volume junto da taxa, chip em uma linha, conversão nula com caixa tracejada e Unplug, grades com 14, 10, 6 e 0 células conferidas no PNG nos dois temas. Três observações no README pedem ajuste de quem tocar o arquivo: o preview diverge da página em 0,55 e 0,56 por cento na linha ocupação indisponível (aviso do render, acima de 0,5 e abaixo de 2), a frase acessível diz sem ocupação onde o corpo diz indisponível, e o corpo deixou de nomear a venda.",
+      "data": "2026-10-12",
+      "registradoEm": "2026-10-12T12:02:24.750Z",
+      "impressao": "5d6ae8ae240fb51396a89d0fb905f571a27001cb",
+      "arquivos": {
+        "Chart.tsx": "f7b19d88a0871de96a9211fc17af7f9de32ea20e",
+        "data.ts": "d16f1985b4f1556e728a72ad535c3f043e212fef",
+        "meta.json": "560fa04f696c4d80570a6891bcc029ad84f08c0e"
+      }
+    }
+  ]
+}

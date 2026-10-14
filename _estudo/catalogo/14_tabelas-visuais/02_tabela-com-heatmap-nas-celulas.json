@@ -1,0 +1,70 @@
+{
+  "slug": "02_tabela-com-heatmap-nas-celulas",
+  "nome": "Tabela com heatmap nas células",
+  "abordagem_stack": "html-tailwind",
+  "resumo": "O fundo de cada célula recebe um tom da rampa sequencial (ou divergente) proporcional ao valor, com o número sempre escrito por cima. Serve para achar extremos e padrões em colunas de mesma natureza (meses, etapas) sem deixar de ser tabela: colunas de texto e colunas sem cor convivem. A cor sai de uma função TypeScript que quantiza o valor em degraus de --seq-1 a --seq-7, com faixa manual ou percentis para um outlier não sequestrar a escala, e o texto troca de token por degrau para manter contraste.",
+  "quando_usar": [
+    "Colunas de mesma natureza e mesma unidade (12 meses, 6 etapas) em que o extremo importa mais que o valor",
+    "Até cerca de 15 linhas por 12 colunas com o número visível em cada célula",
+    "Perfil de entidades por várias métricas, com a cor calculada por coluna e o melhor e o pior realçados",
+    "Desvio contra meta com sinal, em escala divergente centrada no zero e legenda com os limites"
+  ],
+  "quando_evitar": [
+    "Colunas de unidades diferentes numa escala única: calcule a cor por coluna ou use barras inline (14/01)",
+    "Todas as colunas da mesma medida e nenhum texto além do rótulo: é o heatmap matricial (família 15)",
+    "Gradiente automático de mínimo a máximo com um outlier: use faixa manual ou percentis",
+    "Mais de 10 entidades por 8 dimensões com realce de melhor e pior: o realce se perde, use só o gradiente",
+    "Pergunta de quanto a mais entre duas linhas: cor compara mal, prefira barra"
+  ],
+  "arquivo_estudo": "_estudo/familias/14_tabelas-visuais.md",
+  "versoes": [
+    {
+      "slug": "v1_conversao-por-etapa-e-mes",
+      "titulo": "Conversão por etapa do funil e mês",
+      "caso_de_uso": "Comercial: em quais meses de 2026 cada etapa do funil converteu melhor ou pior, com a taxa exata em cada célula.",
+      "o_que_demonstra": [
+        "Quantização em 7 degraus de --seq-1 a --seq-7 por função pura, escala comum às 12 colunas",
+        "Texto em text-primary nos degraus baixos e accent-cyan-contrast nos altos",
+        "Legenda de escala com limites e unidade, e vão de 1 px entre células",
+        "Meses curtos por formatMonthShort e taxa por formatPercent com uma casa"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v2_cpl-qualificado-com-teto",
+      "titulo": "CPL qualificado por plataforma com teto",
+      "caso_de_uso": "Marketing: quais plataformas e meses passaram do teto de R$ 180 de CPL qualificado em 2026.",
+      "o_que_demonstra": [
+        "Faixa manual de R$ 60 a R$ 240 em 5 degraus, com valor fora da faixa encostado no extremo",
+        "Célula acima do teto com contorno em warning e ícone, além da cor",
+        "Legenda que diz a faixa manual e a regra do teto numa linha",
+        "Polaridade invertida escrita: tom mais forte é CPL mais caro"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v3_perfil-das-areas-por-coluna",
+      "titulo": "Perfil das áreas nas metas do ano",
+      "caso_de_uso": "Diretoria: como 9 áreas se saem em 8 métricas de unidades diferentes, e quem é o melhor e o pior em cada uma.",
+      "o_que_demonstra": [
+        "Cor calculada por coluna como posição percentual dentro da própria coluna",
+        "Direção por coluna vinda do dado: em métrica de menor é melhor a rampa inverte",
+        "Melhor da coluna em peso 700 e pior com ícone, com legenda dizendo a regra",
+        "Número formatado pela unidade de cada coluna por formatValue"
+      ],
+      "canvas_sugerido": "largo"
+    },
+    {
+      "slug": "v4_desvio-divergente-e-sem-meta",
+      "titulo": "Desvio contra a meta com células sem meta",
+      "caso_de_uso": "Diretoria: quais áreas e trimestres ficaram acima ou abaixo da meta, e onde nem existe meta cadastrada.",
+      "o_que_demonstra": [
+        "Escala divergente simétrica centrada em 0% com degraus de negative e positive",
+        "Sinal + ou − tipográfico escrito na célula, nunca só a cor",
+        "Célula sem meta com hachura, texto sem meta e chip próprio na legenda",
+        "Contraste do texto conferido degrau a degrau nos dois temas"
+      ],
+      "canvas_sugerido": "largo"
+    }
+  ]
+}

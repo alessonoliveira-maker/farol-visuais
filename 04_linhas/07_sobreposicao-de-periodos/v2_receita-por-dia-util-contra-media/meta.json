@@ -1,0 +1,12 @@
+{
+  "title": "Receita do mês por dia útil contra a média",
+  "useCase": "No 9º dia útil de 2026-09, a receita acumulada do mês está à frente da média dos 6 meses anteriores?",
+  "demonstrates": [
+    "Alinhamento por dia útil, não por data civil",
+    "Média dos 6 meses anteriores como série tracejada de referência",
+    "Diferença de hoje escrita com a base nomeada na mesma linha",
+    "Anticolisão de rótulos quando as duas linhas terminam próximas no mesmo dia"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

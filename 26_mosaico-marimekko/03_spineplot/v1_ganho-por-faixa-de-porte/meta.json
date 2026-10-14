@@ -1,0 +1,14 @@
+{
+  "title": "Taxa de ganho por faixa de porte",
+  "useCase": "Comercial, 2026: a taxa de ganho muda com a faixa de porte da conta, e quanto das oportunidades encerradas cai em cada faixa?",
+  "demonstrates": [
+    "Colunas encostadas com vão de 1 px e largura pelas oportunidades encerradas",
+    "Ganho na base em --chart-1 e perdido acima em --line-strong",
+    "Faixas na ordem natural do porte, do menor para o maior",
+    "Taxa por formatRateWithVolume sobre cada coluna, como 25,0% (7 de 28)",
+    "Categorias do desfecho rotuladas à direita, no lugar de legenda"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Conta do corpo no preset card com o caso de uso em duas linhas: 574 x 225 px. Linha de leitura de 16 mais 8 de vão, SVG de 574 x 201 em escala 1 (GEO-18): 30 de etiqueta de taxa em duas linhas, 121 de ladrilhos e 50 de eixo (vão de 6, três linhas de 14 px para até duas de nome e a participação, 2 de folga). O viewBox é o tamanho da caixa. A taxa sai de formatRateWithVolume e é partida no ' (' para caber na largura da coluna mais estreita; a faixa cujo rótulo não coubesse iria para a linha Sem rótulo no desenho (ROT-10), ramo que o dado padrão não exercita. A parte perdida usa --line-strong como o catálogo pede; o valor vem escrito no ladrilho, e por isso o aviso de CONTRASTE-MARCA (1,8:1) é conhecido. Os vãos saem antes da partilha de largura e de altura, então a área de cada ladrilho é proporcional à contagem (GEO-16)."
+}

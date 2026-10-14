@@ -1,0 +1,12 @@
+{
+  "title": "CPL por canal em quatro painéis",
+  "useCase": "O CPL de cada canal de mídia paga subiu ou caiu de 2026-01 a 2026-08, numa escala que permite comparar os quatro?",
+  "demonstrates": [
+    "Grade Tailwind com um LineChart por canal e o mesmo syncId",
+    "Domínio y comum aos quatro painéis, calculado sobre o conjunto e escrito em nota",
+    "YAxis com a mesma largura em todos os painéis",
+    "Eixo x só nos painéis da linha de baixo, nome de canal sem truncar"
+  ],
+  "canvas": "largo",
+  "frame": "card"
+}

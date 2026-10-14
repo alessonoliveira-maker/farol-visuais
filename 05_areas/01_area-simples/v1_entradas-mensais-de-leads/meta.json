@@ -1,0 +1,12 @@
+{
+  "title": "Entradas mensais de leads",
+  "useCase": "Quanto entrou de lead por mês em 2026 e se o volume está crescendo ou perdendo força.",
+  "demonstrates": [
+    "AreaChart nativo com preenchimento plano em opacidade baixa e contorno de 2 px",
+    "Domínio a partir do zero com ticks redondos calculados no componente",
+    "Curva monotone, que não ultrapassa os pontos nem cruza a base",
+    "Série única sem legenda e com a unidade escrita no próprio tique"
+  ],
+  "canvas": "card",
+  "frame": "card"
+}

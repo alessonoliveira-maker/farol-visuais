@@ -1,0 +1,13 @@
+{
+  "title": "Participação de mercado por perímetro",
+  "useCase": "Mostrar a participação mensal em Operações Estruturadas entre o perímetro restrito e o amplo, sem escolher um número único que engane.",
+  "demonstrates": [
+    "Area de faixa com dataKey em par restrito e amplo",
+    "Bordas rotuladas no fim da faixa com o nome de cada perímetro",
+    "Domínio de percentual a partir do zero (EIX-1)",
+    "Bordas normalizadas com mínimo e máximo antes do render"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "Método declarado: restrito é participação só com garantia real, amplo inclui também as operações sem garantia real; os dois vêm da definição da área comercial, não são percentil nem intervalo de confiança. Sem linha central porque o modelo é a faixa; quando a linha é a protagonista, ver 04_linhas/04_linha-com-banda-de-intervalo."
+}

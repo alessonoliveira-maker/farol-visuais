@@ -1,0 +1,14 @@
+{
+  "title": "Leads do mês por origem em ícones de dez",
+  "useCase": "Quantos leads cada origem trouxe no mês, com uma origem sem coleta?",
+  "demonstrates": [
+    "Unidade 1 ícone = 10 leads declarada na legenda e na frase acessível",
+    "347 leads viram 34 ícones inteiros e o número 347, sem 35º ícone cortado",
+    "Origem com menos de 10 leads sem ícone e com o texto menos de um ícone",
+    "Origem sem coleta com ícone Unplug e formatUnavailable no lugar da fileira",
+    "Acima de 50 ícones por fileira a unidade sobe de novo e o aviso acompanha"
+  ],
+  "canvas": "card",
+  "frame": "card",
+  "notes": "O ícone mede 14 px sem vão (o mínimo do traço de 2,5 no tema escuro): 34 ícones ocupam 476 px, e a fileira cabe em 518 px. Por isso o nome vai numa linha acima da fileira. Quando a unidade sobe, a legenda escreve a nova unidade e o aviso do porquê."
+}

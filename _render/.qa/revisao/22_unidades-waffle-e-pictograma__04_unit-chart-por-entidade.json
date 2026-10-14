@@ -1,0 +1,121 @@
+{
+  "familia": "22_unidades-waffle-e-pictograma",
+  "modelo": "04_unit-chart-por-entidade",
+  "versoes": {
+    "v1_oportunidades-abertas-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 155 quadrados contados no preview (44, 48, 36, 24 e 3), iguais aos números escritos; mesma célula e mesma base em todos os grupos; chart-1 a 9,50:1 e 6,00:1; frase de 169 caracteres. Observações no README (nome em 2 linhas passa 1 px da base do corpo, contagem do grupo sem substantivo).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:20.025Z",
+      "impressao": "1acc61046f8ae26825db85adc0dd6746f2ab2c65",
+      "arquivos": {
+        "Chart.tsx": "082bc7ea7fe681a46286e9ee57ece0809ca0fbc3",
+        "data.ts": "10742e3fbcd813f0081fa24f990dac0b590653a8",
+        "meta.json": "7d0ded8aa481cb8c9f421f00a3ae8ef36fb411cc"
+      }
+    },
+    "v2_oportunidades-paradas-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 73, 23 e 44 quadrados por faixa contados no preview, 140 no total; faixas de 3,72:1 para cima contra o cartão nos dois temas; faixa crítica com contorno além da cor; nota de 19 com colchete nas 4 linhas do bloco. Observações no README (30 sem algarismo tabular, legenda em 11 px e da base ao topo, paradas por etapa só contando quadrados).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:20.512Z",
+      "impressao": "516a4e4cc653b5583f82900109ea34a1ab68986b",
+      "arquivos": {
+        "Chart.tsx": "b8b69f0e9e32cd98d88674798fd270b87795f865",
+        "data.ts": "567efd28af6ef7140867bbf7e04c101c7dc37658",
+        "meta.json": "7c953aa4d01984c657c1487eb1fad68cd3d3ce00"
+      }
+    },
+    "v3_carteira-de-contas-por-executivo": {
+      "veredito": "reprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-13 depois da correção. Os dois bloqueantes da primeira passada estão corrigidos e conferidos: moldura em text-muted a 5,21:1 e 5,37:1, e tabulação na ordem de preenchimento, 0 de 560 pares fora de sequência. Reprovada por dois defeitos da moldura do teto que o dado padrão esconde, medidos em render de rascunho com o mesmo Chart.tsx. Pergunta 13, ANO-3 e seção 14.1 (domínio): a altura do viewBox sai só das pilhas (maxRowsOf) e ignora o teto; com a maior pilha em até 96 contas a moldura nasce acima do topo do viewBox e perde o traço de topo nas seis carteiras (medido com 280 contas: y da moldura 10 px acima do topo); incluir rowsFor(ceiling) na altura. Seção 14.1, encoding (sem pergunta própria, a mais próxima é a 13): a moldura fecha linhas inteiras de 12, então teto que não é múltiplo de 12 desenha capacidade maior que a escrita (medido com teto 100: 108 lugares e 16 quadrados acima do teto pintados dentro da moldura); fechar a moldura em degrau em exatamente ceiling células. As duas saídas foram testadas no rascunho. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__04_unit-chart-por-entidade_2026-10-13.md, seção Segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:17.913Z",
+      "impressao": "4b15ae2dcb28c32391c306e1f7f7dcfbf860d5c4",
+      "arquivos": {
+        "Chart.tsx": "87e54109b9416680e9a64eee7a8118605ac48407",
+        "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
+        "meta.json": "ae6d4cbc0fd839fcdf25ac9d4c05a81f8c15ed2f"
+      }
+    },
+    "v4_leads-por-etapa-com-sem-etapa": {
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 149 quadrados cheios e 41 tracejados contados no preview, 190 para 1.900 leads; aviso da unidade agregada no topo em uma linha; ausência por último em contorno text-muted a 5,21:1 e 5,37:1, com nome e contagem exata. Observações no README (frase acessível conta 6 etapas incluindo o grupo sem etapa, 1.900 e 1.500 sem algarismo tabular, nome em 2 linhas passa 4 px da base do corpo, etapa de 1 a 4 leads fica sem quadrado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:29.801Z",
+      "impressao": "14f1beb1bd8a71d8fab3596cc0226489ac55d228",
+      "arquivos": {
+        "Chart.tsx": "a993c07b6882fef541d967c0e8b92706e1ce43de",
+        "data.ts": "79037c0e8c0c854a70cc0ce1bd6a6a646df59a70",
+        "meta.json": "b35eaed10f1e6c28a27f77596fae7825ad12ef23"
+      }
+    }
+  },
+  "historico": [
+    {
+      "versao": "v1_oportunidades-abertas-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 155 quadrados contados no preview (44, 48, 36, 24 e 3), iguais aos números escritos; mesma célula e mesma base em todos os grupos; chart-1 a 9,50:1 e 6,00:1; frase de 169 caracteres. Observações no README (nome em 2 linhas passa 1 px da base do corpo, contagem do grupo sem substantivo).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:20.025Z",
+      "impressao": "1acc61046f8ae26825db85adc0dd6746f2ab2c65",
+      "arquivos": {
+        "Chart.tsx": "082bc7ea7fe681a46286e9ee57ece0809ca0fbc3",
+        "data.ts": "10742e3fbcd813f0081fa24f990dac0b590653a8",
+        "meta.json": "7d0ded8aa481cb8c9f421f00a3ae8ef36fb411cc"
+      }
+    },
+    {
+      "versao": "v2_oportunidades-paradas-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 73, 23 e 44 quadrados por faixa contados no preview, 140 no total; faixas de 3,72:1 para cima contra o cartão nos dois temas; faixa crítica com contorno além da cor; nota de 19 com colchete nas 4 linhas do bloco. Observações no README (30 sem algarismo tabular, legenda em 11 px e da base ao topo, paradas por etapa só contando quadrados).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:20.512Z",
+      "impressao": "516a4e4cc653b5583f82900109ea34a1ab68986b",
+      "arquivos": {
+        "Chart.tsx": "b8b69f0e9e32cd98d88674798fd270b87795f865",
+        "data.ts": "567efd28af6ef7140867bbf7e04c101c7dc37658",
+        "meta.json": "7c953aa4d01984c657c1487eb1fad68cd3d3ce00"
+      }
+    },
+    {
+      "versao": "v3_carteira-de-contas-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20, tabela 17.2 (papel Referência), ACE-3 e TOK-5: a moldura do teto e a amostra dela na legenda estão em line-strong e medem 1,79:1 e 1,83:1 contra o cartão; trocar por text-muted com tracejado 3 3 e declarar o desvio do catálogo no notes. Seção 14.1, item 5 do demonstrates (versão não demonstra o que o catálogo diz): a tabulação segue a ordem do data.accounts e não a de preenchimento, 560 de 560 pares consecutivos fora de sequência no preview; desenhar os botões na ordem do layout. Contagens, slots de cor e excedente conferidos e sem outro bloqueante. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__04_unit-chart-por-entidade_2026-10-13.md.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:29.261Z",
+      "impressao": "8f3d193944c3a3a42201e820bc96786dd5ef51d8",
+      "arquivos": {
+        "Chart.tsx": "27fe77fda1b7ec450078c3422d3de2206bfdb0f3",
+        "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
+        "meta.json": "08c616569f48298455634a29d0ac93f5e9e1c694"
+      }
+    },
+    {
+      "versao": "v4_leads-por-etapa-com-sem-etapa",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-13. Sem bloqueante: 149 quadrados cheios e 41 tracejados contados no preview, 190 para 1.900 leads; aviso da unidade agregada no topo em uma linha; ausência por último em contorno text-muted a 5,21:1 e 5,37:1, com nome e contagem exata. Observações no README (frase acessível conta 6 etapas incluindo o grupo sem etapa, 1.900 e 1.500 sem algarismo tabular, nome em 2 linhas passa 4 px da base do corpo, etapa de 1 a 4 leads fica sem quadrado).",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T09:43:29.801Z",
+      "impressao": "14f1beb1bd8a71d8fab3596cc0226489ac55d228",
+      "arquivos": {
+        "Chart.tsx": "a993c07b6882fef541d967c0e8b92706e1ce43de",
+        "data.ts": "79037c0e8c0c854a70cc0ce1bd6a6a646df59a70",
+        "meta.json": "b35eaed10f1e6c28a27f77596fae7825ad12ef23"
+      }
+    },
+    {
+      "versao": "v3_carteira-de-contas-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Segunda passada, julgado o arquivo de 2026-10-13 depois da correção. Os dois bloqueantes da primeira passada estão corrigidos e conferidos: moldura em text-muted a 5,21:1 e 5,37:1, e tabulação na ordem de preenchimento, 0 de 560 pares fora de sequência. Reprovada por dois defeitos da moldura do teto que o dado padrão esconde, medidos em render de rascunho com o mesmo Chart.tsx. Pergunta 13, ANO-3 e seção 14.1 (domínio): a altura do viewBox sai só das pilhas (maxRowsOf) e ignora o teto; com a maior pilha em até 96 contas a moldura nasce acima do topo do viewBox e perde o traço de topo nas seis carteiras (medido com 280 contas: y da moldura 10 px acima do topo); incluir rowsFor(ceiling) na altura. Seção 14.1, encoding (sem pergunta própria, a mais próxima é a 13): a moldura fecha linhas inteiras de 12, então teto que não é múltiplo de 12 desenha capacidade maior que a escrita (medido com teto 100: 108 lugares e 16 quadrados acima do teto pintados dentro da moldura); fechar a moldura em degrau em exatamente ceiling células. As duas saídas foram testadas no rascunho. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__04_unit-chart-por-entidade_2026-10-13.md, seção Segunda passada.",
+      "data": "2026-10-13",
+      "registradoEm": "2026-10-13T10:19:17.913Z",
+      "impressao": "4b15ae2dcb28c32391c306e1f7f7dcfbf860d5c4",
+      "arquivos": {
+        "Chart.tsx": "87e54109b9416680e9a64eee7a8118605ac48407",
+        "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
+        "meta.json": "ae6d4cbc0fd839fcdf25ac9d4c05a81f8c15ed2f"
+      }
+    }
+  ]
+}

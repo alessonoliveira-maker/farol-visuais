@@ -1,0 +1,502 @@
+{
+  "slug": "21_texto-e-nuvem-de-palavras",
+  "nome": "Texto e nuvem de palavras",
+  "modelos": [
+    {
+      "slug": "01_frase-com-numero",
+      "nome": "Frase com número e legenda embutida",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "A frase é a peça e o número é parte dela. Duas formas dividem a mesma função geradora: a frase que carrega a conclusão e pinta as palavras-chave com a cor da série do gráfico ao lado, dispensando a legenda; e o KPI em texto corrido, com o número em Space Grotesk dentro de uma frase de uma ou duas linhas, a unidade colada e a base da comparação escrita. A frase nunca é digitada: sai de uma função pura sobre o dado, que decide o verbo (subiu, caiu, ficou estável) pelo sinal, pela polaridade e por um corte de estabilidade declarado, e trata singular, plural, zero, faixa e ausência.",
+      "quando_usar": [
+        "Abrir uma tela com a conclusão do recorte em uma frase, com um ou dois números e a base da comparação",
+        "Substituir a legenda de um gráfico de duas a quatro séries pintando os nomes na frase com a cor de cada série",
+        "Sumário executivo da Diretoria lido em voz alta ou colado num e-mail, com até três frases",
+        "Título dinâmico de painel filtrável, desde que a frase seja recalculada a cada filtro",
+        "Número que precisa sair em faixa (cenário) ou com a palavra premissa, onde o card de KPI forçaria um ponto"
+      ],
+      "quando_evitar": [
+        "Mais de três números numa frase: vira enigma; use a tabela visual (família 14) ou a tira de KPIs (01/07)",
+        "O número sozinho é a peça, com variação e meta: use o KPI simples com contexto (01/01)",
+        "Frase fixa sobre dado filtrável: contradiz o gráfico no primeiro filtro; gere a frase ou tire o texto",
+        "Cor como único canal de destaque na palavra: some para quem não distingue a cor; sempre junto de peso 600 ou 700",
+        "Comparação entre muitas entidades: o texto esconde a ordem; use barras simples ordenadas (02/01)"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_leads-qualificados-contra-totais",
+          "titulo": "Leads qualificados contra leads totais",
+          "caso_de_uso": "Marketing: os leads qualificados cresceram mais que os totais em out/26, sem legenda abaixo da linha de duas séries.",
+          "o_que_demonstra": [
+            "Nomes das séries na frase com a mesma cor do stroke, vinda de um objeto único",
+            "Peso 600 junto da cor na palavra, para o destaque não depender só de cor",
+            "Verbo e ordem da comparação calculados; a frase inverte quando a relação inverte",
+            "LineChart de duas séries logo abaixo da frase, sem Legend do Recharts"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_receita-do-mes-em-texto-corrido",
+          "titulo": "Receita do mês em texto corrido com dataword",
+          "caso_de_uso": "Comercial: em set/26 foram reconhecidos R$ 1,24 mi, 8% acima de ago/26, com a tendência de 12 meses na altura do texto.",
+          "o_que_demonstra": [
+            "KPI em texto corrido: número em kpi-number font-semibold, resto em text-text-secondary",
+            "Sparkline inline em SVG de 1em de altura com geometria calculada em TypeScript",
+            "Último ponto da sparkline na cor do número, como o dataword de Tufte",
+            "Variação com sinal tipográfico e base nomeada na mesma frase"
+          ],
+          "canvas_sugerido": "faixa"
+        },
+        {
+          "slug": "v3_sumario-executivo-da-diretoria",
+          "titulo": "Sumário executivo da Diretoria em três frases",
+          "caso_de_uso": "Diretoria: receita contra meta, entradas previstas contra o teto de capacidade e cenário de 2027 em faixa, em três frases.",
+          "o_que_demonstra": [
+            "Três frases geradas pela mesma função, cada uma com no máximo dois números",
+            "Multiplicador 3,1x contra o teto em text-negative com peso 700 e ícone de alerta",
+            "Cenário escrito em faixa, entre R$ 8,4 mi e R$ 10,1 mi, nunca o ponto médio",
+            "A palavra premissa escrita na frase; a etiqueta colorida fica com o VisualCard"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_zero-um-estavel-e-ausente",
+          "titulo": "Frases diante de zero, um, estável e ausência",
+          "caso_de_uso": "Pré-vendas: a mesma função de frase com nenhuma agenda, 1 agenda, variação dentro do corte, base zero e dado não coletado.",
+          "o_que_demonstra": [
+            "Singular, plural e zero por extenso: nenhuma agenda, 1 agenda, 2 agendas",
+            "Corte de estabilidade declarado: ficou estável (0,4%) sem cor semântica",
+            "Base anterior zero escrita como sem base de comparação, nunca +Infinity%",
+            "Dado não coletado com formatUnavailable e o motivo, nunca um zero falso",
+            "Empate no título dinâmico nomeia as duas plataformas empatadas"
+          ],
+          "canvas_sugerido": "alto"
+        }
+      ]
+    },
+    {
+      "slug": "02_citacao-e-verbatim",
+      "nome": "Citação em destaque e verbatim realçado",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Um trecho de texto em destaque tipográfico, com fio lateral, corpo maior e atribuição por perfil fictício, e a variante analítica: o verbatim com os termos realçados por categoria e a informação de quanto aquele texto representa. A citação ilustra um padrão já medido em outro visual; não prova frequência. Por isso toda citação carrega o contador de representatividade (1 de 38 respostas parecidas, ou 23% das respostas do motivo). O realce é montado em TypeScript: a busca normaliza acento e caixa, o realce marca a forma original, e a string vira segmentos renderizados como mark, sem dangerouslySetInnerHTML. Nome, e-mail e telefone são mascarados antes de qualquer exibição.",
+      "quando_usar": [
+        "Dar voz do cliente a um motivo de perda ou de ganho que outro visual já quantificou",
+        "Mostrar como uma objeção aparece escrita, com os termos da categoria realçados",
+        "Até cinco verbatins por motivo, cada um com a parcela das respostas que ele representa",
+        "Abrir uma tela de Comercial ou de Pré-vendas com a frase que resume o trimestre na voz de quem compra"
+      ],
+      "quando_evitar": [
+        "Como prova de frequência: uma frase escolhida a dedo não mede nada; use a bar list de termos (02/09)",
+        "Mais de cinco citações empilhadas: o leitor para de ler; leve para a concordância KWIC (03)",
+        "Trecho recortado que inverte o sentido original: recorte por oração e marque o corte com reticências",
+        "Citação sem o número que ela ilustra ao lado: vira anedota; junte ao KPI simples com contexto (01/01)",
+        "Texto livre sem mascaramento de nome, e-mail e telefone: o componente mascara antes de exibir, sempre"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_citacao-de-motivo-de-ganho",
+          "titulo": "Citação de motivo de ganho no topo do painel",
+          "caso_de_uso": "Comercial: qual frase de cliente resume o motivo de ganho mais citado em 2026-T3, e quantas respostas ela representa.",
+          "o_que_demonstra": [
+            "blockquote com border-s-4 em --chart-1 e corpo em 14 px, sem aspas decorativas",
+            "Atribuição por perfil fictício: cliente patrimonial, faixa B, set/26",
+            "Contador de representatividade: 1 de 38 respostas parecidas",
+            "Frase acessível na raiz com o motivo, a parcela e o período"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_objecoes-realcadas-por-categoria",
+          "titulo": "Verbatim com objeções realçadas por categoria",
+          "caso_de_uso": "Pré-vendas: em que palavras a objeção aparece na anotação de ligação, com preço, momento e concorrente em cores próprias.",
+          "o_que_demonstra": [
+            "String dividida em segmentos pelos índices das ocorrências, renderizada como mark",
+            "Busca por chave sem acento e em minúsculas, realce na forma original escrita",
+            "Cor por categoria em slot fixo 1, 3 e 6, com fundo translúcido e texto claro",
+            "Sublinhado além da cor no termo realçado, para não depender só de cor",
+            "Legenda das categorias acima do trecho com a contagem de cada uma"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_cinco-verbatins-por-motivo-de-perda",
+          "titulo": "Cinco verbatins por motivo de perda",
+          "caso_de_uso": "Comercial: como os clientes descrevem cada um dos cinco maiores motivos de perda de 2026-T3, com a parcela de cada frase.",
+          "o_que_demonstra": [
+            "Seletor de motivo e cinco verbatins do motivo escolhido, com a contagem do motivo",
+            "Parcela por verbatim: representa 23% das respostas desse motivo, por formatPercent",
+            "Verbatins ordenados pela parcela, não pela escolha de quem montou o painel",
+            "Desfecho e mês de cada verbatim em 11 px e text-text-muted"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_verbatim-longo-e-dado-sensivel",
+          "titulo": "Verbatim longo recortado e com dado mascarado",
+          "caso_de_uso": "Pré-vendas: exibir uma anotação de 800 caracteres ao redor do termo sem expor telefone, e-mail ou nome escritos nela.",
+          "o_que_demonstra": [
+            "Recorte por palavras ao redor do termo com reticências nas duas pontas",
+            "Mascaramento antes do realce: [telefone], [e-mail] e [nome] no lugar do dado",
+            "Contagem de caracteres omitidos escrita junto do recorte",
+            "Motivo sem verbatim mostra estado vazio com role status, sem citação inventada"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "03_concordancia-kwic",
+      "nome": "Concordância KWIC",
+      "abordagem_stack": "html-tailwind",
+      "resumo": "Cada ocorrência de um termo vira uma linha, com o termo numa coluna central própria, o contexto esquerdo alinhado à direita e o contexto direito alinhado à esquerda: o formato Key Word in Context. O olho desce pela coluna do termo e lê o que vem antes e depois em todas as ocorrências de uma vez, o que revela padrões de uso que a contagem esconde. É o complemento natural da lista de termos e da nuvem: a contagem diz quanto, a concordância mostra como. O contexto é cortado por palavras em TypeScript, o esquerdo pelo começo, mantendo as palavras mais próximas do termo; o layout é um grid de três colunas em Tailwind, sem o truque de dir=rtl.",
+      "quando_usar": [
+        "Ler o uso real de um termo que a bar list de termos (02/09) ou a nuvem (04) apontou",
+        "De 10 a 200 ocorrências na tela; acima disso, com filtro e virtualização ao colar no Farol",
+        "Agrupar os sentidos de um termo ordenando pelo contexto direito ou esquerdo",
+        "Conferir se um termo classificado como objeção é mesmo objeção antes de publicar a métrica"
+      ],
+      "quando_evitar": [
+        "Resumo executivo: a concordância é ferramenta de leitura; na Diretoria use a frase com número (01)",
+        "Milhares de ocorrências sem filtro: ninguém lê; filtre por desfecho ou por período antes",
+        "Pergunta sobre as continuações mais comuns em forma de ramos: use a árvore de palavras (07)",
+        "Alinhar o contexto esquerdo com dir=rtl: embaralha pontuação; corte pelas palavras em TypeScript",
+        "Texto com dado pessoal sem mascaramento: mascare nome, e-mail e telefone antes de montar a linha"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_ocorrencias-de-concorrente",
+          "titulo": "Vinte ocorrências de concorrente nas perdas",
+          "caso_de_uso": "Comercial: em que contexto o termo concorrente aparece nas anotações das oportunidades perdidas em 2026-T3.",
+          "o_que_demonstra": [
+            "grid grid-cols-[1fr_auto_1fr] com a coluna esquerda em text-right",
+            "Contexto esquerdo cortado pelo começo, mantendo as palavras mais próximas do termo",
+            "Termo central em peso 600 e text-text-primary, contexto em text-text-secondary",
+            "Frase acessível com o termo, o total de ocorrências e as linhas exibidas"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v2_ordenado-pelo-contexto-direito",
+          "titulo": "Concordância ordenada pelo contexto direito",
+          "caso_de_uso": "Comercial: quais sentidos de concorrente se repetem, como concorrente mais barato ou concorrente já atende.",
+          "o_que_demonstra": [
+            "Ordenação pela primeira palavra do contexto direito, pela chave sem acento",
+            "Grupos de sentido separados por espaço vertical, sem divisória",
+            "Contagem por grupo à direita em tabular-nums, com o substantivo ocorrências",
+            "Seletor de ordenação entre contexto esquerdo, termo e contexto direito"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_concordancia-com-desfecho-e-executivo",
+          "titulo": "Concordância com desfecho, data e executivo",
+          "caso_de_uso": "Comercial: ao clicar em preço na lista de termos, ler as ocorrências filtradas por desfecho, com data e executivo fictício.",
+          "o_que_demonstra": [
+            "Metadados por linha: data por formatDate, desfecho e Executivo 03 em 11 px",
+            "Filtro por desfecho ganha, perdida ou aberta com a contagem em cada opção",
+            "Primeiras 40 de 2.000 linhas no preview, com o total escrito no rodapé",
+            "Desfecho com ícone e palavra junto da cor, nunca só a cor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_termo-na-borda-e-sem-ocorrencia",
+          "titulo": "Termo na borda da frase e termo sem ocorrência",
+          "caso_de_uso": "Pré-vendas: ler ocorrências em que o termo abre ou fecha a anotação, e o que aparece quando ele não ocorre no recorte.",
+          "o_que_demonstra": [
+            "Contexto vazio com marcador discreto em text-text-muted, sem colapsar a coluna",
+            "Grafias preco e preço agrupadas pela chave e exibidas como foram escritas",
+            "Pontuação colada ao termo preservada no contexto e fora do destaque",
+            "Termo sem ocorrência troca a grade por estado vazio com role status"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "04_nuvem-de-palavras",
+      "nome": "Nuvem de palavras",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Termos com tamanho de fonte pelo peso, contado como quantas respostas citam o termo, arranjados de forma compacta. Duas variantes: a nuvem em espiral, em SVG puro com layout calculado em TypeScript (do maior para o menor, espiral arquimediana a partir do centro, colisão de retângulos medidos com measureText depois de document.fonts.ready, descarte contado do que não cabe, sem rotação e sem aleatoriedade), e a nuvem alinhada (tag cloud), em HTML com flex-wrap, degraus por quantil e cada termo como botão de filtro. É a forma mais pedida e a mais criticada da família: palavra longa ganha ênfase indevida e a área não se compara com precisão. Serve para ambientação e exploração rápida; para ranking, a lista de termos lê melhor.",
+      "quando_usar": [
+        "Visão impressionista de 30 a 100 termos, quando a pergunta é o assunto e não o valor exato",
+        "Exploração rápida antes de escolher o termo que vai para a concordância KWIC (03)",
+        "Tags clicáveis que filtram o painel inteiro, na variante alinhada com 4 ou 5 degraus",
+        "Destacar os poucos termos que mudaram, com o resto do vocabulário em tom neutro"
+      ],
+      "quando_evitar": [
+        "Ranking ou comparação precisa de valores: use a bar list de termos (02/09)",
+        "Comparar dois períodos ou dois grupos: use barras divergentes (02/06) ou a dispersão de termos (06)",
+        "Menos de 30 respostas ou menos de 15 termos: a nuvem inventa padrão; mostre a lista com aviso de amostra pequena",
+        "Tamanho linear no valor ou rotação livre: infla termos longos e piora a leitura; use raiz quadrada e texto horizontal",
+        "Layout com Math.random ou refeito a cada redimensionamento: a nuvem troca de lugar; calcule determinístico e por breakpoint"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_motivos-de-perda-em-espiral",
+          "titulo": "Motivos de perda livres do trimestre",
+          "caso_de_uso": "Comercial: quais palavras mais aparecem nos 412 motivos de perda escritos livremente em 2026-T3.",
+          "o_que_demonstra": [
+            "Espiral arquimediana determinística do maior para o menor, com folga de 2 px",
+            "Fonte por raiz quadrada entre 12 e 48 px, largura medida com measureText",
+            "Peso contado por resposta que cita o termo, não por ocorrência",
+            "Termos descartados contados na nota: 12 termos fora da nuvem",
+            "Lista ordenada equivalente em sr-only para leitor de tela"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v2_termos-que-cresceram",
+          "titulo": "Termos de perda que cresceram no trimestre",
+          "caso_de_uso": "Comercial: quais termos dos motivos de perda cresceram mais de 50% contra 2026-T2, sem perder o vocabulário inteiro.",
+          "o_que_demonstra": [
+            "Destaque em --chart-1 e peso 700 só nos termos acima do corte de 50%",
+            "Demais termos em --text-muted, ainda legíveis no tema escuro",
+            "Dica com contagem atual, contagem anterior e variação com a base nomeada",
+            "Termo sem base anterior marcado como novo, fora do cálculo de variação"
+          ],
+          "canvas_sugerido": "card"
+        },
+        {
+          "slug": "v3_termos-de-busca-em-nuvem-alinhada",
+          "titulo": "Termos de busca paga em nuvem alinhada",
+          "caso_de_uso": "Marketing: quais termos de busca paga trouxeram mais leads em ago/26 e quais têm maioria qualificada, clicando para filtrar.",
+          "o_que_demonstra": [
+            "Variante tag cloud em HTML: flex flex-wrap items-baseline e cinco degraus por quantil",
+            "Cada termo é um button com aria-pressed; o selecionado filtra e mostra a contagem",
+            "Maioria qualificada em --chart-1 com peso 600; as demais em text-text-secondary",
+            "Ordem alfabética declarada no subtítulo, com a ordem por peso no seletor",
+            "Dica com leads, percentual qualificado e CPL qualificado por formatCurrencyCompact"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_amostra-pequena-e-termo-longo",
+          "titulo": "Amostra pequena e termo longo",
+          "caso_de_uso": "Pré-vendas: o que a peça mostra quando há só 22 respostas e um termo longo como planejamento sucessório lidera.",
+          "o_que_demonstra": [
+            "Abaixo de 30 respostas ou 15 termos, lista ordenada com aviso de amostra pequena",
+            "Teto de tamanho para termo longo, com o valor exato escrito na dica",
+            "A mesma função de layout decide entre nuvem e lista pela contagem",
+            "Recorte sem texto no período troca a peça por estado vazio com role status"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "05_dispersao-lexical-no-tempo",
+      "nome": "Dispersão lexical ao longo do tempo",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Uma faixa por termo e um traço vertical fino a cada ocorrência, na posição do tempo em que ela aconteceu: o dispersion plot do NLTK trazido para datas. Lê-se quando um termo começou a aparecer, quando adensou e quando sumiu, termo a termo, no mesmo eixo de tempo. No Recharts é um ScatterChart com XAxis numérico de datas e YAxis de categorias, e um shape customizado que desenha a linha com a altura da banda. Traço translúcido revela adensamento; acima de umas 10 ocorrências por dia por termo a forma vira borrão e a pergunta migra para o mapa de calor. Termo sem ocorrência mantém a faixa vazia com 0, porque remover a faixa esconde a ausência.",
+      "quando_usar": [
+        "Saber quando um termo começou ou parou de aparecer, de 3 a 12 termos, num trimestre ou num ano",
+        "Mostrar adensamento de uma objeção depois de um evento datado, como reajuste de taxa ou novo roteiro",
+        "Comparar o ritmo de aparição de termos que a bar list de termos (02/09) colocou lado a lado",
+        "Contagens baixas por dia, até cerca de 10 ocorrências por termo"
+      ],
+      "quando_evitar": [
+        "Contagens altas por dia: vira borrão; agregue por semana num mapa de calor (família 15)",
+        "Pergunta sobre volume total por período: use colunas (família 03) ou linha simples (04/01)",
+        "Remover a faixa do termo sem ocorrência: esconde a ausência; mantenha a faixa vazia com 0",
+        "Mais de 12 termos: as faixas ficam finas demais para ler o traço; filtre ou pagine",
+        "Evento de referência ancorado em pixel: mente no primeiro filtro; ancore a anotação na data do dado"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_termos-de-perda-em-2026",
+          "titulo": "Seis termos de perda ao longo de 2026",
+          "caso_de_uso": "Comercial: em que meses de 2026 cada um dos seis principais termos de motivo de perda apareceu nas anotações.",
+          "o_que_demonstra": [
+            "ScatterChart com XAxis numérico de datas e YAxis type category por termo",
+            "Shape customizado que desenha line vertical com a altura da banda",
+            "Traço de 1 px em --chart-1 com opacidade, para o adensamento aparecer",
+            "Tiques mensais por formatMonthShort e grade vertical mensal em --line-subtle"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_preco-depois-do-reajuste",
+          "titulo": "Preço adensando depois do reajuste de taxa",
+          "caso_de_uso": "Comercial: o termo preço passou a aparecer mais nas perdas depois do reajuste fictício de taxa em 2026-07-01?",
+          "o_que_demonstra": [
+            "ReferenceLine na data do reajuste com rótulo curto na margem superior reservada",
+            "Contagem antes e depois escrita junto da faixa do termo destacado",
+            "Destaque em --chart-1 só na faixa de preço; demais faixas em --line-strong",
+            "Janelas antes e depois de mesma duração, com a regra escrita na nota"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_objecoes-da-pre-vendas-por-dia",
+          "titulo": "Doze objeções da pré-vendas por dia",
+          "caso_de_uso": "Pré-vendas: como as 12 objeções mais anotadas nas ligações se distribuíram dia a dia entre 2026-06-01 e 2026-08-31.",
+          "o_que_demonstra": [
+            "Doze faixas com altura calculada pela área útil, sem rótulo cortado",
+            "Total de menções por termo à direita, em font-display e alinhado à direita",
+            "Termos ordenados pela primeira aparição, com a regra escrita no subtítulo",
+            "Dica com a data por formatDate, o termo e as menções daquele dia",
+            "Aviso quando um termo passa de 10 menções num dia, apontando a família 15"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_termo-sem-mencoes-e-mes-parcial",
+          "titulo": "Termo sem menções e mês corrente parcial",
+          "caso_de_uso": "Marketing: como as faixas de termos de formulário se comportam quando um termo não aparece e o mês ainda não fechou.",
+          "o_que_demonstra": [
+            "Faixa vazia mantida com 0 e rótulo sem menções, nunca removida",
+            "Mês corrente em ReferenceArea com --surface-sunken e nota parcial até a data",
+            "Semana sem coleta de formulário escrita com formatUnavailable, separada de zero",
+            "Recorte sem nenhuma ocorrência troca o gráfico por estado vazio com role status"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    },
+    {
+      "slug": "06_dispersao-de-termos",
+      "nome": "Dispersão de termos (scattertext)",
+      "abordagem_stack": "recharts-custom",
+      "resumo": "Cada termo é um ponto: o eixo X é a frequência, ou o rank, no grupo A e o eixo Y a frequência no grupo B. Termos sobre a diagonal são comuns aos dois grupos; os que se afastam dela são característicos de um. Popularizada pelo Scattertext, a forma responde qual vocabulário distingue dois grupos num universo grande de termos, algo que barras não comportam. No Recharts é um ScatterChart com dois eixos numéricos em rank ou em escala log (somando 1 e declarando), a diagonal por ReferenceLine com segment e rótulos por LabelList com content customizado, que só desenha os rótulos aprovados por um algoritmo guloso de colisão calculado em TypeScript.",
+      "quando_usar": [
+        "Achar os termos típicos de cada um de dois grupos, entre 100 e 300 termos",
+        "Ganhas contra perdidas, CPL abaixo contra acima da mediana, antes contra depois de uma mudança",
+        "Público analítico de Marketing ou de RevOps, que vai explorar com busca e dica",
+        "Quando as barras divergentes (02/06) cortariam termos demais para caber"
+      ],
+      "quando_evitar": [
+        "Público não analítico ou apresentação: use barras divergentes de mudança de vocabulário (02/06)",
+        "Menos de 30 termos: a pirâmide de termos (02/07) mostra as duas magnitudes com o nome em cada barra",
+        "Mais de 300 termos sem frequência mínima: vira nuvem de pontos; filtre antes de desenhar",
+        "Escala log com zero: o ponto some; use rank ou some 1 e declare no subtítulo",
+        "Grupos de tamanhos muito diferentes em contagem bruta: o maior domina; use a proporção de cada grupo"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_ganhas-contra-perdidas",
+          "titulo": "Termos de oportunidades ganhas contra perdidas",
+          "caso_de_uso": "Comercial: quais termos das anotações são típicos das oportunidades ganhas e quais das perdidas, entre 100 termos de 2026.",
+          "o_que_demonstra": [
+            "ScatterChart com eixos em rank nos dois grupos e domínio igual",
+            "Diagonal por ReferenceLine com segment em --text-muted tracejado 3 3",
+            "Quinze rótulos escolhidos por algoritmo guloso de colisão em TypeScript",
+            "Cantos nomeados, típico de ganhas e típico de perdidas, sem legenda"
+          ],
+          "canvas_sugerido": "quadrado"
+        },
+        {
+          "slug": "v2_busca-destaca-um-termo",
+          "titulo": "Busca que destaca um termo na dispersão",
+          "caso_de_uso": "Comercial: onde fica o termo prazo entre ganhas e perdidas, e quais frases fictícias sustentam essa posição.",
+          "o_que_demonstra": [
+            "Prop de termo buscado que acende o ponto em --chart-1 com rótulo em peso 700",
+            "Demais pontos em --line-strong com opacidade, sem competir com o destaque",
+            "Três frases do termo abaixo do gráfico, em concordância curta",
+            "Termo buscado inexistente escreve termo não encontrado no recorte"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v3_titulos-de-criativos-por-cpl",
+          "titulo": "Palavras de títulos de criativos por CPL",
+          "caso_de_uso": "Marketing: quais palavras de títulos de criativos são típicas dos anúncios com CPL abaixo da mediana de ago/26, entre 250 termos.",
+          "o_que_demonstra": [
+            "Eixos em escala log com frequência somada de 1, declarada no subtítulo",
+            "250 pontos com rótulo só nos 20 termos de maior distinção",
+            "Frequência mínima de 3 anúncios aplicada antes e escrita na nota",
+            "Dica com os dois grupos, a contagem de anúncios e o CPL qualificado médio"
+          ],
+          "canvas_sugerido": "alto"
+        },
+        {
+          "slug": "v4_termos-raros-e-grupos-desbalanceados",
+          "titulo": "Termos raros agregados e grupos desbalanceados",
+          "caso_de_uso": "Pré-vendas: como ler a dispersão quando 142 termos aparecem uma vez em cada grupo e um grupo tem 40 anotações contra 400.",
+          "o_que_demonstra": [
+            "Termos de frequência 1 e 1 agregados num marcador único com a contagem",
+            "Proporção por grupo no lugar da contagem, com o n de cada grupo no subtítulo",
+            "Termo presente num grupo só fica sobre o eixo, com o valor 0 escrito na dica",
+            "Aviso de grupo pequeno quando um dos lados tem menos de 50 anotações"
+          ],
+          "canvas_sugerido": "quadrado"
+        }
+      ]
+    },
+    {
+      "slug": "07_arvore-de-palavras",
+      "nome": "Árvore de palavras",
+      "abordagem_stack": "svg-puro",
+      "resumo": "Uma palavra raiz e as sequências que a seguem (sufixo), que a precedem (prefixo) ou as duas, com tamanho de fonte pela frequência de cada ramo; técnica de visualização de texto publicada em 2007. Lê-se da raiz para fora: os ramos maiores são os jeitos mais comuns de continuar a frase. Em SVG puro, com a trie montada em TypeScript sobre frases tokenizadas e normalizadas (chave sem acento e em minúsculas, exibindo a forma original mais frequente), poda por contagem mínima, profundidade de 3 ou 4 palavras, X pela largura acumulada das palavras medidas, Y pelas folhas com o pai centralizado nos filhos e conectores bézier. Layout determinístico e sempre com lista textual equivalente.",
+      "quando_usar": [
+        "Explorar o que vem depois ou antes de uma palavra frequente, em 50 a 500 frases",
+        "Achar as formas comuns de uma objeção começar, como não tem ou não é o momento",
+        "Ligar o ramo ao desfecho, pintando os ramos cujas frases terminaram em perda",
+        "Oficina de roteiro da pré-vendas, em que a equipe lê as frases em conjunto"
+      ],
+      "quando_evitar": [
+        "Raiz com menos de 5 ocorrências: a árvore vira fio; mostre as frases na concordância KWIC (03)",
+        "Mais de 200 frases sem poda: fica ilegível; aplique contagem mínima e profundidade máxima",
+        "Contagem de termos isolados: a bar list de termos (02/09) responde melhor",
+        "Resumo executivo: a árvore pede exploração; use a frase com número (01)",
+        "Grafias sem normalizar: preço e preco viram ramos separados; agrupe pela chave sem acento"
+      ],
+      "arquivo_estudo": "_estudo/familias/21_texto-e-nuvem-de-palavras.md",
+      "versoes": [
+        {
+          "slug": "v1_raiz-nao-nas-objecoes",
+          "titulo": "O que vem depois de não nas objeções",
+          "caso_de_uso": "Pré-vendas: como as objeções anotadas nas ligações de ago/26 continuam depois da palavra não.",
+          "o_que_demonstra": [
+            "Trie de sufixo montada em TypeScript com poda por contagem mínima de 3",
+            "Profundidade de 3 palavras e fonte decrescente com a frequência do ramo",
+            "Conectores bézier com o pai centralizado nas folhas",
+            "Lista textual equivalente dos ramos para leitor de tela"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v2_ramos-que-levam-a-perda",
+          "titulo": "Ramos de objeção que terminaram em perda",
+          "caso_de_uso": "Pré-vendas: quais continuações de não aparecem mais em ligações cujas oportunidades foram perdidas depois.",
+          "o_que_demonstra": [
+            "Ramo com maioria perdida em --chart-1 e peso 700; os demais em text-text-secondary",
+            "Parcela escrita no fim do ramo por formatRateWithVolume, como 7 de 9",
+            "No máximo dois ramos anotados, com a regra de maioria declarada na nota",
+            "Conector do ramo destacado com traço mais grosso, sem depender só da cor"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v3_arvore-dupla-com-raiz-preco",
+          "titulo": "Árvore dupla com raiz preço",
+          "caso_de_uso": "Comercial: o que se escreve antes e depois de preço em 500 anotações fictícias de oportunidades perdidas em 2026.",
+          "o_que_demonstra": [
+            "Prefixo à esquerda e sufixo à direita da mesma raiz, com larguras medidas",
+            "Chave sem acento e em minúsculas; exibida a forma original mais frequente",
+            "Poda por contagem mínima de 8 com contador de ramos omitidos",
+            "Clique numa palavra recomputa a trie com ela como raiz"
+          ],
+          "canvas_sugerido": "largo"
+        },
+        {
+          "slug": "v4_raiz-rara-vira-concordancia",
+          "titulo": "Raiz rara substituída por concordância",
+          "caso_de_uso": "Marketing: o que a peça mostra quando a raiz escolhida, garantia, aparece só em 4 respostas de formulário do trimestre.",
+          "o_que_demonstra": [
+            "Com menos de 5 ocorrências, as frases em concordância no lugar da árvore",
+            "Aviso com a contagem e o limite: 4 ocorrências, a árvore pede 5",
+            "Raiz sem nenhuma ocorrência mostra estado vazio com role status",
+            "A mesma função decide entre árvore e concordância pela contagem"
+          ],
+          "canvas_sugerido": "card"
+        }
+      ]
+    }
+  ]
+}

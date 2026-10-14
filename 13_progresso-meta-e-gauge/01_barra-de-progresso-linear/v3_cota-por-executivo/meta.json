@@ -1,0 +1,15 @@
+{
+  "title": "Atingimento da cota por executivo",
+  "useCase": "Comercial: quem está acima, na linha ou abaixo da cota de 2026 T3 entre 8 executivos com metas de valores diferentes.",
+  "demonstrates": [
+    "Lista em HTML com barra em percentual da meta e valor absoluto ao lado",
+    "Ordenação por atingimento, nunca por nome nem por variação",
+    "Mediana da equipe como traço vertical comum a todas as linhas",
+    "Excedente acima de 100% em tom próprio, com o percentual escrito",
+    "Escala comum sobre o conjunto para o comprimento se comparar entre linhas",
+    "Pessoa sem meta definida no fim com o texto sem meta, fora da mediana"
+  ],
+  "canvas": "alto",
+  "frame": "card",
+  "notes": "Fernanda O. de Andrade Lima exercita o nome longo (seção 3) sem reticência (TIP-7) e, com 2,6% de atingimento, exercita também o rounded-sm da ROUNDED_FLOOR que a v1 não chega a mostrar com o dado dela. Denominador (a meta de cada linha) e período aparecem em texto; a peça declara que não há ritmo esperado calculado, por decisão da família."
+}

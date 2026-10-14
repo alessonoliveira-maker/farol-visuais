@@ -1,0 +1,71 @@
+{
+  "slug": "01_rosca-com-total-central",
+  "nome": "Rosca com total central",
+  "abordagem_stack": "recharts-nativo",
+  "resumo": "Pizza com o miolo recortado em que o centro carrega o total do todo; a leitura sai da área e vai para o comprimento do arco. Absorve a rosca com fatia ativa: hover, foco ou seleção troca o centro do total para o item ativo, o que dispensa rótulo em cada fatia. É a forma mais comum da família nos painéis do Farol.",
+  "quando_usar": [
+    "Parte do todo com 2 a 5 categorias em que o total é a informação principal do cartão",
+    "Composição que precisa do número do todo e da divisão no mesmo lugar, sem repetir o total no título",
+    "Exploração de partes sem poluir com rótulos: o centro mostra o item ativo e a legenda tabular traz valor e percentual",
+    "Composição com categoria de ausência declarada (sem origem, sem dado), visível e por último"
+  ],
+  "quando_evitar": [
+    "Comparação precisa entre categorias de tamanho parecido: barra horizontal ordenada (02)",
+    "Mais de 5 fatias coloridas: agrupar em Outros com a contagem ou trocar por barra (02)",
+    "Uma fração só contra meta: progresso circular (13/03)",
+    "Total que muda com filtro ou com série escondida sem aviso: o centro precisa dizer de qual total fala",
+    "Mesma composição em vários períodos: barra 100% (03) ou linha de participação (04)"
+  ],
+  "arquivo_estudo": "_estudo/familias/07_rosca-e-radial.md",
+  "versoes": [
+    {
+      "slug": "v1_investimento-de-midia-do-mes",
+      "titulo": "Investimento de mídia do mês",
+      "caso_de_uso": "Marketing: como os R$ 186 mil investidos em 2026-08 se dividem entre as três plataformas de mídia paga.",
+      "o_que_demonstra": [
+        "Pie com innerRadius 62% e outerRadius 80%, ordem decrescente a partir das 12 horas",
+        "Total no centro por Label com content e dois tspan, sem repetir o total no título",
+        "Separador entre fatias com stroke em surface-raised",
+        "Legenda tabular ao lado com valor compacto e percentual inteiro somando 100"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v2_perdas-por-motivo-com-fatia-ativa",
+      "titulo": "Perdas por motivo com fatia ativa",
+      "caso_de_uso": "Comercial: qual motivo explica a maior parte das 212 perdas do trimestre, com nome, contagem e percentual no centro.",
+      "o_que_demonstra": [
+        "Estado ativo por shape que lê isActive, sem o activeIndex removido no Recharts 3",
+        "Maior motivo aberto ativo por activeId do data.ts; o centro alterna do total ao item",
+        "Setor ativo com raio 8 px maior e nome na legenda em peso 700",
+        "Atraso de saída de 100 ms para o centro não piscar ao cruzar o separador",
+        "Legenda e teclado também ativam a fatia, não só o ponteiro"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v3_carteira-aberta-por-etapa",
+      "titulo": "Carteira aberta por etapa do funil",
+      "caso_de_uso": "Comercial: quanto dos R$ 7,4 mi em 58 oportunidades abertas está em qualificação, proposta, negociação e fechamento.",
+      "o_que_demonstra": [
+        "Centro em duas linhas: valor compacto e contagem com o substantivo oportunidades",
+        "Etapas na ordem do funil, não por valor, em tons seq-4 a seq-7",
+        "Legenda tabular com valor, oportunidades e percentual em colunas à direita",
+        "Frase acessível calculada com o total e a etapa de maior valor"
+      ],
+      "canvas_sugerido": "card"
+    },
+    {
+      "slug": "v4_origem-com-fatia-minima-e-ausencia",
+      "titulo": "Leads por origem com fatia mínima e ausência",
+      "caso_de_uso": "Marketing: de onde vieram os 486 leads do mês quando três origens são quase nulas e 11% chegaram sem origem declarada.",
+      "o_que_demonstra": [
+        "Teto de 5 fatias: da sexta em diante vira Outros (n=3) com a contagem no rótulo",
+        "Sem origem declarada com contorno text-muted, sem preenchimento e por último",
+        "Fatia de 0,9% ativada pela legenda e pelo teclado, sem inflar o ângulo com minAngle",
+        "Total nulo vira trilho tracejado com formatUnavailable() e ícone Unplug no centro"
+      ],
+      "canvas_sugerido": "card"
+    }
+  ]
+}
