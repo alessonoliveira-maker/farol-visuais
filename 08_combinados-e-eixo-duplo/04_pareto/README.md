@@ -135,11 +135,11 @@ efeito: quantas categorias, a partir da maior, já respondem por 80% do total.
   preenchimento da marca neutra (1,79:1 no escuro, 1,83:1 no claro). É o mesmo uso do molde
   `02_barras-horizontais/01_simples-ordenada`, permitido pela isenção da ACE-3 porque o valor está
   escrito em toda marca; a guarda orienta e não reprova.
-- Modelo: a curva do acumulado atravessa o rótulo de valor da primeira marca em toda versão, porque
-  o primeiro ponto da linha cai por construção na ponta da primeira coluna ou barra. O halo da
-  ROT-7 mantém o número legível e abre um vão visível na linha nos dois temas, que é a mesma
-  observação já registrada na `v1`. A alternativa seria tirar o rótulo da primeira marca, o que
-  custa mais do que o vão.
+- Modelo: o primeiro ponto da linha cai por construção na ponta da primeira coluna ou barra. Na
+  `v2` e na `v4` o rótulo da primeira coluna agora fica à esquerda dela, junto ao topo, fora do
+  traço (a `v4` ganhou margem esquerda de 56 px para isso); na `v3` o rótulo "Acumulado 100,0%" foi
+  para a direita do último ponto, em duas linhas, numa margem direita de 96 px. A `v1` mantém o
+  cruzamento com halo.
 - `v2_corte-em-80-por-cento`: a especificação da versão pede peso 700 no rótulo do destaque, e o
   grupo do corte tem 3 motivos. Pela TIP-3, que admite 700 em no máximo dois elementos, o 700 ficou
   no nome e no valor do motivo líder e o grupo do corte carrega 600 contra 400. O desvio está
@@ -172,3 +172,67 @@ efeito: quantas categorias, a partir da maior, já respondem por 80% do total.
   esta versão imprime 11, que é o que o modelo declara aguentar em Quando usar. Com a banda de
   76,2 px o par mais apertado de tiques, "Sem retorno" contra "Concorrência", fica a 10,3 px de
   tinta contra tinta, e o `check` não acusou colisão.
+
+2026-10-14, revisão independente de `v2`, `v3` e `v4` (as três reprovadas pela pergunta 31; o
+bloqueante está em `validation/revisao_08_combinados-e-eixo-duplo__04_pareto_2026-10-14.md`). O que
+segue não reprova:
+
+- Modelo: pela exceção da marca fina da ROT-7, quem sai do lugar é o rótulo; `v2`, `v3` e `v4`
+  foram corrigidas em 2026-10-14. A `v1`, aprovada em 2026-09-19 e não tocada, mantém o cruzamento
+  do halo com a linha na primeira coluna.
+- `v2`, `v3`, `v4`: TIP-1. Números em Manrope sem `tabular-nums` na linha de leitura (`v2`, `v4`), no
+  título de cada painel e na linha do total (`v3`), e tiques do eixo de percentual sem `font-display`
+  nas três. Sem consequência visível em texto de uma linha só.
+- `v2`, `v4`: TIP-7. A linha de leitura usa `truncate` e a cauda dela carrega o número ("das 200
+  perdas"); na `v3`, o mesmo vale para o título do painel ("3 motivos até 80%") e para a linha do
+  total. Hoje tudo cabe; com nome de etapa ou recorte longo, a reticência come o número.
+- `v2`, `v3`, `v4`: NUM-1. Precisão percentual mista no mesmo cartão: tique e corte inteiros,
+  "Acumulado 100,0%" e linha de leitura com uma casa. A casa de 81,5% tem função, mostra que o
+  acumulado passou de 80; a de 100,0% não tem.
+- `v3`: a raiz `role="img"` envolve o `radiogroup` da alternância. Filho de `img` é apresentacional
+  para leitor de tela, então o controle pode sumir para quem não enxerga a tela;
+  `14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais/v4` usa `figure` com `role="group"`.
+- `v3`: etapa sem perda, ou com zero na grandeza escolhida, some do pequeno múltiplo sem aviso:
+  `buildPanel` devolve `null`, o painel é filtrado, o outro ocupa a largura toda e a frase acessível
+  também perde a etapa. Um painel com a frase de vazio no lugar diria que a etapa existe e zerou.
+- `v3`: o total de cada etapa (170 e 40 perdas) não está escrito, e as barras medem a participação na
+  própria etapa, então 62 e 14 perdas desenham quase o mesmo comprimento nos dois painéis. O rótulo
+  absoluto sustenta a leitura, mas o volume da etapa só sai somando.
+- `v3`: a frase acessível começa pela contagem ("2 gráficos de barras") e não nomeia o motivo líder
+  de cada etapa, que é o que responde ao caso de uso; no preview, que mostra só quantidade, a
+  resposta (Concorrência sobe do 4º para o 1º lugar na pré-vendas) depende de alternar.
+- `v3`: `CUT_LABEL_GAP = 7` fica fora dos múltiplos de 2 px da ESP-1, sem consequência visível.
+- `v3`: no modo valor, pela geometria do código, o primeiro rótulo da etapa de vendas (`R$ 3,4 mi`,
+  a 10 px da ponta) fica a cerca de 1 px de o halo encostar na linha do acumulado. O render só
+  fotografa quantidade, então essa medida é projeção, não render.
+- `v4`: a frase acessível diz "mais a cauda somada" sem a contagem de 30 motivos, que só está no
+  tique.
+
+2026-10-14, segunda passada da revisão independente, depois da rodada de correção: `v2`, `v3` e
+`v4` aprovadas, e o bloqueante da pergunta 31 está resolvido nas três (linha do acumulado contínua
+nos dois temas, conferida no PNG ampliado). O que segue não reprova:
+
+- `v2`, `v4`: o rótulo da primeira coluna sai do traço pela regra `index === 0`, e não por conta
+  de colisão. Para o primeiro ponto a garantia é estrutural, porque a linha nasce nele e só segue
+  para a direita; para os outros rótulos nada é calculado. Num recorte mais plano (na `v4`, líder
+  abaixo de cerca de 14% do total com o segundo motivo perto dele) o halo do segundo rótulo passa
+  a cruzar o primeiro trecho. A conta geral sugerida na rodada anterior (caixa do rótulo contra os
+  segmentos vizinhos, escala fixa de 0 a 100) cobriria esse caso.
+- `v2`, `v4`: `FIRST_LABEL_DROP` fixo em 12 px. Com a primeira coluna mais baixa que isso, o rótulo
+  desce abaixo da base e encosta no tique do nome; a descida pode sair da altura da coluna.
+- `v2`: o rótulo da primeira coluna agora ocupa a faixa esquerda, a mesma do `corte 80%`. Se o
+  líder sozinho ficar perto de 80% do total, os dois se encontram na margem.
+- `v4`: no modo de colunas simples, abaixo de 4 motivos, o rótulo da primeira coluna continua à
+  esquerda dela, embora ali não haja linha; poderia voltar ao topo, como os outros. Ramo sem render.
+- `v4`: a margem esquerda de 56 px estreitou a banda de 76,2 para cerca de 71,8 px. O par de tiques
+  mais apertado, "Sem retorno" contra "Concorrência", mede agora 6,5 px de tinta a tinta (13 px no
+  PNG 2x), e não os 10,3 px da observação anterior: acima do respiro de 4 px, mas um nome dois
+  caracteres mais longo colide.
+- `v2`, `v4`: TIP-6. Os tiques do eixo direito saem alinhados à esquerda (`100%` e `80%` não
+  alinham pelo `%`); número em coluna pede alinhamento à direita.
+- `v3`: a nota do `meta.json` ficou velha: fala em 80 px reservados à direita (hoje 96) e diz que o
+  halo do rótulo de valor interrompe a linha na primeira barra, o que deixou de acontecer. O
+  comentário de `PANEL_MARGIN` também atribui os 96 px ao rótulo de valor, quando quem pede a
+  margem é o "Acumulado" de duas linhas.
+- `v4`: a nota do `meta.json` ficou velha: margem esquerda de 8 px (hoje 56), eixo X de 38 px (hoje
+  48) e banda de 76,2 px (hoje cerca de 71,8).

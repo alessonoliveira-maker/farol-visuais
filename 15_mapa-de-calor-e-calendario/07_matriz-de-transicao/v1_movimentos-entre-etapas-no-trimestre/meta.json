@@ -1,14 +1,17 @@
 {
   "title": "Movimentos entre etapas do funil no trimestre",
-  "useCase": "De cada etapa do funil, para onde as oportunidades foram, e quantas voltaram?",
+  "useCase": "Das 1.340 oportunidades do trimestre, entre 2026-06-30 e 2026-09-14, quem ficou, avançou, regrediu, entrou e saiu?",
   "demonstrates": [
-    "Mesma lista de etapas nos dois eixos, na ordem do funil, dando sentido à diagonal",
-    "Permanência fora da escala de cor, para não achatar todo o resto da matriz",
-    "Retrocesso abaixo da diagonal com contorno próprio, que o Sankey esconde",
-    "Colunas terminais separadas por vão e divisória: Ganha e Perdida não são etapa",
-    "Zero desenhado em neutro com o número escrito, não como faixa fraca da rampa"
+    "Seis etapas nos dois eixos, com de nas linhas e para nas colunas escritos",
+    "Linha extra nova no trimestre e colunas ganha e perdida para os totais fecharem",
+    "Diagonal de permanência fora do domínio de cor, com contorno e número escrito",
+    "Contagem na célula e percentual da linha na dica por formatRateWithVolume",
+    "Cinco totais separados: permaneceram, avançaram, regrediram, entraram e saíram"
   ],
-  "canvas": "card",
+  "canvas": {
+    "width": 960,
+    "height": 480
+  },
   "frame": "card",
-  "notes": "A contagem é de movimentos, não de oportunidades: a mesma oportunidade que avança duas vezes conta duas vezes, e isso está dito no comentário do data.ts porque é a confusão mais provável de quem colar o componente. O contorno de retrocesso usa --negative porque é a única cor semântica de alerta do Farol; quando existirem tokens divergentes próprios, a v2 troca a rampa inteira por divergente e o contorno sai."
+  "notes": "Canvas por conta: 960 x 480 na moldura card. O caso de uso tem 115 caracteres e a tabela de fronteira para 894 px de cabeçalho garante uma linha até 153, então o cabeçalho mede 40,5 px e o corpo fica em 894 x 361,5 px pela conta canvas menos 66 de recuo, menos 40,5 de cabeçalho, menos 12 de vão. Nenhum preset fecha: o largo de 960x400 dá 281,5 px de altura e a peça precisa de 340 para sete linhas de matriz, a leitura da dica e duas linhas de rodapé. O viewBox é 894 x 361 de propósito, para a escala do svg sair 1 e o piso de 11 px valer na tela; por isso painel de totais, legenda, dica e rodapé são desenhados dentro do mesmo svg, e não como bloco HTML irmão. A contagem é de oportunidades entre duas fotos, 2026-06-30 e 2026-09-14, e cada uma cai em uma célula só, por isso os cinco totais somam as 1.340. A dica de célula (mouse) e a leitura padrão usam formatRateWithVolume sobre o total da linha. O contorno de retrocesso usa --negative porque é a única cor semântica de alerta do Farol. A diagonal leva contorno em --text-muted e o zero medido fica vazado, para as duas células não se confundirem."
 }

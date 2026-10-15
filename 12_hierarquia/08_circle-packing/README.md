@@ -183,3 +183,83 @@ agente que tocar o arquivo resolve o que fizer sentido.
 - `v1`: `meta.json` traz "Raio do pai pelo maior distância mais raio dos filhos", com erro de
   concordância copiado do catálogo, e o rótulo "História da família Andrade" usa sobrenome de
   família, que é fictício mas desnecessário perto da régua da seção 3.
+
+Revisão de 2026-10-14, sobre `v2_cpl-qualificado-abaixo-da-mediana`,
+`v3_entradas-por-origem-subcanal-e-desfecho` e `v4_um-nivel-so-e-zeros`. Nenhum item abaixo
+reprova; o bloqueante da `v2` está no parecer em `validation/`, não aqui.
+
+- `v2`: a segunda entrada da legenda do veredito começa na constante 236, e não na largura medida
+  da primeira; com mediana de quatro dígitos ("R$ 1,2 mil") a folga entre as duas cai para perto de
+  9 px (ESP-6, passo derivado).
+- `v2`: a lista lateral (agora agrupada por canal, com amostra do veredito por campanha) não tem teto. Com 3 canais, cabem cerca de 12 linhas de 15 px até o fim do
+  corpo; daí em diante as linhas saem do `viewBox` sem aviso. A `v4` já resolve isso contando o
+  que sobra (GEO-1).
+- `v2`: o `useCase` do `meta.json` corta a segunda metade do caso de uso do catálogo ("e quanto de
+  lead elas trazem"). A linha de leitura responde a essa parte, então o desenho cobre, mas o
+  subtítulo do cartão fica mais estreito que a pergunta.
+- `v3`: o `meta.json` (`demonstrates`) e o item 13 da Anatomia prometem régua de área com três
+  círculos, e os dois PNGs mostram dois (96 e 10). A `thinRuler` derruba o degrau de 40 porque o
+  rótulo dele ficaria a 12,9 px do de 96, abaixo dos 14 px de `RULER_MIN_GAP`. A decisão de
+  legibilidade é boa; quem muda é o texto (DAD-10), ou então os degraus passam a sair do vão
+  disponível (nesta escala, algo perto de 5, 35 e 96 cabe) ou os círculos ficam lado a lado.
+- `v3`: 3 dos 5 subcanais (Formulário, Mensageria, Lista fria) ficam sem nome no desenho.
+  Formulário e Lista fria se reconhecem cruzando o número impresso na folha (61 e 96) com a tabela,
+  e Mensageria só por eliminação dentro de Inbound. Identificável sem interação, por isso não
+  reprova, mas é a leitura mais lenta do cartão.
+- `v3`: os números dentro das folhas (61 e 96) saem sem unidade. O contexto dá a unidade ("Entradas
+  por desfecho", "Régua de área, em entradas"), mas a NUM-6 pede o substantivo onde o número
+  aparece.
+- `v3`: os rótulos da régua ficam à direita do círculo maior, na altura do topo de cada círculo e
+  sem linha de chamada; o "10" fica ao lado da borda do círculo de 96, e não do de 10.
+- `v4`: `ROW_STEP` de 30 com barra de 12 px dá vão de 60% entre faixas, e a ESP-2 pede
+  `barCategoryGap` de 30% a 40%; o comentário do topo lê a regra ao contrário ("40% de barra sobre o
+  passo"). Sem consequência no preview: a barra está no piso de 12 px e a leitura não aperta.
+- `v4`: a nota "fora do desenho porque zero não tem área" vale para o empacotamento e não para as
+  barras que o preview mostra, porque barra codifica comprimento e a EST-3 deixaria desenhar a faixa
+  com "0 leads". O catálogo manda o zero para a lista, então a decisão fica; o motivo escrito é que
+  deveria acompanhar a forma desenhada.
+- `v4`: o marcador vazado em `--text-muted` é a convenção de ausência da 17.2, e aqui marca zero
+  medido. O "0 leads" escrito desfaz a dúvida, mas os dois papéis passam a dividir o mesmo desenho.
+- `v4`: "2026-08" está escrito à mão na nota da lista e na frase acessível, em formato de documento
+  (a NUM-7 pede `formatMonthShort` na tela) e sem vir do dado; num recorte de outro mês a nota
+  mente (DAD-9).
+- `v4`, com peso, ainda que latente: o ramo de empacotamento (profundidade 2 ou mais), que o
+  preview não fotografa, não nomeia grupo nem folha. O anel sai sem nome, a folha grande leva só o
+  número, e os chips cobrem só as folhas pequenas e os zeros, sem dizer o grupo. A altura desse
+  ramo sai de `ranked.length * ROW_STEP`, que é a altura das barras: com mais de 6 folhas o
+  desenho passa do corpo de 241,5 px. Quem colar a `v4` com dado hierárquico recebe círculos mudos;
+  para esse caso a referência continua sendo a `v1`, e a frase do item `v4` em Versões ("responde a
+  qualquer recorte com filhos") promete mais do que o ramo entrega.
+
+Revisão de 2026-10-14, segunda passada, sobre `v2_cpl-qualificado-abaixo-da-mediana` depois da
+rodada de correção. O bloqueante de identificação está resolvido e a versão foi aprovada; nenhum
+item abaixo reprova.
+
+- `v2`: a lista lateral perdeu a legenda "Sem rótulo no desenho", e nada no cartão diz que ela traz
+  só as campanhas sem nome no desenho. "Busca paga 262" fica sobre uma única linha, "Rivais 24", e
+  as linhas de nenhum canal somam o total ao lado. Uma nota de 11 px sob o cabeçalho, ou listar
+  também as rotuladas, desfaz a leitura de que o canal só tem aquelas campanhas.
+- `v2`: as três maiores campanhas (Marca 142, Genéricas 96 e Retorno 74 leads) não têm o volume
+  escrito em lugar nenhum do corpo, e as pequenas têm. O rótulo interno traz nome e CPL, como o
+  catálogo pede, e a área dá a ordem de grandeza; ainda assim o CPL dessas três sai sem o volume ao
+  lado (DAD-1), e o "quanto de lead elas trazem" do caso de uso fica só no agregado da linha de
+  leitura.
+- `v2`, com peso, ainda que latente: campanha com zero lead, que o preview não fotografa, entra na
+  lista com amostra cheia em `--text-muted`, que é o veredito "na mediana ou acima", e com um CPL
+  impresso que não existe sem lead (`costPerLead` é `number`, sem `null`). Zero lead não tem
+  veredito: amostra vazada, `formatUnavailable()` no CPL e `number | null` no tipo (DAD-2, EST-2).
+- `v2`: o veredito, marca contra marca, mede 1,41:1 no escuro e 1,01:1 no claro (`--positive`
+  contra `--text-muted`, só matiz). O segundo canal agora é o CPL escrito em toda campanha, dentro
+  do círculo ou na linha da lista, e por isso não reprova; mas a TOK-9 pede esse número na `notes`
+  do `meta.json`, e ele não está lá.
+- `v2`: o texto da linha de campanha começa 2 px à direita do nome do canal (428 contra 426); o
+  recuo que se lê é só o da amostra, de 8 px. O vão da amostra ao texto na linha é 6 px escrito à
+  mão, com a constante `SAMPLE_GAP` de 10 (17.7) ao lado, e `SIDE_X + 122`, `BAND_TOP + 32` e
+  `row.y - 3.5` também ficam fora do topo. Sem consequência no preview.
+- `v2`: "82,6% (493 de 597)" sai com uma casa por `formatRateWithVolume`, mas é a participação das
+  campanhas no total de leads, e a NUM-1 dá percentual de composição inteiro. O volume ao lado
+  segura a leitura.
+- `v2`: o item da `v2` em Versões e a `notes` do `meta.json` não descrevem a lista agrupada por
+  canal, que o parecer anterior pedia; e a `notes` fala em quatro guardas não medidas, quando o
+  check de hoje lista cinco (a `RAIO-CONTRA-AREA` sai `valor_nao_casado`; a conferência de área à
+  mão já está na própria nota, e confere: r² por lead dá 14,742 nas 10 folhas).

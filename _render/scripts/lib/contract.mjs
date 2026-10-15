@@ -21,6 +21,7 @@ import {
   guardaFormatoAcessivel,
   guardaFraseAcessivel,
   guardaMarcaMeta,
+  guardaRaioContraArea,
   guardaReguaConstante,
   guardaTamanhoTexto,
   guardasDeCodigo,
@@ -465,9 +466,17 @@ export function checkVersion(version) {
   errors.push(...naMarca.errors);
   warnings.push(...naMarca.warnings);
   escapes.push(...naMarca.usados.map((item) => `Chart.tsx ${item}`));
-  // `ace`, `esp`, `col`, `tam`, `con`, `agr`, `mar`, `reg`, `fmt`, `eix`, `opa` e `nam` não são veredito:
-  // dizem
-  // só se a guarda mediu esta versão, para o check contar à parte.
+  // GEO-3 no preview.svg contra o data.ts: a área de fatia, anel, setor e bolha contra a participação do
+  // valor. Entre 2026-10-02 (F0.4) e 2026-10-15 esta guarda era somada só em `check.mjs`, porque o item
+  // que a criou tinha este arquivo fora do escopo; `lib/pendencias.mjs`, que chama `checkVersion`
+  // direto, não a via, e `prontas` podia divergir do `check`. Desde 2026-10-15 (F0.8) ela mora aqui,
+  // na fila das outras, e os dois comandos leem a mesma coisa.
+  const area = guardaRaioContraArea(version.abs, lerEscapes(chartText, 'Chart.tsx'), version.rel);
+  errors.push(...area.errors);
+  warnings.push(...area.warnings);
+  escapes.push(...area.usados.map((item) => `Chart.tsx ${item}`));
+  // `ace`, `esp`, `col`, `tam`, `con`, `agr`, `mar`, `reg`, `fmt`, `eix`, `opa`, `nam` e `are` não são
+  // veredito: dizem só se a guarda mediu esta versão, para o check contar à parte.
   return {
     errors,
     warnings,
@@ -484,6 +493,7 @@ export function checkVersion(version) {
     tam: tamanho.medicao ?? { medida: false, motivo: 'sem_medicao', trechos: null, menor: null, semTamanho: null },
     con: contraste.medicao ?? { medida: false, motivo: 'sem_medicao', temas: null, trechos: null, pior: null, naoMedidos: null },
     nam: naMarca.medicao ?? { medida: false, motivo: 'sem_medicao', temas: null, trechos: null, pior: null, naoMedidos: null },
+    are: area.medicao ?? { medida: false, motivo: 'sem_medicao', pior: null, grupos: null, medidos: null, naoMedidos: null },
   };
 }
 

@@ -266,9 +266,14 @@ export default function MinimumSampleScatter({
   const aviso = 'amostra insuficiente';
 
   const points: Point[] = [];
+  /** Canal sem lead não tem taxa nem intervalo: sai do plano, mas conta como abaixo do piso (DAD-2). */
+  let semLead = 0;
   for (const row of data) {
     const intervalo = wilson(row.agendas, row.leads, confidence);
-    if (intervalo === null) continue;
+    if (intervalo === null) {
+      semLead += 1;
+      continue;
+    }
     const rate = row.agendas / row.leads;
     points.push({
       id: row.id,
@@ -318,16 +323,26 @@ export default function MinimumSampleScatter({
   /** As mesmas chamadas alimentam a frase acessível e o corpo, para as duas lerem igual (DAD-9). */
   const nivelEscrito = formatPercent(confidence, 0);
   const pisoEscrito = formatInt(minimumSample);
-  const quantos = formatInt(points.length);
-  const quantosEscassos = formatInt(escassos.length);
+  const quantos = formatInt(points.length + semLead);
+  const quantosEscassos = formatInt(escassos.length + semLead);
   const tetoEscrito = formatPercent(domainYMax, 0);
   const tetoIgnoradoEscrito = formatPercent(tetoSeContasse, 0);
+  /** O custo do piso só existe quando o intervalo dos escassos levaria o eixo mais alto (ANO-5, ACE-1). */
+  const temCusto = tetoSeContasse > domainYMax;
+  const semLeadEscrito = semLead === 1 ? '1 sem lead' : `${formatInt(semLead)} sem lead`;
+  const semLeadRodape =
+    semLead === 1
+      ? '1 canal sem lead no período fica fora do plano'
+      : `${formatInt(semLead)} canais sem lead no período ficam fora do plano`;
 
-  /** Frase da raiz em 216 caracteres com o dado padrão, dentro dos 250 da ACE-1 e do aviso de 235. */
+  /** Frase da raiz em 216 caracteres com o dado padrão (semLead zero), dentro dos 250 da ACE-1. */
   const summary =
     `Dispersão de ${quantos} canais: leads no eixo horizontal, taxa de agenda no vertical, e o traço é o intervalo de ` +
-    `${nivelEscrito} de Wilson. ${quantosEscassos} canais abaixo do piso de ${pisoEscrito} leads saem vazados e sem ` +
-    `traço, e o eixo para em ${tetoEscrito} em vez de ${tetoIgnoradoEscrito}.`;
+    `${nivelEscrito} de Wilson. ${quantosEscassos} canais abaixo do piso de ${pisoEscrito} leads` +
+    (semLead > 0 ? ` (${semLeadEscrito}, fora do plano)` : '') +
+    (escassos.length > 0 ? ' saem vazados e sem traço' : '') +
+    (temCusto ? `, e o eixo para em ${tetoEscrito} em vez de ${tetoIgnoradoEscrito}` : '') +
+    '.';
 
   const renderTooltip = (props: TooltipContentProps<TooltipValueType, number | string>) => {
     const point = props.payload?.[0]?.payload as Point | undefined;
@@ -350,8 +365,13 @@ export default function MinimumSampleScatter({
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
       <p aria-hidden className="mb-2 shrink-0 text-xs tabular-nums text-text-secondary">
-        {`${quantosEscassos} de ${quantos} canais ficam abaixo do piso de ${pisoEscrito} leads; sem o intervalo deles ` +
-          `o eixo para em ${tetoEscrito} e não em ${tetoIgnoradoEscrito}`}
+        {`${quantosEscassos} de ${quantos} canais ficam abaixo do piso de ${pisoEscrito} leads` +
+          (semLead > 0 ? ` (${semLeadEscrito})` : '') +
+          (temCusto
+            ? `; sem o intervalo deles o eixo para em ${tetoEscrito} e não em ${tetoIgnoradoEscrito}`
+            : escassos.length > 0
+              ? '; o intervalo deles não mudaria o eixo'
+              : '')}
       </p>
       <div className="min-h-0 flex-1">
         <ResponsiveContainer height="100%" width="100%">
@@ -411,7 +431,8 @@ export default function MinimumSampleScatter({
           <path d="M1 1.5 H9 M5 1.5 V12.5 M1 12.5 H9" stroke="var(--text-muted)" strokeWidth={1.25} />
         </svg>
         {`cada traço é o intervalo de ${nivelEscrito} de Wilson da taxa; abaixo de ${pisoEscrito} leads o ponto fica ` +
-          `vazado, perde o traço e sai da conta do domínio`}
+          `vazado, perde o traço e o intervalo dele sai da conta do domínio` +
+          (semLead > 0 ? `; ${semLeadRodape}` : '')}
       </p>
     </div>
   );

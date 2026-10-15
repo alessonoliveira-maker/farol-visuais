@@ -357,6 +357,18 @@ export default function ClosingsByVertical({
               />
             ))}
             <Line
+              activeDot={false}
+              connectNulls={false}
+              dataKey="accumulated"
+              dot={false}
+              isAnimationActive={animate}
+              legendType="none"
+              name="Revestimento do acumulado"
+              stroke="var(--surface-raised)"
+              strokeWidth={5}
+              yAxisId={AXIS_ACCUM}
+            />
+            <Line
               connectNulls={false}
               dataKey="accumulated"
               dot={false}

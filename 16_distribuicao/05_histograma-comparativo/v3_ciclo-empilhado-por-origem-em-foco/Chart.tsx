@@ -36,11 +36,10 @@ import { BIN_COUNT, BIN_WIDTH, data as defaultData, type OriginGroup, type Origi
  * A terceira é a cor. Uma origem em foco recebe cor de papel (`--chart-1`, 9,50:1 no tema escuro e
  * 6,00:1 no claro contra o cartão) e as outras duas ficam em neutro, porque três cores disputando a
  * mesma pilha respondem outra pergunta. O neutro do Farol para marca não destacada é `--text-muted`
- * (5,21:1 e 5,37:1) e `--line-strong` (1,79:1 e 1,83:1); o segundo fica abaixo do piso de 3:1 de
- * marca, e o que autoriza usá-lo é a isenção da ACE-3, o valor escrito junto da marca, que aqui é a
- * legenda com contagem e participação de cada origem. Entre si os dois neutros medem 2,92:1 e
- * 2,93:1, então quem separa as camadas coladas é o contorno na cor da superfície da COR-5, nunca a
- * diferença de tom nem opacidade.
+ * (5,21:1 e 5,37:1). `--line-strong` (1,79:1 e 1,83:1) ficou de fora: abaixo do piso de 3:1 e sem
+ * valor escrito em cada marca, a isenção não vale. As duas origens de apoio usam o mesmo
+ * `--text-muted`; a segunda leva hachura diagonal (também na amostra da legenda) e quem separa as
+ * camadas coladas é o contorno na cor da superfície da COR-5, nunca o tom nem opacidade.
  *
  * A quarta é a recusa. Acima de quatro origens o empilhamento deixa de ser legível, e a peça diz isso
  * no lugar do gráfico em vez de desenhar uma pilha que ninguém consegue ler.
@@ -80,8 +79,15 @@ const X_AXIS_HEIGHT = 26;
 const TONE_FILL: Readonly<Record<OriginTone, string>> = {
   focus: 'var(--chart-1)',
   support: 'var(--text-muted)',
-  supportSoft: 'var(--line-strong)',
+  supportSoft: 'var(--text-muted)',
 };
+/** A segunda camada neutra repete o tom da primeira (os dois passam 3:1 sozinhos) e se distingue por
+ * hachura em diagonal, traço na cor do cartão por cima: o segundo canal que a GEO-11 pede. */
+const HATCH_ID = 'ciclo-hachura-prospeccao';
+const HATCH_STROKE = 'var(--surface-raised)';
+const HATCH_STYLE = {
+  backgroundImage: `repeating-linear-gradient(45deg, transparent 0 2px, ${HATCH_STROKE} 2px 3.5px)`,
+} as const;
 /** O contorno que separa camadas coladas, na cor do cartão, como a COR-5 autoriza. */
 const LAYER_EDGE = 'var(--surface-raised)';
 const LAYER_EDGE_WIDTH = 1;
@@ -235,7 +241,7 @@ export default function StackedOriginHistogram({
    * entre `--text-muted` e `--line-strong` a razão é 2,92:1 no escuro e 2,93:1 no claro.
    */
   const renderLayer =
-    (fill: string) =>
+    (fill: string, hatched: boolean) =>
     ({ x, y, width, height: barHeight }: BarShapeProps): ReactElement => {
       const tall = Number(barHeight);
       const left = Number(x);
@@ -245,6 +251,7 @@ export default function StackedOriginHistogram({
       return (
         <g>
           <rect fill={fill} height={tall} width={span} x={left} y={top} />
+          {hatched ? <rect fill={`url(#${HATCH_ID})`} height={tall} width={span} x={left} y={top} /> : null}
           <rect fill={LAYER_EDGE} height={LAYER_EDGE_WIDTH} width={span} x={left} y={top} />
         </g>
       );
@@ -264,6 +271,7 @@ export default function StackedOriginHistogram({
       return {
         key: group.id,
         fill: TONE_FILL[group.tone],
+        hatched: group.tone === 'supportSoft',
         text:
           slice === null
             ? `${group.label}, ${formatUnavailable()}`
@@ -298,7 +306,7 @@ export default function StackedOriginHistogram({
           {legend.map((item) => (
             <li className="flex items-center gap-2" key={item.key}>
               {/* Amostra na forma da marca (ROT-4): quadrado cheio, porque a marca é área cheia. */}
-              <span className="size-3 shrink-0 rounded-[2px]" style={{ backgroundColor: item.fill }} />
+              <span className="size-3 shrink-0 rounded-[2px]" style={{ backgroundColor: item.fill, ...(item.hatched ? HATCH_STYLE : null) }} />
               <span className="tabular-nums">{item.text}</span>
             </li>
           ))}
@@ -316,6 +324,11 @@ export default function StackedOriginHistogram({
             {/* A grade corre no sentido da leitura, e aqui o valor está no eixo Y: quem serve de régua
                 é a linha horizontal, então `vertical={false}`. A barra nasce no zero e se lê por
                 extensão, então a exceção da EIX-3b não vale, mesmo com os dois eixos numéricos. */}
+            <defs>
+              <pattern height={5} id={HATCH_ID} patternTransform="rotate(45)" patternUnits="userSpaceOnUse" width={5}>
+                <rect fill={HATCH_STROKE} height={5} width={1.8} x={0} y={0} />
+              </pattern>
+            </defs>
             <CartesianGrid stroke={GRID_COLOR} vertical={false} />
             <XAxis
               {...AXIS_PROPS}
@@ -383,7 +396,7 @@ export default function StackedOriginHistogram({
                 isAnimationActive={animate}
                 key={group.id}
                 name={group.label}
-                shape={renderLayer(TONE_FILL[group.tone])}
+                shape={renderLayer(TONE_FILL[group.tone], group.tone === 'supportSoft')}
                 stackId="cycle"
               />
             ))}

@@ -4,14 +4,50 @@
   "versoes": {
     "v1_primeiro-contato-por-sdr": {
       "veredito": "aprovado",
-      "nota": "GEO-12 e DAD-10 resolvidos, com os números conferidos. A saída do DAD-10 foi melhor que as duas que eu tinha oferecido: medido que os dezenove rótulos não cabem, com dois outliers a 4 px um do outro, o comentário parou de prometer e o caso mais distante passou a ser nomeado, então a regra da família sobrevive. Ressalva: quantile devolve 0 em lista vazia, contra a EST-1b, e a peça não tem estado de vazio; fica na fila de dívida porque consertar implica reescrever o shape da caixa e dos bigodes. Parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T15:12:51.674Z",
-      "impressao": "5e07ca937c24d0382119dd10e5d682605ce22aec",
+      "nota": "Correção conferida no arquivo de hoje: quantile e cinco números com number | null, fila sem contato sem caixa e no fim da ordem, interquartil zero por retorno antecipado, taxa por formatRateWithVolume no rodapé e na frase (29,3% (87 de 297)) e bloco role=status com Filter de 16 px e frase de 12 px no vazio. Preview igual nos dois temas, frase de 191 caracteres. Observações no README: tiques sem unidade, SLA sem extendDomain, caixa em --line-subtle e a chave AGREGACAO-ZERO da v1 ainda na fila de dívida, que o check já pede para apagar.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:39.678Z",
+      "impressao": "2778447d2a207157bba80ca512b6e4234b7f2fdf",
       "arquivos": {
-        "Chart.tsx": "efb959369813125ed4be1dd0986bcb9bc1c3058e",
+        "Chart.tsx": "d9e06c99df0fac3bc01d76c499069d59c2f04fed",
         "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
         "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    },
+    "v2_pontos-sobre-a-caixa-e-prazo": {
+      "veredito": "aprovado",
+      "nota": "Estado vazio da EST-1 conferido: rows.length === 0 ou total === 0 devolve o bloco role=status com Filter de 16 px e frase de 12 px, sem eixo nem grade. O resto segue certo nos dois PNGs: caixa vazada, bigode em dois trechos, jitter por FNV dentro da banda, losango em --negative com contorno de superfície, prazo com extendDomain e taxa com volume (31,3% (47 de 150)). Observações no README: tiques constantes contra domainMax em prop, ponto acima do teto sem tratamento (latente) e as de antes.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:46.388Z",
+      "impressao": "2cb8c187db07f61749202c2611212ead1ec84d09",
+      "arquivos": {
+        "Chart.tsx": "855b63f0c368339fb84ea7c5abb03c2d0ab6e78c",
+        "data.ts": "32bd1f025f1375410845743f905be59450c0a1a8",
+        "meta.json": "9128a28936675d188187855e0ea4f3607432e651"
+      }
+    },
+    "v3_dias-parados-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da segunda passada conferido no arquivo de hoje: edgeCases sai de toda oportunidade com days > domainMax, um marcador por etapa com o mais distante e a contagem no rótulo, bigode limitado a domainMax e sem tampa quando cortado, rodapé contando aboveCeiling do dado. Recalculado do gerador: 1.900, 517 acima de 30 dias (27,2%), 33 além da cerca, 2 acima do teto e medianas de 6 a 49 dias, como nos dois PNGs. Bancada pelo código e pela geometria do preview: com 190 dias em Aprovação interna o bigode para em 180, a etapa escreve 2 casos; maior OP 10482 · 412 dias e o rodapé diz 3; com 250 ao lado do 412 sai um rótulo só, de cerca de 194 px (79 a 170 dias), a 8,6 px da etapa de cima. Observações no README: números antigos no texto, comentário contraditório na linha 274, caixa com q3 acima do teto estenderia o eixo (latente), frase sem o caso extremo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:15:51.418Z",
+      "impressao": "a1475a5dbc0ccbf41d0791d5a256919069534b06",
+      "arquivos": {
+        "Chart.tsx": "d6194eb3d158889dd8306ab9254bd5187018eda8",
+        "data.ts": "c67462a99b232d9be25df5741a479f28c0077f3e",
+        "meta.json": "65d46e09e207f92bcbaa60943abd66f21e96d3cb"
+      }
+    },
+    "v4_entalhe-largura-e-grupo-minusculo": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante conferido nos dois PNGs: ponto em R$ 341 acima da tampa de Busca paga (R$ 322) e em R$ 512 acima da de Social pago (R$ 469), opacos com contorno de superfície, e o rodapé escreve 2 campanhas além da cerca, calculado do dado (recontado: só essas duas passam das cercas). Entalhe, largura pela raiz, Nativa tracejada, Programática sem caixa e estado vazio intactos. Observações no README: ponto além da cerca e ponto de Programática com o mesmo desenho, ponto acima do teto sem tratamento (latente).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:46.916Z",
+      "impressao": "47c85f7b291a26f03fa60e2c935e01bd5aacc56e",
+      "arquivos": {
+        "Chart.tsx": "b1a32a630cd71ee3e2ad331ca6942787ea2c97ca",
+        "data.ts": "044021f4ce957b4c903346a544669f16913d29b6",
+        "meta.json": "4939f46f5702af5c819446467c31b1110b84df9c"
       }
     }
   },
@@ -53,6 +89,123 @@
         "Chart.tsx": "efb959369813125ed4be1dd0986bcb9bc1c3058e",
         "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
         "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    },
+    {
+      "versao": "v1_primeiro-contato-por-sdr",
+      "veredito": "reprovado",
+      "nota": "Perguntas 8 e 16; EST-1b, EST-2, EST-1 e 14.1 (ausência exibida como zero). quantile devolve 0 para lista vazia (Chart.tsx:79-80): fila sem contato vira caixa de 2 px colada no zero, ordenada como a mais rápida e citada na frase com mediana de 0 minutos; o rodapé e a frase escrevem formatPercent(total === 0 ? 0 : ...) (linhas 187 e 288), isto é 0,0% sem base; e data vazio desenha eixo, SLA e rodapé em vez do bloco role=status. Mudar: quantile e cinco números com number | null como a v2 (linhas 102 a 131), caixa nula sem desenho, interquartil zero por retorno antecipado em vez de escala 0 (linhas 155 e 159), formatRateWithVolume(above, total) nas duas linhas (traz junto o volume, DAD-1), e o bloco vazio da v4 (linhas 366 a 379). Parecer em validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:41:43.194Z",
+      "impressao": "dff846bce07e80a1b974d6d32e3404998c109893",
+      "arquivos": {
+        "Chart.tsx": "c2023be21e7972e1f350f3bbae8eb066d73425e5",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    },
+    {
+      "versao": "v2_pontos-sobre-a-caixa-e-prazo",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16; EST-1. Não existe estado vazio: com data vazio o componente desenha grade de 0 a 120 h, a linha do prazo e o rodapé com n 0 leads, e a frase cai num ramo de 78 caracteres. Mudar: antes do return principal, quando rows.length === 0 ou total === 0, devolver o bloco da v4 (Chart.tsx:366 a 379), com role=status, Filter de 16 px e frase de 12 px dizendo que o recorte não tem lead com agenda medida. O resto da versão está certo: caixa vazada, bigode em dois trechos, jitter por FNV, losango em --negative com contorno de superfície, prazo com extendDomain e taxa com volume. Parecer em validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:41:48.523Z",
+      "impressao": "a1e24e6bf3fe928b30ceebfb591e7ea6a7619693",
+      "arquivos": {
+        "Chart.tsx": "b61b54a646acd978926a72c5ce693a32fbb84922",
+        "data.ts": "32bd1f025f1375410845743f905be59450c0a1a8",
+        "meta.json": "9128a28936675d188187855e0ea4f3607432e651"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-por-etapa",
+      "veredito": "reprovado",
+      "nota": "Dois bloqueantes. (1) Perguntas 1, 14 e 22; seção 14.1 (versão que não demonstra o que o catálogo diz) e seções 2 e 5: o marcador de borda não nasce do dado. edgeCases sai da constante BEYOND_DOMAIN importada do data.ts (linhas 276 a 280), fora da prop data, e o caso de dentro de data acima do teto é descartado em silêncio (linha 274). No preview os dois casos marcados (412 e 206 dias) ficam fora do n das etapas, das caixas e dos 516 de 1.900 que passam de 30 dias, enquanto os 34 além da cerca os contam; colado no Farol, OP 10482 e OP 10731 fictícios seriam desenhados sobre o dado real e o caso real acima de 180 dias sumiria. Mudar: os dois casos entram em opportunities das suas etapas e o componente deriva os marcadores do próprio dado (days > domainMax), sem import de BEYOND_DOMAIN. (2) Pergunta 16; EST-1: sem estado vazio; devolver o bloco da v4 (Chart.tsx:366 a 379). Parecer em validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:41:55.232Z",
+      "impressao": "e32d66d01ac8081635b518fbd075df8a53549c75",
+      "arquivos": {
+        "Chart.tsx": "7be9e520147f263500017f7217e77a8d58305bc2",
+        "data.ts": "cc1423cc05fb385a8dfb95575e2527ba1756e260",
+        "meta.json": "65d46e09e207f92bcbaa60943abd66f21e96d3cb"
+      }
+    },
+    {
+      "versao": "v4_entalhe-largura-e-grupo-minusculo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 3; seção 14.1 (encoding) e Anatomia 4 e 5 do README: os casos além da cerca não são desenhados. Só os quatro pontos de Programática existem no preview.svg. Busca paga tem CP 3147 a R$ 341 acima do bigode de R$ 322, e Social pago tem CP 3340 a R$ 512 acima do bigode de R$ 469; nenhum dos dois aparece, e o rodapé diz bigode até a cerca, então o desenho afirma que nada passa dela e esconde o maior CPL de Social pago. Mudar: desenhar todo valor fora das cercas como ponto na banda do grupo, no mesmo estilo dos pontos de Programática (opaco, contorno de 0,5 px na cor da superfície), dentro de GroupAnnotations, e escrever no rodapé quantas campanhas ficaram além da cerca. Critério de aceite nos dois PNGs: um ponto em R$ 341 acima de Busca paga e um em R$ 512 acima de Social pago. Parecer em validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:41:59.724Z",
+      "impressao": "f173eeca0f71e242e5a56f01008b50553049dc1b",
+      "arquivos": {
+        "Chart.tsx": "2fbf835dac2b2f1e2c10b5460b9f9d4b6a22111a",
+        "data.ts": "044021f4ce957b4c903346a544669f16913d29b6",
+        "meta.json": "4939f46f5702af5c819446467c31b1110b84df9c"
+      }
+    },
+    {
+      "versao": "v1_primeiro-contato-por-sdr",
+      "veredito": "aprovado",
+      "nota": "Correção conferida no arquivo de hoje: quantile e cinco números com number | null, fila sem contato sem caixa e no fim da ordem, interquartil zero por retorno antecipado, taxa por formatRateWithVolume no rodapé e na frase (29,3% (87 de 297)) e bloco role=status com Filter de 16 px e frase de 12 px no vazio. Preview igual nos dois temas, frase de 191 caracteres. Observações no README: tiques sem unidade, SLA sem extendDomain, caixa em --line-subtle e a chave AGREGACAO-ZERO da v1 ainda na fila de dívida, que o check já pede para apagar.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:39.678Z",
+      "impressao": "2778447d2a207157bba80ca512b6e4234b7f2fdf",
+      "arquivos": {
+        "Chart.tsx": "d9e06c99df0fac3bc01d76c499069d59c2f04fed",
+        "data.ts": "51c3d415085684268e9b88efe02262850df5626f",
+        "meta.json": "1d26d29402f293ba0a9299f74d0ff1d4eee1106c"
+      }
+    },
+    {
+      "versao": "v2_pontos-sobre-a-caixa-e-prazo",
+      "veredito": "aprovado",
+      "nota": "Estado vazio da EST-1 conferido: rows.length === 0 ou total === 0 devolve o bloco role=status com Filter de 16 px e frase de 12 px, sem eixo nem grade. O resto segue certo nos dois PNGs: caixa vazada, bigode em dois trechos, jitter por FNV dentro da banda, losango em --negative com contorno de superfície, prazo com extendDomain e taxa com volume (31,3% (47 de 150)). Observações no README: tiques constantes contra domainMax em prop, ponto acima do teto sem tratamento (latente) e as de antes.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:46.388Z",
+      "impressao": "2cb8c187db07f61749202c2611212ead1ec84d09",
+      "arquivos": {
+        "Chart.tsx": "855b63f0c368339fb84ea7c5abb03c2d0ab6e78c",
+        "data.ts": "32bd1f025f1375410845743f905be59450c0a1a8",
+        "meta.json": "9128a28936675d188187855e0ea4f3607432e651"
+      }
+    },
+    {
+      "versao": "v4_entalhe-largura-e-grupo-minusculo",
+      "veredito": "aprovado",
+      "nota": "Bloqueante conferido nos dois PNGs: ponto em R$ 341 acima da tampa de Busca paga (R$ 322) e em R$ 512 acima da de Social pago (R$ 469), opacos com contorno de superfície, e o rodapé escreve 2 campanhas além da cerca, calculado do dado (recontado: só essas duas passam das cercas). Entalhe, largura pela raiz, Nativa tracejada, Programática sem caixa e estado vazio intactos. Observações no README: ponto além da cerca e ponto de Programática com o mesmo desenho, ponto acima do teto sem tratamento (latente).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:46.916Z",
+      "impressao": "47c85f7b291a26f03fa60e2c935e01bd5aacc56e",
+      "arquivos": {
+        "Chart.tsx": "b1a32a630cd71ee3e2ad331ca6942787ea2c97ca",
+        "data.ts": "044021f4ce957b4c903346a544669f16913d29b6",
+        "meta.json": "4939f46f5702af5c819446467c31b1110b84df9c"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-por-etapa",
+      "veredito": "reprovado",
+      "nota": "Perguntas 14 e 15; seção 14.1 (sobreposição e número impresso falso) e Anatomia 10 do README. O marcador de borda só nasce de caso além da cerca (Chart.tsx:271 a 273) e é desenhado na mesma coordenada para todo caso da etapa (linhas 204 a 229). Aprovação interna tem cerca de cima em 205,5 dias contra teto de 180: caso entre 181 e 205 dias não ganha seta, o bigode passa da borda (linhas 330 e 332, sem limite em domainMax) e o rodapé conta 2 casos acima do teto quando são 3; dois casos acima do teto na mesma etapa empilham setas e rótulos no mesmo ponto. Mudar: edgeCases de toda oportunidade com days > domainMax, um marcador por etapa com o caso mais distante e a contagem, bigode limitado ao teto. Parecer em validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md, seção da segunda passada.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:54:52.128Z",
+      "impressao": "791579738cd618219eb37d255a213d5a9830d1fa",
+      "arquivos": {
+        "Chart.tsx": "a5bc678c39819d0cce67776672decfbc5cf0b546",
+        "data.ts": "c67462a99b232d9be25df5741a479f28c0077f3e",
+        "meta.json": "65d46e09e207f92bcbaa60943abd66f21e96d3cb"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da segunda passada conferido no arquivo de hoje: edgeCases sai de toda oportunidade com days > domainMax, um marcador por etapa com o mais distante e a contagem no rótulo, bigode limitado a domainMax e sem tampa quando cortado, rodapé contando aboveCeiling do dado. Recalculado do gerador: 1.900, 517 acima de 30 dias (27,2%), 33 além da cerca, 2 acima do teto e medianas de 6 a 49 dias, como nos dois PNGs. Bancada pelo código e pela geometria do preview: com 190 dias em Aprovação interna o bigode para em 180, a etapa escreve 2 casos; maior OP 10482 · 412 dias e o rodapé diz 3; com 250 ao lado do 412 sai um rótulo só, de cerca de 194 px (79 a 170 dias), a 8,6 px da etapa de cima. Observações no README: números antigos no texto, comentário contraditório na linha 274, caixa com q3 acima do teto estenderia o eixo (latente), frase sem o caso extremo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:15:51.418Z",
+      "impressao": "a1475a5dbc0ccbf41d0791d5a256919069534b06",
+      "arquivos": {
+        "Chart.tsx": "d6194eb3d158889dd8306ab9254bd5187018eda8",
+        "data.ts": "c67462a99b232d9be25df5741a479f28c0077f3e",
+        "meta.json": "65d46e09e207f92bcbaa60943abd66f21e96d3cb"
       }
     }
   ]

@@ -13,6 +13,42 @@
         "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
         "meta.json": "4ecd8a7ac4db3c6a433f17355323614c0c72b83a"
       }
+    },
+    "v2_perdas-por-motivo-e-etapa-com-totais": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Totais conferidos contra o data.ts (867; motivos de 185 a 39; etapas 199, 191, 160, 212 e 105), régua comum às duas margens com teto 212, faixas de 1 a 20 até 79 a 98 batendo com cada célula, três estados de célula distintos, svg em escala 1 (894 sobre viewBox de 894), contraste e tamanho medidos pelo check nos dois temas. Observações no README: valores das margens fora da ponta livre (ROT-2), participação com uma casa (NUM-1), indisponível sem Unplug onde o motivo não se aplica.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:17.202Z",
+      "impressao": "cfc59759cd4c8269745f727cbaff3d617a9b70e7",
+      "arquivos": {
+        "Chart.tsx": "2efd25ad81c16559d44eb9316eae5360d030e75e",
+        "data.ts": "2db42fc025d630936f570f7aa8432795ff706c08",
+        "meta.json": "a6fa23409addda2e0e0e78c41777a54c82f8d6fc"
+      }
+    },
+    "v3_leads-por-origem-agrupada-em-canal": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ordem por canal e por total conferida contra o data.ts (Mídia paga 3.138 de 5.622, Busca paga 1.347), rótulo de canal centrado pela extensão desenhada, vãos de 8 e 2 px acumulados no y, linha neutra fora do teto 160, ausência e zero medido em canais diferentes, mês parcial com moldura tracejada e data de corte, svg em escala 1. Observações no README: indicação com 2 origens contra 1 do catálogo sem declaração, frase acessível com 15 origens em 3 canais contra 14 do subtítulo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:19.888Z",
+      "impressao": "c5da93cf0ca3b84170d52e4db611fb05e5d9ab4e",
+      "arquivos": {
+        "Chart.tsx": "70b84175deb210a1264d0b7d3b8a806174763d05",
+        "data.ts": "7374399108b0e26e4600bff4539ea5ba866cb1c8",
+        "meta.json": "9ff3b9af94dbbef3f30174bb8580c4a9506155bc"
+      }
+    },
+    "v4_taxa-e-volume-em-celula-de-tamanho-variavel": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Lado pela raiz do volume conferido (160 em 36 px, 116 em 30,6 px), régua de tamanho 5, 41 e 160 calculada do dado, faixas de 7,4% a 60,0% das taxas conclusivas, quatro estados de célula distintos, oito taxas da margem conferidas, três degraus da TOK-8 declarados como dois níveis, svg em escala 1. Observações no README: set/26 com metade do volume em todas as origens sem declarar mês parcial, taxa do par só na cor, régua de tamanho em contorno igual ao estado de amostra rala.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:22.861Z",
+      "impressao": "ea13f50a83365c65cee895377ce99a4a8f775281",
+      "arquivos": {
+        "Chart.tsx": "f9942c525d03ef69605a6d2cbebff786d86ebed2",
+        "data.ts": "c563b5df3aa99f31ad9dbb1531ddda2a8449678c",
+        "meta.json": "b4d2270cd4250e5ddef5eb883d0777a4fe73cd75"
+      }
     }
   },
   "historico": [
@@ -66,6 +102,45 @@
         "Chart.tsx": "4d621439146101082c25f664026c705a6a84586e",
         "data.ts": "77b8bcdfdcc6e958383c56e7d11d8126b468b7f0",
         "meta.json": "4ecd8a7ac4db3c6a433f17355323614c0c72b83a"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo-e-etapa-com-totais",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Totais conferidos contra o data.ts (867; motivos de 185 a 39; etapas 199, 191, 160, 212 e 105), régua comum às duas margens com teto 212, faixas de 1 a 20 até 79 a 98 batendo com cada célula, três estados de célula distintos, svg em escala 1 (894 sobre viewBox de 894), contraste e tamanho medidos pelo check nos dois temas. Observações no README: valores das margens fora da ponta livre (ROT-2), participação com uma casa (NUM-1), indisponível sem Unplug onde o motivo não se aplica.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:17.202Z",
+      "impressao": "cfc59759cd4c8269745f727cbaff3d617a9b70e7",
+      "arquivos": {
+        "Chart.tsx": "2efd25ad81c16559d44eb9316eae5360d030e75e",
+        "data.ts": "2db42fc025d630936f570f7aa8432795ff706c08",
+        "meta.json": "a6fa23409addda2e0e0e78c41777a54c82f8d6fc"
+      }
+    },
+    {
+      "versao": "v3_leads-por-origem-agrupada-em-canal",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Ordem por canal e por total conferida contra o data.ts (Mídia paga 3.138 de 5.622, Busca paga 1.347), rótulo de canal centrado pela extensão desenhada, vãos de 8 e 2 px acumulados no y, linha neutra fora do teto 160, ausência e zero medido em canais diferentes, mês parcial com moldura tracejada e data de corte, svg em escala 1. Observações no README: indicação com 2 origens contra 1 do catálogo sem declaração, frase acessível com 15 origens em 3 canais contra 14 do subtítulo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:19.888Z",
+      "impressao": "c5da93cf0ca3b84170d52e4db611fb05e5d9ab4e",
+      "arquivos": {
+        "Chart.tsx": "70b84175deb210a1264d0b7d3b8a806174763d05",
+        "data.ts": "7374399108b0e26e4600bff4539ea5ba866cb1c8",
+        "meta.json": "9ff3b9af94dbbef3f30174bb8580c4a9506155bc"
+      }
+    },
+    {
+      "versao": "v4_taxa-e-volume-em-celula-de-tamanho-variavel",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Lado pela raiz do volume conferido (160 em 36 px, 116 em 30,6 px), régua de tamanho 5, 41 e 160 calculada do dado, faixas de 7,4% a 60,0% das taxas conclusivas, quatro estados de célula distintos, oito taxas da margem conferidas, três degraus da TOK-8 declarados como dois níveis, svg em escala 1. Observações no README: set/26 com metade do volume em todas as origens sem declarar mês parcial, taxa do par só na cor, régua de tamanho em contorno igual ao estado de amostra rala.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:22.861Z",
+      "impressao": "ea13f50a83365c65cee895377ce99a4a8f775281",
+      "arquivos": {
+        "Chart.tsx": "f9942c525d03ef69605a6d2cbebff786d86ebed2",
+        "data.ts": "c563b5df3aa99f31ad9dbb1531ddda2a8449678c",
+        "meta.json": "b4d2270cd4250e5ddef5eb883d0777a4fe73cd75"
       }
     }
   ]

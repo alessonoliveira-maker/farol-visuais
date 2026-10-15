@@ -111,7 +111,8 @@ function bucketsFor(portfolio: Portfolio, mode: GroupBy): Bucket[] {
 /** Alturas máximas nos dois agrupamentos, para o viewBox não mudar ao trocar de um para o outro. */
 function maxRowsOf(portfolio: Portfolio): number {
   const counts = (['executive', 'segment'] as const).flatMap((mode) => bucketsFor(portfolio, mode).map((bucket) => bucket.accounts.length));
-  return rowsFor(counts.reduce((max, count) => Math.max(max, count), 0));
+  // O teto entra na altura: com pilhas baixas a moldura não pode nascer acima do topo do viewBox.
+  return Math.max(rowsFor(counts.reduce((max, count) => Math.max(max, count), 0)), rowsFor(portfolio.ceiling));
 }
 
 function buildLayout(portfolio: Portfolio, mode: GroupBy, maxRows: number): Layout {
@@ -123,7 +124,7 @@ function buildLayout(portfolio: Portfolio, mode: GroupBy, maxRows: number): Layo
   const order: string[] = [];
   const groups: GroupLayout[] = buckets.map((bucket, bucketIndex) => {
     // O recuo de FRAME_PAD deixa a moldura do primeiro grupo inteira dentro do corpo.
-    const left = bucketIndex * slotWidth + FRAME_PAD;
+    const left = bucketIndex * slotWidth + FRAME_PAD + 1;
     bucket.accounts.forEach((account, index) => {
       const { column, row } = cellOf(index);
       order.push(account.id);
@@ -178,7 +179,20 @@ export default function PortfolioUnits({ data = defaultData, onSelectAccount, cl
 
   const viewH = TOP_BAND + maxRows * PITCH - GAP + NAME_GAP + NAME_BAND;
   const bottom = TOP_BAND + maxRows * PITCH - GAP;
-  const ceilingRows = rowsFor(data.ceiling);
+  // A moldura fecha exatamente `ceiling` células: linhas inteiras e, se sobra resto, um degrau na linha de cima.
+  const fullRows = Math.floor(data.ceiling / COLS);
+  const rest = data.ceiling % COLS;
+  const framePath = (left: number): string => {
+    const x0 = left - FRAME_PAD;
+    const x1 = left + STACK_WIDTH + FRAME_PAD;
+    const yBottom = bottom + FRAME_PAD;
+    const yFull = bottom - fullRows * PITCH + GAP - FRAME_PAD;
+    if (rest === 0) return `M${String(x0)} ${String(yBottom)}H${String(x1)}V${String(yFull)}H${String(x0)}Z`;
+    const xStep = left + rest * PITCH - GAP / 2;
+    const yStep = bottom - fullRows * PITCH + GAP / 2;
+    const yTop = yFull - PITCH;
+    return `M${String(x0)} ${String(yBottom)}H${String(x1)}V${String(yStep)}H${String(xStep)}V${String(yTop)}H${String(x0)}Z`;
+  };
   const accountById = new Map(data.accounts.map((account) => [account.id, account]));
   const segmentById = new Map(data.segments.map((segment) => [segment.id, segment]));
   const executiveById = new Map(data.executives.map((executive) => [executive.id, executive]));
@@ -237,18 +251,15 @@ export default function PortfolioUnits({ data = defaultData, onSelectAccount, cl
         <svg className="block h-auto w-full" viewBox={`0 0 ${String(VIEW_W)} ${String(viewH)}`}>
           {mode === 'executive'
             ? layout.groups.map((group) => (
-                <rect
+                <path
                   aria-hidden
+                  d={framePath(group.left)}
                   fill="none"
-                  height={ceilingRows * PITCH - GAP + FRAME_PAD * 2}
                   key={`frame-${group.id}`}
-                  rx={CELL_RADIUS}
                   stroke={FRAME_STROKE}
                   strokeDasharray={FRAME_DASH}
+                  strokeLinejoin="round"
                   vectorEffect="non-scaling-stroke"
-                  width={STACK_WIDTH + FRAME_PAD * 2}
-                  x={group.left - FRAME_PAD}
-                  y={bottom - ceilingRows * PITCH + GAP - FRAME_PAD}
                 />
               ))
             : null}

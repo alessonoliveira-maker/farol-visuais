@@ -168,3 +168,44 @@ segue não reprova, e quem tocar o arquivo acerta de passagem.
   não escrevem o n. Ajustar o texto ou escrever o n.
 - v4: a célula de ausência não leva o ícone `Unplug` da EST-2, desvio declarado no `notes` por falta
   de largura.
+
+**2026-10-15, segunda passada da v1, depois da segunda rodada de correção.** A v1 foi aprovada: o
+vazio virou bloco `role="status"` com `Filter` e sem régua, e o `svg` sai em escala 1 (viewBox de
+422 x 290 num corpo de 422 x 328), com os 14 textos de 11 px e os 15 números de 12 px medidos no
+preview. Ficam quitados dois itens de 2026-10-05: o `notes` não fala mais em limiar de 0,50 e a frase
+acessível começa por "Matriz de correlação". O que segue não reprova.
+
+- v1: a chave `TAMANHO-TEXTO` da v1 em `_render/scripts/lib/divida-guardas.json` ficou órfã; o
+  `check` avisa que a guarda mede e não acusa mais nada. Quem fecha a rodada apaga a chave, que é
+  arquivo da ferramenta e não do revisor.
+- v1: o comentário de `CHAR_W` ainda cita "84 px para os 17 caracteres de CPL qualificado com o número
+  na frente", medida do desenho antigo de coluna numerada. E o `HEAD_CHARS` promete 5 px de respiro
+  que `Investimento`, palavra única de 12 caracteres, não cumpre: a tinta ocupa os 67 px da célula e
+  fica a cerca de 6 px de `Impressões`. Lê como dois nomes, mas é o par mais justo do cabeçalho.
+- v1: o cabeçalho assenta a 5 px da célula (`TOP_H - 5`) e a célula tem 67 px, fora do múltiplo de 2
+  da ESP-1; `ROW_CHARS` é escrito à mão em vez de sair de `LEFT_W` e `CHAR_W`; `CHIP_W` e `CHIP_H`
+  ficam depois das funções, longe das outras constantes. Nada disso aparece no preview.
+- v1: os nomes e a contagem da frase acessível vêm de `MEASURES`, constante do módulo, e não do
+  `data`; uma matriz de outro tamanho passada por prop herda nomes e "6 medidas" errados. As medidas
+  deviam viajar com o dado. A frase também diz o par mais forte e o mais fraco da matriz, mas não a
+  resposta do caso de uso (investimento com leads qualificados, 0,21).
+- v1: os números abaixo de 0,60 não declaram peso e pedem 400 ao Space Grotesk, que só tem 500 a 700
+  carregados (TIP-4); o navegador cai no 500, como nas irmãs, e a diferença para o 600 do par forte
+  fica sutil. O `meta.json` diz "acima de 0,60" e o código usa maior ou igual.
+- v1: o catálogo descreve "diagonal com o nome", "texto com contraste por faixa" e "Pearson no
+  subtítulo e n na dica"; a peça nomeia nos dois eixos, assenta o número em pastilha e declara método
+  e n na legenda. São substitutos com o mesmo efeito, documentados na Anatomia; vale alinhar o texto
+  do catálogo ao que a peça faz.
+- README: a seção `Correção de 2026-10-15 (v1)` entrou depois desta, que deveria ser a última.
+
+## Correção de 2026-10-15 (v1)
+
+- EST-1: com `data` vazio a v1 devolve um bloco `role="status"` com ícone `Filter` e a frase de
+  ausência, sem régua nem legenda, como as irmãs.
+- TIP-2 e GEO-18: o `viewBox` passou de 462 x 290 para 422 x 290, a largura do corpo medido no
+  preview, e a escala sai 1: os textos de 11 px chegam em 11 px. Para caber, a célula ficou em 67 px, a
+  coluna da esquerda em 79 px e os rótulos de linha quebram em até duas linhas por palavra inteira.
+- A frase acessível passou a começar por "Matriz de correlação" (ACE-1) e o `notes` do `meta.json` não
+  fala mais em limiar de 0,50.
+- Os polos seguem `--positive` e `--negative`, saída aceita pela TOK-3; as irmãs usam `--chart-1` e
+  `--chart-5`, e a v1 não foi alinhada nesta rodada.

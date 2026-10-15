@@ -19,37 +19,19 @@
  * `--json` troca o texto por um objeto JSON no stdout (mensagens da trava vão para o stderr), com o
  * mesmo código de saída. Para stdout limpo pelo npm: `npm run --silent check -- <caminho> --json`.
  */
-import fs from 'node:fs';
 import path from 'node:path';
 
 import { checkFamilyReadme, checkModelReadme, checkVersion } from './lib/contract.mjs';
-import { guardaRaioContraArea, lerEscapes } from './lib/guardas.mjs';
 import { withLock } from './lib/lock.mjs';
 import { parseArgs, planTargets, relToVisuais } from './lib/paths.mjs';
 import { typecheck } from './lib/typecheck.mjs';
 
 /**
- * A RAIO-CONTRA-AREA (GEO-3) somada ao resultado de `checkVersion`, com a mesma forma das outras
- * guardas de preview: erros, avisos, escapes usados e a medição na chave `are`.
- *
- * ELA É CHAMADA DAQUI, e não de dentro de `checkVersion`, porque o item que a criou (F0.4, 2026-10-02)
- * tinha `contract.mjs` fora do escopo. A consequência é declarada: quem chama `checkVersion` direto
- * (`lib/pendencias.mjs`) não vê esta guarda. O lugar dela é a fila das outras, em `checkVersion`; a
- * assinatura é a mesma (`versionAbs`, escapes do `Chart.tsx`, `rel`) para a mudança ser uma linha.
+ * Todas as guardas de uma versão, inclusive a RAIO-CONTRA-AREA (GEO-3), vêm de `checkVersion`. Entre
+ * 2026-10-02 (F0.4) e 2026-10-15 a RAIO-CONTRA-AREA era somada aqui, por fora, porque o item que a criou
+ * tinha `contract.mjs` fora do escopo, e por isso `lib/pendencias.mjs` não a via. O F0.8 (2026-10-15) a
+ * levou para a fila das outras: `check` e `pendencias` passam a ler o mesmo resultado.
  */
-function comRaioContraArea(version, resultado) {
-  const chartFile = path.join(version.abs, 'Chart.tsx');
-  const chartText = fs.existsSync(chartFile) ? fs.readFileSync(chartFile, 'utf8') : '';
-  const area = guardaRaioContraArea(version.abs, lerEscapes(chartText, 'Chart.tsx'), version.rel);
-  return {
-    ...resultado,
-    errors: [...resultado.errors, ...area.errors],
-    warnings: [...resultado.warnings, ...area.warnings],
-    escapes: [...(resultado.escapes ?? []), ...area.usados.map((item) => `Chart.tsx ${item}`)],
-    are: area.medicao,
-  };
-}
-
 async function main() {
   const { positional, flags } = parseArgs(process.argv.slice(2), { booleanFlags: ['json', 'sem-tipos'] });
   const asJson = Boolean(flags.json);
@@ -82,7 +64,7 @@ async function main() {
     return 1;
   }
 
-  const results = new Map(versions.map((version) => [version.abs, comRaioContraArea(version, checkVersion(version))]));
+  const results = new Map(versions.map((version) => [version.abs, checkVersion(version)]));
 
   // READMEs: cada modelo e cada família que tem versão sob o caminho.
   const readmeResults = [];

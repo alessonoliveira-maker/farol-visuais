@@ -474,7 +474,7 @@ produção, não por leitura: o extrator contou 79 regras em 77 códigos únicos
    Visual de moldura `stage` (KPI) vai direto na grade, sem `VisualCard`, numa célula com altura.
 6. **Dê altura ao pai** (`h-64`, a linha da grade) ou passe `height`. Sem altura, `ResponsiveContainer` desenha zero.
 7. **Confira os estados** que o catálogo não mostra: recorte vazio, indisponível e dado parcial. Use `EmptyState` e `UnavailableState` do Farol quando fizer sentido.
-8. **Rode no `app/`:** `npm run typecheck`, `npm run lint`, `npm run test`, e abra a página nos dois temas e a 390 px de largura.
+8. **Rode no `app/`:** `npm run typecheck`, `npm run lint`, `npm run test`, e abra a página nos dois temas e a 390 px de largura. **Antes de copiar, saiba o que o lint do Farol vai cobrar:** de `VISUAIS/_render/`, `npm run lint -- <familia>/<modelo>` roda a régua do `app/eslint.config.js` sobre o `Chart.tsx` e o `data.ts` da versão (emenda de 2026-10-15, pedido P4 da replicação). O `check` do catálogo não roda essa régua, e em 2026-10-15 ela acusava 181 das 814 versões aprovadas (264 erros em 12 regras, as três mais frequentes `prefer-optional-chain`, `no-base-to-string` e `prefer-nullish-coalescing`). Ajuste na cópia, dentro de `app/src/`, com comentário no ponto; nunca aceite o autofix de `prefer-optional-chain` sem ler, porque `a?.b !== null` é verdadeiro quando `a` falta e `a && a.b !== null` não é: a forma equivalente é `a?.b != null`.
 
 ---
 

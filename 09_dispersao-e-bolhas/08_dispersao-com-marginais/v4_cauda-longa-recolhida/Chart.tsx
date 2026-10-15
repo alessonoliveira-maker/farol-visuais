@@ -4,7 +4,6 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
-  Cell,
   LabelList,
   ResponsiveContainer,
   Scatter,
@@ -89,12 +88,13 @@ interface Bin {
   readonly low: number;
   readonly high: number;
   readonly count: number;
-  readonly cauda: boolean;
 }
 
 interface Point {
   readonly ciclo: number;
   readonly ticket: number;
+  /** Constante só para o ZAxis ter dataKey; sem ela o range não chega ao Scatter. */
+  readonly z: number;
 }
 
 /** A fração de 0 a 1 que um valor ocupa no domínio: a única conta de posição do arquivo, chamada
@@ -149,14 +149,13 @@ function ticksFor(domainTop: number, binWidth: number): number[] {
  * Faixas de largura igual que azulejam o domínio inteiro, o que é o que faz o marginal falar a mesma
  * escala do plano: o `BarChart` distribui as faixas em passo uniforme de pixel (escala band) e o
  * plano distribui os valores em passo uniforme de domínio (escala linear), e as duas coincidem
- * exatamente sob essa condição. A ÚLTIMA faixa é aberta à direita quando `clamp` é verdadeiro: ela
- * conta tudo acima da própria divisa de entrada, inclusive o que passou do domínio.
+ * exatamente sob essa condição. Só entra o que está dentro do domínio: o que passou dele é contado à
+ * parte, na barra da reserva, e nunca é somado à última faixa.
  */
 function makeBins(
   values: readonly number[],
   domainTop: number,
   binWidth: number,
-  clamp: boolean,
 ): Bin[] {
   const binCount = Math.round(domainTop / binWidth);
   const counts = new Array<number>(binCount).fill(0);
@@ -166,13 +165,11 @@ function makeBins(
   }
   return counts.map((count, index) => {
     const low = binWidth * index;
-    const ultima = index === binCount - 1;
     return {
       low,
       high: low + binWidth,
       center: low + binWidth / 2,
       count,
-      cauda: clamp && ultima,
     };
   });
 }
@@ -225,6 +222,27 @@ function ClampedEdgeLayer({
   );
 }
 
+/**
+ * A barra própria do que passou do domínio, desenhada na reserva do marginal do topo, na vertical
+ * dos triângulos do plano: altura na mesma escala das outras barras (mesmo teto), cor da cauda e a
+ * contagem escrita acima. Não é uma faixa de 25 dias; a chave e o rodapé dizem que é "acima do corte".
+ */
+function ReserveBar({ count, yMax }: { readonly count: number; readonly yMax: number }) {
+  const plotArea = usePlotArea();
+  if (!plotArea || count === 0) return null;
+  const barHeight = plotArea.height * (count / yMax);
+  const x = plotArea.x + plotArea.width + CLAMP_MARK_OFFSET;
+  const y = plotArea.y + plotArea.height - barHeight;
+  return (
+    <g>
+      <rect fill={TAIL_FILL} height={barHeight} rx={2} width={BAR_MAX_SIZE} x={x} y={y} />
+      <text className="font-display" fill={TAIL_FILL} fontSize={LABEL_SIZE} textAnchor="middle" x={x + BAR_MAX_SIZE / 2} y={y - LABEL_GAP}>
+        {formatInt(count)}
+      </text>
+    </g>
+  );
+}
+
 /** A contagem escrita acima da faixa, que é o que dá a `--line-strong` a isenção da ACE-3. */
 function TopCountLabel({ x, y, width, value }: LabelProps): ReactElement | null {
   if (typeof value !== 'number') return null;
@@ -264,7 +282,7 @@ export default function LongTailClamped({ data = defaultData, height, className 
   const animate = useAnimateOnce();
   const style = height === undefined ? undefined : { height };
 
-  const todas: Point[] = data.map(([ciclo, ticket]) => ({ ciclo, ticket }));
+  const todas: Point[] = data.map(([ciclo, ticket]) => ({ ciclo, ticket, z: 1 }));
   const corte = percentile(todas.map((ponto) => ponto.ciclo), CLAMP_PERCENTILE);
   const ticketMaximo = maxOf(todas.map((ponto) => ponto.ticket));
 
@@ -292,21 +310,21 @@ export default function LongTailClamped({ data = defaultData, height, className 
     .slice()
     .sort((a, b) => a.ticket - b.ticket);
 
-  const cicloBins = makeBins(todas.map((ponto) => ponto.ciclo), cicloTop, CICLO_BIN_WIDTH, true);
-  const ticketBins = makeBins(todas.map((ponto) => ponto.ticket), ticketTop, TICKET_BIN_WIDTH, false);
+  const cicloBins = makeBins(noPlano.map((ponto) => ponto.ciclo), cicloTop, CICLO_BIN_WIDTH);
+  const ticketBins = makeBins(todas.map((ponto) => ponto.ticket), ticketTop, TICKET_BIN_WIDTH);
   const maxCicloCount = Math.max(1, ...cicloBins.map((bin) => bin.count));
   const maxTicketCount = Math.max(1, ...ticketBins.map((bin) => bin.count));
   /** A divisa de entrada da última faixa, derivada do domínio, e a contagem dela medida do dado:
    * assim nem a divisa nem o número dependem de acesso por índice com queda para zero. */
   const ultimaDivisa = cicloTop - CICLO_BIN_WIDTH;
-  const contagemDaCauda = todas.filter((ponto) => ponto.ciclo >= ultimaDivisa).length;
+  const contagemDaCauda = noPlano.filter((ponto) => ponto.ciclo >= ultimaDivisa).length;
 
   const corteTexto = formatDays(cicloTop);
   const p99Texto = formatDays(Math.round(corte));
 
   const summary =
     `Dispersão com histogramas marginais: ${formatInt(todas.length)} oportunidades ganhas por ciclo e ticket. ` +
-    `O P99 do ciclo é ${p99Texto}, então ${formatInt(recolhidas.length)} oportunidades acima de ${corteTexto} vão recolhidas na borda e a última faixa conta ${formatInt(contagemDaCauda)}.`;
+    `O P99 do ciclo é ${p99Texto}: ${formatInt(recolhidas.length)} acima de ${corteTexto} vão recolhidas na borda, e a última faixa comum conta ${formatInt(contagemDaCauda)}.`;
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
@@ -325,7 +343,7 @@ export default function LongTailClamped({ data = defaultData, height, className 
           <svg className="shrink-0" height={10} viewBox="0 0 10 10" width={10}>
             <polygon fill={TAIL_FILL} points="1,0.5 9,5 1,9.5" />
           </svg>
-          <span>Recolhidas na borda</span>
+          <span>Recolhidas na borda e na barra acima do corte</span>
           <span className="text-text-muted">{`${formatInt(recolhidas.length)} oportunidades`}</span>
         </li>
       </ul>
@@ -340,12 +358,10 @@ export default function LongTailClamped({ data = defaultData, height, className 
             >
               <XAxis dataKey="center" domain={[...cicloDomain]} hide type="number" />
               <YAxis allowDecimals={false} domain={[0, maxCicloCount * HIST_AXIS_HEADROOM]} hide />
-              <Bar dataKey="count" isAnimationActive={animate} maxBarSize={BAR_MAX_SIZE} radius={[2, 2, 0, 0]}>
+              <Bar dataKey="count" fill={HIST_FILL} isAnimationActive={animate} maxBarSize={BAR_MAX_SIZE} radius={[2, 2, 0, 0]}>
                 <LabelList content={TopCountLabel} dataKey="count" />
-                {cicloBins.map((bin) => (
-                  <Cell fill={bin.cauda ? TAIL_FILL : HIST_FILL} key={bin.center} />
-                ))}
               </Bar>
+              <ReserveBar count={recolhidas.length} yMax={maxCicloCount * HIST_AXIS_HEADROOM} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -386,7 +402,7 @@ export default function LongTailClamped({ data = defaultData, height, className 
                 type="number"
                 width={AXIS_WIDTH}
               />
-              <ZAxis range={[...Z_RANGE]} type="number" />
+              <ZAxis dataKey="z" range={[...Z_RANGE]} type="number" />
               <Scatter data={noPlano} fill="var(--chart-1)" isAnimationActive={animate} shape="circle" />
               <ClampedEdgeLayer recolhidas={recolhidas} ticketDomain={ticketDomain} />
             </ScatterChart>
@@ -411,7 +427,7 @@ export default function LongTailClamped({ data = defaultData, height, className 
         </div>
       </div>
       <p aria-hidden className="mt-2 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
-        {`Faixas de ${formatDays(CICLO_BIN_WIDTH)} no ciclo e de ${formatCurrencyAxis(TICKET_BIN_WIDTH)} no ticket; a última faixa do ciclo é aberta e conta ${formatDays(ultimaDivisa)} ou mais, porque o P99 é ${p99Texto} e o domínio para em ${corteTexto}`}
+        {`Faixas de ${formatDays(CICLO_BIN_WIDTH)} no ciclo e de ${formatCurrencyAxis(TICKET_BIN_WIDTH)} no ticket; as ${formatInt(recolhidas.length)} acima de ${corteTexto} não entram na última faixa: têm barra própria na reserva à direita, porque o P99 é ${p99Texto} e o domínio para em ${corteTexto}`}
       </p>
     </div>
   );

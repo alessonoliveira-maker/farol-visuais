@@ -1,4 +1,4 @@
-import { CheckCircle2, CircleDashed, Filter } from 'lucide-react';
+import { CheckCircle2, CircleAlert, CircleDashed, Filter } from 'lucide-react';
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts';
 
 import { useAnimateOnce } from '@/components/visuals/charts/chartTheme';
@@ -39,6 +39,10 @@ function bandForIndex(index: number): { readonly inner: string; readonly outer: 
   return RING_BANDS[index] ?? RING_BANDS[RING_BANDS.length - 1] ?? { inner: '30%', outer: '50%' };
 }
 
+function plural(count: number, ring: { readonly unit: string; readonly unitOne: string }): string {
+  return `${formatInt(count)} ${count === 1 ? ring.unitOne : ring.unit}`;
+}
+
 function ringColor(id: string): string {
   return RING_COLOR[id] ?? 'var(--chart-1)';
 }
@@ -72,13 +76,17 @@ export default function ConcentricGoalRings({
   });
 
   const closedCount = rings.filter((ring) => ring.closed).length;
-  const firstOpen = rings.find((ring) => !ring.closed && ring.goal !== null);
+  const parts = rings.map((ring) => {
+    if (ring.pct === null) return `${ring.label} sem meta definida, com ${plural(ring.value, ring)}.`;
+    const pct = formatPercent(ring.pct / 100, 0);
+    if (ring.closed) return `${ring.label} fechou, ${pct}.`;
+    const missing = ring.missing ?? 0;
+    return `${ring.label} não fechou, ${pct}; ${missing === 1 ? 'falta' : 'faltam'} ${plural(missing, ring)}.`;
+  });
   const summary = [
-    `Anéis concêntricos com ${String(rings.length)} metas da pré-vendas na semana de ${formatDate(weekStart)}.`,
+    `Anéis concêntricos com ${String(rings.length)} metas da pré-vendas, semana de ${formatDate(weekStart)}.`,
     `${String(closedCount)} de ${String(rings.length)} metas fechadas.`,
-    firstOpen
-      ? `${firstOpen.label} não fechou: faltam ${formatInt(firstOpen.missing ?? 0)} ${firstOpen.unit}.`
-      : 'Todas as metas fecharam na semana.',
+    ...parts,
   ].join(' ');
 
   return (
@@ -123,15 +131,31 @@ export default function ConcentricGoalRings({
                 <CircleDashed aria-hidden className="size-4 shrink-0 text-text-muted" />
               ) : ring.closed ? (
                 <CheckCircle2 aria-hidden className="size-4 shrink-0 text-positive" />
-              ) : null}
+              ) : (
+                <CircleAlert aria-hidden className="size-4 shrink-0 text-text-muted" />
+              )}
             </div>
-            <p className="pl-5 text-xs text-text-muted">
-              <span className="kpi-number font-semibold text-text-primary">{formatInt(ring.value)}</span> de{' '}
-              {ring.goal === null ? 'sem meta' : `${formatInt(ring.goal)} ${ring.unit}`}
-              {ring.pct === null
-                ? ''
-                : `, ${ring.closed ? formatPercent(ring.pct / 100) : `faltam ${formatInt(ring.missing ?? 0)} ${ring.unit}`}`}
+            <p className="flex items-baseline gap-1 pl-5 text-xs text-text-muted">
+              <span className="kpi-number w-9 shrink-0 text-right font-semibold text-text-primary">{formatInt(ring.value)}</span>
+              {ring.goal === null ? (
+                <span className="min-w-0 flex-1">{ring.value === 1 ? ring.unitOne : ring.unit}, sem meta definida</span>
+              ) : (
+                <>
+                  <span className="shrink-0">de</span>
+                  <span className="kpi-number w-9 shrink-0 text-right">{formatInt(ring.goal)}</span>
+                  <span className="min-w-0 flex-1 truncate">{ring.goal === 1 ? ring.unitOne : ring.unit}</span>
+                  <span className="kpi-number w-11 shrink-0 text-right font-semibold text-text-primary">
+                    {formatPercent((ring.pct ?? 0) / 100, 0)}
+                  </span>
+                </>
+              )}
             </p>
+            {ring.pct !== null && !ring.closed ? (
+              <p className="pl-5 text-xs text-text-muted">
+                {(ring.missing ?? 0) === 1 ? 'falta' : 'faltam'}{' '}
+                <span className="kpi-number">{formatInt(ring.missing ?? 0)}</span> {(ring.missing ?? 0) === 1 ? ring.unitOne : ring.unit}
+              </p>
+            ) : null}
           </li>
         ))}
       </ul>

@@ -2420,13 +2420,87 @@ async function dossieTest() {
   return falhas === 0;
 }
 
+/**
+ * 3d. Lint do Farol (`npm run lint`, 2026-10-15, pedido P4): a régua é a do `app/eslint.config.js`, carrega
+ * as três regras que a colagem mediu e toda regra explícita do arquivo do Farol, acusa `p && p.value !== null`
+ * e `String(unknown)` numa versão descartável e deixa passar a forma equivalente `p?.value != null`. O
+ * programa de tipos da prova é um `tsconfig` temporário sobre a pasta descartável, para não construir o
+ * programa dos 814 `Chart.tsx` a cada `selftest`.
+ */
+async function lintTest() {
+  const provas = [];
+  const L = await import('./lint.mjs');
+  const regrasDaRegua = new Set(L.configDoFarol().flatMap((c) => Object.keys(c.rules ?? {})));
+  provas.push(prova('a régua do lint carrega as três regras que o P4 mediu na colagem', '', L.REGRAS_DO_P4.filter((r) => !regrasDaRegua.has(r)).join('|')));
+  const explicitas = L.regrasExplicitasDoFarol();
+  provas.push(prova('o eslint.config.js do Farol tem regras explícitas para comparar', true, explicitas.length >= 3));
+  provas.push(prova('toda regra explícita do eslint.config.js do Farol está na régua do catálogo', '', explicitas.filter((r) => !regrasDaRegua.has(r)).join('|')));
+
+  const raiz = path.join(TMP_DIR, `lint-${process.pid}`);
+  fs.rmSync(raiz, { recursive: true, force: true });
+  const versoes = [];
+  const escrever = (nome, chart) => {
+    const dir = path.join(raiz, '99_prova', '01_lint', nome);
+    ensureDir(dir);
+    fs.writeFileSync(path.join(dir, 'Chart.tsx'), chart, 'utf8');
+    fs.writeFileSync(path.join(dir, 'data.ts'), 'export const data = [{ value: 1 }];\n', 'utf8');
+    versoes.push({ abs: dir, rel: relToVisuais(dir) });
+  };
+  // A forma é a de `01/01 v4`, que o Farol acusou na colagem: `previous` vem de acesso por índice (tipo
+  // `Row | undefined`, pelo `noUncheckedIndexedAccess`) e a cadeia fica dentro de um `if`. Com o operando
+  // tipado `| null` em vez de `| undefined`, ou atribuída a uma variável, a regra se cala (medido em
+  // 2026-10-15), então o fixture segue a forma do acervo. `interface` e não `type`, pela
+  // `consistent-type-definitions` da mesma régua.
+  escrever(
+    'v1_acusa',
+    [
+      'interface Row { value: number | null }',
+      'export function Chart({ rows, payload }: { rows: Row[]; payload?: { value: unknown } }) {',
+      '  const previous = rows[rows.length - 2];',
+      '  const kpi = rows[0];',
+      "  if (previous && previous.value !== null && kpi && kpi.value !== null) return <p>{previous.value - kpi.value}{String(payload?.value ?? '')}</p>;",
+      '  return <p>nada</p>;',
+      '}',
+      '',
+    ].join('\n'),
+  );
+  escrever(
+    'v2_passa',
+    [
+      'interface Row { value: number | null }',
+      'export function Chart({ rows }: { rows: Row[] }) {',
+      '  const previous = rows[rows.length - 2];',
+      '  if (previous?.value != null && previous.value > 0) return <p>sim</p>;',
+      '  return <p>não</p>;',
+      '}',
+      '',
+    ].join('\n'),
+  );
+  const tsconfig = path.join(raiz, 'tsconfig.json');
+  fs.writeFileSync(tsconfig, JSON.stringify({ extends: path.relative(raiz, path.join(VISUAIS_DIR, 'tsconfig.json')).split(path.sep).join('/'), include: ['**/Chart.tsx', '**/data.ts'], exclude: [] }), 'utf8');
+  try {
+    const relatorio = await L.lintarVersoes(versoes, { tsconfig, ignores: [] });
+    const acusa = relatorio.versoes.find((v) => v.caminho.endsWith('v1_acusa')) ?? { erros: [] };
+    const passa = relatorio.versoes.find((v) => v.caminho.endsWith('v2_passa')) ?? { erros: ['sem relatório'] };
+    provas.push(prova('lint acusa prefer-optional-chain em `p && p.value !== null`', true, acusa.erros.some((e) => e.includes('@typescript-eslint/prefer-optional-chain'))));
+    provas.push(prova('lint acusa no-base-to-string em String(unknown)', true, acusa.erros.some((e) => e.includes('@typescript-eslint/no-base-to-string'))));
+    provas.push(prova('lint deixa passar a forma equivalente `p?.value != null`', 0, passa.erros.length));
+    provas.push(prova('o relatório do lint conta por regra', true, relatorio.porRegra.some((r) => r.regra === '@typescript-eslint/prefer-optional-chain' && r.n >= 1)));
+  } finally {
+    fs.rmSync(raiz, { recursive: true, force: true });
+  }
+  const falhas = provas.filter((p) => !p).length;
+  console.log(`       ${provas.length - falhas} de ${provas.length} provas do lint passaram.`);
+  return falhas === 0;
+}
+
 async function main() {
   const { flags } = parseArgs(process.argv.slice(2));
   if (flags.filho) {
     await child(flags.filho, flags.log);
     return 0;
   }
-  const results = [await lockQueueTest(), await staleLockTest(), await guardasTest(), await multialvoTest(), await coberturaPorVersaoTest(), await carimboBibliotecaTest(), await dossieTest()];
+  const results = [await lockQueueTest(), await staleLockTest(), await guardasTest(), await multialvoTest(), await coberturaPorVersaoTest(), await carimboBibliotecaTest(), await dossieTest(), await lintTest()];
   if (!flags['sem-navegador']) results.push(await carimboNoRenderTest(), await baseHerdadaTest(), await chromeFidelityTest());
   const failed = results.filter((r) => !r).length;
   console.log(`\n[selftest] ${results.length - failed} de ${results.length} provas passaram.`);

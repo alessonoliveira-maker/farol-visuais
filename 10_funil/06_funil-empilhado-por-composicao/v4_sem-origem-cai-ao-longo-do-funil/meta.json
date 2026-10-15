@@ -10,5 +10,5 @@
   ],
   "canvas": "card",
   "frame": "card",
-  "notes": "O catálogo descreve a faixa como hachurada; aqui ela segue o token de ausência da seção 17.2 (contorno --text-muted sem preenchimento), porque hachura é textura decorativa vedada pela COR-9. A parte com origem soma as seis categorias numa faixa neutra só (--line-strong), sem cor por categoria: seis cores sem legenda não eram identificáveis na imagem (ROT-4); a dica continua trazendo o valor de cada origem para quem quiser o detalhe."
+  "notes": "O catálogo descreve a faixa como hachurada; aqui ela segue o token de ausência da seção 17.2 (contorno --text-muted sem preenchimento), porque hachura é textura decorativa vedada pela COR-9. A parte com origem soma as seis categorias numa faixa neutra só (--line-strong), sem cor por categoria: seis cores sem legenda não eram identificáveis na imagem (ROT-4); a dica traz as duas partes da pilha (com origem somada e sem origem), sem o detalhe por origem. A linha de leitura e a frase acessível são calculadas da cobertura da primeira e da última etapa, e etapa sem lead escreve ausência."
 }

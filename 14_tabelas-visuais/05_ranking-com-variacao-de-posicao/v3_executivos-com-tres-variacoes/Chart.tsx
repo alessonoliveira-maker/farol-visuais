@@ -10,6 +10,7 @@ const TRACK_MAX_POS = 6;
 const TRACK_WIDTH = 64;
 const TRACK_HEIGHT = 24;
 const TRACK_PAD = 3;
+const TRACK_PAD_X = 3;
 
 export interface RankingTresVariacoesProps {
   readonly data?: readonly RankingRow[];
@@ -29,14 +30,14 @@ function trackY(pos: number): number {
 }
 
 function TrackSparkline({ row, isHighlight }: { readonly row: RankingRow; readonly isHighlight: boolean }) {
-  const step = TRACK_WIDTH / (row.positions.length - 1);
-  const path = row.positions.map((pos, index) => `${index === 0 ? 'M' : 'L'}${String(index * step)} ${String(trackY(pos))}`).join(' ');
+  const step = (TRACK_WIDTH - TRACK_PAD_X * 2) / (row.positions.length - 1);
+  const path = row.positions.map((pos, index) => `${index === 0 ? 'M' : 'L'}${String(TRACK_PAD_X + index * step)} ${String(trackY(pos))}`).join(' ');
   const lastY = trackY(row.positions[5]);
-  const color = isHighlight ? 'var(--chart-1)' : 'var(--line-strong)';
+  const color = isHighlight ? 'var(--chart-1)' : 'var(--text-muted)';
   return (
     <svg aria-hidden className="h-6 w-16" viewBox={`0 0 ${String(TRACK_WIDTH)} ${String(TRACK_HEIGHT)}`}>
       <path d={path} fill="none" stroke={color} strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} vectorEffect="non-scaling-stroke" />
-      <circle cx={TRACK_WIDTH} cy={lastY} fill={color} r={2} />
+      <circle cx={TRACK_WIDTH - TRACK_PAD_X} cy={lastY} fill={color} r={2} />
     </svg>
   );
 }

@@ -51,8 +51,8 @@ const Y_AXIS_WIDTH = 34;
 /** Raio de 2 px, fixado nas duas pontas do `ZAxis`, porque o tamanho aqui não codifica nada. */
 const POINT_RADIUS = 2;
 const Z_RANGE: readonly [number, number] = [Math.PI * POINT_RADIUS * POINT_RADIUS, Math.PI * POINT_RADIUS * POINT_RADIUS];
-/** Opacidade baixa para 1.697 pontos: onde a tinta fica forte é onde a nuvem se acumula. */
-const POINT_FILL_OPACITY = 0.35;
+/** Opacidade de 0,7 para manter o ponto isolado da cauda acima do mínimo de contraste (ACE-5); o acúmulo ainda escurece. */
+const POINT_FILL_OPACITY = 0.7;
 /** As duas faixas que a linha de leitura compara, em minutos: até 1 h e acima de 1 dia. */
 const BAND_FAST = 60;
 const BAND_SLOW = 1440;
@@ -61,12 +61,12 @@ const BAND_SLOW = 1440;
  * existe porque o `padding` esquerdo do eixo reserva os mesmos pixels: sem essa reserva o valor 1
  * cai exatamente na borda do plano e a nuvem do primeiro minuto cobre a faixa inteira.
  */
-const ZERO_STRIP_WIDTH = 20;
-const ZERO_STRIP_PADDING = { left: 28, right: 6 } as const;
-const ZERO_MARK_WIDTH = 2;
-const ZERO_MARK_HEIGHT = 6;
-const ZERO_COLUMNS = 4;
-const ZERO_COLUMN_GAP = 4;
+const ZERO_STRIP_WIDTH = 36;
+const ZERO_STRIP_PADDING = { left: 44, right: 6 } as const;
+/** Cada linha de tentativas vira uma barra horizontal de 0,8 px por lead, com a contagem escrita ao lado (EST-3). */
+const ZERO_BAR_PER_LEAD = 0.8;
+const ZERO_BAR_HEIGHT = 5;
+const ZERO_COUNT_SIZE = 11;
 
 /** Tique em unidade humana: minuto até 1 h, hora até 1 dia, dia acima disso. */
 function formatMinutesTick(minutos: number): string {
@@ -97,8 +97,8 @@ function median(values: readonly number[]): number | null {
  *
  * Eles não são ausência: o contato aconteceu, e aconteceu no mesmo minuto. Em escala log não existe
  * posição para o zero, então a marca vai para uma faixa reservada à esquerda do primeiro minuto,
- * separada por um tracejado, com a contagem escrita ao lado. Em coluna, porque 41 marcas na mesma
- * altura viram uma só.
+ * separada por um tracejado, com a contagem escrita ao lado. Uma barra por linha de tentativas, com
+ * comprimento proporcional e a contagem escrita, porque marcas na mesma altura viram uma só.
  */
 function ZeroEdgeLayer({ zeros }: { readonly zeros: readonly number[] }) {
   const plotArea = usePlotArea();
@@ -106,6 +106,9 @@ function ZeroEdgeLayer({ zeros }: { readonly zeros: readonly number[] }) {
   if (!plotArea || !yScale || zeros.length === 0) return null;
   const base = plotArea.x + 2;
   const limite = plotArea.x + ZERO_STRIP_WIDTH;
+  const contagens = new Map<number, number>();
+  for (const tentativas of zeros) contagens.set(tentativas, (contagens.get(tentativas) ?? 0) + 1);
+  const linhas = [...contagens.entries()].sort((a, b) => a[0] - b[0]);
 
   return (
     <g>
@@ -117,18 +120,22 @@ function ZeroEdgeLayer({ zeros }: { readonly zeros: readonly number[] }) {
         y1={plotArea.y}
         y2={plotArea.y + plotArea.height}
       />
-      {zeros.map((tentativas, indice) => {
+      {linhas.map(([tentativas, contagem]) => {
         const cy = yScale(tentativas);
         if (cy === undefined) return null;
         return (
-          <rect
-            fill="var(--chart-1)"
-            height={ZERO_MARK_HEIGHT}
-            key={`zero-${String(indice)}`}
-            width={ZERO_MARK_WIDTH}
-            x={base + (indice % ZERO_COLUMNS) * ZERO_COLUMN_GAP}
-            y={cy - ZERO_MARK_HEIGHT / 2}
-          />
+          <g key={`zero-${String(tentativas)}`}>
+            <rect fill="var(--chart-1)" height={ZERO_BAR_HEIGHT} width={contagem * ZERO_BAR_PER_LEAD} x={base} y={cy - ZERO_BAR_HEIGHT / 2} />
+            <text
+              fill="var(--text-secondary)"
+              fontSize={ZERO_COUNT_SIZE}
+              textAnchor="start"
+              x={base + contagem * ZERO_BAR_PER_LEAD + 2}
+              y={cy + 3.5}
+            >
+              {formatInt(contagem)}
+            </text>
+          </g>
         );
       })}
       <text

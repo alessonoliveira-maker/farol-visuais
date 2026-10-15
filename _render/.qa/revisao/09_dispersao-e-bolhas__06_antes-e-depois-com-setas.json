@@ -3,13 +3,13 @@
   "modelo": "06_antes-e-depois-com-setas",
   "versoes": {
     "v1_canais-entre-trimestres": {
-      "veredito": "reprovado",
-      "nota": "P31 e P12, ROT-4 e ROT-7 marca fina: o nome de Mídia programática fica 18 px acima do ponto de destino de Outbound direto, que cai dentro da largura dele, e o nome de Outbound está 44 px abaixo do próprio ponto, sem linha de chamada e a 21 px do anel de origem de Redes sociais. O defeito do par Eventos e Mídia mudou de par. Recusar caixa que fique mais perto de ponto alheio que do próprio, ou usar a fileira com linha de chamada. Taxa com volume conferida (NUM-1 passa).",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T10:32:18.277Z",
-      "impressao": "c4ffe21e030eea9721edccee58d87253513cfd48",
+      "veredito": "aprovado",
+      "nota": "Terceira passada: os dois bloqueantes de 2026-10-15 saíram. Chamadas em text-muted, 5,21:1 no escuro e 5,37:1 no claro (ACE-6). Ponto mais próximo refeito nome a nome nos dois temas, pela caixa de tinta: os oito têm o próprio destino mais perto, o par mais apertado é Eventos corporativos (14,2 px contra 17,4 do destino de Outbound). Nenhuma chamada toca outro texto: a de Mídia fica a mais de 50 px de nome alheio, a de Outbound a 20,5 px de Eventos; nenhuma cruza seta. Observações no README: render 0,74% e 0,77% pela sigla CPL ainda não corrigida, ponta da chamada de Mídia encostando 0,5 px no descendente do g, chamada nascendo no centro do ponto.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:57:45.935Z",
+      "impressao": "f8b6f08bb381aa748e8f50efb0d78032e4c390e8",
       "arquivos": {
-        "Chart.tsx": "a2999a421b236b568933373272c4e4e6f30b58d6",
+        "Chart.tsx": "82d89bb33c5c0a17509a17063965a3b3d96e4289",
         "data.ts": "82966ddd64fbe8fa935950b4fae4471490306933",
         "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
       }
@@ -27,13 +27,13 @@
       }
     },
     "v3_origens-cruzando-a-meta": {
-      "veredito": "reprovado",
-      "nota": "P31, P12 e P1, ROT-4: o nome Eventos corporativos termina 17 px abaixo do ponto de destino de E-mail próprio, da mesma cor, e o nome de E-mail está 44 px abaixo, atrás dele e sem linha de chamada; o cartão troca o nome de quem cruzou. Dar a E-mail e a Eventos posição em que o nome próprio seja o mais próximo do ponto, ou linha de chamada como a de Webinar. Divisória em text-muted e seis nomes conferidos (passam).",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T10:32:18.753Z",
-      "impressao": "cd9c05a1dd992a3c3e3c7daa9345c786a6dd08d0",
+      "veredito": "aprovado",
+      "nota": "Defeito de 2026-10-05 corrigido: Busca paga, Redes sociais, Conteúdo orgânico e E-mail próprio têm o próprio destino como ponto mais próximo nos dois temas (folga mínima de 6,5 px); Eventos e Webinar vão por linha de chamada que sai do próprio ponto, em text-muted (5,21:1 e 5,37:1), sem cruzar marca nem nome. ACE-6 das setas passa (5,21:1 a 7,36:1); render abaixo de 0,5%. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:41:34.763Z",
+      "impressao": "fb7ece4bac329e60e6be39e6e50d9c1f6dba5738",
       "arquivos": {
-        "Chart.tsx": "64775f35e867b5f6d90996efa43cb1316df2412f",
+        "Chart.tsx": "893c787fe01ffa75df6630f49de03310eb953c0d",
         "data.ts": "6e871b4d6f7f4747c96a217f49119de376de9911",
         "meta.json": "82c193064b312f93c03cb411e77e10e92732af99"
       }
@@ -180,6 +180,45 @@
         "Chart.tsx": "d32f264fb32e600e67fe4e87b399dfd8a14054d7",
         "data.ts": "e41be4ad70d6bc24a7c54da3e9500e8fc58608ef",
         "meta.json": "b3bb2cabc0fcd8d65e70a3b4ae18002aa76911b3"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "reprovado",
+      "nota": "P32, P20 e P11, ACE-6: o defeito de 2026-10-05 saiu (sete nomes com o próprio ponto mais perto, nos dois temas), mas Mídia programática institucional foi para a fileira de reserva e a única coisa que a liga ao ponto é a linha de chamada em line-strong, 1,79:1 e 1,83:1; tapada, o nome fica mais perto do destino de Eventos (86,6 contra 104,8 px). Usar text-muted. P13, ROT-7 e ROT-11: essa linha atravessa o nome Eventos corporativos e toca o M; recusar caminho que cruze nome colocado. P21 a corrigir junto: render 0,74% e 0,77% pela sigla CPL. Parecer em validation/revisao_..._2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:41:31.218Z",
+      "impressao": "d9743bf07bc3f9a3e7871ec80032069df54b50db",
+      "arquivos": {
+        "Chart.tsx": "2b90a379925df23a8389e6dd10b448954266f1a8",
+        "data.ts": "82966ddd64fbe8fa935950b4fae4471490306933",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
+      }
+    },
+    {
+      "versao": "v3_origens-cruzando-a-meta",
+      "veredito": "aprovado",
+      "nota": "Defeito de 2026-10-05 corrigido: Busca paga, Redes sociais, Conteúdo orgânico e E-mail próprio têm o próprio destino como ponto mais próximo nos dois temas (folga mínima de 6,5 px); Eventos e Webinar vão por linha de chamada que sai do próprio ponto, em text-muted (5,21:1 e 5,37:1), sem cruzar marca nem nome. ACE-6 das setas passa (5,21:1 a 7,36:1); render abaixo de 0,5%. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:41:34.763Z",
+      "impressao": "fb7ece4bac329e60e6be39e6e50d9c1f6dba5738",
+      "arquivos": {
+        "Chart.tsx": "893c787fe01ffa75df6630f49de03310eb953c0d",
+        "data.ts": "6e871b4d6f7f4747c96a217f49119de376de9911",
+        "meta.json": "82c193064b312f93c03cb411e77e10e92732af99"
+      }
+    },
+    {
+      "versao": "v1_canais-entre-trimestres",
+      "veredito": "aprovado",
+      "nota": "Terceira passada: os dois bloqueantes de 2026-10-15 saíram. Chamadas em text-muted, 5,21:1 no escuro e 5,37:1 no claro (ACE-6). Ponto mais próximo refeito nome a nome nos dois temas, pela caixa de tinta: os oito têm o próprio destino mais perto, o par mais apertado é Eventos corporativos (14,2 px contra 17,4 do destino de Outbound). Nenhuma chamada toca outro texto: a de Mídia fica a mais de 50 px de nome alheio, a de Outbound a 20,5 px de Eventos; nenhuma cruza seta. Observações no README: render 0,74% e 0,77% pela sigla CPL ainda não corrigida, ponta da chamada de Mídia encostando 0,5 px no descendente do g, chamada nascendo no centro do ponto.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:57:45.935Z",
+      "impressao": "f8b6f08bb381aa748e8f50efb0d78032e4c390e8",
+      "arquivos": {
+        "Chart.tsx": "82d89bb33c5c0a17509a17063965a3b3d96e4289",
+        "data.ts": "82966ddd64fbe8fa935950b4fae4471490306933",
+        "meta.json": "76a84c1317f599c6d7cf171017506298ec3a4ff2"
       }
     }
   ]

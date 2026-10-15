@@ -112,6 +112,28 @@ function weightedRate(
   return created === 0 ? null : { rate: won / created, created, cohorts };
 }
 
+/** Piso de cohorts para o rodapé: com um só, a média repetiria a própria linha. */
+const MIN_COMMON = 2;
+
+/**
+ * População fixa do rodapé: os cohorts que já fecharam, com medida, todas as colunas até a mais funda em
+ * que pelo menos `MIN_COMMON` deles chegam. Toda coluna é a média dos mesmos cohorts, então a média só
+ * cai de uma coluna para outra por piora real, nunca por troca de gente (EST-1b). Devolve `null` quando
+ * nenhuma idade tem cohorts fechados em número suficiente.
+ */
+function commonPopulation(
+  lines: readonly CohortLine[],
+): { readonly lines: readonly CohortLine[]; readonly depth: number } | null {
+  for (let depth = ELAPSED_MONTHS - 1; depth >= 0; depth -= 1) {
+    const members = lines.filter((line) =>
+      line.cells.slice(0, depth + 1).every((state) => state.kind === 'valor' && !state.open) &&
+      line.cells.length > depth,
+    );
+    if (members.length >= MIN_COMMON) return { lines: members, depth };
+  }
+  return null;
+}
+
 /** O cohort de maior taxa numa idade fixa, só entre os períodos fechados. */
 function bestAt(
   lines: readonly CohortLine[],
@@ -145,8 +167,12 @@ export default function CohortWinTriangle({ data = defaultData, height, classNam
   const hasFuture = allCells.some((state) => state.kind === 'futuro');
   const sizeSpan = extent(data.map((row) => row.size));
 
+  const population = commonPopulation(lines);
   const reference = bestAt(lines, REFERENCE_ELAPSED);
   const referenceAverage = weightedRate(lines, REFERENCE_ELAPSED);
+  const footerDepth = population === null ? null : population.depth;
+  const footerCount = population === null ? 0 : population.lines.length;
+  const footerLabel = footerDepth === null ? null : `M${formatInt(footerDepth)}`;
   const referenceLabel = `M${formatInt(REFERENCE_ELAPSED)}`;
   const firstLabel = `M${formatInt(0)}`;
   const lastLabel = `M${formatInt(ELAPSED_MONTHS - 1)}`;
@@ -180,9 +206,11 @@ export default function CohortWinTriangle({ data = defaultData, height, classNam
   const summary =
     reference === null || referenceAverage === null
       ? `Triângulo de cohort com a taxa de ganho acumulada de ${formatInt(data.length)} meses de criação, de ${firstLabel} a ${lastLabel}, ainda sem nenhum cohort fechado em ${referenceLabel} para comparar.`
-      : `Triângulo de cohort com a taxa de ganho acumulada de ${formatInt(data.length)} meses de criação, de ${firstLabel} a ${lastLabel}. ` +
-        `Em ${referenceLabel} o melhor é ${formatMonthShort(reference.month)}, com ${formatPercent(reference.rate, 1)}, contra a média ponderada de ${formatPercent(referenceAverage.rate, 1)}. ` +
-        `A diagonal tracejada é ${formatMonthShort(CURRENT_MONTH)}, em curso.`;
+      : `Cohort em triângulo, ganho acumulado, ${formatInt(data.length)} meses de criação. ` +
+        `Em ${referenceLabel}, o melhor é ${formatMonthShort(reference.month)}, ${formatPercent(reference.rate, 1)}, contra ${formatPercent(referenceAverage.rate, 1)} de média de ${formatInt(referenceAverage.cohorts)} cohorts. ` +
+        (footerLabel === null
+          ? 'Rodapé em branco: nenhuma idade com dois cohorts fechados.'
+          : `Rodapé: média dos mesmos ${formatInt(footerCount)} cohorts, até ${footerLabel}.`);
 
   return (
     <figure
@@ -305,11 +333,20 @@ export default function CohortWinTriangle({ data = defaultData, height, classNam
             <th className="text-left align-middle font-medium text-text-muted" scope="row">
               Média
             </th>
-            {/* Sem contagem de cohorts no rótulo: cada coluna tem uma população diferente, porque a idade
-                que um cohort alcançou depende do mês em que ele foi criado, e um número fixo seria falso. */}
-            <td className="pr-2 text-right align-middle text-text-muted">ponderada</td>
+            <td className="pr-2 text-right align-middle text-text-muted">
+              {population === null ? (
+                'sem cohort fechado'
+              ) : (
+                <>
+                  {'mesmos '}
+                  <span className="font-display tabular-nums">{formatInt(footerCount)}</span>
+                  {' cohorts'}
+                </>
+              )}
+            </td>
             {columns.map((elapsed) => {
-              const average = weightedRate(lines, elapsed);
+              const average =
+                population === null || elapsed > population.depth ? null : weightedRate(population.lines, elapsed);
               return (
                 <td
                   className={cn(
@@ -347,7 +384,11 @@ export default function CohortWinTriangle({ data = defaultData, height, classNam
           <span>{`marcos: ${milestoneLabel}`}</span>
           <span>barra e número: oportunidades criadas</span>
           <span>{`tracejado: ${formatMonthShort(CURRENT_MONTH)} em curso`}</span>
-          <span>média ponderada, sem período em curso</span>
+          <span>
+            {footerLabel === null
+              ? 'média ponderada: nenhuma idade com dois cohorts fechados'
+              : `média ponderada, só dos cohorts que já fecharam ${footerLabel}`}
+          </span>
           {hasFuture ? <span>vazio: ainda não começou</span> : null}
           {hasZero ? <span>poço com contorno: zero medido</span> : null}
           {missing > 0 ? (

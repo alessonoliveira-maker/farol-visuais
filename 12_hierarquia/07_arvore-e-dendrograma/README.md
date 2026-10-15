@@ -170,3 +170,23 @@ esquerda, que resolve o mesmo problema, e o desvio está escrito no `meta.json` 
 procedência, porque ela é do `VisualCard` e aparece uma vez por cartão. A v2 desenha, porque o teto
 é premissa e o uso é medido dentro do mesmo número de tela, e um selo único não diz as duas coisas;
 é o mesmo caso de `12_hierarquia/04_arvore-de-indicadores/v1`, e está declarado no `meta.json`.
+
+## Observações da revisão (não bloqueantes)
+
+Revisão independente de 2026-10-14 sobre a `v2`, a `v3` e a `v4`, as três aprovadas sem bloqueante:
+`npm run check` com 0 erro (os dois avisos são da `v1`, que não estava em julgamento), os dois temas
+legíveis e nenhum texto cortado, sobreposto ou fora do corpo.
+
+- `v2`: `--accent-amber` repete o hex de `--prov-premissa`, então no cartão de Pré-vendas a barra âmbar de "perto do teto" e o texto âmbar de "teto PREMISSA" dividem a mesma cor com dois papéis; o verde de "uso MEDIDO" é o hex de `--positive` e fica ao lado do vermelho de "acima do teto" no cartão Comercial. A palavra desfaz a dúvida, mas é a colisão que a COR-8 existe para evitar.
+- `v2`: acima do teto a barra fica cheia, então Pré-vendas (94,2%) e Comercial (105,3%) desenham 5,8 pontos de diferença onde o dado tem 11,1. Está declarado e o número está escrito; um tique no 100% com o excedente além dele mostraria a grandeza sem depender do texto.
+- `v2`: a linha de leitura repete o "25,0% (1 de 4)" que o cartão da área já imprime logo abaixo, e a frase acessível não cita a Pré-vendas, que é a função "perto do teto" do caso de uso. Para quatro funções, "1 de 4 funções" leria melhor que um percentual com casa decimal.
+- `v2`: "158 de 150" lê como parte maior que o todo; "158 contra teto de 150" diria o mesmo sem estranhar. A microbarra de 6 px fica abaixo dos 12 px da ESP-2, sem consequência visível no preview.
+- `v2` e `v4`: o conteúdo tem largura fixa em pixel (872 px e 574 px) e não se adapta a cartão mais estreito que o do catálogo; a decisão está explicada na leva de 2026-09-29, mas o passo de colar no Farol não avisa do corte lateral.
+- `v3`: a contagem de cada campanha só se lê pelo vão angular; o caso de uso pergunta a distribuição por campanha, e escrever o número junto do nome curto ("Retomada 14") responderia sem contar pontos.
+- `v3`: a legenda escreve a composição com uma casa (36,5%, 30,2%, 33,3%), e a NUM-1 pede percentual de composição inteiro, pelo maior resto (37%, 30%, 33%). A amostra da legenda é quadrada e a marca é ponto com traço (ROT-4).
+- `v3`: o `label` do dado ("Criativos do mês") não aparece em lugar nenhum, então o período só existe no comentário do `data.ts` (DAD-9). O nome do criativo aceso ("Sul 06") é digitado no `data.ts` em vez de derivado de campanha e posição, e os dois podem divergir.
+- `v3`: campanha com zero criativo cai no ângulo inicial (`START_DEGREE`), no topo do anel, com o nó e o rótulo fora do próprio ramo. O dado padrão não exercita.
+- `v4`: o rótulo "Comercial" fica exatamente a 16 px do ponto da Pré-vendas, acima, e a 16 px do próprio ponto, abaixo, com o mesmo recuo de 14 px para os dois. Quem identifica o ponto ciano é a convenção de rótulo acima, não a proximidade. Afastar o rótulo do irmão de cima, ou pôr o rótulo na linha do nó, tira a dúvida.
+- `v4`: o selo "2 ocultas" não leva o substantivo (NUM-6); o cartão diz "funções" em todo o resto, mas num organograma "ocultas" também lê como pessoas. O selo da linha de folhas ocultas diz "N funções ocultas", então os dois selos da mesma regra saem diferentes. Os dois números estão em `font-sans` sem `tabular-nums` (TIP-1).
+- `v4`: abrir a Pré-vendas leva o conteúdo a cerca de 387 px num corpo de 241,5 px, e com `justify-center` o excesso sai pelos dois lados, cortando a linha de leitura e o primeiro rótulo em cartão de altura fixa. `justify-start` com rolagem guardaria o topo. A frase acessível também não conta as funções escondidas pelo teto de filhos, só as cortadas pela profundidade.
+- `v4`: raiz declarada com `expanded: false` não ganha botão, porque o botão só existe para `kind === 'branch'`, e o desenho fica preso num ponto só sem estado vazio. O dado padrão não exercita.

@@ -16,23 +16,22 @@ import {
 } from './data';
 
 /**
- * Parallel sets com LIMIAR: toda combinação abaixo de `MIN_COMBO_COUNT` agendas sai da sua
- * categoria e entra numa categoria própria, "Outras combinações", que existe nos três eixos e vem
- * sempre por último, no neutro da 17.2.
+ * Parallel sets com LIMIAR: toda combinação abaixo de `MIN_COMBO_COUNT` agendas é marcada como rara
+ * e pintada num neutro único, sem cor de origem. Ela NÃO sai da sua categoria: cada bloco continua
+ * medindo e escrevendo o total real da categoria nas 248 agendas, e a parte rara é a fatia neutra
+ * empilhada por último no pé do bloco, depois das combinações frequentes.
  *
- * POR QUE AGREGAR. Com 248 agendas em 28 combinações, as menores desenham fitas de menos de 2 px:
- * viram fio de cabelo, somem sob o contorno de separação e, pior, sugerem um padrão que uma ou duas
- * agendas não sustentam. Agregar tira o fio de cabelo do desenho sem tirar as agendas da conta.
+ * POR QUE MARCAR. Com 248 agendas em 28 combinações, as menores desenham fitas de poucos pixels e
+ * sugerem um padrão que três ou quatro agendas não sustentam. Pintar as raras de neutro tira a
+ * competição de cor sem mexer em nenhuma contagem. Tirar as raras das categorias, como a primeira
+ * versão fazia, deixava 10 dos 12 blocos nomeados escrevendo menos que o total real e criava um
+ * valor de Porte e de Desfecho que não é porte nem desfecho.
  *
- * O QUE SAI E O QUE FICA, e esta é a parte que não pode ser calada. As agendas agregadas continuam
- * nas 248: elas trocam de categoria, não desaparecem. Por isso a faixa agregada é desenhada, tem a
- * contagem escrita no rótulo como qualquer outra categoria, e as seis combinações que entraram nela
- * vão listadas uma a uma no rodapé, com nome e contagem. Sem a lista, "outras" seria só um lugar
- * onde o dado some.
+ * O neutro das raras é `--text-muted` (ACE-6, 3:1): a fita carrega a relação e não tem número
+ * próprio junto, então `--line-strong` não vale. As seis raras vão listadas uma a uma no rodapé,
+ * com nome e contagem, e a legenda do topo escreve "6 combinações raras, 20 agendas".
  *
- * O LIMIAR É CONSTANTE DO COMPONENTE, não do dado: o `data.ts` entrega as 28 combinações cruas e o
- * mesmo dado serve para desenhar sem agregação nenhuma. Se o corte viesse pronto no dado, ninguém
- * saberia qual foi o corte.
+ * O LIMIAR É CONSTANTE DO COMPONENTE, não do dado: o `data.ts` entrega as 28 combinações cruas.
  */
 export interface RareComboParallelSetsProps {
   readonly data?: readonly ParallelCombo[];
@@ -44,9 +43,7 @@ export interface RareComboParallelSetsProps {
 
 /** Abaixo disto a combinação não sustenta padrão e entra na categoria agregada. */
 const MIN_COMBO_COUNT = 5;
-const AGGREGATE_ID = 'outras';
-const AGGREGATE_LABEL = 'Outras combinações';
-/** A mesma categoria no meio de frase, sem maiúscula, para a linha de leitura. */
+/** O grupo no meio de frase, para a linha de leitura. */
 const AGGREGATE_LABEL_INLINE = 'outras combinações';
 
 /**
@@ -65,7 +62,6 @@ const FOOTER_NOTE_BASELINE = 481.5;
 const FOOTER_ROW_STEP = 16;
 const FOOTER_COLUMNS = 3;
 const SIDE_PAD = 2;
-/** Mais largo que nas irmãs, porque o rótulo "Outras combinações" mede 103,8 px de tinta. */
 const BLOCK_WIDTH = 112;
 const LANE = 32;
 const LANE_NAME_DY = 20;
@@ -73,9 +69,13 @@ const LANE_COUNT_DY = 6;
 const TEXT_SIZE = 11;
 const READING_SIZE = 12;
 
-/** Neutro da 17.2 para a categoria agregada, nos três eixos e nas fitas dela. */
-const AGGREGATE_FILL = 'var(--line-strong)';
-const BLOCK_FILL = 'var(--text-muted)';
+/** Neutro de dado a 3:1 (ACE-6) para a parte rara, nas fitas e no pé dos blocos. */
+const AGGREGATE_FILL = 'var(--text-muted)';
+/** Bloco de porte e de desfecho em outro token que a parte rara, para a fatia se separar do resto. */
+const BLOCK_FILL = 'var(--text-secondary)';
+const LEGEND_SWATCH_WIDTH = 14;
+const LEGEND_SWATCH_HEIGHT = 8;
+const LEGEND_X = 250;
 /** COR-5: contorno na cor da superfície separa fitas vizinhas da mesma origem. */
 const RIBBON_STROKE = 'var(--surface-raised)';
 const RIBBON_STROKE_WIDTH = 1;
@@ -87,13 +87,12 @@ function categoryOf(combo: ParallelCombo, axis: AxisId): string {
 }
 
 function slotColor(category: ParallelCategory | undefined): string {
-  if (category?.slot === undefined) return BLOCK_FILL;
-  return CHART_SERIES_COLORS[category.slot - 1] ?? BLOCK_FILL;
+  if (category?.slot === undefined) return AGGREGATE_FILL;
+  return CHART_SERIES_COLORS[category.slot - 1] ?? AGGREGATE_FILL;
 }
 
-/** Agregada em neutro; origem na cor do slot dela; porte e desfecho em neutro de bloco. */
+/** Parte frequente do bloco: origem na cor do slot dela; porte e desfecho em neutro de bloco. */
 function blockFill(axisId: AxisId, category: ParallelCategory): string {
-  if (category.id === AGGREGATE_ID) return AGGREGATE_FILL;
   if (axisId !== 'origem') return BLOCK_FILL;
   return slotColor(category);
 }
@@ -124,6 +123,7 @@ interface ComboItem {
   readonly combo: ParallelCombo;
   readonly index: number;
   readonly fill: string;
+  readonly rare: boolean;
 }
 
 interface CategorySlice {
@@ -131,6 +131,8 @@ interface CategorySlice {
   readonly top: number;
   readonly height: number;
   readonly count: number;
+  /** Parte rara do total, empilhada por último no pé do bloco. */
+  readonly rareCount: number;
 }
 
 interface AxisColumn {
@@ -158,13 +160,15 @@ function buildColumn(
     const top = cursor;
     let inner = cursor;
     let count = 0;
+    let rareCount = 0;
     for (const item of items) {
       if (categoryOf(item.combo, axis.id) !== category.id) continue;
       comboTop.set(item.index, inner);
       inner += item.combo.count * scale;
       count += item.combo.count;
+      if (item.rare) rareCount += item.combo.count;
     }
-    slices.push({ category, top, height: count * scale, count });
+    slices.push({ category, top, height: count * scale, count, rareCount });
     cursor = inner;
   }
   return { axis, x, slices, comboTop };
@@ -193,26 +197,13 @@ export default function RareComboParallelSets({
     );
   }
 
-  // O corte. As raras trocam de categoria, nunca saem da soma: `kept` mais a agregada é sempre o
-  // total de entrada.
+  // O corte só MARCA: nenhuma combinação sai da sua categoria, então todo bloco soma o total real.
   const rare = data.filter((row) => row.count < MIN_COMBO_COUNT);
-  const kept = data.filter((row) => row.count >= MIN_COMBO_COUNT);
   const rareTotal = rare.reduce((sum, row) => sum + row.count, 0);
-  const aggregated: ParallelCombo = {
-    origem: AGGREGATE_ID,
-    porte: AGGREGATE_ID,
-    desfecho: AGGREGATE_ID,
-    count: rareTotal,
-  };
-  const shown: readonly ParallelCombo[] = rare.length === 0 ? kept : [...kept, aggregated];
-  const aggregateCategory: ParallelCategory = { id: AGGREGATE_ID, label: AGGREGATE_LABEL };
 
   const ordered = axisOrder
     .map((id) => axes.find((axis) => axis.id === id))
-    .filter((axis): axis is ParallelAxis => axis !== undefined)
-    .map((axis) =>
-      rare.length === 0 ? axis : { ...axis, categories: [...axis.categories, aggregateCategory] },
-    );
+    .filter((axis): axis is ParallelAxis => axis !== undefined);
   const laneBudget = ordered.reduce((most, axis) => Math.max(most, axis.categories.length), 0) * LANE;
 
   const plotHeight = AXIS_BOTTOM - AXIS_TOP;
@@ -220,15 +211,18 @@ export default function RareComboParallelSets({
   const span = (VIEW_WIDTH - SIDE_PAD * 2 - ordered.length * BLOCK_WIDTH) / Math.max(ordered.length - 1, 1);
   const originAxis = ordered.find((axis) => axis.id === 'origem');
 
-  const items: readonly ComboItem[] = [...shown]
-    .sort((a, b) => compareCombos(a, b, ordered))
-    .map((combo, index) => ({
+  // Chave de empilhamento: frequentes primeiro, raras por último, e dentro de cada grupo a ordem
+  // lexicográfica dos eixos. É a mesma em todos os eixos, então cada fita segue contínua.
+  const items: readonly ComboItem[] = data
+    .map((combo) => ({ combo, rare: combo.count < MIN_COMBO_COUNT }))
+    .sort((a, b) => Number(a.rare) - Number(b.rare) || compareCombos(a.combo, b.combo, ordered))
+    .map(({ combo, rare: isRare }, index) => ({
       combo,
       index,
-      fill:
-        combo.origem === AGGREGATE_ID
-          ? AGGREGATE_FILL
-          : slotColor(originAxis?.categories.find((category) => category.id === combo.origem)),
+      rare: isRare,
+      fill: isRare
+        ? AGGREGATE_FILL
+        : slotColor(originAxis?.categories.find((category) => category.id === combo.origem)),
     }));
 
   const columns = ordered.map((axis, index) =>
@@ -271,8 +265,8 @@ export default function RareComboParallelSets({
 
   const thresholdLabel = `${formatInt(MIN_COMBO_COUNT)} ${unitPlural}`;
   const aggregateLabel = `${formatInt(rareTotal)} ${unitPlural}`;
-  const readingPrefix = `Das ${formatInt(data.length)} combinações das ${formatInt(grandTotal)} ${unitPlural} de ${formatMonthShort(period)}, ${formatInt(rare.length)} ficam abaixo de ${thresholdLabel} e viram `;
-  const summary = `Parallel sets de ${formatInt(grandTotal)} ${unitPlural} de pré-vendas em ${formatMonthShort(period)}, com origem, porte e desfecho nos eixos. Das ${formatInt(data.length)} combinações, ${formatInt(rare.length)} ficam abaixo de ${thresholdLabel} e foram agregadas em outras combinações, com ${aggregateLabel}.`;
+  const readingPrefix = `Das ${formatInt(data.length)} combinações das ${formatInt(grandTotal)} ${unitPlural} de ${formatMonthShort(period)}, ${formatInt(rare.length)} ficam abaixo de ${thresholdLabel} e entram no grupo `;
+  const summary = `Parallel sets de ${formatInt(grandTotal)} ${unitPlural} de pré-vendas em ${formatMonthShort(period)}, com origem, porte e desfecho nos eixos. Das ${formatInt(data.length)} combinações, ${formatInt(rare.length)} ficam abaixo de ${thresholdLabel} e formam o grupo outras combinações, com ${aggregateLabel}, mantidas dentro das próprias categorias.`;
 
   return (
     <figure
@@ -283,22 +277,44 @@ export default function RareComboParallelSets({
     >
       <svg aria-hidden className="h-full w-full" viewBox={`0 0 ${String(VIEW_WIDTH)} ${String(VIEW_HEIGHT)}`}>
         {ribbons.map((ribbon) => (
-          <path d={ribbon.d} fill={ribbon.fill} key={ribbon.key} stroke={RIBBON_STROKE} strokeWidth={RIBBON_STROKE_WIDTH} />
+          <path
+            d={ribbon.d}
+            fill={ribbon.fill}
+            key={ribbon.key}
+            stroke={RIBBON_STROKE}
+            strokeWidth={RIBBON_STROKE_WIDTH}
+            style={{ paintOrder: 'stroke' }}
+          />
         ))}
 
         {columns.map((column) =>
-          column.slices.map((slice) => (
-            <rect
-              fill={blockFill(column.axis.id, slice.category)}
-              height={Math.max(slice.height, 0)}
-              key={`block-${column.axis.id}-${slice.category.id}`}
-              stroke={RIBBON_STROKE}
-              strokeWidth={RIBBON_STROKE_WIDTH}
-              width={BLOCK_WIDTH}
-              x={column.x}
-              y={slice.top}
-            />
-          )),
+          column.slices.map((slice) => {
+            const rareHeight = slice.rareCount * scale;
+            return (
+              <g key={`block-${column.axis.id}-${slice.category.id}`}>
+                <rect
+                  fill={blockFill(column.axis.id, slice.category)}
+                  height={Math.max(slice.height - rareHeight, 0)}
+                  stroke={RIBBON_STROKE}
+                  strokeWidth={RIBBON_STROKE_WIDTH}
+                  width={BLOCK_WIDTH}
+                  x={column.x}
+                  y={slice.top}
+                />
+                {slice.rareCount > 0 ? (
+                  <rect
+                    fill={AGGREGATE_FILL}
+                    height={rareHeight}
+                    stroke={RIBBON_STROKE}
+                    strokeWidth={RIBBON_STROKE_WIDTH}
+                    width={BLOCK_WIDTH}
+                    x={column.x}
+                    y={slice.top + slice.height - rareHeight}
+                  />
+                ) : null}
+              </g>
+            );
+          }),
         )}
 
         {columns.map((column) => (
@@ -317,11 +333,10 @@ export default function RareComboParallelSets({
         {columns.map((column) =>
           column.slices.map((slice) => {
             const center = column.x + BLOCK_WIDTH / 2;
-            const isAggregate = slice.category.id === AGGREGATE_ID;
             return (
               <text
-                className={cn('tabular-nums', isAggregate && 'font-semibold')}
-                fill={isAggregate ? 'var(--text-primary)' : 'var(--text-muted)'}
+                className="tabular-nums"
+                fill="var(--text-muted)"
                 fontSize={TEXT_SIZE}
                 key={`label-${column.axis.id}-${slice.category.id}`}
                 textAnchor="middle"
@@ -355,6 +370,17 @@ export default function RareComboParallelSets({
         {/* Anotação (ANO-2): o limiar, escrito, porque ele é escolha e não propriedade do dado. */}
         <text className="tabular-nums" fill="var(--text-muted)" fontSize={TEXT_SIZE} x={0} y={NOTE_BASELINE}>
           {`limiar: ${thresholdLabel} por combinação`}
+        </text>
+        <rect
+          fill={AGGREGATE_FILL}
+          height={LEGEND_SWATCH_HEIGHT}
+          rx={1}
+          width={LEGEND_SWATCH_WIDTH}
+          x={LEGEND_X}
+          y={NOTE_BASELINE - LEGEND_SWATCH_HEIGHT}
+        />
+        <text className="tabular-nums" fill="var(--text-secondary)" fontSize={TEXT_SIZE} x={LEGEND_X + 20} y={NOTE_BASELINE}>
+          {`${formatInt(rare.length)} combinações raras, ${aggregateLabel}, no pé de cada bloco`}
         </text>
 
         {/* Alternativa tabular: as agregadas, uma a uma, com nome e contagem. */}

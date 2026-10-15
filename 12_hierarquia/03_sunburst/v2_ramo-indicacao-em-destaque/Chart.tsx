@@ -66,12 +66,31 @@ function sumSubcanais(subcanais: readonly OrigemEntradas['subcanais'][number][])
   return subcanais.reduce((sum, sub) => sum + sub.value, 0);
 }
 
-/** Participação de uma parte no todo. `null` quando não existe todo a dividir (EST-1b). */
-function shareOf(part: number, whole: number): number | null {
+/**
+ * Percentuais inteiros pelo maior resto: a soma impressa fecha em 100. Indexado por id; `null`
+ * quando não existe todo a dividir (EST-1b). Função pura, o mesmo inteiro vale para lista, centro,
+ * linha de leitura e frase acessível.
+ */
+function integerShares(items: readonly { readonly id: string; readonly value: number }[]): ReadonlyMap<string, number> | null {
+  const whole = items.reduce((sum, item) => sum + item.value, 0);
   if (whole <= 0) {
     return null;
   }
-  return part / whole;
+  const parts = items.map((item) => {
+    const exact = (item.value / whole) * 100;
+    return { id: item.id, floor: Math.floor(exact), rest: exact - Math.floor(exact) };
+  });
+  let missing = 100 - parts.reduce((sum, part) => sum + part.floor, 0);
+  const order = [...parts].sort((a, b) => b.rest - a.rest);
+  const extra = new Set<string>();
+  for (const part of order) {
+    if (missing <= 0) {
+      break;
+    }
+    extra.add(part.id);
+    missing -= 1;
+  }
+  return new Map(parts.map((part) => [part.id, part.floor + (extra.has(part.id) ? 1 : 0)]));
 }
 
 /**
@@ -128,8 +147,9 @@ export default function HighlightedBranchSunburst({
   }
 
   const highlight = branches.find((branch) => branch.highlighted);
-  const highlightShare = highlight === undefined ? null : shareOf(highlight.total, total);
-  const highlightShareText = highlightShare === null ? formatUnavailable() : formatPercent(highlightShare, 0);
+  const shares = integerShares(branches.map((branch) => ({ id: branch.origin.id, value: branch.total })));
+  const highlightPct = highlight === undefined ? undefined : shares?.get(highlight.origin.id);
+  const highlightShareText = highlightPct === undefined ? formatUnavailable() : formatPercent(highlightPct / 100, 0);
   const topSubcanal = highlight === undefined ? undefined : [...highlight.origin.subcanais].sort((a, b) => b.value - a.value)[0];
   const ranked = [...branches].sort((a, b) => b.total - a.total);
 
@@ -171,7 +191,7 @@ export default function HighlightedBranchSunburst({
       <ul className="mt-2 shrink-0 space-y-1.5">
         {ranked.map((branch) => {
           const subcanais = [...branch.origin.subcanais].sort((a, b) => b.value - a.value);
-          const share = shareOf(branch.total, total);
+          const share = shares?.get(branch.origin.id);
           return (
             <li key={branch.origin.id}>
               <div className="flex items-center gap-1.5 text-xs">
@@ -180,7 +200,7 @@ export default function HighlightedBranchSunburst({
                   {branch.origin.name}
                 </span>
                 <span className="font-display w-9 shrink-0 text-right text-text-primary">
-                  {share === null ? formatUnavailable() : formatPercent(share, 0)}
+                  {share === undefined ? formatUnavailable() : formatPercent(share / 100, 0)}
                 </span>
                 <span className="font-display w-9 shrink-0 text-right text-text-muted">{formatInt(branch.total)}</span>
               </div>

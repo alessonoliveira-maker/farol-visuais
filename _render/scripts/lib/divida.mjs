@@ -50,8 +50,15 @@ function arquivoDaFila() {
   return process.env.FAROL_FILA_DIVIDA ?? path.join(RENDER_DIR, 'scripts', 'lib', 'divida-guardas.json');
 }
 
-/** Guardas que nasceram com fila. Guarda antiga não entra aqui: ela já reprova desde sempre. */
-export const GUARDAS_COM_FILA = ['AGREGACAO-ZERO', 'CONTRASTE-MARCA', 'REGUA-CONSTANTE', 'FORMATO-ACESSIVEL', 'EIXO-CALMO', 'OPACIDADE-MARCA', 'TEXTO-NA-MARCA'];
+/**
+ * Guardas que repartem pela fila (`repartirPelaFila`). É esta lista que o dossiê imprime para produtor e
+ * revisor, então ela precisa bater com quem chama a função em `guardas.mjs`. As seis primeiras
+ * nasceram com fila em 2026-09-28; a TEXTO-NA-MARCA em 2026-09-29; a TAMANHO-TEXTO é antiga, mas ganhou
+ * fila em 2026-09-29 quando passou a medir o tamanho que chega à tela (14 peças entraram); a
+ * RAIO-CONTRA-AREA entrou em 2026-10-02 com uma peça. TAMANHO-TEXTO e RAIO-CONTRA-AREA faltavam aqui até
+ * 2026-10-15 (F0.8). A ordem é a dos blocos em `guardas.mjs`, que é como o `selftest` a confere.
+ */
+export const GUARDAS_COM_FILA = ['TAMANHO-TEXTO', 'AGREGACAO-ZERO', 'CONTRASTE-MARCA', 'REGUA-CONSTANTE', 'FORMATO-ACESSIVEL', 'EIXO-CALMO', 'OPACIDADE-MARCA', 'TEXTO-NA-MARCA', 'RAIO-CONTRA-AREA'];
 
 let cache = null;
 

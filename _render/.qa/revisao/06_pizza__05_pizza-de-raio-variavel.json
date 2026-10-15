@@ -4,12 +4,12 @@
   "versoes": {
     "v1_investimento-e-cpl-qualificado-por-plataforma": {
       "veredito": "aprovado",
-      "nota": "Check sem erro; raio em raiz quadrada com piso e aneis coerentes com as fatias, legenda soma 100, dois temas legiveis.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T15:05:42.053Z",
-      "impressao": "3d26e67accac032a56e16036b1e09c37beb73a57",
+      "nota": "Terceira passada: ROT-5b resolvida, anéis em 25%, 50% e 100% do maior CPL observado, o último no raio do setor mais caro (120 px); GEO-3 confere (coroa 0,2, 0,4 e 1,0; anéis 0,25, 0,5 e 1,0 pela mesma função). Simulado com topo de R$ 1.000, R$ 1.800, R$ 2.500 e R$ 4.000: raios dos anéis iguais (68,6, 89,1 e 120 px), nenhum anel sai da caixa, rótulos sem colisão entre si (menor vão 13,6 px) e a 17,7 px da legenda. Observações no README: ponto do anel sob o próprio rótulo, R$ 625 sobre o arco de Busca paga, R$ 1,3 mil para R$ 1.250.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T14:03:51.206Z",
+      "impressao": "2b75d36466544389e3915958dd8de127fba8b395",
       "arquivos": {
-        "Chart.tsx": "86d29c03a7fcaf2836f0b14762f30597458308b8",
+        "Chart.tsx": "89ba1d7087b705f7f9f4a495424e74dfe918fa5f",
         "data.ts": "4da110e2f270291baaa0b2f35f097cc729a6ff31",
         "meta.json": "7a6db685421b1193633f0c67eacda63618695c05"
       }
@@ -128,6 +128,32 @@
         "Chart.tsx": "83dd9d911ae7f2a9e3ef01ac32c74959091146db",
         "data.ts": "987acab4f7d19d224848944edd0ed5843b822798",
         "meta.json": "d95f0190a48b1d9a051f60d31420bee7da94476a"
+      }
+    },
+    {
+      "versao": "v1_investimento-e-cpl-qualificado-por-plataforma",
+      "veredito": "reprovado",
+      "nota": "Pergunta 12, ROT-5b (com EIX-4): RING_VALUES fixo [500, 1500, 2500] num raio normalizado pelo cplMax do dado; com maior CPL de R$ 1.000 os anéis vão a 144 e 184 px numa caixa de 130 de raio e o rótulo invade a legenda; com R$ 4.000 o setor mais caro fica sem anel. Mudar: anéis montados do maior CPL observado (referências redondas abaixo dele mais o próprio cplMax). O conserto da GEO-3 confere: coroa 0,2, 0,4 e 1,0 do topo. Parecer em validation/revisao_06_pizza__05_pizza-de-raio-variavel_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:51:27.342Z",
+      "impressao": "113e86e5de5fae33a0c879f0f917cb5d194fa104",
+      "arquivos": {
+        "Chart.tsx": "81c704fa741d5a71a3128ca13b6f1a3e9e9cd67f",
+        "data.ts": "4da110e2f270291baaa0b2f35f097cc729a6ff31",
+        "meta.json": "7a6db685421b1193633f0c67eacda63618695c05"
+      }
+    },
+    {
+      "versao": "v1_investimento-e-cpl-qualificado-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Terceira passada: ROT-5b resolvida, anéis em 25%, 50% e 100% do maior CPL observado, o último no raio do setor mais caro (120 px); GEO-3 confere (coroa 0,2, 0,4 e 1,0; anéis 0,25, 0,5 e 1,0 pela mesma função). Simulado com topo de R$ 1.000, R$ 1.800, R$ 2.500 e R$ 4.000: raios dos anéis iguais (68,6, 89,1 e 120 px), nenhum anel sai da caixa, rótulos sem colisão entre si (menor vão 13,6 px) e a 17,7 px da legenda. Observações no README: ponto do anel sob o próprio rótulo, R$ 625 sobre o arco de Busca paga, R$ 1,3 mil para R$ 1.250.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T14:03:51.206Z",
+      "impressao": "2b75d36466544389e3915958dd8de127fba8b395",
+      "arquivos": {
+        "Chart.tsx": "89ba1d7087b705f7f9f4a495424e74dfe918fa5f",
+        "data.ts": "4da110e2f270291baaa0b2f35f097cc729a6ff31",
+        "meta.json": "7a6db685421b1193633f0c67eacda63618695c05"
       }
     }
   ]

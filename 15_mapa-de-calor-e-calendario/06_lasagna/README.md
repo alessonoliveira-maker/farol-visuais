@@ -44,7 +44,7 @@ vertical mostra o dia em que todas sofreram junto, que é o sinal de causa comum
   capacidade, contorno em `--warning` acima do teto, semana em curso tracejada e fora da média, e a
   ocupação média escrita à direita de cada linha.
 - `v3_dias-parados-das-oportunidades-abertas`: 200 oportunidades por 120 dias, dias seguidos na mesma
-  faixa fundidos num `rect` só, cinco faixas sequenciais reiniciando a cada movimento, nenhuma célula
+  faixa fundidos num `rect` só, cinco faixas sequenciais contadas a partir do último movimento anterior à janela (ou da criação, se não houver) e reiniciando a cada movimento, nenhuma célula
   antes da criação e a fronteira do vazio desenhada em escada.
 - `v4_inicio-tardio-e-agregacao-semanal`: 7 SDRs por 182 dias num cartão, com prop de granularidade
   que agrega em 26 semanas, e os três estados separados no desenho: vazio antes da admissão, hachura
@@ -84,7 +84,7 @@ vertical mostra o dia em que todas sofreram junto, que é o sinal de causa comum
 8. Na v2 a capacidade da semana sai de `CAPACITY_HOURS_PER_DAY`, `WORKDAYS_PER_WEEK` e
    `CURRENT_WEEK_ELAPSED_DAYS` do `data.ts`. Mudou a jornada, mudam as constantes, e a legenda e a
    semana parcial acompanham sozinhas.
-9. Na v3 o `data.ts` guarda datas, não dias parados: a contagem é derivada no componente e reinicia a
+9. Na v3 o `data.ts` guarda datas, não dias parados: a contagem é derivada no componente, parte do último movimento anterior à janela, ou da criação quando o dado não tem nenhum, e reinicia a
    cada movimento. Guardar o derivado esconderia a régua que produz a cor.
 10. Na v4 o discriminador do vazio é a data de `admission`, nunca o valor guardado. Ao trocar a fonte,
     garanta que a admissão venha junto, senão os três estados voltam a virar um só.
@@ -137,3 +137,43 @@ O conserto, quando alguém for quitar a dívida, é o que as três irmãs fazem:
 iguais ao corpo medido do canvas, com o SVG ocupando o corpo inteiro e a legenda desenhada dentro
 dele em vez de num bloco HTML irmão. Medido nesta leva: com a escala em 1, as quatro guardas de
 preview passaram a medir a v2, a v3 e a v4, e nenhuma delas acusou.
+
+## Observações da revisão (não bloqueantes)
+
+**2026-10-15, revisor independente, primeira passada da v2, da v3 e da v4.** A v2 foi aprovada; a v3
+e a v4 foram reprovadas, e os bloqueantes estão em
+`validation/revisao_15_mapa-de-calor-e-calendario__06_lasagna_2026-10-15.md`. O que segue não reprova.
+
+- v2: a escala divergente não tem ordem de luminância a partir do centro. No claro, "até 70%", "90% a 100%" e "mais de 115%" medem 6,00, 5,37 e 6,36:1 contra o cartão (de 1,06 a 1,18:1 entre si); no escuro, "70% a 90%", "90% a 100%" e "mais de 115%" medem 5,30, 5,21 e 5,50:1. Quem separa é só o matiz.
+- v2: em simulação de daltonismo, "até 70%" contra "90% a 100%" no claro dá ΔE 4,2 (deuteranopia e protanopia), e "70% a 90%" contra "90% a 100%" no escuro dá 5,3 e 2,7: para esse leitor o centro some no braço frio. A pergunta do cartão segue legível, porque acima de 100% há contorno e matiz quente (ΔE de 20 ou mais) e a média está escrita à direita.
+- v2: o degrau "até 70%" usa `--chart-1` pleno e é a marca mais saliente da peça no escuro (9,50:1); o olho vai primeiro para quem está folgado, não para quem passou do teto.
+- v2: o contorno em `--warning` mede 1,11:1 contra "mais de 115%" no claro e 1,52:1 no escuro. Aparece pelo matiz (ΔE 47 e 69) e pela borda contra o vão, não por luminância (TOK-10).
+- v2: a legenda diz "semana em curso, parcial" sem o "parcial até" com data da EIX-10, e não diz que a semana fica fora da média escrita à direita, embora o `notes` afirme que diz.
+- v2: a borda esquerda da moldura tracejada cai de 1,5 a 2,5 px dentro da coluna anterior, por cima das células, e não no vão; onde a célula tem luminância próxima de `--text-muted` o traço some (linha de Ivan P. no claro).
+- v2: a legenda fica abaixo do gráfico, e a ROT-4 diz acima ou ao lado. É a mesma escolha da v1, já aprovada.
+- v3: a amostra de "até 2 dias" na legenda é um bloco cheio de 14 x 10 px, e a marca é uma faixa com 46% da altura da linha (1,16 px). O segundo canal que a versão declara, o degrau mais fino, não é ensinado na legenda (ROT-4, amostra na forma da marca).
+- v3: "até 2 dias" é o degrau mais frequente (37% dos dias pintados) e chega à tela com 1,16 px a 1,92:1 no claro, então a textura se lê como vão. Está declarado no `notes` e neste README (TOK-8).
+- v3: "47 paradas há 30 dias ou mais" sai sem o substantivo (NUM-6): "47 oportunidades paradas há 30 dias ou mais".
+- v3: posições da legenda escritas como número solto no JSX (168, 180, 320, 250 e o 9 de `LEGEND_TWO - 9`), fora das constantes do topo.
+- v3: a linha de hoje coincide com a borda direita da grade e mede 1,79 e 1,83:1; quem carrega o sentido é a palavra "hoje".
+- v4: na granularidade semanal a marca "primeiro dia" fica na borda da semana da admissão e não no dia: Otávio S., admitido em 01/07/2026, tem a marca em 29/06/2026, sob "jun/26". Ou a legenda diz "semana da admissão", ou a marca anda dentro da coluna na proporção do dia.
+- v4: a frase acessível diz "agregado em 26 colunas de 182 dias", que se lê como colunas de 182 dias cada.
+- v4: `SLOT_TWO_B + 20` com número solto no JSX.
+
+**2026-10-15, revisor independente, segunda passada da v3 e da v4, depois da rodada de correção.** A v4
+foi aprovada; a v3 foi reprovada, e o bloqueante está na seção "Segunda passada" do mesmo parecer em
+`validation/`. O que segue não reprova.
+
+- v3: "vazio: ainda não existia" não tem amostra, e a fronteira em escada em `--text-muted`, que é a marca que desenha o vazio, não aparece na legenda (ROT-4, amostra na forma da marca).
+- v3: o `useCase` do `meta.json` pergunta "quantas seguem há 30 dias ou mais", e o catálogo ainda pergunta "quais nunca voltaram a andar". A tela responde a primeira; alinhar o catálogo ou o `meta.json`.
+- v4: a data da nota de escala é montada à mão com `slice` (`Chart.tsx`, linha 179) em vez de `formatDate` (NUM-7). A saída na tela é a mesma, 30/03/2026.
+- v3 e v4: a legenda fica abaixo do gráfico, e a ROT-4 diz acima ou ao lado. É a mesma escolha da v1 e da v2.
+- v3 e v4: as observações da primeira passada continuam valendo no arquivo de hoje ("47 paradas" sem substantivo, números soltos no JSX, amostra cheia para a faixa fina, linha de hoje a 1,79 e 1,83:1; marca do primeiro dia na borda da semana, "26 colunas de 182 dias" na frase).
+
+**2026-10-15, revisor independente, terceira passada da v3, depois da segunda rodada de correção.** A v3
+foi aprovada: a contagem parte do último movimento anterior à janela, ou da criação na falta dele, e a
+cor bate com o `data.ts` em todo dia. O que segue não reprova.
+
+- v3: o movimento anterior à janela entrou em 55 das 81 oportunidades antigas, mas o vão até 01/06 vai de 2 a 48 dias sem relação com o ritmo de cada uma: em 45 das 53 que andam mais de uma vez na janela, o vão que cruza 01/06 é maior que qualquer intervalo delas dentro dela (opp-019 anda a cada 2 dias e chega com 36; opp-062 anda a cada 3 e chega com 47). Por isso 37 das 81 abrem em "mais de 29 dias" em 01/06 (46%), contra 21% em 08/06, 10% em 01/07 e 24% hoje, e a borda esquerda ainda escurece no claro (clareia no escuro). O desenho é fiel ao dado; é o dado fictício que fabrica uma retomada geral na primeira semana de junho. Tirar o vão anterior do próprio ritmo de cada oportunidade.
+- v3: o `meta.json` não acompanhou a correção. O `notes` dá 36%, 24%, 12%, 10% e 18% pelos cinco degraus, e o dado de hoje dá 36%, 25%, 12%, 10% e 17%; e nem o `notes` nem o item "contados desde a criação" do `demonstrates` dizem que a contagem parte do último movimento anterior à janela quando ele existe.
+- v3: as observações das passadas anteriores seguem valendo (vazio e faixa fina sem amostra própria na legenda, "47 paradas" sem substantivo, números soltos no JSX, legenda abaixo do gráfico, linha de hoje a 1,79 e 1,83:1, `useCase` do `meta.json` diferente do catálogo).

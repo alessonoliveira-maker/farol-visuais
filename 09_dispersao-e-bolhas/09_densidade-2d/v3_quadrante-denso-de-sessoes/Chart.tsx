@@ -193,9 +193,12 @@ export default function SessionQuadrant({ data = defaultData, caption = defaultC
   }
 
   /** A frase acessível repete esta linha inteira, para o número não sair com duas aparências. */
+  const leader = REGIONS[leaderIndex];
+  const pagesCut = formatInt(ROW_SPLIT * PAGES_PER_ROW);
+  const timeCut = leader?.quickTime === false ? `de ${formatInt(COL_SPLIT)} min para cima` : `abaixo de ${formatInt(COL_SPLIT)} min`;
+  const pagesText = leader?.manyPages === true ? `com ${pagesCut} páginas ou mais` : `abaixo de ${pagesCut} páginas`;
   const readingLine =
-    `Maior massa em ${REGIONS[leaderIndex]?.inline ?? ''}, abaixo de ${formatInt(COL_SPLIT)} min e de ` +
-    `${formatInt(ROW_SPLIT * PAGES_PER_ROW)} páginas: ${formatInt(regionTotals[leaderIndex] ?? 0)} sessões, ` +
+    `Maior massa em ${leader?.inline ?? ''}, ${timeCut} e ${pagesText}: ${formatInt(regionTotals[leaderIndex] ?? 0)} sessões, ` +
     `${formatPercentPoints(regionShares[leaderIndex] ?? 0, 0)} do mês`;
   const summary =
     `Grade de densidade com ${formatInt(data.length)} células preenchidas de ${formatInt(GRID_COLS * GRID_ROWS)} ` +

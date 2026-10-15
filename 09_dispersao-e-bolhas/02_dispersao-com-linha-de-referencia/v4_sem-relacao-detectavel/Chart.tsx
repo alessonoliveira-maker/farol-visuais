@@ -1,6 +1,7 @@
 import { Filter } from 'lucide-react';
 import {
   CartesianGrid,
+  ReferenceLine,
   ResponsiveContainer,
   Scatter,
   ScatterChart,
@@ -42,8 +43,12 @@ interface Point {
 
 interface LinearFit {
   readonly inclinacao: number;
+  readonly intercepto: number;
   readonly r2: number;
   readonly n: number;
+  /** Menor e maior X observados: a reta nunca se estende além da nuvem. */
+  readonly x0: number;
+  readonly x1: number;
 }
 
 const MARGIN = { top: 10, right: 20, bottom: 8, left: 8 } as const;
@@ -96,7 +101,22 @@ function linearFit(pontos: readonly Point[]): LinearFit | null {
     syy += (ponto.taxaClique - mediaY) ** 2;
   }
   if (sxx === 0 || syy === 0) return null;
-  return { inclinacao: sxy / sxx, r2: (sxy * sxy) / (sxx * syy), n };
+  const inclinacao = sxy / sxx;
+  let menorX: number | null = null;
+  let maiorX: number | null = null;
+  for (const ponto of pontos) {
+    menorX = menorX === null || ponto.frequenciaMedia < menorX ? ponto.frequenciaMedia : menorX;
+    maiorX = maiorX === null || ponto.frequenciaMedia > maiorX ? ponto.frequenciaMedia : maiorX;
+  }
+  if (menorX === null || maiorX === null) return null;
+  return {
+    inclinacao,
+    intercepto: mediaY - inclinacao * mediaX,
+    r2: (sxy * sxy) / (sxx * syy),
+    n,
+    x0: menorX,
+    x1: maiorX,
+  };
 }
 
 /**
@@ -180,9 +200,18 @@ export default function FrequencyCtrScatter({ data = defaultData, height, classN
   const motivo = `R² ${r2Texto} contra o piso de ${formatDecimal(R2_FLOOR, 2)}, e n ${nTexto} contra o piso de ${formatInt(N_FLOOR)}`;
   const faixaTexto = `${formatPercent(menor, 2)} a ${formatPercent(maior, 2)}`;
 
+  /** A inclinação traduzida: pontos percentuais de taxa de clique por vez a mais de frequência. */
+  const inclinacaoTexto =
+    fit === null
+      ? ''
+      : `${fit.inclinacao >= 0 ? '+' : '−'}${formatDecimal(Math.abs(fit.inclinacao) * 100, 2)} p.p. de taxa de clique por vez a mais de frequência`;
+  const tendenciaDetalhe = fit === null ? '' : `R² ${formatDecimal(fit.r2, 2)}, n ${formatInt(fit.n)}`;
+
   const summary =
-    `Gráfico de dispersão com ${formatInt(points.length)} criativos, frequência média contra taxa de clique, sem reta de ` +
-    `tendência. ${passaPiso ? 'A nuvem passa os dois pisos' : 'Sem relação linear detectável'}: ${motivo}. ` +
+    `Gráfico de dispersão com ${formatInt(points.length)} criativos, frequência média contra taxa de clique, ` +
+    (passaPiso
+      ? `com reta de tendência: ${inclinacaoTexto}, ${tendenciaDetalhe}, acima dos pisos de ${formatDecimal(R2_FLOOR, 2)} e ${formatInt(N_FLOOR)}. `
+      : `sem reta de tendência. Sem relação linear detectável: ${motivo}. `) +
     `Taxa de clique de ${faixaTexto}.`;
 
   const renderTooltip = (props: TooltipContentProps<TooltipValueType, number | string>) => {
@@ -241,15 +270,33 @@ export default function FrequencyCtrScatter({ data = defaultData, height, classN
               cursor={{ stroke: CURSOR_COLOR, strokeDasharray: '3 3' }}
               isAnimationActive={false}
             />
+            {passaPiso && fit !== null ? (
+              <ReferenceLine
+                segment={[
+                  { x: fit.x0, y: fit.intercepto + fit.inclinacao * fit.x0 },
+                  { x: fit.x1, y: fit.intercepto + fit.inclinacao * fit.x1 },
+                ]}
+                stroke="var(--text-muted)"
+                strokeDasharray="3 3"
+                strokeWidth={1}
+              />
+            ) : null}
             <Scatter data={points} fill="var(--chart-1)" isAnimationActive={animate} name="Criativos" shape="circle" />
-            {passaPiso ? null : <MissingLineLabel detalhe={motivo} titulo="Sem relação linear detectável" />}
+            {passaPiso ? (
+              <MissingLineLabel detalhe={tendenciaDetalhe} titulo={inclinacaoTexto} />
+            ) : (
+              <MissingLineLabel detalhe={motivo} titulo="Sem relação linear detectável" />
+            )}
           </ScatterChart>
         </ResponsiveContainer>
       </div>
       <p aria-hidden className="mt-2 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
-        {semBase === 0
-          ? 'A reta só entra quando a nuvem passa os dois pisos'
-          : `A reta só entra quando a nuvem passa os dois pisos; ${formatInt(semBase)} ${semBase === 1 ? 'criativo sem impressão fica' : 'criativos sem impressão ficam'} fora do plano`}
+        {(passaPiso
+          ? `Reta de mínimos quadrados entre a menor e a maior frequência, porque a nuvem passa os dois pisos`
+          : 'A reta só entra quando a nuvem passa os dois pisos, e aqui não passa') +
+          (semBase === 0
+            ? ''
+            : `; ${formatInt(semBase)} ${semBase === 1 ? 'criativo sem impressão fica' : 'criativos sem impressão ficam'} fora do plano`)}
       </p>
     </div>
   );

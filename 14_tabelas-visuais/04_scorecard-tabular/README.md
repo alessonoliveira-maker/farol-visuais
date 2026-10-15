@@ -64,8 +64,10 @@ indicador à esquerda, os números à direita em algarismo tabular.
   motivo ao lado do `indisponível`.
 * [`v4_cobertura-denominador-pequeno-e-lacuna`](./v4_cobertura-denominador-pequeno-e-lacuna/) ([preview](./v4_cobertura-denominador-pequeno-e-lacuna/preview.svg), [claro](./v4_cobertura-denominador-pequeno-e-lacuna/preview-claro.svg)):
   cobertura de telefone e cargo por sete origens, cada uma com a barra inline de 0 a 100% ao
-  lado do percentual, coluna cidade inteira em lacuna e duas origens de menos de dez leads para
-  provar o degrau da fração.
+  lado do percentual, coluna cidade em lacuna declarada uma vez no cabeçalho (célula única
+  mesclada no corpo), variação de leads com o mês-base nomeado e "sem base" na origem nova,
+  taxa de agendamento em cinza com ícone onde o telefone está abaixo de 50% e duas origens de
+  menos de dez leads para provar o degrau da fração.
 
 ## Como colar no Farol
 
@@ -142,6 +144,54 @@ Acréscimos da revisão independente de 2026-09-19, depois da rodada de correç�
   (14%, 11%), enquanto a NUM-1 pede uma casa para taxa de conversão; a fração ao lado dá a base, e
   por isso é arredondamento, não erro de leitura.
 
+_Revisão independente de 2026-10-14, `v4_cobertura-denominador-pequeno-e-lacuna` em revisão
+desatualizada (trilho levado a `bg-surface-sunken`). Nenhum item abaixo reprova; os bloqueantes desta
+revisão estão em `validation/revisao_14_tabelas-visuais__04_scorecard-tabular_2026-10-14.md`._
+
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A fração entre parênteses, "(302 de 412)", sai em
+  Manrope sem `tabular-nums` (`Chart.tsx:70`), e o "ago/26" da linha de contexto também; a TIP-1 pede
+  algarismo tabular em todo número. Na coluna alinhada à direita a diferença não aparece no preview.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A barra pintada mede 10 px de altura, não 12: o
+  `absolute inset-y-0` ocupa a caixa de dentro da borda de 1 px do trilho, e o comentário de
+  `BAR_HEIGHT` promete o piso de 12 px da ESP-2. O percentual escrito ao lado sustenta a leitura,
+  inclusive no 24% de Cargo do Formulário do site, que sai quase um círculo.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** Os textos de uma mesma linha não dividem a linha de
+  base: estimado a olho no PNG de 2x, em Mídia social, "indisponível" fica uns 3 px acima do
+  agendamento no tamanho real, com origem, leads e percentuais no meio. Sem colisão nem leitura errada.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** `RatePair` com denominador zero escreve
+  `formatUnavailable()` sem o ícone `Unplug` que a EST-2 pede ao lado da palavra; o dado fixo não
+  exercita o ramo.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A frase acessível conta "2 com telefone abaixo de
+  50%" sem nomear as origens e sem falar do cargo, que tem três origens abaixo do limiar (Busca paga,
+  Formulário do site e Webinar piloto).
+* **v4_cobertura-denominador-pequeno-e-lacuna (o mesmo vale para v1 a v3).** `role="table"` na `div`
+  raiz, que envolve um `<p>` e o `<table>` de verdade, aninha dois papéis de tabela para o leitor de
+  tela; os modelos `07` e `08` da família usam `role="group"` na raiz.
+
+_Revisão independente de 2026-10-14, segunda passada, `v4_cobertura-denominador-pequeno-e-lacuna`
+aprovada depois da rodada de correção. Nenhum item abaixo reprova._
+
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A variação de leads abaixo de 10% sai inteira:
+  Busca paga escreve "−5% contra 281 em jul/26", que é −4,6%, e a NUM-1 pede uma casa abaixo de 10%.
+  A base nomeada ao lado sustenta a leitura.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** Evento regional escreve "−33% contra 6 em jul/26",
+  variação percentual sobre base de 6 leads, justamente na versão que tira o percentual do destaque
+  abaixo de 10. A base nomeada evita o engano; a diferença absoluta ("−2 contra 6") seguiria a regra
+  da própria versão.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A frase acessível tirou a cidade em vez de dizer que
+  ela é indisponível em toda origem, não cita a variação nem o "sem base", e diz "agendamento em
+  cinza" para quem ouve; "com aviso de base fraca" descreveria o sentido, não a cor.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** O `Unplug` do cabeçalho de Cidade herda
+  `text-secondary`, e a EST-2 pede o ícone em `text-muted`; o cabeçalho é alinhado à direita e o
+  ícone da célula mesclada, centrado.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** A variação de leads tem sinal e não tem o ícone de
+  tendência da anatomia (item 5); como a variação não usa cor, o sinal basta para a ACE-2. O "(sem
+  base)" é mais curto que a frase da EST-4 ("sem mês anterior medido para comparar"); o rodapé explica.
+* **v4_cobertura-denominador-pequeno-e-lacuna.** Seguem valendo as observações anteriores: fração e
+  agora também a variação de leads em Manrope sem `tabular-nums` (TIP-1), barra pintada de 10 px,
+  trilhos sem origem comum entre linhas, denominador zero sem `Unplug`, `role="table"` aninhado e
+  vazio sem bloco `role="status"` (EST-1).
+
 ## Correção de 2026-09-19
 
 _Rodada única de correção do reprovo de 2026-09-19 (`v4_cobertura-denominador-pequeno-e-lacuna`).
@@ -170,3 +220,11 @@ então a barra entrou na versão, não o inverso._
   * Possível defeito de escopo do catálogo: a barra de cobertura inline é o assunto declarado do
     modelo `01_tabela-com-barras-inline` da mesma família. A correção seguiu o catálogo como
     escrito (regra 3 da leva), mas o catálogo não foi alterado nem confirmado como certo.
+
+## Correção de 2026-10-14
+
+_Reprovo de 2026-10-14 da `v4_cobertura-denominador-pequeno-e-lacuna`, três bloqueantes do catálogo._
+
+* **Resolvido.** Cidade escreve "indisponível" e o motivo uma vez no `<th>`; o corpo é uma célula com `rowSpan`.
+* **Resolvido.** `data.ts` ganhou `previousVolume: number | null`; Leads escreve a variação com a base ("+12% contra 368 em jul/26") e Webinar piloto escreve "sem base".
+* **Resolvido.** A taxa de agendamento fica em `text-muted` com `TriangleAlert` onde o telefone está abaixo de 50%; o rodapé e a frase acessível descrevem a regra e nomeiam as origens.

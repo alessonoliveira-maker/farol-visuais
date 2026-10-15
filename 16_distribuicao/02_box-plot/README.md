@@ -48,7 +48,9 @@ vem ao lado do histograma da mesma métrica, e sempre com a frase de leitura no 
 9. **Largura variável**, só na `v4`: a espessura da caixa sai da raiz da amostra contra o maior `n`
    observado, com piso de 12 px da ESP-2, e a régua vai na legenda com o `n` dos dois extremos.
 10. **Marcador de borda**, só na `v3`: caso além do teto do eixo desenhado como seta na borda, com o
-   código e o valor escritos, em `--negative`, e o rótulo deslocado da linha do bigode.
+   código e o valor escritos, em `--negative`, e o rótulo deslocado da linha do bigode. Vale todo caso
+   com dias acima do teto (dentro ou além da cerca), um marcador por etapa com o mais distante e a
+   contagem, e o bigode para no teto, sem tampa.
 
 **Emenda de 2026-09-28, e ela corrige o item 2 acima.** O item 2 manda a caixa ser opaca "porque é ela
 que cobre o trecho do bigode que atravessaria por dentro", e isso resolve o sintoma pelo lado errado. As
@@ -97,8 +99,12 @@ vazada com contorno em `--chart-1` mede 9,50:1 e 6,00:1 e não precisa de isenç
    painel. Constante no lugar dela encosta a nuvem de um grupo na do vizinho, e só aparece no PNG.
 8. Na `v3`, passe `onOutlierSelect` para receber o código da oportunidade clicada e abrir o drill.
    Sem a prop os pontos não ficam com cursor de clique, então a peça não promete o que não faz.
-9. A `v4` traz o estado vazio da EST-1 pronto: `data` sem nenhuma campanha substitui o gráfico inteiro
-   por um bloco com `role="status"`. Ao colar no Farol, ele dá lugar ao `EmptyState`, mantendo o texto.
+9. As quatro versões trazem o estado vazio da EST-1 pronto: `data` sem nenhum caso substitui o gráfico
+   inteiro por um bloco com `role="status"`. Ao colar no Farol, ele dá lugar ao `EmptyState`, mantendo
+   o texto. Fila ou etapa sem observação tem caixa `null` (nunca zero) e vai para o fim da ordem.
+   Na `v3`, os casos acima do teto fazem parte de `opportunities` da própria etapa e o marcador de
+   borda é derivado dos dias acima de `domainMax`; no Farol nada além do `data` precisa ser passado.
+   Na `v4`, todo valor além da cerca de Tukey vira ponto na banda do grupo e o rodapé conta quantos.
 10. Rode `npm run typecheck`, `npm run lint` e `npm run test` no `app/`, e confira os dois temas.
 
 ## Pendências conhecidas
@@ -239,3 +245,56 @@ continua no eixo de categoria com o `n` escrito, para a diferença entre "não t
 menos de cinco campanhas entra por ele de propósito. Com o recorte inteiro vazio a `v4` substitui o
 gráfico pela frase de estado da **EST-1**, em vez de desenhar eixo e grade de uma distribuição que não
 existe.
+
+## Observações da revisão (não bloqueantes)
+
+**2026-10-15, revisor independente, quatro versões julgadas.** Nada abaixo reprova; quem tocar o
+arquivo alinha na mesma mão. Os bloqueantes estão em
+`validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md`.
+
+- `v1`: a `ReferenceLine` do SLA não declara `ifOverflow="extendDomain"` (ANO-3, REC-1). Sem consequência com o teto de 200 minutos, mas `domainMax` e `slaMinutes` são props independentes.
+- `v1` e `v2`: a mediana de Rafael T. cai exatamente no limiar (30 minutos na `v1`, 48 horas na `v2`) e o traço tracejado da referência é pintado por cima dela, então a mediana sai riscada nos dois temas (REC-13). Pintar a referência antes da caixa.
+- `v1`: o ponto de 21 minutos de Bruna C. cobre a tampa do bigode em 20, e os pares a 2 minutos (Ernesto V. 102 e 104, Larissa M. 74 e 76) se fundem num borrão. O contorno de 0,5 px na cor da superfície, como na `v2` e na `v3`, separa sem perder contraste.
+- `v1`: a caixa é preenchida com `--line-subtle` (1,25:1 e 1,29:1 contra o cartão, TOK-1). Quem identifica a caixa é o contorno em `--chart-1`, mas as irmãs já fazem caixa vazada com bigode em dois trechos, e é a mesma mão do conserto.
+- `v1` e `v3`: os tiques do eixo de valor saem sem unidade (NUM-6); a unidade vive só no rodapé e no rótulo do limiar. A `v2` e a `v4` escrevem `h` e `R$` no tique.
+- `v1`: sem grade, a caixa de cima se lê contra um eixo a cerca de 170 px; a `v3`, no mesmo layout, tem a grade vertical da EIX-3.
+- `v1`: o catálogo pede dica nomeando o lead no outlier; a versão escreve o código do mais distante no rodapé (saída aceita em 2026-09-28). Uma `ChartTooltip` no `Scatter` completaria o que o catálogo descreve.
+- `v1` e `v2`: a frase acessível sai com ponto duplo depois do nome abreviado ("Camila O..", "Ernesto V..").
+- `v2`: a frase acessível não responde a segunda metade do caso de uso: o aglomerado escondido de Larissa M. (treze leads de 3 a 9 horas e treze de 62 a 96) aparece no desenho e em nenhum texto (ACE-1).
+- `v2`: o caso de uso pergunta quantos leads de cada fila passam do prazo, e só o total está escrito. Contar os 13 losangos de Larissa M. com jitter é trabalho do leitor; o número cabe ao lado do `n` do topo.
+- `v2`: ponto acima de `domainMax` seria desenhado fora da área de plotagem, porque a nuvem não entra no cálculo do domínio. Latente no dado padrão (máximo de 118 horas contra teto de 120).
+- `v2`: o catálogo pede `allowDuplicatedCategory` desligado no `XAxis`; sem `Scatter` a propriedade não tem efeito, e a ausência é coerente com a REC-32.
+- `v2`, `v3` e `v4`: o `n` do topo e o rótulo do caso de borda usam `font-display` sem peso declarado, e o Space Grotesk 400 não é carregado (TIP-4); o navegador cai no 500.
+- `v3`: os casos além da cerca com valor repetido se empilham (17 em Qualificação sobre 7 valores distintos, 13 em Diagnóstico sobre 8): a contagem por etapa não se lê e o clique só alcança o ponto de cima da pilha.
+- `v3`: os rótulos dos casos de borda atravessam a linha de grade de 135 dias sem halo. A grade é `--line-subtle` e a leitura não sofre nos dois PNGs.
+- `v4`: o piso de 12 px leva Nativa (n 9) à largura que a raiz daria para n 12, e a régua da legenda escreve "n 9" sobre esse degrau. Está declarado no `meta.json` e não na tela; "piso de 12 px" na linha da régua resolve.
+- `v4`: a frase acessível não diz a conclusão do caso de uso (o entalhe de Busca paga não cruza os de Display e Vídeo) e põe no topo das medianas Programática, o grupo de quatro campanhas que a própria peça não resume em caixa (ACE-1).
+- `v4`: o `notes` do `meta.json` diz que "o n do grupo recebe um marcador" quando o entalhe é cortado, e o desenho não tem marcador nenhum (DAD-10 no texto, não na tela).
+- README: a lista de "Como colar no Farol" pula do passo 5 para o 7.
+
+**2026-10-15, segunda passada do revisor independente, depois da rodada de correção.** `v1`, `v2` e
+`v4` aprovadas, `v3` reprovada (bloqueante em
+`validation/revisao_16_distribuicao__02_box-plot_2026-10-15.md`, seção da segunda passada). Nada
+abaixo reprova.
+
+- `v1`: a chave `AGREGACAO-ZERO` desta versão continua em `_render/scripts/lib/divida-guardas.json`, e o `check` já avisa que ela não acusa mais nada. Quem conserta tira o registro.
+- README, "Pendências conhecidas": o item que põe a `v1` na fila de dívida da `AGREGACAO-ZERO` (`quantile` devolvendo `0`, linhas 79, 80, 155 e 159) ficou falso. Em "O que cada caixa faz com uma lista vazia", "Nas `v2`, `v3` e `v4`" e "a `v4` substitui o gráfico" valem hoje para as quatro.
+- `v1`: o rótulo `SLA 30 min` da `ReferenceLine` sai sem classe tabular (TIP-1). Sem consequência visível com um número só.
+- `v2`, `v3` e `v4`: os tiques são constantes (`[0..120]`, `[0..180]`, `[0..560]`) enquanto `domainMax` é prop. Outro teto deixaria a grade sem a linha do teto ou com tique fora do domínio (EIX-4). Calcular os tiques do `domainMax`.
+- `v4`: ponto além da cerca acima de `domainMax` seria desenhado fora da área de plotagem, porque os pontos não entram no cálculo do domínio. Latente no dado padrão (maior valor R$ 528 contra teto de R$ 560), a mesma classe já anotada na `v2`.
+- `v4`: o ponto além da cerca e o ponto de Programática têm o mesmo desenho (mesma cor, mesmo raio) e dizem coisas diferentes, caso extremo contra amostra inteira. O rodapé explica os dois, mas a linha "2 campanhas ficaram além da cerca" não traz amostra da marca, como trazem a `v2` e a `v3`.
+- `v3`: os números do texto ficaram com o dado antigo. O README ("Versões") e o `notes` do `meta.json` dizem mediana de 46 dias em Aprovação interna e 34 casos além da cerca; o desenho e a frase dizem 49 dias e 33 casos. O comentário do topo do `Chart.tsx` ainda diz "medianas de 6 a 46 dias" e "trinta e dois códigos".
+- README, passo 9 de "Como colar no Farol": "fila ou etapa sem observação vai para o fim da ordem" não vale para a `v3`, que mantém a ordem de funil, e está certa em manter.
+
+**2026-10-15, terceira passada do revisor independente, só a `v3`, depois da segunda rodada de
+correção.** `v3` aprovada: todo caso acima do teto entra no marcador da etapa, com o mais distante e a
+contagem, o bigode para no teto sem tampa e o rodapé conta do dado. Nada abaixo reprova.
+
+- `v3`: o comentário da linha 274 do `Chart.tsx` ainda diz "todo caso além da cerca com dias acima do teto", e o bloco logo abaixo (linhas 275 e 276) diz o contrário, que vale todo caso acima do teto, esteja ou não além da cerca. Apagar a linha 274.
+- `v3`: os números antigos do texto continuam (item 5 do "O que mudar" da segunda passada): "Versões" deste README e `notes` do `meta.json` com mediana de 46 dias e 34 casos além da cerca, e o comentário do topo do `Chart.tsx` com "medianas de 6 a 46 dias" e "trinta e dois códigos". O desenho e a frase dizem 49 dias e 33 casos. A "banda de 38 px" do comentário e do `notes` mede 32,75 px no `preview.svg`.
+- `v3`: caixa com q3 acima de `domainMax` estenderia o eixo, porque o par `[q1, q3]` do `Bar` entra no domínio e não há `allowDataOverflow`; os tiques fixos parariam em 180 e a seta iria para a borda estendida. Latente (o maior q3 do dado padrão é 94,5 dias), a mesma classe dos tiques constantes já anotados.
+- `v3`: a frase acessível não nomeia o caso extremo, que é a segunda metade do caso de uso. " O mais distante é a OP 10482, com 412 dias." soma 44 caracteres e cabe nos 250 (ACE-1).
+- `v3`: "33 além da cerca" no rodapé sai sem o substantivo (NUM-6, contagem solta); o ramo sem caso mais distante já escreve "oportunidades".
+- `v3`: o rótulo "parada a partir de 30 dias" da `ReferenceLine` sai sem classe tabular (TIP-1), como o da `v1`. Sem consequência visível com um número só.
+- `v3`: `MARKER_LABEL_RISE` de 13 px é ímpar (ESP-1), e a linha de chamada usa deslocamentos soltos (`+ 2`, `+ 3`, `- 2`, `* 1.6`) fora de constante nomeada. Sem consequência visível no preview.
+- README, "Pendências conhecidas": o item que diz que a `v3` sai `preview_com_transform` em duas guardas ficou velho; hoje a `CONTRASTE-MARCA` mede a `v3` e só a `ESPESSURA-MARCA` não mede.

@@ -5,7 +5,7 @@
     "Delta de posição, de valor em R$ e em % em colunas separadas, alinhadas à direita",
     "Barra inline do valor atual com domínio comum a todas as linhas e o número escrito ao lado",
     "Micrográfico de posições em SVG com eixo invertido e domínio comum às 6 linhas",
-    "Executivo em destaque em peso 700 e chart-1, os demais em line-strong"
+    "Executivo em destaque em peso 700 e chart-1, os demais em text-muted"
   ],
   "canvas": { "width": 960, "height": 460 },
   "notes": "Canvas por número: a coluna de Δ R$ tem duas linhas (valor e a base contra o mês anterior), o que passa 36 px do preset largo com as 6 linhas da tabela. A trajetória é decorativa e aria-hidden porque a coluna de Δ posição já diz o mesmo em texto."

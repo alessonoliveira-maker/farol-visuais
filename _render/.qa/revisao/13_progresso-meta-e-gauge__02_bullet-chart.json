@@ -28,26 +28,26 @@
     },
     "v3_painel-de-metas-comerciais": {
       "veredito": "aprovado",
-      "nota": "Painel le bem: cinco linhas normalizadas, faixas nomeadas e a metrica abaixo com icone e peso. Observacao forte: a linha de 100% nao tem rotulo e o eixo oculto deixa a escala percentual sem numero.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:28:36.459Z",
-      "impressao": "0e7205d9a6334b6bec7653383d1a0079c87b8068",
+      "nota": "Estado vazio cumpre EST-1 na bancada (role status, Filter 16 px, frase 12 px muted, sem eixo); guarda testa a lista que alimenta a conta (DAD-6). Observacoes no README: linha de 100% sem rotulo, taxa sem volume, meta zero vira Infinity.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:38:34.838Z",
+      "impressao": "520bd942fabbe5b92d9f8888077cc32f742df63b",
       "arquivos": {
-        "Chart.tsx": "3a1ed30826d653c603a8d415e7c23e34f2a6a4a5",
+        "Chart.tsx": "acc3c6984006375908109333a5d1c6000d40e718",
         "data.ts": "9bb3db19667a36b13a8fb6d6ddd73f627bfe0214",
         "meta.json": "5fffbac3018a3f7b346a6e44999d6126fef95e53"
       }
     },
     "v4_orcamento-por-plataforma-em-coluna": {
       "veredito": "aprovado",
-      "nota": "Bullet vertical com meta nomeada, faixa de conforto e ausencia em trilho tracejado com texto, nunca zero pintado. Observacoes: frase acessivel a 5 do teto, meta sem extendDomain e trilho na altura cheia.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:28:42.226Z",
-      "impressao": "49627222106b171d9acb6b2c0a82f3b10c92864e",
+      "nota": "REC-5 resolvido: rótulo no shape pelo payload; bancada com a ausente na 1ª, 2ª e 3ª posição, duas e todas ausentes, cada coluna escreve o próprio gasto nos dois temas; extendDomain devolve faixa e meta com todas ausentes; meta.json bate com a tela. Observações no README: duas vizinhas acima do conforto sobrepõem rótulos, notes sem o desvio do catálogo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:49:46.041Z",
+      "impressao": "416f4c34fa4b829d41f040e080586857d7549fc7",
       "arquivos": {
-        "Chart.tsx": "d36dccb37116dabb5d67fc34d0e92c1165cb7d66",
+        "Chart.tsx": "fc6c69e2b383f0bb65caa376eee68b013d708b14",
         "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
-        "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+        "meta.json": "469dc2f3c6b4678962eb4fb4fd8ce56abb949635"
       }
     }
   },
@@ -154,6 +154,45 @@
         "Chart.tsx": "d36dccb37116dabb5d67fc34d0e92c1165cb7d66",
         "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
         "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+      }
+    },
+    {
+      "versao": "v3_painel-de-metas-comerciais",
+      "veredito": "aprovado",
+      "nota": "Estado vazio cumpre EST-1 na bancada (role status, Filter 16 px, frase 12 px muted, sem eixo); guarda testa a lista que alimenta a conta (DAD-6). Observacoes no README: linha de 100% sem rotulo, taxa sem volume, meta zero vira Infinity.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:38:34.838Z",
+      "impressao": "520bd942fabbe5b92d9f8888077cc32f742df63b",
+      "arquivos": {
+        "Chart.tsx": "acc3c6984006375908109333a5d1c6000d40e718",
+        "data.ts": "9bb3db19667a36b13a8fb6d6ddd73f627bfe0214",
+        "meta.json": "5fffbac3018a3f7b346a6e44999d6126fef95e53"
+      }
+    },
+    {
+      "versao": "v4_orcamento-por-plataforma-em-coluna",
+      "veredito": "reprovado",
+      "nota": "P8 e P12, EST-2/ROT-2 (REC-5): renderValue acha a linha por rows[index], e com percent null o LabelList pula o retangulo; na bancada com Display no meio, Busca fica sem rotulo e Profissional mostra R$ 33,6 mil de Busca. Achar a linha pelo id (dataKey) ou rotular no shape. 14.1/DAD-10: meta.json promete trilho tracejado que nao existe; reescrever e declarar desvio em notes.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:38:40.401Z",
+      "impressao": "73460b3f90faf103cc79d0be4566ced1bb25c4ce",
+      "arquivos": {
+        "Chart.tsx": "7966fe2960b8032a8034c5db1c7d10df1ebc3891",
+        "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
+        "meta.json": "2106e09f5138d16508764affa5acb85fbb1ac925"
+      }
+    },
+    {
+      "versao": "v4_orcamento-por-plataforma-em-coluna",
+      "veredito": "aprovado",
+      "nota": "REC-5 resolvido: rótulo no shape pelo payload; bancada com a ausente na 1ª, 2ª e 3ª posição, duas e todas ausentes, cada coluna escreve o próprio gasto nos dois temas; extendDomain devolve faixa e meta com todas ausentes; meta.json bate com a tela. Observações no README: duas vizinhas acima do conforto sobrepõem rótulos, notes sem o desvio do catálogo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:49:46.041Z",
+      "impressao": "416f4c34fa4b829d41f040e080586857d7549fc7",
+      "arquivos": {
+        "Chart.tsx": "fc6c69e2b383f0bb65caa376eee68b013d708b14",
+        "data.ts": "7592fc2f885673006b01f828d874d4a65ae874cf",
+        "meta.json": "469dc2f3c6b4678962eb4fb4fd8ce56abb949635"
       }
     }
   ]

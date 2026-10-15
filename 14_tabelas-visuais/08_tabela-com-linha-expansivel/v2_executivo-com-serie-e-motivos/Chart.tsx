@@ -3,7 +3,7 @@ import { Fragment, useId, useMemo, useState } from 'react';
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 import { AXIS_PROPS, useAnimateOnce } from '@/components/visuals/charts/chartTheme';
-import { formatCurrencyAxis, formatCurrencyCompact, formatMonthShort } from '@/lib/format';
+import { formatCurrencyAxis, formatCurrencyCompact, formatMonthShort, formatUnavailable } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, expandedIds as defaultExpandedIds, type ExecutiveDetail } from './data';
 
@@ -20,11 +20,24 @@ export interface ExecutiveLossPanelTableProps {
 }
 
 const PANEL_HEIGHT = 128;
-const Y_AXIS_WIDTH = 56;
+/** Largura que mantém o maior tique ("R$ 300 mil") numa linha só (EIX-6, tabela de larguras). */
+const Y_AXIS_WIDTH = 70;
+const CHART_MARGIN = { top: 4, right: 8, bottom: 0, left: 0 } as const;
 
-function shares(counts: readonly number[]): readonly number[] {
+/** Eixo redondo (EIX-4): passo 1, 2 ou 5 vezes uma potência de dez, terminando acima do maior valor. */
+function niceAxis(values: readonly number[]): { readonly max: number; readonly ticks: readonly number[] } {
+  const peak = Math.max(...values, 0);
+  if (peak <= 0) return { max: 1, ticks: [0, 1] };
+  const rough = peak / 3;
+  const magnitude = 10 ** Math.floor(Math.log10(rough));
+  const step = [1, 2, 5, 10].map((factor) => factor * magnitude).find((candidate) => candidate >= rough) ?? magnitude;
+  const count = Math.ceil(peak / step);
+  return { max: count * step, ticks: Array.from({ length: count + 1 }, (_, index) => index * step) };
+}
+
+function shares(counts: readonly number[]): readonly number[] | null {
   const total = counts.reduce((sum, value) => sum + value, 0);
-  if (total <= 0) return counts.map(() => 0);
+  if (total <= 0) return null;
   const raw = counts.map((value) => (value / total) * 100);
   const floors = raw.map(Math.floor);
   let remainder = 100 - floors.reduce((sum, value) => sum + value, 0);
@@ -54,11 +67,9 @@ export default function ExecutiveLossPanelTable({
     () =>
       data.map((executive) => {
         const percentages = shares(executive.reasons.map((reason) => reason.count));
-        const dominantIndex = executive.reasons.reduce(
-          (best, reason, index) => (reason.count > (executive.reasons[best]?.count ?? -1) ? index : best),
-          0,
-        );
-        return { executive, percentages, dominantIndex };
+        const top = Math.max(...executive.reasons.map((reason) => reason.count));
+        const dominantIndexes = percentages === null ? [] : executive.reasons.flatMap((reason, index) => (reason.count === top ? [index] : []));
+        return { executive, percentages, dominantIndexes };
       }),
     [data],
   );
@@ -97,12 +108,14 @@ export default function ExecutiveLossPanelTable({
             </tr>
           </thead>
           <tbody>
-            {rows.map(({ executive, percentages, dominantIndex }) => {
+            {rows.map(({ executive, percentages, dominantIndexes }) => {
               const isOpen = openIds.includes(executive.id);
               const panelId = `${baseId}-panel-${executive.id}`;
               const current = executive.revenueSeries.at(-1);
-              const dominant = executive.reasons[dominantIndex];
-              const dominantShare = percentages[dominantIndex] ?? 0;
+              const tied = dominantIndexes.length > 1;
+              const dominantNames = dominantIndexes.map((index) => executive.reasons[index]?.reason ?? '').join(' e ');
+              const dominantShare = percentages?.[dominantIndexes[0] ?? 0] ?? 0;
+              const axis = niceAxis(executive.revenueSeries.map((point) => point.value));
               return (
                 <Fragment key={executive.id}>
                   <tr className="border-b border-line-subtle/60 last:border-0">
@@ -124,13 +137,13 @@ export default function ExecutiveLossPanelTable({
                       <span className="block text-[0.6875rem] text-text-muted">receita mensal e motivos de perda</span>
                     </td>
                     <td className="px-2 py-1.5 text-right align-top font-display text-text-primary tabular-nums">
-                      {current ? formatCurrencyCompact(current.value) : '—'}
+                      {current ? formatCurrencyCompact(current.value) : formatUnavailable()}
                     </td>
                     <td className="px-2 py-1.5 align-top text-text-secondary">
-                      {dominant ? (
+                      {dominantIndexes.length > 0 ? (
                         <>
-                          <span className="block">{dominant.reason}</span>
-                          <span className="block text-[0.6875rem] text-text-muted">{`${String(dominantShare)}% das perdas`}</span>
+                          <span className="block">{dominantNames}</span>
+                          <span className="block text-[0.6875rem] text-text-muted">{`${String(dominantShare)}%${tied ? ' cada' : ''} das perdas`}</span>
                         </>
                       ) : (
                         <span className="text-text-muted">sem perdas no período</span>
@@ -142,17 +155,31 @@ export default function ExecutiveLossPanelTable({
                       <td className="px-2 py-2" colSpan={4} id={panelId}>
                         <div className="grid grid-cols-2 gap-4">
                           <div style={{ height: PANEL_HEIGHT }}>
+                            {executive.revenueSeries.length === 0 ? (
+                              <div className="flex h-full items-center gap-2 text-text-muted" role="status">
+                                <Filter aria-hidden className="size-4 shrink-0" />
+                                <span>Nenhum mês com receita neste recorte.</span>
+                              </div>
+                            ) : (
                             <ResponsiveContainer height="100%" width="100%">
-                              <LineChart data={[...executive.revenueSeries]} margin={{ top: 4, right: 8, bottom: 0, left: 0 }}>
+                              <LineChart data={[...executive.revenueSeries]} margin={CHART_MARGIN}>
                                 <CartesianGrid stroke="var(--line-subtle)" vertical={false} />
                                 <XAxis
                                   {...AXIS_PROPS}
+                                  axisLine={false}
                                   dataKey="month"
                                   interval={2}
                                   tickFormatter={(value: string) => formatMonthShort(value)}
                                   tickMargin={8}
                                 />
-                                <YAxis {...AXIS_PROPS} domain={[0, 'dataMax']} tickFormatter={(value: number) => formatCurrencyAxis(value)} width={Y_AXIS_WIDTH} />
+                                <YAxis
+                                  {...AXIS_PROPS}
+                                  axisLine={false}
+                                  domain={[0, axis.max]}
+                                  interval={0}
+                                  tickMargin={8}
+                                  ticks={[...axis.ticks]}
+                                  tickFormatter={(value: number) => formatCurrencyAxis(value)} width={Y_AXIS_WIDTH} />
                                 <Line
                                   dataKey="value"
                                   dot={false}
@@ -163,27 +190,35 @@ export default function ExecutiveLossPanelTable({
                                 />
                               </LineChart>
                             </ResponsiveContainer>
+                            )}
                           </div>
                           <div className="flex flex-col justify-center gap-1.5">
-                            {executive.reasons.map((reason, index) => (
+                            {percentages === null ? (
+                              <div className="flex items-center gap-2 text-text-muted" role="status">
+                                <Filter aria-hidden className="size-4 shrink-0" />
+                                <span>sem perdas no período</span>
+                              </div>
+                            ) : (
+                              executive.reasons.map((reason, index) => (
                               <div className="flex items-center gap-2" key={reason.reason}>
                                 <div className="h-3 min-w-0 flex-1 rounded-sm bg-surface-sunken">
                                   <div
-                                    className={cn('h-full rounded-sm', index === dominantIndex ? 'bg-chart-1' : 'bg-line-strong')}
+                                    className={cn('h-full rounded-sm', dominantIndexes.includes(index) ? 'bg-chart-1' : 'bg-line-strong')}
                                     style={{ width: `${String(percentages[index] ?? 0)}%` }}
                                   />
                                 </div>
                                 <span
                                   className={cn(
-                                    'w-40 shrink-0 truncate',
-                                    index === dominantIndex ? 'font-semibold text-text-primary' : 'text-text-secondary',
+                                    'w-40 shrink-0 break-words leading-tight',
+                                    dominantIndexes.includes(index) ? 'font-bold text-text-primary' : 'text-text-secondary',
                                   )}
                                 >
                                   {reason.reason}
                                 </span>
                                 <span className="w-9 shrink-0 text-right font-display tabular-nums text-text-secondary">{`${String(percentages[index] ?? 0)}%`}</span>
                               </div>
-                            ))}
+                              ))
+                            )}
                           </div>
                         </div>
                       </td>

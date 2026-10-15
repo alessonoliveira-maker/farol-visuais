@@ -27,13 +27,13 @@
       }
     },
     "v3_meta-de-receita-por-origem": {
-      "veredito": "reprovado",
-      "nota": "Conserto do formato aceito: 65% nos dois lados. Volta porque o trilho do anel ficou em --surface-overlay e some no tema claro; foi por esse mesmo defeito que a v4 deste modelo caiu em 2026-09-19. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T15:12:25.248Z",
-      "impressao": "90d2e4525f75a0e6c73dcd6a541b25923dc77e47",
+      "veredito": "aprovado",
+      "nota": "Ramo de vazio entrou no molde de 13/04 v1 (role status, Filter de 16 px, frase de 12 px em text-muted, raiz h-full w-full min-w-0), e o anel não some mais calado escrevendo 0%. Domínio na meta, slots 1, 3, 6 e 5, contorno de 1 px entre segmentos, trilho em surface-sunken visível nos dois temas, legenda na ordem horária com valor e percentual que somam os 65% do centro. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:31.251Z",
+      "impressao": "a3f861d8deeb63f4dff4b08ee04eed2f680752f3",
       "arquivos": {
-        "Chart.tsx": "308f50871fe0e76328494791965c5a06995e73ae",
+        "Chart.tsx": "feaa886969d2538447bda250b3705ff1cb12eedd",
         "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
         "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
       }
@@ -193,6 +193,32 @@
         "Chart.tsx": "6379452ecb9094da24067fc94dddbcb9171a1004",
         "data.ts": "73a343ca30d8960e1a0ad6a653f72c209edf363d",
         "meta.json": "10a67a440d78f5a6cdc45af4151ba1cc3752737e"
+      }
+    },
+    {
+      "versao": "v3_meta-de-receita-por-origem",
+      "veredito": "reprovado",
+      "nota": "Perguntas 16 e 8, EST-1 e EST-2 (14.1, ausência exibida como zero): não há ramo de vazio; com origens vazio o anel some inteiro, porque o trilho mora no RadialBar de índice 0, e o centro escreve 0% e R$ 0 de R$ 5,0 mi. Devolver bloco role=\"status\" com ícone Filter de 16 px e frase de 12 px quando data.origens.length === 0, no molde de 13/04 v1. O conserto do trilho em --surface-sunken está aceito nos dois temas. Parecer em validation/revisao_13_progresso-meta-e-gauge__03_progresso-radial-de-anel-unico_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:14:51.101Z",
+      "impressao": "6d7d6a72838d4af502cafd1ac446e3882c3e7b9b",
+      "arquivos": {
+        "Chart.tsx": "43dd622e355f7ac4208fb5ac6e632ab8ded747a1",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
+      }
+    },
+    {
+      "versao": "v3_meta-de-receita-por-origem",
+      "veredito": "aprovado",
+      "nota": "Ramo de vazio entrou no molde de 13/04 v1 (role status, Filter de 16 px, frase de 12 px em text-muted, raiz h-full w-full min-w-0), e o anel não some mais calado escrevendo 0%. Domínio na meta, slots 1, 3, 6 e 5, contorno de 1 px entre segmentos, trilho em surface-sunken visível nos dois temas, legenda na ordem horária com valor e percentual que somam os 65% do centro. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:31.251Z",
+      "impressao": "a3f861d8deeb63f4dff4b08ee04eed2f680752f3",
+      "arquivos": {
+        "Chart.tsx": "feaa886969d2538447bda250b3705ff1cb12eedd",
+        "data.ts": "179c726950044c206dcc0da1a36495c026072a37",
+        "meta.json": "f076759da5bfb70dbd950e326d85deada9208b92"
       }
     }
   ]

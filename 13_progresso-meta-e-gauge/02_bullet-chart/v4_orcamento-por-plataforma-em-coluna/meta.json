@@ -4,7 +4,7 @@
   "demonstrates": [
     "Bullet vertical: faixa de conforto em ReferenceArea de y1 a y2, meta em ReferenceLine",
     "Faixa de conforto entre 85% e 105% do planejado, por intensidade de um único tom",
-    "Plataforma sem veiculação com trilho tracejado e formatUnavailable, nunca 0% pintado",
+    "Plataforma sem veiculação sem coluna, com ícone e formatUnavailable, nunca 0%",
     "Coluna acima do conforto com o excedente marcado e o valor real gasto escrito",
     "Rótulo curto visível na coluna e nome completo só na frase acessível, sem texto girado"
   ],

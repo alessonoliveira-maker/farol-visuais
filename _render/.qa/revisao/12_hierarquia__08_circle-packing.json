@@ -13,6 +13,42 @@
         "data.ts": "3700049cf6d331bed5a4aad1ddc4159445b8dcbf",
         "meta.json": "6fd9e62432c7fe56492fa4427712b26e19cc0f61"
       }
+    },
+    "v2_cpl-qualificado-abaixo-da-mediana": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante de 2026-10-14 resolvido: cada campanha sem rótulo fica sob o canal dela na coluna lateral, com amostra do veredito, leads e CPL, então as 10 se identificam sem interação e o veredito tem o CPL escrito como segundo canal (ACE-2). Área exata pela raiz (r²/lead 14,742 nas 10), anéis 1, 3 e 6 acima de 5:1 nos dois temas, nada cortado. Observações no README: lista sem aviso de que é parcial, volume das 3 maiores não escrito, ramo de zero lead com veredito e CPL impressos, TOK-9 sem número no notes.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:19.861Z",
+      "impressao": "65408239f13764d7e982eedca9d2b43c0654319e",
+      "arquivos": {
+        "Chart.tsx": "c8eb6af52628ad80ba852cd1507c674b11cb0f10",
+        "data.ts": "de4b4d1f0ea91c58867116e4982ba2a395d68b99",
+        "meta.json": "0764248e52122b8ca6cebd7d39a3f070bc56ad64"
+      }
+    },
+    "v3_entradas-por-origem-subcanal-e-desfecho": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: área pela raiz do valor sem piso, cor de desfecho por chave, contorno de origem em slot 1 e 3, tabela pai › filho que identifica toda folha sem interação, régua terminando no máximo observado, nada cortado nos dois temas. Observações no README: régua com dois círculos onde o meta promete três, 3 subcanais sem nome no desenho, número de folha sem unidade.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:58:41.922Z",
+      "impressao": "957de0f1e3a037b47624b71edb016fc0561fd764",
+      "arquivos": {
+        "Chart.tsx": "d49cd1836baca81e144465f361a329ad1ef9910d",
+        "data.ts": "a369d1eb3d48894aa7c183c949717f47b2e23384",
+        "meta.json": "6248f6d78c75cea3766beeba7bced01b9ce10594"
+      }
+    },
+    "v4_um-nivel-so-e-zeros": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: guarda de profundidade troca para barras do zero com nome ao lado e valor na ponta, aviso em warning aprovado, zeros escritos com 0 leads, estado vazio role=status. Observações no README: vão de 60% entre faixas, motivo de área escrito sob barras, 2026-08 à mão, e o ramo de empacotamento latente sem nomes e com altura presa à contagem de folhas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:58:42.482Z",
+      "impressao": "45278b9081a5e6b19b0a494a64ab5f042bf80281",
+      "arquivos": {
+        "Chart.tsx": "8c11206a1641da02e91ae4a245e49e32068b20e7",
+        "data.ts": "5345b6dbda08005d6a5dd8ec1372380741610aa5",
+        "meta.json": "5c9d86438c7b11c4127d047b277ad22284df921b"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,58 @@
         "Chart.tsx": "0dc25c0ecd9fa14fa4e3f65acccc54cc5f76a2c7",
         "data.ts": "3700049cf6d331bed5a4aad1ddc4159445b8dcbf",
         "meta.json": "6fd9e62432c7fe56492fa4427712b26e19cc0f61"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-abaixo-da-mediana",
+      "veredito": "reprovado",
+      "nota": "Pergunta 12 (e 19), identificação das marcas da 14.1 e ACE-2: 7 das 10 campanhas não têm nome no desenho e a lista lateral não as liga ao círculo (sem canal, sem amostra), então o cinza de Busca paga só se identifica por conta contra o total da legenda e Semelhantes, a 2ª maior e abaixo da mediana, fica muda. Agrupar a lista por canal, sob a linha de legenda de cada um, com amostra preenchida do veredito em cada campanha.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:58:35.972Z",
+      "impressao": "b2d07f5ad0a87cefd317dc566a25e7b50635b882",
+      "arquivos": {
+        "Chart.tsx": "5a752514107ede9726fb0573af29688ed794c4d8",
+        "data.ts": "de4b4d1f0ea91c58867116e4982ba2a395d68b99",
+        "meta.json": "0764248e52122b8ca6cebd7d39a3f070bc56ad64"
+      }
+    },
+    {
+      "versao": "v3_entradas-por-origem-subcanal-e-desfecho",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: área pela raiz do valor sem piso, cor de desfecho por chave, contorno de origem em slot 1 e 3, tabela pai › filho que identifica toda folha sem interação, régua terminando no máximo observado, nada cortado nos dois temas. Observações no README: régua com dois círculos onde o meta promete três, 3 subcanais sem nome no desenho, número de folha sem unidade.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:58:41.922Z",
+      "impressao": "957de0f1e3a037b47624b71edb016fc0561fd764",
+      "arquivos": {
+        "Chart.tsx": "d49cd1836baca81e144465f361a329ad1ef9910d",
+        "data.ts": "a369d1eb3d48894aa7c183c949717f47b2e23384",
+        "meta.json": "6248f6d78c75cea3766beeba7bced01b9ce10594"
+      }
+    },
+    {
+      "versao": "v4_um-nivel-so-e-zeros",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: guarda de profundidade troca para barras do zero com nome ao lado e valor na ponta, aviso em warning aprovado, zeros escritos com 0 leads, estado vazio role=status. Observações no README: vão de 60% entre faixas, motivo de área escrito sob barras, 2026-08 à mão, e o ramo de empacotamento latente sem nomes e com altura presa à contagem de folhas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:58:42.482Z",
+      "impressao": "45278b9081a5e6b19b0a494a64ab5f042bf80281",
+      "arquivos": {
+        "Chart.tsx": "8c11206a1641da02e91ae4a245e49e32068b20e7",
+        "data.ts": "5345b6dbda08005d6a5dd8ec1372380741610aa5",
+        "meta.json": "5c9d86438c7b11c4127d047b277ad22284df921b"
+      }
+    },
+    {
+      "versao": "v2_cpl-qualificado-abaixo-da-mediana",
+      "veredito": "aprovado",
+      "nota": "Bloqueante de 2026-10-14 resolvido: cada campanha sem rótulo fica sob o canal dela na coluna lateral, com amostra do veredito, leads e CPL, então as 10 se identificam sem interação e o veredito tem o CPL escrito como segundo canal (ACE-2). Área exata pela raiz (r²/lead 14,742 nas 10), anéis 1, 3 e 6 acima de 5:1 nos dois temas, nada cortado. Observações no README: lista sem aviso de que é parcial, volume das 3 maiores não escrito, ramo de zero lead com veredito e CPL impressos, TOK-9 sem número no notes.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:19.861Z",
+      "impressao": "65408239f13764d7e982eedca9d2b43c0654319e",
+      "arquivos": {
+        "Chart.tsx": "c8eb6af52628ad80ba852cd1507c674b11cb0f10",
+        "data.ts": "de4b4d1f0ea91c58867116e4982ba2a395d68b99",
+        "meta.json": "0764248e52122b8ca6cebd7d39a3f070bc56ad64"
       }
     }
   ]

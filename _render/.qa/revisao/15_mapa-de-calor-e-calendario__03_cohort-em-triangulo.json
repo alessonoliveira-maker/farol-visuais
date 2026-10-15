@@ -3,15 +3,51 @@
   "modelo": "03_cohort-em-triangulo",
   "versoes": {
     "v1_agenda-por-cohort-mensal-de-entrada": {
-      "veredito": "reprovado",
-      "nota": "Reverto a aprovação que eu mesmo dei hoje. Conferi no código: a linha 123 desenha a microbarra de leads como div com rounded-full e bg-surface-overlay, ou seja um trilho, e o CONTRATO diz na tabela de tokens \"nunca trilho, moldura nem faixa\", regra que eu próprio escrevi depois de perseguir esse defeito em 18 modelos. No tema claro o token mede 1,00:1 contra o cartão e o trilho desaparece. O resto da peça continua exemplar e a medição dos degraus da rampa segue correta; o que falhou foi a minha varredura, que olhou a célula do heatmap e não a coluna lateral.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T15:12:24.918Z",
-      "impressao": "2afe7cf747dd8884bbe4edbcb3d5d25259d68e70",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé conferido à mão contra o data.ts: média ponderada só de jan/26 e fev/26 (800 leads) em toda coluna, 7,8 13,7 16,9 18,4 19,2 19,6 19,8%, M6 não cai mais abaixo de M5; o n aparece no rótulo, na legenda e na frase (195 caracteres). EST-1b e DAD-6: médias devolvem null e a guarda testa a lista que alimenta a conta. NUM-4 sem variação publicada; a frase compara mai/26 21,4% com 19,7% de média de 5 cohorts fechados em M3, conferido. Observações no README: frase perdeu a diagonal em curso, teste por verdade em referenceAverage, rodapé vazio sem cohort fechado em M6, chegaram em vez de fecharam, duas médias de M3 entre frase e rodapé.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:36:11.889Z",
+      "impressao": "bb08ab230ac30901b6c9e3e7d9fefa6f08a7f947",
       "arquivos": {
-        "Chart.tsx": "5d464cfd7fffb3e1b9e5f2779a377bf618b110a8",
+        "Chart.tsx": "09fe36d2e3d9018fc12901febeda0979e7fd746e",
         "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
         "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    "v2_mudanca-de-cadencia-entre-cohorts": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão do data.ts: antes, jan/26 e fev/26 (800 leads) em toda coluna, 7,8 13,6 16,8 18,5 19,3 19,6 19,9%; depois, mai/26 e jun/26 (999 leads) 10,5 21,3 25,3% até M2, com M3 a M6 em branco e o rótulo dizendo até M2; nenhuma queda por troca de população. EST-1b e DAD-6: média e população devolvem null, comparação por !== null, vazio com role=status. NUM-4: nenhuma variação publicada, os dois valores escritos. Observações no README: M1 comparado só com 2 dos 4 cohorts fechados antes (14,0% contra 21,4% com todos), mesmos sem antecedente, recuo sem cohort fechado, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:48.429Z",
+      "impressao": "8abb50ddb08f4d335dff19ed0dded4d44d7e9fb8",
+      "arquivos": {
+        "Chart.tsx": "d4e4187c8e0ef51c5515ad60754cf78cae2d0a58",
+        "data.ts": "65d9e69c457dd9679eb85364b718f19e9fa115de",
+        "meta.json": "220dba44b2bba57af247755ec6c5db52a976eec9"
+      }
+    },
+    "v3_ganho-acumulado-por-mes-de-criacao": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão: abr/25 a ago/25 (497 criadas, os 5 que fecharam M12) de 0,4% a 14,3%, sem queda entre colunas. Linha e frase: fev/26 com 15,7% contra 13,4% (158 de 1.181, 11 cohorts fechados em M6), conferido. As duas médias de M6 no cartão (13,4% na linha, 12,1% no rodapé) levam n e população escritos na linha, no rótulo e na legenda, e se reconciliam no próprio cartão; vai como observação. EST-1b, DAD-6 e NUM-4 conferidos. Observações no README: duas médias de M6, frase sem a diagonal em curso com mar/26 em 18,0% acima do melhor fechado, README com 800x620, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:52.049Z",
+      "impressao": "e418a9bdbec22a8633894954bb957f6db8ea6db0",
+      "arquivos": {
+        "Chart.tsx": "14e8df7cb84592b0620f52ca88cad8c346cf3c1c",
+        "data.ts": "c2dcebb078f01395adb52d703160598615c69651",
+        "meta.json": "cee654007e4075243b135616a9b177c3247880b7"
+      }
+    },
+    "v4_periodo-parcial-e-cohort-pequeno": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão: jan/26 e fev/26 (424 leads; mar/26 fora pelo M2 sem medição e pelo M6 em curso) 7,8 13,7 17,0 18,6 19,6 19,8 20,0%, sem queda; no modo contagem o Total soma 33 a 85 dos mesmos dois, com legenda e frase trocando média por total e soma. Linha e frase: 25,0% (3 de 12) contra 19,9% (82 de 412), lidera conferido contra o máximo da coluna fechada. EST-1b, DAD-6 e NUM-4 conferidos. Observações no README: um dos 2 cohorts do rodapé é o de 12 leads (rodapé 97% jan/26), footerCount recua para 0, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:55.589Z",
+      "impressao": "bc50c49834b6b002124e0f1660c855cf46cfabdf",
+      "arquivos": {
+        "Chart.tsx": "6733a6798db913c8aa1bd8fa45c662c858866bc5",
+        "data.ts": "22c8d52d95035a24072c74bfe71199a8cbce493d",
+        "meta.json": "22b5e04c104177e7e924cf2bc396c5639268625a"
       }
     }
   },
@@ -40,6 +76,136 @@
         "Chart.tsx": "5d464cfd7fffb3e1b9e5f2779a377bf618b110a8",
         "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
         "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    {
+      "versao": "v2_mudanca-de-cadencia-entre-cohorts",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Blocos antes e depois com média ponderada própria e só de período fechado, M1 destacado por peso e anotação, divisória como anotação de regra, tracejado na tinta do número, vazio com role=status, M0 e diagonal nomeados na legenda. Observações no README: fronteira 19% da legenda contra célula de 18,7% pintada acima dela, linha de leitura em duas linhas, anotação repete a leitura, verbo somam na frase acessível.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:55:39.022Z",
+      "impressao": "ea6dfb87a118c02fd23492fd8ae73937358ae337",
+      "arquivos": {
+        "Chart.tsx": "e9503d850e8345cbc8b078330dadc21563649647",
+        "data.ts": "65d9e69c457dd9679eb85364b718f19e9fa115de",
+        "meta.json": "ef70c5efa62b187452b2d2c75ea4c2350532ff76"
+      }
+    },
+    {
+      "versao": "v3_ganho-acumulado-por-mes-de-criacao",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 18 cohorts por 13 colunas com o número inteiro em toda célula, sem corte nos dois temas; melhor cohort calculado numa idade fixa (M6) só entre períodos fechados; zero medido em poço fora da rampa; barra de tamanho sem trilho; vazio com role=status; M0 e marcos nomeados na legenda. Observações no README: fronteiras arredondadas da legenda contradizem 0,6%, 11,0% e 14,7%; linha de leitura em duas linhas.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:55:43.733Z",
+      "impressao": "7553f58f383535f71c2967eb0db25e76079124d6",
+      "arquivos": {
+        "Chart.tsx": "42cf9f09564b545818a6866f6570469c298e92e3",
+        "data.ts": "c2dcebb078f01395adb52d703160598615c69651",
+        "meta.json": "6579877f005710d251316963fe6d9cfb1afb1d61"
+      }
+    },
+    {
+      "versao": "v1_agenda-por-cohort-mensal-de-entrada",
+      "veredito": "reprovado",
+      "nota": "P19, ACE-1 e seção 11: a frase conclui que o melhor é mar/26 com 21,5% em M5, campeão escolhido na última coluna fechada de cada linha, isto é comparando idades diferentes, e contradiz a resposta da tabela ao caso de uso (na mesma idade os cohorts recentes convertem mais); comparar numa idade fixa. P16, EST-1 e EST-1b: sem bloco role=status para data vazio, e a legenda escreve 0% e 100% pelos recuos das linhas 55 e 56. GEO-13 e ROT-8: M0 a M6 sem dizer em lugar nenhum que M é mês decorrido desde a entrada nem que a diagonal é mês de calendário. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__03_cohort-em-triangulo_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:55:47.919Z",
+      "impressao": "248e8cdaf79f325810a694cb043a67720e13c7f6",
+      "arquivos": {
+        "Chart.tsx": "2470f3b8a4eee869a6f33bc71bd5a7de09cf31c6",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    {
+      "versao": "v4_periodo-parcial-e-cohort-pequeno",
+      "veredito": "reprovado",
+      "nota": "P14, NUM-5: no modo contagem a linha rotulada Média ponderada imprime formatInt(average.booked), a soma das agendas dos cohorts fechados (M0 dá 298 contra células de 0 a 64); trocar o rótulo para total ou manter a linha em taxa. P17 e P19, ANO-5, ACE-1 e seção 11: a linha de leitura afirma que a taxa maior é a da base menor e a frase diz que o cohort ralo lidera M6 sem comparar as taxas, e a causa escrita está errada, porque a célula perde intensidade por ter menos de 30 leads; calcular a comparação e nomear o piso. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__03_cohort-em-triangulo_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:55:51.855Z",
+      "impressao": "b56364206f14a87d9a22e146a165c7ac08c31f00",
+      "arquivos": {
+        "Chart.tsx": "d181c63fea3bd74ecc080a8cd9edcee6baf1e605",
+        "data.ts": "22c8d52d95035a24072c74bfe71199a8cbce493d",
+        "meta.json": "bfe5a9bae5a1f57865fe6cae05775807c60febe4"
+      }
+    },
+    {
+      "versao": "v1_agenda-por-cohort-mensal-de-entrada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os três bloqueantes da rodada anterior estão resolvidos no arquivo de hoje: a frase compara numa idade fixa (M3, só períodos fechados: mai/26 com 21,4% contra média ponderada de 19,7%, conferido à mão); data vazio vira bloco role=status com Filter e min, max e maior tamanho saem nulos, sem recuo a 0%; a legenda diz que M0 é o mês de entrada e nomeia set/26 de calendário no tracejado. Trilho, tracejado em text-primary e borda do rodapé também saíram. Observações no README: frase de recuo com 76 caracteres, extremo 5% da legenda contra célula de 4,8% em curso, estados sem amostra.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:06:31.483Z",
+      "impressao": "a7eac728f9b28ac9da1c8ea55fcd6233d16b8444",
+      "arquivos": {
+        "Chart.tsx": "fc0c7b1dfe16755ce600ad76a63b17251c7c422f",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    {
+      "versao": "v4_periodo-parcial-e-cohort-pequeno",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os dois bloqueantes da rodada anterior estão resolvidos: no modo contagem o rodapé vira Total dos fechados e a legenda diz que é soma dos cohorts fechados em cada idade (NUM-5); linha de leitura e frase calculam maior ou menor e lidera ou marca do dado e nomeiam o piso de 30 leads. Conferido à mão: 25,0% (3 de 12) contra 19,9% (82 de 412) em M6, médias 9,9%, 22,8% e 20,0%, fronteiras e degraus da rampa. Observações no README: a frase perdeu o nome da medida (agenda), empate lê menor, total citado no modo taxa, seis escrito à mão, conta de canvas da nota velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:06:36.684Z",
+      "impressao": "cf3b16c6b61d7aabfff92fd149cbd782f68c9c82",
+      "arquivos": {
+        "Chart.tsx": "564e5b6f905ac10066f52a8eb4fe9b573b57770a",
+        "data.ts": "22c8d52d95035a24072c74bfe71199a8cbce493d",
+        "meta.json": "bfe5a9bae5a1f57865fe6cae05775807c60febe4"
+      }
+    },
+    {
+      "versao": "v1_agenda-por-cohort-mensal-de-entrada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé conferido à mão contra o data.ts: média ponderada só de jan/26 e fev/26 (800 leads) em toda coluna, 7,8 13,7 16,9 18,4 19,2 19,6 19,8%, M6 não cai mais abaixo de M5; o n aparece no rótulo, na legenda e na frase (195 caracteres). EST-1b e DAD-6: médias devolvem null e a guarda testa a lista que alimenta a conta. NUM-4 sem variação publicada; a frase compara mai/26 21,4% com 19,7% de média de 5 cohorts fechados em M3, conferido. Observações no README: frase perdeu a diagonal em curso, teste por verdade em referenceAverage, rodapé vazio sem cohort fechado em M6, chegaram em vez de fecharam, duas médias de M3 entre frase e rodapé.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:36:11.889Z",
+      "impressao": "bb08ab230ac30901b6c9e3e7d9fefa6f08a7f947",
+      "arquivos": {
+        "Chart.tsx": "09fe36d2e3d9018fc12901febeda0979e7fd746e",
+        "data.ts": "4d9238a245ca7240daee3d3e3b2f0723f3dd73c9",
+        "meta.json": "fc9325b9457786b427dd48b91672b097e896f60f"
+      }
+    },
+    {
+      "versao": "v2_mudanca-de-cadencia-entre-cohorts",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão do data.ts: antes, jan/26 e fev/26 (800 leads) em toda coluna, 7,8 13,6 16,8 18,5 19,3 19,6 19,9%; depois, mai/26 e jun/26 (999 leads) 10,5 21,3 25,3% até M2, com M3 a M6 em branco e o rótulo dizendo até M2; nenhuma queda por troca de população. EST-1b e DAD-6: média e população devolvem null, comparação por !== null, vazio com role=status. NUM-4: nenhuma variação publicada, os dois valores escritos. Observações no README: M1 comparado só com 2 dos 4 cohorts fechados antes (14,0% contra 21,4% com todos), mesmos sem antecedente, recuo sem cohort fechado, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:48.429Z",
+      "impressao": "8abb50ddb08f4d335dff19ed0dded4d44d7e9fb8",
+      "arquivos": {
+        "Chart.tsx": "d4e4187c8e0ef51c5515ad60754cf78cae2d0a58",
+        "data.ts": "65d9e69c457dd9679eb85364b718f19e9fa115de",
+        "meta.json": "220dba44b2bba57af247755ec6c5db52a976eec9"
+      }
+    },
+    {
+      "versao": "v3_ganho-acumulado-por-mes-de-criacao",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão: abr/25 a ago/25 (497 criadas, os 5 que fecharam M12) de 0,4% a 14,3%, sem queda entre colunas. Linha e frase: fev/26 com 15,7% contra 13,4% (158 de 1.181, 11 cohorts fechados em M6), conferido. As duas médias de M6 no cartão (13,4% na linha, 12,1% no rodapé) levam n e população escritos na linha, no rótulo e na legenda, e se reconciliam no próprio cartão; vai como observação. EST-1b, DAD-6 e NUM-4 conferidos. Observações no README: duas médias de M6, frase sem a diagonal em curso com mar/26 em 18,0% acima do melhor fechado, README com 800x620, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:52.049Z",
+      "impressao": "e418a9bdbec22a8633894954bb957f6db8ea6db0",
+      "arquivos": {
+        "Chart.tsx": "14e8df7cb84592b0620f52ca88cad8c346cf3c1c",
+        "data.ts": "c2dcebb078f01395adb52d703160598615c69651",
+        "meta.json": "cee654007e4075243b135616a9b177c3247880b7"
+      }
+    },
+    {
+      "versao": "v4_periodo-parcial-e-cohort-pequeno",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rodapé recalculado à mão: jan/26 e fev/26 (424 leads; mar/26 fora pelo M2 sem medição e pelo M6 em curso) 7,8 13,7 17,0 18,6 19,6 19,8 20,0%, sem queda; no modo contagem o Total soma 33 a 85 dos mesmos dois, com legenda e frase trocando média por total e soma. Linha e frase: 25,0% (3 de 12) contra 19,9% (82 de 412), lidera conferido contra o máximo da coluna fechada. EST-1b, DAD-6 e NUM-4 conferidos. Observações no README: um dos 2 cohorts do rodapé é o de 12 leads (rodapé 97% jan/26), footerCount recua para 0, nota de canvas velha.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:55.589Z",
+      "impressao": "bc50c49834b6b002124e0f1660c855cf46cfabdf",
+      "arquivos": {
+        "Chart.tsx": "6733a6798db913c8aa1bd8fa45c662c858866bc5",
+        "data.ts": "22c8d52d95035a24072c74bfe71199a8cbce493d",
+        "meta.json": "22b5e04c104177e7e924cf2bc396c5639268625a"
       }
     }
   ]

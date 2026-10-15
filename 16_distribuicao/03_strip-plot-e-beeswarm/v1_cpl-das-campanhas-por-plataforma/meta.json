@@ -6,7 +6,7 @@
     "Ponto opaco com contorno na cor da superfície, sem opacidade na marca",
     "Mediana de cada faixa como traço curto desenhado por cima dos pontos",
     "Meta de CPL em ReferenceLine com o rótulo fora da área de plotagem",
-    "n ao lado do nome da faixa e uma campanha nomeada por ponto",
+    "n ao lado do nome da faixa campanha de maior CPL nomeada no rodapé",
     "allowDuplicatedCategory desligado, sem o qual cada ponto abre uma banda nova"
   ],
   "canvas": "card",

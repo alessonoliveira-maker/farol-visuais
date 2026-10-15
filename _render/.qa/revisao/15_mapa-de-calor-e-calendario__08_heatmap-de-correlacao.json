@@ -3,15 +3,15 @@
   "modelo": "08_heatmap-de-correlacao",
   "versoes": {
     "v1_seis-medidas-de-midia": {
-      "veredito": "reprovado",
-      "nota": "Contraste do número resolvido pela pastilha em --surface-sunken e sinal de menos tipográfico conferido no preview. Volta por dois pontos. Pergunta 16, EST-1: data vazio não tem ramo, desenha um svg sem célula e mantém a régua e a legenda, sem bloco role=status; copiar o ramo das irmãs v2 a v4. Pergunta 10, TIP-2 e GEO-18: os 22 textos do svg chegam à tela em 10,05 px por escala 0,91, e três guardas de texto ficam cegas; desenhar no viewBox do corpo medido, como as irmãs. Na mesma passada: corrigir o notes do meta.json, que ainda descreve o limiar de 0,50. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__08_heatmap-de-correlacao_2026-10-05.md.",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T10:06:58.378Z",
-      "impressao": "7171181277d1182b07c172b63dec1086722a36d3",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não na segunda passada. EST-1: data vazio vira bloco role=status com Filter de 16 px e frase de 12 px, sem régua nem legenda. TIP-2 e GEO-18: viewBox de 422 x 290 num corpo de 422 x 328, escala 1, 14 textos de 11 px e 15 números de 12 px medidos pela TAMANHO-TEXTO. Sinal de menos U+2212 nos 4 negativos e na régua, pastilha mantém o contraste nos dois temas, seis medidas nomeadas. Observações no README: chave órfã da TAMANHO-TEXTO em divida-guardas.json, comentário de CHAR_W velho, nomes da frase vindos de MEASURES e não do data, peso implícito 400 no Space Grotesk, texto do catálogo a alinhar.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:25:05.909Z",
+      "impressao": "18fac7474c2c9de331955b1a50304cfeaaffe1ec",
       "arquivos": {
-        "Chart.tsx": "3d985384f4e358d74228aa73424cad9e4c78a9fb",
+        "Chart.tsx": "05a2400f33e33559d02b71efb98e286b02525193",
         "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
-        "meta.json": "d1d15a32fd8259d99a4655be96eac778f39b8384"
+        "meta.json": "e8600ab1c141e9ac55adb2ab51e56f741d705355"
       }
     },
     "v2_pares-fortes-rotulados": {
@@ -141,6 +141,19 @@
         "Chart.tsx": "d094c30683e5e791ade8031de7b07334b0f3de67",
         "data.ts": "aad8554a78be96c51295c374218615645a5f6db3",
         "meta.json": "299346c9d9ddd45b8fa600235e15a062612bed16"
+      }
+    },
+    {
+      "versao": "v1_seis-medidas-de-midia",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não na segunda passada. EST-1: data vazio vira bloco role=status com Filter de 16 px e frase de 12 px, sem régua nem legenda. TIP-2 e GEO-18: viewBox de 422 x 290 num corpo de 422 x 328, escala 1, 14 textos de 11 px e 15 números de 12 px medidos pela TAMANHO-TEXTO. Sinal de menos U+2212 nos 4 negativos e na régua, pastilha mantém o contraste nos dois temas, seis medidas nomeadas. Observações no README: chave órfã da TAMANHO-TEXTO em divida-guardas.json, comentário de CHAR_W velho, nomes da frase vindos de MEASURES e não do data, peso implícito 400 no Space Grotesk, texto do catálogo a alinhar.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:25:05.909Z",
+      "impressao": "18fac7474c2c9de331955b1a50304cfeaaffe1ec",
+      "arquivos": {
+        "Chart.tsx": "05a2400f33e33559d02b71efb98e286b02525193",
+        "data.ts": "9bcc7b0f0656b0bee501b58414762399ebace6d2",
+        "meta.json": "e8600ab1c141e9ac55adb2ab51e56f741d705355"
       }
     }
   ]

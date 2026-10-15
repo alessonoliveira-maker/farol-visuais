@@ -1,3 +1,4 @@
+import { Filter } from 'lucide-react';
 import { ReferenceLine, ResponsiveContainer, Scatter, ScatterChart, XAxis, YAxis, ZAxis } from 'recharts';
 
 import { AXIS_PROPS } from '@/components/visuals/charts/chartTheme';
@@ -98,6 +99,13 @@ export default function CplStripPlot({
   const above = kinds.reduce((sum, kind) => sum + kind.above, 0);
   const priciest = measured[0];
   const cheapest = measured[measured.length - 1];
+  /** Caso extremo: a campanha de maior CPL, com nome e faixa, porque o ponto isolado é o procurado. */
+  const worst = kinds
+    .flatMap((kind) => kind.campaigns.map((campaign) => ({ ...campaign, kind: kind.name })))
+    .reduce<{ name: string; cpl: number; kind: string } | null>(
+      (top, item) => (top === null || item.cpl > top.cpl ? item : top),
+      null,
+    );
 
   /** Cauda da frase de ordem: a faixa sem mediana não entra na ordenação por valor e vai para o fim. */
   const orderTail =
@@ -108,10 +116,27 @@ export default function CplStripPlot({
       ? `Strip plot de custo por lead com ${formatInt(kinds.length)} tipos de mídia e nenhuma campanha medida: a mediana de cada faixa fica ${formatUnavailable()}.`
       : `Custo por lead de ${formatInt(all.length)} campanhas do trimestre, distribuídas em ${formatInt(kinds.length)} tipos de mídia. ` +
         `A mediana vai de ${formatCurrency(cheapest.middle, 0)} em ${cheapest.name} a ${formatCurrency(priciest.middle, 0)} em ${priciest.name}. ` +
-        `${formatInt(above)} campanhas passam da meta de ${formatCurrency(target, 0)} por lead.` +
+        `${formatInt(above)} campanhas passam da meta de ${formatCurrency(target, 0)} por lead` +
+        (worst === null ? '.' : `; a mais cara é ${worst.name}, com ${formatCurrency(worst.cpl, 0)}.`) +
         (unmeasured.length === 0
           ? ''
           : ` ${formatInt(unmeasured.length)} sem campanha no recorte ficam com a mediana ${formatUnavailable()}.`);
+
+  if (all.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 flex-col items-start justify-center gap-2', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="size-4 text-text-muted" />
+        <p className="text-xs text-text-muted">
+          O recorte não tem campanha com lead, então não há custo por lead a distribuir nem mediana por
+          tipo de mídia a comparar.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <figure
@@ -224,6 +249,9 @@ export default function CplStripPlot({
         </span>
         <span>um ponto é uma campanha; pontos sobrepostos aparecem separados por contorno claro</span>
         <span className="tabular-nums">{`${formatInt(above)} campanhas acima da meta de ${formatCurrency(target, 0)}`}</span>
+        {worst === null ? null : (
+          <span className="tabular-nums">{`maior CPL: ${worst.name} (${worst.kind}), ${formatCurrency(worst.cpl, 0)}`}</span>
+        )}
         {withoutLeads <= 0 ? null : (
           <span className="tabular-nums">{`${formatInt(withoutLeads)} campanhas sem nenhum lead ficaram fora`}</span>
         )}

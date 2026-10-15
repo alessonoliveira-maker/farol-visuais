@@ -13,6 +13,42 @@
         "data.ts": "8c5f980462f5526b604ea446a4cfd2f5b6350c1c",
         "meta.json": "95d405ed78b364d13e2d615d08e326732195b292"
       }
+    },
+    "v2_sdrs-diferentes-do-time": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, semBase contado na linha, no rodapé e na frase (211 caracteres, 239 com um SDR sem lead). Check limpo, fidelidade 0,00% nos dois temas, Wilson e vereditos recalculados, halo sem cortar serifa. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:00.834Z",
+      "impressao": "ef96834d704c7c4f5f1581798165799c0d85e00f",
+      "arquivos": {
+        "Chart.tsx": "9627a6e8da30d98d59e64cb5da78033902d2bf9b",
+        "data.ts": "48e37dd99ae7b0488442e333af6e4d3949f3b010",
+        "meta.json": "b7cc572766d88795905e742dec6bdb61fa13e5b0"
+      }
+    },
+    "v3_canais-com-erro-nos-dois-eixos": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, veredito da linha calculado em três ramos (mesmo canal, intervalos separados, sobrepostos); no dado padrão E-mail vai a 39,1% e Parcerias parte de 39,2%. Check limpo, fidelidade 0,09% e 0,10%, rótulos sem corte nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:06.906Z",
+      "impressao": "32002884b4cdb31020492a4140dbb9813e72309a",
+      "arquivos": {
+        "Chart.tsx": "1ffd4d2e61de1a3d7b15d8c4f26421680f3aa86e",
+        "data.ts": "3a8fa4db8dab790453d05ac5d48ed35330e54c41",
+        "meta.json": "92fced3de64ee869b30cf9e4daa08f29a531bee6"
+      }
+    },
+    "v4_amostra-minima": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueantes resolvidos, semLead somado ao piso na linha, na frase (244 caracteres no ramo) e no rodapé, e a oração do custo condicionada a temCusto. Check limpo. Fidelidade 0,77% e 0,83% pelo glifo do rodapé e eixo a 105% com escasso em 100% ficaram como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:07.530Z",
+      "impressao": "f24a5c50402163d1c07b88a129157317af4f2dd8",
+      "arquivos": {
+        "Chart.tsx": "8b566850873b9ae785a46738b49a8e1467a0ba3e",
+        "data.ts": "4747c220ca4bddaf797c04e80340319872e0380c",
+        "meta.json": "acf7d874d446dc4d2e4a27c98fe070ae1769b23f"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,84 @@
         "Chart.tsx": "44018be52ed9f9791ee2ad37947d82fee313186f",
         "data.ts": "8c5f980462f5526b604ea446a4cfd2f5b6350c1c",
         "meta.json": "95d405ed78b364d13e2d615d08e326732195b292"
+      }
+    },
+    {
+      "versao": "v2_sdrs-diferentes-do-time",
+      "veredito": "reprovado",
+      "nota": "P8, EST-4 e DAD-2 (14.1 ausencia): SDR com zero lead trabalhado sai do plano pelo continue de Chart.tsx:329 sem contagem, e linha e frase descrevem um time menor que o recorte; contar os sem base (semBase) e escrever a contagem no rodape e na frase acessivel, como a v3 faz com semSerie. Parecer em validation/revisao_09_dispersao-e-bolhas__07_dispersao-com-barras-de-erro_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:01:16.518Z",
+      "impressao": "ba30a711a3df303f837593f620dbf112a1bbc528",
+      "arquivos": {
+        "Chart.tsx": "df5839002bf2ecaf8768b0706fdf7d629154a27c",
+        "data.ts": "48e37dd99ae7b0488442e333af6e4d3949f3b010",
+        "meta.json": "b7cc572766d88795905e742dec6bdb61fa13e5b0"
+      }
+    },
+    {
+      "versao": "v3_canais-com-erro-nos-dois-eixos",
+      "veredito": "reprovado",
+      "nota": "P17, ANO-5 (14.1 o que o desenho afirma): o veredito 'mais barato não é mais qualificado' de Chart.tsx:331 é texto fixo; com o mais barato também na melhor taxa a linha se contradiz (E-mail contra E-mail), e com os intervalos de Wilson sobrepostos afirma uma diferença que as barras não sustentam; calcular o veredito do dado e dos limites. Parecer em validation/revisao_09_dispersao-e-bolhas__07_dispersao-com-barras-de-erro_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:01:29.368Z",
+      "impressao": "5df550cb41ce348c200e3661ed9e84aa330e4026",
+      "arquivos": {
+        "Chart.tsx": "30a192b660d0f447b58b6a7c3ea41fa4d6a464c7",
+        "data.ts": "3a8fa4db8dab790453d05ac5d48ed35330e54c41",
+        "meta.json": "92fced3de64ee869b30cf9e4daa08f29a531bee6"
+      }
+    },
+    {
+      "versao": "v4_amostra-minima",
+      "veredito": "reprovado",
+      "nota": "P8, EST-4 e DAD-2 (14.1 ausência): canal com zero lead sai pelo continue de Chart.tsx:271 sem contagem, e '2 de 8 canais abaixo do piso' fica falso com um nono canal sem lead; contar os sem lead, escrever no rodapé e somar ao piso. P17 e P19, ANO-5 e ACE-1: a oração do custo sai sem condição e escreve 'o eixo para em 45% e não em 45%' quando nenhum escasso passa do teto dos medidos; condicionar a tetoSeContasse > domainYMax. Parecer em validation/revisao_09_dispersao-e-bolhas__07_dispersao-com-barras-de-erro_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:01:37.446Z",
+      "impressao": "75ef295b04ee0147ed56fcf8f8bc2090241c3c70",
+      "arquivos": {
+        "Chart.tsx": "838aac3d57aa1eaa3f7f5bb26476390525b27bf1",
+        "data.ts": "4747c220ca4bddaf797c04e80340319872e0380c",
+        "meta.json": "acf7d874d446dc4d2e4a27c98fe070ae1769b23f"
+      }
+    },
+    {
+      "versao": "v2_sdrs-diferentes-do-time",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, semBase contado na linha, no rodapé e na frase (211 caracteres, 239 com um SDR sem lead). Check limpo, fidelidade 0,00% nos dois temas, Wilson e vereditos recalculados, halo sem cortar serifa. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:00.834Z",
+      "impressao": "ef96834d704c7c4f5f1581798165799c0d85e00f",
+      "arquivos": {
+        "Chart.tsx": "9627a6e8da30d98d59e64cb5da78033902d2bf9b",
+        "data.ts": "48e37dd99ae7b0488442e333af6e4d3949f3b010",
+        "meta.json": "b7cc572766d88795905e742dec6bdb61fa13e5b0"
+      }
+    },
+    {
+      "versao": "v3_canais-com-erro-nos-dois-eixos",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, veredito da linha calculado em três ramos (mesmo canal, intervalos separados, sobrepostos); no dado padrão E-mail vai a 39,1% e Parcerias parte de 39,2%. Check limpo, fidelidade 0,09% e 0,10%, rótulos sem corte nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:06.906Z",
+      "impressao": "32002884b4cdb31020492a4140dbb9813e72309a",
+      "arquivos": {
+        "Chart.tsx": "1ffd4d2e61de1a3d7b15d8c4f26421680f3aa86e",
+        "data.ts": "3a8fa4db8dab790453d05ac5d48ed35330e54c41",
+        "meta.json": "92fced3de64ee869b30cf9e4daa08f29a531bee6"
+      }
+    },
+    {
+      "versao": "v4_amostra-minima",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueantes resolvidos, semLead somado ao piso na linha, na frase (244 caracteres no ramo) e no rodapé, e a oração do custo condicionada a temCusto. Check limpo. Fidelidade 0,77% e 0,83% pelo glifo do rodapé e eixo a 105% com escasso em 100% ficaram como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:15:07.530Z",
+      "impressao": "f24a5c50402163d1c07b88a129157317af4f2dd8",
+      "arquivos": {
+        "Chart.tsx": "8b566850873b9ae785a46738b49a8e1467a0ba3e",
+        "data.ts": "4747c220ca4bddaf797c04e80340319872e0380c",
+        "meta.json": "acf7d874d446dc4d2e4a27c98fe070ae1769b23f"
       }
     }
   ]

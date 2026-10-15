@@ -75,9 +75,11 @@ function CenterLabel({ value, target }: CenterLabelProps): ReactElement | null {
   if (width <= 0 || height <= 0) return null;
   const cx = width / 2;
   const cy = height * CY_FRACTION;
+  /** Tinta a mais de 4 px da borda interna da banda (raio ~28% da altura); três algarismos descem de corpo. */
+  const valueSize = formatInt(value).length > 2 ? 20 : 26;
   return (
     <g aria-hidden>
-      <text className="font-display" fill="var(--text-primary)" fontSize={30} fontWeight={600} textAnchor="middle" x={cx} y={cy - 6}>
+      <text className="font-display" fill="var(--text-primary)" fontSize={valueSize} fontWeight={600} textAnchor="middle" x={cx} y={cy - 1}>
         {formatInt(value)}
       </text>
       <text className="font-sans" fill="var(--text-muted)" fontSize={12} textAnchor="middle" x={cx} y={cy + 16}>
@@ -116,7 +118,6 @@ export default function MonthlyGoalArc({ data = defaultData, height, className }
           >
             <PolarAngleAxis domain={[0, target]} tick={false} type="number" />
             <EndLabels max={target} min={0} />
-            <CenterLabel target={target} value={value} />
             <RadialBar
               background={{ fill: 'var(--surface-sunken)' }}
               cornerRadius={cornerRadius}
@@ -124,6 +125,7 @@ export default function MonthlyGoalArc({ data = defaultData, height, className }
               fill="var(--chart-1)"
               isAnimationActive={animate}
             />
+            <CenterLabel target={target} value={value} />
           </RadialBarChart>
         </ResponsiveContainer>
       </div>

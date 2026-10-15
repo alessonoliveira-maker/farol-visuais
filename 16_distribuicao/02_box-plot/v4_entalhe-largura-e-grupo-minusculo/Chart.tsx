@@ -72,6 +72,8 @@ interface KindRow {
   readonly notch: number | null;
   /** Verdadeiro quando o entalhe passa de um dos quartis e precisa ser cortado. */
   readonly notchClipped: boolean;
+  /** Valores além das cercas de Tukey, desenhados como pontos na banda do grupo. Vazio sem caixa. */
+  readonly beyond: readonly number[];
 }
 
 const MARGIN = { top: 22, right: 12, bottom: 4, left: 4 } as const;
@@ -147,6 +149,13 @@ function summarize(kind: MediaKind, minBoxN: number): KindRow {
     box,
     median,
     values: sorted,
+    beyond:
+      box === null
+        ? []
+        : sorted.filter(
+            (value) =>
+              value < box.q1 - FENCE_FACTOR * (box.q3 - box.q1) || value > box.q3 + FENCE_FACTOR * (box.q3 - box.q1),
+          ),
     notch,
     notchClipped:
       box === null || notch === null
@@ -202,9 +211,7 @@ function GroupAnnotations({ rows }: { readonly rows: readonly KindRow[] }) {
             </text>
             {/* Grupo sem caixa: cada campanha como ponto, e nada mais. Caixa sobre quatro casos
                 afirmaria uma metade central que é praticamente a amostra inteira. */}
-            {row.box !== null
-              ? null
-              : row.values.map((value, index) => {
+            {(row.box !== null ? row.beyond : row.values).map((value, index) => {
                   const cy = yScale(value);
                   if (cy === undefined) return null;
                   return (
@@ -267,6 +274,7 @@ export default function NotchedCplBoxPlot({
   );
   const withoutBox = rows.filter((row) => row.box === null);
   const clipped = rows.filter((row) => row.notchClipped);
+  const beyondCount = rows.reduce((sum, row) => sum + row.beyond.length, 0);
 
   /** O menor e o maior `n` com caixa, que são os dois degraus da régua de largura. Nunca constante. */
   const nSmallest = withBox.reduce<number | null>(
@@ -478,6 +486,11 @@ export default function NotchedCplBoxPlot({
         </span>
         {clipped.length === 0 ? null : (
           <span>{`entalhe tracejado: amostra pequena para ele caber na caixa, e por isso cortado nos quartis`}</span>
+        )}
+        {beyondCount === 0 ? null : (
+          <span className="tabular-nums">
+            {`${formatInt(beyondCount)} ${beyondCount === 1 ? 'campanha ficou além da cerca e aparece' : 'campanhas ficaram além da cerca e aparecem'} como ponto`}
+          </span>
         )}
         {withoutBox.length === 0 ? null : (
           <span className="tabular-nums">

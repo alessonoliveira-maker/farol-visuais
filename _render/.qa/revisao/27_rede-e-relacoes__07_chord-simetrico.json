@@ -15,13 +15,13 @@
       }
     },
     "v2_produto-mais-associado-ao-credito-estruturado": {
-      "veredito": "reprovado",
-      "nota": "Segunda passada. Pergunta 12, ROT-2 com a seção 14.1 (identificação das marcas): no canvas alto a caixa da roda mede cerca de 331 por 425 px, o SVG desenha num quadrado de 331 e a camada de rótulos estica na altura; a tinta dos rótulos fica de 15 a 45 px do anel (10 a 13 na v1) e o rótulo Outros fica à mesma distância do arco de Cartão e do arco de Outros (38,9 e 39,0 px), com os seis arcos na mesma cor. Mudar: caixa quadrada nos dois limites, lado igual ao menor entre largura e altura do pai. Pergunta 14, seção 8 e o que demonstra: o percentual do painel e da frase acessível sai de String com o sinal à mão, e meta.json e README dizem formatPercent; usar formatPercent(x / 100, 0) mantendo o maior resto. Parecer na seção Segunda passada de validation/revisao_27_rede-e-relacoes__07_chord-simetrico_2026-10-13.md.",
-      "data": "2026-10-13",
-      "registradoEm": "2026-10-13T21:47:05.268Z",
-      "impressao": "d5a06e53f3dd18e03ccafdf1cbb53e226c2f5591",
+      "veredito": "aprovado",
+      "nota": "Terceira passada, sem bloqueante. Caixa da roda quadrada nos dois limites (334 por 334 px no alto, container query): as sete âncoras a 105,2 px do centro, nenhum desvio, e a tinta de cada rótulo fica de 14,6 a 18,1 px do próprio arco nos dois temas, sempre mais perto dele que de qualquer vizinho (menor margem em Outros, 18,0 contra 22,0). Percentual do painel e da frase por formatPercent sobre o maior resto: 44, 27, 19, 5, 4 e 1, soma 100, frase de 175 caracteres. check 0 erros, render 0,17% nos dois temas. Observações no README: R_LABEL em unidade do viewBox, canvas alto mantido pela GEO-1 com cerca de 87 px de sobra, kpi-number sem peso (TIP-4) e redação das pendências.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:41:56.673Z",
+      "impressao": "e3a0f6869ae176dc28070efe047e30fe2debdaef",
       "arquivos": {
-        "Chart.tsx": "317fdc2949a192a9ef6f46778cea94b5d895712d",
+        "Chart.tsx": "7ce753a7e38f8b0cdddaf2e9e1f6e050d733ac22",
         "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
         "meta.json": "4d0fced7eba5d5e5514f6c849390e4e82c6735ff"
       }
@@ -126,6 +126,19 @@
       "impressao": "d5a06e53f3dd18e03ccafdf1cbb53e226c2f5591",
       "arquivos": {
         "Chart.tsx": "317fdc2949a192a9ef6f46778cea94b5d895712d",
+        "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
+        "meta.json": "4d0fced7eba5d5e5514f6c849390e4e82c6735ff"
+      }
+    },
+    {
+      "versao": "v2_produto-mais-associado-ao-credito-estruturado",
+      "veredito": "aprovado",
+      "nota": "Terceira passada, sem bloqueante. Caixa da roda quadrada nos dois limites (334 por 334 px no alto, container query): as sete âncoras a 105,2 px do centro, nenhum desvio, e a tinta de cada rótulo fica de 14,6 a 18,1 px do próprio arco nos dois temas, sempre mais perto dele que de qualquer vizinho (menor margem em Outros, 18,0 contra 22,0). Percentual do painel e da frase por formatPercent sobre o maior resto: 44, 27, 19, 5, 4 e 1, soma 100, frase de 175 caracteres. check 0 erros, render 0,17% nos dois temas. Observações no README: R_LABEL em unidade do viewBox, canvas alto mantido pela GEO-1 com cerca de 87 px de sobra, kpi-number sem peso (TIP-4) e redação das pendências.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:41:56.673Z",
+      "impressao": "e3a0f6869ae176dc28070efe047e30fe2debdaef",
+      "arquivos": {
+        "Chart.tsx": "7ce753a7e38f8b0cdddaf2e9e1f6e050d733ac22",
         "data.ts": "ce6163dac6b05580d4ef1ed3a1ffa32713e6b6da",
         "meta.json": "4d0fced7eba5d5e5514f6c849390e4e82c6735ff"
       }

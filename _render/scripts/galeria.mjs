@@ -16,6 +16,7 @@ import { readReadmeSummary } from './lib/contract.mjs';
 import { buildFontFaces } from './lib/fonts.mjs';
 import { readMeta, readPreviewStamps, sourceHash, tokensHash } from './lib/meta.mjs';
 import { APP_SRC, EXAMPLES_DIR, VISUAIS_DIR, findVersions, splitVersion, toPosix, writeFileAtomic } from './lib/paths.mjs';
+import { fingerprint, readReviews, reviewProblem } from './lib/revisao.mjs';
 
 const OUTPUT = path.join(VISUAIS_DIR, 'galeria.html');
 
@@ -60,7 +61,24 @@ function previewState(versionAbs) {
   return { key: 'ok', label: 'preview em dia' };
 }
 
+/**
+ * Veredito da revisão, lido de `_render/.qa/revisao/<familia>__<modelo>.json` e preso ao sha1 atual dos
+ * três arquivos, pela mesma régua do `pendencias`. Existe porque a galeria é a vitrine de quem cola no
+ * Farol, e a replicação só pode colar versão aprovada: até 2026-10-15 a página não dizia qual era qual,
+ * e 30 versões reprovadas em pendência conhecida apareciam iguais às 784 aprovadas.
+ */
+function reviewState(versionAbs, family, model, reviewsByModel) {
+  const key = `${family}/${model}`;
+  if (!reviewsByModel.has(key)) reviewsByModel.set(key, readReviews(family, model));
+  const problem = reviewProblem(reviewsByModel.get(key), path.basename(versionAbs), fingerprint(versionAbs).sha1);
+  if (problem === 'sem_revisao') return { key: 'sem', label: 'sem veredito' };
+  if (problem === 'revisao_desatualizada') return { key: 'velho', label: 'veredito desatualizado' };
+  if (problem === 'revisao_reprovada') return { key: 'reprovado', label: 'reprovada, pendência conhecida' };
+  return { key: 'aprovado', label: 'aprovada' };
+}
+
 function collect(versions) {
+  const reviewsByModel = new Map();
   const families = new Map();
   for (const version of versions) {
     const { family, model } = splitVersion(version.rel);
@@ -97,6 +115,8 @@ function collect(versions) {
       meta: draft ?? { title: titleFromSlug(path.basename(version.abs)), useCase: '', demonstrates: [], canvas: null },
       metaErrors: errors,
       state: previewState(version.abs),
+      // Molde de `_render/exemplos` não passa por revisão: só versão do catálogo recebe veredito.
+      review: version.abs.startsWith(EXAMPLES_DIR) ? null : reviewState(version.abs, family, model, reviewsByModel),
       hasLight: fs.existsSync(path.join(version.abs, 'preview-claro.svg')),
     });
   }
@@ -115,11 +135,13 @@ function versionCard(version) {
     .filter((name) => fs.existsSync(path.join(version.abs, name)))
     .map((name) => `<a href="${href(path.join(version.abs, name))}">${name}</a>`)
     .join('');
-  const search = [meta.title, meta.useCase, ...(meta.demonstrates ?? []), version.rel].join(' ').toLowerCase();
+  // O veredito entra no texto de busca: digitar "reprovada" ou "aprovada" filtra a galeria por ele.
+  const search = [meta.title, meta.useCase, ...(meta.demonstrates ?? []), version.rel, version.review?.label ?? ''].join(' ').toLowerCase();
+  const review = version.review ? `<span class="estado veredito-${version.review.key}">${escapeHtml(version.review.label)}</span>` : '';
   return `<article class="versao" id="${escapeHtml(version.rel)}" data-busca="${escapeHtml(search)}">
   <div class="quadro">${img}</div>
   <div class="texto">
-    <p class="rotulo"><span class="slug">${escapeHtml(version.slug)}</span><span class="estado estado-${version.state.key}">${escapeHtml(version.state.label)}</span></p>
+    <p class="rotulo"><span class="slug">${escapeHtml(version.slug)}</span>${review}<span class="estado estado-${version.state.key}">${escapeHtml(version.state.label)}</span></p>
     <h4>${escapeHtml(meta.title)}</h4>
     <p class="caso">${escapeHtml(meta.useCase)}</p>
     ${demonstrates ? `<ul class="demonstra">${demonstrates}</ul>` : ''}
@@ -200,6 +222,7 @@ main{padding:24px 32px 80px;min-width:0}
 .rotulo{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0}
 .estado{font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;border:1px solid currentColor}
 .estado-ok{color:var(--positive)}.estado-tokens{color:var(--warning)}.estado-velho,.estado-ausente{color:var(--negative)}
+.veredito-aprovado{color:var(--positive)}.veredito-sem,.veredito-velho{color:var(--warning)}.veredito-reprovado{color:var(--negative);background:var(--surface-sunken)}
 .caso{color:var(--text-secondary);margin:0 0 10px;font-size:14px}
 .demonstra{margin:0 0 12px;padding-left:18px;color:var(--text-secondary);font-size:13px}.demonstra li{margin:2px 0}
 .rodape{display:flex;gap:12px;flex-wrap:wrap;align-items:baseline;margin:0;font-size:13px}.rodape span{color:var(--text-muted)}

@@ -237,7 +237,7 @@ export default function HourClockHeatmap({
 
   const summary =
     `Relógio de ${formatInt(RING_COUNT)} anéis por ${formatInt(HOURS_IN_DAY)} horas com as entradas de lead por hora, segunda no centro e domingo na borda. ` +
-    `A janela das ${formatHours(firstPeakHour)} às ${formatHours(lastPeakHour)} soma ${share}, ` +
+    `A janela das ${formatHours(firstPeakHour)} às ${formatHours(lastPeakHour)} soma ${share} das entradas de uma semana média, ` +
     `e a maior célula é ${DAY_LABELS[hottest.day].toLowerCase()} às ${formatHours(hottest.hour)}, ${formatDecimal(hottest.value, 1)}.`;
 
   return (
@@ -254,7 +254,7 @@ export default function HourClockHeatmap({
           <tspan className="font-display font-semibold" fill="var(--text-primary)">
             {share}
           </tspan>{' '}
-          das entradas de um dia médio.
+          das entradas de uma semana média.
         </text>
 
         {DAY_ORDER.flatMap((day: WeekDay, ringIndex) => {
@@ -355,8 +355,9 @@ export default function HourClockHeatmap({
         </text>
         {BAND_COLORS.map((color, index) => {
           const y = BAND_FIRST + index * BAND_STEP;
-          const floor = index === 0 ? 0 : (edges[index - 1] ?? 0);
-          const roof = index === BAND_COUNT - 1 ? ceiling : (edges[index] ?? ceiling);
+          const inBand = measured.map((cell) => cell.value).filter((v) => v > 0 && bandOf(v, edges) === index);
+          const floor = inBand.length === 0 ? null : Math.min(...inBand);
+          const roof = maxOf(inBand);
           return (
             <g key={`band-${String(index)}`}>
               <rect
@@ -375,7 +376,9 @@ export default function HourClockHeatmap({
                 x={LIST_X + BAND_SWATCH_W + 6}
                 y={y}
               >
-                {formatDecimal(floor, 1)} a {formatDecimal(roof, 1)}
+                {floor === null || roof === null
+                  ? formatUnavailable()
+                  : `${formatDecimal(floor, 1)} a ${formatDecimal(roof, 1)}`}
               </text>
             </g>
           );

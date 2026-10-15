@@ -13,6 +13,42 @@
         "data.ts": "1834232069e6740b7fae7f6bdfab2fd972032d9a",
         "meta.json": "31cd65ab9020c44afc47d5f57612235ec7dd1d23"
       }
+    },
+    "v2_ramo-indicacao-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Pergunta 6 resolvida: maior resto dá 35, 27, 16, 12 e 10, soma 100, o mesmo inteiro na lista, no centro, na linha de leitura e na frase. As 32 perguntas passam nos dois temas; rótulo com halo segue como dívida conhecida da TEXTO-NA-MARCA. Observações não bloqueantes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:24:28.317Z",
+      "impressao": "5ed2f46ec2b240ab18621cb84ca330794d433235",
+      "arquivos": {
+        "Chart.tsx": "6785a4d35830a99969b57f4c4dfb2286df04b65c",
+        "data.ts": "3283238006c5127255a8b4f4a74ec0f94f4ac41f",
+        "meta.json": "fdd6f7a07920eb219a52c2ceff0a8c8a8c97bf86"
+      }
+    },
+    "v3_motivos-de-perda-com-detalhamento": {
+      "veredito": "aprovado",
+      "nota": "Perguntas 6 e 16 resolvidas: aberto imprime 59, 28 e 13 e a raiz 39, 27, 15, 12 e 7. Montado em bancada: ramo aberto vazio, zerado ou removido volta à raiz com Sem perfil 0% 0 na lista; dado todo zerado ou vazio cai no bloco role=status; descida pela lista e Voltar funcionam. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:24:29.090Z",
+      "impressao": "d8ce5172f63076bae3d2de50419c0c053903b121",
+      "arquivos": {
+        "Chart.tsx": "374ddfe2a1ea875613cee700644fa3a03bc17503",
+        "data.ts": "1a6c6040dc2e8ef7cebdbb0e8615c0eac2c7c357",
+        "meta.json": "e89a3491474052d975dd80cdaa1d7c86cd98824a"
+      }
+    },
+    "v4_subcanais-finos-agrupados": {
+      "veredito": "aprovado",
+      "nota": "Preparo confere com o dado (13 subcanais agrupados com piso de 4% derivado da geometria do rótulo, 100 entradas em Não classificado), percentuais somam 100, ausência por último em vazado com contorno de 3:1 e palavra no rodapé, toda parte nomeada na lista. Observações não bloqueantes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:11:02.215Z",
+      "impressao": "9f1971f0f069893dacd9b85d70a9fbeea5abe4e7",
+      "arquivos": {
+        "Chart.tsx": "75a8974c873ccc5263ef333a99c66fd15e33e957",
+        "data.ts": "3cf49d7ed66afb8a357509e482fd3e40537f6dfc",
+        "meta.json": "543744d010a882d94d995233e579c7aa456e588a"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,71 @@
         "Chart.tsx": "cf9ecc7927f875104c80507234cc486bc135d7c7",
         "data.ts": "1834232069e6740b7fae7f6bdfab2fd972032d9a",
         "meta.json": "31cd65ab9020c44afc47d5f57612235ec7dd1d23"
+      }
+    },
+    {
+      "versao": "v2_ramo-indicacao-em-destaque",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6, NUM-2: percentuais impressos das origens somam 99 (35, 27, 15, 12, 10), formatPercent um a um em Chart.tsx:183; repartir pelo maior resto (Orgânico 16%) numa função pura com null para total não positivo e usar o mesmo inteiro na lista, no centro, na linha de leitura e na frase. Parecer em validation/revisao_12_hierarquia__03_sunburst_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:10:53.348Z",
+      "impressao": "78c7a904682f45ce87aa1cdae43196ee64cd028f",
+      "arquivos": {
+        "Chart.tsx": "c5453186175600a5c29530ce9e2c3527bbfa9c3d",
+        "data.ts": "3283238006c5127255a8b4f4a74ec0f94f4ac41f",
+        "meta.json": "fdd6f7a07920eb219a52c2ceff0a8c8a8c97bf86"
+      }
+    },
+    {
+      "versao": "v3_motivos-de-perda-com-detalhamento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 6, NUM-2: aberto em Sem perfil imprime 58, 28 e 13 (soma 99); maior resto dá 59, 28 e 13, mesmo inteiro na lista, linha de leitura e frase. Pergunta 16, EST-1 e item do catálogo de voltar à raiz: ramo aberto vazio (submotivos [] ou zerados) cai no bloco de vazio que diz não haver perda no recorte e some com trilha e Voltar; resolveOpen deve exigir soma maior que 0, descer exige valor maior que 0, vazio testa o dado inteiro. Parecer em validation/revisao_12_hierarquia__03_sunburst_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:11:00.560Z",
+      "impressao": "1c4f3f9c9fe31ef3dc16c9e6fd4505fd28be4607",
+      "arquivos": {
+        "Chart.tsx": "421a8f5f28b05f6b1cc5211d3409fc061eb7babe",
+        "data.ts": "1a6c6040dc2e8ef7cebdbb0e8615c0eac2c7c357",
+        "meta.json": "e89a3491474052d975dd80cdaa1d7c86cd98824a"
+      }
+    },
+    {
+      "versao": "v4_subcanais-finos-agrupados",
+      "veredito": "aprovado",
+      "nota": "Preparo confere com o dado (13 subcanais agrupados com piso de 4% derivado da geometria do rótulo, 100 entradas em Não classificado), percentuais somam 100, ausência por último em vazado com contorno de 3:1 e palavra no rodapé, toda parte nomeada na lista. Observações não bloqueantes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:11:02.215Z",
+      "impressao": "9f1971f0f069893dacd9b85d70a9fbeea5abe4e7",
+      "arquivos": {
+        "Chart.tsx": "75a8974c873ccc5263ef333a99c66fd15e33e957",
+        "data.ts": "3cf49d7ed66afb8a357509e482fd3e40537f6dfc",
+        "meta.json": "543744d010a882d94d995233e579c7aa456e588a"
+      }
+    },
+    {
+      "versao": "v2_ramo-indicacao-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Pergunta 6 resolvida: maior resto dá 35, 27, 16, 12 e 10, soma 100, o mesmo inteiro na lista, no centro, na linha de leitura e na frase. As 32 perguntas passam nos dois temas; rótulo com halo segue como dívida conhecida da TEXTO-NA-MARCA. Observações não bloqueantes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:24:28.317Z",
+      "impressao": "5ed2f46ec2b240ab18621cb84ca330794d433235",
+      "arquivos": {
+        "Chart.tsx": "6785a4d35830a99969b57f4c4dfb2286df04b65c",
+        "data.ts": "3283238006c5127255a8b4f4a74ec0f94f4ac41f",
+        "meta.json": "fdd6f7a07920eb219a52c2ceff0a8c8a8c97bf86"
+      }
+    },
+    {
+      "versao": "v3_motivos-de-perda-com-detalhamento",
+      "veredito": "aprovado",
+      "nota": "Perguntas 6 e 16 resolvidas: aberto imprime 59, 28 e 13 e a raiz 39, 27, 15, 12 e 7. Montado em bancada: ramo aberto vazio, zerado ou removido volta à raiz com Sem perfil 0% 0 na lista; dado todo zerado ou vazio cai no bloco role=status; descida pela lista e Voltar funcionam. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:24:29.090Z",
+      "impressao": "d8ce5172f63076bae3d2de50419c0c053903b121",
+      "arquivos": {
+        "Chart.tsx": "374ddfe2a1ea875613cee700644fa3a03bc17503",
+        "data.ts": "1a6c6040dc2e8ef7cebdbb0e8615c0eac2c7c357",
+        "meta.json": "e89a3491474052d975dd80cdaa1d7c86cd98824a"
       }
     }
   ]

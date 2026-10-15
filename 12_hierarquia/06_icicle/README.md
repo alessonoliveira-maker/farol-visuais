@@ -96,7 +96,10 @@ desenhada em SVG puro, sem biblioteca de layout.
   os seis nós ganham rótulo direto; os ancestrais viram duas faixas finas no topo, a raiz com o
   total e o ramo com a posição dentro dela mais `28,7% (47 de 164) das perdas`. O ramo aberto é
   declarado no `data.ts` (`zoomedPath`), porque estado de interação não chega ao preview; clique num
-  ancestral volta para aquele nível e a tecla Escape volta à raiz. Previews:
+  ancestral volta para aquele nível e a tecla Escape volta à raiz. A raiz também cabe: canvas
+  640x1000, três colunas com larguras 150, 202 e 202, desenho de 600 px em escala 1 e lista de
+  identificação por categoria e motivo (os submotivos recuados sob o motivo), com a cor de cada
+  categoria no mesmo slot nos dois estados (Concorrência é sempre `--chart-3`). Previews:
   [preview.svg](./v2_ramo-concorrencia-ampliado/preview.svg) (escuro) e
   [preview-claro.svg](./v2_ramo-concorrencia-ampliado/preview-claro.svg) (claro).
 - `v3_investimento-da-plataforma-ao-criativo`: orientação vertical com quatro faixas, cor por
@@ -248,6 +251,66 @@ versão.
   sobre as categóricas fora da `--chart-1`) e os dois previews mostram a marca destacada do cartão,
   mas a tabela de papéis não tem linha para esse uso.
 
+Revisão de 2026-10-14 (`v2`, `v3` e `v4`; a `v2` foi reprovada pelo estado raiz, com parecer em
+`validation/revisao_12_hierarquia__06_icicle_2026-10-14.md`; o que segue não reprova):
+
+- `v2`, `v3` e `v4` (TIP-1): os números da linha de leitura ("62% das 47 perdas", "42% do
+  investimento", "49% das 127 perdas") saem em Manrope sem `tabular-nums`.
+- `v2` (NUM-1): a trilha escreve "28,7% (47 de 164)" com uma casa, e a linha de leitura escreve
+  "62%" inteiro; as duas são participação no todo e pediriam a mesma precisão, a inteira.
+- `v2` e `v4` (ESP-3): a coluna da esquerda nasce em `x = 0` e a da direita termina em `x = VIEW_W`,
+  com o `svg` em escala 1 e `overflow: hidden`. Medido no PNG em 2x: o contorno de 2 px do nível de
+  cima sai com 2 pixels de dispositivo à esquerda e 4 à direita, e o contorno de 1 px da coluna da
+  direita sai com 1 pixel na borda do corpo. É o risco que a nota da `v1` previa, agora
+  materializado; recuar o desenho meia espessura de traço resolve.
+- `v2`: a faixa raiz da trilha recua 8,6 px de cada lado (1,5% de 574), então a trilha começa 8,6 px
+  à direita das colunas de conteúdo.
+- `v2`: a ampliação é de mão única. Nenhum nó do conteúdo aceita clique para abrir um ramo, então
+  depois de Escape não há como voltar à ampliação sem remontar o componente; e o `useState`
+  inicializado de `zoomedPath` ignora mudança posterior da prop (declarado no passo 7 de "Como colar").
+- `v3`: a frase acessível e este README contam "16 criativos", mas um dos dezesseis retângulos é o
+  filho calculado "Direto na campanha, sem criativo"; o dado tem 15 criativos e uma parcela direta.
+- `v3`: o recuo proporcional ao próprio intervalo faz a borda externa de cada faixa andar para fora a
+  cada nível. Medido no PNG: a barra de Total começa cerca de 11 px à direita do primeiro criativo e
+  termina 11 px antes do último. A tinta de cada faixa é a mesma (0,97 do vão inteiro) e os valores
+  estão escritos, então nada é afirmado errado, mas o icicle lê "filhos exatamente sob o pai".
+- `v3` (GEO-16): o contorno de 1 px em `--surface-raised` pinta meio pixel sobre o preenchimento de
+  cada lado, um recuo absoluto que a conta de 0,0000% não vê: o menor criativo perde 3,2% da largura
+  visível e o maior 1,3%.
+- `v3`: a lista de criativos mede cerca de 189 px de 441,5 (43% do corpo), acima dos 30% que a ROT-4
+  dá à legenda. O desenho segue em escala 1, então não há consequência hoje; com mais criativos, o
+  canvas precisa crescer junto.
+- `v3`: quando os filhos declarados somam mais que o pai, `withDirectChild` devolve os filhos como
+  estão e `partitionSpan` os reescala para dentro do intervalo do pai, sem aviso. Caminho latente,
+  fora do dado de hoje.
+- `v4` (ROT-10): a linha do submotivo de valor zero não tem marcador vazado; a palavra e o motivo
+  estão escritos. A linha da faixa muda também não tem amostra na cor do motivo, que ligaria a
+  lista ao contorno desenhado.
+- `v4`: o comentário do `data.ts` diz nomes "de 45 a 76 caracteres", e o mais longo tem 65 (o README
+  e o `meta.json` dizem 65). O `MAX_LABEL_LINES = 3` se justifica pelo nome de 65 caracteres, que
+  quebra em duas linhas, então o caminho de três linhas não aparece no preview.
+- `v4`: o `excludedReason` do zero, "registrado no período e encerrado sem desfecho", não explica
+  por que o submotivo tem zero perdas; lido junto de "0 perdas", sugere uma ocorrência que não houve.
+
+Revisão de 2026-10-14, segunda leitura (`v2` depois da correção, reprovada pela escala 0,984 da raiz,
+com parecer na seção "Segunda leitura" de `validation/revisao_12_hierarquia__06_icicle_2026-10-14.md`;
+o que segue não reprova):
+
+- `v2` (ANO-5, ACE-1): na raiz, a linha de leitura diz "Sem perfil financeiro: 35% das 164 perdas do
+  ramo." e a frase acessível abre com "Icicle lateral ampliado na raiz: 164 das 164 perdas de 2026-T3,
+  100,0% do total". Na raiz não há ramo nem ampliação; o texto pediria "do total" e uma abertura sem
+  "ampliado" e sem a fração de 164 em 164.
+- `v2` (ROT-4): na raiz, a lista de identificação mede 259,25 px, 29,4% do corpo de 881,5 px, e 30,3%
+  contando a margem de 8 px acima dela. Está no teto da regra: um nome a mais que quebre linha passa.
+- `v2`: o canvas de 640x1000, dimensionado pela raiz, faz o preview ampliado repartir 783 px de
+  altura entre seis retângulos com um nome e um valor cada; a maior parte do desenho é preenchimento
+  vazio. Nada é afirmado errado, mas o retrato do catálogo é mais alto que a leitura dele pede.
+- `v2`: a linha de `const categorySlot` no `Chart.tsx` está recuada com quatro espaços a mais que as
+  vizinhas.
+- `v2`: seguem como registrados no parágrafo anterior a precisão da trilha (NUM-1), os números da linha
+  de leitura sem `tabular-nums` (TIP-1), a ampliação de mão única e o contorno esquerdo do nível de
+  cima no preview ampliado (ESP-3), medido de novo: 2 pixels de dispositivo à esquerda e 4 à direita.
+
 ## Correções da rodada de 2026-09-20
 
 Reprovação anterior (`v1_perdas-por-motivo-e-submotivo`), problemas e o que mudou:
@@ -349,3 +412,5 @@ perdas) saiu abaixo do piso de 12 px de altura (ESP-2). Os números da lista tam
   (`showsOwnValue`) não usava `font-display`/`tabular-nums`; nesta base nenhuma categoria fica sem
   rótulo, então o trecho nunca renderizava, mas ficou certo para o dia em que uma categoria de
   ausência (candidata já registrada nas observações abaixo) tornar esse caminho alcançável.
+
+Correção de 2026-10-14 (`v2`): canvas 640x1000 pela raiz, `viewBox` de 600 na raiz e 857 ampliado, lista com nível preservado e contorno por slot da categoria; a nota de `meta.json` descreve a conta.

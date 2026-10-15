@@ -13,6 +13,42 @@
         "data.ts": "9041d1883d936eb88806b2fa4a8d2d32056554eb",
         "meta.json": "e7156282f250a2fb858b751652ecb340c8bc7d97"
       }
+    },
+    "v2_alavanca-de-maior-sensibilidade": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante depois da correção: --chart-1 só no cartão da alavanca (borda, valor e marcador), os outros quatro marcadores em --text-muted (5,21:1 e 5,37:1 contra o cartão), um destaque por visual (17.2, COR-2). Operadores fecham, faixas conferem com a quadratura, R$ 700,0 mil por ponto confere, frase acessível de 190 caracteres, conectores em --text-muted (ACE-6), nada cortado nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:07:53.797Z",
+      "impressao": "426392daef6f919c11f535a90a94ba65ceea1f44",
+      "arquivos": {
+        "Chart.tsx": "c080a791132046d3e0ba84a6f62faa0a8d51890f",
+        "data.ts": "7133f909a3215a1a8e7bd62426371bd593d43355",
+        "meta.json": "4f58991f57c1025aa19ae4f639539ea8c94319fb"
+      }
+    },
+    "v3_da-receita-a-capacidade-de-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: taxas e faixas fecham nos quatro operadores, 292 por mês e 122% do teto conferem, estouro com ícone e base escrita, recolhidos legíveis nos dois temas. Observações no README (período anual só na frase acessível, rodapé com fictício, redação da frase, quebra em Pré-/vendas, TIP-1 nas notas).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:06.552Z",
+      "impressao": "cf1a487b7e532cf66cefb7293ef93b899b8528b0",
+      "arquivos": {
+        "Chart.tsx": "3513b9edf166f6872a01e5dca996155f0b2a3bce",
+        "data.ts": "20f7e72e0399eabdc86d5ca9a9fcc9a87e2fe3a3",
+        "meta.json": "9b324801c28794f1b06cdd19d7abbe32c584aebe"
+      }
+    },
+    "v4_ticket-de-produto-novo-como-premissa": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: lacuna com formatUnavailable, Unplug e contorno tracejado em text-muted, sem valor inventado; faixa de R$ 290 mil a R$ 3,3 mi confere com a quadratura; aviso herdado com ícone e palavra. Observações no README (frase acessível latente, aresta tracejada sem legenda, âmbar repetido, rodapé longe do cartão).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:07.282Z",
+      "impressao": "3c136ca58dbc14e21ee28d5291f6b649f0ccbce2",
+      "arquivos": {
+        "Chart.tsx": "c99cd9cf3a94e6837a2dc8e68dda1d08c9e90e13",
+        "data.ts": "88cbb9e6908b9b7d93b8286a193305c85fc82783",
+        "meta.json": "3b9d08efd461b7214c79d9309d3e29fcd81fbade"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,58 @@
         "Chart.tsx": "19e40e20380c7965882ec0f20a0bf78101930328",
         "data.ts": "9041d1883d936eb88806b2fa4a8d2d32056554eb",
         "meta.json": "e7156282f250a2fb858b751652ecb340c8bc7d97"
+      }
+    },
+    {
+      "versao": "v2_alavanca-de-maior-sensibilidade",
+      "veredito": "reprovado",
+      "nota": "Pergunta 11, 17.2 (um token, um papel) e COR-2: --chart-1 pinta o marcador do valor central nas cinco microbarras e também acende a taxa de ganho, então o destaque divide o token com a série e os demais cartões não ficam em neutro como o catálogo pede; levar o marcador dos quatro cartões não destacados para neutro (--text-muted) e deixar --chart-1 só no cartão da alavanca (borda, valor e marcador).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:30:59.880Z",
+      "impressao": "da45f6bdce9a8ce40eb443f31bf08d79c87435a2",
+      "arquivos": {
+        "Chart.tsx": "03baa6673c278c5b961e59cb191ccb0057aa1463",
+        "data.ts": "7133f909a3215a1a8e7bd62426371bd593d43355",
+        "meta.json": "4f58991f57c1025aa19ae4f639539ea8c94319fb"
+      }
+    },
+    {
+      "versao": "v3_da-receita-a-capacidade-de-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: taxas e faixas fecham nos quatro operadores, 292 por mês e 122% do teto conferem, estouro com ícone e base escrita, recolhidos legíveis nos dois temas. Observações no README (período anual só na frase acessível, rodapé com fictício, redação da frase, quebra em Pré-/vendas, TIP-1 nas notas).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:06.552Z",
+      "impressao": "cf1a487b7e532cf66cefb7293ef93b899b8528b0",
+      "arquivos": {
+        "Chart.tsx": "3513b9edf166f6872a01e5dca996155f0b2a3bce",
+        "data.ts": "20f7e72e0399eabdc86d5ca9a9fcc9a87e2fe3a3",
+        "meta.json": "9b324801c28794f1b06cdd19d7abbe32c584aebe"
+      }
+    },
+    {
+      "versao": "v4_ticket-de-produto-novo-como-premissa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: lacuna com formatUnavailable, Unplug e contorno tracejado em text-muted, sem valor inventado; faixa de R$ 290 mil a R$ 3,3 mi confere com a quadratura; aviso herdado com ícone e palavra. Observações no README (frase acessível latente, aresta tracejada sem legenda, âmbar repetido, rodapé longe do cartão).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:07.282Z",
+      "impressao": "3c136ca58dbc14e21ee28d5291f6b649f0ccbce2",
+      "arquivos": {
+        "Chart.tsx": "c99cd9cf3a94e6837a2dc8e68dda1d08c9e90e13",
+        "data.ts": "88cbb9e6908b9b7d93b8286a193305c85fc82783",
+        "meta.json": "3b9d08efd461b7214c79d9309d3e29fcd81fbade"
+      }
+    },
+    {
+      "versao": "v2_alavanca-de-maior-sensibilidade",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante depois da correção: --chart-1 só no cartão da alavanca (borda, valor e marcador), os outros quatro marcadores em --text-muted (5,21:1 e 5,37:1 contra o cartão), um destaque por visual (17.2, COR-2). Operadores fecham, faixas conferem com a quadratura, R$ 700,0 mil por ponto confere, frase acessível de 190 caracteres, conectores em --text-muted (ACE-6), nada cortado nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:07:53.797Z",
+      "impressao": "426392daef6f919c11f535a90a94ba65ceea1f44",
+      "arquivos": {
+        "Chart.tsx": "c080a791132046d3e0ba84a6f62faa0a8d51890f",
+        "data.ts": "7133f909a3215a1a8e7bd62426371bd593d43355",
+        "meta.json": "4f58991f57c1025aa19ae4f639539ea8c94319fb"
       }
     }
   ]

@@ -98,6 +98,55 @@ bloqueante. Os pontos abaixo ficam para quem tocar o arquivo depois.
   é exigida pelo modelo e pelo catálogo, então fica como está, mas uma versão mais curta caberia
   em uma linha só no canvas `card`.
 
+Revisão independente de 2026-10-14, versões `v2_zoom-do-alcancavel-com-meta`,
+`v3_perimetro-alterado-lado-a-lado` e `v4_nivel-sem-estimativa` aprovadas, sem bloqueante. Como na
+`v1`, `COLISAO-TEXTO`, `CONTRASTE-TEXTO` e `TEXTO-NA-MARCA` não mediram (`texto_em_html`), e a
+conferência de colisão, corte e geometria foi feita nos PNGs de `_render/.qa/`, por pixel onde
+havia dúvida. Os pontos abaixo ficam para quem tocar os arquivos depois.
+
+- `v2`: os percentuais saem com uma casa ("nosso 4,0%", "meta 6,0%") enquanto o caso de uso diz 4% e
+  6%, e a NUM-1 pede percentual de composição inteiro; a distância "2,0 p.p." com uma casa está certa,
+  por ser variação abaixo de 10. É arredondamento e não muda a leitura.
+- `v2`: o rótulo "nosso 4,0%" do painel (linha 195 do `Chart.tsx`) não tem `tabular-nums` nem
+  `kpi-number` (TIP-1); sem coluna a alinhar, a diferença não aparece no preview.
+- `v2`: o destaque se chama "nosso" no painel e "Participação" na lista; um nome só para a mesma marca
+  pouparia a tradução.
+- `v2`: a linha de baixo do cone corre 1 px abaixo da base comum dos quadrados por 155 px, do canto do
+  alcançável até a borda direita do mercado total. No PNG de 2x as duas linhas se separam por 1 px; em
+  tela de 1x o traço encosta no tracejado de baixo do mercado total, que perde os traços nesse trecho.
+  Os outros três lados seguem tracejados, então a identificação do nível não cai.
+- `v2`: no painel, o quadrado da participação e o contorno da meta saem rentes à borda externa
+  esquerda do painel (x 720 no PNG de 2x, em cima da borda de 2 px) e 2 px acima da borda de baixo. À
+  esquerda o preenchimento funde com a borda do mesmo `--chart-1`, sem o contorno de separação da COR-5
+  desse lado. A área continua certa contra o lado externo de 180 px (36 px, 4%).
+- `v2`: com a participação acima da meta, `gapValue` fica negativo e a linha de leitura passaria a
+  dizer "faltam −R$ ..."; o verbo "faltam" e o `Math.abs` dos pontos não tratam a meta já batida.
+- `v3`: "A participação em reais não muda", na linha de leitura, e "segue em ... nos dois" e "cai de",
+  na frase acessível, são texto fixo. Com `ours.after` diferente de `ours.before`, ou com a participação
+  subindo, as duas frases afirmam o falso sem que nada acuse; a afirmação deveria sair do dado (ANO-5),
+  como já foi anotado para a nota fixa da `v1`.
+- `v3`: "o alcançável cresce R$ 800,0 mi" não nomeia a base na mesma linha (NUM-4). O par R$ 2,4 bi e
+  R$ 3,2 bi está na lista e na frase acessível, e variação absoluta em reais não admite outra leitura,
+  por isso fica como observação.
+- `v3`: percentuais com uma casa ("4,0%", "3,0%") contra o "4% a 3%" do caso de uso (NUM-1), impressos
+  duas vezes, na linha de leitura e sob cada quadro.
+- `v4`: o rótulo "Alcançável / sem estimativa" ancora em `boundSide + 2 * BOUND_INSET + LABEL_GAP`, que
+  é a aresta direita do endereçável mais 8 px. No PNG ele fica a 9,5 px do contorno sólido do
+  endereçável e a 17,5 px do tracejado que ele nomeia, com a primeira linha entre o topo dos dois. A
+  amostra tracejada em `--text-muted` da lista e a nota do rodapé desfazem a dúvida, mas o rótulo
+  direto pode ser lido como nome do quadrado sólido; ancorado no próprio tracejado (por dentro, em duas
+  linhas, ou com um fio curto) ele deixaria de competir com o endereçável, que não tem rótulo no desenho.
+- `v4`: o recuo do limite é de 8 px no topo e à direita e de 0 px embaixo e à esquerda (lado igual a
+  `sidePx` menos `2 * BOUND_INSET`, preso no canto), e não "4 px para dentro" como dizem a nota do
+  `meta.json`, o item 12 da Anatomia e a nota do produtor acima. Ele encolhe o lado em 10,3% e a área em
+  cerca de 20%, não "cerca de 5% do lado". Prender no canto está certo, porque mantém a participação
+  dentro do limite; é o texto que precisa acompanhar. Embaixo e à esquerda o tracejado cinza pinta por
+  cima da borda sólida do endereçável e a deixa alternada em cinza e ciano.
+- `v4`: a frase acessível escreve "mercado total de" e "endereçável de" fixos nos índices 0 e 1, e a
+  linha "Participação sobre o ..." usa o nome do nível ausente enquanto a conta usa sempre o índice 2.
+  Com o nível ausente em outra posição, que o passo 9 de "Como colar no Farol" diz ser livre, as duas
+  saem erradas; sem nível ausente, a frase vira "com o perímetro inteiro medido sem estimativa".
+
 ## Observações do produtor da leva de `v2` a `v4` (não bloqueantes)
 
 _Escritas em 2026-09-29, ao entregar as três irmãs. Nenhuma delas tem consequência medível no

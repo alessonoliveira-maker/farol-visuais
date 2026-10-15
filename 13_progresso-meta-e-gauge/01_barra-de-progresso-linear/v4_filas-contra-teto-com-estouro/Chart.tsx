@@ -64,6 +64,12 @@ export default function QueueCapacityChart({ data = defaultData, className }: Qu
               <div className="flex items-baseline justify-between gap-2 text-xs">
                 <span className="min-w-0 text-text-secondary">{queue.label}</span>
                 <span className="shrink-0 text-text-muted">
+                  {queue.demand === null ? null : (
+                    <>
+                      demanda <span className="kpi-number text-text-secondary">{formatInt(queue.demand)}</span>
+                      {' · '}
+                    </>
+                  )}
                   teto <span className="kpi-number">{formatInt(queue.cap)}</span>
                   {isPremissa ? ' (premissa)' : ''}
                 </span>
@@ -76,7 +82,7 @@ export default function QueueCapacityChart({ data = defaultData, className }: Qu
                   <>
                     <div
                       className="absolute inset-y-0 left-0 rounded-full"
-                      style={{ width: `${String(baseRatio * 100)}%`, backgroundColor: 'var(--line-strong)' }}
+                      style={{ width: `${String(baseRatio * 100)}%`, backgroundColor: 'var(--text-muted)' }}
                     />
                     {isOver ? (
                       <div

@@ -1,4 +1,4 @@
-import { CircleSlash } from 'lucide-react';
+import { CircleSlash, Filter } from 'lucide-react';
 
 import { formatDate, formatDays, formatInt, formatMonthShort } from '@/lib/format';
 import { cn } from '@/lib/utils';
@@ -43,11 +43,11 @@ export interface MilestoneCalendarProps {
 const WEEKDAY_LABELS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'] as const;
 /** Teto de chips por célula. Passando disso a célula escreve quantos sobraram. */
 const CHIP_LIMIT = 2;
-/** Mapa fixo de natureza para slot de cor, na ordem 1, 3, 6 da COR-8. */
+/** Mapa fixo de natureza para slot de cor, 3, 6 e 5: o slot 1 fica só para o anel de hoje. */
 const KIND_FILLS: Record<MilestoneKind, string> = {
-  prazo: 'var(--chart-1)',
-  comite: 'var(--chart-3)',
-  externo: 'var(--chart-6)',
+  prazo: 'var(--chart-3)',
+  comite: 'var(--chart-6)',
+  externo: 'var(--chart-5)',
 };
 const KIND_LABELS: Record<MilestoneKind, string> = {
   prazo: 'prazo interno',
@@ -162,6 +162,17 @@ function segmentOf(week: readonly DayBox[], from: string, to: string): BandSegme
 }
 
 /** O dia mais cheio de marcos. Null em lista vazia, nunca zero (EST-1b). */
+function marcos(count: number): string {
+  return `${formatInt(count)} ${count === 1 ? 'marco' : 'marcos'}`;
+}
+
+/** Dias corridos entre duas datas ISO, contando as duas pontas. */
+function spanDays(from: string, to: string): number {
+  const toTime = (iso: string): number =>
+    Date.UTC(Number(iso.slice(0, 4)), Number(iso.slice(5, 7)) - 1, Number(iso.slice(8, 10)));
+  return Math.round((toTime(to) - toTime(from)) / 86_400_000) + 1;
+}
+
 function busiestOf(boxes: readonly DayBox[]): DayBox | null {
   return boxes.reduce<DayBox | null>(
     (best, box) => (best === null || box.items.length > best.items.length ? box : best),
@@ -180,7 +191,6 @@ export default function MilestoneCalendar({
 }: MilestoneCalendarProps) {
   const weeks = buildWeeks(month, data, today);
   const segments = weeks.map((week) => segmentOf(week, windowStart, windowEnd));
-  const crossed = segments.filter((segment) => segment !== null).length;
   const boxes: DayBox[] = [];
   for (const week of weeks) for (const box of week) boxes.push(box);
   const marked = boxes.filter((box) => box.inMonth && box.items.length > 0);
@@ -191,13 +201,28 @@ export default function MilestoneCalendar({
     `${formatInt(data.length)} marcos em ${formatMonthShort(month)}, ` +
     `e ${formatInt(inWindow)} caem na janela que abre em ${formatDate(windowStart)}`;
 
+  const outside = windowEnd > `${month}-${String(daysInMonth(month)).padStart(2, '0')}`;
   const summary =
     busiest === null
-      ? 'Calendário de marcos do mês sem nenhum prazo registrado.'
-      : `Calendário de marcos com ${formatInt(data.length)} prazos em ${formatDays(marked.length)} de ` +
+      ? 'Calendário de marcos do mês sem nenhum marco registrado.'
+      : `Calendário de marcos com ${marcos(data.length)} em ${formatDays(marked.length)} de ` +
         `${formatMonthShort(month)}, mais cheio no dia ${formatInt(busiest.day)}, com ` +
-        `${formatInt(busiest.items.length)}. A janela de leitura abre em ${formatDate(windowStart)}, ` +
-        `atravessa ${formatInt(crossed)} semanas e termina em ${formatDate(windowEnd)}, fora do mês.`;
+        `${marcos(busiest.items.length)}. A janela de leitura abre em ${formatDate(windowStart)}, ` +
+        `dura ${formatDays(spanDays(windowStart, windowEnd))} e termina em ${formatDate(windowEnd)}` +
+        `${outside ? ', fora do mês' : ''}.`;
+
+  if (data.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden size={16} />
+        <span>O recorte não tem nenhum marco registrado, então não há calendário de prazos a desenhar.</span>
+      </div>
+    );
+  }
 
   return (
     <figure

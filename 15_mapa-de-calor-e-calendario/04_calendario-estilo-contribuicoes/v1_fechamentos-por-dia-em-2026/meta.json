@@ -2,13 +2,14 @@
   "title": "Fechamentos por dia no ano em curso",
   "useCase": "Em que dias do ano a casa fecha, e quantos dias úteis passam em branco?",
   "demonstrates": [
-    "Geometria do ano em SVG: semana na coluna, dia da semana na linha, tudo em UTC",
-    "Contorno em degrau separando os meses, calculado do último dia de cada mês",
-    "Zero medido em neutro, separado das cinco faixas de cor que começam no primeiro fechamento",
-    "Fim da medição em degrau tracejado, com a data junto do número em destaque",
-    "Contorno no melhor dia e a contagem de dias úteis em branco escritas na legenda"
+    "Geometria do ano em SVG: semana na coluna, dia da semana na linha, em UTC",
+    "Contorno em degrau separando os meses, do primeiro dia de cada mês",
+    "Zero em traço, fora das três classes de cor que usam só --seq-5 a --seq-7",
+    "Feriado pontilhado, fora da conta de dias úteis sem fechar",
+    "Fim da medição em degrau tracejado, com a data junto do número",
+    "Máximo empatado contornado em todos os dias, escrito como empate"
   ],
   "canvas": "faixa",
   "frame": "card",
-  "notes": "Célula de 12 px com vão de 3 px é o que faz 37 semanas caberem na faixa sem passar do corpo. Não há número dentro da célula, que teria 12 px de lado: o que segura a ACE-2 é a legenda com as faixas numeradas, o contorno do melhor dia com o valor escrito e a frase acessível, que traz total, pico e dias úteis vazios. O primeiro dia do ano cai numa quinta, então a coluna 0 nasce com três células a menos, e é o deslocamento que o cálculo de posição resolve. O ano não acabou, então o recorte aparece onde o número aparece: o degrau tracejado marca o último dia medido, a legenda nomeia o degrau e o número em destaque escreve a data. As três saem do próprio dado, e o título não cita mês nenhum para não envelhecer na primeira atualização."
+  "notes": "Desvio do catálogo (5 faixas de 0 a 4 ou mais) pela TOK-8: só --seq-5, --seq-6 e --seq-7 passam de 3:1 contra o cartão nos dois temas, então são três classes com o intervalo escrito na legenda; 92% dos dias com fechamento caíam nos três degraus que não passam. Escala 1 (GEO-18): célula de 11 px com vão de 3 px, 38 colunas, viewBox de 563 x 113 e svg com width e height iguais ao viewBox, que cabe nos 113,5 px do corpo; a legenda fica numa linha só e o gap da figura é 8 px. Não há número dentro da célula: o que segura a ACE-2 é a legenda com os intervalos, o contorno dos dias de máximo com o valor escrito e a frase acessível. O primeiro dia do ano cai numa quinta, então a coluna 0 nasce com três células a menos. HOLIDAYS em data.ts tira feriado da conta de dia útil. O ano não acabou: o degrau tracejado, a legenda e o número em destaque trazem a data do último dia medido, que sai do próprio dado. Sem dado, bloco role=status."
 }

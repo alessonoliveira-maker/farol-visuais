@@ -13,6 +13,42 @@
         "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
         "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
       }
+    },
+    "v2_plataforma-destacada-em-todas-as-celulas": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: a conclusão da frase acessível agora sai do dado (mediana das 16 acesas contra as 48 demais em investimento e CPL, R$ 18,3 mil contra R$ 19,7 mil e R$ 109 contra R$ 104, conferido à mão), 232 caracteres. Grade e layout intactos: medido no preview, células de 122 x 101 px, nenhum ponto fora; PNG contra página 0,001% e 0,002%. Observações no README (medianOf tipado number, frase com seleção vazia).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:34:52.296Z",
+      "impressao": "447ae055f73c518aa488e7c75d64bcea8969c78f",
+      "arquivos": {
+        "Chart.tsx": "0897f04b85c02c1e55bfa4cea3160b2baa9e23c3",
+        "data.ts": "4c210431a444f565f32dc8c9885b567be3e4e758",
+        "meta.json": "b6d4168d7bf0b0a904996c9ba9192377cc41ea6c"
+      }
+    },
+    "v3_cinco-medidas-da-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo; grade medida no preview com um conjunto só por coluna e por linha (110 linhas), década logarítmica de 44,33 px igual em linha e coluna, histograma da diagonal no centro das faixas de meia década, nenhum ponto cortado, opacidade 0,70 medida pela guarda nos dois temas, nota de método nas células vazias. Conclusão da frase é escrita à mão mas confere com o dado (fila e tempo rho 0,94; SLA e tempo rho -0,82). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:28.233Z",
+      "impressao": "8853f516ade256f1dcae4eecbf6c76d3322af02d",
+      "arquivos": {
+        "Chart.tsx": "d87c8aeb804716213359da56af40e44f8082184c",
+        "data.ts": "588dda430bb96ed45c5a9773d771a32aff4101ac",
+        "meta.json": "c0f8c07911241427714d2d07662a35b8c104973f"
+      }
+    },
+    "v4_medida-com-muitos-ausentes": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: o n saiu da área de plotagem para uma faixa própria de 16 px acima de cada uma das 16 células. Medido no preview: faixa em y 85,5 a 101,5 e gráfico a partir de 102, nenhum ponto sob texto nem fora da célula, área útil de 119 x 99 px, n certo nas 7 células que dependem de CTR (45) e nas outras 9 (64). PNG contra página até 0,004%. Observações no README (notes do meta com a conta do canvas antigo).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:34:58.743Z",
+      "impressao": "e99a372c275a6f75a0a91afc434ab3d50ce7762b",
+      "arquivos": {
+        "Chart.tsx": "79449b6a1fd95470d018981a9ded000d10348005",
+        "data.ts": "544218d182e6dbbc27773fa28708f893688f1430",
+        "meta.json": "334fe235c79c53b2a8c3438c31e7f306de9c2371"
+      }
     }
   },
   "historico": [
@@ -66,6 +102,71 @@
         "Chart.tsx": "13aad44e762b46a704de32dfa8817b626dbe46be",
         "data.ts": "1ba957db3dd897fb80f86b1a0778f03a21987099",
         "meta.json": "171ad935fe29b908010d3d41a089476ca2ebb9f3"
+      }
+    },
+    {
+      "versao": "v2_plataforma-destacada-em-todas-as-celulas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-1 e seção 11: a frase acessível escreve à mão a conclusão 'ocupam a faixa de investimento alto e CPL baixo', e o dado padrão a desmente: mediana da plataforma B R$ 18,3 mil de investimento contra R$ 19,7 mil das demais e CPL R$ 108,55 contra R$ 103,70; no quadrante investimento acima e CPL abaixo da mediana geral estão 6 de 16 da B e 18 de 48 das demais, 37,5% nos dois. Calcular a conclusão do dado (comparar selecionadas e restante por medida) ou trocar o data.ts para a afirmação ser verdade, e calcular mesmo assim. Grade, alinhamento entre painéis, contraste e destaque por forma sem reparo.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:24.984Z",
+      "impressao": "c6a562cd011a1f546feb1b294c1ae2b747c255ff",
+      "arquivos": {
+        "Chart.tsx": "4c081d6b2bcf95130ce53e8841fd7825e8bee932",
+        "data.ts": "4c210431a444f565f32dc8c9885b567be3e4e758",
+        "meta.json": "b6d4168d7bf0b0a904996c9ba9192377cc41ea6c"
+      }
+    },
+    {
+      "versao": "v3_cinco-medidas-da-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo; grade medida no preview com um conjunto só por coluna e por linha (110 linhas), década logarítmica de 44,33 px igual em linha e coluna, histograma da diagonal no centro das faixas de meia década, nenhum ponto cortado, opacidade 0,70 medida pela guarda nos dois temas, nota de método nas células vazias. Conclusão da frase é escrita à mão mas confere com o dado (fila e tempo rho 0,94; SLA e tempo rho -0,82). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:28.233Z",
+      "impressao": "8853f516ade256f1dcae4eecbf6c76d3322af02d",
+      "arquivos": {
+        "Chart.tsx": "d87c8aeb804716213359da56af40e44f8082184c",
+        "data.ts": "588dda430bb96ed45c5a9773d771a32aff4101ac",
+        "meta.json": "c0f8c07911241427714d2d07662a35b8c104973f"
+      }
+    },
+    {
+      "versao": "v4_medida-com-muitos-ausentes",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 31, ROT-7 marca fina e GEO-4: o selo opaco do n mora dentro da área de plotagem, no canto de X alto e Y alto, e cobre dado. Medido no preview.svg: na célula CPL contra CTR o ponto de camp-31 (CTR 2,8%, CPL R$ 149,7) tem o centro em x 477,30, 1,63 px dentro da borda esquerda do selo (475,67), e cerca de 83% dele some; nos dois PNGs sobra uma lasca que lê como 'ı n = 45'. O README afirma o contrário. Tirar o n de dentro do plano (faixa própria acima da área de plotagem, com CELL_MARGIN.top reservando a altura do selo) para nenhuma posição do domínio cair sob o texto, e corrigir a nota do README. Resto sem reparo.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:32.282Z",
+      "impressao": "f0aca8a9ce4ae9cdc8702164af59d779e2187502",
+      "arquivos": {
+        "Chart.tsx": "3bcba3294dc439fcba08692737fa481f2f6c9ce9",
+        "data.ts": "544218d182e6dbbc27773fa28708f893688f1430",
+        "meta.json": "bbe3bf887fe55721562744f984d51e577bab1e3b"
+      }
+    },
+    {
+      "versao": "v2_plataforma-destacada-em-todas-as-celulas",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: a conclusão da frase acessível agora sai do dado (mediana das 16 acesas contra as 48 demais em investimento e CPL, R$ 18,3 mil contra R$ 19,7 mil e R$ 109 contra R$ 104, conferido à mão), 232 caracteres. Grade e layout intactos: medido no preview, células de 122 x 101 px, nenhum ponto fora; PNG contra página 0,001% e 0,002%. Observações no README (medianOf tipado number, frase com seleção vazia).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:34:52.296Z",
+      "impressao": "447ae055f73c518aa488e7c75d64bcea8969c78f",
+      "arquivos": {
+        "Chart.tsx": "0897f04b85c02c1e55bfa4cea3160b2baa9e23c3",
+        "data.ts": "4c210431a444f565f32dc8c9885b567be3e4e758",
+        "meta.json": "b6d4168d7bf0b0a904996c9ba9192377cc41ea6c"
+      }
+    },
+    {
+      "versao": "v4_medida-com-muitos-ausentes",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: o n saiu da área de plotagem para uma faixa própria de 16 px acima de cada uma das 16 células. Medido no preview: faixa em y 85,5 a 101,5 e gráfico a partir de 102, nenhum ponto sob texto nem fora da célula, área útil de 119 x 99 px, n certo nas 7 células que dependem de CTR (45) e nas outras 9 (64). PNG contra página até 0,004%. Observações no README (notes do meta com a conta do canvas antigo).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:34:58.743Z",
+      "impressao": "e99a372c275a6f75a0a91afc434ab3d50ce7762b",
+      "arquivos": {
+        "Chart.tsx": "79449b6a1fd95470d018981a9ded000d10348005",
+        "data.ts": "544218d182e6dbbc27773fa28708f893688f1430",
+        "meta.json": "334fe235c79c53b2a8c3438c31e7f306de9c2371"
       }
     }
   ]

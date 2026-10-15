@@ -54,7 +54,7 @@ curva não vira frase. O par de guias não é enfeite: é o tradutor da peça.
   minutos, e 37 leads sem nenhum contato ficaram fora da curva.
 - `v2_histograma-acumulado-com-tres-limiares`: a mesma escada em barras de 5 minutos, com a soma
   acumulada feita em TypeScript e o sentido como parâmetro de 1 ou menos 1. Três limiares medidos, 5
-  minutos, 30 minutos e 2 horas, marcados na coluna que termina em cada um e escritos num bloco de
+  minutos, 30 minutos e 2 horas, marcados na coluna que termina em cada um (sentido 1; no menos 1 o bin é fechado à esquerda e a marca vai para a coluna que começa no limiar) e escritos num bloco de
   três rótulos empilhados à direita do plano. Faixa aberta no fim, que é o que fecha a soma em 100%.
 - `v3_cpl-ou-mais-em-escala-log`: acumulada descendente do CPL de 1.100 campanhas, com eixo
   horizontal logarítmico avisado no rótulo e escada de tiques derivada do dado na malha 1, 2, 5.
@@ -148,3 +148,52 @@ tabulares que a TIP-1 pede e que o `label` de objeto não trazia.
 então as duas guias se cruzavam na origem e o rótulo escrevia "0% em até 30 min", isto é, um SLA
 reprovado onde não houve medição. Agora `share` é `number | null`; sem base, a guia horizontal e o
 ponto não são desenhados e a frase acessível diz que o percentual fica indisponível.
+
+## Observações da revisão (não bloqueantes)
+
+**2026-10-15**, revisão de `v2`, `v3` e `v4`. Nenhum destes pontos reprova; o bloqueante da `v2` (sentido
+−1) está em `validation/revisao_16_distribuicao__04_ecdf-e-histograma-acumulado_2026-10-15.md`.
+
+- `v2`: a grade vertical contraria a segunda emenda da `EIX-3b` (2026-09-28): histograma tem base
+  ancorada e se lê por comprimento, então a grade fica só na direção da leitura. O `meta.json` e a seção
+  "Defeitos do acervo" acima citam a redação anterior; o `vertical={false}` das versões de
+  `01_histograma` está certo, e só a `v1` daqui, que é linha, deve à grade cheia.
+- `v2`: a faixa aberta ocupa de 120 a 125 min no eixo linear, com a mesma largura das outras e sem tique
+  próprio; só o rodapé diz que ela é aberta. Um tique "mais de 2 h" sob a coluna, ou um vão antes dela,
+  deixaria o eixo dizer isso sozinho.
+- `v2`: o mesmo limiar sai como "120" no eixo e "2 h" no rótulo; alinhar as duas formas.
+- `v2`: três marcas contra o teto de duas anotações da `ANO-1`. O catálogo pede as três e as notas
+  declaram; fica registrado.
+- `v3`: o rótulo do cruzamento mora na ponta esquerda da guia horizontal, a cerca de 310 px do ponto
+  (o catálogo diz "no cruzamento"), e não tem o halo da `ROT-7`. No preview as linhas de grade de R$ 10 e
+  R$ 50 passam por trás de "custam" e de "mais", legível. Em recorte em que R$ 400 caia nos primeiros
+  41% do domínio logarítmico, o rótulo fica sobre a guia vertical e a curva.
+- `v3`: a escada de tiques 2, 10, 50, 200, 1 mil e 5 mil mistura razão 5 e razão 4, e o vão de R$ 50 a
+  R$ 200 sai com cerca de 104 px contra 120 px dos outros.
+- `v3`: o rodapé chama os 1.100 de "CPL medível", mas o `data.ts` diz que o custo zero é zero medido. A
+  base do percentual exclui os 19; com eles seriam 6,88%, ainda 7% impresso. "CPL positivo" diz o recorte
+  sem contradizer o dado.
+- `v4`: "maior apurada R$ 440 mil" sai por `formatCurrencyAxis`; rótulo pede `formatCurrencyCompact`
+  pela `NUM-1` (R$ 440,2 mil).
+- `v4`: o rótulo do salto passa sem halo sobre a grade de R$ 100 mil, legível. Como ele desce sempre
+  14 px, com massa no zero abaixo de cerca de 11% cruzaria a linha de zero e, abaixo de 6%, os tiques do
+  eixo X; improvável para esta métrica, mas o lado pode sair do espaço livre.
+- `v2`, `v3` e `v4`: o bloco de vazio (`Filter`, `role="status"`) escreve `formatUnavailable()`, isto é,
+  "indisponível", para recorte sem linhas. O ícone e a explicação são de vazio; a palavra é de fonte que
+  falhou. Mesmo padrão de `01_histograma` v2 a v4.
+
+**2026-10-15**, segunda revisão da `v2`, depois da correção do sentido −1: aprovada. Os pontos acima que
+não foram tocados (grade vertical, faixa aberta sem tique, "120" contra "2 h", três marcas) continuam
+valendo. Novos, nenhum reprova:
+
+- `v2`: a coincidência entre ponto e topo da coluna supõe limiar múltiplo de `binWidth` e não acima de
+  `openFrom`, e nada no tipo nem no comentário declara isso. Medido com as funções do `Chart.tsx` sobre o
+  `data.ts`: limiar de 7 min põe o ponto de 17,69% sobre coluna de 31,92% no sentido 1 e o de 84,62% sobre
+  coluna de 92,31% no −1; limiar acima de 2 h no sentido 1 manda o centro para fora do domínio, e o
+  `extendDomain` estica o eixo. Declarar a premissa, ou tirar a leitura da própria coluna.
+- `v2`: no −1, "fila ainda na espera" conta valor maior ou igual ao limiar, então os 17 leads atendidos
+  em exatamente 5 min entram como ainda esperando. "esperou o tempo do eixo ou mais" diz o que o rótulo
+  conta.
+- `v2`: o comentário do topo (faixa aberta que fecha a soma), o de `buildBins` (`Math.ceil` e não
+  `Math.floor`), o item do `meta.json` e a linha da `v2` em "Versões" ainda descrevem só o sentido 1; no
+  −1 quem mede 100% é a primeira coluna.

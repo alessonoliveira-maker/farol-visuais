@@ -96,6 +96,16 @@ Uma linha por agente concluído em `LOG.md`: `| data | faixa | alvo | agente/llm
 
 Quando o dono mandar parar: nenhum agente novo, espere os em voo, LOG, passo 5, encerre. Agente devolvendo erro de cota ou limite de uso: mesmo procedimento.
 
+## Modo manutenção (depois dos 24 lotes, desde 2026-10-15)
+
+Os 24 lotes estão executados e não há modelo a produzir. O que sobra é manutenção, e ela segue o mesmo protocolo com três diferenças:
+
+- **O que a fila imprime na faixa `corrigir` não é trabalho automático.** São as versões `reprovado, pendência conhecida`, que já gastaram a rodada única de correção e **só voltam por decisão do dono** (D13). A sessão não as lança por conta própria; o dono nomeia os modelos (`node ../_operacao/fila.mjs --so <alvo>,<alvo>`) e o prompt da linha vale como está, acrescido de `Nota do dono: segunda rodada autorizada em <data> porque <motivo>`.
+- **Versão aprovada com defeito anotado** (README do modelo, fila de dívida, LOG) também pode ir ao corretor, com o defeito escrito no prompt como nota de recusa e a autorização explícita para tocar na versão aprovada; depois dela o revisor julga de novo, porque o sha1 muda e o veredito vence.
+- **Antes de colar no Farol:** a galeria (`npm run galeria`) mostra o veredito de cada versão, e `npm run lint -- <familia>/<modelo>` diz o que o lint do Farol vai cobrar (advertência, não portão; D11).
+
+O resto não muda: um corretor por modelo, portão do `check`, revisor independente, uma linha por agente no LOG, commit só dos caminhos do catálogo.
+
 ## Custos de referência para dimensionar o lote
 
 Medidos em setembro de 2026, antes do dossiê enxuto (F0.1):

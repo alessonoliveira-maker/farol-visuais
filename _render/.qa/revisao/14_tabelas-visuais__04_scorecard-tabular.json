@@ -40,14 +40,14 @@
     },
     "v4_cobertura-denominador-pequeno-e-lacuna": {
       "veredito": "aprovado",
-      "nota": "Check limpo. Barra de cobertura de 0 a 100 com trilho visivel nos dois temas e fracao abaixo do n minimo.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T03:07:11.915Z",
-      "impressao": "518a5d5a97f5ab6b08be6f5aac80dd343f7147e2",
+      "nota": "Check limpo. Os três bloqueantes de 2026-10-14 resolvidos: Cidade declarada uma vez no cabeçalho com célula mesclada, variação de leads com base nomeada e sem base no Webinar piloto, agendamento em cinza com ícone onde o telefone fica abaixo de 50%. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:47:56.514Z",
+      "impressao": "b8768aa137ea1079443334449dd1109a8b8d25dc",
       "arquivos": {
-        "Chart.tsx": "f78fcef26b34e74f4ead39c315f8a687f6ed838f",
-        "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
-        "meta.json": "e225e9c72bac4da7cb442f3f85736e4fb777ebb3"
+        "Chart.tsx": "b31303718bd8b7d040d025667ce4ad006de29264",
+        "data.ts": "e2ef99bd5eb410589ebc47d43478ad4a2fbaf232",
+        "meta.json": "ac2519ef1c6df32ef770c6e54f99bef08e7f068c"
       }
     }
   },
@@ -154,6 +154,32 @@
         "Chart.tsx": "f78fcef26b34e74f4ead39c315f8a687f6ed838f",
         "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
         "meta.json": "e225e9c72bac4da7cb442f3f85736e4fb777ebb3"
+      }
+    },
+    {
+      "versao": "v4_cobertura-denominador-pequeno-e-lacuna",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1, catálogo itens 3 e 4 (14.1, versão que não demonstra o catálogo): Cidade repete indisponível nas 7 células em vez do aviso único no cabeçalho; falta a métrica nova que escreve sem base (EST-4, NUM-4); a taxa de agendamento não esmaece com ícone onde o telefone está abaixo de 50% e o rodapé publica a regra contrária. Parecer em validation/revisao_14_tabelas-visuais__04_scorecard-tabular_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:38:37.780Z",
+      "impressao": "9f36122e6c7d2058108deb1269807005a8846f9e",
+      "arquivos": {
+        "Chart.tsx": "56b0ff3c1b93c3881e9cafea87831857d418519d",
+        "data.ts": "9f7c579b7c9983fe613658f64903b2cf9c38a006",
+        "meta.json": "e225e9c72bac4da7cb442f3f85736e4fb777ebb3"
+      }
+    },
+    {
+      "versao": "v4_cobertura-denominador-pequeno-e-lacuna",
+      "veredito": "aprovado",
+      "nota": "Check limpo. Os três bloqueantes de 2026-10-14 resolvidos: Cidade declarada uma vez no cabeçalho com célula mesclada, variação de leads com base nomeada e sem base no Webinar piloto, agendamento em cinza com ícone onde o telefone fica abaixo de 50%. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:47:56.514Z",
+      "impressao": "b8768aa137ea1079443334449dd1109a8b8d25dc",
+      "arquivos": {
+        "Chart.tsx": "b31303718bd8b7d040d025667ce4ad006de29264",
+        "data.ts": "e2ef99bd5eb410589ebc47d43478ad4a2fbaf232",
+        "meta.json": "ac2519ef1c6df32ef770c6e54f99bef08e7f068c"
       }
     }
   ]

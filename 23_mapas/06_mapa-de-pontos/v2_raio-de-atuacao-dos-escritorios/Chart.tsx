@@ -33,6 +33,10 @@ const OFFICE_BADGE_R = 8;
 const BADGE_CLEAR = OFFICE_BADGE_R + DOT_R + 2;
 const WINDOW_PAD = 5;
 const MAX_ATTEMPTS = 900;
+/** Espaçamento mínimo que ainda separa os contornos (diâmetro 4 mais 0,5 de contorno), e a varredura de anéis. */
+const MIN_GAP_FLOOR = 4.5;
+const SCAN_STEP = 1;
+const SCAN_MAX = 60;
 const FILL_OPACITY = 0.85;
 const ICON_SIZE = 12;
 /** Largura estimada por caractere de 11 px, para testar a caixa do nome do escritório contra os pontos. */
@@ -108,6 +112,22 @@ function ellipseLevel(x: number, y: number, reach: Reach): number {
   return Math.hypot((x - reach.x) / reach.rx, (y - reach.y) / reach.ry);
 }
 
+/** Contagens do dado, independentes do posicionador: cada linha vale `clients` clientes, na classe da coordenada da cidade. */
+function tally(rows: readonly ClientCity[], offices: readonly Office[]): { total: number; inside: number; byOffice: ReadonlyMap<string, number> } {
+  const byOffice = new Map<string, number>();
+  let total = 0;
+  let inside = 0;
+  for (const row of rows) {
+    total += row.clients;
+    const near = nearestOffice(row.lon, row.lat, offices);
+    if (near !== null && near.km <= RADIUS_KM) {
+      inside += row.clients;
+      byOffice.set(near.id, (byOffice.get(near.id) ?? 0) + row.clients);
+    }
+  }
+  return { total, inside, byOffice };
+}
+
 /**
  * Posiciona os clientes. A classe (dentro ou fora do raio) sai da coordenada da cidade, que está no dado. O
  * espalhamento em volta da cidade é só desenho: cada ponto é aceito apenas do lado certo da elipse, com folga da
@@ -126,22 +146,36 @@ function placeClients(rows: readonly ClientCity[], offices: readonly Office[]): 
     const origin = project(item.row.lon, item.row.lat);
     const own = reaches.find((reach) => reach.id === item.nearest);
     for (let index = 0; index < item.row.clients; index += 1) {
-      let chosen = origin;
-      for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
+      const fits = (x: number, y: number, gap: number): boolean => {
+        if (x < WINDOW_PAD || x > MAP_W - WINDOW_PAD || y < WINDOW_PAD || y > MAP_H - WINDOW_PAD) return false;
+        if (reaches.some((reach) => Math.hypot(x - reach.x, y - reach.y) < BADGE_CLEAR)) return false;
+        if (placed.some((other) => Math.hypot(x - other.x, y - other.y) < gap)) return false;
+        return item.inside
+          ? own !== undefined && ellipseLevel(x, y, own) <= 1 - EDGE_CLEAR / Math.min(own.rx, own.ry)
+          : reaches.every((reach) => ellipseLevel(x, y, reach) >= 1 + EDGE_CLEAR / Math.min(reach.rx, reach.ry));
+      };
+      let chosen: { x: number; y: number } | null = null;
+      for (let attempt = 0; attempt < MAX_ATTEMPTS && chosen === null; attempt += 1) {
         const angle = next() * 2 * Math.PI;
         const radius = Math.sqrt(next()) * (5 + attempt * 0.1);
         const x = origin.x + Math.cos(angle) * radius;
         const y = origin.y + Math.sin(angle) * radius;
-        if (x < WINDOW_PAD || x > MAP_W - WINDOW_PAD || y < WINDOW_PAD || y > MAP_H - WINDOW_PAD) continue;
-        if (reaches.some((reach) => Math.hypot(x - reach.x, y - reach.y) < BADGE_CLEAR)) continue;
-        if (placed.some((other) => Math.hypot(x - other.x, y - other.y) < MIN_GAP)) continue;
-        const sideOk = item.inside
-          ? own !== undefined && ellipseLevel(x, y, own) <= 1 - EDGE_CLEAR / Math.min(own.rx, own.ry)
-          : reaches.every((reach) => ellipseLevel(x, y, reach) >= 1 + EDGE_CLEAR / Math.min(reach.rx, reach.ry));
-        if (!sideOk) continue;
-        chosen = { x, y };
-        break;
+        if (fits(x, y, MIN_GAP)) chosen = { x, y };
       }
+      /* Busca determinística: varre em anéis crescentes em volta da cidade e só aceita posição válida, com o
+         espaçamento cheio e depois o mínimo que ainda separa os contornos. Nunca cai na coordenada sem teste. */
+      for (const gap of [MIN_GAP, MIN_GAP_FLOOR]) {
+        for (let radius = 0; radius <= SCAN_MAX && chosen === null; radius += SCAN_STEP) {
+          const steps = Math.max(1, Math.ceil((2 * Math.PI * radius) / SCAN_STEP));
+          for (let k = 0; k < steps && chosen === null; k += 1) {
+            const angle = (2 * Math.PI * k) / steps;
+            const x = origin.x + Math.cos(angle) * radius;
+            const y = origin.y + Math.sin(angle) * radius;
+            if (fits(x, y, gap)) chosen = { x, y };
+          }
+        }
+      }
+      if (chosen === null) continue;
       placed.push({ id: `${item.row.id}-${String(index)}`, ...chosen, inside: item.inside, nearest: item.nearest });
     }
   }
@@ -232,7 +266,9 @@ export default function OfficeReach({ data = defaultData, offices = defaultOffic
   const style = height === undefined ? undefined : { height };
   const clients = placeClients(data, offices);
 
-  if (clients.length === 0 || offices.length === 0) {
+  const counts = tally(data, offices);
+
+  if (counts.total === 0 || offices.length === 0) {
     return (
       <div className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)} role="status" style={style}>
         <Filter aria-hidden className="size-4 shrink-0" />
@@ -243,7 +279,11 @@ export default function OfficeReach({ data = defaultData, offices = defaultOffic
 
   const inside = clients.filter((client) => client.inside);
   const outside = clients.filter((client) => !client.inside);
-  const insideShare = inside.length / clients.length;
+  const insideCount = counts.inside;
+  const outsideCount = counts.total - counts.inside;
+  const insideShare = insideCount / counts.total;
+  const unplaced = counts.total - clients.length;
+  const unplacedNote = unplaced > 0 ? ` ${formatInt(unplaced)} ${unplaced === 1 ? 'cliente ficou sem ponto' : 'clientes ficaram sem ponto'} no desenho, por falta de lugar.` : '';
   const reaches = reachOf(offices);
   const labelBoxes: { x0: number; x1: number; y0: number; y1: number }[] = [];
   const labels = offices.map((office) => {
@@ -252,11 +292,11 @@ export default function OfficeReach({ data = defaultData, offices = defaultOffic
     labelBoxes.push(placedLabel.box);
     return { office, reach, spot: placedLabel.spot };
   });
-  const perOffice = offices.map((office) => ({ ...office, inside: inside.filter((client) => client.nearest === office.id).length }));
+  const perOffice = offices.map((office) => ({ ...office, inside: counts.byOffice.get(office.id) ?? 0 }));
 
   const summary =
-    `Mapa de pontos com ${formatInt(clients.length)} clientes e ${formatInt(offices.length)} escritórios, com raio de ${formatInt(RADIUS_KM)} km. ` +
-    `${formatInt(inside.length)} clientes (${formatPercent(insideShare, 0)}) ficam dentro do raio de algum escritório e ${formatInt(outside.length)} ficam fora.`;
+    `Mapa de pontos com ${formatInt(counts.total)} clientes e ${formatInt(offices.length)} escritórios, com raio de ${formatInt(RADIUS_KM)} km. ` +
+    `${formatInt(insideCount)} clientes (${formatPercent(insideShare, 0)}) ficam dentro do raio de algum escritório e ${formatInt(outsideCount)} ficam fora.${unplacedNote}`;
 
   return (
     <figure aria-label={summary} className={cn('m-0 flex h-full w-full min-w-0 flex-col gap-2', className)} role="figure" style={style}>
@@ -286,16 +326,16 @@ export default function OfficeReach({ data = defaultData, offices = defaultOffic
 
         <div className="flex min-w-0 flex-1 flex-col gap-3 text-[0.6875rem] leading-4 text-text-muted">
           <p aria-hidden className="m-0 text-xs leading-4 text-text-secondary">
-            {`${formatPercent(insideShare, 0)} dos clientes ficam a até ${formatInt(RADIUS_KM)} km de um escritório; ${formatInt(outside.length)} ficam fora do alcance.`}
+            {`${formatPercent(insideShare, 0)} dos clientes ficam a até ${formatInt(RADIUS_KM)} km de um escritório; ${formatInt(outsideCount)} ficam fora do alcance.`}
           </p>
           <div aria-hidden className="flex flex-col gap-1">
             <span className="flex items-center gap-1.5">
               <DotSample />
-              <span className="text-text-secondary">{`Dentro do raio: ${formatInt(inside.length)} clientes`}</span>
+              <span className="text-text-secondary">{`Dentro do raio: ${formatInt(insideCount)} clientes`}</span>
             </span>
             <span className="flex items-center gap-1.5">
               <RingSample />
-              <span className="text-text-secondary">{`Fora do raio: ${formatInt(outside.length)} clientes`}</span>
+              <span className="text-text-secondary">{`Fora do raio: ${formatInt(outsideCount)} clientes`}</span>
             </span>
             <span className="flex items-center gap-1.5">
               <svg className="shrink-0" height={12} width={12}>
@@ -313,6 +353,11 @@ export default function OfficeReach({ data = defaultData, offices = defaultOffic
               </span>
             ))}
           </div>
+          {unplaced > 0 ? (
+            <span aria-hidden className="text-text-secondary">
+              {`${formatInt(unplaced)} ${unplaced === 1 ? 'cliente ficou sem ponto' : 'clientes ficaram sem ponto'} no mapa, por falta de lugar; a contagem acima é a do dado.`}
+            </span>
+          ) : null}
           <span aria-hidden>Recorte do Sudeste, do Centro-Oeste e do norte do Paraná. Posição dentro da cidade é ilustrativa.</span>
         </div>
       </div>

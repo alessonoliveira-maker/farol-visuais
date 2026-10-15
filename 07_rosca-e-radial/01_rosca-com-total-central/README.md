@@ -80,7 +80,13 @@ _Segunda revisão de 2026-10-02, só da v2, depois da rodada de correção. Apro
 - v2: a coluna de contagem da legenda (86, 54, 38, 22, 12) não leva o substantivo (NUM-6), como na v3. `perdas` aparece no centro e no subtítulo do cartão.
 - v2: o `meta.json` diz "Maior motivo aberto ativo por padrão" e o catálogo diz "por activeId do data.ts". A versão faz o que o catálogo diz; é só a redação do `meta.json` que ficou na forma antiga.
 
+_Revisão de 2026-10-15, só da v2, depois da correção da NUM-2. Aprovada. A nota de 2026-09-18 sobre o percentual arredondado um a um deixou de valer: legenda, centro e frase acessível leem a mesma lista de maior resto, e o recálculo do `data.ts` (40,566; 25,472; 17,925; 10,377; 5,660) dá 41, 25, 18, 10 e 6, soma 100, o mesmo que os dois PNGs e a frase mostram. As demais notas acima continuam valendo. Os pontos abaixo são nuance._
+
+- v2: com `data` não vazio e todas as contagens em zero, `integerShares` devolve 0 para cada parte, e legenda, centro e frase passam a escrever `0%` de um total zero (antes da correção esse ramo dava `NaN`). Percentual de total zero não é medida (EST-1b); tratar total zero como o vazio, com o bloco `role="status"`, fecha o ramo. Não aparece no preview, e a v1, a v3 e a v4 têm o mesmo ramo.
+- v2: a frase acessível escreve o total e a contagem de motivos com `String(...)`, enquanto o centro sem item ativo usa `formatInt(total)`. A partir de 1.000 perdas a frase leria `1000` e o centro `1.000` (DAD-5). Invisível com 212.
+- v2: o nome na legenda leva `truncate`, e a TIP-7 diz que nome de marca desenhada não some por reticência. Com o dado atual nada corta: no PNG de 1280 px, `Sem resposta no follow-up` termina cerca de 185 px antes da coluna de contagem. Noutro recorte com nome mais longo, a única identificação da fatia cortaria; quebrar em duas linhas evita.
+
 ## Pendências conhecidas
 
-- v2: NUM-2, percentual da legenda ainda por arredondamento simples (soma 100 só pelo dado atual); falta o maior resto como na v4. EST-1, TIP-4 e ESP-3 desta versão seguem como nas observações acima.
+- v2: EST-1, TIP-4 e ESP-3 desta versão seguem como nas observações acima. NUM-2 resolvido: legenda, centro e frase acessível usam `integerShares` (maior resto, como a v4), conferido com [1,1,1] (34, 33, 33) e sete partes iguais (soma 100).
 - v2: ROT-7 corrigido (quebra do nome no centro), medido nos cinco motivos ativos; a guarda automática continua sem cobrir estados de foco.

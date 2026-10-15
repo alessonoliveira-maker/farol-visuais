@@ -195,7 +195,8 @@ export default function ProductGrowthTreemap({
   }
 
   const total = sumRevenue(drawn);
-  const totalPrevious = sumPreviousRevenue(drawn);
+  // NUM-4: a base do trimestre anterior inclui quem zerou no corrente; só sem base medida fica fora.
+  const totalPrevious = sumPreviousRevenue(data);
   const highlight = drawn.find((product) => product.id === highlightId);
   const highlightGrowth = highlight === undefined ? null : growthOf(highlight);
   const highlightShare = highlight === undefined ? null : shareOf(highlight.revenue, total);
@@ -239,7 +240,7 @@ export default function ProductGrowthTreemap({
     highlight === undefined || highlightGrowthText === ''
       ? ''
       : `Acende ${highlight.name}, o que mais cresceu: ${highlightGrowthText} contra ${highlightBaseText}, e ${highlightShareText} do total de ${totalText}.`,
-    excluded.length === 0 ? '' : `${formatInt(excluded.length)} produto ficou fora do desenho.`,
+    excluded.length === 0 ? '' : `${formatInt(excluded.length)} ${excluded.length === 1 ? 'produto ficou' : 'produtos ficaram'} fora do desenho.`,
   ]
     .filter((part) => part !== '')
     .join(' ');

@@ -65,10 +65,16 @@ interface Grupo {
   readonly forma: 'circle' | 'triangle';
   readonly pontos: readonly Point[];
   readonly fit: Fit | null;
+  /** Por que o grupo ficou sem reta e sem faixa; `null` quando passa os dois pisos. */
+  readonly motivo: string | null;
   readonly grade: readonly GridRow[];
 }
 
-const MARGIN = { top: 10, right: 20, bottom: 8, left: 8 } as const;
+/** Piso de R² e de n, por grupo: abaixo dele a reta daria autoridade a ruído e não se desenha. */
+const R2_FLOOR = 0.3;
+const N_FLOOR = 10;
+
+const MARGIN = { top: 12, right: 36, bottom: 8, left: 8 } as const;
 const DOMAIN_X: readonly [number, number] = [0, 320_000];
 const TICKS_X = [0, 80_000, 160_000, 240_000, 320_000] as const;
 /** O eixo termina em 120 dias, a primeira linha de grade acima do topo da faixa mais alta. */
@@ -249,7 +255,18 @@ export default function CycleTicketByProductScatter({
         cicloDias: oportunidade.cicloDias,
       });
     }
-    const fit = linearFit(pontos);
+    const ajuste = linearFit(pontos);
+    const passa = ajuste !== null && ajuste.r2 >= R2_FLOOR && ajuste.n >= N_FLOOR;
+    const fit = passa ? ajuste : null;
+    let motivo: string | null = null;
+    if (!passa) {
+      motivo =
+        ajuste === null
+          ? pontos.length < N_FLOOR
+            ? `sem reta: n ${formatInt(pontos.length)} contra o piso de ${formatInt(N_FLOOR)}`
+            : 'sem reta: sem variação para ajustar'
+          : `sem reta: R² ${formatDecimal(ajuste.r2, 2)} contra o piso de ${formatDecimal(R2_FLOOR, 2)}, e n ${formatInt(ajuste.n)} contra o piso de ${formatInt(N_FLOOR)}`;
+    }
     return {
       id: produto.id,
       rotulo: produto.rotulo,
@@ -257,6 +274,7 @@ export default function CycleTicketByProductScatter({
       forma: formas[indice % formas.length] ?? 'circle',
       pontos,
       fit,
+      motivo,
       grade: buildGrid(fit),
     };
   });
@@ -282,8 +300,10 @@ export default function CycleTicketByProductScatter({
   const segundo = grupos[1]?.fit ?? null;
   const limite = primeiro === null || segundo === null ? null : overlapUpperBound(primeiro, segundo);
   const confiancaTexto = formatPercent(CONFIDENCE, 0);
-  const sobreposicaoTexto =
-    limite === null
+  const semUmaFaixa = primeiro === null || segundo === null;
+  const sobreposicaoTexto = semUmaFaixa
+    ? 'sem comparação de faixas, porque um dos produtos não tem ajuste'
+    : limite === null
       ? 'as faixas não se encontram no trecho comum'
       : `as duas se sobrepõem até ${formatCurrencyAxis(limite)}`;
   /**
@@ -306,7 +326,12 @@ export default function CycleTicketByProductScatter({
       .filter((item) => item.curto !== null)
       .map((item) => `${item.rotulo} ${String(item.curto)}`)
       .join(', ') +
-    ` por ${formatCurrencyAxis(SLOPE_UNIT)}. Aqui ${sobreposicaoTexto}.`;
+    (inclinacoes.some((item) => item.curto !== null) ? ` por ${formatCurrencyAxis(SLOPE_UNIT)}. ` : '') +
+    grupos
+      .filter((grupo) => grupo.motivo !== null)
+      .map((grupo) => `${grupo.rotulo} ${String(grupo.motivo)}. `)
+      .join('') +
+    `Aqui ${sobreposicaoTexto}.`;
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
@@ -321,7 +346,7 @@ export default function CycleTicketByProductScatter({
               {grupo.forma === 'triangle' ? <polygon fill={grupo.cor} points="5,1 9.5,9 0.5,9" /> : null}
             </svg>
             <span>{grupo.rotulo}</span>
-            <span className="text-text-muted">{inclinacoes[indice]?.texto ?? ''}</span>
+            <span className="text-text-muted">{inclinacoes[indice]?.texto ?? grupo.motivo ?? ''}</span>
             <span className="text-text-muted">
               {grupo.fit === null
                 ? ''

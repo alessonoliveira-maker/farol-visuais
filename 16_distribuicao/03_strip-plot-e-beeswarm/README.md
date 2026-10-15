@@ -106,11 +106,11 @@ vem a segunda dimensão em vez de deixar o leitor deduzir.
   e rótulos descolam. O sintoma é de desalinhamento, não de erro, então passa batido na revisão.
 - **O `ZAxis` está ali para travar o raio** (v1 e v2). Sem ele o Recharts passa a variar o tamanho do
   ponto, e tamanho nestas peças não carrega informação nenhuma (REC-15).
-- **v1, EST-1, bloqueante da revisão de 2026-10-05 (segunda reprovação, sem rodada de correção nesta passada).** Sem
-  estado vazio: com `data` vazio ela desenha eixo, meta e rodapé em vez do bloco `role="status"` das irmãs.
-- **v1, seção 14.1 e DAD-10, bloqueante da mesma revisão.** O `meta.json` e o catálogo declaram campanha
-  nomeada por ponto e nenhum nome chega à tela (sem Tooltip, sem rótulo, sem rodapé). Falta ligar
-  `ChartTooltip` e escrever o caso extremo no rodapé, ou corrigir o `meta.json`.
+- **v1, EST-1 e DAD-10: resolvidos em 2026-10-15**, na segunda rodada de correção autorizada pelo dono
+  (eram os dois bloqueantes da revisão de 2026-10-05). Com `data` vazio a versão devolve o bloco
+  `role="status"` com `Filter`, e a campanha de maior CPL é nomeada no rodapé e na frase acessível, com o
+  `meta.json` alinhado; aprovada na revisão de 2026-10-15. O que ficou dessa correção está nas observações
+  da revisão abaixo (rodapé de cinco linhas, empates exatos, dica do catálogo não implementada).
 - **v3 não mede `CONTRASTE-MARCA` nem `ESPESSURA-MARCA`.** A nuvem é desenhada à mão, fora de um
   `<Bar>`, e o tique do eixo Y é um `<text>` próprio. Os números do par marca contra cartão estão
   medidos à mão no `notes` do `meta.json`.
@@ -232,3 +232,20 @@ faixa de R$ 20 a R$ 460.
 - v4: o rótulo da seleção fica no topo do plano, à esquerda da guia, sem reserva contra traço alto; com a seleção entre R$ 140 e R$ 200 o halo cortaria os traços de 100 a 113 campanhas (GEO-4). Não ocorre com a seleção publicada em R$ 310.
 - v4: a seleção usa `--chart-2`, que repete o hex de `--warning` (COR-8), enquanto a tabela 17.2 dá o destaque ao `--chart-1`; o catálogo pede esse token, não há variação semântica no corpo e a seleção tem comprimento e nome como segundo canal.
 - v4: a observação anterior sobre o rótulo da seleção sem algarismo tabular está resolvida.
+
+**Revisão de 2026-10-15, segunda passada da v1 (depois da segunda rodada de correção).** Aprovada; os dois bloqueantes de 2026-10-05 (EST-1 e DAD-10) estão resolvidos, e nada abaixo reprova.
+
+- v1: a seção Pendências conhecidas ainda lista o EST-1 e o DAD-10 da v1 como abertos e diz "Na v1 nem isso existe"; as duas entradas envelheceram com esta correção.
+- v1: a linha do maior CPL empurrou o rodapé para cinco linhas e o plano caiu de 104 para 84 px de altura (faixas de 26 para 21 px) no canvas `card`. Segue legível, mas é a GEO-14: a frase "um ponto é uma campanha; ..." é a candidata a sair, ou o canvas a crescer (GEO-1).
+- v1: 7 das 114 campanhas empatam em valor exato com outra da mesma faixa (Social com três em R$ 75, três em R$ 138 e duas em R$ 69; Busca paga com duas em R$ 88; Vídeo com duas em R$ 162) e viram um ponto só. O rodapé diz que pontos sobrepostos aparecem separados por contorno, o que não vale para empate exato; o `n` de cada faixa conta todas.
+- v1: o rodapé ainda diz "contorno claro", e no tema escuro o contorno é a cor do cartão (repete 2026-10-05).
+- v1: a frase acessível ainda começa por "Custo por lead" e não pelo tipo de gráfico (ACE-1); mede 230 caracteres, perto do teto de 250.
+- v1: o catálogo pede "tooltip com o nome fictício da campanha"; a correção seguiu a saída da DAD-10 (extremo nomeado no rodapé e `meta.json` alinhado), e as notas do `meta.json` não declaram essa divergência, nem a da opacidade de 0,45.
+- v1: o item do `demonstrates` "n ao lado do nome da faixa campanha de maior CPL nomeada no rodapé" perdeu a conjunção entre "faixa" e "campanha".
+- v1: o comentário do `data.ts` diz que "o ponto sem nome perderia justamente isso", e na tela só o extremo tem nome (DAD-10, lado do comentário).
+- v1: o ramo da frase acessível "nenhuma campanha medida" ficou inalcançável depois do retorno antecipado do estado vazio; é código morto.
+- v1: `withoutLeads` tem default do fixture (7); quem passa `data` próprio sem a contagem herda "7 campanhas sem nenhum lead" no rodapé.
+- v1: a campanha nomeada no rodapé não tem marca no desenho; o leitor a acha pela faixa e pela posição, a 4 px do maior ponto de Social. Cabe como segunda anotação (ANO-1).
+- v1: seguem sem mudança as observações de 2026-10-05 sobre `ifOverflow` (ANO-3), `formatCurrencyAxis` (EIX-6) e o rótulo "meta R$ 150" sem algarismo tabular (TIP-1); os tiques do eixo X também saem sem `tabular-nums`, pelo `AXIS_PROPS`.
+- v1: os tiques do eixo são os automáticos do Recharts sobre o teto em passo de 50, e a EIX-4 pede `ticks` calculados no componente; neste recorte o teto cai em R$ 400 e os cinco tiques são redondos.
+- v1: a amostra da mediana fica no rodapé, e a ROT-4 pede legenda acima ou ao lado do gráfico; sem consequência de leitura neste preview.

@@ -15,13 +15,13 @@
       }
     },
     "v2_maior-sequencia-fora-do-sla-anotada": {
-      "veredito": "reprovado",
-      "nota": "Segunda passada. Pergunta 8, com reflexo na 25. EST-2, EST-1b, DAD-6 e seção 14.1 (ausência exibida como zero). Mora no ramo: a guarda de vazio testa data.length (Chart.tsx, linha 73) e as contas só enxergam semanas com resultado; com as 26 semanas nulas o cartão escreve sem sequência fora do SLA (linha 125) e 0 semanas fora do SLA, nenhuma colada na outra (linha 130), e a frase diz 0 dentro, 0 fora e 0 no limite. Mudar: com zero semana medida escrever formatUnavailable() no topo e na frase, e contar as semanas sem resultado na frase, como a v1 faz. O bloqueante da primeira passada (oração fixa do empate) está corrigido e os dois PNGs do dado padrão estão corretos. Parecer na seção Segunda passada de validation/revisao_24_microvisuais-sparklines__07_win-loss_2026-10-05.md.",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T17:14:42.186Z",
-      "impressao": "f51cdeda3f9286d76565f68addfa869458317da5",
+      "veredito": "aprovado",
+      "nota": "Quarta passada, depois da terceira rodada de correção. 32 perguntas sem bloqueante nos dois temas. Item 3 do parecer de 2026-10-15 cumprido e conferido por execução fora da árvore (Chart empacotado no diretório temporário, dado trocado pela prop, 14 casos renderizados nos dois temas): com semana nula e ao menos uma medida, uma linha própria escreve N semanas sem resultado medido, fora da contagem; com 1 vitória e 25 nulas o corpo lê sem sequência fora do SLA, nenhuma semana fora do SLA e 25 semanas sem resultado medido, fora da contagem; com as 26 nulas, indisponível e 26 semanas sem resultado medido. Plural certo no corpo e nenhuma colada na outra só com derrota. Nenhum caso corta ou passa do corpo: no mais alto a tinta vai até 213 de 241,5 px, e a linha com o empate vizinho cabe numa linha. Dado padrão igual ao do commit (o preview só muda o hash de origem), frase de 173 caracteres, fidelidade de 0,003% e 0,020%. Observações no README: frase chega a 252 caracteres no ramo, ramo sem sequência sem o denominador de semanas medidas, uma derrota só com nenhuma colada na outra, em 1 semanas na frase, ausência sem forma nem item de legenda.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:26:51.918Z",
+      "impressao": "d2c6ddda420ed61d0b9ae5b973afb080ecf9d545",
       "arquivos": {
-        "Chart.tsx": "a1fd37d075d70571cb6ee107093c5a47b3791aa1",
+        "Chart.tsx": "010f6fba7abdd1c600bfb1e38569c783d3e92c3c",
         "data.ts": "720bf4c25dd7fbf8882f04059546efa610f4e216",
         "meta.json": "1805236dcd4ea40dbcac82bf14c88d94b3ed507a"
       }
@@ -126,6 +126,32 @@
       "impressao": "f51cdeda3f9286d76565f68addfa869458317da5",
       "arquivos": {
         "Chart.tsx": "a1fd37d075d70571cb6ee107093c5a47b3791aa1",
+        "data.ts": "720bf4c25dd7fbf8882f04059546efa610f4e216",
+        "meta.json": "1805236dcd4ea40dbcac82bf14c88d94b3ed507a"
+      }
+    },
+    {
+      "versao": "v2_maior-sequencia-fora-do-sla-anotada",
+      "veredito": "reprovado",
+      "nota": "Terceira passada, depois da segunda rodada de correção. Pergunta 8, com reflexo na 19. EST-2, DAD-2, DAD-9, DAD-5 e seção 14.1 (ausência exibida como zero). Corrigido e conferido por execução: com as 26 semanas nulas o topo escreve formatUnavailable() e a frase conta as semanas sem resultado medido. Continua, mora no ramo: o corpo visível só conta a ausência quando nenhuma semana foi medida; com 1 vitória e 25 nulas o cartão escreve sem sequência fora do SLA e 0 semanas fora do SLA, nenhuma colada na outra (Chart.tsx, linhas 133 e 140), o mesmo texto do bloqueante anterior, e só a frase diz 25 sem resultado medido. Mudar: escrever na tela a contagem de semanas sem resultado sempre que houver alguma, nos dois ramos (linha de leitura ou item de legenda com amostra vazada e contagem), sem corte nos dois temas. É o item 3 do O que mudar do parecer anterior. Parecer em validation/revisao_24_microvisuais-sparklines__07_win-loss_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:15:36.830Z",
+      "impressao": "732bf8a69fb99176478146fe863033f5b8010c9b",
+      "arquivos": {
+        "Chart.tsx": "ae1e2a4498ffd02d9f5462f9074ce33b97a53237",
+        "data.ts": "720bf4c25dd7fbf8882f04059546efa610f4e216",
+        "meta.json": "1805236dcd4ea40dbcac82bf14c88d94b3ed507a"
+      }
+    },
+    {
+      "versao": "v2_maior-sequencia-fora-do-sla-anotada",
+      "veredito": "aprovado",
+      "nota": "Quarta passada, depois da terceira rodada de correção. 32 perguntas sem bloqueante nos dois temas. Item 3 do parecer de 2026-10-15 cumprido e conferido por execução fora da árvore (Chart empacotado no diretório temporário, dado trocado pela prop, 14 casos renderizados nos dois temas): com semana nula e ao menos uma medida, uma linha própria escreve N semanas sem resultado medido, fora da contagem; com 1 vitória e 25 nulas o corpo lê sem sequência fora do SLA, nenhuma semana fora do SLA e 25 semanas sem resultado medido, fora da contagem; com as 26 nulas, indisponível e 26 semanas sem resultado medido. Plural certo no corpo e nenhuma colada na outra só com derrota. Nenhum caso corta ou passa do corpo: no mais alto a tinta vai até 213 de 241,5 px, e a linha com o empate vizinho cabe numa linha. Dado padrão igual ao do commit (o preview só muda o hash de origem), frase de 173 caracteres, fidelidade de 0,003% e 0,020%. Observações no README: frase chega a 252 caracteres no ramo, ramo sem sequência sem o denominador de semanas medidas, uma derrota só com nenhuma colada na outra, em 1 semanas na frase, ausência sem forma nem item de legenda.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:26:51.918Z",
+      "impressao": "d2c6ddda420ed61d0b9ae5b973afb080ecf9d545",
+      "arquivos": {
+        "Chart.tsx": "010f6fba7abdd1c600bfb1e38569c783d3e92c3c",
         "data.ts": "720bf4c25dd7fbf8882f04059546efa610f4e216",
         "meta.json": "1805236dcd4ea40dbcac82bf14c88d94b3ed507a"
       }

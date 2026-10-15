@@ -78,6 +78,24 @@ _Revisão de 2026-09-19, segunda leitura, feita depois da rodada de correção: 
 - v3: o percentual da legenda é medido contra a meta, não contra o total já realizado, e por isso as quatro linhas somam os 65% do centro. A leitura fecha, mas o cabeçalho da coluna não existe e o par só se entende depois de somar; um rótulo de coluna ao colar no Farol tiraria a dúvida.
 - v4: o caso sem coleta desenha o trilho tracejado e escreve `formatUnavailable()`, porém sem o ícone `Unplug` que a EST-2 descreve. A ausência continua distinta do zero medido pelo traço e pela palavra, então é acabamento, não sentido.
 
+_Revisão de 2026-10-14 da v3 (motivo `revisao_desatualizada`), feita sobre o arquivo de hoje. O trilho em `--surface-sunken` está aceito nos dois temas, e a versão volta reprovada por outro motivo, a falta de ramo de vazio (parecer em `validation/revisao_13_progresso-meta-e-gauge__03_progresso-radial-de-anel-unico_2026-10-14.md`). Os itens abaixo não reprovam._
+
+- v3: ramo de estouro latente. Com a soma das origens acima da meta, `percent = Math.min(total / meta, 1)` escreve "100%" no centro enquanto a legenda soma mais que isso, e o `PolarAngleAxis` sem `allowDataOverflow` estende o domínio até a soma (Recharts 3.10.1, `extendDomain`), então a volta cheia passa a valer o realizado e não a meta. O dado fixo não exercita esse ramo; o estouro escrito por extenso é demonstração da v4, que a v3 poderia seguir.
+- v3: ramo de meta zero latente. `Math.max(data.meta, 1)` troca a meta ausente por 1, e o centro escreveria "100%" e "R$ 3,3 mi de R$ 0". É o mesmo padrão das v1 e v2; meta sem valor pede `formatUnavailable()` no lugar do percentual (EST-1b, EST-4).
+- v3: a cor vem de `ORIGIN_COLORS[index]`, pela posição no array (COR-3). Com o dado padrão está certo; se a página filtrar uma origem, a vizinha herda o slot dela. Levar `slot` no dado ou mapear por `id`.
+- v3: o percentual de cada origem é arredondado sozinho, sem maior resto (NUM-2). Hoje 31, 17, 12 e 5 somam os 65 do centro por coincidência do dado.
+- v3: os valores da legenda somam R$ 3,21 mi impressos contra R$ 3,3 mi no centro, porque "R$ 1,5 mi" esconde R$ 40 mil. É arredondamento do `formatCurrencyCompact` em escalas misturadas, e os percentuais fecham.
+- v3: o `cornerRadius` de 4 no último segmento arredonda as duas pontas, inclusive a que encosta no inbound, e abre ali um entalhe que mostra o trilho (0,3° medido no PNG claro). Só a ponta livre pediria o arredondamento, ou nenhuma, como na ponta reta da v1.
+- v3: `innerRadius`, `outerRadius` e `cornerRadius` estão escritos no JSX e não em constantes do topo, e o `RadialBarChart` não declara `MARGIN` (ESP-3). Nada encosta na borda no preview.
+- v3: o rótulo do trimestre ("3º trimestre de 2026") não tem classe de algarismo tabular (TIP-1). Sem consequência visível.
+- v3: o nome da origem na legenda usa `truncate`, e a legenda é o único lugar que nomeia os segmentos (TIP-7 latente). Os quatro nomes cabem com folga no preview.
+
+_Segunda revisão de 2026-10-14 da v3 (motivo `revisao_desatualizada`), feita sobre o arquivo de hoje, depois da rodada única de correção. O ramo de vazio entrou no molde de 13/04 v1 e a versão está aprovada. Os nove itens do parágrafo anterior continuam valendo, porque a correção tocou só o ramo de vazio. Os itens abaixo são novos e também não reprovam._
+
+- v3: o percentual do centro está em `text-2xl` (24 px), e a 17.1 pede 30 px para o número de KPI, que é o `text-3xl` da v1. É legível e não encosta no arco no preview; se o tamanho menor foi escolhido para caber no furo, vale escrever isso no comentário do topo.
+- v3: a frase do vazio diz que o recorte não tem origem, mas não diz o que isso quer dizer para a meta (a EST-1 pede as duas coisas). Ela segue o molde aprovado de 13/04 v1.
+- v3: uma origem com valor zero entraria na legenda com amostra cheia e "R$ 0", sem marca no anel (`minPointSize={0}`). A ROT-10 pede marcador vazado e motivo para a parte que some por construção. O dado fixo não exercita esse caso.
+
 ## Pendências conhecidas
 
 - **Fechada em 2026-09-29.** A v3 seguia com o trilho em `--surface-overlay` (invisível no tema claro), fora do escopo da rodada de 2026-09-18 por não estar entre as versões reprovadas; a varredura do token trocou o `TRACK_FILL` da v3 por `--surface-sunken`, e as quatro versões do modelo desenham o trilho nos dois temas.

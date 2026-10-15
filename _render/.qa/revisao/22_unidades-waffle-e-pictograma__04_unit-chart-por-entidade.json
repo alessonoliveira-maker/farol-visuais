@@ -27,13 +27,13 @@
       }
     },
     "v3_carteira-de-contas-por-executivo": {
-      "veredito": "reprovado",
-      "nota": "Segunda passada, julgado o arquivo de 2026-10-13 depois da correção. Os dois bloqueantes da primeira passada estão corrigidos e conferidos: moldura em text-muted a 5,21:1 e 5,37:1, e tabulação na ordem de preenchimento, 0 de 560 pares fora de sequência. Reprovada por dois defeitos da moldura do teto que o dado padrão esconde, medidos em render de rascunho com o mesmo Chart.tsx. Pergunta 13, ANO-3 e seção 14.1 (domínio): a altura do viewBox sai só das pilhas (maxRowsOf) e ignora o teto; com a maior pilha em até 96 contas a moldura nasce acima do topo do viewBox e perde o traço de topo nas seis carteiras (medido com 280 contas: y da moldura 10 px acima do topo); incluir rowsFor(ceiling) na altura. Seção 14.1, encoding (sem pergunta própria, a mais próxima é a 13): a moldura fecha linhas inteiras de 12, então teto que não é múltiplo de 12 desenha capacidade maior que a escrita (medido com teto 100: 108 lugares e 16 quadrados acima do teto pintados dentro da moldura); fechar a moldura em degrau em exatamente ceiling células. As duas saídas foram testadas no rascunho. Parecer em validation/revisao_22_unidades-waffle-e-pictograma__04_unit-chart-por-entidade_2026-10-13.md, seção Segunda passada.",
-      "data": "2026-10-13",
-      "registradoEm": "2026-10-13T10:19:17.913Z",
-      "impressao": "4b15ae2dcb28c32391c306e1f7f7dcfbf860d5c4",
+      "veredito": "aprovado",
+      "nota": "Terceira passada, julgado o arquivo de 2026-10-15. Os dois bloqueantes da segunda passada estão resolvidos e conferidos em bancada com o mesmo Chart.tsx: com 280 contas e teto 120 o viewBox vai a 894 x 172 e as seis molduras fecham inteiras (topo em y 14); com teto 100 cada moldura é um path de 8 linhas e degrau de 4 células (100 lugares), Renan A. com 100 a preenche e os 49 quadrados em negative (28 e 21) ficam todos fora dela; com teto 125 e pilhas baixas o degrau de 5 células entra no viewBox. Dado padrão igual ao anterior: 566 quadrados, molduras de 120, traço esquerdo da primeira agora inteiro (2 px de dispositivo). check 0 erro; página contra SVG 0,03% nos dois temas. Observações no README (Anatomia ainda diz rect, legenda mantém acima do teto sem excedente, itens de mesma rodada em aberto).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:29:58.929Z",
+      "impressao": "7d05a1e82c0fee48b4cf13c3a8b7db435b5a1a08",
       "arquivos": {
-        "Chart.tsx": "87e54109b9416680e9a64eee7a8118605ac48407",
+        "Chart.tsx": "214b6d194e6c034a8c7d1ce549d328dcba895676",
         "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
         "meta.json": "ae6d4cbc0fd839fcdf25ac9d4c05a81f8c15ed2f"
       }
@@ -113,6 +113,19 @@
       "impressao": "4b15ae2dcb28c32391c306e1f7f7dcfbf860d5c4",
       "arquivos": {
         "Chart.tsx": "87e54109b9416680e9a64eee7a8118605ac48407",
+        "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
+        "meta.json": "ae6d4cbc0fd839fcdf25ac9d4c05a81f8c15ed2f"
+      }
+    },
+    {
+      "versao": "v3_carteira-de-contas-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Terceira passada, julgado o arquivo de 2026-10-15. Os dois bloqueantes da segunda passada estão resolvidos e conferidos em bancada com o mesmo Chart.tsx: com 280 contas e teto 120 o viewBox vai a 894 x 172 e as seis molduras fecham inteiras (topo em y 14); com teto 100 cada moldura é um path de 8 linhas e degrau de 4 células (100 lugares), Renan A. com 100 a preenche e os 49 quadrados em negative (28 e 21) ficam todos fora dela; com teto 125 e pilhas baixas o degrau de 5 células entra no viewBox. Dado padrão igual ao anterior: 566 quadrados, molduras de 120, traço esquerdo da primeira agora inteiro (2 px de dispositivo). check 0 erro; página contra SVG 0,03% nos dois temas. Observações no README (Anatomia ainda diz rect, legenda mantém acima do teto sem excedente, itens de mesma rodada em aberto).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:29:58.929Z",
+      "impressao": "7d05a1e82c0fee48b4cf13c3a8b7db435b5a1a08",
+      "arquivos": {
+        "Chart.tsx": "214b6d194e6c034a8c7d1ce549d328dcba895676",
         "data.ts": "4bb3202e905d0bca6d4eab774a30a5ed4e1fa35a",
         "meta.json": "ae6d4cbc0fd839fcdf25ac9d4c05a81f8c15ed2f"
       }

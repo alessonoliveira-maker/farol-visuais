@@ -2,7 +2,7 @@ import { Ban } from 'lucide-react';
 
 import { formatInt } from '@/lib/format';
 import { cn } from '@/lib/utils';
-import { data as defaultData, HIGHLIGHT_STAGE_INDEX, STAGES, type ExecutiveStageLoad } from './data';
+import { data as defaultData, STAGES, type ExecutiveStageLoad } from './data';
 
 /**
  * Tabela cruzada com o miolo em heatmap (degrau proporcional à contagem, escala só das
@@ -53,7 +53,8 @@ export default function StageLoadHeatmap({ data = defaultData, height, className
   const rowMax = Math.max(1, ...rowTotals);
   const colMax = Math.max(1, ...colTotals);
   const grandTotal = sum(rowTotals);
-  const highlightStage = STAGES[HIGHLIGHT_STAGE_INDEX] ?? '';
+  const busiestStageIndex = colTotals.reduce((best, value, index) => (value > (colTotals[best] ?? 0) ? index : best), 0);
+  const highlightStage = STAGES[busiestStageIndex] ?? '';
 
   if (data.length === 0) {
     return (
@@ -63,11 +64,10 @@ export default function StageLoadHeatmap({ data = defaultData, height, className
     );
   }
 
-  const busiestStageIndex = colTotals.reduce((best, value, index) => (value > (colTotals[best] ?? 0) ? index : best), 0);
   const summary =
     `Tabela cruzada em heatmap com ${String(data.length)} executivos por ${String(STAGES.length)} etapas do funil em 2026-09. ` +
     `${STAGES[busiestStageIndex] ?? ''} concentra o maior total de coluna, com ${String(colTotals[busiestStageIndex] ?? 0)}. ` +
-    `Total geral de ${String(grandTotal)} oportunidades. Etapa em destaque: ${highlightStage}.`;
+    `Total geral de ${String(grandTotal)} oportunidades. Etapa em destaque por ter o maior total: ${highlightStage}.`;
 
   const gridTemplateColumns = `${String(NAME_COLUMN_WIDTH)}px repeat(${String(STAGES.length)}, minmax(0, 1fr)) ${String(TOTAL_COLUMN_WIDTH)}px`;
 
@@ -76,7 +76,7 @@ export default function StageLoadHeatmap({ data = defaultData, height, className
       <div className="grid gap-x-1 gap-y-1" style={{ gridTemplateColumns }}>
         <span className="self-end pb-0.5 text-[0.6875rem] font-medium text-text-muted">Executivo</span>
         {STAGES.map((stage, stageIndex) => {
-          const isHighlight = stageIndex === HIGHLIGHT_STAGE_INDEX;
+          const isHighlight = stageIndex === busiestStageIndex;
           return (
             <span className="flex flex-col items-center self-end pb-0.5 text-center" key={stage}>
               <span className={cn('text-[0.6875rem]', isHighlight ? 'font-bold text-text-primary' : 'font-medium text-text-secondary')}>
@@ -84,7 +84,7 @@ export default function StageLoadHeatmap({ data = defaultData, height, className
               </span>
               {isHighlight ? (
                 <span aria-hidden className="text-[0.6875rem] text-text-muted">
-                  {formatInt(colTotals[HIGHLIGHT_STAGE_INDEX] ?? 0)} no total
+                  {formatInt(colTotals[busiestStageIndex] ?? 0)} no total, o maior
                 </span>
               ) : null}
             </span>

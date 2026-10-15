@@ -60,7 +60,7 @@ desmonta o painel, não só o esconde.
   rodapé soma sempre as cinco linhas, abertas ou não.
 * [`v2_executivo-com-serie-e-motivos`](./v2_executivo-com-serie-e-motivos/) ([preview](./v2_executivo-com-serie-e-motivos/preview.svg)):
   ao abrir um executivo, um `LineChart` do Recharts com a receita dos 12 meses até agosto de 2026
-  ao lado da barra de motivos de perda, motivo dominante em `--chart-1` e peso 700, os demais em
+  ao lado da barra de motivos de perda, motivo dominante em `--chart-1` e peso 700 (só com máximo único; no empate a linha fechada nomeia os empatados e as barras empatadas levam o mesmo destaque), os demais em
   `--line-strong` com o percentual escrito, somando 100 pelo maior resto.
 * [`v3_filas-com-mapa-de-entradas`](./v3_filas-com-mapa-de-entradas/) ([preview](./v3_filas-com-mapa-de-entradas/preview.svg)):
   filas de pré-vendas com volume, SLA e bullet de capacidade contra o teto na linha resumo; o
@@ -99,19 +99,11 @@ desmonta o painel, não só o esconde.
   resolveria a quebra.
 * `v1`: o cartão de etapa mostra a duração só em texto, então 34 dias e 5 dias ocupam a mesma
   largura; quem lê rápido perde qual etapa travou o negócio.
-* `v2`: o rótulo do quarto motivo sai truncado ("Projeto cancelado internam…") por causa do
-  `w-40 truncate`; a categoria ainda se identifica, mas o texto completo não aparece em lugar nenhum
-  da tela.
-* `v2`: quando a série do executivo vem vazia, a célula de receita escreve um travessão em vez de
-  `formatUnavailable()`, que é o que a EST-2 pede; o dado fixo nunca chega nesse caminho, então nada
-  aparece no preview.
 * `v2`: o render mediu diferença acima de 0,5% entre o `preview.svg` e a página nos dois temas
   (arquivos `.diff.png` em `_render/.qa/`); é deslocamento de cerca de um pixel nas linhas abaixo do
   painel, sem mudança de conteúdo.
 * `v2`: o `LineChart` do painel não passa `accessibilityLayer={false}` mesmo com a raiz já trazendo
   `role` e frase calculada.
-* `v2`: em Renan A. os dois primeiros motivos empatam em 6 ocorrências e a linha fechada anuncia só
-  o primeiro como principal, sem dizer que houve empate.
 * `v2`: as barras dos motivos não dominantes ficam em `--line-strong` sobre o trilho, o que mede
   1,83:1 no tema claro; a ACE-3 permite porque o percentual está escrito ao lado, mas a marca quase
   desaparece.
@@ -133,17 +125,78 @@ somam ao que já estava registrado acima.
   `transform` só quando `el.localName !== 'svg'` e nunca copia a propriedade `rotate`, então a
   classe `rotate-90` do ícone se perde na serialização. Nada a corrigir nas versões; quem revisar o
   modelo pelo PNG precisa ler o estado de aberto pelo painel, não pela seta.
-* `v2`: o `YAxis` do painel usa `domain={[0, 'dataMax']}` sem `ticks` próprios, então a escala sai
-  em 0, R$ 140 mil e R$ 272 mil, sem o intervalo redondo que a EIX-4 pede.
 * `v2`: com `interval={2}` no eixo de mês, o último mês da série (ago/26) fica sem tique, embora o
   caso de uso cite justamente os 12 meses até agosto de 2026.
-* `v2`: o `meta.json` afirma peso 700 no motivo dominante, enquanto o código aplica `font-semibold`,
-  que é 600; a distinção visual funciona, só o texto do metadado é que promete mais.
 * `v1` e `v4`: a pista da linha fechada escreve "etapas percorridas" sempre no plural, então uma
   oportunidade com uma etapa só leria "1 etapas"; o dado fixo não chega nesse caso.
 * `v3`: acima do teto, os 114% se distinguem por cor e por peso, e o segundo canal exigido pela
   ACE-2 fica por conta do peso; o ícone de alerta que a coluna de SLA já usa deixaria a leitura mais
   firme sem custo de espaço.
+
+Correção de 2026-10-15 em `v2`: nome do motivo inteiro em até duas linhas (TIP-7); eixo Y com ticks redondos (0 a 300 mil) em largura de 70 px, um tique por linha (EIX-4, EIX-6); `shares` devolve `null` sem perdas e a ausência é escrita pelo nome, série vazia vira bloco `role="status"` e `formatUnavailable()`; empate nomeia os empatados (COR-2); `axisLine={false}`, `tickMargin={8}` e margem em constante. Sem desvio declarado de largura além dos 70 px da tabela da EIX-6.
+
+Revisão independente de 2026-10-15 (`v2` e `v3`, código de 2026-09-28): `v3` aprovada, `v2`
+reprovada com o parecer em `validation/revisao_14_tabelas-visuais__08_tabela-com-linha-expansivel_2026-10-15.md`.
+Os itens abaixo não bloqueiam e somam ao que já estava registrado.
+
+* `v2`: a frase acessível descreve a estrutura e não diz conclusão nenhuma (ACE-1); caberia, por
+  exemplo, a subida de Talita V. e o peso do motivo dominante.
+* `v2`: os tiques do eixo Y saem em Manrope sem algarismo tabular, e "50% das perdas" também (TIP-1);
+  os percentuais são montados com `String()` e não com `formatPercent`.
+* `v2`: o total de perdas de cada executivo não aparece em lugar nenhum, então "73% das perdas" de 11
+  casos parece mais forte que "50% das perdas" de 18 (DAD-1, DAD-7).
+* `v2`: o cabeçalho "Receita do mês" não diz qual mês; dá para derivá-lo do último ponto da série com
+  `formatMonthShort` (NUM-5, DAD-9).
+* `v2`: cada painel tem o domínio Y do próprio executivo; com dois abertos, a mesma altura vale
+  valores diferentes (EIX-9); se o modelo admite várias abertas, vale declarar ou usar escala comum.
+* `v2`: o `series()` do `data.ts` troca mês faltante por zero (`?? 0`) e o tipo não admite `null`, então
+  um mês sem medição viraria receita zero na linha (EIX-10, DAD-2).
+* `v3`: com todas as filas sem grade de entradas, `min` e `max` caem em 0 e 1 (`Chart.tsx:38`, aviso da
+  `AGREGACAO-ZERO`) e chegam à legenda e à frase acessível ("de 0 a 1 entradas"); mesmo critério de
+  `14/06 v2`, observação: devolver `null` e omitir a faixa (EST-1b).
+* `v3`: a frase acessível não diz a conclusão (ACE-1): Santa Catarina acima do teto (114%) e do SLA
+  (5,8 h contra 4 h), e o pico das 13h.
+* `v3`: "(meta 4 h)" e os extremos "0" e "27" da legenda saem em Manrope sem `tabular-nums` (TIP-1).
+* `v3`: a legenda da escala não tem unidade ("0 a 27 entradas") e o painel não diz se a célula é o
+  total do mês (NUM-5, NUM-6); a grade de Santa Catarina soma 306 entradas contra 268 em
+  "Volume/mês", incoerência que só aparece com o painel dela aberto.
+* `v3`: a marca do teto do bullet não tem rótulo com valor (ANO-2) e, sobre a barra de 114%, mede
+  1,82:1 no escuro e 1,12:1 no claro contra `--chart-1`; o percentual escrito cobre a leitura (ACE-3).
+* `v3`: capacidade acima de 130% é cortada em `CAPACITY_DOMAIN_MAX` sem sinal no desenho; o dado
+  fixo não chega nesse caso.
+
+Revisão independente de 2026-10-15, segunda passada (`v2` depois da correção do mesmo dia): `v2`
+aprovada. Os quatro bloqueantes do parecer anterior estão resolvidos no arquivo de hoje (nome inteiro
+em duas linhas, tiques de 0 a 300 mil em uma linha cada, `shares` nulo sem perdas, empate nomeado e
+com o mesmo destaque). Os itens abaixo não bloqueiam e somam ao que já estava registrado.
+
+* `v2`: com a série vazia, a célula "Receita do mês" escreve `formatUnavailable()` em
+  `--text-primary` e sem `Unplug`, enquanto o painel da mesma linha diz "Nenhum mês com receita neste
+  recorte." com `Filter`; o dado fixo não chega ao ramo, mas a linha diria indisponível e vazio ao
+  mesmo tempo. Escrever na célula a frase de vazio em `--text-muted` e reservar `formatUnavailable()`
+  com `Unplug` para um estado de falha explícito no tipo, como na `v4` (EST-1, EST-2, Anatomia item 7).
+* `v2`: `Y_AXIS_WIDTH` de 70 px fica acima da faixa de 48 a 64 da EIX-6 sem desvio declarado no
+  `meta.json`; no render os tiques saem em uma linha, sem consequência. Declarar o desvio ou seguir a
+  REC-2.
+* `v2`: o render de hoje mede 1,92% (escuro) e 1,95% (claro) entre página e `preview.svg`, acima de
+  0,5% e abaixo do teto de 2,00% da ferramenta. O painel sai idêntico; o vermelho do `.diff.png` está
+  na seta sem giro, no kerning por face que a própria ferramenta avisa (FIDELIDADE) e num deslocamento
+  de 1 px das linhas abaixo do painel.
+* `v2`: o trilho dos motivos mede 58 px, então 1 p.p. vale 0,58 px; com raio de 6 px numa barra de
+  12 px de altura, a de 22% (12,75 px) sai como círculo e a de 11% (6,4 px) como cápsula. O percentual
+  escrito sustenta a leitura; nome antes do trilho (ROT-2), trilho mais largo e raio menor devolvem a
+  forma de barra.
+* `v2`: a linha da série e o motivo dominante dividem `--chart-1` no mesmo painel (17.2, um destaque
+  por visual); a linha em `--text-secondary` deixaria o ciano só para o motivo destacado.
+* `v2`: o empate escreve "40% cada das perdas"; "40% das perdas cada" lê melhor. Com empate que o
+  maior resto arredonda diferente (contagens 1, 1 e 1 viram 34, 33 e 33) a linha fechada escreveria
+  "34% cada"; o dado fixo não chega.
+* `v2`: a pista "receita mensal e motivos de perda" é igual nas quatro linhas e quebra deixando "perda"
+  sozinha em cada uma; calculada do dado (o total de perdas, por exemplo) ela caberia numa linha e
+  responderia à observação de DAD-1 acima. O cabeçalho "Receita do mês" também quebra em duas linhas.
+* `v2`: continuam valendo as observações anteriores: frase acessível sem conclusão (ACE-1), tiques do
+  eixo Y e "% das perdas" sem algarismo tabular (TIP-1), mês da "Receita do mês" não dito, domínio Y
+  por executivo, `?? 0` no `series()` do `data.ts`, ago/26 sem tique e `accessibilityLayer` ligado.
 
 ## Pendências conhecidas
 

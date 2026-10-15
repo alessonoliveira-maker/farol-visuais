@@ -275,9 +275,9 @@ export default function LinearPace({
 
   const accumulatedPanel = (
     <ResponsiveContainer height="100%" width="100%">
-      <ComposedChart accessibilityLayer={false} data={[...rows]} margin={MARGIN_TOP_PANEL}>
+      <ComposedChart accessibilityLayer={false} barCategoryGap="34%" data={[...rows]} margin={MARGIN_TOP_PANEL}>
         <CartesianGrid stroke="var(--line-subtle)" vertical={false} yAxisId={AXIS_ACCUM} />
-        <XAxis {...xAxis} hide />
+        <XAxis {...xAxis} hide scale="band" />
         <YAxis
           axisLine={false}
           domain={[0, rightDomainMax]}
@@ -397,6 +397,18 @@ export default function LinearPace({
           yAxisId={AXIS_MONTH}
         />
         <Line
+          activeDot={false}
+          connectNulls={false}
+          dataKey="accumulated"
+          dot={false}
+          isAnimationActive={animate}
+          legendType="none"
+          name="Revestimento do acumulado"
+          stroke="var(--surface-raised)"
+          strokeWidth={5}
+          yAxisId={AXIS_ACCUM}
+        />
+        <Line
           connectNulls={false}
           dataKey="accumulated"
           dot={false}
@@ -441,11 +453,27 @@ export default function LinearPace({
       </div>
       {mode === 'paineis' ? (
         <div className="flex min-h-0 flex-1 flex-col gap-2">
-          <div className="min-h-0 flex-1">{accumulatedPanel}</div>
-          <div className="min-h-0 flex-1">{monthlyPanel}</div>
+          <div className="flex min-h-0 flex-1 flex-col">
+            <p aria-hidden className="shrink-0 text-xs font-medium text-text-secondary">
+              Acumulado do ano (R$)
+            </p>
+            <div className="min-h-0 flex-1">{accumulatedPanel}</div>
+          </div>
+          <div className="flex min-h-0 flex-1 flex-col">
+            <p aria-hidden className="shrink-0 text-xs font-medium text-text-secondary">
+              Receita do mês (R$)
+            </p>
+            <div className="min-h-0 flex-1">{monthlyPanel}</div>
+          </div>
         </div>
       ) : (
-        <div className="min-h-0 flex-1">{dualChart}</div>
+        <div className="flex min-h-0 flex-1 flex-col">
+          <p aria-hidden className="flex shrink-0 justify-between text-xs font-medium text-text-secondary">
+            <span>Receita do mês (R$), eixo da esquerda</span>
+            <span style={{ color: ACCUM_COLOR }}>Acumulado do ano (R$), eixo da direita</span>
+          </p>
+          <div className="min-h-0 flex-1">{dualChart}</div>
+        </div>
       )}
       <p aria-hidden className="mt-2 shrink-0 text-[11px] text-text-muted">
         {scaleNote}

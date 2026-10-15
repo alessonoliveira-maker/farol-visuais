@@ -41,6 +41,25 @@ function wrapName(label: string): readonly string[] {
   return lines;
 }
 
+/** Percentuais inteiros pelo método do maior resto: a soma exibida é sempre 100 (NUM-2). */
+function integerShares(values: readonly number[]): number[] {
+  const total = values.reduce((sum, value) => sum + value, 0);
+  if (total <= 0) return values.map(() => 0);
+  const raw = values.map((value) => (value / total) * 100);
+  const floors = raw.map((share) => Math.floor(share));
+  let remainder = 100 - floors.reduce((sum, share) => sum + share, 0);
+  const order = raw
+    .map((share, index) => ({ index, fraction: share - Math.floor(share) }))
+    .sort((a, b) => b.fraction - a.fraction || a.index - b.index);
+  const result = [...floors];
+  for (const { index } of order) {
+    if (remainder <= 0) break;
+    result[index] = (result[index] ?? 0) + 1;
+    remainder -= 1;
+  }
+  return result;
+}
+
 interface SliceShapeProps {
   readonly cx?: number;
   readonly cy?: number;
@@ -99,10 +118,12 @@ export default function LossReasonDonut({ data = defaultData, height, className 
   const total = rows.reduce((sum, row) => sum + row.count, 0);
   const active = rows.find((row) => row.id === activeId);
   const leader = rows[0];
+  const shares = integerShares(rows.map((row) => row.count));
+  const shareOf = (id: string): number => (shares[rows.findIndex((row) => row.id === id)] ?? 0) / 100;
 
   const summary = [
     `Gráfico de rosca com ${String(total)} perdas do trimestre em ${String(rows.length)} motivos.`,
-    leader ? `O maior é ${leader.label}, com ${formatInt(leader.count)} perdas, ${formatPercent(leader.count / total, 0)} do total.` : '',
+    leader ? `O maior é ${leader.label}, com ${formatInt(leader.count)} perdas, ${formatPercent(shareOf(leader.id), 0)} do total.` : '',
     'O centro mostra o motivo em foco; passe o ponteiro ou o teclado pela legenda para trocar.',
   ]
     .filter(Boolean)
@@ -147,7 +168,7 @@ export default function LossReasonDonut({ data = defaultData, height, className 
             x={cx}
             y={top + nameLines.length * CENTER_NAME_LINE_PX + CENTER_GAP_PX + 10}
           >
-            {formatInt(active.count)} perdas ({formatPercent(active.count / total, 0)})
+            {formatInt(active.count)} perdas ({formatPercent(shareOf(active.id), 0)})
           </tspan>
         </text>
       );
@@ -225,7 +246,7 @@ export default function LossReasonDonut({ data = defaultData, height, className 
                   {row.label}
                 </span>
                 <span className="kpi-number w-8 shrink-0 text-right text-text-primary">{formatInt(row.count)}</span>
-                <span className="kpi-number w-10 shrink-0 text-right text-text-muted">{formatPercent(row.count / total, 0)}</span>
+                <span className="kpi-number w-10 shrink-0 text-right text-text-muted">{formatPercent(shareOf(row.id), 0)}</span>
               </button>
             </li>
           );

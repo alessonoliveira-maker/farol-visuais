@@ -85,3 +85,14 @@ Segunda passada de 2026-10-13, sobre a `v3` corrigida às 06:58 do mesmo dia. Os
 - `v3`, nome longo: com um nome de 26 caracteres o nome quebra em duas linhas e "128 contas" desce 12,5 px além do corpo (294 contra 281,5 px). O dado padrão só tem nomes curtos.
 - `v3`, segmento fora da lista: conta com `segmentId` que não está em `segments` é pintada com a cor do slot 1, a de Indústria (linha 287), e some no modo por segmento; no teste, 486 dos 566 quadrados ficaram na tela e a frase seguiu dizendo 566. O tipo não admite conta sem segmento; se o Farol tiver, ela pede grupo próprio no papel Ausência, como na `v4`.
 - `v3`, `notes`: a conta do corpo dá o seletor com 28 px e soma 280; medido, o seletor tem 26 px e o conteúdo fecha em 278 dos 281,5 px.
+
+Terceira passada de 2026-10-15, sobre a `v3` corrigida às 10:23 do mesmo dia. Aprovada: os dois bloqueantes da segunda passada estão resolvidos, conferidos em bancada com o mesmo `Chart.tsx` e só o `data.ts` trocado (280 contas com teto 120, 566 com teto 100, 280 com teto 125), nos dois temas; a bancada foi apagada. O que segue não reprova.
+
+- `v3`, Anatomia, item 5 deste README: ainda descreve a moldura como "`rect` tracejado 3 3"; hoje ela é um `<path>` que fecha exatamente `ceiling` células, em degrau quando o teto não é múltiplo de 12. O comentário do topo do `Chart.tsx` (linha 12) também fala em "as 120 primeiras contas", e o teto vem do dado.
+- `v3`, ROT-4: a legenda mantém o item "acima do teto" quando nenhum executivo passa dele. No recorte de 280 contas a amostra vermelha aparece sem nenhuma marca vermelha na tela. Sem leitura errada, porque a frase e a ausência de "+N" dizem o mesmo; mostrar o item só quando há excedente deixa a legenda igual ao desenho.
+- `v3`: no degrau (teto 100), o traço vertical corre no vão de 2 px entre a última célula de dentro e a primeira de fora na mesma linha; a separação se lê pela cor do excedente mais do que pelo traço. Correto e legível nos dois temas.
+- `v3`: seguem como estavam os itens já listados em "Pendências conhecidas" e nas passadas anteriores (plural fixo na frase acessível, que no recorte de 280 contas diz "0 executivos passam do teto de 120, com 0 contas a mais"; legenda em 11 px com um item em Space Grotesk; peso 400 em "128 contas"; ordem da legenda; comentário solto no `data.ts`; nome longo; `segmentId` fora da lista; fileira do excedente encostada no traço de topo).
+
+## Pendências conhecidas
+
+- `v3`, segunda rodada de correção (2026-10-15): o `viewBox` passou a cobrir `rowsFor(ceiling)` (a moldura sai inteira com pilhas baixas), a moldura é um `<path>` que fecha exatamente `ceiling` células, com degrau quando o teto não é múltiplo de 12, e o recuo do primeiro grupo ganhou 1 px. Seguem sem tratamento, sem peso de bloqueio: plural fixo na frase acessível, nome longo que passa da base do corpo, `segmentId` fora da lista, fileira do excedente encostada no traço de topo.

@@ -75,6 +75,9 @@ type TooltipEntry = NonNullable<ChartTooltipProps['payload']>[number];
  */
 const MARGIN = { top: 34, right: 8, bottom: 0, left: 68 } as const;
 const PCT_AXIS_WIDTH = 40;
+/** Rótulo da primeira coluna: vão até a borda esquerda da coluna e descida a partir do topo. */
+const FIRST_LABEL_GAP = 6;
+const FIRST_LABEL_DROP = 12;
 const MAX_BAR_SIZE = 24;
 const BAR_CATEGORY_GAP = '34%';
 const BAR_RADIUS = [3, 3, 0, 0] as const;
@@ -226,12 +229,15 @@ export default function LossParetoCut({
   const renderCountLabel = ({ x, y, width, index }: LabelProps): ReactElement | null => {
     const row = index === undefined ? undefined : rows[index];
     if (!row) return null;
+    // A primeira coluna toca o primeiro ponto da linha, que sobe para a direita: o rótulo dela
+    // sai do traço e vai para a esquerda da coluna, junto ao topo (ROT-7).
+    const first = index === 0;
     return (
       <text
         style={HALO}
-        textAnchor="middle"
-        x={Number(x) + Number(width) / 2}
-        y={Number(y) - VALUE_LABEL_GAP}
+        textAnchor={first ? 'end' : 'middle'}
+        x={first ? Number(x) - FIRST_LABEL_GAP : Number(x) + Number(width) / 2}
+        y={first ? Number(y) + FIRST_LABEL_DROP : Number(y) - VALUE_LABEL_GAP}
       >
         <tspan
           className="font-display"

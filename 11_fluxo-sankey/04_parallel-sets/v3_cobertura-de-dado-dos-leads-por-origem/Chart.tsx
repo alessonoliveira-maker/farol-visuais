@@ -31,7 +31,9 @@ import {
  * segundo canal da ACE-2 é a forma vazada mais a palavra, nunca a cor sozinha.
  *
  * A COR VEM DO EIXO DE TELEFONE, não da primeira dimensão: `--chart-1` para quem tem telefone e o
- * neutro da 17.2, `--line-strong`, para quem não tem. Assim a fita carrega a comparação do começo
+ * neutro de dado a 3:1 da ACE-6, `--text-muted` (a fita carrega a relação e não tem número próprio
+ * junto, então `--line-strong` não vale), para quem não tem. Toda fita leva contorno
+ * `--surface-raised` de 1 px com `paint-order: stroke`. Assim a fita carrega a comparação do começo
  * ao fim, e a espessura dela no eixo de desfecho é a resposta.
  *
  * Cada combinação é uma fita CONTÍNUA de espessura constante, porque dentro de cada categoria as
@@ -76,9 +78,12 @@ const TEXT_SIZE = 11;
 const READING_SIZE = 12;
 
 const WITH_DATA_FILL = 'var(--chart-1)';
-/** O neutro da marca não destacada da 17.2, aqui no papel de "lead sem telefone". */
-const MISSING_FILL = 'var(--line-strong)';
-const BLOCK_FILL = 'var(--text-muted)';
+/** Neutro de dado a 3:1 (ACE-6), aqui no papel de "lead sem telefone": 5,2:1 e 5,4:1 contra o cartão. */
+const MISSING_FILL = 'var(--text-muted)';
+/** Bloco em outro token que a fita neutra, para os dois não virarem uma massa só. */
+const BLOCK_FILL = 'var(--text-secondary)';
+const RIBBON_STROKE = 'var(--surface-raised)';
+const RIBBON_STROKE_WIDTH = 1;
 const BLOCK_STROKE = 'var(--surface-raised)';
 /** Contorno do segmento de ausência: vazado, sem preenchimento, em 5,2:1 no escuro e 5,4:1 no claro. */
 const ABSENCE_STROKE = 'var(--text-muted)';
@@ -261,12 +266,26 @@ export default function CoverageParallelSets({
         {ribbons
           .filter((ribbon) => !ribbon.hasData)
           .map((ribbon) => (
-            <path d={ribbon.d} fill={MISSING_FILL} key={ribbon.key} />
+            <path
+              d={ribbon.d}
+              fill={MISSING_FILL}
+              key={ribbon.key}
+              stroke={RIBBON_STROKE}
+              strokeWidth={RIBBON_STROKE_WIDTH}
+              style={{ paintOrder: 'stroke' }}
+            />
           ))}
         {ribbons
           .filter((ribbon) => ribbon.hasData)
           .map((ribbon) => (
-            <path d={ribbon.d} fill={WITH_DATA_FILL} key={ribbon.key} />
+            <path
+              d={ribbon.d}
+              fill={WITH_DATA_FILL}
+              key={ribbon.key}
+              stroke={RIBBON_STROKE}
+              strokeWidth={RIBBON_STROKE_WIDTH}
+              style={{ paintOrder: 'stroke' }}
+            />
           ))}
 
         {columns.map((column) =>

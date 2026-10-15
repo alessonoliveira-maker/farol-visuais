@@ -277,20 +277,58 @@ export default function HandoffSwimlane({ data = defaultData, focusId = defaultF
           .filter((handoff) => focusId !== null && isFocus(handoff.opp))
           .map((handoff) => {
             const label = formatDays(handoff.wait);
-            const w = label.length * 7 + 4;
+            const w = Math.ceil(label.length * 5.5);
             const h = 14;
             const ax = dayX(handoff.from.to + 1);
             const ay = centerY(handoff.from);
             const bx = dayX(handoff.to.from);
             const by = centerY(handoff.to);
             /* Candidatos ao longo do tracejado, à direita e à esquerda; vence o primeiro livre de barras. */
-            const candidates = [0, 8, -8, 14, -14].flatMap((dy) =>
-              [0.5, 0.4, 0.6, 0.3, 0.7, 0.2, 0.8, 0.1, 0.9].flatMap((t) =>
-                [6, -6 - w].map((dx) => ({ x: ax + (bx - ax) * t + dx, y: ay + (by - ay) * t - h / 2 + dy })),
-              ),
-            );
+            /* Ponto do próprio tracejado mais perto do retângulo do rótulo (amostrado). */
+            const nearOwn = (c: { x: number; y: number }): { px: number; py: number; gap: number } => {
+              let out = { px: ax, py: ay, gap: Number.POSITIVE_INFINITY };
+              for (let s = 0; s <= 40; s += 1) {
+                const px = ax + ((bx - ax) * s) / 40;
+                const py = ay + ((by - ay) * s) / 40;
+                const gap = Math.hypot(Math.max(c.x - px, 0, px - (c.x + w)), Math.max(c.y - py, 0, py - (c.y + h)));
+                if (gap < out.gap) out = { px, py, gap };
+              }
+              return out;
+            };
+            const candidates = [0, 8, -8, 14, -14, 22, -22, 30, -30]
+              .flatMap((dy) =>
+                [0.5, 0.4, 0.6, 0.3, 0.7, 0.2, 0.8, 0.1, 0.9].flatMap((t) =>
+                  [6, -6 - w].map((dx) => ({ x: ax + (bx - ax) * t + dx, y: ay + (by - ay) * t - h / 2 + dy })),
+                ),
+              )
+              .map((c) => ({ ...c, gap: nearOwn(c).gap }))
+              .filter((c) => c.gap >= 2 && c.gap <= 34)
+              .sort((a, b) => a.gap - b.gap);
+            const pad = 4;
+            /* Marca alheia: tracejado de outra conta (amostrado) e losangos de todas, com 4 px de respiro. */
+            const markHits = (c: { x: number; y: number }): number => {
+              const inside = (px: number, py: number, m: number): boolean =>
+                px > c.x - m && px < c.x + w + m && py > c.y - m && py < c.y + h + m;
+              let n = 0;
+              for (const other of orderedHandoffs) {
+                const ox = dayX(other.from.to + 1);
+                const oy = centerY(other.from);
+                const size = isFocus(other.opp) ? DIAMOND : DIAMOND - 2;
+                if (inside(ox, oy, size + pad)) n += 1;
+                if (other === handoff || other.wait <= 0) continue;
+                const px = dayX(other.to.from);
+                const py = centerY(other.to);
+                for (let s = 0; s <= 24; s += 1) {
+                  if (inside(ox + ((px - ox) * s) / 24, oy + ((py - oy) * s) / 24, pad)) {
+                    n += 1;
+                    break;
+                  }
+                }
+              }
+              return n;
+            };
             const hits = (c: { x: number; y: number }): number =>
-              placed.filter((item) => {
+              markHits(c) + placed.filter((item) => {
                 const bh = isFocus(item.opp) ? FOCUS_BAR_H : DIM_BAR_H;
                 const top = centerY(item) - bh / 2;
                 const left = dayX(item.from);
@@ -298,19 +336,26 @@ export default function HandoffSwimlane({ data = defaultData, focusId = defaultF
                 return c.x < right + 2 && c.x + w > left - 2 && c.y < top + bh + 2 && c.y + h > top - 2;
               }).length;
             const best = candidates.find((c) => hits(c) === 0) ?? candidates.reduce((a, c) => (hits(c) < hits(a) ? c : a), candidates[0] ?? { x: ax, y: ay });
+            const own = nearOwn(best);
+            const lx = Math.min(Math.max(own.px, best.x), best.x + w);
+            const ly = Math.min(Math.max(own.py, best.y), best.y + h);
             return (
+              <g key={`${handoff.opp.id}-${handoff.to.stage.laneId}-dias`}>
+              {own.gap > 5 ? (
+                <line stroke={colorOf(handoff.opp)} strokeWidth={1} vectorEffect="non-scaling-stroke" x1={own.px} x2={lx} y1={own.py} y2={ly} />
+              ) : null}
               <text
                 className="font-display tabular-nums"
                 dominantBaseline="central"
                 fill="var(--text-primary)"
                 fontSize={11}
                 fontWeight={600}
-                key={`${handoff.opp.id}-${handoff.to.stage.laneId}-dias`}
                 x={best.x}
                 y={best.y + h / 2}
               >
                 {label}
               </text>
+              </g>
             );
           })}
 

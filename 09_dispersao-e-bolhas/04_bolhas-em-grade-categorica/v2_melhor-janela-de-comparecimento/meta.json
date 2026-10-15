@@ -2,7 +2,7 @@
   "title": "Janela com melhor comparecimento",
   "useCase": "Qual janela de agenda tem mais comparecimento? A faixa das 10h às 12h de terça a quinta sai marcada com a taxa.",
   "demonstrates": [
-    "ReferenceArea categórica com shape que completa meio passo de cada lado",
+    "Faixa categórica desenhada pelas escalas dos eixos, nas bordas das células",
     "Fundo de superfície rebaixada com texto dizendo o que a faixa marca",
     "Taxa de comparecimento escrita com o volume, dentro e fora da janela",
     "Bolhas fora da faixa em neutro cheio, sem apagar o contexto",

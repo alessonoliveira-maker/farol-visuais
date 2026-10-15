@@ -192,3 +192,74 @@ recorrente e se ele cai dentro ou fora da janela em que a equipe está disponív
   contra o cartão no tema escuro e quase some. A isenção vale porque os extremos da faixa trazem
   `0,0` e `6,3` escritos ao lado, e a rampa lê pelo conjunto; ainda assim, um contorno em
   `--line-subtle` na faixa inteira daria a borda que falta.
+
+Revisão de 2026-10-15 (v2, v3 e v4; os bloqueantes da v2 e da v4 estão no parecer em
+`validation/`, aqui só o que não reprova):
+
+- `v2_pico-contra-janela-do-sdr`: "43,0%" na linha de leitura é parcela do total, e a NUM-1 pede
+  percentual de composição inteiro; `formatRateWithVolume` traz a casa decimal da taxa de conversão.
+- `v2_pico-contra-janela-do-sdr`: a frase acessível escreve "9,0" e "3,5" sem unidade; a unidade só
+  aparece no começo da frase ("entradas de lead por hora").
+- `v2_pico-contra-janela-do-sdr`: o "0,0" à esquerda da primeira amostra é o piso da escala, mas a
+  célula de zero sai no poço e não em `--seq-1`; o piso da rampa é o menor valor positivo.
+- `v2_pico-contra-janela-do-sdr`: a legenda "leads por ocorrência do dia, média de 12 semanas" tem o
+  "12" sem `tabular-nums` (TIP-1), sem efeito visível numa frase corrida; `ZERO_SWATCH_X = 340` e os
+  deslocamentos `LEFT_W + 22` e `LEFT_W + 28` são números arbitrados, não derivados (ESP-6).
+- `v3_agendas-por-sdr-em-pequenos-multiplos`: "56,0%" e "2,1%" são parcelas do total da pessoa, e a
+  NUM-1 pede inteiro em composição; a casa decimal vem de `formatRateWithVolume`.
+- `v3_agendas-por-sdr-em-pequenos-multiplos`: o "5" do rodapé da hachura sai sem `tabular-nums`
+  (TIP-1), sem consequência visível; as amostras do rodapé ficam em `x` literal (368, 390, 470,
+  492), e não derivado da largura do texto anterior (ESP-6).
+- `v3_agendas-por-sdr-em-pequenos-multiplos`: dois ramos que o preview não exercita. Pessoa com
+  todas as horas `null` sairia com "0 agendas" no cabeçalho, porque `sumOf` de lista vazia devolve 0:
+  ausência escrita como zero (EST-2). E recorte com todas as células em zero medido troca as oito
+  grades pelo bloco de vazio, quando a EST-3 manda desenhar o zero. Tratar antes de ligar dado real.
+- `v4_relogio-radial-de-24-horas`: o catálogo pede a mesma escala da v1 para comparar lado a lado, e
+  a versão usa três faixas por terço da amostra. O desvio está declarado no `meta.json` e é forçado
+  pela TOK-8 (sem número no setor, só `--seq-5` a `--seq-7` passam de 3:1); aceito, mas a promessa de
+  comparação com a v1 não se cumpre e o texto do catálogo deveria dizer isso.
+- `v4_relogio-radial-de-24-horas`: os anéis não têm rótulo próprio; a ordem só se lê pelo cabeçalho
+  da lista ("do anel do centro para o de fora"). Um rótulo no anel de dentro e no de fora encurtaria
+  a contagem. O comentário de `data.ts` diz que a ordem está "no rodapé", e ela está no cabeçalho da
+  lista (DAD-10, redação).
+- `v4_relogio-radial-de-24-horas`: o comentário de `bandOf` e as observações desta leva falam em 53,
+  52 e 58 setores por faixa; medido, a primeira faixa pinta 35 setores e os outros 18 do terço são
+  zero medido, desenhados no poço.
+- `v4_relogio-radial-de-24-horas`: a legenda de faixas agora imprime o menor e o maior valor de
+  fato de cada faixa (0,1 a 0,2; 0,3 a 1,7; 1,8 a 9,2), calculados do dado.
+- `v4_relogio-radial-de-24-horas`: os valores da lista de picos ("8,4") não têm unidade na própria
+  lista; ela mora na legenda logo abaixo. A frase acessível começa por "Relógio", e "Mapa de calor
+  radial" nomearia o tipo; ela também escreve "9,2" sem unidade.
+
+Revisão de 2026-10-15, segunda rodada (v2 e v4 depois da correção; as duas aprovadas, e as
+observações da primeira rodada que não foram tocadas continuam valendo):
+
+- `v2_pico-contra-janela-do-sdr`: o bloqueante da primeira rodada está resolvido. `bucketOf` agora
+  dá à célula a primeira faixa cujo teto, em décimos, é maior ou igual ao valor; conferido no dado
+  (27, 19, 17, 6 e 11 células por faixa, mais 2 zeros no poço) e nos dois PNGs.
+- `v2_pico-contra-janela-do-sdr`: a frase acessível afirma "e nela 2 de 5 SDRs saem para almoço"
+  sem testar se `SHORT_STAFF_HOURS` cruza a janela de pico. Com o dado fixo cruza; com outro recorte
+  a frase afirmaria um almoço fora da janela. Condicionar a oração à interseção.
+- `v2_pico-contra-janela-do-sdr`: a frase acessível escreve "43,0% (122 de 284)" sem "de uma semana
+  média", que o corpo diz (DAD-5, metade do caminho); e "A janela de 11 h às 13 h" pede "das".
+- `v2_pico-contra-janela-do-sdr` e `v4_relogio-radial-de-24-horas`: "Pico das 11 h às 13 h, as 3
+  horas seguidas" (v2) e "das 10 h às 14 h, as 5 horas" (v4) nomeiam o início da última coluna, e
+  não o fim da janela; quem lê relógio entende 2 e 4 horas. "Das 11 h às 14 h" ou "11 h, 12 h e
+  13 h" tira a dúvida.
+- `v2_pico-contra-janela-do-sdr`: a legenda de escala fica abaixo da grade, e a ROT-4 pede acima ou
+  ao lado; sem consequência de leitura, porque a amostra traz o teto escrito. A v1 e a v3 fazem igual.
+- `v2_pico-contra-janela-do-sdr`: `Chart.tsx:202` tem `=HOURS` sem espaço, fora da formatação.
+- `v2_pico-contra-janela-do-sdr` e `v4_relogio-radial-de-24-horas`: o número em `font-display` sem
+  `fontWeight` pede Space Grotesk 400, que não está entre os pesos da TIP-4; o navegador cai no 500
+  e o PNG não mostra diferença. Declarar 500 deixa o peso explícito.
+- `v2_pico-contra-janela-do-sdr` e `v4_relogio-radial-de-24-horas`: com linhas no `data` e todas
+  `null`, a peça mostra o bloco de vazio com `Filter`, quando o caso é indisponível (EST-2, ícone
+  `Unplug` e `formatUnavailable()`). Ramo que o preview não exercita.
+- `v4_relogio-radial-de-24-horas`: o bloqueante da primeira rodada está resolvido. A linha de leitura
+  e a frase acessível dizem "das entradas de uma semana média", e 325,0 é a soma dos 7 dias.
+- `v4_relogio-radial-de-24-horas`: a segunda nota de rodapé diz "O valor de cada dia vem escrito na
+  lista ao lado", e a lista traz só o pico de cada dia. "O pico de cada dia" diz o que está lá.
+- `v4_relogio-radial-de-24-horas`: faixa sem nenhum setor imprimiria `formatUnavailable()` na
+  legenda, que é indisponível onde o caso é vazio. Com faixas por terço não acontece no preview.
+- `v4_relogio-radial-de-24-horas`: o bloco de vazio está escrito duas vezes, igual, em
+  `Chart.tsx:182` e `Chart.tsx:218`; uma guarda só, depois de calcular `hottest` e a janela, basta.

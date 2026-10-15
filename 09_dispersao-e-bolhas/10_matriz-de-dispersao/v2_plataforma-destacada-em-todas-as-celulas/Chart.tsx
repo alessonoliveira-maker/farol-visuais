@@ -190,7 +190,23 @@ export default function ScatterMatrixHighlight({
   const lit = new Set(selectedIds);
   const litRows = data.filter((row) => lit.has(row.id));
   const baseRows = data.filter((row) => !lit.has(row.id));
-  const summary = `Matriz de dispersão com investimento, CPL, CTR e taxa de qualificação de ${formatInt(data.length)} campanhas fictícias; as ${formatRateWithVolume(litRows.length, data.length)} da plataforma B acendem nas dezesseis células e ocupam a faixa de investimento alto e CPL baixo.`;
+  const medianOf = (rows: readonly CampaignMetrics[], measure: Measure): number => {
+    const sorted = rows.map((row) => measure.accessor(row)).sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    return sorted.length % 2 === 1 ? (sorted[mid] ?? 0) : ((sorted[mid - 1] ?? 0) + (sorted[mid] ?? 0)) / 2;
+  };
+  // A conclusão sai do dado: mediana das acesas contra a do restante, em investimento e em CPL.
+  const [investmentMeasure, cplMeasure] = MEASURES;
+  const compare = (measure: Measure | undefined): string => {
+    if (measure === undefined || litRows.length === 0 || baseRows.length === 0) {
+      return '';
+    }
+    const a = medianOf(litRows, measure);
+    const b = medianOf(baseRows, measure);
+    const verb = a < b ? 'abaixo' : a > b ? 'acima' : 'igual';
+    return `${measure.label} mediano ${measure.format(a)} contra ${measure.format(b)} (${verb})`;
+  };
+  const summary = `Matriz de dispersão de ${formatInt(data.length)} campanhas fictícias; as ${formatRateWithVolume(litRows.length, data.length)} da plataforma B acendem nas dezesseis células. ${compare(investmentMeasure)} e ${compare(cplMeasure)} das demais.`;
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>

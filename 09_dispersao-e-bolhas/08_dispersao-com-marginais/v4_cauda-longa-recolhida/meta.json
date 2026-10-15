@@ -2,7 +2,7 @@
   "title": "Ciclo com cauda longa recolhida",
   "useCase": "Como não deixar poucas oportunidades de ciclo enorme achatarem as outras 515?",
   "demonstrates": [
-    "Última faixa aberta à direita, contando tudo acima da própria divisa de entrada",
+    "Faixa de 175 a 200 dias comum e barra própria acima do corte na reserva do topo",
     "Marcador na faixa reservada da borda para o que passou do domínio, sem esticar o eixo",
     "Ciclo real de cada oportunidade recolhida escrito ao lado do marcador, com halo",
     "Domínio e tiques derivados do P99 do dado, não de um teto escrito à mão",

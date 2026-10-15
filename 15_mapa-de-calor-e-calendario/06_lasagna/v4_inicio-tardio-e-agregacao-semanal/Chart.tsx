@@ -176,10 +176,11 @@ export default function LateStartLasagna({
     0,
   );
 
+  const startLabel = `${FIRST_DAY.slice(8, 10)}/${FIRST_DAY.slice(5, 7)}/${FIRST_DAY.slice(0, 4)}`;
   const scaleNote =
     granularity === 'semana'
-      ? `${formatInt(days)} dias em ${formatInt(columnCount)} semanas, média por dia`
-      : `${formatInt(days)} dias, um por coluna`;
+      ? `${formatInt(columnCount)} semanas desde ${startLabel}, média por dia`
+      : `${formatInt(days)} dias desde ${startLabel}, um por coluna`;
 
   const summary =
     lanes.length === 0
@@ -210,7 +211,11 @@ export default function LateStartLasagna({
     const previous = new Date(windowStart + (index - 1) * step * MS_DAY).getUTCMonth();
     if (index !== 0 && current === previous) continue;
     const last = monthTicks[monthTicks.length - 1];
-    if (last !== undefined && (index - last) * columnWidth < MIN_TICK_GAP) continue;
+    if (last !== undefined && (index - last) * columnWidth < MIN_TICK_GAP) {
+      // Na colisão, a semana parcial do início cede à virada de mês; o início da janela vai na nota.
+      if (last === 0) monthTicks[monthTicks.length - 1] = index;
+      continue;
+    }
     monthTicks.push(index);
   }
 
@@ -331,7 +336,7 @@ export default function LateStartLasagna({
           primeiro dia
         </text>
         <text fill="var(--text-muted)" fontSize={11} x={NOTE_X} y={LEGEND_TWO}>
-          linhas pela ordem de admissão
+          reuniões por dia, linhas por admissão
         </text>
 
         <text className="tabular-nums" fill="var(--text-muted)" fontSize={11} x={0} y={LEGEND_THREE}>

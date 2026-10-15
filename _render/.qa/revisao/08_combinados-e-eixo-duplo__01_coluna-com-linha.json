@@ -15,13 +15,13 @@
       }
     },
     "v2_fechamentos-com-media-movel": {
-      "veredito": "reprovado",
-      "nota": "Catálogo, item 4 de o que demonstra (destaque da semana corrente com peso 700), e REC-5; sem pergunta própria, a mais próxima é a 18 (DIC-1). O rótulo 3 da semana parcial deixou de ser desenhado nos dois temas: renderPartialValue usa rows[index], e o index do LabelList conta os retângulos desenhados, então com a lacuna de 2026-07-27 a coluna parcial é o retângulo 10 e rows[10] não é parcial. O preview não tem nenhum texto em peso 700 e o README afirma que tem. Tirar o rótulo da dependência de index (dataKey próprio ou camada própria como a MissingWeekMarks) e conferir o 3 em peso 700 acima da coluna vazada com a lacuna mantida. Calendário, lacuna, média sobre o calendário e linha por trás das colunas conferidos e certos. Parecer em validation/revisao_08_combinados-e-eixo-duplo__01_coluna-com-linha_2026-10-02_segunda.md.",
-      "data": "2026-10-02",
-      "registradoEm": "2026-10-02T14:41:00.089Z",
-      "impressao": "7da6a0a1888bd0f7f95401e7c31c918e2fc59099",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. O 3 da semana parcial voltou: rótulo por dataKey partialClosings, peso 700, Space Grotesk tabular, halo, em x=542,4 no centro da coluna vazada e 8 px acima do topo (176,2), único 700 do corpo. Calendário de 12 semanas com a lacuna de 2026-07-27 escrita sem dado, média sobre o calendário de 14,5 a 17,25 de 2026-08-24 a 2026-09-21, linha por trás das colunas; render 0,04% e 0,05%. Cinco observações no README: frase acessível sem o 3 e sem acima, REC-11 latente com parcial zero, demonstrates sem o item do peso 700, data da nota em Space Grotesk 400 caindo em 500, rótulo sem substantivo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:26:59.185Z",
+      "impressao": "397d6b13d0e9b46366ef5c2aa02ffc318370173a",
       "arquivos": {
-        "Chart.tsx": "59c3fd88976ad57fc124867b935aec429b028585",
+        "Chart.tsx": "fbd0d149ff475f4ac5039780d0411f37576ae582",
         "data.ts": "bc16ddba974c458bb4e517da619511d5c5ba3a5e",
         "meta.json": "373c84bee487538af4f1404c0885f2e137bbf81b"
       }
@@ -128,6 +128,19 @@
         "Chart.tsx": "0e657978d88688f7891d8c7da2e51743c40bc288",
         "data.ts": "42d00a1370ec122bb3bfb26a54ef7bac78324077",
         "meta.json": "8318c1a5359077c3f29765e3fa5d5c9a23967ae3"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-com-media-movel",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. O 3 da semana parcial voltou: rótulo por dataKey partialClosings, peso 700, Space Grotesk tabular, halo, em x=542,4 no centro da coluna vazada e 8 px acima do topo (176,2), único 700 do corpo. Calendário de 12 semanas com a lacuna de 2026-07-27 escrita sem dado, média sobre o calendário de 14,5 a 17,25 de 2026-08-24 a 2026-09-21, linha por trás das colunas; render 0,04% e 0,05%. Cinco observações no README: frase acessível sem o 3 e sem acima, REC-11 latente com parcial zero, demonstrates sem o item do peso 700, data da nota em Space Grotesk 400 caindo em 500, rótulo sem substantivo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:26:59.185Z",
+      "impressao": "397d6b13d0e9b46366ef5c2aa02ffc318370173a",
+      "arquivos": {
+        "Chart.tsx": "fbd0d149ff475f4ac5039780d0411f37576ae582",
+        "data.ts": "bc16ddba974c458bb4e517da619511d5c5ba3a5e",
+        "meta.json": "373c84bee487538af4f1404c0885f2e137bbf81b"
       }
     }
   ]

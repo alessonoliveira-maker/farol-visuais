@@ -23,13 +23,11 @@ import {
  *
  * 1. A especificação pede as faixas fora de foco "a 15%". A ACE-5 mede o que a opacidade faz: ela
  *    compõe a cor da marca com a do cartão, e o resultado precisa continuar acima de 3:1. A 15% de
- *    qualquer cor sobra algo entre 1,0 e 1,2:1, isto é, a faixa deixa de existir na tela. O
- *    apagamento aqui é feito pelo TOKEN, não pela opacidade: `--line-strong` é o neutro que a seção
- *    17.2 nomeia para marca não destacada, e ele entra opaco. Medido contra `--surface-raised`,
- *    1,79:1 no escuro e 1,83:1 no claro, que é o preço conhecido do neutro do Farol e o motivo de a
- *    guarda CONTRASTE-MARCA avisar sobre ele; a alternativa de 15% seria pior e ainda escondida
- *    atrás de um `fillOpacity` que ninguém mede. O que a faixa neutra perde de contraste está
- *    escrito ao lado dela, em número, nos dois rótulos de ponta (isenção da ACE-3).
+ *    qualquer cor sobra algo entre 1,0 e 1,2:1. O apagamento é feito pelo TOKEN: `--text-muted`
+ *    opaco, 5,21:1 no escuro e 5,37:1 no claro contra o cartão. `--line-strong` (1,79 e 1,83:1) foi
+ *    abandonado porque nenhuma faixa carrega a própria contagem (ACE-6, tabela 17.2). Toda faixa
+ *    tem contorno `--surface-raised` de 1,75 px (COR-5) e a acesa leva ainda um revestimento de 5 px
+ *    sob si, porque chart-1 contra text-muted mede 1,12:1 no claro (TOK-9).
  *
  * 2. A especificação pede "o nome das categorias em foco em peso 700", e as categorias em foco são
  *    três (Quente na origem, Morno e Frio no destino). A TIP-3 dá peso 700 a no máximo DOIS
@@ -68,9 +66,11 @@ const HEADER_Y = 9;
  * e ligações vizinhas sem mexer no contraste do preenchimento, que é o que a opacidade faria.
  */
 const RIBBON_STROKE = 'var(--surface-raised)';
-const RIBBON_STROKE_WIDTH = 1;
+const RIBBON_STROKE_WIDTH = 1.75;
+/** Revestimento mais largo sob a faixa acesa: segundo canal na própria faixa, porque chart-1 contra text-muted mede 1,12:1 no claro (TOK-9). */
+const HALO_STROKE_WIDTH = 5; // 2,5 px para fora da faixa acesa, que não perde espessura por dentro
 /** Neutro de marca não destacada da seção 17.2. Entra opaco: ver a nota 1 do topo do arquivo. */
-const NEUTRAL_RIBBON = 'var(--line-strong)';
+const NEUTRAL_RIBBON = 'var(--text-muted)';
 
 type CategoryId = string;
 
@@ -311,13 +311,17 @@ export default function CooledLeadsAlluvial({
           viewBox={`0 0 ${String(VIEW_WIDTH)} ${String(VIEW_HEIGHT)}`}
         >
           {orderedRibbons.map((ribbon) => (
-            <path
-              d={ribbon.d}
-              fill={ribbon.color}
-              key={ribbon.id}
-              stroke={ribbon.focused ? RIBBON_STROKE : 'none'}
-              strokeWidth={ribbon.focused ? RIBBON_STROKE_WIDTH : 0}
-            />
+            <g key={ribbon.id}>
+              {ribbon.focused ? (
+                <path d={ribbon.d} fill={RIBBON_STROKE} stroke={RIBBON_STROKE} strokeLinejoin="round" strokeWidth={HALO_STROKE_WIDTH} />
+              ) : null}
+              <path
+                d={ribbon.d}
+                fill={ribbon.color}
+                stroke={ribbon.focused ? 'none' : RIBBON_STROKE}
+                strokeWidth={ribbon.focused ? 0 : RIBBON_STROKE_WIDTH}
+              />
+            </g>
           ))}
           {blocks.map((block) => (
             <rect

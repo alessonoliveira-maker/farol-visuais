@@ -13,6 +13,42 @@
         "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
         "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
       }
+    },
+    "v2_histograma-acumulado-com-tres-limiares": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante do sentido −1 resolvido, conferido por execução das funções do Chart.tsx sobre o data.ts (520 leads): no −1 o bin fecha à esquerda e o ponto vai para a coluna que começa no limiar; 92,31%, 28,85% e 2,50% caem no topo de colunas de 92,31%, 28,85% e 2,50%, a primeira coluna mede 100%, a faixa aberta guarda 13 leads e o rodapé sai do sentido. Sentido 1 intacto (10,96%, 72,12% e 97,69%, diferença zero). Observações no README: limiar fora da malha do bin desalinha o ponto nos dois sentidos; 'ainda na espera' conta quem foi atendido no próprio limiar; comentário do topo, meta.json e README ainda descrevem só o sentido 1.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:58:56.282Z",
+      "impressao": "c19fe70095dd0da3dfe5922d446fbbfe32f9244b",
+      "arquivos": {
+        "Chart.tsx": "7f4ec0ed677c0ec62038c0e460dc0f8d7578946d",
+        "data.ts": "ef1dd80d723ca5279b0b868cfd5c291b9270deda",
+        "meta.json": "4e1fed82a4501248a9d846398e438f32ad8ed147"
+      }
+    },
+    "v3_cpl-ou-mais-em-escala-log": {
+      "veredito": "aprovado",
+      "nota": "Acumulada ou mais com stepBefore correto, eixo logarítmico avisado na linha de sentido, 77 de 1.100 (7,00%) conferido no dado e igual à curva desenhada em R$ 400, erro de reamostragem medido (0,45%, 162 pontos para 346 valores), 47 sem lead e 19 de custo zero contados fora do log. Observações no README: rótulo longe do cruzamento e sem halo da ROT-7, cruzando duas linhas de grade; escada de tiques com razão mista; rodapé que chama custo zero de não medível; vazio escrito com indisponível.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:46:17.363Z",
+      "impressao": "8e06aff2c0fc782b562b5212134469ebca4f6729",
+      "arquivos": {
+        "Chart.tsx": "15d5d14001f43210bf93c1ed2e8d5534ed89ebf8",
+        "data.ts": "51728d28f7237539844c644500949e2e3de3a588",
+        "meta.json": "b4a974c5f2b4eff37e44aab292f08aaa1f778b15"
+      }
+    },
+    "v4_massa-no-zero-e-abertas-fora": {
+      "veredito": "aprovado",
+      "nota": "Salto de 41% no zero medido desenhado e rotulado (100 de 244 conferido), 87 abertas fora da conta e apontadas para a curva de sobrevivência, domínio fixo declarado no rodapé, subtítulo com o n das encerradas, rótulo abaixo da guia, onde a acumulada nunca chega. Observações no README: maior apurada por formatCurrencyAxis em vez de formatCurrencyCompact; rótulo sem halo sobre a grade de R$ 100 mil; vazio escrito com indisponível.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:46:17.915Z",
+      "impressao": "7547628c75d7bae59ae25d6e7441a85adf005cf1",
+      "arquivos": {
+        "Chart.tsx": "13a0f25cc44cfc1adab9bdbd94d5024b9631f3c1",
+        "data.ts": "4dcaee7e59ed2b7923b37104ca866df2aa71f9ab",
+        "meta.json": "9e9c69c635ad6783d18e687a9b687b443f52ddb0"
+      }
     }
   },
   "historico": [
@@ -53,6 +89,58 @@
         "Chart.tsx": "a78f8d92f20922fb5af18f9cae8209fbede21285",
         "data.ts": "04dd07e239bc009dbf1c6a49359ab3bb6d8e1961",
         "meta.json": "0ce5d2ab30b723d1ca83e26eabcd3a5d15c05651"
+      }
+    },
+    {
+      "versao": "v2_histograma-acumulado-com-tres-limiares",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 com reflexo na 17; seção 14.1 (identificação das marcas) e ANO-5. O sentido −1, que o catálogo diz que a versão demonstra, desenha errado: com o bin fechado à direita e o ponto na coluna que termina no limiar, os pontos de 5 e 30 min caem 7,7 e 6,2 p.p. dentro da coluna marcada (92% sobre coluna de 100%, 29% sobre 35%), e o rodapé fixo diz que a última coluna fecha a soma em 100% quando ela mede 2,3%. Mudar: no −1, bin fechado à esquerda, ponto na coluna que começa no limiar e rodapé calculado do sentido; conferir em bancada com sense −1. O preview, sentido 1, está correto. Parecer em validation/revisao_16_distribuicao__04_ecdf-e-histograma-acumulado_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:46:10.860Z",
+      "impressao": "a8a97b2c03069a9d43b603bde16b414e2c85c5bc",
+      "arquivos": {
+        "Chart.tsx": "25a7423502809d005c68bb32cefb73cfbc3b1e68",
+        "data.ts": "ef1dd80d723ca5279b0b868cfd5c291b9270deda",
+        "meta.json": "4e1fed82a4501248a9d846398e438f32ad8ed147"
+      }
+    },
+    {
+      "versao": "v3_cpl-ou-mais-em-escala-log",
+      "veredito": "aprovado",
+      "nota": "Acumulada ou mais com stepBefore correto, eixo logarítmico avisado na linha de sentido, 77 de 1.100 (7,00%) conferido no dado e igual à curva desenhada em R$ 400, erro de reamostragem medido (0,45%, 162 pontos para 346 valores), 47 sem lead e 19 de custo zero contados fora do log. Observações no README: rótulo longe do cruzamento e sem halo da ROT-7, cruzando duas linhas de grade; escada de tiques com razão mista; rodapé que chama custo zero de não medível; vazio escrito com indisponível.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:46:17.363Z",
+      "impressao": "8e06aff2c0fc782b562b5212134469ebca4f6729",
+      "arquivos": {
+        "Chart.tsx": "15d5d14001f43210bf93c1ed2e8d5534ed89ebf8",
+        "data.ts": "51728d28f7237539844c644500949e2e3de3a588",
+        "meta.json": "b4a974c5f2b4eff37e44aab292f08aaa1f778b15"
+      }
+    },
+    {
+      "versao": "v4_massa-no-zero-e-abertas-fora",
+      "veredito": "aprovado",
+      "nota": "Salto de 41% no zero medido desenhado e rotulado (100 de 244 conferido), 87 abertas fora da conta e apontadas para a curva de sobrevivência, domínio fixo declarado no rodapé, subtítulo com o n das encerradas, rótulo abaixo da guia, onde a acumulada nunca chega. Observações no README: maior apurada por formatCurrencyAxis em vez de formatCurrencyCompact; rótulo sem halo sobre a grade de R$ 100 mil; vazio escrito com indisponível.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:46:17.915Z",
+      "impressao": "7547628c75d7bae59ae25d6e7441a85adf005cf1",
+      "arquivos": {
+        "Chart.tsx": "13a0f25cc44cfc1adab9bdbd94d5024b9631f3c1",
+        "data.ts": "4dcaee7e59ed2b7923b37104ca866df2aa71f9ab",
+        "meta.json": "9e9c69c635ad6783d18e687a9b687b443f52ddb0"
+      }
+    },
+    {
+      "versao": "v2_histograma-acumulado-com-tres-limiares",
+      "veredito": "aprovado",
+      "nota": "Bloqueante do sentido −1 resolvido, conferido por execução das funções do Chart.tsx sobre o data.ts (520 leads): no −1 o bin fecha à esquerda e o ponto vai para a coluna que começa no limiar; 92,31%, 28,85% e 2,50% caem no topo de colunas de 92,31%, 28,85% e 2,50%, a primeira coluna mede 100%, a faixa aberta guarda 13 leads e o rodapé sai do sentido. Sentido 1 intacto (10,96%, 72,12% e 97,69%, diferença zero). Observações no README: limiar fora da malha do bin desalinha o ponto nos dois sentidos; 'ainda na espera' conta quem foi atendido no próprio limiar; comentário do topo, meta.json e README ainda descrevem só o sentido 1.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:58:56.282Z",
+      "impressao": "c19fe70095dd0da3dfe5922d446fbbfe32f9244b",
+      "arquivos": {
+        "Chart.tsx": "7f4ec0ed677c0ec62038c0e460dc0f8d7578946d",
+        "data.ts": "ef1dd80d723ca5279b0b868cfd5c291b9270deda",
+        "meta.json": "4e1fed82a4501248a9d846398e438f32ad8ed147"
       }
     }
   ]

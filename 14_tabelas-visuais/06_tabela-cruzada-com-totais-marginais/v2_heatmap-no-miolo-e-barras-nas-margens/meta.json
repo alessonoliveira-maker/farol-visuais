@@ -4,7 +4,7 @@
   "demonstrates": [
     "Cor do miolo por degraus de seq calculados só sobre as células internas",
     "Barra horizontal no total de linha e vertical no total de coluna, domínio próprio",
-    "Coluna da etapa proposta destacada no cabeçalho em peso 700 com anotação curta",
+    "Etapa de maior total destacada no cabeçalho, derivada do dado, com o motivo anotado",
     "Legenda que diz que os totais ficam fora da escala de cor, e ícone de não se aplica"
   ],
   "canvas": "largo",

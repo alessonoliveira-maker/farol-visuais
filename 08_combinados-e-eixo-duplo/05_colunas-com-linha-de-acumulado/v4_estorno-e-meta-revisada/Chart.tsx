@@ -19,7 +19,7 @@ import {
 
 import { ChartTooltip, type ChartTooltipProps } from '@/components/visuals/charts/ChartTooltip';
 import { useAnimateOnce } from '@/components/visuals/charts/chartTheme';
-import { formatCurrencyAxis, formatCurrencyCompact, formatMonthShort, formatPercent } from '@/lib/format';
+import { formatCurrency, formatCurrencyAxis, formatCurrencyCompact, formatMonthShort, formatPercent } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, type MonthlyRevenue } from './data';
 
@@ -221,7 +221,9 @@ export default function ChargebackAndRevisedTarget({
   const stepsNote = steps
     .map((step) => `${formatCurrencyCompact(step.value)} de ${formatMonthShort(step.first)} a ${formatMonthShort(step.last)}`)
     .join('; ');
-  const scaleNote = `Meta vigente: ${stepsNote}. Os dois eixos partilham o zero, e nada além dele.`;
+  const implicitRate = aligned.right.max / aligned.left.max;
+  const nextStepRate = (aligned.right.max + RIGHT_STEP) / aligned.left.max;
+  const scaleNote = `Meta vigente: ${stepsNote}. Eixo duplo: os dois partilham o zero, e o desenho equipara ${formatCurrency(1)} do mês a ${formatCurrency(implicitRate)} do acumulado; um passo a mais na direita leva o empate a ${formatCurrency(nextStepRate)}.`;
 
   function tooltipEntries(row: ChargebackRow): readonly TooltipEntry[] {
     const entries: TooltipEntry[] = [];
@@ -402,6 +404,18 @@ export default function ChargebackAndRevisedTarget({
               strokeDasharray="4 4"
               strokeWidth={1.5}
               type="stepAfter"
+              yAxisId={AXIS_ACCUM}
+            />
+            <Line
+              activeDot={false}
+              connectNulls={false}
+              dataKey="accumulated"
+              dot={false}
+              isAnimationActive={animate}
+              legendType="none"
+              name="Revestimento do acumulado"
+              stroke="var(--surface-raised)"
+              strokeWidth={5}
               yAxisId={AXIS_ACCUM}
             />
             <Line

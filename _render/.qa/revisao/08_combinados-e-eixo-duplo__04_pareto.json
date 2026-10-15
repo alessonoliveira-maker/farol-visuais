@@ -13,6 +13,42 @@
         "data.ts": "b9389c0686c1fa6f1c7ddaf95326aee0ee6cdc42",
         "meta.json": "e4cb2f21d5735368a301054e343e4f76594c88e6"
       }
+    },
+    "v2_corte-em-80-por-cento": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: o rótulo 84 perdas saiu para a esquerda da primeira coluna, onde a linha do acumulado não passa por construção, e o primeiro trecho sai contínuo nos dois temas. Corte calculado (3 motivos, 81,5%), ReferenceLine com extendDomain, 700 só no líder, neutro com valor escrito; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:38:57.260Z",
+      "impressao": "ad0b17f0cd049306eaa14a68e075f11af1436a7d",
+      "arquivos": {
+        "Chart.tsx": "de3ac6e5d78c3fb0a6b08c867f4ac930ef49815c",
+        "data.ts": "071d860b1d027ede7c2acffc5d60f918fff5e22b",
+        "meta.json": "fdd4c63c831f65c790e9f7dc4148e9415e548ba2"
+      }
+    },
+    "v3_quantidade-contra-valor-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: Acumulado 100,0% foi para a direita do último ponto, em duas linhas, sem halo, e o último trecho sai contínuo nos dois painéis e nos dois temas; os rótulos da primeira barra ficam limpos a 10 px do ponto. No modo valor a folga projetada é de cerca de 1 px, sem render; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:38:59.727Z",
+      "impressao": "54d2670d71502e124752c6aad16584df6db0b631",
+      "arquivos": {
+        "Chart.tsx": "4eb724157aecd16268cdeab94ad40040442483ea",
+        "data.ts": "532489308c899136176b5899ab70df5d8fbe435a",
+        "meta.json": "6e592cba56584eaaa5bf5fbf6f786cee310ab377"
+      }
+    },
+    "v4_cauda-longa-e-poucos-motivos": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: o rótulo 58 perdas saiu para a esquerda da primeira coluna, numa margem de 56 px, e o primeiro trecho da linha sai contínuo nos dois temas. Top 10 com a cauda de 30 no tique, minPointSize visível, eixo derivado; o par de tiques mais apertado ficou com 6,5 px, acima do respiro; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:39:02.816Z",
+      "impressao": "c96bbaf044a61428e1cbd859aa61c29ac96f4a87",
+      "arquivos": {
+        "Chart.tsx": "18d3a95c11f36400671285ce93faf7b7d0e804b6",
+        "data.ts": "7794c9fd09fa91619fdf94dbbb46216617caa7db",
+        "meta.json": "6667fa4d49b00a7461d6cb1191b9734b2cc7b931"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,84 @@
         "Chart.tsx": "c7a8d89058f4cade427c6f82bd77e17f1afe9157",
         "data.ts": "b9389c0686c1fa6f1c7ddaf95326aee0ee6cdc42",
         "meta.json": "e4cb2f21d5735368a301054e343e4f76594c88e6"
+      }
+    },
+    {
+      "versao": "v2_corte-em-80-por-cento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 (exceção da marca fina) e GEO-4: o halo do rótulo 84 perdas apaga 20 px do primeiro trecho da linha do acumulado nos dois temas e o rótulo encosta no primeiro ponto; mover o rótulo da primeira coluna para fora do traço por anticolisão calculada (por exemplo ancorado à esquerda do ponto), sem halo sobre a linha. Parecer em validation/revisao_08_combinados-e-eixo-duplo__04_pareto_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:42.012Z",
+      "impressao": "94ba401374d937916349091f165334b3216ed0dd",
+      "arquivos": {
+        "Chart.tsx": "031cc38209092fe0ebf9c59247b7ff9cb9d3a302",
+        "data.ts": "071d860b1d027ede7c2acffc5d60f918fff5e22b",
+        "meta.json": "fdd4c63c831f65c790e9f7dc4148e9415e548ba2"
+      }
+    },
+    {
+      "versao": "v3_quantidade-contra-valor-por-etapa",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 (exceção da marca fina) e GEO-4: o rótulo Acumulado 100,0% nasce em cima do último trecho da própria linha, e o halo com o glifo % apaga 12 px dele nos dois painéis e nos dois temas, deixando o ponto final solto; reposicionar o rótulo onde o traço não passa (à esquerda do último ponto na mesma altura, ou abaixo dele), calculado nos dois modos. Parecer em validation/revisao_08_combinados-e-eixo-duplo__04_pareto_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:52.995Z",
+      "impressao": "fda19ff37d97c2abf0838872adf933c952b76375",
+      "arquivos": {
+        "Chart.tsx": "649ae5dfb7678e05d5eaced982c78a11b4e11e88",
+        "data.ts": "532489308c899136176b5899ab70df5d8fbe435a",
+        "meta.json": "6e592cba56584eaaa5bf5fbf6f786cee310ab377"
+      }
+    },
+    {
+      "versao": "v4_cauda-longa-e-poucos-motivos",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 (exceção da marca fina) e GEO-4: o halo do rótulo 58 perdas apaga 17 px do primeiro trecho da linha do acumulado nos dois temas e o rótulo encosta no primeiro ponto; mover o rótulo da primeira coluna para fora do traço por anticolisão calculada, sem halo sobre a linha. Parecer em validation/revisao_08_combinados-e-eixo-duplo__04_pareto_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:53.680Z",
+      "impressao": "714ab7a4209ac62b194f86c97d7121911d0d1150",
+      "arquivos": {
+        "Chart.tsx": "e297a25703934e23e0e38674442dcedf5310f426",
+        "data.ts": "7794c9fd09fa91619fdf94dbbb46216617caa7db",
+        "meta.json": "6667fa4d49b00a7461d6cb1191b9734b2cc7b931"
+      }
+    },
+    {
+      "versao": "v2_corte-em-80-por-cento",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: o rótulo 84 perdas saiu para a esquerda da primeira coluna, onde a linha do acumulado não passa por construção, e o primeiro trecho sai contínuo nos dois temas. Corte calculado (3 motivos, 81,5%), ReferenceLine com extendDomain, 700 só no líder, neutro com valor escrito; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:38:57.260Z",
+      "impressao": "ad0b17f0cd049306eaa14a68e075f11af1436a7d",
+      "arquivos": {
+        "Chart.tsx": "de3ac6e5d78c3fb0a6b08c867f4ac930ef49815c",
+        "data.ts": "071d860b1d027ede7c2acffc5d60f918fff5e22b",
+        "meta.json": "fdd4c63c831f65c790e9f7dc4148e9415e548ba2"
+      }
+    },
+    {
+      "versao": "v3_quantidade-contra-valor-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: Acumulado 100,0% foi para a direita do último ponto, em duas linhas, sem halo, e o último trecho sai contínuo nos dois painéis e nos dois temas; os rótulos da primeira barra ficam limpos a 10 px do ponto. No modo valor a folga projetada é de cerca de 1 px, sem render; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:38:59.727Z",
+      "impressao": "54d2670d71502e124752c6aad16584df6db0b631",
+      "arquivos": {
+        "Chart.tsx": "4eb724157aecd16268cdeab94ad40040442483ea",
+        "data.ts": "532489308c899136176b5899ab70df5d8fbe435a",
+        "meta.json": "6e592cba56584eaaa5bf5fbf6f786cee310ab377"
+      }
+    },
+    {
+      "versao": "v4_cauda-longa-e-poucos-motivos",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Bloqueante da rodada anterior resolvido: o rótulo 58 perdas saiu para a esquerda da primeira coluna, numa margem de 56 px, e o primeiro trecho da linha sai contínuo nos dois temas. Top 10 com a cauda de 30 no tique, minPointSize visível, eixo derivado; o par de tiques mais apertado ficou com 6,5 px, acima do respiro; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:39:02.816Z",
+      "impressao": "c96bbaf044a61428e1cbd859aa61c29ac96f4a87",
+      "arquivos": {
+        "Chart.tsx": "18d3a95c11f36400671285ce93faf7b7d0e804b6",
+        "data.ts": "7794c9fd09fa91619fdf94dbbb46216617caa7db",
+        "meta.json": "6667fa4d49b00a7461d6cb1191b9734b2cc7b931"
       }
     }
   ]

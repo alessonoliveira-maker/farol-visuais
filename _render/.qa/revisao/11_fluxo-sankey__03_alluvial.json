@@ -13,6 +13,42 @@
         "data.ts": "ad1460cad498177f25c3dc8436230cc7a3049fb5",
         "meta.json": "f685b8f3cf9f38c8b5bc138f76f8529a0ce29d74"
       }
+    },
+    "v2_leads-quentes-que-esfriaram": {
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 32, ACE-6 e COR-5, constante com consequência visível (GEO-16, GEO-4): o revestimento de 5 px da faixa acesa e o contorno de 1,75 px centrado na borda apagam faixas de dado. Na saída de Quente de jul/26 as quatro faixas dos 214 desenham 15,0, 3,5, 2,5 e 0 px contra 18,9, 6,6, 3,0 e 2,1 px do dado: Quente para Descartado some, e 46 contra 21 sai na razão 1,4. Frio para Quente (12), Descartado para Morno (9) e Descartado para Quente (3) ficam sem preenchimento, só na cor do cartão. Mudar: contorno com paintOrder stroke, finas pintadas depois das grossas, segundo canal do destaque que não cubra a vizinha, piso declarado abaixo de 1 px. Neutro em text-muted resolvido. Parecer em validation/revisao_11_fluxo-sankey__03_alluvial_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:00:28.116Z",
+      "impressao": "2035cf6622e2ff77f2c2014dda31f73852188332",
+      "arquivos": {
+        "Chart.tsx": "9e3f70f7f1ee0a5b166cdc270301546e978812bf",
+        "data.ts": "f64e4cd0a981b5af0af74b0a62ce9d9ed5d63550",
+        "meta.json": "38ea1e655397f4020298107137b89e2464c5dbcd"
+      }
+    },
+    "v3_faixa-de-receita-dos-clientes-em-quatro-trimestres": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check 0 erro, população fecha 312 nas quatro colunas e a base de 204, 212, 218 e 220 confere com o cabeçalho, faixas em categóricas na ordem 1, 3, 6, 5 e neutro fora da base em text-muted a 5,21 e 5,37:1, ausência vazada por último, rótulos sem colisão nos dois temas, frase de 218 caracteres. Observações no README, a mais pesada: as faixas de quem encerrou passam por baixo das de Ainda não cliente e só aparecem nas pontas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:48:30.311Z",
+      "impressao": "d3c718b4d58a1a01ade5b489af371ece03b529c1",
+      "arquivos": {
+        "Chart.tsx": "0f600ca274e4e87ab0e7019fb1e53fad6ec74cfd",
+        "data.ts": "d92eb2bba1605174a47c34216af4541c5ec06280",
+        "meta.json": "492023f7f62fed59dd49a147382091ba8142f128"
+      }
+    },
+    "v4_classificacao-que-passou-a-existir": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check 0 erro, 1.240 fecha nas três colunas, Morno sem bloco em jun/26 com presença declarada no dado, ausência vazada em text-muted por último e faixas neutras a 5,21 e 5,37:1, anotação única do nascimento, rótulos sem colisão nos dois temas, frase de 209 caracteres. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:48:30.904Z",
+      "impressao": "d92bb1faea8bc11d316bcba28e9f26fe72641b8e",
+      "arquivos": {
+        "Chart.tsx": "766192d761e485f775cdf0751cb04045ee9b4817",
+        "data.ts": "ae66a73455aac2b229fa632a3a4e935992b78397",
+        "meta.json": "da56915b15575bc2c8e6a96c5402e9dad1108c33"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,58 @@
         "Chart.tsx": "403791ab3ebbb7f91bfe40fb56957215024501bb",
         "data.ts": "ad1460cad498177f25c3dc8436230cc7a3049fb5",
         "meta.json": "f685b8f3cf9f38c8b5bc138f76f8529a0ce29d74"
+      }
+    },
+    {
+      "versao": "v2_leads-quentes-que-esfriaram",
+      "veredito": "reprovado",
+      "nota": "Perguntas 32, 20 e 11, ACE-6 e tabela 17.2: as 14 faixas fora de foco em --line-strong medem 1,79:1 e 1,83:1 sem o valor de cada faixa escrito; trocar por --text-muted opaco. Pergunta 15, COR-5 e TOK-4: as faixas neutras sem contorno se fundem numa massa (a chegada a Quente em ago/26 vira um bloco só e Quente para Descartado, 15 leads, não se rastreia); contorno --surface-raised de 1,5 a 2 px em toda faixa, acesas por último, e medir aceso contra neutro nos dois temas (TOK-9: chart-1 contra text-muted dá 1,12:1 no claro). Parecer em validation/revisao_11_fluxo-sankey__03_alluvial_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:48:23.717Z",
+      "impressao": "fc2ab50a433413f8b43ff0ebb2c4272dc82caa0c",
+      "arquivos": {
+        "Chart.tsx": "802827201aacced68edb82528dcb4a9869bed43a",
+        "data.ts": "f64e4cd0a981b5af0af74b0a62ce9d9ed5d63550",
+        "meta.json": "0635e134af3c5e4edc837b6b3a5626baaa0206c9"
+      }
+    },
+    {
+      "versao": "v3_faixa-de-receita-dos-clientes-em-quatro-trimestres",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check 0 erro, população fecha 312 nas quatro colunas e a base de 204, 212, 218 e 220 confere com o cabeçalho, faixas em categóricas na ordem 1, 3, 6, 5 e neutro fora da base em text-muted a 5,21 e 5,37:1, ausência vazada por último, rótulos sem colisão nos dois temas, frase de 218 caracteres. Observações no README, a mais pesada: as faixas de quem encerrou passam por baixo das de Ainda não cliente e só aparecem nas pontas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:48:30.311Z",
+      "impressao": "d3c718b4d58a1a01ade5b489af371ece03b529c1",
+      "arquivos": {
+        "Chart.tsx": "0f600ca274e4e87ab0e7019fb1e53fad6ec74cfd",
+        "data.ts": "d92eb2bba1605174a47c34216af4541c5ec06280",
+        "meta.json": "492023f7f62fed59dd49a147382091ba8142f128"
+      }
+    },
+    {
+      "versao": "v4_classificacao-que-passou-a-existir",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check 0 erro, 1.240 fecha nas três colunas, Morno sem bloco em jun/26 com presença declarada no dado, ausência vazada em text-muted por último e faixas neutras a 5,21 e 5,37:1, anotação única do nascimento, rótulos sem colisão nos dois temas, frase de 209 caracteres. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:48:30.904Z",
+      "impressao": "d92bb1faea8bc11d316bcba28e9f26fe72641b8e",
+      "arquivos": {
+        "Chart.tsx": "766192d761e485f775cdf0751cb04045ee9b4817",
+        "data.ts": "ae66a73455aac2b229fa632a3a4e935992b78397",
+        "meta.json": "da56915b15575bc2c8e6a96c5402e9dad1108c33"
+      }
+    },
+    {
+      "versao": "v2_leads-quentes-que-esfriaram",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15 e 32, ACE-6 e COR-5, constante com consequência visível (GEO-16, GEO-4): o revestimento de 5 px da faixa acesa e o contorno de 1,75 px centrado na borda apagam faixas de dado. Na saída de Quente de jul/26 as quatro faixas dos 214 desenham 15,0, 3,5, 2,5 e 0 px contra 18,9, 6,6, 3,0 e 2,1 px do dado: Quente para Descartado some, e 46 contra 21 sai na razão 1,4. Frio para Quente (12), Descartado para Morno (9) e Descartado para Quente (3) ficam sem preenchimento, só na cor do cartão. Mudar: contorno com paintOrder stroke, finas pintadas depois das grossas, segundo canal do destaque que não cubra a vizinha, piso declarado abaixo de 1 px. Neutro em text-muted resolvido. Parecer em validation/revisao_11_fluxo-sankey__03_alluvial_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:00:28.116Z",
+      "impressao": "2035cf6622e2ff77f2c2014dda31f73852188332",
+      "arquivos": {
+        "Chart.tsx": "9e3f70f7f1ee0a5b166cdc270301546e978812bf",
+        "data.ts": "f64e4cd0a981b5af0af74b0a62ce9d9ed5d63550",
+        "meta.json": "38ea1e655397f4020298107137b89e2464c5dbcd"
       }
     }
   ]

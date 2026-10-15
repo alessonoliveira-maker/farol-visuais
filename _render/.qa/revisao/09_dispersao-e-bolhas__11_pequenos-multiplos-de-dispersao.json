@@ -13,6 +13,42 @@
         "data.ts": "80f5e0dcff5bfd536ad073de69fe9761d6de7ad9",
         "meta.json": "6e732a6a623860523c96ba5434f8f3c4377bb57e"
       }
+    },
+    "v2_time-inteiro-ao-fundo": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Domínio derivado do dado e comum aos 8 painéis, grade e plano idênticos, nuvem do time em --text-muted (17.2, neutro sem valor escrito, 5,21 e 5,37) e destaque por preenchimento, tamanho e revestimento, não só cor (TOK-9). Contagens e extremos conferidos contra o data.ts: 84 oportunidades, Alice M. R$ 741,5 mil, Bento R. 22 dias. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:47:19.181Z",
+      "impressao": "00a92ffb1bd0a5c40064bde05b7fa3de5b1a629e",
+      "arquivos": {
+        "Chart.tsx": "7ccb1241a3d2a2843b96e898005d2cbfa98b1285",
+        "data.ts": "d067d66616d127ca21f5f0ae704c4a459855aaf4",
+        "meta.json": "8ec21237277d3bd7de80b381409216281a14cb33"
+      }
+    },
+    "v3_doze-regioes-ordenadas-pela-mediana": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. As 12 medianas de ciclo conferidas à mão contra o data.ts (Morro Verde 26 a Enseada Norte 112 dias, nenhum empate) e a ordem da tela sai certa do arquivo alfabético; domínio comum derivado do dado (R$ 700 mil, 160 dias), grade e plano iguais nos 12 painéis, mediana escrita no cabeçalho e critério declarado (GEO-12). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:47:23.653Z",
+      "impressao": "78266d2b53ba444dc7ea6128a9ab05e670d83673",
+      "arquivos": {
+        "Chart.tsx": "96eee6d887c5cc9a87b52ecd2fe9c89e71dd7803",
+        "data.ts": "c5405a41b5d4a21e3cc5e5f66488ff1463b2e822",
+        "meta.json": "95b724f18c7cf1f9077037ebf50e2e0e5b1edc1f"
+      }
+    },
+    "v4_quadrantes-por-trimestre-com-painel-vazio": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da pergunta 1 resolvido pela saída (b): título e caso de uso falam em oportunidades, a unidade do corpo, e a troca frente ao catálogo está declarada no notes e na linha da v4 do README. Varredura completa das 32 perguntas no arquivo de hoje sem outro não: contagens por região (11, 13, 9, 0, 2, 12), tendência 1 de 11 a 9 de 12 e domínio R$ 800 mil por 160 dias reconferidos contra o data.ts; plano igual nos cinco painéis com observação; frase de 233 caracteres; check 0 erros, fidelidade 0,02%. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:54:02.187Z",
+      "impressao": "b029c5bc0c09a6f5e1176f8db5368b91bae8ad26",
+      "arquivos": {
+        "Chart.tsx": "066cbf8f86b6f4bae2cf18b1dc42868c07dd6d9e",
+        "data.ts": "77fc7db1844dc586de0c9d52b2d2f84c422c2db9",
+        "meta.json": "a6b518f6809af0ca2f91b0487452f97305efc01b"
+      }
     }
   },
   "historico": [
@@ -79,6 +115,58 @@
         "Chart.tsx": "80da0fe89fa3fdd9414850dd0ef1a9703159f698",
         "data.ts": "80f5e0dcff5bfd536ad073de69fe9761d6de7ad9",
         "meta.json": "6e732a6a623860523c96ba5434f8f3c4377bb57e"
+      }
+    },
+    {
+      "versao": "v2_time-inteiro-ao-fundo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Domínio derivado do dado e comum aos 8 painéis, grade e plano idênticos, nuvem do time em --text-muted (17.2, neutro sem valor escrito, 5,21 e 5,37) e destaque por preenchimento, tamanho e revestimento, não só cor (TOK-9). Contagens e extremos conferidos contra o data.ts: 84 oportunidades, Alice M. R$ 741,5 mil, Bento R. 22 dias. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:47:19.181Z",
+      "impressao": "00a92ffb1bd0a5c40064bde05b7fa3de5b1a629e",
+      "arquivos": {
+        "Chart.tsx": "7ccb1241a3d2a2843b96e898005d2cbfa98b1285",
+        "data.ts": "d067d66616d127ca21f5f0ae704c4a459855aaf4",
+        "meta.json": "8ec21237277d3bd7de80b381409216281a14cb33"
+      }
+    },
+    {
+      "versao": "v3_doze-regioes-ordenadas-pela-mediana",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. As 12 medianas de ciclo conferidas à mão contra o data.ts (Morro Verde 26 a Enseada Norte 112 dias, nenhum empate) e a ordem da tela sai certa do arquivo alfabético; domínio comum derivado do dado (R$ 700 mil, 160 dias), grade e plano iguais nos 12 painéis, mediana escrita no cabeçalho e critério declarado (GEO-12). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:47:23.653Z",
+      "impressao": "78266d2b53ba444dc7ea6128a9ab05e670d83673",
+      "arquivos": {
+        "Chart.tsx": "96eee6d887c5cc9a87b52ecd2fe9c89e71dd7803",
+        "data.ts": "c5405a41b5d4a21e3cc5e5f66488ff1463b2e822",
+        "meta.json": "95b724f18c7cf1f9077037ebf50e2e0e5b1edc1f"
+      }
+    },
+    {
+      "versao": "v4_quadrantes-por-trimestre-com-painel-vazio",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1, seção 14.1 (identificação das marcas; versão contra o catálogo): o título do cartão diz Quadrantes de executivos por trimestre, mas cada ponto é uma oportunidade e o corpo inteiro conta oportunidades (11 oportunidades, Cada título conta as oportunidades, 47 oportunidades na frase); o useCase trocou os 2 executivos do catálogo por 2 oportunidades sem declarar. Mudar: seguir o catálogo (ponto = executivo no trimestre, contagens em executivos) ou retitular para oportunidades e declarar a troca no README e no notes. Resto conferido sem reparo. Parecer em validation/revisao_09_dispersao-e-bolhas__11_pequenos-multiplos-de-dispersao_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:47:29.898Z",
+      "impressao": "b4a143da992b0c3f22943f49d9f2a643cfe97b70",
+      "arquivos": {
+        "Chart.tsx": "066cbf8f86b6f4bae2cf18b1dc42868c07dd6d9e",
+        "data.ts": "77fc7db1844dc586de0c9d52b2d2f84c422c2db9",
+        "meta.json": "405b7beeca59f5f97144f2b5efff1fb93f82d1d0"
+      }
+    },
+    {
+      "versao": "v4_quadrantes-por-trimestre-com-painel-vazio",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da pergunta 1 resolvido pela saída (b): título e caso de uso falam em oportunidades, a unidade do corpo, e a troca frente ao catálogo está declarada no notes e na linha da v4 do README. Varredura completa das 32 perguntas no arquivo de hoje sem outro não: contagens por região (11, 13, 9, 0, 2, 12), tendência 1 de 11 a 9 de 12 e domínio R$ 800 mil por 160 dias reconferidos contra o data.ts; plano igual nos cinco painéis com observação; frase de 233 caracteres; check 0 erros, fidelidade 0,02%. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:54:02.187Z",
+      "impressao": "b029c5bc0c09a6f5e1176f8db5368b91bae8ad26",
+      "arquivos": {
+        "Chart.tsx": "066cbf8f86b6f4bae2cf18b1dc42868c07dd6d9e",
+        "data.ts": "77fc7db1844dc586de0c9d52b2d2f84c422c2db9",
+        "meta.json": "a6b518f6809af0ca2f91b0487452f97305efc01b"
       }
     }
   ]

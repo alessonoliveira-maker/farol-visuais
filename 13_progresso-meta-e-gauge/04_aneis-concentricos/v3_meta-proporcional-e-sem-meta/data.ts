@@ -9,6 +9,8 @@ export interface ProportionalGoalRing {
   readonly value: number;
   readonly goal: number | null;
   readonly unit: string;
+  /** Forma singular da unidade, para a concordância de "falta 1 agenda". */
+  readonly unitOne: string;
   readonly proportional: boolean;
 }
 
@@ -18,7 +20,7 @@ export const businessDaysConsidered = 3;
 export const businessDaysInWeek = 5;
 
 export const data: readonly ProportionalGoalRing[] = [
-  { id: 'entradas', label: 'Entradas tratadas', value: 41, goal: 24, unit: 'entradas', proportional: true },
-  { id: 'agendas', label: 'Agendas marcadas', value: 9, goal: 10, unit: 'agendas', proportional: true },
-  { id: 'sla', label: 'SLA cumprido', value: 7, goal: null, unit: 'atendimentos', proportional: false },
+  { id: 'entradas', label: 'Entradas tratadas', value: 41, goal: 24, unit: 'entradas', unitOne: 'entrada', proportional: true },
+  { id: 'agendas', label: 'Agendas marcadas', value: 9, goal: 10, unit: 'agendas', unitOne: 'agenda', proportional: true },
+  { id: 'sla', label: 'SLA cumprido', value: 7, goal: null, unit: 'atendimentos', unitOne: 'atendimento', proportional: false },
 ];

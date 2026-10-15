@@ -13,6 +13,42 @@
         "data.ts": "4dc152f13a2e9db5b2c40dde397ca02eb40b072f",
         "meta.json": "f910e65b72ba58dc62eb6dce37b6448cbf9bfca1"
       }
+    },
+    "v2_ganhos-contra-perdas-por-faixa-de-ticket": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada. A frase acessível agora calcula as duas cláusulas (maioria antes da virada e ganhas à frente depois) a partir das faixas; conferido no data.ts: 22/6, 19/9, 15/11, 12/11 antes e 13/7, 11/5, 9/4 depois da virada de 14 contra 9. Pirâmide num stackId com sign, domínio simétrico, zero com ReferenceLine, contraste ok nos dois temas. Observações no README (ramo longo da frase com 261 caracteres, virada na primeira faixa).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:09:59.905Z",
+      "impressao": "0fb425977f61f2327db65cb040c6b4cb10db81ce",
+      "arquivos": {
+        "Chart.tsx": "d21157c2148992d0caa98a4e413ddddaaa319e21",
+        "data.ts": "89674e68f1b2155d213b8fed362e70946eab9d0d",
+        "meta.json": "0530f5057790ae2824b7f2d0725fd12a6bfe284e"
+      }
+    },
+    "v3_ciclo-empilhado-por-origem-em-foco": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada. Prospecção ativa saiu de --line-strong para --text-muted com hachura em --surface-raised, e a CONTRASTE-MARCA não avisa mais; no PNG o segmento de 1 negócio da faixa de 140 a 154 dias se lê como hachura nos dois temas. Separador da COR-5 mantido, legenda na ordem da pilha, totais 278 (120, 96, 62) e 50,0% (6 de 12) conferidos. Observações no README (direção da hachura da amostra oposta à da marca, comentários e notes desatualizados).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:10:03.101Z",
+      "impressao": "9b6a8f415c164107b9ba398f6f992b7eec4a4f0b",
+      "arquivos": {
+        "Chart.tsx": "cffdf307740d4d0eacdf096b5a9274ced3945d0e",
+        "data.ts": "369e9c63a54233a29be40e3dd99c10da702f8413",
+        "meta.json": "930b3cb2fe0bbd0e864909d1e9755ab8762b7531"
+      }
+    },
+    "v4_grupos-de-tamanho-desigual": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada. A abertura da frase acessível sai da escala (percentual do próprio canal ou contagem de leads) e a linha de quanto vale um lead só aparece no percentual; lido no código, linhas 280 e 441. Percentual dentro do canal com nome de eixo, n na legenda, barra contra silhueta revestida, 34,2% (13 de 38) contra 20,9% (134 de 640) conferidos. Observação no README (na contagem a frase ainda escreve percentual sem dizer de quê).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:10:06.011Z",
+      "impressao": "63d9c7993375829a29a104b835b87552b170cbbd",
+      "arquivos": {
+        "Chart.tsx": "c18c11e54c1d1e7fafa7d3506e19af85b7235a58",
+        "data.ts": "60d9e5d97098d5f35d9557bd451da34a4f02e6cb",
+        "meta.json": "226e312d22e94b2eacb78507029334dbfd70e326"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,84 @@
         "Chart.tsx": "e8c18b3b1e23657cf0a6d89cbdf0a3e5deb774b3",
         "data.ts": "4dc152f13a2e9db5b2c40dde397ca02eb40b072f",
         "meta.json": "f910e65b72ba58dc62eb6dce37b6448cbf9bfca1"
+      }
+    },
+    {
+      "versao": "v2_ganhos-contra-perdas-por-faixa-de-ticket",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-1: a frase acessível afirma 'e seguem à frente' (e 'as perdidas são maioria' até a virada) sem conferir no dado, porque crossoverIndex só acha a primeira faixa em que as ganhas passam; calcular as duas cláusulas a partir das faixas ou tirá-las da frase. Desenho sem bloqueante. Parecer em validation/revisao_16_distribuicao__05_histograma-comparativo_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:01:38.723Z",
+      "impressao": "dcc642cdc6b12a807134648c69ddb3e3decb0c29",
+      "arquivos": {
+        "Chart.tsx": "67bac1ffc5ccfa973901f87c8311215cad1e189c",
+        "data.ts": "89674e68f1b2155d213b8fed362e70946eab9d0d",
+        "meta.json": "0530f5057790ae2824b7f2d0725fd12a6bfe284e"
+      }
+    },
+    {
+      "versao": "v3_ciclo-empilhado-por-origem-em-foco",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20, tabela 17.2, ACE-3 e TOK-1: prospecção ativa pintada em --line-strong (1,79:1 escuro, 1,83:1 claro contra o cartão, camada e amostra) sem número escrito em nenhum dos 11 segmentos; o total da legenda não é a isenção. Na faixa de 140 a 154 dias o segmento do topo quase some. Trocar por neutro que passe 3:1 nos dois temas, com distinção não tonal entre as duas camadas neutras (hachura) e o separador da COR-5 mantido. Parecer em validation/revisao_16_distribuicao__05_histograma-comparativo_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:01:41.883Z",
+      "impressao": "df0c17772af402caa95b2ccfb8e31164cafb1a09",
+      "arquivos": {
+        "Chart.tsx": "7c34a1c79b668257b78cc682fecf5649250b3c96",
+        "data.ts": "369e9c63a54233a29be40e3dd99c10da702f8413",
+        "meta.json": "0741d799cb4f857418d8d3fc7975b8cd060b0bda"
+      }
+    },
+    {
+      "versao": "v4_grupos-de-tamanho-desigual",
+      "veredito": "reprovado",
+      "nota": "Perguntas 19 e 14, ACE-1 e NUM-6: o alternador que o catálogo pede está pela metade; com scale='count' a frase acessível ainda abre com 'em percentual do próprio canal' (linha 280, literal) e o rodapé escreve 'cada lead de indicação vale 1 do canal' (linha 443). Derivar a abertura da frase da escala, como o axisName, e mostrar a linha do lead só no percentual. Parecer em validation/revisao_16_distribuicao__05_histograma-comparativo_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:01:44.633Z",
+      "impressao": "f61e40810444cf3371aa585779e6fdf43204aad1",
+      "arquivos": {
+        "Chart.tsx": "b8d66b69e9fb7679b496ab561a86997c0576f5df",
+        "data.ts": "60d9e5d97098d5f35d9557bd451da34a4f02e6cb",
+        "meta.json": "226e312d22e94b2eacb78507029334dbfd70e326"
+      }
+    },
+    {
+      "versao": "v2_ganhos-contra-perdas-por-faixa-de-ticket",
+      "veredito": "aprovado",
+      "nota": "Segunda passada. A frase acessível agora calcula as duas cláusulas (maioria antes da virada e ganhas à frente depois) a partir das faixas; conferido no data.ts: 22/6, 19/9, 15/11, 12/11 antes e 13/7, 11/5, 9/4 depois da virada de 14 contra 9. Pirâmide num stackId com sign, domínio simétrico, zero com ReferenceLine, contraste ok nos dois temas. Observações no README (ramo longo da frase com 261 caracteres, virada na primeira faixa).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:09:59.905Z",
+      "impressao": "0fb425977f61f2327db65cb040c6b4cb10db81ce",
+      "arquivos": {
+        "Chart.tsx": "d21157c2148992d0caa98a4e413ddddaaa319e21",
+        "data.ts": "89674e68f1b2155d213b8fed362e70946eab9d0d",
+        "meta.json": "0530f5057790ae2824b7f2d0725fd12a6bfe284e"
+      }
+    },
+    {
+      "versao": "v3_ciclo-empilhado-por-origem-em-foco",
+      "veredito": "aprovado",
+      "nota": "Segunda passada. Prospecção ativa saiu de --line-strong para --text-muted com hachura em --surface-raised, e a CONTRASTE-MARCA não avisa mais; no PNG o segmento de 1 negócio da faixa de 140 a 154 dias se lê como hachura nos dois temas. Separador da COR-5 mantido, legenda na ordem da pilha, totais 278 (120, 96, 62) e 50,0% (6 de 12) conferidos. Observações no README (direção da hachura da amostra oposta à da marca, comentários e notes desatualizados).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:10:03.101Z",
+      "impressao": "9b6a8f415c164107b9ba398f6f992b7eec4a4f0b",
+      "arquivos": {
+        "Chart.tsx": "cffdf307740d4d0eacdf096b5a9274ced3945d0e",
+        "data.ts": "369e9c63a54233a29be40e3dd99c10da702f8413",
+        "meta.json": "930b3cb2fe0bbd0e864909d1e9755ab8762b7531"
+      }
+    },
+    {
+      "versao": "v4_grupos-de-tamanho-desigual",
+      "veredito": "aprovado",
+      "nota": "Segunda passada. A abertura da frase acessível sai da escala (percentual do próprio canal ou contagem de leads) e a linha de quanto vale um lead só aparece no percentual; lido no código, linhas 280 e 441. Percentual dentro do canal com nome de eixo, n na legenda, barra contra silhueta revestida, 34,2% (13 de 38) contra 20,9% (134 de 640) conferidos. Observação no README (na contagem a frase ainda escreve percentual sem dizer de quê).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T12:10:06.011Z",
+      "impressao": "63d9c7993375829a29a104b835b87552b170cbbd",
+      "arquivos": {
+        "Chart.tsx": "c18c11e54c1d1e7fafa7d3506e19af85b7235a58",
+        "data.ts": "60d9e5d97098d5f35d9557bd451da34a4f02e6cb",
+        "meta.json": "226e312d22e94b2eacb78507029334dbfd70e326"
       }
     }
   ]

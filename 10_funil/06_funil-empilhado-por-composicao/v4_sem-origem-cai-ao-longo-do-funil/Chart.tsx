@@ -1,10 +1,21 @@
 import { Filter } from 'lucide-react';
 import type { ReactElement } from 'react';
-import { Bar, BarChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis, type LabelProps } from 'recharts';
+import {
+  Bar,
+  BarChart,
+  LabelList,
+  Rectangle,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+  type BarShapeProps,
+  type LabelProps,
+} from 'recharts';
 
 import { ChartTooltip } from '@/components/visuals/charts/ChartTooltip';
 import { AXIS_PROPS, useAnimateOnce } from '@/components/visuals/charts/chartTheme';
-import { formatInt, formatPercent, formatRateWithVolume } from '@/lib/format';
+import { formatInt, formatPercentFromScale100, formatUnavailable } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, type FunnelOriginStage } from './data';
 
@@ -15,8 +26,8 @@ import { data as defaultData, type FunnelOriginStage } from './data';
  * tende a ter cadastro mais completo, o mix do fundo não é comparável ao do topo: a linha de
  * leitura avisa o viés antes de qualquer conclusão sobre origem "vencedora". Por isso a parte
  * com origem não é colorida por categoria (as seis origens ficariam sem identidade no próprio
- * visual, só na dica): ela é um tom neutro só, "Neutro de dado" da 17.2, e a dica é quem
- * acrescenta o detalhe por origem para quem quiser ir fundo.
+ * visual): ela é um tom neutro só, "Neutro de dado" da 17.2. A dica traz as duas partes da
+ * pilha (com origem somada e sem origem); o detalhe por origem não está nesta versão.
  */
 export interface NoOriginDeclineBarsProps {
   readonly data?: readonly FunnelOriginStage[];
@@ -56,9 +67,34 @@ function totalOf(row: FunnelOriginStage): number {
   return COLOR_KEYS.reduce((sum, key) => sum + row[key], 0) + row.noOrigin;
 }
 
-function coverageOf(row: FunnelOriginStage): number {
+/** Percentual inteiro da lacuna; `null` quando a etapa não tem lead (ausência, EST-1b). */
+function gapPercentOf(row: FunnelOriginStage): number | null {
   const total = totalOf(row);
-  return total > 0 ? 1 - row.noOrigin / total : 0;
+  return total > 0 ? Math.round((row.noOrigin / total) * 100) : null;
+}
+
+/** Cobertura como 100 menos o percentual impresso da lacuna: o par sempre soma 100 (NUM-2). */
+function coveragePercentOf(row: FunnelOriginStage): number | null {
+  const gap = gapPercentOf(row);
+  return gap === null ? null : 100 - gap;
+}
+
+function percentText(value: number | null): string {
+  return value === null ? formatUnavailable() : formatPercentFromScale100(value, 0);
+}
+
+/** Frase da direção da cobertura, calculada da primeira para a última etapa. */
+function coverageReading(first: FunnelOriginStage, last: FunnelOriginStage): string {
+  const from = coveragePercentOf(first);
+  const to = coveragePercentOf(last);
+  if (from === null || to === null) {
+    return `Cobertura de origem: ${formatUnavailable()} em etapa sem lead, e o mix do fundo não se compara ao do topo.`;
+  }
+  if (from === to) {
+    return `Cobertura de origem fica em ${percentText(from)} do topo ao fundo: o mix do fundo se compara ao do topo.`;
+  }
+  const verb = to > from ? 'sobe' : 'cai';
+  return `Cobertura de origem ${verb} de ${percentText(from)} para ${percentText(to)}: o mix do fundo não se compara ao do topo.`;
 }
 
 interface StageTickProps {
@@ -87,15 +123,11 @@ export default function NoOriginDeclineBars({ data = defaultData, height, classN
   const first = rows[0];
   const last = rows[rows.length - 1];
 
+  const reading = first && last ? coverageReading(first, last) : null;
   const summary =
     first && last
-      ? `Barras horizontais empilhadas com a queda de cobertura de origem em ${String(rows.length)} etapas do funil, de ${first.stage} a ${last.stage}. ` +
-        `Sem origem cai de ${formatRateWithVolume(first.noOrigin, totalOf(first), 0)} para ${formatRateWithVolume(last.noOrigin, totalOf(last), 0)}; ` +
-        `a cobertura de origem sobe de ${formatPercent(coverageOf(first), 0)} para ${formatPercent(coverageOf(last), 0)}.`
-      : 'Barras horizontais empilhadas com a queda de cobertura de origem em cada etapa do funil.';
-
-  const reading =
-    'Quem avança tende a ter cadastro mais completo: o mix do fundo não é comparável ao do topo.';
+      ? `Barras horizontais empilhadas com a cobertura de origem em ${String(rows.length)} etapas do funil, de ${first.stage} a ${last.stage}. ${reading ?? ''}`
+      : 'Barras horizontais empilhadas com a cobertura de origem em cada etapa do funil.';
 
   const renderStageTick = ({ y, index = -1 }: StageTickProps): ReactElement => {
     const row = rows[index];
@@ -105,34 +137,50 @@ export default function NoOriginDeclineBars({ data = defaultData, height, classN
         <tspan className="font-sans" dy="-4" fill="var(--text-secondary)" fontSize={12} fontWeight={500} x={0}>
           {row ? row.stage : ''}
         </tspan>
-        <tspan className="font-sans" dy="15" fill="var(--text-muted)" fontSize={11} x={0}>
-          {row ? `${formatPercent(coverageOf(row), 0)} com origem` : ''}
+        <tspan className="font-sans tabular-nums" dy="15" fill="var(--text-muted)" fontSize={11} x={0}>
+          {row ? (gapPercentOf(row) === null ? 'sem lead' : `${percentText(coveragePercentOf(row))} com origem`) : ''}
         </tspan>
       </text>
     );
   };
+
+  /** Forma própria na lacuna: com ela o Recharts não descarta a barra de largura zero, e o total e a ausência escrita continuam na ponta (REC-11). */
+  const renderGap = ({ x, y, width, height: barHeight }: BarShapeProps): ReactElement => (
+    <Rectangle
+      fill="none"
+      height={Number(barHeight)}
+      radius={[0, 3, 3, 0]}
+      stroke={Number(width) > 0 ? NO_ORIGIN_STROKE : 'none'}
+      strokeWidth={1}
+      width={Number(width)}
+      x={Number(x)}
+      y={Number(y)}
+    />
+  );
 
   const renderTail = ({ x, y, width, height: barHeight, index }: LabelProps): ReactElement | null => {
     const row = index === undefined ? undefined : rows[index];
     if (!row) return null;
     const tipX = Number(x) + Number(width) + VALUE_LABEL_GAP;
     const cy = Number(y) + Number(barHeight) / 2;
-    const share = totalOf(row) > 0 ? row.noOrigin / totalOf(row) : 0;
+    const gap = gapPercentOf(row);
     return (
       <>
-        <text className="font-display" dominantBaseline="central" fill="var(--text-primary)" fontSize={12} fontWeight={700} x={tipX} y={cy - TAIL_LINE_GAP}>
-          {formatInt(totalOf(row))}
+        <text className="font-display tabular-nums" dominantBaseline="central" fill="var(--text-primary)" fontSize={12} fontWeight={600} x={tipX} y={gap === null ? cy : cy - TAIL_LINE_GAP}>
+          {formatInt(totalOf(row))} leads
         </text>
-        <text className="font-sans" dominantBaseline="central" fill="var(--text-muted)" fontSize={11} x={tipX} y={cy + TAIL_LINE_GAP}>
-          {formatPercent(share, 0)} sem origem
-        </text>
+        {gap === null ? null : (
+          <text className="font-sans" dominantBaseline="central" fill="var(--text-muted)" fontSize={11} x={tipX} y={cy + TAIL_LINE_GAP}>
+            {`${percentText(gap)} sem origem`}
+          </text>
+        )}
       </>
     );
   };
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
-      <p aria-hidden className="mb-2 shrink-0 truncate text-xs text-text-secondary">{reading}</p>
+      {reading ? <p aria-hidden className="mb-2 shrink-0 text-xs text-text-secondary">{reading}</p> : null}
       <div className="min-h-0 flex-1">
         <ResponsiveContainer height="100%" width="100%">
           <BarChart accessibilityLayer={false} barCategoryGap={BAR_CATEGORY_GAP} data={rows} layout="vertical" margin={MARGIN}>
@@ -166,10 +214,8 @@ export default function NoOriginDeclineBars({ data = defaultData, height, classN
               isAnimationActive={animate}
               maxBarSize={ROW_STEP}
               name={NO_ORIGIN_LABEL}
-              radius={[0, 3, 3, 0]}
+              shape={renderGap}
               stackId="mix"
-              stroke={NO_ORIGIN_STROKE}
-              strokeWidth={1}
             >
               <LabelList content={renderTail} dataKey="noOrigin" />
             </Bar>

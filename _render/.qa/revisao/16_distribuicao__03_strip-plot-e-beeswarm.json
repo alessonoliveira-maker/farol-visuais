@@ -3,15 +3,15 @@
   "modelo": "03_strip-plot-e-beeswarm",
   "versoes": {
     "v1_cpl-das-campanhas-por-plataforma": {
-      "veredito": "reprovado",
-      "nota": "Opacidade consertada e aceita. Volta por dois bloqueantes. Pergunta 16, EST-1: sem estado vazio, data vazio desenha eixo, meta e rodapé; devolver bloco role=status como as irmãs. Pergunta 1, seção 14.1 e DAD-10: meta e catálogo declaram campanha nomeada por ponto e nenhum nome chega à tela (sem Tooltip, sem rótulo, sem rodapé); ligar ChartTooltip e escrever o caso extremo no rodapé, ou corrigir o meta. Parecer em validation/revisao_16_distribuicao__03_strip-plot-e-beeswarm_2026-10-05.md.",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T10:09:09.896Z",
-      "impressao": "31b2d4811805f6acaeccd131a0ac1de9a7843caa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. EST-1 resolvido: data vazio (ou sem campanha) devolve bloco role=status com Filter de 16 px e frase de 12 px em text-muted, sem eixo nem meta. DAD-10 resolvido pela saída da armadilha: maior CPL nomeado no rodapé e na frase acessível (Xaxim institucional, Display, R$ 395) e meta.json alinhado. Medianas 86, 110, 149 e 174, 35 acima da meta e ordem conferidas contra o dado; ponto 9,50:1 e 6,00:1. Observações no README: Pendências da v1 envelhecidas, plano encolheu de 104 para 84 px (GEO-14), 7 empates exatos viram um ponto, contorno claro, ACE-1, tooltip do catálogo sem declaração nas notas.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:25:08.561Z",
+      "impressao": "afca9c11c2cabb14279cb3d3e98eb92685bb61e4",
       "arquivos": {
-        "Chart.tsx": "6206556f3b37125d94691304d95171d97d9535b9",
+        "Chart.tsx": "2766833a05738eaf620f82629bd9d7518ae047ec",
         "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
-        "meta.json": "98bbf56dcc023d9a086e8873fe051014fad0e8f2"
+        "meta.json": "24fc9a73d3a6fae7a625fd94968856769223db83"
       }
     },
     "v2_wheat-plot-com-buraco-anotado": {
@@ -154,6 +154,19 @@
         "Chart.tsx": "4411cdbb0da532a3781bb7f911648c3ca8c437a0",
         "data.ts": "a0a49175fd977e10a219fb63b96436f111ac652d",
         "meta.json": "12eb8a66349dc0e4fe8504d72b26a7540bfe164f"
+      }
+    },
+    {
+      "versao": "v1_cpl-das-campanhas-por-plataforma",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. EST-1 resolvido: data vazio (ou sem campanha) devolve bloco role=status com Filter de 16 px e frase de 12 px em text-muted, sem eixo nem meta. DAD-10 resolvido pela saída da armadilha: maior CPL nomeado no rodapé e na frase acessível (Xaxim institucional, Display, R$ 395) e meta.json alinhado. Medianas 86, 110, 149 e 174, 35 acima da meta e ordem conferidas contra o dado; ponto 9,50:1 e 6,00:1. Observações no README: Pendências da v1 envelhecidas, plano encolheu de 104 para 84 px (GEO-14), 7 empates exatos viram um ponto, contorno claro, ACE-1, tooltip do catálogo sem declaração nas notas.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:25:08.561Z",
+      "impressao": "afca9c11c2cabb14279cb3d3e98eb92685bb61e4",
+      "arquivos": {
+        "Chart.tsx": "2766833a05738eaf620f82629bd9d7518ae047ec",
+        "data.ts": "78521743c407ecc6c174a82014c2662db75b91d1",
+        "meta.json": "24fc9a73d3a6fae7a625fd94968856769223db83"
       }
     }
   ]

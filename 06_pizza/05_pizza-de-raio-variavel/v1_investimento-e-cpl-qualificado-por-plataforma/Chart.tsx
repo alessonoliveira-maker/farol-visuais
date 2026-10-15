@@ -28,10 +28,10 @@ const RADIUS_MIN_RATIO = 0.32;
 const START_ANGLE = 90;
 const END_ANGLE = -270;
 const RADIAN = Math.PI / 180;
-/** Anéis de referência do CPL qualificado, em reais, do menor para o maior. */
-const RING_VALUES = [500, 1_500, 2_500] as const;
+/** Anéis de referência do CPL qualificado, em frações do topo da escala (o maior CPL do dado). */
+const RING_FRACTIONS = [0.25, 0.5, 1] as const;
 /** Um ângulo próprio por anel (convenção do topo, sentido horário) para nenhum rótulo colidir. */
-const RING_ANGLES = [90, 58, 26] as const;
+const RING_ANGLES = [90, 36, 8] as const;
 /** Slots categóricos na ordem da COR-8 (1, 3, 6): a cor segue o slot do dado, não a posição. */
 const SLOT_COLORS = [CHART_SERIES_COLORS[0], CHART_SERIES_COLORS[2], CHART_SERIES_COLORS[5]] as const;
 /** Halo na cor do cartão: o rótulo do anel continua legível sobre qualquer fatia que cruzar. */
@@ -42,9 +42,11 @@ const HALO = { paintOrder: 'stroke', stroke: 'var(--surface-raised)', strokeLine
  * incluído no domínio (a raiz de 0 é 0), e o piso garante que a fatia mais barata continue visível.
  */
 function radiusForCpl(value: number, cplMax: number): number {
-  if (cplMax <= 0) return OUTER_MAX * RADIUS_MIN_RATIO;
-  const fraction = Math.sqrt(Math.max(0, value) / cplMax);
-  return OUTER_MAX * RADIUS_MIN_RATIO + OUTER_MAX * (1 - RADIUS_MIN_RATIO) * fraction;
+  const rMin = OUTER_MAX * RADIUS_MIN_RATIO;
+  if (cplMax <= 0) return rMin;
+  const fraction = Math.max(0, value) / cplMax;
+  // Área linear no valor: a coroa acima do piso cresce com o valor (GEO-3).
+  return Math.sqrt(rMin * rMin + (OUTER_MAX * OUTER_MAX - rMin * rMin) * fraction);
 }
 
 /** Ponto a um raio e um ângulo dados, na convenção do Recharts (90° é o topo, sentido horário). */
@@ -87,6 +89,7 @@ export default function RadiusPieMedia({ data = defaultData, height, className }
 
   const totalInvestimento = data.reduce((sum, row) => sum + row.investimento, 0);
   const cplMax = data.reduce((max, row) => Math.max(max, row.cplQualificado), 0);
+  const ringValues = cplMax > 0 ? RING_FRACTIONS.map((fraction) => cplMax * fraction) : [];
   const percents = integerPercents(data.map((row) => row.investimento));
   const leaderIndex = data.reduce((best, row, index) => (row.investimento > (data[best]?.investimento ?? -1) ? index : best), 0);
   const priciestIndex = data.reduce((worst, row, index) => (row.cplQualificado > (data[worst]?.cplQualificado ?? -1) ? index : worst), 0);
@@ -171,7 +174,7 @@ export default function RadiusPieMedia({ data = defaultData, height, className }
               cada um com o rótulo em reais num ângulo próprio, para nenhum rótulo colidir com o
               vizinho nem com as fatias por baixo (halo garante a leitura sobre qualquer cor). */}
           <svg aria-hidden className="pointer-events-none absolute inset-0 overflow-visible" viewBox={`0 0 ${String(PIE_SIZE)} ${String(PIE_SIZE)}`}>
-            {RING_VALUES.map((ringValue, index) => {
+            {ringValues.map((ringValue, index) => {
               const angleDeg = RING_ANGLES[index] ?? 90;
               const r = radiusForCpl(ringValue, cplMax);
               const dot = pointAtAngle(r, angleDeg);
@@ -180,7 +183,7 @@ export default function RadiusPieMedia({ data = defaultData, height, className }
               // SVG. O halo garante a leitura sobre a fatia que estiver por baixo.
               const labelPoint = pointAtAngle(Math.max(0, r - 10), angleDeg);
               return (
-                <g key={ringValue}>
+                <g key={RING_FRACTIONS[index]}>
                   <circle cx={PIE_CENTER} cy={PIE_CENTER} fill="none" r={r} stroke="var(--text-muted)" strokeDasharray="3 3" strokeWidth={1} />
                   <circle cx={dot.x} cy={dot.y} fill="var(--text-muted)" r={2} />
                   <text
@@ -212,7 +215,7 @@ export default function RadiusPieMedia({ data = defaultData, height, className }
             ))}
           </ul>
           <p className="mt-1 shrink-0 border-t border-line-subtle pt-2 text-[0.6875rem] text-text-muted">
-            Raio: CPL qualificado. Anéis em {RING_VALUES.map((value) => formatCurrencyCompact(value)).join(', ')}.
+            Raio: CPL qualificado. Anéis em {ringValues.map((value) => formatCurrencyCompact(value)).join(', ')}.
           </p>
         </div>
       </div>

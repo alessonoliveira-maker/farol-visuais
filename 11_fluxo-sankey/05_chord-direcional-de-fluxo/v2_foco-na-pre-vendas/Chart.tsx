@@ -14,7 +14,7 @@ import { data as defaultData, groups, highlightId as defaultHighlightId, type Fl
  *
  * 1. O foco NÃO usa opacidade. A especificação da versão pedia baixar as outras fitas para 15%, e
  *    isso reprova na ACE-5: a opacidade mínima medida das cores de papel vai de 0,63 a 0,77, então
- *    15% sai abaixo do piso de 3:1 da WCAG 1.4.11 nos dois temas. O apagado é token neutro OPACO.
+ *    15% sai abaixo do piso de 3:1 da WCAG 1.4.11 nos dois temas. O apagado é o token neutro OPACO --text-muted (17.2, neutro sem valor escrito, 5,21:1 e 5,37:1), e a fita acesa ganha contorno em --text-primary como segundo canal (TOK-9).
  * 2. A fita acesa leva a cor do PARCEIRO, não a do grupo em foco. Com a cor da origem, a fita do
  *    foco para o maior parceiro sai no mesmo tom do arco dele, colada nele, e a metade da roda lê
  *    como meio disco cheio. Pela cor do parceiro cada fita acesa diz para onde vai.
@@ -64,8 +64,16 @@ const ANNOTATION_BASELINE = VIEW_HEIGHT - 4;
 /** COR-5: contorno na cor do cartão separa arco de fita sem mexer no contraste do preenchimento. */
 const SEPARATION_STROKE = 'var(--surface-raised)';
 const SEPARATION_WIDTH = 1.5;
-/** O neutro da marca não destacada (17.2). Fica abaixo de 3:1 de propósito, e por isso é opaco. */
-const DIMMED_FILL = 'var(--line-strong)';
+/** Neutro de dado SEM valor escrito (17.2): a fita apagada carrega contagem, e mede 5,21:1 e 5,37:1. */
+const DIMMED_FILL = 'var(--text-muted)';
+/**
+ * Segundo canal da fita acesa (TOK-9): contra --text-muted o matiz sozinho mede de 1,00:1 a 1,42:1.
+ * O contorno em --text-primary, de 1,25 px visíveis por fora do preenchimento (paintOrder 'stroke'),
+ * separa acesa de apagada por luminância. As fitas são regiões largas que só se tocam no pé, então
+ * o contorno não cobre vizinha fina (a fita mais fina mede 21,4 px).
+ */
+const LIT_STROKE = 'var(--text-primary)';
+const LIT_STROKE_WIDTH = 2.5;
 
 interface Arc {
   readonly start: number;
@@ -278,8 +286,9 @@ export default function FocusedFunctionChord({
               d={ribbon.d}
               fill={ribbon.fill}
               key={ribbon.key}
+              paintOrder="stroke"
               stroke={SEPARATION_STROKE}
-              strokeWidth={SEPARATION_WIDTH}
+              strokeWidth={SEPARATION_WIDTH * 2}
             />
           ))}
         {ribbons
@@ -289,8 +298,9 @@ export default function FocusedFunctionChord({
               d={ribbon.d}
               fill={ribbon.fill}
               key={ribbon.key}
-              stroke={SEPARATION_STROKE}
-              strokeWidth={SEPARATION_WIDTH}
+              paintOrder="stroke"
+              stroke={LIT_STROKE}
+              strokeWidth={LIT_STROKE_WIDTH}
             />
           ))}
 
@@ -341,11 +351,13 @@ export default function FocusedFunctionChord({
           <tspan className="tabular-nums" fill="var(--text-secondary)">
             {formatInt(focus.received)}
           </tspan>
-          <tspan fill="var(--text-secondary)">{': entrega '}</tspan>
-          <tspan className="tabular-nums font-bold" fill="var(--text-primary)">
-            {formatInt(netSent)}
+          <tspan fill="var(--text-secondary)">{netSent >= 0 ? ': entrega ' : ': recebe '}</tspan>
+          <tspan className="tabular-nums font-semibold" fill="var(--text-primary)">
+            {formatInt(Math.abs(netSent))}
           </tspan>
-          <tspan fill="var(--text-secondary)">{' repasses mais do que recebe.'}</tspan>
+          <tspan fill="var(--text-secondary)">
+            {netSent >= 0 ? ' repasses mais do que recebe.' : ' repasses a mais do que envia.'}
+          </tspan>
         </text>
 
         {/* Anotação de ida e volta do par principal (ANO-1 e ANO-2): uma, com nome e as duas contagens. */}

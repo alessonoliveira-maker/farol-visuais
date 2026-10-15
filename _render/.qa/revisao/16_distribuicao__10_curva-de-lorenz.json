@@ -27,13 +27,13 @@
       }
     },
     "v3_investimento-de-midia-por-campanha": {
-      "veredito": "reprovado",
-      "nota": "Pergunta 15, ESP-3: o tique 100% do eixo X sai cortado na borda direita do quadrado nos dois temas (centrado em x=234 num svg de 242 px com overflow hidden, cerca de 6 px fora); subir MARGIN.right para 16 e refazer a conta do quadrado para 60 dos dois lados. O tique de 75% voltou. Parecer em validation/revisao_16_distribuicao__10_curva-de-lorenz_2026-10-05.md, segunda passada",
-      "data": "2026-10-05",
-      "registradoEm": "2026-10-05T11:45:05.830Z",
-      "impressao": "c0e5bf423d3922d9574be3533e5189c805d5a763",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, terceira passada; 100% do eixo X inteiro e centrado na grade em x=226 (tinta até 272 px, borda do svg em 275) nos dois temas, plano quadrado de 182 px com cinco tiques e cinco linhas por sentido, ponto em 87,8% por 30,0%, Gini 0,71; observações no README",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:28:29.789Z",
+      "impressao": "8b98ffb8d891ee1c9a98ee5f5768c2ab92713855",
       "arquivos": {
-        "Chart.tsx": "ac942f733ba54ec62b6e9e0c0bc39cd13e31316f",
+        "Chart.tsx": "a5932cc71c12b0d7d986607b7323809bfbab33de",
         "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
         "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
       }
@@ -113,6 +113,19 @@
       "impressao": "c0e5bf423d3922d9574be3533e5189c805d5a763",
       "arquivos": {
         "Chart.tsx": "ac942f733ba54ec62b6e9e0c0bc39cd13e31316f",
+        "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
+        "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
+      }
+    },
+    {
+      "versao": "v3_investimento-de-midia-por-campanha",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sem não, terceira passada; 100% do eixo X inteiro e centrado na grade em x=226 (tinta até 272 px, borda do svg em 275) nos dois temas, plano quadrado de 182 px com cinco tiques e cinco linhas por sentido, ponto em 87,8% por 30,0%, Gini 0,71; observações no README",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:28:29.789Z",
+      "impressao": "8b98ffb8d891ee1c9a98ee5f5768c2ab92713855",
+      "arquivos": {
+        "Chart.tsx": "a5932cc71c12b0d7d986607b7323809bfbab33de",
         "data.ts": "4194918608869a837a858349ea4c5b31ffde4314",
         "meta.json": "2e8662eac9035cbd73ca032af728f1b2ebabe5ed"
       }

@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer, useChartHeight, useChartWidth } from 'recharts';
 
 import { useAnimateOnce } from '@/components/visuals/charts/chartTheme';
-import { formatInt, formatMonthLong, formatPercent } from '@/lib/format';
+import { formatDecimal, formatInt, formatMonthLong, formatPercent } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, type MonthlyArcOverGoal } from './data';
 
@@ -95,8 +95,10 @@ function CenterLabel({ value }: CenterLabelProps): ReactElement | null {
   if (width <= 0 || height <= 0) return null;
   const cx = width / 2;
   const cy = height * CY_FRACTION;
+  /** Corpo acompanha o miolo do arco (raio interno ~58% de metade do menor lado), com 4 px de folga. */
+  const valueSize = Math.max(14, Math.min(30, Math.min(width, height) * 0.5 * 0.58 * 0.8 - 4));
   return (
-    <text className="font-display" fill="var(--text-primary)" fontSize={30} fontWeight={600} textAnchor="middle" x={cx} y={cy + 2}>
+    <text className="font-display" fill="var(--text-primary)" fontSize={valueSize} fontWeight={600} textAnchor="middle" x={cx} y={cy + 2}>
       {formatInt(value)}
     </text>
   );
@@ -113,7 +115,7 @@ export default function MonthlyOverGoalArc({ data = defaultData, height, classNa
   const sweepDeg = (base / domainMax) * (ARC_START - ARC_END);
   const baseCornerRadius = excess > 0 ? 0 : sweepDeg < MIN_SWEEP_DEG ? 0 : TIP_CORNER_RADIUS;
 
-  const summary = `Gauge de arco com ${label.toLowerCase()} em ${formatMonthLong(period)}: ${formatInt(value)}, contra a meta de ${formatInt(target)}. ${over > 0 ? `Passou a meta em ${formatInt(over)}, ${formatPercent(over / target)} acima.` : 'Ainda não bateu a meta.'} A meta de ${formatInt(target)} foi ${targetSource}.`;
+  const summary = `Gauge de arco com ${label.toLowerCase()} em ${formatMonthLong(period)}: ${formatInt(value)}, contra a meta de ${formatInt(target)}. ${over > 0 ? `Passou a meta em ${formatInt(over)}, ${formatPercent(over / target)} acima.` : 'Ainda não bateu a meta.'} A meta de ${formatInt(target)} foi ${targetSource}. O arco vai a ${formatInt(domainMax)}, ${formatDecimal(DOMAIN_OVER_FACTOR)} vez a meta, só para o excedente caber.`;
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
@@ -162,8 +164,8 @@ export default function MonthlyOverGoalArc({ data = defaultData, height, classNa
           </RadialBarChart>
         </ResponsiveContainer>
       </div>
-      <p aria-hidden className="mt-1 shrink-0 truncate text-center text-[0.6875rem] text-text-muted">
-        Meta de {formatInt(target)}, {targetSource}. Arco alarga a {formatInt(domainMax)} só para o excedente caber.
+      <p aria-hidden className="mt-1 shrink-0 text-center text-[0.6875rem] leading-tight text-text-muted">
+        Arco vai a {formatInt(domainMax)}, {formatDecimal(DOMAIN_OVER_FACTOR)} vez a meta, para o excedente caber. Meta de {formatInt(target)}, {targetSource}.
       </p>
     </div>
   );

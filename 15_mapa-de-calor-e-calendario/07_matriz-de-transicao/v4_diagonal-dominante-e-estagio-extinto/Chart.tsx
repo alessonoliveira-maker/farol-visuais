@@ -1,3 +1,5 @@
+import { Filter } from 'lucide-react';
+
 import { CHART_SEQUENTIAL_COLORS } from '@/components/visuals/charts/chartTheme';
 import { formatDate, formatInt, formatPercent } from '@/lib/format';
 import { cn } from '@/lib/utils';
@@ -119,6 +121,19 @@ export default function ProcessChangeMatrix({
   height,
   className,
 }: ProcessChangeMatrixProps) {
+  if (data.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="size-4 shrink-0" />
+        <span>Nenhum movimento neste recorte: a matriz de transição não tem o que medir.</span>
+      </div>
+    );
+  }
+
   const columns = [...STAGES, RETIRED_STAGE];
   const retiredColumn = columns.length - 1;
   const totals = data.map((row) => row.to.reduce((sum, value) => sum + value, 0));
@@ -298,6 +313,9 @@ export default function ProcessChangeMatrix({
 
         <text dominantBaseline="central" fill="var(--text-muted)" fontSize={11} x={0} y={206}>
           movimento
+        </text>
+        <text fill="var(--text-muted)" fontSize={11} textAnchor="end" x={VIEW_W} y={206}>
+          Linha: de onde saiu; coluna: para onde foi.
         </text>
         {(ceilings ?? []).map((ceiling, step) => (
           <g key={`degrau-${String(step)}`}>

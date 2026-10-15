@@ -3,15 +3,16 @@ import type { ReactElement } from 'react';
 
 import { formatInt, formatMonthShort, formatPercent, formatUnavailable } from '@/lib/format';
 import { cn } from '@/lib/utils';
-import { data as defaultData, periodLabel, type CoverageRow } from './data';
+import { data as defaultData, periodLabel, previousPeriodLabel, type CoverageRow } from './data';
 
 /**
  * Cobertura de telefone e cargo por origem, cada uma com a barra de 0 a 100% ao lado do
  * percentual, mais a taxa de agendamento sem barra (é conversão, não cobertura de campo).
  * Sempre percentual e fração lado a lado: abaixo de 10 leads a fração vem em destaque e o
  * percentual em apoio, porque a base é pequena demais para o percentual sozinho não enganar.
- * Cidade é lacuna inteira, a mesma em toda origem, e por isso o motivo mora só no cabeçalho da
- * coluna.
+ * Cidade é lacuna inteira, a mesma em toda origem: o aviso mora uma vez no cabeçalho da coluna
+ * e o corpo é uma única célula mesclada, sem repetir a palavra linha a linha. Leads leva a
+ * variação contra o mês anterior com a base nomeada; origem nova escreve "sem base".
  */
 export interface CoverageTableProps {
   readonly data?: readonly CoverageRow[];
@@ -30,18 +31,20 @@ const BAR_WIDTH = 40;
 /**
  * `flagLow` também decide a barra: só faz sentido para cobertura de campo (telefone, cargo).
  * Abaixo do piso, o dado pode faltar por problema de coleta, e o aviso é sobre a confiança do
- * número. Numa taxa de conversão (agendamento) um valor baixo é o KPI de verdade, não um
- * problema de coleta, então a coluna de agendamento nunca leva barra nem aviso, só o destaque de
- * fração do denominador pequeno.
+ * número. Numa taxa de conversão (agendamento) um valor baixo é o KPI de verdade, então a
+ * coluna de agendamento nunca leva barra e só esmaece quando `lowTrust` diz que a base de que ela
+ * depende (telefone) é fraca. `lowTrust` esmaece sem opacidade: cinza com ícone de aviso.
  */
 function RatePair({
   numerator,
   denominator,
   flagLow = true,
+  lowTrust = false,
 }: {
   readonly numerator: number;
   readonly denominator: number;
   readonly flagLow?: boolean;
+  readonly lowTrust?: boolean;
 }): ReactElement {
   if (denominator <= 0) {
     return <span className="text-xs text-text-muted">{formatUnavailable()}</span>;
@@ -49,12 +52,12 @@ function RatePair({
   const fraction = `${formatInt(numerator)} de ${formatInt(denominator)}`;
   const coverage = numerator / denominator;
   const percent = formatPercent(coverage, 0);
-  const low = flagLow && coverage < LOW_COVERAGE;
+  const low = (flagLow && coverage < LOW_COVERAGE) || lowTrust;
   const small = denominator < N_MIN;
   const mainClass = cn('kpi-number text-xs font-semibold', low ? 'text-text-muted' : 'text-text-primary');
   const barPct = Math.min(Math.max(coverage, 0), 1) * 100;
   return (
-    <span className="inline-flex items-center justify-end gap-2">
+    <span className="inline-flex items-center justify-end gap-2 text-nowrap">
       {flagLow ? (
         <span
           aria-hidden
@@ -73,15 +76,24 @@ function RatePair({
   );
 }
 
+function leadsDelta(current: number, previous: number | null): string {
+  if (previous === null || previous <= 0) return 'sem base';
+  const change = (current - previous) / previous;
+  const text = formatPercent(change, 0);
+  return `${change > 0 ? '+' : ''}${text} contra ${formatInt(previous)} em ${formatMonthShort(previousPeriodLabel)}`;
+}
+
 export default function CoverageTable({ data = defaultData, height, className }: CoverageTableProps): ReactElement {
   const style = height === undefined ? undefined : { height };
   const smallRows = data.filter((row) => row.volume < N_MIN);
   const lowPhoneRows = data.filter((row) => row.phoneCovered / row.volume < LOW_COVERAGE);
 
   const summary =
-    `Tabela de cobertura de telefone, cargo, cidade e agendamento em ${String(data.length)} origens de lead de ${formatMonthShort(periodLabel)}. ` +
+    `Tabela de cobertura de telefone, cargo e agendamento em ${String(data.length)} origens de ${formatMonthShort(periodLabel)}. ` +
     (smallRows.length > 0 ? `${String(smallRows.length)} com menos de ${String(N_MIN)} leads, em fração. ` : '') +
-    (lowPhoneRows.length > 0 ? `${String(lowPhoneRows.length)} com telefone abaixo de ${formatPercent(LOW_COVERAGE, 0)}.` : '');
+    (lowPhoneRows.length > 0
+      ? `${String(lowPhoneRows.length)} com telefone abaixo de ${formatPercent(LOW_COVERAGE, 0)}, agendamento em cinza: ${lowPhoneRows.map((row) => row.origin).join(' e ')}.`
+      : '');
 
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="table" style={style}>
@@ -102,9 +114,12 @@ export default function CoverageTable({ data = defaultData, height, className }:
               Cargo
             </th>
             <th className="pb-1.5 pl-3 text-right text-xs font-medium text-text-secondary" scope="col">
-              <span className="inline-flex items-center justify-end gap-1">
-                <Unplug aria-hidden className="size-3 shrink-0" />
-                Cidade
+              <span className="inline-flex flex-col items-end text-nowrap">
+                <span className="inline-flex items-center gap-1">
+                  <Unplug aria-hidden className="size-3 shrink-0" />
+                  Cidade: {formatUnavailable()}
+                </span>
+                <span className="text-[11px] font-normal text-text-muted">campo não coletado</span>
               </span>
             </th>
             <th className="pb-1.5 pl-3 text-right text-xs font-medium text-text-secondary" scope="col">
@@ -113,40 +128,40 @@ export default function CoverageTable({ data = defaultData, height, className }:
           </tr>
         </thead>
         <tbody>
-          {data.map((row) => (
+          {data.map((row, index) => (
             <tr className="border-t border-line-subtle" key={row.id}>
-              <th className="py-1 pr-2 text-left text-xs font-medium text-nowrap text-text-secondary" scope="row">
+              <th className="py-0.5 pr-2 text-left text-xs font-medium text-nowrap text-text-secondary" scope="row">
                 {row.origin}
               </th>
-              <td className="kpi-number py-1 pl-3 text-right text-xs font-semibold text-text-primary">{formatInt(row.volume)}</td>
-              <td className="py-1 pl-3 text-right">
+              <td className="py-0.5 pl-3 text-right text-nowrap">
+                <span className="kpi-number text-xs font-semibold text-text-primary">{formatInt(row.volume)}</span>{' '}
+                <span className="text-[11px] text-text-muted">({leadsDelta(row.volume, row.previousVolume)})</span>
+              </td>
+              <td className="py-0.5 pl-3 text-right">
                 <RatePair denominator={row.volume} numerator={row.phoneCovered} />
               </td>
-              <td className="py-1 pl-3 text-right">
+              <td className="py-0.5 pl-3 text-right">
                 <RatePair denominator={row.volume} numerator={row.roleCovered} />
               </td>
-              <td className="py-1 pl-3 text-right">
-                <span className="inline-flex items-center justify-end gap-1 text-xs text-text-muted">
-                  <Unplug aria-hidden className="size-3.5 shrink-0" />
-                  {formatUnavailable()}
-                </span>
-              </td>
-              <td className="py-1 pl-3 text-right">
-                <RatePair denominator={row.volume} flagLow={false} numerator={row.agendas} />
+              {index === 0 ? (
+                <td className="px-2 py-0.5 text-center align-middle" rowSpan={data.length}>
+                  <Unplug aria-hidden className="mx-auto size-3.5 shrink-0 text-text-muted" />
+                </td>
+              ) : null}
+              <td className="py-0.5 pl-3 text-right">
+                <RatePair denominator={row.volume} flagLow={false} lowTrust={row.phoneCovered / row.volume < LOW_COVERAGE} numerator={row.agendas} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       <p className="mt-0.5 shrink-0 text-[11px] leading-snug text-text-muted">
-        Barra e percentual de telefone e cargo vão de{' '}
-        <span className="tabular-nums">{formatPercent(0, 0)}</span> a{' '}
-        <span className="tabular-nums">{formatPercent(1, 0)}</span>. Abaixo de{' '}
-        <span className="tabular-nums">{formatInt(N_MIN)}</span> leads a fração vem em destaque;
-        abaixo de <span className="tabular-nums">{formatPercent(LOW_COVERAGE, 0)}</span> de
-        cobertura, o texto fica cinza com aviso. Agendamento não leva barra nem aviso: taxa baixa
-        é o KPI, não falha de coleta. Cidade é lacuna em toda origem: motivo declarado aqui, não
-        em cada célula.
+        Barra de <span className="tabular-nums">{formatPercent(0, 0)}</span> a <span className="tabular-nums">{formatPercent(1, 0)}</span>. Abaixo de{' '}
+        <span className="tabular-nums">{formatInt(N_MIN)}</span> leads a fração vem em destaque.
+        Abaixo de <span className="tabular-nums">{formatPercent(LOW_COVERAGE, 0)}</span> de
+        cobertura, cinza com aviso; em agendamento, a regra vale pelo telefone: base em que mais
+        da metade dos leads não tem telefone. Variação nomeia o mês-base; origem nova escreve sem
+        base.
       </p>
     </div>
   );

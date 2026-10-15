@@ -13,6 +13,42 @@
         "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
         "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
       }
+    },
+    "v2_corte-no-pico-da-distribuicao": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Marginais alinhados ao plano nos dois eixos (faixa de R$ 75 a 100 com centro em 238,9 px no topo e no plano; faixa de 25 a 30% em 101,4 px nos dois), divisória pela mesma fractionOf nos três gráficos, faixa acesa contendo os dois cortes, contagens somando 48 dos dois lados e as 11 campanhas a menos de um décimo do corte conferidas no dado. Sem bloqueante; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:13:21.454Z",
+      "impressao": "1bc52eaf1fbd43ef7d18f6160b4cc55b4d9ea205",
+      "arquivos": {
+        "Chart.tsx": "470720fa3203625db91c1e629be0e806cb25405e",
+        "data.ts": "273aa37dcac933fd5ad9de7d6d829ea14d21b341",
+        "meta.json": "572b885c6784872a743ce70f32adb43486e396ca"
+      }
+    },
+    "v3_leads-com-tempo-em-escala-log": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. O raio declarado de 1,5 px agora é o desenhado: os 2.000 paths saem M1.5,0A1.5 nos dois previews, pelo ZAxis com dataKey constante. Marginais alinhados ao plano nos dois eixos (14 faixas de razão 1,93 com centro geométrico, 10 faixas centradas no inteiro, eixo revertido), contagens somando 2.000 dos dois lados e conferidas no dado; opacidade 0,70 declarada contra a ACE-5 e medida pela guarda. Diferença preview contra página de 0,000% nos dois temas. Sem bloqueante; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:38.149Z",
+      "impressao": "d04a9feaf0fcce99aaeef69fd1ddc4395ca900f1",
+      "arquivos": {
+        "Chart.tsx": "869f550235a0151a56c02ae90c5fbb6de000acbd",
+        "data.ts": "2d34bbac5fdfd6a7d9856ae299f954a95461bf3d",
+        "meta.json": "671af0d3ca3fadda67618c2c94b70b2b1ec9d6fa"
+      }
+    },
+    "v4_cauda-longa-recolhida": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro. A faixa de 175 a 200 dias voltou a ser comum, 46 em line-strong sobre a coluna que tem 46 pontos, e a reserva do marginal do topo ganhou a barra própria de 5 em chart-5, na vertical dos triângulos e no mesmo teto de escala das outras; o rosa tem um referente só, o que a chave nomeia (COR-3). Marginais somam 520 dos dois lados, P99 de 191 dias e as 5 recolhidas conferidos no dado, raio de 3 px desenhado. Diferença preview contra página de 0,002% e 0,012%. Sem bloqueante; observações no README, entre elas a nota do meta.json que ainda descreve a faixa aberta.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:45.807Z",
+      "impressao": "f566ae6c0f0722786c5ed7507115fe99fd2941e7",
+      "arquivos": {
+        "Chart.tsx": "22065a53afe39f68a992b91425e2360f0131d3b2",
+        "data.ts": "4e84871897cbcfdc78e003422fc0a43501b8b300",
+        "meta.json": "14214d6228e6073b9616f8198d2d1150a5fd182e"
+      }
     }
   },
   "historico": [
@@ -53,6 +89,71 @@
         "Chart.tsx": "566b30aa3e09095850fbb09f60888159faf082c4",
         "data.ts": "d66babb23d088c0b8e4a730d79a82b1f65cbd0c8",
         "meta.json": "553a048a5118270fe8921c4ba7e8d2d67fda8428"
+      }
+    },
+    {
+      "versao": "v2_corte-no-pico-da-distribuicao",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. Marginais alinhados ao plano nos dois eixos (faixa de R$ 75 a 100 com centro em 238,9 px no topo e no plano; faixa de 25 a 30% em 101,4 px nos dois), divisória pela mesma fractionOf nos três gráficos, faixa acesa contendo os dois cortes, contagens somando 48 dos dois lados e as 11 campanhas a menos de um décimo do corte conferidas no dado. Sem bloqueante; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:13:21.454Z",
+      "impressao": "1bc52eaf1fbd43ef7d18f6160b4cc55b4d9ea205",
+      "arquivos": {
+        "Chart.tsx": "470720fa3203625db91c1e629be0e806cb25405e",
+        "data.ts": "273aa37dcac933fd5ad9de7d6d829ea14d21b341",
+        "meta.json": "572b885c6784872a743ce70f32adb43486e396ca"
+      }
+    },
+    {
+      "versao": "v3_leads-com-tempo-em-escala-log",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 (o que o catálogo diz que a versão demonstra), REC-31 e REC-15: o raio declarado de 1,5 px sai 4,514 px nos 2.000 pontos do preview.svg, que é o padrão de 64 px² do Recharts, porque o ZAxis sem dataKey não chega ao Scatter; a versão não demonstra o raio pequeno para volume alto e o comentário e a nota do meta.json afirmam 1,5 px. Fazer o raio desenhado ser o declarado (forma própria com r constante, ou ZAxis com dataKey) e conferir o d do path no preview.svg.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:13:31.152Z",
+      "impressao": "08eeefedacdb7765fbae892b0f70b356938841ee",
+      "arquivos": {
+        "Chart.tsx": "306ad87ffdd06211054c9bca6ccc333a580b64d4",
+        "data.ts": "2d34bbac5fdfd6a7d9856ae299f954a95461bf3d",
+        "meta.json": "671af0d3ca3fadda67618c2c94b70b2b1ec9d6fa"
+      }
+    },
+    {
+      "versao": "v4_cauda-longa-recolhida",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 e condição central do modelo (README, Anatomia 5 e Quando evitar), COR-3: a barra final do marginal do topo é a faixa de 175 a 200 dias aberta, 51, sobre uma coluna do plano que tem 46 pontos; as 5 recolhidas ficam na reserva, sob um trecho vazio do marginal, e o rosa que a chave dá a Recolhidas na borda, 5 oportunidades, pinta a barra de 51. Manter 175 a 200 como faixa comum (46, neutra) e desenhar na reserva do marginal do topo, sobre os triângulos, a barra própria acima de 200 dias com a contagem 5, como o catálogo pede.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:13:32.011Z",
+      "impressao": "6cd245013d7d2f97482838943c49aa4d8ac510bd",
+      "arquivos": {
+        "Chart.tsx": "a73b77dab34df17de53867dc8bda2cbb5e0a2855",
+        "data.ts": "4e84871897cbcfdc78e003422fc0a43501b8b300",
+        "meta.json": "047e860bede3878468f4eefac2638145f2dd1915"
+      }
+    },
+    {
+      "versao": "v3_leads-com-tempo-em-escala-log",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. O raio declarado de 1,5 px agora é o desenhado: os 2.000 paths saem M1.5,0A1.5 nos dois previews, pelo ZAxis com dataKey constante. Marginais alinhados ao plano nos dois eixos (14 faixas de razão 1,93 com centro geométrico, 10 faixas centradas no inteiro, eixo revertido), contagens somando 2.000 dos dois lados e conferidas no dado; opacidade 0,70 declarada contra a ACE-5 e medida pela guarda. Diferença preview contra página de 0,000% nos dois temas. Sem bloqueante; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:38.149Z",
+      "impressao": "d04a9feaf0fcce99aaeef69fd1ddc4395ca900f1",
+      "arquivos": {
+        "Chart.tsx": "869f550235a0151a56c02ae90c5fbb6de000acbd",
+        "data.ts": "2d34bbac5fdfd6a7d9856ae299f954a95461bf3d",
+        "meta.json": "671af0d3ca3fadda67618c2c94b70b2b1ec9d6fa"
+      }
+    },
+    {
+      "versao": "v4_cauda-longa-recolhida",
+      "veredito": "aprovado",
+      "nota": "Check sem erro. A faixa de 175 a 200 dias voltou a ser comum, 46 em line-strong sobre a coluna que tem 46 pontos, e a reserva do marginal do topo ganhou a barra própria de 5 em chart-5, na vertical dos triângulos e no mesmo teto de escala das outras; o rosa tem um referente só, o que a chave nomeia (COR-3). Marginais somam 520 dos dois lados, P99 de 191 dias e as 5 recolhidas conferidos no dado, raio de 3 px desenhado. Diferença preview contra página de 0,002% e 0,012%. Sem bloqueante; observações no README, entre elas a nota do meta.json que ainda descreve a faixa aberta.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:24:45.807Z",
+      "impressao": "f566ae6c0f0722786c5ed7507115fe99fd2941e7",
+      "arquivos": {
+        "Chart.tsx": "22065a53afe39f68a992b91425e2360f0131d3b2",
+        "data.ts": "4e84871897cbcfdc78e003422fc0a43501b8b300",
+        "meta.json": "14214d6228e6073b9616f8198d2d1150a5fd182e"
       }
     }
   ]

@@ -16,14 +16,14 @@
     },
     "v2_heatmap-no-miolo-e-barras-nas-margens": {
       "veredito": "aprovado",
-      "nota": "Escala de cor so do miolo, barras marginais do zero, contraste medido acima de 5,4 nos dois temas. Observacao: as duas margens usam dominios diferentes e a legenda nao diz.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T04:11:59.984Z",
-      "impressao": "1cdce665e0dc20609b36b9eef07e9f3ae44fc685",
+      "nota": "Destaque agora derivado do maior total de coluna: peso 700 e anotação '49 no total, o maior' em Prospecção, mesma etapa da frase acessível. Barras de total proporcionais do zero medidas no PNG nos dois sentidos, texto de 5,45:1 a 14,82:1 nos dois temas, um só 700, sem corte. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:52:39.225Z",
+      "impressao": "ef1909e4ee4318a155414800046e9819f44af086",
       "arquivos": {
-        "Chart.tsx": "4fda108343b7971cc5aec3e0eedbb8c6aa237147",
-        "data.ts": "f49df374f8bc1d23f913ba041dcb6f667cc6936f",
-        "meta.json": "e73fce298b331d23a3cb6cdaf250601e75295297"
+        "Chart.tsx": "b6bf9479424090b8f8000868bf058996c3d24305",
+        "data.ts": "8da10065a1e573fa3a4c3c7dfec5a0e68e06694e",
+        "meta.json": "8e39b0851dcf8b3dd60cc2c79150d9ae145821ab"
       }
     },
     "v3_leads-por-origem-e-mes-em-percentual-da-linha": {
@@ -167,6 +167,32 @@
         "Chart.tsx": "eed9ea6192fda31ed41f3f136049275314291bda",
         "data.ts": "bf2dd559626f19f54d69494102da002df11fa53f",
         "meta.json": "ec0fbec9224caa74258d4b3fa5eb5f9098d77b93"
+      }
+    },
+    {
+      "versao": "v2_heatmap-no-miolo-e-barras-nas-margens",
+      "veredito": "reprovado",
+      "nota": "Perguntas 1 e 17, ANO-1 e ANO-5: o único destaque (peso 700 e anotação '30 no total') cai em Proposta por índice fixo, enquanto o caso de uso pergunta qual etapa concentra e o dado responde Prospecção com 49; a frase acessível conclui Prospecção e a tela destaca Proposta. Derivar o destaque do maior total de coluna, apagar HIGHLIGHT_STAGE_INDEX, dizer o motivo na anotação e ajustar o data.ts para que Proposta seja a etapa de maior total.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:46:21.382Z",
+      "impressao": "485f9e3696ace5f7c4c0bc7524344a47e2d608eb",
+      "arquivos": {
+        "Chart.tsx": "7a99bdd6529291abdd82dc5b475b3e2de51113ba",
+        "data.ts": "f49df374f8bc1d23f913ba041dcb6f667cc6936f",
+        "meta.json": "e73fce298b331d23a3cb6cdaf250601e75295297"
+      }
+    },
+    {
+      "versao": "v2_heatmap-no-miolo-e-barras-nas-margens",
+      "veredito": "aprovado",
+      "nota": "Destaque agora derivado do maior total de coluna: peso 700 e anotação '49 no total, o maior' em Prospecção, mesma etapa da frase acessível. Barras de total proporcionais do zero medidas no PNG nos dois sentidos, texto de 5,45:1 a 14,82:1 nos dois temas, um só 700, sem corte. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:52:39.225Z",
+      "impressao": "ef1909e4ee4318a155414800046e9819f44af086",
+      "arquivos": {
+        "Chart.tsx": "b6bf9479424090b8f8000868bf058996c3d24305",
+        "data.ts": "8da10065a1e573fa3a4c3c7dfec5a0e68e06694e",
+        "meta.json": "8e39b0851dcf8b3dd60cc2c79150d9ae145821ab"
       }
     }
   ]

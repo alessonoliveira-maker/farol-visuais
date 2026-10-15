@@ -100,13 +100,28 @@ export const BEYOND_DOMAIN: readonly BeyondDomain[] = [
  */
 export const WITHOUT_STAGE_DATE = 78;
 
+/**
+ * Os casos além do teto entram na lista de oportunidades da própria etapa, como qualquer outra: o n, a
+ * caixa e a taxa acima do limiar os contam, e o componente deriva o marcador de borda do dado
+ * (dias acima do teto), sem ler `BEYOND_DOMAIN`.
+ */
+function withBeyond(item: FunnelStage): FunnelStage {
+  const extras = BEYOND_DOMAIN.filter((beyond) => beyond.stageId === item.id).map((beyond) => ({
+    id: beyond.id,
+    days: beyond.days,
+  }));
+  return { ...item, opportunities: [...item.opportunities, ...extras] };
+}
+
+/* Negociação e Aprovação interna geram uma oportunidade a menos: o caso de borda de cada uma entra no
+   lugar e o total segue em 1.900. */
 export const data: readonly FunnelStage[] = [
   stage('triagem', 'Triagem', 20000, 20260101, 520, 1, 45, 3.0),
   stage('qualificacao', 'Qualificação', 21000, 20260202, 410, 1, 60, 3.2),
   stage('diagnostico', 'Diagnóstico', 22000, 20260303, 285, 2, 85, 3.0),
   stage('proposta', 'Proposta enviada', 23000, 20260404, 210, 2, 110, 2.8),
-  stage('negociacao', 'Negociação', 24000, 20260505, 170, 4, 130, 2.3),
-  stage('aprovacao-interna', 'Aprovação interna', 25000, 20260606, 135, 5, 170, 2.2),
+  stage('negociacao', 'Negociação', 24000, 20260505, 169, 4, 130, 2.3),
+  stage('aprovacao-interna', 'Aprovação interna', 25000, 20260606, 134, 5, 170, 2.2),
   stage('contrato', 'Contrato', 26000, 20260707, 105, 2, 120, 2.5),
   stage('assinatura', 'Assinatura', 27000, 20260808, 65, 1, 70, 3.4),
-];
+].map(withBeyond);

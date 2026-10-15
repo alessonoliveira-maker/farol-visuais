@@ -55,9 +55,11 @@ interface WeekRow {
   readonly partial: boolean;
   /** Média das 4 semanas completas terminadas nesta, ou `null` quando a janela tem lacuna ou parcial. */
   readonly average: number | null;
+  /** Fechamentos só da semana parcial (senão `null`): chave do rótulo, sem depender do índice do desenho. */
+  readonly partialClosings: number | null;
 }
 
-type CalendarWeek = Omit<WeekRow, 'average'>;
+type CalendarWeek = Omit<WeekRow, 'average' | 'partialClosings'>;
 
 /** Semanas da janela da média móvel. */
 const MOVING_WINDOW = 4;
@@ -299,6 +301,7 @@ export default function WeeklyClosingsMovingAverage({
   const rows: readonly WeekRow[] = calendar.map((row, index) => ({
     ...row,
     average: movingAverage(calendar, index),
+    partialClosings: row.partial ? row.closings : null,
   }));
   const maxClosings = rows.reduce((max, row) => Math.max(max, row.closings ?? 0), 0);
   const missingWeeks = rows.filter((row) => row.closings === null).map((row) => row.week);
@@ -336,9 +339,8 @@ export default function WeeklyClosingsMovingAverage({
     .filter(Boolean)
     .join(' ');
 
-  const renderPartialValue = ({ x, y, width, index }: LabelProps): ReactElement | null => {
-    const row = index === undefined ? undefined : rows[index];
-    if (!row || !row.partial || row.closings === null) return null;
+  const renderPartialValue = ({ x, y, width, value }: LabelProps): ReactElement | null => {
+    if (typeof value !== 'number') return null;
     return (
       <text
         className="font-display"
@@ -351,7 +353,7 @@ export default function WeeklyClosingsMovingAverage({
         x={Number(x) + Number(width) / 2}
         y={Number(y) - VALUE_LABEL_GAP}
       >
-        {formatInt(row.closings)}
+        {formatInt(value)}
       </text>
     );
   };
@@ -493,7 +495,7 @@ export default function WeeklyClosingsMovingAverage({
                   stroke={row.partial ? BAR_FILL : undefined}
                 />
               ))}
-              <LabelList content={renderPartialValue} dataKey="closings" />
+              <LabelList content={renderPartialValue} dataKey="partialClosings" />
             </Bar>
             {partial === undefined ? null : <PartialNote until={asOf} />}
             {missingWeeks.length === 0 ? null : <MissingWeekMarks weeks={missingWeeks} />}

@@ -4,48 +4,48 @@
   "versoes": {
     "v1_receita-do-trimestre-contra-meta": {
       "veredito": "aprovado",
-      "nota": "Barra do zero, dominio com folga, meta marcada e o que falta escrito; trilho pouco visivel no tema claro e caso de uso cortado pela moldura.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T00:52:03.604Z",
-      "impressao": "d792dd325200bc2c4a6b251794718afef7fa6227",
+      "nota": "Barra do zero, domínio com folga sobre valor e meta, meta escrita com nome e valor, o que falta escrito, pares de contraste aprovados nos dois temas; observações no README (ramo de meta zero que escreve 0,0%, percentual sem tabular-nums, traço da meta cortado pelo overflow do trilho).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:18.360Z",
+      "impressao": "aafedae6cfe60dfd473c90fa6e6c1166db13004f",
       "arquivos": {
-        "Chart.tsx": "02a5a73e5ee0f9c3af0a06e3f3a879f1b6e0b121",
+        "Chart.tsx": "79691ac6f1c5367cf1e04e13f090ca68279d86e9",
         "data.ts": "cafbef97f15404f367e1467410344afd05f915aa",
         "meta.json": "69e3f8d5766f0c0f04acea88c2c94984e22cc754"
       }
     },
     "v2_agendas-no-ritmo-do-mes": {
       "veredito": "aprovado",
-      "nota": "Ritmo esperado, projecao como premissa e lacuna escrita; o traco do ritmo se confunde com as listras da projecao.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T00:52:09.560Z",
-      "impressao": "b24635360fae1d45a4a39ed5acea5e94f92b13ec",
+      "nota": "Ritmo esperado vindo do dado, projeção como premissa em textura e em texto, lacuna escrita com sinal semântico e palavra; o traço do ritmo cai no vão da listra neste dado e se vê nos dois temas; observações no README (posição frágil do traço, hachura a 2,99:1 do trilho no claro, artigo errado na frase acessível).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:22.441Z",
+      "impressao": "f47c2418f770aed35aba247e40989278a4a45fc0",
       "arquivos": {
-        "Chart.tsx": "f545357f43dff5f66798f90d20eaac55d0ce3daf",
+        "Chart.tsx": "1a267e829f856f9385852714be78046837ac5841",
         "data.ts": "0e31dcae907460abf19030517fc906893db1a123",
         "meta.json": "6c1db6e76186d21a79c1d5952577ca5ab79c30b6"
       }
     },
     "v3_cota-por-executivo": {
       "veredito": "aprovado",
-      "nota": "Conserto do zero aceito nos dois temas: cota sem progresso agora desenha traco de base e nao fica indistinguivel de recorte do eixo.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T11:40:33.696Z",
-      "impressao": "d2d30e9ab526cb24a4fdd4bf81c566cdcf35cf26",
+      "nota": "Escala comum, ordem por atingimento, excedente em tom próprio com o percentual escrito, sem meta fora da mediana e com o valor escrito, mediana nula vira indisponível; observações no README (período 2026 T3 fixo no JSX, mediana some sobre a barra pela TOK-10, contorno de ausência em line-strong).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:26.228Z",
+      "impressao": "fcd4d1ab4649f5adb83bcdc923ed63d7241ffab9",
       "arquivos": {
-        "Chart.tsx": "bbdfdf8f99b9d195066329962dd9ad0a3612fca9",
+        "Chart.tsx": "90123a61d903aa724b7d2d1e2131471bc1c32878",
         "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
         "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
       }
     },
     "v4_filas-contra-teto-com-estouro": {
       "veredito": "aprovado",
-      "nota": "Polaridade invertida, escala comum, premissa no rotulo e indisponivel sem zero; a demanda de cada fila nao aparece escrita.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T00:52:18.717Z",
-      "impressao": "31d3e791b0847644156f192e383952e161f42dcd",
+      "nota": "Bloqueante de 2026-10-14 resolvido: a demanda está escrita em cada linha e a barra passou a --text-muted (5,21:1 e 5,37:1 contra o cartão; 5,98:1 e 4,65:1 contra o trilho). Escala comum do zero, estouro em negative com ícone e palavra, premissa no rótulo, fila sem coleta com formatUnavailable. Observações no README (emenda neutro e excedente a 1,05:1 e 1,18:1 sem vão da COR-5, Anatomia item 3 ainda diz line-strong, text-muted em dois papéis).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:17:15.305Z",
+      "impressao": "88c9757759f00261053d1ce5e6101402ac86780a",
       "arquivos": {
-        "Chart.tsx": "6e268aac0042463f56c7a632848bbb657330d2c0",
+        "Chart.tsx": "4d5bf4bc8730b377c7a958648bbcaaa64fccf7d9",
         "data.ts": "ac2975863acc646104c0df215e8fbe5cdd639519",
         "meta.json": "f254bd794080323d112917e38b6da614cd9d4614"
       }
@@ -115,6 +115,71 @@
         "Chart.tsx": "bbdfdf8f99b9d195066329962dd9ad0a3612fca9",
         "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
         "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
+      }
+    },
+    {
+      "versao": "v1_receita-do-trimestre-contra-meta",
+      "veredito": "aprovado",
+      "nota": "Barra do zero, domínio com folga sobre valor e meta, meta escrita com nome e valor, o que falta escrito, pares de contraste aprovados nos dois temas; observações no README (ramo de meta zero que escreve 0,0%, percentual sem tabular-nums, traço da meta cortado pelo overflow do trilho).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:18.360Z",
+      "impressao": "aafedae6cfe60dfd473c90fa6e6c1166db13004f",
+      "arquivos": {
+        "Chart.tsx": "79691ac6f1c5367cf1e04e13f090ca68279d86e9",
+        "data.ts": "cafbef97f15404f367e1467410344afd05f915aa",
+        "meta.json": "69e3f8d5766f0c0f04acea88c2c94984e22cc754"
+      }
+    },
+    {
+      "versao": "v2_agendas-no-ritmo-do-mes",
+      "veredito": "aprovado",
+      "nota": "Ritmo esperado vindo do dado, projeção como premissa em textura e em texto, lacuna escrita com sinal semântico e palavra; o traço do ritmo cai no vão da listra neste dado e se vê nos dois temas; observações no README (posição frágil do traço, hachura a 2,99:1 do trilho no claro, artigo errado na frase acessível).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:22.441Z",
+      "impressao": "f47c2418f770aed35aba247e40989278a4a45fc0",
+      "arquivos": {
+        "Chart.tsx": "1a267e829f856f9385852714be78046837ac5841",
+        "data.ts": "0e31dcae907460abf19030517fc906893db1a123",
+        "meta.json": "6c1db6e76186d21a79c1d5952577ca5ab79c30b6"
+      }
+    },
+    {
+      "versao": "v3_cota-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Escala comum, ordem por atingimento, excedente em tom próprio com o percentual escrito, sem meta fora da mediana e com o valor escrito, mediana nula vira indisponível; observações no README (período 2026 T3 fixo no JSX, mediana some sobre a barra pela TOK-10, contorno de ausência em line-strong).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:26.228Z",
+      "impressao": "fcd4d1ab4649f5adb83bcdc923ed63d7241ffab9",
+      "arquivos": {
+        "Chart.tsx": "90123a61d903aa724b7d2d1e2131471bc1c32878",
+        "data.ts": "fceba6409751b8c8094f0926731d35e459cfa7c1",
+        "meta.json": "a41a0242825efa1b00824985360117a17c055bb1"
+      }
+    },
+    {
+      "versao": "v4_filas-contra-teto-com-estouro",
+      "veredito": "reprovado",
+      "nota": "Perguntas 11 e 20; tabela 17.2 (neutro de dado com valor escrito), ACE-3, armadilha TOK-5: a barra de demanda em --line-strong mede 1,79:1 e 1,83:1 contra o cartão e 2,05:1 e 1,59:1 contra o trilho, e a demanda (132, 61, 214) não está escrita em lugar nenhum; escrever a demanda em cada linha ou trocar a barra para --text-muted.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:08:30.492Z",
+      "impressao": "0bcd317ebf05eec9ba55cc57c72f4ebaef797b5e",
+      "arquivos": {
+        "Chart.tsx": "247a83b2e90fae823676d754db3b0b81c0dd3809",
+        "data.ts": "ac2975863acc646104c0df215e8fbe5cdd639519",
+        "meta.json": "f254bd794080323d112917e38b6da614cd9d4614"
+      }
+    },
+    {
+      "versao": "v4_filas-contra-teto-com-estouro",
+      "veredito": "aprovado",
+      "nota": "Bloqueante de 2026-10-14 resolvido: a demanda está escrita em cada linha e a barra passou a --text-muted (5,21:1 e 5,37:1 contra o cartão; 5,98:1 e 4,65:1 contra o trilho). Escala comum do zero, estouro em negative com ícone e palavra, premissa no rótulo, fila sem coleta com formatUnavailable. Observações no README (emenda neutro e excedente a 1,05:1 e 1,18:1 sem vão da COR-5, Anatomia item 3 ainda diz line-strong, text-muted em dois papéis).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:17:15.305Z",
+      "impressao": "88c9757759f00261053d1ce5e6101402ac86780a",
+      "arquivos": {
+        "Chart.tsx": "4d5bf4bc8730b377c7a958648bbcaaa64fccf7d9",
+        "data.ts": "ac2975863acc646104c0df215e8fbe5cdd639519",
+        "meta.json": "f254bd794080323d112917e38b6da614cd9d4614"
       }
     }
   ]

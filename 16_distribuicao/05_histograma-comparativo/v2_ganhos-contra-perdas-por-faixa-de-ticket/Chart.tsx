@@ -328,10 +328,19 @@ export default function TicketOutcomePyramid({
   const summary =
     `Histograma comparativo espelhado do ticket, ${formatInt(wonGroup.values.length)} ganhas contra ` +
     `${formatInt(lostGroup.values.length)} perdidas em faixas de ${formatCurrencyAxis(bandWidth)}. ` +
-    (crossBand === undefined
-      ? 'As perdidas são maioria em toda faixa da régua.'
-      : `Até ${formatCurrencyAxis(crossBand.floor)} as perdidas são maioria; dali para cima as ganhas passam, ` +
-        `${formatInt(crossBand.won)} contra ${formatInt(Math.abs(crossBand.lost))}, e seguem à frente.`);
+    (crossBand === undefined || crossAt === null
+      ? bands.every((band) => band.won < Math.abs(band.lost))
+        ? 'As perdidas são maioria em toda faixa da régua.'
+        : 'As ganhas não passam as perdidas em nenhuma faixa da régua.'
+      : `${
+          bands.slice(0, crossAt).every((band) => band.won < Math.abs(band.lost))
+            ? `Até ${formatCurrencyAxis(crossBand.floor)} as perdidas são maioria`
+            : `Antes de ${formatCurrencyAxis(crossBand.floor)} as ganhas não passam as perdidas`
+        }; a partir dali as ganhas passam, ${formatInt(crossBand.won)} contra ` +
+        `${formatInt(Math.abs(crossBand.lost))}, ` +
+        (bands.slice(crossAt + 1).every((band) => band.won > Math.abs(band.lost))
+          ? 'e seguem à frente em todas as faixas seguintes.'
+          : 'mas em alguma faixa acima as perdidas voltam a empatar ou passar.'));
 
   return (
     <figure

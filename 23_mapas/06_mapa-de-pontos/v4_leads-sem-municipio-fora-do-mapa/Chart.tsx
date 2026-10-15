@@ -23,13 +23,10 @@ const MAP_W = Math.round((GEO_BOUNDS.lonMax - GEO_BOUNDS.lonMin) * DEG_PX);
 const MAP_H = Math.round((GEO_BOUNDS.latMax - GEO_BOUNDS.latMin) * DEG_PX);
 const LEADS_PER_DOT = 20;
 const DOT_R = 1.7;
-/** Distância entre centros no cacho: o diâmetro do ponto mais o contorno e um respiro, então nenhum ponto cobre outro. */
-const CLUSTER_STEP = 4;
-const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
-const CLUSTER_GAP = 1.5;
-const RELAX_ROUNDS = 160;
-/** Atração fraca de volta à coordenada da cidade, para o afastamento entre cachos não desmanchar a geografia. */
-const PULL = 0.03;
+/** Passo da malha hexagonal: o diâmetro do ponto mais o contorno e um respiro, então nenhum ponto cobre outro. */
+const GRID_STEP = 3.9;
+/** Folga mínima entre o centro do ponto e o traço do contorno, para o ponto ficar inteiro dentro do país. */
+const EDGE_CLEAR = DOT_R + 1;
 /** 0,80 fica acima da opacidade mínima de --chart-1 (0,66) nos dois temas (ACE-5). */
 const FILL_OPACITY = 0.8;
 const TOP_UFS = 3;
@@ -50,57 +47,75 @@ function sumCounts(values: readonly number[]): number | null {
   return total;
 }
 
-interface Cluster {
-  readonly id: string;
-  readonly count: number;
-  readonly radius: number;
-  readonly originX: number;
-  readonly originY: number;
-  x: number;
-  y: number;
+/** Ray casting: o ponto está dentro do polígono. */
+function inside(poly: readonly Point[], x: number, y: number): boolean {
+  let result = false;
+  poly.forEach(([x1, y1], i) => {
+    const [x0, y0] = poly[(i + poly.length - 1) % poly.length] ?? [x1, y1];
+    if (y1 > y !== y0 > y && x < ((x0 - x1) * (y - y1)) / (y0 - y1) + x1) result = !result;
+  });
+  return result;
 }
 
-/**
- * Um ponto a cada LEADS_PER_DOT leads. Cada cidade vira um cacho em espiral de girassol, com distância fixa entre
- * centros, então a área do cacho cresce com a contagem e nenhum ponto cobre outro. Cachos vizinhos se afastam por
- * relaxamento de ordem fixa, com uma atração fraca de volta à cidade: a posição em volta da cidade é ilustrativa.
- */
-function placeDots(cities: readonly CityLeads[]): readonly { readonly id: string; readonly x: number; readonly y: number }[] {
-  const clusters: Cluster[] = cities.map((city) => {
-    const count = Math.round(city.leads / LEADS_PER_DOT);
-    const [originX, originY] = project(city.lon, city.lat);
-    return { id: city.id, count, radius: CLUSTER_STEP * Math.sqrt(count) + DOT_R + 0.5, originX, originY, x: originX, y: originY };
+/** Menor distância do ponto ao traço do polígono. */
+function edgeDistance(poly: readonly Point[], x: number, y: number): number {
+  let best = Infinity;
+  poly.forEach(([x1, y1], i) => {
+    const [x0, y0] = poly[(i + poly.length - 1) % poly.length] ?? [x1, y1];
+    const len2 = (x1 - x0) ** 2 + (y1 - y0) ** 2;
+    const t = len2 === 0 ? 0 : Math.min(1, Math.max(0, ((x - x0) * (x1 - x0) + (y - y0) * (y1 - y0)) / len2));
+    best = Math.min(best, Math.hypot(x - (x0 + t * (x1 - x0)), y - (y0 + t * (y1 - y0))));
   });
-  for (let round = 0; round < RELAX_ROUNDS; round += 1) {
-    clusters.forEach((a, indexA) => {
-      a.x += (a.originX - a.x) * PULL;
-      a.y += (a.originY - a.y) * PULL;
-      clusters.slice(indexA + 1).forEach((b, offset) => {
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
-        const distance = Math.hypot(dx, dy);
-        const wanted = a.radius + b.radius + CLUSTER_GAP;
-        if (distance >= wanted) return;
-        const angle = distance > 0.001 ? Math.atan2(dy, dx) : (indexA + offset) * GOLDEN_ANGLE;
-        const push = (wanted - distance) / 2;
-        a.x -= Math.cos(angle) * push;
-        a.y -= Math.sin(angle) * push;
-        b.x += Math.cos(angle) * push;
-        b.y += Math.sin(angle) * push;
-      });
-    });
-    for (const cluster of clusters) {
-      cluster.x = Math.min(MAP_W - cluster.radius, Math.max(cluster.radius, cluster.x));
-      cluster.y = Math.min(MAP_H - cluster.radius, Math.max(cluster.radius, cluster.y));
+  return best;
+}
+
+const OUTLINE: readonly Point[] = BRASIL_OUTLINE.map(([lon, lat]) => project(lon, lat));
+
+/** Nós da malha hexagonal que cabem inteiros dentro do país, em ordem fixa. */
+const GRID: readonly Point[] = (() => {
+  const nodes: Point[] = [];
+  const rowH = (GRID_STEP * Math.sqrt(3)) / 2;
+  for (let row = 0; row * rowH <= MAP_H; row += 1) {
+    for (let col = 0; col * GRID_STEP <= MAP_W; col += 1) {
+      const x = col * GRID_STEP + (row % 2) * (GRID_STEP / 2);
+      const y = row * rowH;
+      if (inside(OUTLINE, x, y) && edgeDistance(OUTLINE, x, y) >= EDGE_CLEAR) nodes.push([x, y]);
     }
   }
-  return clusters.flatMap((cluster) =>
-    Array.from({ length: cluster.count }, (_, index) => ({
-      id: `${cluster.id}-${String(index)}`,
-      x: cluster.x + CLUSTER_STEP * Math.sqrt(index + 0.5) * Math.cos(index * GOLDEN_ANGLE),
-      y: cluster.y + CLUSTER_STEP * Math.sqrt(index + 0.5) * Math.sin(index * GOLDEN_ANGLE),
-    })),
-  );
+  return nodes;
+})();
+
+/**
+ * Um ponto a cada LEADS_PER_DOT leads. Todo ponto ocupa um nó livre da malha hexagonal, que só tem nós dentro do
+ * contorno do país. Os pontos são distribuídos em rodadas entre as cidades (um por cidade a cada rodada) e cada um
+ * toma o nó livre mais próximo da coordenada da cidade, então o cacho fica compacto, cresce com a contagem, nunca
+ * sai do país e nenhum ponto cobre outro. Cidade litorânea empurra o cacho para o interior: a posição em volta
+ * da cidade é ilustrativa.
+ */
+function placeDots(cities: readonly CityLeads[]): readonly { readonly id: string; readonly x: number; readonly y: number }[] {
+  const taken = new Set<number>();
+  const wanted = cities.map((city) => ({ city, count: Math.round(city.leads / LEADS_PER_DOT), origin: project(city.lon, city.lat) }));
+  const dots: { id: string; x: number; y: number }[] = [];
+  const rounds = Math.max(0, ...wanted.map((w) => w.count));
+  for (let round = 0; round < rounds; round += 1) {
+    for (const { city, count, origin } of wanted) {
+      if (round >= count) continue;
+      let best = -1;
+      let bestDistance = Infinity;
+      GRID.forEach(([x, y], index) => {
+        if (taken.has(index)) return;
+        const distance = Math.hypot(x - origin[0], y - origin[1]);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          best = index;
+        }
+      });
+      if (best < 0) continue;
+      taken.add(best);
+      dots.push({ id: `${city.id}-${String(round)}`, x: GRID[best]?.[0] ?? 0, y: GRID[best]?.[1] ?? 0 });
+    }
+  }
+  return dots;
 }
 
 export default function MissingCityMap({ data = defaultData, height, className }: MissingCityMapProps) {
@@ -162,7 +177,7 @@ export default function MissingCityMap({ data = defaultData, height, className }
               </svg>
               <span>{`${formatInt(1)} ponto = ${formatInt(LEADS_PER_DOT)} leads com município`}</span>
             </span>
-            <span>Lead sem município não vira ponto, nem no centroide da UF. O cacho cresce com a contagem; a posição em volta da cidade é ilustrativa.</span>
+            <span>Lead sem município não vira ponto, nem no centroide da UF. O cacho cresce com a contagem; a posição em volta da cidade é ilustrativa e nunca sai do país.</span>
           </div>
         </div>
       </div>

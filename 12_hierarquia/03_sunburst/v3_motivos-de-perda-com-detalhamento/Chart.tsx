@@ -74,12 +74,31 @@ interface SubmotivoValue {
   readonly value: number;
 }
 
-/** Participação de uma parte no todo. `null` quando não existe todo a dividir (EST-1b). */
-function shareOf(part: number, whole: number): number | null {
+/**
+ * Percentuais inteiros pelo maior resto: a soma impressa fecha em 100. Indexado por id; `null`
+ * quando não existe todo a dividir (EST-1b). Função pura, o mesmo inteiro vale para lista, centro,
+ * linha de leitura e frase acessível.
+ */
+function integerShares(items: readonly { readonly id: string; readonly value: number }[]): ReadonlyMap<string, number> | null {
+  const whole = items.reduce((sum, item) => sum + item.value, 0);
   if (whole <= 0) {
     return null;
   }
-  return part / whole;
+  const parts = items.map((item) => {
+    const exact = (item.value / whole) * 100;
+    return { id: item.id, floor: Math.floor(exact), rest: exact - Math.floor(exact) };
+  });
+  let missing = 100 - parts.reduce((sum, part) => sum + part.floor, 0);
+  const order = [...parts].sort((a, b) => b.rest - a.rest);
+  const extra = new Set<string>();
+  for (const part of order) {
+    if (missing <= 0) {
+      break;
+    }
+    extra.add(part.id);
+    missing -= 1;
+  }
+  return new Map(parts.map((part) => [part.id, part.floor + (extra.has(part.id) ? 1 : 0)]));
 }
 
 /** Um nó desenhado no anel interno do nível aberto, com o que a lista precisa para identificá-lo. */
@@ -108,7 +127,9 @@ function resolveOpen(rows: readonly CategoriaPerda[], path: readonly string[]): 
   if (first === undefined) {
     return null;
   }
-  return rows.find((row) => row.id === first) ?? null;
+  const found = rows.find((row) => row.id === first);
+  // Ramo vazio (sem submotivos ou todos zerados) conta como removido: volta à raiz.
+  return found !== undefined && sumSubmotivos([...found.submotivos]) > 0 ? found : null;
 }
 
 /** Nós do nível aberto: as categorias na raiz, os submotivos dentro de uma categoria. */
@@ -152,7 +173,7 @@ function buildTree(
         value: node.value,
         fill: node.color,
         nodeId: node.id,
-        openable: node.children.length > 0,
+        openable: node.children.length > 0 && node.value > 0,
         children: node.children.map((child) => ({
           name: child.name,
           value: child.value,
@@ -197,8 +218,9 @@ export default function LossDrilldownSunburst({
   const open = resolveOpen(data, path);
   const nodes = levelNodes(data, open);
   const levelTotal = nodes.reduce((sum, node) => sum + node.value, 0);
+  const dataTotal = data.reduce((sum, row) => sum + sumSubmotivos([...row.submotivos]), 0);
 
-  if (levelTotal <= 0) {
+  if (dataTotal <= 0) {
     return (
       <div
         className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
@@ -214,8 +236,9 @@ export default function LossDrilldownSunburst({
   const tree = buildTree(open, nodes, levelTotal);
   const ranked = [...nodes].sort((a, b) => b.value - a.value);
   const leader = ranked[0];
-  const leaderShare = leader === undefined ? null : shareOf(leader.value, levelTotal);
-  const leaderShareText = leaderShare === null ? formatUnavailable() : formatPercent(leaderShare, 0);
+  const shares = integerShares(nodes);
+  const leaderPct = leader === undefined ? undefined : shares?.get(leader.id);
+  const leaderShareText = leaderPct === undefined ? formatUnavailable() : formatPercent(leaderPct / 100, 0);
 
   const summary =
     open === null
@@ -300,8 +323,8 @@ export default function LossDrilldownSunburst({
       </div>
       <ul className="mt-2 shrink-0 space-y-1.5">
         {ranked.map((node) => {
-          const share = shareOf(node.value, levelTotal);
-          const openable = node.children.length > 0;
+          const share = shares?.get(node.id);
+          const openable = node.children.length > 0 && node.value > 0;
           return (
             <li key={node.id}>
               <div className="flex items-center gap-1.5 text-xs">
@@ -321,7 +344,7 @@ export default function LossDrilldownSunburst({
                   <span className="min-w-0 flex-1 font-medium text-text-primary">{node.name}</span>
                 )}
                 <span className="font-display w-9 shrink-0 text-right text-text-primary">
-                  {share === null ? formatUnavailable() : formatPercent(share, 0)}
+                  {share === undefined ? formatUnavailable() : formatPercent(share / 100, 0)}
                 </span>
                 <span className="font-display w-9 shrink-0 text-right text-text-muted">{formatInt(node.value)}</span>
               </div>

@@ -1,7 +1,9 @@
+import { Filter } from 'lucide-react';
+
 import { CHART_SEQUENTIAL_COLORS } from '@/components/visuals/charts/chartTheme';
 import { formatDate, formatInt } from '@/lib/format';
 import { cn } from '@/lib/utils';
-import { data as defaultData, FIRST_DAY } from './data';
+import { data as defaultData, FIRST_DAY, HOLIDAYS } from './data';
 
 /**
  * Calendário estilo contribuições: o ano inteiro em colunas de semana por linhas de dia da semana.
@@ -25,21 +27,24 @@ export interface YearCalendarProps {
   readonly className?: string;
 }
 
-const CELL = 12;
+const CELL = 11;
 const GAP = 3;
 const STEP = CELL + GAP;
 const LEFT_W = 34;
 const TOP_H = 18;
 const MS_DAY = 86_400_000;
 
-/** Zero é medido e fica no neutro; as 5 faixas de cor começam no primeiro fechamento do dia. */
+/**
+ * Zero é medido e fica fora da rampa: célula neutra com traço em texto de apoio. A rampa usa só os
+ * degraus que passam de 3:1 contra o cartão nos dois temas (TOK-8), em três classes com o intervalo
+ * escrito na legenda. Feriado é marca própria: neutro com contorno pontilhado.
+ */
 const ZERO_COLOR = 'var(--surface-sunken)';
-const BUCKET_COLORS = [
-  CHART_SEQUENTIAL_COLORS[0],
-  CHART_SEQUENTIAL_COLORS[1],
-  CHART_SEQUENTIAL_COLORS[2],
-  CHART_SEQUENTIAL_COLORS[5],
-  CHART_SEQUENTIAL_COLORS[6],
+const MARK_COLOR = 'var(--text-muted)';
+const BUCKETS = [
+  { color: CHART_SEQUENTIAL_COLORS[4], range: '1' },
+  { color: CHART_SEQUENTIAL_COLORS[5], range: '2 a 3' },
+  { color: CHART_SEQUENTIAL_COLORS[6], range: '4 ou mais' },
 ] as const;
 const WEEKDAY_LABELS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'] as const;
 const MONTH_LABELS = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'] as const;
@@ -59,7 +64,8 @@ function isoOf(time: number): string {
 
 function bucketOf(value: number): number {
   if (value <= 0) return -1;
-  return Math.min(BUCKET_COLORS.length - 1, value - 1);
+  if (value >= 4) return 2;
+  return value >= 2 ? 1 : 0;
 }
 
 /** Meia calha antes da coluna: a borda cai no vão, não em cima da célula. */
@@ -100,10 +106,28 @@ export default function YearCalendar({ data = defaultData, height, className }: 
     };
   });
 
-  const columns = days.length > 0 ? (days[days.length - 1]?.column ?? 0) + 1 : 0;
+  const lastDay = days[days.length - 1];
+  if (lastDay === undefined) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden size={16} />
+        <span>O recorte não tem nenhum dia medido, então não há calendário a desenhar.</span>
+      </div>
+    );
+  }
+
+  const columns = lastDay.column + 1;
   const total = days.reduce((sum, day) => sum + day.value, 0);
-  const peak = days.reduce((best, day) => (best === null || day.value > best.value ? day : best), days[0] ?? null);
-  const idleWorkdays = days.filter((day) => day.value === 0 && day.row < 5).length;
+  const maxValue = days.reduce((best, day) => (day.value > best ? day.value : best), 0);
+  /** Todos os dias no máximo: o empate é do dado, e a ordem do array não escolhe entre eles. */
+  const peakDays = maxValue > 0 ? days.filter((day) => day.value === maxValue) : [];
+  const isHoliday = (time: number): boolean => HOLIDAYS.includes(isoOf(time));
+  const holidayCount = days.filter((day) => isHoliday(day.time)).length;
+  const idleWorkdays = days.filter((day) => day.value === 0 && day.row < 5 && !isHoliday(day.time)).length;
 
   /** Separador em degrau no primeiro dia de cada mês. */
   const monthEdges = MONTH_LABELS.map((label, month) => {
@@ -123,12 +147,19 @@ export default function YearCalendar({ data = defaultData, height, className }: 
   const endPosition = days.length + offset;
   const endEdge = lastMeasured === undefined ? null : stepPath(Math.floor(endPosition / 7), endPosition % 7);
 
+  const peakDates = peakDays.map((day) => formatDate(isoOf(day.time))).join(', ');
+  const peakText =
+    peakDays.length === 0
+      ? 'Nenhum dia teve fechamento.'
+      : peakDays.length === 1
+        ? `O melhor dia é ${peakDates}, com ${formatInt(maxValue)} fechamentos.`
+        : `O máximo de ${formatInt(maxValue)} fechamentos aconteceu em ${formatInt(peakDays.length)} dias: ${peakDates}.`;
   const summary =
-    peak === null || measuredUntil === null
+    measuredUntil === null
       ? 'Calendário do ano sem nenhum dia medido.'
       : `Calendário de ${formatInt(days.length)} dias com ${formatInt(total)} fechamentos no ano até ${measuredUntil}. ` +
-        `O melhor dia é ${formatDate(isoOf(peak.time))}, com ${formatInt(peak.value)}. ` +
-        `${formatInt(idleWorkdays)} dias úteis terminaram sem nenhum fechamento.`;
+        `${peakText} ` +
+        `${formatInt(idleWorkdays)} dias úteis terminaram sem nenhum fechamento, fora ${formatInt(holidayCount)} feriados.`;
 
   const viewWidth = LEFT_W + columns * STEP - GAP;
   const viewHeight = TOP_H + 7 * STEP - GAP;
@@ -136,16 +167,17 @@ export default function YearCalendar({ data = defaultData, height, className }: 
   return (
     <figure
       aria-label={summary}
-      className={cn('m-0 flex h-full w-full min-w-0 flex-col gap-3', className)}
+      className={cn('m-0 flex h-full w-full min-w-0 flex-col gap-2', className)}
       role="figure"
       style={height === undefined ? undefined : { height }}
     >
       <div className="flex min-h-0 flex-1 items-center gap-5">
         <svg
           aria-hidden
-          className="h-full min-w-0 flex-1"
-          preserveAspectRatio="xMidYMid meet"
+          className="shrink-0"
+          height={viewHeight}
           viewBox={`0 0 ${String(viewWidth)} ${String(viewHeight)}`}
+          width={viewWidth}
         >
           {monthEdges.map((edge) => (
             <text
@@ -176,16 +208,25 @@ export default function YearCalendar({ data = defaultData, height, className }: 
           )}
           {days.map((day) => {
             const bucket = bucketOf(day.value);
+            const holiday = isHoliday(day.time);
+            const x = LEFT_W + day.column * STEP;
+            const y = TOP_H + day.row * STEP;
             return (
-              <rect
-                fill={bucket < 0 ? ZERO_COLOR : BUCKET_COLORS[bucket]}
-                height={CELL}
-                key={day.time}
-                rx={2}
-                width={CELL}
-                x={LEFT_W + day.column * STEP}
-                y={TOP_H + day.row * STEP}
-              />
+              <g key={day.time}>
+                <rect
+                  fill={bucket < 0 ? ZERO_COLOR : BUCKETS[bucket]?.color}
+                  height={CELL}
+                  rx={2}
+                  stroke={holiday ? MARK_COLOR : 'none'}
+                  strokeDasharray={holiday ? '1 2' : undefined}
+                  width={CELL}
+                  x={x}
+                  y={y}
+                />
+                {bucket < 0 && !holiday ? (
+                  <rect fill={MARK_COLOR} height={1.5} width={5} x={x + (CELL - 5) / 2} y={y + (CELL - 1.5) / 2} />
+                ) : null}
+              </g>
             );
           })}
           {monthEdges.map((edge) => (
@@ -200,10 +241,11 @@ export default function YearCalendar({ data = defaultData, height, className }: 
           {endEdge === null ? null : (
             <path d={endEdge} fill="none" stroke="var(--text-muted)" strokeDasharray="3 3" strokeWidth={1} />
           )}
-          {peak === null ? null : (
+          {peakDays.map((peak) => (
             <rect
               fill="none"
               height={CELL + 4}
+              key={`peak-${String(peak.time)}`}
               rx={3}
               stroke="var(--text-primary)"
               strokeWidth={1.5}
@@ -211,12 +253,12 @@ export default function YearCalendar({ data = defaultData, height, className }: 
               x={LEFT_W + peak.column * STEP - 2}
               y={TOP_H + peak.row * STEP - 2}
             />
-          )}
+          ))}
         </svg>
 
         <dl
           aria-hidden
-          className="flex w-44 shrink-0 flex-col gap-1 border-l border-line-subtle pl-4 text-[0.6875rem] leading-4 text-text-muted"
+          className="flex w-44 shrink-0 flex-col gap-1 text-[0.6875rem] leading-4 text-text-muted"
         >
           {/* O recorte anda junto com o número, e não só na frase acessível: o ano está em curso, e
               "374 fechamentos no ano" sozinho promete um ano inteiro que ainda não aconteceu. */}
@@ -226,12 +268,16 @@ export default function YearCalendar({ data = defaultData, height, className }: 
               {measuredUntil === null ? 'fechamentos no ano' : `fechamentos até ${measuredUntil}`}
             </dt>
           </div>
-          {peak === null ? null : (
+          {peakDays.length === 0 ? null : (
             <div>
               <dd className="font-display text-xs font-semibold tabular-nums text-text-primary">
-                {formatDate(isoOf(peak.time))}
+                {peakDays.length === 1 ? formatDate(isoOf(peakDays[0]?.time ?? 0)) : `${formatInt(peakDays.length)} dias`}
               </dd>
-              <dt className="tabular-nums">{`melhor dia, ${formatInt(peak.value)} fechamentos`}</dt>
+              <dt className="tabular-nums">
+                {peakDays.length === 1
+                  ? `melhor dia, ${formatInt(maxValue)} fechamentos`
+                  : `empatados no máximo, ${formatInt(maxValue)} fechamentos cada`}
+              </dt>
             </div>
           )}
           <div>
@@ -243,18 +289,34 @@ export default function YearCalendar({ data = defaultData, height, className }: 
 
       <div aria-hidden className="flex shrink-0 flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] leading-4 text-text-muted">
         <span className="flex items-center gap-1.5">
+          <span
+            className="flex h-3 w-3 items-center justify-center rounded-[2px]"
+            style={{ backgroundColor: ZERO_COLOR }}
+          >
+            <span className="h-px w-1.5" style={{ backgroundColor: MARK_COLOR }} />
+          </span>
           <span className="font-display tabular-nums">{formatInt(0)}</span>
-          <span className="h-3 w-3 rounded-[2px]" style={{ backgroundColor: ZERO_COLOR }} />
-          {BUCKET_COLORS.map((color) => (
-            <span className="h-3 w-3 rounded-[2px]" key={color} style={{ backgroundColor: color }} />
+          {BUCKETS.map((bucket) => (
+            <span className="flex items-center gap-1.5" key={bucket.range}>
+              <span className="h-3 w-3 rounded-[2px]" style={{ backgroundColor: bucket.color }} />
+              <span className="font-display tabular-nums">{bucket.range}</span>
+            </span>
           ))}
-          <span className="font-display tabular-nums">{`${formatInt(BUCKET_COLORS.length)}+`}</span>
+          <span>fechamentos no dia</span>
         </span>
-        <span>fechamentos no dia</span>
-        <span>contorno: melhor dia do ano</span>
-        <span>o degrau separa os meses</span>
+        <span className="flex items-center gap-1.5">
+          <span
+            className="h-3 w-3 rounded-[2px]"
+            style={{ backgroundColor: ZERO_COLOR, border: `1px dotted ${MARK_COLOR}` }}
+          />
+          <span>feriado, fora dos dias úteis</span>
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-3 w-3 rounded-[3px] border-[1.5px] border-text-primary" />
+          <span>dia de máximo</span>
+        </span>
         {measuredUntil === null ? null : (
-          <span className="tabular-nums">{`tracejado: fim da medição em ${measuredUntil}`}</span>
+          <span className="tabular-nums">{`tracejado: fim em ${measuredUntil}`}</span>
         )}
       </div>
     </figure>

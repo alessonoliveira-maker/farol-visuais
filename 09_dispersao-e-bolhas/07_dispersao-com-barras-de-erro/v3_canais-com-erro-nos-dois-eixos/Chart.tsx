@@ -295,6 +295,13 @@ export default function ChannelTwoAxisErrorScatter({
   const melhorNome = melhorTaxa.name;
   const melhorTaxaEscrita = formatRateWithVolume(melhorTaxa.qualificados, melhorTaxa.leads);
   const quantos = formatInt(points.length);
+  const baratoTaxaEscrita = formatRateWithVolume(maisBarato.qualificados, maisBarato.leads);
+  /** Veredito calculado do dado e dos limites de Wilson: só afirma diferença quando os intervalos se separam (ANO-5). */
+  const mesmoCanal = maisBarato.id === melhorTaxa.id;
+  const veredito =
+    maisBarato.upper < melhorTaxa.lower
+      ? 'mais barato não é mais qualificado'
+      : `a taxa do mais barato e a da melhor não se distinguem no intervalo de ${nivelEscrito}`;
 
   /** Frase da raiz em 229 caracteres com o dado padrão, dentro dos 250 da ACE-1 e do aviso de 235. */
   const summary =
@@ -328,9 +335,10 @@ export default function ChannelTwoAxisErrorScatter({
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
       <p aria-hidden className="mb-2 shrink-0 text-xs tabular-nums text-text-secondary">
-        {`mais barato não é mais qualificado: ${baratoNome} a ${baratoCpl} com ` +
-          `${formatRateWithVolume(maisBarato.qualificados, maisBarato.leads)}, contra ${melhorNome} a ` +
-          `${formatCurrencyAxis(melhorTaxa.cplMedio)} com ${melhorTaxaEscrita}`}
+        {mesmoCanal
+          ? `o mais barato é também o de melhor taxa: ${baratoNome} a ${baratoCpl} com ${melhorTaxaEscrita}`
+          : `${veredito}: ${baratoNome} a ${baratoCpl} com ${baratoTaxaEscrita}, contra ${melhorNome} a ` +
+            `${formatCurrencyAxis(melhorTaxa.cplMedio)} com ${melhorTaxaEscrita}`}
       </p>
       <div className="min-h-0 flex-1">
         <ResponsiveContainer height="100%" width="100%">

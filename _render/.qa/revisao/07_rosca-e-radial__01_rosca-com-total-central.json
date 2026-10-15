@@ -16,12 +16,12 @@
     },
     "v2_perdas-por-motivo-com-fatia-ativa": {
       "veredito": "aprovado",
-      "nota": "ROT-7 fechada: nome do centro quebrado por palavra, medido por tinta nos 5 estados de foco e no ponteiro, nos dois temas. Menor folga até a corda do raio interno: 5,1 px por lado em Sem resposta no (111,0 px de tinta contra 121,1 px de corda); nenhuma tinta toca o anel. Check com 0 erros. Observações no README.",
-      "data": "2026-10-02",
-      "registradoEm": "2026-10-02T14:40:42.992Z",
-      "impressao": "73a1d5edbdc2aec8347f7ebdc802d116dc2003c5",
+      "nota": "NUM-2 fechada: legenda, centro e frase usam uma só lista de maior resto; recalculado do data.ts (40,566; 25,472; 17,925; 10,377; 5,660) dá 41, 25, 18, 10 e 6, soma 100, igual nos dois PNGs e na frase acessível (86 perdas, 41%). Contraprova: [1,1,1] dá 34, 33, 33 e sete partes iguais somam 100. PNGs abertos nos dois temas: centro dentro do miolo, fatia ativa 8 px maior, legenda na ordem do anel, sem corte nem colisão. Check com 0 erros e 0 avisos. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:48:33.402Z",
+      "impressao": "0769771bef3f78c500a146ef91d533ac7495690a",
       "arquivos": {
-        "Chart.tsx": "88df0c293f224cefe5a77ac91f07ed14bd81816a",
+        "Chart.tsx": "8037be8590d4fd434324f10bb2a1426af16f1dd9",
         "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
         "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
       }
@@ -139,6 +139,19 @@
       "impressao": "73a1d5edbdc2aec8347f7ebdc802d116dc2003c5",
       "arquivos": {
         "Chart.tsx": "88df0c293f224cefe5a77ac91f07ed14bd81816a",
+        "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
+        "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
+      }
+    },
+    {
+      "versao": "v2_perdas-por-motivo-com-fatia-ativa",
+      "veredito": "aprovado",
+      "nota": "NUM-2 fechada: legenda, centro e frase usam uma só lista de maior resto; recalculado do data.ts (40,566; 25,472; 17,925; 10,377; 5,660) dá 41, 25, 18, 10 e 6, soma 100, igual nos dois PNGs e na frase acessível (86 perdas, 41%). Contraprova: [1,1,1] dá 34, 33, 33 e sete partes iguais somam 100. PNGs abertos nos dois temas: centro dentro do miolo, fatia ativa 8 px maior, legenda na ordem do anel, sem corte nem colisão. Check com 0 erros e 0 avisos. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:48:33.402Z",
+      "impressao": "0769771bef3f78c500a146ef91d533ac7495690a",
+      "arquivos": {
+        "Chart.tsx": "8037be8590d4fd434324f10bb2a1426af16f1dd9",
         "data.ts": "f7fe11e00624641698126e97653d3862a446b5d8",
         "meta.json": "2852c1f5e8895e63933dc71d16411c154371dd6b"
       }

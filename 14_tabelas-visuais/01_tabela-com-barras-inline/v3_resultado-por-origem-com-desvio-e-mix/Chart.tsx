@@ -17,11 +17,15 @@ export interface OriginResultTableProps {
   readonly className?: string;
 }
 
-/** Segmento só recebe percentual escrito acima deste tanto da linha (ROT-2 aplicado ao mix). */
-const LABEL_SHARE_THRESHOLD = 0.12;
+/** ROT-10: o segmento recebe o percentual quando o número cabe nele (texto de 11 px, cerca de 20 px com folga). */
+const LABEL_MIN_PX = 20;
+/** Largura mínima estimada da coluna do mix no cartão; o teste de caber usa este piso, não um limiar de participação. */
+const MIX_WIDTH_ESTIMATE = 320;
 /** Ordem de slot categórico (COR-8): --chart-2 e --chart-4 ficam de fora das quatro categorias. */
 const SLOT_ORDER = [1, 3, 6, 5] as const;
 const TRACK_HEIGHT = 14;
+/** ESP-2: mix com rótulo dentro, texto de 11 px mais 6 px. */
+const MIX_HEIGHT = 17;
 
 function volumeOf(row: OriginResult): number {
   return row.mix.novo + row.mix.emCadencia + row.mix.agendado + row.mix.descartado;
@@ -123,7 +127,7 @@ export default function OriginResultTable({ data = defaultData, height, classNam
                   <td className="px-2 py-0.5 align-middle">
                     <div className="flex items-center gap-2">
                       <div className="relative h-3.5 min-w-0 flex-1 rounded-full bg-surface-sunken" style={{ height: TRACK_HEIGHT }}>
-                        <div className="h-full rounded-full bg-chart-1" style={{ width: `${String(volumePct)}%` }} />
+                        <div className="h-full rounded-full" style={{ backgroundColor: 'var(--text-muted)', width: `${String(volumePct)}%` }} />
                       </div>
                       <span className="w-16 shrink-0 text-right font-display tabular-nums text-text-secondary">{formatInt(volume)}</span>
                     </div>
@@ -146,7 +150,7 @@ export default function OriginResultTable({ data = defaultData, height, classNam
                     </div>
                   </td>
                   <td className="px-2 py-0.5 align-middle">
-                    <div className="flex h-3.5 w-full gap-[1.5px] overflow-hidden rounded-sm" style={{ height: TRACK_HEIGHT }}>
+                    <div className="flex w-full gap-[1.5px] overflow-hidden rounded-sm" style={{ height: MIX_HEIGHT }}>
                       {(() => {
                         const counts = mixOrder.map((category) => row.mix[category.key]);
                         const shares = largestRemainder(counts, volume);
@@ -160,7 +164,7 @@ export default function OriginResultTable({ data = defaultData, height, classNam
                               key={category.key}
                               style={{ backgroundColor: slotColor(index), flexBasis: `${String((count / volume) * 100)}%` }}
                             >
-                              {sharePct / 100 > LABEL_SHARE_THRESHOLD ? (
+                              {(count / volume) * MIX_WIDTH_ESTIMATE >= LABEL_MIN_PX ? (
                                 <span className="font-display text-[0.6875rem] font-medium" style={{ color: 'var(--accent-cyan-contrast)' }}>
                                   {formatPercent(sharePct / 100, 0)}
                                 </span>

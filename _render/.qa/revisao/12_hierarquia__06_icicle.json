@@ -13,6 +13,42 @@
         "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
         "meta.json": "c930cf3c6bd4a2b7a8813765a989acef97d28e73"
       }
+    },
+    "v2_ramo-concorrencia-ampliado": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 10 (TIP-2, armadilha GEO-18) no estado raiz, que Escape e o clique na trilha abrem: a lista com a margem toma 267,25 px e o svg recebe 590,25 px para um viewBox de 600, escala 0,984, e 17 trechos de 11 px chegam a 10,82 px; a guarda TAMANHO-TEXTO rodada sobre a raiz serializada dá erro. COR-3 e a lista com nível estão resolvidos. Baixar VIEW_H_ROOT para 590 (medido: escala 1, as quatro guardas de texto passam) e corrigir a conta no comentário, no meta.json e no README, que afirmam escala 1; parecer na segunda leitura de validation/revisao_12_hierarquia__06_icicle_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:13:24.218Z",
+      "impressao": "a1656b2981da8e9f36726538630e95da6538c6e7",
+      "arquivos": {
+        "Chart.tsx": "68147c654aa605c05cb5b45b4a126f76bac212aa",
+        "data.ts": "22bf188354e7b4ed9b22e6b22285cc180ac9f7e0",
+        "meta.json": "0a9bbdae4886eaf387f2f6fe486aef18cbf2dce6"
+      }
+    },
+    "v3_investimento-da-plataforma-ao-criativo": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, partição exata em largura (soma por nível confere), marcas compostas acima de 3:1 nos dois temas (menor 3,04:1), pista de rótulo sem colisão e criativos nomeados na lista por campanha; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:59:30.435Z",
+      "impressao": "63df4460f882b56e7886ee3f077276053debb8ce",
+      "arquivos": {
+        "Chart.tsx": "aa13176e22b415f928f91c9a69de8617871c6214",
+        "data.ts": "21e8566aeef83165aa210c40997af84a463d330f",
+        "meta.json": "78db8cd7d5ead2746c94d958b35ae8a97bb8b19a"
+      }
+    },
+    "v4_submotivos-com-rotulos-longos": {
+      "veredito": "aprovado",
+      "nota": "Check limpo, nome longo quebrado por palavra sem reticência, faixa de 4 perdas e submotivo zero nomeados abaixo com o motivo, contorno por slot acima de 3:1 nos dois temas; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:59:31.062Z",
+      "impressao": "9ca1ed10bfc2236a79890cd4051f05e4f29b9456",
+      "arquivos": {
+        "Chart.tsx": "894d25309d3871c6d68876aae5e2e7789a30a1ad",
+        "data.ts": "4589cc16b54b5798567114b8a1650bb3ec9e103d",
+        "meta.json": "db737916e955abb0b57da22f3813f62266f3fd3a"
+      }
     }
   },
   "historico": [
@@ -66,6 +102,58 @@
         "Chart.tsx": "93f8d7aef151e797400a9f65fabcf8a79d9de24d",
         "data.ts": "c27ff8bc05b18504763ac4674d8c372fb75bc758",
         "meta.json": "c930cf3c6bd4a2b7a8813765a989acef97d28e73"
+      }
+    },
+    {
+      "versao": "v2_ramo-concorrencia-ampliado",
+      "veredito": "reprovado",
+      "nota": "Perguntas 10, 15 e 9 (TIP-2, GEO-18, COR-3) no estado raiz, que a tecla Escape e o clique na trilha abrem e o demonstrates anuncia: 20 de 25 nós ficam mudos, a lista empurra o svg para escala 0,50 no melhor caso (texto de 12 px a 6 px) e cerca de 0,05 com a quebra real, e as quatro categorias saem em --chart-1 enquanto Concorrência ampliada é --chart-3. Fazer a raiz caber com escala 1 e cor por slot da categoria nos dois estados; parecer em validation/revisao_12_hierarquia__06_icicle_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:59:29.811Z",
+      "impressao": "496ce5fbecd0e567af9a8dc26c1481034c3e0efc",
+      "arquivos": {
+        "Chart.tsx": "4c87c21fbc9956f641df625315c41b4383d4f582",
+        "data.ts": "22bf188354e7b4ed9b22e6b22285cc180ac9f7e0",
+        "meta.json": "f1378774531e474b03c43063d65bbf59a9efcb98"
+      }
+    },
+    {
+      "versao": "v3_investimento-da-plataforma-ao-criativo",
+      "veredito": "aprovado",
+      "nota": "Check limpo, partição exata em largura (soma por nível confere), marcas compostas acima de 3:1 nos dois temas (menor 3,04:1), pista de rótulo sem colisão e criativos nomeados na lista por campanha; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:59:30.435Z",
+      "impressao": "63df4460f882b56e7886ee3f077276053debb8ce",
+      "arquivos": {
+        "Chart.tsx": "aa13176e22b415f928f91c9a69de8617871c6214",
+        "data.ts": "21e8566aeef83165aa210c40997af84a463d330f",
+        "meta.json": "78db8cd7d5ead2746c94d958b35ae8a97bb8b19a"
+      }
+    },
+    {
+      "versao": "v4_submotivos-com-rotulos-longos",
+      "veredito": "aprovado",
+      "nota": "Check limpo, nome longo quebrado por palavra sem reticência, faixa de 4 perdas e submotivo zero nomeados abaixo com o motivo, contorno por slot acima de 3:1 nos dois temas; observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T18:59:31.062Z",
+      "impressao": "9ca1ed10bfc2236a79890cd4051f05e4f29b9456",
+      "arquivos": {
+        "Chart.tsx": "894d25309d3871c6d68876aae5e2e7789a30a1ad",
+        "data.ts": "4589cc16b54b5798567114b8a1650bb3ec9e103d",
+        "meta.json": "db737916e955abb0b57da22f3813f62266f3fd3a"
+      }
+    },
+    {
+      "versao": "v2_ramo-concorrencia-ampliado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 10 (TIP-2, armadilha GEO-18) no estado raiz, que Escape e o clique na trilha abrem: a lista com a margem toma 267,25 px e o svg recebe 590,25 px para um viewBox de 600, escala 0,984, e 17 trechos de 11 px chegam a 10,82 px; a guarda TAMANHO-TEXTO rodada sobre a raiz serializada dá erro. COR-3 e a lista com nível estão resolvidos. Baixar VIEW_H_ROOT para 590 (medido: escala 1, as quatro guardas de texto passam) e corrigir a conta no comentário, no meta.json e no README, que afirmam escala 1; parecer na segunda leitura de validation/revisao_12_hierarquia__06_icicle_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:13:24.218Z",
+      "impressao": "a1656b2981da8e9f36726538630e95da6538c6e7",
+      "arquivos": {
+        "Chart.tsx": "68147c654aa605c05cb5b45b4a126f76bac212aa",
+        "data.ts": "22bf188354e7b4ed9b22e6b22285cc180ac9f7e0",
+        "meta.json": "0a9bbdae4886eaf387f2f6fe486aef18cbf2dce6"
       }
     }
   ]

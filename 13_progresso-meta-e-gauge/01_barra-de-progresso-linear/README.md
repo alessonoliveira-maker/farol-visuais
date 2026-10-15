@@ -153,6 +153,42 @@ Revisão de 2026-09-18, as quatro versões aprovadas. Nada aqui impede o uso com
 - **v4**: na fila que estourou, o traço do teto coincide com a emenda entre a barra neutra e o
   excedente e quase desaparece ali; nas outras filas ele lê bem.
 
+Revisão de 2026-10-14, sobre o arquivo de hoje das quatro versões (motivo `revisao_desatualizada`).
+v1, v2 e v3 aprovadas; v4 reprovada, e o bloqueante dela está em
+`validation/revisao_13_progresso-meta-e-gauge__01_barra-de-progresso-linear_2026-10-14.md`. A
+observação de 2026-09-18 sobre a demanda da v4 não escrita deixou de ser nuance: sem o valor escrito,
+a isenção da 17.2 para `--line-strong` não vale. Os itens abaixo não impedem o uso como referência.
+
+- **v1 a v4**: o traço de referência tem `inset-y-[-3px]`, mas o trilho tem `overflow-hidden` e corta a extensão; nos PNGs ele mede a altura do trilho (12 px, dois traços de 3 px), e a Anatomia, item 4, promete 3 px acima e abaixo. Ou o traço sai do trilho como irmão posicionado sobre ele, ou a Anatomia muda.
+- **v1**: `percentOfTarget` devolve `0` quando a meta é zero (`Chart.tsx:29`), e o cartão escreveria "0,0% da meta" e "faltam R$ 0"; a `AGREGACAO-ZERO` orienta por dívida. Saída da EST-1b: `number | null` e `formatUnavailable()` no lugar do percentual.
+- **v1**: "83,6% da meta" sai em Manrope sem `tabular-nums` (TIP-1); o número vizinho do mesmo parágrafo está em `kpi-number`.
+- **v1**: a frase acessível termina em "Leitura sem o ritmo esperado do período considerado", que lê como se o considerado fosse o período; "Leitura que não considera o ritmo esperado do período" diz o que se quer.
+- **v2**: neste dado o traço do ritmo cai no vão de 3 px entre duas listras, colado à listra seguinte (x 722 e 723 do PNG, listra a partir de 724). No vão mede 9,36:1 no escuro e 7,04:1 no claro; sobre a listra mediria 1,62:1 e 2,35:1. A visibilidade depende de onde o dado põe o traço.
+- **v2**: a listra da projeção, com `opacity-70`, mede 2,99:1 contra o trilho no claro (3,45:1 contra o cartão); o 68 escrito abaixo garante a isenção, mas a margem é de 0,01.
+- **v2**: o traço do ritmo usa `--text-secondary` pontilhado, que não é papel da 17.2 (Referência é `--text-muted` tracejado); a textura já separa ritmo e meta.
+- **v2**: a frase acessível diz "41 de 90 na dia 18 de 30"; o artigo é "no".
+- **v2**: o `meta.json` e a Anatomia dizem que o ritmo sai de `elapsedRatio`, e o componente lê `expectedRatio`; `elapsedRatio` fica no `data.ts` sem uso. No modo linear os dois valem 0,6 e o desenho está certo.
+- **v2**: as larguras da listra (5 px e 8 px) estão dentro do `repeating-linear-gradient`, não em constante nomeada no topo.
+- **v3**: o período "2026 T3" está escrito no JSX da linha de leitura (`Chart.tsx:79`) e não vem do dado, ao contrário da v1, da v2 e da v4; colado no Farol com outro trimestre, a linha erra o período.
+- **v3**: o traço da mediana some onde cruza a barra: `--text-muted` contra `--chart-1` mede 1,82:1 no escuro e 1,12:1 no claro (TOK-10), nas linhas de Renata A., Murilo C. e Talita V. O valor está escrito no topo, então é referência; a saída da TOK-10 é interromper o traço sobre a barra ou dar-lhe halo.
+- **v3**: o contorno tracejado de "sem meta definida" usa `--line-strong`; o papel Ausência da 17.2 pede contorno `--text-muted`. A palavra ao lado carrega a identificação.
+- **v4**: contagens sem substantivo (NUM-6): "teto 180", "34 acima do teto do mês", "faltam 18"; o nome da fila sugere a unidade, mas nenhuma linha a escreve.
+- **v4**: o traço do teto de premissa, com `opacity-50`, mede 2,33:1 no escuro e 1,96:1 no claro contra o trilho; a palavra "(premissa)" e o número escrito carregam a informação, e o traço segue visível nos dois PNGs.
+- **v4**: o contorno tracejado da fila sem coleta usa `--line-strong`; mesma observação da v3 sobre o papel Ausência.
+- **v4**: a frase acessível conta "1 acima do teto do mês" sem dizer qual fila; "Entradas novas, 34 acima" fecharia a conclusão.
+
+Revisão de 2026-10-14, segunda passada da v4 depois da rodada de correção (motivo `revisao_desatualizada`).
+v4 aprovada: a demanda agora está escrita em cada linha ("demanda 214 · teto 180") e a barra neutra
+passou a `--text-muted`, que mede 5,21:1 e 5,37:1 contra o cartão e 5,98:1 e 4,65:1 contra o trilho. A
+observação de 2026-09-18 sobre a demanda não escrita está resolvida. Os itens abaixo não impedem o uso
+como referência.
+
+- **v4**: na fila que estourou, a barra neutra e o excedente medem 1,05:1 entre si no escuro (`#7f8fab` contra `#f2617a`) e 1,18:1 no claro (`#5c6b87` contra `#b5253f`), e não há o vão de 1,5 px nem o contorno `--surface-raised` da COR-5. A emenda se lê pelo matiz (simulado, diferença de cor de 20 e 29 em protanopia, 40 e 46 em deuteranopia), pelo estreitamento da ponta arredondada da barra neutra e pelos números escritos com o ícone; em leitura sem cor, só o estreitamento marca onde fica o teto. Com `--line-strong`, que voltou a valer porque a demanda está escrita, o par sobe para 3,08:1 e 3,47:1.
+- **v4**: a Anatomia, item 3, ainda diz `var(--line-strong)` para a demanda contra teto, e o `Chart.tsx` usa `--text-muted`; o parecer de 2026-10-14 pedia, nesta opção, atualizar a Anatomia e registrar o desvio no `notes` do `meta.json`, e nenhum dos dois mudou. O `notes` também diz "teto e período aparecem em texto por linha", e o período aparece uma vez, na linha do topo.
+- **v4**: `--text-muted` faz dois papéis da 17.2 no mesmo visual, neutro de dado na barra e referência no traço do teto; a forma separa os dois, mas na fila que estourou o traço some sobre a emenda (já anotado em 2026-09-18). Voltar a barra para `--line-strong` resolve este item e o primeiro de uma vez.
+- **v4**: demanda medida igual a zero desenha barra de largura 0% e nada no trilho, só "demanda 0" escrito (EST-3, ramo latente, fora do dado publicado); a v3 resolveu o mesmo caso com traço de base.
+- **v4**: os números em `kpi-number` não declaram peso e pedem Space Grotesk 400, que não está entre os pesos carregados (TIP-4); o navegador cai para 500 e o PNG não mostra defeito. "ago/26" na linha do topo sai em Manrope sem `tabular-nums` (TIP-1).
+
 ## Correção de 2026-09-25
 
 **v3.** A `teamMedian` era calculada sobre `withQuota`, mas a única guarda de vazio testava

@@ -103,7 +103,14 @@ function buildBins(
   const closed = Math.ceil(openFrom / width);
   const counts = new Array<number>(closed + 1).fill(0);
   for (const value of values) {
-    const slot = value > openFrom ? closed : Math.max(Math.ceil(value / width) - 1, 0);
+    /* No sentido 1 o bin é fechado à direita (o limiar termina a coluna); no −1, fechado à
+       esquerda (o limiar abre a coluna), para que a coluna que começa em t meça "t ou mais". */
+    const slot =
+      sense === 1
+        ? value > openFrom
+          ? closed
+          : Math.max(Math.ceil(value / width) - 1, 0)
+        : Math.min(Math.floor(value / width), closed);
     counts[slot] = (counts[slot] ?? 0) + 1;
   }
   const total = values.length;
@@ -186,8 +193,12 @@ export default function CumulativeQueue({
     const share = shareAtThreshold(data, minutes, sense);
     return {
       minutes,
-      /* O ponto marca a coluna que **termina** no limiar, e é ela que carrega a leitura. */
-      center: Math.max(Math.ceil(minutes / binWidth) - 0.5, 0.5),
+      /* No sentido 1 o ponto marca a coluna que **termina** no limiar; no −1, a que **começa**
+         nele (a faixa aberta, no limiar de 2 h). É ela que carrega a leitura. */
+      center:
+        sense === 1
+          ? Math.max(Math.ceil(minutes / binWidth) - 0.5, 0.5)
+          : Math.min(Math.floor(minutes / binWidth) + 0.5, bins.length - 0.5),
       share,
       text:
         share === null
@@ -196,7 +207,11 @@ export default function CumulativeQueue({
     };
   });
   const longest = longestWait(data);
-  const beyond = data.filter((value) => value > openFrom).length;
+  const beyond = data.filter((value) => (sense === 1 ? value > openFrom : value >= openFrom)).length;
+  const openNote =
+    sense === 1
+      ? `a última coluna é a faixa aberta acima de ${timeLabel(openFrom)} e fecha a soma em ${formatPercent(1, 0)}`
+      : `a primeira coluna mede ${formatPercent(1, 0)} e a última é a faixa aberta de ${timeLabel(openFrom)} ou mais`;
 
   /* Tiques derivados dos próprios limiares mais um passo de apoio, e não de uma lista fixa: com o
      passo automático o eixo saltava de bin em bin e nenhuma marca caía nos três limiares. */
@@ -305,7 +320,7 @@ export default function CumulativeQueue({
           {`minutos até o primeiro contato, faixas de ${timeLabel(binWidth)}, n ${formatInt(data.length)} leads`}
         </span>
         <span className="tabular-nums">
-          {`a última coluna é a faixa aberta acima de ${timeLabel(openFrom)} e fecha a soma em ${formatPercent(1, 0)}`}
+          {openNote}
         </span>
         {beyond <= 0 ? null : (
           <span className="tabular-nums">{`${formatInt(beyond)} leads caíram nela`}</span>

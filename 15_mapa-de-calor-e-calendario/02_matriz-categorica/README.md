@@ -224,6 +224,58 @@ aprovada; aqui fica só o que não reprova._
   palavra, "0%" e "100%" literais, taxa geral fora do corpo do cartão, borda fraca dos botões e o
   texto do catálogo sobre congelar a ordem ao filtrar.
 
+_Revisão de 2026-10-15, primeira das versões 2, 3 e 4 (render de 2026-10-02). As três foram
+aprovadas sem bloqueante; aqui fica só o que não reprova._
+
+- `v2`: os valores das margens não ficam na ponta livre (ROT-2). O total de etapa fica abaixo da base
+  da barra, que é o zero, e o total de motivo fica numa coluna alinhada à direita, a cerca de 67 px da
+  ponta em Decisor trocou (39). No render a leitura está íntegra e sem colisão.
+- `v2`: a linha de leitura escreve a participação da etapa com uma casa, "24,5% (212 de 867)", por
+  `formatRateWithVolume`. A NUM-1 pede percentual de composição inteiro, e a anotação logo abaixo já
+  usa 46%.
+- `v2`: a célula ausente escreve `formatUnavailable()` sem o ícone `Unplug` da EST-2. O `data.ts` diz
+  que Preço e Decisor trocou não existem na Triagem, então "indisponível" sugere medição perdida
+  onde o motivo simplesmente não se aplica, e põe em dúvida o total de 199 da Triagem, que fica só 13
+  perdas abaixo da Proposta. A legenda "motivo sem registro na etapa" segura a leitura.
+- `v2`: com dado em que todo par medido é zero, a peça mostra o bloco de vazio "Nenhuma perda
+  registrada" no lugar da matriz de zeros medidos (a EST-3 manda desenhar o zero), e o motivo com a
+  linha toda nula some da matriz sem aviso. O mesmo vale para a `v3`.
+- `v2` e `v3`: a legenda fica abaixo da grade (ROT-4) e a amostra `--seq-1` mede 1,14:1 contra o
+  cartão no escuro. A isenção da ACE-3 vale pelo intervalo escrito ao lado, como na `v1`.
+- `v3`: o catálogo pede indicação com 1 origem e o dado tem 2. O desvio não está nas colisões
+  declaradas acima nem na nota do `meta.json`, e assim o grupo de um item só, em que o rótulo de canal
+  divide a linha com o da origem, fica sem exercício.
+- `v3`: a frase acessível diz "15 origens em 3 canais" e o subtítulo diz 14 origens: Sem origem
+  declarada entra na contagem e fica fora dos canais. A frase também não diz que set/26 é parcial.
+- `v3`: o caso de uso pergunta como os leads evoluíram, mas a linha de leitura fala de composição
+  (Mídia paga 55,8%, com uma casa, contra a NUM-1) e a anotação fala do total (Busca paga 1.347
+  leads, sem dizer "total", NUM-5). Nenhuma das duas fala da evolução.
+- `v4`: set/26 repete os valores do mês parcial da `v3` (Busca paga 71 contra 160 em ago/26, e as
+  oito origens com cerca de metade do volume), mas a `v4` não declara mês parcial. O desenho lê como
+  queda de setembro em todas as origens, o "32 vezes o menor" da anotação compara com um par de
+  set/26 e as duas células de amostra rala existem só nesse mês. Se o recorte é o mesmo da `v3`, falta
+  a marcação da EIX-10; se não é, convém trocar o dado do último mês.
+- `v4`: a taxa de cada célula vive só na cor, em três degraus que medem 1,42:1 e 1,45:1 entre
+  vizinhos, sem número e sem dica. É o regime declarado da TOK-8 e a margem escreve a taxa da linha,
+  mas o valor exato do par não aparece em lugar nenhum (a DIC-1 aceita dica com o par volume e taxa).
+- `v4`: a régua de tamanho desenha quadrados só de contorno, que é também o desenho do estado
+  "contorno sem preenchimento: menos de 8 leads". A amostra não tem a forma da marca preenchida (ROT-4).
+- `v4`: as faixas de cor imprimem a borda duas vezes, "7,4% a 24,9%" e "24,9% a 42,5%", sem dizer em
+  qual faixa cai a taxa de 24,9%.
+- `v4`: o caso de uso do `meta.json` diz "3 agendas em 5 leads" e o do catálogo diz "2 leads com
+  100%"; o dado não tem nenhum par de 100%.
+- `v4`: a linha de leitura nomeia a origem de maior taxa e menor volume (Indicação de cliente, "3,2%
+  dos leads", com uma casa, contra a NUM-1), justamente a armadilha que a versão existe para conter,
+  e não nomeia a origem que responde à pergunta (Acesso direto, 41,2% em 233, ou Busca orgânica,
+  31,7% em 565). A coluna de taxa com volume à direita não tem cabeçalho que a nomeie como taxa do
+  período (NUM-5).
+- `v4`: o canto de 2 px tira 3,4 px² de área, 4,7% do menor quadrado preenchido (8,5 px de lado), sem
+  consequência visível. Já o `MIN_SIDE` passa a agir quando o teto supera 288 leads, e aí achata a
+  área do quadrado preenchido sem que a régua de tamanho saiba (GEO-16).
+- `v2`, `v3` e `v4`: no preview o svg está em escala 1 (894 px sobre `viewBox` de 894), com texto em
+  11 e 12 px. Como as três escalam com o contêiner, em cartão mais estreito o texto cai abaixo do
+  piso da TIP-2 (GEO-18), como o item 6 de Como colar já avisa.
+
 ## Correção de 2026-09-24
 
 A `v1` estava reprovada por NUM-1: a célula escrevia só a taxa, com o n indo de 3 a 31, e a coluna

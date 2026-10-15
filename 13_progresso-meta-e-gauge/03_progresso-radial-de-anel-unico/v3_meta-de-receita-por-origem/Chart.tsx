@@ -1,3 +1,4 @@
+import { Filter } from 'lucide-react';
 import { PolarAngleAxis, RadialBar, RadialBarChart, ResponsiveContainer } from 'recharts';
 
 import { CHART_SERIES_COLORS, useAnimateOnce } from '@/components/visuals/charts/chartTheme';
@@ -26,6 +27,19 @@ const ORIGIN_COLORS = [CHART_SERIES_COLORS[0], CHART_SERIES_COLORS[2], CHART_SER
 export default function MetaReceitaPorOrigemRadial({ data = defaultData, height, className }: MetaReceitaPorOrigemRadialProps) {
   const animate = useAnimateOnce();
   const style = height === undefined ? undefined : { height };
+  if (data.origens.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={style}
+      >
+        <Filter aria-hidden className="size-4 shrink-0" />
+        <span>Nenhuma origem de receita neste recorte do trimestre.</span>
+      </div>
+    );
+  }
+
   const meta = Math.max(data.meta, 1);
   const total = data.origens.reduce((sum, origem) => sum + origem.valor, 0);
   const percent = Math.min(total / meta, 1);

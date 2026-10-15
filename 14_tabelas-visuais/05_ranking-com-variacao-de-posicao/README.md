@@ -60,7 +60,7 @@ _Revisão de 2026-09-19; segunda passada no mesmo dia, depois da correção da p
 
 - `v1_receita-do-trimestre`: o `meta.json` promete "posição estável com valor em queda", e nenhuma linha faz isso: as duas que mantêm a posição (Renan A. e Priscila T.) sobem de valor. A outra metade da frase, posição em alta com valor estável, aparece em Heitor Wanderley M.
 - `v1_receita-do-trimestre`: no texto "contra R$ 401,3 mil" o número fica em `text-text-muted` sem `tabular-nums`, então é o único número da tabela fora do algarismo tabular da TIP-1. O mesmo vale para o "contra" da v2 e da v4.
-- `v3_executivos-com-tres-variacoes`: o micrográfico das linhas sem destaque é desenhado em `--line-strong`, que mede 1,79:1 e 1,83:1 contra o cartão, e ali não há valor escrito na marca; a leitura se sustenta porque a coluna de variação repete a informação em texto e o SVG é `aria-hidden`.
+- `v3_executivos-com-tres-variacoes`: o micrográfico das linhas sem destaque passou a `--text-muted` (a trajetória é dado: mar a jun só existem no traço) e a barra inline segue em `--line-strong` porque o valor vem escrito ao lado.
 - `v3_executivos-com-tres-variacoes`: `TRACK_MAX_POS` é fixo em 6, igual ao número de linhas do dado; com outra quantidade de executivos a trajetória sai fora de escala. Vale derivar o domínio do próprio `data`.
 - `v3_executivos-com-tres-variacoes`: o `meta.json` diz que as três variações ficam "alinhadas à direita", mas a coluna de Δ posição é alinhada à esquerda por causa do ícone.
 - `v1_receita-do-trimestre`: a coluna "Variação vs 2026-T2" é estreita e a unidade "mil" cai sozinha na segunda linha em quase todas as linhas; a leitura se mantém, mas a primeira linha fica com o número sem unidade.
@@ -73,3 +73,23 @@ _Revisão de 2026-09-19; segunda passada no mesmo dia, depois da correção da p
 - `v3_executivos-com-tres-variacoes`: a barra inline fica na borda esquerda da célula e o número na borda direita, com um vão largo entre os dois; aproximar os dois encurtaria o caminho do olho.
 - `v4_empate-e-menor-e-melhor`: na última linha, "contra 34 dias" quebra e deixa "dias" sozinho na segunda linha; é a mesma estreiteza de coluna da v1.
 - `v4_empate-e-menor-e-melhor`: o canvas `alto` sobra cerca de um quarto da altura abaixo da última linha, com seis linhas apenas.
+
+_Revisão de 2026-10-14 da `v3_executivos-com-tres-variacoes` (reprovada; os bloqueantes estão em `validation/revisao_14_tabelas-visuais__05_ranking-com-variacao-de-posicao_2026-10-14.md`). A observação de 2026-09-19 sobre o contraste do micrográfico subiu a bloqueante pela ACE-6, e a das posições repetidas, a bloqueante pela EIX-9._
+
+- `v3_executivos-com-tres-variacoes`: a variação percentual a partir de 10% sai com uma casa (+28,4%, −22,1%, +15,5%, −13,4%), e a NUM-1 pede inteiro nessa faixa; trocar a tabela e a frase acessível juntas, para a FORMATO-ACESSIVEL não acusar.
+- `v3_executivos-com-tres-variacoes`: os cabeçalhos "Δ R$" e "Δ %" não nomeiam o período, que só aparece em "Δ posição desde jul/26"; e o símbolo Δ fica perto da abreviação que a ROT-8 evita, onde "Variação" lê sem esforço.
+- `v3_executivos-com-tres-variacoes`: a frase acessível diz "subiu 1 e cresceu 28,4%" sem o substantivo "posição" (NUM-6); na tabela o cabeçalho supre, na frase lida em voz não.
+- `v3_executivos-com-tres-variacoes`: o valor das linhas sem destaque sai em `--text-primary`, e a 17.1 pede `--text-secondary` para rótulo direto de valor fora do destaque; hoje o valor de Camila D. se distingue só pelo peso.
+- `v3_executivos-com-tres-variacoes`: `font-display` sem peso declarado herda 400, que não é peso carregado de Space Grotesk (TIP-4); o navegador cai no 500 e não há efeito visível.
+- `v3_executivos-com-tres-variacoes`: o `data.ts` não exercita "manteve" (ícone `Minus`), salto de mais de uma posição nem posição e valor em sentidos opostos; as seis linhas andam exatamente uma posição e os deltas saem em pares espelhados (± R$ 34,6 mil, ± R$ 88,9 mil, ± R$ 35,5 mil).
+- `v3_executivos-com-tres-variacoes`: `valueAnterior` igual a zero divide por zero no Δ %, e o tipo não admite base ausente (EST-4); a v2 mostra como declarar a comparação sem base.
+- `v3_executivos-com-tres-variacoes`: a coluna de posição alinha o ordinal à esquerda (TIP-6 pede número à direita em coluna), e os cabeçalhos com data não levam `tabular-nums` (TIP-1), ambos sem efeito visível.
+- `v3_executivos-com-tres-variacoes`: `r={2}`, `strokeWidth={1.5}` e `strokeWidth={2.5}` estão literais no JSX, fora das constantes nomeadas do topo (seção 5).
+
+_Revisão de 2026-10-14, segunda passada da `v3_executivos-com-tres-variacoes` (aprovada), depois da rodada de correção. Os três bloqueantes da primeira passada foram resolvidos: a trajetória sem destaque em `--text-muted` mede 5,21:1 no escuro e 5,37:1 no claro, o ponto final sai como disco inteiro nos dois temas, e as posições de cada mês formam uma permutação de 1 a 6 que bate com `valueAnterior` e `value`. As observações de 2026-10-14 acima continuam valendo._
+
+- `v3_executivos-com-tres-variacoes`: as `notes` do `meta.json` ainda dizem que a trajetória "é decorativa e aria-hidden porque a coluna de Δ posição já diz o mesmo em texto", o que deixou de ser verdade (mar/26 a jun/26 só existem no traço, ACE-6), e não declaram o desvio do catálogo, que pede "demais em line-strong" enquanto a versão usa `--text-muted` porque o contrato vence. O parecer da primeira passada pedia as duas mudanças.
+- `v3_executivos-com-tres-variacoes`: o item 9 da Anatomia deste README repete que a trajetória é "decorativa" e que "a coluna de variação já diz a mesma coisa em texto"; vale só quando o micrográfico cobre os mesmos dois meses da coluna, e na v3 ele cobre seis.
+- `v3_executivos-com-tres-variacoes`: o SVG da trajetória é `aria-hidden` e é o único lugar com as posições de mar/26 a jun/26, então quem usa leitor de tela não chega a elas; um texto `sr-only` por linha com as seis posições resolveria sem mexer na frase de 199 caracteres.
+- `v3_executivos-com-tres-variacoes`: a folga `TRACK_PAD_X = 3` é escrita à mão e cobre por 0,25 px o raio de 2 mais o meio traço de 0,75; derivada do raio e do traço, ela acompanharia uma mudança de `r` sem o meio disco voltar.
+- `v3_executivos-com-tres-variacoes`: o `check` segue com aviso de CONTRASTE-MARCA, agora pelas cinco barras inline em `--line-strong` (1,79:1 e 1,83:1); elas têm o valor escrito logo acima, que é a isenção da ACE-3 e da 17.2, então o aviso fica sem ação.

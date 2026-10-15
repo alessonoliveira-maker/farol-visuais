@@ -62,12 +62,12 @@ const READING_LAYER = 450;
 const TICKS = [0, 0.25, 0.5, 0.75, 1] as const;
 /**
  * O quadrado só é quadrado se o que o plano perde na largura for igual ao que perde na altura:
- * 44 do eixo Y mais 8 de margem direita, contra 12 de margem de cima, 26 do eixo X e 14 de margem
- * de baixo. Os dois somam 52.
+ * 44 do eixo Y mais 16 de margem direita (cabe o tique de 100% inteiro), contra 12 de margem de cima,
+ * 26 do eixo X e 22 de margem de baixo. Os dois somam 60.
  */
 const Y_AXIS_WIDTH = 44;
 const X_AXIS_HEIGHT = 26;
-const MARGIN = { top: 12, right: 8, bottom: 14, left: 0 } as const;
+const MARGIN = { top: 12, right: 16, bottom: 22, left: 0 } as const;
 const CURVE_STROKE = 'var(--chart-1)';
 const EQUALITY_STROKE = 'var(--line-strong)';
 /** Poço opaco para a faixa das maiores campanhas: ANO-4 manda `--surface-sunken`, nunca `--surface-overlay`. */

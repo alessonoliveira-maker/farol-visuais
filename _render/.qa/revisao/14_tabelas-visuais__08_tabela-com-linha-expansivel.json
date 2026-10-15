@@ -16,24 +16,24 @@
     },
     "v2_executivo-com-serie-e-motivos": {
       "veredito": "aprovado",
-      "nota": "Check limpo, motivos somam 100 pelo maior resto, dominante com cor e peso; rotulo truncado e nao bloqueante.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T04:02:13.713Z",
-      "impressao": "ce7afecf76a1cee04af2e7dde361d858b91e50ac",
+      "nota": "Sem bloqueante: os quatro do parecer anterior resolvidos (nome inteiro em duas linhas, tiques 0 a 300 mil em uma linha, shares nulo sem perdas, empate nomeado); motivos somam 100 pelo maior resto, line-strong com valor escrito. Observacoes no README (serie vazia escreve indisponivel contra vazio no painel, eixo de 70 px, trilho de 58 px).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:07:31.678Z",
+      "impressao": "59e67ed683d4925b735dde3433ee74dd2302c530",
       "arquivos": {
-        "Chart.tsx": "e170ff77b1c256c4d53e1c9aaf6f322093bc50d6",
+        "Chart.tsx": "384eb34a93d46b3ef59eff6b060821d701a30281",
         "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
         "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
       }
     },
     "v3_filas-com-mapa-de-entradas": {
       "veredito": "aprovado",
-      "nota": "Check limpo, mapa sequencial com valor escrito em toda celula e escala comum declarada na legenda.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T04:02:18.762Z",
-      "impressao": "680e1a021870e87023ffe86b16ec9d9ccd742f2d",
+      "nota": "Sem bloqueante: escala sequencial comum de 0 a 27 com numero em toda celula, texto das celulas acima de 5,09:1 nos dois temas, bullet nasce no zero; observacoes no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:53:04.191Z",
+      "impressao": "04778b50908d75f455bcd27d0cf1330098aac139",
       "arquivos": {
-        "Chart.tsx": "e238bee8110412758d94758386a68b6e1ab7c796",
+        "Chart.tsx": "0c8c8fae522b392599031192d2feb2bc7babeadd",
         "data.ts": "b0705dfa7e2e45becc29282efaf8b0dbdd65b5c5",
         "meta.json": "af6f566a0368eec8d40471f0a4eb3dedb214fee7"
       }
@@ -154,6 +154,45 @@
         "Chart.tsx": "62e0f2abe2b4880903e8518a5d6f4ff724f3663d",
         "data.ts": "bcc5c16ea71a79ece96a6b30e7a6b8d29fe9d7e2",
         "meta.json": "cf5c248fc4638943d1f4d0ea37d4a6a016bfe53d"
+      }
+    },
+    {
+      "versao": "v2_executivo-com-serie-e-motivos",
+      "veredito": "reprovado",
+      "nota": "Q10/Q15/Q27 TIP-7: nome do 4o motivo sai truncado (internam...), quebrar por palavra em ate duas linhas; Q15 EIX-6/REC-2: tiques R$ 140 mil e R$ 272 mil em duas linhas, ticks redondos (EIX-4) e eixo em que caibam numa linha; Q8 EST-1b/EST-2: total zero escreve 0% das perdas com motivo nomeado e serie vazia vira travessao e grafico vazio; COR-2/14.1: empate de Renan A. nomeia um motivo so. Parecer em validation/.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:53:02.808Z",
+      "impressao": "dc78dc7829de903a21c4de15b5911f13f6c814d6",
+      "arquivos": {
+        "Chart.tsx": "31ed814b8ea9738996daa95989042589bee1d063",
+        "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
+        "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
+      }
+    },
+    {
+      "versao": "v3_filas-com-mapa-de-entradas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: escala sequencial comum de 0 a 27 com numero em toda celula, texto das celulas acima de 5,09:1 nos dois temas, bullet nasce no zero; observacoes no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:53:04.191Z",
+      "impressao": "04778b50908d75f455bcd27d0cf1330098aac139",
+      "arquivos": {
+        "Chart.tsx": "0c8c8fae522b392599031192d2feb2bc7babeadd",
+        "data.ts": "b0705dfa7e2e45becc29282efaf8b0dbdd65b5c5",
+        "meta.json": "af6f566a0368eec8d40471f0a4eb3dedb214fee7"
+      }
+    },
+    {
+      "versao": "v2_executivo-com-serie-e-motivos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: os quatro do parecer anterior resolvidos (nome inteiro em duas linhas, tiques 0 a 300 mil em uma linha, shares nulo sem perdas, empate nomeado); motivos somam 100 pelo maior resto, line-strong com valor escrito. Observacoes no README (serie vazia escreve indisponivel contra vazio no painel, eixo de 70 px, trilho de 58 px).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:07:31.678Z",
+      "impressao": "59e67ed683d4925b735dde3433ee74dd2302c530",
+      "arquivos": {
+        "Chart.tsx": "384eb34a93d46b3ef59eff6b060821d701a30281",
+        "data.ts": "04972d93fda3603a270e875b8d49e95f4e6f44e3",
+        "meta.json": "faf4188248479bc40f6ae5eab741186226b51882"
       }
     }
   ]

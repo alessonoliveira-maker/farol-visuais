@@ -112,6 +112,33 @@ function weightedRate(
   return leads === 0 ? null : { rate: booked / leads, leads, cohorts };
 }
 
+/** Piso de cohorts para o rodapé de um bloco: com um só, a média repetiria a própria linha. */
+const MIN_COMMON = 2;
+
+/**
+ * População fixa do rodapé de um bloco: os cohorts que já fecharam, com medida, todas as colunas até a
+ * mais funda em que pelo menos `MIN_COMMON` deles chegam. Toda coluna do rodapé é a média dos mesmos
+ * cohorts, então a média só cai de uma coluna para outra por piora real, nunca por troca de gente (EST-1b).
+ * Devolve `null` quando nenhuma idade tem cohorts fechados em número suficiente.
+ */
+function commonPopulation(
+  lines: readonly CohortLine[],
+): { readonly lines: readonly CohortLine[]; readonly depth: number } | null {
+  for (let depth = ELAPSED_MONTHS - 1; depth >= 0; depth -= 1) {
+    const members = lines.filter((line) =>
+      line.cells.slice(0, depth + 1).length === depth + 1 &&
+      line.cells.slice(0, depth + 1).every((state) => state.kind === 'valor' && !state.open),
+    );
+    if (members.length >= MIN_COMMON) return { lines: members, depth };
+  }
+  return null;
+}
+
+/** Média da coluna sobre a população fixa; `null` além da idade que a população alcança. */
+function commonRate(population: ReturnType<typeof commonPopulation>, elapsed: number) {
+  return population === null || elapsed > population.depth ? null : weightedRate(population.lines, elapsed);
+}
+
 function paletteAt(level: number): { readonly fill: string; readonly text: string } {
   return { fill: SEQ_TOKENS[level] ?? SEQ_TOKENS[0], text: SEQ_TEXT[level] ?? SEQ_TEXT[0] };
 }
@@ -136,8 +163,10 @@ export default function CohortCadenceTriangle({
   const hasZero = allCells.some((state) => state.kind === 'valor' && state.rate === 0);
   const hasFuture = allCells.some((state) => state.kind === 'futuro');
 
-  const highlightBefore = weightedRate(before, HIGHLIGHT_ELAPSED);
-  const highlightAfter = weightedRate(after, HIGHLIGHT_ELAPSED);
+  const populationBefore = commonPopulation(before);
+  const populationAfter = commonPopulation(after);
+  const highlightBefore = commonRate(populationBefore, HIGHLIGHT_ELAPSED);
+  const highlightAfter = commonRate(populationAfter, HIGHLIGHT_ELAPSED);
   const highlightLabel = `M${formatInt(HIGHLIGHT_ELAPSED)}`;
   const firstLabel = `M${formatInt(0)}`;
   const lastLabel = `M${formatInt(ELAPSED_MONTHS - 1)}`;
@@ -173,10 +202,10 @@ export default function CohortCadenceTriangle({
 
   const comparable = highlightBefore !== null && highlightAfter !== null;
   const summary = comparable
-    ? `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}. ` +
-      `Em ${highlightLabel} os cohorts anteriores à cadência de ${formatMonthShort(CADENCE_MONTH)} somam ${formatPercent(highlightBefore.rate, 1)} e os posteriores somam ${formatPercent(highlightAfter.rate, 1)}. ` +
-      `A diagonal tracejada é ${formatMonthShort(CURRENT_MONTH)}, em curso.`
-    : `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}, sem os dois blocos fechados na mesma idade para comparar a cadência.`;
+    ? `Cohort em triângulo, lead em agenda, ${formatInt(data.length)} meses de entrada. ` +
+      `Em ${highlightLabel}, média dos mesmos ${formatInt(highlightBefore.cohorts)} cohorts antes de ${formatMonthShort(CADENCE_MONTH)}: ${formatPercent(highlightBefore.rate, 1)}; dos mesmos ${formatInt(highlightAfter.cohorts)} depois: ${formatPercent(highlightAfter.rate, 1)}. ` +
+      `Diagonal tracejada: ${formatMonthShort(CURRENT_MONTH)}, em curso.`
+    : `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}, sem dois cohorts fechados em cada bloco até ${highlightLabel} para comparar a cadência.`;
 
   function renderCells(line: CohortLine) {
     return columns.map((elapsed) => {
@@ -226,7 +255,12 @@ export default function CohortCadenceTriangle({
     });
   }
 
-  function renderBlock(block: readonly CohortLine[], key: string, side: string) {
+  function renderBlock(
+    block: readonly CohortLine[],
+    population: ReturnType<typeof commonPopulation>,
+    key: string,
+    side: string,
+  ) {
     return (
       <>
         {block.map((line) => (
@@ -241,14 +275,20 @@ export default function CohortCadenceTriangle({
           </tr>
         ))}
         <tr key={key}>
-          <th className="text-left align-middle font-medium text-text-muted" scope="row">
-            Média
+          <th className="pr-2 text-left align-middle font-medium text-text-muted" colSpan={2} scope="row">
+            {population === null ? (
+              'Média: sem cohort fechado'
+            ) : (
+              <>
+                {`Média ${side}, mesmos `}
+                <span className="font-display tabular-nums">{formatInt(population.lines.length)}</span>
+                {' cohorts'}
+                {population.depth < ELAPSED_MONTHS - 1 ? `, até M${formatInt(population.depth)}` : ''}
+              </>
+            )}
           </th>
-          {/* Sem contagem de cohorts no rótulo: cada coluna tem uma população diferente, porque a idade
-              que um cohort alcançou depende do mês em que ele entrou, e um número fixo aqui seria falso. */}
-          <td className="pr-2 text-right align-middle text-text-muted">{side}</td>
           {columns.map((elapsed) => {
-            const average = weightedRate(block, elapsed);
+            const average = commonRate(population, elapsed);
             return (
               <td
                 className={cn(
@@ -275,7 +315,7 @@ export default function CohortCadenceTriangle({
     >
       <p aria-hidden className="shrink-0 text-xs leading-4 text-text-secondary">
         {comparable && highlightBefore !== null && highlightAfter !== null
-          ? `Na idade de ${highlightLabel} a conversão ${highlightAfter.rate >= highlightBefore.rate ? 'sobe' : 'cai'} de ${formatPercent(highlightBefore.rate, 1)}, com os ${formatInt(highlightBefore.cohorts)} cohorts anteriores, para ${formatPercent(highlightAfter.rate, 1)}, com os ${formatInt(highlightAfter.cohorts)} que já entraram sob a nova cadência.`
+          ? `Na idade de ${highlightLabel} a conversão ${highlightAfter.rate >= highlightBefore.rate ? 'sobe' : 'cai'} de ${formatPercent(highlightBefore.rate, 1)}, com os mesmos ${formatInt(highlightBefore.cohorts)} cohorts anteriores, para ${formatPercent(highlightAfter.rate, 1)}, com os mesmos ${formatInt(highlightAfter.cohorts)} da nova cadência.`
           : `Sem dois blocos fechados na idade de ${highlightLabel} não há comparação de cadência a fazer.`}
       </p>
       {comparable && highlightBefore !== null && highlightAfter !== null ? (
@@ -311,7 +351,7 @@ export default function CohortCadenceTriangle({
           </tr>
         </thead>
         <tbody>
-          {renderBlock(before, 'media-antes', 'antes')}
+          {renderBlock(before, populationBefore, 'media-antes', 'antes')}
           <tr>
             <td className="py-1" colSpan={columns.length + 2}>
               <div className="flex items-center gap-2">
@@ -323,7 +363,7 @@ export default function CohortCadenceTriangle({
               </div>
             </td>
           </tr>
-          {renderBlock(after, 'media-depois', 'depois')}
+          {renderBlock(after, populationAfter, 'media-depois', 'depois')}
         </tbody>
       </table>
 
@@ -346,7 +386,7 @@ export default function CohortCadenceTriangle({
         <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span>{`${firstLabel} é a entrada e ${lastLabel} são seis meses depois`}</span>
           <span>{`tracejado: ${formatMonthShort(CURRENT_MONTH)} de calendário, em curso`}</span>
-          <span>média ponderada pelos leads, sem período em curso</span>
+          <span>média ponderada pelos leads, só dos cohorts que já fecharam a idade mais funda do bloco</span>
           {hasFuture ? <span>vazio: período que ainda não começou</span> : null}
           {hasZero ? <span>poço com contorno cheio: zero medido</span> : null}
           {missing > 0 ? (

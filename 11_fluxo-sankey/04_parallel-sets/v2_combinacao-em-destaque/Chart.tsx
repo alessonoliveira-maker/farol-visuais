@@ -18,9 +18,13 @@ import {
 
 /**
  * Parallel sets com UMA combinação acesa: três eixos categóricos da mesma população de agendas e,
- * atravessando os três, a faixa da combinação em foco em `--chart-1`. Todo o resto fica no neutro
- * que a 17.2 reserva para a marca não destacada (`--line-strong`), e os blocos de eixo ficam em
- * `--text-muted`, que mede 5,2:1 no escuro e 5,4:1 no claro contra o cartão.
+ * atravessando os três, a faixa da combinação em foco em `--chart-1`. Todo o resto fica em
+ * `--text-muted` (5,2:1 no escuro e 5,4:1 no claro contra o cartão), neutro de dado a 3:1 da ACE-6:
+ * a fita carrega a relação e não tem número próprio junto, então `--line-strong` não vale (17.2).
+ * Toda fita leva contorno `--surface-raised` de 1 px (COR-5), com `paint-order: stroke` para o traço
+ * ficar sob o preenchimento e nunca comer a fita fina. Os blocos de eixo ficam em `--text-secondary`,
+ * para se separar da fita de mesma família. Segundo canal do destaque (TOK-9): contorno
+ * `--text-primary` na fita e na fatia acesas, sem revestimento largo que apague a vizinha.
  *
  * DUAS DECISÕES DE GEOMETRIA, e as duas existem para a conservação do fluxo ficar visível.
  *
@@ -77,10 +81,15 @@ const TEXT_SIZE = 11;
 const READING_SIZE = 12;
 
 const FOCUS_FILL = 'var(--chart-1)';
-/** O neutro da marca não destacada, como a 17.2 manda. Fica abaixo de 3:1 de propósito. */
-const CONTEXT_FILL = 'var(--line-strong)';
-const BLOCK_FILL = 'var(--text-muted)';
+/** Neutro de dado a 3:1 (ACE-6): a fita fora de foco carrega a relação, sem número próprio. */
+const CONTEXT_FILL = 'var(--text-muted)';
+const BLOCK_FILL = 'var(--text-secondary)';
 const BLOCK_STROKE = 'var(--surface-raised)';
+const RIBBON_STROKE = 'var(--surface-raised)';
+const RIBBON_STROKE_WIDTH = 1;
+/** Segundo canal do destaque: contorno escuro (claro no tema escuro) só na fita e na fatia acesas. */
+const FOCUS_OUTLINE = 'var(--text-primary)';
+const FOCUS_OUTLINE_WIDTH = 1.5;
 
 function categoryOf(combo: ParallelCombo, axis: AxisId): string {
   if (axis === 'origem') return combo.origem;
@@ -273,12 +282,25 @@ export default function FocusedComboParallelSets({
         {ribbons
           .filter((ribbon) => !ribbon.focused)
           .map((ribbon) => (
-            <path d={ribbon.d} fill={CONTEXT_FILL} key={ribbon.key} />
+            <path
+              d={ribbon.d}
+              fill={CONTEXT_FILL}
+              key={ribbon.key}
+              stroke={RIBBON_STROKE}
+              strokeWidth={RIBBON_STROKE_WIDTH}
+              style={{ paintOrder: 'stroke' }}
+            />
           ))}
         {ribbons
           .filter((ribbon) => ribbon.focused)
           .map((ribbon) => (
-            <path d={ribbon.d} fill={FOCUS_FILL} key={ribbon.key} />
+            <path
+              d={ribbon.d}
+              fill={FOCUS_FILL}
+              key={ribbon.key}
+              stroke={FOCUS_OUTLINE}
+              strokeWidth={FOCUS_OUTLINE_WIDTH}
+            />
           ))}
 
         {columns.map((column) =>
@@ -307,6 +329,8 @@ export default function FocusedComboParallelSets({
                   fill={FOCUS_FILL}
                   height={focusedItem.combo.count * scale}
                   key={`focus-${column.axis.id}`}
+                  stroke={FOCUS_OUTLINE}
+                  strokeWidth={FOCUS_OUTLINE_WIDTH}
                   width={BLOCK_WIDTH}
                   x={column.x}
                   y={top}
@@ -370,6 +394,8 @@ export default function FocusedComboParallelSets({
           fill={FOCUS_FILL}
           height={LEGEND_SWATCH_HEIGHT}
           rx={1}
+          stroke={FOCUS_OUTLINE}
+          strokeWidth={1}
           width={LEGEND_SWATCH_WIDTH}
           x={0}
           y={LEGEND_BASELINE - LEGEND_SWATCH_HEIGHT}

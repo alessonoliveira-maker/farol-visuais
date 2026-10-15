@@ -13,6 +13,42 @@
         "data.ts": "e9e52c8b3d0af22fd90509e1744ae190a7872ab3",
         "meta.json": "276a127f61f683e32c150dd53faacff012d36421"
       }
+    },
+    "v3_origens-com-envoltoria": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; três origens com slot fixo 1, 3 e 6 e forma própria, envoltória P5 a P95 com contorno opaco de 5,39 a 9,50:1 nos dois temas carregando o território, legenda com contagem e percentual que soma 100, ausência no rodapé. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:21.123Z",
+      "impressao": "783b5c29cffd9dc9a0b416652f115985804610e6",
+      "arquivos": {
+        "Chart.tsx": "dcea4e778fa5df7d61875d089ae145ed4baeb284",
+        "data.ts": "08265513212d78d32552e4af0ca5376d9e9a2fb2",
+        "meta.json": "f347102d9d8e8763d4a4012c285f112addc1c1ac"
+      }
+    },
+    "v2_extremos-rotulados-com-destaque": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: os seis extremos em --chart-1, um destaque só, com anel de 8,5 px nos seis e peso 700 só em Murilo C. e Sônia H. (TIP-3); nuvem em --text-muted, o neutro sem valor escrito da 17.2; rótulos com halo sem colisão nos dois temas; ausência fora do plano e no rodapé. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:37:36.515Z",
+      "impressao": "b939b77f114c477a628ded490c635c50b01190b3",
+      "arquivos": {
+        "Chart.tsx": "981599e99563ee4ba06a9a446b7da1a436aad555",
+        "data.ts": "4d0304b3b497f844ef6ed94426e0a328ed8f5371",
+        "meta.json": "c4e67d492b7a9facfe13428bc3bd2db27c2c6eea"
+      }
+    },
+    "v4_tempo-de-contato-em-escala-log": {
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 (14.1, versão que não demonstra o que o catálogo diz), REC-15 e REC-31: POINT_RADIUS 2 não chega ao desenho; o ZAxis sem dataKey cai no padrão de 64 px² e os 1.697 pontos saem com 4,514 px de raio nos dois previews, 5,1 vezes a área declarada, enquanto meta.json, README e comentário afirmam raio 2; e o meta.json ainda diz opacidade 0,35 abaixo da ACE-5, com o código em 0,7 passando (5,30 e 3,25:1). Fazer o raio 2 valer (shape própria com r fixo ou ZAxis com domínio), conferir M2,0A2 no preview.svg e reescrever demonstrates e notes do meta.json com 0,7 declarado como desvio da especificação pela ACE-5.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:37:42.794Z",
+      "impressao": "cb0c21454c65b8a19aed3649089da5c46e78457d",
+      "arquivos": {
+        "Chart.tsx": "08354c9dc4697dcf768d47c64f307ff74c77e713",
+        "data.ts": "17c5096ef7081abe39101305cf9503d50587797c",
+        "meta.json": "4690bbf2813bfa76af7a8e166f102ede0922d1ed"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,84 @@
         "Chart.tsx": "9c6b19e731dd3b12354f1311b8bc705f8b1b5bc7",
         "data.ts": "e9e52c8b3d0af22fd90509e1744ae190a7872ab3",
         "meta.json": "276a127f61f683e32c150dd53faacff012d36421"
+      }
+    },
+    {
+      "versao": "v3_origens-com-envoltoria",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; tres origens com slot fixo 1, 3 e 6 e forma propria, envoltoria P5 a P95 com contorno opaco de 5,39 a 9,50:1 nos dois temas carregando o territorio, legenda com contagem e percentual que soma 100, ausencia no rodape. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:00.847Z",
+      "impressao": "783b5c29cffd9dc9a0b416652f115985804610e6",
+      "arquivos": {
+        "Chart.tsx": "dcea4e778fa5df7d61875d089ae145ed4baeb284",
+        "data.ts": "08265513212d78d32552e4af0ca5376d9e9a2fb2",
+        "meta.json": "f347102d9d8e8763d4a4012c285f112addc1c1ac"
+      }
+    },
+    {
+      "versao": "v2_extremos-rotulados-com-destaque",
+      "veredito": "reprovado",
+      "nota": "Pergunta 11, 17.2 e COR-6 (papel de cor, 14.1): os 3 maiores e os 3 menores win rate saem em --positive e --negative, mas o papel semântico é de variação ou estado, nunca pinta série e vem com sinal, ícone ou palavra; aqui é posição no ranking sem base nem palavra. Pintar os seis extremos em --chart-1 (um destaque) mantendo anel e peso 700, ou ancorar o bom e o ruim numa ReferenceLine do win rate do time com a palavra no rótulo.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:13.222Z",
+      "impressao": "6a3ea00efc94584b8850d3d22795b0c46fdebd89",
+      "arquivos": {
+        "Chart.tsx": "58c75d33409145dadc49cd45cf04766fea20a59e",
+        "data.ts": "4d0304b3b497f844ef6ed94426e0a328ed8f5371",
+        "meta.json": "c4e67d492b7a9facfe13428bc3bd2db27c2c6eea"
+      }
+    },
+    {
+      "versao": "v4_tempo-de-contato-em-escala-log",
+      "veredito": "reprovado",
+      "nota": "Pergunta 30, ACE-5 (contraste, 14.1): ponto isolado em --chart-1 a 0,35 mede 2,28:1 no escuro e 1,71:1 no claro, e é justamente a cauda acima de 1 dia que sustenta a conclusão; subir para 0,66 ou mais, ou ponto opaco com contorno na cor da superfície. Pergunta 3, EST-3 (encoding): a faixa do zero desenha 41 marcas em 14 posições (módulo 4 sobre o índice global), e as linhas de 19, 13 e 7 leads saem iguais; escrever ou desenhar a contagem por linha.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:20.533Z",
+      "impressao": "0025346f429528fde6b1178f0230b1d90d28a099",
+      "arquivos": {
+        "Chart.tsx": "25418a7c6ec8bb0b96de50aed62b1fc732d93f6d",
+        "data.ts": "17c5096ef7081abe39101305cf9503d50587797c",
+        "meta.json": "4690bbf2813bfa76af7a8e166f102ede0922d1ed"
+      }
+    },
+    {
+      "versao": "v3_origens-com-envoltoria",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; três origens com slot fixo 1, 3 e 6 e forma própria, envoltória P5 a P95 com contorno opaco de 5,39 a 9,50:1 nos dois temas carregando o território, legenda com contagem e percentual que soma 100, ausência no rodapé. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:23:21.123Z",
+      "impressao": "783b5c29cffd9dc9a0b416652f115985804610e6",
+      "arquivos": {
+        "Chart.tsx": "dcea4e778fa5df7d61875d089ae145ed4baeb284",
+        "data.ts": "08265513212d78d32552e4af0ca5376d9e9a2fb2",
+        "meta.json": "f347102d9d8e8763d4a4012c285f112addc1c1ac"
+      }
+    },
+    {
+      "versao": "v2_extremos-rotulados-com-destaque",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: os seis extremos em --chart-1, um destaque só, com anel de 8,5 px nos seis e peso 700 só em Murilo C. e Sônia H. (TIP-3); nuvem em --text-muted, o neutro sem valor escrito da 17.2; rótulos com halo sem colisão nos dois temas; ausência fora do plano e no rodapé. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:37:36.515Z",
+      "impressao": "b939b77f114c477a628ded490c635c50b01190b3",
+      "arquivos": {
+        "Chart.tsx": "981599e99563ee4ba06a9a446b7da1a436aad555",
+        "data.ts": "4d0304b3b497f844ef6ed94426e0a328ed8f5371",
+        "meta.json": "c4e67d492b7a9facfe13428bc3bd2db27c2c6eea"
+      }
+    },
+    {
+      "versao": "v4_tempo-de-contato-em-escala-log",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 (14.1, versão que não demonstra o que o catálogo diz), REC-15 e REC-31: POINT_RADIUS 2 não chega ao desenho; o ZAxis sem dataKey cai no padrão de 64 px² e os 1.697 pontos saem com 4,514 px de raio nos dois previews, 5,1 vezes a área declarada, enquanto meta.json, README e comentário afirmam raio 2; e o meta.json ainda diz opacidade 0,35 abaixo da ACE-5, com o código em 0,7 passando (5,30 e 3,25:1). Fazer o raio 2 valer (shape própria com r fixo ou ZAxis com domínio), conferir M2,0A2 no preview.svg e reescrever demonstrates e notes do meta.json com 0,7 declarado como desvio da especificação pela ACE-5.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:37:42.794Z",
+      "impressao": "cb0c21454c65b8a19aed3649089da5c46e78457d",
+      "arquivos": {
+        "Chart.tsx": "08354c9dc4697dcf768d47c64f307ff74c77e713",
+        "data.ts": "17c5096ef7081abe39101305cf9503d50587797c",
+        "meta.json": "4690bbf2813bfa76af7a8e166f102ede0922d1ed"
       }
     }
   ]

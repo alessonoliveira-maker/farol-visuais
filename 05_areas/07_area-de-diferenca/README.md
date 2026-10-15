@@ -191,6 +191,24 @@ A `v1` foi reprovada nesta data por um bloqueante de contraste (pergunta 30, ACE
 - **`v1`**: a amostra "Referência: zero" e a própria linha usam `--line-strong` (1,79:1 no escuro e
   1,83:1 no claro); é referência e não dado, e a tensão é a E5 do contrato, ainda aberta.
 
+### Revisão independente de 2026-10-15 (só a `v1`, depois da segunda rodada de correção)
+
+A `v1` foi aprovada nesta data: com `FILL_OPACITY` em 0,70 o bloqueante de ACE-5 de 2026-10-02 está
+resolvido. O que segue é o que não reprova.
+
+- **`v1`**: a folga da ACE-5 no claro é mínima. Medido à mão, com canal arredondado: `--positive`
+  composto mede 3,03:1 no claro (3,07:1 no PNG) e 4,26:1 no escuro; `--negative` mede 3,67:1 no claro
+  e 3,28:1 no escuro. Qualquer ajuste em `--positive` ou em `--surface-raised` derruba o verde abaixo
+  do piso sem aviso, porque a guarda OPACIDADE-MARCA não lê o `fill` em `url(#…)` e lista a `v1` como
+  `sem_opacidade_em_marca`.
+- **`v1`**: a amostra de "Positivo" e "Negativo" sai redonda, 10 px, na cor cheia, enquanto a marca é
+  área a 0,70; a ROT-4 pede amostra na forma da marca. A identificação não se perde, porque o nome
+  está ao lado.
+- **`v1`**: seguem abertas as observações de 2026-10-02 que não tratavam da ACE-5: o comentário do
+  tique (`Chart.tsx:36`) ainda cita `R$ -50 mil`; o comentário do topo promete a contagem de meses na
+  tela (DAD-10); `Y_AXIS_WIDTH` em 80; tique do eixo X sem `font-display`; `id` do gradiente com os
+  dois pontos do `useId()`; zero em `--line-strong`.
+
 ## Pendências conhecidas
 
 - **`v3`**: domínio de 0 a 100% com SLA que nunca desce de 74% deixa mais da metade do corpo

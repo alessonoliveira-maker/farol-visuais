@@ -288,7 +288,10 @@ function DriverCard({ positioned, highlight, annotation }: DriverCardProps): Rea
       <div className="flex shrink-0 flex-col gap-1">
         <div aria-hidden className="relative h-1 w-full rounded-full bg-line-strong">
           <span
-            className="absolute top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-chart-1"
+            className={cn(
+              'absolute top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full',
+              highlight ? 'bg-chart-1' : 'bg-text-muted',
+            )}
             style={{ left: `${String(fraction * 100)}%` }}
           />
         </div>

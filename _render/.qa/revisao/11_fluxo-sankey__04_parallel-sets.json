@@ -13,6 +13,42 @@
         "data.ts": "39c250c0ab2a808be90716fea75278dccc515c30",
         "meta.json": "3286aa3e7030205f940fed9d5d21520c60d7d53b"
       }
+    },
+    "v2_combinacao-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: as 27 fitas fora de foco em --text-muted opaco (5,21:1 e 5,37:1, ACE-6), contorno --surface-raised em toda fita (COR-5), blocos em --text-secondary separados da fita nos dois temas, e segundo canal do destaque por contorno --text-primary (2,79:1 e 3,34:1 contra a neutra) mais peso 600 e 700 (TOK-9, TIP-3). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:29.607Z",
+      "impressao": "1a81a925c30b522abf1d419eac5ce09e8b6e4685",
+      "arquivos": {
+        "Chart.tsx": "a713e09c7b272c4a17dc8f181fa58a8091c5c4fb",
+        "data.ts": "96376389828bfe64592d035b8b62e144006a95bf",
+        "meta.json": "04feabc3900bfec9ae87553e193dfe43d82d7b22"
+      }
+    },
+    "v3_cobertura-de-dado-dos-leads-por-origem": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: as 36 fitas dos leads sem telefone em --text-muted opaco (5,21:1 e 5,37:1, ACE-6) com contorno --surface-raised (COR-5); par --chart-1 contra --text-muted medido no notes (1,82:1 e 1,12:1) com segundo canal declarado na posição do stackOrder e no bloco vazado; os quatro eixos fecham em 1.240 e as duas taxas conferem com o dado. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:36.452Z",
+      "impressao": "a99fd6551ff1b880c4543565e2a0c5414b4c5358",
+      "arquivos": {
+        "Chart.tsx": "5df5ed339f6e9575cbe0b1ca01113781b5ccab1e",
+        "data.ts": "0d1b9fc266684e4330cbbf39e4da9c04866f9984",
+        "meta.json": "7babb60d968f5b5ef977f8daec9357ad8aed4804"
+      }
+    },
+    "v4_combinacoes-raras-agregadas": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro (aviso de frase em 235 de 250); bloqueante da rodada anterior resolvido: as 6 raras ficam dentro das categorias, no pé de cada bloco e em --text-muted (ACE-6), e os 12 blocos escrevem o total real (Cancelada 20, Não compareceu 9, Grande 78, Mídia social 54), conferido contra o data.ts; Porte e Desfecho sem valor que não é deles. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:37.417Z",
+      "impressao": "63c72c2311924523c352c1f50d1d233e19a2252e",
+      "arquivos": {
+        "Chart.tsx": "30cdface4e5a2a078041fe003bbb5f4dd957246a",
+        "data.ts": "9357412cc9498676e34ecbe3cd7f410ce1f1bcda",
+        "meta.json": "19264a2cf97fa7831880ef41b5e0ee4924ece8f3"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,84 @@
         "Chart.tsx": "9fafe1fe5fd4e53edd1801e5cfebec8abdba9348",
         "data.ts": "39c250c0ab2a808be90716fea75278dccc515c30",
         "meta.json": "3286aa3e7030205f940fed9d5d21520c60d7d53b"
+      }
+    },
+    {
+      "versao": "v2_combinacao-em-destaque",
+      "veredito": "reprovado",
+      "nota": "Perguntas 32, 11 e 20; ACE-6 e tabela 17.2: as 27 fitas fora de foco (55 marcas) estao em --line-strong, 1,79:1 e 1,83:1, sem numero proprio junto; trocar por neutro de dado a 3:1 (--text-muted), com contorno --surface-raised da COR-5 e segundo canal no destaque (TOK-9). Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:01:06.826Z",
+      "impressao": "e9a62958c067a4b3dee676a2198c560b41e91c15",
+      "arquivos": {
+        "Chart.tsx": "9016e93c3bc2c29ef1852dfed3fceabd38e6f301",
+        "data.ts": "96376389828bfe64592d035b8b62e144006a95bf",
+        "meta.json": "61798cad812e22db31018721d9dd4052f7fa75c6"
+      }
+    },
+    {
+      "versao": "v3_cobertura-de-dado-dos-leads-por-origem",
+      "veredito": "reprovado",
+      "nota": "Perguntas 32, 11 e 20; ACE-6 e tabela 17.2: as 36 fitas dos leads sem telefone, metade da resposta (84 de 520 qualificados), estao em --line-strong, 1,79:1 e 1,83:1, sem numero proprio junto; trocar por neutro de dado a 3:1 (--text-muted cheio com contorno --surface-raised, ou fita vazada com contorno --text-muted) e medir o par com --chart-1 nos dois temas (TOK-9). Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:01:12.238Z",
+      "impressao": "4b930cb35c0b66643638babe48cfc0a3771c95bf",
+      "arquivos": {
+        "Chart.tsx": "5dfbf3b4d83267f9b6112084d2d4d15b8fab5c27",
+        "data.ts": "0d1b9fc266684e4330cbbf39e4da9c04866f9984",
+        "meta.json": "0d2e59c471cc04a56234fd2c5f38b54f92ca8228"
+      }
+    },
+    {
+      "versao": "v4_combinacoes-raras-agregadas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 3 e 14.1 (encoding): ao tirar as 6 raras das suas categorias, 10 dos 12 blocos nomeados medem e escrevem menos que o total real (Cancelada 11 de 20, Nao compareceu 5 de 9, Grande 66 de 78, Midia social 48 de 54) e Porte e Desfecho ganham uma categoria que nao e valor deles; os blocos nomeados voltam ao total real e a parte rara fica dentro da categoria, por ultimo, no neutro da agregada. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:01:15.000Z",
+      "impressao": "3278bae6c285b3e2b5b6cabe3f230237ae516f89",
+      "arquivos": {
+        "Chart.tsx": "8ad5ec13d74a0d3eab128ce24f376a9983d8d1bb",
+        "data.ts": "9357412cc9498676e34ecbe3cd7f410ce1f1bcda",
+        "meta.json": "19fa5afd0cc222a00841e00c74eed45486546983"
+      }
+    },
+    {
+      "versao": "v2_combinacao-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: as 27 fitas fora de foco em --text-muted opaco (5,21:1 e 5,37:1, ACE-6), contorno --surface-raised em toda fita (COR-5), blocos em --text-secondary separados da fita nos dois temas, e segundo canal do destaque por contorno --text-primary (2,79:1 e 3,34:1 contra a neutra) mais peso 600 e 700 (TOK-9, TIP-3). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:29.607Z",
+      "impressao": "1a81a925c30b522abf1d419eac5ce09e8b6e4685",
+      "arquivos": {
+        "Chart.tsx": "a713e09c7b272c4a17dc8f181fa58a8091c5c4fb",
+        "data.ts": "96376389828bfe64592d035b8b62e144006a95bf",
+        "meta.json": "04feabc3900bfec9ae87553e193dfe43d82d7b22"
+      }
+    },
+    {
+      "versao": "v3_cobertura-de-dado-dos-leads-por-origem",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; bloqueante da rodada anterior resolvido: as 36 fitas dos leads sem telefone em --text-muted opaco (5,21:1 e 5,37:1, ACE-6) com contorno --surface-raised (COR-5); par --chart-1 contra --text-muted medido no notes (1,82:1 e 1,12:1) com segundo canal declarado na posição do stackOrder e no bloco vazado; os quatro eixos fecham em 1.240 e as duas taxas conferem com o dado. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:36.452Z",
+      "impressao": "a99fd6551ff1b880c4543565e2a0c5414b4c5358",
+      "arquivos": {
+        "Chart.tsx": "5df5ed339f6e9575cbe0b1ca01113781b5ccab1e",
+        "data.ts": "0d1b9fc266684e4330cbbf39e4da9c04866f9984",
+        "meta.json": "7babb60d968f5b5ef977f8daec9357ad8aed4804"
+      }
+    },
+    {
+      "versao": "v4_combinacoes-raras-agregadas",
+      "veredito": "aprovado",
+      "nota": "Check sem erro (aviso de frase em 235 de 250); bloqueante da rodada anterior resolvido: as 6 raras ficam dentro das categorias, no pé de cada bloco e em --text-muted (ACE-6), e os 12 blocos escrevem o total real (Cancelada 20, Não compareceu 9, Grande 78, Mídia social 54), conferido contra o data.ts; Porte e Desfecho sem valor que não é deles. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:15:37.417Z",
+      "impressao": "63c72c2311924523c352c1f50d1d233e19a2252e",
+      "arquivos": {
+        "Chart.tsx": "30cdface4e5a2a078041fe003bbb5f4dd957246a",
+        "data.ts": "9357412cc9498676e34ecbe3cd7f410ce1f1bcda",
+        "meta.json": "19264a2cf97fa7831880ef41b5e0ee4924ece8f3"
       }
     }
   ]

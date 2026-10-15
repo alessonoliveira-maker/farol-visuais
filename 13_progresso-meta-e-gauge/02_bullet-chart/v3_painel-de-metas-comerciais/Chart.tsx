@@ -1,4 +1,4 @@
-import { TriangleAlert } from 'lucide-react';
+import { Filter, TriangleAlert } from 'lucide-react';
 import type { ReactElement } from 'react';
 import { Bar, BarChart, LabelList, ReferenceArea, ReferenceLine, ResponsiveContainer, XAxis, YAxis, type LabelProps } from 'recharts';
 
@@ -38,6 +38,15 @@ interface NameTickProps {
 export default function CommercialGoalsPanelChart({ data = defaultData, height, className }: CommercialGoalsPanelChartProps) {
   const animate = useAnimateOnce();
   const style = height === undefined ? undefined : { height };
+  if (data.metrics.length === 0) {
+    return (
+      <div className={cn('flex h-full w-full min-w-0 items-center justify-center gap-2', className)} role="status" style={style}>
+        <Filter aria-hidden color="var(--text-muted)" height={16} width={16} />
+        <span className="font-sans" style={{ color: 'var(--text-muted)', fontSize: 12 }}>O recorte não tem metas no trimestre, então não há o que comparar com a meta.</span>
+      </div>
+    );
+  }
+
   const rows = data.metrics.map((metric) => ({ ...metric, percent: (metric.value / metric.target) * 100 }));
   const domainMax = Math.max(130, ...rows.map((row) => row.percent)) * 1.02;
   const belowCount = rows.filter((row) => row.percent < data.acceptableFrom).length;

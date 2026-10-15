@@ -69,9 +69,6 @@ limite conhecido do tema, registrados para quem for copiar o modelo._
   ficava sem a régua que diz quanto falta. Corrigido em 2026-09-29: as três versões pintam o
   `background` em `--surface-sunken`, e na v3 a fila sem coleta segue em contorno tracejado de
   `--line-strong`.
-- **v1:** o canto superior esquerdo do `57` para a menos de 1 px da borda interna do arco no canvas
-  `kpi-alto`; não há sobreposição nem perda de contraste, mas a folga é a menor da família e um
-  valor de três dígitos encostaria.
 - **v1:** a linha de leitura e a frase de origem da meta saem truncadas no canvas do preview
   (`setembro de 2…`, `planejamento comercial j…`); a leitura sobrevive, o ano e o fim da frase não.
 - **v1:** `ratio` é travado por `Math.min(1, value / target)`, então um realizado acima da meta
@@ -81,11 +78,82 @@ limite conhecido do tema, registrados para quem for copiar o modelo._
   o verde seguram a leitura, mas o traço "sobre o arco" da Anatomia não é o que sai no PNG.
 - **v2:** o trecho excedente nasce com `cornerRadius` nas duas pontas e encosta no ciano só pelo
   raio médio, o que faz o verde ler como pílula solta em vez de continuação do mesmo arco.
-- **v2:** a frase de rodapé é cortada antes de `Arco alarga a 24 só para o excedente caber`, que é
-  justamente o que explica a folga escura depois do verde.
 - **v2:** `MinLabel` e `CenterLabel` desenham `<text>` sem `aria-hidden`, diferente da v1; sem efeito
   prático porque a raiz é `role="img"`, mas quebra a simetria entre as versões.
 - **v3:** no tema claro a fila em zero medido fica só com o número `0` e o par `0,0% (0 de 25)`,
   sem nenhum arco, porque o trilho é invisível ali; é a demonstração de "zero medido com o arco de
   fundo sozinho" que se perde num dos dois temas, e o contorno tracejado usado na fila sem coleta
   resolveria também esse caso.
+
+_Revisão de 2026-10-14, sobre o código de 2026-09-28 (trilho em `--surface-sunken`). O trilho agora
+aparece nos dois temas, inclusive na fila em zero da v3. Dois pontos da revisão anterior mudaram de
+peso e foram para o parecer em `validation/revisao_13_progresso-meta-e-gauge__05_gauge-de-arco-preenchido_2026-10-14.md`:
+o `57` da v1 encosta no arco (bloqueante) e o rodapé cortado da v2 perde o domínio (bloqueante pela
+emenda da TIP-7 de 2026-09-28). O que segue é nota, não reprova._
+
+- **v1:** a linha de leitura corta em `setembro de 2…`; a cauda perdida é o ano, o achado vem antes
+  e a frase acessível tem o resto, então a TIP-7 permite, mas a data partida lê mal (`formatMonthShort`
+  ou quebra em duas linhas).
+- **v1:** o rodapé corta em `planejamento comercial j…`; passa nas duas condições da TIP-7.
+- **v1:** `ratio` devolve 0 quando `target` é 0 (aviso AGREGACAO-ZERO, dívida conhecida): a peça
+  escreveria `0,0% da meta` e `Faltam 0` em vez de `formatUnavailable()`.
+- **v1:** `de 90` (em `font-sans`), o `90` do rodapé e o ano da linha de leitura são números em
+  Manrope sem `tabular-nums` (TIP-1); sem efeito visível numa linha só.
+- **v1:** o `90` sai três vezes (ponta, `de 90` e rodapé); o `de 90` repete a ponta ao lado.
+- **v1:** o `meta.json` escreve `endAngle -30` com hífen; o catálogo escreve "menos 30".
+- **v1 e v2:** os rótulos das pontas e o traço de meta usam `min(largura, altura) / 2` como raio, sem
+  a margem de 5 px nem o vão de banda que o Recharts aplica; na v2 o traço passa 10,8 px além da
+  borda externa (o código pretende 5) e os rótulos não acompanham a banda se o canvas mudar.
+- **v2:** `+15,0%` deveria sair `+15%` pela NUM-1 (variação inteira a partir de 10%), como o catálogo
+  escreve.
+- **v2:** o domínio é fixo em 1,2 vez a meta; realizado acima de 24 passa do fim do arco. Um teto
+  `Math.max` entre 1,2 vez a meta e o realizado com folga evita o transbordo.
+- **v2:** com `target` 0, `over / target` vira infinito na linha positiva e na frase acessível.
+- **v2:** continuam valendo as notas de 2026-09-18 sobre o traço de meta pintado por baixo do arco e
+  o verde que lê como pílula; a meta segue identificável pelo toco externo, pelo rótulo e pela
+  emenda de cor.
+- **v2:** o `20` sai três vezes (linha positiva, `meta 20` e rodapé).
+- **v3:** `truncate` no nome da fila (a TIP-7 proíbe reticência em nome de marca) e na linha do par de
+  contagens, que carrega o número; nada corta no preview, mas num cartão estreito são os primeiros a
+  sumir. Deixar quebrar.
+- **v3:** o percentual sob cada arco usa a capacidade da própria fila e o arco usa o domínio comum;
+  com capacidades diferentes o texto e o arco divergem. O dado de amostra tem as três capacidades
+  iguais, então o caso não é exercitado.
+- **v3:** `72,0% (18 de 25)` em Manrope sem `tabular-nums` (TIP-1).
+- **v3:** o contorno da fila sem coleta em `--line-strong` mede 1,8:1 contra o cartão; vale pela saída
+  da TOK-1 (dois estados de ausência, um em poço e outro em contorno) e porque a palavra e o ícone
+  carregam o estado.
+
+_Correção de 2026-10-14: v1 com o número em 26 px (20 px com três algarismos), linha de base mais alta e `CenterLabel` desenhado depois do `RadialBar`; v2 com o rodapé sem `truncate`, domínio do arco dito primeiro e levado à frase acessível, e número central com corpo proporcional ao miolo do arco._
+
+_Revisão de 2026-10-14, segunda passada, sobre a correção acima. Os dois bloqueantes saíram: a
+tinta do `57` da v1 fica a 8 px do arco nos dois temas (medido no PNG de 2x, pixel de texto puro
+contra pixel de arco puro), e o rodapé da v2 diz o fim do arco inteiro, em duas linhas. v1 e v2
+aprovadas. O que segue é nota, não reprova._
+
+- **v1:** o `CenterLabel` vem depois do `RadialBar` no JSX, mas o Recharts 3 pinta o setor preenchido
+  numa camada própria, e no `preview.svg` o `<path>` do arco continua depois do `<text>` do número;
+  a nota de correção acima promete uma ordem que o render não entrega. Sem consequência hoje, porque
+  a folga é de 8 px, e com três algarismos em 20 px a conta dá folga acima de 7 px.
+- **v1:** continuam valendo as notas anteriores sobre a leitura cortada em `setembro de 2…`, o rodapé
+  cortado em `planejamento comercial j…`, o ramo de `target` 0 e o `de 90` em Manrope sem
+  `tabular-nums`.
+- **v1 e v2:** os deslocamentos do número e dos rótulos estão escritos no meio do JSX, e não como
+  constantes nomeadas no topo (seção 5): `cy - 1`, `cy + 16` e o par `20 : 26` na v1; `0.5 * 0.58 * 0.8 - 4`,
+  `outer + 5`, `inner - 4`, `outer + 20` e o fator `1.1` na v2.
+- **v2:** o rodapé em duas linhas tirou 29 px do corpo do arco (de 111 para 82 px). O raio externo caiu
+  para 33 px e a banda para 9 px, abaixo do piso geral de 12 px da ESP-2 (aviso, sem medição atrás), e
+  o arco ocupa um quinto da largura do cartão. Tudo segue legível nos dois temas; um canvas por número
+  mais alto, declarado pela GEO-1, devolveria o arco da v1.
+- **v2:** o corpo do número central usa `0.58` fixo como fração do raio interno, enquanto
+  `INNER_FRACTION` vale `0.64`; o `23` saiu em 15 px com 12 px de folga até a borda interna e caberia
+  maior se a conta derivasse da constante.
+- **v2:** `+15,0%` segue com uma casa na linha positiva e na frase acessível (NUM-1 pede `+15%` a partir
+  de 10%). A frase tem 242 caracteres, a 8 do teto da ACE-1, e cresce com o nome da métrica.
+- **v2:** a linha positiva usa `truncate` e a cauda dela carrega a meta (`da meta de 20`); nada corta no
+  preview, mas a TIP-7 só admite reticência quando a cauda não leva número. Deixar quebrar.
+- **v2:** os números do cabeçalho, da linha positiva e do rodapé estão em Manrope sem `tabular-nums`
+  (TIP-1), sem efeito visível.
+- **v2:** continuam valendo as notas anteriores sobre o traço de meta pintado por baixo do arco (o que
+  se vê é o toco externo e o traço nas quinas da emenda entre o ciano e o verde), o verde que lê como
+  pílula, o domínio fixo em 1,2 vez a meta e o ramo de `target` 0.

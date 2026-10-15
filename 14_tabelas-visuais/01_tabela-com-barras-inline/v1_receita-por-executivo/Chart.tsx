@@ -94,7 +94,7 @@ export default function RevenueBarTable({ data = defaultData, height, className 
                         <div
                           aria-hidden
                           className="absolute inset-y-0 border-l border-dashed"
-                          style={{ borderColor: 'var(--text-muted)', left: `${String(averagePct)}%` }}
+                          style={{ borderColor: 'var(--text-primary)', boxShadow: '0 0 0 1px var(--surface-raised)', left: `${String(averagePct)}%` }}
                         />
                       </div>
                       <span

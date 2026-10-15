@@ -43,6 +43,10 @@ function bandForIndex(index: number): { readonly inner: string; readonly outer: 
   return RING_BANDS[index] ?? RING_BANDS[RING_BANDS.length - 1] ?? { inner: '30%', outer: '50%' };
 }
 
+function unitFor(count: number, ring: { readonly unit: string; readonly unitOne: string }): string {
+  return count === 1 ? ring.unitOne : ring.unit;
+}
+
 function ringColor(id: string): string {
   return RING_COLOR[id] ?? 'var(--chart-1)';
 }
@@ -82,8 +86,12 @@ export default function ProportionalGoalRings({
   const summary = [
     `Anéis concêntricos com ${String(rings.length)} metas de alguém que entrou na semana.`,
     over ? `${over.label} passou de 100%, com ${formatPercent((over.pct ?? 0) / 100)} da meta proporcional.` : '',
-    under ? `${under.label} não fechou, falta ${formatInt(under.missing ?? 0)} ${under.unit}.` : '',
-    withoutGoal ? `${withoutGoal.label} ainda sem meta definida.` : '',
+    under
+      ? `${under.label} não fechou, ${(under.missing ?? 0) === 1 ? 'falta' : 'faltam'} ${formatInt(under.missing ?? 0)} ${unitFor(under.missing ?? 0, under)}.`
+      : '',
+    withoutGoal
+      ? `${withoutGoal.label} ainda sem meta definida, com ${formatInt(withoutGoal.value)} ${unitFor(withoutGoal.value, withoutGoal)}.`
+      : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -129,7 +137,11 @@ export default function ProportionalGoalRings({
           {rings.map((ring) => (
             <li className="min-w-0" key={ring.id}>
               <div className="flex items-center gap-2">
-                <span aria-hidden className="size-2.5 shrink-0 rounded-full" style={{ backgroundColor: ringColor(ring.id) }} />
+                <span
+                  aria-hidden
+                  className={cn('size-2.5 shrink-0 rounded-full', ring.goal === null && 'border border-dashed border-text-muted')}
+                  style={ring.goal === null ? undefined : { backgroundColor: ringColor(ring.id) }}
+                />
                 <span className="min-w-0 flex-1 truncate text-xs font-medium text-text-primary">{ring.label}</span>
                 {ring.goal === null ? (
                   <CircleDashed aria-hidden className="size-4 shrink-0 text-text-muted" />
@@ -138,11 +150,14 @@ export default function ProportionalGoalRings({
                 ) : null}
               </div>
               <p className="pl-5 text-xs text-text-muted">
-                <span className="kpi-number font-semibold text-text-primary">{formatInt(ring.value)}</span> de{' '}
-                {ring.goal === null ? 'sem meta' : `${formatInt(ring.goal)} ${ring.unit}`}
-                {ring.pct === null
-                  ? ''
-                  : `, ${ring.closed ? formatPercent(ring.pct / 100) : `faltam ${formatInt(ring.missing ?? 0)} ${ring.unit}`}`}
+                <span className="kpi-number font-semibold text-text-primary">{formatInt(ring.value)}</span>{' '}
+                {ring.goal === null
+                  ? `${unitFor(ring.value, ring)}, sem meta definida`
+                  : `de ${formatInt(ring.goal)} ${unitFor(ring.goal, ring)}, ${
+                      ring.closed
+                        ? formatPercent((ring.pct ?? 0) / 100)
+                        : `${(ring.missing ?? 0) === 1 ? 'falta' : 'faltam'} ${formatInt(ring.missing ?? 0)} ${unitFor(ring.missing ?? 0, ring)}`
+                    }`}
               </p>
             </li>
           ))}

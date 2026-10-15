@@ -1,6 +1,6 @@
 # Catálogo VISUAIS do Farol
 
-> Índice mestre do catálogo. Atualizado em 2026-09-30. Todo dado do catálogo é fictício e fixo: nenhum nome de pessoa, empresa, documento ou contato é real. Para trabalhar no catálogo, comece por [CLAUDE.md](CLAUDE.md); para operar a produção, por [_operacao/ORQUESTRADOR.md](_operacao/ORQUESTRADOR.md).
+> Índice mestre do catálogo. Atualizado em 2026-10-15. Todo dado do catálogo é fictício e fixo: nenhum nome de pessoa, empresa, documento ou contato é real. Para trabalhar no catálogo, comece por [CLAUDE.md](CLAUDE.md); para operar a produção ou a manutenção, por [_operacao/ORQUESTRADOR.md](_operacao/ORQUESTRADOR.md).
 
 ## Propósito
 
@@ -14,12 +14,13 @@ Stack: React 18.3, TypeScript estrito, Recharts 3.10, Tailwind 4 e lucide-react.
 
 ## Estado
 
-O estado vivo (números, o que funciona, bloqueios) está em [STATUS.md](STATUS.md) e sai de `node _operacao/fila.mjs --resumo`; este índice não repete números para não envelhecer. O plano do catálogo está fechado em [`_estudo/catalogo.json`](_estudo/catalogo.json), os 27 READMEs de família estão escritos, os moldes da ferramenta são 3 em [`_render/exemplos/`](_render/exemplos/), e `npm run dossie -- <familia>/<modelo>` gera a leitura única de quem produz.
+O estado vivo (números, o que funciona, bloqueios) está em [STATUS.md](STATUS.md) e sai de `node _operacao/fila.mjs --resumo`; os números que este índice traz (o parágrafo abaixo e a tabela de famílias) são **datados**, e o STATUS manda quando divergirem. O plano do catálogo está fechado em [`_estudo/catalogo.json`](_estudo/catalogo.json), os 27 READMEs de família estão escritos, os moldes da ferramenta são 3 em [`_render/exemplos/`](_render/exemplos/), e `npm run dossie -- <familia>/<modelo>` gera a leitura única de quem produz. A [galeria](galeria.html) (`npm run galeria`, fora do git) mostra cada versão com o **veredito** ao lado do estado do preview (`aprovada` ou `reprovada, pendência conhecida`, desde 2026-10-15); quem cola no Farol só usa versão aprovada, e `npm run lint -- <familia>/<modelo>` diz antes o que o lint do Farol vai cobrar.
 
-**A contagem tem quatro respostas verdadeiras e elas não são intercambiáveis:** versões planejadas no
-catálogo (814), versões com pasta e `Chart.tsx` no disco (491), versões com todas as pendências fechadas
-(308, que é o `prontas` do `pendencias`, e desconta quem espera veredito) e modelos completos (124).
-Antes de citar um número, diga qual dos quatro é.
+**A contagem tem quatro respostas verdadeiras e elas não são intercambiáveis.** Na medição de 2026-10-15
+(`npm run pendencias` com tipos): versões planejadas no catálogo (814), versões com pasta e `Chart.tsx` no
+disco (814), versões com todas as pendências fechadas (784, que é o `prontas` do `pendencias`, e desconta
+quem espera veredito ou ficou reprovado) e modelos completos (205). Que duas delas hoje coincidam não as
+torna a mesma pergunta. Antes de citar um número, diga qual dos quatro é e de que data.
 
 ## Como navegar
 
@@ -97,38 +98,38 @@ Slugs de pasta não levam acento; o texto de tela leva.
 
 ## Famílias
 
-Números calculados de [`_estudo/catalogo.json`](_estudo/catalogo.json). **Versões planejadas** são as que já têm título, caso de uso, o que demonstra e canvas definidos no catálogo; quantas existem no disco e quantas estão aprovadas sai de `npm run pendencias` e está resumido em [STATUS.md](STATUS.md). Na coluna Abordagens, `nativo` é `recharts-nativo`, `custom` é `recharts-custom`, `svg` é `svg-puro` e `html` é `html-tailwind`, com o número de modelos de cada uma.
+Modelos, versões planejadas e abordagens são calculados de [`_estudo/catalogo.json`](_estudo/catalogo.json). **Versões planejadas** são as que já têm título, caso de uso, o que demonstra e canvas definidos no catálogo. As colunas **Versões no disco**, **Prontas** e **Reprovadas em pendência conhecida** são a medição de 2026-10-15 (`npm run pendencias` com tipos, gravada às 14:07Z em `_render/.qa/pendencias.json`, depois da segunda rodada de correção do Lote 25) e foram contadas por script a partir desse arquivo, família por família: no disco é a versão sem os motivos `sem_pasta` e `sem_chart`; pronta é a versão sem motivo nenhum, isto é, check em zero erro e veredito aprovado válido; reprovada conta o motivo `revisao_reprovada`, o único aberto no acervo nessa data (9 versões em 8 modelos, cosméticas ou de régua por decisão D13, cada uma com o veredito registrado em [_operacao/LOG.md](_operacao/LOG.md)). Nessa medição, aprovada e pronta coincidem, porque nenhuma versão aprovada tem outro motivo aberto; por isso a tabela traz uma coluna só. O estado vivo segue em [STATUS.md](STATUS.md), e estas três colunas valem para a data da medição até serem recalculadas. Na coluna Abordagens, `nativo` é `recharts-nativo`, `custom` é `recharts-custom`, `svg` é `svg-puro` e `html` é `html-tailwind`, com o número de modelos de cada uma.
 
-| # | Família | Modelos | Versões planejadas | Abordagens | Estudo e plano |
-|---|---|---:|---:|---|---|
-| 01 | [Cards e KPIs](01_cards-e-kpis/README.md) | 8 | 32 | nativo 1, svg 1, html 6 | [estudo](_estudo/familias/01_cards-e-kpis.md), [catálogo](_estudo/catalogo/01_cards-e-kpis.json) |
-| 02 | [Barras horizontais](02_barras-horizontais/README.md) | 10 | 39 | nativo 5, custom 2, svg 2, html 1 | [estudo](_estudo/familias/02_barras-horizontais.md), [catálogo](_estudo/catalogo/02_barras-horizontais.json) |
-| 03 | [Colunas verticais](03_colunas-verticais/README.md) | 8 | 32 | nativo 5, custom 2, html 1 | [estudo](_estudo/familias/03_colunas-verticais.md), [catálogo](_estudo/catalogo/03_colunas-verticais.json) |
-| 04 | [Linhas](04_linhas/README.md) | 9 | 35 | nativo 7, custom 2 | [estudo](_estudo/familias/04_linhas.md), [catálogo](_estudo/catalogo/04_linhas.json) |
-| 05 | [Áreas](05_areas/README.md) | 10 | 39 | nativo 7, custom 2, svg 1 | [estudo](_estudo/familias/05_areas.md), [catálogo](_estudo/catalogo/05_areas.json) |
-| 06 | [Pizza](06_pizza/README.md) | 6 | 24 | nativo 3, custom 3 | [estudo](_estudo/familias/06_pizza.md), [catálogo](_estudo/catalogo/06_pizza.json) |
-| 07 | [Rosca e radial](07_rosca-e-radial/README.md) | 7 | 28 | nativo 5, custom 1, svg 1 | [estudo](_estudo/familias/07_rosca-e-radial.md), [catálogo](_estudo/catalogo/07_rosca-e-radial.json) |
-| 08 | [Combinados e eixo duplo](08_combinados-e-eixo-duplo/README.md) | 6 | 24 | nativo 5, custom 1 | [estudo](_estudo/familias/08_combinados-e-eixo-duplo.md), [catálogo](_estudo/catalogo/08_combinados-e-eixo-duplo.json) |
-| 09 | [Dispersão e bolhas](09_dispersao-e-bolhas/README.md) | 11 | 44 | nativo 5, custom 2, svg 2, html 2 | [estudo](_estudo/familias/09_dispersao-e-bolhas.md), [catálogo](_estudo/catalogo/09_dispersao-e-bolhas.json) |
-| 10 | [Funil](10_funil/README.md) | 7 | 28 | nativo 4, custom 2, html 1 | [estudo](_estudo/familias/10_funil.md), [catálogo](_estudo/catalogo/10_funil.json) |
-| 11 | [Fluxo e Sankey](11_fluxo-sankey/README.md) | 5 | 20 | nativo 1, custom 1, svg 3 | [estudo](_estudo/familias/11_fluxo-sankey.md), [catálogo](_estudo/catalogo/11_fluxo-sankey.json) |
-| 12 | [Hierarquia](12_hierarquia/README.md) | 8 | 32 | nativo 2, custom 1, svg 3, html 2 | [estudo](_estudo/familias/12_hierarquia.md), [catálogo](_estudo/catalogo/12_hierarquia.json) |
-| 13 | [Progresso, meta e gauge](13_progresso-meta-e-gauge/README.md) | 7 | 26 | nativo 3, custom 3, html 1 | [estudo](_estudo/familias/13_progresso-meta-e-gauge.md), [catálogo](_estudo/catalogo/13_progresso-meta-e-gauge.json) |
-| 14 | [Tabelas visuais](14_tabelas-visuais/README.md) | 9 | 36 | svg 1, html 8 | [estudo](_estudo/familias/14_tabelas-visuais.md), [catálogo](_estudo/catalogo/14_tabelas-visuais.json) |
-| 15 | [Mapa de calor e calendário](15_mapa-de-calor-e-calendario/README.md) | 8 | 32 | svg 6, html 2 | [estudo](_estudo/familias/15_mapa-de-calor-e-calendario.md), [catálogo](_estudo/catalogo/15_mapa-de-calor-e-calendario.json) |
-| 16 | [Distribuição](16_distribuicao/README.md) | 13 | 51 | nativo 5, custom 4, svg 4 | [estudo](_estudo/familias/16_distribuicao.md), [catálogo](_estudo/catalogo/16_distribuicao.json) |
-| 17 | [Comparação de pontos](17_comparacao-de-pontos/README.md) | 6 | 24 | nativo 3, custom 2, svg 1 | [estudo](_estudo/familias/17_comparacao-de-pontos.md), [catálogo](_estudo/catalogo/17_comparacao-de-pontos.json) |
-| 18 | [Radar](18_radar/README.md) | 6 | 24 | nativo 3, custom 1, svg 2 | [estudo](_estudo/familias/18_radar.md), [catálogo](_estudo/catalogo/18_radar.json) |
-| 19 | [Cascata (waterfall)](19_cascata-waterfall/README.md) | 8 | 32 | custom 6, svg 2 | [estudo](_estudo/familias/19_cascata-waterfall.md), [catálogo](_estudo/catalogo/19_cascata-waterfall.json) |
-| 20 | [Cronograma e linha do tempo](20_cronograma-e-linha-do-tempo/README.md) | 9 | 36 | nativo 3, custom 1, svg 2, html 3 | [estudo](_estudo/familias/20_cronograma-e-linha-do-tempo.md), [catálogo](_estudo/catalogo/20_cronograma-e-linha-do-tempo.json) |
-| 21 | [Texto e nuvem de palavras](21_texto-e-nuvem-de-palavras/README.md) | 7 | 28 | custom 2, svg 2, html 3 | [estudo](_estudo/familias/21_texto-e-nuvem-de-palavras.md), [catálogo](_estudo/catalogo/21_texto-e-nuvem-de-palavras.json) |
-| 22 | [Unidades, waffle e pictograma](22_unidades-waffle-e-pictograma/README.md) | 6 | 24 | custom 1, svg 2, html 3 | [estudo](_estudo/familias/22_unidades-waffle-e-pictograma.md), [catálogo](_estudo/catalogo/22_unidades-waffle-e-pictograma.json) |
-| 23 | [Mapas](23_mapas/README.md) | 6 | 24 | svg 4, html 2 | [estudo](_estudo/familias/23_mapas.md), [catálogo](_estudo/catalogo/23_mapas.json) |
-| 24 | [Microvisuais e sparklines](24_microvisuais-sparklines/README.md) | 7 | 28 | nativo 2, svg 1, html 4 | [estudo](_estudo/familias/24_microvisuais-sparklines.md), [catálogo](_estudo/catalogo/24_microvisuais-sparklines.json) |
-| 25 | [Matriz e quadrantes](25_matriz-e-quadrantes/README.md) | 7 | 28 | nativo 1, custom 1, html 5 | [estudo](_estudo/familias/25_matriz-e-quadrantes.md), [catálogo](_estudo/catalogo/25_matriz-e-quadrantes.json) |
-| 26 | [Mosaico e marimekko](26_mosaico-marimekko/README.md) | 3 | 12 | svg 3 | [estudo](_estudo/familias/26_mosaico-marimekko.md), [catálogo](_estudo/catalogo/26_mosaico-marimekko.json) |
-| 27 | [Rede e relações](27_rede-e-relacoes/README.md) | 8 | 32 | svg 7, html 1 | [estudo](_estudo/familias/27_rede-e-relacoes.md), [catálogo](_estudo/catalogo/27_rede-e-relacoes.json) |
-| | **Total: 27 famílias** | **205** | **814** | nativo 70, custom 40, svg 50, html 45 | |
+| # | Família | Modelos | Versões planejadas | Versões no disco | Prontas | Reprovadas em pendência conhecida | Abordagens | Estudo e plano |
+|---|---|---:|---:|---:|---:|---:|---|---|
+| 01 | [Cards e KPIs](01_cards-e-kpis/README.md) | 8 | 32 | 32 | 32 | 0 | nativo 1, svg 1, html 6 | [estudo](_estudo/familias/01_cards-e-kpis.md), [catálogo](_estudo/catalogo/01_cards-e-kpis.json) |
+| 02 | [Barras horizontais](02_barras-horizontais/README.md) | 10 | 39 | 39 | 39 | 0 | nativo 5, custom 2, svg 2, html 1 | [estudo](_estudo/familias/02_barras-horizontais.md), [catálogo](_estudo/catalogo/02_barras-horizontais.json) |
+| 03 | [Colunas verticais](03_colunas-verticais/README.md) | 8 | 32 | 32 | 32 | 0 | nativo 5, custom 2, html 1 | [estudo](_estudo/familias/03_colunas-verticais.md), [catálogo](_estudo/catalogo/03_colunas-verticais.json) |
+| 04 | [Linhas](04_linhas/README.md) | 9 | 35 | 35 | 35 | 0 | nativo 7, custom 2 | [estudo](_estudo/familias/04_linhas.md), [catálogo](_estudo/catalogo/04_linhas.json) |
+| 05 | [Áreas](05_areas/README.md) | 10 | 39 | 39 | 39 | 0 | nativo 7, custom 2, svg 1 | [estudo](_estudo/familias/05_areas.md), [catálogo](_estudo/catalogo/05_areas.json) |
+| 06 | [Pizza](06_pizza/README.md) | 6 | 24 | 24 | 24 | 0 | nativo 3, custom 3 | [estudo](_estudo/familias/06_pizza.md), [catálogo](_estudo/catalogo/06_pizza.json) |
+| 07 | [Rosca e radial](07_rosca-e-radial/README.md) | 7 | 28 | 28 | 28 | 0 | nativo 5, custom 1, svg 1 | [estudo](_estudo/familias/07_rosca-e-radial.md), [catálogo](_estudo/catalogo/07_rosca-e-radial.json) |
+| 08 | [Combinados e eixo duplo](08_combinados-e-eixo-duplo/README.md) | 6 | 24 | 24 | 24 | 0 | nativo 5, custom 1 | [estudo](_estudo/familias/08_combinados-e-eixo-duplo.md), [catálogo](_estudo/catalogo/08_combinados-e-eixo-duplo.json) |
+| 09 | [Dispersão e bolhas](09_dispersao-e-bolhas/README.md) | 11 | 44 | 44 | 41 | 3 | nativo 5, custom 2, svg 2, html 2 | [estudo](_estudo/familias/09_dispersao-e-bolhas.md), [catálogo](_estudo/catalogo/09_dispersao-e-bolhas.json) |
+| 10 | [Funil](10_funil/README.md) | 7 | 28 | 28 | 28 | 0 | nativo 4, custom 2, html 1 | [estudo](_estudo/familias/10_funil.md), [catálogo](_estudo/catalogo/10_funil.json) |
+| 11 | [Fluxo e Sankey](11_fluxo-sankey/README.md) | 5 | 20 | 20 | 17 | 3 | nativo 1, custom 1, svg 3 | [estudo](_estudo/familias/11_fluxo-sankey.md), [catálogo](_estudo/catalogo/11_fluxo-sankey.json) |
+| 12 | [Hierarquia](12_hierarquia/README.md) | 8 | 32 | 32 | 31 | 1 | nativo 2, custom 1, svg 3, html 2 | [estudo](_estudo/familias/12_hierarquia.md), [catálogo](_estudo/catalogo/12_hierarquia.json) |
+| 13 | [Progresso, meta e gauge](13_progresso-meta-e-gauge/README.md) | 7 | 26 | 26 | 26 | 0 | nativo 3, custom 3, html 1 | [estudo](_estudo/familias/13_progresso-meta-e-gauge.md), [catálogo](_estudo/catalogo/13_progresso-meta-e-gauge.json) |
+| 14 | [Tabelas visuais](14_tabelas-visuais/README.md) | 9 | 36 | 36 | 36 | 0 | svg 1, html 8 | [estudo](_estudo/familias/14_tabelas-visuais.md), [catálogo](_estudo/catalogo/14_tabelas-visuais.json) |
+| 15 | [Mapa de calor e calendário](15_mapa-de-calor-e-calendario/README.md) | 8 | 32 | 32 | 32 | 0 | svg 6, html 2 | [estudo](_estudo/familias/15_mapa-de-calor-e-calendario.md), [catálogo](_estudo/catalogo/15_mapa-de-calor-e-calendario.json) |
+| 16 | [Distribuição](16_distribuicao/README.md) | 13 | 51 | 51 | 51 | 0 | nativo 5, custom 4, svg 4 | [estudo](_estudo/familias/16_distribuicao.md), [catálogo](_estudo/catalogo/16_distribuicao.json) |
+| 17 | [Comparação de pontos](17_comparacao-de-pontos/README.md) | 6 | 24 | 24 | 24 | 0 | nativo 3, custom 2, svg 1 | [estudo](_estudo/familias/17_comparacao-de-pontos.md), [catálogo](_estudo/catalogo/17_comparacao-de-pontos.json) |
+| 18 | [Radar](18_radar/README.md) | 6 | 24 | 24 | 24 | 0 | nativo 3, custom 1, svg 2 | [estudo](_estudo/familias/18_radar.md), [catálogo](_estudo/catalogo/18_radar.json) |
+| 19 | [Cascata (waterfall)](19_cascata-waterfall/README.md) | 8 | 32 | 32 | 32 | 0 | custom 6, svg 2 | [estudo](_estudo/familias/19_cascata-waterfall.md), [catálogo](_estudo/catalogo/19_cascata-waterfall.json) |
+| 20 | [Cronograma e linha do tempo](20_cronograma-e-linha-do-tempo/README.md) | 9 | 36 | 36 | 36 | 0 | nativo 3, custom 1, svg 2, html 3 | [estudo](_estudo/familias/20_cronograma-e-linha-do-tempo.md), [catálogo](_estudo/catalogo/20_cronograma-e-linha-do-tempo.json) |
+| 21 | [Texto e nuvem de palavras](21_texto-e-nuvem-de-palavras/README.md) | 7 | 28 | 28 | 28 | 0 | custom 2, svg 2, html 3 | [estudo](_estudo/familias/21_texto-e-nuvem-de-palavras.md), [catálogo](_estudo/catalogo/21_texto-e-nuvem-de-palavras.json) |
+| 22 | [Unidades, waffle e pictograma](22_unidades-waffle-e-pictograma/README.md) | 6 | 24 | 24 | 24 | 0 | custom 1, svg 2, html 3 | [estudo](_estudo/familias/22_unidades-waffle-e-pictograma.md), [catálogo](_estudo/catalogo/22_unidades-waffle-e-pictograma.json) |
+| 23 | [Mapas](23_mapas/README.md) | 6 | 24 | 24 | 23 | 1 | svg 4, html 2 | [estudo](_estudo/familias/23_mapas.md), [catálogo](_estudo/catalogo/23_mapas.json) |
+| 24 | [Microvisuais e sparklines](24_microvisuais-sparklines/README.md) | 7 | 28 | 28 | 28 | 0 | nativo 2, svg 1, html 4 | [estudo](_estudo/familias/24_microvisuais-sparklines.md), [catálogo](_estudo/catalogo/24_microvisuais-sparklines.json) |
+| 25 | [Matriz e quadrantes](25_matriz-e-quadrantes/README.md) | 7 | 28 | 28 | 27 | 1 | nativo 1, custom 1, html 5 | [estudo](_estudo/familias/25_matriz-e-quadrantes.md), [catálogo](_estudo/catalogo/25_matriz-e-quadrantes.json) |
+| 26 | [Mosaico e marimekko](26_mosaico-marimekko/README.md) | 3 | 12 | 12 | 12 | 0 | svg 3 | [estudo](_estudo/familias/26_mosaico-marimekko.md), [catálogo](_estudo/catalogo/26_mosaico-marimekko.json) |
+| 27 | [Rede e relações](27_rede-e-relacoes/README.md) | 8 | 32 | 32 | 32 | 0 | svg 7, html 1 | [estudo](_estudo/familias/27_rede-e-relacoes.md), [catálogo](_estudo/catalogo/27_rede-e-relacoes.json) |
+| | **Total: 27 famílias** | **205** | **814** | **814** | **805** | **9** | nativo 70, custom 40, svg 50, html 45 | |
 
 ### Por abordagem
 

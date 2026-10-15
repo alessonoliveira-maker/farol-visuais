@@ -104,12 +104,23 @@ function ribbonPath(a: Arc, b: Arc): string {
   const p2 = polar(R_INNER, a.end);
   const p3 = polar(R_INNER, b.start);
   const p4 = polar(R_INNER, b.end);
+  // Par de mão única (uma ponta com largura zero): com o centro como controle a fita afina em t ao
+  // quadrado e some antes de chegar. Controles deslocados de d/4 em lados opostos tornam a largura
+  // LINEAR, do pé até a ponta zero, que então termina em ponto sobre o arco (sem pé falso).
+  const aWidth = a.end - a.start;
+  const bWidth = b.end - b.start;
+  const oneWay = aWidth <= 0 || bWidth <= 0;
+  const dx = aWidth > 0 ? p1.x - p2.x : p3.x - p4.x;
+  const dy = aWidth > 0 ? p1.y - p2.y : p3.y - p4.y;
+  const sign = aWidth > 0 ? 1 : -1;
+  const c1 = oneWay ? `${fmt(CX - (sign * dx) / 4)},${fmt(CY - (sign * dy) / 4)}` : `${String(CX)},${String(CY)}`;
+  const c2 = oneWay ? `${fmt(CX + (sign * dx) / 4)},${fmt(CY + (sign * dy) / 4)}` : `${String(CX)},${String(CY)}`;
   return [
     `M ${fmt(p1.x)},${fmt(p1.y)}`,
     `A ${String(R_INNER)},${String(R_INNER)} 0 ${String(largeArcFlag(a))} 1 ${fmt(p2.x)},${fmt(p2.y)}`,
-    `Q ${String(CX)},${String(CY)} ${fmt(p3.x)},${fmt(p3.y)}`,
+    `Q ${c1} ${fmt(p3.x)},${fmt(p3.y)}`,
     `A ${String(R_INNER)},${String(R_INNER)} 0 ${String(largeArcFlag(b))} 1 ${fmt(p4.x)},${fmt(p4.y)}`,
-    `Q ${String(CX)},${String(CY)} ${fmt(p1.x)},${fmt(p1.y)}`,
+    `Q ${c2} ${fmt(p1.x)},${fmt(p1.y)}`,
     'Z',
   ].join(' ');
 }
@@ -253,8 +264,9 @@ export default function ManyTeamsChord({ data = defaultData, onShowMatrix, heigh
             d={ribbon.d}
             fill={ribbon.fill}
             key={ribbon.key}
+            paintOrder="stroke"
             stroke={SEPARATION_STROKE}
-            strokeWidth={SEPARATION_WIDTH}
+            strokeWidth={SEPARATION_WIDTH * 2}
           />
         ))}
 

@@ -196,3 +196,50 @@ escreve a própria ausência por `formatUnavailable()`, inclusive a faixa mais c
 **Conserto de caminho latente:** as 312 observações publicadas continuam iguais, as duas medidas
 seguem calculadas e o desenho não mudou. O que se conserta é o ramo, não a foto. A pendência
 registrada acima fica fechada, e a `v1` passa a ter a mesma forma das irmãs `v2`, `v3` e `v4`.
+
+## Observações da revisão (não bloqueantes)
+
+**Revisão de 2026-10-15, `v1_ciclo-de-fechamento`** (a versão foi reprovada por outro motivo, o tique
+24 perdido no eixo Y; o parecer está em `validation/revisao_16_distribuicao__01_histograma_2026-10-15.md`).
+Os itens abaixo não reprovam sozinhos, mas valem para a mesma rodada de correção:
+
+- `v1`: a marca da faixa vazia segue em `--line-strong` (1,79:1 no escuro, 1,83:1 no claro), a pendência
+  já registrada acima. Não reprova porque o buraco também se vê pelo vão e está escrito no rodapé, mas
+  a troca para `--text-muted`, como na `v2` e na `v4`, cabe na mesma rodada.
+- `v1`: o `meta.json` diz em `notes` que "a segunda série de Bar existe só para desenhar o traço de base",
+  e o código usa uma série só com `shape`, como manda a REC-19. A nota ensina o padrão errado a quem copiar.
+- `v1`: o exemplo de dica no `meta.json` e na Anatomia ("42 a 49 dias, 22 oportunidades") não bate com o
+  dado: a faixa de 42 a 49 tem 19; a de 22 é a de 49 a 56.
+- `v1`: valores acima de `domainMax` são descartados do bin em silêncio, mas continuam em `n`, na mediana
+  e na média; em recorte com ciclo acima de 210 dias as barras deixam de somar o `n` do rodapé. Contar
+  o excedente no rodapé, como a faixa aberta da `v4`.
+- `v1`: a frase acessível fecha com "puxada pela cauda longa" fixo no código; deveria depender de média
+  maior que mediana.
+- `v1`: `hole` nomeia só a primeira faixa vazia interna; com dois buracos, o segundo ganha marca e não
+  ganha texto.
+- `v1`: com barras encostadas e sem contorno, faixas vizinhas de mesma altura se fundem; a de 133 a 147
+  dias lê como uma barra só de 7, quando são 14 casos. Contorno de 1 px em `--surface-raised` mantém as
+  barras encostadas e separa as faixas (COR-5).
+- `v1`: eixos herdam o `axisLine` do `AXIS_PROPS` (EIX-5, fila do EIXO-CALMO); a linha vertical do Y
+  aparece à esquerda do plano nos dois temas.
+- `v1`: o rótulo "210" do eixo X sai 4,1 px à esquerda da posição dele (561,9 contra 566), porque
+  `MARGIN.right` de 8 px é menor que meia largura do rótulo; sem grade vertical, não se percebe.
+- `v1`: tiques do X a cada 30 dias não caem em borda de faixa de 7; a cada 35 dias (0, 35, ..., 210)
+  cairiam, e fechariam no fim do domínio.
+- `v1`: tiques dos eixos sem `font-display` (TIP-1), `YAxis width={28}` e `tickCount={8}` sem constante
+  nomeada, e a dica sem `isAnimationActive={false}` (DIC-4).
+
+**Revisão de 2026-10-15, segunda rodada, `v1_ciclo-de-fechamento`** (aprovada: o eixo Y agora imprime
+0, 8, 16, 24 e 32, e cada rótulo cai na própria linha de grade nos dois temas). A correção levou só o
+bloqueante; as observações da primeira rodada, logo acima, seguem abertas. Novas:
+
+- `v1`: só o teto do eixo Y sai do dado; o passo é a constante `Y_STEP = 8`. Com o `binWidth` de 14
+  que o `data.ts` anuncia como uso legítimo, a faixa mais cheia vai a 54 e o eixo sai com 8 linhas (0
+  a 56) num plano de 108 px, fora das 3 a 5 da EIX-4; com até 8 casos cai para 2 linhas; e, como o
+  `interval={0}` impede o descarte, acima de uns 96 casos na faixa mais cheia os rótulos de 11 px se
+  tocam. A escada `Y_STEPS` da `v2`, da `v3` e da `v4` resolve, e daria 0 a 40 em passo 10 com o dado
+  de hoje; a régua da família hoje diverge das três irmãs neste ponto.
+- `v1`: o texto do estado vazio diz que "a mediana fica indisponível em vez de zero", mas a peça
+  nunca mostra mediana; basta dizer que o recorte não tem amostra para desenhar a distribuição.
+- `v1`: o `useCase` do `meta.json` diz "no ano", e o `data.ts` e este README dizem "nos últimos 12
+  meses"; ano civil e janela móvel são recortes diferentes.

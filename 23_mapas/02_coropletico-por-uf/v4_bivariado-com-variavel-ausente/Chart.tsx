@@ -32,8 +32,8 @@ const ROW_PITCH = HEX_R * 1.5;
 const PAD = 2;
 const LABEL_SIZE = 12;
 const NOTE_SIZE = 11;
-/** Passo entre as linhas do hexágono classificado: sigla, taxa e CPL. */
-const VALUE_STEP = 11;
+/** Passo entre as linhas do hexágono classificado: taxa no centro, sigla acima e CPL abaixo, todas dentro da faixa mais larga do hexágono. */
+const VALUE_STEP = 14;
 /** Recuo do preenchimento na UF de amostra pequena: abre o canal onde corre o contorno pontilhado. */
 const THIN_INSET = 4;
 const HATCH_SIZE = 6;
@@ -344,7 +344,7 @@ export default function BivariateChoropleth({ data = defaultData, height, classN
                 fontSize={NOTE_SIZE}
                 textAnchor="middle"
                 x={cell.cx}
-                y={cell.cy + VALUE_STEP}
+                y={cell.cy}
               >
                 {formatPercent(item.rate, 1)}
               </text>
@@ -355,7 +355,7 @@ export default function BivariateChoropleth({ data = defaultData, height, classN
                 fontSize={NOTE_SIZE}
                 textAnchor="middle"
                 x={cell.cx}
-                y={cell.cy + VALUE_STEP * 2}
+                y={cell.cy + VALUE_STEP}
               >
                 {money(item.cpl)}
               </text>

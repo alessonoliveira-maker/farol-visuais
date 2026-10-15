@@ -27,13 +27,13 @@
       }
     },
     "v3_handoff-em-raias-de-funcao": {
-      "veredito": "reprovado",
-      "nota": "Pergunta 31, ROT-7 marca fina e GEO-4, seção 14.1 identificação das marcas: o rótulo 6 dias do foco está escrito sobre o tracejado de Atacado Central (espera de 2 dias), a 3 px do losango dela e a 6 px do próprio tracejado; pôr tracejado alheio e losango no teste de colisão com 4 px de respiro, sem voltar ao halo. Halo, 5 dias e losangos da primeira passada estão resolvidos. Parecer na seção Segunda passada de validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-08.md.",
-      "data": "2026-10-08",
-      "registradoEm": "2026-10-08T20:15:02.707Z",
-      "impressao": "b6b99163f3d4a71464cb60f6dcf3f9b78326dbb6",
+      "veredito": "aprovado",
+      "nota": "Quarta passada: os seis focos montados por prop no navegador do render, nos dois temas; nenhum rotulo cruza traco, losango ou barra, o proprio tracejado fica de 4,3 a 9,0 px da tinta e nenhum alheio fica mais perto, e as 8 chamadas terminam de 1,8 a 4,1 px do numero (ROT-7 marca fina, pergunta 31). Observacoes no README: chamada que nasce sob barra fina alheia, toco solto em espera zero, ponta presa na caixa.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T14:04:01.972Z",
+      "impressao": "71396c7d26e782e7c17e41bc8571b1f9e3a4b363",
       "arquivos": {
-        "Chart.tsx": "13bedbe41f5ee00c2017d55593a988f0c40cdaf4",
+        "Chart.tsx": "759261f8430d28165dd334bb7ce2c4624608b4c4",
         "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
         "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
       }
@@ -126,6 +126,32 @@
       "impressao": "b6b99163f3d4a71464cb60f6dcf3f9b78326dbb6",
       "arquivos": {
         "Chart.tsx": "13bedbe41f5ee00c2017d55593a988f0c40cdaf4",
+        "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
+        "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
+      }
+    },
+    {
+      "versao": "v3_handoff-em-raias-de-funcao",
+      "veredito": "reprovado",
+      "nota": "Pergunta 31, ROT-7 marca fina, GEO-4 e 14.1 identificação das marcas: no foco padrão as três esperas estão sobre o próprio tracejado nos dois temas, mas com focusId op-sul o 2 dias fica a 6,9 px do tracejado de Distribuidora Norte e a 17,6 px do dele, e com op-central o 1 dia fica a 9,2 px do de Construtora Sul; nos dois a linha de chamada termina a 13 ou 14 px do número. Causa: caixa de 46 px para tinta de 31,5 px (linha 280). Medir a caixa pela tinta, dar 2 px de respiro contra o próprio tracejado e conferir com op-sul e op-central. Parecer em validation/revisao_20_cronograma-e-linha-do-tempo__05_swimlane-de-eventos_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:47:28.839Z",
+      "impressao": "bdc6768366a3967e15ae6e195a8ecf98925b9bc7",
+      "arquivos": {
+        "Chart.tsx": "da14c491f2b9912375c599af97db56fe0f1cde89",
+        "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
+        "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
+      }
+    },
+    {
+      "versao": "v3_handoff-em-raias-de-funcao",
+      "veredito": "aprovado",
+      "nota": "Quarta passada: os seis focos montados por prop no navegador do render, nos dois temas; nenhum rotulo cruza traco, losango ou barra, o proprio tracejado fica de 4,3 a 9,0 px da tinta e nenhum alheio fica mais perto, e as 8 chamadas terminam de 1,8 a 4,1 px do numero (ROT-7 marca fina, pergunta 31). Observacoes no README: chamada que nasce sob barra fina alheia, toco solto em espera zero, ponta presa na caixa.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T14:04:01.972Z",
+      "impressao": "71396c7d26e782e7c17e41bc8571b1f9e3a4b363",
+      "arquivos": {
+        "Chart.tsx": "759261f8430d28165dd334bb7ce2c4624608b4c4",
         "data.ts": "f24e5fc13bcf1429f13ab4865193962e4248797e",
         "meta.json": "d51a2268bfb14e219cf7fb1d8ef097291041a659"
       }

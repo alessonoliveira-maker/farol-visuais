@@ -194,10 +194,12 @@ export default function AttendanceWindowGrid({
   const animate = useAnimateOnce();
   const style = height === undefined ? undefined : { height };
 
-  /** Cruzamento medido com zero agenda não vira bolha: o piso de área faria ele parecer volume. */
+  /** Só estado vazio, máximo e contas usam o filtrado: o zero não vira bolha, o piso de área o faria parecer volume. */
   const cells = data.filter((row) => row.scheduled > 0);
-  const hourOrder = categoryOrder(cells, (row) => row.hour);
-  const dayOrder = categoryOrder(cells, (row) => row.day);
+  const zeroCells = data.length - cells.length;
+  /** As ordens saem da grade INTEIRA: o domínio categórico nasce da primeira ocorrência na série (EST-3, 14.1). */
+  const hourOrder = categoryOrder(data, (row) => row.hour);
+  const dayOrder = categoryOrder(data, (row) => row.day);
   const hourSpan = span(hourOrder, highlightHours);
   const daySpan = span(dayOrder, highlightDays);
 
@@ -223,7 +225,7 @@ export default function AttendanceWindowGrid({
   const comparecidasFora = foraDaJanela.reduce((soma, row) => soma + row.attended, 0);
   const maxScheduled = Math.max(...cells.map((row) => row.scheduled));
   /** A grade inteira alimenta a série, na ordem do dado, que é a ordem das categorias nos eixos. */
-  const rows: readonly AttendancePoint[] = cells.map((row) => ({
+  const rows: readonly AttendancePoint[] = data.map((row) => ({
     ...row,
     inWindow: highlightDays.includes(row.day) && highlightHours.includes(row.hour),
     maxOfGrid: maxScheduled,
@@ -262,7 +264,7 @@ export default function AttendanceWindowGrid({
 
   const renderTooltip = (props: TooltipContentProps<TooltipValueType, number | string>) => {
     const row = props.payload?.[0]?.payload as AttendanceCell | undefined;
-    if (!row) return null;
+    if (!row || row.scheduled <= 0) return null;
     const entries = [
       { dataKey: 'scheduled', name: 'Agendas', value: formatInt(row.scheduled) },
       { dataKey: 'attended', name: 'Comparecimento', value: formatRateWithVolume(row.attended, row.scheduled) },
@@ -273,7 +275,7 @@ export default function AttendanceWindowGrid({
   return (
     <div aria-label={summary} className={cn('flex h-full w-full min-w-0 flex-col', className)} role="img" style={style}>
       <p aria-hidden className="mb-2 shrink-0 text-xs tabular-nums text-text-secondary">
-        {`Melhor janela: ${janelaEscrita}, com ${taxaJanela} de comparecimento`}
+        {`Melhor janela: ${janelaEscrita}, com ${taxaJanela} de comparecimento, contra ${taxaFora} fora dela`}
       </p>
       <div className="min-h-0 flex-1">
         <ResponsiveContainer height="100%" width="100%">
@@ -345,6 +347,9 @@ export default function AttendanceWindowGrid({
       </div>
       <p aria-hidden className="mt-2 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
         {`fora da janela: ${taxaFora} de comparecimento`}
+        {zeroCells > 0
+          ? `. ${formatInt(zeroCells)} ${zeroCells === 1 ? 'cruzamento medido com zero agenda, sem bolha' : 'cruzamentos medidos com zero agenda, sem bolha'}`
+          : ''}
       </p>
     </div>
   );

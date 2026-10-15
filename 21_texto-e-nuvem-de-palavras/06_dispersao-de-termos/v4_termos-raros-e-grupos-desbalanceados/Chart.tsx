@@ -177,9 +177,6 @@ function RareLayer({
     }
   };
 
-  if (rare && rareX !== undefined && rareY !== undefined) {
-    tryPlace('raros', `${formatInt(rare.count)} termos, ${formatInt(RARE_MENTIONS)} menção em cada grupo`, rareX, rareY, RARE_RADIUS - POINT_RADIUS);
-  }
   let labeled = 0;
   for (const point of candidates) {
     if (labeled >= LABEL_COUNT) break;
@@ -289,6 +286,12 @@ export default function RareTermsScatter({ data = defaultData, height, className
       <p aria-hidden className="mb-1 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
         {`Proporção das anotações do grupo: telefone ${formatInt(data.annotationsPhone)}, vídeo ${formatInt(data.annotationsVideo)}`}
       </p>
+      {rare ? (
+        <p aria-hidden className="mb-1 flex shrink-0 items-center gap-1.5 text-[0.6875rem] tabular-nums text-text-secondary">
+          <span className="inline-block size-3 shrink-0 rounded-full border-2 border-text-secondary" />
+          {`Anel: ${formatInt(rare.count)} termos com ${formatInt(RARE_MENTIONS)} menção em cada grupo (${formatPercent(rare.x, 2)} do telefone, ${formatPercent(rare.y, 1)} do vídeo)`}
+        </p>
+      ) : null}
       <div aria-hidden className="flex shrink-0 items-center justify-between gap-2 pl-12 pr-4 text-[0.6875rem] text-text-muted">
         <span className="flex items-center gap-1 font-semibold text-text-secondary">
           <span className="size-2 rounded-full bg-chart-3" />

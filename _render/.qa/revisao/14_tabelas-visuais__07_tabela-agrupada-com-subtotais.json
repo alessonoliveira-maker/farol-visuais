@@ -4,12 +4,12 @@
   "versoes": {
     "v1_pipeline-por-time-comercial": {
       "veredito": "aprovado",
-      "nota": "Subtotais fecham com as filhas, barra do zero com dominio so das filhas, tokens e formatadores corretos nos dois temas.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T03:48:48.347Z",
-      "impressao": "08386fa24b6d86878b5c264f52247e0a042d643e",
+      "nota": "Subtotais por soma fecham com as filhas (R$ 929,2 mil, 755,2 mil, 801,4 mil), barra a partir do zero com domínio só das filhas e escala comum aos três times, trilho em surface-sunken visível nos dois temas; observações de rodapé, alinhamento e vazio no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:52:01.937Z",
+      "impressao": "e9aff55624ca57b39b1e86f69d65baad9e0e24c0",
       "arquivos": {
-        "Chart.tsx": "b7945bd9d307a911561a74eb5280c93da6129558",
+        "Chart.tsx": "dc35985ea36b822a2495292416f324e5138819ab",
         "data.ts": "43e4ecf3af19ecb5b5315cf3ceb5ea187a41ddd2",
         "meta.json": "6157890546c087fc7101b5184059663059de909b"
       }
@@ -102,6 +102,19 @@
         "Chart.tsx": "ab75eea6074802e0016a04abb3841287b55b145a",
         "data.ts": "ee171b0eda417bf27c30ece686c4205a10f46d7b",
         "meta.json": "1ee25f029b9582ac851b8c2c41cb79133eb8f521"
+      }
+    },
+    {
+      "versao": "v1_pipeline-por-time-comercial",
+      "veredito": "aprovado",
+      "nota": "Subtotais por soma fecham com as filhas (R$ 929,2 mil, 755,2 mil, 801,4 mil), barra a partir do zero com domínio só das filhas e escala comum aos três times, trilho em surface-sunken visível nos dois temas; observações de rodapé, alinhamento e vazio no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:52:01.937Z",
+      "impressao": "e9aff55624ca57b39b1e86f69d65baad9e0e24c0",
+      "arquivos": {
+        "Chart.tsx": "dc35985ea36b822a2495292416f324e5138819ab",
+        "data.ts": "43e4ecf3af19ecb5b5315cf3ceb5ea187a41ddd2",
+        "meta.json": "6157890546c087fc7101b5184059663059de909b"
       }
     }
   ]

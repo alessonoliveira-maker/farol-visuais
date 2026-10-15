@@ -15,9 +15,6 @@ export interface ExecutiveStageLoad {
 
 export const STAGES: readonly string[] = ['Prospecção', 'Qualificação', 'Proposta', 'Negociação', 'Fechamento'];
 
-/** Índice da etapa em destaque nesta versão (a de maior atenção do time nesta semana). */
-export const HIGHLIGHT_STAGE_INDEX = 2;
-
 export const data: readonly ExecutiveStageLoad[] = [
   { id: 'exec-01', name: 'Otávio L.', role: 'AE', counts: [null, null, 14, 6, 2] },
   { id: 'exec-02', name: 'Carla Mendes Sobral', role: 'AE', counts: [null, null, 11, 9, 3] },

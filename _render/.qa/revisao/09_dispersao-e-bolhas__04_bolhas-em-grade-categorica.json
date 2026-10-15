@@ -13,6 +13,42 @@
         "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
         "meta.json": "e8d2deeb1607e3329c79ec29994c83cfcf4860dc"
       }
+    },
+    "v3_motivo-de-perda-por-etapa": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Matriz completa de 84 cruzamentos com zeros na série, então as 6 etapas ficam na ordem do funil e os 14 motivos do maior total no topo; totais marginais conferidos (90, 70, 82, 76, 37, 9 e 37 a 11, soma 364) e alinhados pelas escalas; ZAxis de 0 ao máximo com régua 5, 12, 24; zero medido sem bolha declarado no rodapé (29 de 84). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:35.726Z",
+      "impressao": "e957cc25b726269e0de861f53f1003072bdcac16",
+      "arquivos": {
+        "Chart.tsx": "8c0addcbae594c2464fb716d72296d024b71a44c",
+        "data.ts": "d306459a082be76e4669f21c362c1c276f5d0b07",
+        "meta.json": "a9059b18009daf3a8f4c0b128805eb7aaccc03f7"
+      }
+    },
+    "v4_zero-contra-sem-expediente": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Os quatro estados saem distintos e conferidos no dado: 6 zeros medidos em anel tracejado, 24 horas sem expediente em traço, 2 horas sem apuração vazias e contadas com formatUnavailable(), nunca somadas ao zero; série única com a grade inteira, então a ordem do relógio e dos dias se mantém; piso de raio 5 acima do anel de 4 e distorção declarada (2 contatos, 19% da área, 7% do valor); marcas em text-muted a 5,21:1 e 5,37:1. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:42.446Z",
+      "impressao": "c0c86f577cc7e4b8bebc81ca81cc897d2dd0a7e5",
+      "arquivos": {
+        "Chart.tsx": "1315bd3e26ce304341caebf0f05310bf5de47e79",
+        "data.ts": "f280385b8507cf405f0ae59bc40d99b77fcf0869",
+        "meta.json": "4f258f31ba41a4d828da9b5c403fe47e6a299179"
+      }
+    },
+    "v2_melhor-janela-de-comparecimento": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. O bloqueio anterior (pergunta 8, EST-3, domínio de eixo) está resolvido: o Scatter recebe a grade inteira (data.map), hourOrder e dayOrder saem de data, o AttendanceDot devolve nulo para o zero, a dica não calcula taxa sobre base zero e o rodapé conta os zeros só quando há, no singular para 1. Contas conferidas no dado: 134 de 164 (81,7%) contra 313 de 534 (58,6%), total 698, régua 5, 12 e 23 com 23 no máximo; faixa nas bordas das células; frase acessível de 202 caracteres. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:59:52.267Z",
+      "impressao": "e473d883c1afcd9835c23c886d68bce8e4761d0d",
+      "arquivos": {
+        "Chart.tsx": "91f3dea3af36e31a252e59a4b1899161e77813df",
+        "data.ts": "6f09ab08ccc8aab121cbb68dde92e104c17da8e9",
+        "meta.json": "a94e660a6409588b012c95a6317765f17d34d826"
+      }
     }
   },
   "historico": [
@@ -79,6 +115,58 @@
         "Chart.tsx": "4602936631f120cb5a1161e93bb930ac3969aa76",
         "data.ts": "124e44a898bd38134408e1fd3aa2ce162625891e",
         "meta.json": "e8d2deeb1607e3329c79ec29994c83cfcf4860dc"
+      }
+    },
+    {
+      "versao": "v3_motivo-de-perda-por-etapa",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Matriz completa de 84 cruzamentos com zeros na série, então as 6 etapas ficam na ordem do funil e os 14 motivos do maior total no topo; totais marginais conferidos (90, 70, 82, 76, 37, 9 e 37 a 11, soma 364) e alinhados pelas escalas; ZAxis de 0 ao máximo com régua 5, 12, 24; zero medido sem bolha declarado no rodapé (29 de 84). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:35.726Z",
+      "impressao": "e957cc25b726269e0de861f53f1003072bdcac16",
+      "arquivos": {
+        "Chart.tsx": "8c0addcbae594c2464fb716d72296d024b71a44c",
+        "data.ts": "d306459a082be76e4669f21c362c1c276f5d0b07",
+        "meta.json": "a9059b18009daf3a8f4c0b128805eb7aaccc03f7"
+      }
+    },
+    {
+      "versao": "v4_zero-contra-sem-expediente",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. Os quatro estados saem distintos e conferidos no dado: 6 zeros medidos em anel tracejado, 24 horas sem expediente em traço, 2 horas sem apuração vazias e contadas com formatUnavailable(), nunca somadas ao zero; série única com a grade inteira, então a ordem do relógio e dos dias se mantém; piso de raio 5 acima do anel de 4 e distorção declarada (2 contatos, 19% da área, 7% do valor); marcas em text-muted a 5,21:1 e 5,37:1. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:42.446Z",
+      "impressao": "c0c86f577cc7e4b8bebc81ca81cc897d2dd0a7e5",
+      "arquivos": {
+        "Chart.tsx": "1315bd3e26ce304341caebf0f05310bf5de47e79",
+        "data.ts": "f280385b8507cf405f0ae59bc40d99b77fcf0869",
+        "meta.json": "4f258f31ba41a4d828da9b5c403fe47e6a299179"
+      }
+    },
+    {
+      "versao": "v2_melhor-janela-de-comparecimento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EST-3 e seção 14.1 (domínio e sentido de eixo), no ramo do zero: Chart.tsx:198 tira da série os cruzamentos com zero agenda antes do Scatter, e o domínio categórico do Recharts sai da primeira ocorrência na série (axisSelectors.js, new Set). Um zero em Sexta das 08h às 17h manda aquela hora para o fim do eixo X, um dia todo zerado some do eixo Y, a frase acessível passa a dizer de 09h a 08h e o zero some sem nota. Mudar: alimentar o Scatter e as ordens com a grade inteira, como a v3 e a v4, deixar o shape devolver nulo para o zero e contar os zeros num rodapé condicional. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:48.738Z",
+      "impressao": "ec080308a9b6d7669387274c4364bee391b28735",
+      "arquivos": {
+        "Chart.tsx": "b19c006c95eff3b0ebce01ddc3629898207660e1",
+        "data.ts": "6f09ab08ccc8aab121cbb68dde92e104c17da8e9",
+        "meta.json": "e6be52aaaa730044bebc4cc77a56477e3a515880"
+      }
+    },
+    {
+      "versao": "v2_melhor-janela-de-comparecimento",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante nos dois temas. O bloqueio anterior (pergunta 8, EST-3, domínio de eixo) está resolvido: o Scatter recebe a grade inteira (data.map), hourOrder e dayOrder saem de data, o AttendanceDot devolve nulo para o zero, a dica não calcula taxa sobre base zero e o rodapé conta os zeros só quando há, no singular para 1. Contas conferidas no dado: 134 de 164 (81,7%) contra 313 de 534 (58,6%), total 698, régua 5, 12 e 23 com 23 no máximo; faixa nas bordas das células; frase acessível de 202 caracteres. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:59:52.267Z",
+      "impressao": "e473d883c1afcd9835c23c886d68bce8e4761d0d",
+      "arquivos": {
+        "Chart.tsx": "91f3dea3af36e31a252e59a4b1899161e77813df",
+        "data.ts": "6f09ab08ccc8aab121cbb68dde92e104c17da8e9",
+        "meta.json": "a94e660a6409588b012c95a6317765f17d34d826"
       }
     }
   ]

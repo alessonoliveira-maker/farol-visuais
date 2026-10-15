@@ -4,36 +4,36 @@
   "versoes": {
     "v1_meta-de-agendas-em-arco": {
       "veredito": "aprovado",
-      "nota": "Arco do zero com domain explicito, minimo e maximo escritos, numero centrado e origem da meta por extenso. Observacoes: o 57 para a menos de 1 px do arco, rodape truncado e trilho invisivel no tema claro.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:58:38.254Z",
-      "impressao": "72f42b99e4a78b81f70aebd6727c8e21e175bb88",
+      "nota": "Bloqueante anterior resolvido: a tinta do 57 (26 px) fica a 8 px do arco nos dois temas, medido no PNG de 2x. Domínio [0, meta] explícito, mínimo e máximo nas pontas, frase de 201 caracteres. Observações no README: Recharts ainda pinta o arco depois do número, truncate na leitura e no rodapé, TIP-1, constantes no JSX.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:36:39.776Z",
+      "impressao": "0d8120acf9c2e8315d67f3da3bb6efadacd28da1",
       "arquivos": {
-        "Chart.tsx": "1f93984478a2313909daa62a03c533a8fe3c2e40",
+        "Chart.tsx": "bca8ca1948c958c3b2b3340f4a4ed2a52a4f5f11",
         "data.ts": "bb9fdb4f8821493ad9f7b2858a3e9d09fa64343d",
         "meta.json": "f48d809bb5aecced07841d5c053b8c7df1e4c5a4"
       }
     },
     "v2_fechamentos-acima-da-meta": {
       "veredito": "aprovado",
-      "nota": "Dominio alargado so para o excedente caber, meta no angulo real e fim do arco sem numero: nao finge teto. Observacoes: o traco da meta fica por baixo do arco, o verde le como pilula solta e o rodape corta a frase da folga.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:58:43.774Z",
-      "impressao": "1a7aceaf6eb7c6c39ed2fd78d1eff64dfaecd633",
+      "nota": "Bloqueante anterior resolvido: rodapé em duas linhas sem truncate diz que o arco vai a 24 (1,2 vez a meta) e a frase acessível repete. Meta no ângulo real (10°), excedente em positive com ícone e base nomeada. Observações no README: arco encolheu para raio de 33 px e banda de 9 px, +15,0% pela NUM-1, truncate com número na cauda, TIP-1.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:36:42.353Z",
+      "impressao": "c421eab060d300359f54bbb45cddab25fa7b7e86",
       "arquivos": {
-        "Chart.tsx": "9a8f95e5e85090ebe3c97c82bb45a25ad3df7662",
+        "Chart.tsx": "5a54bb4ba9460daffa0951def02891dd422e3343",
         "data.ts": "ce7e74822a16edc4a02ae68ddba0292f29ea2fd8",
         "meta.json": "002fa896d30b216286de59a5e77c8c6d9617a197"
       }
     },
     "v3_filas-na-mesma-escala": {
       "veredito": "aprovado",
-      "nota": "Dominio comum sobre o conjunto, zero medido com numero 0, sem coleta com contorno tracejado e indisponivel, vazio tratado. Observacao: no tema claro o trilho some e a fila em zero fica sem arco nenhum.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:58:48.795Z",
-      "impressao": "20ec9d5261a7f114f3c6c50081616e4a8435ad04",
+      "nota": "Dominio comum sobre o conjunto, zero medido com trilho visivel nos dois temas e numero 0, sem coleta com contorno tracejado, Unplug e formatUnavailable, vazio com role=status. Observacoes no README: truncate no nome da fila, percentual pela capacidade da fila contra arco pelo dominio comum, TIP-1.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:28:28.029Z",
+      "impressao": "46ce825c5cbface4c55656902c3d9358037af633",
       "arquivos": {
-        "Chart.tsx": "6cb0fd87dcfab2b0c2dc3756be6235b3b7604ccf",
+        "Chart.tsx": "f1790b19af479e4b537fc8a800f6ffd7eac113f8",
         "data.ts": "368613fc9b69ab8d79c3cde64e7ca6308f1c6737",
         "meta.json": "365bb85cb6c04b6124f1866350a57278e5932b4a"
       }
@@ -77,6 +77,71 @@
         "Chart.tsx": "6cb0fd87dcfab2b0c2dc3756be6235b3b7604ccf",
         "data.ts": "368613fc9b69ab8d79c3cde64e7ca6308f1c6737",
         "meta.json": "365bb85cb6c04b6124f1866350a57278e5932b4a"
+      }
+    },
+    {
+      "versao": "v1_meta-de-agendas-em-arco",
+      "veredito": "reprovado",
+      "nota": "Perguntas 13 e 15, ROT-7 e 17.7: o 57 encosta na borda interna do arco nos dois temas (pixel de texto e de arco vizinhos em diagonal, arco pintado por cima do canto do 5); afastar a tinta do numero 4 px da borda interna real e pintar o CenterLabel depois do RadialBar. Parecer em validation/revisao_13_progresso-meta-e-gauge__05_gauge-de-arco-preenchido_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:28:23.013Z",
+      "impressao": "33a4a64d6ff17640c4685e88e0162ec76a2c0ed4",
+      "arquivos": {
+        "Chart.tsx": "17690a0fb3befd173ce294aa243912438606540c",
+        "data.ts": "bb9fdb4f8821493ad9f7b2858a3e9d09fa64343d",
+        "meta.json": "f48d809bb5aecced07841d5c053b8c7df1e4c5a4"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-acima-da-meta",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, TIP-7: o rodape truncado corta 'Arco alarga a 24 so para o excedente caber', unico lugar que diz o fim do arco, ausente da frase acessivel e com numero na cauda; deixar quebrar em duas linhas ou escrever o dominio primeiro e leva-lo a frase acessivel. Parecer em validation/revisao_13_progresso-meta-e-gauge__05_gauge-de-arco-preenchido_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:28:25.888Z",
+      "impressao": "45e300ceb8f00130aa95cc43e95602ee37908ee6",
+      "arquivos": {
+        "Chart.tsx": "9c48bc71490f3d4ed2bb392ef7451c5e0909867b",
+        "data.ts": "ce7e74822a16edc4a02ae68ddba0292f29ea2fd8",
+        "meta.json": "002fa896d30b216286de59a5e77c8c6d9617a197"
+      }
+    },
+    {
+      "versao": "v3_filas-na-mesma-escala",
+      "veredito": "aprovado",
+      "nota": "Dominio comum sobre o conjunto, zero medido com trilho visivel nos dois temas e numero 0, sem coleta com contorno tracejado, Unplug e formatUnavailable, vazio com role=status. Observacoes no README: truncate no nome da fila, percentual pela capacidade da fila contra arco pelo dominio comum, TIP-1.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:28:28.029Z",
+      "impressao": "46ce825c5cbface4c55656902c3d9358037af633",
+      "arquivos": {
+        "Chart.tsx": "f1790b19af479e4b537fc8a800f6ffd7eac113f8",
+        "data.ts": "368613fc9b69ab8d79c3cde64e7ca6308f1c6737",
+        "meta.json": "365bb85cb6c04b6124f1866350a57278e5932b4a"
+      }
+    },
+    {
+      "versao": "v1_meta-de-agendas-em-arco",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: a tinta do 57 (26 px) fica a 8 px do arco nos dois temas, medido no PNG de 2x. Domínio [0, meta] explícito, mínimo e máximo nas pontas, frase de 201 caracteres. Observações no README: Recharts ainda pinta o arco depois do número, truncate na leitura e no rodapé, TIP-1, constantes no JSX.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:36:39.776Z",
+      "impressao": "0d8120acf9c2e8315d67f3da3bb6efadacd28da1",
+      "arquivos": {
+        "Chart.tsx": "bca8ca1948c958c3b2b3340f4a4ed2a52a4f5f11",
+        "data.ts": "bb9fdb4f8821493ad9f7b2858a3e9d09fa64343d",
+        "meta.json": "f48d809bb5aecced07841d5c053b8c7df1e4c5a4"
+      }
+    },
+    {
+      "versao": "v2_fechamentos-acima-da-meta",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: rodapé em duas linhas sem truncate diz que o arco vai a 24 (1,2 vez a meta) e a frase acessível repete. Meta no ângulo real (10°), excedente em positive com ícone e base nomeada. Observações no README: arco encolheu para raio de 33 px e banda de 9 px, +15,0% pela NUM-1, truncate com número na cauda, TIP-1.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:36:42.353Z",
+      "impressao": "c421eab060d300359f54bbb45cddab25fa7b7e86",
+      "arquivos": {
+        "Chart.tsx": "5a54bb4ba9460daffa0951def02891dd422e3343",
+        "data.ts": "ce7e74822a16edc4a02ae68ddba0292f29ea2fd8",
+        "meta.json": "002fa896d30b216286de59a5e77c8c6d9617a197"
       }
     }
   ]

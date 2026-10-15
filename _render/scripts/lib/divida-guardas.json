@@ -112,9 +112,6 @@
   "06_pizza/04_pizzas-em-small-multiples/v1_agendas-em-quatro-semanas": {
     "TEXTO-NA-MARCA": 3
   },
-  "06_pizza/05_pizza-de-raio-variavel/v1_investimento-e-cpl-qualificado-por-plataforma": {
-    "RAIO-CONTRA-AREA": 1
-  },
   "06_pizza/06_pizzas-proporcionais-ao-total/v1_receita-por-trimestre-e-tipo-de-cliente": {
     "TEXTO-NA-MARCA": 3
   },
@@ -152,8 +149,7 @@
     "EIXO-CALMO": 2
   },
   "09_dispersao-e-bolhas/03_bolhas/v1_campanhas-por-cpl-e-qualificacao": {
-    "EIXO-CALMO": 2,
-    "OPACIDADE-MARCA": 2
+    "EIXO-CALMO": 2
   },
   "10_funil/01_funil-em-barras-com-taxa-de-passo/v1_barras-com-trilho-e-taxa-de-passo": {
     "AGREGACAO-ZERO": 1
@@ -168,9 +164,6 @@
   },
   "10_funil/04_funil-comparativo/v1_trimestre-contra-trimestre": {
     "AGREGACAO-ZERO": 2
-  },
-  "10_funil/06_funil-empilhado-por-composicao/v4_sem-origem-cai-ao-longo-do-funil": {
-    "AGREGACAO-ZERO": 1
   },
   "11_fluxo-sankey/03_alluvial/v1_temperatura-dos-leads-em-tres-meses": {
     "AGREGACAO-ZERO": 1
@@ -242,29 +235,10 @@
   "14_tabelas-visuais/07_tabela-agrupada-com-subtotais/v2_media-da-casa-fixa-no-topo": {
     "AGREGACAO-ZERO": 2
   },
-  "14_tabelas-visuais/08_tabela-com-linha-expansivel/v2_executivo-com-serie-e-motivos": {
-    "EIXO-CALMO": 2
-  },
   "14_tabelas-visuais/09_matriz-de-comparacao-com-status/v2_cenarios-com-bolas-de-harvey": {
     "AGREGACAO-ZERO": 1
   },
-  "15_mapa-de-calor-e-calendario/03_cohort-em-triangulo/v1_agenda-por-cohort-mensal-de-entrada": {
-    "AGREGACAO-ZERO": 1
-  },
-  "15_mapa-de-calor-e-calendario/04_calendario-estilo-contribuicoes/v1_fechamentos-por-dia-em-2026": {
-    "TAMANHO-TEXTO": 1
-  },
-  "15_mapa-de-calor-e-calendario/05_calendario-mensal-em-grade/v1_reunioes-realizadas-em-setembro": {
-    "AGREGACAO-ZERO": 1
-  },
   "15_mapa-de-calor-e-calendario/06_lasagna/v1_sla-diario-por-fila": {
-    "TAMANHO-TEXTO": 1
-  },
-  "15_mapa-de-calor-e-calendario/07_matriz-de-transicao/v1_movimentos-entre-etapas-no-trimestre": {
-    "AGREGACAO-ZERO": 1,
-    "TAMANHO-TEXTO": 1
-  },
-  "15_mapa-de-calor-e-calendario/08_heatmap-de-correlacao/v1_seis-medidas-de-midia": {
     "TAMANHO-TEXTO": 1
   },
   "16_distribuicao/01_histograma/v1_ciclo-de-fechamento": {
@@ -279,12 +253,6 @@
   },
   "16_distribuicao/01_histograma/v4_receita-com-massa-no-zero": {
     "EIXO-CALMO": 2
-  },
-  "16_distribuicao/02_box-plot/v1_primeiro-contato-por-sdr": {
-    "AGREGACAO-ZERO": 3
-  },
-  "16_distribuicao/03_strip-plot-e-beeswarm/v1_cpl-das-campanhas-por-plataforma": {
-    "OPACIDADE-MARCA": 1
   },
   "16_distribuicao/04_ecdf-e-histograma-acumulado/v1_sla-de-primeiro-contato": {
     "EIXO-CALMO": 2

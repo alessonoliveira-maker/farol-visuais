@@ -1,6 +1,6 @@
 import { Filter } from 'lucide-react';
 
-import { formatDate, formatInt } from '@/lib/format';
+import { formatDate, formatInt, formatUnavailable } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, FIRST_WEEK, type Outcome } from './data';
 
@@ -86,6 +86,8 @@ export default function LongestLossRun({ data = defaultData, height, className }
   const wins = data.filter((outcome) => outcome === 'win').length;
   const losses = data.filter((outcome) => outcome === 'loss').length;
   const ties = data.filter((outcome) => outcome === 'tie').length;
+  const measured = wins + losses + ties;
+  const unmeasured = data.length - measured;
   const run = longestLossRun(data);
   const span = run === null ? null : spanOf(run, data.length);
   const flip = span !== null && span.left + span.width / 2 > LABEL_FLIP_AT;
@@ -102,13 +104,21 @@ export default function LongestLossRun({ data = defaultData, height, className }
       : tieWeek === tieAfter
         ? `; o empate no limite da semana de ${formatDate(isoAt(tieWeek))} a encerra`
         : `; o empate no limite da semana de ${formatDate(isoAt(tieWeek))} a precede`;
-  const runLabel = run === null ? '' : `${formatInt(run.length)} semanas seguidas fora`;
+  const plural = (n: number, um: string, varios: string): string => `${formatInt(n)} ${n === 1 ? um : varios}`;
+  const runLabel = run === null ? '' : `${plural(run.length, 'semana seguida fora', 'semanas seguidas fora')}`;
+  const unmeasuredLabel = plural(unmeasured, 'semana sem resultado medido', 'semanas sem resultado medido');
   const width = cellWidth(data.length);
 
   const summary =
     `Win/loss do SLA semanal em ${formatInt(data.length)} semanas, de ${firstLabel} a ${lastLabel}: ` +
-    `${formatInt(wins)} dentro, ${formatInt(losses)} fora e ${formatInt(ties)} no limite. ` +
-    (run === null
+    (measured === 0
+      ? `nenhuma semana tem resultado medido (${formatUnavailable()}). `
+      : `${formatInt(wins)} dentro, ${formatInt(losses)} fora e ${formatInt(ties)} no limite` +
+        (unmeasured > 0 ? `, ${formatInt(unmeasured)} sem resultado medido` : '') +
+        '. ') +
+    (measured === 0
+      ? 'Não há sequência a anotar.'
+      : run === null
       ? 'Nenhuma sequência de derrotas.'
       : `A maior sequência fora do SLA tem ${formatInt(run.length)} semanas, de ${runStart} a ${runEnd}${tieNote}.`);
 
@@ -122,14 +132,21 @@ export default function LongestLossRun({ data = defaultData, height, className }
       <div aria-hidden>
         <p className="tabular-nums">
           <span className="font-display text-sm font-semibold text-text-primary">
-            {run === null ? 'sem sequência fora do SLA' : runLabel}
+            {measured === 0 ? formatUnavailable() : run === null ? 'sem sequência fora do SLA' : runLabel}
           </span>
         </p>
         <p className="mt-1 text-[0.6875rem] leading-4 text-text-muted tabular-nums">
-          {run === null
-            ? `${formatInt(losses)} semanas fora do SLA, nenhuma colada na outra`
+          {measured === 0
+            ? unmeasuredLabel
+            : run === null
+            ? losses === 0
+              ? 'nenhuma semana fora do SLA'
+              : `${plural(losses, 'semana fora do SLA', 'semanas fora do SLA')}, nenhuma colada na outra`
             : `a maior, de ${runStart} a ${runEnd}${tieNote}`}
         </p>
+        {measured > 0 && unmeasured > 0 ? (
+          <p className="mt-1 text-[0.6875rem] leading-4 text-text-muted tabular-nums">{`${unmeasuredLabel}, fora da contagem`}</p>
+        ) : null}
       </div>
 
       <div aria-hidden>

@@ -13,6 +13,42 @@
         "data.ts": "68f91ac7a5ed23914bac98f8e050b3ea1bcba3b7",
         "meta.json": "ba9e72c7349703bca227b31a03446003b160de74"
       }
+    },
+    "v2_concentracao-em-um-executivo": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: um destaque em chart-1 com segundo canal (peso 700, linha de leitura e lista), neutro text-muted sem valor escrito acima de 3:1 nos dois temas, area da folha exata por squarify, todo produto nomeado com valor na lista (ROT-10), zero declarado fora do desenho com motivo. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:10.615Z",
+      "impressao": "99fe3e2678aa59b03fcdf5d04409e302f1ba304a",
+      "arquivos": {
+        "Chart.tsx": "aef0c0a373d33a959186419c911fd72e025f952e",
+        "data.ts": "a39e672d9e2bad8cfc97645193d7ab03a58ae121",
+        "meta.json": "9aade90b253d098d88ef7884f55c802eb7b9ae8f"
+      }
+    },
+    "v3_custo-por-camada-e-rubrica": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: tres camadas em chart-1, chart-3 e chart-6 na ordem da COR-8, faixa de 18 px reservada antes de repartir, total e participacao no cabecalho somando 100 pelo maior resto, rotulo so com nome e valor juntos, 26 rubricas nomeadas com valor na lista (ROT-10). Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:16.375Z",
+      "impressao": "0fa26166657907ac784706e9cf9f67b1eb6cb5b3",
+      "arquivos": {
+        "Chart.tsx": "7291043145d4201d9ff922741eaf47fa4a094faf",
+        "data.ts": "3b4d7fd8044175d4dd288e91b6ebdcbb287df79b",
+        "meta.json": "7ed80f807b82cbd742169194df8820309b4f1de9"
+      }
+    },
+    "v4_grupo-minusculo-sem-selo": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: regra de corte em tres desfechos visiveis (faixa, sem faixa com contorno, camada de 0,16% pintada cheia em 420 px2 contra cerca de 400 pedidos), seis cores no teto da COR-4, toda camada e rubrica nomeada com valor na lista e a menor tambem na frase acessivel. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:16.946Z",
+      "impressao": "6bf7302f44fa871109f56a40c1b16f0813973b51",
+      "arquivos": {
+        "Chart.tsx": "9f8676ce55bb5ce6dd65b37c35380b7bae2ca60f",
+        "data.ts": "d9c4a535792c15a012522f932bf2d1e602577868",
+        "meta.json": "ec0e419bdfa16bc250a9d6e4b7543c131d9f3e43"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,45 @@
         "Chart.tsx": "b8898d427ffeb5bb0499a51984881ddf280b9add",
         "data.ts": "68f91ac7a5ed23914bac98f8e050b3ea1bcba3b7",
         "meta.json": "ba9e72c7349703bca227b31a03446003b160de74"
+      }
+    },
+    {
+      "versao": "v2_concentracao-em-um-executivo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: um destaque em chart-1 com segundo canal (peso 700, linha de leitura e lista), neutro text-muted sem valor escrito acima de 3:1 nos dois temas, area da folha exata por squarify, todo produto nomeado com valor na lista (ROT-10), zero declarado fora do desenho com motivo. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:10.615Z",
+      "impressao": "99fe3e2678aa59b03fcdf5d04409e302f1ba304a",
+      "arquivos": {
+        "Chart.tsx": "aef0c0a373d33a959186419c911fd72e025f952e",
+        "data.ts": "a39e672d9e2bad8cfc97645193d7ab03a58ae121",
+        "meta.json": "9aade90b253d098d88ef7884f55c802eb7b9ae8f"
+      }
+    },
+    {
+      "versao": "v3_custo-por-camada-e-rubrica",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: tres camadas em chart-1, chart-3 e chart-6 na ordem da COR-8, faixa de 18 px reservada antes de repartir, total e participacao no cabecalho somando 100 pelo maior resto, rotulo so com nome e valor juntos, 26 rubricas nomeadas com valor na lista (ROT-10). Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:16.375Z",
+      "impressao": "0fa26166657907ac784706e9cf9f67b1eb6cb5b3",
+      "arquivos": {
+        "Chart.tsx": "7291043145d4201d9ff922741eaf47fa4a094faf",
+        "data.ts": "3b4d7fd8044175d4dd288e91b6ebdcbb287df79b",
+        "meta.json": "7ed80f807b82cbd742169194df8820309b4f1de9"
+      }
+    },
+    {
+      "versao": "v4_grupo-minusculo-sem-selo",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: regra de corte em tres desfechos visiveis (faixa, sem faixa com contorno, camada de 0,16% pintada cheia em 420 px2 contra cerca de 400 pedidos), seis cores no teto da COR-4, toda camada e rubrica nomeada com valor na lista e a menor tambem na frase acessivel. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:24:16.946Z",
+      "impressao": "6bf7302f44fa871109f56a40c1b16f0813973b51",
+      "arquivos": {
+        "Chart.tsx": "9f8676ce55bb5ce6dd65b37c35380b7bae2ca60f",
+        "data.ts": "d9c4a535792c15a012522f932bf2d1e602577868",
+        "meta.json": "ec0e419bdfa16bc250a9d6e4b7543c131d9f3e43"
       }
     }
   ]

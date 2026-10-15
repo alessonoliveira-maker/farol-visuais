@@ -13,6 +13,42 @@
         "data.ts": "ae0fb61aa79566c483908d9856ab723a577cb531",
         "meta.json": "6280c054ab7e617d97c1a71270b3317a80b1ad33"
       }
+    },
+    "v2_ritmo-linear-com-alternancia-para-paineis": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: os dois painéis em escala band (jan da linha em x 109,75 contra 109,95 da coluna, planos de 79 px nos dois), título por painel, revestimento --surface-raised sob a linha do modo duplo, conferido pela aritmética dos domínios sem cobrir topo de coluna; check 0 erros. Observações no README (syncId, guia sobre coluna TOK-10, GEO-1 do meta.json).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:54.651Z",
+      "impressao": "667c08ae5face8f01471e1d20015564e1367f6be",
+      "arquivos": {
+        "Chart.tsx": "55661995421040ea7302600c0301ac963599e6eb",
+        "data.ts": "baa45fc76c55dbeed5481a3e3856c8b0334cb440",
+        "meta.json": "7e4ef91638c9ae418e38a39b9cdfa2cfb58ebfbf"
+      }
+    },
+    "v3_fechamentos-por-vertical-com-acumulado": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: revestimento --surface-raised de 5 px sob a linha em --chart-7, que agora se lê sobre os quatro segmentos nos dois temas sem cobrir topo de pilha (o mais próximo a 3,6 px); taxa de câmbio no rodapé; check 0 erros. Observações no README (guia do ritmo sobre a pilha, nome da linha).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:55.231Z",
+      "impressao": "080982077e21ef88235e493683cd35c0ef9397d1",
+      "arquivos": {
+        "Chart.tsx": "123a772f9bbe5f71466753238d5dd8164be8ddec",
+        "data.ts": "2a9cd61a16f68f42950d735d8aa819e49519a3cc",
+        "meta.json": "cb35f789cfd25d8d6e89746c4a1368378b42992c"
+      }
+    },
+    "v4_estorno-e-meta-revisada": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: rodapé imprime a taxa implícita (R$ 1,00 do mês a R$ 8,00 do acumulado) e o passo seguinte (R$ 10,00), como a emenda da EIX-8 pede; revestimento sob a linha do acumulado sem cobrir topo; check 0 erros. Degrau da meta ainda acima das colunas (TOK-10) fica como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:55.882Z",
+      "impressao": "cd05e431bae7230300621de91deb8c8d8a18ca75",
+      "arquivos": {
+        "Chart.tsx": "5482b5cc1450edb4de51af8ab0c6cfe68df7dc6c",
+        "data.ts": "54732cec967fec6e599effc3087a4f7586bc612b",
+        "meta.json": "bef5e9050dc023846d8f98d24359ecd66c1dacf8"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,84 @@
         "Chart.tsx": "a01cffe7c36bf68cfdc9851b5048ae42ac2325bd",
         "data.ts": "ae0fb61aa79566c483908d9856ab723a577cb531",
         "meta.json": "6280c054ab7e617d97c1a71270b3317a80b1ad33"
+      }
+    },
+    {
+      "versao": "v2_ritmo-linear-com-alternancia-para-paineis",
+      "veredito": "reprovado",
+      "nota": "Pergunta 29, EIX-12 e REC-16: o painel do acumulado não tem Bar e cai em escala point, o das colunas em band; jan da linha em x 76 contra 109,75 da coluna e dez 33,75 px do outro lado; dar scale=\"band\" ao XAxis do painel de cima. Pergunta 12, identificação das marcas: nenhum painel nomeia a grandeza, \"acumulado\" e \"receita\" não aparecem na tela e os tiques empilham 12, 6, 0, 2, 1, 0 como um eixo só; titular cada painel como em 08/03. Pergunta 20, ACE-3 e TOK-4: no modo duplo a linha em --chart-1 passa por dentro de 6 das 8 colunas a 1,06 a 1,73:1; revestimento --surface-raised sob a linha. Parecer em validation/revisao_08_combinados-e-eixo-duplo__05_colunas-com-linha-de-acumulado_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:25:07.918Z",
+      "impressao": "51f68c0e60effe8f8f48bb0898b6d2b452ec0f5d",
+      "arquivos": {
+        "Chart.tsx": "1e2dc97e741e29aa469dc52f0a2e635540016c61",
+        "data.ts": "baa45fc76c55dbeed5481a3e3856c8b0334cb440",
+        "meta.json": "7e4ef91638c9ae418e38a39b9cdfa2cfb58ebfbf"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-por-vertical-com-acumulado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 20, ACE-3 e ACE-2, saída da TOK-4: a linha do acumulado em --chart-7 cruza 6 das 8 pilhas sem revestimento e mede de 1,02 a 1,58:1 contra os segmentos; sobre Renda fixa (1,08:1 no escuro, 1,09:1 no claro, matiz vizinho) o vértice de abr/26 some nos dois temas. Desenhar por baixo da linha um traço de --surface-raised mais largo, como a COR-5 autoriza. Parecer em validation/revisao_08_combinados-e-eixo-duplo__05_colunas-com-linha-de-acumulado_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:25:16.749Z",
+      "impressao": "16853f0cfd9ed8a341913e016ae7a48078587288",
+      "arquivos": {
+        "Chart.tsx": "4a99858492a7709eb579962ecab0d1cb60ff0a52",
+        "data.ts": "2a9cd61a16f68f42950d735d8aa819e49519a3cc",
+        "meta.json": "cb35f789cfd25d8d6e89746c4a1368378b42992c"
+      }
+    },
+    {
+      "versao": "v4_estorno-e-meta-revisada",
+      "veredito": "reprovado",
+      "nota": "Pergunta 7, EIX-8 (emenda de 2026-09-28): eixo duplo assumido de propósito sem a taxa de câmbio implícita, e o rodapé diz só que os eixos partilham o zero; o desenho equipara R$ 1 do mês a R$ 8 do acumulado, e a meta de R$ 1,0 mi corre exatamente no topo da coluna de ago/26 (y 49,125 nos dois); imprimir a taxa e o passo seguinte, como a v3. Pergunta 20, ACE-3 e ACE-2, saída da TOK-4: 7 dos 8 vértices da linha caem dentro das colunas, a 1,47:1 no escuro e 1,03:1 no claro; revestimento --surface-raised sob a linha. Parecer em validation/revisao_08_combinados-e-eixo-duplo__05_colunas-com-linha-de-acumulado_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:25:17.346Z",
+      "impressao": "95c1ecee984e4c0c8e2693e22dfa38a6eb5b4d77",
+      "arquivos": {
+        "Chart.tsx": "33b92754ad59d3eb4e9ada6fee0a0f77c7134d63",
+        "data.ts": "54732cec967fec6e599effc3087a4f7586bc612b",
+        "meta.json": "bef5e9050dc023846d8f98d24359ecd66c1dacf8"
+      }
+    },
+    {
+      "versao": "v2_ritmo-linear-com-alternancia-para-paineis",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: os dois painéis em escala band (jan da linha em x 109,75 contra 109,95 da coluna, planos de 79 px nos dois), título por painel, revestimento --surface-raised sob a linha do modo duplo, conferido pela aritmética dos domínios sem cobrir topo de coluna; check 0 erros. Observações no README (syncId, guia sobre coluna TOK-10, GEO-1 do meta.json).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:54.651Z",
+      "impressao": "667c08ae5face8f01471e1d20015564e1367f6be",
+      "arquivos": {
+        "Chart.tsx": "55661995421040ea7302600c0301ac963599e6eb",
+        "data.ts": "baa45fc76c55dbeed5481a3e3856c8b0334cb440",
+        "meta.json": "7e4ef91638c9ae418e38a39b9cdfa2cfb58ebfbf"
+      }
+    },
+    {
+      "versao": "v3_fechamentos-por-vertical-com-acumulado",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: revestimento --surface-raised de 5 px sob a linha em --chart-7, que agora se lê sobre os quatro segmentos nos dois temas sem cobrir topo de pilha (o mais próximo a 3,6 px); taxa de câmbio no rodapé; check 0 erros. Observações no README (guia do ritmo sobre a pilha, nome da linha).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:55.231Z",
+      "impressao": "080982077e21ef88235e493683cd35c0ef9397d1",
+      "arquivos": {
+        "Chart.tsx": "123a772f9bbe5f71466753238d5dd8164be8ddec",
+        "data.ts": "2a9cd61a16f68f42950d735d8aa819e49519a3cc",
+        "meta.json": "cb35f789cfd25d8d6e89746c4a1368378b42992c"
+      }
+    },
+    {
+      "versao": "v4_estorno-e-meta-revisada",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: rodapé imprime a taxa implícita (R$ 1,00 do mês a R$ 8,00 do acumulado) e o passo seguinte (R$ 10,00), como a emenda da EIX-8 pede; revestimento sob a linha do acumulado sem cobrir topo; check 0 erros. Degrau da meta ainda acima das colunas (TOK-10) fica como observação no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:43:55.882Z",
+      "impressao": "cd05e431bae7230300621de91deb8c8d8a18ca75",
+      "arquivos": {
+        "Chart.tsx": "5482b5cc1450edb4de51af8ab0c6cfe68df7dc6c",
+        "data.ts": "54732cec967fec6e599effc3087a4f7586bc612b",
+        "meta.json": "bef5e9050dc023846d8f98d24359ecd66c1dacf8"
       }
     }
   ]

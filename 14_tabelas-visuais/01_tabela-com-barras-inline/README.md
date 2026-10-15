@@ -60,7 +60,7 @@ correlação sem gráfico de dispersão, que é o espírito do TableLens.
 
 * [`v1_receita-por-executivo`](./v1_receita-por-executivo/) ([preview](./v1_receita-por-executivo/preview.svg)):
   barra simples com a receita reconhecida de 12 executivos, domínio calculado uma vez por
-  `useMemo` e traço tracejado da média do time comum ao trilho de todas as linhas.
+  `useMemo` e traço tracejado da média do time comum ao trilho de todas as linhas, em `--text-primary` com anel de 1 px em `--surface-raised`, que o mantém legível sobre a barra.
 * [`v2_agendas-contra-meta-em-bullet`](./v2_agendas-contra-meta-em-bullet/) ([preview](./v2_agendas-contra-meta-em-bullet/preview.svg)):
   bullet inline em SVG puro com as agendas da semana de 10 SDRs contra a meta comum, faixas de
   0 a 70%, 70 a 100% e acima de 100%, ícone e cor só na linha mais crítica, e marca de estouro
@@ -68,7 +68,7 @@ correlação sem gráfico de dispersão, que é o espírito do TableLens.
 * [`v3_resultado-por-origem-com-desvio-e-mix`](./v3_resultado-por-origem-com-desvio-e-mix/) ([preview](./v3_resultado-por-origem-com-desvio-e-mix/preview.svg)):
   três marcas na mesma linha por origem de lead, volume em barra simples, saldo em barra
   divergente com zero e domínio simétrico calculados por coluna, e mix de status em composição
-  100% com legenda única no cabeçalho e rótulo percentual só acima de 12%.
+  100% com legenda única no cabeçalho e rótulo percentual em todo segmento onde o número cabe (ROT-10, não o limiar de 12% do catálogo); volume em `--text-muted`, `--chart-1` só em Novo; canvas 960 por 440 declarado no `meta.json`.
 * [`v4_ausente-zero-outlier-e-faixa`](./v4_ausente-zero-outlier-e-faixa/) ([preview](./v4_ausente-zero-outlier-e-faixa/preview.svg)):
   os quatro casos difíceis lado a lado, CPL indisponível diferente de CPL zero medido, volume de
   uma origem 11 vezes maior que as demais truncado com marca de corte, e margem em ponto e
@@ -164,14 +164,57 @@ fim da lista. Nenhum item desta seção reprova versão._
   de posição na lista ordenada.
 * `v2_agendas-contra-meta-em-bullet`: com 10 linhas no canvas `alto`, cerca de um quinto da
   altura sobra vazia abaixo da última linha, dentro da moldura da tabela.
-* `v3_resultado-por-origem-com-desvio-e-mix`: `--chart-1` acumula dois papéis no mesmo visual,
-  série única da coluna de volume e categoria "Novo" do mix, enquanto a 17.2 pede um papel por
-  token dentro de um visual. A leitura se sustenta porque as colunas têm cabeçalho próprio e a
-  legenda nomeia a categoria.
-* `v3_resultado-por-origem-com-desvio-e-mix`: nas linhas com segmento abaixo de 12% os
-  percentuais impressos somam menos de 100, como em "Evento presencial", com 14, 53 e 25. O
-  desenho segue proporcional e a conta interna fecha em 100 pelo maior resto; o que falta é o
-  número do segmento pequeno, que o próprio catálogo manda omitir.
 * `v4_ausente-zero-outlier-e-faixa`: a coluna de CPL escreve centavo (`R$ 38,00`), enquanto a
   NUM-1 reserva o centavo à tabela de detalhe. Aqui é tabela, então a escolha é defensável, mas o
   centavo é sempre zero no dado fixo e ocupa dois dígitos da coluna.
+
+_Revisão de 2026-10-14, sobre o código e os PNGs de hoje das versões `v1`, `v3` e `v4`, com a `v1`
+e a `v3` reprovadas (parecer em `validation/revisao_14_tabelas-visuais__01_tabela-com-barras-inline_2026-10-14.md`).
+Os itens abaixo não reprovam e ficam para quem tocar o arquivo._
+
+* `v1`, `v3` e `v4`: os números do cabeçalho e do rodapé (`média R$ 750,7 mil`, `0 a 612 leads`,
+  `± R$ 89,0 mil`, `R$ 0 a R$ 124`, `704 leads`, `−14% a +14%`, `(n=1)` e a contagem de linhas)
+  saem em Manrope sem `tabular-nums` (TIP-1). São números soltos, sem coluna a alinhar, então não há
+  consequência visível.
+* `v1_receita-por-executivo`: o primeiro item de `demonstrates` no `meta.json`, e a linha do
+  catálogo, ainda dizem "trilho em surface-overlay", enquanto o código usa, com razão,
+  `bg-surface-sunken`. A descrição contradiz a peça e o token que a tabela de estrutura proíbe.
+* `v1_receita-por-executivo`: os dois primeiros escrevem `R$ 1,3 mi` e `R$ 1,1 mi`, dois algarismos
+  significativos, enquanto os demais escrevem quatro (`R$ 998,2 mil`), e o caso de uso promete o
+  valor exato de cada um. É o `formatCurrencyCompact` que a NUM-1 manda, por isso não reprova.
+* `v3_resultado-por-origem-com-desvio-e-mix`: os trilhos de volume e de saldo medem 56 px cada,
+  enquanto a coluna Origem sobra uns 100 px. O saldo de ± R$ 89,0 mil cabe em 28 px por lado:
+  `−R$ 3,2 mil` vira 1 px, e as duas maiores perdas, com 12 a 13 px de largura contra 14 de altura
+  em `rounded-full`, leem como ponto e não como barra.
+* `v3_resultado-por-origem-com-desvio-e-mix`: as setas `ArrowUpRight` e `ArrowDownRight` do saldo
+  sugerem tendência, e o saldo é sinal de resultado, não variação contra uma base.
+* `v3_resultado-por-origem-com-desvio-e-mix`: a frase acessível escreve `R$ 89,0 mil de saldo` e o
+  corpo `+R$ 89,0 mil`, o mesmo número com e sem sinal (DAD-5).
+* `v4_ausente-zero-outlier-e-faixa`: o período, agosto de 2026, só existe na frase acessível
+  (DAD-9). O caso de uso da `v3` diz "em 2026-08"; o da `v4` não diz, e nem o corpo.
+* `v4_ausente-zero-outlier-e-faixa`: a margem escreve o n só na linha de `n=1`; as outras, de 8 a 54
+  negócios, saem sem a base (DAD-1), e `Evento presencial`, com 8, não ganha aviso. O cabeçalho
+  também não diz se o ponto é média ou mediana nem o que a faixa cobre (NUM-5).
+* `v4_ausente-zero-outlier-e-faixa`: a frase acessível cita três dos quatro casos difíceis e deixa
+  de fora o zero medido de `Busca orgânica`, que o caso de uso nomeia.
+* `v4_ausente-zero-outlier-e-faixa`: conferido de novo em 2026-10-14, a marca de corte do outlier
+  continua visível nos dois temas no render de página e ausente no `preview.svg` e no PNG; a
+  moldura da tabela também aparece no render de página e some no preview. Defeito do serializador,
+  não da versão.
+
+_Segunda revisão de 2026-10-14, depois da rodada de correção, sobre o código e os PNGs de hoje da
+`v1` e da `v3`, as duas aprovadas. Os itens abaixo não reprovam._
+
+* `v1_receita-por-executivo`: o anel de 1 px em `--surface-raised` em volta do traço da média também
+  cobre 1 px da barra de cada lado. Na linha 6 (`R$ 803,4 mil` contra a média de `R$ 750,7 mil`) a
+  ponta passa uns 5 px do traço e só uns 4 px de barra aparecem depois do anel; num recorte em que
+  um valor caia a 2 px da média, a ponta some sob o anel. O valor escrito ao lado segura a leitura.
+* `v1_receita-por-executivo`: o `demonstrates` do `meta.json` continua dizendo "trilho em
+  surface-overlay"; a rodada de correção não tocou o arquivo.
+* `v3_resultado-por-origem-com-desvio-e-mix`: o teste de caber do rótulo do mix usa
+  `MIX_WIDTH_ESTIMATE = 320`, e não a largura medida. No preview a coluna mede uns 319 px e o `8%`
+  cabe com folga de 2 a 3 px; num cartão mais estreito o segmento rotulado, que é item flex com
+  `min-width: auto`, alarga além da própria participação ou o número transborda. Ao colar no Farol,
+  medir a coluna (ResizeObserver) ou dar `min-w-0` com `overflow-hidden` ao segmento.
+* `v3_resultado-por-origem-com-desvio-e-mix`: com o canvas de 440 px, a moldura da tabela, que
+  estica com `flex-1`, deixa uns 28 px vazios abaixo da última linha.

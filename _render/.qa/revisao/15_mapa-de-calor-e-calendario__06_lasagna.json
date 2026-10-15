@@ -13,6 +13,42 @@
         "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
         "meta.json": "799877bbbc25d35498625b3f49f2917fe6715903"
       }
+    },
+    "v2_ocupacao-semanal-por-sdr": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala divergente centrada em 100% com contorno em --warning acima do teto, semana em curso tracejada e fora da média, semana sem agenda hachurada e média escrita à direita; degraus a 0,7 de opacidade em 3,25:1 e 3,28:1 no pior tema. Observações no README: escala sem ordem de luminância a partir do centro (até 70% contra 90% a 100% dá ΔE 4,2 em deuteranopia no claro), contorno visível só pelo matiz, parcial sem data, legenda abaixo do gráfico.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:18:36.858Z",
+      "impressao": "1e7b2e05dff3ed3111d4e7a8affb4e93c86e0178",
+      "arquivos": {
+        "Chart.tsx": "ceee43fb6831b87919fa7454b4ddb8db51f00d42",
+        "data.ts": "996f5568887e7b11e50a9a733ba0ef784f8da8a1",
+        "meta.json": "8fef1300accd3a1ef67f3dd748f1d3230d154b7b"
+      }
+    },
+    "v3_dias-parados-das-oportunidades-abertas": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O defeito da segunda passada foi resolvido: laneOf toma o último movimento anterior à janela como referência (e a criação na falta dele), e o data.ts ganhou esse movimento em 55 das 81 oportunidades antigas, com 26 contando da criação (11 nunca andaram). Recalculado do data.ts, a cor bate com o dado em todo dia: 47 paradas há 30 dias ou mais, 119 nascidas no recorte, 36% no primeiro degrau, 18.035 dias em 3.439 trechos. Observações no README: o vão anterior à janela sai de 2 a 48 dias sem relação com o ritmo de cada oportunidade, e 46% das antigas abrem em mais de 29 dias contra 10% em 01/07 (artefato do dado fictício, não do encoding); meta.json com distribuição velha e sem a regra do movimento anterior.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:15:50.461Z",
+      "impressao": "a491e1b5c8a527ff0a7ac617d361a805e51919fb",
+      "arquivos": {
+        "Chart.tsx": "cdf5dedec24f2b52c321137bbdded2184b2e4675",
+        "data.ts": "89febf6896d67050b6017e80030dcec9750fa9ba",
+        "meta.json": "d5fb9ea48baddb6a22b11f6edcd5dbdd31e9c88d"
+      }
+    },
+    "v4_inicio-tardio-e-agregacao-semanal": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os dois da primeira passada foram resolvidos: a grandeza está na tela (reuniões por dia, linhas por admissão) e, na colisão, a semana parcial cede à virada, com abr/26 na coluna de 06/04 e o início na nota (26 semanas desde 30/03/2026); no passo dia mar/26 também cede a abr/26. Vazio antes da admissão, 3 colunas hachuradas e 2 zeros com o 0 vazado a 5,21 e 5,37:1, conferidos contra o data.ts. Observações no README: data da nota montada à mão em vez de formatDate, legenda abaixo do gráfico, e as da primeira passada seguem valendo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:30:43.689Z",
+      "impressao": "46df6821511005db24c58c212dd10064831633e2",
+      "arquivos": {
+        "Chart.tsx": "37a1bf0233cd0e555257f0b75e7bf3b5d7b9e237",
+        "data.ts": "614fab2d4b077d4c4727e6ea7ba558a9048a06a0",
+        "meta.json": "78e2a06d27588e1dc5a8e07225c721944b175091"
+      }
     }
   },
   "historico": [
@@ -53,6 +89,84 @@
         "Chart.tsx": "36401ea8f894c147e51005adca90d45ece297485",
         "data.ts": "c410d521745f2a2a5e7f7fd181c92d7a1f4bff57",
         "meta.json": "799877bbbc25d35498625b3f49f2917fe6715903"
+      }
+    },
+    {
+      "versao": "v2_ocupacao-semanal-por-sdr",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala divergente centrada em 100% com contorno em --warning acima do teto, semana em curso tracejada e fora da média, semana sem agenda hachurada e média escrita à direita; degraus a 0,7 de opacidade em 3,25:1 e 3,28:1 no pior tema. Observações no README: escala sem ordem de luminância a partir do centro (até 70% contra 90% a 100% dá ΔE 4,2 em deuteranopia no claro), contorno visível só pelo matiz, parcial sem data, legenda abaixo do gráfico.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:18:36.858Z",
+      "impressao": "1e7b2e05dff3ed3111d4e7a8affb4e93c86e0178",
+      "arquivos": {
+        "Chart.tsx": "ceee43fb6831b87919fa7454b4ddb8db51f00d42",
+        "data.ts": "996f5568887e7b11e50a9a733ba0ef784f8da8a1",
+        "meta.json": "8fef1300accd3a1ef67f3dd748f1d3230d154b7b"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-das-oportunidades-abertas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EIX-10 e DAD-2 (14.1, ausência exibida como zero): para as 81 oportunidades criadas antes de 01/06/2026 a contagem de dias parados começa em zero no primeiro dia da janela sem movimento nenhum no dado. 55 delas saem como até 2 dias de 01 a 03/06, e as 11 que nunca andaram (opp-013 desde 31/10/2025) só chegam a mais de 29 dias em 01/07; o PNG mostra colunas falsas nos dias 3, 8, 15 e 30 de junho, e o data.ts diz que a oportunidade sem movimento conta desde a criação. Dar ao dado o último movimento anterior à janela, ou contar desde a criação, ou desenhar o trecho sem histórico como ausência declarada. Pergunta 1: o subtítulo pergunta quais nunca andaram, que o desenho não identifica; voltar ao nunca voltaram a andar do catálogo ou escrever a contagem. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__06_lasagna_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:18:42.487Z",
+      "impressao": "d7dbb5b05faf03f4322b75ba84147bca6dd79f25",
+      "arquivos": {
+        "Chart.tsx": "9ab81d040d4cd65e61872f08bab0c552224bd4aa",
+        "data.ts": "132dfc38b1b055ff989b2333778906c6f2e17a40",
+        "meta.json": "93c17d64363e612c29a1eac3cb95f59404230719"
+      }
+    },
+    {
+      "versao": "v4_inicio-tardio-e-agregacao-semanal",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6 (14.1, unidade): a grandeza pintada não aparece na tela. A legenda diz até 1,5 por dia, 1,5 a 3,0 por dia e mais de 3,0 por dia, e nem título, nem subtítulo, nem nota dizem reuniões, que só existe na frase acessível; pôr reuniões por dia na legenda ou na nota de escala. Pergunta 15, eixo de tempo (14.1, tique perdido): MIN_TICK_GAP descarta abr/26 e mantém mar/26 sobre a coluna que tem só 30 e 31/03, e as quatro semanas de abril ficam sob mar/26; na colisão, descartar o rótulo da semana parcial do início e manter a virada, com o início da janela escrito na nota. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__06_lasagna_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:18:47.702Z",
+      "impressao": "eb3d5776cf8c7d5e598ba01167a39839a40cd89d",
+      "arquivos": {
+        "Chart.tsx": "6571a45108be24d093c8d5470bb56fd99d12344b",
+        "data.ts": "614fab2d4b077d4c4727e6ea7ba558a9048a06a0",
+        "meta.json": "78e2a06d27588e1dc5a8e07225c721944b175091"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-das-oportunidades-abertas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EIX-10 e DAD-2 (14.1, encoding da cor): laneOf descarta todo movimento anterior à janela (Chart.tsx linha 127, index >= 0) e começa a contagem na criação, então com histórico no dado a cor afirma dias parados que o dado contradiz: criada em 05/10/2025 e movida em 30/05/2026 sai como mais de 29 dias de 01 a 09/06, quando o dado dá de 2 a 10 dias. Como o data.ts não tem nenhum movimento antes de 01/06, o preview abre com 59 das 81 oportunidades antigas em mais de 29 dias em 01/06, 19 em 14/06, contra 10% no dia 30: faixa escura na borda esquerda que se lê como evento sistêmico e é o corte da janela. Tomar o último movimento anterior à janela como referência inicial, dar esse histórico ao data.ts e manter algumas sem movimento desde a criação. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__06_lasagna_2026-10-15.md, segunda passada.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:30:40.704Z",
+      "impressao": "11a3f3585f3cae53b59ac28790d46fe6126c2db0",
+      "arquivos": {
+        "Chart.tsx": "0500262cb15362aff536ef78e9ad34b90853f092",
+        "data.ts": "9a52a9a179374313b19fa00afd596ef0ff7185c4",
+        "meta.json": "d5fb9ea48baddb6a22b11f6edcd5dbdd31e9c88d"
+      }
+    },
+    {
+      "versao": "v4_inicio-tardio-e-agregacao-semanal",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Os dois da primeira passada foram resolvidos: a grandeza está na tela (reuniões por dia, linhas por admissão) e, na colisão, a semana parcial cede à virada, com abr/26 na coluna de 06/04 e o início na nota (26 semanas desde 30/03/2026); no passo dia mar/26 também cede a abr/26. Vazio antes da admissão, 3 colunas hachuradas e 2 zeros com o 0 vazado a 5,21 e 5,37:1, conferidos contra o data.ts. Observações no README: data da nota montada à mão em vez de formatDate, legenda abaixo do gráfico, e as da primeira passada seguem valendo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:30:43.689Z",
+      "impressao": "46df6821511005db24c58c212dd10064831633e2",
+      "arquivos": {
+        "Chart.tsx": "37a1bf0233cd0e555257f0b75e7bf3b5d7b9e237",
+        "data.ts": "614fab2d4b077d4c4727e6ea7ba558a9048a06a0",
+        "meta.json": "78e2a06d27588e1dc5a8e07225c721944b175091"
+      }
+    },
+    {
+      "versao": "v3_dias-parados-das-oportunidades-abertas",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. O defeito da segunda passada foi resolvido: laneOf toma o último movimento anterior à janela como referência (e a criação na falta dele), e o data.ts ganhou esse movimento em 55 das 81 oportunidades antigas, com 26 contando da criação (11 nunca andaram). Recalculado do data.ts, a cor bate com o dado em todo dia: 47 paradas há 30 dias ou mais, 119 nascidas no recorte, 36% no primeiro degrau, 18.035 dias em 3.439 trechos. Observações no README: o vão anterior à janela sai de 2 a 48 dias sem relação com o ritmo de cada oportunidade, e 46% das antigas abrem em mais de 29 dias contra 10% em 01/07 (artefato do dado fictício, não do encoding); meta.json com distribuição velha e sem a regra do movimento anterior.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:15:50.461Z",
+      "impressao": "a491e1b5c8a527ff0a7ac617d361a805e51919fb",
+      "arquivos": {
+        "Chart.tsx": "cdf5dedec24f2b52c321137bbdded2184b2e4675",
+        "data.ts": "89febf6896d67050b6017e80030dcec9750fa9ba",
+        "meta.json": "d5fb9ea48baddb6a22b11f6edcd5dbdd31e9c88d"
       }
     }
   ]

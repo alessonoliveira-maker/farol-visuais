@@ -1,3 +1,4 @@
+import { Filter } from 'lucide-react';
 import type { ReactElement } from 'react';
 import {
   Bar,
@@ -12,7 +13,7 @@ import {
 } from 'recharts';
 
 import { AXIS_PROPS } from '@/components/visuals/charts/chartTheme';
-import { formatDecimal, formatInt, formatPercent } from '@/lib/format';
+import { formatDecimal, formatInt, formatRateWithVolume } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, DOMAIN_MAX, SLA_MINUTES, WITHOUT_CONTACT, type Contact, type SdrQueue } from './data';
 
@@ -42,15 +43,21 @@ export interface FirstContactBoxPlotProps {
   readonly className?: string;
 }
 
-interface BoxRow {
-  readonly id: string;
-  readonly name: string;
-  readonly n: number;
+/** Os cinco números da caixa. `null` no lugar deste objeto quando a fila não tem contato medido. */
+interface BoxFive {
   readonly q1: number;
   readonly median: number;
   readonly q3: number;
   readonly whiskerLow: number;
   readonly whiskerHigh: number;
+}
+
+interface BoxRow {
+  readonly id: string;
+  readonly name: string;
+  readonly n: number;
+  /** `null` sem observação: caixa de quartis zerados leria como a fila mais rápida. */
+  readonly box: BoxFive | null;
   readonly outliers: readonly Contact[];
   readonly aboveSla: number;
 }
@@ -75,13 +82,20 @@ const MIN_BOX_W = 2;
 const FENCE_FACTOR = 1.5;
 const MEDIAN_W = 2;
 
-/** Quartil por interpolação linear, a convenção declarada no rodapé. */
-function quantile(sorted: readonly number[], p: number): number {
-  if (sorted.length === 0) return 0;
+/**
+ * Quartil por interpolação linear, a convenção declarada no rodapé.
+ *
+ * Devolve `null` para lista vazia, nunca `0`: o zero desenha a caixa colada no piso do eixo, que se lê
+ * como "esta fila responde na hora" em vez de "não houve contato".
+ */
+function quantile(sorted: readonly number[], p: number): number | null {
+  if (sorted.length === 0) return null;
   const position = (sorted.length - 1) * p;
   const base = Math.floor(position);
-  const next = sorted[base + 1] ?? sorted[base] ?? 0;
-  const value = sorted[base] ?? 0;
+  const value = sorted[base];
+  if (value === undefined) return null;
+  const next = sorted[base + 1];
+  if (next === undefined) return value;
   return value + (position - base) * (next - value);
 }
 
@@ -92,6 +106,9 @@ function summarize(queue: SdrQueue, slaMinutes: number): BoxRow {
   const q1 = quantile(values, 0.25);
   const median = quantile(values, 0.5);
   const q3 = quantile(values, 0.75);
+  if (q1 === null || median === null || q3 === null) {
+    return { id: queue.id, name: queue.name, n: 0, box: null, outliers: [], aboveSla: 0 };
+  }
   const iqr = q3 - q1;
   const low = q1 - FENCE_FACTOR * iqr;
   const high = q3 + FENCE_FACTOR * iqr;
@@ -100,11 +117,7 @@ function summarize(queue: SdrQueue, slaMinutes: number): BoxRow {
     id: queue.id,
     name: queue.name,
     n: sorted.length,
-    q1,
-    median,
-    q3,
-    whiskerLow: inside[0] ?? q1,
-    whiskerHigh: inside[inside.length - 1] ?? q3,
+    box: { q1, median, q3, whiskerLow: inside[0] ?? q1, whiskerHigh: inside[inside.length - 1] ?? q3 },
     outliers: sorted.filter((contact) => contact.minutes < low || contact.minutes > high),
     aboveSla: values.filter((value) => value > slaMinutes).length,
   };
@@ -119,7 +132,12 @@ export default function FirstContactBoxPlot({
   className,
 }: FirstContactBoxPlotProps) {
   /** Ordem pela mediana, da fila mais rápida para a mais lenta. Alfabética esconderia o gradiente. */
-  const rows = data.map((queue) => summarize(queue, slaMinutes)).sort((a, b) => a.median - b.median);
+  const rows = data
+    .map((queue) => summarize(queue, slaMinutes))
+    .sort((a, b) => {
+      if (a.box === null || b.box === null) return (a.box === null ? 1 : 0) - (b.box === null ? 1 : 0);
+      return a.box.median - b.box.median;
+    });
 
   const outlierPoints: OutlierPoint[] = rows.flatMap((row) =>
     row.outliers.map((contact) => ({ name: row.name, minutes: contact.minutes, code: contact.id })),
@@ -133,8 +151,9 @@ export default function FirstContactBoxPlot({
 
   const total = rows.reduce((sum, row) => sum + row.n, 0);
   const above = rows.reduce((sum, row) => sum + row.aboveSla, 0);
-  const fastest = rows[0];
-  const slowest = rows[rows.length - 1];
+  const measured = rows.filter((row): row is BoxRow & { box: BoxFive } => row.box !== null);
+  const fastest = measured[0];
+  const slowest = measured[measured.length - 1];
 
   /**
    * Caixa, mediana e as duas pontas do bigode desenhadas no mesmo `shape`.
@@ -145,46 +164,68 @@ export default function FirstContactBoxPlot({
    */
   const renderBox = ({ x, y, width, height: barHeight, index }: BarShapeProps): ReactElement => {
     const row = rows[Number(index)];
-    if (row === undefined) return <g />;
+    if (row === undefined || row.box === null) return <g />;
+    const box = row.box;
     const left = Number(x);
-    const span = Math.max(Number(width), MIN_BOX_W);
     const top = Number(y);
     const boxHeight = Number(barHeight);
-    const iqr = row.q3 - row.q1;
+    const iqr = box.q3 - box.q1;
+    /* Interquartil zero não tem escala de pixel por minuto, e por isso a saída é antecipada em vez de
+       uma escala valendo zero: o zero empilharia bigode e mediana sobre a mesma coluna. */
+    if (iqr <= 0) {
+      return (
+        <g>
+          <rect fill={BOX_FILL} height={boxHeight} stroke={BOX_STROKE} strokeWidth={1} width={MIN_BOX_W} x={left} y={top} />
+          <rect fill={MEDIAN_STROKE} height={boxHeight} width={MEDIAN_W} x={left - MEDIAN_W / 2} y={top} />
+        </g>
+      );
+    }
+    const span = Number(width);
     /** Pixels por minuto, lidos da própria caixa: é a escala que o Recharts já resolveu. */
-    const scale = iqr > 0 ? Number(width) / iqr : 0;
-    const at = (value: number): number => left + (value - row.q1) * scale;
+    const scale = span / iqr;
+    const at = (value: number): number => left + (value - box.q1) * scale;
     const capTop = top + boxHeight * 0.25;
     const capBottom = top + boxHeight * 0.75;
-    const medianX = left + (iqr > 0 ? ((row.median - row.q1) / iqr) * span : 0);
+    const medianX = left + ((box.median - box.q1) / iqr) * span;
     return (
       <g>
-        {scale > 0 ? (
-          <>
-            <line
-              stroke={WHISKER_STROKE}
-              strokeWidth={1}
-              x1={at(row.whiskerLow)}
-              x2={at(row.whiskerHigh)}
-              y1={top + boxHeight / 2}
-              y2={top + boxHeight / 2}
-            />
-            <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(row.whiskerLow)} x2={at(row.whiskerLow)} y1={capTop} y2={capBottom} />
-            <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(row.whiskerHigh)} x2={at(row.whiskerHigh)} y1={capTop} y2={capBottom} />
-          </>
-        ) : null}
+        <line
+          stroke={WHISKER_STROKE}
+          strokeWidth={1}
+          x1={at(box.whiskerLow)}
+          x2={at(box.whiskerHigh)}
+          y1={top + boxHeight / 2}
+          y2={top + boxHeight / 2}
+        />
+        <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(box.whiskerLow)} x2={at(box.whiskerLow)} y1={capTop} y2={capBottom} />
+        <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(box.whiskerHigh)} x2={at(box.whiskerHigh)} y1={capTop} y2={capBottom} />
         <rect fill={BOX_FILL} height={boxHeight} stroke={BOX_STROKE} strokeWidth={1} width={span} x={left} y={top} />
         <rect fill={MEDIAN_STROKE} height={boxHeight} width={MEDIAN_W} x={medianX - MEDIAN_W / 2} y={top} />
       </g>
     );
   };
 
+  /* Recorte sem contato medido: o visual sai e entra a frase de estado. Eixo, SLA e rodapé de um
+     gráfico vazio leem como filas instantâneas, que é ausência vestida de medição. */
+  if (rows.length === 0 || total === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 flex-col items-center justify-center gap-2 text-center', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="text-text-muted" size={16} />
+        <p className="text-xs text-text-muted">O recorte não tem lead com primeiro contato medido, então não há minutos a resumir.</p>
+      </div>
+    );
+  }
+
   const summary =
     fastest === undefined || slowest === undefined
-      ? 'Box plot sem nenhuma fila para medir.'
+      ? 'Box plot sem nenhuma fila com contato medido.'
       : `Box plot dos minutos até o primeiro contato em ${formatInt(rows.length)} filas de pré-vendas, com ${formatInt(total)} leads. ` +
-        `A mediana vai de ${formatInt(Math.round(fastest.median))} minutos em ${fastest.name} a ${formatInt(Math.round(slowest.median))} em ${slowest.name}. ` +
-        `${formatPercent(total === 0 ? 0 : above / total, 1)} dos leads passaram do SLA de ${formatInt(slaMinutes)} minutos.`;
+        `A mediana vai de ${formatInt(Math.round(fastest.box.median))} minutos em ${fastest.name} a ${formatInt(Math.round(slowest.box.median))} em ${slowest.name}. ` +
+        `${formatRateWithVolume(above, total)} passaram do SLA de ${formatInt(slaMinutes)} minutos.`;
 
   return (
     <figure
@@ -242,14 +283,20 @@ export default function FirstContactBoxPlot({
             />
             <Bar
               barSize={BAR_SIZE}
-              dataKey={(row: BoxRow) => [row.q1, row.q3]}
+              dataKey={(row: { readonly box?: BoxFive | null }) =>
+                row.box === undefined || row.box === null ? [null, null] : [row.box.q1, row.box.q3]
+              }
               isAnimationActive={false}
               shape={renderBox}
             >
               {/* Declarado, e não desenhado: o bigode sai do `shape` acima porque a distância do
                   ErrorBar é medida a partir de Q3 e a linha de baixo cruzaria a caixa por dentro. */}
               <ErrorBar
-                dataKey={(row: BoxRow) => [row.q3 - row.whiskerLow, row.whiskerHigh - row.q3]}
+                dataKey={(row: { readonly box?: BoxFive | null }) =>
+                  row.box === undefined || row.box === null
+                    ? [0, 0]
+                    : [row.box.q3 - row.box.whiskerLow, row.box.whiskerHigh - row.box.q3]
+                }
                 stroke="transparent"
                 width={0}
               />
@@ -285,7 +332,7 @@ export default function FirstContactBoxPlot({
               : `${formatInt(outlierPoints.length)} leads além da cerca; o mais distante é o ${farthest.code}, com ${formatInt(farthest.minutes)} min`}
           </span>
         </span>
-        <span className="tabular-nums">{`${formatPercent(total === 0 ? 0 : above / total, 1)} acima do SLA de ${formatInt(slaMinutes)} min`}</span>
+        <span className="tabular-nums">{`${formatRateWithVolume(above, total)} acima do SLA de ${formatInt(slaMinutes)} min`}</span>
         {withoutContact <= 0 ? null : (
           <span className="tabular-nums">{`${formatInt(withoutContact)} leads ainda sem contato ficaram fora`}</span>
         )}

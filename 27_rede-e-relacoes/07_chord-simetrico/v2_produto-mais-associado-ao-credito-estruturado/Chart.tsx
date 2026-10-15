@@ -1,6 +1,6 @@
 import { Filter } from 'lucide-react';
 
-import { formatInt } from '@/lib/format';
+import { formatInt, formatPercent } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, groups, highlightId as defaultHighlightId, type ProductGroup, type ProductPair } from './data';
 
@@ -232,7 +232,7 @@ export default function ProductChord({
   }
 
   const summary = best
-    ? `Diagrama de corda simétrico com ${String(groups.length)} produtos, em foco ${focus.plain}, com ${formatInt(focusTotal)} clientes em pares. O mais associado é ${best.group.plain}, com ${formatInt(best.count)} clientes, ${String(percents[0] ?? 0)}% do total do produto.`
+    ? `Diagrama de corda simétrico com ${String(groups.length)} produtos, em foco ${focus.plain}, com ${formatInt(focusTotal)} clientes em pares. O mais associado é ${best.group.plain}, com ${formatInt(best.count)} clientes, ${formatPercent((percents[0] ?? 0) / 100, 0)} do total do produto.`
     : `Diagrama de corda simétrico com ${String(groups.length)} produtos, em foco ${focus.plain}, sem nenhum cliente que tenha outro produto junto.`;
 
   return (
@@ -242,8 +242,8 @@ export default function ProductChord({
       role="img"
       style={height === undefined ? undefined : { height }}
     >
-      <div className="relative flex h-full min-w-0 flex-1 items-center justify-center pl-6">
-        <div className="relative aspect-square h-full w-auto max-w-full">
+      <div className="relative flex h-full min-w-0 flex-1 items-center justify-center pl-6 [container-type:size]">
+        <div className="relative shrink-0" style={{ width: 'min(100cqw, 100cqh)', height: 'min(100cqw, 100cqh)' }}>
           <svg aria-hidden className="absolute inset-0 h-full w-full" viewBox={`0 0 ${String(VIEW)} ${String(VIEW)}`}>
             {ribbons.map((ribbon) => (
               <path d={ribbon.d} fill={ribbon.color} key={ribbon.id} stroke={SURFACE_STROKE} strokeWidth={STROKE_WIDTH} style={{ paintOrder: 'stroke' }} />
@@ -307,7 +307,7 @@ export default function ProductChord({
                 <span className={cn('kpi-number w-8 text-right', index === 0 ? 'font-semibold text-text-primary' : 'text-text-secondary')}>
                   {formatInt(row.count)}
                 </span>
-                <span className="kpi-number w-9 text-right text-[0.6875rem] text-text-muted">{String(percents[index] ?? 0)}%</span>
+                <span className="kpi-number w-9 text-right text-[0.6875rem] text-text-muted">{formatPercent((percents[index] ?? 0) / 100, 0)}</span>
               </span>
             </li>
           ))}

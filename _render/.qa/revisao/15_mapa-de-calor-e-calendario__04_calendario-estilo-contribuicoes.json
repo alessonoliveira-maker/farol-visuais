@@ -3,15 +3,51 @@
   "modelo": "04_calendario-estilo-contribuicoes",
   "versoes": {
     "v1_fechamentos-por-dia-em-2026": {
-      "veredito": "reprovado",
-      "nota": "Conserto do DAD-9 aceito: a borda tracejada fecha a medição em 14/09/2026 e o número levou a data. Volta por outro defeito, que é o assunto do subtítulo: o dia com zero fechamento usa --surface-overlay, 1,00:1 contra o cartão no claro, então o dia útil sem fechar some justamente na pergunta que a peça faz. Evidência medida no parecer de 2026-09-28 em validation/2026-09-28_revisao-de-onze-consertos.md.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T15:12:24.983Z",
-      "impressao": "a2026f103aade599879f7c4e5221bfe83b22bc6b",
+      "veredito": "aprovado",
+      "nota": "Rodada de correção aceita, sem bloqueante. Três classes em --seq-5 a --seq-7 (mínimo 4,89:1 no escuro e 3,72:1 no claro) com intervalo escrito; zero em traço text-muted; 8 feriados pontilhados fora da conta, 4 dias úteis em branco conferidos (11/03, 13/05, 22/07, 12/08); empate de 5 em 4 dias contornado e escrito; vazio role=status; escala 1 (viewBox 563 x 113), guardas de texto medindo. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:19:15.654Z",
+      "impressao": "26e8268e7fe1341a5bd58caeb22509f0cc19da75",
       "arquivos": {
-        "Chart.tsx": "eff510b6d4c958dc40019fac8ba7d83e22e6727c",
-        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
-        "meta.json": "1f89b761149db3b41c5d3b22de1ab9a95e24133c"
+        "Chart.tsx": "d5a357e002c10810b7241112e8f26ab8375ffa73",
+        "data.ts": "01c16208fe4ec705a6debec948be9b71a3411d91",
+        "meta.json": "052f800c56c48c70f110f811f330d039a329a4fe"
+      }
+    },
+    "v2_tres-anos-de-receita-reconhecida": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rampa por quartil comum aos três anos, cortes batendo com a legenda e teto no máximo observado; --seq-4 com contorno em text-muted (TOK-8); falha de carga hachurada distinta do zero; vazio com role=status; escala 1. Observações no README (total sem nomear os dias carregados, percentual de composição com casa, frase só de 2025).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:26.215Z",
+      "impressao": "1f163f012e30ca6321083d807887c77fdaee8ac1",
+      "arquivos": {
+        "Chart.tsx": "8258de52d7a482b2435f679aad317cb7367c753e",
+        "data.ts": "5598a90c6869946e7016eb62a52585c84b18339d",
+        "meta.json": "7e05f1bfe65bf2efc2856cea1a7bc80ad598261c"
+      }
+    },
+    "v3_efeito-de-fim-de-mes-por-dia-do-mes": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Só --seq-5 a --seq-7 com intervalo escrito; máscara de data; janela dos 5 últimos dias úteis conferida mês a mês e 114 de 272 no total; mês incompleto sem taxa; zero em traço; escala 1. Observações no README (indisponível para mês futuro, linha de leitura sem a base de cerca de 23%).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:26.772Z",
+      "impressao": "db0d40b37847cfd3aebdbb8fd7e6ddea9d60a590",
+      "arquivos": {
+        "Chart.tsx": "ab1b2fa0bcb1d964ccbe8cb23cd154c2e477d44c",
+        "data.ts": "3407bd38d27a39e246e26ecae782901e14b9b258",
+        "meta.json": "29ffcff0c800440af41f8c9577e8101d6d4b2a4f"
+      }
+    },
+    "v4_grade-micro-por-sdr-com-ferias": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala comum de 4 faixas com a mais baixa em quadrado menor; férias vazadas e feriado pontilhado fora da classe zero; 6 colunas declaradas; leitura conferida (22 de 52 na sexta, 30 de 56 na segunda); escala 1. Observações no README (frase começa por número, base desigual de segundas e sextas).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:27.358Z",
+      "impressao": "7e170e6f2c46d3dc39d99e77e8012223ed849a34",
+      "arquivos": {
+        "Chart.tsx": "224b41a6f3b70d6d718febbd09e606ba52524f28",
+        "data.ts": "b87c68fb567f75dc2bd77e5f6257604f645e2927",
+        "meta.json": "d4d41dabf46232649f7b2894cbbf32401eceb881"
       }
     }
   },
@@ -53,6 +89,71 @@
         "Chart.tsx": "eff510b6d4c958dc40019fac8ba7d83e22e6727c",
         "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
         "meta.json": "1f89b761149db3b41c5d3b22de1ab9a95e24133c"
+      }
+    },
+    {
+      "versao": "v1_fechamentos-por-dia-em-2026",
+      "veredito": "reprovado",
+      "nota": "Cinco bloqueantes, parecer em validation/revisao_15_mapa-de-calor-e-calendario__04_calendario-estilo-contribuicoes_2026-10-15.md. P20 ACE-3/TOK-8: 176 dos 192 dias com fechamento em --seq-1 a --seq-3, abaixo de 3:1, e zero contra 1 fechamento mede 1,05:1 no claro; usar só --seq-5 a --seq-7 com o intervalo escrito. P14 NUM-5: os 8 dias úteis sem fechar são todos feriados de 2026; tirar feriado da conta e dar marca própria. P3 ANO-1: o máximo de 5 empata em 4 dias e só 29/04 é chamado de melhor dia. P16/P8 EST-1: sem bloco role=status, data vazio escreve 0 fechamentos. P10 TIP-2/GEO-18: escala 0,946, 13 textos a 10,4 px; desenhar em escala 1 e tirar a chave da fila de dívida.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:19.000Z",
+      "impressao": "559f505d2fc37c603a4427f562c711ad02215a7d",
+      "arquivos": {
+        "Chart.tsx": "8fcd91ce11b9a7f87b64723faa2bd81b91aef598",
+        "data.ts": "32fe0b3308c18632cbeb231904ac2bdfa99dae75",
+        "meta.json": "1f89b761149db3b41c5d3b22de1ab9a95e24133c"
+      }
+    },
+    {
+      "versao": "v2_tres-anos-de-receita-reconhecida",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Rampa por quartil comum aos três anos, cortes batendo com a legenda e teto no máximo observado; --seq-4 com contorno em text-muted (TOK-8); falha de carga hachurada distinta do zero; vazio com role=status; escala 1. Observações no README (total sem nomear os dias carregados, percentual de composição com casa, frase só de 2025).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:26.215Z",
+      "impressao": "1f163f012e30ca6321083d807887c77fdaee8ac1",
+      "arquivos": {
+        "Chart.tsx": "8258de52d7a482b2435f679aad317cb7367c753e",
+        "data.ts": "5598a90c6869946e7016eb62a52585c84b18339d",
+        "meta.json": "7e05f1bfe65bf2efc2856cea1a7bc80ad598261c"
+      }
+    },
+    {
+      "versao": "v3_efeito-de-fim-de-mes-por-dia-do-mes",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Só --seq-5 a --seq-7 com intervalo escrito; máscara de data; janela dos 5 últimos dias úteis conferida mês a mês e 114 de 272 no total; mês incompleto sem taxa; zero em traço; escala 1. Observações no README (indisponível para mês futuro, linha de leitura sem a base de cerca de 23%).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:26.772Z",
+      "impressao": "db0d40b37847cfd3aebdbb8fd7e6ddea9d60a590",
+      "arquivos": {
+        "Chart.tsx": "ab1b2fa0bcb1d964ccbe8cb23cd154c2e477d44c",
+        "data.ts": "3407bd38d27a39e246e26ecae782901e14b9b258",
+        "meta.json": "29ffcff0c800440af41f8c9577e8101d6d4b2a4f"
+      }
+    },
+    {
+      "versao": "v4_grade-micro-por-sdr-com-ferias",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. Escala comum de 4 faixas com a mais baixa em quadrado menor; férias vazadas e feriado pontilhado fora da classe zero; 6 colunas declaradas; leitura conferida (22 de 52 na sexta, 30 de 56 na segunda); escala 1. Observações no README (frase começa por número, base desigual de segundas e sextas).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:09:27.358Z",
+      "impressao": "7e170e6f2c46d3dc39d99e77e8012223ed849a34",
+      "arquivos": {
+        "Chart.tsx": "224b41a6f3b70d6d718febbd09e606ba52524f28",
+        "data.ts": "b87c68fb567f75dc2bd77e5f6257604f645e2927",
+        "meta.json": "d4d41dabf46232649f7b2894cbbf32401eceb881"
+      }
+    },
+    {
+      "versao": "v1_fechamentos-por-dia-em-2026",
+      "veredito": "aprovado",
+      "nota": "Rodada de correção aceita, sem bloqueante. Três classes em --seq-5 a --seq-7 (mínimo 4,89:1 no escuro e 3,72:1 no claro) com intervalo escrito; zero em traço text-muted; 8 feriados pontilhados fora da conta, 4 dias úteis em branco conferidos (11/03, 13/05, 22/07, 12/08); empate de 5 em 4 dias contornado e escrito; vazio role=status; escala 1 (viewBox 563 x 113), guardas de texto medindo. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:19:15.654Z",
+      "impressao": "26e8268e7fe1341a5bd58caeb22509f0cc19da75",
+      "arquivos": {
+        "Chart.tsx": "d5a357e002c10810b7241112e8f26ab8375ffa73",
+        "data.ts": "01c16208fe4ec705a6debec948be9b71a3411d91",
+        "meta.json": "052f800c56c48c70f110f811f330d039a329a4fe"
       }
     }
   ]

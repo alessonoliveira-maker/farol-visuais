@@ -28,14 +28,14 @@
     },
     "v3_executivos-com-tres-variacoes": {
       "veredito": "aprovado",
-      "nota": "Tres variacoes legiveis e barra com dominio comum; trajetoria tem posicao repetida nos meses antigos e eixo invertido sem sinalizacao.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T02:53:31.751Z",
-      "impressao": "dd0c099ddceba930efc74f32ce9c7c459b99fb76",
+      "nota": "Bloqueantes de 2026-10-14 resolvidos: trajetória em --text-muted mede 5,21:1 e 5,37:1, ponto final inteiro com folga em x, posições de cada mês formam permutação de 1 a 6; sobra a nota do meta.json que ainda chama a trajetória de decorativa.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:49:37.310Z",
+      "impressao": "19724fc9b72968453f06f0c8f8ae6b925ce80509",
       "arquivos": {
-        "Chart.tsx": "aa1681c52cc452474b5ca5fd3522e902d2a92015",
-        "data.ts": "6a0f11fb9f24f8e1800ccfb7544bbf0848f0f587",
-        "meta.json": "d39afb0ed42c67ce3ac5ea579064ac0a72ffa28a"
+        "Chart.tsx": "1cbb7f9b394c5c0bdec1fba1abedb0632c8edcef",
+        "data.ts": "d9b605904291b94091131d1467e4647f1412ac73",
+        "meta.json": "5438e0f239e7029012ad2862414e7beb39d66edf"
       }
     },
     "v4_empate-e-menor-e-melhor": {
@@ -154,6 +154,32 @@
         "Chart.tsx": "be1a73e6a560f5d435c9d03ba112cbedac94b05c",
         "data.ts": "db71dc6c2f4cf89711c87ec9cdece958a988865e",
         "meta.json": "5398a3c7348bb8fba436452f18f350164ed7dda5"
+      }
+    },
+    {
+      "versao": "v3_executivos-com-tres-variacoes",
+      "veredito": "reprovado",
+      "nota": "Pergunta 32 e 20, ACE-6 e 17.2: trajetoria das 5 linhas sem destaque em --line-strong mede 1,79:1 e 1,83:1 e e dado (mar a jun so existem no traco), passar a --text-muted e corrigir a nota do meta.json; pergunta 15, marca partida: ponto final em cx = TRACK_WIDTH sai como meio disco, dar folga em x; pergunta 23 e EIX-9: posicoes de mar, abr e jun nao formam ranking (ninguem em 1o, posicao repetida), usar permutacao de 1 a 6",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:42:48.845Z",
+      "impressao": "8ad40911d663d4622dbea29137bb33b439a2781e",
+      "arquivos": {
+        "Chart.tsx": "137485b45f84a7387d9cfdd625644326cea2609e",
+        "data.ts": "6a0f11fb9f24f8e1800ccfb7544bbf0848f0f587",
+        "meta.json": "d39afb0ed42c67ce3ac5ea579064ac0a72ffa28a"
+      }
+    },
+    {
+      "versao": "v3_executivos-com-tres-variacoes",
+      "veredito": "aprovado",
+      "nota": "Bloqueantes de 2026-10-14 resolvidos: trajetória em --text-muted mede 5,21:1 e 5,37:1, ponto final inteiro com folga em x, posições de cada mês formam permutação de 1 a 6; sobra a nota do meta.json que ainda chama a trajetória de decorativa.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:49:37.310Z",
+      "impressao": "19724fc9b72968453f06f0c8f8ae6b925ce80509",
+      "arquivos": {
+        "Chart.tsx": "1cbb7f9b394c5c0bdec1fba1abedb0632c8edcef",
+        "data.ts": "d9b605904291b94091131d1467e4647f1412ac73",
+        "meta.json": "5438e0f239e7029012ad2862414e7beb39d66edf"
       }
     }
   ]

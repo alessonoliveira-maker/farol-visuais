@@ -39,7 +39,10 @@ interface Bin {
   readonly count: number;
 }
 
-const MARGIN = { top: 8, right: 8, bottom: 4, left: 4 } as const;
+/** Topo de 12 px: o rótulo do tique mais alto (11 px, centrado na linha) precisa de meia altura acima dela. */
+const MARGIN = { top: 12, right: 8, bottom: 4, left: 4 } as const;
+/** Passo fixo do eixo Y; o teto sai do dado, arredondado para cima ao múltiplo do passo. */
+const Y_STEP = 8;
 const BAR_FILL = 'var(--chart-1)';
 /** Marca de base nas faixas vazias dentro da amostra, para o vão ser deliberado e não sumiço. */
 const EMPTY_MARK = 'var(--line-strong)';
@@ -125,6 +128,9 @@ export default function CycleHistogram({
   const hole = bins.find((item, index) => item.count === 0 && index > 0 && index < lastFilled);
   const tallest = bins.reduce<Bin | null>((best, item) => (best === null || item.count > best.count ? item : best), null);
 
+  const yTop = Math.max(Y_STEP, Math.ceil((tallest?.count ?? 0) / Y_STEP) * Y_STEP);
+  const yTicks = Array.from({ length: yTop / Y_STEP + 1 }, (_, index) => index * Y_STEP);
+
   const middle = median(data);
   const mean = average(data);
   /** Cada medida escreve a própria ausência: nenhuma delas vira número quando não foi calculada. */
@@ -187,7 +193,17 @@ export default function CycleHistogram({
               tickFormatter={(value: number) => formatInt(value)}
               type="number"
             />
-            <YAxis {...AXIS_PROPS} allowDecimals={false} tickFormatter={(value: number) => formatInt(value)} width={28} />
+            {/* `interval={0}` porque o Recharts descarta em silêncio tiques que julga sobrepostos, e o
+                eixo passava a ler 0, 8, 16, 32 como escala que dobra. */}
+            <YAxis
+              {...AXIS_PROPS}
+              allowDecimals={false}
+              domain={[0, yTop]}
+              interval={0}
+              tickFormatter={(value: number) => formatInt(value)}
+              ticks={yTicks}
+              width={28}
+            />
             <Tooltip
               content={({ active, payload }) => {
                 if (active !== true) return null;

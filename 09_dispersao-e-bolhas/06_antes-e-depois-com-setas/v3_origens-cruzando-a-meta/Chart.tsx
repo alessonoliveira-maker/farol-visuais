@@ -198,6 +198,21 @@ interface LabelPlacement {
   readonly leaderTo: Point | null;
 }
 
+/** Folga mínima entre a caixa de um nome com linha de chamada e qualquer ponto alheio. */
+const LEADER_CLEARANCE = 36;
+
+function rectDistance(r: Rect, p: Point): number {
+  const dx = Math.max(r.x - p.x, 0, p.x - (r.x + r.width));
+  const dy = Math.max(r.y - p.y, 0, p.y - (r.y + r.height));
+  return Math.hypot(dx, dy);
+}
+
+/** Atribuição (ROT-2, ROT-11): o nome só vale sem linha de chamada se o próprio ponto de destino for o ponto mais próximo da caixa. */
+function ownPointIsNearest(rect: Rect, own: Point, others: readonly Point[]): boolean {
+  const ownDistance = rectDistance(rect, own);
+  return others.every((point) => rectDistance(rect, point) > ownDistance + 1);
+}
+
 /**
  * Anticolisão dos rótulos: cada nome tenta 8 direções em 4 raios crescentes ao redor do próprio
  * ponto de destino e aceita a primeira caixa que não cruza outro rótulo, nenhum ponto e nenhum
@@ -223,6 +238,7 @@ function placeLabels(arrows: readonly ArrowGeometry[], named: readonly ArrowGeom
         if (placedRects.some((placed) => rectsOverlap(rect, placed, LABEL_GAP))) continue;
         if (allPoints.some((point) => rectContainsPoint(rect, point, POINT_BUFFER))) continue;
         if (arrows.some((other) => segmentHitsRect(other.origin, other.tip, rect, ARROW_BUFFER))) continue;
+        if (!ownPointIsNearest(rect, arrow.target, allPoints.filter((point) => point !== arrow.target))) continue;
         chosen = { rect, anchor: dir.anchor };
         break;
       }
@@ -234,12 +250,18 @@ function placeLabels(arrows: readonly ArrowGeometry[], named: readonly ArrowGeom
       /* Reserva: varre o plano e fica com a caixa livre mais próxima do ponto, ligada a ele por
          linha de chamada. Nome de seta que cruzou nunca some por falta de lugar (ROT-4). */
       let bestDistance = Infinity;
+      /* Primeira passada: o ponto próprio é o mais próximo da caixa. Segunda: nenhum ponto alheio a
+         menos de LEADER_CLEARANCE da caixa, e a linha de chamada abraça só o próprio ponto (ROT-2, ROT-11). */
+      for (const strict of [true, false]) {
+      if (chosen) break;
       for (let y = plotBounds.y; y + LABEL_LINE_HEIGHT <= plotBounds.y + plotBounds.height; y += SCAN_STEP_Y) {
         for (let x = plotBounds.x; x + textWidth <= plotBounds.x + plotBounds.width; x += SCAN_STEP_X) {
           const rect: Rect = { x, y, width: textWidth, height: LABEL_LINE_HEIGHT };
           if (placedRects.some((placed) => rectsOverlap(rect, placed, LABEL_GAP))) continue;
           if (allPoints.some((point) => rectContainsPoint(rect, point, POINT_BUFFER))) continue;
           if (arrows.some((other) => segmentHitsRect(other.origin, other.tip, rect, ARROW_BUFFER))) continue;
+          const foreign = allPoints.filter((point) => point !== arrow.target);
+          if (strict ? !ownPointIsNearest(rect, arrow.target, foreign) : foreign.some((point) => rectDistance(rect, point) < LEADER_CLEARANCE)) continue;
           const nearest = { x: Math.min(Math.max(arrow.target.x, rect.x), rect.x + rect.width), y: Math.min(Math.max(arrow.target.y, rect.y), rect.y + rect.height) };
           const distance = Math.hypot(nearest.x - arrow.target.x, nearest.y - arrow.target.y);
           if (leaders.some(([from, to]) => segmentHitsRect(from, to, rect, ARROW_BUFFER))) continue;
@@ -251,6 +273,7 @@ function placeLabels(arrows: readonly ArrowGeometry[], named: readonly ArrowGeom
             leaderTo = nearest;
           }
         }
+      }
       }
     }
 

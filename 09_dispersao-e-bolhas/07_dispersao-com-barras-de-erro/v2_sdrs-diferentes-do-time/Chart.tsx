@@ -322,11 +322,16 @@ export default function SdrVersusTeamScatter({
   let totalLeads = 0;
   let totalAgendas = 0;
   const points: Point[] = [];
+  /** SDR sem lead trabalhado não tem taxa nem intervalo: sai do plano, mas entra na contagem (DAD-2). */
+  let semBase = 0;
   for (const row of data) {
     totalLeads += row.leadsTrabalhados;
     totalAgendas += row.agendas;
     const intervalo = wilson(row.agendas, row.leadsTrabalhados, confidence);
-    if (intervalo === null) continue;
+    if (intervalo === null) {
+      semBase += 1;
+      continue;
+    }
     const rate = row.agendas / row.leadsTrabalhados;
     const role: Role = intervalo.upper < teamRate ? 'abaixo' : intervalo.lower > teamRate ? 'acima' : 'cruza';
     points.push({
@@ -355,12 +360,17 @@ export default function SdrVersusTeamScatter({
   const quantosAbaixo = formatInt(abaixo.length);
   const quantosCruzam = formatInt(cruzam.length);
   const quantos = formatInt(points.length);
+  const semBaseEscrito =
+    semBase === 1
+      ? '1 SDR sem lead trabalhado no período fica fora do plano'
+      : `${formatInt(semBase)} SDRs sem lead trabalhado no período ficam fora do plano`;
 
-  /** Frase da raiz em 229 caracteres com o dado padrão, dentro dos 250 da ACE-1 e do aviso de 235. */
+  /** Frase da raiz em 228 caracteres com o dado padrão (semBase zero), dentro dos 250 da ACE-1. */
   const summary =
-    `Gráfico de dispersão: taxa de agenda de ${quantos} SDRs por leads trabalhados, com traço no intervalo de ` +
-    `${nivelEscrito} de Wilson. Contra a taxa do time, ${timeEscrito}, ${quantosAcima} estão acima e ` +
-    `${quantosAbaixo} abaixo sem cruzar a linha; ${quantosCruzam} cruzam e não se distinguem.`;
+    `Dispersão: taxa de agenda de ${quantos} SDRs por leads trabalhados, com traço no intervalo de ` +
+    `${nivelEscrito} de Wilson. Contra a taxa do time, ${timeEscrito}, ${quantosAcima} acima e ` +
+    `${quantosAbaixo} abaixo sem cruzar a linha; ${quantosCruzam} cruzam e não se distinguem.` +
+    (semBase > 0 ? ` Fora do plano, sem lead: ${formatInt(semBase)}.` : '');
 
   const renderTooltip = (props: TooltipContentProps<TooltipValueType, number | string>) => {
     const point = props.payload?.[0]?.payload as Point | undefined;
@@ -391,7 +401,7 @@ export default function SdrVersusTeamScatter({
         <svg aria-hidden height={14} viewBox="0 0 10 14" width={10}>
           <path d="M1 1.5 H9 M5 1.5 V12.5 M1 12.5 H9" stroke="var(--text-muted)" strokeWidth={1.25} />
         </svg>
-        {`cada traço é o intervalo de ${nivelEscrito} de Wilson da taxa; ${formatInt(labeled.length)} de ${quantos} SDRs se distinguem do time`}
+        {`cada traço é o intervalo de ${nivelEscrito} de Wilson da taxa; ${formatInt(labeled.length)} de ${quantos} SDRs${semBase > 0 ? ' com lead trabalhado' : ''} se distinguem do time`}
       </p>
       <div className="min-h-0 flex-1">
         <ResponsiveContainer height="100%" width="100%">
@@ -469,7 +479,7 @@ export default function SdrVersusTeamScatter({
         </ResponsiveContainer>
       </div>
       <p aria-hidden className="mt-2 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
-        {`cor e nome só em quem tem o intervalo inteiro de um lado da linha; os ${quantosCruzam} em neutro cruzam a taxa do time`}
+        {`cor e nome só em quem tem o intervalo inteiro de um lado da linha; os ${quantosCruzam} em neutro cruzam a taxa do time${semBase > 0 ? `; ${semBaseEscrito}` : ''}`}
       </p>
     </div>
   );

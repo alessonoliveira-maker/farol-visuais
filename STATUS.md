@@ -1,52 +1,46 @@
 # Status — Catálogo VISUAIS
 
-_Atualizado em 2026-09-30 (sessão de reorganização da operação)_
+_Atualizado em 2026-10-15, no fim da sessão de coerência pós-fechamento (Lote 25, livre, por delegação do dono)_
 
 ## Números
 
-Saída de `node _operacao/fila.mjs --resumo` em 2026-10-14, no fim do Lote 19 (o primeiro só de revisão do acervo de 2026-09-29: onze modelos revisados, nove deles com uma rodada de correção, e o `08/01` pulado por já estar em pendência conhecida desde 2026-10-02; nenhuma mudança de ferramenta). **A produção fechou no disco: as 814 versões planejadas existem.**
+Saída de `npm run pendencias` com tipos e de `node _operacao/fila.mjs --resumo` em 2026-10-15, 14:07Z. **Os 24 lotes estão executados e o catálogo está em modo manutenção.** As 814 versões planejadas existem no disco e toda versão tem veredito.
 
 | Contagem | Valor |
 |---|---|
 | Versões planejadas | 814 em 205 modelos e 27 famílias |
 | Versões no disco | 814 (100%) |
-| Versões prontas (check em zero erro e veredito válido) | 670 (eram 640: o Lote 19 julgou 30 versões de onze modelos do acervo e aprovou as 30, 17 de primeira e 13 depois da rodada única de correção; nenhuma ficou em pendência conhecida) |
+| Versões prontas (check em zero erro e veredito aprovado válido) | **805** (eram 784 no fim do Lote 24; o Lote 25 corrigiu e aprovou 21 das 30 reprovadas e reaprovou 8 versões aprovadas que tinham defeito de número anotado) |
 | Modelos completos (todas as versões no disco) | 205 de 205 |
-| Modelos vazios | 0 (a família 27 fechou no disco, com sete dos oito modelos prontos, de `27/01` a `27/06` e o `27/08`, e o `27/07` com a v2 em pendência conhecida; não resta modelo a produzir, e os lotes 19 a 23 são só de revisão, com o 19 fechado em 2026-10-14) |
-| Fila por faixa | corrigir 18 modelos (21 versões reprovadas: `05/07` v1 e `08/01` v2, mais as 8 que o Lote 4 fechou como `reprovado, pendência conhecida`: `09/03` v2 e v4, `09/06` v1 e v3, `11/01` v2, `11/02` v3, `15/08` v1, `16/03` v1, a `16/10` v3 do Lote 5, a `24/07` v2 do Lote 8, a `25/01` v2 do Lote 9, a `20/05` v3 do Lote 11, a `22/04` v3 do Lote 13, a `21/06` v4 e a `23/02` v4 do Lote 15, a `23/03` v3 e a `23/06` v2 e v4 do Lote 16 e a `27/07` v2 do Lote 18; essas 19 versões já gastaram a rodada de correção e só voltam por decisão do dono, assim como a `08/01` v2, que fechou em pendência conhecida em 2026-10-02 e que a fila ainda imprime na faixa `corrigir`), revisar 43 modelos (93 versões sem veredito, 30 com veredito desatualizado), produzir 0 modelos; no Lote 19 a contagem de corrigir não mudou e a de revisar caiu de 54 para 43 modelos, pelos motivos do resumo (`revisao_reprovada` 21, `sem_revisao` 93, `revisao_desatualizada` 30) |
-| Guardas do `check` | 16 desde o Lote 3 (entrou a `RAIO-CONTRA-AREA`, ligada em `check.mjs` e ainda invisível para `lib/pendencias.mjs`); fila de dívida com 92 peças (entrou `06/05` v1) |
-| Avisos do `check -- .` | 389 (o aviso a mais é a `06/05` v1, acusada pela guarda nova e posta na fila), nenhum de biblioteca; 0 erros (contagem de avisos não remedida nos Lotes 5 a 19; o Lote 19 tirou ao menos 8, `07/04` de 9 para 1 depois da correção, e acrescentou ao menos 1, `07/02` v4, de 0 para 1; antes dele: o Lote 18 não acrescentou nenhum, os três modelos fecharam com 0 avisos; antes dele: o Lote 17 acrescentou 6, 3 de `26/03`, CONTRASTE-MARCA em v2, v3 e v4, e 3 de `27/01`, CONTRASTE-MARCA da diagonal em v1, v3 e v4; antes dele: o Lote 16 acrescentou ao menos 9, 4 de `26/01`, 3 de CONTRASTE-MARCA em v2, v3 e v4 e 1 de FRASE-ACESSIVEL na v4, 4 de `26/02`, um de CONTRASTE-MARCA por versão, e 1 de `23/05` v4, FRASE-ACESSIVEL; antes dele: o Lote 15 acrescentou ao menos 5, 3 de `23/01`, 2 de CONTRASTE-MARCA em v2 e v3 e 1 de COLISAO-TEXTO na v3, e 2 de `23/02` v4, COLISAO-TEXTO e CONTRASTE-TEXTO; antes dele: o Lote 14 acrescentou ao menos 6, 1 de `18/04` v3, 1 de `18/05` v2 e 4 de `21/03`, estes quatro um falso positivo da AGREGACAO-ZERO, o Lote 13 acrescentou ao menos 2, 1 de `18/01` v3 e 1 de `18/02` v3, o Lote 5 acrescentou ao menos os 9 avisos de `16/08`, o Lote 7 ao menos 6, 5 de `24/02` e 1 de `24/04`, o Lote 8 ao menos 6, 4 de `24/06` e 2 de `19/03`, o Lote 9 ao menos 6, 3 de `19/04`, 1 de `19/06` e 2 de `25/01`, o Lote 10 ao menos 2, 1 de `25/02` e 1 de `25/05`, o Lote 11 ao menos 2, os dois de `20/01` v3, e o Lote 12 ao menos 6, 4 de `20/08`, 1 de `22/01` v4 e 1 de `22/02` v4) |
-| Provas do `selftest` | 661 (eram 591 no início do Lote 3: 626 depois do F0.3, 661 depois do F0.4) |
-| Dossiê do produtor | teto de 110 KB (112.640 B) com prova no `selftest`; o maior dos 205 é `24/01` com 112.578 B, **folga de 62 B**: a próxima emenda de régua estoura, decisão do dono em aberto |
-
-Fechamento do Lote 3 em 2026-10-02: as quatro contagens de versão acima não mudaram (lote só de ferramenta e de régua).
+| Versões em `reprovado, pendência conhecida` | **9, em 8 modelos**, todas cosméticas ou de régua, que ficam por decisão D13: `09/01` v4, `09/03` v2 e v4, `11/01` v2, `11/02` v3, `11/03` v2, `12/06` v2, `23/03` v3, `25/01` v2. A fila as imprime na faixa `corrigir` porque é o único motivo aberto; **não são trabalho automático** (ver "Modo manutenção" no ORQUESTRADOR) |
+| Fila por faixa | corrigir 8 (as de cima), revisar 0, produzir 0 |
+| `check -- . --sem-tipos` | 0 erros, **421 avisos**, 17 escapes (eram 436 avisos de manhã: 10 chaves quitadas limpas no F0.9, 2 no fechamento, 3 avisos a menos pelas correções) |
+| Guardas do `check` | 16, todas em `checkVersion` (a `RAIO-CONTRA-AREA` entrou na fila das outras no F0.8; `check` e `pendencias` leem o mesmo resultado); cobertura da `RAIO-CONTRA-AREA` 43 de 814 |
+| Fila de dívida | **82 peças** (eram 92: AGREGACAO-ZERO 41, EIXO-CALMO 19, OPACIDADE-MARCA 14, TEXTO-NA-MARCA 10, TAMANHO-TEXTO 10; a única peça da RAIO-CONTRA-AREA, `06/05` v1, foi consertada e saiu) |
+| Provas do `selftest` | **665 em 11 blocos** (eram 658 em 10; entrou o bloco do lint com 7) |
+| Galeria | 817 cartões (814 mais os 3 moldes), cada versão com o selo de veredito: **805 `aprovada`, 9 `reprovada, pendência conhecida`** |
+| Lint do Farol sobre o catálogo (`npm run lint`, F0.11) | medido de manhã, antes das correções: **181 das 814 versões aprovadas falham, 264 erros em 12 regras**; advertência, não portão (D11) |
+| Dossiê do produtor | teto de 110 KB com prova no `selftest`; o maior dos 205 é `24/01` com 112.578 B, folga de 62 B (D14) |
 
 ## Funcionando
 
-- Famílias 01 a 14 completas e aprovadas; 15 e 16 com todos os modelos abertos completos no disco.
-- Ferramenta: render com trava entre processos, check com 15 guardas e fila de dívida, dossiê por modelo, pendências, veredito preso ao sha1, galeria, selftest.
-- **Kit de operação por agente (2026-09-30):** quatro briefings versionados em `.claude/agents/visuais-{produtor,revisor,corretor,ferramenta}.md`, protocolo da sessão em [`_operacao/ORQUESTRADOR.md`](_operacao/ORQUESTRADOR.md), fila ordenada dos 81 modelos vazios com modelo-guia e LLM por linha em `_operacao/fila.json`, e `_operacao/fila.mjs`, que cruza a fila com `pendencias.json` e imprime o prompt pronto de cada agente. A sessão orquestradora não lê régua nem abre PNG. Para os briefings entrarem no git, o `.gitignore` da raiz passou de `.claude/` para `.claude/*` mais `!.claude/agents/` (2026-09-30).
-- Produção medida em set/2026: irmã de v1 existente sai por cerca de 95 mil tokens de agente; modelo novo por 0,3 a 0,5 M quando passa de primeira.
+- **Catálogo completo e consumível pela replicação:** 805 versões aprovadas em 205 modelos, 27 famílias com README, galeria com veredito por versão, `npm run lint -- <familia>/<modelo>` dizendo antes da colagem o que o lint do Farol vai cobrar (CONTRATO seção 16, passo 8).
+- **Ferramenta coerente (F0.8 a F0.11, 2026-10-15):** todas as guardas em `checkVersion`, lista de guardas com fila igual a quem reparte pela fila, fila de dívida sem chave quitada, galeria lendo os vereditos, `npm run lint` com a régua do `app/eslint.config.js` resolvida de `app/node_modules`. Nota em [`validation/ferramenta_f0-8-a-f0-11-coerencia-pos-fechamento_2026-10-15.md`](validation/ferramenta_f0-8-a-f0-11-coerencia-pos-fechamento_2026-10-15.md).
+- **Kit de operação por agente:** briefings em `.claude/agents/visuais-{produtor,revisor,corretor,ferramenta}.md`, protocolo em [`_operacao/ORQUESTRADOR.md`](_operacao/ORQUESTRADOR.md) (agora com a seção "Modo manutenção"), fila em `_operacao/fila.mjs`, decisões em [`_operacao/DECISOES_PENDENTES.md`](_operacao/DECISOES_PENDENTES.md), uma linha por agente em `_operacao/LOG.md`.
+- **Segunda rodada de correção funcionou onde o defeito era de número ou de ruído:** 21 das 30 reprovadas aprovadas no mesmo dia, 7 delas depois de uma terceira passada com o conserto exato que o revisor apontou (`24/07` v2, `10/06` v4, `13/02` v4, `23/06` v2, `09/06` v1, `20/05` v3, `06/05` v1). As quatro versões aprovadas com defeito de número anotado (`06/05` v1, `07/01` v2, `13/02` v4, `15/03` v1, que arrastou v2 a v4) também foram corrigidas e reaprovadas. Lista no `PLAN.md`, Lote 25.
 
 ## Em construção
 
-- **24 lotes em sequência no `PLAN.md` (2026-10-01):** 1 a 3 ferramenta (dossiê enxuto, carimbo da biblioteca, consertos de régua, guarda raio contra área), 4 conserto dos 3 reprovados mais a revisão ACE-6, 5 a 18 produção dos 81 modelos vazios (6 por lote, com revisão no mesmo lote), 19 a 23 revisão do acervo de 2026-09-29 (12 por lote), 24 fechamento. `node _operacao/fila.mjs --lote N` mostra o que o lote N vai fazer hoje. Próximo lote: **1**.
-- Decisões fechadas em 2026-10-01: D1 (todas as versões por modelo) e D10 (commit e push por lote, autorizados).
-
-## Contexto de nascimento de um agente (medido em 2026-10-01)
-
-Agente `visuais-produtor` lançado em Haiku de uma sessão aberta na raiz, sem ler arquivo nem usar ferramenta: **37,5 mil tokens**. Ele enxerga o `CLAUDE.md` da raiz inteiro (42 KB, dos quais 35 KB são a seção "Fase atual"), o `CONVENTIONS.md` (7,5 KB), o índice `MEMORY.md` da memória automática (19 KB, copiado verbatim na prova), o git status e o próprio briefing; não enxerga skills, ferramentas MCP nem os `CLAUDE.md` aninhados. Com `omitClaudeMd: true` acrescentado ao frontmatter **na mesma sessão**, nada mudou (36 mil tokens, CLAUDE.md ainda visível): a definição parece ser lida uma vez por sessão. Versão instalada 2.1.285. **A confirmar na próxima sessão** com o teste do ORQUESTRADOR. Depois disso, o produtor ainda lê o dossiê (167 KB antes do Lote 1, cerca de 45 mil tokens; 108 KB depois dele) e o guia (cerca de 10 mil), o que explica os 100 mil observados.
-
-Resultado do teste em 2026-10-02 (sessão aberta na raiz do repositório, agente `visuais-corretor` em `haiku`): `CLAUDE.md` com `@CONVENTIONS.md` "não vejo"; índice de memória "não vejo"; briefing do corretor "sim"; **10,1 mil tokens** de nascimento, contra os 36 a 37 mil medidos antes. O `omitClaudeMd` está valendo nesta versão, e o índice de memória não chegou ao agente mesmo com a sessão aberta na raiz.
-
-Resultado do teste em 2026-10-12, versão 2.1.295 (sessão aberta na raiz do repositório, agente `visuais-corretor` em `haiku`, sem ferramenta): índice de memória "não vejo"; briefing do corretor "sim"; **10,3 mil tokens** de nascimento, igual aos 10,1 mil de 2026-10-02. Na pergunta do `CLAUDE.md` a resposta foi "sim", mas a prova que o agente deu foi a linha `M CLAUDE.md` do git status, e a linha copiada é a que o próprio prompt do teste traz; ele não citou conteúdo do arquivo. Pelo custo, o `omitClaudeMd` segue valendo nesta versão (com o `CLAUDE.md` da raiz carregado o nascimento ficaria perto de 21 mil). A pergunta 1 do teste é ambígua, porque o git status que o agente recebe lista o nome do arquivo; quem refizer o teste deve pedir uma frase do corpo do arquivo, e não a linha `@CONVENTIONS.md`.
+- Nada em produção. Trabalho novo só por pedido do dono: as 9 reprovadas cosméticas (D13), o F0.6 se a D5 for aceita, o portão de lint se a D11 mudar, e os retornos de régua do LOG que ainda não têm item (a 14.1 não pesa a faixa entre 0,5% e 2% de fidelidade; a EIX-6b não diz quantos px são "sair da linha de grade"; a 14.1 não diz se leiaute de linha condicional se julga pelo preview ou pelo ramo).
 
 ## Quebrado, pontos cegos e bloqueios
 
-- **O dossiê cresceu além do que devia substituir:** 167 KB para `16/05` contra os 59 KB de 2026-09-28. O Lote 1 (F0.1, 2026-10-01) o levou a **108 KB** no papel `produtor` (com as dez perguntas) e criou o papel `revisor` com 49 KB; não chegou aos 70 KB pedidos porque o que o item manda manter já soma 68 KB. Decisão do dono registrada no LOG: cortar mais 10 KB do recorte do contrato ou dos enunciados, ou aceitar 108.
-- **Carimbo do preview não cobre `@/lib/format`, `chartTheme.ts` nem `ChartTooltip`:** mexer num formatador envelhece previews com check verde. Bloqueia qualquer escrita em `app/src/`. Item F0.2.
-- **Pontos cegos declarados das guardas:** contraste e espessura não medem dentro de `foreignObject` (45 versões, entre elas as 30 de `01_cards-e-kpis`); forma com `transform` desliga `CONTRASTE-MARCA` e `ESPESSURA-MARCA` (dispersão inteira); no tema claro `--surface-overlay` é o mesmo branco de `--surface-raised`. Check verde não é medido.
-- **Quatro versões aprovadas antes da ACE-6** (`11/01`, `11/02`, `09/05`, `09/06`) precisam de nova revisão com foco no traço que carrega a relação. Fase 1, itens manuais.
-- **459 arquivos de `VISUAIS/` fora do git** desde 2026-09-20. Decisão D10.
-- **Onze decisões do dono em aberto**, cada uma com padrão adotado: [`_operacao/DECISOES_PENDENTES.md`](_operacao/DECISOES_PENDENTES.md).
-- O script de Workflow antigo (`visuais-farol-producao-wf_402a69c5-726.js`, fora do repositório) está superado e não deve ser usado: o produtor dele lia o CONTRATO inteiro.
+- **Pontos cegos declarados das guardas, que a sessão de hoje mediu de novo:** COLISAO-TEXTO, CONTRASTE-TEXTO e TEXTO-NA-MARCA não medem texto em HTML ou `foreignObject` (243, 231 e 231 versões fora); ESPESSURA-MARCA e CONTRASTE-MARCA desligam com `transform` (57 e 51); OPACIDADE-MARCA não lê preenchimento em `url(#…)`; REGUA-CONSTANTE pula anéis com `fill="none"`; nenhuma guarda pega rótulo trocado por índice (REC-5), ponto fora de contorno, marca coberta por marca ou texto cortado pela borda. Check verde não é medido; o revisor mede à mão e anota no README.
+- **Render e guardas só olham o dado padrão.** Oito dos nove retornos de ferramenta de hoje foram isso: o ramo que reprovou (foco trocado, plataforma ausente fora da última posição, cliente sem lugar no mapa) só aparece com bancada em `_render/exemplos/99_bancada-*`, montada e apagada à mão. É a proposta E7, ainda em estudo, e o maior ponto cego da ferramenta.
+- **Lint do Farol:** 22% das versões aprovadas falham na régua do destino (medido de manhã). Quem cola ajusta na cópia; não há retrofit planejado (D11).
+- **Decisões do dono em aberto:** D4, D5, D7, D11, D12, D13, D14, cada uma com padrão adotado e recomendação em [`_operacao/DECISOES_PENDENTES.md`](_operacao/DECISOES_PENDENTES.md). D6 e D9 são do Farol, não do catálogo.
+- O catálogo em `_estudo/catalogo/13_progresso-meta-e-gauge.json` ainda promete "trilho tracejado" para `13/02` v4, que a correção de hoje removeu; o dossiê repete o texto. `_estudo/` não se edita à mão: fica como divergência declarada no README do modelo.
+
+## Contexto de nascimento de um agente
+
+Medições de 2026-10-01, 2026-10-02 e 2026-10-12 (10,1 a 10,3 mil tokens com `omitClaudeMd` valendo) estão no histórico do git deste arquivo. Não remedido em 2026-10-15.

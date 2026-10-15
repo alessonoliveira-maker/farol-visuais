@@ -13,6 +13,42 @@
         "data.ts": "2a0e123042875764454e17ffaf834d22e951c1fc",
         "meta.json": "7ad423d15d51543ad8bd6c57e9732d287181511d"
       }
+    },
+    "v2_pico-contra-janela-do-sdr": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: bucketOf usa os mesmos tetos inclusive que a legenda imprime; conferido no dado (27, 19, 17, 6 e 11 células por faixa) e nos dois PNGs (terça 8h 1,8 em seq-1, sexta 16h 3,6, quarta 10h e quinta 15h 5,4 na faixa do próprio teto). Janela 11h a 13h com 43,0% (122 de 284) confere. Render 0,09% no pior tema. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:56:56.444Z",
+      "impressao": "e242ee29c6546c8c371065d4d42439f7a41d241d",
+      "arquivos": {
+        "Chart.tsx": "d7ca27d4622ec34b8ec373f2da5c8b5ab8d80e06",
+        "data.ts": "e8860c87399eca51791edbf24b146d487c570b63",
+        "meta.json": "a3578e6a6f4a3b40802bad621e0192e106700c34"
+      }
+    },
+    "v3_agendas-por-sdr-em-pequenos-multiplos": {
+      "veredito": "aprovado",
+      "nota": "Pequenos múltiplos com domínio comum às oito grades; faixas de 5 a 9, 10 a 14 e 15 a 19 coerentes com a pintura; hachura, zero medido e ausência em três canais; total por painel e ordem declarada (GEO-12). Frase com 217 caracteres. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:58.698Z",
+      "impressao": "6522f0def707c5bb8eac281f7e60e3c0023dcfbd",
+      "arquivos": {
+        "Chart.tsx": "0419d0fe20ff5375ca3fc24ab0e3706d1e44feb5",
+        "data.ts": "aea8c4555a685d4db5f89a5653787c40b5d2fee9",
+        "meta.json": "5c317cfd700b135979b0ed08799ebfecd9bdfa6c"
+      }
+    },
+    "v4_relogio-radial-de-24-horas": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: linha de leitura e frase acessível dizem 53,6% (174 de 325) das entradas de uma semana média, e 325,0 é a soma dos 7 dias. Legenda de faixas com o menor e o maior valor de fato (0,1 a 0,2; 0,3 a 1,7; 1,8 a 9,2), coerente com bandOf. Nota da GEO-5 e lista de picos presentes; render 0,08%. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:56:59.070Z",
+      "impressao": "bb5aa68c2fd63be8cfda3893323ad9da6724862c",
+      "arquivos": {
+        "Chart.tsx": "554420607678479667d4b04a66fca5cba0c090d7",
+        "data.ts": "e8737bb191b46d199193e4737f81dc9a7a9fddca",
+        "meta.json": "34f9fe7d0dcbf5c2d736ac7e267298dc41086326"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,71 @@
         "Chart.tsx": "572fe13a9214d2ac340ff6f3832b391444224092",
         "data.ts": "2a0e123042875764454e17ffaf834d22e951c1fc",
         "meta.json": "7ad423d15d51543ad8bd6c57e9732d287181511d"
+      }
+    },
+    {
+      "versao": "v2_pico-contra-janela-do-sdr",
+      "veredito": "reprovado",
+      "nota": "Pergunta 12 e 14.1 (domínio da escala de cor): a legenda afirma que o número na amostra é o teto da faixa, mas bucketOf usa Math.floor e pinta na faixa de cima as 4 células com valor igual ao teto (terça 8h 1,8; sexta 16h 3,6; quarta 10h e quinta 15h 5,4), visível nos dois PNGs. Atribuir a faixa pelos mesmos tetos que a legenda imprime, ou imprimir o piso na amostra. Resto íntegro nos dois temas.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:56.247Z",
+      "impressao": "ed26d58f72c004743615f6a74dfa6ebe300e0e6a",
+      "arquivos": {
+        "Chart.tsx": "ffc1223edaf910ddc8dbc793d219e9b4c54e08c7",
+        "data.ts": "e8860c87399eca51791edbf24b146d487c570b63",
+        "meta.json": "a3578e6a6f4a3b40802bad621e0192e106700c34"
+      }
+    },
+    {
+      "versao": "v3_agendas-por-sdr-em-pequenos-multiplos",
+      "veredito": "aprovado",
+      "nota": "Pequenos múltiplos com domínio comum às oito grades; faixas de 5 a 9, 10 a 14 e 15 a 19 coerentes com a pintura; hachura, zero medido e ausência em três canais; total por painel e ordem declarada (GEO-12). Frase com 217 caracteres. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:47:58.698Z",
+      "impressao": "6522f0def707c5bb8eac281f7e60e3c0023dcfbd",
+      "arquivos": {
+        "Chart.tsx": "0419d0fe20ff5375ca3fc24ab0e3706d1e44feb5",
+        "data.ts": "aea8c4555a685d4db5f89a5653787c40b5d2fee9",
+        "meta.json": "5c317cfd700b135979b0ed08799ebfecd9bdfa6c"
+      }
+    },
+    {
+      "versao": "v4_relogio-radial-de-24-horas",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-5 e NUM-6 (agregado e unidade): a linha de leitura escreve 53,6% (174 de 325) das entradas de um dia médio, mas 325 é a soma dos 7 dias, isto é a semana média; o dia médio tem 46,4. Escrever uma semana média, como a v2, ou dividir o volume por 7. Aproveitar a rodada para a legenda de faixas (ver parecer).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:48:01.213Z",
+      "impressao": "00081997ffc096e8780ddd35f851fa80f5a54649",
+      "arquivos": {
+        "Chart.tsx": "792883e2f363aee436d247096e81d34e849d6968",
+        "data.ts": "e8737bb191b46d199193e4737f81dc9a7a9fddca",
+        "meta.json": "34f9fe7d0dcbf5c2d736ac7e267298dc41086326"
+      }
+    },
+    {
+      "versao": "v2_pico-contra-janela-do-sdr",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: bucketOf usa os mesmos tetos inclusive que a legenda imprime; conferido no dado (27, 19, 17, 6 e 11 células por faixa) e nos dois PNGs (terça 8h 1,8 em seq-1, sexta 16h 3,6, quarta 10h e quinta 15h 5,4 na faixa do próprio teto). Janela 11h a 13h com 43,0% (122 de 284) confere. Render 0,09% no pior tema. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:56:56.444Z",
+      "impressao": "e242ee29c6546c8c371065d4d42439f7a41d241d",
+      "arquivos": {
+        "Chart.tsx": "d7ca27d4622ec34b8ec373f2da5c8b5ab8d80e06",
+        "data.ts": "e8860c87399eca51791edbf24b146d487c570b63",
+        "meta.json": "a3578e6a6f4a3b40802bad621e0192e106700c34"
+      }
+    },
+    {
+      "versao": "v4_relogio-radial-de-24-horas",
+      "veredito": "aprovado",
+      "nota": "Bloqueante anterior resolvido: linha de leitura e frase acessível dizem 53,6% (174 de 325) das entradas de uma semana média, e 325,0 é a soma dos 7 dias. Legenda de faixas com o menor e o maior valor de fato (0,1 a 0,2; 0,3 a 1,7; 1,8 a 9,2), coerente com bandOf. Nota da GEO-5 e lista de picos presentes; render 0,08%. Sem bloqueante; observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T10:56:59.070Z",
+      "impressao": "bb5aa68c2fd63be8cfda3893323ad9da6724862c",
+      "arquivos": {
+        "Chart.tsx": "554420607678479667d4b04a66fca5cba0c090d7",
+        "data.ts": "e8737bb191b46d199193e4737f81dc9a7a9fddca",
+        "meta.json": "34f9fe7d0dcbf5c2d736ac7e267298dc41086326"
       }
     }
   ]

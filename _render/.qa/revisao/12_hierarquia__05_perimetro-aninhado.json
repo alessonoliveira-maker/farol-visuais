@@ -13,6 +13,42 @@
         "data.ts": "ad0a261b9ef55fd78d36481f0e472df35d72eb76",
         "meta.json": "dbc3564d58f951f90bb9431a2f1ce073bb1f1ebf"
       }
+    },
+    "v2_zoom-do-alcancavel-com-meta": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; área do painel confere (36 px = 4% de 180, meta 44,1 px = 6%), ampliação 7,1 e 50 saem do dado, cone em text-muted acima de 3:1 e saindo dos cantos do alcançável; observações no README (precisão 4,0%, nosso sem tabular-nums, linha de baixo do cone colada à base)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:18.393Z",
+      "impressao": "74c0c64a09a1970abd35fbf82f9ff88f3e9f89d6",
+      "arquivos": {
+        "Chart.tsx": "c4a2f32d969e7dc1210ac55c2c5b4cdb563b1d4f",
+        "data.ts": "dc006cd68546ab9a6b97a9c4dbecbceeeccab53d",
+        "meta.json": "f1190a367786906f193f5414cdec8810f55845e4"
+      }
+    },
+    "v3_perimetro-alterado-lado-a-lado": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; escala comum medida (base R$ 138 bi, quadro atual 186,5 px contra 200), participação 5,3 px idêntica nos dois, procedência por nível escrita por extenso e acima de 4,5:1 nos dois temas; observações no README (frases com não muda e cai fixas, cresce sem base na linha)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:25.167Z",
+      "impressao": "aba39fe8ba19479b49c59349d6dea91e5433a1f8",
+      "arquivos": {
+        "Chart.tsx": "304580281c5c026bf97afd733d02f75b0ca09820",
+        "data.ts": "6b5fd45032b1a9632833c52a3210a4d768bbfe64",
+        "meta.json": "c758ce7e917a62a692dfa8ed8053cc3758b9863d"
+      }
+    },
+    "v4_nivel-sem-estimativa": {
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; nível ausente sem lado, contorno text-muted, indisponível com Unplug no valor e no percentual, participação mantida em 5,66 px; observações no README (rótulo do ausente ancorado na aresta do endereçável, recuo real de 8 px e não 4, frase com nomes fixos por índice)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:26.417Z",
+      "impressao": "4e41a16b01e42fa4c920f22528780fbcf5941045",
+      "arquivos": {
+        "Chart.tsx": "42a9aa03d462686325bbdf5e853992a96b68af2a",
+        "data.ts": "4a6ba1df5b79981c39135b79e2c562fe562fb8ef",
+        "meta.json": "c00be468f9e9d8edd62c26ece34eaf4ad0c23d2f"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,45 @@
         "Chart.tsx": "c8ed178738799d7f31206232642209f755477d75",
         "data.ts": "ad0a261b9ef55fd78d36481f0e472df35d72eb76",
         "meta.json": "dbc3564d58f951f90bb9431a2f1ce073bb1f1ebf"
+      }
+    },
+    {
+      "versao": "v2_zoom-do-alcancavel-com-meta",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; área do painel confere (36 px = 4% de 180, meta 44,1 px = 6%), ampliação 7,1 e 50 saem do dado, cone em text-muted acima de 3:1 e saindo dos cantos do alcançável; observações no README (precisão 4,0%, nosso sem tabular-nums, linha de baixo do cone colada à base)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:18.393Z",
+      "impressao": "74c0c64a09a1970abd35fbf82f9ff88f3e9f89d6",
+      "arquivos": {
+        "Chart.tsx": "c4a2f32d969e7dc1210ac55c2c5b4cdb563b1d4f",
+        "data.ts": "dc006cd68546ab9a6b97a9c4dbecbceeeccab53d",
+        "meta.json": "f1190a367786906f193f5414cdec8810f55845e4"
+      }
+    },
+    {
+      "versao": "v3_perimetro-alterado-lado-a-lado",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; escala comum medida (base R$ 138 bi, quadro atual 186,5 px contra 200), participação 5,3 px idêntica nos dois, procedência por nível escrita por extenso e acima de 4,5:1 nos dois temas; observações no README (frases com não muda e cai fixas, cresce sem base na linha)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:25.167Z",
+      "impressao": "aba39fe8ba19479b49c59349d6dea91e5433a1f8",
+      "arquivos": {
+        "Chart.tsx": "304580281c5c026bf97afd733d02f75b0ca09820",
+        "data.ts": "6b5fd45032b1a9632833c52a3210a4d768bbfe64",
+        "meta.json": "c758ce7e917a62a692dfa8ed8053cc3758b9863d"
+      }
+    },
+    {
+      "versao": "v4_nivel-sem-estimativa",
+      "veredito": "aprovado",
+      "nota": "32 perguntas sim; nível ausente sem lado, contorno text-muted, indisponível com Unplug no valor e no percentual, participação mantida em 5,66 px; observações no README (rótulo do ausente ancorado na aresta do endereçável, recuo real de 8 px e não 4, frase com nomes fixos por índice)",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T17:12:26.417Z",
+      "impressao": "4e41a16b01e42fa4c920f22528780fbcf5941045",
+      "arquivos": {
+        "Chart.tsx": "42a9aa03d462686325bbdf5e853992a96b68af2a",
+        "data.ts": "4a6ba1df5b79981c39135b79e2c562fe562fb8ef",
+        "meta.json": "c00be468f9e9d8edd62c26ece34eaf4ad0c23d2f"
       }
     }
   ]

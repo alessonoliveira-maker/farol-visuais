@@ -1,3 +1,5 @@
+import { Filter } from 'lucide-react';
+
 import { CHART_SEQUENTIAL_COLORS } from '@/components/visuals/charts/chartTheme';
 import { formatDate, formatInt, formatPercent, formatRateWithVolume, formatUnavailable } from '@/lib/format';
 import { cn } from '@/lib/utils';
@@ -77,6 +79,27 @@ interface CellStat {
   readonly value: number;
   readonly total: number;
   readonly share: number;
+  /** Percentual inteiro da linha, repartido pelo maior resto: é o que a célula escreve e a legenda lê. */
+  readonly percent: number;
+}
+
+/**
+ * Percentual inteiro de cada contagem sobre o total, repartido pelo maior resto para a linha somar
+ * 100. Empate de resto desempata pela posição, que é determinística. Total zero devolve null.
+ */
+function wholePercents(counts: readonly number[], total: number): readonly number[] | null {
+  if (total <= 0) return null;
+  const floors = counts.map((count) => Math.floor((count * 100) / total));
+  const order = counts
+    .map((count, index) => ({ index, rest: count * 100 - (floors[index] ?? 0) * total }))
+    .sort((first, second) => second.rest - first.rest || first.index - second.index);
+  const missing = 100 - floors.reduce((sum, value) => sum + value, 0);
+  const result = [...floors];
+  for (let step = 0; step < missing; step += 1) {
+    const target = order[step]?.index ?? 0;
+    result[target] = (result[target] ?? 0) + 1;
+  }
+  return result;
 }
 
 /** Teto de cada degrau por tercil do observado. Lista vazia não tem teto: devolve null, nunca zero. */
@@ -113,8 +136,22 @@ export default function StageSetbackMatrix({
   height,
   className,
 }: StageSetbackMatrixProps) {
+  if (data.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="size-4 shrink-0" />
+        <span>Nenhum movimento neste recorte: não houve medição de avanço nem de retrocesso.</span>
+      </div>
+    );
+  }
+
   const originOf = (id: string): number => STAGES.findIndex((stage) => stage.id === id);
   const totals = data.map((row) => row.to.reduce((sum, value) => sum + value, 0));
+  const rowPercents = data.map((row, rowIndex) => wholePercents(row.to, totals[rowIndex] ?? 0));
 
   const moves = data.flatMap((row, rowIndex): CellStat[] => {
     const origin = originOf(row.from);
@@ -123,7 +160,17 @@ export default function StageSetbackMatrix({
     return row.to.flatMap((value, columnIndex): CellStat[] =>
       value === 0 || columnIndex === origin
         ? []
-        : [{ row: rowIndex, column: columnIndex, origin, value, total, share: value / total }],
+        : [
+            {
+              row: rowIndex,
+              column: columnIndex,
+              origin,
+              value,
+              total,
+              share: value / total,
+              percent: rowPercents[rowIndex]?.[columnIndex] ?? 0,
+            },
+          ],
     );
   });
   const setbacks = moves.filter((cell) => cell.column < cell.origin);
@@ -135,8 +182,8 @@ export default function StageSetbackMatrix({
     null,
   );
 
-  const advanceCeilings = tercileCeilings(advances.map((cell) => cell.share));
-  const setbackCeilings = tercileCeilings(setbacks.map((cell) => cell.share));
+  const advanceCeilings = tercileCeilings(advances.map((cell) => cell.percent / 100));
+  const setbackCeilings = tercileCeilings(setbacks.map((cell) => cell.percent / 100));
 
   const summary =
     worst === null
@@ -199,7 +246,7 @@ export default function StageSetbackMatrix({
                 row.to.map((value, columnIndex) => {
                   const x = cellX(columnIndex);
                   const centerX = x + CELL_W / 2;
-                  const share = value / total;
+                  const share = (rowPercents[rowIndex]?.[columnIndex] ?? 0) / 100;
                   const isStay = columnIndex === origin;
                   const isSetback = columnIndex < origin;
                   const isEmpty = value === 0;

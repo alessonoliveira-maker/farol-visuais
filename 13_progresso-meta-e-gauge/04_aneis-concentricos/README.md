@@ -58,8 +58,10 @@ declarada no dado, nunca para o tamanho do percentual.
 ## Versões
 
 - **v1_tres-metas-da-semana**: três metas independentes de uma equipe (entradas tratadas, agendas
-  marcadas, SLA cumprido) na mesma semana, com uma meta fechada e duas em aberto, cada uma com o
-  que falta escrito na lista.
+  marcadas, SLA cumprido) na mesma semana, com uma meta fechada e duas em aberto. A lista traz
+  valor, meta com unidade e percentual em colunas tabulares alinhadas à direita nos três anéis,
+  ícone por estado (`CheckCircle2` fechado, `CircleAlert` aberto, `CircleDashed` sem meta) e o
+  "faltam N unidade" nos abertos.
 - **v2_quem-fechou-as-tres-metas**: pequenos múltiplos do mesmo trio de anéis para 6 pessoas, na
   mesma escala e no mesmo raio, com legenda única de cor por meta, o par valor/meta escrito em
   cada número (com ícone de fechado além da cor) e selo de "três metas fechadas" só para quem
@@ -141,6 +143,63 @@ bloqueante novo; os pontos abaixo se somam aos de cima.
   e ao documento. O texto vem palavra por palavra do catálogo, então a correção é de lá, não da
   versão.
 
+_Revisão de 2026-10-14 das três versões (motivo `revisao_desatualizada`), feita sobre o arquivo de
+hoje. O trilho em `--surface-sunken` está aceito nos dois temas (`#070c16` contra `#121c2e` no
+escuro, `#eaeff7` contra `#ffffff` no claro, lidos do PNG). `v2` aprovada; `v1` e `v3` voltam
+reprovadas, com parecer em
+`validation/revisao_13_progresso-meta-e-gauge__04_aneis-concentricos_2026-10-14.md`. Os itens
+abaixo não reprovam e se somam aos de cima, sem repeti-los._
+
+- v1: a frase acessível diz "1 de 3 metas fechadas. Agendas marcadas não fechou: faltam 6
+  agendas." e não diz qual meta fechou nem que o SLA ficou a 7 atendimentos; quem ouve não sabe se
+  a fechada foi Entradas ou SLA. Nomear a fechada e as duas abertas com o que falta cabe nos 250.
+- v1 e v3: `bandForIndex` devolve a banda da terceira para a quarta meta em diante, e os dois anéis
+  se desenham um em cima do outro sem aviso; `ringColor` cai em `--chart-1` para id desconhecido e
+  repete a cor de Entradas (COR-3 latente). O modelo limita a 3 metas, mas o componente não recusa.
+- v1: o `CheckCircle2` do anel fechado fica na borda direita da lista, a cerca de 190 px do nome,
+  medidos no PNG; a ligação com a linha depende só do alinhamento horizontal.
+- v2: a frase acessível dá a contagem ("1 de 6 fecharam as três metas") mas não diz quem fechou,
+  que é a resposta do caso de uso, e nomeia só a primeira exceção na ordem do array (Murilo C.)
+  entre cinco. "Só Talita V. fechou as três metas" cabe no lugar da exceção.
+- v2: os pares valor/meta não levam unidade em lugar nenhum da grade; "Entradas" e "Agendas" servem
+  de substantivo pela legenda, "SLA" não (a unidade é atendimentos). Hoje o par lê como contagem
+  pelo formato, mas a NUM-6 pede o substantivo.
+- v2: o selo diz "três metas"; "três metas fechadas" diz o estado sem depender do ícone.
+- v2: o `RadialBarChart` não declara `margin` e herda os 5 px do Recharts, então o anel usa 54 dos
+  64 px reservados e cada banda sai com 4,9 px; legível no preview, mas é espaço reservado e não
+  usado (ESP-3).
+- v3: o trilho tracejado do anel sem meta desenha também a aresta radial do setor às 12 h, um traço
+  curto entre os dois círculos (medido a 358,9° no raio médio, nos dois temas) que lê como marca
+  de início. Dois círculos tracejados, sem a aresta, dizem o mesmo sem a marca extra.
+- v3: o `TrendingUp` só aparece acima de 100%; meta fechada em exatamente 100% sai sem ícone
+  nenhum, ramo latente que o dado fixo não exercita.
+- v3: o selo de meta proporcional escreve os dias com `String()` em vez de `formatInt` e sem
+  algarismo tabular (TIP-1).
+
+_Revisão de 2026-10-14, segunda passada, sobre `v1` e `v3` depois da correção do mesmo dia (motivo
+`revisao_desatualizada`), julgado o arquivo de hoje. As duas aprovadas. Os itens abaixo não
+reprovam e se somam aos de cima, sem repeti-los._
+
+- v1: "120", "40", "58" e os números do "faltam" levam `kpi-number` sem classe de peso e pedem
+  Space Grotesk 400, que não está entre os pesos carregados (TIP-4); o navegador cai para 500. Sem
+  consequência visível; `font-medium` declara o peso que já sai na tela.
+- v1 e v3: o nome do anel vai com `truncate`, e na v1 a unidade também. Nada corta no preview e os
+  três nomes estão na frase acessível, mas a TIP-7 não admite reticência em nome de marca
+  desenhada; deixar quebrar em duas linhas é a saída quando o cartão estreitar.
+- v1: o ramo sem meta ainda pinta a amostra cheia na cor da meta, enquanto a v3 já usa a amostra
+  vazada e tracejada (ROT-4); o dado fixo da v1 não exercita o ramo.
+- v3: o anel aberto (Agendas marcadas) sai sem ícone de estado, e a v1 dá `CircleAlert` ao mesmo
+  estado. O texto "falta 1 agenda" carrega a leitura, mas o modelo fica com dois desenhos para o
+  mesmo estado.
+- v3: a lista segue em frase corrida e escreve o percentual só no anel acima de 100%; Agendas
+  marcadas não escreve os 90% que o arco codifica. Diverge do item 4 da Anatomia ("valor bruto,
+  meta e percentual ... por linha") e da v1, que passou para colunas.
+- v3: `weekStart` e `joinedOn` saem do `data.ts` e não são lidos; nem o selo nem a frase dizem a
+  semana ou o dia de entrada, e o "entrou na quarta" fica só no subtítulo do cartão. Escrever o dia
+  de entrada no selo, por `formatDate`, amarraria o recorte.
+- v1 e v3: `space-y-2.5` dá 10 px entre os itens da lista, que são grupos; a ESP-1 pede múltiplo de
+  4 px nessa distância. Sem consequência visível.
+
 ## Correção de 2026-09-18 (v2, reprovada)
 
 A rodada anterior reprovou `v2_quem-fechou-as-tres-metas` em dois pontos: nenhuma cor tinha nome
@@ -156,6 +215,16 @@ uma meta fechou sem decorar a paleta (NUM-6, Anatomia item 4). Correção:
   cabiam no preset sem espremer o texto (medido: o corpo comprimia a altura da linha do nome de
   16 px para 8 px e cortava as letras pela metade). O desvio está declarado em `canvas` e `notes`
   do `meta.json`, como pede a seção 17.7 do contrato.
+
+## Correção de 2026-10-14 (v1 e v3, reprovadas)
+
+- v1: ícone `CircleAlert` em `--text-muted` no anel aberto; lista em colunas de largura fixa
+  (valor, meta, percentual inteiro) para os três anéis; frase acessível nomeia as três metas.
+- v1 e v3: `unitOne` no dado e concordância "falta 1 agenda"; o anel sem meta escreve "7
+  atendimentos, sem meta definida" e a frase leva o valor com a unidade.
+- v3: amostra vazada e tracejada para o anel sem meta.
+- Superadas por esta correção as observações acima sobre ícone do anel aberto, percentual só no
+  fechado, frase corrida, "faltam 1 agendas", "7 de sem meta" e amostra cheia no sem meta.
 
 ## Pendências conhecidas
 

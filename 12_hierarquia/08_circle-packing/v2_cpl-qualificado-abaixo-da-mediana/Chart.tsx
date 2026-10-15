@@ -59,6 +59,8 @@ const LABEL_LINE_STEP = 14;
 /** Folga entre a caixa de tinta do rótulo e a borda do círculo. */
 const LABEL_MARGIN = 4;
 const SAMPLE_RADIUS = 6;
+const ROW_SAMPLE_RADIUS = 4;
+const ROW_INDENT = 14;
 /** 17.7: da amostra até o texto da legenda. */
 const SAMPLE_GAP = 10;
 /** 17.7: itens da legenda entre si. */
@@ -430,13 +432,6 @@ export default function CampaignCostPacking({
     (a, b) => b.qualifiedLeads - a.qualifiedLeads || a.id.localeCompare(b.id),
   );
   const biggest = ranked[0];
-  // A lista cobre as campanhas sem rótulo no desenho e também as que não têm círculo nenhum,
-  // porque volume zero não tem área: as duas classes são invisíveis no desenho pelo mesmo motivo.
-  const listRows = [
-    ...groups.flatMap((group) => group.leaves).filter((leaf) => !leaf.labelled),
-    ...everyLeaf.filter((leaf) => leaf.qualifiedLeads <= 0),
-  ].sort((a, b) => b.qualifiedLeads - a.qualifiedLeads || a.id.localeCompare(b.id));
-
   const summary = [
     `Empacotamento de círculos: ${countLabel(withVolume.length)} campanhas em ${countLabel(groups.length)} canais, ${leadsLabel(totalLeads)} qualificados.`,
     `${countLabel(below.length)} ficam abaixo da mediana de ${costLabel(cutoff)} de CPL qualificado e trazem ${shareLabel(belowLeads, totalLeads)} dos leads.`,
@@ -447,9 +442,36 @@ export default function CampaignCostPacking({
     .filter(Boolean)
     .join(' ');
 
-  const listCaptionY = BAND_TOP + 32 + groups.length * LEGEND_STEP;
-  const listHeaderY = listCaptionY + LINE_NOTE;
-  const countColumnX = SIDE_X + 108;
+  const unnamed = new Set(
+    groups.flatMap((group) => group.leaves).filter((leaf) => !leaf.labelled).map((leaf) => leaf.id),
+  );
+  // Cada canal na legenda lateral leva abaixo as campanhas dele sem nome no desenho, e também as de
+  // volume zero, que não têm área: as duas classes são invisíveis no desenho pelo mesmo motivo.
+  let cursorY = BAND_TOP + 32;
+  const sideBlocks = data.map((group) => {
+    const y = cursorY;
+    const rows = [...group.children]
+      .filter((leaf) => unnamed.has(leaf.id) || leaf.qualifiedLeads <= 0)
+      .sort((a, b) => b.qualifiedLeads - a.qualifiedLeads || a.id.localeCompare(b.id))
+      .map((leaf, index) => ({
+        id: leaf.id,
+        label: leaf.label,
+        qualifiedLeads: leaf.qualifiedLeads,
+        costPerLead: leaf.costPerLead,
+        below: leaf.qualifiedLeads > 0 && leaf.costPerLead < cutoff,
+        y: y + (index + 1) * LINE_NOTE + 3,
+      }));
+    cursorY = y + LEGEND_STEP + rows.length * LINE_NOTE;
+    return {
+      id: group.id,
+      label: group.label,
+      slot: group.slot,
+      total: group.children.reduce((sum, leaf) => sum + leaf.qualifiedLeads, 0),
+      y,
+      rows,
+    };
+  });
+  const countColumnX = SIDE_X + 122;
   const costColumnX = BODY_WIDTH - 4;
 
   return (
@@ -542,24 +564,39 @@ export default function CampaignCostPacking({
           </g>
         ))}
 
-        {/* Legenda dos canais, ao lado do gráfico: anel na cor do contorno, nome e volume. */}
+        {/* Legenda dos canais e identificação das campanhas sem rótulo (ROT-10): cada campanha fica
+            sob o canal dela, com a amostra preenchida do veredito, o volume e o CPL. */}
+        <text className="font-sans" fill="var(--text-muted)" fontSize={TEXT_NOTE} x={SIDE_X} y={BAND_TOP + 11}>
+          Canal
+        </text>
         <text
           className="font-sans"
           fill="var(--text-muted)"
           fontSize={TEXT_NOTE}
-          x={SIDE_X}
+          textAnchor="end"
+          x={countColumnX}
           y={BAND_TOP + 11}
         >
-          Leads por canal
+          leads
         </text>
-        {groups.map((group, index) => (
-          <g key={group.id}>
+        <text
+          className="font-sans"
+          fill="var(--text-muted)"
+          fontSize={TEXT_NOTE}
+          textAnchor="end"
+          x={costColumnX}
+          y={BAND_TOP + 11}
+        >
+          CPL
+        </text>
+        {sideBlocks.map((block) => (
+          <g key={block.id}>
             <circle
               cx={SIDE_X + SAMPLE_RADIUS}
-              cy={BAND_TOP + 28 + index * LEGEND_STEP}
+              cy={block.y - 4}
               fill="none"
               r={SAMPLE_RADIUS - 1}
-              stroke={slotColor(group.slot)}
+              stroke={slotColor(block.slot)}
               strokeWidth={GROUP_STROKE}
             />
             <text
@@ -567,9 +604,9 @@ export default function CampaignCostPacking({
               fill="var(--text-secondary)"
               fontSize={TEXT_MAIN}
               x={SIDE_X + 2 * SAMPLE_RADIUS + SAMPLE_GAP}
-              y={BAND_TOP + 32 + index * LEGEND_STEP}
+              y={block.y}
             >
-              {group.label}
+              {block.label}
             </text>
             <text
               className="font-display"
@@ -577,54 +614,25 @@ export default function CampaignCostPacking({
               fontSize={TEXT_MAIN}
               fontWeight={500}
               textAnchor="end"
-              x={costColumnX}
-              y={BAND_TOP + 32 + index * LEGEND_STEP}
-            >
-              {countLabel(group.total)}
-            </text>
-          </g>
-        ))}
-
-        {/* Identificação das campanhas sem rótulo no desenho (ROT-10): nome, volume e CPL. */}
-        {listRows.length > 0 ? (
-          <>
-            <text
-              className="font-sans"
-              fill="var(--text-muted)"
-              fontSize={TEXT_NOTE}
-              x={SIDE_X}
-              y={listCaptionY}
-            >
-              Sem rótulo no desenho
-            </text>
-            <text
-              className="font-sans"
-              fill="var(--text-muted)"
-              fontSize={TEXT_NOTE}
-              textAnchor="end"
               x={countColumnX}
-              y={listHeaderY}
+              y={block.y}
             >
-              leads
+              {countLabel(block.total)}
             </text>
-            <text
-              className="font-sans"
-              fill="var(--text-muted)"
-              fontSize={TEXT_NOTE}
-              textAnchor="end"
-              x={costColumnX}
-              y={listHeaderY}
-            >
-              CPL
-            </text>
-            {listRows.map((row, index) => (
+            {block.rows.map((row) => (
               <g key={row.id}>
+                <circle
+                  cx={SIDE_X + ROW_INDENT}
+                  cy={row.y - 3.5}
+                  fill={row.below ? 'var(--positive)' : 'var(--text-muted)'}
+                  r={ROW_SAMPLE_RADIUS}
+                />
                 <text
                   className="font-sans"
                   fill="var(--text-secondary)"
                   fontSize={TEXT_NOTE}
-                  x={SIDE_X}
-                  y={listHeaderY + (index + 1) * LINE_NOTE}
+                  x={SIDE_X + ROW_INDENT + ROW_SAMPLE_RADIUS + 6}
+                  y={row.y}
                 >
                   {row.label}
                 </text>
@@ -634,7 +642,7 @@ export default function CampaignCostPacking({
                   fontSize={TEXT_NOTE}
                   textAnchor="end"
                   x={countColumnX}
-                  y={listHeaderY + (index + 1) * LINE_NOTE}
+                  y={row.y}
                 >
                   {countLabel(row.qualifiedLeads)}
                 </text>
@@ -644,14 +652,14 @@ export default function CampaignCostPacking({
                   fontSize={TEXT_NOTE}
                   textAnchor="end"
                   x={costColumnX}
-                  y={listHeaderY + (index + 1) * LINE_NOTE}
+                  y={row.y}
                 >
                   {costLabel(row.costPerLead)}
                 </text>
               </g>
             ))}
-          </>
-        ) : null}
+          </g>
+        ))}
       </svg>
     </div>
   );

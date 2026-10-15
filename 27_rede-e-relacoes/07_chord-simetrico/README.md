@@ -93,8 +93,17 @@ Revisão de 2026-10-13, segunda passada, depois da rodada de correção, com a `
 - `v2`: o rótulo de Financiamento ocupa os 88 px do `max-w-[5.5rem]` ("o mais associado" mede 86,5 px) e a tinta começa a 1 px da borda esquerda do corpo. Nome mais longo quebra a linha ou sai do corpo.
 - `v2`: itens da primeira passada que mudaram. O canvas agora é `alto` e o anel tem 186 px; o `notes` traz os números da TOK-9; o comentário da prop `highlightId` foi alinhado ao código, mas a frase do vazio para id inexistente continua dizendo "Nenhum cliente com dois produtos"; o `218` da nota do painel segue sem `tabular-nums`.
 
+Revisão de 2026-10-15, terceira passada, depois da segunda rodada de correção, só a `v2` julgada. `v2` aprovada: a caixa da roda é quadrada (334 por 334 px), as sete âncoras ficam a 105,2 px do centro e os percentuais saem por `formatPercent` sobre o maior resto (44, 27, 19, 5, 4 e 1, soma 100). Os itens abaixo não reprovam.
+
+- `v2`: a tinta dos rótulos fica de 14,6 a 18,1 px do próprio arco nos dois temas, e não de 10 a 14 px como a correção registrou. Cada rótulo está mais perto do próprio arco que de qualquer vizinho; a menor margem é a de Outros (18,0 px do arco dele, 22,0 do de Consórcio e 22,1 do de Cartão). `R_LABEL` está em unidade do viewBox, então o vão cresce com a roda (8,9 px na escala da `v1`, 11,7 aqui); um afastamento em px manteria o vão fixo.
+- `v2`, GEO-1, decidido: o canvas `alto` fica. A conta cabe nele com sobra, e nesse caso a GEO-1 manda escrever o nome do preset. A sobra é de cerca de 87 px no corpo: cerca de 108 px em branco entre o subtítulo e o rótulo Cartão e 86 px abaixo de "estruturado". Se o dono preferir o cartão justo, 640 por 480 escrito por número fecha.
+- `v2`, TIP-4: os números do painel fora da primeira linha e o `96 clientes` do rótulo usam `kpi-number` sem classe de peso e herdam 400. Space Grotesk 400 não é carregado, e o navegador usa o 500. O preview não muda.
+- `v2`: da segunda passada seguem valendo, sem mudança, o comentário do topo do `Chart.tsx` (cor da fita pelo índice menor, parêntese aberto), a frase que começa em minúscula no `notes`, a frase do vazio para id inexistente, o `218` sem `tabular-nums`, os dois pares fora do foco que ficam sem fita e sem aviso, e o rótulo de Financiamento que ocupa os 88 px e começa a 1 px da borda do corpo.
+- Pendências conhecidas, abaixo: o item da `v3` e da `v4` repete "é o antigo é o antigo"; e o item da `v2` sobre a GEO-1 fica respondido pela decisão acima.
+
 ## Pendências conhecidas
 
 - `v1`, COR-5: três pares com Outros (3, 5 e 6 clientes) ficam sem fita por piso e são contados no rodapé; as fitas de 8 e 9 clientes seguem finas no meio.
 - `v2`, COR-5: Cartão (8) e Outros (3) ficam sem fita por piso e marcados no painel; Conta digital (12) tem fita fina.
-- `v3` e `v4`: o contorno ainda é o antigo (aprovadas, não tocadas); alinhar ao `paintOrder` das irmãs quando voltarem à fila.
+- `v2`, GEO-1: a caixa da roda agora é quadrada nos dois limites (`[container-type:size]` no pai, lado `min(100cqw, 100cqh)`), então o corpo do `alto` deixa folga vertical; declarar o canvas por número fica para o revisor decidir.
+- `v3` e `v4`: a caixa `aspect-square h-full w-auto max-w-full` ainda é a antiga; alinhar ao conserto da `v2`. O contorno também ainda é o antigo é o antigo (aprovadas, não tocadas); alinhar ao `paintOrder` das irmãs quando voltarem à fila.

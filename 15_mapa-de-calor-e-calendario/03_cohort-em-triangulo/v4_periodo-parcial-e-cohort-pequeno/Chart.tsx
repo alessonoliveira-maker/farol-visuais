@@ -138,6 +138,31 @@ function paletteAt(level: number): { readonly fill: string; readonly text: strin
   return { fill: SEQ_TOKENS[level] ?? SEQ_TOKENS[0], text: SEQ_TEXT[level] ?? SEQ_TEXT[0] };
 }
 
+/** Piso de cohorts para o rodapé: com um só, a média repetiria a própria linha. */
+const MIN_COMMON = 2;
+
+/**
+ * População fixa do rodapé: os cohorts com base que já fecharam, com medida, todas as colunas até a mais
+ * funda em que pelo menos `MIN_COMMON` deles chegam. Toda coluna é a média (ou o total) dos mesmos
+ * cohorts, então o valor só cai de uma coluna para outra por piora real, nunca por troca de gente
+ * (EST-1b). Cohort com célula sem medição fica de fora da população inteira. Devolve `null` quando
+ * nenhuma idade tem cohorts fechados em número suficiente.
+ */
+function commonPopulation(
+  lines: readonly CohortLine[],
+): { readonly lines: readonly CohortLine[]; readonly depth: number } | null {
+  for (let depth = ELAPSED_MONTHS - 1; depth >= 0; depth -= 1) {
+    const members = lines.filter(
+      (line) =>
+        !line.baseless &&
+        line.cells.length > depth &&
+        line.cells.slice(0, depth + 1).every((state) => state.kind === 'valor' && !state.open),
+    );
+    if (members.length >= MIN_COMMON) return { lines: members, depth };
+  }
+  return null;
+}
+
 interface Confront {
   readonly thinMonth: string;
   readonly thinBooked: number;
@@ -226,6 +251,19 @@ export default function CohortPartialTriangle({
 
   /** O par que a linha de leitura confronta: a base rala contra o maior cohort de base cheia, na mesma idade. */
   const confront = confrontAt(lines, REFERENCE_ELAPSED);
+  const closedRates = lines.flatMap((line) => {
+    const state = line.cells[REFERENCE_ELAPSED];
+    return !line.baseless && state !== undefined && state.kind === 'valor' && !state.open ? [state.rate] : [];
+  });
+  const columnMax = extent(closedRates);
+  const thinRate = confront === null ? null : confront.thinBooked / confront.thinSize;
+  const fullRate = confront === null ? null : confront.fullBooked / confront.fullSize;
+  const thinHigher = thinRate !== null && fullRate !== null && thinRate > fullRate;
+  const thinLeads = columnMax !== null && thinRate !== null && thinRate >= columnMax.max;
+  const population = commonPopulation(lines);
+  const footerCount = population === null ? 0 : population.lines.length;
+  const footerLabel = population === null ? null : `M${formatInt(population.depth)}`;
+  const thresholdLabel = `${formatInt(MIN_SAMPLE)} leads`;
 
   if (lines.length === 0) {
     return (
@@ -240,12 +278,16 @@ export default function CohortPartialTriangle({
     );
   }
 
+  const footerSentence =
+    footerLabel === null
+      ? 'O rodapé fica em branco: nenhuma idade tem dois cohorts fechados.'
+      : `Rodapé: ${unit === 'taxa' ? 'média' : 'soma'} dos mesmos ${formatInt(footerCount)} cohorts, até ${footerLabel}.`;
+
   const summary =
     confront === null
-      ? `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}, sem cohort de base rala a confrontar nesta idade.`
-      : `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}. ` +
-        `${formatMonthShort(confront.thinMonth)} lidera ${referenceLabel} com ${formatRateWithVolume(confront.thinBooked, confront.thinSize)} e fica sem intensidade. ` +
-        `${formatInt(baselessLines.length)} cohort sem entradas e ${formatInt(missing)} período sem medição ficam fora das médias.`;
+      ? `Triângulo de cohort de ${formatInt(data.length)} meses de entrada, de ${firstLabel} a ${lastLabel}, sem cohort de base rala a confrontar nesta idade. ${footerSentence}`
+      : `Triângulo de cohort de ${formatInt(data.length)} meses de entrada. ` +
+        `Em ${referenceLabel}, ${formatMonthShort(confront.thinMonth)} ${thinLeads ? 'lidera' : 'marca'} com ${formatRateWithVolume(confront.thinBooked, confront.thinSize)}, contra ${formatRateWithVolume(confront.fullBooked, confront.fullSize)} de ${formatMonthShort(confront.fullMonth)}, e fica sem intensidade por ter menos de ${thresholdLabel}. ${footerSentence}`;
 
   return (
     <figure
@@ -257,7 +299,7 @@ export default function CohortPartialTriangle({
       <p aria-hidden className="shrink-0 text-xs leading-4 text-text-secondary">
         {confront === null
           ? `Nenhum cohort de base rala chegou a ${referenceLabel} fechado, então não há confronto de bases a mostrar.`
-          : `Em ${referenceLabel}, ${formatMonthShort(confront.thinMonth)} marca ${formatRateWithVolume(confront.thinBooked, confront.thinSize)} e ${formatMonthShort(confront.fullMonth)} marca ${formatRateWithVolume(confront.fullBooked, confront.fullSize)}: a taxa maior é a da base menor, e é por isso que ela não recebe intensidade.`}
+          : `Em ${referenceLabel}, ${formatMonthShort(confront.thinMonth)} marca ${formatRateWithVolume(confront.thinBooked, confront.thinSize)} e ${formatMonthShort(confront.fullMonth)} marca ${formatRateWithVolume(confront.fullBooked, confront.fullSize)}: a taxa da base menor é ${thinHigher ? 'maior' : 'menor'}, e a célula fica sem intensidade por ter menos de ${thresholdLabel}, qualquer que seja a taxa.`}
       </p>
       <p aria-hidden className="shrink-0 text-[11px] leading-4 text-text-muted">
         {`${formatInt(baselessLines.length)} cohort sem entradas e ${formatInt(missing)} período sem medição`}
@@ -403,13 +445,22 @@ export default function CohortPartialTriangle({
           ))}
           <tr>
             <th className="text-left align-middle font-medium text-text-muted" scope="row">
-              Média
+              {unit === 'taxa' ? 'Média' : 'Total'}
             </th>
-            {/* Sem contagem de cohorts no rótulo: cada coluna tem uma população diferente, porque a idade
-                que um cohort alcançou depende do mês em que ele entrou, e um número fixo seria falso. */}
-            <td className="pr-2 text-right align-middle text-text-muted">ponderada</td>
+            <td className="pr-2 text-right align-middle text-text-muted">
+              {population === null ? (
+                'sem cohort fechado'
+              ) : (
+                <>
+                  {'mesmos '}
+                  <span className="font-display tabular-nums">{formatInt(footerCount)}</span>
+                  {' cohorts'}
+                </>
+              )}
+            </td>
             {columns.map((elapsed) => {
-              const average = weightedRate(lines, elapsed);
+              const average =
+                population === null || elapsed > population.depth ? null : weightedRate(population.lines, elapsed);
               return (
                 <td
                   className={cn(
@@ -452,6 +503,11 @@ export default function CohortPartialTriangle({
           {missing > 0 ? (
             <span>{`${formatUnavailable()}: contorno pontilhado, ${formatInt(missing)} célula fora das médias`}</span>
           ) : null}
+          {footerLabel === null ? (
+            <span>rodapé em branco: nenhuma idade com dois cohorts fechados</span>
+          ) : (
+            <span>{`${unit === 'taxa' ? 'média ponderada' : 'total'} só dos cohorts que já fecharam ${footerLabel}, sem período em curso nem célula sem medição`}</span>
+          )}
           {thinLines.length > 0 ? (
             <span>{`abaixo de ${formatInt(MIN_SAMPLE)} leads a célula fica sem intensidade`}</span>
           ) : null}

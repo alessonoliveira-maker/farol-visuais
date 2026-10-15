@@ -35,7 +35,7 @@ dois eixos, porque a diagonal só vale 45 graus se os lados forem iguais.
 2. **Plano quadrado**: os dois eixos de 0 a 100% com `formatPercent(valor, 0)`, grade nos dois
    sentidos (EIX-3b, os dois eixos são quantitativos e lidos por posição) em `GRID_COLOR`. O quadrado
    vem da conta de margens, com eixo Y de 44 px mais 8 de margem direita contra 12 em cima, eixo X de
-   26 e 14 embaixo, 52 dos dois lados, e do `aspect-square` do contêiner.
+   26 e 14 embaixo, 52 dos dois lados (na `v3`, margem direita de 16 e embaixo de 22, 60 dos dois lados), e do `aspect-square` do contêiner.
 3. **Diagonal tracejada** em `--line-strong`, `Line` sobre `equal = x`: é estrutura de referência, não
    marca de dado.
 4. **Curva** em `--chart-1`, traço de 2 px, `type="linear"`: entre dois clientes não há dado, e uma
@@ -70,7 +70,7 @@ dois eixos, porque a diagonal só vale 45 graus se os lados forem iguais.
    a ordenação é parte da conta e acontece no componente. A `v2` recebe `{ previous, current }` com o
    rótulo de cada ano.
 3. O quadrado depende de `aspect-square h-full` no contêiner do gráfico e de a soma de margens e
-   eixos ser igual nos dois sentidos (52 px). Mudou o `YAxis width`, a altura do eixo X ou a margem?
+   eixos ser igual nos dois sentidos (52 px; 60 px na `v3`). Mudou o `YAxis width`, a altura do eixo X ou a margem?
    Refaça a conta, ou o plano deixa de ser quadrado.
 4. A `ZIndexLayer` exige Recharts 3.4 ou mais (o Farol está na 3.10.1). Em versão anterior, o que um
    componente próprio desenha cai abaixo da `Area` e a sombra apaga a leitura.
@@ -92,7 +92,7 @@ dois eixos, porque a diagonal só vale 45 graus se os lados forem iguais.
 Revisão de 2026-10-05, quatro versões julgadas. A `v3` foi reprovada por tique perdido no eixo X, e o
 parecer está em `validation/revisao_16_distribuicao__10_curva-de-lorenz_2026-10-05.md`. O que segue não reprova.
 
-- `v1`, `v2`, `v3`, `v4`: o tique `100%` do eixo X é desenhado 10,3 px à esquerda da linha de grade dele (na `v1`, texto em 271,7 e grade em 282), porque a margem direita de 8 px não comporta meia largura do rótulo. Lê sem dúvida nas três aprovadas; na `v3` é o que derruba o tique de 75%. Quem tocar o arquivo sobe a margem direita e refaz a conta do quadrado.
+- `v1`, `v2`, `v4`: o tique `100%` do eixo X é desenhado 10,3 px à esquerda da linha de grade dele (na `v1`, texto em 271,7 e grade em 282), porque a margem direita de 8 px não comporta meia largura do rótulo. Lê sem dúvida nas três aprovadas; na `v3` é o que derruba o tique de 75%. Quem tocar o arquivo sobe a margem direita e refaz a conta do quadrado.
 - `v1`, `v2`, `v3`: a função `lorenz` descarta valor negativo em silêncio (`filter(value >= 0)`). O n impresso continua honesto, mas só a `v4` conta o que saiu. Vale uma nota quando houver negativo no dado.
 - `v1`, `v4`: legenda com uma série de dado e a diagonal de referência. A ROT-1 preferiria rótulo direto na diagonal; fica porque o catálogo pede o Gini e o n na legenda.
 - `v2`: as curvas saem de uma grade uniforme de 1%, e o último trecho, de 99% a 100%, vira uma corda reta com vértice visível perto de 75% no eixo vertical. O desvio é menor que 1 px na horizontal; a simplificação da `v3` resolveria.
@@ -110,4 +110,11 @@ Revisão de 2026-10-05, segunda passada, só a `v3` (código mudou depois do ver
 - `v3`: o `notes` do `meta.json` continua falando em grade uniforme de 120 passos e erro calculado; o código usa Ramer, Douglas e Peucker, 28 pontos e tolerância fixa de 0,2 p.p. Apontado na primeira passada e não alinhado.
 - `v3`: a observação da primeira passada sobre o `100%` deslocado 10,3 px para a esquerda deixou de valer para esta versão, porque o rótulo agora fica centrado na linha dele; segue valendo para `v1`, `v2` e `v4`.
 - `v3`: a frase acessível mantém "12% do total" para dizer 12% das campanhas, e o botão e a frase em `text-text-primary` seguem com número sem `tabular-nums` (TIP-1), sem consequência no preview.
-- `v3`: se a correção levar a soma de margens da `v3` para 60 px, a Anatomia (item 2) e o passo 3 de Como colar, que dizem 52 para o modelo inteiro, precisam dizer que a `v3` difere.
+- `v3`: corrigido em 2026-10-15, margem direita 16 e embaixo 22 (60 dos dois lados), tique de 100% inteiro e centrado na grade.
+
+Revisão de 2026-10-15, terceira passada, só a `v3` (código mudou depois do veredito). Aprovada: o `100%` do eixo X sai inteiro e centrado na linha dele nos dois temas, o plano fecha em 182 por 182 px com cinco tiques e cinco linhas de grade em cada sentido. O que segue não reprova.
+
+- `v3`: o `100%` do eixo X termina a 3 px da borda do `<svg>` aninhado, que tem `overflow:hidden` (tinta até 272 px, borda em 275, medido no PNG). Lê inteiro nos dois temas; a folga é curta, e uma fonte mais larga no Farol voltaria a cortar. Quem tocar o arquivo pode levar a margem direita a 18 ou 20 e refazer a conta do quadrado.
+- `v3`: a margem de baixo de 22 px fica vazia sob os tiques do eixo X; `top: 16` e `bottom: 18`, já sugeridos no parecer anterior, fecham a mesma conta de 60 com o quadrado mais ao centro da coluna.
+- `v3`: o `notes` do `meta.json` segue falando em grade uniforme de 120 passos e erro calculado, contra Ramer, Douglas e Peucker com 28 pontos e tolerância fixa de 0,2 p.p. no código. Terceira passada com o mesmo apontamento.
+- `v3`: a frase acessível segue com "12% do total" para dizer 12% das campanhas, e o botão e a frase em `text-text-primary` seguem com número sem `tabular-nums` (TIP-1), sem consequência no preview.

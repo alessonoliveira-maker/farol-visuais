@@ -277,7 +277,7 @@ export default function UnequalChannelHistogram({
       : `na faixa de ${bandName(peak)} ${outlineGroup.label.toLowerCase()} é ${formatRateWithVolume(peak.outlineCount, outlineGroup.values.length)} contra ${formatPercent(peakFilled)} de ${filledGroup.label.toLowerCase()}`;
 
   const summary =
-    `Histograma comparativo em percentual do próprio canal, ${formatInt(filledGroup.values.length)} leads de ` +
+    `Histograma comparativo ${scale === 'share' ? 'em percentual do próprio canal' : 'em contagem de leads'}, ${formatInt(filledGroup.values.length)} leads de ` +
     `${filledGroup.label.toLowerCase()} contra ${formatInt(outlineGroup.values.length)} de ${outlineGroup.label.toLowerCase()}, ` +
     `em faixas de ${formatDays(binWidth)}. ` +
     (peak === null || peakOutline === null || peakFilled === null
@@ -438,9 +438,9 @@ export default function UnequalChannelHistogram({
         <span className="tabular-nums">{`a última faixa é aberta, ${formatDays(binWidth * (binCount - 1))} ou mais`}</span>
         {/* Quanto vale um único lead no canal menor. É a informação que o percentual dentro do grupo
             esconde por construção, e sem ela a silhueta de 38 leads parece tão firme quanto a de 640. */}
-        {oneLeadShare === null ? null : (
+        {oneLeadShare === null || scale === 'count' ? null : (
           <span className="tabular-nums">
-            {`cada lead de ${outlineGroup.label.toLowerCase()} vale ${printValue(scale === 'count' ? 1 : oneLeadShare)} do canal`}
+            {`cada lead de ${outlineGroup.label.toLowerCase()} vale ${printValue(oneLeadShare)} do canal`}
           </span>
         )}
         {/* A ausência vem nomeada por canal, e não como um total só: duas ausências num canal de 38

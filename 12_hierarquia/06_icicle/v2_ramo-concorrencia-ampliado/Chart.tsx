@@ -55,17 +55,22 @@ export interface BranchIcicleProps {
 }
 
 const VIEW_W = 574;
-/** Altura do `viewBox` igual à altura que o corpo de fato entrega ao `svg`, para a escala sair 1 e
- * o texto de 12 px chegar à tela com 12 px. Canvas 640x560 na moldura `card` dá corpo de 574 x
- * 441,5 px (cabeçalho de uma linha, porque o caso de uso tem 85 caracteres e o limite de uma linha
- * em 574 px é 92); a linha de leitura come 24 px, e sobram 417,5 px para o `svg`. */
-const VIEW_H = 408;
+/** Altura do `viewBox` por estado, sempre igual à altura que o corpo de fato entrega ao `svg`, para
+ * a escala sair 1 e o texto de 12 px chegar à tela com 12 px. Canvas 640x1000 na moldura `card` dá
+ * corpo de 574 x 881,5 px (cabeçalho de uma linha); a linha de leitura come 24 px e sobram 857,5.
+ * Na raiz, 20 de 25 nós não cabem em rótulo e a lista de identificação (2 colunas, nível preservado)
+ * toma cerca de 255 px, então o desenho tem 600; ampliado não há lista e o desenho usa os 857. O
+ * `svg` nunca cresce além do `viewBox`, então dar mais só deixa vazio e dar menos encolhe o texto. */
+const VIEW_H_ROOT = 600;
+const VIEW_H_ZOOM = 857;
+const ROOT_COLUMN_WIDTHS = [150, 202, 202] as const;
 const LEVEL_NAMES = ['Categoria', 'Motivo', 'Submotivo'] as const;
 const TRAIL_BAND_H = 20;
 const TRAIL_GAP = 6;
-/** Linha do nome de cada coluna de conteúdo, entre a trilha e o primeiro retângulo. */
-const HEADER_BASELINE_Y = 66;
-const CONTENT_TOP = 74;
+/** Recuo do topo do conteúdo depois da última faixa da trilha; a linha do nome da coluna fica 8 px
+ * acima do primeiro retângulo. */
+const TRAIL_TO_CONTENT = 22;
+const TRAIL_STEP = TRAIL_BAND_H + TRAIL_GAP;
 const COLUMN_GAP = 10;
 /** Fração do intervalo que vira vão, de cada lado (armadilha GEO-16: respiro proporcional). */
 const GAP_FRACTION = 0.015;
@@ -256,8 +261,16 @@ interface Column {
 }
 
 function buildColumns(levels: number): readonly Column[] {
-  const width = (VIEW_W - (levels - 1) * COLUMN_GAP) / levels;
   const columns: Column[] = [];
+  if (levels === ROOT_COLUMN_WIDTHS.length) {
+    let x = 0;
+    for (const width of ROOT_COLUMN_WIDTHS) {
+      columns.push({ x, width });
+      x += width + COLUMN_GAP;
+    }
+    return columns;
+  }
+  const width = (VIEW_W - (levels - 1) * COLUMN_GAP) / levels;
   for (let index = 0; index < levels; index += 1) {
     columns.push({ x: index * (width + COLUMN_GAP), width });
   }
@@ -271,6 +284,7 @@ interface PlacedNode {
   readonly level: number;
   readonly y0: number;
   readonly y1: number;
+  readonly parentId: string;
   readonly parentLabel: string;
   readonly nameLines: readonly string[];
   readonly hasLabel: boolean;
@@ -282,6 +296,7 @@ function placeSubtree(
   bottom: number,
   level: number,
   columns: readonly Column[],
+  parentId: string,
   parentLabel: string,
   out: PlacedNode[][],
 ): void {
@@ -298,12 +313,45 @@ function placeSubtree(
       level,
       y0: placed.start,
       y1: placed.end,
+      parentId,
       parentLabel,
       nameLines: fit.lines,
       hasLabel: fit.hasLabel,
     });
-    placeSubtree(placed.node.children ?? [], placed.start, placed.end, level + 1, columns, placed.node.label, out);
+    placeSubtree(placed.node.children ?? [], placed.start, placed.end, level + 1, columns, placed.node.id, placed.node.label, out);
   }
+}
+
+interface MutedBlock {
+  readonly id: string;
+  readonly label: string;
+  /** Valor do próprio nó só quando ele está mudo; com rótulo no desenho, `null`. */
+  readonly value: number | null;
+  readonly children: readonly PlacedNode[];
+}
+
+/** Lista de identificação com o nível preservado (ROT-10): cada nó do nível de cima vira um bloco, e
+ * os filhos mudos ficam recuados por baixo dele, nunca soltos ao lado como se fossem irmãos. */
+function buildMutedBlocks(parents: readonly PlacedNode[], children: readonly PlacedNode[]): readonly MutedBlock[] {
+  return parents
+    .map((parent): MutedBlock => {
+      const own = children.filter((child) => child.parentId === parent.id);
+      return {
+        id: parent.id,
+        label: parent.label,
+        value: parent.hasLabel ? null : parent.value,
+        children: parent.hasLabel ? own.filter((child) => !child.hasLabel) : own,
+      };
+    })
+    .filter((block) => block.value !== null || block.children.length > 0);
+}
+
+interface MutedGroup {
+  readonly id: string;
+  readonly label: string;
+  readonly slot: 1 | 2 | 3 | 4 | 5 | 6;
+  readonly value: number | null;
+  readonly blocks: readonly MutedBlock[];
 }
 
 function slotColor(slot: 1 | 2 | 3 | 4 | 5 | 6): string {
@@ -322,12 +370,14 @@ export default function BranchIcicle({
   const total = data.reduce((sum, category) => sum + category.value, 0);
   const zoom = useMemo(() => resolveZoom(data, path, total), [data, path, total]);
   const levels = LEVEL_NAMES.length - zoom.startLevel;
+  const viewH = zoom.startLevel === 0 ? VIEW_H_ROOT : VIEW_H_ZOOM;
+  const contentTop = zoom.trail.length * TRAIL_STEP + TRAIL_TO_CONTENT;
   const columns = useMemo(() => buildColumns(levels), [levels]);
   const placed = useMemo(() => {
     const out: PlacedNode[][] = Array.from({ length: levels }, () => []);
-    placeSubtree(zoom.forest, CONTENT_TOP, VIEW_H, 0, columns, zoom.branchLabel, out);
+    placeSubtree(zoom.forest, contentTop, viewH, 0, columns, '', zoom.branchLabel, out);
     return out;
-  }, [columns, levels, zoom.branchLabel, zoom.forest]);
+  }, [columns, contentTop, levels, viewH, zoom.branchLabel, zoom.forest]);
 
   // Recorte sem linha nenhuma, e recorte cujo total é zero, são o mesmo desenho impossível: sem
   // total não há partição, e forçar uma seria desenhar faixa onde não há valor (EST-1, EST-1b).
@@ -351,7 +401,29 @@ export default function BranchIcicle({
   // Só existe líder quando a partição devolveu nós, e ela só devolve com total positivo: por isso a
   // divisão abaixo não precisa de teto, e o ramo sem líder devolve `null`, nunca zero (EST-1b).
   const leaderShare = leader === undefined ? null : leader.value / zoom.branchValue;
-  const muted = placed.flat().filter((node) => !node.hasLabel);
+    const categorySlot = (id: string): 1 | 2 | 3 | 4 | 5 | 6 => data.find((item) => item.id === id)?.slot ?? zoom.slot;
+  const mutedGroups: readonly MutedGroup[] =
+    zoom.startLevel === 0
+      ? level1.map((category) => ({
+          id: category.id,
+          label: category.label,
+          slot: categorySlot(category.id),
+          value: category.hasLabel ? null : category.value,
+          blocks: buildMutedBlocks(
+            level2.filter((motive) => motive.parentId === category.id),
+            placed[2] ?? [],
+          ),
+        }))
+      : [
+          {
+            id: zoom.branchLabel,
+            label: zoom.branchLabel,
+            slot: zoom.slot,
+            value: null,
+            blocks: buildMutedBlocks(level1, level2),
+          },
+        ];
+  const visibleGroups = mutedGroups.filter((group) => group.value !== null || group.blocks.length > 0);
 
   const scope = zoom.startLevel === 0 ? 'na raiz' : `no ramo ${zoom.branchLabel}`;
   const firstLevelName = (LEVEL_NAMES[zoom.startLevel] ?? 'nível').toLowerCase();
@@ -385,7 +457,7 @@ export default function BranchIcicle({
         {readingLine}
       </p>
       <div className="min-h-0 w-full flex-1">
-        <svg aria-hidden className="h-full w-full" viewBox={`0 0 ${String(VIEW_W)} ${String(VIEW_H)}`}>
+        <svg aria-hidden className="h-full w-full" viewBox={`0 0 ${String(VIEW_W)} ${String(viewH)}`}>
           {zoom.trail.map((band, index) => {
             const bandWidth = band.x1 - band.x0;
             const nameInk = measureInkPx(band.label, SMALL_FONT_PX, MANROPE_EM);
@@ -469,7 +541,7 @@ export default function BranchIcicle({
                   fill="var(--text-muted)"
                   fontSize={SMALL_FONT_PX}
                   x={column.x}
-                  y={HEADER_BASELINE_Y}
+                  y={contentTop - 8}
                 >
                   {levelName}
                 </text>
@@ -483,7 +555,7 @@ export default function BranchIcicle({
                         fill="var(--surface-sunken)"
                         height={Math.max(node.y1 - node.y0 - inset * 2, 1)}
                         rx={NODE_RADIUS}
-                        stroke={levelIndex === 0 ? slotColor(zoom.slot) : 'var(--line-subtle)'}
+                        stroke={levelIndex === 0 ? slotColor(zoom.startLevel === 0 ? categorySlot(node.id) : zoom.slot) : 'var(--line-subtle)'}
                         strokeWidth={levelIndex === 0 ? BRANCH_STROKE_WIDTH : NODE_STROKE_WIDTH}
                         width={column.width}
                         x={column.x}
@@ -523,21 +595,54 @@ export default function BranchIcicle({
           })}
         </svg>
       </div>
-      {muted.length > 0 ? (
-        <div className="mt-2 shrink-0 text-[0.6875rem] leading-snug">
-          <p className="mb-1 text-text-muted">Sem altura para o rótulo no desenho:</p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
-            {muted.map((node) => (
-              <li className="grid grid-cols-[1fr_72px] items-baseline gap-x-2" key={node.id}>
-                <span className="min-w-0 text-text-secondary">
-                  {node.parentLabel}: {node.label}
-                </span>
-                <span className="font-display text-right text-text-primary">
-                  {formatInt(node.value)} {unitLabel}
-                </span>
-              </li>
+      {visibleGroups.length > 0 ? (
+        <div className="mt-2 shrink-0">
+          <p className="mb-1 text-[0.6875rem] text-text-muted">Sem rótulo no desenho, em {unitLabel}:</p>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-[0.6875rem] leading-snug">
+            {visibleGroups.map((group) => (
+              <div className="min-w-0" key={group.id}>
+                <div className="mb-0.5 flex items-center gap-1.5 font-semibold text-text-secondary">
+                  <span aria-hidden className="size-2 shrink-0 rounded-sm" style={{ backgroundColor: slotColor(group.slot) }} />
+                  <span>
+                    {group.value === null ? (
+                      group.label
+                    ) : (
+                      <>
+                        {group.label}:{' '}
+                        <span className="font-display text-text-primary">
+                          {formatInt(group.value)} {unitLabel}
+                        </span>
+                      </>
+                    )}
+                  </span>
+                </div>
+                <ul className="space-y-1 pl-3.5">
+                  {group.blocks.map((block) => (
+                    <li key={block.id}>
+                      <div className="grid grid-cols-[1fr_64px] items-baseline gap-x-2 font-medium text-text-secondary">
+                        <span className="min-w-0">{block.label}</span>
+                        {block.value === null ? null : (
+                          <span className="font-display text-right text-text-primary">
+                            {formatInt(block.value)} {unitLabel}
+                          </span>
+                        )}
+                      </div>
+                      <ul className="space-y-0.5 pl-3.5">
+                        {block.children.map((child) => (
+                          <li className="grid grid-cols-[1fr_64px] items-baseline gap-x-2" key={child.id}>
+                            <span className="min-w-0 text-text-secondary">{child.label}</span>
+                            <span className="font-display text-right text-text-primary">
+                              {formatInt(child.value)} {unitLabel}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       ) : null}
     </div>

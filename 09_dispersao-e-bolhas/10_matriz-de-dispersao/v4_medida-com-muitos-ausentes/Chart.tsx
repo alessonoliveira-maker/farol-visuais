@@ -237,10 +237,17 @@ export default function ScatterMatrixMissing({ data = defaultData, height, class
             const shown = diagonal ? values.length : cloud.length;
             return (
               <div
-                className="relative min-h-0 min-w-0"
+                className="flex min-h-0 min-w-0 flex-col"
                 key={`cell-${rowMeasure.id}-${colMeasure.id}`}
                 style={{ gridColumn: col + 2, gridRow: row + 1 }}
               >
+                {/* O n mora numa faixa própria acima da área de plotagem, e não dentro dela: nenhuma
+                    posição do domínio cai sob o texto (ROT-7, GEO-4). A faixa existe nas dezesseis
+                    células, então os painéis da mesma linha seguem alinhados. */}
+                <div className="h-4 shrink-0 text-right text-[0.6875rem] leading-4 text-text-muted tabular-nums">
+                  n = {formatInt(shown)}
+                </div>
+                <div className="min-h-0 flex-1">
                 <ResponsiveContainer height="100%" width="100%">
                   {diagonal ? (
                     (() => {
@@ -275,11 +282,7 @@ export default function ScatterMatrixMissing({ data = defaultData, height, class
                     </ScatterChart>
                   )}
                 </ResponsiveContainer>
-                {/* O n de cada célula, sobre fundo da própria superfície: é o halo da ROT-7 escrito em
-                    HTML, e sem ele o número cairia sobre a nuvem em parte das dezesseis células. */}
-                <span className="absolute right-0 top-0 rounded-sm bg-surface-raised px-1 text-[0.6875rem] text-text-muted tabular-nums">
-                  n = {formatInt(shown)}
-                </span>
+                </div>
               </div>
             );
           }),

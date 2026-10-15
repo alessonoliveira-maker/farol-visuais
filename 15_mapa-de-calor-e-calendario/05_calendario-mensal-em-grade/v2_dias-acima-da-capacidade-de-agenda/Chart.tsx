@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Filter } from 'lucide-react';
 
 import { CHART_SEQUENTIAL_COLORS } from '@/components/visuals/charts/chartTheme';
 import { formatDecimal, formatInt, formatMonthLong } from '@/lib/format';
@@ -31,6 +31,8 @@ export interface CapacityCalendarProps {
 
 const WEEKDAY_LABELS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'] as const;
 const WEEK_ROWS = 6;
+/** Quantos dias acima do teto a frase acessível cita antes de contar o resto. */
+const MAX_LISTED = 6;
 /** Dia útil que terminou em zero é medição, e fica no poço, fora da rampa. */
 const ZERO_FILL = 'var(--surface-sunken)';
 /** Três degraus dentro da capacidade. Índice i do array é o token --seq-(i+1). */
@@ -104,17 +106,40 @@ export default function CapacityCalendar({
   while (cells.length < WEEK_ROWS * 7) cells.push(null);
 
   const reading =
-    `Teto de ${formatInt(capacity)} agendas por dia útil, ` +
-    `e ${formatInt(over.length)} dos ${formatInt(worked.length)} passaram dele`;
+    worked.length === 0
+      ? `Teto de ${formatInt(capacity)} agendas por dia útil, sem dia útil medido para comparar`
+      : `Teto de ${formatInt(capacity)} agendas por dia útil, ` +
+        `e ${formatInt(over.length)} dos ${formatInt(worked.length)} passaram dele`;
+
+  /** Dias acima do teto, até MAX_LISTED; o resto vira contagem. */
+  const listed = over.slice(0, MAX_LISTED).map((day) => formatInt(day.day));
+  const hidden = over.length - listed.length;
+  const overWhere =
+    over.length === 0
+      ? 'nenhum dia útil passou do teto'
+      : `${formatInt(over.length)} dos ${formatInt(worked.length)} dias úteis passaram do teto, ` +
+        `${over.length === 1 ? 'no dia' : 'nos dias'} ${listed.join(', ')}` +
+        `${hidden > 0 ? ` e mais ${formatInt(hidden)}` : ''}`;
 
   const summary =
     average === null || peak === null
       ? 'Calendário do mês sem nenhum dia com expediente medido.'
-      : `Calendário de ${formatMonthLong(month)} com ${formatInt(total)} agendas marcadas, ` +
-        `média de ${formatDecimal(average, 1)} por dia útil. ` +
-        `${formatInt(over.length)} dos ${formatInt(worked.length)} dias úteis passaram do teto de ` +
-        `${formatInt(capacity)} agendas, e o pico foi ${formatInt(peak.agendas)} no dia ` +
-        `${formatInt(peak.day)}. Fim de semana não tem expediente e fica fora das contas.`;
+      : `Calendário de ${formatMonthLong(month)}, média de ${formatDecimal(average, 1)} agendas por dia útil: ` +
+        `${overWhere} (teto de ${formatInt(capacity)} agendas). O pico foi de ` +
+        `${formatInt(peak.agendas)} agendas no dia ${formatInt(peak.day)}.`;
+
+  if (data.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden size={16} />
+        <span>O recorte não tem nenhum dia medido, então não há como comparar a agenda com o teto.</span>
+      </div>
+    );
+  }
 
   return (
     <figure

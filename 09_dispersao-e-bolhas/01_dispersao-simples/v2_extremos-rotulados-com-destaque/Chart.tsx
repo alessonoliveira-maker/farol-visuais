@@ -73,9 +73,10 @@ const LABEL_SIZE = 11;
 const LABEL_CHAR_WIDTH = 6.4;
 const LABEL_PAD = 3;
 
+/** Os seis extremos levam um só destaque: bom e ruim não têm base nem palavra aqui, então semântica fica de fora (COR-6). */
 const ROLE_COLOR: Readonly<Record<Role, string>> = {
-  alta: 'var(--positive)',
-  baixa: 'var(--negative)',
+  alta: 'var(--chart-1)',
+  baixa: 'var(--chart-1)',
   meio: 'var(--text-muted)',
 };
 

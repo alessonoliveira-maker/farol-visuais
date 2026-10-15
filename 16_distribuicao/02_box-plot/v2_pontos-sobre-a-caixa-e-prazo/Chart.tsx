@@ -1,3 +1,4 @@
+import { Filter } from 'lucide-react';
 import type { ReactElement } from 'react';
 import {
   Bar,
@@ -320,6 +321,21 @@ export default function ScheduleBoxPlot({
       </g>
     );
   };
+
+  /* Recorte sem lead com agenda medida: o visual sai e entra a frase de estado. Grade e rodapé de um
+     gráfico vazio leem como distribuição medida em zero. */
+  if (rows.length === 0 || total === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 flex-col items-center justify-center gap-2 text-center', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="text-text-muted" size={16} />
+        <p className="text-xs text-text-muted">O recorte não tem lead com agenda medida, então não há horas a resumir.</p>
+      </div>
+    );
+  }
 
   const summary =
     fastest === undefined || slowest === undefined

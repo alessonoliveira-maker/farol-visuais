@@ -4,12 +4,12 @@
   "versoes": {
     "v1_ciclo-de-fechamento": {
       "veredito": "aprovado",
-      "nota": "Aceita nos dois temas. A mediana e a média agora devolvem ausência em vez de zero, e a guarda passou a testar a lista que alimenta a conta, não a lista vizinha derivada do domínio, que nunca esvaziava. Desenho publicado idêntico, porque o dado fixo é completo. O buraco de 161 a 168 dias continua marcado no traço de base e declarado no rodapé. Ressalva sem conserto: a frase acessível afirma \"puxada pela cauda longa\", que é conclusão fixa no código e o dado pode desmentir noutro recorte.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T12:31:36.021Z",
-      "impressao": "68d89425f79b2b4a22dcac9f9277da4e8cda1483",
+      "nota": "Aceita na rodada de correção. O eixo Y imprime 0, 8, 16, 24 e 32, com domain e ticks do componente e interval={0}, e cada rótulo cai na própria linha de grade nos dois temas (y 120, 93, 66, 39 e 12); barras somam 312. Observações no README: passo Y fixo em 8 fora da escada das irmãs, marca da faixa vazia em --line-strong a 1,79:1, nota do meta.json sobre segunda série.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:48:08.620Z",
+      "impressao": "5c5a7a9b5eeeb9e60363c9fb56be606c40a8288b",
       "arquivos": {
-        "Chart.tsx": "88b4d6189e6d493afba5b5789a4330f1f6d2f2bb",
+        "Chart.tsx": "673a826f0bbfe07960749dc5a8976e242f1cefba",
         "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
         "meta.json": "d598b7f9070269864df19987568b41b531800827"
       }
@@ -113,6 +113,32 @@
       "impressao": "68d89425f79b2b4a22dcac9f9277da4e8cda1483",
       "arquivos": {
         "Chart.tsx": "88b4d6189e6d493afba5b5789a4330f1f6d2f2bb",
+        "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
+        "meta.json": "d598b7f9070269864df19987568b41b531800827"
+      }
+    },
+    {
+      "versao": "v1_ciclo-de-fechamento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3 com EIX-6b (emenda de 2026-10-02), EIX-4 e REC-29: o eixo Y perdeu o tique 24 e a linha de grade dele nos dois temas, e passa a ler 0, 8, 16, 32 como escala que dobra; o 32 sai a 11,25 px, 3,25 px abaixo da própria linha. Causa: MARGIN.top 8, abaixo dos 12 px, e ticks deixados ao Recharts. Mudar: MARGIN.top 12 com a conta ao lado, domain [0, 32] e ticks de 8 em 8 calculados do dado no componente, com interval={0} no YAxis, como a v4 já faz. Parecer em validation/revisao_16_distribuicao__01_histograma_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:35:12.426Z",
+      "impressao": "1f86cb292a889a92ba5fc09f7f26fd6247410092",
+      "arquivos": {
+        "Chart.tsx": "cb19cf7eea2e2c29d889e0f59b11770fe3f42cd5",
+        "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
+        "meta.json": "d598b7f9070269864df19987568b41b531800827"
+      }
+    },
+    {
+      "versao": "v1_ciclo-de-fechamento",
+      "veredito": "aprovado",
+      "nota": "Aceita na rodada de correção. O eixo Y imprime 0, 8, 16, 24 e 32, com domain e ticks do componente e interval={0}, e cada rótulo cai na própria linha de grade nos dois temas (y 120, 93, 66, 39 e 12); barras somam 312. Observações no README: passo Y fixo em 8 fora da escada das irmãs, marca da faixa vazia em --line-strong a 1,79:1, nota do meta.json sobre segunda série.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:48:08.620Z",
+      "impressao": "5c5a7a9b5eeeb9e60363c9fb56be606c40a8288b",
+      "arquivos": {
+        "Chart.tsx": "673a826f0bbfe07960749dc5a8976e242f1cefba",
         "data.ts": "89f0bae024c939085b33a165ce6c12fd2b969280",
         "meta.json": "d598b7f9070269864df19987568b41b531800827"
       }

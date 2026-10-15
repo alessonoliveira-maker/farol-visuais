@@ -5,8 +5,9 @@
     "Três marcas na mesma tabela, cada coluna com domínio próprio declarado no cabeçalho",
     "Barra divergente com zero calculado por coluna e domínio simétrico",
     "Composição 100% com flex, ordem fixa das categorias e legenda única no cabeçalho",
-    "Rótulo percentual só em segmento acima de 12% e vão de 1,5 px entre segmentos"
+    "Rótulo percentual em todo segmento onde cabe, vão de 1,5 px entre eles"
   ],
-  "canvas": "largo",
-  "frame": "card"
+  "canvas": { "width": 960, "height": 440 },
+  "frame": "card",
+  "notes": "Canvas por número: o preset largo (400 px) corta a última linha em cerca de 4,5 px. Conta: legenda 18 px, cabeçalho de duas linhas 38 px, 10 linhas de 22 px (mix de 17 px mais py-0.5 e borda) = 220 px, rodapé 24 px, molduras e margens; sobra de respiro até 440. Desvio declarado do catálogo: o rótulo do mix segue o teste de caber (ROT-10), não o limiar de 12%; volume em --text-muted para --chart-1 ficar só em Novo (17.2)."
 }

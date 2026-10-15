@@ -140,12 +140,17 @@ export default function ForecastVersusClosedScatter({
 
   const points: Point[] = [];
   const perdidas: ForecastVersusClosed[] = [];
+  /** Ganhas que não estavam no forecast: previsto zero, fechado positivo, contadas no rodapé. */
+  const semForecast: ForecastVersusClosed[] = [];
   for (const row of data) {
     if (row.desfecho === 'perdida') {
       perdidas.push(row);
       continue;
     }
-    if (row.previstoReais <= 0) continue;
+    if (row.previstoReais <= 0) {
+      semForecast.push(row);
+      continue;
+    }
     points.push({
       id: row.id,
       rotulo: row.rotulo,
@@ -177,10 +182,26 @@ export default function ForecastVersusClosedScatter({
   /** A mesma chamada alimenta a legenda e a frase acessível, para as duas lerem o mesmo par. */
   const acerto = formatRateWithVolume(dentro.length, points.length);
   const perdidoTexto = formatCurrencyCompact(previstoPerdido);
+  const fechadoSemForecast = semForecast.reduce((soma, row) => soma + row.fechadoReais, 0);
+  const semForecastTexto =
+    semForecast.length === 0
+      ? ''
+      : `${formatInt(semForecast.length)} ganhas fora do forecast, com ${formatCurrencyCompact(fechadoSemForecast)} fechados, ficam fora do plano porque não há previsto para comparar`;
+  const perdidasTexto =
+    perdidas.length === 0
+      ? ''
+      : `${formatInt(perdidas.length)} perdidas, com ${perdidoTexto} previstos, ficam fora do plano porque o fechado delas é zero`;
+  const rodape =
+    perdidas.length === 0 && semForecast.length === 0
+      ? `Toda oportunidade ganha do trimestre está no plano, e a comparação é com o forecast de ${formatDays(FORECAST_LAG_DAYS)} antes`
+      : [semForecastTexto, perdidasTexto].filter((texto) => texto !== '').join('; ');
 
   const summary =
     `Gráfico de dispersão com ${formatInt(points.length)} oportunidades ganhas, forecast no eixo horizontal e valor ` +
     `fechado no vertical, com a diagonal de igualdade. Dentro de ${toleranciaTexto} do forecast: ${acerto}. ` +
+    (semForecast.length === 0
+      ? ''
+      : `${formatInt(semForecast.length)} ganhas sem forecast, com ${formatCurrencyCompact(fechadoSemForecast)}, não aparecem. `) +
     (perdidas.length === 0
       ? ''
       : `${formatInt(perdidas.length)} perdidas com ${perdidoTexto} previstos não aparecem.`);
@@ -312,9 +333,7 @@ export default function ForecastVersusClosedScatter({
         </ResponsiveContainer>
       </div>
       <p aria-hidden className="mt-2 shrink-0 text-[0.6875rem] tabular-nums text-text-muted">
-        {perdidas.length === 0
-          ? `Toda oportunidade ganha do trimestre está no plano, e a comparação é com o forecast de ${formatDays(FORECAST_LAG_DAYS)} antes`
-          : `${formatInt(perdidas.length)} perdidas, com ${perdidoTexto} previstos, ficam fora do plano porque o fechado delas é zero`}
+        {rodape}
       </p>
     </div>
   );

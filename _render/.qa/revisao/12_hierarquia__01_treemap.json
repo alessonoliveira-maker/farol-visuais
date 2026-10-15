@@ -13,6 +13,42 @@
         "data.ts": "c22887a10f041d1dafe004854820972c5f5c41b4",
         "meta.json": "d7879e3a9659ca663e4af23de34afd3da89536f3"
       }
+    },
+    "v2_produto-que-mais-cresceu": {
+      "veredito": "aprovado",
+      "nota": "Correção conferida: a base do 2026-T2 soma todo produto com base medida, e a linha escreve +3,8 pontos de 7,3% para 11% (320 sobre 4.407 e 520 sobre 4.720). Check sem erro, texto e marca acima do piso nos dois temas, destaque com peso 700 e linha de leitura como segundo canal (TOK-9: 1,12:1 contra o neutro no claro). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:33.409Z",
+      "impressao": "2643680a0a9c9fd7d33f2f26f072897745dbd308",
+      "arquivos": {
+        "Chart.tsx": "9cb25a3b81eedc5dee88453e90ed74315cabc62d",
+        "data.ts": "630295abc8c8ff8e4207088b71bd5103812aa3e0",
+        "meta.json": "f5d8c20ea0e1c70d1baeef79b513b2a9ff8a2a7b"
+      }
+    },
+    "v3_cpl-qualificado-por-campanha": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; área no investimento e cor no sentido do CPL invertido, régua de seis faixas nomeadas que soma 100 e bate com o dado, texto vazado acima de 4,5:1 nos dois temas, ausência em contorno e toda célula muda identificada na lista com sinal e ícone. Diferença de render de 0,67% e 0,72% é a colisão de fonte depois de CPL. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:23:34.652Z",
+      "impressao": "1ebd5d4e0504d66668a02c91f44f089270b8375b",
+      "arquivos": {
+        "Chart.tsx": "99b6f1a85458deaaa4d28d9e5cf26fab4ad131cc",
+        "data.ts": "c7b2adf7d9750821ac3a34ae91d83b9b6782af7a",
+        "meta.json": "8c200dec407c7c6e25539907f8b72b3cb8016002"
+      }
+    },
+    "v4_detalhamento-com-ramo-vazio": {
+      "veredito": "aprovado",
+      "nota": "Check sem erro; ramo vazio troca o gráfico por bloco role=status com voltar, trilha visível, cabeçalho de 10% confere com 16,5 sobre 168,0, lista de vizinhos soma o pai e key com a assinatura do filtro; níveis com treemap lidos no código. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:23:35.224Z",
+      "impressao": "53bc135ab2b1a08e80ea83f238e57585f00938b0",
+      "arquivos": {
+        "Chart.tsx": "52086dcfd5e51c33b658e03ed9c87057fb2badc0",
+        "data.ts": "59ebecc17567ebbdeb284d93bc44715e5aa30708",
+        "meta.json": "36fe530453b19f861d67895d54047e4c17617368"
+      }
     }
   },
   "historico": [
@@ -53,6 +89,58 @@
         "Chart.tsx": "a44fb131ff29cb012bb773a1f1b2d96fdbf128f0",
         "data.ts": "c22887a10f041d1dafe004854820972c5f5c41b4",
         "meta.json": "d7879e3a9659ca663e4af23de34afd3da89536f3"
+      }
+    },
+    {
+      "versao": "v2_produto-que-mais-cresceu",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-4 e 14.1: a base do 2026-T2 soma só os produtos desenhados (Chart.tsx:198, sumPreviousRevenue(drawn)) e perde os R$ 62 mil de Consultoria tributária; a linha escreve +3,7 pontos de 7,4% para 11% quando o certo é +3,8 de 7,3%. Somar a base sobre todo produto com revenuePrevious medido. Parecer em validation/revisao_12_hierarquia__01_treemap_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:23:34.013Z",
+      "impressao": "b4bbc286ef78c8e4031de980ad3e62d4299e4830",
+      "arquivos": {
+        "Chart.tsx": "f29e576e37c9498154d5f2309c1512993e2db980",
+        "data.ts": "630295abc8c8ff8e4207088b71bd5103812aa3e0",
+        "meta.json": "f5d8c20ea0e1c70d1baeef79b513b2a9ff8a2a7b"
+      }
+    },
+    {
+      "versao": "v3_cpl-qualificado-por-campanha",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; área no investimento e cor no sentido do CPL invertido, régua de seis faixas nomeadas que soma 100 e bate com o dado, texto vazado acima de 4,5:1 nos dois temas, ausência em contorno e toda célula muda identificada na lista com sinal e ícone. Diferença de render de 0,67% e 0,72% é a colisão de fonte depois de CPL. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:23:34.652Z",
+      "impressao": "1ebd5d4e0504d66668a02c91f44f089270b8375b",
+      "arquivos": {
+        "Chart.tsx": "99b6f1a85458deaaa4d28d9e5cf26fab4ad131cc",
+        "data.ts": "c7b2adf7d9750821ac3a34ae91d83b9b6782af7a",
+        "meta.json": "8c200dec407c7c6e25539907f8b72b3cb8016002"
+      }
+    },
+    {
+      "versao": "v4_detalhamento-com-ramo-vazio",
+      "veredito": "aprovado",
+      "nota": "Check sem erro; ramo vazio troca o gráfico por bloco role=status com voltar, trilha visível, cabeçalho de 10% confere com 16,5 sobre 168,0, lista de vizinhos soma o pai e key com a assinatura do filtro; níveis com treemap lidos no código. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:23:35.224Z",
+      "impressao": "53bc135ab2b1a08e80ea83f238e57585f00938b0",
+      "arquivos": {
+        "Chart.tsx": "52086dcfd5e51c33b658e03ed9c87057fb2badc0",
+        "data.ts": "59ebecc17567ebbdeb284d93bc44715e5aa30708",
+        "meta.json": "36fe530453b19f861d67895d54047e4c17617368"
+      }
+    },
+    {
+      "versao": "v2_produto-que-mais-cresceu",
+      "veredito": "aprovado",
+      "nota": "Correção conferida: a base do 2026-T2 soma todo produto com base medida, e a linha escreve +3,8 pontos de 7,3% para 11% (320 sobre 4.407 e 520 sobre 4.720). Check sem erro, texto e marca acima do piso nos dois temas, destaque com peso 700 e linha de leitura como segundo canal (TOK-9: 1,12:1 contra o neutro no claro). Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:31:33.409Z",
+      "impressao": "2643680a0a9c9fd7d33f2f26f072897745dbd308",
+      "arquivos": {
+        "Chart.tsx": "9cb25a3b81eedc5dee88453e90ed74315cabc62d",
+        "data.ts": "630295abc8c8ff8e4207088b71bd5103812aa3e0",
+        "meta.json": "f5d8c20ea0e1c70d1baeef79b513b2a9ff8a2a7b"
       }
     }
   ]

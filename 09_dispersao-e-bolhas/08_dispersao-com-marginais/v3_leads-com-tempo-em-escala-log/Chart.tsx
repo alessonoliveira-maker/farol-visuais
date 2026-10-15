@@ -96,6 +96,8 @@ interface Bin {
 interface Point {
   readonly minutos: number;
   readonly tentativas: number;
+  /** Valor constante só para o ZAxis ter dataKey; sem ele o range não chega ao Scatter. */
+  readonly z: number;
 }
 
 /** A razão entre duas divisas vizinhas das faixas de tempo, calculada do domínio e da contagem. */
@@ -196,7 +198,7 @@ export default function LogTimeWithMarginals({ data = defaultData, height, class
   const points: Point[] = [];
   for (const [minutos, tentativas] of data) {
     if (minutos <= 0) continue;
-    points.push({ minutos, tentativas });
+    points.push({ minutos, tentativas, z: 1 });
   }
 
   if (points.length === 0) {
@@ -292,7 +294,7 @@ export default function LogTimeWithMarginals({ data = defaultData, height, class
                 type="number"
                 width={AXIS_WIDTH}
               />
-              <ZAxis range={[...Z_RANGE]} type="number" />
+              <ZAxis dataKey="z" range={[...Z_RANGE]} type="number" />
               <Scatter
                 data={points}
                 fill="var(--chart-1)"

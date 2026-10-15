@@ -13,6 +13,42 @@
         "data.ts": "10ade2918d086988f73441f2a1973aff32d74e7c",
         "meta.json": "d87fccb032616968ae84704e901adc795df15b17"
       }
+    },
+    "v3_reatribuicao-entre-executivos": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 137 reatribuições fecham nos 8 arcos (29, 24, 20, 17, 15, 13, 11, 8); 6 pares abaixo de 3 trocas fora do desenho e declarados; slots 1, 3, 6, 5, 2, 4 e neutro --text-muted a 5,21 e 5,37:1 nos dois sem slot, com nome em todo arco; fita mais fina 6,8 px e visível nas duas pontas; viewBox na escala 1. Observações no README (saldo sem sentido explícito, groups fora das props).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:11:06.659Z",
+      "impressao": "1b1ce707810a3689a879f5bb6bcacc36d0e494d8",
+      "arquivos": {
+        "Chart.tsx": "a12bf31bdb68c6487fb646c77e4452532c3130b5",
+        "data.ts": "7f263008af4189eae39bddb5caab0dc7f907587f",
+        "meta.json": "1cc205bbe4e9feefeb9f958e8588ccffbdd53e24"
+      }
+    },
+    "v2_foco-na-pre-vendas": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da primeira passada fechado: fitas apagadas em --text-muted opaco (5,21 e 5,37:1, ACE-6, 17.2), conferido no PNG (#7f8fab e #5c6b87); fita acesa com contorno --text-primary como segundo canal (TOK-9), inteiro entre acesa e apagada nos dois temas, 2,79 e 3,34:1 contra a neutra, como em 04_parallel-sets/v2; verbo da linha pelo sinal do saldo, ramo negativo estimado em 546 de 600 px; 700 só no nome em foco; check 0 erro. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:25:02.542Z",
+      "impressao": "1710a02bc89b0cf3ea9d8e9afe5e0a9bd427ea02",
+      "arquivos": {
+        "Chart.tsx": "201aa534e2da27990d23a9809a284fa0449120df",
+        "data.ts": "6174eeed6561d9cd1d05b8657d6c601137a4d1f0",
+        "meta.json": "55dfd37b4db7908eedad42774999aa4c6a2ce0f4"
+      }
+    },
+    "v4_muitas-equipes-com-saida-para-matriz": {
+      "veredito": "aprovado",
+      "nota": "Bloqueante da primeira passada fechado: a fita de mão única de Outras para a Litoral (5 e 0) afina de forma linear e a tinta verde, medida nos dois PNGs, vai contínua do pé de 14,2 px até o raio 170 na ponta do arco da Litoral, sem pé falso e separada da fita de Oeste e Litoral; torção em (383,5, 187,7) e fio de 0,94 px no último terço anotados no README. Pés medidos perdem no máximo 1,6 px; check 0 erro.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:25:06.191Z",
+      "impressao": "7adcc1ce58d3e7ca8fde96b23bc5dd231aee41d3",
+      "arquivos": {
+        "Chart.tsx": "5bae31a9bc5eebae09289e3bd3f5e54b53ce28f7",
+        "data.ts": "0ce0fe42b79183103046a6b89616d99e185635a7",
+        "meta.json": "a35147e21ed20799d511d07d52085999d1378002"
+      }
     }
   },
   "historico": [
@@ -27,6 +63,71 @@
         "Chart.tsx": "7f2ab85d8e79855b34b436db122f73e5213deecf",
         "data.ts": "10ade2918d086988f73441f2a1973aff32d74e7c",
         "meta.json": "d87fccb032616968ae84704e901adc795df15b17"
+      }
+    },
+    {
+      "versao": "v3_reatribuicao-entre-executivos",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante. 137 reatribuições fecham nos 8 arcos (29, 24, 20, 17, 15, 13, 11, 8); 6 pares abaixo de 3 trocas fora do desenho e declarados; slots 1, 3, 6, 5, 2, 4 e neutro --text-muted a 5,21 e 5,37:1 nos dois sem slot, com nome em todo arco; fita mais fina 6,8 px e visível nas duas pontas; viewBox na escala 1. Observações no README (saldo sem sentido explícito, groups fora das props).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:11:06.659Z",
+      "impressao": "1b1ce707810a3689a879f5bb6bcacc36d0e494d8",
+      "arquivos": {
+        "Chart.tsx": "a12bf31bdb68c6487fb646c77e4452532c3130b5",
+        "data.ts": "7f263008af4189eae39bddb5caab0dc7f907587f",
+        "meta.json": "1cc205bbe4e9feefeb9f958e8588ccffbdd53e24"
+      }
+    },
+    {
+      "versao": "v2_foco-na-pre-vendas",
+      "veredito": "reprovado",
+      "nota": "Perguntas 32, 20 e 11; ACE-6, ACE-3 e tabela 17.2: DIMMED_FILL = --line-strong pinta as 3 fitas fora de foco (Executivo e Relacionamento 78 e 66, Executivo e Especialista 41 e 47, Relacionamento e Especialista 34 e 29) a 1,79:1 e 1,83:1, sem o número de nenhuma escrito; o total do arco não é o valor da fita e não ativa a isenção. Trocar para --text-muted (5,21 e 5,37:1), dar à fita acesa um segundo canal além do matiz (contra --text-muted ela mede de 1,00:1 a 1,42:1, TOK-9) e corrigir a isenção alegada no comentário, no notes e no README. Parecer em validation/revisao_11_fluxo-sankey__05_chord-direcional-de-fluxo_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:11:12.648Z",
+      "impressao": "178963fbff2782a1e84a0a48076b58b0dbe13664",
+      "arquivos": {
+        "Chart.tsx": "7c74f61efce43d28a0cfe3be2a9d8cd9a6893924",
+        "data.ts": "6174eeed6561d9cd1d05b8657d6c601137a4d1f0",
+        "meta.json": "9f8574a6efdd5c987f9dad9932057549bb766afc"
+      }
+    },
+    {
+      "versao": "v4_muitas-equipes-com-saida-para-matriz",
+      "veredito": "reprovado",
+      "nota": "Perguntas 15, 19 e 12; ACE-2 e 14.1 (identificação das marcas, marca partida): a fita de mão única de Outras para a Equipe Litoral (5 e 0) afina em t ao quadrado até a ponta zero e o contorno --surface-raised de 1,5 px apaga o resto; nos dois PNGs a tinta verde acaba em torno de (406, 180) do viewBox, na metade do caminho, cerca de 110 px antes do arco da Litoral em (298, 161). O destino da fita fica só na cor. Fazer a fita chegar visível ao arco da Litoral nos dois temas sem publicar pé falso nessa ponta. Parecer em validation/revisao_11_fluxo-sankey__05_chord-direcional-de-fluxo_2026-10-14.md.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:11:16.713Z",
+      "impressao": "178a5706656773b6bd08b45365eef5228a1e2122",
+      "arquivos": {
+        "Chart.tsx": "703eee296da037338c4e15c6b5031f1584355461",
+        "data.ts": "0ce0fe42b79183103046a6b89616d99e185635a7",
+        "meta.json": "0d666ed0b2e1be6118895adf67e41201e3d2e7b6"
+      }
+    },
+    {
+      "versao": "v2_foco-na-pre-vendas",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da primeira passada fechado: fitas apagadas em --text-muted opaco (5,21 e 5,37:1, ACE-6, 17.2), conferido no PNG (#7f8fab e #5c6b87); fita acesa com contorno --text-primary como segundo canal (TOK-9), inteiro entre acesa e apagada nos dois temas, 2,79 e 3,34:1 contra a neutra, como em 04_parallel-sets/v2; verbo da linha pelo sinal do saldo, ramo negativo estimado em 546 de 600 px; 700 só no nome em foco; check 0 erro. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:25:02.542Z",
+      "impressao": "1710a02bc89b0cf3ea9d8e9afe5e0a9bd427ea02",
+      "arquivos": {
+        "Chart.tsx": "201aa534e2da27990d23a9809a284fa0449120df",
+        "data.ts": "6174eeed6561d9cd1d05b8657d6c601137a4d1f0",
+        "meta.json": "55dfd37b4db7908eedad42774999aa4c6a2ce0f4"
+      }
+    },
+    {
+      "versao": "v4_muitas-equipes-com-saida-para-matriz",
+      "veredito": "aprovado",
+      "nota": "Bloqueante da primeira passada fechado: a fita de mão única de Outras para a Litoral (5 e 0) afina de forma linear e a tinta verde, medida nos dois PNGs, vai contínua do pé de 14,2 px até o raio 170 na ponta do arco da Litoral, sem pé falso e separada da fita de Oeste e Litoral; torção em (383,5, 187,7) e fio de 0,94 px no último terço anotados no README. Pés medidos perdem no máximo 1,6 px; check 0 erro.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:25:06.191Z",
+      "impressao": "7adcc1ce58d3e7ca8fde96b23bc5dd231aee41d3",
+      "arquivos": {
+        "Chart.tsx": "5bae31a9bc5eebae09289e3bd3f5e54b53ce28f7",
+        "data.ts": "0ce0fe42b79183103046a6b89616d99e185635a7",
+        "meta.json": "a35147e21ed20799d511d07d52085999d1378002"
       }
     }
   ]

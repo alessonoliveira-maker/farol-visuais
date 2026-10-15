@@ -110,10 +110,21 @@ function maxOf(values: readonly number[]): number | null {
   return values.reduce((champion, value) => (value > champion ? value : champion), values[0] ?? 0);
 }
 
-function bucketOf(value: number, ceiling: number): number {
-  if (ceiling <= 0) return 0;
-  const step = Math.floor((value / ceiling) * BUCKET_COUNT);
-  return Math.min(BUCKET_COUNT - 1, Math.max(0, step));
+/** Décimos inteiros: compara valor e teto na mesma casa que a legenda imprime, sem ruído de ponto flutuante. */
+function tenthsOf(value: number): number {
+  return Math.round(value * 10);
+}
+
+/** Tetos das faixas, os mesmos que a legenda escreve na amostra. */
+function bucketCeilings(ceiling: number): readonly number[] {
+  return BUCKET_COLORS.map((_color, index) => tenthsOf((ceiling * (index + 1)) / BUCKET_COUNT));
+}
+
+/** Primeira faixa cujo teto é maior ou igual ao valor: o número na amostra é o teto inclusive. */
+function bucketOf(value: number, ceilings: readonly number[]): number {
+  const tenths = tenthsOf(value);
+  const found = ceilings.findIndex((roof) => tenths <= roof);
+  return found < 0 ? BUCKET_COUNT - 1 : found;
 }
 
 function cellX(hourIndex: number, peakStart: number): number {
@@ -187,7 +198,8 @@ export default function PeakWindowHeatmap({
     );
   }
 
-  const shortStaffIndexes = HOURS.map((hour, index) => (SHORT_STAFF_HOURS.includes(hour) ? index : -1)).filter(
+  const ceilings = bucketCeilings(ceiling);
+  const shortStaffIndexes =HOURS.map((hour, index) => (SHORT_STAFF_HOURS.includes(hour) ? index : -1)).filter(
     (index) => index >= 0,
   );
   const firstShort = shortStaffIndexes[0];
@@ -272,7 +284,7 @@ export default function PeakWindowHeatmap({
               );
             }
             const zero = value === 0;
-            const bucket = bucketOf(value, ceiling);
+            const bucket = bucketOf(value, ceilings);
             return (
               <g key={`${day}-${String(hour)}`}>
                 <rect
@@ -371,7 +383,7 @@ export default function PeakWindowHeatmap({
                 x={x + SWATCH_W / 2}
                 y={SCALE_TOP + SCALE_H / 2}
               >
-                {formatDecimal((ceiling * (index + 1)) / BUCKET_COUNT, 1)}
+                {formatDecimal((ceilings[index] ?? 0) / 10, 1)}
               </text>
             </g>
           );
@@ -393,7 +405,7 @@ export default function PeakWindowHeatmap({
           x={VIEW_W - RIGHT_PAD}
           y={SCALE_TOP + SCALE_H / 2}
         >
-          o número na amostra é o teto da faixa
+          o número na amostra é o teto da faixa, inclusive
         </text>
 
         <rect

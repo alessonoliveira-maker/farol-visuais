@@ -13,6 +13,42 @@
         "data.ts": "a9c165ac1cac062941c2c0b6b3a2ab860342b322",
         "meta.json": "7bbb2df777802ac5db72cabf4b8d46206926a5c4"
       }
+    },
+    "v2_forecast-contra-fechamento": {
+      "veredito": "aprovado",
+      "nota": "Correção conferida no arquivo de hoje: ganhas sem forecast vão para semForecast, com contagem e valor fechado no rodapé e na frase acessível, e o texto Toda oportunidade só sai com as duas contagens em zero. Check ok; plano de 373 por 373 px, tiques sobre as linhas de grade nos dois eixos; 21 dentro e 5 fora de 15% e R$ 917,0 mil das perdidas recalculados do dado. Observações no README: frase acima de 250 caracteres com as duas ausências, plural com contagem 1, estado vazio que cala as perdidas, peso 400 em font-display.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:03:37.500Z",
+      "impressao": "d30dcf8ebb1278b425fd083cef440871d864ae1c",
+      "arquivos": {
+        "Chart.tsx": "9881ad0b1057e29aab303617d22b75ffa2ae86cd",
+        "data.ts": "08c6455ab127a617193bdc2ed07a2aec73e3268c",
+        "meta.json": "e302604ebb857e05b101055663aa9511666f8819"
+      }
+    },
+    "v3_ciclo-contra-ticket-por-produto": {
+      "veredito": "aprovado",
+      "nota": "Segunda rodada conferida no arquivo de hoje: MARGIN top 12 e right 36 põem R$ 320 mil em x 858, sobre a borda do plano e a última linha de grade, e 120 dias em y 12, sobre a grade do topo, nos dois previews; o tique não se desloca mais. Check sem erro nem aviso; 32 perguntas sem não, faixa a 0,15 aceita pelo contorno opaco (ACE-5, já registrada). Observações no README: margem sem a conta ao lado e XAxis sem height em constante (EIX-6b).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:29.935Z",
+      "impressao": "417c98d8ed8971559e002c6f583bf37917f1049d",
+      "arquivos": {
+        "Chart.tsx": "7d39b64680b3a97fcfaa67d792d304ae72cae56a",
+        "data.ts": "7b8bceb41fcb8d0b0fa14150f6d201f81a3bb72f",
+        "meta.json": "ad21944285d42515fb69ceeb7a3b89b9fd43eab9"
+      }
+    },
+    "v4_sem-relacao-detectavel": {
+      "veredito": "aprovado",
+      "nota": "Segunda rodada conferida no arquivo de hoje: a inclinação sai por formatDecimal(|inclinação| × 100, 2) seguido de p.p., com o menos U+2212, no rótulo e na frase (Chart.tsx:207); simulado com 12 criativos que passam o piso, sai −0,17 p.p. de taxa de clique por vez, conta certa, e a frase fica em 238 caracteres. Dado padrão segue sem reta e o preview está certo. Check sem erro nem aviso; 32 perguntas sem não. Observações no README: duas casas contra a uma da DAD-4, título de 57 caracteres no ramo do piso, tique 6 vezes 4,1 px fora do centro da grade.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:35.685Z",
+      "impressao": "a3f3dadafdee467f4d1dc3377d3c7fa7c54c87a0",
+      "arquivos": {
+        "Chart.tsx": "785504d2ac5d5c56c59fc7dd1455abe2af5efa67",
+        "data.ts": "4b599a1be076d725ffef54d6fce95dba60c6e871",
+        "meta.json": "3f11fda7a09662197ca0f8769a82a23544b959ae"
+      }
     }
   },
   "historico": [
@@ -40,6 +76,110 @@
         "Chart.tsx": "8c7d352143139cc435ee21cb4155cd6fd712e6d6",
         "data.ts": "a9c165ac1cac062941c2c0b6b3a2ab860342b322",
         "meta.json": "7bbb2df777802ac5db72cabf4b8d46206926a5c4"
+      }
+    },
+    {
+      "versao": "v2_forecast-contra-fechamento",
+      "veredito": "reprovado",
+      "nota": "Pergunta 8, EST-4 e DAD-2 (14.1, ausência e comparação sem base): ganha com previstoReais <= 0 sai do plano sem contagem nenhuma (Chart.tsx:148), a frase conta só as plotadas e, com zero perdidas, o rodapé afirma 'Toda oportunidade ganha do trimestre está no plano'; o acerto de ±15% passa a excluir em silêncio justamente o maior erro do forecast. Contar as ganhas sem forecast e escrevê-las no rodapé e na frase acessível, e condicionar o 'Toda' a essa contagem ser zero. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:06.299Z",
+      "impressao": "2dba2cee0706c206d0b802f1b910c944ec2ddcdd",
+      "arquivos": {
+        "Chart.tsx": "33e22a1e25839daf3bf09cacc5e6634b7b89b049",
+        "data.ts": "08c6455ab127a617193bdc2ed07a2aec73e3268c",
+        "meta.json": "e302604ebb857e05b101055663aa9511666f8819"
+      }
+    },
+    {
+      "versao": "v3_ciclo-contra-ticket-por-produto",
+      "veredito": "reprovado",
+      "nota": "Pergunta 3 (14.1, versão que não demonstra o que o catálogo diz) e pergunta 8 (EST-4): não há R2_FLOOR nem N_FLOOR, então reta e faixa saem para qualquer n >= 3 e qualquer R², contra a regra do modelo ('só aparece quando passa o piso declarado de R² e de n'); e grupo sem ajuste vira 'as faixas não se encontram no trecho comum' (Chart.tsx:283-288), conclusão de que os produtos se distinguem afirmada sem base. Aplicar o piso de R² 0,3 e n 10 por grupo, escrever na legenda por que o grupo ficou sem reta, e declarar 'sem comparação de faixas' quando um lado não tem ajuste. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:12.269Z",
+      "impressao": "db5810b64dfd479bad25a9ecc79a58d5deabe715",
+      "arquivos": {
+        "Chart.tsx": "153f6cbcb85daeb23abf5a1c85e8e1aa5510c310",
+        "data.ts": "7b8bceb41fcb8d0b0fa14150f6d201f81a3bb72f",
+        "meta.json": "ad21944285d42515fb69ceeb7a3b89b9fd43eab9"
+      }
+    },
+    {
+      "versao": "v4_sem-relacao-detectavel",
+      "veredito": "reprovado",
+      "nota": "Pergunta 1 (14.1, versão que não demonstra o que o catálogo diz) e pergunta 19 (ACE-1): o ramo passaPiso não desenha reta nenhuma (Chart.tsx:245), então o piso não decide nada; nesse ramo a frase sai 'sem reta de tendência. A nuvem passa os dois pisos' e o rodapé fixo 'A reta só entra quando a nuvem passa os dois pisos' (Chart.tsx:249-253) faz o leitor concluir que a nuvem não passou. Desenhar a reta entre o menor e o maior X quando passa o piso, como na v1, e condicionar frase e rodapé a passaPiso. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T13:49:15.320Z",
+      "impressao": "3a7e7a6d92b9b386e35e3efd50237eb7a4a06c2d",
+      "arquivos": {
+        "Chart.tsx": "db910f764e72729a21c8c1a3759f9ae32c3e05a6",
+        "data.ts": "4b599a1be076d725ffef54d6fce95dba60c6e871",
+        "meta.json": "3f11fda7a09662197ca0f8769a82a23544b959ae"
+      }
+    },
+    {
+      "versao": "v2_forecast-contra-fechamento",
+      "veredito": "aprovado",
+      "nota": "Correção conferida no arquivo de hoje: ganhas sem forecast vão para semForecast, com contagem e valor fechado no rodapé e na frase acessível, e o texto Toda oportunidade só sai com as duas contagens em zero. Check ok; plano de 373 por 373 px, tiques sobre as linhas de grade nos dois eixos; 21 dentro e 5 fora de 15% e R$ 917,0 mil das perdidas recalculados do dado. Observações no README: frase acima de 250 caracteres com as duas ausências, plural com contagem 1, estado vazio que cala as perdidas, peso 400 em font-display.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:03:37.500Z",
+      "impressao": "d30dcf8ebb1278b425fd083cef440871d864ae1c",
+      "arquivos": {
+        "Chart.tsx": "9881ad0b1057e29aab303617d22b75ffa2ae86cd",
+        "data.ts": "08c6455ab127a617193bdc2ed07a2aec73e3268c",
+        "meta.json": "e302604ebb857e05b101055663aa9511666f8819"
+      }
+    },
+    {
+      "versao": "v3_ciclo-contra-ticket-por-produto",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3 e emenda de 2026-10-02 da EIX-6b, cujo peso é bloquear quando o tique sai da linha de grade no render: com MARGIN.right 20 o Recharts reposiciona o último tique, e R$ 320 mil sai centrado em x 859,1 contra a borda do plano em 874,0, 14,9 px à esquerda da linha de grade dele, visível no tamanho natural dos dois PNGs. Subir MARGIN.right para 36 (o Recharts mede 34,9 px de meia largura) e margin.top para 12, e conferir no preview.svg que o último tique cai em plotArea.x + width. Pisos de R² e n por grupo e o texto sem comparação de faixas estão corrigidos. Defeito presente desde a primeira passada, que não o viu. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:03:41.587Z",
+      "impressao": "beaa144372e88b7ded4063727d6c90e09ba855e7",
+      "arquivos": {
+        "Chart.tsx": "481f64e7f28416f0457dfb8d0117e15dd8616fa5",
+        "data.ts": "7b8bceb41fcb8d0b0fa14150f6d201f81a3bb72f",
+        "meta.json": "ad21944285d42515fb69ceeb7a3b89b9fd43eab9"
+      }
+    },
+    {
+      "versao": "v4_sem-relacao-detectavel",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6 e DAD-4 (14.1, unidade): no ramo que passa o piso, a inclinação de uma taxa sai por formatPercent (Chart.tsx:207), como +0,12% de taxa de clique por vez a mais de frequência, que é variação em ponto percentual escrita como percentual; o texto vai para o rótulo do plano e para a frase acessível. Escrever formatDecimal(inclinacao * 100, 2) seguido de p.p., nos dois lugares. A reta entre o menor e o maior X e a frase e o rodapé condicionados a passaPiso estão corrigidos; o dado padrão segue sem reta e o preview está certo. Parecer em validation/.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:03:44.746Z",
+      "impressao": "f446987b5367deb44e3e07c5e4e11d5b12e17506",
+      "arquivos": {
+        "Chart.tsx": "650c32ceff631e6f194196c7aef0fd4650b663d1",
+        "data.ts": "4b599a1be076d725ffef54d6fce95dba60c6e871",
+        "meta.json": "3f11fda7a09662197ca0f8769a82a23544b959ae"
+      }
+    },
+    {
+      "versao": "v3_ciclo-contra-ticket-por-produto",
+      "veredito": "aprovado",
+      "nota": "Segunda rodada conferida no arquivo de hoje: MARGIN top 12 e right 36 põem R$ 320 mil em x 858, sobre a borda do plano e a última linha de grade, e 120 dias em y 12, sobre a grade do topo, nos dois previews; o tique não se desloca mais. Check sem erro nem aviso; 32 perguntas sem não, faixa a 0,15 aceita pelo contorno opaco (ACE-5, já registrada). Observações no README: margem sem a conta ao lado e XAxis sem height em constante (EIX-6b).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:29.935Z",
+      "impressao": "417c98d8ed8971559e002c6f583bf37917f1049d",
+      "arquivos": {
+        "Chart.tsx": "7d39b64680b3a97fcfaa67d792d304ae72cae56a",
+        "data.ts": "7b8bceb41fcb8d0b0fa14150f6d201f81a3bb72f",
+        "meta.json": "ad21944285d42515fb69ceeb7a3b89b9fd43eab9"
+      }
+    },
+    {
+      "versao": "v4_sem-relacao-detectavel",
+      "veredito": "aprovado",
+      "nota": "Segunda rodada conferida no arquivo de hoje: a inclinação sai por formatDecimal(|inclinação| × 100, 2) seguido de p.p., com o menos U+2212, no rótulo e na frase (Chart.tsx:207); simulado com 12 criativos que passam o piso, sai −0,17 p.p. de taxa de clique por vez, conta certa, e a frase fica em 238 caracteres. Dado padrão segue sem reta e o preview está certo. Check sem erro nem aviso; 32 perguntas sem não. Observações no README: duas casas contra a uma da DAD-4, título de 57 caracteres no ramo do piso, tique 6 vezes 4,1 px fora do centro da grade.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:35.685Z",
+      "impressao": "a3f3dadafdee467f4d1dc3377d3c7fa7c54c87a0",
+      "arquivos": {
+        "Chart.tsx": "785504d2ac5d5c56c59fc7dd1455abe2af5efa67",
+        "data.ts": "4b599a1be076d725ffef54d6fce95dba60c6e871",
+        "meta.json": "3f11fda7a09662197ca0f8769a82a23544b959ae"
       }
     }
   ]

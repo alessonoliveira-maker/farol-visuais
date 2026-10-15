@@ -39,13 +39,13 @@
       }
     },
     "v4_termos-raros-e-grupos-desbalanceados": {
-      "veredito": "reprovado",
-      "nota": "Julgado o arquivo de 2026-10-13 depois da correção. Pergunta 12, seção 14.1 (identificação das marcas) e primeiro item do demonstrates: o anel do marcador único está desenhado em 0,25% de telefone e 2,5% de vídeo sem a contagem e sem nome. O texto 142 termos, 1 menção em cada grupo não existe no preview.svg nem nos dois PNGs, o corpo do cartão não cita o anel em lugar nenhum e o anel não tem dica: 142 dos 188 termos ficam numa marca sem identificação. Causa: o rótulo do marcador passou a entrar no teste do ponto dono em tryPlace; a única vaga dentro do plano e sem marca (dx 8, dy 4) é recusada porque 11 pontos ficam mais perto da caixa de 211 px que o centro do anel (dono a 12,0 px, boleto a 5,9 px), e não há saída quando nenhuma vaga serve. Tirar o rótulo do marcador desse teste ou escrever a contagem numa linha fora do plano com a amostra do anel, e nunca desenhar o anel sem a contagem. O bloqueante da primeira passada está resolvido: os 10 nomes têm o dono como ponto mais próximo (7,9 a 9,3 px, vizinho a 12,3 px ou mais). Parecer em validation/revisao_21_texto-e-nuvem-de-palavras__06_dispersao-de-termos_2026-10-13.md.",
-      "data": "2026-10-13",
-      "registradoEm": "2026-10-13T14:33:16.220Z",
-      "impressao": "fdc306da7858f6840b4b3c7c11f10a8f3593328c",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-15 depois da segunda rodada de correção. Sem bloqueante: o anel do marcador único tem identificação fora do plano, com amostra vazada na cor dele e o texto Anel: 142 termos com 1 menção em cada grupo (0,25% do telefone, 2,5% do vídeo), presente no preview.svg e nos dois PNGs; 142 linhas com 1 e 1 no data.ts, 1 de 400 e 1 de 40. A linha quebra em duas sem colidir (4 px até a linha seguinte) e mede 8,16:1 no escuro e 8,13:1 no claro, o mesmo do traço do anel. Os 10 nomes têm o dono como ponto mais próximo (7,9 a 9,3 px, vizinho a 11,2 px ou mais); contagens 5, 19 e 22 refeitas do data.ts; marcas a 9,50, 6,47 e 5,21:1 no escuro e 6,00, 6,18 e 5,37:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu; sem arquivo de diferença no render, então no máximo 0,5%. Observações no README: plano de 191 para 154 px por causa da linha em duas, 1 menção contra uma menção na frase, termo de 2 e 1 menções cairia dentro do anel com dado real.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:38:50.600Z",
+      "impressao": "22f7767a0619fb4441bc9a2da0068c87c54865f3",
       "arquivos": {
-        "Chart.tsx": "49a2c0c52659c807601662374c334893202e3d2d",
+        "Chart.tsx": "72c8f784a65eaba6cebee9689101ef02f3682f5e",
         "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
         "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
       }
@@ -165,6 +165,19 @@
       "impressao": "fdc306da7858f6840b4b3c7c11f10a8f3593328c",
       "arquivos": {
         "Chart.tsx": "49a2c0c52659c807601662374c334893202e3d2d",
+        "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
+        "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
+      }
+    },
+    {
+      "versao": "v4_termos-raros-e-grupos-desbalanceados",
+      "veredito": "aprovado",
+      "nota": "Julgado o arquivo de 2026-10-15 depois da segunda rodada de correção. Sem bloqueante: o anel do marcador único tem identificação fora do plano, com amostra vazada na cor dele e o texto Anel: 142 termos com 1 menção em cada grupo (0,25% do telefone, 2,5% do vídeo), presente no preview.svg e nos dois PNGs; 142 linhas com 1 e 1 no data.ts, 1 de 400 e 1 de 40. A linha quebra em duas sem colidir (4 px até a linha seguinte) e mede 8,16:1 no escuro e 8,13:1 no claro, o mesmo do traço do anel. Os 10 nomes têm o dono como ponto mais próximo (7,9 a 9,3 px, vizinho a 11,2 px ou mais); contagens 5, 19 e 22 refeitas do data.ts; marcas a 9,50, 6,47 e 5,21:1 no escuro e 6,00, 6,18 e 5,37:1 no claro, medidas à mão porque a CONTRASTE-MARCA não mediu; sem arquivo de diferença no render, então no máximo 0,5%. Observações no README: plano de 191 para 154 px por causa da linha em duas, 1 menção contra uma menção na frase, termo de 2 e 1 menções cairia dentro do anel com dado real.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:38:50.600Z",
+      "impressao": "22f7767a0619fb4441bc9a2da0068c87c54865f3",
+      "arquivos": {
+        "Chart.tsx": "72c8f784a65eaba6cebee9689101ef02f3682f5e",
         "data.ts": "59d5823223fef65293ae83e4a105732163d5cbf5",
         "meta.json": "e9388fa3bc735692738dee6aad3fa8475804602b"
       }

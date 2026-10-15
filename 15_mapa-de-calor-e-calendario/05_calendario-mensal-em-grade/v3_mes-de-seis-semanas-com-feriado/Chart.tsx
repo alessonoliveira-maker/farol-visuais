@@ -1,4 +1,4 @@
-import { CalendarClock, Flag } from 'lucide-react';
+import { CalendarClock, Filter, Flag } from 'lucide-react';
 
 import { CHART_SEQUENTIAL_COLORS } from '@/components/visuals/charts/chartTheme';
 import { formatDate, formatDays, formatDecimal, formatInt, formatMonthLong } from '@/lib/format';
@@ -146,6 +146,11 @@ function peakOf(cells: readonly MeasuredCell[]): MeasuredCell | null {
   );
 }
 
+/** Dias úteis sem agenda, com a concordância do singular. */
+function idleLabel(count: number): string {
+  return `${formatInt(count)} ${count === 1 ? 'dia útil' : 'dias úteis'} sem agenda`;
+}
+
 export default function PartialMonthCalendar({
   data = defaultData,
   month = MONTH,
@@ -153,6 +158,19 @@ export default function PartialMonthCalendar({
   height,
   className,
 }: PartialMonthCalendarProps) {
+  if (data.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden size={16} />
+        <span>O recorte não tem nenhum dia medido, então não há calendário de agendas a desenhar.</span>
+      </div>
+    );
+  }
+
   const today = Number(measuredThrough.slice(8, 10));
   const cells = buildGrid(month, data, today);
   const active = cells.filter(isMeasured);
@@ -163,6 +181,8 @@ export default function PartialMonthCalendar({
   const peak = peakOf(active);
   const idle = active.filter((cell) => cell.agendas === 0).length;
   const pending = cells.filter((cell) => cell.kind === 'futuro').length;
+  const holidayCount = cells.filter((cell) => cell.kind === 'feriado').length;
+  const weekCount = Math.ceil((weekdayOf(month, 1) + daysInMonth(month)) / 7);
   /** Teto de cada degrau: os dois tercis e o MAIOR valor observado (ROT-5b). */
   const ceilings: readonly (number | null)[] =
     edges === null || peak === null ? [null, null, null] : [edges[0] ?? null, edges[1] ?? null, peak.agendas];
@@ -174,11 +194,12 @@ export default function PartialMonthCalendar({
   const summary =
     average === null || peak === null
       ? 'Calendário do mês sem nenhum dia útil medido.'
-      : `Calendário de ${formatMonthLong(month)} em seis semanas, parcial até ` +
-        `${formatDate(measuredThrough)}: ${formatInt(total)} agendas marcadas, média de ` +
-        `${formatDecimal(average, 1)} por dia útil. O pico foi ${formatInt(peak.agendas)} no dia ` +
-        `${formatInt(peak.label)}, ${formatDays(idle)} útil ficou sem agenda, o feriado saiu da média ` +
-        `e ${formatDays(pending)} serão medidos.`;
+      : `Calendário de ${formatMonthLong(month)} em ${formatInt(weekCount)} semanas, parcial até ` +
+        `${formatDate(measuredThrough)}: ${formatInt(total)} agendas, média de ` +
+        `${formatDecimal(average, 1)} por dia útil. Pico de ${formatInt(peak.agendas)} no dia ` +
+        `${formatInt(peak.label)}; ${idleLabel(idle)}` +
+        `${holidayCount === 0 ? '' : holidayCount === 1 ? '; 1 feriado saiu da média' : `; ${formatInt(holidayCount)} feriados saíram da média`}` +
+        `; ${pending === 1 ? '1 dia será medido' : `${formatDays(pending)} serão medidos`}.`;
 
   return (
     <figure
@@ -311,7 +332,7 @@ export default function PartialMonthCalendar({
               ? 'sem dia útil medido para a média'
               : `média de ${formatDecimal(average, 1)} por dia útil`}
           </span>
-          <span>{`${formatDays(idle)} útil sem agenda`}</span>
+          <span>{idleLabel(idle)}</span>
           <span className="flex items-center gap-1">
             <CalendarClock aria-hidden className="size-3 shrink-0" />
             <span>{`${formatDays(pending)} a medir`}</span>

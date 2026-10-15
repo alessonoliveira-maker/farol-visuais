@@ -1,3 +1,4 @@
+import { Filter } from 'lucide-react';
 import type { ReactElement } from 'react';
 import {
   Bar,
@@ -17,14 +18,7 @@ import {
 import { AXIS_PROPS, GRID_COLOR } from '@/components/visuals/charts/chartTheme';
 import { formatDays, formatDecimal, formatInt, formatRateWithVolume } from '@/lib/format';
 import { cn } from '@/lib/utils';
-import {
-  BEYOND_DOMAIN,
-  data as defaultData,
-  DOMAIN_MAX,
-  STALLED_DAYS,
-  WITHOUT_STAGE_DATE,
-  type FunnelStage,
-} from './data';
+import { data as defaultData, DOMAIN_MAX, STALLED_DAYS, WITHOUT_STAGE_DATE, type FunnelStage, type Opportunity } from './data';
 
 /**
  * Box plot de dias parados, uma caixa por etapa do funil, com os casos extremos nomeados.
@@ -172,6 +166,8 @@ interface EdgeCase {
   readonly stageName: string;
   readonly code: string;
   readonly days: number;
+  /** Quantos casos da etapa passam do teto; o marcador mostra o mais distante e esta contagem. */
+  readonly count: number;
 }
 
 /**
@@ -231,7 +227,9 @@ function EdgeMarkers({
               x={tip - MARKER_R * 1.6 - MARKER_GAP}
               y={middle - MARKER_LABEL_RISE}
             >
-              {`${item.code} · ${formatDays(item.days)}`}
+              {item.count > 1
+                ? `${formatInt(item.count)} casos; maior ${item.code} · ${formatDays(item.days)}`
+                : `${item.code} · ${formatDays(item.days)}`}
             </text>
           </g>
         );
@@ -273,20 +271,33 @@ export default function StalledDaysBoxPlot({
   /** Dentro do domínio vai como ponto; além dele vira marcador na borda, com o valor escrito. */
   const plotted = inFence.filter((point) => point.days <= domainMax);
 
-  const edgeCases: readonly EdgeCase[] = BEYOND_DOMAIN.flatMap((item) => {
-    const row = rows.find((candidate) => candidate.id === item.stageId);
-    if (row === undefined) return [];
-    return [{ stageName: row.name, code: item.id, days: item.days }];
+  /** Os marcadores de borda nascem do próprio dado: todo caso além da cerca com dias acima do teto. */
+  /* Um marcador por etapa, com o caso mais distante e a contagem; conta todo caso acima do teto,
+     esteja ou não além da cerca (o bigode também pode passar do teto sem ser caso extremo). */
+  const aboveCeiling: number = data.reduce(
+    (sum, item) => sum + item.opportunities.filter((opp) => opp.days > domainMax).length,
+    0,
+  );
+  const edgeCases: readonly EdgeCase[] = data.flatMap((item): readonly EdgeCase[] => {
+    const above = item.opportunities.filter((opp) => opp.days > domainMax);
+    const worst = above.reduce<Opportunity | null>(
+      (best, opp) => (best === null || opp.days > best.days ? opp : best),
+      null,
+    );
+    return worst === null
+      ? []
+      : [{ stageName: item.name, code: worst.id, days: worst.days, count: above.length }];
   });
 
   const total = rows.reduce((sum, row) => sum + row.n, 0);
   const stalled = rows.reduce((sum, row) => sum + row.stalled, 0);
-  const beyondFence = inFence.length + edgeCases.length;
+  const beyondFence = inFence.length;
 
   /** O caso mais distante, o único que cabe nomeado no desenho. `null` sem nenhum caso além da cerca. */
-  const farthest = [...inFence, ...edgeCases.map((item) => ({ code: item.code, days: item.days }))].reduce<
-    { readonly code: string; readonly days: number } | null
-  >((worst, item) => (worst === null || item.days > worst.days ? item : worst), null);
+  const farthest = inFence.reduce<OutlierPoint | null>(
+    (worst, item) => (worst === null || item.days > worst.days ? item : worst),
+    null,
+  );
 
   const measured = rows.filter((row): row is StageRow & { box: BoxFive } => row.box !== null);
   const quickest = measured.reduce<(StageRow & { box: BoxFive }) | null>(
@@ -330,17 +341,39 @@ export default function StalledDaysBoxPlot({
     /** Pixels por dia, lidos da própria caixa: é a escala que o Recharts já resolveu. */
     const scale = Number(width) / iqr;
     const at = (value: number): number => left + (value - box.q1) * scale;
+    /* O bigode não passa do teto do eixo: acima dele quem fala é a seta de borda. */
+    const clipped = box.whiskerHigh > domainMax;
+    const highEnd = at(Math.min(box.whiskerHigh, domainMax));
     return (
       <g>
         <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(box.whiskerLow)} x2={left} y1={middle} y2={middle} />
-        <line stroke={WHISKER_STROKE} strokeWidth={1} x1={left + Number(width)} x2={at(box.whiskerHigh)} y1={middle} y2={middle} />
+        <line stroke={WHISKER_STROKE} strokeWidth={1} x1={left + Number(width)} x2={highEnd} y1={middle} y2={middle} />
         <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(box.whiskerLow)} x2={at(box.whiskerLow)} y1={capTop} y2={capBottom} />
-        <line stroke={WHISKER_STROKE} strokeWidth={1} x1={at(box.whiskerHigh)} x2={at(box.whiskerHigh)} y1={capTop} y2={capBottom} />
+        {clipped ? null : (
+          <line stroke={WHISKER_STROKE} strokeWidth={1} x1={highEnd} x2={highEnd} y1={capTop} y2={capBottom} />
+        )}
         <rect fill="none" height={tall} stroke={BOX_STROKE} strokeWidth={1} width={Number(width)} x={left} y={top} />
         <rect fill={MEDIAN_FILL} height={tall} width={MEDIAN_W} x={at(box.median) - MEDIAN_W / 2} y={top} />
       </g>
     );
   };
+
+  /* Recorte sem oportunidade medida: o visual sai e entra a frase de estado. Eixo e limiar de um
+     gráfico vazio leem como funil sem nada parado, que é ausência vestida de medição. */
+  if (rows.length === 0 || total === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 flex-col items-center justify-center gap-2 text-center', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="text-text-muted" size={16} />
+        <p className="text-xs text-text-muted">
+          O recorte não tem oportunidade com data de etapa, então não há dias parados a resumir.
+        </p>
+      </div>
+    );
+  }
 
   const summary =
     quickest === null || slowest === null
@@ -478,7 +511,7 @@ export default function StalledDaysBoxPlot({
               <polygon fill={OUTLIER_FILL} points="8.5,4.5 1.5,0.5 1.5,8.5" />
             </svg>
             <span className="tabular-nums">
-              {`${formatInt(edgeCases.length)} casos passam do teto de ${formatDays(domainMax)} e vão na borda, com o valor escrito`}
+              {`${formatInt(aboveCeiling)} ${aboveCeiling === 1 ? 'caso passa' : 'casos passam'} do teto de ${formatDays(domainMax)}; a seta na borda marca o mais distante de cada etapa, com o valor escrito`}
             </span>
           </span>
         )}

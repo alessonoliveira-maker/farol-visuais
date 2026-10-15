@@ -46,8 +46,8 @@ export interface TransitionRow {
 export const data: readonly TransitionRow[] = [
   { from: 'contato', to: [420, 62, 4, 0, 0, 9] },
   { from: 'avaliacao', to: [7, 210, 41, 3, 0, 5] },
-  { from: 'proposta', to: [2, 9, 154, 28, 1, 0] },
-  { from: 'negocio', to: [0, 1, 2, 7, 2, 0] },
+  { from: 'proposta', to: [2, 9, 154, 29, 0, 0] },
+  { from: 'negocio', to: [0, 1, 4, 7, 0, 0] },
   { from: 'contrato', to: [0, 0, 0, 0, 0, 0] },
 ];
 

@@ -4,14 +4,50 @@
   "versoes": {
     "v1_reunioes-realizadas-em-setembro": {
       "veredito": "aprovado",
-      "nota": "Cada dia escreve a contagem, feriado sai da escala com marca propria e rotulo, e o rodape declara total, media por dia util e o zero de dias uteis sem reuniao em vez de omitir. Ressalva sem conserto: no tema claro o degrau zero da rampa quase iguala o fundo do cartao, entao o dia sem reuniao perde a moldura e a grade abre buracos; a contagem escrita na celula segura a leitura, por isso nao reprova.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T12:11:49.703Z",
-      "impressao": "fb773d6d37689b2ea9092841acd367a6ca53bfd0",
+      "nota": "Correção conferida: vazio com role=status e Filter, média de lista vazia null (EST-1b), pontas de ago e out desenhadas em --text-muted sem cor (catálogo item 4), tracejado do feriado em --text-muted e frase com formatDays. Pares de texto de 4,65 a 14,82 nos dois temas. Observações no README (frase sem os dias úteis vazios, TOK-8 sem declaração, Anatomia item 3 velha).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:29.670Z",
+      "impressao": "1ccba3a744818a4aeaa42d29ea11acc93e793e35",
       "arquivos": {
-        "Chart.tsx": "ba7fad5eaa42cf8fadb6b1f916e33625b5343d86",
+        "Chart.tsx": "cd2cae010d27a50c2189b5eb0a8f1703541fe9e8",
         "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
-        "meta.json": "ad29e8665a7a8d3f087829d9fd12da8ef151ff44"
+        "meta.json": "4104b2c68a9d54e23828bf88a37e48e57b7e1090"
+      }
+    },
+    "v2_dias-acima-da-capacidade-de-agenda": {
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status, linha de leitura sem 0 dos 0 quando não há dia útil medido, e a frase nomeia os dias acima do teto (5, 11, 12, 24 e 25) com teto de 6 citados e pico em agendas (catálogo item 4). Anel em --warning a 8,36 e 5,74 contra o cartão. TIP-3 com cinco números em 700 segue como tensão de régua, no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:33.876Z",
+      "impressao": "fc89ff6b2aa9f88857f908da98b8c48a57f5b547",
+      "arquivos": {
+        "Chart.tsx": "b754028f0e9ff0ee2d3db204c696f5a53b0b123f",
+        "data.ts": "f9f8bfcbcbae385d4e6ff8b312fc75e8862a7b3f",
+        "meta.json": "cb1e81b613261f7e73919b69f5bec567d7f27286"
+      }
+    },
+    "v3_mes-de-seis-semanas-com-feriado": {
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status antes de montar a grade, feriados contados do dado com omissão no zero, semanas por Math.ceil e concordância de dia útil. Tercis 13, 18 e 24 conferidos (5, 5 e 5 dias), último degrau no maior observado (ROT-5b), --chart-1 só no anel, de 3,13 a 10,90 contra os vizinhos. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:36.361Z",
+      "impressao": "3637326ac67f7e642162102dd2a636ed8fc24f9b",
+      "arquivos": {
+        "Chart.tsx": "35675c587c44f9a14102151839a090c095185407",
+        "data.ts": "3c315bac0f7a56b5a2e9afe1193a40732a5fab4b",
+        "meta.json": "d58b1fee2a88bea27953bcc3a6f4811cbab3be39"
+      }
+    },
+    "v4_calendario-de-marcos-com-janela-de-leitura": {
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status, chips nos slots 3, 6 e 5 com o desvio da COR-8 declarado e --chart-1 só no anel de hoje (17.2), frase com a janela de 31 dias e fora do mês calculado. Texto vazado nos chips de 5,39 a 7,39 nos dois temas, sem halo (ROT-7b). Observações no README (marcos atrás do +N sem nome, comentário trocado, barra a 1,15:1 por ANO-4).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:39.026Z",
+      "impressao": "20746811f99c6166775951a3fd7040cf9e6001c8",
+      "arquivos": {
+        "Chart.tsx": "38ff8061b59b3a1915d7761671ac1355c3c28f3e",
+        "data.ts": "a9e6d3bf84ae5e22c3e0cad93a51d54dde886528",
+        "meta.json": "e0d661e4d87b178e3859f977c6b63c4565e3105c"
       }
     }
   },
@@ -27,6 +63,110 @@
         "Chart.tsx": "ba7fad5eaa42cf8fadb6b1f916e33625b5343d86",
         "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
         "meta.json": "ad29e8665a7a8d3f087829d9fd12da8ef151ff44"
+      }
+    },
+    {
+      "versao": "v1_reunioes-realizadas-em-setembro",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16 e 8, EST-1 e EST-1b: sem role=status, data vazio escreve 0 no mês e média de 0,0, e a média de lista vazia devolve 0 (linha 70); bloco de vazio e média null. Catálogo item 4: dias de agosto e outubro nas pontas não são desenhados (linha 103); desenhar em --text-muted sem cor, como a v3. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__05_calendario-mensal-em-grade_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:20:26.515Z",
+      "impressao": "c3bb0bab1a5186fee343d09b1d4a44449ee932a3",
+      "arquivos": {
+        "Chart.tsx": "0c337c1b1962a1bb4832c098e0619c2988efe507",
+        "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
+        "meta.json": "ad29e8665a7a8d3f087829d9fd12da8ef151ff44"
+      }
+    },
+    {
+      "versao": "v2_dias-acima-da-capacidade-de-agenda",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16 e 8, EST-1: sem role=status, data vazio escreve na linha de leitura 0 dos 0 passaram dele; bloco de vazio. Pergunta 19, ACE-1 e catálogo item 4: a frase acessível diz quantos dias passaram do teto e nunca quais (5, 11, 12, 24 e 25), e o caso de uso pergunta em quais dias; listar os dias de over na frase. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__05_calendario-mensal-em-grade_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:20:34.946Z",
+      "impressao": "2a5e9acbcc00735ba38b90f4f2376707e4dd2772",
+      "arquivos": {
+        "Chart.tsx": "7deec51a188ed8b107423979c03b197ea219a48c",
+        "data.ts": "f9f8bfcbcbae385d4e6ff8b312fc75e8862a7b3f",
+        "meta.json": "cb1e81b613261f7e73919b69f5bec567d7f27286"
+      }
+    },
+    {
+      "versao": "v3_mes-de-seis-semanas-com-feriado",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16 e 8, EST-1: sem role=status, data vazio desenha dias 32 a 36 e escreve 0 agendas em 0 dias úteis medidos; bloco de vazio. Pergunta 19, ACE-1: a oração o feriado saiu da média é texto fixo (linha 180), falsa em mês sem feriado e no singular com dois; contar os feriados do dado. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__05_calendario-mensal-em-grade_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:20:35.531Z",
+      "impressao": "8eed60608e164c9fe1219cfa97819591529e151e",
+      "arquivos": {
+        "Chart.tsx": "2090910cca4b63c4a70e23333d7c2227b283254c",
+        "data.ts": "3c315bac0f7a56b5a2e9afe1193a40732a5fab4b",
+        "meta.json": "d58b1fee2a88bea27953bcc3a6f4811cbab3be39"
+      }
+    },
+    {
+      "versao": "v4_calendario-de-marcos-com-janela-de-leitura",
+      "veredito": "reprovado",
+      "nota": "Pergunta 16 e 8, EST-1: sem role=status, data vazio desenha o mês com 0 marcos; bloco de vazio. Pergunta 11, 17.2: --chart-1 é a categoria prazo interno (linha 48) e o anel de hoje (linha 63), e o anel de 09/12 lê como prazo; tirar um dos papéis. Pergunta 19, ACE-1: atravessa 3 semanas conta as linhas desenhadas e não a janela de 31 dias, e fora do mês é texto fixo. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__05_calendario-mensal-em-grade_2026-10-15.md",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:20:36.107Z",
+      "impressao": "0e52d4aabc3f37dd1b6e397decaa0dda6aa6a637",
+      "arquivos": {
+        "Chart.tsx": "a8edbdac749245ffc164adf76ed312851a134d5f",
+        "data.ts": "a9e6d3bf84ae5e22c3e0cad93a51d54dde886528",
+        "meta.json": "e5b70c8b6e5ed6020ba23bc199f37b925061d43b"
+      }
+    },
+    {
+      "versao": "v1_reunioes-realizadas-em-setembro",
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status e Filter, média de lista vazia null (EST-1b), pontas de ago e out desenhadas em --text-muted sem cor (catálogo item 4), tracejado do feriado em --text-muted e frase com formatDays. Pares de texto de 4,65 a 14,82 nos dois temas. Observações no README (frase sem os dias úteis vazios, TOK-8 sem declaração, Anatomia item 3 velha).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:29.670Z",
+      "impressao": "1ccba3a744818a4aeaa42d29ea11acc93e793e35",
+      "arquivos": {
+        "Chart.tsx": "cd2cae010d27a50c2189b5eb0a8f1703541fe9e8",
+        "data.ts": "25d4615650673dae3880e61c818115a2a3f492cb",
+        "meta.json": "4104b2c68a9d54e23828bf88a37e48e57b7e1090"
+      }
+    },
+    {
+      "versao": "v2_dias-acima-da-capacidade-de-agenda",
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status, linha de leitura sem 0 dos 0 quando não há dia útil medido, e a frase nomeia os dias acima do teto (5, 11, 12, 24 e 25) com teto de 6 citados e pico em agendas (catálogo item 4). Anel em --warning a 8,36 e 5,74 contra o cartão. TIP-3 com cinco números em 700 segue como tensão de régua, no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:33.876Z",
+      "impressao": "fc89ff6b2aa9f88857f908da98b8c48a57f5b547",
+      "arquivos": {
+        "Chart.tsx": "b754028f0e9ff0ee2d3db204c696f5a53b0b123f",
+        "data.ts": "f9f8bfcbcbae385d4e6ff8b312fc75e8862a7b3f",
+        "meta.json": "cb1e81b613261f7e73919b69f5bec567d7f27286"
+      }
+    },
+    {
+      "versao": "v3_mes-de-seis-semanas-com-feriado",
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status antes de montar a grade, feriados contados do dado com omissão no zero, semanas por Math.ceil e concordância de dia útil. Tercis 13, 18 e 24 conferidos (5, 5 e 5 dias), último degrau no maior observado (ROT-5b), --chart-1 só no anel, de 3,13 a 10,90 contra os vizinhos. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:36.361Z",
+      "impressao": "3637326ac67f7e642162102dd2a636ed8fc24f9b",
+      "arquivos": {
+        "Chart.tsx": "35675c587c44f9a14102151839a090c095185407",
+        "data.ts": "3c315bac0f7a56b5a2e9afe1193a40732a5fab4b",
+        "meta.json": "d58b1fee2a88bea27953bcc3a6f4811cbab3be39"
+      }
+    },
+    {
+      "versao": "v4_calendario-de-marcos-com-janela-de-leitura",
+      "veredito": "aprovado",
+      "nota": "Correção conferida: vazio com role=status, chips nos slots 3, 6 e 5 com o desvio da COR-8 declarado e --chart-1 só no anel de hoje (17.2), frase com a janela de 31 dias e fora do mês calculado. Texto vazado nos chips de 5,39 a 7,39 nos dois temas, sem halo (ROT-7b). Observações no README (marcos atrás do +N sem nome, comentário trocado, barra a 1,15:1 por ANO-4).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:39.026Z",
+      "impressao": "20746811f99c6166775951a3fd7040cf9e6001c8",
+      "arquivos": {
+        "Chart.tsx": "38ff8061b59b3a1915d7761671ac1355c3c28f3e",
+        "data.ts": "a9e6d3bf84ae5e22c3e0cad93a51d54dde886528",
+        "meta.json": "e0d661e4d87b178e3859f977c6b63c4565e3105c"
       }
     }
   ]

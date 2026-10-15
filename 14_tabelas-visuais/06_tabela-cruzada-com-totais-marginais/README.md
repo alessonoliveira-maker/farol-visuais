@@ -76,7 +76,7 @@ fixa de meses).
   ([preview](./v2_heatmap-no-miolo-e-barras-nas-margens/preview.svg),
   [claro](./v2_heatmap-no-miolo-e-barras-nas-margens/preview-claro.svg)): miolo em heatmap com
   escala só das células internas, barra horizontal no total de linha e vertical no total de
-  coluna, cada uma com domínio próprio, e a etapa da semana destacada no cabeçalho.
+  coluna, cada uma com domínio próprio, e a etapa de maior total (derivada do dado) destacada no cabeçalho.
 * [`v3_leads-por-origem-e-mes-em-percentual-da-linha`](./v3_leads-por-origem-e-mes-em-percentual-da-linha/)
   ([preview](./v3_leads-por-origem-e-mes-em-percentual-da-linha/preview.svg),
   [claro](./v3_leads-por-origem-e-mes-em-percentual-da-linha/preview-claro.svg)): 10 origens
@@ -248,6 +248,43 @@ acabamento e nenhum nasceu da mudança do botão._
   1,49 e 1,92 no claro, e degraus vizinhos se separam por 1,23 a 1,52. A leitura mora no número escrito
   em cada célula (exceção da ACE-3, lacuna de paleta da TOK-8), com texto de 5,45:1 a 14,82:1. No modo
   "% da linha" o degrau mais baixo cobre de 0% a 6%, então ele não é exclusivo do zero medido.
+
+_Quarta revisão independente, 2026-10-14, só da v2, sobre o `Chart.tsx` de 2026-09-28 (trilhos em
+`--surface-sunken`). A v2 saiu reprovada por um bloqueante, o destaque fixo em Proposta contra a pergunta
+de qual etapa concentra, descrito em `validation/revisao_14_tabelas-visuais__06_tabela-cruzada-com-totais-marginais_2026-10-14.md`. Os pontos abaixo não reprovam._
+
+* **v2:** a barra do total de linha mora num trilho de 26 px por 14 px com `rounded-full` (`TOTAL_COLUMN_WIDTH` de 60 px menos o número e os vãos); 22 e 23 saem como quase círculos de 14,5 e 15 px e a margem lembra uma chave de liga e desliga. A ordem está certa e o número está escrito ao lado; uma coluna de total mais larga daria corpo de barra.
+* **v2:** os algarismos de "30 no total" e do "1" e "22" da legenda estão em Manrope sem `tabular-nums` (TIP-1). Sem consequência no render, porque cada um é número isolado.
+* **v2:** a legenda da rampa fica abaixo da tabela, e a ROT-4 pede acima ou ao lado. Ocupa uma linha, menos de 30% do corpo, com amostra na forma da célula.
+* **v2:** as linhas são separadas por `border-t border-line-subtle` e a linha de total por `border-line-strong`, contra a letra da ESP-5; aqui as bordas pintam, porque a linha é grid com `subgrid` e não `display: contents` como na v1. Sem colisão nem corte.
+* **v2:** o estado vazio escreve a frase em `role="status"` sem o ícone `Filter` de 16 px da EST-1.
+* **v2:** `min` cai em 0 com a lista de medidas vazia (`Chart.tsx:49`, AGREGACAO-ZERO em dívida conhecida, EST-1b). Num recorte com todas as células em não se aplica, a legenda escreveria "0" a "1" para uma escala que não mediu nada; o dado padrão não cai no ramo.
+* **v2:** a altura do trilho da barra de coluna (28 px) está escrita no JSX, e o comentário de `BAR_TRACK` diz que a constante vale "na coluna e na linha", mas a coluna não a usa (checklist 22).
+* **v2:** a frase acessível escreve o período "2026-09" como literal, fora do dado e fora da tela, no formato do dado (NUM-7, vizinha da DAD-9): ligada a outro mês no Farol, ela mente. Monta os números com `String()` e não com `formatInt`, e "com 49" sai sem substantivo.
+* **v2:** nenhum texto da tela diz que as células contam oportunidades; o substantivo vem só do subtítulo do cartão e da frase acessível (NUM-6), como já anotado na v1, e "30 no total" também sai sem ele.
+* **v2:** a rampa usa cinco degraus e só `--seq-6` e `--seq-7` passam de 3:1 contra o cartão nos dois temas; a ordem é carregada pelo número escrito em cada célula, e o README não declara que a cor sozinha não ordena, como pede a saída da TOK-8.
+
+_Quinta revisão independente, 2026-10-14, só da v2, sobre a correção do mesmo dia (destaque derivado do dado). A v2 saiu
+aprovada: o peso 700 e a anotação "49 no total, o maior" caem em Prospecção pelo maior total de coluna que o Chart calcula,
+e a frase acessível nomeia a mesma etapa. No PNG de 2x as barras de total medem 30, 32, 12, 52, 40 e 18 px na linha (trilho
+de 52) e 56, 34, 34, 20 e 6 px na coluna (trilho de 56), proporcionais a partir do zero; o texto das células mede de 6,33:1
+a 12,69:1 no escuro e de 5,45:1 a 14,82:1 no claro. Os pontos abaixo não reprovam. Os do parágrafo anterior que não tratam
+do destaque seguem valendo, porque a correção não tocou neles._
+
+* **v2:** o catálogo (`_estudo/catalogo/14_tabelas-visuais/06_tabela-cruzada-com-totais-marginais.json`) ainda diz "Coluna
+  da etapa proposta destacada", e na família 15 a mesma expressão nomeia a etapa Proposta. O `meta.json` passou a dizer
+  "Etapa de maior total destacada" e o dado não mudou, então a coluna em destaque é Prospecção. O desenho é honesto e mostra
+  a técnica pedida; cabe ao dono do catálogo alinhar a frase ao que a versão demonstra.
+* **v2:** a frase acessível nomeia Prospecção duas vezes ("concentra o maior total de coluna" e "Etapa em destaque por ter o
+  maior total") e não diz quem carrega a concentração, a segunda metade do caso de uso (Renata V. com 22 e Diego A. com 18).
+  Trocar a frase repetida por essa resposta cabe no teto de 250 caracteres.
+* **v2:** num empate no maior total, o `reduce` de `busiestStageIndex` fica com a primeira etapa e a anotação diz "o maior"
+  de uma entre iguais; com todas as células em não se aplica, destaca Prospecção com "0 no total, o maior". O dado padrão
+  não cai em nenhum dos dois ramos.
+* **v2:** `sum` conta `null` como zero, então uma etapa que nenhum papel cobre sairia com total "0" e trilho vazio em vez de
+  não se aplica (EST-1b, EST-2). O dado padrão tem ao menos três células medidas por coluna.
+* **v2:** as barras de coluna de Qualificação (29) e Proposta (30) saem com a mesma altura, 34 px no PNG de 2x; a diferença
+  vive só no número escrito acima de cada uma, que está lá.
 
 ## Pendências conhecidas
 

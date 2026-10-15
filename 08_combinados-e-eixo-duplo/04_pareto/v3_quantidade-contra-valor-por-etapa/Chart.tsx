@@ -77,7 +77,7 @@ type TooltipEntry = NonNullable<ChartTooltipProps['payload']>[number];
 
 const MODE_LABEL: Record<Mode, string> = { count: 'quantidade', amount: 'valor perdido' };
 /** A margem direita reserva o rótulo de valor na ponta livre da barra: `R$ 820,0 mil` pede 63 px. */
-const PANEL_MARGIN = { top: 18, right: 80, bottom: 0, left: 0 } as const;
+const PANEL_MARGIN = { top: 18, right: 96, bottom: 0, left: 0 } as const;
 /** Cabe `Concorrência` em 11 px (70,5 px de tinta) com a sobrecarga de 18 px do eixo. */
 const NAME_AXIS_WIDTH = 112;
 const PCT_AXIS_HEIGHT = 30;
@@ -282,12 +282,16 @@ export default function StageLossPareto({
           className="font-display"
           fill={LINE_STROKE}
           fontSize={11}
-          style={HALO}
-          textAnchor="end"
-          x={Number(x)}
-          y={Number(y) - ACUM_LABEL_GAP}
+          textAnchor="start"
+          x={Number(x) + ACUM_LABEL_GAP}
+          y={Number(y)}
         >
-          Acumulado {formatPercentPoints(row.acumPct)}
+          <tspan dominantBaseline="auto" x={Number(x) + ACUM_LABEL_GAP} dy={-2}>
+            Acumulado
+          </tspan>
+          <tspan dominantBaseline="auto" x={Number(x) + ACUM_LABEL_GAP} dy={13}>
+            {formatPercentPoints(row.acumPct)}
+          </tspan>
         </text>
       );
     };

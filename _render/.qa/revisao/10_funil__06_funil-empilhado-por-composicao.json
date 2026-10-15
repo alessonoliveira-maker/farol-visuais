@@ -4,50 +4,50 @@
   "versoes": {
     "v1_origem-do-lead-ao-ganho-em-volume": {
       "veredito": "aprovado",
-      "nota": "Pilha por origem com lacuna em contorno no fim, total na ponta e check limpo.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:11:53.728Z",
-      "impressao": "7fb391594857002424e379734096b9218dc1891d",
+      "nota": "Sem bloqueante no arquivo de hoje: pilha em volume com cor por chave, lacuna em contorno no fim, total na ponta sem corte nos dois temas; peso 700 nos totais, amostra redonda e COR-5 sem vao ficam como observacao no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:56:58.529Z",
+      "impressao": "6f89f0c50b99bdaa79984a98fc6e2495611689fe",
       "arquivos": {
-        "Chart.tsx": "283c522de2d9fca8ce3362b2b38c526810331f26",
+        "Chart.tsx": "70984f3708250f68c4cba89a5a5581f8de97436a",
         "data.ts": "809b0b387b81f237e23145828eeffd8b3d6190db",
         "meta.json": "d817aa7f79249cc37ac0502fe168268613dd4ef0"
       }
     },
     "v2_mix-em-100-com-indicacao-em-destaque": {
       "veredito": "aprovado",
-      "nota": "Mix em 100% soma 100 pelo maior resto, total absoluto na ponta; legenda de valor sem nomear a etapa fica como observacao.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:11:58.539Z",
-      "impressao": "c0ef3b2917b216a7490606dd4316a48c4f0b6305",
+      "nota": "Segunda passada de 2026-10-15 com bancada em quatro casos. REC-11 resolvido: Ganho sem lacuna mantém 16 leads e os sete percentuais (44, 13, 19, 12, 6, 6, 0, soma 100); sem lacuna em todas as etapas, totais, colunas e cabeçalho ficam; Ganho zerado escreve 0 leads e sem lead nesta etapa. Dado padrão: 35 percentuais pelo maior resto, opacidade 0,72 acima de 3:1, frase de 214 caracteres. Observações no README (âncora no 0% da etapa vazia, funil todo zerado fora do estado vazio).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:07.459Z",
+      "impressao": "589283ef8d5c6c57d5f54d9bd43a71989227613b",
       "arquivos": {
-        "Chart.tsx": "96696d8fd7a6ba5f7095723722f89e75983ed642",
+        "Chart.tsx": "62ae438f472b0b6598ff69231d923ce6ee5fd60c",
         "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
         "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
       }
     },
     "v3_cauda-longa-de-campanhas-agrupada": {
       "veredito": "aprovado",
-      "nota": "Cauda agrupada no componente, lacuna separada, teto de 6 cores respeitado; cor por posto e dica por id ficam como observacao.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:12:03.613Z",
-      "impressao": "a3c8415ea90d30b7cada99104d06d0c8accacadc",
+      "nota": "Sem bloqueante no arquivo de hoje: cauda de nove agrupada pelo volume da entrada, separada da lacuna, seis cores mais o contorno, linha de leitura calculada; cor por posto, truncate e contagem sem substantivo ficam como observacao no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:57:03.190Z",
+      "impressao": "7fbf285a1bb240ae60fbf5952e8732b5f83b96e5",
       "arquivos": {
-        "Chart.tsx": "0c4767e9f1231c8400b2fee3e7e65dd3a5eb46e4",
+        "Chart.tsx": "479df900e7f8e8e10131b802f7370cc6e4ac7c45",
         "data.ts": "28a44b837a2ebee896ad40a75f1f21d7a9e1e386",
         "meta.json": "1ecdfd588e3f39d91ea52bde3899d179896d9452"
       }
     },
     "v4_sem-origem-cai-ao-longo-do-funil": {
       "veredito": "aprovado",
-      "nota": "Cobertura por etapa, percentual da lacuna em cada barra e aviso de vies; desvio da hachura esta declarado no meta.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T01:12:08.886Z",
-      "impressao": "800d982b0532b13bbf6c05dd6524a5698e17ca5d",
+      "nota": "Terceira passada de 2026-10-15, bancada em quatro casos (Ganho zerado, Ganho sem lacuna, Lead zerado, Ganho só sem origem) com render nos dois temas e check na cópia: COLISAO-TEXTO limpa nos quatro. ROT-9 resolvido: com o Ganho zerado a ponta escreve só 0 leads em x 110 e o tique sem lead termina perto de x 45, dentro da coluna que vai a x 102. Dado padrão igual nos dois temas, previews idênticos, frase de 178 caracteres. 1 leads no plural e a rodada sem registro no README ficam como observação.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:30:53.763Z",
+      "impressao": "37238acad391583fd54109bdbaec0b50357d3ca8",
       "arquivos": {
-        "Chart.tsx": "944fc096cfd840d5bd513d691035d7fb7c7e7c42",
+        "Chart.tsx": "003dfd1fde48e3a9b6f2f7f3ae4f9a37dcf1deae",
         "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
-        "meta.json": "f41812d6fd7e7d91e63f760c9ee1abd829118a00"
+        "meta.json": "3c46108401d45bbec76e5c45145e5f5f23d2153b"
       }
     }
   },
@@ -154,6 +154,123 @@
         "Chart.tsx": "944fc096cfd840d5bd513d691035d7fb7c7e7c42",
         "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
         "meta.json": "f41812d6fd7e7d91e63f760c9ee1abd829118a00"
+      }
+    },
+    {
+      "versao": "v1_origem-do-lead-ao-ganho-em-volume",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje: pilha em volume com cor por chave, lacuna em contorno no fim, total na ponta sem corte nos dois temas; peso 700 nos totais, amostra redonda e COR-5 sem vao ficam como observacao no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:56:58.529Z",
+      "impressao": "6f89f0c50b99bdaa79984a98fc6e2495611689fe",
+      "arquivos": {
+        "Chart.tsx": "70984f3708250f68c4cba89a5a5581f8de97436a",
+        "data.ts": "809b0b387b81f237e23145828eeffd8b3d6190db",
+        "meta.json": "d817aa7f79249cc37ac0502fe168268613dd4ef0"
+      }
+    },
+    {
+      "versao": "v2_mix-em-100-com-indicacao-em-destaque",
+      "veredito": "reprovado",
+      "nota": "30/20 ACE-5: origens atenuadas a 0,35 medem 1,64 a 2,09:1 nos dois temas, subir para 0,71 ou mais; 27/14 ROT-10, NUM-5 e catalogo: so o Ganho tem percentual, sem nomear a etapa, escrever os sete percentuais de cada etapa; 8 EST-1b: etapa sem lead escreve 1% em cada origem e NaN%, devolver null. Parecer em validation.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:57:01.046Z",
+      "impressao": "aaae00935cb8fd2a2cd5fcdcb18f366d187d606f",
+      "arquivos": {
+        "Chart.tsx": "450223ab76f7e2fe8f389f0f2bad5e516e057e55",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    {
+      "versao": "v3_cauda-longa-de-campanhas-agrupada",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante no arquivo de hoje: cauda de nove agrupada pelo volume da entrada, separada da lacuna, seis cores mais o contorno, linha de leitura calculada; cor por posto, truncate e contagem sem substantivo ficam como observacao no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:57:03.190Z",
+      "impressao": "7fbf285a1bb240ae60fbf5952e8732b5f83b96e5",
+      "arquivos": {
+        "Chart.tsx": "479df900e7f8e8e10131b802f7370cc6e4ac7c45",
+        "data.ts": "28a44b837a2ebee896ad40a75f1f21d7a9e1e386",
+        "meta.json": "1ecdfd588e3f39d91ea52bde3899d179896d9452"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "reprovado",
+      "nota": "19/17 ACE-1, ANO-5: a frase acessivel diz queda de cobertura quando ela sobe de 72% para 94%, e a linha de leitura e os verbos sao texto fixo, tirar a direcao do dado; 8 EST-1b: etapa sem lead escreve 0% com origem e 0% sem origem, devolver null e escrever ausencia. Parecer em validation.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T15:57:05.480Z",
+      "impressao": "b294607dc4b53f97cdca41ee85526828f158d1e1",
+      "arquivos": {
+        "Chart.tsx": "ccc28f18d5890869b49f1abadf2beccb975ea28b",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "f41812d6fd7e7d91e63f760c9ee1abd829118a00"
+      }
+    },
+    {
+      "versao": "v2_mix-em-100-com-indicacao-em-destaque",
+      "veredito": "reprovado",
+      "nota": "8 e 27, EST-2, EST-3, ROT-10, armadilha REC-11: na bancada, Ganho zerado sai em branco (sem 0 leads, sem ausência escrita) e Ganho sem lacuna perde total e os sete percentuais, porque o rótulo mora no LabelList da Bar da lacuna sem shape; pendurar total e colunas em algo que exista em toda etapa, ancorado no x do 100%. ACE-5, colunas e null resolvidos. Parecer em validation, segunda passada.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:12:33.146Z",
+      "impressao": "07accea4626c659d1e9afb5e88029b64eb6748c6",
+      "arquivos": {
+        "Chart.tsx": "b40a2d2e8ad718a9313bb4f867935e7f7933c4f6",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "reprovado",
+      "nota": "8 e 25, EST-3, ROT-2, armadilha REC-11: na bancada, Ganho sem lacuna perde 16 leads e 0% sem origem, e a etapa fica com 100% com origem sem volume e sem eixo; Ganho zerado não escreve 0 leads. Declarar shape na Bar da lacuna. Frase, linha de leitura e ausência no eixo resolvidas. Parecer em validation, segunda passada.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T16:12:33.760Z",
+      "impressao": "fc5b6aab1f5edac9ac6e5f658915178c0437d00b",
+      "arquivos": {
+        "Chart.tsx": "f845939d6021535cbed9e680801979cf1eb613dc",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "3c46108401d45bbec76e5c45145e5f5f23d2153b"
+      }
+    },
+    {
+      "versao": "v2_mix-em-100-com-indicacao-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Segunda passada de 2026-10-15 com bancada em quatro casos. REC-11 resolvido: Ganho sem lacuna mantém 16 leads e os sete percentuais (44, 13, 19, 12, 6, 6, 0, soma 100); sem lacuna em todas as etapas, totais, colunas e cabeçalho ficam; Ganho zerado escreve 0 leads e sem lead nesta etapa. Dado padrão: 35 percentuais pelo maior resto, opacidade 0,72 acima de 3:1, frase de 214 caracteres. Observações no README (âncora no 0% da etapa vazia, funil todo zerado fora do estado vazio).",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:07.459Z",
+      "impressao": "589283ef8d5c6c57d5f54d9bd43a71989227613b",
+      "arquivos": {
+        "Chart.tsx": "62ae438f472b0b6598ff69231d923ce6ee5fd60c",
+        "data.ts": "95351bde0a823e0d0375d2824367287ad368e478",
+        "meta.json": "3d8d0379bb1492d8065303d1b3a52a4f76c1a05f"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ROT-9: com o Ganho zerado (bancada), o tique sem lead nesta etapa (x 0, tinta de uns 110 px numa coluna que termina em x 102) encosta em indisponível da ponta (x 110, 3,2 px de altura de diferença); a COLISAO-TEXTO mede 0,14 px e reprova, e os dois leem como uma frase. Mudar: na etapa sem lead, a ponta escreve só 0 leads (a ausência já está no tique) e o tique cabe na coluna do eixo. Ganho sem lacuna e dado padrão corretos.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:22:10.292Z",
+      "impressao": "30de95a0ca651dcb0aee2128eb6da22776cad4cf",
+      "arquivos": {
+        "Chart.tsx": "6174aba18fc5005379532f3068a7ae532cf99002",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "3c46108401d45bbec76e5c45145e5f5f23d2153b"
+      }
+    },
+    {
+      "versao": "v4_sem-origem-cai-ao-longo-do-funil",
+      "veredito": "aprovado",
+      "nota": "Terceira passada de 2026-10-15, bancada em quatro casos (Ganho zerado, Ganho sem lacuna, Lead zerado, Ganho só sem origem) com render nos dois temas e check na cópia: COLISAO-TEXTO limpa nos quatro. ROT-9 resolvido: com o Ganho zerado a ponta escreve só 0 leads em x 110 e o tique sem lead termina perto de x 45, dentro da coluna que vai a x 102. Dado padrão igual nos dois temas, previews idênticos, frase de 178 caracteres. 1 leads no plural e a rodada sem registro no README ficam como observação.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:30:53.763Z",
+      "impressao": "37238acad391583fd54109bdbaec0b50357d3ca8",
+      "arquivos": {
+        "Chart.tsx": "003dfd1fde48e3a9b6f2f7f3ae4f9a37dcf1deae",
+        "data.ts": "5590477420d047b5d0ba1feae184586d62c6f0b9",
+        "meta.json": "3c46108401d45bbec76e5c45145e5f5f23d2153b"
       }
     }
   ]

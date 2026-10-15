@@ -1,3 +1,5 @@
+import { Filter } from 'lucide-react';
+
 import { formatInt, formatMonthShort, formatPercent } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { CURRENT_MONTH, data as defaultData, ELAPSED_MONTHS, type CohortRow } from './data';
@@ -32,7 +34,9 @@ const SEQ_TEXT = [
   'var(--accent-cyan-contrast)',
 ] as const;
 const CELL_GAP = 2;
-const TRACK_HEIGHT = 6;
+const BAR_HEIGHT = 6;
+/** Idade fixa da comparação entre cohorts: M3 é a última em que há mais de um cohort fechado e recente. */
+const REFERENCE_ELAPSED = 3;
 
 function monthIndex(month: string): number {
   return Number(month.slice(0, 4)) * 12 + Number(month.slice(5, 7)) - 1;
@@ -52,18 +56,24 @@ function levelForValue(value: number, min: number, max: number): number {
 export default function CohortTriangle({ data = defaultData, height, className }: CohortTriangleProps) {
   const columns = Array.from({ length: ELAPSED_MONTHS }, (_, index) => index);
   const values = data.flatMap((row) => row.cumulative);
-  const min = values.length > 0 ? Math.min(...values) : 0;
-  const max = values.length > 0 ? Math.max(...values) : 1;
-  const maxSize = data.reduce((largest, row) => Math.max(largest, row.size), 0);
+  const min = values.length > 0 ? Math.min(...values) : null;
+  const max = values.length > 0 ? Math.max(...values) : null;
+  const maxSize = data.reduce<number | null>((largest, row) => (largest === null || row.size > largest ? row.size : largest), null);
 
   /**
    * Média ponderada pelo tamanho do cohort, e só sobre período fechado: juntar o mês em curso na
    * coluna puxaria a média para baixo por causa dos dias que ainda não aconteceram.
    */
+  const lastElapsed = ELAPSED_MONTHS - 1;
+  /**
+   * População fixa do rodapé: só os cohorts que já fecharam a última coluna. Assim toda coluna é a
+   * média dos mesmos cohorts, e M6 abaixo de M5 só poderia vir de piora real, não de troca de gente.
+   */
+  const commonRows = data.filter((row) => row.cumulative[lastElapsed] !== undefined && !isOpenPeriod(row.month, lastElapsed));
   const columnAverages = columns.map((elapsed) => {
     let weighted = 0;
     let weight = 0;
-    for (const row of data) {
+    for (const row of commonRows) {
       const value = row.cumulative[elapsed];
       if (value === undefined || isOpenPeriod(row.month, elapsed)) continue;
       weighted += value * row.size;
@@ -72,22 +82,48 @@ export default function CohortTriangle({ data = defaultData, height, className }
     return weight === 0 ? null : { rate: weighted / weight, cohorts: weight };
   });
 
-  /** O melhor cohort é o de maior taxa na última coluna fechada que ele tem. */
-  const best = data.reduce<{ month: string; elapsed: number; rate: number } | null>((champion, row) => {
-    for (let elapsed = row.cumulative.length - 1; elapsed >= 0; elapsed -= 1) {
-      const value = row.cumulative[elapsed];
-      if (value === undefined || isOpenPeriod(row.month, elapsed)) continue;
-      if (champion === null || value > champion.rate) return { month: row.month, elapsed, rate: value };
-      return champion;
-    }
-    return champion;
-  }, null);
+  /** Média da coluna de referência com todos os cohorts fechados nela, para comparar com o melhor da mesma coluna. */
+  let referenceWeighted = 0;
+  let referenceWeight = 0;
+  let referenceCohorts = 0;
+  for (const row of data) {
+    const value = row.cumulative[REFERENCE_ELAPSED];
+    if (value === undefined || isOpenPeriod(row.month, REFERENCE_ELAPSED)) continue;
+    referenceWeighted += value * row.size;
+    referenceWeight += row.size;
+    referenceCohorts += 1;
+  }
 
-  const summary = best
-    ? `Triângulo de cohort com a conversão de lead em agenda de ${formatInt(data.length)} meses de entrada, de M0 a M${formatInt(ELAPSED_MONTHS - 1)}. ` +
-      `O melhor é o cohort de ${formatMonthShort(best.month)}, com ${formatPercent(best.rate, 1)} em M${formatInt(best.elapsed)}. ` +
-      `A diagonal tracejada é ${formatMonthShort(CURRENT_MONTH)}, que ainda está em curso.`
-    : 'Triângulo de cohort sem nenhum período fechado para comparar.';
+  /** O melhor cohort numa idade fixa, só entre períodos fechados: idades diferentes não se comparam. */
+  let best: { month: string; rate: number } | null = null;
+  for (const row of data) {
+    const value = row.cumulative[REFERENCE_ELAPSED];
+    if (value === undefined || isOpenPeriod(row.month, REFERENCE_ELAPSED)) continue;
+    if (best === null || value > best.rate) best = { month: row.month, rate: value };
+  }
+  const referenceAverage = referenceWeight === 0 ? null : referenceWeighted / referenceWeight;
+  const referenceLabel = `M${formatInt(REFERENCE_ELAPSED)}`;
+  const lastLabel = `M${formatInt(ELAPSED_MONTHS - 1)}`;
+
+  if (data.length === 0 || min === null || max === null) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden className="size-4 shrink-0" />
+        <span>Nenhum cohort neste recorte: sem mês de entrada não existe triângulo a montar.</span>
+      </div>
+    );
+  }
+
+  const summary =
+    best && referenceAverage
+      ? `Cohort em triângulo, conversão de lead em agenda, ${formatInt(data.length)} meses de entrada. ` +
+        `Em ${referenceLabel}, o melhor é ${formatMonthShort(best.month)}, ${formatPercent(best.rate, 1)}, contra ${formatPercent(referenceAverage, 1)} de média de ${formatInt(referenceCohorts)} cohorts. ` +
+        `Rodapé: média dos mesmos ${formatInt(commonRows.length)} cohorts em toda coluna.`
+      : 'Triângulo de cohort sem nenhum período fechado na mesma idade para comparar.';
 
   return (
     <figure
@@ -120,10 +156,10 @@ export default function CohortTriangle({ data = defaultData, height, className }
               </th>
               <td className="pr-2 align-middle">
                 <div className="flex items-center gap-1.5">
-                  <div className="relative min-w-0 flex-1 rounded-full bg-surface-sunken" style={{ height: TRACK_HEIGHT }}>
+                  <div className="min-w-0 flex-1">
                     <div
-                      className="h-full rounded-full bg-chart-1"
-                      style={{ width: `${String(maxSize > 0 ? (row.size / maxSize) * 100 : 0)}%` }}
+                      className="rounded-full bg-chart-1"
+                      style={{ height: BAR_HEIGHT, width: maxSize === null || maxSize <= 0 ? undefined : `${String((row.size / maxSize) * 100)}%` }}
                     />
                   </div>
                   <span className="font-display tabular-nums text-text-secondary">{formatInt(row.size)}</span>
@@ -146,7 +182,7 @@ export default function CohortTriangle({ data = defaultData, height, className }
                     style={{
                       backgroundColor: SEQ_TOKENS[level],
                       color: SEQ_TEXT[level],
-                      borderColor: open ? 'var(--text-primary)' : undefined,
+                      borderColor: open ? SEQ_TEXT[level] : undefined,
                     }}
                   >
                     {formatPercent(value, 1)}
@@ -158,13 +194,13 @@ export default function CohortTriangle({ data = defaultData, height, className }
         </tbody>
         <tfoot>
           <tr>
-            <th className="border-t border-line-subtle pt-1 text-left align-middle font-medium text-text-muted" scope="row">
+            <th className="pt-2 text-left align-middle font-medium text-text-muted" scope="row">
               Média
             </th>
-            <td className="border-t border-line-subtle pr-2 pt-1 align-middle text-text-muted">ponderada</td>
+            <td className="pr-2 pt-2 align-middle text-text-muted">{`mesmos ${formatInt(commonRows.length)} cohorts`}</td>
             {columnAverages.map((average, elapsed) => (
               <td
-                className="border-t border-line-subtle pt-1 text-center align-middle font-display font-semibold tabular-nums text-text-primary"
+                className="pt-2 text-center align-middle font-display font-semibold tabular-nums text-text-primary"
                 key={elapsed}
               >
                 {average === null ? '' : formatPercent(average.rate, 1)}
@@ -185,9 +221,10 @@ export default function CohortTriangle({ data = defaultData, height, className }
           <span className="font-display tabular-nums">{formatPercent(max, 0)}</span>
         </span>
         <span>taxa acumulada de agenda</span>
-        <span>tracejado: período em curso</span>
+        <span>{`M0 é o mês de entrada e ${lastLabel} são ${formatInt(ELAPSED_MONTHS - 1)} meses depois`}</span>
+        <span>{`tracejado: ${formatMonthShort(CURRENT_MONTH)} de calendário, em curso`}</span>
         <span>célula vazia: período que ainda não começou</span>
-        <span>média ponderada pelo tamanho, só períodos fechados</span>
+        <span>{`média ponderada pelo tamanho, só dos ${formatInt(commonRows.length)} cohorts que já chegaram a ${lastLabel}`}</span>
       </figcaption>
     </figure>
   );

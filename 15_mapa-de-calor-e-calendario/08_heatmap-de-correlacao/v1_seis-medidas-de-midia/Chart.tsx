@@ -1,3 +1,5 @@
+import { Filter } from 'lucide-react';
+
 import { formatDecimal, formatInt } from '@/lib/format';
 import { cn } from '@/lib/utils';
 import { data as defaultData, MEASURES, OBSERVATIONS } from './data';
@@ -25,10 +27,16 @@ export interface CorrelationHeatmapProps {
   readonly className?: string;
 }
 
-const CELL_W = 70;
+/**
+ * Corpo do canvas `quadrado` na moldura `card`: 422 px de largura medidos no preview, e 328 px de
+ * altura para o svg depois da legenda. O `viewBox` tem a largura do corpo e altura menor que a dele,
+ * então `meet` escala pela largura e a escala sai 1: o texto de 11 px chega à tela em 11 px.
+ */
+const VIEW_W = 422;
+const CELL_W = 67;
 const CELL_H = 50;
 const GAP = 2;
-const LEFT_W = 104;
+const LEFT_W = VIEW_W - 5 * (CELL_W + GAP) + GAP;
 const TOP_H = 32;
 /** Altura de uma linha do cabeçalho, para o nome que precisa de duas. */
 const HEAD_LINE = 14;
@@ -39,19 +47,21 @@ const STRONG = 0.6;
  * "CPL qualificado" com o número na frente. SVG puro não mede texto, então a quebra do cabeçalho
  * se decide por esta constante.
  */
-const CHAR_W = 4.95;
+const CHAR_W = 5.4;
 /** O que cabe numa linha do cabeçalho, com 5 px de respiro de cada lado da célula. */
 const HEAD_CHARS = Math.floor((CELL_W - 10) / CHAR_W);
+/** O que cabe numa linha do rótulo de linha, que é a coluna da esquerda menos 8 px de respiro. */
+const ROW_CHARS = 12;
 
 /**
  * Nome da coluna em até duas linhas, quebrado por palavra inteira. Reticência é proibida em nome
  * de marca desenhada (TIP-7), então o que não cabe desce de linha em vez de sumir.
  */
-function headLines(label: string): readonly string[] {
+function headLines(label: string, limit: number = HEAD_CHARS): readonly string[] {
   const lines: string[] = [];
   for (const word of label.split(' ')) {
     const current = lines[lines.length - 1];
-    if (current === undefined || current.length + 1 + word.length > HEAD_CHARS) {
+    if (current === undefined || current.length + 1 + word.length > limit) {
       lines.push(word);
     } else {
       lines[lines.length - 1] = `${current} ${word}`;
@@ -107,12 +117,25 @@ export default function CorrelationHeatmap({
   const summary =
     strongest === null || weakest === null
       ? 'Matriz de correlação sem par para medir.'
-      : `Correlação entre ${formatInt(MEASURES.length)} medidas semanais de mídia em ${formatInt(observations)} semanas. ` +
+      : `Matriz de correlação entre ${formatInt(MEASURES.length)} medidas semanais de mídia em ${formatInt(observations)} semanas. ` +
         `O par mais forte é ${strongest.from} com ${strongest.to}, em ${formatDecimal(strongest.value, 2)}. ` +
         `O mais fraco é ${weakest.from} com ${weakest.to}, em ${formatDecimal(weakest.value, 2)}.`;
 
-  const viewWidth = LEFT_W + columns * (CELL_W + GAP) - GAP;
+  const viewWidth = VIEW_W;
   const viewHeight = TOP_H + rows * (CELL_H + GAP) - GAP;
+
+  if (pairs.length === 0) {
+    return (
+      <div
+        className={cn('flex h-full w-full min-w-0 items-center gap-2 text-xs text-text-muted', className)}
+        role="status"
+        style={height === undefined ? undefined : { height }}
+      >
+        <Filter aria-hidden height={16} width={16} />
+        <span>O recorte não tem medidas com histórico, então não há correlação a medir.</span>
+      </div>
+    );
+  }
 
   return (
     <figure
@@ -151,16 +174,19 @@ export default function CorrelationHeatmap({
             const y = TOP_H + rowIndex * (CELL_H + GAP);
             return (
               <g key={measure?.id ?? rowIndex}>
-                <text
-                  dominantBaseline="central"
-                  fill="var(--text-secondary)"
-                  fontSize={11}
-                  textAnchor="end"
-                  x={LEFT_W - 8}
-                  y={y + CELL_H / 2}
-                >
-                  {measure?.label ?? ''}
-                </text>
+                {headLines(measure?.label ?? '', ROW_CHARS).map((line, lineIndex, all) => (
+                  <text
+                    dominantBaseline="central"
+                    fill="var(--text-secondary)"
+                    fontSize={11}
+                    key={line}
+                    textAnchor="end"
+                    x={LEFT_W - 8}
+                    y={y + CELL_H / 2 + (lineIndex - (all.length - 1) / 2) * HEAD_LINE}
+                  >
+                    {line}
+                  </text>
+                ))}
                 {row.map((value, columnIndex) => {
                   const x = LEFT_W + columnIndex * (CELL_W + GAP);
                   const strong = Math.abs(value) >= STRONG;

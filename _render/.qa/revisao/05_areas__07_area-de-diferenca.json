@@ -3,13 +3,13 @@
   "modelo": "07_area-de-diferenca",
   "versoes": {
     "v1_resultado-mensal-contra-zero": {
-      "veredito": "reprovado",
-      "nota": "Pergunta 30, ACE-5: preenchimento da área a 0,30 compõe 1,54:1 e 1,67:1 no claro e 1,80:1 e 1,55:1 no escuro contra o cartão, piso 3:1, sem valor escrito que isente; subir FILL_OPACITY para 0,70 ou mais, ou cor cheia, e medir à mão os dois temas porque a guarda não lê fill em url. Tique de moeda negativa conferido e certo: uma linha, sem corte nem colisão.",
-      "data": "2026-10-02",
-      "registradoEm": "2026-10-02T14:17:52.371Z",
-      "impressao": "13132caa7adf925d0a5ce6f926f7df28c3b83c45",
+      "veredito": "aprovado",
+      "nota": "ACE-5 resolvida: preenchimento a 0,70 compõe 4,26:1 e 3,28:1 no escuro e 3,03:1 e 3,67:1 no claro (canal arredondado; PNG 3,07 e 3,68), medido à mão porque a guarda não lê fill em url. Corte no zero exato (offset 129,333/218), cruzamentos limpos, saldo +R$ 320,8 mil confere com o dado.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:28.768Z",
+      "impressao": "f6924673657b8ba884715958b27b19bd298317b6",
       "arquivos": {
-        "Chart.tsx": "b5953c403ac999d0d5f5e1e9b401c5a0f61b6372",
+        "Chart.tsx": "1679151814f757bdd4d381a695753048b11b68a0",
         "data.ts": "69f5952fb746692151582445276b919272ee94cf",
         "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
       }
@@ -165,6 +165,19 @@
       "impressao": "13132caa7adf925d0a5ce6f926f7df28c3b83c45",
       "arquivos": {
         "Chart.tsx": "b5953c403ac999d0d5f5e1e9b401c5a0f61b6372",
+        "data.ts": "69f5952fb746692151582445276b919272ee94cf",
+        "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
+      }
+    },
+    {
+      "versao": "v1_resultado-mensal-contra-zero",
+      "veredito": "aprovado",
+      "nota": "ACE-5 resolvida: preenchimento a 0,70 compõe 4,26:1 e 3,28:1 no escuro e 3,03:1 e 3,67:1 no claro (canal arredondado; PNG 3,07 e 3,68), medido à mão porque a guarda não lê fill em url. Corte no zero exato (offset 129,333/218), cruzamentos limpos, saldo +R$ 320,8 mil confere com o dado.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T13:50:28.768Z",
+      "impressao": "f6924673657b8ba884715958b27b19bd298317b6",
+      "arquivos": {
+        "Chart.tsx": "1679151814f757bdd4d381a695753048b11b68a0",
         "data.ts": "69f5952fb746692151582445276b919272ee94cf",
         "meta.json": "912841d8fdf7d4bf412bcd6ac69fa10ffda673bc"
       }

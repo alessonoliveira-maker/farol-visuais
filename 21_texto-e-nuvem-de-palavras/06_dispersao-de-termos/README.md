@@ -55,7 +55,7 @@ não colide com marca nem com outro rótulo.
 - `v3_titulos-de-criativos-por-cpl`: 250 palavras de títulos de criativos de ago/26 em escala log com 1
   somado, mínimo de 3 anúncios aplicado antes e nome só nas palavras típicas de um grupo. Canvas `alto`.
 - `v4_termos-raros-e-grupos-desbalanceados`: proporção por grupo (400 contra 40 anotações), 142 termos
-  de uma menção em cada grupo num marcador único, termo de um grupo só sobre o eixo e aviso de grupo
+  de uma menção em cada grupo num marcador único (anel identificado numa linha fora do plano, com amostra, nome e contagem), termo de um grupo só sobre o eixo e aviso de grupo
   pequeno. Canvas `quadrado`.
 
 ## Como colar no Farol
@@ -119,3 +119,12 @@ Revisão de 2026-10-13, segunda passada, da `v1`, da `v3` e da `v4` depois da co
 - `v3`, ferramenta: a diferença entre a página e o SVG isolado continua em 0,64% no escuro e 0,66% no claro, toda no texto depois de `CPL`, inclusive no cabeçalho do cartão, que não é do `Chart.tsx`.
 - `v4`, quem fica sem nome: `pagamento` (5º em diferença, 19,5 p.p.) e os outros dois termos sobre o eixo, `boleto` e `upgrade`. Os 10 nomes são as posições 1, 2, 3, 4, 6, 7, 8, 13, 17 e 19 da ordem de diferença.
 - `v4`, sobreposição: `orçamento`, `vencimento` e `pix` dividem um ponto (3% e 12,5%) e `interesse` e `dúvida` outro (5,25% e 7,5%). São 46 termos em 43 discos.
+
+Revisão de 2026-10-15, terceira passada, só da `v4`, depois da segunda rodada de correção. Passou: a linha `Anel: 142 termos com 1 menção em cada grupo (0,25% do telefone, 2,5% do vídeo)` fica fora do plano, com amostra vazada na cor do anel, e confere com o `data.ts` (142 linhas com 1 e 1; 1 de 400 e 1 de 40). Da segunda passada deixa de valer a lista de quem ganha nome na `v4`. Abaixo, só o que é novo.
+
+- `v4`, GEO-14: a linha do anel quebra em duas no canvas `quadrado` (`2,5% do` e, embaixo, `vídeo)`), e o plano caiu de 191 para 154 px de altura, 19% menos. Uma menção no vídeo (2,5 p.p.) passou de 11,9 para 9,6 px, para discos de 8 px. Uma linha só, com texto mais curto, ou o canvas `alto` devolveria a altura.
+- `v4`, quem ganha nome: com o plano mais baixo, os 10 nomes são as posições 1, 2, 3, 4, 6, 7, 13, 17, 19 e 24 da ordem de diferença. `estoque` (8º) perdeu o nome e `proposta` (24º) voltou a ter; ficam sem nome `pagamento` (5º), do 8º ao 12º (`estoque`, `condição`, `crédito`, `objeção` e `upgrade`) e `boleto`. Todo nome tem o dono como ponto mais próximo: dono a 7,9 a 9,3 px, vizinho a 11,2 px ou mais, menor folga de 2,9 px em `concorrente`.
+- `v4`, DAD-5: o corpo escreve `1 menção` e a frase acessível `uma menção`, e só o corpo traz as posições do anel (0,25% e 2,5%). Calcular o trecho uma vez e usar nos dois lugares.
+- `v4`, marcador único com dado real: termo com 2 e 1, 0 e 1 ou 1 e 0 menções cai a 2,2, 2,2 e 9,6 px do centro do anel (raio de 8 px), dentro ou sobre ele, e se lê como parte do agregado. A nota do `meta.json` declara que o `data.ts` foi escolhido para ninguém cair ali; o componente não trata o caso ao colar no Farol.
+- `v4`, diagonal: passa a 8,0 px do centro do anel, dentro do traço dele (7,25 a 8,75 px), e tangencia o anel embaixo, à direita. Os dois continuam legíveis.
+- `v4`, estado vazio: o texto `sem anotações nos dois grupos` sai também quando só um grupo tem zero anotações e quando a lista de termos vem vazia com anotações nos dois. Nenhum dos casos aparece no preview.

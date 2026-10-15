@@ -4,37 +4,37 @@
   "versoes": {
     "v1_tres-metas-da-semana": {
       "veredito": "aprovado",
-      "nota": "Check limpo e leitura correta nos dois temas; observacoes de acabamento no README",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T02:14:23.478Z",
-      "impressao": "9f090a3ba1c5b8d1bd89d3766c3075a391f580e8",
+      "nota": "Os dois bloqueantes de 2026-10-14 resolvidos: CircleAlert no anel aberto, distinto do CheckCircle2 e do CircleDashed; valor, meta com unidade e percentual inteiro nos três anéis em colunas fixas alinhadas à direita, em kpi-number. Arcos medidos no SVG: 306,0° e 316,6° para 85% e 88%, entradas travada na volta cheia. Frase de 227 caracteres nomeia as três metas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:30:56.550Z",
+      "impressao": "08df1f5d140e25b040dc2184349315c4cd43101e",
       "arquivos": {
-        "Chart.tsx": "2a42ef7b742a8114abf00f30ee7792528050ee83",
-        "data.ts": "818dca07678696bbbba7a3d3b557e6afa333e2ba",
+        "Chart.tsx": "73574487edf62a393b15e6d1959ea15cbe05a3d0",
+        "data.ts": "929cbc968058aaebc4d8844c7c81c1b103bc0a93",
         "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
       }
     },
     "v2_quem-fechou-as-tres-metas": {
       "veredito": "aprovado",
-      "nota": "Pequenos multiplos na mesma escala, legenda e par valor/meta legiveis nos dois temas",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T02:14:32.292Z",
-      "impressao": "611cc084f90cac7fd706316a6fc6e24b44b43f96",
+      "nota": "Trilho em surface-sunken visível nos dois temas; seis trios com o mesmo raio e domínio de 0 a 100; legenda na ordem dos anéis; par valor/meta tabular com ícone no fechado; selo de três metas com ícone e texto; nome longo inteiro. Observações no README (frase não diz quem fechou, pares sem unidade, selo curto, margem herdada).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:56.916Z",
+      "impressao": "f5e170e1523ca153c3c960bb36aa3166e57f95fd",
       "arquivos": {
-        "Chart.tsx": "4f67456597a4607ed05e47a27b222e05ce796296",
+        "Chart.tsx": "67de9c59b9d2d119e49b9b9e3a25593400334cab",
         "data.ts": "9ef083d7311ba208c0f7ee3295409b612faac799",
         "meta.json": "c4fa7f1ff475555045e3988ce704558651090478"
       }
     },
     "v3_meta-proporcional-e-sem-meta": {
       "veredito": "aprovado",
-      "nota": "Ausencia de meta tratada como ausencia e estouro travado com percentual escrito; so observacoes de redacao",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T02:14:32.780Z",
-      "impressao": "bbbe136927674cfc6cd5556102d8d6f41915e6aa",
+      "nota": "Bloqueante de 2026-10-14 resolvido: o anel sem meta escreve '7 atendimentos, sem meta definida' e a frase leva o valor com unidade (232 caracteres). Concordância 'falta 1 agenda' na tela e na frase; amostra vazada e tracejada no sem meta. Agendas medida a 324,0° para 90%, entradas travada com 170,8% escrito, SLA só com trilho tracejado. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:30:58.956Z",
+      "impressao": "02d393de3502215f2883aebe31e26213d408a1ab",
       "arquivos": {
-        "Chart.tsx": "c271beb8449fcbbc1593b9fa3e903139435277ee",
-        "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "Chart.tsx": "35f9cd7c9eaabfc0e678d94e80697019a5403017",
+        "data.ts": "d13afc96a1c38dd114721c7985034228c9efbc1b",
         "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
       }
     }
@@ -115,6 +115,71 @@
       "arquivos": {
         "Chart.tsx": "c271beb8449fcbbc1593b9fa3e903139435277ee",
         "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
+      }
+    },
+    {
+      "versao": "v1_tres-metas-da-semana",
+      "veredito": "reprovado",
+      "nota": "Pergunta 19, ACE-2 e item 4 do catálogo: o anel que não fechou sai sem ícone (só o fechado tem CheckCircle2); dar ícone próprio ao estado aberto, distinto do fechado e do CircleDashed de sem meta. Pergunta 12, ROT-5 e item 3 do catálogo: percentual escrito só no anel fechado (85% e 88% faltam) e lista em frase corrida; escrever valor, meta e percentual nos três anéis em colunas tabulares alinhadas à direita. Parecer em validation/revisao_13_progresso-meta-e-gauge__04_aneis-concentricos_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:50.927Z",
+      "impressao": "54da268b91d99da78133d63a56b6160fdc615d41",
+      "arquivos": {
+        "Chart.tsx": "9afa43eee52ab6d24f2828e923abf87419b25ce6",
+        "data.ts": "818dca07678696bbbba7a3d3b557e6afa333e2ba",
+        "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
+      }
+    },
+    {
+      "versao": "v2_quem-fechou-as-tres-metas",
+      "veredito": "aprovado",
+      "nota": "Trilho em surface-sunken visível nos dois temas; seis trios com o mesmo raio e domínio de 0 a 100; legenda na ordem dos anéis; par valor/meta tabular com ícone no fechado; selo de três metas com ícone e texto; nome longo inteiro. Observações no README (frase não diz quem fechou, pares sem unidade, selo curto, margem herdada).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:56.916Z",
+      "impressao": "f5e170e1523ca153c3c960bb36aa3166e57f95fd",
+      "arquivos": {
+        "Chart.tsx": "67de9c59b9d2d119e49b9b9e3a25593400334cab",
+        "data.ts": "9ef083d7311ba208c0f7ee3295409b612faac799",
+        "meta.json": "c4fa7f1ff475555045e3988ce704558651090478"
+      }
+    },
+    {
+      "versao": "v3_meta-proporcional-e-sem-meta",
+      "veredito": "reprovado",
+      "nota": "Pergunta 14, NUM-6 (unidade, seção 14.1): o anel sem meta escreve '7 de sem meta', sem a unidade atendimentos em lugar nenhum da tela nem da frase; escrever '7 atendimentos, sem meta definida' e levar o valor com unidade à frase acessível. Na mesma passada: concordância de 'faltam 1 agendas' e amostra vazada para o anel sem meta. Parecer em validation/revisao_13_progresso-meta-e-gauge__04_aneis-concentricos_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:21:57.490Z",
+      "impressao": "8c9836fba6960428d9e65be2104bbe2e3c6c1fd7",
+      "arquivos": {
+        "Chart.tsx": "a4758b2fc018772cbe883e3f103805ec5bf23562",
+        "data.ts": "3f0ced6831caecae916991ae8b4ab8bb6334ba23",
+        "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
+      }
+    },
+    {
+      "versao": "v1_tres-metas-da-semana",
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes de 2026-10-14 resolvidos: CircleAlert no anel aberto, distinto do CheckCircle2 e do CircleDashed; valor, meta com unidade e percentual inteiro nos três anéis em colunas fixas alinhadas à direita, em kpi-number. Arcos medidos no SVG: 306,0° e 316,6° para 85% e 88%, entradas travada na volta cheia. Frase de 227 caracteres nomeia as três metas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:30:56.550Z",
+      "impressao": "08df1f5d140e25b040dc2184349315c4cd43101e",
+      "arquivos": {
+        "Chart.tsx": "73574487edf62a393b15e6d1959ea15cbe05a3d0",
+        "data.ts": "929cbc968058aaebc4d8844c7c81c1b103bc0a93",
+        "meta.json": "e3372e5b9f8b98ee6160aee594c0dabce5d7b741"
+      }
+    },
+    {
+      "versao": "v3_meta-proporcional-e-sem-meta",
+      "veredito": "aprovado",
+      "nota": "Bloqueante de 2026-10-14 resolvido: o anel sem meta escreve '7 atendimentos, sem meta definida' e a frase leva o valor com unidade (232 caracteres). Concordância 'falta 1 agenda' na tela e na frase; amostra vazada e tracejada no sem meta. Agendas medida a 324,0° para 90%, entradas travada com 170,8% escrito, SLA só com trilho tracejado. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:30:58.956Z",
+      "impressao": "02d393de3502215f2883aebe31e26213d408a1ab",
+      "arquivos": {
+        "Chart.tsx": "35f9cd7c9eaabfc0e678d94e80697019a5403017",
+        "data.ts": "d13afc96a1c38dd114721c7985034228c9efbc1b",
         "meta.json": "3ee50a0468b4466b2c3e6e2e8e222b8df8df3015"
       }
     }

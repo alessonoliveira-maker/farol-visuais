@@ -13,6 +13,42 @@
         "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
         "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
       }
+    },
+    "v2_hexbin-com-sdr-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, rede hexagonal por angulo coerente com a agregacao (15 alta, 5 demais, 1 fora conferidos), faixas ate o maximo observado, destaque por forma, anel e legenda, contraste ok nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:11:30.431Z",
+      "impressao": "3177de03dda10bcdbc001e4c146f29c6def96c9b",
+      "arquivos": {
+        "Chart.tsx": "5eb577cbe8b8a4206d9ce82c08ea8dda28491cef",
+        "data.ts": "9009eb3e5c909c55d681c89eda784e159ad2a5dc",
+        "meta.json": "7a15c83891a459034167c4f8888965a6dbf56974"
+      }
+    },
+    "v3_quadrante-denso-de-sessoes": {
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, o recorte da linha de leitura e da frase sai de quickTime e manyPages da região líder e fica certo nas quatro regiões (frase com 216 caracteres). Check limpo, fidelidade 0,03% e 0,05%, regiões 863, 2.037, 4.994 e 1.206 somam 9.100 e 100%, faixas 1 a 9, 10 a 83 e 84 a 753 até o máximo, divisórias no vão de bin, contraste ok nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:21:38.418Z",
+      "impressao": "16adf2afa2fefbed508d0267f2bae046246e45a6",
+      "arquivos": {
+        "Chart.tsx": "4f9ccbed76063dbe59c97c20fd98eae6ac226577",
+        "data.ts": "802a55bc1b76d7d9580cd056131f655d33f35245",
+        "meta.json": "dbaee69b73946f8960665c14baeb59a36cc004b0"
+      }
+    },
+    "v4_concentracao-extrema-por-quantis": {
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, tercis conferidos (18, 16, 17 celulas; cortes 44 e 312), legenda declara quantil e termina no maximo observado, contagem do dominante ao lado dele sem cobrir hexagono, contraste ok nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:11:38.824Z",
+      "impressao": "e00bcca84c286f0b3d251565be2cad8749231453",
+      "arquivos": {
+        "Chart.tsx": "22d412a61ac4ebf70bec759cf373d59bd237d5fd",
+        "data.ts": "dfae2e054606fe9904e6e0862d56449c161f8ce3",
+        "meta.json": "c95a32f9a3ac29bfa3dc427c0ed593b55237b352"
+      }
     }
   },
   "historico": [
@@ -53,6 +89,58 @@
         "Chart.tsx": "0cd7dbf2fbf41ad30f043ad7d07999211f7f5eb4",
         "data.ts": "fd88d8e02915720acb0b84e088ad37f9e1e45ced",
         "meta.json": "b5ddafcfec4f8f25d010086f10435ef9ac70ec65"
+      }
+    },
+    {
+      "versao": "v2_hexbin-com-sdr-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, rede hexagonal por angulo coerente com a agregacao (15 alta, 5 demais, 1 fora conferidos), faixas ate o maximo observado, destaque por forma, anel e legenda, contraste ok nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:11:30.431Z",
+      "impressao": "3177de03dda10bcdbc001e4c146f29c6def96c9b",
+      "arquivos": {
+        "Chart.tsx": "5eb577cbe8b8a4206d9ce82c08ea8dda28491cef",
+        "data.ts": "9009eb3e5c909c55d681c89eda784e159ad2a5dc",
+        "meta.json": "7a15c83891a459034167c4f8888965a6dbf56974"
+      }
+    },
+    {
+      "versao": "v3_quadrante-denso-de-sessoes",
+      "veredito": "reprovado",
+      "nota": "Perguntas 17 e 19, ANO-5 e ACE-1: a linha de leitura e a frase acessivel escrevem 'abaixo de 6 min e de 8 paginas' fixo para qualquer regiao lider; o recorte tem de sair da regiao (campo por regiao derivado de COL_SPLIT e ROW_SPLIT). Parecer em validation/revisao_09_dispersao-e-bolhas__09_densidade-2d_2026-10-14.md",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:11:38.260Z",
+      "impressao": "a78d993c381abf8573f26eddc534734c941f92c4",
+      "arquivos": {
+        "Chart.tsx": "511bfa6c9cc75a37021ea6da71193fb6406f302c",
+        "data.ts": "802a55bc1b76d7d9580cd056131f655d33f35245",
+        "meta.json": "dbaee69b73946f8960665c14baeb59a36cc004b0"
+      }
+    },
+    {
+      "versao": "v4_concentracao-extrema-por-quantis",
+      "veredito": "aprovado",
+      "nota": "Sem bloqueante: check limpo, tercis conferidos (18, 16, 17 celulas; cortes 44 e 312), legenda declara quantil e termina no maximo observado, contagem do dominante ao lado dele sem cobrir hexagono, contraste ok nos dois temas. Observacoes no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:11:38.824Z",
+      "impressao": "e00bcca84c286f0b3d251565be2cad8749231453",
+      "arquivos": {
+        "Chart.tsx": "22d412a61ac4ebf70bec759cf373d59bd237d5fd",
+        "data.ts": "dfae2e054606fe9904e6e0862d56449c161f8ce3",
+        "meta.json": "c95a32f9a3ac29bfa3dc427c0ed593b55237b352"
+      }
+    },
+    {
+      "versao": "v3_quadrante-denso-de-sessoes",
+      "veredito": "aprovado",
+      "nota": "Segunda passada: bloqueante resolvido, o recorte da linha de leitura e da frase sai de quickTime e manyPages da região líder e fica certo nas quatro regiões (frase com 216 caracteres). Check limpo, fidelidade 0,03% e 0,05%, regiões 863, 2.037, 4.994 e 1.206 somam 9.100 e 100%, faixas 1 a 9, 10 a 83 e 84 a 753 até o máximo, divisórias no vão de bin, contraste ok nos dois temas. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T14:21:38.418Z",
+      "impressao": "16adf2afa2fefbed508d0267f2bae046246e45a6",
+      "arquivos": {
+        "Chart.tsx": "4f9ccbed76063dbe59c97c20fd98eae6ac226577",
+        "data.ts": "802a55bc1b76d7d9580cd056131f655d33f35245",
+        "meta.json": "dbaee69b73946f8960665c14baeb59a36cc004b0"
       }
     }
   ]

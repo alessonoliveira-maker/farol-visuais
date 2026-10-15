@@ -4,12 +4,12 @@
   "versoes": {
     "v1_receita-por-executivo": {
       "veredito": "aprovado",
-      "nota": "Barra do zero, dominio unico por coluna, valor fora da marca e media tracejada; trilho some no tema claro, sem perda de leitura.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T03:21:40.318Z",
-      "impressao": "cf7fff129e91cecc6aed38be6904f0b08c144c8e",
+      "nota": "Traço da média em --text-primary com anel de 1 px em --surface-raised agora se vê sobre a barra nas 6 linhas acima da média, nos dois temas (medido no PNG); barra do zero, domínio único, valor fora da marca e vazio com hooks antes do retorno. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:39:00.954Z",
+      "impressao": "44fcd8a8e2ca367ae7a1f2b4e95967663a2f2620",
       "arquivos": {
-        "Chart.tsx": "af4c3c46a2f7fd8577740f9ff59a597d24064581",
+        "Chart.tsx": "08df2007a149e009f57bbcabd075406d58fe2d95",
         "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
         "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
       }
@@ -28,24 +28,24 @@
     },
     "v3_resultado-por-origem-com-desvio-e-mix": {
       "veredito": "aprovado",
-      "nota": "Tres marcas com dominio proprio no cabecalho, divergente com zero simetrico e mix sem chart-2 nem chart-4; rotulo do mix acima de 4,5 a 1 nos dois temas.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T03:21:50.843Z",
-      "impressao": "714a515085f03dc817a6b55c81d8a67ee41bd171",
+      "nota": "Última linha inteira no canvas 960 por 440 declarado; todo segmento do mix rotulado e as 10 linhas somam 100; volume em --text-muted e --chart-1 só em Novo; divergente simétrica do zero com sinal, ícone e cor. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:39:01.524Z",
+      "impressao": "b968762e53a85688b321ed8d9cf35c0ddcb35465",
       "arquivos": {
-        "Chart.tsx": "8334ed7ca0d5e24b446c452a717d9329a6f04b28",
+        "Chart.tsx": "a61674f09cd3409663d0c6a335446bce64315b73",
         "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
-        "meta.json": "e7a50b8777825062e64adf44f984e1e74ca8ec58"
+        "meta.json": "14ecae359cfaed0a930d5eacc33dfd46e22378cb"
       }
     },
     "v4_ausente-zero-outlier-e-faixa": {
       "veredito": "aprovado",
-      "nota": "Indisponivel, zero medido, truncamento declarado e n igual a 1 separados; a marca de corte aparece no render de pagina e some no preview por defeito do serializador.",
-      "data": "2026-09-19",
-      "registradoEm": "2026-09-19T03:21:56.307Z",
-      "impressao": "a4cfc876881557250f2a521921331b1c946fe5f0",
+      "nota": "Indisponível com Unplug e formatUnavailable, zero medido escrito, teto do volume declarado no cabeçalho com valor real ao lado e n=1 só com ponto; a marca de corte aparece no render de página e some no preview por defeito do serializador. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:31:40.335Z",
+      "impressao": "93235bdfb5efd7a118134c6f91e392d8ec24ec97",
       "arquivos": {
-        "Chart.tsx": "377aa3eacbec10fc1608daad9a1f0f27a5b8443f",
+        "Chart.tsx": "33fc9d33b03f199842d75e77b7966cbac3daa9a8",
         "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
         "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
       }
@@ -154,6 +154,71 @@
         "Chart.tsx": "377aa3eacbec10fc1608daad9a1f0f27a5b8443f",
         "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
         "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "reprovado",
+      "nota": "Perguntas 20 e 13, ACE-3 e TOK-10: o traço tracejado da média some dentro da barra nas 6 linhas acima da média (text-muted sobre chart-1 mede 1,12:1 no claro e 1,82:1 no escuro, medido no PNG); dar ao traço um segundo fundo, anel de 1 px em --surface-raised de cada lado, ou desenhá-lo só no trilho por baixo da barra, conferindo a linha 6 nos dois temas.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:31:35.078Z",
+      "impressao": "9975db7782b66a12e0d2e427a4c040e0d792b9a1",
+      "arquivos": {
+        "Chart.tsx": "d3a55ea7186e47b38fd8d3481e213230c2df1e12",
+        "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
+        "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
+      }
+    },
+    {
+      "versao": "v3_resultado-por-origem-com-desvio-e-mix",
+      "veredito": "reprovado",
+      "nota": "Pergunta 15, ESP-3 e GEO-1: a moldura da tabela corta a última linha, cerca de 4,5 px, nos dois temas e no render de página; canvas por número com a conta no meta.json. Perguntas 6 e 27, ROT-10 e NUM-2: o segmento Novo de Evento presencial (8%, 24 px) sai sem número e os impressos somam 92; rotular por caber, não por limiar de 12%. Pergunta 11, 17.2: --chart-1 pinta o volume e a categoria Novo; volume vai para neutro de dado (--text-muted).",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:31:38.360Z",
+      "impressao": "cfc3743b97d7202d7216eb57cf97806133284b7f",
+      "arquivos": {
+        "Chart.tsx": "74df6ae8805ff75f7e0c7af4d3fbfbbf79a9d814",
+        "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
+        "meta.json": "e7a50b8777825062e64adf44f984e1e74ca8ec58"
+      }
+    },
+    {
+      "versao": "v4_ausente-zero-outlier-e-faixa",
+      "veredito": "aprovado",
+      "nota": "Indisponível com Unplug e formatUnavailable, zero medido escrito, teto do volume declarado no cabeçalho com valor real ao lado e n=1 só com ponto; a marca de corte aparece no render de página e some no preview por defeito do serializador. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:31:40.335Z",
+      "impressao": "93235bdfb5efd7a118134c6f91e392d8ec24ec97",
+      "arquivos": {
+        "Chart.tsx": "33fc9d33b03f199842d75e77b7966cbac3daa9a8",
+        "data.ts": "c889be68f9a8b7f08fc315a9e4e70cc6a1b97325",
+        "meta.json": "b28265ec505d05f4b71ca549605e8d442e3c55a7"
+      }
+    },
+    {
+      "versao": "v1_receita-por-executivo",
+      "veredito": "aprovado",
+      "nota": "Traço da média em --text-primary com anel de 1 px em --surface-raised agora se vê sobre a barra nas 6 linhas acima da média, nos dois temas (medido no PNG); barra do zero, domínio único, valor fora da marca e vazio com hooks antes do retorno. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:39:00.954Z",
+      "impressao": "44fcd8a8e2ca367ae7a1f2b4e95967663a2f2620",
+      "arquivos": {
+        "Chart.tsx": "08df2007a149e009f57bbcabd075406d58fe2d95",
+        "data.ts": "b7cedb3919582ee8cf038bee18c43d2ab1b319b7",
+        "meta.json": "4e1ff07fe6819c7def99444033bb39684b35ba99"
+      }
+    },
+    {
+      "versao": "v3_resultado-por-origem-com-desvio-e-mix",
+      "veredito": "aprovado",
+      "nota": "Última linha inteira no canvas 960 por 440 declarado; todo segmento do mix rotulado e as 10 linhas somam 100; volume em --text-muted e --chart-1 só em Novo; divergente simétrica do zero com sinal, ícone e cor. Observações no README.",
+      "data": "2026-10-14",
+      "registradoEm": "2026-10-14T19:39:01.524Z",
+      "impressao": "b968762e53a85688b321ed8d9cf35c0ddcb35465",
+      "arquivos": {
+        "Chart.tsx": "a61674f09cd3409663d0c6a335446bce64315b73",
+        "data.ts": "de8396d4e14f1c690808e6efa07f44d3b30684ad",
+        "meta.json": "14ecae359cfaed0a930d5eacc33dfd46e22378cb"
       }
     }
   ]

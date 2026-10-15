@@ -122,13 +122,15 @@ function laneOf(row: OpportunityMoves, days: number, windowStart: number): Oppor
   const created = Math.round((parse(row.created) - windowStart) / MS_DAY);
   const firstDay = Math.max(created, 0);
   const moveDays = new Set<number>();
+  // Referência inicial: o último movimento anterior à janela; sem ele, a criação.
+  let reference = created;
   for (const iso of row.moves) {
     const index = Math.round((parse(iso) - windowStart) / MS_DAY);
-    if (index >= 0 && index < days) moveDays.add(index);
+    if (index < 0) reference = Math.max(reference, index);
+    else if (index < days) moveDays.add(index);
   }
 
   const runs: Run[] = [];
-  let reference = firstDay;
   let current = -1;
   let from = firstDay;
   for (let day = firstDay; day < days; day += 1) {

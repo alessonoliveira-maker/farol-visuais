@@ -4,14 +4,50 @@
   "versoes": {
     "v1_movimentos-entre-etapas-no-trimestre": {
       "veredito": "aprovado",
-      "nota": "A diagonal fica fora da escala de cor e se declara no rodape, o que impede a permanencia na etapa de dominar a rampa e apagar os movimentos. O retrocesso ganha contorno proprio e o rodape declara 60 retrocessos contra 540 avancos: somei as dez celulas contornadas e da 60. Cabecalho alternado em duas alturas resolve o nome longo sem girar texto. Ressalva igual a da 05: no claro a celula de zero perde a moldura, mas o numero escrito segura a leitura.",
-      "data": "2026-09-28",
-      "registradoEm": "2026-09-28T12:11:49.785Z",
-      "impressao": "c9cebecde255b6c80386ceee36b839010d27e390",
+      "nota": "Os quatro bloqueantes da primeira passada caíram: linha Nova no trimestre, diagonal contornada, cinco totais escritos que somam 1.340 (257, 540, 60, 210 e 273, conferido no dado), percentual da linha por formatRateWithVolume na dica e na leitura padrão (50,3%, 182 de 362), recorte e de/para escritos, viewBox 894 x 361 em escala 1 e vazio em role=status. Observações no README: zeros de Nova para Ganha e Perdida sem o recorte escrito, amostra de avanço que é degrau da rampa, datas ISO no subtítulo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:12.200Z",
+      "impressao": "3464844484582efdbe88f4c9013541967f65a386",
       "arquivos": {
-        "Chart.tsx": "d499a8620233106c90dad50a945b947c636748dd",
-        "data.ts": "2719a94a76f2d242692e9ead4430a40fbffb3f48",
-        "meta.json": "7602800da010f74aaaa044a3a57a94b393f7a068"
+        "Chart.tsx": "75f249f96c5a482837432454161a7f13c94a6e39",
+        "data.ts": "c668ceadf496c56287163543ab741472aa7de14e",
+        "meta.json": "58eda408372d133fffca6ea90f85a5fe5ec4efcc"
+      }
+    },
+    "v2_retrocessos-em-destaque": {
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes caíram. NUM-2: percentual pelo maior resto, as seis linhas somam 100 nos dois PNGs (Qualificação 4, 39, 54 e 3) e os tetos por tercil leem o mesmo inteiro das células (avanço 3, 48 e 54; retrocesso 3, 8 e 14, conferidos). EST-1: vazio em role=status que diz não houve medição. Retrocesso por posição, seta e rampa de negative por color-mix; anotação Proposta volta a Descoberta 14% (21 de 148) confere com a célula. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:16.529Z",
+      "impressao": "2c0bd8f38dc57434d4e06591c72c4650895f11a3",
+      "arquivos": {
+        "Chart.tsx": "2fbc7181b7d5fa1701e9fd7a07b74555e5921586",
+        "data.ts": "fc77534850f7fda17a70995d0a0f893fb470cc0f",
+        "meta.json": "12bf52919e115b6a0c8578cfcf50c49a33c982f3"
+      }
+    },
+    "v3_motivo-de-perda-sugerido-contra-revisado": {
+      "veredito": "aprovado",
+      "nota": "Os quatro bloqueantes caíram: seletor de verdade com quatro botões aria-pressed, modo inicial pela prop e rótulos com revocação e precisão; percentual pelo maior resto com a diagonal fixada na taxa arredondada (linha Sem fit 79, 5, 7, 8 e 1; coluna Fora de hora 44, 17, 17, 22 e 0); painel com taxa de uma casa e volume (410 de 551, 0 de 18); vazio em role=status. Coeficiente de Matthews 0,59 conferido à mão. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:20.884Z",
+      "impressao": "f619ff0e7315cfe3c9c840f250c4855812b9ac8b",
+      "arquivos": {
+        "Chart.tsx": "b3c0b15fddf56a92cd99944556e4154f8bb0f1c4",
+        "data.ts": "eaba74341e3d5a48896892e07e5f430ed76ec626",
+        "meta.json": "841326a757bbf4ea460248844d982489560ed986"
+      }
+    },
+    "v4_diagonal-dominante-e-estagio-extinto": {
+      "veredito": "aprovado",
+      "nota": "Os três bloqueantes caíram: a coluna Contrato está zerada no dado e a faixa sem movimento no período agora é verdade, como o comentário do data.ts promete; de/para escrito no rodapé; vazio em role=status. Permanência 791 de 967 (82%) e tetos por tercil 4, 29 e 62 conferidos; base pequena vazada com o n na margem e Triagem hachurada com a data, desvios da especificação declarados no notes por TOK-1 e ACE-5. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:25.225Z",
+      "impressao": "7f3e44dfb7f70ba2705346bd06cf211a872ae788",
+      "arquivos": {
+        "Chart.tsx": "6ddcd87fdabbe0f18fcc0d67a7160ae5109d0ccf",
+        "data.ts": "fee207d5e1c24524441e6edf3b921d40e218c268",
+        "meta.json": "f489ebf0892fdd5c81a0b696ff773132e90dbf1c"
       }
     }
   },
@@ -27,6 +63,123 @@
         "Chart.tsx": "d499a8620233106c90dad50a945b947c636748dd",
         "data.ts": "2719a94a76f2d242692e9ead4430a40fbffb3f48",
         "meta.json": "7602800da010f74aaaa044a3a57a94b393f7a068"
+      }
+    },
+    {
+      "versao": "v1_movimentos-entre-etapas-no-trimestre",
+      "veredito": "reprovado",
+      "nota": "Quatro bloqueantes. (1) Pergunta 1 e catálogo, 14.1 (não demonstra o que o catálogo diz): faltam a linha Nova no trimestre, o contorno da diagonal (hoje ela tem o mesmo fundo e texto do zero), o percentual da linha na dica por formatRateWithVolume, os cinco totais (só avanço e retrocesso estão escritos), o recorte de 2026-06-30 a 2026-09-14 e o de nas linhas e para nas colunas escrito; o useCase trocou o do catálogo. (2) Pergunta 10, TIP-2, GEO-18: viewBox 562 x 226 desenhado em 491,13 x 197,5 (escala 0,874), 36 trechos de 11 px chegam a 9,61 px e os números de 12 px a 10,49 px; legenda HTML irmã encolhe a caixa. (3) Perguntas 16 e 8, EST-1 e EST-1b: sem bloco role=status; com data vazio a legenda escreve 1 a 0 movimentos e retrocesso, 0 contra 0 avanços (Chart.tsx:55 devolve 0). (4) 14.1, sentido de eixo: nada na tela diz que a linha é a origem e a coluna o destino. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__07_matriz-de-transicao_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:34.054Z",
+      "impressao": "a808a4c023cf9692f8f35f148f8b8b3e3d15f12c",
+      "arquivos": {
+        "Chart.tsx": "21c6893f6ebed74ce810419b0f5c2aab10c9d69f",
+        "data.ts": "2719a94a76f2d242692e9ead4430a40fbffb3f48",
+        "meta.json": "7602800da010f74aaaa044a3a57a94b393f7a068"
+      }
+    },
+    {
+      "versao": "v2_retrocessos-em-destaque",
+      "veredito": "reprovado",
+      "nota": "Dois bloqueantes. (1) Pergunta 6, NUM-2, 14.1 (proporção que não soma): a linha Qualificação imprime 4%, 39%, 55% e 3% sobre 227 movimentos, soma 101 nos dois PNGs; pelo maior resto é 4, 39, 54 e 3, e o teto da legenda de avanço tem de sair do mesmo inteiro. (2) Perguntas 16 e 8, EST-1, 14.1 (ausência exibida como zero): sem bloco role=status; com data vazio a peça desenha cabeçalhos, legendas sem degrau e escreve Nenhum retrocesso medido no trimestre, e a frase acessível diz sem retrocesso medido, onde não houve medição. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__07_matriz-de-transicao_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:46.323Z",
+      "impressao": "71d711ba581c5a6c7fb313ccb9b9a2dc67d4de54",
+      "arquivos": {
+        "Chart.tsx": "86ffb4e32d5d9f45408f3706c36aa9a99cd78c9e",
+        "data.ts": "fc77534850f7fda17a70995d0a0f893fb470cc0f",
+        "meta.json": "12bf52919e115b6a0c8578cfcf50c49a33c982f3"
+      }
+    },
+    {
+      "versao": "v3_motivo-de-perda-sugerido-contra-revisado",
+      "veredito": "reprovado",
+      "nota": "Três bloqueantes. (1) Catálogo, item 2, 14.1 (não demonstra o que o catálogo diz): o seletor de normalização é desenho inerte dentro de um svg aria-hidden, sem clique, foco nem aria-pressed; no Farol ele parece botão e não faz nada. A irmã 27/01/v3 mostra o padrão: useState com o padrão vindo da prop e botão com aria-pressed. (2) Pergunta 6, NUM-2: nos modos por linha e por coluna o percentual inteiro não soma 100 (linha Sem fit 79, 5, 7, 8 e 2 dá 101; coluna Sem fit 74, 8, 7, 10 e 0 dá 99); maior resto, com o painel lendo o mesmo inteiro. (3) Perguntas 16 e 8, EST-1: sem bloco role=status; com data vazio a peça escreve Amostra de 0 perdas revisadas e a frase acessível diz sem erro medido na amostra revisada. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__07_matriz-de-transicao_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:46.898Z",
+      "impressao": "b14cb53dae46bfdc3d5574a1a04877b06ba75359",
+      "arquivos": {
+        "Chart.tsx": "fbc3c3e8c0d4a6cd919db823d3a2ee779151ccaf",
+        "data.ts": "eaba74341e3d5a48896892e07e5f430ed76ec626",
+        "meta.json": "ddebda0031d84b72baeed22ccccb54f38cc146d4"
+      }
+    },
+    {
+      "versao": "v4_diagonal-dominante-e-estagio-extinto",
+      "veredito": "reprovado",
+      "nota": "Três bloqueantes. (1) Pergunta 3 e 19, catálogo item 2, DAD-10: a faixa da linha Contrato e a frase acessível dizem que a etapa ficou sem movimento no período, e a coluna Contrato desenha 1 vindo de Proposta e 2 de Negócio (data.ts:49 e 50); o comentário do data.ts promete que Contrato não recebeu ninguém. Zerar a coluna, ou dizer só que nada saiu de Contrato. (2) 14.1, sentido de eixo: nada na tela diz que a linha é a origem e a coluna o destino, o que a v2 e a v3 escrevem no rodapé. (3) Perguntas 16 e 8, EST-1: sem bloco role=status; com data vazio sobram cabeçalhos, divisória, legenda sem degrau e o rodapé. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__07_matriz-de-transicao_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:29:47.494Z",
+      "impressao": "d6a0c7088240a16611ecd8d222321cfd5fd45bcb",
+      "arquivos": {
+        "Chart.tsx": "0d491404c3c64332bab5e15bad57fc1882cd4044",
+        "data.ts": "46c635880d990177fd75e88826e7d4bd5fdfed0f",
+        "meta.json": "f489ebf0892fdd5c81a0b696ff773132e90dbf1c"
+      }
+    },
+    {
+      "versao": "v3_motivo-de-perda-sugerido-contra-revisado",
+      "veredito": "reprovado",
+      "nota": "Quatro bloqueantes (esta nota substitui a anterior do mesmo dia, que omitiu o quarto). (1) Catálogo, item 2, 14.1: o seletor de normalização é desenho inerte dentro de um svg aria-hidden, sem clique, foco nem aria-pressed; no Farol parece botão e não faz nada. Padrão da irmã 27/01/v3: useState com o padrão vindo da prop e botão com aria-pressed. (2) Pergunta 6, NUM-2: nos modos por linha e por coluna o percentual inteiro não soma 100 (linha Sem fit 79, 5, 7, 8 e 2 dá 101; coluna Sem fit 74, 8, 7, 10 e 0 dá 99); maior resto, com o painel lendo o mesmo inteiro da diagonal. (3) Perguntas 14 e 25, NUM-1, DAD-1, Precedência (volume junto da taxa): precisão e revocação saem só em percentual; o denominador da precisão (551, 224, 188, 219 e 18) não está em lugar nenhum da tela, e Fora de hora escreve 0% sem dizer que são 0 de 18. (4) Perguntas 16 e 8, EST-1: sem bloco role=status; com data vazio a peça escreve Amostra de 0 perdas revisadas e a frase diz sem erro medido. Parecer em validation/revisao_15_mapa-de-calor-e-calendario__07_matriz-de-transicao_2026-10-15.md.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:30:56.983Z",
+      "impressao": "b14cb53dae46bfdc3d5574a1a04877b06ba75359",
+      "arquivos": {
+        "Chart.tsx": "fbc3c3e8c0d4a6cd919db823d3a2ee779151ccaf",
+        "data.ts": "eaba74341e3d5a48896892e07e5f430ed76ec626",
+        "meta.json": "ddebda0031d84b72baeed22ccccb54f38cc146d4"
+      }
+    },
+    {
+      "versao": "v1_movimentos-entre-etapas-no-trimestre",
+      "veredito": "aprovado",
+      "nota": "Os quatro bloqueantes da primeira passada caíram: linha Nova no trimestre, diagonal contornada, cinco totais escritos que somam 1.340 (257, 540, 60, 210 e 273, conferido no dado), percentual da linha por formatRateWithVolume na dica e na leitura padrão (50,3%, 182 de 362), recorte e de/para escritos, viewBox 894 x 361 em escala 1 e vazio em role=status. Observações no README: zeros de Nova para Ganha e Perdida sem o recorte escrito, amostra de avanço que é degrau da rampa, datas ISO no subtítulo.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:12.200Z",
+      "impressao": "3464844484582efdbe88f4c9013541967f65a386",
+      "arquivos": {
+        "Chart.tsx": "75f249f96c5a482837432454161a7f13c94a6e39",
+        "data.ts": "c668ceadf496c56287163543ab741472aa7de14e",
+        "meta.json": "58eda408372d133fffca6ea90f85a5fe5ec4efcc"
+      }
+    },
+    {
+      "versao": "v2_retrocessos-em-destaque",
+      "veredito": "aprovado",
+      "nota": "Os dois bloqueantes caíram. NUM-2: percentual pelo maior resto, as seis linhas somam 100 nos dois PNGs (Qualificação 4, 39, 54 e 3) e os tetos por tercil leem o mesmo inteiro das células (avanço 3, 48 e 54; retrocesso 3, 8 e 14, conferidos). EST-1: vazio em role=status que diz não houve medição. Retrocesso por posição, seta e rampa de negative por color-mix; anotação Proposta volta a Descoberta 14% (21 de 148) confere com a célula. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:16.529Z",
+      "impressao": "2c0bd8f38dc57434d4e06591c72c4650895f11a3",
+      "arquivos": {
+        "Chart.tsx": "2fbc7181b7d5fa1701e9fd7a07b74555e5921586",
+        "data.ts": "fc77534850f7fda17a70995d0a0f893fb470cc0f",
+        "meta.json": "12bf52919e115b6a0c8578cfcf50c49a33c982f3"
+      }
+    },
+    {
+      "versao": "v3_motivo-de-perda-sugerido-contra-revisado",
+      "veredito": "aprovado",
+      "nota": "Os quatro bloqueantes caíram: seletor de verdade com quatro botões aria-pressed, modo inicial pela prop e rótulos com revocação e precisão; percentual pelo maior resto com a diagonal fixada na taxa arredondada (linha Sem fit 79, 5, 7, 8 e 1; coluna Fora de hora 44, 17, 17, 22 e 0); painel com taxa de uma casa e volume (410 de 551, 0 de 18); vazio em role=status. Coeficiente de Matthews 0,59 conferido à mão. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:20.884Z",
+      "impressao": "f619ff0e7315cfe3c9c840f250c4855812b9ac8b",
+      "arquivos": {
+        "Chart.tsx": "b3c0b15fddf56a92cd99944556e4154f8bb0f1c4",
+        "data.ts": "eaba74341e3d5a48896892e07e5f430ed76ec626",
+        "meta.json": "841326a757bbf4ea460248844d982489560ed986"
+      }
+    },
+    {
+      "versao": "v4_diagonal-dominante-e-estagio-extinto",
+      "veredito": "aprovado",
+      "nota": "Os três bloqueantes caíram: a coluna Contrato está zerada no dado e a faixa sem movimento no período agora é verdade, como o comentário do data.ts promete; de/para escrito no rodapé; vazio em role=status. Permanência 791 de 967 (82%) e tetos por tercil 4, 29 e 62 conferidos; base pequena vazada com o n na margem e Triagem hachurada com a data, desvios da especificação declarados no notes por TOK-1 e ACE-5. Observações no README.",
+      "data": "2026-10-15",
+      "registradoEm": "2026-10-15T11:56:25.225Z",
+      "impressao": "7f3e44dfb7f70ba2705346bd06cf211a872ae788",
+      "arquivos": {
+        "Chart.tsx": "6ddcd87fdabbe0f18fcc0d67a7160ae5109d0ccf",
+        "data.ts": "fee207d5e1c24524441e6edf3b921d40e218c268",
+        "meta.json": "f489ebf0892fdd5c81a0b696ff773132e90dbf1c"
       }
     }
   ]

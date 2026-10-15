@@ -124,3 +124,26 @@ em 0 com erro e 0 aviso._
 * Em v4 a frase acessível diz que o time maior soma mediana de 18 dias; mediana não soma, e a
   contagem de grupos vazios não concorda em número quando passa de um. Os dois pontos são de redação,
   a informação continua correta e completa.
+
+_Revisão independente de 2026-10-14, só de v1 (o `Chart.tsx` mudou em 2026-09-28: o trilho da barra
+passou de `bg-surface-overlay` para `bg-surface-sunken` e agora aparece no claro); aprovada sem
+bloqueante, com `npm run check` em 0 com erro e o aviso de AGREGACAO-ZERO da fila de dívida, que aqui
+é largura de desenho e não chega a texto._
+
+* v1: o rodapé ainda diz "Fundo realçado marca o subtotal do time", e no claro esse fundo sai
+  `rgba(255, 255, 255, 0.6)` sobre o branco do cartão, ou seja, não existe. A troca do trilho não
+  alcançou a frase. Reescrever pelos canais que sobrevivem nos dois temas (linha em semibold, sem
+  recuo, com a soma do time) resolve isto e ainda nomeia o agregado, como pede a NUM-5.
+* v1: o subtotal de pipeline sai `text-left`, no início da coluna da barra, enquanto os valores das
+  filhas saem à direita do vão fixo de 100 px; os dois números da mesma grandeza ficam em eixos de
+  alinhamento diferentes (TIP-6). Soma com o ponto já registrado do cabeçalho Pipeline aberto.
+* v1: os números do rodapé ("9 executivos em 3 times") saem em Manrope sem `tabular-nums` (TIP-1);
+  sem consequência visível, porque não alinham com nada.
+* v1: o vazio tem `role="status"` e a frase em 12 px `text-text-muted`, mas falta o ícone `Filter` de
+  16 px que a EST-1 descreve.
+* v1: a frase acessível diz que Comercial SP lidera com R$ 929,2 mil e 6 fechamentos, mas Comercial SC
+  empata em 6 fechamentos; quem ouve pode entender liderança também na segunda coluna.
+* v1: o trilho tem cerca de 68 px e o vão do valor reserva 100 px para uma tinta de cerca de 70 px;
+  passar a sobra para o trilho dá mais resolução à comparação entre executivos.
+* v1: um time que chegue com a lista de executivos vazia imprime R$ 0 e 0 na linha de grupo, lidos como
+  zero medido; quando o recorte puder esvaziar um time, o tratamento a copiar é o de v4.

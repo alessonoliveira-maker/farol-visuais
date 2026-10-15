@@ -23,7 +23,8 @@ export interface MonthlyResultDifferenceProps {
 const MARGIN = { top: 12, right: 12, bottom: 0, left: 0 } as const;
 const Y_AXIS_WIDTH = 80;
 const GRID_TARGET_COUNT = 4;
-const FILL_OPACITY = 0.3;
+// Mínima da tabela do dossiê (ACE-5): --positive 0,70 (claro) e --negative 0,66 (escuro); 0,70 cobre as duas. Contorno segue opaco.
+const FILL_OPACITY = 0.7;
 const STROKE_WIDTH = 2;
 
 interface ValueTickProps {

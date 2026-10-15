@@ -9,6 +9,7 @@
     "check": "node scripts/check.mjs",
     "dossie": "node scripts/dossie.mjs",
     "galeria": "node scripts/galeria.mjs",
+    "lint": "node scripts/lint.mjs",
     "pendencias": "node scripts/pendencias.mjs",
     "revisao": "node scripts/revisao.mjs",
     "selftest": "node scripts/selftest.mjs"

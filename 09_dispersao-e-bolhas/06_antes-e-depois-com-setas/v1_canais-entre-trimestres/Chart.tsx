@@ -32,12 +32,10 @@ const ORIGIN_RADIUS = 4;
 const TARGET_RADIUS = 4;
 const ARROW_COLOR = 'var(--chart-1)';
 const READING_LINE_Y = 13;
-/** Fileira reservada para a linha de chamada, entre a linha de leitura e o topo do plano. */
-const FALLBACK_ROW_Y = 27;
 const LABEL_FONT_SIZE = 12;
 /** Largura media por caractere em Manrope 12 px, superestimada de proposito: o anticolisao erra
  * para o lado de sobrar espaco, nunca para o lado de duas caixas se tocarem. */
-const CHAR_WIDTH_FACTOR = 0.6;
+const CHAR_WIDTH_FACTOR = 0.52;
 const LABEL_LINE_HEIGHT = 14;
 const LABEL_GAP = 4;
 const POINT_BUFFER = 7;
@@ -148,6 +146,25 @@ interface LabelPlacement {
   readonly textX: number;
   readonly textY: number;
   readonly leaderFrom: Point | null;
+  readonly leaderTo: Point | null;
+}
+
+/** Dois segmentos se cruzam (orientação dos pontos). */
+function segmentsCross(p1: Point, p2: Point, p3: Point, p4: Point): boolean {
+  const side = (a: Point, b: Point, c: Point): number => (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+  return side(p1, p2, p3) * side(p1, p2, p4) < 0 && side(p3, p4, p1) * side(p3, p4, p2) < 0;
+}
+
+function rectDistance(r: Rect, p: Point): number {
+  const dx = Math.max(r.x - p.x, 0, p.x - (r.x + r.width));
+  const dy = Math.max(r.y - p.y, 0, p.y - (r.y + r.height));
+  return Math.hypot(dx, dy);
+}
+
+/** Atribuição (ROT-2, ROT-11): o nome só vale sem linha de chamada se o próprio ponto de destino for o ponto mais próximo da caixa. */
+function ownPointIsNearest(rect: Rect, own: Point, others: readonly Point[]): boolean {
+  const ownDistance = rectDistance(rect, own);
+  return others.every((point) => rectDistance(rect, point) > ownDistance + 1);
 }
 
 /**
@@ -159,16 +176,68 @@ interface LabelPlacement {
  * a resposta a um rótulo perto de traço fino é mover o texto, nunca apagar a marca com o halo
  * (exceção da marca fina na ROT-7).
  */
-function placeLabels(arrows: readonly ArrowGeometry[], plotBounds: Rect): readonly LabelPlacement[] {
+function placeLabelsWith(arrows: readonly ArrowGeometry[], plotBounds: Rect, reserved: ReadonlySet<string>): { readonly placements: readonly LabelPlacement[]; readonly overflowIds: readonly string[] } {
   const allPoints = arrows.flatMap((arrow) => [arrow.origin, arrow.target]);
   const placedRects: Rect[] = [];
   const placements: LabelPlacement[] = [];
   const overflow: ArrowGeometry[] = [];
 
+  const leaders: Array<readonly [Point, Point]> = [];
+  /* Reserva (ROT-7, ROT-11): varre o plano e fica com a caixa livre mais próxima do ponto, ligada a
+     ele por linha de chamada que não cruza nome, marca nem outra chamada. Primeira passada: o ponto
+     próprio é o mais próximo da caixa. Segunda: nenhum ponto alheio colado na caixa. */
+  function placeReserved(list: readonly ArrowGeometry[]): void {
+  for (const arrow of list) {
+    const textWidth = estimateTextWidth(arrow.item.name);
+    const foreign = allPoints.filter((point) => point !== arrow.target);
+    let best: { rect: Rect; to: Point } | null = null;
+    let bestDistance = Infinity;
+    for (const strict of [true, false]) {
+      if (best) break;
+      for (let y = plotBounds.y; y + LABEL_LINE_HEIGHT <= plotBounds.y + plotBounds.height; y += 4) {
+        for (let x = plotBounds.x; x + textWidth <= plotBounds.x + plotBounds.width; x += 8) {
+          const rect: Rect = { x, y, width: textWidth, height: LABEL_LINE_HEIGHT };
+          if (placedRects.some((placed) => rectsOverlap(rect, placed, LABEL_GAP))) continue;
+          if (allPoints.some((point) => rectContainsPoint(rect, point, POINT_BUFFER))) continue;
+          if (arrows.some((other) => segmentHitsRect(other.origin, other.tip, rect, ARROW_BUFFER))) continue;
+          if (strict ? !ownPointIsNearest(rect, arrow.target, foreign) : foreign.some((point) => rectDistance(rect, point) < 14)) continue;
+          const to: Point = {
+            x: Math.min(Math.max(arrow.target.x, rect.x), rect.x + rect.width),
+            y: Math.min(Math.max(arrow.target.y, rect.y), rect.y + rect.height),
+          };
+          if (leaders.some(([from, end]) => segmentHitsRect(from, end, rect, ARROW_BUFFER))) continue;
+          if (placedRects.some((placed) => segmentHitsRect(arrow.target, to, placed, 2))) continue;
+          if (foreign.some((point) => segmentHitsRect(arrow.target, to, { x: point.x, y: point.y, width: 0, height: 0 }, POINT_BUFFER))) continue;
+          if (arrows.some((other) => other !== arrow && segmentsCross(arrow.target, to, other.origin, other.tip))) continue;
+          const distance = Math.hypot(to.x - arrow.target.x, to.y - arrow.target.y);
+          if (distance < bestDistance) {
+            bestDistance = distance;
+            best = { rect, to };
+          }
+        }
+      }
+    }
+    if (best === null) continue;
+    leaders.push([arrow.target, best.to]);
+    placedRects.push(best.rect);
+    placements.push({
+      item: arrow.item,
+      rect: best.rect,
+      textAnchor: best.to.x >= best.rect.x + best.rect.width ? 'end' : 'start',
+      textX: best.to.x >= best.rect.x + best.rect.width ? best.rect.x + best.rect.width : best.rect.x,
+      textY: best.rect.y + best.rect.height / 2,
+      leaderFrom: arrow.target,
+      leaderTo: best.to,
+    });
+  }
+  }
+
+  placeReserved(arrows.filter((arrow) => reserved.has(arrow.item.id)));
   /* Nomes mais longos escolhem primeiro: o nome que mais precisa de espaço fica no raio menor, e o
      nome curto de um vizinho nunca toma a posição que fazia o longo ser o mais próximo do próprio ponto. */
   const byNameLength = [...arrows].sort((a, b) => b.item.name.length - a.item.name.length);
   for (const arrow of byNameLength) {
+    if (reserved.has(arrow.item.id)) continue;
     const textWidth = estimateTextWidth(arrow.item.name);
     let chosen: { rect: Rect; anchor: 'start' | 'middle' | 'end' } | null = null;
 
@@ -179,6 +248,7 @@ function placeLabels(arrows: readonly ArrowGeometry[], plotBounds: Rect): readon
         if (placedRects.some((placed) => rectsOverlap(rect, placed, LABEL_GAP))) continue;
         if (allPoints.some((point) => rectContainsPoint(rect, point, POINT_BUFFER))) continue;
         if (arrows.some((other) => segmentHitsRect(other.origin, other.tip, rect, ARROW_BUFFER))) continue;
+        if (!ownPointIsNearest(rect, arrow.target, allPoints.filter((point) => point !== arrow.target))) continue;
         chosen = { rect, anchor: dir.anchor };
         break;
       }
@@ -196,22 +266,16 @@ function placeLabels(arrows: readonly ArrowGeometry[], plotBounds: Rect): readon
         textX,
         textY: chosen.rect.y + chosen.rect.height / 2,
         leaderFrom: null,
+        leaderTo: null,
       });
     } else {
       overflow.push(arrow);
     }
   }
 
-  let cursorX = plotBounds.x;
-  for (const arrow of overflow) {
-    const textWidth = estimateTextWidth(arrow.item.name);
-    const x = Math.max(cursorX, arrow.target.x - textWidth / 2);
-    const rect: Rect = { x, y: FALLBACK_ROW_Y - LABEL_LINE_HEIGHT / 2, width: textWidth, height: LABEL_LINE_HEIGHT };
-    cursorX = rect.x + rect.width + LABEL_GAP * 3;
-    placements.push({ item: arrow.item, rect, textAnchor: 'start', textX: rect.x, textY: FALLBACK_ROW_Y, leaderFrom: arrow.target });
-  }
+  placeReserved(overflow);
+  return { placements, overflowIds: overflow.map((arrow) => arrow.item.id) };
 
-  return placements;
 }
 
 export default function ChannelArrows({ data = defaultData, height, className }: ChannelArrowsProps) {
@@ -243,7 +307,8 @@ export default function ChannelArrows({ data = defaultData, height, className }:
     return { item, origin, target, tip };
   });
 
-  const placements = placeLabels(arrows, plotBounds);
+  const firstPass = placeLabelsWith(arrows, plotBounds, new Set());
+  const placements = firstPass.overflowIds.length === 0 ? firstPass.placements : placeLabelsWith(arrows, plotBounds, new Set(firstPass.overflowIds)).placements;
 
   const leader = [...data].sort((a, b) => movementScore(b) - movementScore(a))[0]!;
   const summary =
@@ -304,15 +369,15 @@ export default function ChannelArrows({ data = defaultData, height, className }:
           a seta, e por isso nenhum leva halo. */}
       {placements.map((placement) => (
         <g key={placement.item.id}>
-          {placement.leaderFrom ? (
+          {placement.leaderFrom && placement.leaderTo ? (
             <line
-              stroke="var(--line-strong)"
+              stroke="var(--text-muted)"
               strokeDasharray="2 2"
               strokeWidth={1}
               x1={placement.leaderFrom.x}
-              x2={placement.textAnchor === 'end' ? placement.rect.x + placement.rect.width : placement.rect.x}
+              x2={placement.leaderTo.x}
               y1={placement.leaderFrom.y}
-              y2={placement.rect.y + placement.rect.height / 2}
+              y2={placement.leaderTo.y}
             />
           ) : null}
           <text
